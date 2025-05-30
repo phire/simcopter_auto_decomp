@@ -18,12 +18,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long IFlatImage(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long IFlatImage(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);
@@ -87,12 +87,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long CFlatImage(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long CFlatImage(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long CFlatImage(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long CFlatImage(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);

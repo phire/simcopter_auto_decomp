@@ -26,8 +26,8 @@ public:
 	int32_t CompareTo(const class MDate&);
 	uint32_t Day();
 	uint32_t DayOfMonth();
-	uint32_t MDate(uint32_t);
-	uint32_t MDate();
+	uint32_t FirstDayOfMonth(uint32_t);
+	uint32_t FirstDayOfMonth();
 	uint32_t Hash();
 	int32_t IsValid();
 	int32_t Leap();
@@ -36,9 +36,9 @@ public:
 	uint32_t Month();
 	char * NameOfDay();
 	char * NameOfMonth();
-	class MDate MDate(uint32_t);
+	class MDate Previous(uint32_t);
 	// vtable: 4
-	intro class MDate MDate(char *);
+	intro class MDate Previous(char *);
 	uint32_t WeekDay();
 	uint32_t Year();
 	uint32_t YearLastTwoDigits();
@@ -102,32 +102,32 @@ class ostrstream : public virtual ios, public ostream, public virtual <indirect>
 {
 public:
 	int32_t[0]* ios;
-	void ostrstream(class ios&);
-	void ostrstream(const class ostream&);
-	void ostrstream();
-	void ostrstream(class streambuf*);
+	void ostream(class ios&);
+	void ostream(const class ostream&);
+	void ostream();
+	void ostream(class streambuf*);
 	virtual void ~ostream();
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();
-	class ostream& ostrstream(class streambuf*);
-	class ostream& ostrstream(void * __ptr32);
-	class ostream& ostrstream(double);
-	class ostream& ostrstream(double);
-	class ostream& ostrstream(float);
-	class ostream& ostrstream(unsigned long);
-	class ostream& ostrstream(long);
-	class ostream& ostrstream(uint32_t);
-	class ostream& ostrstream(int32_t);
-	class ostream& ostrstream(unsigned short);
-	class ostream& ostrstream(short);
-	class ostream& ostrstream(char);
-	class ostream& ostrstream(unsigned char);
-	class ostream& ostrstream(char);
-	class ostream& ostrstream(char *);
-	class ostream& ostrstream(unsigned char *);
-	class ostream& ostrstream(char *);
-	class ostream& ostrstream(LfPointer @ 0x75e80:
+	class ostream& operator<<(class streambuf*);
+	class ostream& operator<<(void * __ptr32);
+	class ostream& operator<<(double);
+	class ostream& operator<<(double);
+	class ostream& operator<<(float);
+	class ostream& operator<<(unsigned long);
+	class ostream& operator<<(long);
+	class ostream& operator<<(uint32_t);
+	class ostream& operator<<(int32_t);
+	class ostream& operator<<(unsigned short);
+	class ostream& operator<<(short);
+	class ostream& operator<<(char);
+	class ostream& operator<<(unsigned char);
+	class ostream& operator<<(char);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(unsigned char *);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(LfPointer @ 0x75e80:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -150,7 +150,7 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ios&));
-	class ostream& ostrstream(LfPointer @ 0x26c0:
+	class ostream& operator<<(LfPointer @ 0x26c0:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -173,18 +173,18 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ostream&));
-	class ostream& ostrstream(char);
-	class ostream& ostrstream(unsigned char);
-	class ostream& ostrstream(char);
-	class ostream& ostrstream(char *, int32_t);
-	class ostream& ostrstream(unsigned char *, int32_t);
-	class ostream& ostrstream(char *, int32_t);
-	class ostream& ostrstream(long, enum ios::seek_dir);
-	class ostream& ostrstream(long);
+	class ostream& put(char);
+	class ostream& put(unsigned char);
+	class ostream& put(char);
+	class ostream& write(char *, int32_t);
+	class ostream& write(unsigned char *, int32_t);
+	class ostream& write(char *, int32_t);
+	class ostream& seekp(long, enum ios::seek_dir);
+	class ostream& seekp(long);
 	long tellp();
 protected:
-	class ostream& ostrstream(const class ostream&);
-	class ostream& ostrstream(class streambuf*);
+	class ostream& operator=(const class ostream&);
+	class ostream& operator=(class streambuf*);
 	int32_t do_opfx(int32_t);
 	void do_osfx();
 private:
@@ -211,23 +211,23 @@ public:
 	virtual void ~istream();
 	int32_t ipfx(int32_t);
 	void isfx();
-	class istream& istream(class streambuf*);
-	class istream& istream(double&);
-	class istream& istream(double&);
-	class istream& istream(float&);
-	class istream& istream(unsigned long&);
-	class istream& istream(long&);
-	class istream& istream(uint32_t&);
-	class istream& istream(int32_t&);
-	class istream& istream(unsigned short&);
-	class istream& istream(short&);
-	class istream& istream(char&);
-	class istream& istream(unsigned char&);
-	class istream& istream(char&);
-	class istream& istream(char *);
-	class istream& istream(unsigned char *);
-	class istream& istream(char *);
-	class istream& istream(LfPointer @ 0x75e80:
+	class istream& operator>>(class streambuf*);
+	class istream& operator>>(double&);
+	class istream& operator>>(double&);
+	class istream& operator>>(float&);
+	class istream& operator>>(unsigned long&);
+	class istream& operator>>(long&);
+	class istream& operator>>(uint32_t&);
+	class istream& operator>>(int32_t&);
+	class istream& operator>>(unsigned short&);
+	class istream& operator>>(short&);
+	class istream& operator>>(char&);
+	class istream& operator>>(unsigned char&);
+	class istream& operator>>(char&);
+	class istream& operator>>(char *);
+	class istream& operator>>(unsigned char *);
+	class istream& operator>>(char *);
+	class istream& operator>>(LfPointer @ 0x75e80:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -250,7 +250,7 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ios&));
-	class istream& istream(LfPointer @ 0x264c4:
+	class istream& operator>>(LfPointer @ 0x264c4:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -273,33 +273,33 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class istream&));
-	class istream& istream(char *, int32_t, int32_t);
-	class istream& istream(class streambuf&, char);
-	class istream& istream(char&);
-	class istream& istream(unsigned char&);
-	class istream& istream(char&);
-	class istream& istream(char *, int32_t, char);
-	class istream& istream(unsigned char *, int32_t, char);
-	class istream& istream(char *, int32_t, char);
-	int32_t istream();
-	class istream& istream(char *, int32_t, char);
-	class istream& istream(unsigned char *, int32_t, char);
-	class istream& istream(char *, int32_t, char);
+	class istream& get(char *, int32_t, int32_t);
+	class istream& get(class streambuf&, char);
+	class istream& get(char&);
+	class istream& get(unsigned char&);
+	class istream& get(char&);
+	class istream& get(char *, int32_t, char);
+	class istream& get(unsigned char *, int32_t, char);
+	class istream& get(char *, int32_t, char);
+	int32_t get();
+	class istream& getline(char *, int32_t, char);
+	class istream& getline(unsigned char *, int32_t, char);
+	class istream& getline(char *, int32_t, char);
 	class istream& ignore(int32_t, int32_t);
-	class istream& istream(char *, int32_t);
-	class istream& istream(unsigned char *, int32_t);
-	class istream& istream(char *, int32_t);
+	class istream& read(char *, int32_t);
+	class istream& read(unsigned char *, int32_t);
+	class istream& read(char *, int32_t);
 	int32_t gcount();
 	int32_t peek();
 	class istream& putback(char);
 	int32_t sync();
-	class istream& istream(long, enum ios::seek_dir);
-	class istream& istream(long);
+	class istream& seekg(long, enum ios::seek_dir);
+	class istream& seekg(long);
 	long tellg();
 	void eatwhite();
 protected:
-	class istream& istream(const class istream&);
-	class istream& istream(class streambuf*);
+	class istream& operator=(const class istream&);
+	class istream& operator=(class streambuf*);
 	int32_t do_ipfx(int32_t);
 private:
 	int32_t getint(char *);
@@ -325,24 +325,24 @@ public:
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();
-	class ostream& ostream(class streambuf*);
-	class ostream& ostream(void * __ptr32);
-	class ostream& ostream(double);
-	class ostream& ostream(double);
-	class ostream& ostream(float);
-	class ostream& ostream(unsigned long);
-	class ostream& ostream(long);
-	class ostream& ostream(uint32_t);
-	class ostream& ostream(int32_t);
-	class ostream& ostream(unsigned short);
-	class ostream& ostream(short);
-	class ostream& ostream(char);
-	class ostream& ostream(unsigned char);
-	class ostream& ostream(char);
-	class ostream& ostream(char *);
-	class ostream& ostream(unsigned char *);
-	class ostream& ostream(char *);
-	class ostream& ostream(LfPointer @ 0x75e80:
+	class ostream& operator<<(class streambuf*);
+	class ostream& operator<<(void * __ptr32);
+	class ostream& operator<<(double);
+	class ostream& operator<<(double);
+	class ostream& operator<<(float);
+	class ostream& operator<<(unsigned long);
+	class ostream& operator<<(long);
+	class ostream& operator<<(uint32_t);
+	class ostream& operator<<(int32_t);
+	class ostream& operator<<(unsigned short);
+	class ostream& operator<<(short);
+	class ostream& operator<<(char);
+	class ostream& operator<<(unsigned char);
+	class ostream& operator<<(char);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(unsigned char *);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(LfPointer @ 0x75e80:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -365,7 +365,7 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ios&));
-	class ostream& ostream(LfPointer @ 0x26c0:
+	class ostream& operator<<(LfPointer @ 0x26c0:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -388,18 +388,18 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ostream&));
-	class ostream& ostream(char);
-	class ostream& ostream(unsigned char);
-	class ostream& ostream(char);
-	class ostream& ostream(char *, int32_t);
-	class ostream& ostream(unsigned char *, int32_t);
-	class ostream& ostream(char *, int32_t);
-	class ostream& ostream(long, enum ios::seek_dir);
-	class ostream& ostream(long);
+	class ostream& put(char);
+	class ostream& put(unsigned char);
+	class ostream& put(char);
+	class ostream& write(char *, int32_t);
+	class ostream& write(unsigned char *, int32_t);
+	class ostream& write(char *, int32_t);
+	class ostream& seekp(long, enum ios::seek_dir);
+	class ostream& seekp(long);
 	long tellp();
 protected:
-	class ostream& ostream(const class ostream&);
-	class ostream& ostream(class streambuf*);
+	class ostream& operator=(const class ostream&);
+	class ostream& operator=(class streambuf*);
 	int32_t do_opfx(int32_t);
 	void do_osfx();
 private:

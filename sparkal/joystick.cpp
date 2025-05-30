@@ -23,8 +23,8 @@ public:
 	long GetNormalizedMin();
 	long GetNormalizedMax();
 	void SetNormalizedMinMax(long, long);
-	int32_t JoystickManager(char *);
-	int32_t JoystickManager(uint32_t);
+	int32_t IsJoystickPresent(char *);
+	int32_t IsJoystickPresent(uint32_t);
 	int32_t GetJoystickName(uint32_t, char *);
 	int32_t GetJoystickIndex(char *, int32_t *);
 	int32_t GetJoystickCount();

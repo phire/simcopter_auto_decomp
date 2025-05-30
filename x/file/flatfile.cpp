@@ -27,9 +27,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long FlatFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long FlatFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);

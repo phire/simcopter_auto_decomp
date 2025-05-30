@@ -28,8 +28,8 @@ public:
 	void GetSummary(struct SmackSumTag*);
 	void CenterBufferInRect(struct SparkalRect*);
 	void SetBufferPosition(int32_t, int32_t);
-	void SmackerBuffer(class CSparkalWindow*);
-	void SmackerBuffer(void * __ptr32);
+	void SetWindow(class CSparkalWindow*);
+	void SetWindow(void * __ptr32);
 	void SetZoomFactor(int32_t);
 	// calltype: NearC
 	static char * GetSmackerVersion(char *);
@@ -98,8 +98,8 @@ public:
 class VRBmpSmackerBuffer : public SmackerBuffer
 {
 public:
-	void VRBmpSmackerBuffer(char *, int32_t, int32_t);
-	void VRBmpSmackerBuffer();
+	void SmackerBuffer(char *, int32_t, int32_t);
+	void SmackerBuffer();
 	// vtable: 0
 	intro void ~SmackerBuffer();
 	// vtable: 4
@@ -121,8 +121,8 @@ public:
 	void GetSummary(struct SmackSumTag*);
 	void CenterBufferInRect(struct SparkalRect*);
 	void SetBufferPosition(int32_t, int32_t);
-	void VRBmpSmackerBuffer(class CSparkalWindow*);
-	void VRBmpSmackerBuffer(void * __ptr32);
+	void SetWindow(class CSparkalWindow*);
+	void SetWindow(void * __ptr32);
 	void SetZoomFactor(int32_t);
 	// calltype: NearC
 	static char * GetSmackerVersion(char *);
@@ -175,8 +175,8 @@ public:
 class SmackerBackBuffer : public SmackerBuffer, public IFlatImage, public IBackBuffer, public CBackBuffer
 {
 public:
-	void SmackerBackBuffer(char *, int32_t, int32_t);
-	void SmackerBackBuffer();
+	void SmackerBuffer(char *, int32_t, int32_t);
+	void SmackerBuffer();
 	// vtable: 0
 	intro void ~SmackerBuffer();
 	// vtable: 4
@@ -198,8 +198,8 @@ public:
 	void GetSummary(struct SmackSumTag*);
 	void CenterBufferInRect(struct SparkalRect*);
 	void SetBufferPosition(int32_t, int32_t);
-	void SmackerBackBuffer(class CSparkalWindow*);
-	void SmackerBackBuffer(void * __ptr32);
+	void SetWindow(class CSparkalWindow*);
+	void SetWindow(void * __ptr32);
 	void SetZoomFactor(int32_t);
 	// calltype: NearC
 	static char * GetSmackerVersion(char *);
@@ -233,12 +233,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long SmackerBackBuffer(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);
@@ -258,9 +258,9 @@ public:
 	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
 	// vtable: 36
 	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
-	void SmackerBackBuffer(long, long, const struct SparkalColor*);
-	void SmackerBackBuffer(char *);
-	void SmackerBackBuffer();
+	void CBackBuffer(long, long, const struct SparkalColor*);
+	void CBackBuffer(char *);
+	void CBackBuffer();
 	// vtable: 40
 	intro void InitializeMemberVariables();
 	void ~CBackBuffer();
@@ -273,17 +273,17 @@ public:
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
 	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
 	// vtable: 44
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	virtual unsigned long SmackerBackBuffer(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long SmackerBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 48
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
+	intro unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
 	// vtable: 52
 	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
 	// vtable: 56
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	intro unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
 	// vtable: 60
-	intro unsigned long SmackerBackBuffer(class IFlatImage*, long, long, long, long, long, long);
+	intro unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long);
 	void UpdatePalette(long, long, const struct SparkalColor*);
 	virtual void SetTransparentColor(int32_t, long);
 	unsigned long GetTransparentColor(long&);
@@ -297,9 +297,9 @@ public:
 	// vtable: 68
 	intro unsigned long FillRect(long, const struct SparkalRect*);
 	// vtable: 72
-	intro unsigned long SmackerBackBuffer(char *, long, unsigned long, const class MRect&, class MFont*);
+	intro unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*);
 	// vtable: 76
-	intro unsigned long SmackerBackBuffer(char *, unsigned long, long *, long *, long *, long *, class MFont*);
+	intro unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*);
 	// vtable: 80
 	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
 	// vtable: 84
@@ -369,12 +369,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long IFlatImage(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long IFlatImage(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);

@@ -55,9 +55,9 @@ public:
 	// vtable: 36
 	intro long GetPrefDataLength(long);
 	// vtable: 40
-	intro long PreferenceManager(class PreferenceItem*);
+	intro long SetPref(class PreferenceItem*);
 	// vtable: 44
-	intro long PreferenceManager(long, char *, long);
+	intro long SetPref(long, char *, long);
 	// vtable: 48
 	intro long RemovePref(long);
 };
@@ -146,9 +146,9 @@ public:
 	intro long StopStream();
 protected:
 	// vtable: 76
-	intro long DigitalSound(struct IDirectSoundBuffer**);
+	intro long IsPlaying(struct IDirectSoundBuffer**);
 public:
-	virtual long DigitalSound();
+	virtual long IsPlaying();
 	virtual int32_t GetVolume(long *);
 	virtual int32_t SetVolume(long);
 	// vtable: 80

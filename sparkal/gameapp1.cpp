@@ -70,71 +70,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: char[260];
@@ -173,16 +173,16 @@ public:
 	// vtable: 0
 	intro void ~Version();
 	int32_t GetApplicationName(char *&);
-	long Version(int32_t);
-	int32_t Version(char *&);
+	long GetApplicationVersion(int32_t);
+	int32_t GetApplicationVersion(char *&);
 	int32_t GetApplicationCopyright(char *&);
 	int32_t GetApplicationDebugVersion(char *&);
 	// calltype: NearC
 	static int32_t GetSystemType();
 	// calltype: NearC
-	static long Version(int32_t);
+	static long GetSystemVersion(int32_t);
 	// calltype: NearC
-	static int32_t Version(char *);
+	static int32_t GetSystemVersion(char *);
 	// calltype: NearC
 	static long GetCPUVersion();
 	// calltype: NearC
@@ -270,33 +270,33 @@ protected:
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::iterator();
+		void iterator();
 	protected:
-		void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+		void iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::iterator&);
 		struct Shortcut& operator*();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
+		class list<Shortcut>::iterator operator++(int32_t);
+		class list<Shortcut>::iterator& operator++();
+		class list<Shortcut>::iterator operator--(int32_t);
+		class list<Shortcut>::iterator& operator--();
 	};
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::const_iterator(const class list<Shortcut>::iterator&);
-		void list<Shortcut>::const_iterator();
+		void const_iterator(const class list<Shortcut>::iterator&);
+		void const_iterator();
 	protected:
-		void list<Shortcut>::const_iterator(struct list<Shortcut>::list_node*);
+		void const_iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::const_iterator&);
 		const struct Shortcut& operator*();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
+		class list<Shortcut>::const_iterator operator++(int32_t);
+		class list<Shortcut>::const_iterator& operator++();
+		class list<Shortcut>::const_iterator operator--(int32_t);
+		class list<Shortcut>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int>;
@@ -305,30 +305,30 @@ public:
 	void list<Shortcut>(const struct Shortcut*, const struct Shortcut*);
 	void list<Shortcut>(uint32_t, const struct Shortcut&);
 	void list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
+	class list<Shortcut>::const_iterator begin();
+	class list<Shortcut>::iterator begin();
+	class list<Shortcut>::const_iterator end();
+	class list<Shortcut>::iterator end();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rend();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
+	const struct Shortcut& front();
+	struct Shortcut& front();
+	const struct Shortcut& back();
+	struct Shortcut& back();
 	void swap(class list<Shortcut>&);
-	void list<Shortcut>(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
-	class list<Shortcut>::iterator list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
+	void insert(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
+	class list<Shortcut>::iterator insert(class list<Shortcut>::iterator, const struct Shortcut&);
 	void push_front(const struct Shortcut&);
 	void push_back(const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<Shortcut>();
@@ -336,9 +336,9 @@ public:
 protected:
 	void transfer(class list<Shortcut>::iterator, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
 public:
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&);
 	void remove(const struct Shortcut&);
 	void unique();
 	void merge(class list<Shortcut>&);
@@ -352,16 +352,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 // Type: struct list<Shortcut>::list_node (forward reference);
@@ -372,16 +372,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 // Type: class list<CopterGameMode> (forward reference);
@@ -432,33 +432,33 @@ protected:
 	protected:
 		struct list<CopterGameMode>::list_node* node;
 	public:
-		void list<CopterGameMode>::iterator();
+		void iterator();
 	protected:
-		void list<CopterGameMode>::iterator(struct list<CopterGameMode>::list_node*);
+		void iterator(struct list<CopterGameMode>::list_node*);
 	public:
 		int32_t operator==(const class list<CopterGameMode>::iterator&);
 		class CopterGameMode& operator*();
-		class list<CopterGameMode>::iterator list<CopterGameMode>::iterator(int32_t);
-		class list<CopterGameMode>::iterator& list<CopterGameMode>::iterator();
-		class list<CopterGameMode>::iterator list<CopterGameMode>::iterator(int32_t);
-		class list<CopterGameMode>::iterator& list<CopterGameMode>::iterator();
+		class list<CopterGameMode>::iterator operator++(int32_t);
+		class list<CopterGameMode>::iterator& operator++();
+		class list<CopterGameMode>::iterator operator--(int32_t);
+		class list<CopterGameMode>::iterator& operator--();
 	};
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
 	{
 	protected:
 		struct list<CopterGameMode>::list_node* node;
 	public:
-		void list<CopterGameMode>::const_iterator(const class list<CopterGameMode>::iterator&);
-		void list<CopterGameMode>::const_iterator();
+		void const_iterator(const class list<CopterGameMode>::iterator&);
+		void const_iterator();
 	protected:
-		void list<CopterGameMode>::const_iterator(struct list<CopterGameMode>::list_node*);
+		void const_iterator(struct list<CopterGameMode>::list_node*);
 	public:
 		int32_t operator==(const class list<CopterGameMode>::const_iterator&);
 		const class CopterGameMode& operator*();
-		class list<CopterGameMode>::const_iterator list<CopterGameMode>::const_iterator(int32_t);
-		class list<CopterGameMode>::const_iterator& list<CopterGameMode>::const_iterator();
-		class list<CopterGameMode>::const_iterator list<CopterGameMode>::const_iterator(int32_t);
-		class list<CopterGameMode>::const_iterator& list<CopterGameMode>::const_iterator();
+		class list<CopterGameMode>::const_iterator operator++(int32_t);
+		class list<CopterGameMode>::const_iterator& operator++();
+		class list<CopterGameMode>::const_iterator operator--(int32_t);
+		class list<CopterGameMode>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<CopterGameMode>::const_iterator,CopterGameMode,CopterGameMode const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<CopterGameMode>::iterator,CopterGameMode,CopterGameMode &,int>;
@@ -467,30 +467,30 @@ public:
 	void list<CopterGameMode>(const class CopterGameMode*, const class CopterGameMode*);
 	void list<CopterGameMode>(uint32_t, const class CopterGameMode&);
 	void list<CopterGameMode>();
-	class list<CopterGameMode>::const_iterator list<CopterGameMode>();
-	class list<CopterGameMode>::iterator list<CopterGameMode>();
-	class list<CopterGameMode>::const_iterator list<CopterGameMode>();
-	class list<CopterGameMode>::iterator list<CopterGameMode>();
-	class reverse_bidirectional_iterator<list<CopterGameMode>::const_iterator,CopterGameMode,CopterGameMode const &,int> list<CopterGameMode>();
-	class reverse_bidirectional_iterator<list<CopterGameMode>::iterator,CopterGameMode,CopterGameMode &,int> list<CopterGameMode>();
-	class reverse_bidirectional_iterator<list<CopterGameMode>::const_iterator,CopterGameMode,CopterGameMode const &,int> list<CopterGameMode>();
-	class reverse_bidirectional_iterator<list<CopterGameMode>::iterator,CopterGameMode,CopterGameMode &,int> list<CopterGameMode>();
+	class list<CopterGameMode>::const_iterator begin();
+	class list<CopterGameMode>::iterator begin();
+	class list<CopterGameMode>::const_iterator end();
+	class list<CopterGameMode>::iterator end();
+	class reverse_bidirectional_iterator<list<CopterGameMode>::const_iterator,CopterGameMode,CopterGameMode const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<CopterGameMode>::iterator,CopterGameMode,CopterGameMode &,int> rbegin();
+	class reverse_bidirectional_iterator<list<CopterGameMode>::const_iterator,CopterGameMode,CopterGameMode const &,int> rend();
+	class reverse_bidirectional_iterator<list<CopterGameMode>::iterator,CopterGameMode,CopterGameMode &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class CopterGameMode& list<CopterGameMode>();
-	class CopterGameMode& list<CopterGameMode>();
-	const class CopterGameMode& list<CopterGameMode>();
-	class CopterGameMode& list<CopterGameMode>();
+	const class CopterGameMode& front();
+	class CopterGameMode& front();
+	const class CopterGameMode& back();
+	class CopterGameMode& back();
 	void swap(class list<CopterGameMode>&);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, uint32_t, const class CopterGameMode&);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, class list<CopterGameMode>::const_iterator, class list<CopterGameMode>::const_iterator);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, const class CopterGameMode*, const class CopterGameMode*);
-	class list<CopterGameMode>::iterator list<CopterGameMode>(class list<CopterGameMode>::iterator, const class CopterGameMode&);
+	void insert(class list<CopterGameMode>::iterator, uint32_t, const class CopterGameMode&);
+	void insert(class list<CopterGameMode>::iterator, class list<CopterGameMode>::const_iterator, class list<CopterGameMode>::const_iterator);
+	void insert(class list<CopterGameMode>::iterator, const class CopterGameMode*, const class CopterGameMode*);
+	class list<CopterGameMode>::iterator insert(class list<CopterGameMode>::iterator, const class CopterGameMode&);
 	void push_front(const class CopterGameMode&);
 	void push_back(const class CopterGameMode&);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator);
+	void erase(class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator);
+	void erase(class list<CopterGameMode>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<CopterGameMode>();
@@ -498,9 +498,9 @@ public:
 protected:
 	void transfer(class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator);
 public:
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, class list<CopterGameMode>&, class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, class list<CopterGameMode>&, class list<CopterGameMode>::iterator);
-	void list<CopterGameMode>(class list<CopterGameMode>::iterator, class list<CopterGameMode>&);
+	void splice(class list<CopterGameMode>::iterator, class list<CopterGameMode>&, class list<CopterGameMode>::iterator, class list<CopterGameMode>::iterator);
+	void splice(class list<CopterGameMode>::iterator, class list<CopterGameMode>&, class list<CopterGameMode>::iterator);
+	void splice(class list<CopterGameMode>::iterator, class list<CopterGameMode>&);
 	void remove(const class CopterGameMode&);
 	void unique();
 	void merge(class list<CopterGameMode>&);
@@ -516,16 +516,16 @@ class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameM
 protected:
 	struct list<CopterGameMode>::list_node* node;
 public:
-	void list<CopterGameMode>::iterator();
+	void iterator();
 protected:
-	void list<CopterGameMode>::iterator(struct list<CopterGameMode>::list_node*);
+	void iterator(struct list<CopterGameMode>::list_node*);
 public:
 	int32_t operator==(const class list<CopterGameMode>::iterator&);
 	class CopterGameMode& operator*();
-	class list<CopterGameMode>::iterator list<CopterGameMode>::iterator(int32_t);
-	class list<CopterGameMode>::iterator& list<CopterGameMode>::iterator();
-	class list<CopterGameMode>::iterator list<CopterGameMode>::iterator(int32_t);
-	class list<CopterGameMode>::iterator& list<CopterGameMode>::iterator();
+	class list<CopterGameMode>::iterator operator++(int32_t);
+	class list<CopterGameMode>::iterator& operator++();
+	class list<CopterGameMode>::iterator operator--(int32_t);
+	class list<CopterGameMode>::iterator& operator--();
 };
 
 

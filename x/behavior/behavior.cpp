@@ -60,8 +60,8 @@ public:
 	// vtable: 0
 	intro const struct Behavior::Node* GetNodeRef(short, short);
 	// vtable: 4
-	intro void Behavior(short, short, unsigned char *);
-	void Behavior(struct Behavior::Node*, unsigned char *);
+	intro void GetNodeText(short, short, unsigned char *);
+	void GetNodeText(struct Behavior::Node*, unsigned char *);
 	// vtable: 8
 	intro void GetTreeName(short, unsigned char *);
 	short CountPrimitives();
@@ -113,9 +113,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long NResFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long NResFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);
@@ -140,8 +140,8 @@ public:
 	virtual void ~FlatResFile();
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long NResFile(unsigned char *);
-	virtual long NResFile(char *);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
 	long OpenFromName();
 	virtual long Close();
 	short CountTypes();
@@ -200,9 +200,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long ResFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long ResFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);
@@ -227,8 +227,8 @@ public:
 	virtual void ~FlatResFile();
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long ResFile(unsigned char *);
-	virtual long ResFile(char *);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
 	long OpenFromName();
 	virtual long Close();
 	short CountTypes();

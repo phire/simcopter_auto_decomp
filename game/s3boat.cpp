@@ -93,9 +93,9 @@ public:
 	// vtable: 0
 	intro void ~BoatClass();
 	// calltype: NearC
-	static class BoatClass* BoatClass(long, long, int32_t);
+	static class BoatClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
-	static class BoatClass* BoatClass(int32_t);
+	static class BoatClass* CreateInstance(int32_t);
 	// calltype: NearC
 	static class BoatClass* GetBoatPointer(long);
 	static class BoatClass lsBoat;

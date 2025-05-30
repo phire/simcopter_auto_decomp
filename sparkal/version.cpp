@@ -9,16 +9,16 @@ public:
 	// vtable: 0
 	intro void ~Version();
 	int32_t GetApplicationName(char *&);
-	long Version(int32_t);
-	int32_t Version(char *&);
+	long GetApplicationVersion(int32_t);
+	int32_t GetApplicationVersion(char *&);
 	int32_t GetApplicationCopyright(char *&);
 	int32_t GetApplicationDebugVersion(char *&);
 	// calltype: NearC
 	static int32_t GetSystemType();
 	// calltype: NearC
-	static long Version(int32_t);
+	static long GetSystemVersion(int32_t);
 	// calltype: NearC
-	static int32_t Version(char *);
+	static int32_t GetSystemVersion(char *);
 	// calltype: NearC
 	static long GetCPUVersion();
 	// calltype: NearC

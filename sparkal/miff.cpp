@@ -14,18 +14,18 @@
 class MIFF : public PFile
 {
 public:
-	void MIFF(char *);
-	void MIFF(const class PFile&);
-	void MIFF(int32_t);
-	void MIFF();
+	void PFile(char *);
+	void PFile(const class PFile&);
+	void PFile(int32_t);
+	void PFile();
 	// vtable: 0
 	intro void ~PFile();
 	int32_t Open(char *, unsigned short, unsigned short, int32_t);
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void MIFF(long);
-	long MIFF();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();

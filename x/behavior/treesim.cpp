@@ -124,8 +124,8 @@ public:
 	// vtable: 0
 	intro const struct Behavior::Node* GetNodeRef(short, short);
 	// vtable: 4
-	intro void Behavior(short, short, unsigned char *);
-	void Behavior(struct Behavior::Node*, unsigned char *);
+	intro void GetNodeText(short, short, unsigned char *);
+	void GetNodeText(struct Behavior::Node*, unsigned char *);
 	// vtable: 8
 	intro void GetTreeName(short, unsigned char *);
 	short CountPrimitives();
@@ -199,8 +199,8 @@ protected:
 	char NodeComplete(unsigned short);
 	unsigned short Gosub(class Behavior*, short *, short);
 public:
-	void ExtSim(short, short *);
-	void ExtSim(short, short, class Behavior*, short *);
+	void TreeSim(short, short *);
+	void TreeSim(short, short, class Behavior*, short *);
 	// vtable: 8
 	intro void ~TreeSim();
 	// vtable: 12

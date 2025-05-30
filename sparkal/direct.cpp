@@ -64,71 +64,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: long;
@@ -179,71 +179,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: class DirectoryEntry;
@@ -329,33 +329,33 @@ protected:
 	protected:
 		struct list<basic_string<char>>::list_node* node;
 	public:
-		void list<basic_string<char>>::iterator();
+		void iterator();
 	protected:
-		void list<basic_string<char>>::iterator(struct list<basic_string<char>>::list_node*);
+		void iterator(struct list<basic_string<char>>::list_node*);
 	public:
 		int32_t operator==(const class list<basic_string<char>>::iterator&);
 		class basic_string<char>& operator*();
-		class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-		class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
-		class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-		class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
+		class list<basic_string<char>>::iterator operator++(int32_t);
+		class list<basic_string<char>>::iterator& operator++();
+		class list<basic_string<char>>::iterator operator--(int32_t);
+		class list<basic_string<char>>::iterator& operator--();
 	};
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
 		struct list<basic_string<char>>::list_node* node;
 	public:
-		void list<basic_string<char>>::const_iterator(const class list<basic_string<char>>::iterator&);
-		void list<basic_string<char>>::const_iterator();
+		void const_iterator(const class list<basic_string<char>>::iterator&);
+		void const_iterator();
 	protected:
-		void list<basic_string<char>>::const_iterator(struct list<basic_string<char>>::list_node*);
+		void const_iterator(struct list<basic_string<char>>::list_node*);
 	public:
 		int32_t operator==(const class list<basic_string<char>>::const_iterator&);
 		const class basic_string<char>& operator*();
-		class list<basic_string<char>>::const_iterator list<basic_string<char>>::const_iterator(int32_t);
-		class list<basic_string<char>>::const_iterator& list<basic_string<char>>::const_iterator();
-		class list<basic_string<char>>::const_iterator list<basic_string<char>>::const_iterator(int32_t);
-		class list<basic_string<char>>::const_iterator& list<basic_string<char>>::const_iterator();
+		class list<basic_string<char>>::const_iterator operator++(int32_t);
+		class list<basic_string<char>>::const_iterator& operator++();
+		class list<basic_string<char>>::const_iterator operator--(int32_t);
+		class list<basic_string<char>>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int>;
@@ -364,30 +364,30 @@ public:
 	void list<basic_string<char>>(const class basic_string<char>*, const class basic_string<char>*);
 	void list<basic_string<char>>(uint32_t, const class basic_string<char>&);
 	void list<basic_string<char>>();
-	class list<basic_string<char>>::const_iterator list<basic_string<char>>();
-	class list<basic_string<char>>::iterator list<basic_string<char>>();
-	class list<basic_string<char>>::const_iterator list<basic_string<char>>();
-	class list<basic_string<char>>::iterator list<basic_string<char>>();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> list<basic_string<char>>();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> list<basic_string<char>>();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> list<basic_string<char>>();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> list<basic_string<char>>();
+	class list<basic_string<char>>::const_iterator begin();
+	class list<basic_string<char>>::iterator begin();
+	class list<basic_string<char>>::const_iterator end();
+	class list<basic_string<char>>::iterator end();
+	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rbegin();
+	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rend();
+	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class basic_string<char>& list<basic_string<char>>();
-	class basic_string<char>& list<basic_string<char>>();
-	const class basic_string<char>& list<basic_string<char>>();
-	class basic_string<char>& list<basic_string<char>>();
+	const class basic_string<char>& front();
+	class basic_string<char>& front();
+	const class basic_string<char>& back();
+	class basic_string<char>& back();
 	void swap(class list<basic_string<char>>&);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, uint32_t, const class basic_string<char>&);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, class list<basic_string<char>>::const_iterator, class list<basic_string<char>>::const_iterator);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, const class basic_string<char>*, const class basic_string<char>*);
-	class list<basic_string<char>>::iterator list<basic_string<char>>(class list<basic_string<char>>::iterator, const class basic_string<char>&);
+	void insert(class list<basic_string<char>>::iterator, uint32_t, const class basic_string<char>&);
+	void insert(class list<basic_string<char>>::iterator, class list<basic_string<char>>::const_iterator, class list<basic_string<char>>::const_iterator);
+	void insert(class list<basic_string<char>>::iterator, const class basic_string<char>*, const class basic_string<char>*);
+	class list<basic_string<char>>::iterator insert(class list<basic_string<char>>::iterator, const class basic_string<char>&);
 	void push_front(const class basic_string<char>&);
 	void push_back(const class basic_string<char>&);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator);
+	void erase(class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
+	void erase(class list<basic_string<char>>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<basic_string<char>>();
@@ -395,9 +395,9 @@ public:
 protected:
 	void transfer(class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
 public:
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator);
-	void list<basic_string<char>>(class list<basic_string<char>>::iterator, class list<basic_string<char>>&);
+	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
+	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator);
+	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&);
 	void remove(const class basic_string<char>&);
 	void unique();
 	void merge(class list<basic_string<char>>&);
@@ -411,16 +411,16 @@ class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEn
 protected:
 	struct list<DirectoryEntry>::list_node* node;
 public:
-	void list<DirectoryEntry>::iterator();
+	void iterator();
 protected:
-	void list<DirectoryEntry>::iterator(struct list<DirectoryEntry>::list_node*);
+	void iterator(struct list<DirectoryEntry>::list_node*);
 public:
 	int32_t operator==(const class list<DirectoryEntry>::iterator&);
 	class DirectoryEntry& operator*();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-	class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-	class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
+	class list<DirectoryEntry>::iterator operator++(int32_t);
+	class list<DirectoryEntry>::iterator& operator++();
+	class list<DirectoryEntry>::iterator operator--(int32_t);
+	class list<DirectoryEntry>::iterator& operator--();
 };
 
 // Type: char;
@@ -431,16 +431,16 @@ class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEn
 protected:
 	struct list<DirectoryEntry>::list_node* node;
 public:
-	void list<DirectoryEntry>::iterator();
+	void iterator();
 protected:
-	void list<DirectoryEntry>::iterator(struct list<DirectoryEntry>::list_node*);
+	void iterator(struct list<DirectoryEntry>::list_node*);
 public:
 	int32_t operator==(const class list<DirectoryEntry>::iterator&);
 	class DirectoryEntry& operator*();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-	class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-	class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
+	class list<DirectoryEntry>::iterator operator++(int32_t);
+	class list<DirectoryEntry>::iterator& operator++();
+	class list<DirectoryEntry>::iterator operator--(int32_t);
+	class list<DirectoryEntry>::iterator& operator--();
 };
 
 // Type: class list<DirectoryEntry> (forward reference);
@@ -491,33 +491,33 @@ protected:
 	protected:
 		struct list<DirectoryEntry>::list_node* node;
 	public:
-		void list<DirectoryEntry>::iterator();
+		void iterator();
 	protected:
-		void list<DirectoryEntry>::iterator(struct list<DirectoryEntry>::list_node*);
+		void iterator(struct list<DirectoryEntry>::list_node*);
 	public:
 		int32_t operator==(const class list<DirectoryEntry>::iterator&);
 		class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-		class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
-		class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-		class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
+		class list<DirectoryEntry>::iterator operator++(int32_t);
+		class list<DirectoryEntry>::iterator& operator++();
+		class list<DirectoryEntry>::iterator operator--(int32_t);
+		class list<DirectoryEntry>::iterator& operator--();
 	};
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{
 	protected:
 		struct list<DirectoryEntry>::list_node* node;
 	public:
-		void list<DirectoryEntry>::const_iterator(const class list<DirectoryEntry>::iterator&);
-		void list<DirectoryEntry>::const_iterator();
+		void const_iterator(const class list<DirectoryEntry>::iterator&);
+		void const_iterator();
 	protected:
-		void list<DirectoryEntry>::const_iterator(struct list<DirectoryEntry>::list_node*);
+		void const_iterator(struct list<DirectoryEntry>::list_node*);
 	public:
 		int32_t operator==(const class list<DirectoryEntry>::const_iterator&);
 		const class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::const_iterator list<DirectoryEntry>::const_iterator(int32_t);
-		class list<DirectoryEntry>::const_iterator& list<DirectoryEntry>::const_iterator();
-		class list<DirectoryEntry>::const_iterator list<DirectoryEntry>::const_iterator(int32_t);
-		class list<DirectoryEntry>::const_iterator& list<DirectoryEntry>::const_iterator();
+		class list<DirectoryEntry>::const_iterator operator++(int32_t);
+		class list<DirectoryEntry>::const_iterator& operator++();
+		class list<DirectoryEntry>::const_iterator operator--(int32_t);
+		class list<DirectoryEntry>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int>;
@@ -526,30 +526,30 @@ public:
 	void list<DirectoryEntry>(const class DirectoryEntry*, const class DirectoryEntry*);
 	void list<DirectoryEntry>(uint32_t, const class DirectoryEntry&);
 	void list<DirectoryEntry>();
-	class list<DirectoryEntry>::const_iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::const_iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> list<DirectoryEntry>();
+	class list<DirectoryEntry>::const_iterator begin();
+	class list<DirectoryEntry>::iterator begin();
+	class list<DirectoryEntry>::const_iterator end();
+	class list<DirectoryEntry>::iterator end();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rbegin();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rend();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class DirectoryEntry& list<DirectoryEntry>();
-	class DirectoryEntry& list<DirectoryEntry>();
-	const class DirectoryEntry& list<DirectoryEntry>();
-	class DirectoryEntry& list<DirectoryEntry>();
+	const class DirectoryEntry& front();
+	class DirectoryEntry& front();
+	const class DirectoryEntry& back();
+	class DirectoryEntry& back();
 	void swap(class list<DirectoryEntry>&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, uint32_t, const class DirectoryEntry&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::const_iterator, class list<DirectoryEntry>::const_iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, const class DirectoryEntry*, const class DirectoryEntry*);
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>(class list<DirectoryEntry>::iterator, const class DirectoryEntry&);
+	void insert(class list<DirectoryEntry>::iterator, uint32_t, const class DirectoryEntry&);
+	void insert(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::const_iterator, class list<DirectoryEntry>::const_iterator);
+	void insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry*, const class DirectoryEntry*);
+	class list<DirectoryEntry>::iterator insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry&);
 	void push_front(const class DirectoryEntry&);
 	void push_back(const class DirectoryEntry&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator);
+	void erase(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
+	void erase(class list<DirectoryEntry>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<DirectoryEntry>();
@@ -557,9 +557,9 @@ public:
 protected:
 	void transfer(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
 public:
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&);
 	void remove(const class DirectoryEntry&);
 	void unique();
 	void merge(class list<DirectoryEntry>&);
@@ -575,16 +575,16 @@ class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_s
 protected:
 	struct list<basic_string<char>>::list_node* node;
 public:
-	void list<basic_string<char>>::iterator();
+	void iterator();
 protected:
-	void list<basic_string<char>>::iterator(struct list<basic_string<char>>::list_node*);
+	void iterator(struct list<basic_string<char>>::list_node*);
 public:
 	int32_t operator==(const class list<basic_string<char>>::iterator&);
 	class basic_string<char>& operator*();
-	class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-	class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
-	class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-	class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
+	class list<basic_string<char>>::iterator operator++(int32_t);
+	class list<basic_string<char>>::iterator& operator++();
+	class list<basic_string<char>>::iterator operator--(int32_t);
+	class list<basic_string<char>>::iterator& operator--();
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
@@ -595,16 +595,16 @@ class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_s
 protected:
 	struct list<basic_string<char>>::list_node* node;
 public:
-	void list<basic_string<char>>::iterator();
+	void iterator();
 protected:
-	void list<basic_string<char>>::iterator(struct list<basic_string<char>>::list_node*);
+	void iterator(struct list<basic_string<char>>::list_node*);
 public:
 	int32_t operator==(const class list<basic_string<char>>::iterator&);
 	class basic_string<char>& operator*();
-	class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-	class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
-	class list<basic_string<char>>::iterator list<basic_string<char>>::iterator(int32_t);
-	class list<basic_string<char>>::iterator& list<basic_string<char>>::iterator();
+	class list<basic_string<char>>::iterator operator++(int32_t);
+	class list<basic_string<char>>::iterator& operator++();
+	class list<basic_string<char>>::iterator operator--(int32_t);
+	class list<basic_string<char>>::iterator& operator--();
 };
 
 

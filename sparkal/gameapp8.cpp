@@ -53,18 +53,18 @@ public:
 class MIFF : public PFile
 {
 public:
-	void MIFF(char *);
-	void MIFF(const class PFile&);
-	void MIFF(int32_t);
-	void MIFF();
+	void PFile(char *);
+	void PFile(const class PFile&);
+	void PFile(int32_t);
+	void PFile();
 	// vtable: 0
 	intro void ~PFile();
 	int32_t Open(char *, unsigned short, unsigned short, int32_t);
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void MIFF(long);
-	long MIFF();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();
@@ -199,33 +199,33 @@ protected:
 	protected:
 		struct list<DirectoryEntry>::list_node* node;
 	public:
-		void list<DirectoryEntry>::iterator();
+		void iterator();
 	protected:
-		void list<DirectoryEntry>::iterator(struct list<DirectoryEntry>::list_node*);
+		void iterator(struct list<DirectoryEntry>::list_node*);
 	public:
 		int32_t operator==(const class list<DirectoryEntry>::iterator&);
 		class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-		class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
-		class list<DirectoryEntry>::iterator list<DirectoryEntry>::iterator(int32_t);
-		class list<DirectoryEntry>::iterator& list<DirectoryEntry>::iterator();
+		class list<DirectoryEntry>::iterator operator++(int32_t);
+		class list<DirectoryEntry>::iterator& operator++();
+		class list<DirectoryEntry>::iterator operator--(int32_t);
+		class list<DirectoryEntry>::iterator& operator--();
 	};
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{
 	protected:
 		struct list<DirectoryEntry>::list_node* node;
 	public:
-		void list<DirectoryEntry>::const_iterator(const class list<DirectoryEntry>::iterator&);
-		void list<DirectoryEntry>::const_iterator();
+		void const_iterator(const class list<DirectoryEntry>::iterator&);
+		void const_iterator();
 	protected:
-		void list<DirectoryEntry>::const_iterator(struct list<DirectoryEntry>::list_node*);
+		void const_iterator(struct list<DirectoryEntry>::list_node*);
 	public:
 		int32_t operator==(const class list<DirectoryEntry>::const_iterator&);
 		const class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::const_iterator list<DirectoryEntry>::const_iterator(int32_t);
-		class list<DirectoryEntry>::const_iterator& list<DirectoryEntry>::const_iterator();
-		class list<DirectoryEntry>::const_iterator list<DirectoryEntry>::const_iterator(int32_t);
-		class list<DirectoryEntry>::const_iterator& list<DirectoryEntry>::const_iterator();
+		class list<DirectoryEntry>::const_iterator operator++(int32_t);
+		class list<DirectoryEntry>::const_iterator& operator++();
+		class list<DirectoryEntry>::const_iterator operator--(int32_t);
+		class list<DirectoryEntry>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int>;
@@ -234,30 +234,30 @@ public:
 	void list<DirectoryEntry>(const class DirectoryEntry*, const class DirectoryEntry*);
 	void list<DirectoryEntry>(uint32_t, const class DirectoryEntry&);
 	void list<DirectoryEntry>();
-	class list<DirectoryEntry>::const_iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::const_iterator list<DirectoryEntry>();
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> list<DirectoryEntry>();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> list<DirectoryEntry>();
+	class list<DirectoryEntry>::const_iterator begin();
+	class list<DirectoryEntry>::iterator begin();
+	class list<DirectoryEntry>::const_iterator end();
+	class list<DirectoryEntry>::iterator end();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rbegin();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rend();
+	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class DirectoryEntry& list<DirectoryEntry>();
-	class DirectoryEntry& list<DirectoryEntry>();
-	const class DirectoryEntry& list<DirectoryEntry>();
-	class DirectoryEntry& list<DirectoryEntry>();
+	const class DirectoryEntry& front();
+	class DirectoryEntry& front();
+	const class DirectoryEntry& back();
+	class DirectoryEntry& back();
 	void swap(class list<DirectoryEntry>&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, uint32_t, const class DirectoryEntry&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::const_iterator, class list<DirectoryEntry>::const_iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, const class DirectoryEntry*, const class DirectoryEntry*);
-	class list<DirectoryEntry>::iterator list<DirectoryEntry>(class list<DirectoryEntry>::iterator, const class DirectoryEntry&);
+	void insert(class list<DirectoryEntry>::iterator, uint32_t, const class DirectoryEntry&);
+	void insert(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::const_iterator, class list<DirectoryEntry>::const_iterator);
+	void insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry*, const class DirectoryEntry*);
+	class list<DirectoryEntry>::iterator insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry&);
 	void push_front(const class DirectoryEntry&);
 	void push_back(const class DirectoryEntry&);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator);
+	void erase(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
+	void erase(class list<DirectoryEntry>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<DirectoryEntry>();
@@ -265,9 +265,9 @@ public:
 protected:
 	void transfer(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
 public:
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator);
-	void list<DirectoryEntry>(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator);
+	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&);
 	void remove(const class DirectoryEntry&);
 	void unique();
 	void merge(class list<DirectoryEntry>&);

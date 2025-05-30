@@ -55,9 +55,9 @@ public:
 	// vtable: 36
 	intro long GetPrefDataLength(long);
 	// vtable: 40
-	intro long PreferenceManager(class PreferenceItem*);
+	intro long SetPref(class PreferenceItem*);
 	// vtable: 44
-	intro long PreferenceManager(long, char *, long);
+	intro long SetPref(long, char *, long);
 	// vtable: 48
 	intro long RemovePref(long);
 };
@@ -72,16 +72,16 @@ class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceI
 protected:
 	struct list<PreferenceItem>::list_node* node;
 public:
-	void list<PreferenceItem>::iterator();
+	void iterator();
 protected:
-	void list<PreferenceItem>::iterator(struct list<PreferenceItem>::list_node*);
+	void iterator(struct list<PreferenceItem>::list_node*);
 public:
 	int32_t operator==(const class list<PreferenceItem>::iterator&);
 	class PreferenceItem& operator*();
-	class list<PreferenceItem>::iterator list<PreferenceItem>::iterator(int32_t);
-	class list<PreferenceItem>::iterator& list<PreferenceItem>::iterator();
-	class list<PreferenceItem>::iterator list<PreferenceItem>::iterator(int32_t);
-	class list<PreferenceItem>::iterator& list<PreferenceItem>::iterator();
+	class list<PreferenceItem>::iterator operator++(int32_t);
+	class list<PreferenceItem>::iterator& operator++();
+	class list<PreferenceItem>::iterator operator--(int32_t);
+	class list<PreferenceItem>::iterator& operator--();
 };
 
 // Type: char[41];
@@ -136,19 +136,19 @@ public:
 	// vtable: 36
 	intro long GetPrefDataLength(long);
 	// vtable: 40
-	intro long NotificationPreferenceManager(class PreferenceItem*);
+	intro long SetPref(class PreferenceItem*);
 	// vtable: 44
-	intro long NotificationPreferenceManager(long, char *, long);
+	intro long SetPref(long, char *, long);
 	// vtable: 48
 	intro long RemovePref(long);
 	class list<NotificationItem> myNotifications;
 	void NotificationPreferenceManager(long, long, long, int32_t);
-	virtual long NotificationPreferenceManager(class PreferenceItem*);
-	virtual long NotificationPreferenceManager(long, char *, long);
+	virtual long SetPref(class PreferenceItem*);
+	virtual long SetPref(long, char *, long);
 	// vtable: 52
-	intro int32_t NotificationPreferenceManager(class NotificationItem&);
+	intro int32_t AddNotification(class NotificationItem&);
 	// vtable: 56
-	intro int32_t NotificationPreferenceManager(long, class NotificationSink*);
+	intro int32_t AddNotification(long, class NotificationSink*);
 	// vtable: 60
 	intro int32_t RemoveNotification(class NotificationSink*, long);
 	// vtable: 64
@@ -190,16 +190,16 @@ class list<NotificationItem>::iterator : public bidirectional_iterator<Notificat
 protected:
 	struct list<NotificationItem>::list_node* node;
 public:
-	void list<NotificationItem>::iterator();
+	void iterator();
 protected:
-	void list<NotificationItem>::iterator(struct list<NotificationItem>::list_node*);
+	void iterator(struct list<NotificationItem>::list_node*);
 public:
 	int32_t operator==(const class list<NotificationItem>::iterator&);
 	class NotificationItem& operator*();
-	class list<NotificationItem>::iterator list<NotificationItem>::iterator(int32_t);
-	class list<NotificationItem>::iterator& list<NotificationItem>::iterator();
-	class list<NotificationItem>::iterator list<NotificationItem>::iterator(int32_t);
-	class list<NotificationItem>::iterator& list<NotificationItem>::iterator();
+	class list<NotificationItem>::iterator operator++(int32_t);
+	class list<NotificationItem>::iterator& operator++();
+	class list<NotificationItem>::iterator operator--(int32_t);
+	class list<NotificationItem>::iterator& operator--();
 };
 
 // Type: uint32_t;
@@ -252,33 +252,33 @@ protected:
 	protected:
 		struct list<PreferenceItem>::list_node* node;
 	public:
-		void list<PreferenceItem>::iterator();
+		void iterator();
 	protected:
-		void list<PreferenceItem>::iterator(struct list<PreferenceItem>::list_node*);
+		void iterator(struct list<PreferenceItem>::list_node*);
 	public:
 		int32_t operator==(const class list<PreferenceItem>::iterator&);
 		class PreferenceItem& operator*();
-		class list<PreferenceItem>::iterator list<PreferenceItem>::iterator(int32_t);
-		class list<PreferenceItem>::iterator& list<PreferenceItem>::iterator();
-		class list<PreferenceItem>::iterator list<PreferenceItem>::iterator(int32_t);
-		class list<PreferenceItem>::iterator& list<PreferenceItem>::iterator();
+		class list<PreferenceItem>::iterator operator++(int32_t);
+		class list<PreferenceItem>::iterator& operator++();
+		class list<PreferenceItem>::iterator operator--(int32_t);
+		class list<PreferenceItem>::iterator& operator--();
 	};
 	class list<PreferenceItem>::const_iterator : public bidirectional_iterator<PreferenceItem,int>
 	{
 	protected:
 		struct list<PreferenceItem>::list_node* node;
 	public:
-		void list<PreferenceItem>::const_iterator(const class list<PreferenceItem>::iterator&);
-		void list<PreferenceItem>::const_iterator();
+		void const_iterator(const class list<PreferenceItem>::iterator&);
+		void const_iterator();
 	protected:
-		void list<PreferenceItem>::const_iterator(struct list<PreferenceItem>::list_node*);
+		void const_iterator(struct list<PreferenceItem>::list_node*);
 	public:
 		int32_t operator==(const class list<PreferenceItem>::const_iterator&);
 		const class PreferenceItem& operator*();
-		class list<PreferenceItem>::const_iterator list<PreferenceItem>::const_iterator(int32_t);
-		class list<PreferenceItem>::const_iterator& list<PreferenceItem>::const_iterator();
-		class list<PreferenceItem>::const_iterator list<PreferenceItem>::const_iterator(int32_t);
-		class list<PreferenceItem>::const_iterator& list<PreferenceItem>::const_iterator();
+		class list<PreferenceItem>::const_iterator operator++(int32_t);
+		class list<PreferenceItem>::const_iterator& operator++();
+		class list<PreferenceItem>::const_iterator operator--(int32_t);
+		class list<PreferenceItem>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<PreferenceItem>::const_iterator,PreferenceItem,PreferenceItem const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<PreferenceItem>::iterator,PreferenceItem,PreferenceItem &,int>;
@@ -287,30 +287,30 @@ public:
 	void list<PreferenceItem>(const class PreferenceItem*, const class PreferenceItem*);
 	void list<PreferenceItem>(uint32_t, const class PreferenceItem&);
 	void list<PreferenceItem>();
-	class list<PreferenceItem>::const_iterator list<PreferenceItem>();
-	class list<PreferenceItem>::iterator list<PreferenceItem>();
-	class list<PreferenceItem>::const_iterator list<PreferenceItem>();
-	class list<PreferenceItem>::iterator list<PreferenceItem>();
-	class reverse_bidirectional_iterator<list<PreferenceItem>::const_iterator,PreferenceItem,PreferenceItem const &,int> list<PreferenceItem>();
-	class reverse_bidirectional_iterator<list<PreferenceItem>::iterator,PreferenceItem,PreferenceItem &,int> list<PreferenceItem>();
-	class reverse_bidirectional_iterator<list<PreferenceItem>::const_iterator,PreferenceItem,PreferenceItem const &,int> list<PreferenceItem>();
-	class reverse_bidirectional_iterator<list<PreferenceItem>::iterator,PreferenceItem,PreferenceItem &,int> list<PreferenceItem>();
+	class list<PreferenceItem>::const_iterator begin();
+	class list<PreferenceItem>::iterator begin();
+	class list<PreferenceItem>::const_iterator end();
+	class list<PreferenceItem>::iterator end();
+	class reverse_bidirectional_iterator<list<PreferenceItem>::const_iterator,PreferenceItem,PreferenceItem const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<PreferenceItem>::iterator,PreferenceItem,PreferenceItem &,int> rbegin();
+	class reverse_bidirectional_iterator<list<PreferenceItem>::const_iterator,PreferenceItem,PreferenceItem const &,int> rend();
+	class reverse_bidirectional_iterator<list<PreferenceItem>::iterator,PreferenceItem,PreferenceItem &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class PreferenceItem& list<PreferenceItem>();
-	class PreferenceItem& list<PreferenceItem>();
-	const class PreferenceItem& list<PreferenceItem>();
-	class PreferenceItem& list<PreferenceItem>();
+	const class PreferenceItem& front();
+	class PreferenceItem& front();
+	const class PreferenceItem& back();
+	class PreferenceItem& back();
 	void swap(class list<PreferenceItem>&);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, uint32_t, const class PreferenceItem&);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, class list<PreferenceItem>::const_iterator, class list<PreferenceItem>::const_iterator);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, const class PreferenceItem*, const class PreferenceItem*);
-	class list<PreferenceItem>::iterator list<PreferenceItem>(class list<PreferenceItem>::iterator, const class PreferenceItem&);
+	void insert(class list<PreferenceItem>::iterator, uint32_t, const class PreferenceItem&);
+	void insert(class list<PreferenceItem>::iterator, class list<PreferenceItem>::const_iterator, class list<PreferenceItem>::const_iterator);
+	void insert(class list<PreferenceItem>::iterator, const class PreferenceItem*, const class PreferenceItem*);
+	class list<PreferenceItem>::iterator insert(class list<PreferenceItem>::iterator, const class PreferenceItem&);
 	void push_front(const class PreferenceItem&);
 	void push_back(const class PreferenceItem&);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator);
+	void erase(class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator);
+	void erase(class list<PreferenceItem>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<PreferenceItem>();
@@ -318,9 +318,9 @@ public:
 protected:
 	void transfer(class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator);
 public:
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, class list<PreferenceItem>&, class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, class list<PreferenceItem>&, class list<PreferenceItem>::iterator);
-	void list<PreferenceItem>(class list<PreferenceItem>::iterator, class list<PreferenceItem>&);
+	void splice(class list<PreferenceItem>::iterator, class list<PreferenceItem>&, class list<PreferenceItem>::iterator, class list<PreferenceItem>::iterator);
+	void splice(class list<PreferenceItem>::iterator, class list<PreferenceItem>&, class list<PreferenceItem>::iterator);
+	void splice(class list<PreferenceItem>::iterator, class list<PreferenceItem>&);
 	void remove(const class PreferenceItem&);
 	void unique();
 	void merge(class list<PreferenceItem>&);

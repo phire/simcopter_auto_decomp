@@ -156,14 +156,14 @@ protected:
 	struct t_free m_rawFree;
 	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
 	public:
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
+		void stream_iterator();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator=(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		int32_t operator==(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		unsigned char& operator*();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator cGZXParamBitstream<t_alloc,t_free>::stream_iterator(int32_t);
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
 		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
 		class CPropertyType<unsigned long> m_pos;
@@ -171,14 +171,14 @@ protected:
 	};
 	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
 	public:
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
+		void stream_iterator();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator=(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		int32_t operator==(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		unsigned char& operator*();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator cGZXParamBitstream<t_alloc,t_free>::stream_iterator(int32_t);
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
 		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
 		class CPropertyType<unsigned long> m_pos;
@@ -231,20 +231,20 @@ protected:
 	struct tGZXBitstreamNode* end_of_storage;
 	void insert_aux(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode&);
 public:
-	const struct tGZXBitstreamNode* vector<tGZXBitstreamNode>();
-	struct tGZXBitstreamNode* vector<tGZXBitstreamNode>();
-	const struct tGZXBitstreamNode* vector<tGZXBitstreamNode>();
-	struct tGZXBitstreamNode* vector<tGZXBitstreamNode>();
-	class reverse_iterator<tGZXBitstreamNode const *,tGZXBitstreamNode,tGZXBitstreamNode const &,int> vector<tGZXBitstreamNode>();
-	class reverse_iterator<tGZXBitstreamNode *,tGZXBitstreamNode,tGZXBitstreamNode &,int> vector<tGZXBitstreamNode>();
-	class reverse_iterator<tGZXBitstreamNode const *,tGZXBitstreamNode,tGZXBitstreamNode const &,int> vector<tGZXBitstreamNode>();
-	class reverse_iterator<tGZXBitstreamNode *,tGZXBitstreamNode,tGZXBitstreamNode &,int> vector<tGZXBitstreamNode>();
+	const struct tGZXBitstreamNode* begin();
+	struct tGZXBitstreamNode* begin();
+	const struct tGZXBitstreamNode* end();
+	struct tGZXBitstreamNode* end();
+	class reverse_iterator<tGZXBitstreamNode const *,tGZXBitstreamNode,tGZXBitstreamNode const &,int> rbegin();
+	class reverse_iterator<tGZXBitstreamNode *,tGZXBitstreamNode,tGZXBitstreamNode &,int> rbegin();
+	class reverse_iterator<tGZXBitstreamNode const *,tGZXBitstreamNode,tGZXBitstreamNode const &,int> rend();
+	class reverse_iterator<tGZXBitstreamNode *,tGZXBitstreamNode,tGZXBitstreamNode &,int> rend();
 	uint32_t size();
 	uint32_t max_size();
 	uint32_t capacity();
 	int32_t empty();
-	const struct tGZXBitstreamNode& vector<tGZXBitstreamNode>(uint32_t);
-	struct tGZXBitstreamNode& vector<tGZXBitstreamNode>(uint32_t);
+	const struct tGZXBitstreamNode& operator[](uint32_t);
+	struct tGZXBitstreamNode& operator[](uint32_t);
 	void vector<tGZXBitstreamNode>(const struct tGZXBitstreamNode*, const struct tGZXBitstreamNode*);
 	void vector<tGZXBitstreamNode>(const class vector<tGZXBitstreamNode>&);
 	void vector<tGZXBitstreamNode>(uint32_t, const struct tGZXBitstreamNode&);
@@ -252,18 +252,18 @@ public:
 	void ~vector<tGZXBitstreamNode>();
 	class vector<tGZXBitstreamNode>& operator=(const class vector<tGZXBitstreamNode>&);
 	void reserve(uint32_t);
-	const struct tGZXBitstreamNode& vector<tGZXBitstreamNode>();
-	struct tGZXBitstreamNode& vector<tGZXBitstreamNode>();
-	const struct tGZXBitstreamNode& vector<tGZXBitstreamNode>();
-	struct tGZXBitstreamNode& vector<tGZXBitstreamNode>();
+	const struct tGZXBitstreamNode& front();
+	struct tGZXBitstreamNode& front();
+	const struct tGZXBitstreamNode& back();
+	struct tGZXBitstreamNode& back();
 	void push_back(const struct tGZXBitstreamNode&);
 	void swap(class vector<tGZXBitstreamNode>&);
-	void vector<tGZXBitstreamNode>(struct tGZXBitstreamNode*, uint32_t, const struct tGZXBitstreamNode&);
-	void vector<tGZXBitstreamNode>(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode*, const struct tGZXBitstreamNode*);
-	struct tGZXBitstreamNode* vector<tGZXBitstreamNode>(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode&);
+	void insert(struct tGZXBitstreamNode*, uint32_t, const struct tGZXBitstreamNode&);
+	void insert(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode*, const struct tGZXBitstreamNode*);
+	struct tGZXBitstreamNode* insert(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode&);
 	void pop_back();
-	void vector<tGZXBitstreamNode>(struct tGZXBitstreamNode*, struct tGZXBitstreamNode*);
-	void vector<tGZXBitstreamNode>(struct tGZXBitstreamNode*);
+	void erase(struct tGZXBitstreamNode*, struct tGZXBitstreamNode*);
+	void erase(struct tGZXBitstreamNode*);
 };
 
 // Type: class cGZXParamBitstream<t_alloc,t_free> (forward reference);
@@ -298,14 +298,14 @@ protected:
 	struct t_free m_rawFree;
 	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
 	public:
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
+		void stream_iterator();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator=(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		int32_t operator==(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		unsigned char& operator*();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator cGZXParamBitstream<t_alloc,t_free>::stream_iterator(int32_t);
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
 		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
 		class CPropertyType<unsigned long> m_pos;
@@ -313,14 +313,14 @@ protected:
 	};
 	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
 	public:
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
-		void cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
+		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
+		void stream_iterator();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator=(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		int32_t operator==(const class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		unsigned char& operator*();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& cGZXParamBitstream<t_alloc,t_free>::stream_iterator();
-		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator cGZXParamBitstream<t_alloc,t_free>::stream_iterator(int32_t);
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
+		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
 		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
 		class CPropertyType<unsigned long> m_pos;

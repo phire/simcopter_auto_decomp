@@ -19,12 +19,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long CBackBuffer(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long CBackBuffer(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);
@@ -59,17 +59,17 @@ public:
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
 	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
 	// vtable: 44
-	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	virtual unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 48
-	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
+	intro unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
 	// vtable: 52
 	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
 	// vtable: 56
-	intro unsigned long CBackBuffer(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
+	intro unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
 	// vtable: 60
-	intro unsigned long CBackBuffer(class IFlatImage*, long, long, long, long, long, long);
+	intro unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long);
 	void UpdatePalette(long, long, const struct SparkalColor*);
 	virtual void SetTransparentColor(int32_t, long);
 	unsigned long GetTransparentColor(long&);
@@ -83,9 +83,9 @@ public:
 	// vtable: 68
 	intro unsigned long FillRect(long, const struct SparkalRect*);
 	// vtable: 72
-	intro unsigned long CBackBuffer(char *, long, unsigned long, const class MRect&, class MFont*);
+	intro unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*);
 	// vtable: 76
-	intro unsigned long CBackBuffer(char *, unsigned long, long *, long *, long *, long *, class MFont*);
+	intro unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*);
 	// vtable: 80
 	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
 	// vtable: 84
@@ -199,8 +199,8 @@ public:
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void PFile(long);
-	long PFile();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();
@@ -412,8 +412,8 @@ public:
 	long top;
 	long right;
 	long bottom;
-	void MRect(long, long, long, long);
-	void MRect();
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -424,56 +424,56 @@ public:
 	long Width();
 	long Height();
 	class MSize Size();
-	const class MPoint& MRect();
-	class MPoint& MRect();
-	const class MPoint& MRect();
-	class MPoint& MRect();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
 	class MPoint CenterPoint();
 	struct SparkalRect* operator struct SparkalRect *();
 	class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t MRect(struct SparkalPoint);
-	int32_t MRect(long, long);
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
 	int32_t DoesRectOverlap(struct SparkalRect*);
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(long, long, long, long);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
 	void SetRectEmpty();
 	void CopyRect(class MRect*);
 	int32_t EqualRect(class MRect*);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
 	void NormalizeRect();
 	int32_t IntersectRect(class MRect*, class MRect*);
 	int32_t UnionRect(class MRect*, class MRect*);
 	int32_t SubtractRect(class MRect*, class MRect*);
 	int32_t operator==(const struct SparkalRect&);
 	int32_t operator!=(const struct SparkalRect&);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
 	void operator&=(const struct SparkalRect&);
 	void operator|=(const struct SparkalRect&);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalPoint);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(struct SparkalPoint);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
@@ -536,12 +536,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long IFlatImage(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long IFlatImage(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long IFlatImage(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);
@@ -564,8 +564,8 @@ public:
 	long top;
 	long right;
 	long bottom;
-	void MRect(long, long, long, long);
-	void MRect();
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -576,56 +576,56 @@ public:
 	long Width();
 	long Height();
 	class MSize Size();
-	const class MPoint& MRect();
-	class MPoint& MRect();
-	const class MPoint& MRect();
-	class MPoint& MRect();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
 	class MPoint CenterPoint();
 	struct SparkalRect* operator struct SparkalRect *();
 	class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t MRect(struct SparkalPoint);
-	int32_t MRect(long, long);
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
 	int32_t DoesRectOverlap(struct SparkalRect*);
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(long, long, long, long);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
 	void SetRectEmpty();
 	void CopyRect(class MRect*);
 	int32_t EqualRect(class MRect*);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
 	void NormalizeRect();
 	int32_t IntersectRect(class MRect*, class MRect*);
 	int32_t UnionRect(class MRect*, class MRect*);
 	int32_t SubtractRect(class MRect*, class MRect*);
 	int32_t operator==(const struct SparkalRect&);
 	int32_t operator!=(const struct SparkalRect&);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
 	void operator&=(const struct SparkalRect&);
 	void operator|=(const struct SparkalRect&);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalPoint);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(struct SparkalPoint);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
@@ -689,12 +689,12 @@ public:
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
 	// vtable: 12
-	intro unsigned long IBackBuffer(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long IBackBuffer(class IFlatImage*, long, long);
+	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(class IFlatImage*, long, long);
 	// vtable: 16
-	intro unsigned long IBackBuffer(class IFlatImage*, long, long, long, long, long, long, long, long);
+	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
 	// vtable: 20
-	intro unsigned long IBackBuffer(class IFlatImage*, struct SparkalRect, struct SparkalRect);
+	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
 	// vtable: 24
 	intro unsigned long FillRect(long, struct SparkalRect*);
 	void DrawPixel(unsigned char, long, long);

@@ -24,11 +24,11 @@ public:
 	class CharData* lastCharData;
 	void CharList();
 	void ~CharList();
-	void CharList(class CharData*);
-	void CharList(unsigned char);
-	void CharList(int32_t);
-	void CharList(unsigned char);
-	void CharList(class CharData*);
+	void AddItem(class CharData*);
+	void AddItem(unsigned char);
+	void DeleteItem(int32_t);
+	void DeleteItem(unsigned char);
+	void DeleteItem(class CharData*);
 	void DeleteAllItems();
 	class CharData* FindCharDataByIndex(int32_t);
 	class CharData* FindCharDataByValue(unsigned char);

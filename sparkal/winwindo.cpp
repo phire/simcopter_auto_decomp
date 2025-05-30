@@ -36,9 +36,9 @@ public:
 	unsigned long ScreenScroll(long, long, long, long, long, long);
 	unsigned long RectSlideUp(long, long, long, long);
 	// vtable: 36
-	intro unsigned long CSparkalWindow(long, long, long, long);
+	intro unsigned long SwapBuffer(long, long, long, long);
 	// vtable: 40
-	intro unsigned long CSparkalWindow();
+	intro unsigned long SwapBuffer();
 	// vtable: 44
 	intro void UpdatePalette(long, long, struct SparkalColor*);
 protected:

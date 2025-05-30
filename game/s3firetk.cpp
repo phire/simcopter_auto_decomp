@@ -48,8 +48,8 @@ protected:
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
-	void FireEngineClass(const class AutomobileClass&);
-	void FireEngineClass();
+	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass();
 	// vtable: 0
 	intro void ~AutomobileClass();
 	// calltype: NearC
@@ -142,8 +142,8 @@ protected:
 	int32_t stationID;
 	int32_t numberOfSeats;
 public:
-	void FireEngineClass(const class EmergencyVehicleClass&);
-	void FireEngineClass();
+	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
+	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass();
 	enum EmergencyLevel GetEmergencyState();
 	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType);
@@ -186,9 +186,9 @@ public:
 	// calltype: NearC
 	static int32_t Dispatch(enum EmergencyType, enum EmergencyLevel, long, long);
 	// calltype: NearC
-	static int32_t FireEngineClass(long, long);
+	static int32_t IsThisAFireStation(long, long);
 	// calltype: NearC
-	static int32_t FireEngineClass(unsigned short);
+	static int32_t IsThisAFireStation(unsigned short);
 	class FireEngineClass operator=(const class FireEngineClass&);
 protected:
 	virtual void ItterateFSM();

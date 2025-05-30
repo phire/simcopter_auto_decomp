@@ -42,16 +42,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 // Type: class CGameCommander (forward reference);
@@ -96,13 +96,13 @@ public:
 	// vtable: 36
 	intro void ProcessSetFocus();
 	// vtable: 40
-	intro void CGameCommander(long, struct CommandSystem&, int32_t&, int32_t&);
+	intro void ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&);
 	// vtable: 44
-	intro void CGameCommander(long);
+	intro void ProcessKeyDown(long);
 	// vtable: 48
-	intro void CGameCommander(long, struct CommandSystem&);
+	intro void ProcessKeyUp(long, struct CommandSystem&);
 	// vtable: 52
-	intro void CGameCommander(long);
+	intro void ProcessKeyUp(long);
 	// vtable: 56
 	intro unsigned long OnCharacter(long);
 	// vtable: 60
@@ -183,33 +183,33 @@ protected:
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::iterator();
+		void iterator();
 	protected:
-		void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+		void iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::iterator&);
 		struct Shortcut& operator*();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
+		class list<Shortcut>::iterator operator++(int32_t);
+		class list<Shortcut>::iterator& operator++();
+		class list<Shortcut>::iterator operator--(int32_t);
+		class list<Shortcut>::iterator& operator--();
 	};
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::const_iterator(const class list<Shortcut>::iterator&);
-		void list<Shortcut>::const_iterator();
+		void const_iterator(const class list<Shortcut>::iterator&);
+		void const_iterator();
 	protected:
-		void list<Shortcut>::const_iterator(struct list<Shortcut>::list_node*);
+		void const_iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::const_iterator&);
 		const struct Shortcut& operator*();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
+		class list<Shortcut>::const_iterator operator++(int32_t);
+		class list<Shortcut>::const_iterator& operator++();
+		class list<Shortcut>::const_iterator operator--(int32_t);
+		class list<Shortcut>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int>;
@@ -218,30 +218,30 @@ public:
 	void list<Shortcut>(const struct Shortcut*, const struct Shortcut*);
 	void list<Shortcut>(uint32_t, const struct Shortcut&);
 	void list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
+	class list<Shortcut>::const_iterator begin();
+	class list<Shortcut>::iterator begin();
+	class list<Shortcut>::const_iterator end();
+	class list<Shortcut>::iterator end();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rend();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
+	const struct Shortcut& front();
+	struct Shortcut& front();
+	const struct Shortcut& back();
+	struct Shortcut& back();
 	void swap(class list<Shortcut>&);
-	void list<Shortcut>(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
-	class list<Shortcut>::iterator list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
+	void insert(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
+	class list<Shortcut>::iterator insert(class list<Shortcut>::iterator, const struct Shortcut&);
 	void push_front(const struct Shortcut&);
 	void push_back(const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<Shortcut>();
@@ -249,9 +249,9 @@ public:
 protected:
 	void transfer(class list<Shortcut>::iterator, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
 public:
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&);
 	void remove(const struct Shortcut&);
 	void unique();
 	void merge(class list<Shortcut>&);
@@ -263,18 +263,18 @@ public:
 class MIFF : public PFile
 {
 public:
-	void MIFF(char *);
-	void MIFF(const class PFile&);
-	void MIFF(int32_t);
-	void MIFF();
+	void PFile(char *);
+	void PFile(const class PFile&);
+	void PFile(int32_t);
+	void PFile();
 	// vtable: 0
 	intro void ~PFile();
 	int32_t Open(char *, unsigned short, unsigned short, int32_t);
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void MIFF(long);
-	long MIFF();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();
@@ -390,16 +390,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 

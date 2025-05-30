@@ -65,9 +65,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long FlatResFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long FlatResFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);
@@ -92,8 +92,8 @@ public:
 	virtual void ~FlatResFile();
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long FlatResFile(unsigned char *);
-	virtual long FlatResFile(char *);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
 	long OpenFromName();
 	virtual long Close();
 	short CountTypes();
@@ -153,9 +153,9 @@ public:
 	// vtable: 32
 	intro void WriteToDisk();
 	void cBBase();
-	void cBBase(void * __ptr32);
-	void cBBase(unsigned char *);
-	void cBBase(unsigned long);
+	void Init(void * __ptr32);
+	void Init(unsigned char *);
+	void Init(unsigned long);
 	void * __ptr32 fDataHandle;
 	unsigned long fDataHandleSize;
 	unsigned char[16] fName;
@@ -288,9 +288,9 @@ public:
 	// vtable: 32
 	intro void WriteToDisk();
 	void cBBase();
-	void cCopterAnim(void * __ptr32);
-	void cCopterAnim(unsigned char *);
-	void cCopterAnim(unsigned long);
+	void Init(void * __ptr32);
+	void Init(unsigned char *);
+	void Init(unsigned long);
 	void * __ptr32 fDataHandle;
 	unsigned long fDataHandleSize;
 	unsigned char[16] fName;
@@ -317,9 +317,9 @@ public:
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
-	static class cBBase* cCopterAnim(void * __ptr32);
+	static class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
-	static class cCopterAnim* cCopterAnim(unsigned long, class cCopterBody*);
+	static class cCopterAnim* MakeNew(unsigned long, class cCopterBody*);
 	// calltype: NearC
 	static void LoadAllRelatedArrays(class ResFile*);
 	// calltype: NearC
@@ -398,8 +398,8 @@ public:
 	void Add(class cCopterBody*);
 	class cCopterBody* GetByIndex(long);
 	class cCopterBody* GetByOrder(long);
-	long cBList<cCopterBody>(unsigned long);
-	long cBList<cCopterBody>(class cCopterBody*);
+	long GetIndex(unsigned long);
+	long GetIndex(class cCopterBody*);
 	void cBList<cCopterBody>();
 	void ~cBList<cCopterBody>();
 	void Delete();

@@ -22,8 +22,8 @@ protected:
 	char NodeComplete(unsigned short);
 	unsigned short Gosub(class Behavior*, short *, short);
 public:
-	void cYObject(short, short *);
-	void cYObject(short, short, class Behavior*, short *);
+	void TreeSim(short, short *);
+	void TreeSim(short, short, class Behavior*, short *);
 	// vtable: 8
 	intro void ~TreeSim();
 	// vtable: 12
@@ -33,8 +33,8 @@ public:
 	struct TreeSim::StackElem* GetNthElem(short);
 	short GetStackSize();
 	short GetMaxStackSize();
-	void cYObject(class YObjLang&);
-	void cYObject(unsigned char *);
+	void YObjLang(class YObjLang&);
+	void YObjLang(unsigned char *);
 	void ~YObjLang();
 	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
 	virtual void GetPrimName(short, unsigned char *);
@@ -139,13 +139,13 @@ public:
 	// calltype: NearC
 	static void BeamRemainingAmbients();
 	// calltype: NearC
-	static void cYObject(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
 	// calltype: NearC
-	static void cYObject(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*);
 	unsigned short GetNearbyFire(short, short *, short *);
 	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*);
-	unsigned short cYObject(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
-	unsigned short cYObject(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*);
 	void ResetToAmbient();
 	long JoinRiot();
 	// calltype: NearC
@@ -193,11 +193,11 @@ public:
 public:
 	static struct cYObject::LocationInfo[14] sLocInfo;
 	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
-	short cYObject(struct _DYOBJ_INST*);
-	short cYObject(short, short);
-	unsigned short cYObject(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
-	unsigned short cYObject(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
-	unsigned short cYObject(struct _DYOBJ_INST*, struct Point3d*);
+	short GetDirectionTo(struct _DYOBJ_INST*);
+	short GetDirectionTo(short, short);
+	unsigned short SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*);
 	static short sBeamed;
 	static short sDebugNumBeamed;
 	// calltype: NearC
@@ -210,15 +210,15 @@ public:
 	static unsigned short IsNeutralForPerson(enum PersonType, enum cYObject::LocationType);
 	unsigned short IsNeutralAndSparse(struct _CELL_INFO*, enum cYObject::LocationType);
 	// calltype: NearC
-	static struct Point3d cYObject(unsigned char, unsigned char, int32_t, int32_t);
+	static struct Point3d GetPos(unsigned char, unsigned char, int32_t, int32_t);
 	// calltype: NearC
-	static struct Point3d cYObject(struct _CELL_INFO*, int32_t, int32_t);
+	static struct Point3d GetPos(struct _CELL_INFO*, int32_t, int32_t);
 	unsigned short AdjoinsRoad(struct Point3d);
 	unsigned short RoadTile(int32_t, int32_t);
 	unsigned short GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *);
 	void UpdateMission(enum cYObject::MissionUpdates, long);
-	void cYObject();
-	void cYObject(short);
+	void ResetTree();
+	void ResetTree(short);
 	class cYObject::MoveInfo{
 	public:
 		enum cYObject::LocationType* locType;
@@ -267,9 +267,9 @@ public:
 	void TellLocToEngine();
 	class cYObject* GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *);
 	// calltype: NearC
-	static class cYObject* cYObject(short);
+	static class cYObject* GetObjectA(short);
 	// calltype: NearC
-	static class cYObject* cYObject(struct _DYOBJ_INST*);
+	static class cYObject* GetObjectA(struct _DYOBJ_INST*);
 	class cYObject* GetPersonWithMaster(struct _DYOBJ_INST*);
 	// calltype: NearC
 	static class cYObject* GetSleepingPerson();
@@ -277,8 +277,8 @@ public:
 	static void DrawOnePerson(struct VRBlit*);
 	void SetCell(unsigned char, unsigned char);
 	void UnsetCell(unsigned char, unsigned char);
-	void cYObject();
-	void cYObject(unsigned char, unsigned char);
+	void Link();
+	void Link(unsigned char, unsigned char);
 	long fMissionID;
 	void PutOnGround();
 	void Unlink();
@@ -319,9 +319,9 @@ public:
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
-	static struct Point2d cYObject(short, short);
+	static struct Point2d GetRiotCenter(short, short);
 	// calltype: NearC
-	static struct Point2d cYObject(long);
+	static struct Point2d GetRiotCenter(long);
 	void SimAnim();
 	void Simulate();
 	// calltype: NearC
@@ -407,9 +407,9 @@ public:
 	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
 	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, struct cYObject::MoveInfo*);
 	enum cYObject::MoveErrorCode TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
-	enum cYObject::LocationType cYObject();
+	enum cYObject::LocationType GetLocType();
 	// calltype: NearC
-	static enum cYObject::LocationType cYObject(short, short);
+	static enum cYObject::LocationType GetLocType(short, short);
 	// calltype: NearC
 	static unsigned short IsWater(short, short);
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
@@ -452,9 +452,9 @@ public:
 	static void StopAllSounds();
 	void StopSound();
 	void ClearSoundChannel();
-	short cYObject();
+	short GetActualSoundChannel();
 	// calltype: NearC
-	static short cYObject(short);
+	static short GetActualSoundChannel(short);
 	void SetSoundChannel(short);
 	// calltype: NearC
 	static short GetSRadius(struct _DYOBJ_INST*);
@@ -471,9 +471,9 @@ public:
 	unsigned short GetFakeDistTo(struct _DYOBJ_INST*);
 	unsigned short CloseTo(struct _DYOBJ_INST*);
 	// calltype: NearC
-	static class cYObject* cYObject();
+	static class cYObject* GetFirst();
 	// calltype: NearC
-	static class cYObject* cYObject(short, short);
+	static class cYObject* GetFirst(short, short);
 	// calltype: NearC
 	static class cYObject* GetFirstInvisible(short);
 	class cYObject* PutTotedMedVicOnHeli();
@@ -511,8 +511,8 @@ public:
 	void Draw(struct VRBlit*);
 	float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
-	void cYObject(struct Point3d, unsigned char, unsigned char);
-	void cYObject(unsigned char, unsigned char, int32_t, int32_t);
+	void SetCellAndLoc(struct Point3d, unsigned char, unsigned char);
+	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
 	void Start(int32_t, int32_t, int32_t, int32_t);
 	unsigned short BeamIntoCameraRange();
 	unsigned short OutOfCameraRange();

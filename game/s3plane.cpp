@@ -79,9 +79,9 @@ public:
 	// vtable: 0
 	intro void ~PlaneClass();
 	// calltype: NearC
-	static class PlaneClass* PlaneClass(long, long, int32_t);
+	static class PlaneClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
-	static class PlaneClass* PlaneClass(int32_t);
+	static class PlaneClass* CreateInstance(int32_t);
 	// calltype: NearC
 	static class PlaneClass* GetPlanePointer(long);
 	// calltype: NearC

@@ -25,9 +25,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long ResFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long ResFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);
@@ -52,8 +52,8 @@ public:
 	virtual void ~FlatResFile();
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long ResFile(unsigned char *);
-	virtual long ResFile(char *);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
 	long OpenFromName();
 	virtual long Close();
 	short CountTypes();
@@ -147,8 +147,8 @@ private:
 	void BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long);
 	void FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long));
 public:
-	unsigned long _cArray();
-	void _cArray(unsigned char *);
+	unsigned long GetName();
+	void GetName(unsigned char *);
 	// calltype: NearC
 	static class _cArray* GetArray(unsigned long, short);
 	// calltype: NearC
@@ -172,13 +172,13 @@ public:
 	unsigned short Resize(long, long, char);
 	// vtable: 0
 	intro void WriteToDisk();
-	void _cArray(class _cArray*);
-	void _cArray(unsigned long);
-	void _cArray(unsigned char *);
+	void CopyFrom(class _cArray*);
+	void CopyFrom(unsigned long);
+	void CopyFrom(unsigned char *);
 	void CopyToByFTN(class ResFile*, unsigned long, unsigned char *);
-	void _cArray(class _cArray*);
-	void _cArray(unsigned long);
-	void _cArray(unsigned char *);
+	void CopyTo(class _cArray*);
+	void CopyTo(unsigned long);
+	void CopyTo(unsigned char *);
 	void ~_cArray();
 	void DeleteResource();
 	// calltype: NearC
@@ -271,8 +271,8 @@ private:
 	void BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long);
 	void FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long));
 public:
-	unsigned long _cArray();
-	void _cArray(unsigned char *);
+	unsigned long GetName();
+	void GetName(unsigned char *);
 	// calltype: NearC
 	static class _cArray* GetArray(unsigned long, short);
 	// calltype: NearC
@@ -296,13 +296,13 @@ public:
 	unsigned short Resize(long, long, char);
 	// vtable: 0
 	intro void WriteToDisk();
-	void _cArray(class _cArray*);
-	void _cArray(unsigned long);
-	void _cArray(unsigned char *);
+	void CopyFrom(class _cArray*);
+	void CopyFrom(unsigned long);
+	void CopyFrom(unsigned char *);
 	void CopyToByFTN(class ResFile*, unsigned long, unsigned char *);
-	void _cArray(class _cArray*);
-	void _cArray(unsigned long);
-	void _cArray(unsigned char *);
+	void CopyTo(class _cArray*);
+	void CopyTo(unsigned long);
+	void CopyTo(unsigned char *);
 	void ~_cArray();
 	void DeleteResource();
 	// calltype: NearC

@@ -106,9 +106,9 @@ public:
 	// vtable: 0
 	intro void ~TrainClass();
 	// calltype: NearC
-	static class TrainClass* TrainClass(long, long, int32_t);
+	static class TrainClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
-	static class TrainClass* TrainClass(int32_t);
+	static class TrainClass* CreateInstance(int32_t);
 	// calltype: NearC
 	static class TrainClass* GetTrainPointer(long);
 	// calltype: NearC

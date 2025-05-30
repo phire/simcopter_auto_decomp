@@ -12,8 +12,8 @@
 class Keyboard{
 public:
 	void Keyboard();
-	int32_t Keyboard(unsigned char, unsigned char);
-	int32_t Keyboard(unsigned char);
+	int32_t IsKeyDown(unsigned char, unsigned char);
+	int32_t IsKeyDown(unsigned char);
 	void ProcessKeyDown(unsigned char);
 	void ProcessKeyUp(unsigned char);
 	void ClearSettings();

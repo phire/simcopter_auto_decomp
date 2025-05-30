@@ -42,9 +42,9 @@ public:
 	// vtable: 32
 	intro void WriteToDisk();
 	void cBBase();
-	void cCopterAnim(void * __ptr32);
-	void cCopterAnim(unsigned char *);
-	void cCopterAnim(unsigned long);
+	void Init(void * __ptr32);
+	void Init(unsigned char *);
+	void Init(unsigned long);
 	void * __ptr32 fDataHandle;
 	unsigned long fDataHandleSize;
 	unsigned char[16] fName;
@@ -71,9 +71,9 @@ public:
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
-	static class cBBase* cCopterAnim(void * __ptr32);
+	static class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
-	static class cCopterAnim* cCopterAnim(unsigned long, class cCopterBody*);
+	static class cCopterAnim* MakeNew(unsigned long, class cCopterBody*);
 	// calltype: NearC
 	static void LoadAllRelatedArrays(class ResFile*);
 	// calltype: NearC

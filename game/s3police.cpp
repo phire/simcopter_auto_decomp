@@ -48,8 +48,8 @@ protected:
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
-	void PoliceCarClass(const class AutomobileClass&);
-	void PoliceCarClass();
+	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass();
 	// vtable: 0
 	intro void ~AutomobileClass();
 	// calltype: NearC
@@ -142,8 +142,8 @@ protected:
 	int32_t stationID;
 	int32_t numberOfSeats;
 public:
-	void PoliceCarClass(const class EmergencyVehicleClass&);
-	void PoliceCarClass();
+	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
+	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass();
 	enum EmergencyLevel GetEmergencyState();
 	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType);

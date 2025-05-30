@@ -8,8 +8,8 @@
 class SoundButtonWindow : public GraphicWindow, public ButtonWindow
 {
 public:
-	void SoundButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void SoundButtonWindow();
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
 	virtual int32_t Initialize();
 	// vtable: 196
 	intro int32_t GetImageCount();
@@ -57,8 +57,8 @@ public:
 	long top;
 	long right;
 	long bottom;
-	void MRect(long, long, long, long);
-	void MRect();
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -69,56 +69,56 @@ public:
 	long Width();
 	long Height();
 	class MSize Size();
-	const class MPoint& MRect();
-	class MPoint& MRect();
-	const class MPoint& MRect();
-	class MPoint& MRect();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
 	class MPoint CenterPoint();
 	struct SparkalRect* operator struct SparkalRect *();
 	class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t MRect(struct SparkalPoint);
-	int32_t MRect(long, long);
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
 	int32_t DoesRectOverlap(struct SparkalRect*);
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(long, long, long, long);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
 	void SetRectEmpty();
 	void CopyRect(class MRect*);
 	int32_t EqualRect(class MRect*);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
 	void NormalizeRect();
 	int32_t IntersectRect(class MRect*, class MRect*);
 	int32_t UnionRect(class MRect*, class MRect*);
 	int32_t SubtractRect(class MRect*, class MRect*);
 	int32_t operator==(const struct SparkalRect&);
 	int32_t operator!=(const struct SparkalRect&);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
 	void operator&=(const struct SparkalRect&);
 	void operator|=(const struct SparkalRect&);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalPoint);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(struct SparkalPoint);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
@@ -140,8 +140,8 @@ public:
 class SoundRadioButtonWindow : public GraphicWindow, public ButtonWindow, public RadioButtonWindow
 {
 public:
-	void SoundRadioButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void SoundRadioButtonWindow();
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
 	virtual int32_t Initialize();
 	// vtable: 196
 	intro int32_t GetImageCount();
@@ -170,8 +170,8 @@ protected:
 	struct SparkalColor colorFont;
 	struct SparkalColor colorFontHighlighted;
 public:
-	void SoundRadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void SoundRadioButtonWindow();
+	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void RadioButtonWindow();
 	virtual void ~RadioButtonWindow();
 	virtual int32_t Initialize();
 	virtual int32_t GetImageCount();
@@ -203,8 +203,8 @@ protected:
 class SoundCheckBoxWindow : public GraphicWindow, public ButtonWindow, public CheckBoxWindow
 {
 public:
-	void SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void SoundCheckBoxWindow();
+	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow();
 	virtual int32_t Initialize();
 	// vtable: 196
 	intro int32_t GetImageCount();
@@ -233,8 +233,8 @@ protected:
 	struct SparkalColor colorFont;
 	struct SparkalColor colorFontHighlighted;
 public:
-	void SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void SoundCheckBoxWindow();
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
 	virtual int32_t ComposeSelf();
 	virtual int32_t GetImageCount();
 	virtual void SetState(int32_t);
@@ -256,8 +256,8 @@ protected:
 class SoundScrollBarWindow : public GraphicWindow, public SliderWindow, public ScrollBarWindow
 {
 public:
-	void SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
-	void SoundScrollBarWindow();
+	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
+	void SliderWindow();
 	virtual void ~SliderWindow();
 	virtual int32_t Initialize();
 	void SetMinimumValue(long);
@@ -296,8 +296,8 @@ public:
 	class CBackBuffer* myBackgroundImage;
 	class basic_string<char> sBackgroundFile;
 	int32_t bBusySettingValue;
-	void SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
-	void SoundScrollBarWindow();
+	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
+	void ScrollBarWindow();
 	virtual int32_t Initialize();
 	virtual int32_t ComposeSelf();
 	virtual long DoCursorDown(long, long, unsigned long);

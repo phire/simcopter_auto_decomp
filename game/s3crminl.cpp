@@ -52,8 +52,8 @@ protected:
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
-	void CriminalEvaderCarClass(const class AutomobileClass&);
-	void CriminalEvaderCarClass();
+	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass();
 	// vtable: 0
 	intro void ~AutomobileClass();
 	// calltype: NearC

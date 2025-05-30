@@ -58,8 +58,8 @@ public:
 	long top;
 	long right;
 	long bottom;
-	void MRect(long, long, long, long);
-	void MRect();
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -70,56 +70,56 @@ public:
 	long Width();
 	long Height();
 	class MSize Size();
-	const class MPoint& MRect();
-	class MPoint& MRect();
-	const class MPoint& MRect();
-	class MPoint& MRect();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
 	class MPoint CenterPoint();
 	struct SparkalRect* operator struct SparkalRect *();
 	class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t MRect(struct SparkalPoint);
-	int32_t MRect(long, long);
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
 	int32_t DoesRectOverlap(struct SparkalRect*);
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(long, long, long, long);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
 	void SetRectEmpty();
 	void CopyRect(class MRect*);
 	int32_t EqualRect(class MRect*);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
 	void NormalizeRect();
 	int32_t IntersectRect(class MRect*, class MRect*);
 	int32_t UnionRect(class MRect*, class MRect*);
 	int32_t SubtractRect(class MRect*, class MRect*);
 	int32_t operator==(const struct SparkalRect&);
 	int32_t operator!=(const struct SparkalRect&);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
 	void operator&=(const struct SparkalRect&);
 	void operator|=(const struct SparkalRect&);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalPoint);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(struct SparkalPoint);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
@@ -173,71 +173,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: long;
@@ -280,71 +280,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: class list<HotSpot>::iterator;
@@ -353,16 +353,16 @@ class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 protected:
 	struct list<HotSpot>::list_node* node;
 public:
-	void list<HotSpot>::iterator();
+	void iterator();
 protected:
-	void list<HotSpot>::iterator(struct list<HotSpot>::list_node*);
+	void iterator(struct list<HotSpot>::list_node*);
 public:
 	int32_t operator==(const class list<HotSpot>::iterator&);
 	class HotSpot& operator*();
-	class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-	class list<HotSpot>::iterator& list<HotSpot>::iterator();
-	class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-	class list<HotSpot>::iterator& list<HotSpot>::iterator();
+	class list<HotSpot>::iterator operator++(int32_t);
+	class list<HotSpot>::iterator& operator++();
+	class list<HotSpot>::iterator operator--(int32_t);
+	class list<HotSpot>::iterator& operator--();
 };
 
 // Type: class list<KeyColors>::iterator;
@@ -371,16 +371,16 @@ class list<KeyColors>::iterator : public bidirectional_iterator<KeyColors,int>
 protected:
 	struct list<KeyColors>::list_node* node;
 public:
-	void list<KeyColors>::iterator();
+	void iterator();
 protected:
-	void list<KeyColors>::iterator(struct list<KeyColors>::list_node*);
+	void iterator(struct list<KeyColors>::list_node*);
 public:
 	int32_t operator==(const class list<KeyColors>::iterator&);
 	struct KeyColors& operator*();
-	class list<KeyColors>::iterator list<KeyColors>::iterator(int32_t);
-	class list<KeyColors>::iterator& list<KeyColors>::iterator();
-	class list<KeyColors>::iterator list<KeyColors>::iterator(int32_t);
-	class list<KeyColors>::iterator& list<KeyColors>::iterator();
+	class list<KeyColors>::iterator operator++(int32_t);
+	class list<KeyColors>::iterator& operator++();
+	class list<KeyColors>::iterator operator--(int32_t);
+	class list<KeyColors>::iterator& operator--();
 };
 
 // Type: class MRect;
@@ -391,8 +391,8 @@ public:
 	long top;
 	long right;
 	long bottom;
-	void MRect(long, long, long, long);
-	void MRect();
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
 	void MRect(struct SparkalRect*);
@@ -403,56 +403,56 @@ public:
 	long Width();
 	long Height();
 	class MSize Size();
-	const class MPoint& MRect();
-	class MPoint& MRect();
-	const class MPoint& MRect();
-	class MPoint& MRect();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
 	class MPoint CenterPoint();
 	struct SparkalRect* operator struct SparkalRect *();
 	class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t MRect(struct SparkalPoint);
-	int32_t MRect(long, long);
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
 	int32_t DoesRectOverlap(struct SparkalRect*);
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(long, long, long, long);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
 	void SetRectEmpty();
 	void CopyRect(class MRect*);
 	int32_t EqualRect(class MRect*);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(long, long, long, long);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(long, long);
-	void MRect(struct SparkalPoint);
-	void MRect(struct SparkalSize);
-	void MRect(long, long);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
 	void NormalizeRect();
 	int32_t IntersectRect(class MRect*, class MRect*);
 	int32_t UnionRect(class MRect*, class MRect*);
 	int32_t SubtractRect(class MRect*, class MRect*);
 	int32_t operator==(const struct SparkalRect&);
 	int32_t operator!=(const struct SparkalRect&);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
-	void MRect(class MRect*);
-	void MRect(struct SparkalSize);
-	void MRect(struct SparkalPoint);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
 	void operator&=(const struct SparkalRect&);
 	void operator|=(const struct SparkalRect&);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalPoint);
-	class MRect MRect(class MRect*);
-	class MRect MRect(struct SparkalSize);
-	class MRect MRect(struct SparkalPoint);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
@@ -651,16 +651,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 // Type: class list<StringIDAssociation>::iterator;
@@ -669,16 +669,16 @@ class list<StringIDAssociation>::iterator : public bidirectional_iterator<String
 protected:
 	struct list<StringIDAssociation>::list_node* node;
 public:
-	void list<StringIDAssociation>::iterator();
+	void iterator();
 protected:
-	void list<StringIDAssociation>::iterator(struct list<StringIDAssociation>::list_node*);
+	void iterator(struct list<StringIDAssociation>::list_node*);
 public:
 	int32_t operator==(const class list<StringIDAssociation>::iterator&);
 	struct StringIDAssociation& operator*();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-	class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-	class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
+	class list<StringIDAssociation>::iterator operator++(int32_t);
+	class list<StringIDAssociation>::iterator& operator++();
+	class list<StringIDAssociation>::iterator operator--(int32_t);
+	class list<StringIDAssociation>::iterator& operator--();
 };
 
 // Type: long[16];
@@ -696,29 +696,29 @@ class MPoint : public SparkalPoint
 public:
 	long x;
 	long y;
-	void MPoint(long, long);
-	void MPoint();
+	void SparkalPoint(long, long);
+	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
 	void MPoint(long, long);
 	void MPoint();
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
-	void MPoint(long, long);
+	void Offset(struct SparkalSize);
+	void Offset(struct SparkalPoint);
+	void Offset(long, long);
 	int32_t operator==(struct SparkalPoint);
 	int32_t operator!=(struct SparkalPoint);
-	void MPoint(struct SparkalPoint);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
-	void MPoint(struct SparkalSize);
-	class MRect MPoint(const struct SparkalRect*);
-	class MPoint MPoint(struct SparkalPoint);
-	class MPoint MPoint(struct SparkalSize);
-	class MRect MPoint(const struct SparkalRect*);
-	class MSize MPoint(struct SparkalPoint);
-	class MPoint MPoint();
-	class MPoint MPoint(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator+=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
+	void operator-=(struct SparkalSize);
+	class MRect operator+(const struct SparkalRect*);
+	class MPoint operator+(struct SparkalPoint);
+	class MPoint operator+(struct SparkalSize);
+	class MRect operator-(const struct SparkalRect*);
+	class MSize operator-(struct SparkalPoint);
+	class MPoint operator-();
+	class MPoint operator-(struct SparkalSize);
 };
 
 // Type: class CBackBuffer (forward reference);
@@ -775,33 +775,33 @@ protected:
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::iterator();
+		void iterator();
 	protected:
-		void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+		void iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::iterator&);
 		struct Shortcut& operator*();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
-		class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-		class list<Shortcut>::iterator& list<Shortcut>::iterator();
+		class list<Shortcut>::iterator operator++(int32_t);
+		class list<Shortcut>::iterator& operator++();
+		class list<Shortcut>::iterator operator--(int32_t);
+		class list<Shortcut>::iterator& operator--();
 	};
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
 		struct list<Shortcut>::list_node* node;
 	public:
-		void list<Shortcut>::const_iterator(const class list<Shortcut>::iterator&);
-		void list<Shortcut>::const_iterator();
+		void const_iterator(const class list<Shortcut>::iterator&);
+		void const_iterator();
 	protected:
-		void list<Shortcut>::const_iterator(struct list<Shortcut>::list_node*);
+		void const_iterator(struct list<Shortcut>::list_node*);
 	public:
 		int32_t operator==(const class list<Shortcut>::const_iterator&);
 		const struct Shortcut& operator*();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
-		class list<Shortcut>::const_iterator list<Shortcut>::const_iterator(int32_t);
-		class list<Shortcut>::const_iterator& list<Shortcut>::const_iterator();
+		class list<Shortcut>::const_iterator operator++(int32_t);
+		class list<Shortcut>::const_iterator& operator++();
+		class list<Shortcut>::const_iterator operator--(int32_t);
+		class list<Shortcut>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int>;
@@ -810,30 +810,30 @@ public:
 	void list<Shortcut>(const struct Shortcut*, const struct Shortcut*);
 	void list<Shortcut>(uint32_t, const struct Shortcut&);
 	void list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class list<Shortcut>::const_iterator list<Shortcut>();
-	class list<Shortcut>::iterator list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> list<Shortcut>();
-	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> list<Shortcut>();
+	class list<Shortcut>::const_iterator begin();
+	class list<Shortcut>::iterator begin();
+	class list<Shortcut>::const_iterator end();
+	class list<Shortcut>::iterator end();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rbegin();
+	class reverse_bidirectional_iterator<list<Shortcut>::const_iterator,Shortcut,Shortcut const &,int> rend();
+	class reverse_bidirectional_iterator<list<Shortcut>::iterator,Shortcut,Shortcut &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
-	const struct Shortcut& list<Shortcut>();
-	struct Shortcut& list<Shortcut>();
+	const struct Shortcut& front();
+	struct Shortcut& front();
+	const struct Shortcut& back();
+	struct Shortcut& back();
 	void swap(class list<Shortcut>&);
-	void list<Shortcut>(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
-	class list<Shortcut>::iterator list<Shortcut>(class list<Shortcut>::iterator, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, uint32_t, const struct Shortcut&);
+	void insert(class list<Shortcut>::iterator, class list<Shortcut>::const_iterator, class list<Shortcut>::const_iterator);
+	void insert(class list<Shortcut>::iterator, const struct Shortcut*, const struct Shortcut*);
+	class list<Shortcut>::iterator insert(class list<Shortcut>::iterator, const struct Shortcut&);
 	void push_front(const struct Shortcut&);
 	void push_back(const struct Shortcut&);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void erase(class list<Shortcut>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<Shortcut>();
@@ -841,9 +841,9 @@ public:
 protected:
 	void transfer(class list<Shortcut>::iterator, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
 public:
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
-	void list<Shortcut>(class list<Shortcut>::iterator, class list<Shortcut>&);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&, class list<Shortcut>::iterator);
+	void splice(class list<Shortcut>::iterator, class list<Shortcut>&);
 	void remove(const struct Shortcut&);
 	void unique();
 	void merge(class list<Shortcut>&);
@@ -860,9 +860,9 @@ public:
 	void TextWindow();
 	virtual int32_t DrawSelf();
 	// vtable: 196
-	intro void TextWindow(const class basic_string<char>&);
+	intro void SetWindowTitle(const class basic_string<char>&);
 	// vtable: 200
-	intro void TextWindow(int32_t);
+	intro void SetWindowTitle(int32_t);
 	// vtable: 204
 	intro void SetFontCharacteristics(long, long, long);
 	// vtable: 208
@@ -920,12 +920,12 @@ public:
 	void swap(class set<long,less<long>>&);
 	using pair_iterator_bool = struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,int>;
 public:
-	void set<long,less<long>>(long *, long *);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator set<long,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator, const long&);
-	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,int> set<long,less<long>>(const long&);
-	void set<long,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator, class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator);
-	uint32_t set<long,less<long>>(const long&);
-	void set<long,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator);
+	void insert(long *, long *);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator insert(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator, const long&);
+	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,int> insert(const long&);
+	void erase(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator, class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator);
+	uint32_t erase(const long&);
+	void erase(class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator);
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator find(const long&);
 	uint32_t count(const long&);
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator lower_bound(const long&);
@@ -941,18 +941,18 @@ class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bi
 protected:
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 public:
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+	void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
+	void const_iterator();
 protected:
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+	void const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 public:
 	int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 	int32_t operator!=(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 	const long& operator*();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator++(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator++();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator--(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator--();
 };
 
 // Type: struct Shortcut (forward reference);
@@ -977,20 +977,20 @@ protected:
 	char * end_of_storage;
 	void insert_aux(char *, const char&);
 public:
-	char * vector<char>();
-	char * vector<char>();
-	char * vector<char>();
-	char * vector<char>();
-	class reverse_iterator<char const *,char,char const &,int> vector<char>();
-	class reverse_iterator<char *,char,char &,int> vector<char>();
-	class reverse_iterator<char const *,char,char const &,int> vector<char>();
-	class reverse_iterator<char *,char,char &,int> vector<char>();
+	char * begin();
+	char * begin();
+	char * end();
+	char * end();
+	class reverse_iterator<char const *,char,char const &,int> rbegin();
+	class reverse_iterator<char *,char,char &,int> rbegin();
+	class reverse_iterator<char const *,char,char const &,int> rend();
+	class reverse_iterator<char *,char,char &,int> rend();
 	uint32_t size();
 	uint32_t max_size();
 	uint32_t capacity();
 	int32_t empty();
-	const char& vector<char>(uint32_t);
-	char& vector<char>(uint32_t);
+	const char& operator[](uint32_t);
+	char& operator[](uint32_t);
 	void vector<char>(char *, char *);
 	void vector<char>(const class vector<char>&);
 	void vector<char>(uint32_t, const char&);
@@ -998,18 +998,18 @@ public:
 	void ~vector<char>();
 	class vector<char>& operator=(const class vector<char>&);
 	void reserve(uint32_t);
-	const char& vector<char>();
-	char& vector<char>();
-	const char& vector<char>();
-	char& vector<char>();
+	const char& front();
+	char& front();
+	const char& back();
+	char& back();
 	void push_back(const char&);
 	void swap(class vector<char>&);
-	void vector<char>(char *, uint32_t, const char&);
-	void vector<char>(char *, char *, char *);
-	char * vector<char>(char *, const char&);
+	void insert(char *, uint32_t, const char&);
+	void insert(char *, char *, char *);
+	char * insert(char *, const char&);
 	void pop_back();
-	void vector<char>(char *, char *);
-	void vector<char>(char *);
+	void erase(char *, char *);
+	void erase(char *);
 };
 
 // Type: class ostream (forward reference);
@@ -1025,24 +1025,24 @@ public:
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();
-	class ostream& ostream(class streambuf*);
-	class ostream& ostream(void * __ptr32);
-	class ostream& ostream(double);
-	class ostream& ostream(double);
-	class ostream& ostream(float);
-	class ostream& ostream(unsigned long);
-	class ostream& ostream(long);
-	class ostream& ostream(uint32_t);
-	class ostream& ostream(int32_t);
-	class ostream& ostream(unsigned short);
-	class ostream& ostream(short);
-	class ostream& ostream(char);
-	class ostream& ostream(unsigned char);
-	class ostream& ostream(char);
-	class ostream& ostream(char *);
-	class ostream& ostream(unsigned char *);
-	class ostream& ostream(char *);
-	class ostream& ostream(LfPointer @ 0x75e80:
+	class ostream& operator<<(class streambuf*);
+	class ostream& operator<<(void * __ptr32);
+	class ostream& operator<<(double);
+	class ostream& operator<<(double);
+	class ostream& operator<<(float);
+	class ostream& operator<<(unsigned long);
+	class ostream& operator<<(long);
+	class ostream& operator<<(uint32_t);
+	class ostream& operator<<(int32_t);
+	class ostream& operator<<(unsigned short);
+	class ostream& operator<<(short);
+	class ostream& operator<<(char);
+	class ostream& operator<<(unsigned char);
+	class ostream& operator<<(char);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(unsigned char *);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(LfPointer @ 0x75e80:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -1065,7 +1065,7 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ios&));
-	class ostream& ostream(LfPointer @ 0x26c0:
+	class ostream& operator<<(LfPointer @ 0x26c0:
 	[90m   LP.[32m[  0.  2][m [95mAttributes[m =
 	[90m   LP.[mContainer: 
 	[90m   LP.[m    ptrmode = (enum) Ref 1
@@ -1088,18 +1088,18 @@ public:
 	[90m   LP.[m[90m   LC.[32m[  8.  2][m [95mvshape[m = <NoType>
 	[90m   LP.[m[90m   LC.[32m[  a.  *][m [95mSize[m = 0
 	 (*)(class ostream&));
-	class ostream& ostream(char);
-	class ostream& ostream(unsigned char);
-	class ostream& ostream(char);
-	class ostream& ostream(char *, int32_t);
-	class ostream& ostream(unsigned char *, int32_t);
-	class ostream& ostream(char *, int32_t);
-	class ostream& ostream(long, enum ios::seek_dir);
-	class ostream& ostream(long);
+	class ostream& put(char);
+	class ostream& put(unsigned char);
+	class ostream& put(char);
+	class ostream& write(char *, int32_t);
+	class ostream& write(unsigned char *, int32_t);
+	class ostream& write(char *, int32_t);
+	class ostream& seekp(long, enum ios::seek_dir);
+	class ostream& seekp(long);
 	long tellp();
 protected:
-	class ostream& ostream(const class ostream&);
-	class ostream& ostream(class streambuf*);
+	class ostream& operator=(const class ostream&);
+	class ostream& operator=(class streambuf*);
 	int32_t do_opfx(int32_t);
 	void do_osfx();
 private:
@@ -1115,29 +1115,29 @@ class MPoint : public SparkalPoint
 public:
 	long x;
 	long y;
-	void MPoint(long, long);
-	void MPoint();
+	void SparkalPoint(long, long);
+	void SparkalPoint();
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
 	void MPoint(struct SparkalPoint);
 	void MPoint(long, long);
 	void MPoint();
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
-	void MPoint(long, long);
+	void Offset(struct SparkalSize);
+	void Offset(struct SparkalPoint);
+	void Offset(long, long);
 	int32_t operator==(struct SparkalPoint);
 	int32_t operator!=(struct SparkalPoint);
-	void MPoint(struct SparkalPoint);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
-	void MPoint(struct SparkalSize);
-	class MRect MPoint(const struct SparkalRect*);
-	class MPoint MPoint(struct SparkalPoint);
-	class MPoint MPoint(struct SparkalSize);
-	class MRect MPoint(const struct SparkalRect*);
-	class MSize MPoint(struct SparkalPoint);
-	class MPoint MPoint();
-	class MPoint MPoint(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator+=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
+	void operator-=(struct SparkalSize);
+	class MRect operator+(const struct SparkalRect*);
+	class MPoint operator+(struct SparkalPoint);
+	class MPoint operator+(struct SparkalSize);
+	class MRect operator-(const struct SparkalRect*);
+	class MSize operator-(struct SparkalPoint);
+	class MPoint operator-();
+	class MPoint operator-(struct SparkalSize);
 };
 
 // Type: class list<KeyColors> (forward reference);
@@ -1188,33 +1188,33 @@ protected:
 	protected:
 		struct list<KeyColors>::list_node* node;
 	public:
-		void list<KeyColors>::iterator();
+		void iterator();
 	protected:
-		void list<KeyColors>::iterator(struct list<KeyColors>::list_node*);
+		void iterator(struct list<KeyColors>::list_node*);
 	public:
 		int32_t operator==(const class list<KeyColors>::iterator&);
 		struct KeyColors& operator*();
-		class list<KeyColors>::iterator list<KeyColors>::iterator(int32_t);
-		class list<KeyColors>::iterator& list<KeyColors>::iterator();
-		class list<KeyColors>::iterator list<KeyColors>::iterator(int32_t);
-		class list<KeyColors>::iterator& list<KeyColors>::iterator();
+		class list<KeyColors>::iterator operator++(int32_t);
+		class list<KeyColors>::iterator& operator++();
+		class list<KeyColors>::iterator operator--(int32_t);
+		class list<KeyColors>::iterator& operator--();
 	};
 	class list<KeyColors>::const_iterator : public bidirectional_iterator<KeyColors,int>
 	{
 	protected:
 		struct list<KeyColors>::list_node* node;
 	public:
-		void list<KeyColors>::const_iterator(const class list<KeyColors>::iterator&);
-		void list<KeyColors>::const_iterator();
+		void const_iterator(const class list<KeyColors>::iterator&);
+		void const_iterator();
 	protected:
-		void list<KeyColors>::const_iterator(struct list<KeyColors>::list_node*);
+		void const_iterator(struct list<KeyColors>::list_node*);
 	public:
 		int32_t operator==(const class list<KeyColors>::const_iterator&);
 		const struct KeyColors& operator*();
-		class list<KeyColors>::const_iterator list<KeyColors>::const_iterator(int32_t);
-		class list<KeyColors>::const_iterator& list<KeyColors>::const_iterator();
-		class list<KeyColors>::const_iterator list<KeyColors>::const_iterator(int32_t);
-		class list<KeyColors>::const_iterator& list<KeyColors>::const_iterator();
+		class list<KeyColors>::const_iterator operator++(int32_t);
+		class list<KeyColors>::const_iterator& operator++();
+		class list<KeyColors>::const_iterator operator--(int32_t);
+		class list<KeyColors>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<KeyColors>::const_iterator,KeyColors,KeyColors const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<KeyColors>::iterator,KeyColors,KeyColors &,int>;
@@ -1223,30 +1223,30 @@ public:
 	void list<KeyColors>(const struct KeyColors*, const struct KeyColors*);
 	void list<KeyColors>(uint32_t, const struct KeyColors&);
 	void list<KeyColors>();
-	class list<KeyColors>::const_iterator list<KeyColors>();
-	class list<KeyColors>::iterator list<KeyColors>();
-	class list<KeyColors>::const_iterator list<KeyColors>();
-	class list<KeyColors>::iterator list<KeyColors>();
-	class reverse_bidirectional_iterator<list<KeyColors>::const_iterator,KeyColors,KeyColors const &,int> list<KeyColors>();
-	class reverse_bidirectional_iterator<list<KeyColors>::iterator,KeyColors,KeyColors &,int> list<KeyColors>();
-	class reverse_bidirectional_iterator<list<KeyColors>::const_iterator,KeyColors,KeyColors const &,int> list<KeyColors>();
-	class reverse_bidirectional_iterator<list<KeyColors>::iterator,KeyColors,KeyColors &,int> list<KeyColors>();
+	class list<KeyColors>::const_iterator begin();
+	class list<KeyColors>::iterator begin();
+	class list<KeyColors>::const_iterator end();
+	class list<KeyColors>::iterator end();
+	class reverse_bidirectional_iterator<list<KeyColors>::const_iterator,KeyColors,KeyColors const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<KeyColors>::iterator,KeyColors,KeyColors &,int> rbegin();
+	class reverse_bidirectional_iterator<list<KeyColors>::const_iterator,KeyColors,KeyColors const &,int> rend();
+	class reverse_bidirectional_iterator<list<KeyColors>::iterator,KeyColors,KeyColors &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const struct KeyColors& list<KeyColors>();
-	struct KeyColors& list<KeyColors>();
-	const struct KeyColors& list<KeyColors>();
-	struct KeyColors& list<KeyColors>();
+	const struct KeyColors& front();
+	struct KeyColors& front();
+	const struct KeyColors& back();
+	struct KeyColors& back();
 	void swap(class list<KeyColors>&);
-	void list<KeyColors>(class list<KeyColors>::iterator, uint32_t, const struct KeyColors&);
-	void list<KeyColors>(class list<KeyColors>::iterator, class list<KeyColors>::const_iterator, class list<KeyColors>::const_iterator);
-	void list<KeyColors>(class list<KeyColors>::iterator, const struct KeyColors*, const struct KeyColors*);
-	class list<KeyColors>::iterator list<KeyColors>(class list<KeyColors>::iterator, const struct KeyColors&);
+	void insert(class list<KeyColors>::iterator, uint32_t, const struct KeyColors&);
+	void insert(class list<KeyColors>::iterator, class list<KeyColors>::const_iterator, class list<KeyColors>::const_iterator);
+	void insert(class list<KeyColors>::iterator, const struct KeyColors*, const struct KeyColors*);
+	class list<KeyColors>::iterator insert(class list<KeyColors>::iterator, const struct KeyColors&);
 	void push_front(const struct KeyColors&);
 	void push_back(const struct KeyColors&);
-	void list<KeyColors>(class list<KeyColors>::iterator, class list<KeyColors>::iterator);
-	void list<KeyColors>(class list<KeyColors>::iterator);
+	void erase(class list<KeyColors>::iterator, class list<KeyColors>::iterator);
+	void erase(class list<KeyColors>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<KeyColors>();
@@ -1254,9 +1254,9 @@ public:
 protected:
 	void transfer(class list<KeyColors>::iterator, class list<KeyColors>::iterator, class list<KeyColors>::iterator);
 public:
-	void list<KeyColors>(class list<KeyColors>::iterator, class list<KeyColors>&, class list<KeyColors>::iterator, class list<KeyColors>::iterator);
-	void list<KeyColors>(class list<KeyColors>::iterator, class list<KeyColors>&, class list<KeyColors>::iterator);
-	void list<KeyColors>(class list<KeyColors>::iterator, class list<KeyColors>&);
+	void splice(class list<KeyColors>::iterator, class list<KeyColors>&, class list<KeyColors>::iterator, class list<KeyColors>::iterator);
+	void splice(class list<KeyColors>::iterator, class list<KeyColors>&, class list<KeyColors>::iterator);
+	void splice(class list<KeyColors>::iterator, class list<KeyColors>&);
 	void remove(const struct KeyColors&);
 	void unique();
 	void merge(class list<KeyColors>&);
@@ -1272,16 +1272,16 @@ class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 protected:
 	struct list<HotSpot>::list_node* node;
 public:
-	void list<HotSpot>::iterator();
+	void iterator();
 protected:
-	void list<HotSpot>::iterator(struct list<HotSpot>::list_node*);
+	void iterator(struct list<HotSpot>::list_node*);
 public:
 	int32_t operator==(const class list<HotSpot>::iterator&);
 	class HotSpot& operator*();
-	class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-	class list<HotSpot>::iterator& list<HotSpot>::iterator();
-	class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-	class list<HotSpot>::iterator& list<HotSpot>::iterator();
+	class list<HotSpot>::iterator operator++(int32_t);
+	class list<HotSpot>::iterator& operator++();
+	class list<HotSpot>::iterator operator--(int32_t);
+	class list<HotSpot>::iterator& operator--();
 };
 
 // Type: class list<HotSpot> (forward reference);
@@ -1332,33 +1332,33 @@ protected:
 	protected:
 		struct list<HotSpot>::list_node* node;
 	public:
-		void list<HotSpot>::iterator();
+		void iterator();
 	protected:
-		void list<HotSpot>::iterator(struct list<HotSpot>::list_node*);
+		void iterator(struct list<HotSpot>::list_node*);
 	public:
 		int32_t operator==(const class list<HotSpot>::iterator&);
 		class HotSpot& operator*();
-		class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-		class list<HotSpot>::iterator& list<HotSpot>::iterator();
-		class list<HotSpot>::iterator list<HotSpot>::iterator(int32_t);
-		class list<HotSpot>::iterator& list<HotSpot>::iterator();
+		class list<HotSpot>::iterator operator++(int32_t);
+		class list<HotSpot>::iterator& operator++();
+		class list<HotSpot>::iterator operator--(int32_t);
+		class list<HotSpot>::iterator& operator--();
 	};
 	class list<HotSpot>::const_iterator : public bidirectional_iterator<HotSpot,int>
 	{
 	protected:
 		struct list<HotSpot>::list_node* node;
 	public:
-		void list<HotSpot>::const_iterator(const class list<HotSpot>::iterator&);
-		void list<HotSpot>::const_iterator();
+		void const_iterator(const class list<HotSpot>::iterator&);
+		void const_iterator();
 	protected:
-		void list<HotSpot>::const_iterator(struct list<HotSpot>::list_node*);
+		void const_iterator(struct list<HotSpot>::list_node*);
 	public:
 		int32_t operator==(const class list<HotSpot>::const_iterator&);
 		const class HotSpot& operator*();
-		class list<HotSpot>::const_iterator list<HotSpot>::const_iterator(int32_t);
-		class list<HotSpot>::const_iterator& list<HotSpot>::const_iterator();
-		class list<HotSpot>::const_iterator list<HotSpot>::const_iterator(int32_t);
-		class list<HotSpot>::const_iterator& list<HotSpot>::const_iterator();
+		class list<HotSpot>::const_iterator operator++(int32_t);
+		class list<HotSpot>::const_iterator& operator++();
+		class list<HotSpot>::const_iterator operator--(int32_t);
+		class list<HotSpot>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<HotSpot>::const_iterator,HotSpot,HotSpot const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<HotSpot>::iterator,HotSpot,HotSpot &,int>;
@@ -1367,30 +1367,30 @@ public:
 	void list<HotSpot>(const class HotSpot*, const class HotSpot*);
 	void list<HotSpot>(uint32_t, const class HotSpot&);
 	void list<HotSpot>();
-	class list<HotSpot>::const_iterator list<HotSpot>();
-	class list<HotSpot>::iterator list<HotSpot>();
-	class list<HotSpot>::const_iterator list<HotSpot>();
-	class list<HotSpot>::iterator list<HotSpot>();
-	class reverse_bidirectional_iterator<list<HotSpot>::const_iterator,HotSpot,HotSpot const &,int> list<HotSpot>();
-	class reverse_bidirectional_iterator<list<HotSpot>::iterator,HotSpot,HotSpot &,int> list<HotSpot>();
-	class reverse_bidirectional_iterator<list<HotSpot>::const_iterator,HotSpot,HotSpot const &,int> list<HotSpot>();
-	class reverse_bidirectional_iterator<list<HotSpot>::iterator,HotSpot,HotSpot &,int> list<HotSpot>();
+	class list<HotSpot>::const_iterator begin();
+	class list<HotSpot>::iterator begin();
+	class list<HotSpot>::const_iterator end();
+	class list<HotSpot>::iterator end();
+	class reverse_bidirectional_iterator<list<HotSpot>::const_iterator,HotSpot,HotSpot const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<HotSpot>::iterator,HotSpot,HotSpot &,int> rbegin();
+	class reverse_bidirectional_iterator<list<HotSpot>::const_iterator,HotSpot,HotSpot const &,int> rend();
+	class reverse_bidirectional_iterator<list<HotSpot>::iterator,HotSpot,HotSpot &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class HotSpot& list<HotSpot>();
-	class HotSpot& list<HotSpot>();
-	const class HotSpot& list<HotSpot>();
-	class HotSpot& list<HotSpot>();
+	const class HotSpot& front();
+	class HotSpot& front();
+	const class HotSpot& back();
+	class HotSpot& back();
 	void swap(class list<HotSpot>&);
-	void list<HotSpot>(class list<HotSpot>::iterator, uint32_t, const class HotSpot&);
-	void list<HotSpot>(class list<HotSpot>::iterator, class list<HotSpot>::const_iterator, class list<HotSpot>::const_iterator);
-	void list<HotSpot>(class list<HotSpot>::iterator, const class HotSpot*, const class HotSpot*);
-	class list<HotSpot>::iterator list<HotSpot>(class list<HotSpot>::iterator, const class HotSpot&);
+	void insert(class list<HotSpot>::iterator, uint32_t, const class HotSpot&);
+	void insert(class list<HotSpot>::iterator, class list<HotSpot>::const_iterator, class list<HotSpot>::const_iterator);
+	void insert(class list<HotSpot>::iterator, const class HotSpot*, const class HotSpot*);
+	class list<HotSpot>::iterator insert(class list<HotSpot>::iterator, const class HotSpot&);
 	void push_front(const class HotSpot&);
 	void push_back(const class HotSpot&);
-	void list<HotSpot>(class list<HotSpot>::iterator, class list<HotSpot>::iterator);
-	void list<HotSpot>(class list<HotSpot>::iterator);
+	void erase(class list<HotSpot>::iterator, class list<HotSpot>::iterator);
+	void erase(class list<HotSpot>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<HotSpot>();
@@ -1398,9 +1398,9 @@ public:
 protected:
 	void transfer(class list<HotSpot>::iterator, class list<HotSpot>::iterator, class list<HotSpot>::iterator);
 public:
-	void list<HotSpot>(class list<HotSpot>::iterator, class list<HotSpot>&, class list<HotSpot>::iterator, class list<HotSpot>::iterator);
-	void list<HotSpot>(class list<HotSpot>::iterator, class list<HotSpot>&, class list<HotSpot>::iterator);
-	void list<HotSpot>(class list<HotSpot>::iterator, class list<HotSpot>&);
+	void splice(class list<HotSpot>::iterator, class list<HotSpot>&, class list<HotSpot>::iterator, class list<HotSpot>::iterator);
+	void splice(class list<HotSpot>::iterator, class list<HotSpot>&, class list<HotSpot>::iterator);
+	void splice(class list<HotSpot>::iterator, class list<HotSpot>&);
 	void remove(const class HotSpot&);
 	void unique();
 	void merge(class list<HotSpot>&);
@@ -1416,16 +1416,16 @@ class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 protected:
 	struct list<Shortcut>::list_node* node;
 public:
-	void list<Shortcut>::iterator();
+	void iterator();
 protected:
-	void list<Shortcut>::iterator(struct list<Shortcut>::list_node*);
+	void iterator(struct list<Shortcut>::list_node*);
 public:
 	int32_t operator==(const class list<Shortcut>::iterator&);
 	struct Shortcut& operator*();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
-	class list<Shortcut>::iterator list<Shortcut>::iterator(int32_t);
-	class list<Shortcut>::iterator& list<Shortcut>::iterator();
+	class list<Shortcut>::iterator operator++(int32_t);
+	class list<Shortcut>::iterator& operator++();
+	class list<Shortcut>::iterator operator--(int32_t);
+	class list<Shortcut>::iterator& operator--();
 };
 
 // Type: class list<StringIDAssociation>::iterator (forward reference);
@@ -1434,16 +1434,16 @@ class list<StringIDAssociation>::iterator : public bidirectional_iterator<String
 protected:
 	struct list<StringIDAssociation>::list_node* node;
 public:
-	void list<StringIDAssociation>::iterator();
+	void iterator();
 protected:
-	void list<StringIDAssociation>::iterator(struct list<StringIDAssociation>::list_node*);
+	void iterator(struct list<StringIDAssociation>::list_node*);
 public:
 	int32_t operator==(const class list<StringIDAssociation>::iterator&);
 	struct StringIDAssociation& operator*();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-	class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-	class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
+	class list<StringIDAssociation>::iterator operator++(int32_t);
+	class list<StringIDAssociation>::iterator& operator++();
+	class list<StringIDAssociation>::iterator operator--(int32_t);
+	class list<StringIDAssociation>::iterator& operator--();
 };
 
 // Type: class list<StringIDAssociation> (forward reference);
@@ -1494,33 +1494,33 @@ protected:
 	protected:
 		struct list<StringIDAssociation>::list_node* node;
 	public:
-		void list<StringIDAssociation>::iterator();
+		void iterator();
 	protected:
-		void list<StringIDAssociation>::iterator(struct list<StringIDAssociation>::list_node*);
+		void iterator(struct list<StringIDAssociation>::list_node*);
 	public:
 		int32_t operator==(const class list<StringIDAssociation>::iterator&);
 		struct StringIDAssociation& operator*();
-		class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-		class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
-		class list<StringIDAssociation>::iterator list<StringIDAssociation>::iterator(int32_t);
-		class list<StringIDAssociation>::iterator& list<StringIDAssociation>::iterator();
+		class list<StringIDAssociation>::iterator operator++(int32_t);
+		class list<StringIDAssociation>::iterator& operator++();
+		class list<StringIDAssociation>::iterator operator--(int32_t);
+		class list<StringIDAssociation>::iterator& operator--();
 	};
 	class list<StringIDAssociation>::const_iterator : public bidirectional_iterator<StringIDAssociation,int>
 	{
 	protected:
 		struct list<StringIDAssociation>::list_node* node;
 	public:
-		void list<StringIDAssociation>::const_iterator(const class list<StringIDAssociation>::iterator&);
-		void list<StringIDAssociation>::const_iterator();
+		void const_iterator(const class list<StringIDAssociation>::iterator&);
+		void const_iterator();
 	protected:
-		void list<StringIDAssociation>::const_iterator(struct list<StringIDAssociation>::list_node*);
+		void const_iterator(struct list<StringIDAssociation>::list_node*);
 	public:
 		int32_t operator==(const class list<StringIDAssociation>::const_iterator&);
 		const struct StringIDAssociation& operator*();
-		class list<StringIDAssociation>::const_iterator list<StringIDAssociation>::const_iterator(int32_t);
-		class list<StringIDAssociation>::const_iterator& list<StringIDAssociation>::const_iterator();
-		class list<StringIDAssociation>::const_iterator list<StringIDAssociation>::const_iterator(int32_t);
-		class list<StringIDAssociation>::const_iterator& list<StringIDAssociation>::const_iterator();
+		class list<StringIDAssociation>::const_iterator operator++(int32_t);
+		class list<StringIDAssociation>::const_iterator& operator++();
+		class list<StringIDAssociation>::const_iterator operator--(int32_t);
+		class list<StringIDAssociation>::const_iterator& operator--();
 	};
 	using const_reverse_iterator = class reverse_bidirectional_iterator<list<StringIDAssociation>::const_iterator,StringIDAssociation,StringIDAssociation const &,int>;
 	using reverse_iterator = class reverse_bidirectional_iterator<list<StringIDAssociation>::iterator,StringIDAssociation,StringIDAssociation &,int>;
@@ -1529,30 +1529,30 @@ public:
 	void list<StringIDAssociation>(const struct StringIDAssociation*, const struct StringIDAssociation*);
 	void list<StringIDAssociation>(uint32_t, const struct StringIDAssociation&);
 	void list<StringIDAssociation>();
-	class list<StringIDAssociation>::const_iterator list<StringIDAssociation>();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>();
-	class list<StringIDAssociation>::const_iterator list<StringIDAssociation>();
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>();
-	class reverse_bidirectional_iterator<list<StringIDAssociation>::const_iterator,StringIDAssociation,StringIDAssociation const &,int> list<StringIDAssociation>();
-	class reverse_bidirectional_iterator<list<StringIDAssociation>::iterator,StringIDAssociation,StringIDAssociation &,int> list<StringIDAssociation>();
-	class reverse_bidirectional_iterator<list<StringIDAssociation>::const_iterator,StringIDAssociation,StringIDAssociation const &,int> list<StringIDAssociation>();
-	class reverse_bidirectional_iterator<list<StringIDAssociation>::iterator,StringIDAssociation,StringIDAssociation &,int> list<StringIDAssociation>();
+	class list<StringIDAssociation>::const_iterator begin();
+	class list<StringIDAssociation>::iterator begin();
+	class list<StringIDAssociation>::const_iterator end();
+	class list<StringIDAssociation>::iterator end();
+	class reverse_bidirectional_iterator<list<StringIDAssociation>::const_iterator,StringIDAssociation,StringIDAssociation const &,int> rbegin();
+	class reverse_bidirectional_iterator<list<StringIDAssociation>::iterator,StringIDAssociation,StringIDAssociation &,int> rbegin();
+	class reverse_bidirectional_iterator<list<StringIDAssociation>::const_iterator,StringIDAssociation,StringIDAssociation const &,int> rend();
+	class reverse_bidirectional_iterator<list<StringIDAssociation>::iterator,StringIDAssociation,StringIDAssociation &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const struct StringIDAssociation& list<StringIDAssociation>();
-	struct StringIDAssociation& list<StringIDAssociation>();
-	const struct StringIDAssociation& list<StringIDAssociation>();
-	struct StringIDAssociation& list<StringIDAssociation>();
+	const struct StringIDAssociation& front();
+	struct StringIDAssociation& front();
+	const struct StringIDAssociation& back();
+	struct StringIDAssociation& back();
 	void swap(class list<StringIDAssociation>&);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, uint32_t, const struct StringIDAssociation&);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::const_iterator, class list<StringIDAssociation>::const_iterator);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, const struct StringIDAssociation*, const struct StringIDAssociation*);
-	class list<StringIDAssociation>::iterator list<StringIDAssociation>(class list<StringIDAssociation>::iterator, const struct StringIDAssociation&);
+	void insert(class list<StringIDAssociation>::iterator, uint32_t, const struct StringIDAssociation&);
+	void insert(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::const_iterator, class list<StringIDAssociation>::const_iterator);
+	void insert(class list<StringIDAssociation>::iterator, const struct StringIDAssociation*, const struct StringIDAssociation*);
+	class list<StringIDAssociation>::iterator insert(class list<StringIDAssociation>::iterator, const struct StringIDAssociation&);
 	void push_front(const struct StringIDAssociation&);
 	void push_back(const struct StringIDAssociation&);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator);
+	void erase(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator);
+	void erase(class list<StringIDAssociation>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<StringIDAssociation>();
@@ -1560,9 +1560,9 @@ public:
 protected:
 	void transfer(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator);
 public:
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&, class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&, class list<StringIDAssociation>::iterator);
-	void list<StringIDAssociation>(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&);
+	void splice(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&, class list<StringIDAssociation>::iterator, class list<StringIDAssociation>::iterator);
+	void splice(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&, class list<StringIDAssociation>::iterator);
+	void splice(class list<StringIDAssociation>::iterator, class list<StringIDAssociation>&);
 	void remove(const struct StringIDAssociation&);
 	void unique();
 	void merge(class list<StringIDAssociation>&);
@@ -1587,18 +1587,18 @@ class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bi
 protected:
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 public:
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+	void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
+	void const_iterator();
 protected:
-	void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+	void const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 public:
 	int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 	int32_t operator!=(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 	const long& operator*();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator++(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator++();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator--(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator--();
 };
 
 // Type: struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node (forward reference);
@@ -1651,12 +1651,12 @@ protected:
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* get_node();
 	void put_node(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* header;
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rb_tree<long,long,ident<long,long>,less<long>>();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& leftmost();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& leftmost();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rightmost();
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rightmost();
 	uint32_t node_count;
 	int32_t insert_always;
 	struct less<long> key_compare;
@@ -1682,34 +1682,34 @@ protected:
 	protected:
 		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 	public:
-		void rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+		void iterator();
 	protected:
-		void rb_tree<long,long,ident<long,long>,less<long>>::iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+		void iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 	public:
 		int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 		long& operator*();
-		class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-		class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
-		class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-		class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+		class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator++(int32_t);
+		class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator++();
+		class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator--(int32_t);
+		class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator--();
 	};
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 	{
 	protected:
 		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 	public:
-		void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
-		void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+		void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
+		void const_iterator();
 	protected:
-		void rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+		void const_iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 	public:
 		int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 		int32_t operator!=(const class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator&);
 		const long& operator*();
-		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
-		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>::const_iterator(int32_t);
-		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& rb_tree<long,long,ident<long,long>,less<long>>::const_iterator();
+		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator++(int32_t);
+		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator++();
+		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator operator--(int32_t);
+		class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator& operator--();
 	};
 	using reverse_iterator = class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::iterator,long,long &,int>;
 	using const_reverse_iterator = class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,long,long const &,int>;
@@ -1725,39 +1725,39 @@ public:
 	void ~rb_tree<long,long,ident<long,long>,less<long>>();
 	class rb_tree<long,long,ident<long,long>,less<long>>& operator=(const class rb_tree<long,long,ident<long,long>,less<long>>&);
 	struct less<long> key_comp();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>();
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>();
-	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,long,long const &,int> rb_tree<long,long,ident<long,long>,less<long>>();
-	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::iterator,long,long &,int> rb_tree<long,long,ident<long,long>,less<long>>();
-	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,long,long const &,int> rb_tree<long,long,ident<long,long>,less<long>>();
-	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::iterator,long,long &,int> rb_tree<long,long,ident<long,long>,less<long>>();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator begin();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator begin();
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator end();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator end();
+	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,long,long const &,int> rbegin();
+	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::iterator,long,long &,int> rbegin();
+	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,long,long const &,int> rend();
+	class reverse_bidirectional_iterator<rb_tree<long,long,ident<long,long>,less<long>>::iterator,long,long &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
 	void swap(class rb_tree<long,long,ident<long,long>,less<long>>&);
 	using pair_iterator_bool = struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int>;
 public:
-	void rb_tree<long,long,ident<long,long>,less<long>>(long *, long *);
-	void rb_tree<long,long,ident<long,long>,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, const long&);
-	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int> rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	void rb_tree<long,long,ident<long,long>,less<long>>(long *, long *);
-	void rb_tree<long,long,ident<long,long>,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
-	uint32_t rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	void rb_tree<long,long,ident<long,long>,less<long>>(class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
+	void insert(long *, long *);
+	void insert(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator insert(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, const long&);
+	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int> insert(const long&);
+	void erase(long *, long *);
+	void erase(class rb_tree<long,long,ident<long,long>,less<long>>::iterator, class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
+	uint32_t erase(const long&);
+	void erase(class rb_tree<long,long,ident<long,long>,less<long>>::iterator);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator find(const long&);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator find(const long&);
 	uint32_t count(const long&);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>(const long&);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator lower_bound(const long&);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator lower_bound(const long&);
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator upper_bound(const long&);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator upper_bound(const long&);
 	using pair_iterator_iterator = struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,rb_tree<long,long,ident<long,long>,less<long>>::iterator>;
 public:
-	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,rb_tree<long,long,ident<long,long>,less<long>>::const_iterator> rb_tree<long,long,ident<long,long>,less<long>>(const long&);
-	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,rb_tree<long,long,ident<long,long>,less<long>>::iterator> rb_tree<long,long,ident<long,long>,less<long>>(const long&);
+	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,rb_tree<long,long,ident<long,long>,less<long>>::const_iterator> equal_range(const long&);
+	struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,rb_tree<long,long,ident<long,long>,less<long>>::iterator> equal_range(const long&);
 	using pair_citerator_citerator = struct pair<rb_tree<long,long,ident<long,long>,less<long>>::const_iterator,rb_tree<long,long,ident<long,long>,less<long>>::const_iterator>;
 public:
 	void rotate_left(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
@@ -1770,16 +1770,16 @@ class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirect
 protected:
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 public:
-	void rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+	void iterator();
 protected:
-	void rb_tree<long,long,ident<long,long>,less<long>>::iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+	void iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 public:
 	int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	long& operator*();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator++(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator++();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator--(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator--();
 };
 
 // Type: char[4096];
@@ -1804,16 +1804,16 @@ class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirect
 protected:
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
 public:
-	void rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+	void iterator();
 protected:
-	void rb_tree<long,long,ident<long,long>,less<long>>::iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
+	void iterator(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 public:
 	int32_t operator==(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	long& operator*();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator rb_tree<long,long,ident<long,long>,less<long>>::iterator(int32_t);
-	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& rb_tree<long,long,ident<long,long>,less<long>>::iterator();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator++(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator++();
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator operator--(int32_t);
+	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator--();
 };
 
 // Type: struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int> (forward reference);

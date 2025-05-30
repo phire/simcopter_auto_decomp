@@ -48,8 +48,8 @@ public:
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void PFile(long);
-	long PFile();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();
@@ -141,8 +141,8 @@ public:
 	int32_t Close();
 	int32_t GetHandle();
 	long Position();
-	void PFile(long);
-	long PFile();
+	void Length(long);
+	long Length();
 	long Seek(long, int32_t);
 	long SeekToBegin();
 	long SeekToEnd();

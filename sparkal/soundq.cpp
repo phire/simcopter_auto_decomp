@@ -115,71 +115,71 @@ protected:
 	using baggage_type = struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
-	class basic_string<char>& basic_string<char>(char);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&);
+	class basic_string<char>& operator=(char);
+	class basic_string<char>& operator=(char *);
+	class basic_string<char>& operator=(const class basic_string<char>&);
+	class basic_string<char>& operator+=(char);
+	class basic_string<char>& operator+=(char *);
+	class basic_string<char>& operator+=(const class basic_string<char>&);
 	class vector<char> operator class vector<char>();
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(char, uint32_t);
-	class basic_string<char>& basic_string<char>(char *);
-	class basic_string<char>& basic_string<char>(char *, uint32_t);
-	class basic_string<char>& basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& append(char, uint32_t);
+	class basic_string<char>& append(char *);
+	class basic_string<char>& append(char *, uint32_t);
+	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& assign(char, uint32_t);
+	class basic_string<char>& assign(char *);
+	class basic_string<char>& assign(char *, uint32_t);
+	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& insert(uint32_t, char, uint32_t);
+	class basic_string<char>& insert(uint32_t, char *);
+	class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& basic_string<char>(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
-	char& basic_string<char>(uint32_t);
-	char basic_string<char>(uint32_t);
+	char& operator[](uint32_t);
+	char operator[](uint32_t);
 	char * c_str();
 	char * data();
 	uint32_t length();
-	void basic_string<char>(uint32_t);
-	void basic_string<char>(uint32_t, char);
-	void basic_string<char>(uint32_t);
-	uint32_t basic_string<char>();
+	void resize(uint32_t);
+	void resize(uint32_t, char);
+	void reserve(uint32_t);
+	uint32_t reserve();
 	uint32_t copy(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
-	uint32_t basic_string<char>(char, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t);
-	uint32_t basic_string<char>(char *, uint32_t, uint32_t);
-	uint32_t basic_string<char>(const class basic_string<char>&, uint32_t);
+	uint32_t find(char, uint32_t);
+	uint32_t find(char *, uint32_t);
+	uint32_t find(char *, uint32_t, uint32_t);
+	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(char, uint32_t);
+	uint32_t rfind(char *, uint32_t);
+	uint32_t rfind(char *, uint32_t, uint32_t);
+	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(char, uint32_t);
+	uint32_t find_first_of(char *, uint32_t);
+	uint32_t find_first_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(char, uint32_t);
+	uint32_t find_last_of(char *, uint32_t);
+	uint32_t find_last_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(char, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t);
+	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_not_of(char, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t);
+	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
+	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
 	class basic_string<char> substr(uint32_t, uint32_t);
-	int32_t basic_string<char>(char, uint32_t, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t);
-	int32_t basic_string<char>(char *, uint32_t, uint32_t);
-	int32_t basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(char, uint32_t, uint32_t);
+	int32_t compare(char *, uint32_t);
+	int32_t compare(char *, uint32_t, uint32_t);
+	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: char *;
@@ -188,11 +188,11 @@ public:
 class DigitalSoundQueueItem : public SoundQueueItem
 {
 public:
-	void DigitalSoundQueueItem(class Sound*, char *, long, int32_t);
-	void DigitalSoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t);
-	void DigitalSoundQueueItem(class Sound*, long, long, int32_t);
-	void DigitalSoundQueueItem(class Sound*, long, int32_t);
-	void DigitalSoundQueueItem();
+	void SoundQueueItem(class Sound*, char *, long, int32_t);
+	void SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t);
+	void SoundQueueItem(class Sound*, long, long, int32_t);
+	void SoundQueueItem(class Sound*, long, int32_t);
+	void SoundQueueItem();
 	class Sound* mySound;
 	long lSoundResourceID;
 	class basic_string<char> sSoundFile;
@@ -214,8 +214,8 @@ public:
 	intro void DeInitialize(int32_t);
 	// vtable: 8
 	intro void ClearQueue(int32_t);
-	class SoundQueue& SoundQueue(struct SoundQueueItem*);
-	class SoundQueue& SoundQueue(class Sound*);
+	class SoundQueue& operator+=(struct SoundQueueItem*);
+	class SoundQueue& operator+=(class Sound*);
 	// vtable: 12
 	intro int32_t StartPauseCallback(long);
 	// vtable: 16
@@ -253,16 +253,16 @@ class list<SoundQueueItem *>::iterator : public bidirectional_iterator<SoundQueu
 protected:
 	struct list<SoundQueueItem *>::list_node* node;
 public:
-	void list<SoundQueueItem *>::iterator();
+	void iterator();
 protected:
-	void list<SoundQueueItem *>::iterator(struct list<SoundQueueItem *>::list_node*);
+	void iterator(struct list<SoundQueueItem *>::list_node*);
 public:
 	int32_t operator==(const class list<SoundQueueItem *>::iterator&);
 	struct SoundQueueItem*& operator*();
-	class list<SoundQueueItem *>::iterator list<SoundQueueItem *>::iterator(int32_t);
-	class list<SoundQueueItem *>::iterator& list<SoundQueueItem *>::iterator();
-	class list<SoundQueueItem *>::iterator list<SoundQueueItem *>::iterator(int32_t);
-	class list<SoundQueueItem *>::iterator& list<SoundQueueItem *>::iterator();
+	class list<SoundQueueItem *>::iterator operator++(int32_t);
+	class list<SoundQueueItem *>::iterator& operator++();
+	class list<SoundQueueItem *>::iterator operator--(int32_t);
+	class list<SoundQueueItem *>::iterator& operator--();
 };
 
 // Type: uint32_t;

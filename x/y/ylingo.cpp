@@ -423,8 +423,8 @@ public:
 	// vtable: 0
 	intro const struct Behavior::Node* GetNodeRef(short, short);
 	// vtable: 4
-	intro void Behavior(short, short, unsigned char *);
-	void Behavior(struct Behavior::Node*, unsigned char *);
+	intro void GetNodeText(short, short, unsigned char *);
+	void GetNodeText(struct Behavior::Node*, unsigned char *);
 	// vtable: 8
 	intro void GetTreeName(short, unsigned char *);
 	short CountPrimitives();

@@ -43,9 +43,9 @@ public:
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
 	// vtable: 4
-	intro long ResFile(unsigned char *);
+	intro long Open(unsigned char *);
 	// vtable: 8
-	intro long ResFile(char *);
+	intro long Open(char *);
 	// vtable: 12
 	intro long Close();
 	void OpenFromOtherFile(class FlatFile*);
@@ -70,8 +70,8 @@ public:
 	virtual void ~FlatResFile();
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long ResFile(unsigned char *);
-	virtual long ResFile(char *);
+	virtual long Open(unsigned char *);
+	virtual long Open(char *);
 	long OpenFromName();
 	virtual long Close();
 	short CountTypes();

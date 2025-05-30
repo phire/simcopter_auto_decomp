@@ -21,9 +21,9 @@ public:
 	// vtable: 16
 	intro void FadeToBlack(long);
 	// vtable: 20
-	intro void SparkalPalette(struct SparkalColor, long, long);
+	intro void FadeToPalette(struct SparkalColor, long, long);
 	// calltype: NearC
-	static void SparkalPalette(struct SparkalColor, struct SparkalColor*, long, long);
+	static void FadeToPalette(struct SparkalColor, struct SparkalColor*, long, long);
 	void FadeToRGB(struct SparkalColor&, long);
 	// calltype: NearC
 	static void SetSystemPaletteEntriesToRGB(struct SparkalColor&);
@@ -99,8 +99,8 @@ public:
 	struct SparkalColor* pColors;
 	long lColors;
 	int32_t bOwnColors;
-	void CopterSparkalPalette(struct SparkalColor*, int32_t, unsigned long);
-	void CopterSparkalPalette();
+	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
+	void SparkalPalette();
 	// vtable: 0
 	intro void ~SparkalPalette();
 	void GetRGBValue(int32_t, struct SparkalColor&);
