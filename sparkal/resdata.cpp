@@ -40,14 +40,6 @@ protected:
 // Contribution: 1:000467b0-00046b55 Module: 49, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004477b0
 void ResourceRCData::ResourceRCData() {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -65,23 +57,10 @@ void ResourceRCData::ResourceRCData() {
 // LINE 27:
 	__asm        jmp    near ptr 0x00447806;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044780e
 void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, nTheResource;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -110,23 +89,10 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 // LINE 47:
 	__asm        jmp    near ptr 0x00447876;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00447880
 void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 55:
@@ -178,23 +144,10 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // Block end:
 	__asm        jmp    near ptr 0x00447912;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044791c
 void ResourceRCData::~ResourceRCData() {
-// LINE 72:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 73:
@@ -202,23 +155,10 @@ void ResourceRCData::~ResourceRCData() {
 	__asm        call   0x004479EA;
 // LINE 74:
 	__asm        jmp    near ptr 0x0044793E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447943
 class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 82:
 	__asm        mov    eax, resData;
 	__asm        cmp    this, eax;
@@ -276,23 +216,10 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x004479E3;
 // LINE 97:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004479ea
 void ResourceRCData::Reset() {
-// LINE 104:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 106:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -333,23 +260,10 @@ void ResourceRCData::Reset() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 116:
 	__asm        jmp    near ptr 0x00447A6F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447a74
 unsigned long ResourceRCData::DataSize() {
-// LINE 130:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 132:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -367,23 +281,10 @@ unsigned long ResourceRCData::DataSize() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00447AAD;
 // LINE 136:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447ab2
 int32_t ResourceRCData::ReadResource() {
-// LINE 143:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 145:
 	__asm        push   0xA;
 	__asm        mov    eax, this;
@@ -428,33 +329,15 @@ int32_t ResourceRCData::ReadResource() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00447B35;
 // LINE 155:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447b3a
 char * ResourceRCData::DataReference() {
-// LINE 161:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x00447B51;
 // LINE 163:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

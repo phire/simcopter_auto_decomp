@@ -242,67 +242,31 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052b0c0
 void $E8() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0052B0DA;
 	__asm        call   0x0052B0F9;
 	__asm        jmp    near ptr 0x0052B0D5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052b0da
 void $E4() {
-// LINE 144:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x62B6E8], 0x593220;
 	__asm        jmp    near ptr 0x0052B0EF;
 	__asm        jmp    near ptr 0x0052B0F4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052b0f9
 void $E7() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x52B116;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052B111;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052b116
 void $E5() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B7B0];
 	__asm        test   al, 1;
@@ -314,25 +278,12 @@ void $E5() {
 	__asm        mov    ecx, 0x62B6E8;
 	__asm        call   0x0052B216;
 	__asm        jmp    near ptr 0x0052B148;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b14d
 void PlaneClass::PlaneClass(long mapx, long mapy) {
 	int32_t currentFlag;
 
-// LINE 174:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593220;
 // LINE 177:
@@ -391,23 +342,10 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 // LINE 205:
 	__asm        jmp    near ptr 0x0052B20C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052b216
 void PlaneClass::~PlaneClass() {
-// LINE 224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593220;
 // LINE 229:
@@ -433,21 +371,10 @@ void PlaneClass::~PlaneClass() {
 	__asm        mov    byte ptr [eax+4], 0;
 // LINE 246:
 	__asm        jmp    near ptr 0x0052B26E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b273
 class PlaneClass* PlaneClass::GetPlanePointer(long index) {
-// LINE 265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 266:
 	__asm        cmp    index, 2;
 	__asm        jl     near ptr 0x0052B28A;
@@ -459,21 +386,10 @@ class PlaneClass* PlaneClass::GetPlanePointer(long index) {
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        jmp    near ptr 0x0052B299;
 // LINE 270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b29e
 class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
-// LINE 289:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 290:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -483,24 +399,12 @@ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052B2B9;
 // LINE 328:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b2be
 class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
 	class PlaneClass* newplane;
 
-// LINE 350:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 353:
 	__asm        push   0xBC;
 	__asm        call   0x0056A600;
@@ -549,23 +453,10 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052B359;
 // LINE 377:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b35e
 int32_t PlaneClass::Initialize(int32_t instanceID) {
-// LINE 452:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 453:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -579,24 +470,12 @@ int32_t PlaneClass::Initialize(int32_t instanceID) {
 	__asm        call   0x0052D456;
 	__asm        jmp    near ptr 0x0052B389;
 // LINE 454:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052b390
 void PlaneClass::ResetAll() {
 	int32_t currentPlaneIndex;
 
-// LINE 477:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 498:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    near ptr 0x0052B3A8;
@@ -611,24 +490,12 @@ void PlaneClass::ResetAll() {
 	__asm        jmp    near ptr 0x0052B3A5;
 // LINE 503:
 	__asm        jmp    near ptr 0x0052B3CB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b3d0
 void PlaneClass::ItterateAll() {
 	int32_t currentPlaneIndex;
 
-// LINE 527:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 548:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    near ptr 0x0052B3E8;
@@ -643,24 +510,12 @@ void PlaneClass::ItterateAll() {
 	__asm        jmp    near ptr 0x0052B3E5;
 // LINE 553:
 	__asm        jmp    near ptr 0x0052B40B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b410
 int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	int32_t currentPlaneIndex;
 
-// LINE 577:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 580:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    near ptr 0x0052B428;
@@ -709,23 +564,10 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052B4D0;
 // LINE 592:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b4d5
 void PlaneClass::Itterate() {
-// LINE 611:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 614:
 	__asm        jmp    near ptr 0x0052B4E6;
 	__asm        mov    eax, this;
@@ -840,23 +682,10 @@ void PlaneClass::Itterate() {
 	__asm        jmp    near ptr 0x0052B640;
 // LINE 669:
 	__asm        jmp    near ptr 0x0052B645;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b64a
 void PlaneClass::Reset() {
-// LINE 688:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 689:
 	__asm        mov    ecx, this;
 	__asm        call   0x0052D411;
@@ -895,11 +724,6 @@ void PlaneClass::Reset() {
 	__asm        mov    dword ptr [eax+0x50], 0;
 // LINE 704:
 	__asm        jmp    near ptr 0x0052B6CB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b6d0
@@ -908,14 +732,6 @@ void PlaneClass::PlaneSoundDriver() {
 	struct Point3d vec;
 	int32_t dist;
 
-// LINE 745:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 750:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
@@ -1159,23 +975,10 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        add    esp, 4;
 // LINE 852:
 	__asm        jmp    near ptr 0x0052B99E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b9a3
 void PlaneClass::ItterateFSM() {
-// LINE 871:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 872:
 	__asm        mov    ecx, this;
 	__asm        call   0x0052BDAD;
@@ -1281,25 +1084,12 @@ void PlaneClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x0052BAD7;
 // LINE 932:
 	__asm        jmp    near ptr 0x0052BAF0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052baf5
 void PlaneClass::AdjustSpeed() {
 	static const int32_t speedAdjustor = { /* <data@0x005b769c> */ };
 
-// LINE 951:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 954:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -1313,53 +1103,22 @@ void PlaneClass::AdjustSpeed() {
 	__asm        mov    dword ptr [eax+0x18], 1;
 // LINE 960:
 	__asm        jmp    near ptr 0x0052BB29;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052bb2e
 enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
-// LINE 980:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1000:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052BB41;
 // LINE 1001:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052bb46
 enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct Point2d& __formal, const struct Point3d& collisionPoint) {
-// LINE 1020:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1160:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052BB59;
 // LINE 1161:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052bb60
@@ -1372,14 +1131,6 @@ void PlaneClass::SetCrashWhenReady() {
 	int32_t x;
 	int32_t dist;
 
-// LINE 1178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1186:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
@@ -1569,11 +1320,6 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        jmp    near ptr 0x0052BDA3;
 // LINE 1258:
 	__asm        jmp    near ptr 0x0052BDA8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052bdad
@@ -1581,14 +1327,6 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 	int32_t deltaY;
 	int32_t deltaX;
 
-// LINE 1277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1281:
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
@@ -1661,55 +1399,24 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052BE95;
 // LINE 1323:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052be9a
 void PlaneClass::SlowDown() {
-// LINE 1341:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1342:
 	__asm        mov    eax, this;
 	__asm        sub    dword ptr [eax+0x18], 0x20000;
 // LINE 1343:
 	__asm        jmp    near ptr 0x0052BEB5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052beba
 void PlaneClass::Stop() {
-// LINE 1362:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1363:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 1364:
 	__asm        jmp    near ptr 0x0052BED5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052beda
@@ -1720,14 +1427,6 @@ void PlaneClass::MoveForward() {
 	struct Point3d newloc;
 	int32_t dist;
 
-// LINE 1383:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1390:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -1966,11 +1665,6 @@ void PlaneClass::MoveForward() {
 	__asm        mov    [ecx+8], eax;
 // LINE 1465:
 	__asm        jmp    near ptr 0x0052C19E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052c1a3
@@ -1993,14 +1687,6 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	struct Point3d* norm;
 	int32_t speed;
 
-// LINE 1475:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xEC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1490:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -2678,23 +2364,10 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052CA22;
 // LINE 1744:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052ca29
 int32_t PlaneClass::HaveIReachedNextLoc() {
-// LINE 1764:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1765:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2708,23 +2381,10 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052CA58;
 // LINE 1773:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ca5d
 int32_t PlaneClass::AmIInANewCell() {
-// LINE 1791:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1797:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x70];
@@ -2757,25 +2417,12 @@ int32_t PlaneClass::AmIInANewCell() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052CAC6;
 // LINE 1808:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052cacb
 void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 1827:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1830:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -2854,25 +2501,12 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 // LINE 1856:
 // Block end:
 	__asm        jmp    near ptr 0x0052CBDA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052cbe1
 void PlaneClass::LinkToCell(const struct Point2d& point) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 1875:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1878:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -2920,11 +2554,6 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1884:
 	__asm        jmp    near ptr 0x0052CC96;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052cc9d
@@ -2932,14 +2561,6 @@ void PlaneClass::AdjustCurrentPosition() {
 	struct _CELL_INFO* cellPointer;
 	int32_t alt;
 
-// LINE 1904:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1905:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -3011,11 +2632,6 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        add    [ecx+0x74], eax;
 // LINE 1923:
 	__asm        jmp    near ptr 0x0052CD9C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052cda1
@@ -3024,14 +2640,6 @@ void PlaneClass::AdjustNextPosition() {
 	struct Point3d nextFineLocation;
 	int32_t mat[4][4];
 
-// LINE 1943:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1944:
 	__asm        mov    eax, ds:[0x6BF18C];
 	__asm        and    eax, 0xFF;
@@ -3129,11 +2737,6 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        add    esp, 8;
 // LINE 1967:
 	__asm        jmp    near ptr 0x0052CEE0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052cee5
@@ -3145,14 +2748,6 @@ void PlaneClass::AdjustNextAltitude() {
 	struct Point3d loc;
 	int32_t mat[4][4];
 
-// LINE 1986:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1995:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
@@ -3286,11 +2881,6 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        mov    dword ptr [eax+0x14], 0x200000;
 // LINE 2034:
 	__asm        jmp    near ptr 0x0052D086;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d08b
@@ -3309,14 +2899,6 @@ void PlaneClass::BeamToWithinCameraRange() {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 2054:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2057:
 	__asm        mov    curr_dist, 0;
 // LINE 2058:
@@ -3613,23 +3195,10 @@ foundCell:
 // LINE 2213:
 	__asm        jmp    near ptr 0x0052D40C;
 	__asm        jmp    near ptr 0x0052D352;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d411
 void PlaneClass::UnPlacePlane() {
-// LINE 2233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2236:
 	__asm        jmp    near ptr 0x0052D422;
 	__asm        mov    eax, this;
@@ -3648,11 +3217,6 @@ void PlaneClass::UnPlacePlane() {
 	__asm        mov    byte ptr [eax+5], 0;
 // LINE 2241:
 	__asm        jmp    near ptr 0x0052D451;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d456
@@ -3660,14 +3224,6 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	int32_t object;
 	struct VRObjInfo objectInfo;
 
-// LINE 2267:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2272:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
@@ -3817,25 +3373,12 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052D611;
 // LINE 2454:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0052d618
 void PlaneClass::HandleUFOStuff() {
 	struct Point3d vec;
 
-// LINE 2473:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2477:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
@@ -3889,21 +3432,10 @@ void PlaneClass::HandleUFOStuff() {
 	__asm        add    esp, 0x20;
 // LINE 2506:
 	__asm        jmp    near ptr 0x0052D6B8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d6bd
 void CreatePlaneInstance(int32_t instanceID) {
-// LINE 2553:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2554:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -3911,21 +3443,10 @@ void CreatePlaneInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 // LINE 2555:
 	__asm        jmp    near ptr 0x0052D6D4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d6d9
 int32_t S3PlaneCrashWhenReady(long mission_id) {
-// LINE 2573:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2574:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
@@ -3933,60 +3454,26 @@ int32_t S3PlaneCrashWhenReady(long mission_id) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052D6F0;
 // LINE 2575:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d6f5
 void ResetAllPlanes() {
-// LINE 2596:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2597:
 	__asm        call   0x0052B390;
 // LINE 2598:
 	__asm        jmp    near ptr 0x0052D705;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d70a
 void ItterateAllPlanes() {
-// LINE 2619:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2620:
 	__asm        call   0x0052B3D0;
 // LINE 2621:
 	__asm        jmp    near ptr 0x0052D71A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d71f
 void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
-// LINE 2632:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2635:
 	__asm        mov    eax, hitter_type;
 	__asm        mov    [ebp-0x18], eax;
@@ -4162,21 +3649,10 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        (bad);
 // LINE 2698:
 	__asm        jmp    near ptr 0x0052D970;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d975
 void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
-// LINE 2707:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2708:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
@@ -4192,11 +3668,6 @@ void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        add    esp, 0x14;
 // LINE 2709:
 	__asm        jmp    near ptr 0x0052D99C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052d9a1
@@ -4206,14 +3677,6 @@ void PlaneClass::TurnOnShields() {
 	int32_t face;
 	struct VRObjInfo oinfo;
 
-// LINE 2722:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2728:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -4265,11 +3728,6 @@ void PlaneClass::TurnOnShields() {
 	__asm        jmp    near ptr 0x0052D9DE;
 // LINE 2740:
 	__asm        jmp    near ptr 0x0052DA37;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052da3c
@@ -4279,14 +3737,6 @@ void PlaneClass::TurnOffShields() {
 	int32_t face;
 	struct VRObjInfo oinfo;
 
-// LINE 2744:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2750:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -4340,21 +3790,10 @@ void PlaneClass::TurnOffShields() {
 	__asm        jmp    near ptr 0x0052DA79;
 // LINE 2762:
 	__asm        jmp    near ptr 0x0052DAD6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052dadb
 int32_t S3PlaneMIFFLoad(void * __ptr32 miffReader) {
-// LINE 2772:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2773:
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -4362,21 +3801,10 @@ int32_t S3PlaneMIFFLoad(void * __ptr32 miffReader) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052DAF2;
 // LINE 2774:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052daf7
 int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
-// LINE 2785:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2786:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -4384,11 +3812,6 @@ int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052DB0E;
 // LINE 2787:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052db13
@@ -4397,13 +3820,6 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t ret;
 	class PlaneClass* p;
 
-// LINE 2797:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2805:
 	__asm        push   0xBC;
 	__asm        push   0x62B6E8;
@@ -4563,11 +3979,6 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052DCED;
 // LINE 2846:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052dcf2
@@ -4575,13 +3986,6 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	int32_t i;
 	int32_t ret;
 
-// LINE 2856:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2859:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0052DD0A;
@@ -4611,11 +4015,6 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052DD58;
 // LINE 2869:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

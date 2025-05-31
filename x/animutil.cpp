@@ -75,12 +75,6 @@ public:
 // Contribution: 1:00161610-00162e95 Module: 187, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562610
 void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* childaxis) {
-// LINE 46:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 47:
 	__asm        mov    eax, childaxis;
 	__asm        push   eax;
@@ -125,21 +119,10 @@ void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* child
 	__asm        jmp    near ptr 0x00562693;
 // LINE 48:
 	__asm        jmp    near ptr 0x00562698;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056269d
 void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin, struct DXZY* maj, struct DXZY* min, float majrad, float minrad) {
-// LINE 51:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 52:
 	__asm        mov    eax, maj;
 	__asm        push   eax;
@@ -176,21 +159,10 @@ void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin,
 	__asm        add    esp, 0x1C;
 // LINE 54:
 	__asm        jmp    near ptr 0x005626F0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005626f5
 unsigned short PutInPerspective(struct DXZY* xzy, short cH) {
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 59:
 	__asm        mov    eax, xzy;
 	__asm        fld    dword ptr [eax+8];
@@ -225,24 +197,12 @@ unsigned short PutInPerspective(struct DXZY* xzy, short cH) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x00562761;
 // LINE 64:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562766
 unsigned short PutInPerspective(struct XZY* xzy, short cH) {
 	struct DXZY dxzy;
 
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 68:
 	__asm        mov    eax, xzy;
 	__asm        movsx  eax, word ptr [eax];
@@ -290,11 +250,6 @@ unsigned short PutInPerspective(struct XZY* xzy, short cH) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005627FD;
 // LINE 73:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562802
@@ -305,13 +260,6 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	float x;
 	struct DXZY transformed;
 
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        push   0x8C085;
 	__asm        push   0x5BECD8;
@@ -387,21 +335,10 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        mov    [eax], ecx;
 // LINE 85:
 	__asm        jmp    near ptr 0x005628E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005628eb
 void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, float cosYangle, struct DXZY dpt, struct DXZY* transformed) {
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 94:
 	__asm        fld    dpt.x;
 	__asm        fmul   cosYangle;
@@ -438,21 +375,10 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 	__asm        fstp   dword ptr [eax+8];
 // LINE 99:
 	__asm        jmp    near ptr 0x0056294B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562950
 void TransformToAxes(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis, struct DXZY prist, struct DXZY* real) {
-// LINE 102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 103:
 	__asm        mov    eax, real;
 	__asm        mov    dword ptr [eax], 0;
@@ -534,24 +460,12 @@ void TransformToAxes(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis,
 	__asm        fstp   dword ptr [eax+8];
 // LINE 115:
 	__asm        jmp    near ptr 0x00562A2C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562a31
 void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis, struct DXZY* centeroffset, struct DXZY* dxzy) {
 	struct DXZY tf;
 
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 121:
 	__asm        lea    eax, tf.x;
 	__asm        push   eax;
@@ -609,24 +523,12 @@ void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* 
 	__asm        mov    [ecx+0xC], eax;
 // LINE 129:
 	__asm        jmp    near ptr 0x00562AC0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562ac5
 void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, float cosYangle, float scale, struct DXZY dpt, short * ptH, short * ptV, short * ptDepth, unsigned short perspective) {
 	struct DXZY transformed;
 
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 134:
 	__asm        lea    eax, transformed.x;
 	__asm        push   eax;
@@ -692,21 +594,10 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	__asm        mov    [ecx], ax;
 // LINE 146:
 	__asm        jmp    near ptr 0x00562B7D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562b82
 void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
-// LINE 151:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 152:
 	__asm        push   0x8C085;
 	__asm        push   0x5BED14;
@@ -735,21 +626,10 @@ void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
 	__asm        add    esp, 4;
 // LINE 156:
 	__asm        jmp    near ptr 0x00562BD6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562bdb
 void Keep0to2pi(float * radians) {
-// LINE 159:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 160:
 	__asm        mov    eax, radians;
 	__asm        fld    dword ptr [eax];
@@ -780,21 +660,10 @@ void Keep0to2pi(float * radians) {
 	__asm        jmp    near ptr 0x00562C0C;
 // LINE 164:
 	__asm        jmp    near ptr 0x00562C3C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c41
 void Keep0to2pi(struct Polar* polar) {
-// LINE 167:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 168:
 	__asm        mov    eax, polar;
 	__asm        push   eax;
@@ -814,21 +683,10 @@ void Keep0to2pi(struct Polar* polar) {
 	__asm        add    esp, 4;
 // LINE 171:
 	__asm        jmp    near ptr 0x00562C76;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c7b
 float Keep0to2pi(float radians) {
-// LINE 174:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 175:
 	__asm        lea    eax, radians;
 	__asm        push   eax;
@@ -838,21 +696,10 @@ float Keep0to2pi(float radians) {
 	__asm        fld    radians;
 	__asm        jmp    near ptr 0x00562C95;
 // LINE 177:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
 void IncrementFloat(struct Polar inc, struct Polar* partPolar) {
-// LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 181:
 	__asm        mov    eax, partPolar;
 	__asm        fld    dword ptr [eax];
@@ -878,24 +725,12 @@ void IncrementFloat(struct Polar inc, struct Polar* partPolar) {
 	__asm        add    esp, 4;
 // LINE 185:
 	__asm        jmp    near ptr 0x00562CDC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562ce1
 float my_acos(float x, float rad) {
 	float res;
 
-// LINE 188:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 190:
 	__asm        fld    rad;
 	__asm        fcomp  dword ptr ds:[0x593750];
@@ -973,41 +808,18 @@ float my_acos(float x, float rad) {
 	__asm        fld    res;
 	__asm        jmp    near ptr 0x00562DED;
 // LINE 204:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562df2
 void NormalizeTo1(struct DXZY* vec) {
-// LINE 207:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 209:
 	__asm        jmp    near ptr 0x00562DFD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562e02
 double GetLength(float x, float z, float y) {
 	double rad;
 
-// LINE 212:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 214:
 	__asm        fld    x;
 	__asm        fmul   x;
@@ -1032,11 +844,6 @@ double GetLength(float x, float z, float y) {
 // LINE 216:
 	__asm        jmp    near ptr 0x00562E4B;
 // LINE 217:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562e50
@@ -1045,13 +852,6 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 	float phi;
 	float psi;
 
-// LINE 224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 226:
 	__asm        lea    eax, junk;
 	__asm        push   eax;
@@ -1088,11 +888,6 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 	__asm        add    esp, 0x18;
 // LINE 228:
 	__asm        jmp    near ptr 0x00562EA6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00562eab
@@ -1103,13 +898,6 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	struct Point centerPt;
 	float ydist;
 
-// LINE 231:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 236:
 	__asm        lea    eax, phi;
 	__asm        push   eax;
@@ -1315,21 +1103,10 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        add    esp, 0x18;
 // LINE 265:
 	__asm        jmp    near ptr 0x005630CB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005630d0
 void DrawDirectionDisk(struct Point centerPt, struct DXZY unitvector, float rad) {
-// LINE 268:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 269:
 	__asm        push   0;
 	__asm        mov    eax, rad;
@@ -1352,11 +1129,6 @@ void DrawDirectionDisk(struct Point centerPt, struct DXZY unitvector, float rad)
 	__asm        add    esp, 0x18;
 // LINE 270:
 	__asm        jmp    near ptr 0x00563111;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563116
@@ -1367,13 +1139,6 @@ void DrawDirectionDisk(struct DXZY start, struct DXZY end) {
 	struct Point startpt;
 	float ydist;
 
-// LINE 273:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 274:
 	__asm        fld    start.z;
 	__asm        call   0x0056EBE8;
@@ -1435,64 +1200,26 @@ void DrawDirectionDisk(struct DXZY start, struct DXZY end) {
 	__asm        add    esp, 0x18;
 // LINE 279:
 	__asm        jmp    near ptr 0x005631CB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk(struct Point centerPt, float hdist, float vdist, float depth, float rad, unsigned short bigol) {
-// LINE 282:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 355:
 	__asm        jmp    near ptr 0x005631DB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631e0
 void Score(struct Point centerPt, struct Point leftOff, struct Point rightOff) {
-// LINE 357:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 370:
 	__asm        jmp    near ptr 0x005631EB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005631f0
 unsigned short DrawGrid(float phiOff, float psiOff, short cntrh, short cntrv, unsigned short persp, float scale, short thickness, unsigned long edgecolor, unsigned long hatchcolor, enum UseDrawGrid how, short pth, short ptv, short ptdepth) {
-// LINE 374:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 498:
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005631FF;
 // LINE 499:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563204
@@ -1503,13 +1230,6 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	float tauComp;
 	float psiComp;
 
-// LINE 508:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 509:
 	__asm        lea    edi, incFromParent.phi;
 	__asm        mov    esi, passedInc;
@@ -1702,11 +1422,6 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	__asm        fstp   dword ptr [eax+8];
 // LINE 565:
 	__asm        jmp    near ptr 0x0056341B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563420
@@ -1715,13 +1430,6 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	struct Polar polar;
 	struct Polar inc;
 
-// LINE 568:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 570:
 	__asm        mov    eax, phi;
 	__asm        mov    eax, [eax];
@@ -1790,22 +1498,10 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	__asm        mov    [eax], ecx;
 // LINE 580:
 	__asm        jmp    near ptr 0x005634F7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005634fc
 void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar* partPolar) {
-// LINE 583:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 584:
 	__asm        mov    eax, inc;
 	__asm        movsx  eax, word ptr [eax+0x12];
@@ -1986,21 +1682,10 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        add    esp, 4;
 // LINE 619:
 	__asm        jmp    near ptr 0x005636D0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005636d5
 void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
-// LINE 623:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 624:
 	__asm        mov    eax, polar;
 	__asm        movsx  eax, word ptr [eax+0x12];
@@ -2044,21 +1729,10 @@ void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        add    esp, 4;
 // LINE 628:
 	__asm        jmp    near ptr 0x00563747;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056374c
 void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
-// LINE 631:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 632:
 	__asm        mov    eax, polar;
 	__asm        fld    dword ptr [eax];
@@ -2105,21 +1779,10 @@ void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        add    esp, 4;
 // LINE 636:
 	__asm        jmp    near ptr 0x005637CE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005637d3
 void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs) {
-// LINE 639:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 640:
 	__asm        mov    eax, polar;
 	__asm        mov    word ptr [eax+0x14], 0;
@@ -2166,11 +1829,6 @@ void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs
 	__asm        add    esp, 0x10;
 // LINE 644:
 	__asm        jmp    near ptr 0x00563854;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563859
@@ -2182,13 +1840,6 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	float dtrq;
 	float dlat;
 
-// LINE 649:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 650:
 	__asm        movsx  eax, latincs;
 	__asm        mov    [ebp-0x20], eax;
@@ -2316,22 +1967,10 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        mov    word ptr [eax], 0;
 // LINE 670:
 	__asm        jmp    near ptr 0x005639CD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005639d2
 void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngincs, short trqincs, float * phi, float * psi, float * tau) {
-// LINE 673:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 674:
 	__asm        movsx  eax, lat;
 	__asm        mov    [ebp-4], eax;
@@ -2364,11 +2003,6 @@ void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngi
 	__asm        fstp   dword ptr [eax];
 // LINE 677:
 	__asm        jmp    near ptr 0x00563A3D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563a42
@@ -2378,13 +2012,6 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	float debugrad;
 	float debugpsi;
 
-// LINE 685:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 686:
 	__asm        mov    eax, phi;
 	__asm        mov    debugphi, eax;
@@ -2442,21 +2069,10 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        fstp   dword ptr [eax];
 // LINE 693:
 	__asm        jmp    near ptr 0x00563AE7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563aec
 void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
-// LINE 696:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 697:
 	__asm        mov    eax, dxzy;
 	__asm        add    eax, 8;
@@ -2478,11 +2094,6 @@ void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
 	__asm        add    esp, 0x18;
 // LINE 698:
 	__asm        jmp    near ptr 0x00563B22;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563b27
@@ -2492,13 +2103,6 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	float phi;
 	float psi;
 
-// LINE 702:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 703:
 	__asm        mov    eax, donttouch;
 	__asm        lea    ecx, dpt.x;
@@ -2593,11 +2197,6 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	__asm        mov    [ecx], ax;
 // LINE 717:
 	__asm        jmp    near ptr 0x00563C1B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563c20
@@ -2605,13 +2204,6 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	double rad;
 	double projrad;
 
-// LINE 740:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 741:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -2687,21 +2279,10 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        fstp   dword ptr [eax];
 // LINE 760:
 	__asm        jmp    near ptr 0x00563CF1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
 void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
-// LINE 763:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 764:
 	__asm        mov    eax, radius;
 	__asm        push   eax;
@@ -2723,11 +2304,6 @@ void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 766:
 	__asm        jmp    near ptr 0x00563D2E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563d33
@@ -2736,13 +2312,6 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 	float parPhiToZero;
 	struct Polar inc;
 
-// LINE 939:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 940:
 	__asm        lea    edi, parPolar.phi;
 	__asm        mov    esi, parentPolar;
@@ -2800,11 +2369,6 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 	__asm        fstp   parPolar.phi;
 // LINE 952:
 	__asm        jmp    near ptr 0x00563DCE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
@@ -2814,13 +2378,6 @@ void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* chil
 	float parY20;
 	struct Polar inc;
 
-// LINE 955:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 956:
 	__asm        lea    edi, parPolar.phi;
 	__asm        mov    esi, parentPolar;
@@ -2871,21 +2428,10 @@ void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* chil
 	__asm        add    esp, 8;
 // LINE 963:
 	__asm        jmp    near ptr 0x00563E62;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563e67
 unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
-// LINE 1815:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1816:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEEF4;
@@ -2897,11 +2443,6 @@ unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00563E91;
 // LINE 1820:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

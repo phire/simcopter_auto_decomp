@@ -498,14 +498,6 @@ public:
 // Contribution: 1:00099f80-0009d28b Module: 13, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049af80
 void UserMenuWindow::UserMenuWindow() {
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        push   0x10;
@@ -662,23 +654,10 @@ void UserMenuWindow::UserMenuWindow() {
 // LINE 40:
 	__asm        jmp    near ptr 0x0049B1F3;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049b1fb
 void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        add    eax, 0xC;
 	__asm        lea    ecx, [ebp-0x10];
@@ -1000,11 +979,6 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 // LINE 58:
 	__asm        jmp    near ptr 0x0049B66E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0049b678
@@ -1012,14 +986,6 @@ void UserMenuWindow::~UserMenuWindow() {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912F8;
 // LINE 68:
@@ -1142,11 +1108,6 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        jmp    near ptr 0x0049B84B;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049b858
@@ -1156,14 +1117,6 @@ int32_t UserMenuWindow::Initialize() {
 	int32_t i;
 	char szFullSoundPath[260];
 
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1CC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 89:
 	__asm        jmp    near ptr 0x0049B86F;
 	__asm        jmp    near ptr 0x0049B874;
@@ -1766,11 +1719,6 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049C3A8;
 // LINE 151:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049c3ad
@@ -1778,14 +1726,6 @@ int32_t UserMenuWindow::DrawSelf() {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 158:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 160:
 	__asm        jmp    near ptr 0x0049C3BE;
 	__asm        jmp    near ptr 0x0049C3C3;
@@ -1822,23 +1762,10 @@ int32_t UserMenuWindow::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049C437;
 // LINE 174:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049c43c
 int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
-// LINE 181:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 182:
 	__asm        cmp    nIndex, 0;
 	__asm        jl     near ptr 0x0049C47C;
@@ -1922,23 +1849,10 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049C554;
 // LINE 192:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049c55b
 int32_t UserMenuWindow::SetSelectionValue(int32_t nValue) {
-// LINE 197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 198:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -1954,30 +1868,12 @@ int32_t UserMenuWindow::SetSelectionValue(int32_t nValue) {
 	__asm        call   dword ptr [eax+0xC4];
 	__asm        jmp    near ptr 0x0049C58E;
 // LINE 200:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049c595
 void UserMenuWindow::DrawSelectionIndicators() {
-// LINE 210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 212:
 	__asm        jmp    near ptr 0x0049C5A6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049c5ab
@@ -1985,14 +1881,6 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 231:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 235:
 	__asm        mov    i, 0;
 	__asm        mov    eax, this;
@@ -2060,23 +1948,10 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049C6A6;
 // LINE 242:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049c6ad
 int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, class MPoint& ptPosition) {
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 249:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA4];
@@ -2094,11 +1969,6 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, class MPoint& ptPos
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049C6ED;
 // LINE 253:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049c6f4
@@ -2106,14 +1976,6 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 263:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 264:
 	__asm        mov    i, 0;
 // LINE 265:
@@ -2303,23 +2165,10 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049C9A0;
 // LINE 275:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049c9a7
 long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 281:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 282:
 	__asm        cmp    lKey, 0x28;
 	__asm        je     near ptr 0x0049C9C7;
@@ -2473,11 +2322,6 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049cb8d
@@ -2485,14 +2329,6 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	int32_t nIndex;
 	int32_t bExecute;
 
-// LINE 327:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 329:
 	__asm        mov    bExecute, 0;
 // LINE 331:
@@ -2536,25 +2372,12 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049CC13;
 // LINE 339:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049cc1a
 long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	int32_t nIndex;
 
-// LINE 346:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 349:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -2579,25 +2402,12 @@ long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049CC64;
 // LINE 352:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049cc6b
 int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 	long lValue;
 
-// LINE 359:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 360:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
@@ -2622,23 +2432,10 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049CCB4;
 // LINE 364:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ccbb
 void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 393:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -2660,23 +2457,10 @@ void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMen
 // LINE 394:
 	__asm        jmp    near ptr 0x0049CD0B;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0049cd15
 void CopterMainMenu::~CopterMainMenu() {
-// LINE 400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5913E0;
 // LINE 401:
@@ -2700,23 +2484,10 @@ void CopterMainMenu::~CopterMainMenu() {
 	__asm        jmp    near ptr 0x0049CD65;
 	__asm        mov    ecx, this;
 	__asm        call   0x0049B678;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049cd72
 int32_t CopterMainMenu::Initialize() {
-// LINE 411:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 413:
 	__asm        push   0x74;
 	__asm        call   0x0056A600;
@@ -2794,11 +2565,6 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0049CE96;
 // LINE 418:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ce9b
@@ -2806,14 +2572,6 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	class basic_string<char> sImagePath;
 	class basic_string<char> sImageFile;
 
-// LINE 425:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 426:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3173,23 +2931,10 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0049D3F6;
 // LINE 441:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049d3fd
 void CopterMainMenu::DestroyImage() {
-// LINE 446:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 447:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15A], 0;
@@ -3241,23 +2986,10 @@ void CopterMainMenu::DestroyImage() {
 	__asm        call   0x004A4CAB;
 // LINE 456:
 	__asm        jmp    near ptr 0x0049D4C4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049d4c9
 int32_t CopterMainMenu::DrawSelf() {
-// LINE 461:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 462:
 	__asm        mov    ecx, this;
 	__asm        call   0x0049C3AD;
@@ -3268,11 +3000,6 @@ int32_t CopterMainMenu::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049D4EF;
 // LINE 466:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049d4f4
@@ -3283,14 +3010,6 @@ void CopterMainMenu::DrawRatchetAndLights() {
 	class MRect rectRatchetsSource[5];
 	class MPoint ptRatchetsDestination[5];
 
-// LINE 472:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x118;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    dword ptr [ebp-0xF8], 5;
 	__asm        lea    eax, ptLightsDestination[0].x;
 	__asm        mov    [ebp-0xFC], eax;
@@ -3429,23 +3148,10 @@ void CopterMainMenu::DrawRatchetAndLights() {
 	__asm        jmp    near ptr 0x0049D6C3;
 // LINE 490:
 	__asm        jmp    near ptr 0x0049D73D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049d742
 void CopterMainMenu::GetCoordinatesForLights(class MPoint* ptDestinationArray, class MRect* rectSourceArray) {
-// LINE 501:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 502:
 	__asm        mov    eax, ptDestinationArray;
 	__asm        mov    dword ptr [eax], 0x14E;
@@ -3550,23 +3256,10 @@ void CopterMainMenu::GetCoordinatesForLights(class MPoint* ptDestinationArray, c
 	__asm        add    dword ptr [eax+ecx+8], 0x3C;
 // LINE 539:
 	__asm        jmp    near ptr 0x0049D8A4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049d8ab
 void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray, class MRect* rectSourceArray) {
-// LINE 545:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 546:
 	__asm        mov    eax, ptDestinationArray;
 	__asm        mov    dword ptr [eax], 0x21;
@@ -3671,23 +3364,10 @@ void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray,
 	__asm        add    dword ptr [eax+ecx+8], 0x27;
 // LINE 583:
 	__asm        jmp    near ptr 0x0049DA0D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049da14
 void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 604:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -3709,23 +3389,10 @@ void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMen
 // LINE 605:
 	__asm        jmp    near ptr 0x0049DA64;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0049da6e
 void CopterPlayMenu::~CopterPlayMenu() {
-// LINE 612:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5914C8;
 // LINE 613:
@@ -3735,23 +3402,10 @@ void CopterPlayMenu::~CopterPlayMenu() {
 	__asm        jmp    near ptr 0x0049DA90;
 	__asm        mov    ecx, this;
 	__asm        call   0x0049B678;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049da9d
 int32_t CopterPlayMenu::Initialize() {
-// LINE 621:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 622:
 	__asm        mov    ecx, this;
 	__asm        call   0x0049B858;
@@ -3763,11 +3417,6 @@ int32_t CopterPlayMenu::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0049DAC3;
 // LINE 624:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049dac8
@@ -3775,14 +3424,6 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	class basic_string<char> sImagePath;
 	class basic_string<char> sImageFile;
 
-// LINE 630:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 631:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -4152,23 +3793,10 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0049E048;
 // LINE 647:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049e04f
 void CopterPlayMenu::DestroyImage() {
-// LINE 652:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 653:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
@@ -4220,23 +3848,10 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        call   0x004A4CAB;
 // LINE 662:
 	__asm        jmp    near ptr 0x0049E116;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049e11b
 int32_t CopterPlayMenu::DrawSelf() {
-// LINE 667:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 668:
 	__asm        mov    ecx, this;
 	__asm        call   0x0049C3AD;
@@ -4247,11 +3862,6 @@ int32_t CopterPlayMenu::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049E141;
 // LINE 671:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049e146
@@ -4259,14 +3869,6 @@ void CopterPlayMenu::DrawRatchet() {
 	class MPoint ptDestinationRatchet;
 	class MPoint ptDestinationBackground;
 
-// LINE 677:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 678:
 	__asm        jmp    near ptr 0x0049E157;
 	__asm        mov    ptDestinationBackground.x, 0x1E;
@@ -4334,23 +3936,10 @@ void CopterPlayMenu::DrawRatchet() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 687:
 	__asm        jmp    near ptr 0x0049E221;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049e226
 void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
-// LINE 693:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 694:
 	__asm        mov    eax, ptDestination;
 	__asm        mov    dword ptr [eax], 0x1D;
@@ -4378,11 +3967,6 @@ void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 	__asm        mov    [ecx+4], eax;
 // LINE 699:
 	__asm        jmp    near ptr 0x0049E285;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 
@@ -4402,14 +3986,6 @@ void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 // Contribution: 1:0009d320-0009d359 Module: 13, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x0049e320
 int32_t UserMenuWindow::GetLineCount() {
-// LINE 218:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 219:
 	__asm        jmp    near ptr 0x0049E331;
 	__asm        jmp    near ptr 0x0049E336;
@@ -4421,11 +3997,6 @@ int32_t UserMenuWindow::GetLineCount() {
 	__asm        sar    eax, 2;
 	__asm        jmp    near ptr 0x0049E355;
 // LINE 220:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

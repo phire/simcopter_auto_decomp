@@ -260,14 +260,6 @@ public:
 // Contribution: 1:0015bb10-0015c4b2 Module: 194, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055cb10
 void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* startBehavior, short * autoStackArea) {
-// LINE 11:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ax, maxStackSize;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA], ax;
@@ -310,23 +302,10 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 // LINE 17:
 	__asm        jmp    near ptr 0x0055CB9B;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0055cba5
 void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
-// LINE 25:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ax, maxStackSize;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA], ax;
@@ -362,23 +341,10 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 // LINE 29:
 	__asm        jmp    near ptr 0x0055CC20;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055cc2a
 void TreeSim::~TreeSim() {
-// LINE 35:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593630;
 // LINE 36:
@@ -389,25 +355,12 @@ void TreeSim::~TreeSim() {
 	__asm        add    esp, 4;
 // LINE 37:
 	__asm        jmp    near ptr 0x0055CC53;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055cc58
 void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 	struct TreeSim::StackElem* bottom;
 
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -451,11 +404,6 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 	__asm        mov    word ptr [eax+4], 0;
 // LINE 54:
 	__asm        jmp    near ptr 0x0055CCE8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055ccef
@@ -463,14 +411,6 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	short stackSize;
 	class Behavior* curBeh;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 63:
 	__asm        jmp    near ptr 0x0055CD00;
 	__asm        mov    eax, this;
@@ -563,23 +503,10 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x0055CE32;
 // LINE 71:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055ce37
 unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short treeID) {
-// LINE 83:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 84:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -666,11 +593,6 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055CF30;
 // LINE 106:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0055cf37
@@ -680,14 +602,6 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	const struct Behavior::Node* node;
 	enum TreeSim::ReturnCode result;
 
-// LINE 114:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 120:
 	__asm        mov    done, 0;
 // LINE 123:
@@ -893,11 +807,6 @@ tree_error:
 	__asm        jmp    near ptr 0x0055D19F;
 	__asm        jmp    near ptr 0x0055D19F;
 	__asm        jmp    near ptr 0x0055D19F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055d1c3
@@ -907,14 +816,6 @@ char TreeSim::NodeComplete(unsigned short success) {
 	unsigned short done;
 	const struct Behavior::Node* node;
 
-// LINE 198:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 202:
 	__asm        mov    done, 0;
 // LINE 204:
@@ -1013,25 +914,12 @@ tree_error:
 	__asm        jmp    near ptr 0x0055D2F6;
 // LINE 233:
 	__asm        jmp    near ptr 0x0055D2EA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055d2fd
 void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	struct TreeSim::StackElem* elem;
 
-// LINE 239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -1076,23 +964,10 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        mov    [ecx], ax;
 // LINE 247:
 	__asm        jmp    near ptr 0x0055D39E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055d3a5
 enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
-// LINE 255:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 256:
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -1106,23 +981,10 @@ enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem* elem, str
 	__asm        call   dword ptr [edx];
 	__asm        jmp    near ptr 0x0055D3CE;
 // LINE 257:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055d3d5
 void ExtSim::Error(short errNum) {
-// LINE 262:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 263:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(errNum);
 	__asm        push   eax;
@@ -1134,11 +996,6 @@ void ExtSim::Error(short errNum) {
 	__asm        call   dword ptr [edx+4];
 // LINE 264:
 	__asm        jmp    near ptr 0x0055D3FB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055d402
@@ -1148,14 +1005,6 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	short savemaxstacksize;
 	short savestacksize;
 
-// LINE 271:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 272:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1216,11 +1065,6 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x0055D4AC;
 // LINE 287:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 

@@ -252,14 +252,6 @@ protected:
 // Contribution: 1:00025fc0-00026507 Module: 69, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00426fc0
 void CSparkalApp::CSparkalApp() {
-// LINE 14:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F428;
 // LINE 15:
@@ -328,23 +320,10 @@ void CSparkalApp::CSparkalApp() {
 // LINE 38:
 	__asm        jmp    near ptr 0x004270D9;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004270e1
 void CSparkalApp::~CSparkalApp() {
-// LINE 45:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F428;
 	__asm        mov    eax, ds:[0x59A9D4];
@@ -387,11 +366,6 @@ void CSparkalApp::~CSparkalApp() {
 	__asm        jmp    near ptr 0x00427199;
 // LINE 52:
 	__asm        jmp    near ptr 0x0042719E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004271a3
@@ -400,14 +374,6 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	unsigned long Version;
 	unsigned char WinMajor;
 
-// LINE 61:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 62:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -463,25 +429,12 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x00427252;
 // LINE 87:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00427257
 class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
 	class CSparkalWindow* Window;
 
-// LINE 96:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 97:
 	__asm        mov    Window, 0;
 // LINE 101:
@@ -510,25 +463,12 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	__asm        mov    eax, Window;
 	__asm        jmp    near ptr 0x004272B7;
 // LINE 109:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x004272be
 class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	class IFlatImage* pBitmap;
 
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 117:
 	__asm        mov    pBitmap, 0;
 // LINE 120:
@@ -581,25 +521,12 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        mov    eax, pBitmap;
 	__asm        jmp    near ptr 0x00427361;
 // LINE 133:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00427368
 class IFlatImage* CSparkalApp::NewImage(long width, long height, const const struct SparkalColor* pColors) {
 	class IFlatImage* pBitmap;
 
-// LINE 141:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 142:
 	__asm        mov    pBitmap, 0;
 // LINE 145:
@@ -708,74 +635,30 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    eax, pBitmap;
 	__asm        jmp    near ptr 0x004274B9;
 // LINE 166:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004274c0
 unsigned long CSparkalApp::PrepareGame() {
-// LINE 174:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 175:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004274D3;
 // LINE 176:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004274d8
 unsigned long CSparkalApp::TickGame() {
-// LINE 179:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 180:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004274EB;
 // LINE 181:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004274f0
 unsigned long CSparkalApp::FinishGame() {
-// LINE 184:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 185:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00427503;
 // LINE 186:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

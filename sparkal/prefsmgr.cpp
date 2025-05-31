@@ -348,14 +348,6 @@ class bidirectional_iterator<NotificationItem,int>{
 // Contribution: 1:0007ab70-0007caa5 Module: 32, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0047bb70
 void PreferenceItem::PreferenceItem() {
-// LINE 17:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 18:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -368,23 +360,10 @@ void PreferenceItem::PreferenceItem() {
 // LINE 21:
 	__asm        jmp    near ptr 0x0047BB9E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047bba6
 void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 32:
 	__asm        mov    eax, P1;
 	__asm        mov    eax, [eax];
@@ -438,23 +417,10 @@ void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
 // LINE 45:
 	__asm        jmp    near ptr 0x0047BC3D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047bc47
 void PreferenceItem::~PreferenceItem() {
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 53:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -471,23 +437,10 @@ void PreferenceItem::~PreferenceItem() {
 	__asm        add    esp, 4;
 // LINE 55:
 	__asm        jmp    near ptr 0x0047BC80;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047bc85
 class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem& P2) {
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 65:
 	__asm        mov    eax, P2;
 	__asm        mov    eax, [eax];
@@ -542,21 +495,10 @@ class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem& P2) 
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0047BD1F;
 // LINE 78:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047bd26
 int32_t operator==(const class PreferenceItem& P1, const class PreferenceItem& P2) {
-// LINE 85:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 86:
 	__asm        mov    eax, P1;
 	__asm        cmp    P2, eax;
@@ -566,23 +508,10 @@ int32_t operator==(const class PreferenceItem& P1, const class PreferenceItem& P
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047BD49;
 // LINE 87:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047bd4e
 int32_t PreferenceItem::Compare(const class PreferenceItem& P2) {
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 95:
 	__asm        mov    eax, P2;
 	__asm        cmp    this, eax;
@@ -594,21 +523,10 @@ int32_t PreferenceItem::Compare(const class PreferenceItem& P2) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047BD77;
 // LINE 113:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047bd7e
 int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2) {
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 120:
 	__asm        mov    eax, P1;
 	__asm        mov    ecx, P2;
@@ -620,25 +538,12 @@ int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047BDA5;
 // LINE 121:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047bdaa
 class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	class PreferenceItem* prefItemReturn;
 
-// LINE 129:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 132:
 	__asm        push   0xC;
 	__asm        call   0x0056A600;
@@ -717,23 +622,10 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        mov    eax, prefItemReturn;
 	__asm        jmp    near ptr 0x0047BE9D;
 // LINE 149:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047bea2
 void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileType, long lTheFileVersion, int32_t bSaveTheFileAtAllChanges) {
-// LINE 165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        inc    dword ptr ds:[0x599A5C];
@@ -913,23 +805,10 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 // LINE 172:
 	__asm        jmp    near ptr 0x0047C13D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0047c147
 int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
-// LINE 178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 179:
 	__asm        push   0x148;
 	__asm        call   0x0056A600;
@@ -962,23 +841,10 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047C1B7;
 // LINE 184:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047c1be
 void PreferenceManager::~PreferenceManager() {
-// LINE 191:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590DB0;
 // LINE 192:
@@ -1119,11 +985,6 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    dword ptr ds:[0x599A60], 0;
 	__asm        jmp    near ptr 0x0047C3D8;
 	__asm        jmp    near ptr 0x0047C3DD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047c3e2
@@ -1131,14 +992,6 @@ void PreferenceManager::EnumeratePrefs() {
 	long j;
 	class list<PreferenceItem>::iterator i;
 
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 204:
 	__asm        jmp    near ptr 0x0047C3F3;
 // LINE 207:
@@ -1193,11 +1046,6 @@ void PreferenceManager::EnumeratePrefs() {
 	__asm        jmp    near ptr 0x0047C419;
 // LINE 209:
 	__asm        jmp    near ptr 0x0047C4A8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047c4ad
@@ -1205,14 +1053,6 @@ long PreferenceManager::SaveAllPrefs() {
 	class list<PreferenceItem>::iterator i;
 	char szStringRudelyEmbeddedDirectly[41];
 
-// LINE 222:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 227:
 	__asm        jmp    near ptr 0x0047C4BE;
 // LINE 228:
@@ -1361,11 +1201,6 @@ long PreferenceManager::SaveAllPrefs() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047C66B;
 // LINE 253:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047c670
@@ -1375,14 +1210,6 @@ long PreferenceManager::LoadAllPrefs() {
 	class PreferenceItem tempPrefItem;
 	long lRecordDataSize;
 
-// LINE 270:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 274:
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
 	__asm        call   0x0047BB70;
@@ -1535,23 +1362,10 @@ long PreferenceManager::LoadAllPrefs() {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    near ptr 0x0047C82F;
 // LINE 304:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047c834
 long PreferenceManager::ClearPrefsMemory() {
-// LINE 311:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 313:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1636,25 +1450,12 @@ long PreferenceManager::ClearPrefsMemory() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047C96B;
 // LINE 316:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047c970
 long PreferenceManager::RemovePref(long lPrefType) {
 	class list<PreferenceItem>::iterator i;
 
-// LINE 326:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 327:
 	__asm        jmp    near ptr 0x0047C981;
 // LINE 329:
@@ -1761,25 +1562,12 @@ long PreferenceManager::RemovePref(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CAD9;
 // LINE 339:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047cae0
 class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 	class list<PreferenceItem>::iterator i;
 
-// LINE 354:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 355:
 	__asm        jmp    near ptr 0x0047CAF1;
 // LINE 357:
@@ -1842,11 +1630,6 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CBBC;
 // LINE 362:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047cbc3
@@ -1854,14 +1637,6 @@ class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
 	class PreferenceItem* prefItemReturn;
 	class PreferenceItem* prefItemTemp;
 
-// LINE 375:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 379:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -1884,25 +1659,12 @@ class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CC05;
 // LINE 385:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047cc0c
 char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
 	class PreferenceItem* prefItemTemp;
 
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 404:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -1922,11 +1684,6 @@ char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CC46;
 // LINE 409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047cc4d
@@ -1934,14 +1691,6 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 	class PreferenceItem* prefItemTemp;
 	char * chDataCopy;
 
-// LINE 421:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 426:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -1978,25 +1727,12 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CCB0;
 // LINE 436:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047ccb7
 long PreferenceManager::GetPrefDataLength(long lPrefType) {
 	class PreferenceItem* prefItemTemp;
 
-// LINE 451:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 453:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -2016,25 +1752,12 @@ long PreferenceManager::GetPrefDataLength(long lPrefType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047CCF1;
 // LINE 457:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047ccf8
 long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
 	class PreferenceItem* prefItemToSet;
 
-// LINE 465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 472:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2216,23 +1939,10 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047CF50;
 // LINE 499:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047cf57
 long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
-// LINE 507:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 511:
 	__asm        mov    eax, prefItemToUse;
 	__asm        mov    eax, [eax];
@@ -2438,23 +2148,10 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047D249;
 // LINE 518:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047d250
 void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileCreator, long lTheFileType, long lTheFileVersion, int32_t bSaveTheFileAtAllChanges) {
-// LINE 534:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bSaveTheFileAtAllChanges;
 	__asm        push   eax;
 	__asm        mov    eax, lTheFileVersion;
@@ -2620,25 +2317,12 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 // LINE 535:
 	__asm        jmp    near ptr 0x0047D4C5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0047d4cf
 int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, class NotificationSink* newNotificationSink) {
 	class NotificationItem tempNewNotificationItem;
 
-// LINE 546:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 547:
 	__asm        mov    eax, newNotificationSink;
 	__asm        push   eax;
@@ -2655,23 +2339,10 @@ int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, cla
 	__asm        call   dword ptr [eax+0x34];
 	__asm        jmp    near ptr 0x0047D4FF;
 // LINE 549:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047d506
 int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& newNotificationItem) {
-// LINE 555:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 556:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -2855,11 +2526,6 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047D7C0;
 // LINE 558:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047d7c7
@@ -2867,14 +2533,6 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	class list<NotificationItem>::iterator iterator;
 	int32_t nFound;
 
-// LINE 568:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 571:
 	__asm        jmp    near ptr 0x0047D7D8;
 // LINE 572:
@@ -2977,25 +2635,12 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    eax, nFound;
 	__asm        jmp    near ptr 0x0047D928;
 // LINE 586:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047d92f
 long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
 	long lReturnValue;
 
-// LINE 593:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 594:
 	__asm        mov    eax, lSizeofPref;
 	__asm        push   eax;
@@ -3020,25 +2665,12 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    near ptr 0x0047D973;
 // LINE 598:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047d97a
 long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	long lReturnValue;
 
-// LINE 604:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 605:
 	__asm        mov    eax, prefItemToUse;
 	__asm        push   eax;
@@ -3060,25 +2692,12 @@ long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse)
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    near ptr 0x0047D9B8;
 // LINE 609:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047d9bf
 void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	class list<NotificationItem>::iterator iterator;
 
-// LINE 615:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 618:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -3144,11 +2763,6 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	__asm        jmp    near ptr 0x0047D9E6;
 // LINE 625:
 	__asm        jmp    near ptr 0x0047DA9F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

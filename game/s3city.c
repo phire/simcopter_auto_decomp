@@ -67,13 +67,6 @@ short S3CityInit() {
 	int32_t i;
 	char szFilePath[260];
 
-// LINE 206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x138;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 211:
 	__asm        cmp    dword ptr ds:[0x5B59E0], 0;
 	__asm        jne    near ptr 0x0050A038;
@@ -344,24 +337,12 @@ short S3CityInit() {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0050A401;
 // LINE 322:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050a406
 void S3CityDeInit() {
 	struct tagLogCityEnterExit tempLogCityEnterExit;
 
-// LINE 334:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 338:
 	__asm        mov    tempLogCityEnterExit.nType, 2;
 // LINE 339:
@@ -396,11 +377,6 @@ void S3CityDeInit() {
 // LINE 350:
 	__asm        dec    dword ptr ds:[0x5B59E0];
 // LINE 352:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050a478
@@ -409,13 +385,6 @@ void VRSetBackPlane(int32_t farZ) {
 	long i;
 	struct VRBmpHdr* bhdr;
 
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 369:
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B476C];
@@ -527,11 +496,6 @@ void VRSetBackPlane(int32_t farZ) {
 // LINE 418:
 	__asm        mov    dword ptr ds:[0x66281C], 0x2580000;
 // LINE 419:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050a5df
@@ -553,13 +517,6 @@ short S3CityInitOmap() {
 	short flags;
 	long obj1user;
 
-// LINE 447:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 462:
 	__asm        mov    edi, 0x67ED30;
 	__asm        xor    eax, eax;
@@ -7007,11 +6964,6 @@ short S3CityInitOmap() {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0050EF49;
 // LINE 2431:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050ef4e
@@ -7022,13 +6974,6 @@ void S3CityGrid() {
 	short x_pos;
 	int32_t tmpfix;
 
-// LINE 2446:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2447:
 	__asm        mov    view_changed, 1;
 // LINE 2455:
@@ -7574,11 +7519,6 @@ void S3CityGrid() {
 // LINE 2894:
 	__asm        jmp    near ptr 0x0050F679;
 // LINE 2896:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
@@ -7607,13 +7547,6 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	unsigned short get_y_next;
 	int32_t xi;
 
-// LINE 2916:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2937:
 	__asm        mov    eax, spos;
 	__asm        mov    eax, [eax+8];
@@ -8241,11 +8174,6 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    ecx, cell_last;
 	__asm        mov    [ecx], eax;
 // LINE 3191:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050fe32
@@ -8264,13 +8192,6 @@ void city_fovscan_horizedge() {
 	long y_start;
 	long x_pos;
 
-// LINE 3210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3219:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        add    eax, 0x20000000;
@@ -8660,11 +8581,6 @@ void city_fovscan_horizedge() {
 	__asm        sub    eax, 8;
 	__asm        mov    ds:[0x609BE8], eax;
 // LINE 3353:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005102d4
@@ -8683,13 +8599,6 @@ void city_fovscan_vertedge() {
 	long x_pos;
 	struct Point2d* tend;
 
-// LINE 3360:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3369:
 	__asm        mov    eax, 0x20000000;
 	__asm        sub    eax, ds:[0x6C1274];
@@ -9070,11 +8979,6 @@ void city_fovscan_vertedge() {
 	__asm        sub    eax, 8;
 	__asm        mov    ds:[0x609BE8], eax;
 // LINE 3495:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00510776
@@ -9084,13 +8988,6 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	long y;
 	long x;
 
-// LINE 3520:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3523:
 	__asm        mov    eax, curr_fovcell;
 	__asm        mov    eax, [eax];
@@ -9455,11 +9352,6 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 // LINE 3630:
 	__asm        dec    dword ptr ds:[0x5B59EC];
 // LINE 3632:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00510beb
@@ -9469,13 +9361,6 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	long y;
 	long x;
 
-// LINE 3637:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3640:
 	__asm        mov    eax, curr_fovcell;
 	__asm        mov    eax, [eax];
@@ -9829,11 +9714,6 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00511001;
 // LINE 3738:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051103e
@@ -9851,13 +9731,6 @@ void S3CityDrawGrid() {
 	long coffset;
 	short ydiff;
 
-// LINE 3754:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3767:
 	__asm        mov    eax, ds:[0x666384];
 	__asm        mov    cptrptr, eax;
@@ -10213,11 +10086,6 @@ void S3CityDrawGrid() {
 // LINE 3912:
 	__asm        call   0x004D6AFC;
 // LINE 3913:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051147c
@@ -10242,13 +10110,6 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	struct _DYOBJ_INST* tmpdyobj;
 	struct _CELL_INFO*** caddr1;
 
-// LINE 3931:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3970:
 	__asm        mov    i, 0;
 	__asm        mov    eax, endcptrptr;
@@ -11440,11 +11301,6 @@ next_dyobj:
 // LINE 4300:
 	__asm        jmp    near ptr 0x005114A3;
 // LINE 4301:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051215e
@@ -11452,13 +11308,6 @@ int32_t S3CityCellInFront(struct _CELL_INFO*** caddr2, struct _CELL_INFO*** cadd
 	long i;
 	struct _CELL_INFO*** caddr;
 
-// LINE 4314:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4318:
 	__asm        mov    eax, caddr2;
 	__asm        mov    caddr, eax;
@@ -11521,11 +11370,6 @@ int32_t S3CityCellInFront(struct _CELL_INFO*** caddr2, struct _CELL_INFO*** cadd
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00512219;
 // LINE 4340:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051221e
@@ -11535,13 +11379,6 @@ void S3CityCheckGridPos() {
 	long gsize;
 	long ydiff;
 
-// LINE 4355:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4360:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        add    eax, 0x20000000;
@@ -11743,11 +11580,6 @@ void S3CityCheckGridPos() {
 	__asm        neg    eax;
 	__asm        sub    ds:[0x666308], eax;
 // LINE 4440:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005124fe
@@ -11760,13 +11592,6 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 	long ydir;
 	long xdir;
 
-// LINE 4453:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4456:
 	__asm        mov    curr_dist, 0;
 // LINE 4457:
@@ -11888,11 +11713,6 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 // LINE 4529:
 	__asm        jmp    near ptr 0x00512551;
 // LINE 4530:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512670
@@ -11907,13 +11727,6 @@ int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 	int32_t maxobjy;
 	int32_t wradius;
 
-// LINE 4733:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4745:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -12170,11 +11983,6 @@ int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0051295C;
 // LINE 4878:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512961
@@ -12184,13 +11992,6 @@ void S3CityDrawOverHeadGrid() {
 	int32_t mat2[4][4];
 	int32_t mat1[4][4];
 
-// LINE 4888:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x88;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4892:
 	__asm        mov    dword ptr ds:[0x5B59E4], 1;
 // LINE 4895:
@@ -12261,11 +12062,6 @@ void S3CityDrawOverHeadGrid() {
 // LINE 4925:
 	__asm        mov    dword ptr ds:[0x5B59E4], 0;
 // LINE 4926:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512a46
@@ -12275,13 +12071,6 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	long x;
 	unsigned short minalt;
 
-// LINE 4939:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4944:
 	__asm        mov    minalt, 0xFFFF;
 // LINE 4947:
@@ -12331,21 +12120,10 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	__asm        mov    ax, minalt;
 	__asm        jmp    near ptr 0x00512AF0;
 // LINE 4956:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512af5
 int32_t S3CityIsCellFlat(long x, long y) {
-// LINE 4965:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4968:
 	__asm        mov    eax, ds:[0x5B5CBC];
 	__asm        and    eax, y;
@@ -12430,24 +12208,12 @@ int32_t S3CityIsCellFlat(long x, long y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00512C26;
 // LINE 4974:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512c2b
 int32_t S3CityGetBase(long x, long y, long size) {
 	long zone;
 
-// LINE 4984:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4987:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00512C5C;
@@ -12602,11 +12368,6 @@ int32_t S3CityGetBase(long x, long y, long size) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00512E35;
 // LINE 5037:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00512e3a
@@ -12619,13 +12380,6 @@ void S3CityCreateHeliBase(long x, long y) {
 	int32_t incity;
 	long py;
 
-// LINE 5051:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5057:
 	__asm        mov    incity, 0;
 // LINE 5061:
@@ -13853,11 +13607,6 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5409:
 	__asm        mov    dword ptr ds:[0x5B491C], 1;
 // LINE 5410:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

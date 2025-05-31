@@ -78,14 +78,6 @@ public:
 // Contribution: 1:0015b270-0015bac4 Module: 195, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055c270
 void FlatFile::FlatFile() {
-// LINE 13:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593620;
 // LINE 14:
@@ -103,23 +95,10 @@ void FlatFile::FlatFile() {
 // LINE 23:
 	__asm        jmp    near ptr 0x0055C2B3;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c2bb
 void FlatFile::~FlatFile() {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593620;
 // LINE 30:
@@ -133,24 +112,12 @@ void FlatFile::~FlatFile() {
 	__asm        call   0x0055C96E;
 // LINE 33:
 	__asm        jmp    near ptr 0x0055C2F5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c2fa
 class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	class FlatFile* srch;
 
-// LINE 42:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 44:
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    srch, eax;
@@ -183,25 +150,12 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C365;
 // LINE 49:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c36a
 long FlatFile::Open(char * name) {
 	unsigned char pstrbuff[256];
 
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 54:
 	__asm        push   0x100;
 	__asm        lea    eax, pstrbuff[0];
@@ -224,11 +178,6 @@ long FlatFile::Open(char * name) {
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    near ptr 0x0055C3C0;
 // LINE 57:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c3c7
@@ -236,14 +185,6 @@ long FlatFile::Open(unsigned char * name) {
 	class FlatFile* same;
 	long err;
 
-// LINE 60:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 61:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C7DD;
@@ -365,25 +306,12 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x0055C57F;
 // LINE 108:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c586
 void FlatFile::OpenFromOtherFile(class FlatFile* other) {
 	unsigned char otherName[256];
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 112:
 	__asm        lea    eax, otherName[0];
 	__asm        push   eax;
@@ -398,25 +326,12 @@ void FlatFile::OpenFromOtherFile(class FlatFile* other) {
 	__asm        call   dword ptr [eax+4];
 // LINE 114:
 	__asm        jmp    near ptr 0x0055C5C4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c5cb
 long FlatFile::Close() {
 	long err;
 
-// LINE 117:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 118:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C7DD;
@@ -471,25 +386,12 @@ long FlatFile::Close() {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x0055C697;
 // LINE 152:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c69c
 long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	long actualSize;
 
-// LINE 158:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 159:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C7DD;
@@ -523,23 +425,10 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C70A;
 // LINE 176:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055c711
 long FlatFile::SetPos(long fromStart) {
-// LINE 179:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 180:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C7DD;
@@ -566,23 +455,10 @@ long FlatFile::SetPos(long fromStart) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C770;
 // LINE 188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c777
 long FlatFile::Advance(long skipAmt) {
-// LINE 191:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 192:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C7DD;
@@ -609,23 +485,10 @@ long FlatFile::Advance(long skipAmt) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C7D6;
 // LINE 200:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c7dd
 unsigned short FlatFile::ValidFile() {
-// LINE 220:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 221:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0;
@@ -637,23 +500,10 @@ unsigned short FlatFile::ValidFile() {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0055C80F;
 // LINE 223:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c814
 unsigned short FlatFile::SameFile(class FlatFile* other) {
-// LINE 234:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 235:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0;
@@ -676,11 +526,6 @@ unsigned short FlatFile::SameFile(class FlatFile* other) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055C873;
 // LINE 239:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c87a
@@ -688,14 +533,6 @@ long FlatFile::Read4(long * val) {
 	long err;
 	long size;
 
-// LINE 243:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 244:
 	__asm        mov    size, 4;
 // LINE 245:
@@ -717,11 +554,6 @@ long FlatFile::Read4(long * val) {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x0055C8BE;
 // LINE 248:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c8c5
@@ -729,14 +561,6 @@ long FlatFile::Read2(short * val) {
 	long err;
 	long size;
 
-// LINE 251:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 252:
 	__asm        mov    size, 2;
 // LINE 253:
@@ -758,11 +582,6 @@ long FlatFile::Read2(short * val) {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x0055C909;
 // LINE 256:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c910
@@ -770,14 +589,6 @@ long FlatFile::Read1(char * val) {
 	long err;
 	long size;
 
-// LINE 259:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 260:
 	__asm        mov    size, 1;
 // LINE 261:
@@ -792,23 +603,10 @@ long FlatFile::Read1(char * val) {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x0055C93E;
 // LINE 263:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055c945
 void FlatFile::Link() {
-// LINE 265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 266:
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    ecx, this;
@@ -818,25 +616,12 @@ void FlatFile::Link() {
 	__asm        mov    ds:[0x5BDDD8], eax;
 // LINE 268:
 	__asm        jmp    near ptr 0x0055C969;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c96e
 void FlatFile::Unlink() {
 	class FlatFile** srch;
 
-// LINE 270:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 271:
 	__asm        mov    srch, 0x5BDDD8;
 // LINE 273:
@@ -872,25 +657,12 @@ void FlatFile::Unlink() {
 	__asm        add    esp, 0x10;
 // LINE 281:
 	__asm        jmp    near ptr 0x0055C9DE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c9e3
 unsigned short FlatFile::Exclusive() {
 	class FlatFile* srch;
 
-// LINE 284:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 285:
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    srch, eax;
@@ -921,23 +693,10 @@ unsigned short FlatFile::Exclusive() {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0055CA43;
 // LINE 292:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055ca48
 long FlatFile::GetFileName(unsigned char * name) {
-// LINE 295:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 296:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -955,11 +714,6 @@ long FlatFile::GetFileName(unsigned char * name) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055CA78;
 // LINE 298:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055ca7f
@@ -967,13 +721,6 @@ short FlatFile::CheckForLeaks() {
 	short total;
 	class FlatFile* list;
 
-// LINE 301:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 302:
 	__asm        mov    total, 0;
 // LINE 304:
@@ -993,11 +740,6 @@ short FlatFile::CheckForLeaks() {
 	__asm        mov    ax, total;
 	__asm        jmp    near ptr 0x0055CAC0;
 // LINE 309:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

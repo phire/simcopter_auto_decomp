@@ -235,14 +235,6 @@ public:
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560290
 void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NResFile* privFile) {
-// LINE 16:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    eax, this;
@@ -291,89 +283,38 @@ void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NR
 // LINE 30:
 	__asm        jmp    near ptr 0x00560324;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0056032e
 void Behavior::~Behavior() {
-// LINE 33:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936D8;
 // LINE 34:
 	__asm        jmp    near ptr 0x00560348;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056034d
 class ResFile* Behavior::GetPrivFile() {
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x00560364;
 // LINE 40:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560369
 class ResFile* Behavior::GetGlobFile() {
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x00560380;
 // LINE 45:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560385
 void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*paramswizzler)(short, struct Behavior::NodeParameter*)) {
 	short count;
 
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 49:
 	__asm        mov    eax, tree;
 	__asm        push   eax;
@@ -415,25 +356,12 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*par
 	__asm        jmp    near ptr 0x005603A5;
 // LINE 54:
 	__asm        jmp    near ptr 0x00560405;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056040a
 const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	struct Behavior::Tree* tree;
 
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 74:
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0xFFF;
@@ -542,44 +470,18 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        lea    eax, [ecx+eax*4+2];
 	__asm        jmp    near ptr 0x005605A5;
 // LINE 85:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005605ac
 void Behavior::GetNodeText(struct Behavior::Node* node, unsigned char * str) {
-// LINE 91:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 128:
 	__asm        jmp    near ptr 0x005605BD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005605c4
 void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) {
 	struct Behavior::Node node;
 
-// LINE 131:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 134:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(nodeNum);
 	__asm        push   eax;
@@ -606,23 +508,10 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        call   0x005605AC;
 // LINE 136:
 	__asm        jmp    near ptr 0x0056060F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00560616
 short Behavior::CountPrimitives() {
-// LINE 139:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 140:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -632,11 +521,6 @@ short Behavior::CountPrimitives() {
 	__asm        call   dword ptr [edx+8];
 	__asm        jmp    near ptr 0x00560638;
 // LINE 141:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056063d
@@ -644,14 +528,6 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	class ResFile* pFile;
 	void * __ptr32 tree;
 
-// LINE 145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 149:
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x100;
@@ -725,23 +601,10 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 // LINE 174:
 // Block end:
 	__asm        jmp    near ptr 0x00560728;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0056072f
 class ResFile* Behavior::GetResFile(short treeID) {
-// LINE 177:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 178:
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x100;
@@ -762,24 +625,12 @@ class ResFile* Behavior::GetResFile(short treeID) {
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x00560776;
 // LINE 187:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0056077d
 short Behavior::GetBaseID(short treeclass) {
 	short baseID;
 
-// LINE 189:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 190:
 	__asm        mov    baseID, 0;
 // LINE 191:
@@ -819,24 +670,12 @@ short Behavior::GetBaseID(short treeclass) {
 	__asm        mov    ax, baseID;
 	__asm        jmp    near ptr 0x005607F6;
 // LINE 206:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005607fb
 short Behavior::GetMaxID(short treeclass) {
 	short maxID;
 
-// LINE 208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 209:
 	__asm        mov    maxID, 0;
 // LINE 210:
@@ -877,21 +716,10 @@ short Behavior::GetMaxID(short treeclass) {
 	__asm        mov    ax, maxID;
 	__asm        jmp    near ptr 0x00560874;
 // LINE 225:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560879
 short Behavior::GetTreeClass(short treeID) {
-// LINE 227:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 228:
 	__asm        movsx  eax, treeID;
 	__asm        test   eax, eax;
@@ -936,24 +764,12 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0056091F;
 // LINE 237:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560924
 void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	char * str;
 
-// LINE 239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 241:
 	__asm        movsx  eax, cl;
 	__asm        mov    [ebp-8], eax;
@@ -1008,11 +824,6 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 260:
 	__asm        jmp    near ptr 0x005609C4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

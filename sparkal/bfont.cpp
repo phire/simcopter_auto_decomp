@@ -591,14 +591,6 @@ protected:
 // Contribution: 1:000670a0-0006a0c9 Module: 42, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004680a0
 void BitmappedFont::BitmappedFont() {
-// LINE 24:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -689,23 +681,10 @@ void BitmappedFont::BitmappedFont() {
 // LINE 25:
 	__asm        jmp    near ptr 0x00468237;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046823f
 void BitmappedFont::BitmappedFont(class basic_string<char>& sNewFontInfoPath, const long lNewLanguage) {
-// LINE 37:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x00468250;
 	__asm        mov    eax, sNewFontInfoPath;
 	__asm        mov    eax, [eax+4];
@@ -884,23 +863,10 @@ void BitmappedFont::BitmappedFont(class basic_string<char>& sNewFontInfoPath, co
 // LINE 38:
 	__asm        jmp    near ptr 0x0046850F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00468519
 void BitmappedFont::BitmappedFont(char * szNewFontInfoPath, const long lNewLanguage) {
-// LINE 49:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -1021,23 +987,10 @@ void BitmappedFont::BitmappedFont(char * szNewFontInfoPath, const long lNewLangu
 // LINE 50:
 	__asm        jmp    near ptr 0x00468702;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0046870c
 void BitmappedFont::~BitmappedFont() {
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5904D0;
 // LINE 58:
@@ -1202,23 +1155,10 @@ void BitmappedFont::~BitmappedFont() {
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00468971;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00468976
 int32_t BitmappedFont::Initialize() {
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 66:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1226,23 +1166,10 @@ int32_t BitmappedFont::Initialize() {
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        jmp    near ptr 0x00468992;
 // LINE 67:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00468997
 void BitmappedFont::DeInitialize() {
-// LINE 73:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 74:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1250,11 +1177,6 @@ void BitmappedFont::DeInitialize() {
 	__asm        call   dword ptr [eax+0x18];
 // LINE 75:
 	__asm        jmp    near ptr 0x004689B3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004689b8
@@ -1266,15 +1188,6 @@ int32_t BitmappedFont::LoadFontInfo() {
 	char * chCurrentRectangle;
 	char szBitmapFile[256];
 
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x11EC;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 86:
 	__asm        jmp    near ptr 0x004689D3;
 	__asm        jmp    near ptr 0x004689D8;
@@ -1938,11 +1851,6 @@ int32_t BitmappedFont::LoadFontInfo() {
 	__asm        mov    eax, [eax+0x14];
 	__asm        jmp    near ptr 0x0046952D;
 // LINE 126:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00469532
@@ -1956,14 +1864,6 @@ void BitmappedFont::CalculateCharacterRects() {
 	int32_t xEnd;
 	class MRect rectCurrent;
 
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 142:
 	__asm        jmp    near ptr 0x00469549;
 	__asm        jmp    near ptr 0x0046954E;
@@ -2490,11 +2390,6 @@ void BitmappedFont::CalculateCharacterRects() {
 	__asm        call   dword ptr [edx+4];
 // LINE 179:
 	__asm        jmp    near ptr 0x00469D38;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00469d3d
@@ -2502,14 +2397,6 @@ int32_t BitmappedFont::CreateImage() {
 	char szBitmapFilePath[260];
 	unsigned char chTransparentIndex;
 
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x150;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 194:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2728,23 +2615,10 @@ int32_t BitmappedFont::CreateImage() {
 	__asm        mov    eax, [eax+0x14];
 	__asm        jmp    near ptr 0x0046A0F0;
 // LINE 203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046a0f5
 void BitmappedFont::DestroyImage() {
-// LINE 209:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 210:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2770,11 +2644,6 @@ void BitmappedFont::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 214:
 	__asm        jmp    near ptr 0x0046A154;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046a159
@@ -2782,14 +2651,6 @@ long BitmappedFont::GetStringWidth(char * chText, const unsigned long nStringLen
 	char * chEnd;
 	long lWidth;
 
-// LINE 228:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 229:
 	__asm        mov    lWidth, 0;
 // LINE 230:
@@ -2848,11 +2709,6 @@ long BitmappedFont::GetStringWidth(char * chText, const unsigned long nStringLen
 	__asm        mov    eax, lWidth;
 	__asm        jmp    near ptr 0x0046A21E;
 // LINE 238:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0046a225
@@ -2860,14 +2716,6 @@ long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nSt
 	char * chTextEnd;
 	long lWidth;
 
-// LINE 251:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 252:
 	__asm        mov    eax, nStringLength;
 	__asm        push   eax;
@@ -2976,11 +2824,6 @@ long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nSt
 	__asm        mov    eax, lWidth;
 	__asm        jmp    near ptr 0x0046A375;
 // LINE 267:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046a37c
@@ -2989,14 +2832,6 @@ long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nS
 	char * chTextEnd;
 	long lCurrentLineStringLength;
 
-// LINE 278:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 280:
 	__asm        mov    eax, nStringLength;
 	__asm        add    eax, chText;
@@ -3026,11 +2861,6 @@ long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nS
 	__asm        mov    eax, lLineCount;
 	__asm        jmp    near ptr 0x0046A3CD;
 // LINE 289:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046a3d4
@@ -3038,14 +2868,6 @@ long BitmappedFont::CalculateWidthOfLines(char * chText, const unsigned long nSt
 	unsigned long nCurrentWidth;
 	const long lLines;
 
-// LINE 307:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 308:
 	__asm        jmp    near ptr 0x0046A3E5;
 	__asm        mov    ecx, this;
@@ -3079,11 +2901,6 @@ long BitmappedFont::CalculateWidthOfLines(char * chText, const unsigned long nSt
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046A444;
 // LINE 316:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046a44b
@@ -3093,14 +2910,6 @@ long BitmappedFont::CalculateCharsToFitInWidth(char * chText, const unsigned lon
 	unsigned long nPotentialCurrentChars;
 	unsigned long nCurrentChars;
 
-// LINE 334:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 335:
 	__asm        mov    nPotentialCurrentWidth, 0;
 // LINE 336:
@@ -3236,25 +3045,12 @@ long BitmappedFont::CalculateCharsToFitInWidth(char * chText, const unsigned lon
 	__asm        mov    eax, nCurrentChars;
 	__asm        jmp    near ptr 0x0046A5DC;
 // LINE 379:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0046a5e3
 void BitmappedFont::DrawTextLine(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
 	char * chEnd;
 
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 393:
 	__asm        mov    eax, nStringLength;
 	__asm        add    eax, chText;
@@ -3403,25 +3199,12 @@ void BitmappedFont::DrawTextLine(class CBackBuffer* destination, long x, long y,
 	__asm        jmp    near ptr 0x0046A5F8;
 // LINE 400:
 	__asm        jmp    near ptr 0x0046A7D5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046a7dc
 void BitmappedFont::DrawTextLineNoClip(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
 	char * chEnd;
 
-// LINE 409:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 410:
 	__asm        mov    eax, nStringLength;
 	__asm        add    eax, chText;
@@ -3570,11 +3353,6 @@ void BitmappedFont::DrawTextLineNoClip(class CBackBuffer* destination, long x, l
 	__asm        jmp    near ptr 0x0046A7F1;
 // LINE 417:
 	__asm        jmp    near ptr 0x0046A9CE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046a9d5
@@ -3586,14 +3364,6 @@ void BitmappedFont::DrawTextPara(class CBackBuffer* destination, class MRect& re
 	long lCharacterHeight;
 	long lCurrentLineStringLength;
 
-// LINE 428:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 429:
 	__asm        mov    eax, rectPara;
 	__asm        mov    eax, [eax];
@@ -3656,11 +3426,6 @@ void BitmappedFont::DrawTextPara(class CBackBuffer* destination, class MRect& re
 	__asm        jmp    near ptr 0x0046AA27;
 // LINE 442:
 	__asm        jmp    near ptr 0x0046AA78;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0046aa7f
@@ -3672,14 +3437,6 @@ void BitmappedFont::DrawTextParaNoClip(class CBackBuffer* destination, class MRe
 	long lCharacterHeight;
 	long lCurrentLineStringLength;
 
-// LINE 454:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 455:
 	__asm        mov    eax, rectPara;
 	__asm        mov    eax, [eax];
@@ -3742,11 +3499,6 @@ void BitmappedFont::DrawTextParaNoClip(class CBackBuffer* destination, class MRe
 	__asm        jmp    near ptr 0x0046AAD1;
 // LINE 468:
 	__asm        jmp    near ptr 0x0046AB22;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0046ab29
@@ -3754,14 +3506,6 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRe
 	unsigned long nVisibleStringWidth;
 	unsigned long nVisibleStringLength;
 
-// LINE 482:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 486:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
 	__asm        je     near ptr 0x0046ABA6;
@@ -3869,11 +3613,6 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRe
 	__asm        call   0x0046A5E3;
 // LINE 505:
 	__asm        jmp    near ptr 0x0046AC3F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046ac46
@@ -3881,14 +3620,6 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, cla
 	unsigned long nVisibleStringWidth;
 	unsigned long nVisibleStringLength;
 
-// LINE 519:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 523:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
 	__asm        je     near ptr 0x0046ACC3;
@@ -3996,11 +3727,6 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, cla
 	__asm        call   0x0046A7DC;
 // LINE 542:
 	__asm        jmp    near ptr 0x0046AD5C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046ad63
@@ -4012,14 +3738,6 @@ void BitmappedFont::DrawTextParaFormat(class CBackBuffer* destination, class MRe
 	long lCharacterHeight;
 	long lCurrentLineStringLength;
 
-// LINE 556:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 557:
 	__asm        mov    eax, rectPara;
 	__asm        mov    eax, [eax];
@@ -4099,11 +3817,6 @@ void BitmappedFont::DrawTextParaFormat(class CBackBuffer* destination, class MRe
 	__asm        jmp    near ptr 0x0046ADB5;
 // LINE 572:
 	__asm        jmp    near ptr 0x0046AE3C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046ae43
@@ -4115,14 +3828,6 @@ void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer* destination, cla
 	long lCharacterHeight;
 	long lCurrentLineStringLength;
 
-// LINE 585:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 586:
 	__asm        mov    eax, rectPara;
 	__asm        mov    eax, [eax];
@@ -4202,23 +3907,10 @@ void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer* destination, cla
 	__asm        jmp    near ptr 0x0046AE95;
 // LINE 601:
 	__asm        jmp    near ptr 0x0046AF1C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046af23
 int32_t BitmappedFont::IsCharBreakingChar(const char chText) {
-// LINE 613:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 614:
 	__asm        movsx  eax, chText;
 	__asm        cmp    eax, 0x20;
@@ -4231,23 +3923,10 @@ int32_t BitmappedFont::IsCharBreakingChar(const char chText) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046AF5A;
 // LINE 615:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046af61
 int32_t BitmappedFont::IsCharReturnChar(const char chText) {
-// LINE 625:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 626:
 	__asm        movsx  eax, chText;
 	__asm        cmp    eax, 0xA;
@@ -4257,23 +3936,10 @@ int32_t BitmappedFont::IsCharReturnChar(const char chText) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046AF8B;
 // LINE 627:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046af92
 int32_t BitmappedFont::IsCharWhitespace(const char chText) {
-// LINE 634:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 635:
 	__asm        movsx  eax, chText;
 	__asm        cmp    eax, 0x20;
@@ -4283,23 +3949,10 @@ int32_t BitmappedFont::IsCharWhitespace(const char chText) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046AFBC;
 // LINE 636:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046afc3
 int32_t BitmappedFont::GetIniFileLong(char * chHeader, char * chSection, char * chPath, long * lResult) {
-// LINE 645:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 647:
 	__asm        mov    eax, chPath;
 	__asm        push   eax;
@@ -4322,23 +3975,10 @@ int32_t BitmappedFont::GetIniFileLong(char * chHeader, char * chSection, char * 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046B00B;
 // LINE 654:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0046b012
 int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char * chPath, char * chResult, const long lStringLength) {
-// LINE 663:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 665:
 	__asm        mov    eax, chPath;
 	__asm        push   eax;
@@ -4354,11 +3994,6 @@ int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char 
 	__asm        call   dword ptr ds:[0x6C3618];
 	__asm        jmp    near ptr 0x0046B042;
 // LINE 669:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046b049
@@ -4368,14 +4003,6 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 	char szDirectory[256];
 	char szFileName[256];
 
-// LINE 677:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x308;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 684:
 	__asm        lea    eax, szFileExtension[0];
 	__asm        push   eax;
@@ -4414,11 +4041,6 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046B0C3;
 // LINE 690:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 

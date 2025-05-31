@@ -15,13 +15,6 @@
 // Contribution: 1:0004ef40-0004f04f Module: 46, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0044ff40
 void GUIReportError(unsigned long Error, unsigned char Terminate) {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x200;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 22:
 	__asm        cmp    Error, 0;
 	__asm        jne    near ptr 0x0044FF6F;
@@ -102,11 +95,6 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 45:
 // Block end:
 	__asm        jmp    near ptr 0x0045004B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

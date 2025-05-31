@@ -423,14 +423,6 @@ void MDate::MDate() {
 	struct tm* now;
 	long clk;
 
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -465,23 +457,10 @@ void MDate::MDate() {
 // LINE 79:
 	__asm        jmp    near ptr 0x004BC4C9;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc4d1
 void MDate::MDate(uint32_t day, uint32_t year) {
-// LINE 94:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -511,23 +490,10 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 // LINE 99:
 	__asm        jmp    near ptr 0x004BC52E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bc538
 void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -549,23 +515,10 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 // LINE 114:
 	__asm        jmp    near ptr 0x004BC57F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004bc589
 void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
-// LINE 127:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -584,25 +537,12 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 // LINE 129:
 	__asm        jmp    near ptr 0x004BC5C7;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004bc5d1
 enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 	enum MDate::HowToPrint oldoption;
 
-// LINE 136:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 137:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -615,22 +555,10 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 	__asm        mov    eax, oldoption;
 	__asm        jmp    near ptr 0x004BC5F7;
 // LINE 140:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bc5fe
 char * MDate::DayName(uint32_t weekDayNumber) {
-// LINE 152:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 153:
 	__asm        cmp    weekDayNumber, 1;
 	__asm        jb     near ptr 0x004BC620;
@@ -647,21 +575,10 @@ char * MDate::DayName(uint32_t weekDayNumber) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC64A;
 // LINE 154:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc64f
 uint32_t MDate::DayOfWeek(char * nameOfDay) {
-// LINE 167:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 168:
 	__asm        push   7;
 	__asm        push   0x59AD18;
@@ -672,24 +589,12 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 	__asm        inc    eax;
 	__asm        jmp    near ptr 0x004BC66E;
 // LINE 169:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc673
 int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 	uint32_t len;
 
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 56:
 	__asm        mov    eax, str;
 	__asm        push   eax;
@@ -723,24 +628,12 @@ int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 	__asm        mov    eax, icand;
 	__asm        jmp    near ptr 0x004BC6D2;
 // LINE 63:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc6d7
 int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 	uint32_t d;
 
-// LINE 181:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 182:
 	__asm        cmp    day, 0;
 	__asm        jbe    near ptr 0x004BC717;
@@ -781,21 +674,10 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC76A;
 // LINE 188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc76f
 uint32_t MDate::DaysInYear(uint32_t year) {
-// LINE 200:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 201:
 	__asm        mov    eax, year;
 	__asm        push   eax;
@@ -808,21 +690,10 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 	__asm        mov    eax, 0x16D;
 	__asm        jmp    near ptr 0x004BC79D;
 // LINE 202:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc7a2
 uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 216:
 	__asm        push   0xC;
 	__asm        push   0x59ACC8;
@@ -833,11 +704,6 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 	__asm        inc    eax;
 	__asm        jmp    near ptr 0x004BC7C1;
 // LINE 217:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc7c6
@@ -845,13 +711,6 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 	unsigned long ya;
 	unsigned long c;
 
-// LINE 233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 235:
 	__asm        cmp    y, 0x63;
 	__asm        ja     near ptr 0x004BC7E0;
@@ -928,21 +787,10 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 	__asm        lea    eax, [eax+ecx+0x1A431F];
 	__asm        jmp    near ptr 0x004BC89A;
 // LINE 250:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc89f
 int32_t MDate::LeapYear(uint32_t year) {
-// LINE 262:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 263:
 	__asm        test   reinterpret_cast<uint8_t>(year), 3;
 	__asm        jne    near ptr 0x004BC8C3;
@@ -963,22 +811,10 @@ int32_t MDate::LeapYear(uint32_t year) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC8E8;
 // LINE 264:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc8ed
 char * MDate::MonthName(uint32_t monthNumber) {
-// LINE 277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 278:
 	__asm        cmp    monthNumber, 1;
 	__asm        jb     near ptr 0x004BC90F;
@@ -995,23 +831,10 @@ char * MDate::MonthName(uint32_t monthNumber) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC939;
 // LINE 279:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc93e
 int32_t MDate::CompareTo(const class MDate& d) {
-// LINE 292:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 293:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, d;
@@ -1037,23 +860,10 @@ int32_t MDate::CompareTo(const class MDate& d) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC993;
 // LINE 299:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bc99a
 uint32_t MDate::Day() {
-// LINE 307:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 308:
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+4];
@@ -1069,11 +879,6 @@ uint32_t MDate::Day() {
 	__asm        mov    eax, ebx;
 	__asm        jmp    near ptr 0x004BC9CB;
 // LINE 309:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc9d0
@@ -1082,14 +887,6 @@ uint32_t MDate::DayOfMonth() {
 	uint32_t y;
 	uint32_t d;
 
-// LINE 320:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 322:
 	__asm        lea    eax, y;
 	__asm        push   eax;
@@ -1103,25 +900,12 @@ uint32_t MDate::DayOfMonth() {
 	__asm        mov    eax, d;
 	__asm        jmp    near ptr 0x004BC9F8;
 // LINE 324:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc9fd
 uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 	uint32_t firstDay;
 
-// LINE 336:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 337:
 	__asm        cmp    month, 1;
 	__asm        jb     near ptr 0x004BCA27;
@@ -1156,33 +940,15 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 	__asm        mov    eax, firstDay;
 	__asm        jmp    near ptr 0x004BCA7D;
 // LINE 343:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bca84
 uint32_t MDate::Hash() {
-// LINE 351:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 352:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x004BCA9B;
 // LINE 353:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bcaa0
@@ -1190,14 +956,6 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	unsigned long j;
 	unsigned long d;
 
-// LINE 368:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 370:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1309,23 +1067,10 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        inc    dword ptr [eax];
 // LINE 388:
 	__asm        jmp    near ptr 0x004BCBC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004bcbcd
 class MDate MDate::MaxDate(const class MDate& dt) {
-// LINE 396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 397:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dt;
@@ -1353,23 +1098,10 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCC30;
 // LINE 398:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bcc37
 class MDate MDate::MinDate(const class MDate& dt) {
-// LINE 406:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 407:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dt;
@@ -1397,11 +1129,6 @@ class MDate MDate::MinDate(const class MDate& dt) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCC9A;
 // LINE 408:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bcca1
@@ -1410,14 +1137,6 @@ uint32_t MDate::Month() {
 	uint32_t y;
 	uint32_t d;
 
-// LINE 419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 421:
 	__asm        lea    eax, y;
 	__asm        push   eax;
@@ -1431,23 +1150,10 @@ uint32_t MDate::Month() {
 	__asm        mov    eax, m;
 	__asm        jmp    near ptr 0x004BCCC9;
 // LINE 423:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bccce
 class MDate MDate::Previous(char * dayName) {
-// LINE 435:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 436:
 	__asm        mov    eax, dayName;
 	__asm        push   eax;
@@ -1461,11 +1167,6 @@ class MDate MDate::Previous(char * dayName) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCCFB;
 // LINE 437:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bcd02
@@ -1473,14 +1174,6 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 	unsigned long j;
 	uint32_t thisDayOfWeek;
 
-// LINE 448:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 451:
 	__asm        dec    desiredDayOfWeek;
 // LINE 452:
@@ -1522,23 +1215,10 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCD75;
 // LINE 464:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bcd7c
 uint32_t MDate::WeekDay() {
-// LINE 472:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 473:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1553,11 +1233,6 @@ uint32_t MDate::WeekDay() {
 	__asm        lea    eax, [edx+1];
 	__asm        jmp    near ptr 0x004BCDAC;
 // LINE 474:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bcdb1
@@ -1566,14 +1241,6 @@ uint32_t MDate::Year() {
 	uint32_t y;
 	uint32_t d;
 
-// LINE 484:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 486:
 	__asm        lea    eax, y;
 	__asm        push   eax;
@@ -1587,23 +1254,10 @@ uint32_t MDate::Year() {
 	__asm        mov    eax, y;
 	__asm        jmp    near ptr 0x004BCDD9;
 // LINE 488:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bcdde
 uint32_t MDate::YearLastTwoDigits() {
-// LINE 498:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 499:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BCDB1;
@@ -1613,25 +1267,12 @@ uint32_t MDate::YearLastTwoDigits() {
 	__asm        mov    eax, edx;
 	__asm        jmp    near ptr 0x004BCE02;
 // LINE 500:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bce07
 char * MDate::PrintString(char * szDate) {
 	class ostrstream strtemp;
 
-// LINE 510:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 511:
 	__asm        push   1;
 	__asm        push   2;
@@ -1664,11 +1305,6 @@ char * MDate::PrintString(char * szDate) {
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    near ptr 0x004BCE6C;
 // LINE 514:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bce73
@@ -1677,14 +1313,6 @@ void MDate::ParseFrom(class istream& s) {
 	uint32_t y;
 	uint32_t d;
 
-// LINE 577:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 579:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -1916,24 +1544,12 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        jmp    near ptr 0x004BD169;
 // LINE 608:
 	__asm        jmp    near ptr 0x004BD16E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bd175
 void SkipDelim(class istream& strm) {
 	char c;
 
-// LINE 525:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 527:
 	__asm        mov    eax, strm;
 	__asm        mov    eax, [eax];
@@ -2001,11 +1617,6 @@ void SkipDelim(class istream& strm) {
 	__asm        call   0x00571B20;
 // LINE 536:
 	__asm        jmp    near ptr 0x004BD277;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
@@ -2014,13 +1625,6 @@ char * ParseMonth(class istream& s) {
 	static const char month[12] = { /* <data@0x006069a8> */ };
 	char * p;
 
-// LINE 547:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 549:
 	__asm        mov    p, 0x6069A8;
 // LINE 551:
@@ -2102,11 +1706,6 @@ char * ParseMonth(class istream& s) {
 	__asm        mov    eax, 0x6069A8;
 	__asm        jmp    near ptr 0x004BD395;
 // LINE 561:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd39a
@@ -2114,13 +1713,6 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	class ostrstream out;
 	char buf[80];
 
-// LINE 617:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 623:
 	__asm        push   1;
 	__asm        push   2;
@@ -2325,11 +1917,6 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        jmp    near ptr 0x004BD65C;
 // LINE 660:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

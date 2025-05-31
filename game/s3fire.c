@@ -81,13 +81,6 @@ void S3FireReset() {
 	long i;
 	struct _FIRE_DATA* fd;
 
-// LINE 100:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 105:
 	__asm        mov    dword ptr ds:[0x5B73A0], 0;
 // LINE 111:
@@ -118,11 +111,6 @@ void S3FireReset() {
 // LINE 123:
 	__asm        jmp    near ptr 0x00524647;
 // LINE 126:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052467d
@@ -134,13 +122,6 @@ void S3FireInit() {
 	long size;
 	struct VRObjInfo oinfo;
 
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 143:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -271,11 +252,6 @@ void S3FireInit() {
 // LINE 185:
 	__asm        jmp    near ptr 0x005247F3;
 // LINE 187:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00524829
@@ -288,13 +264,6 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	struct _FIRE_DATA* fd;
 	struct VRObjInfo oinfo;
 
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 213:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -534,11 +503,6 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00524ADA;
 // LINE 299:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00524adf
@@ -558,13 +522,6 @@ void S3FireDriver() {
 	struct _FIRE_DATA* fd;
 	long mindist;
 
-// LINE 312:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 322:
 	__asm        mov    fireloopsound, 0;
 // LINE 325:
@@ -1076,11 +1033,6 @@ void S3FireDriver() {
 // LINE 562:
 	__asm        jmp    near ptr 0x005250B9;
 // LINE 563:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005250be
@@ -1092,13 +1044,6 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 	long cellx;
 	struct _CELL_FIRE_DATA* cfd;
 
-// LINE 574:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 582:
 	__asm        call   0x0056EC50;
 	__asm        movsx  eax, ax;
@@ -1184,24 +1129,12 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 	__asm        call   0x00525624;
 	__asm        add    esp, 0x14;
 // LINE 608:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005251d6
 struct _CELL_FIRE_DATA* S3FireGetCellData() {
 	long i;
 
-// LINE 618:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 621:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x005251EE;
@@ -1222,11 +1155,6 @@ struct _CELL_FIRE_DATA* S3FireGetCellData() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00525227;
 // LINE 628:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052522c
@@ -1244,13 +1172,6 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	struct _DYOBJ_INST* dyobj;
 	struct _FIRE_DATA* fd;
 
-// LINE 640:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 651:
 	__asm        mov    eax, ds:[0x5B739C];
 	__asm        mov    ecx, ds:[0x598EB0];
@@ -1601,11 +1522,6 @@ check_dyobjs:
 // LINE 818:
 	__asm        jmp    near ptr 0x00525580;
 // LINE 820:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00525624
@@ -1614,13 +1530,6 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	struct _MISSION_PARMS mp;
 	struct _LZ_INFO* lz;
 
-// LINE 831:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 833:
 	__asm        mov    retval, 0;
 // LINE 837:
@@ -2659,11 +2568,6 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00526123;
 // LINE 934:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526128
@@ -2671,13 +2575,6 @@ struct _FIRE_DATA* S3FireGetByMission(long mission_id) {
 	long i;
 	struct _FIRE_DATA* fd;
 
-// LINE 943:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 947:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -2703,11 +2600,6 @@ struct _FIRE_DATA* S3FireGetByMission(long mission_id) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052618D;
 // LINE 954:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526192
@@ -2717,13 +2609,6 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	struct _STOBJ_INST* stobj;
 	struct _FIRE_DATA* fd;
 
-// LINE 965:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 972:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
@@ -2810,11 +2695,6 @@ next_obj:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052628D;
 // LINE 1013:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526292
@@ -2824,13 +2704,6 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 	struct Point3d vec;
 	int32_t speed;
 
-// LINE 1029:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1036:
 	__asm        mov    eax, dytruck;
 	__asm        add    eax, 0x18;
@@ -2946,11 +2819,6 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005263E7;
 // LINE 1098:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005263ec
@@ -2960,13 +2828,6 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 	struct Point3d vec;
 	int32_t speed;
 
-// LINE 1110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1117:
 	__asm        mov    eax, dytruck;
 	__asm        add    eax, 0x18;
@@ -3083,24 +2944,12 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00526545;
 // LINE 1164:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052654a
 void S3FireTweakInit() {
 	int32_t * pvals[10];
 
-// LINE 1175:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1178:
 	__asm        mov    pvals[0], 0x5B7388;
 // LINE 1179:
@@ -3121,24 +2970,12 @@ void S3FireTweakInit() {
 	__asm        call   0x004C9AD0;
 	__asm        add    esp, 0xC;
 // LINE 1186:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526595
 int32_t S3FireCanCellBurn(long cellx, long celly) {
 	long tile;
 
-// LINE 1197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1200:
 	__asm        cmp    cellx, 0;
 	__asm        jl     near ptr 0x005265C6;
@@ -3184,11 +3021,6 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052665C;
 // LINE 1218:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526661
@@ -3205,13 +3037,6 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	int32_t mat[4][4];
 	int32_t speed;
 
-// LINE 1231:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1241:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -3629,30 +3454,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 // LINE 1370:
 	__asm        jmp    near ptr 0x00526AA5;
 // LINE 1371:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526b81
 long S3FireGetCount() {
-// LINE 1380:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1381:
 	__asm        mov    eax, ds:[0x5B73A0];
 	__asm        jmp    near ptr 0x00526B91;
 // LINE 1382:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526b96
@@ -3671,13 +3480,6 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 	struct _FIRE_DATA* fd;
 	int32_t xdir;
 
-// LINE 1396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1397:
 	__asm        mov    spiral_dist, 5;
 // LINE 1400:
@@ -3846,11 +3648,6 @@ FoundFire:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x00526D79;
 // LINE 1494:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526d7e
@@ -3859,13 +3656,6 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	struct _DYOBJ_INST* dyobj;
 	int32_t ret_code;
 
-// LINE 1504:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1506:
 	__asm        mov    ret_code, 0;
 // LINE 1510:
@@ -4053,11 +3843,6 @@ next_dyobj:
 // LINE 1598:
 	__asm        jmp    near ptr 0x00526FB0;
 // LINE 1599:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00526fb5
@@ -4066,13 +3851,6 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	long ret;
 	struct _FIRE_DATA* fd;
 
-// LINE 1618:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1626:
 	__asm        push   0xA0;
 	__asm        push   0x62B550;
@@ -4361,11 +4139,6 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00527355;
 // LINE 1723:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052735a
@@ -4373,13 +4146,6 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	long i;
 	long ret;
 
-// LINE 1727:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1731:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00527372;
@@ -4459,11 +4225,6 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052745E;
 // LINE 1763:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

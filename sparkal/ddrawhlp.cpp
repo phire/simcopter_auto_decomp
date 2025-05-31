@@ -204,13 +204,6 @@ public:
 long DDEnable() {
 	long hResult;
 
-// LINE 30:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 33:
 	__asm        cmp    dword ptr ds:[0x597264], 0;
 	__asm        jne    near ptr 0x0041F527;
@@ -258,21 +251,10 @@ long DDEnable() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0041F5A0;
 // LINE 49:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0041f5a5
 void DDDisable() {
-// LINE 59:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 60:
 	__asm        cmp    dword ptr ds:[0x597264], 0;
 	__asm        jne    near ptr 0x0041F5BD;
@@ -291,11 +273,6 @@ void DDDisable() {
 	__asm        mov    dword ptr ds:[0x597264], 0;
 // LINE 70:
 	__asm        jmp    near ptr 0x0041F5EC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
@@ -306,13 +283,6 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	long hres;
 	struct _DDSURFACEDESC ddsd;
 
-// LINE 84:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 87:
 	__asm        mov    dw, 0xFFFFFFFF;
 // LINE 91:
@@ -412,11 +382,6 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, dw;
 	__asm        jmp    near ptr 0x0041F6DF;
 // LINE 115:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0041f6e4
@@ -427,13 +392,6 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	int32_t fh;
 	struct IDirectDrawPalette* ppal;
 
-// LINE 126:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x428;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 143:
 	__asm        mov    pal.dwRiff, 0;
 // LINE 145:
@@ -542,11 +500,6 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	__asm        mov    eax, ppal;
 	__asm        jmp    near ptr 0x0041F865;
 // LINE 182:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

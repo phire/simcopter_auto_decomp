@@ -21,60 +21,27 @@
 // Contribution: 1:000f8bc0-000f9082 Module: 174, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f9bc0
 int32_t HeliPassengerHasChanged(struct tagHeliPassengerData* heliPassengerData) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 30:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax];
 	__asm        jmp    near ptr 0x004F9BD0;
 // LINE 31:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9bd5
 void HeliPassengerSetChanged(struct tagHeliPassengerData* heliPassengerData) {
-// LINE 37:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 38:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 39:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9be9
 void HeliPassengerClearChanged(struct tagHeliPassengerData* heliPassengerData) {
-// LINE 45:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 46:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 47:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9bfd
@@ -83,13 +50,6 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 	long lRowWidth;
 	int32_t i;
 
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 59:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    dword ptr [eax], 0;
@@ -170,21 +130,10 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 // LINE 81:
 	__asm        jmp    near ptr 0x004F9C93;
 // LINE 82:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9cfa
 int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
-// LINE 94:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 95:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax+4];
@@ -192,24 +141,12 @@ int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, stru
 	__asm        sub    eax, [ecx+8];
 	__asm        jmp    near ptr 0x004F9D11;
 // LINE 96:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
 int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
 	int32_t i;
 
-// LINE 108:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 111:
 	__asm        mov    eax, passenger;
 	__asm        push   eax;
@@ -292,24 +229,12 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F9DFF;
 // LINE 136:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9e04
 int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerData, long id) {
 	int32_t i;
 
-// LINE 144:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 147:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9E1C;
@@ -333,24 +258,12 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004F9E56;
 // LINE 153:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9e5b
 int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerData, long id, int32_t expression) {
 	int32_t i;
 
-// LINE 159:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 160:
 	__asm        mov    eax, id;
 	__asm        push   eax;
@@ -376,24 +289,12 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F9EA5;
 // LINE 167:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9eaa
 int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long id) {
 	int32_t i;
 
-// LINE 173:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 174:
 	__asm        mov    eax, id;
 	__asm        push   eax;
@@ -458,21 +359,10 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F9F69;
 // LINE 193:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9f6e
 long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData) {
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 204:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax+4];
@@ -480,11 +370,6 @@ long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData)
 	__asm        sub    eax, [ecx+8];
 	__asm        jmp    near ptr 0x004F9F85;
 // LINE 205:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a
@@ -493,13 +378,6 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 	int32_t nSeat;
 	int32_t bSeats[16];
 
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 220:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9FA2;
@@ -549,24 +427,12 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 229:
 	__asm        jmp    near ptr 0x004F9FC8;
 // LINE 230:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fa033
 int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTotal, int32_t nRowWidth, int32_t * bSeats) {
 	int32_t j;
 
-// LINE 242:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 245:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004FA04B;
@@ -588,10 +454,5 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004FA07E;
 // LINE 250:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

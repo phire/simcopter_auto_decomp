@@ -651,85 +651,38 @@ class bidirectional_iterator<tagLogBase *,int>{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbc0
 void $E57() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x004EBBDA;
 	__asm        call   0x004EBBF4;
 	__asm        jmp    near ptr 0x004EBBD5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbda
 void $E54() {
-// LINE 20:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   0x004EBC4F;
 	__asm        jmp    near ptr 0x004EBBEF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbf4
 void $E56() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x4EBC11;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004EBC0C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebc11
 void $E55() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   0x004EBEED;
 	__asm        jmp    near ptr 0x004EBC26;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ebc2b
 void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {
-// LINE 36:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 37:
 	__asm        push   1;
 	__asm        mov    eax, bShowUserMessage;
@@ -740,23 +693,10 @@ void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {
 	__asm        call   0x004EC749;
 // LINE 38:
 	__asm        jmp    near ptr 0x004EBC4A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ebc4f
 void LogManager::LogManager() {
-// LINE 46:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -929,23 +869,10 @@ void LogManager::LogManager() {
 // LINE 48:
 	__asm        jmp    near ptr 0x004EBEE5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ebeed
 void LogManager::~LogManager() {
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 54:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -1077,11 +1004,6 @@ void LogManager::~LogManager() {
 	__asm        mov    dword ptr [eax], 0;
 // LINE 59:
 	__asm        jmp    near ptr 0x004EC0E8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ec0ed
@@ -1089,14 +1011,6 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	int32_t nReturnValue;
 	class MIFF tempMIFF;
 
-// LINE 66:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x154;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 67:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
@@ -1122,11 +1036,6 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC15E;
 // LINE 74:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec165
@@ -1134,14 +1043,6 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	int32_t nReturnValue;
 	class MIFF tempMIFF;
 
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x154;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 82:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
@@ -1167,11 +1068,6 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC1D6;
 // LINE 89:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec1dd
@@ -1179,14 +1075,6 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 	struct tagLogBase tempLogBase;
 	long lPresentRecordDataLength;
 
-// LINE 99:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 103:
 	__asm        mov    eax, miffReader;
 	__asm        mov    eax, [eax];
@@ -1244,25 +1132,12 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EC27D;
 // LINE 116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec284
 int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 	class list<tagLogBase *>::iterator iterator;
 
-// LINE 122:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x184;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x15C], eax;
@@ -1474,23 +1349,10 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EC5E9;
 // LINE 150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec5f0
 long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 158:
 	__asm        mov    eax, logRecord;
 	__asm        cmp    dword ptr [eax], 1;
@@ -1519,11 +1381,6 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 	__asm        mov    eax, 0xC;
 	__asm        jmp    near ptr 0x004EC654;
 // LINE 165:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec65b
@@ -1531,14 +1388,6 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 	struct tagLogBase tempLogBase;
 	char chBuffer[56];
 
-// LINE 176:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x160;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 180:
 	__asm        push   0xC;
 	__asm        lea    eax, tempLogBase.nType;
@@ -1598,23 +1447,10 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EC706;
 // LINE 200:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec70d
 int32_t LogManager::ValidateLogEntry(struct tagLogBase* logData) {
-// LINE 207:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 208:
 	__asm        mov    eax, logData;
 	__asm        cmp    dword ptr [eax], 0;
@@ -1627,23 +1463,10 @@ int32_t LogManager::ValidateLogEntry(struct tagLogBase* logData) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004EC742;
 // LINE 209:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ec749
 int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage, int32_t bSetTime) {
-// LINE 219:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 220:
 	__asm        jmp    near ptr 0x004EC760;
 	__asm        mov    eax, this;
@@ -2056,11 +1879,6 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ECCCA;
 // LINE 258:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004eccd1
@@ -2069,14 +1887,6 @@ int32_t LogManager::SortLogEntriesByDate() {
 	class list<tagLogBase *>::iterator iterator;
 	class list<tagLogBase *>* newLogBasePtrList;
 
-// LINE 265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xBC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 266:
 	__asm        push   8;
 	__asm        call   0x0056A600;
@@ -2414,11 +2224,6 @@ int32_t LogManager::SortLogEntriesByDate() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ED1F8;
 // LINE 284:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ed1fd
@@ -2427,14 +2232,6 @@ int32_t LogManager::SortLogEntriesByType() {
 	class list<tagLogBase *>::iterator iterator;
 	class list<tagLogBase *>* newLogBasePtrList;
 
-// LINE 291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xBC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 292:
 	__asm        push   8;
 	__asm        call   0x0056A600;
@@ -2772,25 +2569,12 @@ int32_t LogManager::SortLogEntriesByType() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ED724;
 // LINE 310:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ed729
 int32_t LogManager::PurgeAllEntries() {
 	class list<tagLogBase *>::iterator iterator;
 
-// LINE 321:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -2949,11 +2733,6 @@ int32_t LogManager::PurgeAllEntries() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ED942;
 // LINE 332:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ed947
@@ -2961,14 +2740,6 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 	class list<tagLogBase *>::iterator iterator;
 	long i;
 
-// LINE 343:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x40], eax;
@@ -3120,11 +2891,6 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EDB47;
 // LINE 357:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004edb4e
@@ -3135,13 +2901,6 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 	int32_t nFullStringID;
 	char szBuffer[256];
 
-// LINE 365:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2A4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 366:
 	__asm        mov    al, ds:[0x5B4878];
 	__asm        mov    szBuffer[0], al;
@@ -3633,32 +3392,16 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 	__asm        jmp    near ptr 0x004EE25A;
 // LINE 407:
 	__asm        jmp    near ptr 0x004EE25F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ee264
 long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
-// LINE 413:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 416:
 	__asm        mov    eax, lME;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x214;
 	__asm        jmp    near ptr 0x004EE279;
 // LINE 434:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

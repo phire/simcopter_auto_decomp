@@ -138,14 +138,6 @@ public:
 // Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004963b0
 void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, pNewColors;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -160,23 +152,10 @@ void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNe
 // LINE 31:
 	__asm        jmp    near ptr 0x004963E5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004963ef
 void SparkalPalette::SparkalPalette() {
-// LINE 40:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -188,23 +167,10 @@ void SparkalPalette::SparkalPalette() {
 // LINE 41:
 	__asm        jmp    near ptr 0x00496427;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049642f
 void SparkalPalette::~SparkalPalette() {
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 48:
@@ -226,11 +192,6 @@ void SparkalPalette::~SparkalPalette() {
 	__asm        add    esp, 4;
 // LINE 50:
 	__asm        jmp    near ptr 0x0049647E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00496483
@@ -240,14 +201,6 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 	unsigned long lCurrentDistance;
 	unsigned long lClosestDistance;
 
-// LINE 64:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 67:
 	__asm        mov    lClosestDistance, 0xFFFFFFFF;
 // LINE 70:
@@ -350,11 +303,6 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 	__asm        mov    [ecx], eax;
 // LINE 84:
 	__asm        jmp    near ptr 0x004965A9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004965b0
@@ -368,14 +316,6 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	int32_t nMultiplier;
 	int32_t nDivisor;
 
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x460;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 95:
 	__asm        mov    eax, lFadeTime;
 	__asm        cdq;
@@ -639,11 +579,6 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 // LINE 171:
 	__asm        jmp    near ptr 0x00496A08;
 	__asm        jmp    near ptr 0x00496A0D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00496a14
@@ -657,14 +592,6 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	int32_t nMultiplier;
 	int32_t nDivisor;
 
-// LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x460;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 182:
 	__asm        mov    eax, lFadeTime;
 	__asm        cdq;
@@ -919,11 +846,6 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 // LINE 260:
 	__asm        jmp    near ptr 0x00496E48;
 	__asm        jmp    near ptr 0x00496E4D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00496e54
@@ -938,14 +860,6 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	int32_t nMultiplier;
 	int32_t nDivisor;
 
-// LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x464;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 272:
 	__asm        mov    eax, lFadeTime;
 	__asm        cdq;
@@ -1230,23 +1144,10 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 // LINE 353:
 	__asm        jmp    near ptr 0x004972DB;
 	__asm        jmp    near ptr 0x004972E0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004972e7
 void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTime, long lSteps) {
-// LINE 360:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 361:
 	__asm        mov    eax, lSteps;
 	__asm        push   eax;
@@ -1261,11 +1162,6 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 	__asm        add    esp, 0x10;
 // LINE 362:
 	__asm        jmp    near ptr 0x00497313;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049731a
@@ -1282,13 +1178,6 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	int32_t nMultiplier;
 	int32_t nDivisor;
 
-// LINE 377:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 379:
 	__asm        mov    eax, lFadeTime;
 	__asm        cdq;
@@ -1698,11 +1587,6 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 // LINE 456:
 	__asm        jmp    near ptr 0x0049783A;
 	__asm        jmp    near ptr 0x0049783F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00497844
@@ -1710,13 +1594,6 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
 
-// LINE 462:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x404;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 467:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049785F;
@@ -1764,11 +1641,6 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 	__asm        call   dword ptr [eax+0x18];
 // LINE 483:
 	__asm        jmp    near ptr 0x004978E4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004978e9
@@ -1777,14 +1649,6 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
 
-// LINE 493:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x410;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 503:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049790A;
@@ -1841,23 +1705,10 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 	__asm        call   0x0042D420;
 // LINE 519:
 	__asm        jmp    near ptr 0x004979C8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
-// LINE 534:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004963EF;
 	__asm        mov    eax, this;
@@ -1865,23 +1716,10 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 // LINE 535:
 	__asm        jmp    near ptr 0x004979F1;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004979f9
 void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors) {
-// LINE 543:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x100;
 	__asm        mov    eax, bNewOwnColors;
 	__asm        push   eax;
@@ -1894,11 +1732,6 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors,
 // LINE 544:
 	__asm        jmp    near ptr 0x00497A28;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00497a32
@@ -1909,13 +1742,6 @@ void ClearWindowsSystemPalette() {
 	struct ClearWindowsSystemPalette::__unnamed Palette;
 	int32_t Counter;
 
-// LINE 560:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x414;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 570:
 	__asm        mov    Palette.Version, 0x300;
 	__asm        mov    Palette.NumberOfEntries, 0x100;
@@ -1988,11 +1814,6 @@ void ClearWindowsSystemPalette() {
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 594:
 	__asm        jmp    near ptr 0x00497B47;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

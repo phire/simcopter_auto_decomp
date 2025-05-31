@@ -40,13 +40,6 @@ int32_t Magnitude(struct Point3d* V) {
 	double j;
 	double i;
 
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 33:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -81,11 +74,6 @@ int32_t Magnitude(struct Point3d* V) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x00542FEF;
 // LINE 38:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00542ff4
@@ -94,13 +82,6 @@ int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
 	double j;
 	double i;
 
-// LINE 51:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 54:
 	__asm        mov    eax, p2;
 	__asm        mov    eax, [eax];
@@ -148,11 +129,6 @@ int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x00543089;
 // LINE 59:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054308e
@@ -162,13 +138,6 @@ int32_t Normalize(struct Point3d* V) {
 	double i;
 	double r;
 
-// LINE 71:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 74:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -245,21 +214,10 @@ int32_t Normalize(struct Point3d* V) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x0054317E;
 // LINE 88:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543183
 void CreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
-// LINE 102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 106:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -307,11 +265,6 @@ void CreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
 	__asm        mov    eax, plane;
 	__asm        mov    [eax+0xC], ebx;
 // LINE 113:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005431fe
@@ -320,13 +273,6 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	struct Point3d d;
 	int32_t s;
 
-// LINE 128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 134:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -382,24 +328,12 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	__asm        mov    eax, s;
 	__asm        jmp    near ptr 0x0054328D;
 // LINE 145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543292
 void CreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, int32_t t) {
 	int32_t i;
 
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 163:
 	__asm        mov    eax, p2;
 	__asm        mov    eax, [eax];
@@ -446,21 +380,10 @@ void CreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, i
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 170:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054330c
 int32_t SameSigns(int32_t s1, int32_t s2) {
-// LINE 183:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 185:
 	__asm        xor    eax, eax;
 	__asm        cmp    s2, 0;
@@ -468,24 +391,12 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 	__asm        xor    eax, s1;
 	__asm        jmp    near ptr 0x00543323;
 // LINE 187:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543328
 int32_t VectorBounds(struct Point3d* V, int32_t m) {
 	int32_t r;
 
-// LINE 201:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 205:
 	__asm        mov    eax, V;
 	__asm        push   eax;
@@ -540,24 +451,12 @@ int32_t VectorBounds(struct Point3d* V, int32_t m) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005433B9;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005433be
 void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 	struct Point3d A;
 
-// LINE 227:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 234:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -616,11 +515,6 @@ void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0x10], eax;
 // LINE 245:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543455
@@ -630,13 +524,6 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	int32_t f;
 	int32_t a;
 
-// LINE 261:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 265:
 	__asm        mov    eax, p;
 	__asm        add    eax, 8;
@@ -718,11 +605,6 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 282:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543535
@@ -730,13 +612,6 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	int32_t nv;
 	int32_t A;
 
-// LINE 299:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 306:
 	__asm        mov    eax, M;
 	__asm        push   eax;
@@ -774,11 +649,6 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        mov    eax, nv;
 	__asm        jmp    near ptr 0x0054359F;
 // LINE 314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005435a4
@@ -788,13 +658,6 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	int32_t vf;
 	int32_t A;
 
-// LINE 332:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 336:
 	__asm        cmp    V, 0;
 	__asm        je     near ptr 0x0054361D;
@@ -843,21 +706,10 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00543624;
 // LINE 344:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00543629
 int32_t AngleBounds(int32_t a) {
-// LINE 358:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 359:
 	__asm        cmp    a, 0;
 	__asm        jge    near ptr 0x00543645;
@@ -877,11 +729,6 @@ int32_t AngleBounds(int32_t a) {
 	__asm        mov    eax, a;
 	__asm        jmp    near ptr 0x00543680;
 // LINE 362:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

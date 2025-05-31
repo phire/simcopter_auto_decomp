@@ -114,14 +114,6 @@ class bidirectional_iterator<CopterGameMode,int>{
 // Contribution: 1:000314e0-00032110 Module: 60, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004324e0
 int  CGameApp::CanWeSwitchToWindowedMode() {
-// LINE 28:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 31:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42EC], 0x280;
@@ -137,46 +129,20 @@ int  CGameApp::CanWeSwitchToWindowedMode() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00432533;
 // LINE 32:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432538
 int  CGameApp::CanWeSwitchToFullScreenMode() {
-// LINE 39:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 41:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043254E;
 // LINE 45:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432553
 int  CGameApp::SwitchToWindowedMode() {
 	long hResult;
 
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -311,25 +277,12 @@ int  CGameApp::SwitchToWindowedMode() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004326C6;
 // LINE 100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004326cb
 int  CGameApp::SwitchToFullScreenMode() {
 	long hResult;
 
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -464,25 +417,12 @@ int  CGameApp::SwitchToFullScreenMode() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043283E;
 // LINE 156:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432843
 int  CGameApp::ConvertMonitorToWindowedMode() {
 	long hResult;
 
-// LINE 164:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 168:
 	__asm        mov    eax, ds:[0x597264];
 	__asm        push   eax;
@@ -494,25 +434,12 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043286C;
 // LINE 172:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432871
 int  CGameApp::ConvertMonitorToFullScreenMode() {
 	long hResult;
 
-// LINE 179:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 185:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x42DC];
@@ -533,23 +460,10 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004328B8;
 // LINE 188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004328bd
 int  CGameApp::ToggleScreenMode() {
-// LINE 198:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 199:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
@@ -569,11 +483,6 @@ int  CGameApp::ToggleScreenMode() {
 	__asm        call   dword ptr [eax+0x50];
 	__asm        jmp    near ptr 0x004328FB;
 // LINE 203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432900
@@ -582,14 +491,6 @@ int  CGameApp::CreateDisplaySurfaces() {
 	long nWindowWidth;
 	long nWindowHeight;
 
-// LINE 210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 212:
 	__asm        jmp    near ptr 0x00432911;
 	__asm        jmp    near ptr 0x00432916;
@@ -731,23 +632,10 @@ int  CGameApp::CreateDisplaySurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00432AE9;
 // LINE 239:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432aee
 int  CGameApp::DestroyDisplaySurfaces() {
-// LINE 246:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 247:
 	__asm        mov    ecx, this;
 	__asm        call   0x00440ED6;
@@ -813,11 +701,6 @@ int  CGameApp::DestroyDisplaySurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00432BC7;
 // LINE 260:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432bcc
@@ -825,14 +708,6 @@ int  CGameApp::CreateModeSurfaces() {
 	int32_t nCurrentMode;
 	class list<CopterGameMode>::iterator i;
 
-// LINE 278:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x430C], 0;
@@ -909,11 +784,6 @@ int  CGameApp::CreateModeSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00432CDD;
 // LINE 301:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432ce2
@@ -921,14 +791,6 @@ int  CGameApp::DestroyModeSurfaces() {
 	int32_t nCurrentMode;
 	class list<CopterGameMode>::iterator i;
 
-// LINE 319:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 323:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
@@ -1021,23 +883,10 @@ int  CGameApp::DestroyModeSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00432E32;
 // LINE 344:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432e37
 void  CGameApp::PaletteInitialize() {
-// LINE 359:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 360:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1221,23 +1070,10 @@ void  CGameApp::PaletteInitialize() {
 	__asm        call   0x004C30C8;
 // LINE 388:
 	__asm        jmp    near ptr 0x004330E5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004330ea
 void  CGameApp::PaletteUninitialize() {
-// LINE 396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 398:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1247,11 +1083,6 @@ void  CGameApp::PaletteUninitialize() {
 	__asm        call   dword ptr [edx+0x78];
 // LINE 400:
 	__asm        jmp    near ptr 0x0043310C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

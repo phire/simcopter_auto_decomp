@@ -3,13 +3,6 @@
 int32_t TimeOfTravelTable(unsigned short t) {
 	 // Switch table at 0x0054150d
 
-// LINE 778:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 779:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
@@ -120,10 +113,5 @@ int32_t TimeOfTravelTable(unsigned short t) {
 	__asm        add    eax, [ebx];
 	__asm        add    al, [edx];
 // LINE 876:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

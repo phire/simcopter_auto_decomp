@@ -15,13 +15,6 @@
 void ERexit(char * p) {
 	int32_t answer;
 
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 56:
 	__asm        push   2;
 	__asm        push   0x5C2714;
@@ -42,11 +35,6 @@ void ERexit(char * p) {
 // LINE 60:
 	__asm        call   dword ptr ds:[0x6C369C];
 // LINE 65:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

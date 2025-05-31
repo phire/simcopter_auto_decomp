@@ -47,13 +47,6 @@ float GetMillisecondTime() {
 	float Time;
 	union _LARGE_INTEGER Counter;
 
-// LINE 27:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 34:
 	__asm        lea    eax, Counter<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
@@ -87,40 +80,18 @@ float GetMillisecondTime() {
 	__asm        fld    Time;
 	__asm        jmp    near ptr 0x0043D8C1;
 // LINE 47:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d8c6
 long GetMillisecondTimeLong() {
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 56:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        jmp    near ptr 0x0043D8D7;
 // LINE 61:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d8dc
 long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long lMinDestination, long lMaxDestination) {
-// LINE 73:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 74:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, lMinSource;
@@ -147,24 +118,12 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 	__asm        mov    eax, lPositionSource;
 	__asm        jmp    near ptr 0x0043D91A;
 // LINE 79:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d91f
 void SparkalDelay(unsigned long lMilliseconds) {
 	class MTimer tempTimer;
 
-// LINE 99:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 102:
 	__asm        mov    tempTimer.nTimerResolution, 1;
 	__asm        mov    tempTimer.lStartTime, 0;
@@ -271,11 +230,6 @@ void SparkalDelay(unsigned long lMilliseconds) {
 // LINE 107:
 	__asm        jmp    near ptr 0x0043DAC9;
 	__asm        jmp    near ptr 0x0043DACE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

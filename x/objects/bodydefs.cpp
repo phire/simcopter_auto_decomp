@@ -467,13 +467,6 @@ public:
 void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 	struct PrivAnimPartInfo* pinfo;
 
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 111:
 	__asm        cmp    size, 8;
 	__asm        je     near ptr 0x0055D97C;
@@ -488,24 +481,12 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 	__asm        mov    pinfo, eax;
 // LINE 125:
 	__asm        jmp    near ptr 0x0055D987;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d98c
 struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 	struct TinyXZY txzy;
 
-// LINE 128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 130:
 	__asm        mov    eax, dxzy.x;
 	__asm        push   eax;
@@ -528,24 +509,12 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(txzy.x);
 	__asm        jmp    near ptr 0x0055D9CA;
 // LINE 134:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d9cf
 struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 	struct DXZY dxzy;
 
-// LINE 137:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 139:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(txzy.x);
 	__asm        push   eax;
@@ -578,43 +547,20 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 	__asm        mov    eax, [ebp+8];
 	__asm        jmp    near ptr 0x0055DA29;
 // LINE 146:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055da2e
 float Byte_2_Float(char byte) {
-// LINE 151:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 152:
 	__asm        movsx  eax, byte;
 	__asm        mov    [ebp-4], eax;
 	__asm        fild   dword ptr [ebp-4];
 	__asm        jmp    near ptr 0x0055DA46;
 // LINE 153:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055da4b
 char Float_2_Byte(float flt) {
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 157:
 	__asm        fld    flt;
 	__asm        fcomp  qword ptr ds:[0x593640];
@@ -637,24 +583,12 @@ char Float_2_Byte(float flt) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x0055DAA2;
 // LINE 161:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint(void * __ptr32 val, long size) {
 	struct Point* pt;
 
-// LINE 165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 167:
 	__asm        cmp    size, 4;
 	__asm        je     near ptr 0x0055DAD6;
@@ -680,11 +614,6 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 	__asm        add    esp, 4;
 // LINE 172:
 	__asm        jmp    near ptr 0x0055DAFC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055db01
@@ -693,8 +622,6 @@ void InitBodiesAndAnimations() {
 	unsigned char privname[256];
 
 // LINE 175:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55E286;
 	__asm        mov    eax, fs:[0];
@@ -1134,13 +1061,6 @@ _L39413:
 
 // FUNCTION: COPTER_D 0x0055e29e
 void DeleteBodiesAndAnimations() {
-// LINE 229:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, ds:[0x5BF6D4];
 	__asm        mov    [ebp-0x38], eax;
 // LINE 233:
@@ -1383,11 +1303,6 @@ void DeleteBodiesAndAnimations() {
 	__asm        jmp    near ptr 0x0055E64B;
 // LINE 247:
 	__asm        jmp    near ptr 0x0055E650;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

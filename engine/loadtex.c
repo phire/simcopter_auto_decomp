@@ -40,13 +40,6 @@ struct VRResource* LoadImages(char * name) {
 	struct VRBmpInfo* bhdr;
 	int32_t r;
 
-// LINE 70:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        push   0x8000;
 	__asm        mov    eax, name;
@@ -217,11 +210,6 @@ struct VRResource* LoadImages(char * name) {
 	__asm        mov    eax, res;
 	__asm        jmp    near ptr 0x004D6241;
 // LINE 212:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d6246
@@ -230,13 +218,6 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
 	int32_t j;
 	struct VRBmpHdr* bhdr;
 
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 228:
 	__asm        mov    eax, res;
 	__asm        mov    hdr, eax;
@@ -267,24 +248,12 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
 	__asm        mov    eax, [ecx+eax*4+0x20];
 	__asm        jmp    near ptr 0x004D62A0;
 // LINE 243:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d62a5
 int32_t VRGetResTextureCnt(struct VRResource* res) {
 	struct TEXT_Resource* hdr;
 
-// LINE 254:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 257:
 	__asm        mov    eax, res;
 	__asm        mov    hdr, eax;
@@ -293,11 +262,6 @@ int32_t VRGetResTextureCnt(struct VRResource* res) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        jmp    near ptr 0x004D62BF;
 // LINE 259:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d62c4
@@ -313,13 +277,6 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 	int32_t col;
 	int32_t rowshift;
 
-// LINE 282:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 290:
 	__asm        mov    eax, res;
 	__asm        mov    hdr, eax;
@@ -452,11 +409,6 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D645B;
 // LINE 358:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d6460
@@ -467,13 +419,6 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	struct VRBmpInfo* bhdr;
 	int32_t r;
 
-// LINE 384:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 391:
 	__asm        call   0x004CB7A5;
 	__asm        mov    alignptr, eax;
@@ -620,10 +565,5 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D6607;
 // LINE 496:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

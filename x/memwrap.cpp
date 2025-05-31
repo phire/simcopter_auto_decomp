@@ -104,59 +104,26 @@ public:
 // Contribution: 1:00153720-00153f24 Module: 198, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00554720
 void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32 mh) {
-// LINE 103:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 104:
 	__asm        mov    eax, mh;
 	__asm        jmp    near ptr 0x0055472E;
 // LINE 105:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554733
 void * __ptr32 Memory::GetPlatformHandle(void * __ptr32 mh) {
-// LINE 107:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 108:
 	__asm        mov    eax, mh;
 	__asm        jmp    near ptr 0x00554741;
 // LINE 109:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554746
 void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
-// LINE 114:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 115:
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x00554754;
 // LINE 116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554759
@@ -164,13 +131,6 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	void * __ptr32 mem;
 	unsigned long wstate;
 
-// LINE 150:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 151:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -246,21 +206,10 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x00554843;
 // LINE 184:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554848
 void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 191:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -273,24 +222,12 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 	__asm        call   dword ptr ds:[0x6C371C];
 // LINE 197:
 	__asm        jmp    near ptr 0x0055486B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554870
 unsigned char * Memory::PAlloc(long * pool, long size) {
 	void * __ptr32 mem;
 
-// LINE 202:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 203:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -313,24 +250,12 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x005548BE;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005548c3
 void Memory::HFree(void * __ptr32 mem) {
 	unsigned char * p;
 
-// LINE 219:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 220:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -384,21 +309,10 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 243:
 	__asm        jmp    near ptr 0x00554971;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554976
 void Memory::PFree(unsigned char * mem) {
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 249:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -429,11 +343,6 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        add    esp, 0x10;
 // LINE 260:
 	__asm        jmp    near ptr 0x005549DB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005549e0
@@ -441,13 +350,6 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	short err;
 	unsigned char * p;
 
-// LINE 265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 266:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -474,24 +376,12 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	__asm        mov    eax, p;
 	__asm        jmp    near ptr 0x00554A38;
 // LINE 290:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554a3d
 void Memory::HUnlock(void * __ptr32 mem) {
 	short err;
 
-// LINE 295:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 296:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -514,41 +404,19 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 307:
 	__asm        jmp    near ptr 0x00554A8F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554a94
 void Memory::HMoveHi(void * __ptr32 h) {
-// LINE 312:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 313:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 320:
 	__asm        jmp    near ptr 0x00554AA7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554aac
 void Memory::HPurge(void * __ptr32 h) {
-// LINE 327:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 328:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC2E4;
@@ -558,21 +426,10 @@ void Memory::HPurge(void * __ptr32 h) {
 	__asm        add    esp, 0x10;
 // LINE 332:
 	__asm        jmp    near ptr 0x00554AD3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554ad8
 void Memory::HNoPurge(void * __ptr32 h) {
-// LINE 339:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 340:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC334;
@@ -582,24 +439,12 @@ void Memory::HNoPurge(void * __ptr32 h) {
 	__asm        add    esp, 0x10;
 // LINE 344:
 	__asm        jmp    near ptr 0x00554AFF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554b04
 unsigned char * Memory::Stash(void * __ptr32 h) {
 	unsigned long flags;
 
-// LINE 350:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 351:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -634,21 +479,10 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00554B71;
 // LINE 364:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554b76
 void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
-// LINE 370:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 371:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jb     near ptr 0x00554BA5;
@@ -669,21 +503,10 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        add    esp, 0xC;
 // LINE 377:
 	__asm        jmp    near ptr 0x00554BBE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554bc3
 void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
-// LINE 380:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 381:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jb     near ptr 0x00554BF2;
@@ -704,24 +527,12 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        add    esp, 0xC;
 // LINE 387:
 	__asm        jmp    near ptr 0x00554C0B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554c10
 void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long size) {
 	short err;
 
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 393:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -750,21 +561,10 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        add    esp, 0x10;
 // LINE 399:
 	__asm        jmp    near ptr 0x00554C6E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554c73
 unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second, unsigned long size) {
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 402:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -781,21 +581,10 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00554CA6;
 // LINE 403:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554cab
 long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
-// LINE 408:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 409:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC4A4;
@@ -807,21 +596,10 @@ long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00554CD4;
 // LINE 411:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554cd9
 void Memory::PoolFree(long * pool) {
-// LINE 416:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 417:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC4DC;
@@ -831,24 +609,12 @@ void Memory::PoolFree(long * pool) {
 	__asm        add    esp, 0x10;
 // LINE 418:
 	__asm        jmp    near ptr 0x00554D00;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554d05
 unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	unsigned long size;
 
-// LINE 423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 424:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -871,24 +637,12 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x00554D55;
 // LINE 433:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554d5a
 unsigned long Memory::PGetSize(unsigned char * mem) {
 	unsigned long size;
 
-// LINE 438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 439:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -911,24 +665,12 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x00554DAA;
 // LINE 448:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554daf
 unsigned short Memory::HIsLocked(void * __ptr32 h) {
 	long state;
 
-// LINE 453:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 455:
 	__asm        mov    eax, h;
 	__asm        push   eax;
@@ -943,11 +685,6 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00554DE2;
 // LINE 457:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554de7
@@ -955,13 +692,6 @@ long Memory::HGetState(void * __ptr32 h) {
 	long state;
 	unsigned long wstate;
 
-// LINE 462:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 463:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -994,21 +724,10 @@ long Memory::HGetState(void * __ptr32 h) {
 	__asm        mov    eax, state;
 	__asm        jmp    near ptr 0x00554E5D;
 // LINE 475:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554e62
 void Memory::HSetState(void * __ptr32 h, long newState) {
-// LINE 480:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 486:
 	__asm        test   reinterpret_cast<uint8_t>(newState), 0x80;
 	__asm        je     near ptr 0x00554E83;
@@ -1024,24 +743,12 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	__asm        add    esp, 4;
 // LINE 489:
 	__asm        jmp    near ptr 0x00554E94;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554e99
 long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	long err;
 
-// LINE 494:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 495:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
@@ -1074,24 +781,12 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x00554F01;
 // LINE 507:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00554f06
 long Memory::Error() {
 	long err;
 
-// LINE 536:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 541:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        mov    err, eax;
@@ -1099,11 +794,6 @@ long Memory::Error() {
 	__asm        mov    eax, err;
 	__asm        jmp    near ptr 0x00554F20;
 // LINE 544:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

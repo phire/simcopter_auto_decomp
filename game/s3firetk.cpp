@@ -376,12 +376,6 @@ public:
 // Contribution: 1:00135100-00135db2 Module: 159, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536100
 int32_t CreateFireTruckInstance(int32_t instanceID) {
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -394,23 +388,10 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053612B;
 // LINE 78:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536130
 void FireEngineClass::FireEngineClass() {
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x005415D5;
 	__asm        mov    eax, this;
@@ -421,33 +402,15 @@ void FireEngineClass::FireEngineClass() {
 // LINE 84:
 	__asm        jmp    near ptr 0x0053615C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536164
 void FireEngineClass::~FireEngineClass() {
-// LINE 88:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
 	__asm        jmp    near ptr 0x0053617E;
 	__asm        mov    ecx, this;
 	__asm        call   0x0054163A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053618b
@@ -456,13 +419,6 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	class FireEngineClass* youveWonABrandNewCar;
 	char * objectMemory;
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 117:
 	__asm        push   0x2C0;
 	__asm        call   0x0056A600;
@@ -614,21 +570,10 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053637C;
 // LINE 184:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536381
 int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
-// LINE 209:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 211:
 	__asm        push   5;
 	__asm        push   0x62B9D0;
@@ -644,21 +589,10 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	__asm        call   0x0053AB93;
 	__asm        jmp    near ptr 0x005363AE;
 // LINE 212:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005363b3
 int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
-// LINE 217:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 218:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        and    eax, 0xFFFF;
@@ -669,22 +603,10 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005363DD;
 // LINE 219:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005363e2
 int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
-// LINE 224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 225:
 	__asm        cmp    mapX, 0;
 	__asm        jl     near ptr 0x00536419;
@@ -723,11 +645,6 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00536489;
 // LINE 226:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053648e
@@ -735,14 +652,6 @@ void FireEngineClass::ItterateFSM() {
 	struct Point3d vec;
 	int32_t dist;
 
-// LINE 249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 254:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -972,11 +881,6 @@ void FireEngineClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x00536720;
 // LINE 348:
 	__asm        jmp    near ptr 0x00536773;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536778
@@ -984,14 +888,6 @@ int32_t FireEngineClass::AtScene() {
 	struct Point3d vec;
 	int32_t dist;
 
-// LINE 353:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 358:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A4], 0;
@@ -1099,11 +995,6 @@ int32_t FireEngineClass::AtScene() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005368C8;
 // LINE 400:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005368cd
@@ -1115,14 +1006,6 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	struct _DYOBJ_INST* dyobj;
 	class SpiralScan spiral;
 
-// LINE 420:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 424:
 	__asm        push   5;
 	__asm        lea    ecx, spiral.currDist;
@@ -1290,23 +1173,10 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    near ptr 0x00536ADB;
 // LINE 498:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00536ae2
 void FireEngineClass::PointStreamAtFire() {
-// LINE 517:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 521:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A4], 0;
@@ -1403,23 +1273,10 @@ void FireEngineClass::PointStreamAtFire() {
 	__asm        mov    [ecx+0x2AC], eax;
 // LINE 542:
 	__asm        jmp    near ptr 0x00536C38;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536c3d
 void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 553:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 554:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -1453,23 +1310,10 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x00542A75;
 // LINE 561:
 	__asm        jmp    near ptr 0x00536CB1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00536cb8
 void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 572:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 575:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1542,11 +1386,6 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x00536AE2;
 // LINE 606:
 	__asm        jmp    near ptr 0x00536DAC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

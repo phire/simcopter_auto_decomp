@@ -39,13 +39,6 @@ short GetAltitude(int32_t x, int32_t y) {
 	short alt;
 	short wat;
 
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 96:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00513D6D;
@@ -100,24 +93,12 @@ short GetAltitude(int32_t x, int32_t y) {
 	__asm        mov    ax, alt;
 	__asm        jmp    near ptr 0x00513E10;
 // LINE 110:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00513e15
 void S3TerrainInit() {
 	long i;
 
-// LINE 121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 130:
 	__asm        push   0x400000;
 	__asm        push   0x10000;
@@ -145,11 +126,6 @@ void S3TerrainInit() {
 // LINE 143:
 	__asm        jmp    near ptr 0x00513E7C;
 // LINE 144:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00513e81
@@ -166,13 +142,6 @@ short S3TerrainInitMap() {
 	int32_t k1;
 	short wflags;
 
-// LINE 155:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 164:
 	__asm        mov    dword ptr ds:[0x66EB00], 0x7530;
 // LINE 165:
@@ -3903,11 +3872,6 @@ short S3TerrainInitMap() {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00517237;
 // LINE 1002:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051723c
@@ -3916,13 +3880,6 @@ void do_map_square(short x, short y, short msize) {
 	short midp;
 	short is_odd;
 
-// LINE 1012:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1015:
 	__asm        movsx  eax, msize;
 	__asm        sar    eax, 1;
@@ -4783,11 +4740,6 @@ void do_map_square(short x, short y, short msize) {
 	__asm        call   0x0051723C;
 	__asm        add    esp, 0xC;
 // LINE 1100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00517dc6
@@ -4796,13 +4748,6 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	long max_noise;
 	long new_height;
 
-// LINE 1109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1110:
 	__asm        mov    max_noise, 0x7FF;
 // LINE 1115:
@@ -4845,11 +4790,6 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        mov    ax, reinterpret_cast<uint16_t>(new_height);
 	__asm        jmp    near ptr 0x00517E58;
 // LINE 1121:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00517e5d
@@ -4859,13 +4799,6 @@ void S3TerrSetGridObj() {
 	int32_t * yptr;
 	struct Point2d ulp;
 
-// LINE 1134:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1144:
 	__asm        mov    eax, ds:[0x67ED28];
 	__asm        and    eax, 0xFF;
@@ -4940,11 +4873,6 @@ void S3TerrSetGridObj() {
 // LINE 1162:
 	__asm        jmp    near ptr 0x00517E96;
 // LINE 1163:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00517f70
@@ -4953,13 +4881,6 @@ void S3TerrainMorph() {
 	struct Point3d* v;
 	struct Point2d ulp;
 
-// LINE 1190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1199:
 	__asm        cmp    dword ptr ds:[0x5B5CC4], 0xA;
 	__asm        jne    near ptr 0x005181A2;
@@ -5331,11 +5252,6 @@ void S3TerrainMorph() {
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x1C], ecx;
 // LINE 1277:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00518499
@@ -5348,13 +5264,6 @@ int32_t S3TerrMorphWater() {
 	short alt0;
 	short * array1;
 
-// LINE 1431:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1439:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        add    ds:[0x5B5CDC], eax;
@@ -5476,11 +5385,6 @@ int32_t S3TerrMorphWater() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00518656;
 // LINE 1489:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051865b
@@ -5496,13 +5400,6 @@ void AdjustTerrainMap() {
 	int32_t end;
 	int32_t alt1;
 
-// LINE 1540:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1544:
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        sar    eax, 1;
@@ -5821,11 +5718,6 @@ void AdjustTerrainMap() {
 // LINE 1586:
 	__asm        jmp    near ptr 0x00518A25;
 // LINE 1588:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00518a8c
@@ -5842,13 +5734,6 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	int32_t hypalt;
 	int32_t alt1;
 
-// LINE 1605:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1613:
 	__asm        cmp    landable, 0;
 	__asm        je     near ptr 0x00518AA8;
@@ -6170,30 +6055,14 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        mov    eax, alt1;
 	__asm        jmp    near ptr 0x00518E5F;
 // LINE 1727:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00518e64
 unsigned char S3TerrGetShadeIndex(long x, long y) {
-// LINE 1738:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1804:
 	__asm        xor    al, al;
 	__asm        jmp    near ptr 0x00518E71;
 // LINE 1805:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00518e76
@@ -6208,13 +6077,6 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	int32_t normz;
 	int32_t flags;
 
-// LINE 1822:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1829:
 	__asm        mov    eax, cityx;
 	__asm        add    eax, 0x20000000;
@@ -6314,11 +6176,6 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	__asm        mov    eax, alt;
 	__asm        jmp    near ptr 0x00518F87;
 // LINE 1866:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

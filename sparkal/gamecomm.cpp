@@ -458,14 +458,6 @@ protected:
 // Contribution: 1:0008a2b0-0008d894 Module: 26, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048b2b0
 void CommandSystem::CommandSystem() {
-// LINE 31:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xC8;
 	__asm        call   0x0043D432;
@@ -625,11 +617,6 @@ void CommandSystem::CommandSystem() {
 // LINE 33:
 	__asm        jmp    near ptr 0x0048B52C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b534
@@ -637,14 +624,6 @@ void CommandSystem::Initialize() {
 	int32_t j;
 	int32_t i;
 
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 46:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0048B54F;
@@ -709,25 +688,12 @@ void CommandSystem::Initialize() {
 	__asm        jmp    near ptr 0x0048B604;
 // LINE 61:
 	__asm        jmp    near ptr 0x0048B62C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b631
 void CommandSystem::ClearAllCommands() {
 	int32_t i;
 
-// LINE 71:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 74:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0048B64C;
@@ -746,25 +712,12 @@ void CommandSystem::ClearAllCommands() {
 	__asm        call   0x0043D703;
 // LINE 77:
 	__asm        jmp    near ptr 0x0048B67D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b682
 void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 	int32_t i;
 
-// LINE 86:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 89:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0048B69D;
@@ -792,11 +745,6 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 	__asm        call   0x0043D703;
 // LINE 92:
 	__asm        jmp    near ptr 0x0048B6E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048b6ed
@@ -808,14 +756,6 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 	unsigned char chCurrentChar;
 	long lCurrentIgnoreModifiers;
 
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 130:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
@@ -1035,11 +975,6 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 	__asm        jmp    near ptr 0x0048B729;
 // LINE 182:
 	__asm        jmp    near ptr 0x0048B9A4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b9a9
@@ -1050,14 +985,6 @@ void CommandSystem::PollJoysticksForCommands() {
 	int32_t iEnd;
 	int32_t nCommand;
 
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 199:
 	__asm        mov    eax, ds:[0x604C78];
 	__asm        mov    iEnd, eax;
@@ -1199,23 +1126,10 @@ void CommandSystem::PollJoysticksForCommands() {
 	__asm        jmp    near ptr 0x0048BA46;
 // LINE 233:
 	__asm        jmp    near ptr 0x0048BB83;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bb88
 void CGameCommander::CGameCommander() {
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0049ADC3;
 	__asm        mov    eax, this;
@@ -1226,67 +1140,28 @@ void CGameCommander::CGameCommander() {
 // LINE 252:
 	__asm        jmp    near ptr 0x0048BBB4;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bbbc
 void CGameCommander::~CGameCommander() {
-// LINE 255:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590FF8;
 // LINE 256:
 	__asm        jmp    near ptr 0x0048BBD6;
 	__asm        mov    ecx, this;
 	__asm        call   0x0049ADED;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bbe3
 unsigned long CGameCommander::Idle() {
-// LINE 263:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 264:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BBF6;
 // LINE 265:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bbfb
 unsigned long CGameCommander::OnLMouseDown(int32_t x, int32_t y) {
-// LINE 273:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 274:
 	__asm        push   1;
 	__asm        mov    eax, y;
@@ -1303,23 +1178,10 @@ unsigned long CGameCommander::OnLMouseDown(int32_t x, int32_t y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BC2C;
 // LINE 276:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048bc33
 unsigned long CGameCommander::OnLMouseUp(int32_t x, int32_t y) {
-// LINE 283:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 284:
 	__asm        push   1;
 	__asm        mov    eax, y;
@@ -1336,23 +1198,10 @@ unsigned long CGameCommander::OnLMouseUp(int32_t x, int32_t y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BC64;
 // LINE 286:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048bc6b
 unsigned long CGameCommander::OnRMouseDown(int32_t x, int32_t y) {
-// LINE 292:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 293:
 	__asm        push   2;
 	__asm        mov    eax, y;
@@ -1369,23 +1218,10 @@ unsigned long CGameCommander::OnRMouseDown(int32_t x, int32_t y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BC9C;
 // LINE 295:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048bca3
 unsigned long CGameCommander::OnRMouseUp(int32_t x, int32_t y) {
-// LINE 302:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 303:
 	__asm        push   2;
 	__asm        mov    eax, y;
@@ -1402,23 +1238,10 @@ unsigned long CGameCommander::OnRMouseUp(int32_t x, int32_t y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BCD4;
 // LINE 305:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048bcdb
 unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
-// LINE 312:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 313:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -1434,23 +1257,10 @@ unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BD0A;
 // LINE 315:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048bd11
 unsigned long CGameCommander::OnWindowActivate() {
-// LINE 322:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-4], eax;
@@ -1462,23 +1272,10 @@ unsigned long CGameCommander::OnWindowActivate() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BD3F;
 // LINE 326:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bd44
 unsigned long CGameCommander::OnWindowDeactivate() {
-// LINE 332:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-4], eax;
@@ -1490,23 +1287,10 @@ unsigned long CGameCommander::OnWindowDeactivate() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BD72;
 // LINE 336:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bd77
 void CGameCommander::ProcessSetFocus() {
-// LINE 351:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 354:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   0x00431E19;
@@ -1519,23 +1303,10 @@ void CGameCommander::ProcessSetFocus() {
 	__asm        call   dword ptr [edx+0x98];
 // LINE 356:
 	__asm        jmp    near ptr 0x0048BDA6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048bdab
 unsigned long CGameCommander::OnCharacter(long lCharacter) {
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 364:
 	__asm        mov    eax, lCharacter;
 	__asm        push   eax;
@@ -1549,23 +1320,10 @@ unsigned long CGameCommander::OnCharacter(long lCharacter) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048BDD6;
 // LINE 366:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048bddd
 void CGameCommander::ProcessKeyDown(long lKey) {
-// LINE 373:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 374:
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
@@ -1585,23 +1343,10 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 	__asm        call   dword ptr [edx+0xA0];
 // LINE 376:
 	__asm        jmp    near ptr 0x0048BE1F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048be26
 void CGameCommander::ProcessKeyUp(long lKey) {
-// LINE 385:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 386:
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
@@ -1621,11 +1366,6 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 	__asm        call   dword ptr [edx+0xA4];
 // LINE 388:
 	__asm        jmp    near ptr 0x0048BE68;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048be6f
@@ -1634,14 +1374,6 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 	int32_t nTempIndex;
 	unsigned char chTempModifierState;
 
-// LINE 402:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 408:
 	__asm        mov    eax, nCommand;
 	__asm        mov    dword ptr [eax], 0;
@@ -1810,11 +1542,6 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 	__asm        call   0x0043D4EB;
 // LINE 466:
 	__asm        jmp    near ptr 0x0048C05D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0048c064
@@ -1823,14 +1550,6 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 	int32_t nTempIndex;
 	unsigned char chTempModifierState;
 
-// LINE 478:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 483:
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
@@ -1975,34 +1694,16 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 	__asm        call   0x0043D67F;
 // LINE 520:
 	__asm        jmp    near ptr 0x0048C20C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048c213
 void CGameCommander::ProcessSystemCloseRequest() {
-// LINE 527:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 528:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+8];
 	__asm        call   0x00464D1A;
 // LINE 529:
 	__asm        jmp    near ptr 0x0048C22F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048c234
@@ -2011,13 +1712,6 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	struct Shortcut tempShortcut;
 	char szFilePath[260];
 
-// LINE 552:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2D4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 553:
 	__asm        mov    al, ds:[0x599D94];
 	__asm        mov    szFilePath[0], al;
@@ -2275,11 +1969,6 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	__asm        mov    eax, [ebp-0x26C];
 	__asm        jmp    near ptr 0x0048C6EC;
 // LINE 579:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048c6f1
@@ -2289,13 +1978,6 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	struct Shortcut tempShortcut;
 	char szFilePath[260];
 
-// LINE 586:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x290;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 587:
 	__asm        mov    al, ds:[0x599D98];
 	__asm        mov    szFilePath[0], al;
@@ -2407,11 +2089,6 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        jmp    near ptr 0x0048C8B8;
 // LINE 605:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048c8bd
@@ -2419,13 +2096,6 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	int32_t i;
 	struct Shortcut tempShortcut;
 
-// LINE 611:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2E0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 616:
 	__asm        mov    tempShortcut.lDeviceID, 0;
 // LINE 618:
@@ -4252,21 +3922,10 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        jmp    near ptr 0x0048DC69;
 // LINE 922:
 	__asm        jmp    near ptr 0x0048E3AF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e3b4
 int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIgnoreModifiers) {
-// LINE 928:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 937:
 	__asm        cmp    lCommand, 3;
 	__asm        je     near ptr 0x0048E414;
@@ -4327,24 +3986,12 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0048E4B0;
 // LINE 962:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e4b5
 void DeleteShortcutPrefsFile() {
 	char szFilePath[260];
 
-// LINE 968:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 969:
 	__asm        mov    al, ds:[0x599D9C];
 	__asm        mov    szFilePath[0], al;
@@ -4371,21 +4018,10 @@ void DeleteShortcutPrefsFile() {
 	__asm        jmp    near ptr 0x0048E50B;
 // LINE 973:
 	__asm        jmp    near ptr 0x0048E510;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e515
 int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
-// LINE 979:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 982:
 	__asm        mov    eax, shortcutToValidate;
 	__asm        cmp    dword ptr [eax], 0;
@@ -4460,21 +4096,10 @@ int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0048E5F5;
 // LINE 1007:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e5fa
 int32_t IsKeyReserved(long lKey) {
-// LINE 1013:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1018:
 	__asm        cmp    lKey, 0x90;
 	__asm        je     near ptr 0x0048E635;
@@ -4491,21 +4116,10 @@ int32_t IsKeyReserved(long lKey) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048E646;
 // LINE 1019:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e64b
 void GetReservedKeyArray(long * lKeys) {
-// LINE 1029:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1030:
 	__asm        mov    eax, lKeys;
 	__asm        mov    dword ptr [eax], 0x90;
@@ -4526,21 +4140,10 @@ void GetReservedKeyArray(long * lKeys) {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1036:
 	__asm        jmp    near ptr 0x0048E691;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e696
 int32_t IsCommandConfigurable(long lCommand) {
-// LINE 1043:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1045:
 	__asm        cmp    lCommand, 2;
 	__asm        jl     near ptr 0x0048E6BA;
@@ -4551,21 +4154,10 @@ int32_t IsCommandConfigurable(long lCommand) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048E6C1;
 // LINE 1046:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048e6c6
 long GetJoystickCommandTwin(long lCommand) {
-// LINE 1056:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1057:
 	__asm        cmp    lCommand, 6;
 	__asm        jne    near ptr 0x0048E6E5;
@@ -4695,11 +4287,6 @@ long GetJoystickCommandTwin(long lCommand) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048E890;
 // LINE 1094:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

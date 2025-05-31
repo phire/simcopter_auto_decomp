@@ -66,13 +66,6 @@ void S3ObjInit() {
 	struct VRBmpHdr* bhdr;
 	struct VRObjInfo oinfo;
 
-// LINE 379:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 390:
 	__asm        push   0x33;
 	__asm        mov    eax, ds:[0x5B476C];
@@ -672,21 +665,10 @@ void S3ObjInit() {
 // LINE 679:
 	__asm        jmp    near ptr 0x005190BC;
 // LINE 680:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051957b
 void S3ObjLinkLowRes() {
-// LINE 690:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 708:
 	__asm        push   0x13F;
 	__asm        call   0x004D8821;
@@ -1130,11 +1112,6 @@ void S3ObjLinkLowRes() {
 // LINE 827:
 	__asm        jmp    near ptr 0x00519A9F;
 // LINE 831:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00519aa4
@@ -1147,13 +1124,6 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	long winwidth;
 	char * ptr;
 
-// LINE 852:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 853:
 	__asm        mov    bufwidth, 0x140;
 // LINE 854:
@@ -1320,11 +1290,6 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	__asm        mov    edx, ptr;
 	__asm        mov    [ecx+edx], al;
 // LINE 940:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00519c86
@@ -1352,13 +1317,6 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	char * ptr;
 	int32_t scale;
 
-// LINE 951:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 955:
 	__asm        mov    bufwidth, 0x140;
 // LINE 956:
@@ -8435,21 +8393,10 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 3670:
 	__asm        jmp    near ptr 0x0051BF72;
 // LINE 3672:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051da5b
 struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
-// LINE 3683:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3685:
 	__asm        cmp    tile, 0;
 	__asm        jl     near ptr 0x0051DA78;
@@ -8464,11 +8411,6 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 	__asm        lea    eax, [eax+eax*4+0x5B5EA0];
 	__asm        jmp    near ptr 0x0051DA91;
 // LINE 3689:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051da96
@@ -8491,13 +8433,6 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	 // Switch table at 0x0051dc7b
 	long hittee_type;
 
-// LINE 3703:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3707:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -9728,11 +9663,6 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        in     al, 0x51;
 	__asm        (bad);
 // LINE 4117:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0051e69a
@@ -9741,13 +9671,6 @@ void S3ObjSetFlatShading() {
 	long i;
 	long objcount;
 
-// LINE 4145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4150:
 	__asm        cmp    dword ptr ds:[0x598E90], 0;
 	__asm        jne    near ptr 0x0051E6D1;
@@ -9809,11 +9732,6 @@ void S3ObjSetFlatShading() {
 // LINE 4178:
 	__asm        jmp    near ptr 0x0051E72C;
 // LINE 4179:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -319,14 +319,6 @@ private:
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00427550
 unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
-// LINE 61:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 63:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
@@ -374,23 +366,10 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 	__asm        mov    eax, 6;
 	__asm        jmp    near ptr 0x004275DC;
 // LINE 77:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004275e3
 unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
-// LINE 85:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 86:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
@@ -443,11 +422,6 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 	__asm        mov    eax, 0x80000000;
 	__asm        jmp    near ptr 0x0042768A;
 // LINE 102:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00427691
@@ -468,14 +442,6 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	char szSplitPathExtension[256];
 	long lPresentRecordType;
 
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x638;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 126:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
@@ -800,11 +766,6 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00427BED;
 // LINE 213:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00427bf4
@@ -818,14 +779,6 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	char szSplitPathDrive[3];
 	char szSplitPathExtension[256];
 
-// LINE 222:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x434;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 232:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -1064,11 +1017,6 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00427F91;
 // LINE 292:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00427f98
@@ -1087,14 +1035,6 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	int32_t nFullStringID;
 	char szSplitPathExtension[256];
 
-// LINE 305:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x808;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 326:
 	__asm        lea    eax, szSplitPathExtension[0];
 	__asm        push   eax;
@@ -1742,11 +1682,6 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    eax, nResult;
 	__asm        jmp    near ptr 0x00428A6F;
 // LINE 406:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428a74
@@ -1754,14 +1689,6 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	class MIFF myMIFF;
 	long lFileType;
 
-// LINE 421:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x16C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 422:
 	__asm        mov    eax, szGamePath;
 	__asm        push   eax;
@@ -1855,23 +1782,10 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        mov    eax, [ebp-0x168];
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 455:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00428c38
 int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
-// LINE 462:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 463:
 	__asm        push   1;
 	__asm        mov    eax, nResult;
@@ -1882,11 +1796,6 @@ int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
 	__asm        call   0x0043F2B9;
 	__asm        jmp    near ptr 0x00428C61;
 // LINE 464:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

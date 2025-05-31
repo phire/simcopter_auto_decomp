@@ -19,12 +19,6 @@
 // Contribution: 1:0008a110-0008a2a6 Module: 27, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048b110
 int32_t GetAllDisplayModes() {
-// LINE 31:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 33:
 	__asm        push   0x48B234;
 	__asm        push   0;
@@ -39,24 +33,12 @@ int32_t GetAllDisplayModes() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0048B13B;
 // LINE 40:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b140
 int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	int32_t i;
 
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 62:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0048B158;
@@ -89,11 +71,6 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048B1BF;
 // LINE 69:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
@@ -102,13 +79,6 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 	int32_t nPlanes;
 	int32_t nBitsPerPixel;
 
-// LINE 78:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 84:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -147,21 +117,10 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 	__asm        mov    [ecx+8], eax;
 // LINE 93:
 	__asm        jmp    near ptr 0x0048B22F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048b234
 long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
-// LINE 103:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 104:
 	__asm        cmp    dword ptr ds:[0x599D80], 0x40;
 	__asm        jl     near ptr 0x0048B24E;
@@ -192,11 +151,6 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0048B2A0;
 // LINE 112:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 

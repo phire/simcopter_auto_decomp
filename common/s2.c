@@ -11,13 +11,6 @@
 long S2TileSize(long tile) {
 	long size;
 
-// LINE 42:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 46:
 	__asm        cmp    tile, 0x61;
 	__asm        jl     near ptr 0x0058E38D;
@@ -45,10 +38,5 @@ long S2TileSize(long tile) {
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x0058E3D9;
 // LINE 56:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

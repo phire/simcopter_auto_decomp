@@ -30,13 +30,6 @@ public:
 unsigned short wincpuidsupport() {
 	int32_t cpuid_support;
 
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 64:
 	__asm        mov    cpuid_support, 1;
 // LINE 67:
@@ -66,24 +59,12 @@ support:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(cpuid_support);
 	__asm        jmp    near ptr 0x0047B675;
 // LINE 85:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b67a
 unsigned short wincpuid() {
 	unsigned short cpuid;
 
-// LINE 106:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 110:
 	__asm        call   0x0047B640;
 	__asm        movzx  eax, ax;
@@ -138,11 +119,6 @@ end:
 	__asm        mov    ax, cpuid;
 	__asm        jmp    near ptr 0x0047B734;
 // LINE 139:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b739
@@ -153,13 +129,6 @@ unsigned short wincpuidext() {
 	unsigned char vendor_id[12];
 	unsigned short cpu_type;
 
-// LINE 162:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 164:
 	__asm        mov    i, 0;
 // LINE 165:
@@ -247,11 +216,6 @@ end_cpuidext:
 	__asm        mov    ax, cpuidext;
 	__asm        jmp    near ptr 0x0047B820;
 // LINE 215:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b825
@@ -261,13 +225,6 @@ unsigned long wincpufeatures() {
 	unsigned long cpuff;
 	unsigned char vendor_id[12];
 
-// LINE 253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 255:
 	__asm        mov    i, 0;
 // LINE 256:
@@ -343,11 +300,6 @@ end_cpuff:
 	__asm        mov    eax, cpuff;
 	__asm        jmp    near ptr 0x0047B8E7;
 // LINE 299:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b8ec
@@ -355,13 +307,6 @@ struct TIME_STAMP winrdtsc() {
 	struct TIME_STAMP timestamp;
 	unsigned long features;
 
-// LINE 320:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 324:
 	__asm        call   0x0047B825;
 	__asm        mov    features, eax;
@@ -383,48 +328,24 @@ struct TIME_STAMP winrdtsc() {
 	__asm        mov    edx, timestamp.Low;
 	__asm        jmp    near ptr 0x0047B928;
 // LINE 343:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b92d
 unsigned short getdllversion() {
 	unsigned short Version;
 
-// LINE 359:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 360:
 	__asm        mov    Version, 0x100;
 // LINE 362:
 	__asm        mov    ax, Version;
 	__asm        jmp    near ptr 0x0047B945;
 // LINE 364:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b94a
 unsigned short check_clone() {
 	short cpu_type;
 
-// LINE 381:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 382:
 	__asm        mov    cpu_type, 0;
 // LINE 386:
@@ -463,24 +384,12 @@ clone:
 	__asm        mov    ax, cpu_type;
 	__asm        jmp    near ptr 0x0047B994;
 // LINE 407:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b999
 unsigned short check_8086() {
 	unsigned short cpu_type;
 
-// LINE 422:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 424:
 	__asm        mov    cpu_type, 0xFFFF;
 // LINE 427:
@@ -520,24 +429,12 @@ end_8086:
 	__asm        mov    ax, cpu_type;
 	__asm        jmp    near ptr 0x0047B9E6;
 // LINE 450:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b9eb
 unsigned short check_80286() {
 	unsigned short cpu_type;
 
-// LINE 465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 467:
 	__asm        mov    cpu_type, 0xFFFF;
 // LINE 470:
@@ -575,24 +472,12 @@ end_80286:
 	__asm        mov    ax, cpu_type;
 	__asm        jmp    near ptr 0x0047BA35;
 // LINE 496:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047ba3a
 unsigned short check_80386() {
 	unsigned short cpu_type;
 
-// LINE 511:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 513:
 	__asm        mov    cpu_type, 0xFFFF;
 // LINE 516:
@@ -638,11 +523,6 @@ end_80386:
 	__asm        mov    ax, cpu_type;
 	__asm        jmp    near ptr 0x0047BA88;
 // LINE 546:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047ba8d
@@ -654,13 +534,6 @@ unsigned short check_IDProc() {
 	unsigned short cpu_type;
 	unsigned char model;
 
-// LINE 561:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 563:
 	__asm        mov    i, 0;
 // LINE 564:
@@ -751,11 +624,6 @@ end_IDProc:
 	__asm        mov    ax, cpu_type;
 	__asm        jmp    near ptr 0x0047BB63;
 // LINE 616:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

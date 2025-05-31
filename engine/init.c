@@ -9,12 +9,6 @@
 // Contribution: 1:0018d3e0-0018d42c Module: 95, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0058e3e0
 void VREngineInit() {
-// LINE 42:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 48:
 	__asm        push   0x5C2770;
 	__asm        call   0x004D6A69;
@@ -40,11 +34,6 @@ void VREngineInit() {
 // LINE 54:
 	__asm        call   0x004D69C9;
 // LINE 56:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

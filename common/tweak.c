@@ -27,13 +27,6 @@
 int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	int32_t nCt;
 
-// LINE 40:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 43:
 	__asm        cmp    dword ptr ds:[0x59B3A8], 0xC8;
 	__asm        jle    near ptr 0x004C9AF3;
@@ -92,11 +85,6 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	__asm        mov    eax, ds:[0x59B3A8];
 	__asm        jmp    near ptr 0x004C9B96;
 // LINE 57:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9b9b
@@ -106,13 +94,6 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	char szTemp[300];
 	char szFullPath[260];
 
-// LINE 70:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x268;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        mov    dword ptr ds:[0x59B3AC], 0;
 // LINE 78:
@@ -221,21 +202,10 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        mov    eax, ds:[0x59B3AC];
 	__asm        jmp    near ptr 0x004C9D29;
 // LINE 105:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d2e
 void TWKGameInit() {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 117:
 	__asm        push   0x59B450;
 	__asm        call   dword ptr ds:[0x6C37E4];
@@ -245,27 +215,11 @@ void TWKGameInit() {
 // LINE 120:
 	__asm        mov    dword ptr ds:[0x59B3AC], 0;
 // LINE 121:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d5d
 void TWKUpdate() {
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 142:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9d68
@@ -276,13 +230,6 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	char szFullPath[260];
 	char * pszFile;
 
-// LINE 154:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x23C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 170:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -347,11 +294,6 @@ void TWKReadAllFiles(char * pszTWKFile) {
 // LINE 185:
 	__asm        jmp    near ptr 0x004C9D9A;
 // LINE 191:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9e4f
@@ -363,13 +305,6 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	char szFullPath[260];
 	char szValue[15];
 
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x164;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 211:
 	__asm        push   0x59B484;
 	__asm        push   0x59B48C;
@@ -522,43 +457,20 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 // LINE 246:
 	__asm        inc    dword ptr ds:[0x59B3AC];
 // LINE 249:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca059
 int32_t TWKDOSRead(char * pszTWKFile) {
-// LINE 262:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 265:
 	__asm        mov    eax, ds:[0x59B3AC];
 	__asm        jmp    near ptr 0x004CA069;
 // LINE 352:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca06e
 void TWKGetToEOLN(char * pDest, char * pSource) {
 	int32_t nCt;
 
-// LINE 361:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 362:
 	__asm        mov    nCt, 0;
 // LINE 363:
@@ -583,11 +495,6 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 	__asm        mov    ecx, pDest;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 369:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -564,49 +564,20 @@ private:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c710
 void $E14() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0043C725;
 	__asm        jmp    near ptr 0x0043C720;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c725
 void $E13() {
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0057D0B0;
 	__asm        jmp    near ptr 0x0043C735;
 	__asm        jmp    near ptr 0x0043C73A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043c73f
 void MDate::MDate(const class MTime& t) {
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 // LINE 56:
@@ -632,98 +603,44 @@ void MDate::MDate(const class MTime& t) {
 // LINE 57:
 	__asm        jmp    near ptr 0x0043C7A9;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7b3
 void $E17() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0043C7C8;
 	__asm        jmp    near ptr 0x0043C7C3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7c8
 void $E16() {
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, 0x5C3608;
 	__asm        call   0x004BC4D1;
 	__asm        jmp    near ptr 0x0043C7E1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7e6
 void $E20() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0043C7FB;
 	__asm        jmp    near ptr 0x0043C7F6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7fb
 void $E19() {
-// LINE 68:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0;
 	__asm        push   0xC22D;
 	__asm        mov    ecx, 0x5C3618;
 	__asm        call   0x004BC4D1;
 	__asm        jmp    near ptr 0x0043C817;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043c81c
 int  MTime::AssertMDate(const class MDate& date) {
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        mov    eax, date;
 	__asm        mov    ecx, ds:[0x5C360C];
@@ -740,22 +657,10 @@ int  MTime::AssertMDate(const class MDate& date) {
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x0043C862;
 // LINE 78:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043c867
 class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
-// LINE 88:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 90:
 	__asm        jmp    near ptr 0x0043C875;
 	__asm        mov    eax, date;
@@ -783,25 +688,12 @@ class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043C8C9;
 // LINE 91:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043c8ce
 unsigned long  MTime::LocalSecs() {
 	class MTime local_time;
 
-// LINE 101:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        sub    eax, ds:[0x5C0870];
@@ -822,24 +714,12 @@ unsigned long  MTime::LocalSecs() {
 	__asm        mov    eax, local_time.<MTime+0x00:4>;
 	__asm        jmp    near ptr 0x0043C919;
 // LINE 106:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043c91e
 class MTime  MTime::BeginDST(uint32_t year) {
 	class MDate endApril;
 
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 120:
 	__asm        cmp    year, 0x7C2;
 	__asm        jbe    near ptr 0x0043C992;
@@ -934,24 +814,12 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA31;
 // LINE 133:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043ca36
 class MTime  MTime::EndDST(uint32_t year) {
 	class MDate endOctober;
 
-// LINE 147:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 148:
 	__asm        mov    eax, year;
 	__asm        push   eax;
@@ -974,11 +842,6 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA74;
 // LINE 150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043ca79
@@ -987,14 +850,6 @@ class MTime  MTime::EndDST(uint32_t year) {
 	struct tm* t;
 	long ltime;
 
-// LINE 163:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 165:
@@ -1043,23 +898,10 @@ class MTime  MTime::EndDST(uint32_t year) {
 // LINE 178:
 	__asm        jmp    near ptr 0x0043CAFA;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cb02
  MTime::MTime(uint32_t h, uint32_t m, uint32_t s) {
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 191:
@@ -1080,23 +922,10 @@ class MTime  MTime::EndDST(uint32_t year) {
 // LINE 192:
 	__asm        jmp    near ptr 0x0043CB41;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0043cb4b
  MTime::MTime(const class MDate& date, uint32_t h, uint32_t m, uint32_t s) {
-// LINE 212:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 213:
@@ -1177,25 +1006,12 @@ class MTime  MTime::EndDST(uint32_t year) {
 // LINE 233:
 	__asm        jmp    near ptr 0x0043CC51;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0043cc5b
 int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 	int32_t bPreviousPrinMDate;
 
-// LINE 241:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 242:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1208,25 +1024,12 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 	__asm        mov    eax, bPreviousPrinMDate;
 	__asm        jmp    near ptr 0x0043CC81;
 // LINE 245:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043cc88
 int  MTime::CompareTo(const class MTime& t) {
 	unsigned long diff;
 
-// LINE 253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 254:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1245,45 +1048,19 @@ int  MTime::CompareTo(const class MTime& t) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0043CCD0;
 // LINE 256:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043ccd7
 unsigned int  MTime::Hash() {
-// LINE 264:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 265:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        jmp    near ptr 0x0043CCED;
 // LINE 266:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043ccf2
 unsigned int  MTime::Hour() {
-// LINE 277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 278:
 	__asm        mov    ecx, this;
 	__asm        call   0x0043C8CE;
@@ -1296,23 +1073,10 @@ unsigned int  MTime::Hour() {
 	__asm        div    ecx;
 	__asm        jmp    near ptr 0x0043CD1F;
 // LINE 279:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cd24
 unsigned int  MTime::HourGMT() {
-// LINE 290:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 291:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;
@@ -1325,11 +1089,6 @@ unsigned int  MTime::HourGMT() {
 	__asm        div    ecx;
 	__asm        jmp    near ptr 0x0043CD4E;
 // LINE 292:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cd53
@@ -1337,14 +1096,6 @@ int  MTime::IsDST() {
 	uint32_t daycount;
 	uint32_t year;
 
-// LINE 304:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 305:
 	__asm        cmp    dword ptr ds:[0x5C0874], 0;
 	__asm        jne    near ptr 0x0043CD73;
@@ -1407,23 +1158,10 @@ int  MTime::IsDST() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0043CE25;
 // LINE 314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043ce2a
 class MTime  MTime::MaxTime(const class MTime& t) {
-// LINE 325:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 326:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, t;
@@ -1456,23 +1194,10 @@ class MTime  MTime::MaxTime(const class MTime& t) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CE94;
 // LINE 330:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0043ce9b
 class MTime  MTime::MinTime(const class MTime& t) {
-// LINE 341:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 342:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, t;
@@ -1505,23 +1230,10 @@ class MTime  MTime::MinTime(const class MTime& t) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CF05;
 // LINE 346:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0043cf0c
 unsigned int  MTime::Minute() {
-// LINE 357:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 358:
 	__asm        mov    ecx, this;
 	__asm        call   0x0043C8CE;
@@ -1538,23 +1250,10 @@ unsigned int  MTime::Minute() {
 	__asm        div    ecx;
 	__asm        jmp    near ptr 0x0043CF44;
 // LINE 359:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cf49
 unsigned int  MTime::MinuteGMT() {
-// LINE 370:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 371:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;
@@ -1571,23 +1270,10 @@ unsigned int  MTime::MinuteGMT() {
 	__asm        div    ecx;
 	__asm        jmp    near ptr 0x0043CF7E;
 // LINE 372:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cf83
 unsigned int  MTime::Second() {
-// LINE 382:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 383:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;
@@ -1605,25 +1291,12 @@ unsigned int  MTime::Second() {
 	__asm        mov    eax, edx;
 	__asm        jmp    near ptr 0x0043CFBA;
 // LINE 384:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043cfbf
 char *  MTime::PrintString(char * szTime) {
 	class ostrstream strtemp;
 
-// LINE 396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 397:
 	__asm        push   1;
 	__asm        push   2;
@@ -1656,11 +1329,6 @@ char *  MTime::PrintString(char * szTime) {
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    near ptr 0x0043D024;
 // LINE 400:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d02b
@@ -1669,13 +1337,6 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	class ostrstream out;
 	char buf[80];
 
-// LINE 407:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 413:
 	__asm        push   1;
 	__asm        push   2;
@@ -1861,11 +1522,6 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        jmp    near ptr 0x0043D385;
 // LINE 431:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

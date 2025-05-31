@@ -26,31 +26,14 @@
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e80
 void $E48() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00428E9A;
 	__asm        call   0x00428F13;
 	__asm        jmp    near ptr 0x00428E95;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e9a
 void $E45() {
-// LINE 30:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x5C33D4], 1;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
@@ -69,58 +52,27 @@ void $E45() {
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
 	__asm        jmp    near ptr 0x00428F09;
 	__asm        jmp    near ptr 0x00428F0E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f13
 void $E47() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x428F30;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00428F2B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f30
 void $E46() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00428F3B;
 	__asm        jmp    near ptr 0x00428F40;
 	__asm        jmp    near ptr 0x00428F45;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428f4a
 struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
-// LINE 83:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 84:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00428F68;
@@ -131,21 +83,10 @@ struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 	__asm        lea    eax, ds:[0x5C2ABC];
 	__asm        jmp    near ptr 0x00428F73;
 // LINE 87:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428f78
 void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
-// LINE 92:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 93:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00428F9B;
@@ -161,42 +102,19 @@ void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo)
 	__asm        rep movsd;
 // LINE 96:
 	__asm        jmp    near ptr 0x00428FB0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428fb5
 long GetUserMoney() {
-// LINE 101:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 102:
 	__asm        call   0x00428F4A;
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x00428FC8;
 // LINE 103:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428fcd
 void SetUserMoney(long lNewMoney) {
-// LINE 108:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 109:
 	__asm        call   0x00428F4A;
 	__asm        mov    [ebp-4], eax;
@@ -205,22 +123,10 @@ void SetUserMoney(long lNewMoney) {
 	__asm        mov    [ecx+0x40], eax;
 // LINE 110:
 	__asm        jmp    near ptr 0x00428FEC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00428ff1
 void ChangeUserMoney(long lNewMoneyDelta) {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 116:
 	__asm        call   0x00428F4A;
 	__asm        mov    [ebp-4], eax;
@@ -229,42 +135,19 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 	__asm        add    [ecx+0x40], eax;
 // LINE 117:
 	__asm        jmp    near ptr 0x00429010;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429015
 long GetUserPoints() {
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 125:
 	__asm        call   0x00428F4A;
 	__asm        mov    eax, [eax+0x50];
 	__asm        jmp    near ptr 0x00429028;
 // LINE 126:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042902d
 void SetUserPoints(long lNewPoints) {
-// LINE 131:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 132:
 	__asm        call   0x00428F4A;
 	__asm        mov    [ebp-4], eax;
@@ -273,22 +156,10 @@ void SetUserPoints(long lNewPoints) {
 	__asm        mov    [ecx+0x50], eax;
 // LINE 133:
 	__asm        jmp    near ptr 0x0042904C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429051
 void ChangeUserPoints(long lNewPointsDelta) {
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 139:
 	__asm        call   0x00428F4A;
 	__asm        mov    [ebp-4], eax;
@@ -297,21 +168,10 @@ void ChangeUserPoints(long lNewPointsDelta) {
 	__asm        add    [ecx+0x50], eax;
 // LINE 140:
 	__asm        jmp    near ptr 0x00429070;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429075
 struct tagCitySettings* GetCurrentCitySettings() {
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 147:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00429092;
@@ -324,24 +184,12 @@ struct tagCitySettings* GetCurrentCitySettings() {
 	__asm        lea    eax, [eax+eax*8+0x5C2B1C];
 	__asm        jmp    near ptr 0x004290A6;
 // LINE 150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290ab
 void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 	struct tagCitySettings* tempCitySettings;
 
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 157:
 	__asm        call   0x00429075;
 	__asm        mov    tempCitySettings, eax;
@@ -352,40 +200,18 @@ void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 	__asm        rep movsd;
 // LINE 159:
 	__asm        jmp    near ptr 0x004290CE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290d3
 char * GetCurrentCityPath() {
-// LINE 166:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 167:
 	__asm        mov    eax, 0x5C2918;
 	__asm        jmp    near ptr 0x004290E3;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004290e8
 void SetCurrentCityPath(char * szNewCurrentCityPath) {
-// LINE 177:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 178:
 	__asm        mov    eax, szNewCurrentCityPath;
 	__asm        push   eax;
@@ -394,21 +220,10 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 	__asm        add    esp, 8;
 // LINE 179:
 	__asm        jmp    near ptr 0x00429104;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429109
 void SetUserHasSavedCurrentCity() {
-// LINE 185:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 186:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x0042912B;
@@ -420,21 +235,10 @@ void SetUserHasSavedCurrentCity() {
 	__asm        mov    dword ptr ds:[0x5C2AB8], 1;
 // LINE 190:
 	__asm        jmp    near ptr 0x0042913A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042913f
 int32_t GetUserHasSavedCurrentCity() {
-// LINE 196:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 197:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00429161;
@@ -447,21 +251,10 @@ int32_t GetUserHasSavedCurrentCity() {
 	__asm        mov    eax, ds:[0x5C2AB8];
 	__asm        jmp    near ptr 0x0042916B;
 // LINE 201:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429170
 void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * szCityFileName) {
-// LINE 214:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 215:
 	__asm        mov    eax, szCityFileNameBase;
 	__asm        push   eax;
@@ -503,21 +296,10 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        add    esp, 8;
 // LINE 223:
 	__asm        jmp    near ptr 0x004291E9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004291ee
 void InitializeAllUserInfo() {
-// LINE 230:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 231:
 	__asm        mov    byte ptr ds:[0x5C2918], 0;
 // LINE 232:
@@ -570,11 +352,6 @@ void InitializeAllUserInfo() {
 	__asm        mov    dword ptr ds:[0x5C2AA0], 0;
 // LINE 259:
 	__asm        jmp    near ptr 0x004292E7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004292ec
@@ -584,13 +361,6 @@ void CareerCityTweakInit() {
 	int32_t i;
 	struct tagCareerCityInfo* currentCareerCityInfo;
 
-// LINE 267:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 268:
 	__asm        mov    nPvals, 9;
 // LINE 273:
@@ -654,24 +424,12 @@ void CareerCityTweakInit() {
 	__asm        jmp    near ptr 0x00429308;
 // LINE 286:
 	__asm        jmp    near ptr 0x00429396;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042939b
 void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	char szFullCityFileName[256];
 
-// LINE 300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 303:
 	__asm        cmp    lNewCareerCityIndex, 0x1F;
 	__asm        jge    near ptr 0x004293BB;
@@ -777,24 +535,12 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    dword ptr ds:[0x5C2B10], 0xA;
 // LINE 332:
 	__asm        jmp    near ptr 0x0042957D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429582
 void SetUpNewUserCity(char * szUserCityPath) {
 	char * chPrefData;
 
-// LINE 345:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 348:
 	__asm        mov    eax, szUserCityPath;
 	__asm        push   eax;
@@ -904,11 +650,6 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    dword ptr ds:[0x5C2A9C], 0xA;
 // LINE 377:
 	__asm        jmp    near ptr 0x0042975B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00429760
@@ -916,13 +657,6 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	char szFullCityFileName[256];
 	long lOriginalIndex;
 
-// LINE 391:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 395:
 	__asm        mov    eax, ds:[0x5C2AB4];
 	__asm        mov    lOriginalIndex, eax;
@@ -1011,24 +745,12 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        add    esp, 4;
 // LINE 408:
 	__asm        jmp    near ptr 0x004298D2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004298d7
 void InitializeAllCareerCitiesInfo() {
 	int32_t i;
 
-// LINE 418:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 421:
 	__asm        mov    dword ptr ds:[0x5C2B4C], 0xFFFFFFFF;
 // LINE 422:
@@ -1688,11 +1410,6 @@ void InitializeAllCareerCitiesInfo() {
 	__asm        jmp    near ptr 0x0042A42C;
 // LINE 755:
 	__asm        jmp    near ptr 0x0042A4E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

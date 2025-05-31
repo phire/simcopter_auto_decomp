@@ -15,13 +15,6 @@
 struct VRResource* LoadPalette() {
 	struct CMAP_Resource* res;
 
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 56:
 	__asm        push   0x310;
 	__asm        mov    eax, ds:[0x59C22C];
@@ -62,24 +55,12 @@ struct VRResource* LoadPalette() {
 	__asm        mov    eax, res;
 	__asm        jmp    near ptr 0x004D2152;
 // LINE 99:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2157
 char * VRGetPalFromResource(struct VRResource* res) {
 	struct CMAP_Resource* cmp;
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 113:
 	__asm        mov    eax, res;
 	__asm        mov    cmp, eax;
@@ -88,10 +69,5 @@ char * VRGetPalFromResource(struct VRResource* res) {
 	__asm        add    eax, 0x10;
 	__asm        jmp    near ptr 0x004D2171;
 // LINE 116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

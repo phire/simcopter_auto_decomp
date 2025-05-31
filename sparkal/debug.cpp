@@ -693,14 +693,6 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	class vector<basic_string<char>> commands;
 	int32_t num;
 
-// LINE 23:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 26:
 	__asm        mov    commands.start, 0;
 	__asm        mov    commands.finish, 0;
@@ -1129,25 +1121,12 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        jmp    near ptr 0x004228DD;
 	__asm        jmp    near ptr 0x004228E2;
 	__asm        jmp    near ptr 0x004228E7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
 	static const struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command = { /* <data@0x005c2900> */ };
 
-// LINE 58:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -1443,22 +1422,11 @@ void CDebugWindow::CDebugWindow() {
 // LINE 64:
 	__asm        jmp    near ptr 0x00422DB2;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00422dba
 void $E20() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00422DC8;
 	__asm        jmp    near ptr 0x00422DCD;
 	__asm        mov    eax, ds:[0x5C2910];
@@ -1556,23 +1524,10 @@ void $E20() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00422F41;
 	__asm        jmp    near ptr 0x00422F46;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00422f4b
 void CDebugWindow::~CDebugWindow() {
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 69:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -1756,23 +1711,10 @@ void CDebugWindow::~CDebugWindow() {
 	__asm        jmp    near ptr 0x004231D7;
 	__asm        jmp    near ptr 0x00422FCF;
 	__asm        jmp    near ptr 0x004231E1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004231e6
 int32_t CDebugWindow::Create(char * windowName) {
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 77:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -1898,23 +1840,10 @@ int32_t CDebugWindow::Create(char * windowName) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00423360;
 // LINE 130:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00423367
 void CDebugWindow::ShowWindow() {
-// LINE 134:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 136:
 	__asm        push   5;
 	__asm        mov    eax, this;
@@ -1923,23 +1852,10 @@ void CDebugWindow::ShowWindow() {
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 138:
 	__asm        jmp    near ptr 0x00423387;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042338c
 void CDebugWindow::HideWindow() {
-// LINE 140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 142:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1948,11 +1864,6 @@ void CDebugWindow::HideWindow() {
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 144:
 	__asm        jmp    near ptr 0x004233AC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004233b1
@@ -1960,14 +1871,6 @@ int32_t CDebugWindow::Save(char * filePath) {
 	struct _iobuf* file;
 	class deque<basic_string<char>>::iterator it;
 
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 153:
 	__asm        push   0x5973E8;
 	__asm        mov    eax, filePath;
@@ -2207,11 +2110,6 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004236BF;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004236c6
@@ -2219,14 +2117,6 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 	struct tagRECT winRect;
 	struct tagRECT editRect;
 
-// LINE 178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 180:
 	__asm        lea    eax, winRect.left;
 	__asm        push   eax;
@@ -2267,11 +2157,6 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 185:
 	__asm        jmp    near ptr 0x00423732;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00423739
@@ -2284,14 +2169,6 @@ void CDebugWindow::OnPaint() {
 	char * str;
 	int32_t scrollStart;
 
-// LINE 191:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 194:
 	__asm        lea    eax, ps.hdc;
 	__asm        push   eax;
@@ -2559,11 +2436,6 @@ void CDebugWindow::OnPaint() {
 	__asm        call   dword ptr ds:[0x6C3830];
 // LINE 215:
 	__asm        jmp    near ptr 0x00423BA0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00423ba5
@@ -2572,14 +2444,6 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	int32_t maxPos;
 	int32_t curPos;
 
-// LINE 221:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 222:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -2664,25 +2528,12 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 240:
 	__asm        jmp    near ptr 0x00423C96;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00423c9d
 void CDebugWindow::OutputString(char * buf) {
 	class basic_string<char> str;
 
-// LINE 249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 250:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3027,11 +2878,6 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004241F3;
 	__asm        jmp    near ptr 0x004241F8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004241ff
@@ -3047,14 +2893,6 @@ void CDebugWindow::RecalcScrollRange() {
 	int32_t maxPos;
 	int32_t curPos;
 
-// LINE 261:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 262:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
@@ -3156,11 +2994,6 @@ void CDebugWindow::RecalcScrollRange() {
 	__asm        call   dword ptr ds:[0x6C3844];
 // LINE 288:
 	__asm        jmp    near ptr 0x00424308;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042430d
@@ -3169,14 +3002,6 @@ void CDebugWindow::OnEditChange() {
 	long count;
 	char buf[256];
 
-// LINE 294:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x280;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 297:
 	__asm        mov    buf[0], 0xFF;
 // LINE 298:
@@ -3505,23 +3330,10 @@ void CDebugWindow::OnEditChange() {
 // LINE 325:
 // Block end:
 	__asm        jmp    near ptr 0x004248CF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004248d4
 long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, long LParam) {
-// LINE 337:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 338:
 	__asm        mov    eax, Message;
 	__asm        mov    [ebp-8], eax;
@@ -3607,24 +3419,12 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004249E8;
 // LINE 360:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004249ef
 long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uint32_t WParam, long LParam) {
 	class CDebugWindow* debugWin;
 
-// LINE 362:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 363:
 	__asm        push   0xFFFFFFEB;
 	__asm        mov    eax, hWindow;
@@ -3658,22 +3458,10 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        call   dword ptr ds:[0x6C3860];
 	__asm        jmp    near ptr 0x00424A4A;
 // LINE 368:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00424a51
 void CreateDebugWindow() {
-// LINE 383:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 384:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
 	__asm        jne    near ptr 0x00424AAA;
@@ -3695,22 +3483,10 @@ void CreateDebugWindow() {
 	__asm        call   0x004231E6;
 // LINE 389:
 	__asm        jmp    near ptr 0x00424AAF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00424ab4
 void DestroyDebugWindow() {
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 393:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
 	__asm        je     near ptr 0x00424B0A;
@@ -3733,11 +3509,6 @@ void DestroyDebugWindow() {
 	__asm        mov    dword ptr ds:[0x597374], 0;
 // LINE 398:
 	__asm        jmp    near ptr 0x00424B0F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00424b14
@@ -3745,13 +3516,6 @@ void DebugOutput(char * text, ...) {
 	char * Marker;
 	char buf[256];
 
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 404:
 	__asm        lea    eax, [ebp+0xC];
 	__asm        mov    Marker, eax;
@@ -3774,22 +3538,10 @@ void DebugOutput(char * text, ...) {
 	__asm        call   0x00423C9D;
 // LINE 408:
 	__asm        jmp    near ptr 0x00424B67;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00424b6c
 void RegisterDebugCommand(struct debug_command* aCommand) {
-// LINE 411:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x80;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 412:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
 	__asm        je     near ptr 0x00424F26;
@@ -4057,22 +3809,10 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424F26;
 // LINE 414:
 	__asm        jmp    near ptr 0x00424F2B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00424f30
 void UnregisterDebugCommand(struct debug_command* aCommand) {
-// LINE 417:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 418:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
 	__asm        je     near ptr 0x0042500B;
@@ -4133,21 +3873,10 @@ void UnregisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x0042500B;
 // LINE 420:
 	__asm        jmp    near ptr 0x00425010;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00425015
 void SaveDebugWindow(char * fileName) {
-// LINE 423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 424:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
 	__asm        je     near ptr 0x00425037;
@@ -4158,11 +3887,6 @@ void SaveDebugWindow(char * fileName) {
 	__asm        call   0x004233B1;
 // LINE 426:
 	__asm        jmp    near ptr 0x0042503C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00425041
@@ -4172,13 +3896,6 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	int32_t index;
 	class basic_string<char> subString;
 
-// LINE 430:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 432:
 	__asm        jmp    near ptr 0x00425052;
 	__asm        mov    eax, str.reference;
@@ -4620,11 +4337,6 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    near ptr 0x004256C4;
 // LINE 473:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

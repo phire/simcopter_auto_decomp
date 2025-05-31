@@ -43,13 +43,6 @@ short VRInitGridObj(long ViewSize) {
 	long plotter;
 	static const int32_t b_FirstTime = { /* <data@0x0059d2d8> */ };
 
-// LINE 121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 132:
 	__asm        mov    plotter, 0;
 // LINE 134:
@@ -569,32 +562,16 @@ short VRInitGridObj(long ViewSize) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D71D2;
 // LINE 358:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d71d7
 void VRFreeGridObj() {
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 364:
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
 	__asm        call   0x004CB628;
 	__asm        add    esp, 4;
 // LINE 365:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d71f0
@@ -603,13 +580,6 @@ void InitGridPool() {
 	long GridPoolSize;
 	int32_t tempSize;
 
-// LINE 370:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 371:
 	__asm        mov    GridPoolSize, 0;
 // LINE 372:
@@ -691,11 +661,6 @@ void InitGridPool() {
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59D2D4], eax;
 // LINE 413:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

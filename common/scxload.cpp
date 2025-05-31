@@ -320,14 +320,6 @@ public:
 // Contribution: 1:000ca880-000cc535 Module: 89, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cb880
 void cLZAPFileBitStream::cLZAPFileBitStream() {
-// LINE 85:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923F8;
 	__asm        jmp    near ptr 0x004CB89A;
@@ -342,23 +334,10 @@ void cLZAPFileBitStream::cLZAPFileBitStream() {
 // LINE 88:
 	__asm        jmp    near ptr 0x004CB8BC;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb8c4
 void cLZAPFileBitStream::~cLZAPFileBitStream() {
-// LINE 90:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x592418;
 // LINE 91:
@@ -377,23 +356,10 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 	__asm        jmp    near ptr 0x004CB903;
 // LINE 92:
 	__asm        jmp    near ptr 0x004CB908;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb90d
 int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
-// LINE 95:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 96:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -442,23 +408,10 @@ int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 	__asm        call   0x004A03A0;
 	__asm        jmp    near ptr 0x004CB9CB;
 // LINE 99:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004cb9d2
 void cLZAPFileBitStream::Close() {
-// LINE 102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 103:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -478,23 +431,10 @@ void cLZAPFileBitStream::Close() {
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 105:
 	__asm        jmp    near ptr 0x004CBA17;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cba1c
 unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBytes) {
-// LINE 108:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 109:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -527,23 +467,10 @@ unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBy
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004CBA95;
 // LINE 112:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004cba9c
 unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nBytes) {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 116:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -576,23 +503,10 @@ unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nB
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004CBB15;
 // LINE 119:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004cbb1c
 void cLZAPFileBitStream::Rewind() {
-// LINE 122:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 123:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -611,23 +525,10 @@ void cLZAPFileBitStream::Rewind() {
 	__asm        jmp    near ptr 0x004CBB59;
 // LINE 125:
 	__asm        jmp    near ptr 0x004CBB5E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbb63
 void cLZAPFileBitStream::RewindToMark() {
-// LINE 128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -650,23 +551,10 @@ void cLZAPFileBitStream::RewindToMark() {
 	__asm        jmp    near ptr 0x004CBBAB;
 // LINE 131:
 	__asm        jmp    near ptr 0x004CBBB0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbbb5
 void cLZAPFileBitStream::Mark() {
-// LINE 133:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 134:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -690,23 +578,10 @@ void cLZAPFileBitStream::Mark() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 138:
 	__asm        jmp    near ptr 0x004CBC08;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbc0d
 long cLZAPFileBitStream::Size() {
-// LINE 140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 141:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -720,39 +595,15 @@ long cLZAPFileBitStream::Size() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004CBC3D;
 // LINE 144:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbc42
 void cLZAPFileBitStream::FreeAll() {
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x004CBC53;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbc58
 void SCXReadBudget(class cGZXBitstream* AStream, unsigned char * data) {
-// LINE 169:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 170:
 	__asm        push   0x71A;
 	__asm        mov    eax, data;
@@ -763,21 +614,10 @@ void SCXReadBudget(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        call   dword ptr [eax];
 // LINE 172:
 	__asm        jmp    near ptr 0x004CBC76;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbc7b
 void SCXReadGraphData(class cGZXBitstream* AStream, unsigned char * data) {
-// LINE 184:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 185:
 	__asm        push   0xD40;
 	__asm        mov    eax, data;
@@ -788,21 +628,10 @@ void SCXReadGraphData(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        call   dword ptr [eax];
 // LINE 186:
 	__asm        jmp    near ptr 0x004CBC99;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbc9e
 void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
-// LINE 196:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 197:
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        push   eax;
@@ -867,11 +696,6 @@ void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        add    esp, 8;
 // LINE 205:
 	__asm        jmp    near ptr 0x004CBD33;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbd38
@@ -880,13 +704,6 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	long loop;
 	struct SCXNeighborData* pData;
 
-// LINE 221:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 225:
 	__asm        mov    eax, data;
 	__asm        mov    pData, eax;
@@ -1106,24 +923,12 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        jmp    near ptr 0x004CBEA0;
 // LINE 258:
 	__asm        jmp    near ptr 0x004CBFC3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cbfc8
 void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
 	long num;
 
-// LINE 279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 282:
 	__asm        push   4;
 	__asm        lea    eax, num;
@@ -1145,11 +950,6 @@ void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        call   dword ptr [eax];
 // LINE 284:
 	__asm        jmp    near ptr 0x004CBFFE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cc003
@@ -1164,13 +964,6 @@ int32_t ReadSCXFile(char * filePath) {
 	class cGZXParamBitstream<t_alloc,t_free> memstrm;
 	struct tSCXSaveFileHdr header;
 
-// LINE 295:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5F0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 296:
 	__asm        call   0x004C920E;
 // LINE 297:
@@ -2476,11 +2269,6 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    eax, [ebp-0x58C];
 	__asm        jmp    near ptr 0x004CD531;
 // LINE 531:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

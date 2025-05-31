@@ -31,14 +31,6 @@ public:
 // Contribution: 1:0003d160-0003d24d Module: 54, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043e160
 void NotificationItem::NotificationItem() {
-// LINE 9:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -46,23 +38,10 @@ void NotificationItem::NotificationItem() {
 // LINE 10:
 	__asm        jmp    near ptr 0x0043E184;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043e18c
 void NotificationItem::NotificationItem(const class NotificationItem& newNotificationSink) {
-// LINE 12:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 13:
 	__asm        mov    eax, newNotificationSink;
 	__asm        push   eax;
@@ -71,23 +50,10 @@ void NotificationItem::NotificationItem(const class NotificationItem& newNotific
 // LINE 14:
 	__asm        jmp    near ptr 0x0043E1A9;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043e1b3
 void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink* newNotificationSink) {
-// LINE 19:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, lNewPreferenceType;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -97,23 +63,10 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, class Notificat
 // LINE 20:
 	__asm        jmp    near ptr 0x0043E1D5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0043e1df
 class NotificationItem& NotificationItem::operator=(const class NotificationItem& P2) {
-// LINE 22:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 23:
 	__asm        mov    eax, P2;
 	__asm        mov    eax, [eax];
@@ -128,21 +81,10 @@ class NotificationItem& NotificationItem::operator=(const class NotificationItem
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0043E209;
 // LINE 26:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043e210
 int32_t operator==(const class NotificationItem& P1, const class NotificationItem& P2) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 31:
 	__asm        mov    eax, P1;
 	__asm        mov    ecx, P2;
@@ -159,10 +101,5 @@ int32_t operator==(const class NotificationItem& P1, const class NotificationIte
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0043E249;
 // LINE 32:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

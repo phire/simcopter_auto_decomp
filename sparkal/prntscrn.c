@@ -22,13 +22,6 @@ void S3PrintScreen() {
 	char * chPalette;
 	char fname[260];
 
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 56:
 	__asm        mov    eax, ds:[0x5B4770];
 	__asm        push   eax;
@@ -54,11 +47,6 @@ void S3PrintScreen() {
 	__asm        call   0x0046B8DB;
 	__asm        add    esp, 8;
 // LINE 59:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046b8db
@@ -70,13 +58,6 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	int32_t y;
 	char * ptr;
 
-// LINE 68:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 74:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
 	__asm        jne    near ptr 0x0046B90E;
@@ -228,11 +209,6 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        call   0x0056D120;
 	__asm        add    esp, 4;
 // LINE 127:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
@@ -241,13 +217,6 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	unsigned short i;
 	unsigned short t;
 
-// LINE 136:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 137:
 	__asm        mov    i, 0;
 	__asm        mov    j, 0;
@@ -381,11 +350,6 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        and    eax, 0xFFFF;
 	__asm        jmp    near ptr 0x0046BC9A;
 // LINE 158:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

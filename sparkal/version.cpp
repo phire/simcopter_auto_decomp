@@ -68,14 +68,6 @@ void Version::Version() {
 	uint32_t nValueSize;
 	char szFileName[260];
 
-// LINE 23:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x120;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5B8;
 // LINE 31:
@@ -151,23 +143,10 @@ void Version::Version() {
 // LINE 50:
 	__asm        jmp    near ptr 0x0043DC05;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043dc10
 void Version::~Version() {
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5B8;
 // LINE 59:
@@ -186,11 +165,6 @@ void Version::~Version() {
 	__asm        add    esp, 4;
 // LINE 62:
 	__asm        jmp    near ptr 0x0043DC52;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043dc57
@@ -199,14 +173,6 @@ int32_t Version::GetApplicationName(char *& szName) {
 	int32_t nReturnValue;
 	uint32_t vSize;
 
-// LINE 74:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -247,11 +213,6 @@ int32_t Version::GetApplicationName(char *& szName) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0043DCE2;
 // LINE 98:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043dce9
@@ -260,14 +221,6 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 	int32_t nReturnValue;
 	uint32_t vSize;
 
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 115:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -308,11 +261,6 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0043DD74;
 // LINE 121:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043dd7b
@@ -321,14 +269,6 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 	int32_t nReturnValue;
 	uint32_t vSize;
 
-// LINE 133:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 139:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -369,11 +309,6 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0043DE06;
 // LINE 145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043de0d
@@ -382,14 +317,6 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 	int32_t nReturnValue;
 	uint32_t vSize;
 
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -430,11 +357,6 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0043DE98;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043de9f
@@ -443,14 +365,6 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	struct tagVS_FIXEDFILEINFO* vsFixedFileInfo;
 	uint32_t vSize;
 
-// LINE 187:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 193:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -520,24 +434,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0043DF7C;
 // LINE 208:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043df83
 int32_t Version::GetSystemVersion(char * szSystemVersion) {
 	unsigned long dwVersion;
 
-// LINE 230:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 232:
 	__asm        call   dword ptr ds:[0x6C3644];
 	__asm        mov    dwVersion, eax;
@@ -574,11 +476,6 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043DFED;
 // LINE 256:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043dff2
@@ -586,13 +483,6 @@ int32_t Version::GetSystemType() {
 	int32_t nSystemType;
 	unsigned long dwVersion;
 
-// LINE 267:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 268:
 	__asm        mov    nSystemType, 0;
 // LINE 271:
@@ -611,24 +501,12 @@ int32_t Version::GetSystemType() {
 	__asm        mov    eax, nSystemType;
 	__asm        jmp    near ptr 0x0043E033;
 // LINE 286:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043e038
 long Version::GetSystemVersion(int32_t nVersionComponent) {
 	unsigned long dwVersion;
 
-// LINE 302:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 307:
 	__asm        call   dword ptr ds:[0x6C3644];
 	__asm        mov    dwVersion, eax;
@@ -651,24 +529,12 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0043E081;
 // LINE 316:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043e086
 long Version::GetCPUVersion() {
 	long lReturnValue;
 
-// LINE 334:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 339:
 	__asm        call   0x0047B67A;
 	__asm        movzx  eax, ax;
@@ -682,24 +548,12 @@ long Version::GetCPUVersion() {
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    near ptr 0x0043E0B3;
 // LINE 344:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043e0b8
 long Version::GetCPUSpeed() {
 	struct FREQ_INFO tempFREQ_INFO;
 
-// LINE 355:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 360:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x30];
@@ -729,11 +583,6 @@ long Version::GetCPUSpeed() {
 	__asm        mov    eax, tempFREQ_INFO.norm_freq;
 	__asm        jmp    near ptr 0x0043E10C;
 // LINE 363:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

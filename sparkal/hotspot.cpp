@@ -314,14 +314,6 @@ public:
 // Contribution: 1:000b8040-000ba946 Module: 4, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004b9040
 void HotSpot::HotSpot() {
-// LINE 25:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -336,23 +328,10 @@ void HotSpot::HotSpot() {
 // LINE 26:
 	__asm        jmp    near ptr 0x004B9087;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b908f
 void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -632,25 +611,12 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 // LINE 38:
 	__asm        jmp    near ptr 0x004B9480;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b948a
 void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoordinates) {
 	int32_t i;
 
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x90;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -961,11 +927,6 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 // LINE 54:
 	__asm        jmp    near ptr 0x004B9966;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004b9973
@@ -973,14 +934,6 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	int32_t i;
 	long lCount;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x94;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -1299,23 +1252,10 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 // LINE 74:
 	__asm        jmp    near ptr 0x004B9E68;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b9e75
 void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
-// LINE 88:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -1855,23 +1795,10 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 // LINE 91:
 	__asm        jmp    near ptr 0x004BA782;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004ba78f
 class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
-// LINE 101:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 102:
 	__asm        mov    eax, newHotSpot;
 	__asm        cmp    this, eax;
@@ -2152,22 +2079,10 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x004BAB74;
 // LINE 109:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bab7b
 int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 117:
 	__asm        mov    eax, hs2;
 	__asm        mov    ecx, hs1;
@@ -2273,23 +2188,10 @@ int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BAD00;
 // LINE 124:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bad05
 int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
@@ -2357,11 +2259,6 @@ int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BADF1;
 // LINE 140:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004badf8
@@ -2369,14 +2266,6 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 	int32_t nDistanceToPosition;
 	int32_t nRadiusOfCircle;
 
-// LINE 154:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 160:
 	__asm        jmp    near ptr 0x004BAE09;
 	__asm        jmp    near ptr 0x004BAE0E;
@@ -2460,11 +2349,6 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BAF23;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004baf2a
@@ -2474,14 +2358,6 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 	int32_t nVertices;
 	int32_t c;
 
-// LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 184:
 	__asm        jmp    near ptr 0x004BAF3B;
 	__asm        jmp    near ptr 0x004BAF40;
@@ -2593,11 +2469,6 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 	__asm        mov    eax, c;
 	__asm        jmp    near ptr 0x004BB0CB;
 // LINE 195:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004bb0d2
@@ -2610,14 +2481,6 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	int32_t nRadiusOfCircle;
 	int32_t nPointCount;
 
-// LINE 207:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 211:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
@@ -2916,11 +2779,6 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jmp    near ptr 0x004BB48F;
 // LINE 262:
 	__asm        jmp    near ptr 0x004BB494;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bb49b
@@ -2933,13 +2791,6 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	struct HotSpotResourceFileHeader* fileImage;
 	class ResourceRCData resourceHangarHotspots;
 
-// LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xCC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 270:
 	__asm        push   1;
 	__asm        mov    eax, nResourceID;
@@ -3225,11 +3076,6 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, [ebp-0x58];
 	__asm        jmp    near ptr 0x004BB942;
 // LINE 294:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

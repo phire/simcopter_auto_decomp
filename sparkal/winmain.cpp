@@ -29,13 +29,6 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	struct tagMSG Message;
 	union _LARGE_INTEGER TimerFrequency;
 
-// LINE 28:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 33:
 	__asm        mov    eax, hInstance;
 	__asm        mov    ds:[0x5C28C8], eax;
@@ -220,11 +213,6 @@ Cleanup:
 	__asm        jmp    near ptr 0x0041FABB;
 // LINE 93:
 	__asm        jmp    near ptr 0x0041FA71;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 

@@ -127,14 +127,6 @@ public:
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00565a40
 void StringSet::StringSet(class ResFile* file, short resID) {
-// LINE 12:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 13:
 	__asm        mov    eax, file;
 	__asm        mov    ecx, this;
@@ -147,23 +139,10 @@ void StringSet::StringSet(class ResFile* file, short resID) {
 // LINE 16:
 	__asm        jmp    near ptr 0x00565A65;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00565a6f
 void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
-// LINE 20:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 21:
 	__asm        mov    eax, file;
 	__asm        mov    ecx, this;
@@ -190,23 +169,10 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 // LINE 28:
 	__asm        jmp    near ptr 0x00565AC2;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00565acc
 void StringSet::LoadStrings(short resID) {
-// LINE 32:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 33:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
@@ -268,21 +234,10 @@ void StringSet::LoadStrings(short resID) {
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 48:
 	__asm        jmp    near ptr 0x00565B99;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00565ba0
 void StringSet::Swizzle(void * __ptr32 data, long size) {
-// LINE 51:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        mov    eax, data;
 	__asm        push   eax;
@@ -290,23 +245,10 @@ void StringSet::Swizzle(void * __ptr32 data, long size) {
 	__asm        add    esp, 4;
 // LINE 54:
 	__asm        jmp    near ptr 0x00565BB7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565bbc
 void StringSet::~StringSet() {
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -326,11 +268,6 @@ void StringSet::~StringSet() {
 	__asm        call   0x00553794;
 // LINE 62:
 	__asm        jmp    near ptr 0x00565BFA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565bff
@@ -338,14 +275,6 @@ unsigned char * StringSet::GetString(short which) {
 	short cnt;
 	unsigned char * str;
 
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 66:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, which;
@@ -387,11 +316,6 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        mov    eax, str;
 	__asm        jmp    near ptr 0x00565C8A;
 // LINE 77:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

@@ -458,14 +458,6 @@ public:
 // Contribution: 1:0015f9d0-0015fba1 Module: 190, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005609d0
 void YObjLang::YObjLang(unsigned char * fileName) {
-// LINE 42:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x005609EA;
@@ -474,22 +466,10 @@ void YObjLang::YObjLang(unsigned char * fileName) {
 // LINE 48:
 	__asm        jmp    near ptr 0x005609F8;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560a02
 void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param) {
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        movsx  eax, id;
 	__asm        mov    [ebp-8], eax;
@@ -556,24 +536,12 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 	__asm        jmp    near ptr 0x00560A4E;
 // LINE 72:
 	__asm        jmp    near ptr 0x00560AB9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560abe
 void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	struct Behavior::Tree* tree;
 
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 76:
 	__asm        mov    eax, treevoid;
 	__asm        mov    tree, eax;
@@ -587,23 +555,10 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	__asm        add    esp, 0xC;
 // LINE 79:
 	__asm        jmp    near ptr 0x00560AE7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560aec
 void YObjLang::YObjLang(class YObjLang& otherLanguage) {
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x00560B06;
@@ -612,112 +567,42 @@ void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 // LINE 88:
 	__asm        jmp    near ptr 0x00560B14;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560b1e
 void YObjLang::~YObjLang() {
-// LINE 91:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 95:
 	__asm        jmp    near ptr 0x00560B38;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560b3d
 short YObjLang::CountPrimitives() {
-// LINE 98:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 103:
 	__asm        mov    ax, 0x40;
 	__asm        jmp    near ptr 0x00560B52;
 // LINE 105:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00560b57
 void YObjLang::GetPrimName(short primCode, unsigned char * str) {
-// LINE 108:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 112:
 	__asm        jmp    near ptr 0x00560B68;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
 unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 129:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00560B83;
 // LINE 130:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560b8a
 void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, unsigned char * str) {
-// LINE 467:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 478:
 	__asm        jmp    near ptr 0x00560B9B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 

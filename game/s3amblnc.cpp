@@ -403,12 +403,6 @@ public:
 // Contribution: 1:001348a0-0013509d Module: 160, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005358a0
 int32_t CreateAmbulanceInstance(int32_t instanceID) {
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 77:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -421,23 +415,10 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005358CB;
 // LINE 78:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005358d0
 void AmbulanceClass::AmbulanceClass() {
-// LINE 83:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x005415D5;
 	__asm        mov    eax, this;
@@ -448,33 +429,15 @@ void AmbulanceClass::AmbulanceClass() {
 // LINE 85:
 	__asm        jmp    near ptr 0x005358FC;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535904
 void AmbulanceClass::~AmbulanceClass() {
-// LINE 89:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593280;
 	__asm        jmp    near ptr 0x0053591E;
 	__asm        mov    ecx, this;
 	__asm        call   0x0054163A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053592b
@@ -483,13 +446,6 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	class AmbulanceClass* youveWonABrandNewCar;
 	char * objectMemory;
 
-// LINE 106:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 113:
 	__asm        push   0x2A0;
 	__asm        call   0x0056A600;
@@ -638,21 +594,10 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00535B0F;
 // LINE 177:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535b14
 unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
-// LINE 243:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 251:
 	__asm        push   5;
 	__asm        push   0x62B9B8;
@@ -668,21 +613,10 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        call   0x0053AB93;
 	__asm        jmp    near ptr 0x00535B41;
 // LINE 252:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535b46
 int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
-// LINE 257:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 258:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        and    eax, 0xFFFF;
@@ -693,22 +627,10 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00535B70;
 // LINE 259:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535b75
 int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
-// LINE 264:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 265:
 	__asm        cmp    mapX, 0;
 	__asm        jl     near ptr 0x00535BAC;
@@ -747,11 +669,6 @@ int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00535C1C;
 // LINE 266:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535c21
@@ -759,14 +676,6 @@ void AmbulanceClass::ItterateFSM() {
 	struct Point3d vec;
 	int32_t dist;
 
-// LINE 288:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 292:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -1060,45 +969,19 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        (bad);
 // LINE 404:
 	__asm        jmp    near ptr 0x00535FD5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535fda
 int32_t AmbulanceClass::AtScene() {
-// LINE 409:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 410:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF6];
 	__asm        jmp    near ptr 0x00535FF4;
 // LINE 411:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535ff9
 void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 422:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 424:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1106,23 +989,10 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x00542A75;
 // LINE 425:
 	__asm        jmp    near ptr 0x00536016;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053601d
 void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 436:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 439:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1158,11 +1028,6 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        jmp    near ptr 0x00536092;
 // LINE 460:
 	__asm        jmp    near ptr 0x00536097;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

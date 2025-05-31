@@ -33,13 +33,6 @@ int32_t VRAppInit() {
 	int32_t totalVehicles;
 	char szFilePath[260];
 
-// LINE 163:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x124;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 175:
 	__asm        mov    dword ptr ds:[0x5B4790], 1;
 // LINE 179:
@@ -714,11 +707,6 @@ int32_t VRAppInit() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004EB5C5;
 // LINE 530:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eb5ca
@@ -727,13 +715,6 @@ int32_t VRAppCityInit(int32_t reload) {
 	long i;
 	struct Point2d* pad;
 
-// LINE 548:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 553:
 	__asm        cmp    reload, 1;
 	__asm        jne    near ptr 0x004EB5E7;
@@ -941,21 +922,10 @@ int32_t VRAppCityInit(int32_t reload) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EB872;
 // LINE 693:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eb877
 int32_t VRAppGameInit(void * __ptr32 miffReader) {
-// LINE 705:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 706:
 	__asm        cmp    miffReader, 0;
 	__asm        je     near ptr 0x004EB8EC;
@@ -1010,21 +980,10 @@ int32_t VRAppGameInit(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EB904;
 // LINE 726:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eb909
 int32_t VRAppGameSave(void * __ptr32 miffWriter) {
-// LINE 739:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 742:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -1069,21 +1028,10 @@ int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004EB979;
 // LINE 752:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eb97e
 void VRAppDeInit() {
-// LINE 766:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 770:
 	__asm        call   0x00545D74;
 // LINE 771:
@@ -1097,21 +1045,10 @@ void VRAppDeInit() {
 	__asm        call   0x004CB6C3;
 	__asm        add    esp, 4;
 // LINE 773:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eb9aa
 void VRAppNextFrame() {
-// LINE 784:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 791:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        shl    eax, 3;
@@ -1215,37 +1152,15 @@ void VRAppNextFrame() {
 // LINE 905:
 	__asm        jmp    near ptr 0x004EBADC;
 // LINE 906:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ebae1
 void VRAppNewTextures() {
-// LINE 922:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 924:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ebaec
 void SetUserVars(int32_t * user) {
-// LINE 939:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 941:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax];
@@ -1315,11 +1230,6 @@ void SetUserVars(int32_t * user) {
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ds:[0x5B48AC], eax;
 // LINE 962:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

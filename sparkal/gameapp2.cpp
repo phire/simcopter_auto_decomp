@@ -518,12 +518,6 @@ class bidirectional_iterator<CopterGameMode,int>{
 // Contribution: 1:00060180-00065c19 Module: 44, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00461180
 void S3SwitchToProperSkyType() {
-// LINE 90:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 91:
 	__asm        cmp    dword ptr ds:[0x5B4794], 0;
 	__asm        je     near ptr 0x004611B5;
@@ -536,24 +530,12 @@ void S3SwitchToProperSkyType() {
 	__asm        call   0x0049550C;
 // LINE 93:
 	__asm        jmp    near ptr 0x004611BA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004611bf
 int32_t IsActualTimeDaytime() {
 	class MTime tempTime;
 
-// LINE 98:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 99:
 	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
 	__asm        call   0x0043CA79;
@@ -573,11 +555,6 @@ int32_t IsActualTimeDaytime() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00461203;
 // LINE 104:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00461208
@@ -585,14 +562,6 @@ void  CGameApp::GetPreferences() {
 	char * chPrefData;
 	char szPath[260];
 
-// LINE 111:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 115:
 	__asm        push   0x30;
 	__asm        call   0x0056A600;
@@ -705,11 +674,6 @@ void  CGameApp::GetPreferences() {
 	__asm        add    esp, 4;
 // LINE 136:
 	__asm        jmp    near ptr 0x004613C6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004613cb
@@ -717,14 +681,6 @@ void  CGameApp::GetSoundPreferences() {
 	char * chPrefData;
 	struct SoundPreferences tempSoundPreferences;
 
-// LINE 143:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 147:
 	__asm        push   0x4FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -789,23 +745,10 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 165:
 	__asm        jmp    near ptr 0x0046148F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00461494
 void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences) {
-// LINE 172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 173:
 	__asm        mov    eax, newSoundPreferences;
 	__asm        mov    eax, [eax];
@@ -824,11 +767,6 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 179:
 	__asm        jmp    near ptr 0x004614D7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004614de
@@ -837,14 +775,6 @@ void  CGameApp::SavePreferences() {
 	int32_t i;
 	char szJoystickName[64];
 
-// LINE 187:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 188:
 	__asm        jmp    near ptr 0x004614EF;
 	__asm        mov    eax, ds:[0x604C78];
@@ -946,11 +876,6 @@ void  CGameApp::SavePreferences() {
 	__asm        mov    dword ptr ds:[0x599BC4], 0;
 // LINE 209:
 	__asm        jmp    near ptr 0x00461624;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00461629
@@ -958,14 +883,6 @@ unsigned long  CGameApp::TickGame() {
 	static const long lFramesSinceLastSecond = { /* <data@0x00599294> */ };
 	long lElapsedMilliSeconds;
 
-// LINE 218:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 222:
 	__asm        inc    dword ptr ds:[0x599294];
 // LINE 223:
@@ -1125,11 +1042,6 @@ unsigned long  CGameApp::TickGame() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046189E;
 // LINE 257:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004618a3
@@ -1137,8 +1049,6 @@ void  CGameApp::ComposeFrame() {
 	int32_t nCurrentMode;
 
 // LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x461EA1;
 	__asm        mov    eax, fs:[0];
@@ -1543,14 +1453,6 @@ void  CGameApp::ComposePlayFrame() {
 	static const long lLastLoopTickCount = { /* <data@0x00599298> */ };
 	static const long lFrameCount = { /* <data@0x005992a0> */ };
 
-// LINE 400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 406:
 	__asm        inc    dword ptr ds:[0x5992A0];
 // LINE 408:
@@ -1933,25 +1835,12 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        add    esp, 4;
 // LINE 478:
 	__asm        jmp    near ptr 0x004624D9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004624de
 void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 	int32_t i;
 
-// LINE 484:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 487:
 	__asm        cmp    lMilliSecondsSinceLastCall, 0x2EE;
 	__asm        jle    near ptr 0x004624FF;
@@ -1991,23 +1880,10 @@ void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 	__asm        jmp    near ptr 0x0046254C;
 // LINE 494:
 	__asm        jmp    near ptr 0x0046257B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00462582
 int  CGameApp::EnterMode(int32_t nMode) {
-// LINE 502:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x160;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 503:
 	__asm        cmp    nMode, 0;
 	__asm        jne    near ptr 0x00462680;
@@ -2988,23 +2864,10 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00463601;
 // LINE 652:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00463608
 int  CGameApp::ExitMode(int32_t nMode) {
-// LINE 660:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 661:
 	__asm        cmp    nMode, 0;
 	__asm        jne    near ptr 0x0046366E;
@@ -3444,11 +3307,6 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00463BF2;
 // LINE 740:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00463bf9
@@ -3456,14 +3314,6 @@ void  CGameApp::DestroyAllModes() {
 	int32_t nCurrentMode;
 	class list<CopterGameMode>::iterator i;
 
-// LINE 748:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 753:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
@@ -3594,23 +3444,10 @@ void  CGameApp::DestroyAllModes() {
 	__asm        jmp    near ptr 0x00463C7A;
 // LINE 783:
 	__asm        jmp    near ptr 0x00463DC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00463dcb
 void  CGameApp::ProcessCommand(int32_t nCommand) {
-// LINE 790:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 791:
 	__asm        cmp    nCommand, 0x37;
 	__asm        jne    near ptr 0x00463DF6;
@@ -4084,11 +3921,6 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        jmp    near ptr 0x00464446;
 // LINE 956:
 	__asm        jmp    near ptr 0x00464446;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046444d
@@ -4096,14 +3928,6 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	int32_t bPushCommand;
 	int32_t nCommand;
 
-// LINE 964:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 970:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4439,23 +4263,10 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x00464878;
 // LINE 1041:
 	__asm        jmp    near ptr 0x00464878;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0046487f
 void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
-// LINE 1049:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1050:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
 	__asm        push   eax;
@@ -4611,23 +4422,10 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1064:
 	__asm        jmp    near ptr 0x00464A9E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00464aa5
 void  CGameApp::DoCharacter(long lCharacter) {
-// LINE 1071:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1072:
 	__asm        mov    eax, lCharacter;
 	__asm        push   eax;
@@ -4638,23 +4436,10 @@ void  CGameApp::DoCharacter(long lCharacter) {
 	__asm        call   dword ptr [eax+8];
 // LINE 1073:
 	__asm        jmp    near ptr 0x00464AC9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00464ad0
 void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
-// LINE 1079:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1080:
 	__asm        mov    eax, nButton;
 	__asm        push   eax;
@@ -4669,23 +4454,10 @@ void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton
 	__asm        call   dword ptr [eax+0x14];
 // LINE 1081:
 	__asm        jmp    near ptr 0x00464AFC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00464b03
 void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
-// LINE 1088:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1089:
 	__asm        mov    eax, nButton;
 	__asm        push   eax;
@@ -4700,23 +4472,10 @@ void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) 
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1090:
 	__asm        jmp    near ptr 0x00464B2F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00464b36
 void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
-// LINE 1097:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1098:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -4729,23 +4488,10 @@ void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 1099:
 	__asm        jmp    near ptr 0x00464B5E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00464b65
 void  CGameApp::ClearCommands() {
-// LINE 1107:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1110:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -4857,23 +4603,10 @@ void  CGameApp::ClearCommands() {
 	__asm        call   0x0048B631;
 // LINE 1120:
 	__asm        jmp    near ptr 0x00464D15;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00464d1a
 void  CGameApp::ProcessSystemCloseRequest() {
-// LINE 1128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -4916,25 +4649,12 @@ void  CGameApp::ProcessSystemCloseRequest() {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1138:
 	__asm        jmp    near ptr 0x00464DAE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00464db3
 int  CGameApp::CheckForWarpToCareerLevel() {
 	int32_t nNewLevel;
 
-// LINE 1144:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1147:
 	__asm        cmp    dword ptr ds:[0x5C3814], 0;
 	__asm        je     near ptr 0x00464DF6;
@@ -4956,23 +4676,10 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00464DFD;
 // LINE 1153:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00464e02
 int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
-// LINE 1163:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1164:
 	__asm        cmp    nNewLevel, 0;
 	__asm        jl     near ptr 0x00464E22;
@@ -5025,23 +4732,10 @@ int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00464EAB;
 // LINE 1173:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00464eb2
 int  CGameApp::GraduateUserToNextCareerLevel() {
-// LINE 1181:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1182:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -5129,23 +4823,10 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00465019;
 // LINE 1198:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046501e
 int  CGameApp::GraduateUserFromAllCareerLevels() {
-// LINE 1206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1207:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -5170,11 +4851,6 @@ int  CGameApp::GraduateUserFromAllCareerLevels() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046507C;
 // LINE 1210:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00465081
@@ -5184,14 +4860,6 @@ void  CGameApp::NotifyUserOfGraduation() {
 	char szFullPath[260];
 	int32_t nFullStringID;
 
-// LINE 1216:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1D0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 // LINE 1222:
 	__asm        push   0;
@@ -5433,11 +5101,6 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        call   dword ptr [eax+8];
 // LINE 1235:
 	__asm        jmp    near ptr 0x0046549F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004654a4
@@ -5445,14 +5108,6 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	unsigned long nResult;
 	int32_t nCurrentGameMode;
 
-// LINE 1241:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1242:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4324];
@@ -6267,11 +5922,6 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00465ED4;
 // LINE 1453:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00465edb
@@ -6284,14 +5934,6 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	char szSplitPathDrive[3];
 	char szSplitPathExtension[256];
 
-// LINE 1461:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x634;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1469:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -6597,11 +6239,6 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004662F3;
 // LINE 1565:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004662fa
@@ -6609,14 +6246,6 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	unsigned long nResult;
 	int32_t nCurrentGameMode;
 
-// LINE 1573:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1574:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -6834,11 +6463,6 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004665A6;
 // LINE 1648:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004665ad
@@ -6847,14 +6471,6 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	char szFullCityVideoFilePath[260];
 	float fScaleFactor;
 
-// LINE 1658:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x33C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1663:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -7021,25 +6637,12 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004668A6;
 // LINE 1685:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004668ad
 void  CGameApp::ComposeCareerCityVideoFrame() {
 	unsigned long nErrorCode;
 
-// LINE 1692:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1703:
 	__asm        jmp    near ptr 0x004668BE;
 	__asm        jmp    near ptr 0x004668C3;
@@ -7093,25 +6696,12 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1708:
 	__asm        jmp    near ptr 0x00466963;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00466968
 int  CGameApp::StartVideoForMainMenu() {
 	char szMainMenuVideoPath[260];
 
-// LINE 1714:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x228;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1717:
 	__asm        lea    eax, szMainMenuVideoPath[0];
 	__asm        push   eax;
@@ -7208,23 +6798,10 @@ int  CGameApp::StartVideoForMainMenu() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00466B2D;
 // LINE 1731:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00466b32
 void  CGameApp::EndVideoForMainMenu() {
-// LINE 1737:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1738:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
@@ -7252,25 +6829,12 @@ void  CGameApp::EndVideoForMainMenu() {
 	__asm        mov    dword ptr [eax+0x6C], 0;
 // LINE 1743:
 	__asm        jmp    near ptr 0x00466B8F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00466b94
 void  CGameApp::ComposeMainMenuVideoFrame() {
 	unsigned long nErrorCode;
 
-// LINE 1749:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1752:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
@@ -7309,11 +6873,6 @@ void  CGameApp::ComposeMainMenuVideoFrame() {
 	__asm        call   0x00466B32;
 // LINE 1761:
 	__asm        jmp    near ptr 0x00466C15;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

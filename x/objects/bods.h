@@ -4,8 +4,6 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	class cCopterBody* thing;
 
 // LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55FC56;
 	__asm        mov    eax, fs:[0];
@@ -254,40 +252,14 @@ _L45521:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc70
 void  cCopterBody::WriteToDisk() {
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 139:
 	__asm        jmp    near ptr 0x0055FC81;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc90
 class cBList<class cBBase> *  cCopterBody::GetList() {
-// LINE 159:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        jmp    near ptr 0x0055FCA6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

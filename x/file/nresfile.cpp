@@ -158,14 +158,6 @@ public:
 class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(void * __ptr32, long)) {
 	class StdResLoader* loader;
 
-// LINE 11:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 13:
 // Block start:
 	class PtrList<StdResLoader>::Iter i;
@@ -377,25 +369,12 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        mov    eax, loader;
 	__asm        jmp    near ptr 0x0049A1EE;
 // LINE 23:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049a1f5
 void NResFile::~NResFile() {
 	class PtrList<StdResLoader>::Iter i;
 
-// LINE 30:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591218;
 // LINE 31:
@@ -540,11 +519,6 @@ void NResFile::~NResFile() {
 	__asm        jmp    near ptr 0x0049A42F;
 	__asm        mov    ecx, this;
 	__asm        call   0x0055301B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -476,31 +476,14 @@ class bidirectional_iterator<basic_string<char>,int>{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00491180
 void $E32() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0049119A;
 	__asm        call   0x00491548;
 	__asm        jmp    near ptr 0x00491195;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049119a
 void $E29() {
-// LINE 19:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -711,41 +694,20 @@ void $E29() {
 	__asm        jmp    near ptr 0x00491539;
 	__asm        jmp    near ptr 0x0049153E;
 	__asm        jmp    near ptr 0x00491543;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00491548
 void $E31() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x491565;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491560;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00491565
 void $E30() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00491573;
 	__asm        mov    dword ptr [ebp-0x34], 0xC;
 	__asm        mov    eax, 0x604C00;
@@ -856,21 +818,10 @@ void $E30() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491721;
 	__asm        jmp    near ptr 0x00491726;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049172b
 int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
-// LINE 25:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 26:
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
@@ -884,11 +835,6 @@ int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * s
 	__asm        call   0x00492E50;
 	__asm        jmp    near ptr 0x00491750;
 // LINE 27:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00491755
@@ -899,15 +845,6 @@ int32_t FileServices::Initialize() {
 	int32_t bRemotePathFound;
 	int32_t nFullStringID;
 
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x207C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 42:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1293,11 +1230,6 @@ int32_t FileServices::Initialize() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    near ptr 0x00491D17;
 // LINE 69:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00491d1c
@@ -1309,14 +1241,6 @@ int32_t FileServices::FindRemotePath() {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 88:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x8C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 91:
 	__asm        mov    szDriveStrings, 0;
 // LINE 93:
@@ -1773,11 +1697,6 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004923C1;
 // LINE 127:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004923c6
@@ -1785,14 +1704,6 @@ int32_t FileServices::ValidateRemotePath() {
 	class PFile tempPFile;
 	class basic_string<char> sTempValidationFilePath;
 
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x194;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 139:
 	__asm        jmp    near ptr 0x004923DD;
 	__asm        mov    eax, this;
@@ -2115,11 +2026,6 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        mov    eax, [ebp-0x124];
 	__asm        jmp    near ptr 0x00492995;
 // LINE 152:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049299a
@@ -2130,14 +2036,6 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	class list<basic_string<char>>::iterator tempStringListIterator;
 	class list<basic_string<char>> tempStringListFiles;
 
-// LINE 164:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xCC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 165:
 	__asm        push   0;
 	__asm        push   0;
@@ -2436,46 +2334,20 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
 	__asm        call   0x00428C70;
 	__asm        jmp    near ptr 0x00492E2F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00492e36
 int32_t FileServices::CopyFileFromRemoteToLocal(char * szPartialPath) {
-// LINE 195:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 196:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00492E49;
 // LINE 197:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00492e50
 int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
 	long lTotalStringLength;
 
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xADC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 218:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x00492E74;
@@ -4591,11 +4463,6 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00494F7B;
 // LINE 383:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00494f82
@@ -4604,14 +4471,6 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	int32_t nReturnValue;
 	char szPath[260];
 
-// LINE 391:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x160;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 396:
 	__asm        mov    eax, sFile;
 	__asm        cmp    dword ptr [eax], 0;
@@ -4870,11 +4729,6 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004953EB;
 // LINE 400:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 

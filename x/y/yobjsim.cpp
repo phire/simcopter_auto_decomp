@@ -1287,12 +1287,6 @@ public:
 // Contribution: 1:00153ff0-0015b264 Module: 196, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00554ff0
 unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRad, struct Point3d objLoc, int32_t objRad) {
-// LINE 57:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 60:
 	__asm        mov    eax, objLoc.x;
 	__asm        sub    eax, objRad;
@@ -1357,11 +1351,6 @@ unsigned short cYObject::InBoundingRect(struct Point3d queryloc, int32_t queryRa
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005550A7;
 // LINE 73:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005550ac
@@ -1371,13 +1360,6 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	short tree;
 	class cYObject* person;
 
-// LINE 77:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 78:
 	__asm        cmp    hitter_type, 0;
 	__asm        jl     near ptr 0x005550C9;
@@ -1564,11 +1546,6 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        jmp    near ptr 0x0055535F;
 // LINE 122:
 	__asm        jmp    near ptr 0x00555364;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00555369
@@ -1580,13 +1557,6 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 	struct _DYOBJ_INST* founddyobj;
 	struct _DYOBJ_INST* dyobj;
 
-// LINE 172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 174:
 	__asm        mov    founddyobj, 0;
 // LINE 181:
@@ -1821,11 +1791,6 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 	__asm        mov    eax, founddyobj;
 	__asm        jmp    near ptr 0x00555659;
 // LINE 250:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055565e
@@ -1839,13 +1804,6 @@ struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d location, int32_t radi
 	int32_t flags;
 	int32_t normz;
 
-// LINE 264:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 276:
 	__asm        mov    eax, location.x;
 	__asm        add    eax, 0x20000000;
@@ -1929,24 +1887,12 @@ struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d location, int32_t radi
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00555741;
 // LINE 315:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00555746
 enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 	short scurkID;
 
-// LINE 318:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 321:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
@@ -1996,24 +1942,12 @@ enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 	__asm        mov    eax, [eax*4+0x636ED0];
 	__asm        jmp    near ptr 0x00555814;
 // LINE 326:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00555819
 unsigned short cYObject::IsWater(short cellx, short celly) {
 	int32_t j;
 
-// LINE 329:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 330:
 	__asm        movsx  eax, celly;
 	__asm        and    eax, 0xFF;
@@ -2037,30 +1971,14 @@ unsigned short cYObject::IsWater(short cellx, short celly) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055586E;
 // LINE 335:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00555873
 char cYObject::GetRoadDir(struct Point3d location) {
-// LINE 338:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 345:
 	__asm        mov    al, 3;
 	__asm        jmp    near ptr 0x00555880;
 // LINE 346:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00555885
@@ -2071,14 +1989,6 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 	enum cYObject::MoveErrorCode movecode;
 	int32_t dz;
 
-// LINE 349:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 350:
 	__asm        mov    attempts, 0;
 // LINE 354:
@@ -2173,11 +2083,6 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 // LINE 376:
 	__asm        jmp    near ptr 0x00555897;
 // LINE 377:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x005559b2
@@ -2187,14 +2092,6 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d vector, int3
 	int32_t Vx;
 	int32_t dz;
 
-// LINE 380:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 382:
 	__asm        cmp    fwdspeed, 0;
 	__asm        jne    near ptr 0x005559D2;
@@ -2255,11 +2152,6 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d vector, int3
 	__asm        call   0x00555A60;
 	__asm        jmp    near ptr 0x00555A59;
 // LINE 393:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00555a60
@@ -2271,14 +2163,6 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	unsigned char ncelly;
 	enum cYObject::MoveErrorCode retcode;
 
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 402:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
@@ -3028,23 +2912,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00556469;
 // LINE 596:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00556470
 unsigned short cYObject::CanJumpOffHere() {
-// LINE 605:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 606:
 	__asm        mov    eax, this;
 	__asm        movzx  ax, byte ptr [eax+0x89];
@@ -3135,23 +3006,10 @@ unsigned short cYObject::CanJumpOffHere() {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005565B3;
 // LINE 630:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005565b8
 unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::LocationType loctype) {
-// LINE 633:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 634:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
@@ -3220,22 +3078,10 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005566A8;
 // LINE 651:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x005566af
 struct Point2d GetRiotCenter(long riotid) {
-// LINE 656:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 657:
 	__asm        mov    eax, riotid;
 	__asm        push   eax;
@@ -3247,11 +3093,6 @@ struct Point2d GetRiotCenter(long riotid) {
 	__asm        mov    edx, [ebp-4];
 	__asm        jmp    near ptr 0x005566D5;
 // LINE 658:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005566da
@@ -3263,13 +3104,6 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 	long overallcellx;
 	long overallcelly;
 
-// LINE 661:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 662:
 	__asm        mov    numcounted, 0;
 // LINE 663:
@@ -3368,11 +3202,6 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 	__asm        mov    edx, cent.y;
 	__asm        jmp    near ptr 0x00556843;
 // LINE 679:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00556848
@@ -3387,14 +3216,6 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	double overallxloc;
 	short startcelly;
 
-// LINE 682:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 683:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3745,11 +3566,6 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	__asm        mov    [ecx], ax;
 // LINE 739:
 	__asm        jmp    near ptr 0x00556CB2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00556cb9
@@ -3758,14 +3574,6 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 	short celly;
 	short cellx;
 
-// LINE 745:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 748:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3917,11 +3725,6 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00556EB9;
 // LINE 771:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00556ec0
@@ -3931,14 +3734,6 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 	struct _DYOBJ_INST* closestdyn;
 	short count;
 
-// LINE 774:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 775:
 	__asm        mov    closestdyn, 0;
 // LINE 776:
@@ -4120,25 +3915,12 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 	__asm        mov    eax, closestobj;
 	__asm        jmp    near ptr 0x00557167;
 // LINE 800:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0055716e
 void cYObject::Die() {
 	struct _MISSION_PARMS mp;
 
-// LINE 803:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 805:
 	__asm        mov    mp.op, 0x17;
 // LINE 806:
@@ -4179,11 +3961,6 @@ void cYObject::Die() {
 	__asm        mov    word ptr [eax+0xEE], 1;
 // LINE 817:
 	__asm        jmp    near ptr 0x005571F6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005571fb
@@ -4191,13 +3968,6 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 	class cYObject* found;
 	short count;
 
-// LINE 821:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 822:
 	__asm        mov    found, 0;
 // LINE 823:
@@ -4283,25 +4053,12 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00557347;
 // LINE 833:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055734c
 class cYObject* cYObject::DropToted() {
 	class cYObject* obj;
 
-// LINE 836:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 837:
 	__asm        mov    ecx, this;
 	__asm        call   0x005573F5;
@@ -4346,11 +4103,6 @@ class cYObject* cYObject::DropToted() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005573F0;
 // LINE 846:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005573f5
@@ -4358,14 +4110,6 @@ class cYObject* cYObject::GetToted() {
 	class cYObject* found;
 	short count;
 
-// LINE 849:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 850:
 	__asm        mov    found, 0;
 // LINE 851:
@@ -4443,25 +4187,12 @@ class cYObject* cYObject::GetToted() {
 	__asm        mov    eax, found;
 	__asm        jmp    near ptr 0x00557526;
 // LINE 861:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055752b
 enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 875:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 876:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 877:
@@ -4478,25 +4209,12 @@ enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem* el
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557569;
 // LINE 882:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557570
 enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 885:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 886:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 887:
@@ -4529,11 +4247,6 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005575D5;
 // LINE 896:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005575dc
@@ -4542,14 +4255,6 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 899:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 900:
 	__asm        mov    eax, node;
 	__asm        add    eax, 4;
@@ -4620,11 +4325,6 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem* elem, struct
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005576EF;
 // LINE 908:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005576f6
@@ -4633,14 +4333,6 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem* elem, str
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 911:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 912:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -4691,11 +4383,6 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem* elem, str
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005577C6;
 // LINE 917:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005577cd
@@ -4703,14 +4390,6 @@ enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem* elem, struct
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 920:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 921:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -4726,11 +4405,6 @@ enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem* elem, struct
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557800;
 // LINE 924:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557807
@@ -4744,14 +4418,6 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 	struct cYObject::MoveInfo moveinfo;
 	enum TreeSim::ReturnCode result;
 
-// LINE 927:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 928:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -4850,11 +4516,6 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem* elem, struct
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557941;
 // LINE 963:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557948
@@ -4863,14 +4524,6 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 966:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 967:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -4983,11 +4636,6 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem* elem, str
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557B1E;
 // LINE 973:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557b25
@@ -4997,14 +4645,6 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 976:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 977:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -5075,11 +4715,6 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem* elem, stru
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557C19;
 // LINE 986:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557c20
@@ -5091,14 +4726,6 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 	short speed;
 	enum TreeSim::ReturnCode result;
 
-// LINE 989:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 990:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -5336,11 +4963,6 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557F39;
 // LINE 1030:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557f40
@@ -5349,14 +4971,6 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem* e
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1033:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1034:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -5380,11 +4994,6 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557F89;
 // LINE 1040:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00557f90
@@ -5393,14 +5002,6 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1043:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1044:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -5627,11 +5228,6 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558268;
 // LINE 1106:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055826f
@@ -5643,14 +5239,6 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	enum TreeSim::ReturnCode result;
 	struct _DYOBJ_INST* destobj;
 
-// LINE 1109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1110:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6104,25 +5692,12 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005587C1;
 // LINE 1242:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005587c8
 enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1245:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1246:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1247:
@@ -6134,25 +5709,12 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem* 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005587F2;
 // LINE 1251:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005587f9
 enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1254:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1255:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1256:
@@ -6213,25 +5775,12 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005588EC;
 // LINE 1262:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005588f3
 enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1266:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1267:
@@ -6274,11 +5823,6 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558983;
 // LINE 1272:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055898a
@@ -6288,14 +5832,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem* ele
 	enum cYObject::LocationType loctype;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1275:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1276:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6329,11 +5865,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem* ele
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005589FB;
 // LINE 1285:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558a02
@@ -6341,14 +5872,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 	enum cYObject::LocationType loctype;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1288:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1289:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1290:
@@ -6392,25 +5915,12 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558AB4;
 // LINE 1297:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558abb
 enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1301:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1302:
@@ -6429,11 +5939,6 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem* el
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558AFC;
 // LINE 1308:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558b03
@@ -6443,14 +5948,6 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1311:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1312:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6563,11 +6060,6 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558C95;
 // LINE 1325:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558c9c
@@ -6576,14 +6068,6 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem* 
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1328:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1329:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6624,11 +6108,6 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem* 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558D46;
 // LINE 1335:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558d4d
@@ -6641,14 +6120,6 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 	short actualriotval;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1338:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1339:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6795,11 +6266,6 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558F75;
 // LINE 1351:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00558f7c
@@ -6809,14 +6275,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1354:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1355:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -6888,11 +6346,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem* ele
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055909B;
 // LINE 1364:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005590a2
@@ -6900,14 +6353,6 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 	short id;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1367:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1368:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1370:
@@ -6969,25 +6414,12 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559193;
 // LINE 1377:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055919a
 enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1380:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1381:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1382:
@@ -7011,11 +6443,6 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005591FB;
 // LINE 1386:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559202
@@ -7023,14 +6450,6 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 	struct tagLogString lstr;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1389:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x8C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1390:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    lstr.nType, 1;
@@ -7329,11 +6748,6 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem* elem, st
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559780;
 // LINE 1402:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559787
@@ -7343,14 +6757,6 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem* elem
 	short count;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1405:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1406:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -7426,11 +6832,6 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem* elem
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005598B3;
 // LINE 1417:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005598ba
@@ -7445,14 +6846,6 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 	enum TreeSim::ReturnCode result;
 	long scale;
 
-// LINE 1420:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x80;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1421:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1422:
@@ -7626,25 +7019,12 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559B2A;
 // LINE 1442:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559b31
 enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1445:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1446:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1447:
@@ -7687,25 +7067,12 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559BC1;
 // LINE 1452:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559bc8
 enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1455:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1456:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1457:
@@ -7748,25 +7115,12 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559C5E;
 // LINE 1462:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559c65
 enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1466:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1467:
@@ -7809,11 +7163,6 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559CFB;
 // LINE 1472:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559d02
@@ -7824,14 +7173,6 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 	enum cYObject::MoveErrorCode movecode;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1475:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1476:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -7983,11 +7324,6 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559F17;
 // LINE 1527:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559f1e
@@ -7995,14 +7331,6 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct Tre
 	struct tagLogString lstr;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1530:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1531:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    lstr.nType, 1;
@@ -8025,11 +7353,6 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct Tre
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559F6D;
 // LINE 1540:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00559f74
@@ -8040,14 +7363,6 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 	short firecelly;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1543:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1544:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -8186,11 +7501,6 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem* 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A154;
 // LINE 1557:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a15b
@@ -8198,14 +7508,6 @@ enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem* elem, struct 
 	struct tagLogString lstr;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1560:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1561:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    lstr.nType, 1;
@@ -8228,23 +7530,10 @@ enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem* elem, struct 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A1AA;
 // LINE 1568:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a1b1
 enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
-// LINE 1571:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1572:
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -8254,11 +7543,6 @@ enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem*
 	__asm        call   0x00557C20;
 	__asm        jmp    near ptr 0x0055A1D2;
 // LINE 1573:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a1d9
@@ -8268,14 +7552,6 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1576:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1577:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -8344,25 +7620,12 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A2D3;
 // LINE 1586:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a2da
 enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1589:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1590:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1591:
@@ -8508,11 +7771,6 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem* elem, str
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A578;
 // LINE 1595:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a57f
@@ -8520,14 +7778,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1598:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1599:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1600:
@@ -8576,25 +7826,12 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A643;
 // LINE 1608:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a64a
 enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1611:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1612:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1613:
@@ -8610,11 +7847,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A688;
 // LINE 1618:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a68f
@@ -8622,14 +7854,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1621:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1622:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1623:
@@ -8715,11 +7939,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A7C3;
 // LINE 1631:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055a7ca
@@ -8727,14 +7946,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1634:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1635:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1636:
@@ -8906,11 +8117,6 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055AAC9;
 // LINE 1643:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055aad0
@@ -8918,14 +8124,6 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1646:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1647:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, elem;
@@ -9059,11 +8257,6 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055ACF2;
 // LINE 1657:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055acf9
@@ -9071,14 +8264,6 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1660:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1661:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1662:
@@ -9143,25 +8328,12 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055ADE9;
 // LINE 1675:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055adf0
 enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1678:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1679:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1680:
@@ -9247,11 +8419,6 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem* 
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055AF32;
 // LINE 1689:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055af39
@@ -9259,14 +8426,6 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1692:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1693:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1694:
@@ -9319,11 +8478,6 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055AFFC;
 // LINE 1702:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b003
@@ -9332,14 +8486,6 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1705:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1706:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -9446,11 +8592,6 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B19A;
 // LINE 1719:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b1a1
@@ -9458,14 +8599,6 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem* elem, s
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1722:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1723:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1724:
@@ -9490,11 +8623,6 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem* elem, s
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B1F0;
 // LINE 1733:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b1f7
@@ -9502,14 +8630,6 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 	class cYObject* obj;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1736:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1737:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1738:
@@ -9562,25 +8682,12 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B2BA;
 // LINE 1746:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b2c1
 enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1749:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1750:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -9639,11 +8746,6 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem* elem,
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B39E;
 // LINE 1759:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b3a5
@@ -9652,14 +8754,6 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem* e
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1762:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1763:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -9692,11 +8786,6 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem* e
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B410;
 // LINE 1772:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b417
@@ -9708,14 +8797,6 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 	float speed;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1775:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1776:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -9801,25 +8882,12 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B542;
 // LINE 1789:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b549
 enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1792:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1793:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1794:
@@ -9853,11 +8921,6 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem* el
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B5C3;
 // LINE 1802:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b5ca
@@ -9866,14 +8929,6 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1805:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1806:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -9904,25 +8959,12 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem* elem, s
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B62A;
 // LINE 1827:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b631
 enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1830:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1831:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1832:
@@ -9985,25 +9027,12 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B732;
 // LINE 1848:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b739
 enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode result;
 
-// LINE 1851:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1852:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1853:
@@ -10022,23 +9051,10 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem* elem, s
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B782;
 // LINE 1859:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b789
 enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
-// LINE 1862:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1863:
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -10048,11 +9064,6 @@ enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackEl
 	__asm        call   0x005598BA;
 	__asm        jmp    near ptr 0x0055B7AA;
 // LINE 1864:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b7b1
@@ -10061,14 +9072,6 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 	union YObjLang::Param* nparam;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1867:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1868:
 	__asm        mov    result, 0xFFFFFFFF;
 	__asm        mov    eax, node;
@@ -10110,25 +9113,12 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B846;
 // LINE 1876:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b84d
 enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
 	enum TreeSim::ReturnCode res;
 
-// LINE 1880:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1881:
 	__asm        mov    eax, node;
 	__asm        movsx  eax, word ptr [eax];
@@ -10183,25 +9173,12 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem* elem, s
 	__asm        mov    eax, res;
 	__asm        jmp    near ptr 0x0055B919;
 // LINE 1889:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055b920
 void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missionid) {
 	struct _MISSION_PARMS mp;
 
-// LINE 1899:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1901:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -10369,11 +9346,6 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 	__asm        add    esp, 4;
 // LINE 1964:
 	__asm        jmp    near ptr 0x0055BB59;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055bb60
@@ -10383,14 +9355,6 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 	short rhs;
 	enum TreeSim::ReturnCode result;
 
-// LINE 1991:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1992:
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 1996:
@@ -10759,23 +9723,10 @@ tree_error:
 	__asm        jmp    near ptr 0x0055BFA9;
 	__asm        jmp    near ptr 0x0055BFA9;
 	__asm        jmp    near ptr 0x0055BFA9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055bfef
 void cYObject::HandleOverflow() {
-// LINE 2103:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2104:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDBD4;
@@ -10785,11 +9736,6 @@ void cYObject::HandleOverflow() {
 	__asm        add    esp, 0x10;
 // LINE 2105:
 	__asm        jmp    near ptr 0x0055C01C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055c021
@@ -10798,14 +9744,6 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 	short temp;
 	short data;
 
-// LINE 2107:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2113:
 	__asm        cmp    dataRef, 0;
 	__asm        jne    near ptr 0x0055C043;
@@ -10977,11 +9915,6 @@ tree_error:
 	__asm        jmp    near ptr 0x0055C247;
 	__asm        jmp    near ptr 0x0055C247;
 	__asm        jmp    near ptr 0x0055C247;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 

@@ -320,14 +320,6 @@ class bidirectional_iterator<HotSpot,int>{
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a8360
 void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x9C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x004A8377;
 	__asm        jmp    near ptr 0x004A837C;
 	__asm        mov    eax, windowNewParent;
@@ -749,23 +741,10 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 // LINE 60:
 	__asm        jmp    near ptr 0x004A8A43;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004a8a50
 void InventoryWindow::~InventoryWindow() {
-// LINE 66:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591888;
 // LINE 67:
@@ -1027,11 +1006,6 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        jmp    near ptr 0x004A8E5A;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a8e67
@@ -1040,15 +1014,6 @@ int32_t InventoryWindow::Initialize() {
 	int32_t i;
 	int32_t nFullStringID;
 
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x5060;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 81:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -1616,23 +1581,10 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004A9818;
 // LINE 106:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a981d
 int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -1723,23 +1675,10 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A9958;
 // LINE 114:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004a995f
 int32_t InventoryWindow::CreateImage(int32_t __formal) {
-// LINE 120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 124:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
@@ -1971,23 +1910,10 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+0x7C];
 	__asm        jmp    near ptr 0x004A9C7E;
 // LINE 134:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004a9c85
 void InventoryWindow::DestroyImage() {
-// LINE 140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 141:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
@@ -2036,23 +1962,10 @@ void InventoryWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 149:
 	__asm        jmp    near ptr 0x004A9D3B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a9d40
 int32_t InventoryWindow::ComposeSelf() {
-// LINE 155:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 156:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x44], 0;
@@ -2117,11 +2030,6 @@ int32_t InventoryWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004A9E03;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a9e08
@@ -2130,14 +2038,6 @@ void InventoryWindow::DrawTitleText() {
 	int32_t i;
 	class MPoint ptText;
 
-// LINE 174:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x90;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    dword ptr [ebp-0x60], 3;
 	__asm        lea    eax, rectText[0].left;
 	__asm        mov    [ebp-0x64], eax;
@@ -2387,11 +2287,6 @@ void InventoryWindow::DrawTitleText() {
 	__asm        jmp    near ptr 0x004AA09E;
 // LINE 197:
 	__asm        jmp    near ptr 0x004AA1CC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aa1d1
@@ -2403,14 +2298,6 @@ void InventoryWindow::DrawInventory() {
 	class MRect rectDestination;
 	long lCurrentRow;
 
-// LINE 205:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 208:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
@@ -2689,109 +2576,44 @@ void InventoryWindow::DrawInventory() {
 	__asm        jmp    near ptr 0x004AA22A;
 // LINE 260:
 	__asm        jmp    near ptr 0x004AA4E9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aa4ee
 long InventoryWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 267:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 269:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AA501;
 // LINE 270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004aa508
 long InventoryWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 276:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 278:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AA51E;
 // LINE 279:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004aa525
 long InventoryWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 285:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 286:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AA53B;
 // LINE 287:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004aa542
 long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 294:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AA558;
 // LINE 295:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004aa55f
 int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
 	class list<HotSpot>::iterator i;
 
-// LINE 302:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 303:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -2854,44 +2676,18 @@ int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AA639;
 // LINE 312:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004aa640
 void InventoryWindow::LoadHotSpots() {
-// LINE 317:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 323:
 	__asm        jmp    near ptr 0x004AA651;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
 	static const const long lColumnStart[6] = { /* <data@0x00591810> */ };
 
-// LINE 330:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 334:
 	__asm        cmp    lColumn, 6;
 	__asm        jge    near ptr 0x004AA676;
@@ -2905,25 +2701,12 @@ long InventoryWindow::GetColumnStartPixel(long lColumn) {
 	__asm        mov    eax, [eax*4+0x591810];
 	__asm        jmp    near ptr 0x004AA68C;
 // LINE 337:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
 	static const const long lRowStart[11] = { /* <data@0x00591828> */ };
 
-// LINE 344:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 348:
 	__asm        cmp    lRow, 0xB;
 	__asm        jge    near ptr 0x004AA6B3;
@@ -2937,11 +2720,6 @@ long InventoryWindow::GetRowStartPixel(long lRow) {
 	__asm        mov    eax, [eax*4+0x591828];
 	__asm        jmp    near ptr 0x004AA6C9;
 // LINE 351:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004aa6d0
@@ -2949,14 +2727,6 @@ void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoin
 	static const const long lXPositions[5] = { /* <data@0x00591858> */ };
 	static const const long lYPositions[5] = { /* <data@0x00591870> */ };
 
-// LINE 359:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 363:
 	__asm        cmp    lEquipmentIndex, 5;
 	__asm        jge    near ptr 0x004AA6F0;
@@ -2976,23 +2746,10 @@ void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoin
 	__asm        mov    [ecx+4], eax;
 // LINE 367:
 	__asm        jmp    near ptr 0x004AA71B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004aa722
 void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRect& rectAddress1, class MRect& rectAddress2) {
-// LINE 377:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 378:
 	__asm        mov    eax, rectTitle;
 	__asm        mov    dword ptr [eax], 0xE8;
@@ -3025,11 +2782,6 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRec
 	__asm        jmp    near ptr 0x004AA7B2;
 // LINE 381:
 	__asm        jmp    near ptr 0x004AA7B7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 

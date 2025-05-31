@@ -324,12 +324,6 @@ public:
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005349c0
 int32_t CreateCriminalCarInstance(int32_t instanceID) {
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 82:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -342,21 +336,10 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005349EB;
 // LINE 83:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005349f0
 int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
-// LINE 87:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 88:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -370,23 +353,10 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00534A13;
 // LINE 89:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534a18
 void CriminalEvaderCarClass::CriminalEvaderCarClass() {
-// LINE 97:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x00501B6C;
 	__asm        mov    eax, this;
@@ -397,46 +367,21 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // LINE 99:
 	__asm        jmp    near ptr 0x00534A44;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534a4c
 void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
-// LINE 103:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
 	__asm        jmp    near ptr 0x00534A66;
 	__asm        mov    ecx, this;
 	__asm        call   0x00501D09;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534a73
 class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t instanceID) {
 	class CriminalEvaderCarClass* youveWonABrandNewCar;
 
-// LINE 123:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 127:
 	__asm        push   0x12A;
 	__asm        call   0x0056A600;
@@ -486,11 +431,6 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00534B1C;
 // LINE 150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534b21
@@ -499,13 +439,6 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	int32_t i;
 	struct _GridCoordinates startLoc;
 
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 159:
 	__asm        mov    al, reinterpret_cast<uint8_t>(x);
 	__asm        mov    startLoc.x, al;
@@ -591,25 +524,12 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00534C40;
 // LINE 199:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534c45
 void CriminalEvaderCarClass::ItterateFSM() {
 	struct _MISSION_PARMS mp;
 
-// LINE 206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 209:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11A];
@@ -986,23 +906,10 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        (bad);
 // LINE 387:
 	__asm        jmp    near ptr 0x00535129;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053512e
 void CriminalEvaderCarClass::PullOver(short carModel) {
-// LINE 391:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 3;
@@ -1032,23 +939,10 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 	__asm        call   0x005048CD;
 // LINE 399:
 	__asm        jmp    near ptr 0x005351AC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005351b3
 void CriminalEvaderCarClass::AdjustSpeed() {
-// LINE 417:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 418:
 	__asm        mov    ecx, this;
 	__asm        call   0x0050409A;
@@ -1068,11 +962,6 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 424:
 	__asm        jmp    near ptr 0x005351FD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535202
@@ -1085,14 +974,6 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	struct _GridCoordinates scanLoc;
 	class SpiralScan scan;
 
-// LINE 441:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 442:
 	__asm        movsx  eax, word ptr ds:[0x5B7CB8];
 	__asm        push   eax;
@@ -1676,25 +1557,12 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 622:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535709
 void CriminalEvaderCarClass::ShowWhereWeAre() {
 	struct _MISSION_PARMS mp;
 
-// LINE 644:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 649:
 	__asm        mov    mp.op, 0xA;
 // LINE 650:
@@ -1718,23 +1586,10 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	__asm        add    esp, 4;
 // LINE 657:
 	__asm        jmp    near ptr 0x0053574F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00535754
 void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 667:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 669:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11A];
@@ -1762,23 +1617,10 @@ void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x0050917E;
 // LINE 676:
 	__asm        jmp    near ptr 0x005357B9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005357c0
 void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 687:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 689:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1812,11 +1654,6 @@ void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    [ecx+0x126], eax;
 // LINE 702:
 	__asm        jmp    near ptr 0x00535836;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

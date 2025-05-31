@@ -72,13 +72,6 @@ public:
 void GlobalToLocal(struct Point* pt) {
 	struct tagPOINT wpt;
 
-// LINE 8:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 10:
 	__asm        mov    eax, pt;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -103,24 +96,12 @@ void GlobalToLocal(struct Point* pt) {
 	__asm        mov    [ecx], ax;
 // LINE 15:
 	__asm        jmp    near ptr 0x00566A54;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566a59
 void LocalToGlobal(struct Point* pt) {
 	struct tagPOINT wpt;
 
-// LINE 17:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 19:
 	__asm        mov    eax, pt;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -145,21 +126,10 @@ void LocalToGlobal(struct Point* pt) {
 	__asm        mov    [ecx], ax;
 // LINE 24:
 	__asm        jmp    near ptr 0x00566A9D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566aa2
 long TickCount() {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 32:
 	__asm        call   dword ptr ds:[0x6C3614];
 	__asm        shl    eax, 2;
@@ -170,24 +140,12 @@ long TickCount() {
 	__asm        div    ecx;
 	__asm        jmp    near ptr 0x00566AC5;
 // LINE 33:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566aca
 short StringWidth(unsigned char * str) {
 	struct tagSIZE textSize;
 
-// LINE 35:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 37:
 	__asm        lea    eax, textSize.cx;
 	__asm        push   eax;
@@ -212,24 +170,12 @@ short StringWidth(unsigned char * str) {
 	__asm        mov    ax, reinterpret_cast<uint16_t>(textSize.cx);
 	__asm        jmp    near ptr 0x00566B0E;
 // LINE 41:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566b13
 void PtoCstr(unsigned char * pstr) {
 	short len;
 
-// LINE 44:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 45:
 	__asm        mov    eax, pstr;
 	__asm        movzx  ax, byte ptr [eax];
@@ -250,24 +196,12 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 48:
 	__asm        jmp    near ptr 0x00566B4D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566b52
 void CtoPstr(char * cstr) {
 	short len;
 
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        mov    eax, cstr;
 	__asm        push   eax;
@@ -295,21 +229,10 @@ void CtoPstr(char * cstr) {
 	__asm        mov    [ecx], al;
 // LINE 57:
 	__asm        jmp    near ptr 0x00566BA3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566ba8
 void OffsetRect(struct Rect* rect, short hoff, short voff) {
-// LINE 60:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 61:
 	__asm        mov    eax, rect;
 	__asm        movsx  eax, word ptr [eax];
@@ -340,11 +263,6 @@ void OffsetRect(struct Rect* rect, short hoff, short voff) {
 	__asm        mov    [ecx+6], ax;
 // LINE 65:
 	__asm        jmp    near ptr 0x00566C01;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566c06
@@ -354,13 +272,6 @@ unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* res
 	struct tagRECT lrect1;
 	unsigned short sect;
 
-// LINE 74:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 76:
 	__asm        mov    eax, rect1;
 	__asm        movsx  eax, word ptr [eax];
@@ -413,21 +324,10 @@ unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* res
 	__asm        mov    ax, sect;
 	__asm        jmp    near ptr 0x00566CA3;
 // LINE 81:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566ca8
 void SetPortDC(void * __ptr32 dc) {
-// LINE 103:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 104:
 	__asm        call   0x00566CCF;
 // LINE 105:
@@ -437,21 +337,10 @@ void SetPortDC(void * __ptr32 dc) {
 	__asm        mov    dword ptr ds:[0x5BF638], 0;
 // LINE 107:
 	__asm        jmp    near ptr 0x00566CCA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566ccf
 void CleanUpPort() {
-// LINE 84:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 85:
 	__asm        cmp    dword ptr ds:[0x5BF638], 0;
 	__asm        je     near ptr 0x00566D1A;
@@ -476,21 +365,10 @@ void CleanUpPort() {
 	__asm        mov    dword ptr ds:[0x5BF63C], 0;
 // LINE 92:
 	__asm        jmp    near ptr 0x00566D33;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566d38
 void SetPort(void * __ptr32 newHWND) {
-// LINE 111:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 112:
 	__asm        call   0x00566CCF;
 // LINE 113:
@@ -503,21 +381,10 @@ void SetPort(void * __ptr32 newHWND) {
 	__asm        mov    ds:[0x5BF63C], eax;
 // LINE 115:
 	__asm        jmp    near ptr 0x00566D61;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566d66
 void SetPort(struct GrafPtr newPort) {
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 120:
 	__asm        call   0x00566CCF;
 // LINE 121:
@@ -536,21 +403,10 @@ void SetPort(struct GrafPtr newPort) {
 	__asm        mov    ds:[0x5BF63C], ecx;
 // LINE 126:
 	__asm        jmp    near ptr 0x00566DA2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566da7
 void GetPort(struct GrafPtr* pPort) {
-// LINE 130:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 131:
 	__asm        mov    eax, ds:[0x5BF638];
 	__asm        mov    ecx, ds:[0x5BF63C];
@@ -559,11 +415,6 @@ void GetPort(struct GrafPtr* pPort) {
 	__asm        mov    [edx+4], ecx;
 // LINE 132:
 	__asm        jmp    near ptr 0x00566DC5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566dca
@@ -572,13 +423,6 @@ void EraseRect(struct tagRECT* rect) {
 	void * __ptr32 tempBrush;
 	struct tagRECT lRect;
 
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 136:
 	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
 	__asm        jne    near ptr 0x00566DFC;
@@ -625,24 +469,12 @@ void EraseRect(struct tagRECT* rect) {
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 143:
 	__asm        jmp    near ptr 0x00566E62;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566e67
 void EraseRect(struct Rect* r) {
 	struct tagRECT lRect;
 
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 148:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax];
@@ -663,11 +495,6 @@ void EraseRect(struct Rect* r) {
 	__asm        add    esp, 4;
 // LINE 150:
 	__asm        jmp    near ptr 0x00566EA8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566ead
@@ -676,13 +503,6 @@ void FrameRect(struct Rect* rect) {
 	void * __ptr32 tempBrush;
 	struct tagRECT lRect;
 
-// LINE 153:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 154:
 	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
 	__asm        jne    near ptr 0x00566EDF;
@@ -726,21 +546,10 @@ void FrameRect(struct Rect* rect) {
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 161:
 	__asm        jmp    near ptr 0x00566F3D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566f42
 void SetRect(struct Rect* rect, short left, short top, short right, short bottom) {
-// LINE 164:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 165:
 	__asm        mov    ax, left;
 	__asm        mov    ecx, rect;
@@ -759,21 +568,10 @@ void SetRect(struct Rect* rect, short left, short top, short right, short bottom
 	__asm        mov    [ecx+4], ax;
 // LINE 169:
 	__asm        jmp    near ptr 0x00566F78;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566f7d
 void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
-// LINE 172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 173:
 	__asm        mov    eax, rect2;
 	__asm        movsx  eax, word ptr [eax];
@@ -852,21 +650,10 @@ void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 	__asm        mov    [ecx+4], ax;
 // LINE 192:
 	__asm        jmp    near ptr 0x0056705E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567063
 unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
-// LINE 195:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 196:
 	__asm        mov    eax, rect2;
 	__asm        mov    ecx, rect1;
@@ -887,21 +674,10 @@ unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005670A4;
 // LINE 199:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005670a9
 void InsetRect(struct Rect* r, short hdelta, short vdelta) {
-// LINE 202:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 203:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax];
@@ -932,21 +708,10 @@ void InsetRect(struct Rect* r, short hdelta, short vdelta) {
 	__asm        mov    [ecx+6], ax;
 // LINE 207:
 	__asm        jmp    near ptr 0x00567102;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567107
 unsigned short PtInRect(struct Point p, struct Rect* r) {
-// LINE 210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 211:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -975,21 +740,10 @@ unsigned short PtInRect(struct Point p, struct Rect* r) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0056716E;
 // LINE 213:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567173
 unsigned short EmptyRect(struct Rect* r) {
-// LINE 216:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 217:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -1009,21 +763,10 @@ unsigned short EmptyRect(struct Rect* r) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x005671B5;
 // LINE 219:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005671ba
 void GetBackColor(unsigned long * color) {
-// LINE 222:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 223:
 	__asm        mov    eax, ds:[0x5BF63C];
 	__asm        push   eax;
@@ -1032,21 +775,10 @@ void GetBackColor(unsigned long * color) {
 	__asm        mov    [ecx], eax;
 // LINE 224:
 	__asm        jmp    near ptr 0x005671D6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005671db
 void RGBBackColor(unsigned long * color) {
-// LINE 227:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 228:
 	__asm        mov    eax, color;
 	__asm        mov    eax, [eax];
@@ -1056,11 +788,6 @@ void RGBBackColor(unsigned long * color) {
 	__asm        call   dword ptr ds:[0x6C3544];
 // LINE 229:
 	__asm        jmp    near ptr 0x005671F8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

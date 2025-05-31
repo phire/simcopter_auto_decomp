@@ -902,14 +902,6 @@ class bidirectional_iterator<basic_string<char>,int>{
 // Contribution: 1:00032120-000389b8 Module: 59, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00433120
 void RadioStation::RadioStation() {
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 1;
 	__asm        mov    eax, this;
@@ -1227,23 +1219,10 @@ void RadioStation::RadioStation() {
 // LINE 73:
 	__asm        jmp    near ptr 0x004335FD;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00433605
 void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
-// LINE 80:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -1682,23 +1661,10 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 // LINE 99:
 	__asm        jmp    near ptr 0x00433C34;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00433c3e
 class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioStation) {
-// LINE 106:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 107:
 	__asm        mov    eax, this;
 	__asm        cmp    copyRadioStation, eax;
@@ -2113,23 +2079,10 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x004341BF;
 // LINE 129:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004341c6
 void RadioStation::~RadioStation() {
-// LINE 136:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F518;
 // LINE 140:
@@ -2384,67 +2337,28 @@ void RadioStation::~RadioStation() {
 	__asm        jmp    near ptr 0x00434572;
 	__asm        jmp    near ptr 0x00434577;
 	__asm        jmp    near ptr 0x0043457C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00434581
 int32_t RadioStation::Initialize() {
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 147:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00434597;
 // LINE 148:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043459c
 void RadioStation::SetPlayStatus(int32_t bNewPlaying) {
-// LINE 155:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 156:
 	__asm        mov    eax, bNewPlaying;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 159:
 	__asm        jmp    near ptr 0x004345B6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004345bd
 void RadioStation::StationSet() {
-// LINE 165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 166:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2457,47 +2371,21 @@ void RadioStation::StationSet() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 168:
 	__asm        jmp    near ptr 0x004345E4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004345e9
 int32_t RadioStation::IsPlaying() {
-// LINE 175:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 176:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x00434600;
 // LINE 177:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00434605
 int32_t RadioStation::DoState() {
 	unsigned long lElapsedTime;
 
-// LINE 184:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 187:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2825,25 +2713,12 @@ int32_t RadioStation::DoState() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00434A41;
 // LINE 264:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00434a46
 int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType radioStationCycleType) {
 	class basic_string<char> sFullSelectionPath;
 
-// LINE 271:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 272:
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
 	__asm        call   0x00411EE0;
@@ -3444,25 +3319,12 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    near ptr 0x004353DB;
 // LINE 310:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004353e2
 void RadioStation::LoadAllPlaylists() {
 	class Directory tempDirectory;
 
-// LINE 317:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 318:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3819,11 +3681,6 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
 	__asm        call   0x00428C70;
 	__asm        jmp    near ptr 0x004359DD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004359e2
@@ -3831,14 +3688,6 @@ void RadioStation::ShufflePlaylist() {
 	class basic_string<char> sTempItem;
 	class basic_string<char> sCurrentLastItem;
 
-// LINE 349:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x160;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 350:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -4659,11 +4508,6 @@ void RadioStation::ShufflePlaylist() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436784;
 	__asm        jmp    near ptr 0x00436789;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043678e
@@ -4673,14 +4517,6 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	int32_t iEnd;
 	class vector<basic_string<char>> stringArray;
 
-// LINE 411:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 412:
 	__asm        jmp    near ptr 0x004367A5;
 	__asm        mov    eax, stringList;
@@ -4965,11 +4801,6 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        jmp    near ptr 0x00436BBC;
 	__asm        jmp    near ptr 0x00436BC1;
 	__asm        jmp    near ptr 0x00436BC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00436bcd
@@ -4977,14 +4808,6 @@ void RadioStation::ShuffleCycle() {
 	int32_t nTempCycleItem;
 	int32_t nCurrentCycleLastItem;
 
-// LINE 445:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 450:
 	__asm        jmp    near ptr 0x00436BDE;
 	__asm        jmp    near ptr 0x00436BE3;
@@ -5106,23 +4929,10 @@ void RadioStation::ShuffleCycle() {
 	__asm        mov    [ecx], eax;
 // LINE 462:
 	__asm        jmp    near ptr 0x00436D7B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00436d80
 void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign) {
-// LINE 469:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 470:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x38;
@@ -5251,45 +5061,19 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        jmp    near ptr 0x00436F53;
 // LINE 471:
 	__asm        jmp    near ptr 0x00436F58;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00436f5f
 enum RadioStationType RadioStation::GetRadioStationType() {
-// LINE 478:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 479:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
 	__asm        jmp    near ptr 0x00436F76;
 // LINE 480:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00436f7b
 int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStationCycleType) {
-// LINE 487:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 488:
 	__asm        cmp    radioStationCycleType, 0;
 	__asm        jne    near ptr 0x00436FA6;
@@ -5353,23 +5137,10 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 507:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00437054
 void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStationCycleType) {
-// LINE 514:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 515:
 	__asm        cmp    radioStationCycleType, 0;
 	__asm        jne    near ptr 0x0043710B;
@@ -5567,11 +5338,6 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        jmp    near ptr 0x0043732B;
 // LINE 535:
 	__asm        jmp    near ptr 0x00437330;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00437337
@@ -5579,14 +5345,6 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	class Directory tempDirectory;
 	class DirectoryEntry* tempDirectoryEntry;
 
-// LINE 542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x94;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 543:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -5834,11 +5592,6 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    near ptr 0x004376D7;
 // LINE 555:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004376dc
@@ -5847,14 +5600,6 @@ int32_t RadioStation::DetectRadioStationType() {
 	int32_t i;
 	class basic_string<char> sStationDirectoryName;
 
-// LINE 562:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x94;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 563:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -6118,23 +5863,10 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    near ptr 0x00437B0B;
 // LINE 579:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437b10
  Radio::Radio() {
-// LINE 603:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -6168,23 +5900,10 @@ int32_t RadioStation::DetectRadioStationType() {
 // LINE 604:
 	__asm        jmp    near ptr 0x00437BB2;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437bba
  Radio::~Radio() {
-// LINE 610:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F560;
 // LINE 611:
@@ -6226,23 +5945,10 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        jmp    near ptr 0x00437C48;
 	__asm        jmp    near ptr 0x00437C4D;
 	__asm        jmp    near ptr 0x00437C52;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437c57
 int  Radio::Initialize() {
-// LINE 619:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 620:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6257,23 +5963,10 @@ int  Radio::Initialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00437C83;
 // LINE 623:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437c88
 int  Radio::DeInitialize() {
-// LINE 630:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 631:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6289,23 +5982,10 @@ int  Radio::DeInitialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00437CB8;
 // LINE 634:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437cbd
 void  Radio::SetPreferences(struct RadioPreferences& newRadioPreferences) {
-// LINE 641:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 642:
 	__asm        mov    eax, newRadioPreferences;
 	__asm        mov    eax, [eax+4];
@@ -6359,23 +6039,10 @@ void  Radio::SetPreferences(struct RadioPreferences& newRadioPreferences) {
 	__asm        call   dword ptr [eax+0x34];
 // LINE 653:
 	__asm        jmp    near ptr 0x00437D45;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00437d4c
 void  Radio::GetPreferences(struct RadioPreferences& currentRadioPreferences) {
-// LINE 660:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 661:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -6413,11 +6080,6 @@ void  Radio::GetPreferences(struct RadioPreferences& currentRadioPreferences) {
 	__asm        mov    [ecx+0x18], eax;
 // LINE 668:
 	__asm        jmp    near ptr 0x00437DB0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00437db7
@@ -6425,14 +6087,6 @@ int  Radio::GetPreferences() {
 	struct RadioPreferences tempRadioPreferences;
 	char * chPrefData;
 
-// LINE 675:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 679:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
 	__asm        je     near ptr 0x00437E58;
@@ -6482,25 +6136,12 @@ int  Radio::GetPreferences() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00437E62;
 // LINE 696:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437e67
 int  Radio::SavePreferences() {
 	struct RadioPreferences tempRadioPreferences;
 
-// LINE 703:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 706:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
 	__asm        je     near ptr 0x00437EDB;
@@ -6544,23 +6185,10 @@ int  Radio::SavePreferences() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00437EE2;
 // LINE 720:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00437ee7
 int  Radio::SetOn(int32_t bNewOn) {
-// LINE 727:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 732:
 	__asm        cmp    bNewOn, 0;
 	__asm        je     near ptr 0x00437FCE;
@@ -6650,23 +6278,10 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00437FFE;
 // LINE 750:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00438005
 void  Radio::SetMute(int32_t bNewMute) {
-// LINE 758:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 759:
 	__asm        cmp    bNewMute, 0;
 	__asm        je     near ptr 0x00438051;
@@ -6713,23 +6328,10 @@ void  Radio::SetMute(int32_t bNewMute) {
 	__asm        call   dword ptr [eax+0x24];
 // LINE 774:
 	__asm        jmp    near ptr 0x00438099;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004380a0
 void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
-// LINE 780:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 781:
 	__asm        cmp    nRadioOption, 0;
 	__asm        jne    near ptr 0x004380C4;
@@ -6755,23 +6357,10 @@ void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
 	__asm        mov    [ecx+0x30], eax;
 // LINE 787:
 	__asm        jmp    near ptr 0x004380F4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004380fb
 int  Radio::GetOption(enum RadioOption nRadioOption) {
-// LINE 793:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 794:
 	__asm        cmp    nRadioOption, 0;
 	__asm        jne    near ptr 0x00438121;
@@ -6799,23 +6388,10 @@ int  Radio::GetOption(enum RadioOption nRadioOption) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00438157;
 // LINE 801:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043815e
 int  Radio::SetVolume(long lNewVolume) {
-// LINE 811:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 812:
 	__asm        cmp    lNewVolume, 0;
 	__asm        jge    near ptr 0x0043817B;
@@ -6847,23 +6423,10 @@ int  Radio::SetVolume(long lNewVolume) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004381C5;
 // LINE 820:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004381cc
 int  Radio::SetStation(int32_t nStationIndex) {
-// LINE 826:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 827:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nStationIndex;
@@ -6944,11 +6507,6 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004382C3;
 // LINE 839:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004382ca
@@ -6956,14 +6514,6 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 846:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 849:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004382E2;
@@ -7015,11 +6565,6 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00438372;
 // LINE 854:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00438379
@@ -7027,14 +6572,6 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 860:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 863:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00438391;
@@ -7081,23 +6618,10 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00438417;
 // LINE 868:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043841e
 int  Radio::GetStationCount() {
-// LINE 875:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 876:
 	__asm        jmp    near ptr 0x0043842F;
 	__asm        jmp    near ptr 0x00438434;
@@ -7111,23 +6635,10 @@ int  Radio::GetStationCount() {
 	__asm        idiv   ecx;
 	__asm        jmp    near ptr 0x00438452;
 // LINE 877:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00438457
 int  Radio::DoState() {
-// LINE 884:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 885:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -7155,25 +6666,12 @@ int  Radio::DoState() {
 	__asm        call   dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004384B1;
 // LINE 888:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004384b6
 int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirectory) {
 	int32_t i;
 
-// LINE 895:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 898:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004384D1;
@@ -7290,11 +6788,6 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00438676;
 // LINE 903:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043867d
@@ -7310,14 +6803,6 @@ int  Radio::SetupStations() {
 	class basic_string<char> sRadioDirectory;
 	class list<basic_string<char>>::iterator radioStationStringListIterator;
 
-// LINE 914:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x258;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 915:
 	__asm        lea    ecx, sRadioDirectory.c_str_ptr;
 	__asm        call   0x00411EE0;
@@ -8284,23 +7769,10 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, [ebp-0x160];
 	__asm        jmp    near ptr 0x0043965E;
 // LINE 1006:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00439663
 int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_string<char>& sDirectory) {
-// LINE 1013:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ds:[0x5984C4];
 	__asm        mov    [ebp-0x6C], eax;
 // LINE 1014:
@@ -8533,11 +8005,6 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x004399B2;
 // LINE 1015:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

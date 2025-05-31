@@ -376,89 +376,39 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047de80
 void $E64() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0047DE95;
 	__asm        jmp    near ptr 0x0047DE90;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047de95
 void $E63() {
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    byte ptr ds:[0x604448], 0xA;
 	__asm        mov    byte ptr ds:[0x604449], 0x85;
 	__asm        mov    byte ptr ds:[0x60444A], 0xDA;
 	__asm        jmp    near ptr 0x0047DEB5;
 	__asm        jmp    near ptr 0x0047DEBA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047debf
 void $E67() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0047DED4;
 	__asm        jmp    near ptr 0x0047DECF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047ded4
 void $E66() {
-// LINE 49:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    byte ptr ds:[0x60444C], 0x6F;
 	__asm        mov    byte ptr ds:[0x60444D], 0xDA;
 	__asm        mov    byte ptr ds:[0x60444E], 0xFF;
 	__asm        jmp    near ptr 0x0047DEF4;
 	__asm        jmp    near ptr 0x0047DEF9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047defe
 void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, void * __ptr32 myNewPlatformWindow, long * lNewCities, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewAllowCancel) {
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -591,23 +541,10 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 // LINE 87:
 	__asm        jmp    near ptr 0x0047E11F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x20;
 }
 
 // FUNCTION: COPTER_D 0x0047e129
 void CareerWindow::~CareerWindow() {
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590E30;
 // LINE 94:
@@ -635,11 +572,6 @@ void CareerWindow::~CareerWindow() {
 	__asm        jmp    near ptr 0x0047E191;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047e19e
@@ -651,15 +583,6 @@ int32_t CareerWindow::Initialize() {
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
-// LINE 101:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x5320;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 103:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1734,11 +1657,6 @@ int32_t CareerWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x294];
 	__asm        jmp    near ptr 0x0047F38C;
 // LINE 195:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047f391
@@ -1746,14 +1664,6 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 	class basic_string<char> sImagePath;
 	class basic_string<char> sImageFile;
 
-// LINE 201:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 202:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -2013,23 +1923,10 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    near ptr 0x0047F753;
 // LINE 212:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047f75a
 void CareerWindow::DestroyImage() {
-// LINE 219:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 220:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x83C], 0;
@@ -2058,11 +1955,6 @@ void CareerWindow::DestroyImage() {
 	__asm        call   0x004A4CAB;
 // LINE 225:
 	__asm        jmp    near ptr 0x0047F7CA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047f7cf
@@ -2070,14 +1962,6 @@ int32_t CareerWindow::DrawSelf() {
 	int32_t i;
 	unsigned long nErrorCode;
 
-// LINE 232:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 241:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047F7EA;
@@ -2146,11 +2030,6 @@ int32_t CareerWindow::DrawSelf() {
 	__asm        mov    eax, nErrorCode;
 	__asm        jmp    near ptr 0x0047F8A6;
 // LINE 248:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047f8ab
@@ -2160,14 +2039,6 @@ void CareerWindow::DrawCitySelection() {
 	int32_t i;
 	class MRect rectSources[3][4];
 
-// LINE 256:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x13C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    dword ptr [ebp-0x12C], 0xC;
 	__asm        lea    eax, ptDestinations[0][0].x;
 	__asm        mov    [ebp-0x130], eax;
@@ -2265,23 +2136,10 @@ void CareerWindow::DrawCitySelection() {
 	__asm        jmp    near ptr 0x0047F961;
 // LINE 273:
 	__asm        jmp    near ptr 0x0047FA70;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047fa75
 long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 280:
 	__asm        cmp    lKey, 0x1B;
 	__asm        je     near ptr 0x0047FA9B;
@@ -2331,25 +2189,12 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047FB0D;
 // LINE 289:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047fb14
 long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 	int32_t i;
 
-// LINE 296:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 299:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047FB2F;
@@ -2436,25 +2281,12 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047FC40;
 // LINE 314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047fc47
 long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	int32_t i;
 
-// LINE 321:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 324:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047FC62;
@@ -2513,23 +2345,10 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047FD26;
 // LINE 331:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047fd2d
 int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-// LINE 338:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 339:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;
@@ -2590,23 +2409,10 @@ int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047FDEB;
 // LINE 352:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0047fdf2
 long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
-// LINE 358:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 359:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewCitySelection;
@@ -2690,11 +2496,6 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047FF22;
 // LINE 371:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
@@ -2703,14 +2504,6 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinatio
 	class CareerWindow::CitySelectionFrame upperLeft;
 	class CareerWindow::CitySelectionFrame upperRight;
 
-// LINE 383:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 385:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 1;
@@ -2787,23 +2580,10 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinatio
 	__asm        mov    upperLeft.<vftable>, 0x590EF4;
 	__asm        jmp    near ptr 0x00480026;
 	__asm        jmp    near ptr 0x0048002B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00480032
 void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_t b_Top, int32_t b_Selected) {
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xCC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, b_Left;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -3059,25 +2839,12 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 // LINE 423:
 	__asm        jmp    near ptr 0x00480490;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0048049d
 void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDest) {
 	int32_t nN;
 
-// LINE 426:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 427:
 	__asm        mov    nN, 0;
 	__asm        jmp    near ptr 0x004804B8;
@@ -3101,25 +2868,12 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDes
 	__asm        jmp    near ptr 0x004804B5;
 // LINE 431:
 	__asm        jmp    near ptr 0x004804F0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004804f7
 void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 	int32_t nN;
 
-// LINE 434:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 435:
 	__asm        mov    nN, 0;
 	__asm        jmp    near ptr 0x00480512;
@@ -3201,11 +2955,6 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 	__asm        jmp    near ptr 0x0048050F;
 // LINE 450:
 	__asm        jmp    near ptr 0x00480605;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

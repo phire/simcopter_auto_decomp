@@ -293,67 +293,31 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052dda0
 void $E7() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0052DDBA;
 	__asm        call   0x0052DDD9;
 	__asm        jmp    near ptr 0x0052DDB5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddba
 void $E3() {
-// LINE 150:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x62B7B8], 0x593238;
 	__asm        jmp    near ptr 0x0052DDCF;
 	__asm        jmp    near ptr 0x0052DDD4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddd9
 void $E6() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x52DDF6;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052DDF1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddf6
 void $E4() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B998];
 	__asm        test   al, 1;
@@ -365,11 +329,6 @@ void $E4() {
 	__asm        mov    ecx, 0x62B7B8;
 	__asm        call   0x0052E0A8;
 	__asm        jmp    near ptr 0x0052DE28;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052de2d
@@ -377,14 +336,6 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 	long odds;
 	int32_t currentFlag;
 
-// LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593238;
 // LINE 183:
@@ -519,23 +470,10 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 // LINE 230:
 	__asm        jmp    near ptr 0x0052DFC3;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052dfcd
 void TrainClass::Reset() {
-// LINE 246:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 248:
 	__asm        mov    ecx, this;
 	__asm        call   0x005339B0;
@@ -604,23 +542,10 @@ void TrainClass::Reset() {
 	__asm        mov    dword ptr [eax+0x59], 0xFFFFFFFF;
 // LINE 271:
 	__asm        jmp    near ptr 0x0052E0A3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e0a8
 void TrainClass::~TrainClass() {
-// LINE 291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593238;
 // LINE 296:
@@ -667,21 +592,10 @@ void TrainClass::~TrainClass() {
 	__asm        mov    byte ptr [eax+4], 0;
 // LINE 315:
 	__asm        jmp    near ptr 0x0052E13C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e141
 class TrainClass* TrainClass::GetTrainPointer(long index) {
-// LINE 334:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 335:
 	__asm        cmp    index, 1;
 	__asm        jl     near ptr 0x0052E158;
@@ -693,21 +607,10 @@ class TrainClass* TrainClass::GetTrainPointer(long index) {
 	__asm        mov    eax, [eax*4+0x62B994];
 	__asm        jmp    near ptr 0x0052E167;
 // LINE 339:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e16c
 class TrainClass* TrainClass::CreateInstance(int32_t instanceID) {
-// LINE 361:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 362:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -717,24 +620,12 @@ class TrainClass* TrainClass::CreateInstance(int32_t instanceID) {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052E187;
 // LINE 422:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e18c
 class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
 	class TrainClass* newtrain;
 
-// LINE 444:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 447:
 	__asm        push   0x1D9;
 	__asm        call   0x0056A600;
@@ -783,23 +674,10 @@ class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052E227;
 // LINE 471:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e22c
 int32_t TrainClass::Initialize(int32_t instanceID) {
-// LINE 546:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 547:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -813,24 +691,12 @@ int32_t TrainClass::Initialize(int32_t instanceID) {
 	__asm        call   0x00533E76;
 	__asm        jmp    near ptr 0x0052E257;
 // LINE 548:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052e25e
 void TrainClass::ResetAll() {
 	int32_t currentTrainIndex;
 
-// LINE 571:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 592:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E276;
@@ -845,24 +711,12 @@ void TrainClass::ResetAll() {
 	__asm        jmp    near ptr 0x0052E273;
 // LINE 597:
 	__asm        jmp    near ptr 0x0052E299;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e29e
 void TrainClass::ItterateAll() {
 	int32_t currentTrainIndex;
 
-// LINE 620:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 641:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E2B6;
@@ -877,24 +731,12 @@ void TrainClass::ItterateAll() {
 	__asm        jmp    near ptr 0x0052E2B3;
 // LINE 646:
 	__asm        jmp    near ptr 0x0052E2D9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e2de
 int32_t TrainClass::FindTrainToCrash(long mission_id) {
 	int32_t currentTrainIndex;
 
-// LINE 669:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 672:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E2F6;
@@ -934,23 +776,10 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052E36E;
 // LINE 683:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e373
 void TrainClass::Itterate() {
-// LINE 704:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 707:
 	__asm        jmp    near ptr 0x0052E384;
 	__asm        mov    eax, this;
@@ -1097,11 +926,6 @@ void TrainClass::Itterate() {
 	__asm        jmp    near ptr 0x0052E52A;
 // LINE 759:
 	__asm        jmp    near ptr 0x0052E52F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e534
@@ -1110,14 +934,6 @@ void TrainClass::TrainSoundDriver() {
 	struct Point3d vec;
 	int32_t dist;
 
-// LINE 777:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 783:
 	__asm        jmp    near ptr 0x0052E545;
 	__asm        mov    eax, this;
@@ -1214,23 +1030,10 @@ void TrainClass::TrainSoundDriver() {
 	__asm        add    esp, 4;
 // LINE 819:
 	__asm        jmp    near ptr 0x0052E66C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e671
 void TrainClass::ItterateFSM() {
-// LINE 841:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 843:
 	__asm        jmp    near ptr 0x0052E682;
 	__asm        mov    eax, this;
@@ -1457,11 +1260,6 @@ void TrainClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x0052E8E0;
 // LINE 1024:
 	__asm        jmp    near ptr 0x0052E90B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e910
@@ -1470,14 +1268,6 @@ void TrainClass::SetCrashWhenReady() {
 	int32_t deltaX;
 	int32_t dist;
 
-// LINE 1042:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1048:
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
@@ -1529,11 +1319,6 @@ void TrainClass::SetCrashWhenReady() {
 	__asm        mov    dword ptr [eax+0x65], 0;
 // LINE 1065:
 	__asm        jmp    near ptr 0x0052E99F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052e9a4
@@ -1548,14 +1333,6 @@ void TrainClass::TrainCrashMovement() {
 	int32_t distance;
 	int32_t speed;
 
-// LINE 1083:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x90;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1086:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -2165,23 +1942,10 @@ void TrainClass::TrainCrashMovement() {
 	__asm        add    esp, 4;
 // LINE 1298:
 	__asm        jmp    near ptr 0x0052F149;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052f14e
 void TrainClass::MakeUturn() {
-// LINE 1320:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1321:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0;
@@ -2353,23 +2117,10 @@ void TrainClass::MakeUturn() {
 	__asm        jmp    near ptr 0x0052F38A;
 // LINE 1368:
 	__asm        jmp    near ptr 0x0052F38F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052f394
 int32_t TrainClass::FinishedUturn() {
-// LINE 1388:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1389:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x65], 0xA;
@@ -2411,25 +2162,12 @@ int32_t TrainClass::FinishedUturn() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052F416;
 // LINE 1402:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
 	static const int32_t speedAdjustor = { /* <data@0x005b7838> */ };
 
-// LINE 1421:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1424:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x31];
@@ -2443,11 +2181,6 @@ void TrainClass::AdjustSpeed() {
 	__asm        mov    dword ptr [eax+0x2D], 1;
 // LINE 1430:
 	__asm        jmp    near ptr 0x0052F44F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052f454
@@ -2455,14 +2188,6 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	struct Point2d trainLocation;
 	struct Point3d trainHeading;
 
-// LINE 1450:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1456:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -2531,11 +2256,6 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        call   0x0052F52F;
 	__asm        jmp    near ptr 0x0052F52A;
 // LINE 1464:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052f52f
@@ -2548,14 +2268,6 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	struct _DYOBJ_INST* currentObject;
 	int32_t ydiff;
 
-// LINE 1483:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1486:
 	__asm        mov    eax, collisionPoint;
 	__asm        mov    eax, [eax];
@@ -2917,11 +2629,6 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052F991;
 // LINE 1638:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052f998
@@ -2929,14 +2636,6 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 	int32_t deltaY;
 	int32_t deltaX;
 
-// LINE 1657:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1661:
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
@@ -3009,11 +2708,6 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052FA80;
 // LINE 1703:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052fa85
@@ -3021,14 +2715,6 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	 // Switch table at 0x00530db4
 	 // Switch table at 0x00530381
 
-// LINE 1722:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1723:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x35;
@@ -4744,69 +4430,30 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x00530CEB;
 // LINE 2638:
 	__asm        jmp    near ptr 0x00530DFB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00530e02
 void TrainClass::SlowDown() {
-// LINE 2656:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2657:
 	__asm        mov    eax, this;
 	__asm        sub    dword ptr [eax+0x2D], 0x20000;
 // LINE 2658:
 	__asm        jmp    near ptr 0x00530E1D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00530e22
 void TrainClass::Stop() {
-// LINE 2677:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2678:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2D], 0;
 // LINE 2679:
 	__asm        jmp    near ptr 0x00530E3D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00530e42
 void TrainClass::MoveForward() {
 	int32_t distance;
 
-// LINE 2698:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2701:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -4954,23 +4601,10 @@ void TrainClass::MoveForward() {
 	__asm        mov    dword ptr [eax+0xD], 0;
 // LINE 2729:
 	__asm        jmp    near ptr 0x00531048;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053104d
 int32_t TrainClass::HaveIReachedNextLoc() {
-// LINE 2749:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2750:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x21], 0;
@@ -4984,23 +4618,10 @@ int32_t TrainClass::HaveIReachedNextLoc() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053107C;
 // LINE 2758:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00531081
 int32_t TrainClass::AmIInANewCell() {
-// LINE 2776:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2782:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -5103,25 +4724,12 @@ int32_t TrainClass::AmIInANewCell() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00531226;
 // LINE 2795:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053122b
 void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST* dyobj) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 2814:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2817:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -5199,25 +4807,12 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 // LINE 2843:
 // Block end:
 	__asm        jmp    near ptr 0x00531336;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0053133d
 void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyobj) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 2862:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2865:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -5263,11 +4858,6 @@ void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyo
 	__asm        mov    [ecx+0x10], eax;
 // LINE 2872:
 	__asm        jmp    near ptr 0x005313EB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005313f2
@@ -5279,14 +4869,6 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	long intersection;
 	unsigned short northTile;
 
-// LINE 2895:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2905:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax];
@@ -6067,23 +5649,10 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, intersection;
 	__asm        jmp    near ptr 0x00531DF8;
 // LINE 3087:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00531dff
 int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
-// LINE 3108:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3118:
 	__asm        mov    dword ptr [ebp-0xC], 0x5B7BB8;
 	__asm        mov    eax, [ebp-0xC];
@@ -6164,23 +5733,10 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x00531F81;
 // LINE 3119:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00531f88
 void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) {
-// LINE 3138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3139:
 	__asm        mov    eax, intersectionType;
 	__asm        mov    [ebp-8], eax;
@@ -6325,23 +5881,10 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        (bad);
 // LINE 3229:
 	__asm        jmp    near ptr 0x00532142;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00532149
 enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
-// LINE 3248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3252:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
@@ -6417,23 +5960,10 @@ enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 	__asm        mov    eax, 3;
 	__asm        jmp    near ptr 0x00532299;
 // LINE 3262:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053229e
 void TrainClass::SetTrailingCars() {
-// LINE 3282:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3284:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -6624,11 +6154,6 @@ void TrainClass::SetTrailingCars() {
 	__asm        rep movsd;
 // LINE 3310:
 	__asm        jmp    near ptr 0x00532513;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00532518
@@ -6637,14 +6162,6 @@ void TrainClass::AdjustTrailingCars() {
 	struct Point2d currloc;
 	struct Point3d vec;
 
-// LINE 3329:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3334:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -6978,25 +6495,12 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        add    esp, 8;
 // LINE 3395:
 	__asm        jmp    near ptr 0x005328FE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00532903
 void TrainClass::AdjustCurrentPosition() {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 3415:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3416:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x39];
@@ -7111,11 +6615,6 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        add    dword ptr [eax+0x18], 0x1E0000;
 // LINE 3449:
 	__asm        jmp    near ptr 0x00532AA6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00532aab
@@ -7127,14 +6626,6 @@ void TrainClass::AdjustNextPosition() {
 	int32_t xdiff;
 	int32_t ydiff;
 
-// LINE 3469:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3470:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x59];
@@ -7586,23 +7077,10 @@ void TrainClass::AdjustNextPosition() {
 // LINE 3637:
 // Block end:
 	__asm        jmp    near ptr 0x0053309F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005330a4
 void TrainClass::GoStraight() {
-// LINE 3656:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3659:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 0;
@@ -7697,23 +7175,10 @@ void TrainClass::GoStraight() {
 	__asm        jmp    near ptr 0x005331C4;
 // LINE 3687:
 	__asm        jmp    near ptr 0x005331C9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005331ce
 void TrainClass::TurnLeft() {
-// LINE 3706:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3709:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 1;
@@ -7808,23 +7273,10 @@ void TrainClass::TurnLeft() {
 	__asm        jmp    near ptr 0x005332EE;
 // LINE 3738:
 	__asm        jmp    near ptr 0x005332F3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005332f8
 void TrainClass::TurnRight() {
-// LINE 3757:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3760:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 1;
@@ -7919,11 +7371,6 @@ void TrainClass::TurnRight() {
 	__asm        jmp    near ptr 0x00533418;
 // LINE 3793:
 	__asm        jmp    near ptr 0x0053341D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00533422
@@ -7942,14 +7389,6 @@ void TrainClass::BeamToWithinCameraRange() {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 3812:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3815:
 	__asm        mov    curr_dist, 0;
 // LINE 3816:
@@ -8382,23 +7821,10 @@ foundCell:
 // LINE 3969:
 	__asm        jmp    near ptr 0x005339AB;
 	__asm        jmp    near ptr 0x00533861;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005339b0
 void TrainClass::UnPlaceTrain() {
-// LINE 3989:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3992:
 	__asm        jmp    near ptr 0x005339C1;
 	__asm        mov    eax, this;
@@ -8440,11 +7866,6 @@ void TrainClass::UnPlaceTrain() {
 	__asm        mov    byte ptr [eax+5], 0;
 // LINE 3999:
 	__asm        jmp    near ptr 0x00533A36;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00533a3b
@@ -8462,14 +7883,6 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 4018:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4021:
 	__asm        mov    curr_dist, 0;
 // LINE 4022:
@@ -8779,11 +8192,6 @@ foundCell:
 	__asm        jmp    near ptr 0x00533E6F;
 // LINE 4136:
 	__asm        jmp    near ptr 0x00533D20;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00533e76
@@ -8793,14 +8201,6 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	int32_t object1;
 	int32_t object2;
 
-// LINE 4391:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4396:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA9], 0;
@@ -9148,40 +8548,18 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005342D4;
 // LINE 4578:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x005342db
 short GetMaximumNumberOfTrains() {
-// LINE 4602:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4603:
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005342EA;
 // LINE 4604:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005342ef
 int32_t CreateTrainInstance(int32_t instanceID) {
-// LINE 4625:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4626:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -9194,59 +8572,26 @@ int32_t CreateTrainInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053431A;
 // LINE 4627:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053431f
 void ResetAllTrains() {
-// LINE 4644:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4645:
 	__asm        call   0x0052E25E;
 // LINE 4646:
 	__asm        jmp    near ptr 0x0053432F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534334
 void ItterateAllTrains() {
-// LINE 4667:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4668:
 	__asm        call   0x0052E29E;
 // LINE 4669:
 	__asm        jmp    near ptr 0x00534344;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534349
 int32_t S3TrainCrashWhenReady(long mission_id) {
-// LINE 4688:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4689:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
@@ -9254,21 +8599,10 @@ int32_t S3TrainCrashWhenReady(long mission_id) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00534360;
 // LINE 4690:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534365
 int32_t S3TrainStartRescue(long mission_id, int32_t timetolive) {
-// LINE 4709:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4710:
 	__asm        mov    eax, timetolive;
 	__asm        push   eax;
@@ -9278,11 +8612,6 @@ int32_t S3TrainStartRescue(long mission_id, int32_t timetolive) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x00534380;
 // LINE 4711:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534385
@@ -9296,13 +8625,6 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	class TrainClass* t;
 	long totalpersons;
 
-// LINE 4735:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4743:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0053439D;
@@ -9472,21 +8794,10 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00534567;
 // LINE 4812:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053456c
 int32_t S3TrainMIFFLoad(void * __ptr32 miffReader) {
-// LINE 4825:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4826:
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -9494,21 +8805,10 @@ int32_t S3TrainMIFFLoad(void * __ptr32 miffReader) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00534583;
 // LINE 4827:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534588
 int32_t S3TrainMIFFSave(void * __ptr32 miffWriter) {
-// LINE 4838:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4839:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -9516,11 +8816,6 @@ int32_t S3TrainMIFFSave(void * __ptr32 miffWriter) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053459F;
 // LINE 4840:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005345a4
@@ -9529,13 +8824,6 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t ret;
 	class TrainClass* t;
 
-// LINE 4850:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4858:
 	__asm        push   0x1D9;
 	__asm        push   0x62B7B8;
@@ -9823,11 +9111,6 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00534901;
 // LINE 4915:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00534906
@@ -9835,13 +9118,6 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 	int32_t i;
 	int32_t ret;
 
-// LINE 4925:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4928:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053491E;
@@ -9871,11 +9147,6 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0053496C;
 // LINE 4938:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

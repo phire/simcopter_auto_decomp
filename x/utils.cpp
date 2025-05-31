@@ -52,22 +52,11 @@ public:
 // Contribution: 1:00164ca0-00165846 Module: 184, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00565ca0
 void EmptyPStr(unsigned char * str) {
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 55:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax], 0;
 // LINE 56:
 	__asm        jmp    near ptr 0x00565CB1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565cb6
@@ -76,13 +65,6 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	unsigned char count;
 	unsigned short neg;
 
-// LINE 59:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 62:
 	__asm        mov    neg, 0;
 // LINE 65:
@@ -246,11 +228,6 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x00565E7B;
 // LINE 96:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565e80
@@ -259,13 +236,6 @@ void Num2Str(long num, unsigned char * str) {
 	unsigned short neg;
 	unsigned long tenPower;
 
-// LINE 99:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 100:
 	__asm        mov    power, 0;
 // LINE 101:
@@ -382,11 +352,6 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        jmp    near ptr 0x00565F69;
 // LINE 150:
 	__asm        jmp    near ptr 0x00565FB8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565fbd
@@ -395,13 +360,6 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	unsigned char digitval;
 	unsigned long result;
 
-// LINE 154:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 155:
 	__asm        mov    digit, 1;
 // LINE 157:
@@ -495,11 +453,6 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005660B9;
 // LINE 173:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005660be
@@ -507,13 +460,6 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	int32_t power;
 	unsigned long sixteenPower;
 
-// LINE 176:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 177:
 	__asm        mov    power, 0;
 // LINE 178:
@@ -603,21 +549,10 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        jmp    near ptr 0x0056614C;
 // LINE 208:
 	__asm        jmp    near ptr 0x005661AF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005661b4
 void Long2PStr(unsigned long namelet, unsigned char * name) {
-// LINE 214:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 215:
 	__asm        mov    eax, name;
 	__asm        mov    byte ptr [eax], 4;
@@ -641,22 +576,10 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 	__asm        mov    [ecx+4], al;
 // LINE 220:
 	__asm        jmp    near ptr 0x005661EF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005661f4
 unsigned long PStr2Long(unsigned char * name) {
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 224:
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
@@ -695,25 +618,12 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        mov    eax, name4;
 	__asm        jmp    near ptr 0x00566261;
 // LINE 232:
-// Block end:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566266
 void CToPString(char * cstr, unsigned char * pstr) {
 	int32_t count;
 
-// LINE 257:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 260:
 	__asm        mov    eax, cstr;
 	__asm        push   eax;
@@ -740,11 +650,6 @@ void CToPString(char * cstr, unsigned char * pstr) {
 	__asm        jmp    near ptr 0x0056628C;
 // LINE 263:
 	__asm        jmp    near ptr 0x005662BC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005662c1
@@ -753,13 +658,6 @@ short Round(float val) {
 	short intval;
 	double dint;
 
-// LINE 268:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 270:
 	__asm        lea    eax, dint;
 	__asm        push   eax;
@@ -796,22 +694,10 @@ short Round(float val) {
 	__asm        mov    ax, intval;
 	__asm        jmp    near ptr 0x00566339;
 // LINE 280:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056633e
 void CToPStr(char * cstr, unsigned char * pstr) {
-// LINE 365:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 366:
 	__asm        mov    eax, pstr;
 	__asm        mov    byte ptr [eax], 0;
@@ -840,24 +726,12 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 	__asm        jmp    near ptr 0x0056634D;
 // LINE 368:
 	__asm        jmp    near ptr 0x00566397;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056639c
 void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 	unsigned short copyBytes;
 
-// LINE 442:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 445:
 	__asm        mov    eax, str2;
 	__asm        xor    ecx, ecx;
@@ -909,24 +783,12 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 	__asm        mov    [eax], cl;
 // LINE 452:
 	__asm        jmp    near ptr 0x00566420;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566425
 void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	unsigned char buff[256];
 
-// LINE 454:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x100;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 456:
 	__asm        push   0x100;
 	__asm        lea    eax, buff[0];
@@ -951,24 +813,12 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        add    esp, 0xC;
 // LINE 460:
 	__asm        jmp    near ptr 0x00566474;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566479
 void ConcatNum(long number, unsigned char * str, short destSize) {
 	unsigned char numStr[256];
 
-// LINE 464:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x100;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 467:
 	__asm        lea    eax, numStr[0];
 	__asm        push   eax;
@@ -987,11 +837,6 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        add    esp, 0xC;
 // LINE 469:
 	__asm        jmp    near ptr 0x005664B4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005664b9
@@ -999,13 +844,6 @@ void HexToString(unsigned long num, unsigned char * str) {
 	short position;
 	char letter;
 
-// LINE 499:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 500:
 	__asm        mov    position, 0x1C;
 // LINE 503:
@@ -1092,11 +930,6 @@ void HexToString(unsigned long num, unsigned char * str) {
 	__asm        jmp    near ptr 0x00566533;
 // LINE 523:
 	__asm        jmp    near ptr 0x005665B2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005665b7
@@ -1108,13 +941,6 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	short count;
 	unsigned char * first;
 
-// LINE 906:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 907:
 	__asm        mov    eax, voidFirst;
 	__asm        mov    first, eax;
@@ -1224,24 +1050,12 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00566700;
 // LINE 925:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566705
 void ExtractFileName(unsigned char * path, unsigned char * name) {
 	short place;
 
-// LINE 928:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 929:
 	__asm        mov    eax, path;
 	__asm        movzx  ax, byte ptr [eax];
@@ -1283,21 +1097,10 @@ void ExtractFileName(unsigned char * path, unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 935:
 	__asm        jmp    near ptr 0x00566778;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056677d
 void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
-// LINE 990:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1076:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 1;
@@ -1340,24 +1143,12 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 1084:
 	__asm        jmp    near ptr 0x005667F9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005667fe
 struct Point center(struct Rect* pRect) {
 	struct Point tmp;
 
-// LINE 1253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1255:
 	__asm        mov    eax, pRect;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -1382,11 +1173,6 @@ struct Point center(struct Rect* pRect) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tmp.v);
 	__asm        jmp    near ptr 0x00566842;
 // LINE 1259:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -44,13 +44,6 @@ int32_t MTMagnitude(struct Point3d* V) {
 	double j;
 	double i;
 
-// LINE 39:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 43:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -89,11 +82,6 @@ int32_t MTMagnitude(struct Point3d* V) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x004CA13B;
 // LINE 48:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca140
@@ -102,13 +90,6 @@ int32_t MTDistance(struct Point3d* p1, struct Point3d* p2) {
 	double j;
 	double i;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 65:
 	__asm        mov    eax, p2;
 	__asm        mov    eax, [eax];
@@ -159,11 +140,6 @@ int32_t MTDistance(struct Point3d* p1, struct Point3d* p2) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x004CA1DE;
 // LINE 70:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca1e3
@@ -173,13 +149,6 @@ int32_t MTNormalize(struct Point3d* V) {
 	double i;
 	double r;
 
-// LINE 83:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 86:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -259,21 +228,10 @@ int32_t MTNormalize(struct Point3d* V) {
 	__asm        call   0x0056EBE8;
 	__asm        jmp    near ptr 0x004CA2DC;
 // LINE 100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca2e1
 void MTCreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 119:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -321,11 +279,6 @@ void MTCreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
 	__asm        mov    eax, plane;
 	__asm        mov    [eax+0xC], ebx;
 // LINE 126:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca35c
@@ -334,13 +287,6 @@ int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	struct Point3d d;
 	int32_t s;
 
-// LINE 142:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 148:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -396,24 +342,12 @@ int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	__asm        mov    eax, s;
 	__asm        jmp    near ptr 0x004CA3EB;
 // LINE 159:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca3f0
 void MTCreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, int32_t t) {
 	int32_t i;
 
-// LINE 172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 178:
 	__asm        mov    eax, p2;
 	__asm        mov    eax, [eax];
@@ -460,21 +394,10 @@ void MTCreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V,
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 185:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca46a
 int32_t MTSameSigns(int32_t s1, int32_t s2) {
-// LINE 199:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 201:
 	__asm        xor    eax, eax;
 	__asm        cmp    s2, 0;
@@ -482,24 +405,12 @@ int32_t MTSameSigns(int32_t s1, int32_t s2) {
 	__asm        xor    eax, s1;
 	__asm        jmp    near ptr 0x004CA481;
 // LINE 203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca486
 int32_t MTVectorBounds(struct Point3d* V, int32_t m) {
 	int32_t r;
 
-// LINE 218:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 222:
 	__asm        mov    eax, V;
 	__asm        push   eax;
@@ -554,24 +465,12 @@ int32_t MTVectorBounds(struct Point3d* V, int32_t m) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004CA517;
 // LINE 231:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca51c
 void MTApply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 	struct Point3d A;
 
-// LINE 245:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 252:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -630,11 +529,6 @@ void MTApply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0x10], eax;
 // LINE 263:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca5b3
@@ -644,13 +538,6 @@ void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
 	int32_t f;
 	int32_t a;
 
-// LINE 280:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 284:
 	__asm        mov    eax, p;
 	__asm        add    eax, 8;
@@ -739,11 +626,6 @@ void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 305:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca6ae
@@ -751,13 +633,6 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	int32_t nv;
 	int32_t A;
 
-// LINE 323:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 330:
 	__asm        mov    eax, M;
 	__asm        push   eax;
@@ -795,11 +670,6 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	__asm        mov    eax, nv;
 	__asm        jmp    near ptr 0x004CA71C;
 // LINE 338:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca721
@@ -809,13 +679,6 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	int32_t vf;
 	int32_t A;
 
-// LINE 357:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 361:
 	__asm        cmp    V, 0x64;
 	__asm        jg     near ptr 0x004CA73E;
@@ -866,21 +729,10 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004CA7AF;
 // LINE 369:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca7b4
 int32_t MTAngleBounds(int32_t a) {
-// LINE 384:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 385:
 	__asm        cmp    a, 0;
 	__asm        jge    near ptr 0x004CA7D0;
@@ -900,11 +752,6 @@ int32_t MTAngleBounds(int32_t a) {
 	__asm        mov    eax, a;
 	__asm        jmp    near ptr 0x004CA80B;
 // LINE 388:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ca810
@@ -922,13 +769,6 @@ void MTArbRotMat(int32_t[4]* mat, int32_t Angle, struct Point3d* V) {
 	int32_t Sin;
 	int32_t VxSin;
 
-// LINE 401:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 408:
 	__asm        lea    eax, Cos;
 	__asm        push   eax;
@@ -1131,24 +971,12 @@ void MTArbRotMat(int32_t[4]* mat, int32_t Angle, struct Point3d* V) {
 	__asm        mov    eax, mat;
 	__asm        mov    dword ptr [eax+0x3C], 0x10000;
 // LINE 447:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004caa19
 void MTmat_row_normal(int32_t[4]* mat) {
 	int32_t factor;
 
-// LINE 463:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 471:
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+4];
@@ -1354,24 +1182,12 @@ void MTmat_row_normal(int32_t[4]* mat) {
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x28], eax;
 // LINE 499:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cac36
 void MTmat_col_normal(int32_t[4]* mat) {
 	int32_t factor;
 
-// LINE 502:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 510:
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x20];
@@ -1577,21 +1393,10 @@ void MTmat_col_normal(int32_t[4]* mat) {
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x28], eax;
 // LINE 538:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cae53
 void MTXProduct(struct Point3d* v1, struct Point3d* v2, struct Point3d* vr) {
-// LINE 548:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 549:
 	__asm        mov    eax, v2;
 	__asm        mov    eax, [eax+4];
@@ -1656,11 +1461,6 @@ void MTXProduct(struct Point3d* v1, struct Point3d* v2, struct Point3d* vr) {
 	__asm        mov    eax, vr;
 	__asm        mov    [eax+8], ebx;
 // LINE 552:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004caefb
@@ -1668,13 +1468,6 @@ void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
 	struct Point3d xv;
 	struct Point3d yv;
 
-// LINE 568:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 579:
 	__asm        mov    eax, dv;
 	__asm        mov    eax, [eax+8];
@@ -1771,11 +1564,6 @@ void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
 	__asm        mov    eax, mat;
 	__asm        mov    dword ptr [eax+0x3C], 0x10000;
 // LINE 612:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004caff7
@@ -1783,13 +1571,6 @@ void MTCreateDOF4x4Y(int32_t[4]* mat, struct Point3d* dv) {
 	struct Point3d xv;
 	struct Point3d zv;
 
-// LINE 628:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 639:
 	__asm        mov    eax, dv;
 	__asm        mov    eax, [eax+4];
@@ -1886,21 +1667,10 @@ void MTCreateDOF4x4Y(int32_t[4]* mat, struct Point3d* dv) {
 	__asm        mov    eax, mat;
 	__asm        mov    dword ptr [eax+0x3C], 0x10000;
 // LINE 672:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb0f3
 void MTCreateReflection4x4(int32_t[4]* mat, struct Point3d* norm) {
-// LINE 683:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 688:
 	__asm        mov    ebx, 0x10000;
 	__asm        mov    eax, norm;
@@ -2021,11 +1791,6 @@ void MTCreateReflection4x4(int32_t[4]* mat, struct Point3d* norm) {
 	__asm        mov    eax, mat;
 	__asm        mov    dword ptr [eax+0x3C], 0x10000;
 // LINE 708:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb23c
@@ -2034,13 +1799,6 @@ int32_t MTCheapDist2D(struct Point2d* p1, struct Point2d* p2) {
 	int32_t dist;
 	int32_t ydiff;
 
-// LINE 718:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 721:
 	__asm        mov    eax, p1;
 	__asm        mov    eax, [eax];
@@ -2079,11 +1837,6 @@ int32_t MTCheapDist2D(struct Point2d* p1, struct Point2d* p2) {
 	__asm        mov    eax, dist;
 	__asm        jmp    near ptr 0x004CB2A2;
 // LINE 733:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

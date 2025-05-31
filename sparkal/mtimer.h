@@ -1,14 +1,6 @@
 // Function in module: Simradio.obj
 // FUNCTION: COPTER_D 0x00439bd0
 void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, nNewTimerResolution;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -38,24 +30,11 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 65:
 	__asm        jmp    near ptr 0x00439C31;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Simradio.obj
 // FUNCTION: COPTER_D 0x00439c40
 void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
-// LINE 87:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 88:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewTimerResolution;
@@ -90,10 +69,5 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        jmp    near ptr 0x00439CB2;
 // LINE 96:
 	__asm        jmp    near ptr 0x00439CB7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 

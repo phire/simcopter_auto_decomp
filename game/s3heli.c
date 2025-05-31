@@ -101,13 +101,6 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	long size;
 	struct VRObjInfo oinfo;
 
-// LINE 485:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 490:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -1275,11 +1268,6 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        call   0x004F9BFD;
 	__asm        add    esp, 8;
 // LINE 805:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004effa0
@@ -1289,13 +1277,6 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 	int32_t alt;
 	long heliidx;
 
-// LINE 820:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 829:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -1908,11 +1889,6 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 // LINE 997:
 	__asm        call   0x004F8FE2;
 // LINE 998:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f07ba
@@ -1932,13 +1908,6 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	int32_t normz;
 	struct Point2d* freepad;
 
-// LINE 1010:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1011:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -3185,12 +3154,6 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x0051EEE5;
 	__asm        add    esp, 0x20;
 // LINE 1425:
-// Block end:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f176d
@@ -3203,13 +3166,6 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	struct Point3d V;
 	struct Point3d saveloc;
 
-// LINE 1441:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1446:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
@@ -3440,11 +3396,6 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F1A1B;
 // LINE 1499:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f1a20
@@ -3458,13 +3409,6 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	int32_t dist;
 	int32_t newyaw;
 
-// LINE 1514:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1516:
 	__asm        mov    dist, 0;
 // LINE 1517:
@@ -3658,24 +3602,12 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F1C7E;
 // LINE 1603:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f1c83
 void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_t color) {
 	struct VRview pos;
 
-// LINE 1617:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1621:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
 	__asm        je     near ptr 0x004F1CA6;
@@ -3841,11 +3773,6 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1677:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f1e8a
@@ -3860,13 +3787,6 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	int32_t sliderate;
 	int32_t tempfix;
 
-// LINE 1687:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1689:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -4667,11 +4587,6 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004F2911;
 // LINE 1918:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f2916
@@ -4682,13 +4597,6 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	int32_t matrix[4][4];
 	int32_t tempfix;
 
-// LINE 1929:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1932:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -5144,11 +5052,6 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        call   0x004D8C2E;
 	__asm        add    esp, 8;
 // LINE 2079:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f2ec9
@@ -5156,13 +5059,6 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	int32_t velocity;
 	int32_t origFwdSpeed;
 
-// LINE 2088:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2090:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
@@ -5478,11 +5374,6 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        add    [ecx+0x18], eax;
 // LINE 2169:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f32fe
@@ -5491,13 +5382,6 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	long texid;
 	int32_t yrate;
 
-// LINE 2180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2182:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -6106,11 +5990,6 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0xD0], eax;
 // LINE 2385:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f3b82
@@ -6125,13 +6004,6 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	struct VRObjInfo oinfo;
 	int32_t tempfix;
 
-// LINE 2395:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2406:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6567,11 +6439,6 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x144], 1;
 // LINE 2526:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f40c7
@@ -6584,13 +6451,6 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	int32_t y;
 	int32_t x;
 
-// LINE 2536:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2542:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -7110,11 +6970,6 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 2692:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f4766
@@ -7124,13 +6979,6 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 	struct Point3d vec;
 	int32_t dz;
 
-// LINE 2701:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2706:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
@@ -7262,11 +7110,6 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 // LINE 2742:
 	__asm        jmp    near ptr 0x004F48E7;
 // LINE 2744:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f48ec
@@ -7278,13 +7121,6 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	struct Point3d dvec;
 	int32_t mat[4][4];
 
-// LINE 2754:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2760:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -7412,21 +7248,10 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 // LINE 2800:
 	__asm        jmp    near ptr 0x004F4A64;
 // LINE 2802:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f4a69
 void NormalizeMapPoints(int32_t * x, int32_t * z) {
-// LINE 2812:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2813:
 	__asm        mov    eax, x;
 	__asm        cmp    dword ptr [eax], 0x20000000;
@@ -7456,11 +7281,6 @@ void NormalizeMapPoints(int32_t * x, int32_t * z) {
 	__asm        mov    eax, z;
 	__asm        add    dword ptr [eax], 0x40000000;
 // LINE 2822:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f4ad4
@@ -7468,13 +7288,6 @@ void NormalizeXZVector(struct Point3d* vector) {
 	int32_t length;
 	int32_t angle;
 
-// LINE 2834:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2838:
 	__asm        mov    eax, vector;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -7585,11 +7398,6 @@ void NormalizeXZVector(struct Point3d* vector) {
 	__asm        cmp    length, 0x10000;
 	__asm        jl     near ptr 0x004F4B16;
 // LINE 2881:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f4c0e
@@ -7621,13 +7429,6 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	int32_t flags;
 	struct Point3d ploc;
 
-// LINE 2895:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x80;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2906:
 	__asm        mov    ropeload, 8;
 // LINE 2907:
@@ -8107,40 +7908,17 @@ next_dyobj:
 // LINE 3061:
 	__asm        jmp    near ptr 0x004F4D4B;
 // LINE 3063:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f512e
 void S3DrawWater(struct VRBlit* blit) {
-// LINE 3089:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3319:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5139
 int32_t GetCopterTerAlt(struct _HELI_DATA* hd) {
 	int32_t alt;
 
-// LINE 3324:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3327:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0x13C;
@@ -8160,11 +7938,6 @@ int32_t GetCopterTerAlt(struct _HELI_DATA* hd) {
 	__asm        mov    eax, alt;
 	__asm        jmp    near ptr 0x004F5178;
 // LINE 3331:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f517d
@@ -8181,13 +7954,6 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 	int32_t normz;
 	int32_t flags;
 
-// LINE 3336:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3345:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C];
@@ -8328,11 +8094,6 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 	__asm        mov    eax, alt;
 	__asm        jmp    near ptr 0x004F5311;
 // LINE 3383:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5316
@@ -8342,13 +8103,6 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	long x;
 	int32_t randz;
 
-// LINE 3396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3403:
 	__asm        cmp    hd, 0;
 	__asm        jne    near ptr 0x004F532E;
@@ -8610,21 +8364,10 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	__asm        jle    near ptr 0x004F56B4;
 	__asm        mov    dword ptr ds:[0x5B4934], 0;
 // LINE 3520:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f56b9
 int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
-// LINE 3535:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3537:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x118], 0;
@@ -8716,24 +8459,12 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F57FB;
 // LINE 3586:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5800
 int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 	int32_t alt;
 
-// LINE 3598:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3602:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x118], 0;
@@ -8776,27 +8507,11 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004F5893;
 // LINE 3624:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5898
 void S3HeliHeadsUp() {
-// LINE 3637:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3638:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f58a3
@@ -8813,13 +8528,6 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	int32_t deflectangle;
 	int32_t deltaz;
 
-// LINE 3655:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3667:
 	__asm        mov    eax, vector;
 	__asm        mov    eax, [eax];
@@ -8942,11 +8650,6 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	__asm        mov    eax, deflectangle;
 	__asm        jmp    near ptr 0x004F5A07;
 // LINE 3715:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5a0c
@@ -8955,13 +8658,6 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 	struct _STOBJ_INST* stobj;
 	struct VRObjInfo oinfo;
 
-// LINE 3727:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3733:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+0xC];
@@ -9001,42 +8697,19 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 	__asm        add    eax, eax;
 	__asm        jmp    near ptr 0x004F5A7B;
 // LINE 3748:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5a80
 void S3HeliSwitchType(struct _HELI_DATA* hd) {
-// LINE 3758:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3760:
 	__asm        jmp    near ptr 0x004F5A8B;
 // LINE 3761:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5a90
 struct _HELI_DATA* S3HeliGetDataByDyObj(struct _DYOBJ_INST* dyheli) {
 	long heliidx;
 
-// LINE 3772:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3775:
 	__asm        mov    heliidx, 0;
 	__asm        jmp    near ptr 0x004F5AA8;
@@ -9063,24 +8736,12 @@ struct _HELI_DATA* S3HeliGetDataByDyObj(struct _DYOBJ_INST* dyheli) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F5AF7;
 // LINE 3785:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5afc
 void S3HeliNextFrameDriver() {
 	long heliidx;
 
-// LINE 3797:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3800:
 	__asm        mov    heliidx, 0;
 	__asm        jmp    near ptr 0x004F5B14;
@@ -9109,11 +8770,6 @@ void S3HeliNextFrameDriver() {
 // LINE 3815:
 	__asm        call   0x004F5B6A;
 // LINE 3817:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5b6a
@@ -9126,13 +8782,6 @@ void S3HeliSoundDriver() {
 	long heliidx;
 	struct _HELI_DATA* closehd;
 
-// LINE 3830:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3841:
 	__asm        mov    eax, ds:[0x5B4904];
 	__asm        mov    [ebp-0x28], eax;
@@ -9374,11 +9023,6 @@ void S3HeliSoundDriver() {
 // LINE 3952:
 	__asm        jmp    near ptr 0x004F5E62;
 // LINE 3953:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f5e67
@@ -9395,13 +9039,6 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	struct Point3d svec;
 	int32_t scale;
 
-// LINE 3970:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3979:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
@@ -9778,21 +9415,10 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 4115:
 	__asm        jmp    near ptr 0x004F631C;
 // LINE 4118:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6321
 void S3HeliGetSpotLoc(struct Point2d* loc) {
-// LINE 4129:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4130:
 	__asm        mov    eax, ds:[0x6BF1B8];
 	__asm        mov    ecx, loc;
@@ -9802,11 +9428,6 @@ void S3HeliGetSpotLoc(struct Point2d* loc) {
 	__asm        mov    ecx, loc;
 	__asm        mov    [ecx+4], eax;
 // LINE 4132:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6341
@@ -9818,13 +9439,6 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	struct Point3d cloc;
 	struct VRObjInfo oinfo;
 
-// LINE 4145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4152:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -9948,21 +9562,10 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F6472;
 // LINE 4210:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6477
 void S3HeliRotateSpotLite(int32_t rotx, int32_t roty) {
-// LINE 4221:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4254:
 	__asm        mov    eax, rotx;
 	__asm        add    ds:[0x5B492C], eax;
@@ -10015,11 +9618,6 @@ void S3HeliRotateSpotLite(int32_t rotx, int32_t roty) {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 4270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6555
@@ -10035,13 +9633,6 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	struct Point3d loc;
 	int32_t slide;
 
-// LINE 4284:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4292:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -10341,11 +9932,6 @@ calc_turbulence:
 	__asm        idiv   ecx;
 	__asm        mov    ds:[0x607290], eax;
 // LINE 4398:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6912
@@ -10358,13 +9944,6 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	int32_t speed;
 	long scale;
 
-// LINE 4409:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4417:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -10732,32 +10311,16 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   0x005240DC;
 	__asm        add    esp, 0xC;
 // LINE 4532:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6d6e
 void S3HeliReset() {
-// LINE 4543:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4544:
 	__asm        mov    edi, 0x5B4940;
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, 0xA;
 	__asm        rep stosd;
 // LINE 4545:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f6d87
@@ -10765,13 +10328,6 @@ void S3HeliTweakInit() {
 	int32_t * pvals[14];
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 4556:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4560:
 	__asm        mov    htd, 0x5B4978;
 // LINE 4562:
@@ -11425,24 +10981,12 @@ void S3HeliTweakInit() {
 	__asm        call   0x004C9AD0;
 	__asm        add    esp, 0xC;
 // LINE 4754:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f73bd
 int32_t S3HeliGetRepairRate(struct _HELI_DATA* hd) {
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 4762:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4763:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -11456,24 +11000,12 @@ int32_t S3HeliGetRepairRate(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0x50];
 	__asm        jmp    near ptr 0x004F73E8;
 // LINE 4765:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f73ed
 int32_t S3HeliGetFuelRate(struct _HELI_DATA* hd) {
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 4770:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4771:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -11487,11 +11019,6 @@ int32_t S3HeliGetFuelRate(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0x54];
 	__asm        jmp    near ptr 0x004F7418;
 // LINE 4773:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f741d
@@ -11500,13 +11027,6 @@ long S3GetFullRepairCost(struct _HELI_DATA* hd) {
 	int32_t current_damage;
 	int32_t repair_rate;
 
-// LINE 4779:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4784:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -11535,11 +11055,6 @@ long S3GetFullRepairCost(struct _HELI_DATA* hd) {
 	__asm        sar    eax, 0x10;
 	__asm        jmp    near ptr 0x004F746E;
 // LINE 4788:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f7473
@@ -11548,13 +11063,6 @@ void S3HeliPurchaseRepairs(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	int32_t current_damage;
 	int32_t repair_rate;
 
-// LINE 4799:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4804:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -11593,11 +11101,6 @@ void S3HeliPurchaseRepairs(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0xD0], eax;
 // LINE 4811:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f74eb
@@ -11606,13 +11109,6 @@ long S3GetFullRefuelCost(struct _HELI_DATA* hd) {
 	int32_t current_fuel;
 	int32_t fuel_purchase_rate;
 
-// LINE 4819:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4824:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -11640,11 +11136,6 @@ long S3GetFullRefuelCost(struct _HELI_DATA* hd) {
 	__asm        sar    eax, 0x10;
 	__asm        jmp    near ptr 0x004F7539;
 // LINE 4828:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f753e
@@ -11653,13 +11144,6 @@ void S3HeliPurchaseFuel(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	int32_t current_fuel;
 	int32_t fuel_purchase_rate;
 
-// LINE 4838:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4843:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -11698,24 +11182,12 @@ void S3HeliPurchaseFuel(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x320], eax;
 // LINE 4850:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f75b5
 int32_t S3HeliGetMaximumDamage(struct _HELI_DATA* hd) {
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 4857:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4858:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -11729,44 +11201,21 @@ int32_t S3HeliGetMaximumDamage(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0x4C];
 	__asm        jmp    near ptr 0x004F75E0;
 // LINE 4860:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f75e5
 int32_t S3HeliGetCurrentDamage(struct _HELI_DATA* hd) {
-// LINE 4866:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4867:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xD0];
 	__asm        jmp    near ptr 0x004F75F9;
 // LINE 4868:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f75fe
 int32_t S3HeliGetMaximumFuel(struct _HELI_DATA* hd) {
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 4874:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4875:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -11780,21 +11229,10 @@ int32_t S3HeliGetMaximumFuel(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x004F7629;
 // LINE 4877:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f762e
 void S3HeliCommand(int32_t nCommand) {
-// LINE 4887:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4889:
 	__asm        cmp    nCommand, 3;
 	__asm        jne    near ptr 0x004F76F3;
@@ -11938,24 +11376,12 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   0x005426AB;
 	__asm        add    esp, 0x10;
 // LINE 4928:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f781b
 void S3PlayMegaphoneMessage(int32_t nMessageType) {
 	char szSoundFiles[4][12];
 
-// LINE 4936:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4937:
 	__asm        mov    eax, 0x5B4D5C;
 	__asm        lea    ecx, szSoundFiles[0][0];
@@ -12025,11 +11451,6 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 	__asm        call   0x004F7F7D;
 	__asm        add    esp, 0x14;
 // LINE 4944:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f78fa
@@ -12043,13 +11464,6 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	int32_t speed;
 	struct Point2d* freepad;
 
-// LINE 4958:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4967:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C];
@@ -12466,11 +11880,6 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F7DE1;
 // LINE 5117:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f7de6
@@ -12480,13 +11889,6 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 	struct _DYOBJ_INST* dyobj;
 	int32_t ret_code;
 
-// LINE 5128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5131:
 	__asm        mov    ret_code, 0;
 // LINE 5134:
@@ -12622,11 +12024,6 @@ next_dyobj:
 	__asm        mov    eax, ret_code;
 	__asm        jmp    near ptr 0x004F7F78;
 // LINE 5199:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f7f7d
@@ -12643,13 +12040,6 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 	long ydir;
 	long xdir;
 
-// LINE 5212:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5214:
 	__asm        mov    curr_dist, 0;
 // LINE 5215:
@@ -12847,11 +12237,6 @@ next_dyobj:
 // LINE 5334:
 	__asm        jmp    near ptr 0x004F7FF7;
 // LINE 5335:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f81bb
@@ -12861,13 +12246,6 @@ struct Point2d* S3HeliGetFreePad() {
 	struct Point2d* pad;
 	struct _DYOBJ_INST* dyobj;
 
-// LINE 5349:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5355:
 	__asm        mov    noheliloc, 0;
 // LINE 5358:
@@ -12926,24 +12304,12 @@ contains_a_heli:
 	__asm        mov    eax, noheliloc;
 	__asm        jmp    near ptr 0x004F826B;
 // LINE 5391:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8270
 struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 	int32_t i;
 
-// LINE 5402:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5405:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F8288;
@@ -12975,24 +12341,12 @@ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F82DA;
 // LINE 5410:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f82df
 long S3HeliGetNewValue(long lHeliType) {
 	struct _HELI_TYPE_DATA* htd;
 
-// LINE 5419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5420:
 	__asm        mov    eax, lHeliType;
 	__asm        mov    ecx, eax;
@@ -13011,11 +12365,6 @@ long S3HeliGetNewValue(long lHeliType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F8319;
 // LINE 5428:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f831e
@@ -13024,13 +12373,6 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	struct _HELI_DATA* hd;
 	int32_t newval;
 
-// LINE 5438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5439:
 	__asm        mov    eax, lHeliType;
 	__asm        push   eax;
@@ -13076,11 +12418,6 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F83A3;
 // LINE 5455:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f83a8
@@ -13088,13 +12425,6 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	long lTeargasCanisterCount;
 	long lValues[5];
 
-// LINE 5466:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5468:
 	__asm        mov    lValues[0], 0x7D0;
 // LINE 5469:
@@ -13138,22 +12468,10 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	__asm        mov    eax, [ebp+eax*4-0x14];
 	__asm        jmp    near ptr 0x004F8439;
 // LINE 5494:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f843e
 void S3HeliPurchaseTeargasCanisters(long lBucks) {
-// LINE 5502:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5503:
 	__asm        call   0x00428F4A;
 	__asm        mov    [ebp-4], eax;
@@ -13164,21 +12482,10 @@ void S3HeliPurchaseTeargasCanisters(long lBucks) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        add    [ecx+0x54], eax;
 // LINE 5504:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8465
 long S3HeliGetEquipmentCurrentValue(long lEquipmentType) {
-// LINE 5515:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5516:
 	__asm        mov    eax, lEquipmentType;
 	__asm        push   eax;
@@ -13192,11 +12499,6 @@ long S3HeliGetEquipmentCurrentValue(long lEquipmentType) {
 	__asm        idiv   ecx;
 	__asm        jmp    near ptr 0x004F848D;
 // LINE 5517:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8492
@@ -13205,13 +12507,6 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	struct _HELI_DATA* hd;
 	struct Point2d* freepad;
 
-// LINE 5528:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5529:
 	__asm        mov    eax, lHeliType;
 	__asm        push   eax;
@@ -13262,11 +12557,6 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	__asm        call   0x004EFFA0;
 	__asm        add    esp, 0xC;
 // LINE 5547:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f852a
@@ -13276,13 +12566,6 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	struct _HELI_DATA* hd;
 	long i;
 
-// LINE 5556:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5557:
 	__asm        mov    eax, lHeliType;
 	__asm        push   eax;
@@ -13340,24 +12623,12 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 // LINE 5579:
 	__asm        jmp    near ptr 0x004F8565;
 // LINE 5581:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f85e8
 void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	struct _DYOBJ_INST** dyptrptr;
 
-// LINE 5591:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5594:
 	__asm        mov    eax, cptr;
 	__asm        add    eax, 0x10;
@@ -13396,24 +12667,12 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 5603:
 	__asm        jmp    near ptr 0x004F85FA;
 // LINE 5604:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8653
 void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
 	struct _HELI_DATA* hd;
 
-// LINE 5616:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5617:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
@@ -13572,11 +12831,6 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        dec    edi;
 	__asm        (bad);
 // LINE 5676:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8847
@@ -13585,13 +12839,6 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	long i;
 	long ret;
 
-// LINE 5694:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5702:
 	__asm        push   0x32C;
 	__asm        push   0x606EB0;
@@ -13669,11 +12916,6 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004F894A;
 // LINE 5729:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f894f
@@ -13681,13 +12923,6 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 	long i;
 	long ret;
 
-// LINE 5733:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5737:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F8967;
@@ -13723,11 +12958,6 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004F89C3;
 // LINE 5748:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f89c8
@@ -13740,13 +12970,6 @@ void S3HeliUserExit() {
 	struct Point3d vehicleLoc;
 	int32_t rcos;
 
-// LINE 5759:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 5761:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0xA4];
@@ -13836,11 +13059,6 @@ void S3HeliUserExit() {
 // LINE 5789:
 	__asm        jmp    near ptr 0x004F8A05;
 // LINE 5790:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

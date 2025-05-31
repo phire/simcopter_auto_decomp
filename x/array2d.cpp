@@ -334,12 +334,6 @@ public:
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005674e0
 unsigned short OpenFile(class ResFile* pFile) {
-// LINE 16:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 17:
 	__asm        mov    ecx, pFile;
 	__asm        call   0x0055C7DD;
@@ -375,11 +369,6 @@ unsigned short OpenFile(class ResFile* pFile) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0056754D;
 // LINE 24:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567552
@@ -389,14 +378,6 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	struct _cArray::Header* header;
 	unsigned char tmpname[256];
 
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x118;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 30:
 	__asm        mov    eax, pFile;
 	__asm        mov    ecx, this;
@@ -651,23 +632,10 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 // LINE 105:
 // Block end:
 	__asm        jmp    near ptr 0x005678F9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00567900
 void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char * name, class ResFile* pFile, unsigned long rType) {
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 123:
 	__asm        cmp    pFile, 0;
 	__asm        jne    near ptr 0x00567920;
@@ -745,23 +713,10 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 	__asm        call   0x00567E6B;
 // LINE 154:
 	__asm        jmp    near ptr 0x005679E4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x005679eb
 void _cArray::~_cArray() {
-// LINE 158:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593738;
 // LINE 160:
@@ -842,22 +797,10 @@ void _cArray::~_cArray() {
 // LINE 190:
 // Block end:
 	__asm        jmp    near ptr 0x00567B16;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567b1b
 void _cArray::MakeTable() {
-// LINE 194:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 195:
 	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
 	__asm        jne    near ptr 0x00567B9D;
@@ -892,22 +835,10 @@ void _cArray::MakeTable() {
 // LINE 202:
 // Block end:
 	__asm        jmp    near ptr 0x00567BA2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567ba7
 void _cArray::DeleteTable() {
-// LINE 205:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 206:
 	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
 	__asm        je     near ptr 0x00567BD7;
@@ -922,42 +853,16 @@ void _cArray::DeleteTable() {
 	__asm        add    esp, 4;
 // LINE 208:
 	__asm        jmp    near ptr 0x00567BDC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567be1
 void _cArray::WriteToDisk() {
-// LINE 214:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 246:
 	__asm        jmp    near ptr 0x00567BF2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567bf7
 void _cArray::CheckIntoTable() {
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 249:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
@@ -1032,11 +937,6 @@ void _cArray::CheckIntoTable() {
 // LINE 264:
 // Block end:
 	__asm        jmp    near ptr 0x00567D0D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567d12
@@ -1044,14 +944,6 @@ void _cArray::FillHeader() {
 	unsigned long debugsize;
 	struct _cArray::Header* header;
 
-// LINE 303:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 305:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1134,23 +1026,10 @@ void _cArray::FillHeader() {
 	__asm        mov    [ecx], ax;
 // LINE 316:
 	__asm        jmp    near ptr 0x00567E2E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00567e33
 void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
-// LINE 319:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 320:
 	__asm        mov    eax, newySize;
 	__asm        push   eax;
@@ -1166,11 +1045,6 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 	__asm        call   0x005689CC;
 // LINE 323:
 	__asm        jmp    near ptr 0x00567E64;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00567e6b
@@ -1183,14 +1057,6 @@ void _cArray::ClearBytes(char zeropad) {
 	long cnt;
 	char * fillPtr;
 
-// LINE 326:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 327:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1301,11 +1167,6 @@ void _cArray::ClearBytes(char zeropad) {
 	__asm        jmp    near ptr 0x00567F80;
 // LINE 354:
 	__asm        jmp    near ptr 0x00567FDF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00567fe6
@@ -1314,14 +1175,6 @@ short _cArray::InsertRow(short afterwhich) {
 	long oldxsize;
 	long oldysize;
 
-// LINE 358:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 360:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1428,11 +1281,6 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        mov    ax, beforewhich;
 	__asm        jmp    near ptr 0x00568121;
 // LINE 383:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568128
@@ -1441,14 +1289,6 @@ short _cArray::InsertColumn(short afterwhich) {
 	long oldxsize;
 	long oldysize;
 
-// LINE 386:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 388:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1571,11 +1411,6 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        mov    ax, beforewhich;
 	__asm        jmp    near ptr 0x0056828D;
 // LINE 407:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568294
@@ -1585,14 +1420,6 @@ short _cArray::DeleteRow(short which) {
 	long oldxsize;
 	long oldysize;
 
-// LINE 410:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 413:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1718,11 +1545,6 @@ short _cArray::DeleteRow(short which) {
 	__asm        mov    ax, [eax+0x14];
 	__asm        jmp    near ptr 0x00568432;
 // LINE 430:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568439
@@ -1733,14 +1555,6 @@ short _cArray::DeleteColumn(short which) {
 	unsigned char * nextone;
 	long oldysize;
 
-// LINE 433:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 436:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -1937,11 +1751,6 @@ short _cArray::DeleteColumn(short which) {
 	__asm        mov    ax, [eax+0x10];
 	__asm        jmp    near ptr 0x005686A8;
 // LINE 461:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005686af
@@ -1953,8 +1762,6 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	unsigned char * dest;
 
 // LINE 465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x56885E;
 	__asm        mov    eax, fs:[0];
@@ -2111,14 +1918,6 @@ _L27256:
 
 // FUNCTION: COPTER_D 0x00568879
 unsigned short _cArray::SetSize(long newxSize, long newySize) {
-// LINE 493:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 494:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, newySize;
@@ -2215,25 +2014,12 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005689C5;
 // LINE 512:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005689cc
 void _cArray::SetXPointers() {
 	short count;
 
-// LINE 515:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 517:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -2280,23 +2066,10 @@ void _cArray::SetXPointers() {
 	__asm        jmp    near ptr 0x00568A1B;
 // LINE 527:
 	__asm        jmp    near ptr 0x00568A63;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00568a68
 void _cArray::CopyFrom(unsigned char * fromName) {
-// LINE 537:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 538:
 	__asm        mov    eax, fromName;
 	__asm        push   eax;
@@ -2307,25 +2080,12 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 	__asm        call   0x00568A95;
 // LINE 539:
 	__asm        jmp    near ptr 0x00568A8E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568a95
 void _cArray::CopyFrom(unsigned long oldname) {
 	class _cArray* src;
 
-// LINE 542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 543:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, oldname;
@@ -2340,25 +2100,12 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	__asm        call   0x00568ACA;
 // LINE 545:
 	__asm        jmp    near ptr 0x00568AC3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568aca
 void _cArray::CopyFrom(class _cArray* src) {
 	long howmuch;
 
-// LINE 548:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 549:
 	__asm        cmp    src, 0;
 	__asm        jne    near ptr 0x00568AFC;
@@ -2434,25 +2181,12 @@ void _cArray::CopyFrom(class _cArray* src) {
 	__asm        add    esp, 0xC;
 // LINE 557:
 	__asm        jmp    near ptr 0x00568BE1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568be8
 void _cArray::CopyTo(class _cArray* dest) {
 	long howmuch;
 
-// LINE 568:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 569:
 	__asm        cmp    dest, 0;
 	__asm        jne    near ptr 0x00568C1A;
@@ -2528,25 +2262,12 @@ void _cArray::CopyTo(class _cArray* dest) {
 	__asm        add    esp, 0xC;
 // LINE 577:
 	__asm        jmp    near ptr 0x00568CFF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568d06
 void _cArray::CopyTo(unsigned long oldname) {
 	class _cArray* dest;
 
-// LINE 580:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 581:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, oldname;
@@ -2561,23 +2282,10 @@ void _cArray::CopyTo(unsigned long oldname) {
 	__asm        call   0x00568BE8;
 // LINE 583:
 	__asm        jmp    near ptr 0x00568D34;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568d3b
 void _cArray::CopyTo(unsigned char * toName) {
-// LINE 586:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 587:
 	__asm        mov    eax, toName;
 	__asm        push   eax;
@@ -2588,23 +2296,10 @@ void _cArray::CopyTo(unsigned char * toName) {
 	__asm        call   0x00568D06;
 // LINE 588:
 	__asm        jmp    near ptr 0x00568D61;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568d68
 void _cArray::GetName(unsigned char * name) {
-// LINE 591:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 592:
 	__asm        push   0x10;
 	__asm        mov    eax, name;
@@ -2616,46 +2311,21 @@ void _cArray::GetName(unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 593:
 	__asm        jmp    near ptr 0x00568D8E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00568d95
 unsigned long _cArray::GetName() {
-// LINE 596:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 597:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        jmp    near ptr 0x00568DAC;
 // LINE 598:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00568db1
 class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	short cnt;
 
-// LINE 610:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 612:
 	__asm        call   0x00567B1B;
 // LINE 613:
@@ -2754,11 +2424,6 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00568F20;
 // LINE 626:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00568f25
@@ -2767,13 +2432,6 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 	short count;
 	class _cArray* arr;
 
-// LINE 629:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 630:
 	__asm        call   0x00567B1B;
 // LINE 631:
@@ -2813,11 +2471,6 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00568FA3;
 // LINE 643:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00568fa8
@@ -2825,13 +2478,6 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 	short cnt;
 	short numByType;
 
-// LINE 646:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 647:
 	__asm        call   0x00567B1B;
 // LINE 648:
@@ -2864,11 +2510,6 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 	__asm        mov    ax, numByType;
 	__asm        jmp    near ptr 0x0056900B;
 // LINE 655:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00569010
@@ -2877,13 +2518,6 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 	short count;
 	class _cArray* arr;
 
-// LINE 658:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 659:
 	__asm        call   0x00567B1B;
 // LINE 660:
@@ -2923,11 +2557,6 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 	__asm        mov    ax, 0xFFFF;
 	__asm        jmp    near ptr 0x00569090;
 // LINE 672:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00569095
@@ -2941,8 +2570,6 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	struct _cArray::Header* header;
 
 // LINE 705:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x569305;
 	__asm        mov    eax, fs:[0];
@@ -3155,13 +2782,6 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 	short cnt;
 	struct _cArray::FileAndType ft;
 
-// LINE 776:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 779:
 	__asm        mov    foundcount, 0xFFFF;
 // LINE 780:
@@ -3209,11 +2829,6 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 	__asm        mov    ax, foundcount;
 	__asm        jmp    near ptr 0x005693CF;
 // LINE 794:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

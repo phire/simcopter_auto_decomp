@@ -84,39 +84,17 @@ public:
 // Contribution: 1:0013ad40-0014035d Module: 155, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0053bd40
 void S3RoadGraphInit() {
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 69:
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   0x0053BD6A;
 // LINE 70:
 	__asm        jmp    near ptr 0x0053BD55;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053bd5a
 void S3RoadGraphDestroy() {
-// LINE 74:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 76:
 	__asm        jmp    near ptr 0x0053BD65;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053bd6a
@@ -125,14 +103,6 @@ void RoadGraph::Init() {
 	int32_t y;
 	int32_t x;
 
-// LINE 85:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 91:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BD85;
@@ -574,11 +544,6 @@ void RoadGraph::Init() {
 	__asm        jmp    near ptr 0x0053C297;
 // LINE 191:
 	__asm        jmp    near ptr 0x0053C32C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053c331
@@ -588,14 +553,6 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 	struct RGVertex* pRGV;
 	struct Road* pRoad;
 
-// LINE 197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 199:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax];
@@ -892,11 +849,6 @@ IntersectionKludge:
 // LINE 327:
 	__asm        jmp    near ptr 0x0053C697;
 	__asm        jmp    near ptr 0x0053C449;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053c69e
@@ -908,14 +860,6 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	struct RGVertex* pRGV;
 	int32_t loopCounter;
 
-// LINE 333:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 338:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -1196,11 +1140,6 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        mov    [eax+0x1E], ecx;
 // LINE 413:
 	__asm        jmp    near ptr 0x0053C991;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0053c998
@@ -1210,14 +1149,6 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	unsigned short fromTile;
 	struct Goal resultGoal;
 
-// LINE 419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 420:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
@@ -1801,11 +1732,6 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0053D025;
 // LINE 530:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0053d02c
@@ -1813,14 +1739,6 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	enum DirIndex2 prevDir;
 	struct _GridCoordinates here;
 
-// LINE 553:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 554:
 	__asm        mov    eax, pGoal;
 	__asm        mov    ax, [eax+0xC];
@@ -1929,25 +1847,12 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        jne    near ptr 0x0053D08E;
 // LINE 587:
 	__asm        jmp    near ptr 0x0053D160;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053d167
 unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	unsigned char yindex;
 
-// LINE 596:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 597:
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053D17F;
@@ -1998,11 +1903,6 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	__asm        mov    al, 0xFF;
 	__asm        jmp    near ptr 0x0053D214;
 // LINE 606:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0053d21b
@@ -2013,14 +1913,6 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	enum DirIndex2 currentDir;
 	enum DirIndex2 result;
 
-// LINE 629:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 632:
 	__asm        mov    eax, currentDirType;
 	__asm        mov    eax, [eax*4+0x593440];
@@ -2198,11 +2090,6 @@ KlugeFirstStepIsAnIntersection:
 	__asm        jmp    near ptr 0x0053D3F9;
 // LINE 702:
 	__asm        jmp    near ptr 0x0053D348;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x0053d400
@@ -2212,14 +2099,6 @@ void RoadGraph::FindDeadEnds() {
 	int32_t y;
 	int32_t x;
 
-// LINE 708:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 713:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053D41B;
@@ -2597,11 +2476,6 @@ void RoadGraph::FindDeadEnds() {
 	__asm        jmp    near ptr 0x0053D418;
 // LINE 758:
 	__asm        jmp    near ptr 0x0053D8D0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053d8d5
@@ -2611,14 +2485,6 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	enum DirIndex2 returnDir;
 	enum DirIndex2 startingDir;
 
-// LINE 762:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 763:
 	__asm        mov    repeatCount, 0;
 // LINE 766:
@@ -2706,11 +2572,6 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 // LINE 802:
 	__asm        jmp    near ptr 0x0053D911;
 // LINE 803:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0053d9d2
@@ -2722,14 +2583,6 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	struct Edge* pEdge;
 	unsigned short fromTile;
 
-// LINE 808:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 810:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053DA0C;
@@ -3369,11 +3222,6 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        call   0x0053E305;
 // LINE 876:
 	__asm        jmp    near ptr 0x0053E2FE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0053e305
@@ -3384,14 +3232,6 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	enum DirIndex2 returnDir;
 	enum DirIndex2 startingDir;
 
-// LINE 880:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 881:
 	__asm        mov    repeatCount, 0;
 // LINE 884:
@@ -3842,11 +3682,6 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        dec    word ptr [eax+4];
 // LINE 1009:
 	__asm        jmp    near ptr 0x0053E8A9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x0053e8b0
@@ -3855,14 +3690,6 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	int32_t Offset;
 	unsigned short LocalTile;
 
-// LINE 1013:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1014:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
@@ -4344,11 +4171,6 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0053EECF;
 // LINE 1090:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0053eed6
@@ -4363,14 +4185,6 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	 // Switch table at 0x0053f158
 	unsigned char yindex;
 
-// LINE 1096:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1099:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(RampTile);
 	__asm        and    eax, 0xFFFF;
@@ -5807,11 +5621,6 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        jmp    near ptr 0x005403F4;
 // LINE 1192:
 	__asm        jmp    near ptr 0x00540486;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0054048d
@@ -5820,14 +5629,6 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	int32_t Offset;
 	unsigned short fromTile;
 
-// LINE 1197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1198:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x005404C7;
@@ -5966,11 +5767,6 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        call   0x00540636;
 // LINE 1236:
 	__asm        jmp    near ptr 0x0054062F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00540636
@@ -5987,14 +5783,6 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	struct Road* pRoad;
 	int32_t deadEnd;
 
-// LINE 1254:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1259:
 	__asm        mov    element, 0;
 // LINE 1260:
@@ -6786,25 +6574,12 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        jmp    near ptr 0x00540CF5;
 // LINE 1406:
 	__asm        jmp    near ptr 0x00541129;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00541130
 void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currLoc) {
 	struct Road* pRoad;
 
-// LINE 1413:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1414:
 	__asm        mov    eax, goal;
 	__asm        mov    eax, [eax];
@@ -6951,23 +6726,10 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        mov    [eax+0x1A], ecx;
 // LINE 1440:
 	__asm        jmp    near ptr 0x005412CA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005412d1
 int32_t RoadGraph::SetElevation(unsigned short t) {
-// LINE 1446:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1447:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
@@ -6995,11 +6757,6 @@ int32_t RoadGraph::SetElevation(unsigned short t) {
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x00541357;
 // LINE 1448:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

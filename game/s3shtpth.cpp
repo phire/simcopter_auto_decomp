@@ -60,14 +60,6 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates here, 
 	int32_t y;
 	int32_t x;
 
-// LINE 13:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 16:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destination.x;
@@ -111,11 +103,6 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates here, 
 	__asm        add    eax, y;
 	__asm        jmp    near ptr 0x005436FD;
 // LINE 30:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00543704
@@ -126,14 +113,6 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	struct RGVertex* pRGV;
 	struct _FringeHeapNode scratch;
 
-// LINE 36:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 37:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.x;
@@ -387,11 +366,6 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        mov    eax, pathFoundFlag;
 	__asm        jmp    near ptr 0x005439B4;
 // LINE 132:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005439bb
@@ -404,14 +378,6 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	struct RGVertex* pRGV;
 	struct _FringeHeapNode scratch;
 
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 139:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.x;
@@ -714,11 +680,6 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    eax, pathFoundFlag;
 	__asm        jmp    near ptr 0x00543CD6;
 // LINE 247:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00543cdd
@@ -726,14 +687,6 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 	int32_t index;
 	struct _FringeHeapNode tempNode;
 
-// LINE 252:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 255:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -822,11 +775,6 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode)
 	__asm        jmp    near ptr 0x00543D16;
 // LINE 271:
 	__asm        jmp    near ptr 0x00543DC4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00543dcb
@@ -836,14 +784,6 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 	int32_t parent;
 	struct _FringeHeapNode tempNode;
 
-// LINE 275:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 281:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -997,11 +937,6 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 	__asm        mov    [ecx+8], al;
 // LINE 314:
 	__asm        jmp    near ptr 0x00543F66;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

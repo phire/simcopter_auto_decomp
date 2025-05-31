@@ -388,67 +388,31 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715e0
 void $E65() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x004715FA;
 	__asm        call   0x00471614;
 	__asm        jmp    near ptr 0x004715F5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715fa
 void $E61() {
-// LINE 12:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   0x0042EF87;
 	__asm        jmp    near ptr 0x0047160F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471614
 void $E64() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x471631;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047162C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471631
 void $E62() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
 	__asm        test   al, 1;
@@ -460,77 +424,36 @@ void $E62() {
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   0x0042F2E9;
 	__asm        jmp    near ptr 0x00471663;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471668
 void $E70() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00471682;
 	__asm        call   0x0047169C;
 	__asm        jmp    near ptr 0x0047167D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471682
 void $E67() {
-// LINE 15:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   0x0042EF87;
 	__asm        jmp    near ptr 0x00471697;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047169c
 void $E69() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x4716B9;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004716B4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716b9
 void $E68() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
 	__asm        test   al, 2;
@@ -542,77 +465,36 @@ void $E68() {
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   0x0042F2E9;
 	__asm        jmp    near ptr 0x004716EB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716f0
 void $E75() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0047170A;
 	__asm        call   0x00471724;
 	__asm        jmp    near ptr 0x00471705;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047170a
 void $E72() {
-// LINE 18:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604348;
 	__asm        call   0x0042EF87;
 	__asm        jmp    near ptr 0x0047171F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471724
 void $E74() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x471741;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047173C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471741
 void $E73() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
 	__asm        test   al, 4;
@@ -624,77 +506,36 @@ void $E73() {
 	__asm        mov    ecx, 0x604348;
 	__asm        call   0x0042F2E9;
 	__asm        jmp    near ptr 0x00471773;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471778
 void $E80() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00471792;
 	__asm        call   0x004717AC;
 	__asm        jmp    near ptr 0x0047178D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471792
 void $E77() {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604248;
 	__asm        call   0x0042EF87;
 	__asm        jmp    near ptr 0x004717A7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717ac
 void $E79() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x4717C9;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004717C4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717c9
 void $E78() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
 	__asm        test   al, 8;
@@ -706,23 +547,10 @@ void $E78() {
 	__asm        mov    ecx, 0x604248;
 	__asm        call   0x0042F2E9;
 	__asm        jmp    near ptr 0x004717FB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004ADE3D;
 	__asm        mov    eax, this;
@@ -738,23 +566,10 @@ void SoundButtonWindow::SoundButtonWindow() {
 // LINE 33:
 	__asm        jmp    near ptr 0x0047183F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471847
 void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 44:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -782,23 +597,10 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 // LINE 48:
 	__asm        jmp    near ptr 0x0047189E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004718a8
 void SoundButtonWindow::~SoundButtonWindow() {
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 56:
@@ -813,23 +615,10 @@ void SoundButtonWindow::~SoundButtonWindow() {
 	__asm        jmp    near ptr 0x004718DD;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004718ea
 void SoundButtonWindow::SetState(int32_t nNewButtonState) {
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 66:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
@@ -854,23 +643,10 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   0x004AEACE;
 // LINE 71:
 	__asm        jmp    near ptr 0x0047193E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471945
 void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -900,23 +676,10 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 // LINE 86:
 	__asm        jmp    near ptr 0x004719A0;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x004719aa
 void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
-// LINE 91:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 92:
@@ -930,23 +693,10 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 	__asm        jmp    near ptr 0x004719DA;
 	__asm        mov    ecx, this;
 	__asm        call   0x004AFCFE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004719e7
 void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
-// LINE 101:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 102:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
@@ -972,23 +722,10 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   0x004AFEE3;
 // LINE 107:
 	__asm        jmp    near ptr 0x00471A3E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471a45
 void SoundCheckBoxWindow::SoundCheckBoxWindow() {
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004AEE29;
 	__asm        mov    eax, this;
@@ -1004,23 +741,10 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 // LINE 116:
 	__asm        jmp    near ptr 0x00471A84;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471a8c
 void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 126:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1048,23 +772,10 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 // LINE 130:
 	__asm        jmp    near ptr 0x00471AE3;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00471aed
 void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 136:
@@ -1080,23 +791,10 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 	__asm        jmp    near ptr 0x00471B27;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471b34
 void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
-// LINE 145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 146:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
@@ -1119,23 +817,10 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   0x004AF6AB;
 // LINE 151:
 	__asm        jmp    near ptr 0x00471B7E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00471b85
 void SoundScrollBarWindow::SoundScrollBarWindow() {
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004B28F8;
 	__asm        mov    eax, this;
@@ -1151,23 +836,10 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 // LINE 160:
 	__asm        jmp    near ptr 0x00471BC4;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471bcc
 void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
-// LINE 170:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
@@ -1197,23 +869,10 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 // LINE 174:
 	__asm        jmp    near ptr 0x00471C27;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x00471c31
 void SoundScrollBarWindow::~SoundScrollBarWindow() {
-// LINE 179:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 180:
@@ -1229,23 +888,10 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 	__asm        jmp    near ptr 0x00471C6B;
 	__asm        mov    ecx, this;
 	__asm        call   0x004B19E0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471c78
 void SoundScrollBarWindow::MoveLinePrevious() {
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 191:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1267,23 +913,10 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 	__asm        call   0x004B39D0;
 // LINE 196:
 	__asm        jmp    near ptr 0x00471CC4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471cc9
 void SoundScrollBarWindow::MoveLineNext() {
-// LINE 204:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 205:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1305,11 +938,6 @@ void SoundScrollBarWindow::MoveLineNext() {
 	__asm        call   0x004B3A46;
 // LINE 210:
 	__asm        jmp    near ptr 0x00471D15;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

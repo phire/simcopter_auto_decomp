@@ -33,14 +33,6 @@ public:
 void DirectDrawError::DisplayError(char * szErrorDescription) {
 	char szFullErrorDescription[256];
 
-// LINE 10:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 13:
 	__asm        mov    eax, szErrorDescription;
 	__asm        push   eax;
@@ -56,23 +48,10 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	__asm        add    esp, 8;
 // LINE 22:
 	__asm        jmp    near ptr 0x0042D461;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042d468
 void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
-// LINE 27:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -635,25 +614,12 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        add    esp, 8;
 // LINE 183:
 	__asm        jmp    near ptr 0x0042DC62;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042dc69
 void DirectSoundError::DisplayError(char * szErrorDescription) {
 	char szFullErrorDescription[256];
 
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x104;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 193:
 	__asm        mov    eax, szErrorDescription;
 	__asm        push   eax;
@@ -669,23 +635,10 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	__asm        add    esp, 8;
 // LINE 202:
 	__asm        jmp    near ptr 0x0042DCAA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042dcb1
 void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
-// LINE 208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 210:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -876,11 +829,6 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        add    esp, 8;
 // LINE 262:
 	__asm        jmp    near ptr 0x0042DF55;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 

@@ -9,60 +9,26 @@
 // Contribution: 1:00070e40-00070f60 Module: 37, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471e40
 void  CGameApp::EnableSoundTrack() {
-// LINE 23:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 27:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   0x00437EE7;
 // LINE 28:
 	__asm        jmp    near ptr 0x00471E5D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471e62
 void  CGameApp::DisableSoundTrack() {
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 39:
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   0x00437EE7;
 // LINE 40:
 	__asm        jmp    near ptr 0x00471E7F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471e84
 void  CGameApp::ToggleMusicSoundTrack() {
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 48:
 	__asm        jmp    near ptr 0x00471E95;
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
@@ -101,32 +67,14 @@ void  CGameApp::ToggleMusicSoundTrack() {
 	__asm        call   0x00437EE7;
 // LINE 54:
 	__asm        jmp    near ptr 0x00471F3C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00471f41
 void  CGameApp::PlayNextSoundTrackIfNeeded() {
-// LINE 61:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 62:
 	__asm        mov    ecx, 0x604480;
 	__asm        call   0x00438457;
 // LINE 63:
 	__asm        jmp    near ptr 0x00471F5C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

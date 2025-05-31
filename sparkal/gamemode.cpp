@@ -440,60 +440,26 @@ public:
 // Contribution: 1:000bc670-000c27dd Module: 1, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bd670
 void CopterGameMode::CopterGameMode() {
-// LINE 50:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 51:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 52:
 	__asm        jmp    near ptr 0x004BD68A;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd692
 void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, nNewModeID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 // LINE 57:
 	__asm        jmp    near ptr 0x004BD6AB;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bd6b5
 void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
-// LINE 59:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 61:
 	__asm        mov    eax, newGameMode;
 	__asm        push   eax;
@@ -502,23 +468,10 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 // LINE 62:
 	__asm        jmp    near ptr 0x004BD6D2;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bd6dc
 class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newGameMode) {
-// LINE 64:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 65:
 	__asm        mov    eax, newGameMode;
 	__asm        mov    eax, [eax];
@@ -528,21 +481,10 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newG
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x004BD6FA;
 // LINE 67:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004bd701
 int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGameMode& gameMode2) {
-// LINE 69:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 70:
 	__asm        mov    eax, gameMode1;
 	__asm        mov    ecx, gameMode2;
@@ -554,23 +496,10 @@ int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGame
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BD728;
 // LINE 71:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd72d
 void GameModeCoreData::GameModeCoreData() {
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -584,23 +513,10 @@ void GameModeCoreData::GameModeCoreData() {
 // LINE 133:
 	__asm        jmp    near ptr 0x004BD76F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd777
 void GameModeCoreData::~GameModeCoreData() {
-// LINE 139:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923C0;
 // LINE 140:
@@ -622,23 +538,10 @@ void GameModeCoreData::~GameModeCoreData() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 144:
 	__asm        jmp    near ptr 0x004BD7C3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd7c8
 void GameModeMainMenuData::GameModeMainMenuData() {
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    eax, this;
@@ -658,25 +561,12 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 // LINE 161:
 	__asm        jmp    near ptr 0x004BD812;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd81a
 void GameModeMainMenuData::CreatePalette() {
 	char szPath[260];
 
-// LINE 169:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x114;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 172:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -723,23 +613,10 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        add    esp, 8;
 // LINE 177:
 	__asm        jmp    near ptr 0x004BD8F2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd8f7
 void GameModeMainMenuData::UsePalette() {
-// LINE 184:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 185:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -762,11 +639,6 @@ void GameModeMainMenuData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 189:
 	__asm        jmp    near ptr 0x004BD945;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bd94a
@@ -774,14 +646,6 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	struct UserMenuWindowDescription tempUMWD;
 	class UserMenuWindow* myUserMenuWindow;
 
-// LINE 196:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 198:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -970,23 +834,10 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        mov    eax, [ebp-0x88];
 	__asm        jmp    near ptr 0x004BDC6A;
 // LINE 223:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bdc6f
 int32_t GameModeMainMenuData::DestroyAllSurfaces() {
-// LINE 229:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 230:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1012,23 +863,10 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BDCC6;
 // LINE 235:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bdccb
 void GameModePickCareerCityData::GameModePickCareerCityData() {
-// LINE 250:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        jmp    near ptr 0x004BDCE4;
@@ -1056,47 +894,21 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 // LINE 257:
 	__asm        jmp    near ptr 0x004BDD33;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bdd3b
 void GameModePickCareerCityData::Initialize() {
-// LINE 264:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 265:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 266:
 	__asm        jmp    near ptr 0x004BDD56;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bdd5b
 void GameModePickCareerCityData::CreatePalette() {
 	char szPath[260];
 
-// LINE 273:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x114;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 276:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1143,23 +955,10 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        add    esp, 8;
 // LINE 281:
 	__asm        jmp    near ptr 0x004BDE33;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bde38
 void GameModePickCareerCityData::UsePalette() {
-// LINE 288:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 289:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1182,11 +981,6 @@ void GameModePickCareerCityData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 293:
 	__asm        jmp    near ptr 0x004BDE86;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bde8b
@@ -1194,14 +988,6 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	class CareerWindow* myCareerWindow;
 	long * lNewCitiesPointer;
 
-// LINE 300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 303:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -1284,23 +1070,10 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BDFA4;
 // LINE 318:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bdfa9
 int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
-// LINE 324:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 325:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1326,23 +1099,10 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BE000;
 // LINE 330:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be005
 void GameModePlayData::GameModePlayData() {
-// LINE 342:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    ecx, this;
@@ -1434,23 +1194,10 @@ void GameModePlayData::GameModePlayData() {
 // LINE 370:
 	__asm        jmp    near ptr 0x004BE140;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be148
 void GameModePlayData::Initialize() {
-// LINE 389:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 390:
 	__asm        mov    ecx, this;
 	__asm        call   0x004C0326;
@@ -1459,11 +1206,6 @@ void GameModePlayData::Initialize() {
 	__asm        call   0x004C0176;
 // LINE 392:
 	__asm        jmp    near ptr 0x004BE169;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be16e
@@ -1472,14 +1214,6 @@ void GameModePlayData::CreatePalette() {
 	char * pPalettePosition;
 	char szPath[260];
 
-// LINE 399:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 411:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1571,23 +1305,10 @@ void GameModePlayData::CreatePalette() {
 	__asm        jmp    near ptr 0x004BE27E;
 // LINE 430:
 	__asm        jmp    near ptr 0x004BE300;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be305
 void GameModePlayData::UsePalette() {
-// LINE 438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 439:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1610,23 +1331,10 @@ void GameModePlayData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 443:
 	__asm        jmp    near ptr 0x004BE353;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be358
 void GameModePlayData::Sleep() {
-// LINE 450:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 451:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -1835,23 +1543,10 @@ void GameModePlayData::Sleep() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 485:
 	__asm        jmp    near ptr 0x004BE5CB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be5d0
 void GameModePlayData::Awake() {
-// LINE 491:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 492:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -2088,23 +1783,10 @@ void GameModePlayData::Awake() {
 	__asm        call   0x004BE305;
 // LINE 536:
 	__asm        jmp    near ptr 0x004BE893;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be898
 int32_t GameModePlayData::CreateAllSurfaces() {
-// LINE 542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 543:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BF4FC;
@@ -2118,11 +1800,6 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BE8C6;
 // LINE 547:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004be8cb
@@ -2136,14 +1813,6 @@ int32_t GameModePlayData::CreatePanels() {
 	class MRect rectPanel1;
 	class MRect rectPanel2;
 
-// LINE 554:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xD4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 556:
 	__asm        jmp    near ptr 0x004BE8E2;
 	__asm        jmp    near ptr 0x004BE8E7;
@@ -2590,11 +2259,6 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BF013;
 // LINE 629:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf018
@@ -2605,14 +2269,6 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	class MRect rectFlap1;
 	class MRect rectFlap3;
 
-// LINE 636:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 638:
 	__asm        jmp    near ptr 0x004BF029;
 	__asm        jmp    near ptr 0x004BF02E;
@@ -2987,23 +2643,10 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        mov    dword ptr [eax+0x68], 0;
 // LINE 712:
 	__asm        jmp    near ptr 0x004BF4F7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf4fc
 int32_t GameModePlayData::CreateIndependentSurfaces() {
-// LINE 719:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 721:
 	__asm        push   0x150;
 	__asm        call   0x0056A600;
@@ -3063,23 +2706,10 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BF5C5;
 // LINE 727:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf5ca
 void GameModePlayData::DestroyIndependentSurfaces() {
-// LINE 735:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 736:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -3129,23 +2759,10 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 	__asm        mov    dword ptr [eax+0x3C], 0;
 // LINE 744:
 	__asm        jmp    near ptr 0x004BF67C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf681
 void GameModePlayData::DestroyAllSurfaces() {
-// LINE 752:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 753:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BF5CA;
@@ -3154,23 +2771,10 @@ void GameModePlayData::DestroyAllSurfaces() {
 	__asm        call   0x004BF6A7;
 // LINE 755:
 	__asm        jmp    near ptr 0x004BF6A2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf6a7
 int32_t GameModePlayData::DestroyPanels() {
-// LINE 762:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 763:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -3343,23 +2947,10 @@ int32_t GameModePlayData::DestroyPanels() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BF89D;
 // LINE 812:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bf8a2
 void GameModePlayData::ShowPanels() {
-// LINE 832:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 835:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -3515,23 +3106,10 @@ void GameModePlayData::ShowPanels() {
 	__asm        jmp    near ptr 0x004BFAA1;
 // LINE 870:
 	__asm        jmp    near ptr 0x004BFAA6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfaab
 void GameModePlayData::HidePanels() {
-// LINE 887:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 889:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -3680,23 +3258,10 @@ void GameModePlayData::HidePanels() {
 	__asm        jmp    near ptr 0x004BFC90;
 // LINE 922:
 	__asm        jmp    near ptr 0x004BFC95;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfc9a
 void GameModePlayData::ShowEquipment() {
-// LINE 929:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 930:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
@@ -3757,23 +3322,10 @@ void GameModePlayData::ShowEquipment() {
 	__asm        jmp    near ptr 0x004BFD6B;
 // LINE 943:
 	__asm        jmp    near ptr 0x004BFD70;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfd75
 void GameModePlayData::HideEquipment() {
-// LINE 951:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 952:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
@@ -3827,23 +3379,10 @@ void GameModePlayData::HideEquipment() {
 	__asm        jmp    near ptr 0x004BFE2C;
 // LINE 963:
 	__asm        jmp    near ptr 0x004BFE31;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfe36
 void GameModePlayData::TogglePanelDisplay() {
-// LINE 971:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 972:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -3864,23 +3403,10 @@ void GameModePlayData::TogglePanelDisplay() {
 	__asm        call   0x004BF8A2;
 // LINE 982:
 	__asm        jmp    near ptr 0x004BFE7D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfe82
 void GameModePlayData::ToggleEquipmentDisplay() {
-// LINE 990:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 991:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
@@ -3895,47 +3421,21 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 	__asm        call   0x004BFC9A;
 // LINE 995:
 	__asm        jmp    near ptr 0x004BFEB5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfeba
 void GameModePlayData::Shutdown() {
-// LINE 1002:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1003:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BF681;
 // LINE 1004:
 	__asm        jmp    near ptr 0x004BFED3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bfed8
 long GameModePlayData::TestForUserInHelicopter() {
 	long lReturnValue;
 
-// LINE 1011:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1012:
 	__asm        mov    lReturnValue, 0;
 // LINE 1014:
@@ -3974,23 +3474,10 @@ long GameModePlayData::TestForUserInHelicopter() {
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    near ptr 0x004BFF66;
 // LINE 1035:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bff6b
 long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
-// LINE 1043:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1046:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BF018;
@@ -4005,23 +3492,10 @@ long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BFF9E;
 // LINE 1050:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bffa3
 long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
-// LINE 1058:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1060:
 	__asm        mov    ecx, this;
 	__asm        call   0x004BFAAB;
@@ -4035,23 +3509,10 @@ long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BFFD5;
 // LINE 1069:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bffda
 void GameModePlayData::SetUpRenderWindowSizes() {
-// LINE 1083:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1084:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x1C;
@@ -4189,23 +3650,10 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        mov    ds:[0x598EF4], eax;
 // LINE 1125:
 	__asm        jmp    near ptr 0x004C0171;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c0176
 void GameModePlayData::ReadUserConfigurableCommands() {
-// LINE 1132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1134:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x148;
@@ -4223,11 +3671,6 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 	__asm        call   0x0048B6ED;
 // LINE 1137:
 	__asm        jmp    near ptr 0x004C01B3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c01b8
@@ -4235,14 +3678,6 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 	long lCurrentCommand;
 	class list<Shortcut>::iterator tempShortcutListIterator;
 
-// LINE 1143:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1144:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4334,23 +3769,10 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 	__asm        jmp    near ptr 0x004C01E2;
 // LINE 1154:
 	__asm        jmp    near ptr 0x004C02FA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c02ff
 void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
-// LINE 1160:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1164:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x148;
@@ -4359,25 +3781,12 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 	__asm        add    esp, 4;
 // LINE 1165:
 	__asm        jmp    near ptr 0x004C0321;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c0326
 void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
-// LINE 1175:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x19C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1178:
 	__asm        mov    tempShortcut.lDeviceID, 0;
 // LINE 1180:
@@ -5294,23 +4703,10 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C129E;
 // LINE 1413:
 	__asm        jmp    near ptr 0x004C12A3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c12a8
 void GameModeHangarData::GameModeHangarData() {
-// LINE 1426:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    ecx, this;
@@ -5339,23 +4735,10 @@ void GameModeHangarData::GameModeHangarData() {
 // LINE 1433:
 	__asm        jmp    near ptr 0x004C130F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1317
 int32_t GameModeHangarData::CreateAllSurfaces() {
-// LINE 1442:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1443:
 	__asm        push   0x12E;
 	__asm        call   0x0056A600;
@@ -5400,23 +4783,10 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C13B4;
 // LINE 1447:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c13b9
 void GameModeHangarData::DestroyAllSurfaces() {
-// LINE 1452:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1453:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -5433,23 +4803,10 @@ void GameModeHangarData::DestroyAllSurfaces() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1457:
 	__asm        jmp    near ptr 0x004C13F2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c13f7
 void GameModeHangarData::Sleep() {
-// LINE 1463:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1464:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -5469,23 +4826,10 @@ void GameModeHangarData::Sleep() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1467:
 	__asm        jmp    near ptr 0x004C1437;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c143c
 void GameModeHangarData::Awake() {
-// LINE 1472:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1473:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -5522,23 +4866,10 @@ void GameModeHangarData::Awake() {
 	__asm        jmp    near ptr 0x004C14A5;
 // LINE 1481:
 	__asm        jmp    near ptr 0x004C14AA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c14af
 void GameModeHangarData::CreatePalette() {
-// LINE 1487:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1488:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -5575,23 +4906,10 @@ void GameModeHangarData::CreatePalette() {
 	__asm        call   0x00472F61;
 // LINE 1492:
 	__asm        jmp    near ptr 0x004C153D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1542
 void GameModeHangarData::UsePalette() {
-// LINE 1498:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1499:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -5614,47 +4932,21 @@ void GameModeHangarData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 1503:
 	__asm        jmp    near ptr 0x004C1590;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1595
 void GameModeHangarData::Shutdown() {
-// LINE 1509:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1510:
 	__asm        mov    ecx, this;
 	__asm        call   0x004C13B9;
 // LINE 1511:
 	__asm        jmp    near ptr 0x004C15AE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c15b3
 void GameModeHangarData::SetCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
-// LINE 1518:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xBC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1522:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -6000,23 +5292,10 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        call   0x0048B6ED;
 // LINE 1569:
 	__asm        jmp    near ptr 0x004C1B41;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1b46
 void GameModeCatalogData::GameModeCatalogData() {
-// LINE 1585:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    ecx, this;
@@ -6033,23 +5312,10 @@ void GameModeCatalogData::GameModeCatalogData() {
 // LINE 1588:
 	__asm        jmp    near ptr 0x004C1B85;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1b8d
 int32_t GameModeCatalogData::CreateAllSurfaces() {
-// LINE 1596:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1597:
 	__asm        push   0x2B6;
 	__asm        call   0x0056A600;
@@ -6094,23 +5360,10 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C1C2A;
 // LINE 1601:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1c2f
 void GameModeCatalogData::DestroyAllSurfaces() {
-// LINE 1606:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1607:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -6127,23 +5380,10 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1611:
 	__asm        jmp    near ptr 0x004C1C68;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1c6d
 void GameModeCatalogData::Sleep() {
-// LINE 1617:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1618:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -6163,23 +5403,10 @@ void GameModeCatalogData::Sleep() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1621:
 	__asm        jmp    near ptr 0x004C1CAD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1cb2
 void GameModeCatalogData::Awake() {
-// LINE 1626:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1627:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -6216,23 +5443,10 @@ void GameModeCatalogData::Awake() {
 	__asm        jmp    near ptr 0x004C1D1B;
 // LINE 1635:
 	__asm        jmp    near ptr 0x004C1D20;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1d25
 void GameModeCatalogData::CreatePalette() {
-// LINE 1641:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1642:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -6269,23 +5483,10 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        call   0x0047A9B3;
 // LINE 1646:
 	__asm        jmp    near ptr 0x004C1DB3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1db8
 void GameModeCatalogData::UsePalette() {
-// LINE 1652:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1653:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -6308,47 +5509,21 @@ void GameModeCatalogData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 1657:
 	__asm        jmp    near ptr 0x004C1E06;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1e0b
 void GameModeCatalogData::Shutdown() {
-// LINE 1663:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1664:
 	__asm        mov    ecx, this;
 	__asm        call   0x004C1C2F;
 // LINE 1665:
 	__asm        jmp    near ptr 0x004C1E24;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c1e29
 void GameModeCatalogData::SetCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
-// LINE 1672:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1676:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -6724,23 +5899,10 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 	__asm        call   0x0048B6ED;
 // LINE 1695:
 	__asm        jmp    near ptr 0x004C24C9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c24ce
 void GameModeMissionLogData::GameModeMissionLogData() {
-// LINE 1710:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    ecx, this;
@@ -6757,23 +5919,10 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 // LINE 1713:
 	__asm        jmp    near ptr 0x004C250D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2515
 int32_t GameModeMissionLogData::CreateAllSurfaces() {
-// LINE 1721:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1722:
 	__asm        push   0x80;
 	__asm        call   0x0056A600;
@@ -6818,23 +5967,10 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C25B2;
 // LINE 1726:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c25b7
 void GameModeMissionLogData::DestroyAllSurfaces() {
-// LINE 1731:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1732:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -6851,23 +5987,10 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1736:
 	__asm        jmp    near ptr 0x004C25F0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c25f5
 void GameModeMissionLogData::Sleep() {
-// LINE 1742:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1743:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -6887,23 +6010,10 @@ void GameModeMissionLogData::Sleep() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1746:
 	__asm        jmp    near ptr 0x004C2635;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c263a
 void GameModeMissionLogData::Awake() {
-// LINE 1751:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1752:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -6940,23 +6050,10 @@ void GameModeMissionLogData::Awake() {
 	__asm        jmp    near ptr 0x004C26A3;
 // LINE 1760:
 	__asm        jmp    near ptr 0x004C26A8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c26ad
 void GameModeMissionLogData::CreatePalette() {
-// LINE 1766:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1767:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -6993,23 +6090,10 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        call   0x0046C90A;
 // LINE 1771:
 	__asm        jmp    near ptr 0x004C273B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2740
 void GameModeMissionLogData::UsePalette() {
-// LINE 1777:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1778:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -7032,47 +6116,21 @@ void GameModeMissionLogData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 1782:
 	__asm        jmp    near ptr 0x004C278E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2793
 void GameModeMissionLogData::Shutdown() {
-// LINE 1788:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1789:
 	__asm        mov    ecx, this;
 	__asm        call   0x004C25B7;
 // LINE 1790:
 	__asm        jmp    near ptr 0x004C27AC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c27b1
 void GameModeMissionLogData::SetCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
-// LINE 1797:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1801:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -7448,23 +6506,10 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 	__asm        call   0x0048B6ED;
 // LINE 1820:
 	__asm        jmp    near ptr 0x004C2E51;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2e56
 void GameModeInventoryData::GameModeInventoryData() {
-// LINE 1832:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004BD72D;
 	__asm        mov    ecx, this;
@@ -7481,23 +6526,10 @@ void GameModeInventoryData::GameModeInventoryData() {
 // LINE 1835:
 	__asm        jmp    near ptr 0x004C2E95;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2e9d
 int32_t GameModeInventoryData::CreateAllSurfaces() {
-// LINE 1843:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1844:
 	__asm        push   0x1E2;
 	__asm        call   0x0056A600;
@@ -7542,23 +6574,10 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C2F3A;
 // LINE 1848:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2f3f
 void GameModeInventoryData::DestroyAllSurfaces() {
-// LINE 1853:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1854:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -7575,23 +6594,10 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1858:
 	__asm        jmp    near ptr 0x004C2F78;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2f7d
 void GameModeInventoryData::Sleep() {
-// LINE 1864:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1865:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -7611,23 +6617,10 @@ void GameModeInventoryData::Sleep() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1868:
 	__asm        jmp    near ptr 0x004C2FBD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c2fc2
 void GameModeInventoryData::Awake() {
-// LINE 1873:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1874:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -7664,23 +6657,10 @@ void GameModeInventoryData::Awake() {
 	__asm        jmp    near ptr 0x004C302B;
 // LINE 1882:
 	__asm        jmp    near ptr 0x004C3030;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c3035
 void GameModeInventoryData::CreatePalette() {
-// LINE 1888:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1889:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -7717,23 +6697,10 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        call   0x004A981D;
 // LINE 1893:
 	__asm        jmp    near ptr 0x004C30C3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c30c8
 void GameModeInventoryData::UsePalette() {
-// LINE 1899:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1900:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -7756,47 +6723,21 @@ void GameModeInventoryData::UsePalette() {
 	__asm        mov    dword ptr ds:[0x604814], 0;
 // LINE 1904:
 	__asm        jmp    near ptr 0x004C3116;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c311b
 void GameModeInventoryData::Shutdown() {
-// LINE 1910:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1911:
 	__asm        mov    ecx, this;
 	__asm        call   0x004C2F3F;
 // LINE 1912:
 	__asm        jmp    near ptr 0x004C3134;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c3139
 void GameModeInventoryData::SetCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
-// LINE 1918:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xF8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1922:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -8172,11 +7113,6 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 	__asm        call   0x0048B6ED;
 // LINE 1941:
 	__asm        jmp    near ptr 0x004C37D9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

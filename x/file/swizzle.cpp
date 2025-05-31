@@ -26,13 +26,6 @@ void Swizzle16(void * __ptr32 val) {
 	char hiWord[8];
 	char loWord[8];
 
-// LINE 10:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 12:
 	__asm        mov    eax, val;
 	__asm        mov    al, [eax];
@@ -61,11 +54,6 @@ void Swizzle16(void * __ptr32 val) {
 	__asm        mov    [ecx+8], al;
 // LINE 19:
 	__asm        jmp    near ptr 0x00566898;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056689d
@@ -73,13 +61,6 @@ void Swizzle8(void * __ptr32 val) {
 	long hiWord;
 	long loWord;
 
-// LINE 22:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 24:
 	__asm        mov    eax, val;
 	__asm        mov    eax, [eax];
@@ -108,21 +89,10 @@ void Swizzle8(void * __ptr32 val) {
 	__asm        mov    [ecx+4], eax;
 // LINE 31:
 	__asm        jmp    near ptr 0x005668E5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005668ea
 void SwizzleFloat(void * __ptr32 val) {
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 35:
 	__asm        mov    eax, val;
 	__asm        push   eax;
@@ -130,11 +100,6 @@ void SwizzleFloat(void * __ptr32 val) {
 	__asm        add    esp, 4;
 // LINE 36:
 	__asm        jmp    near ptr 0x00566901;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566906
@@ -142,13 +107,6 @@ void Swizzle4(void * __ptr32 val) {
 	short hiWord;
 	short loWord;
 
-// LINE 39:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 41:
 	__asm        mov    eax, val;
 	__asm        mov    ax, [eax];
@@ -177,11 +135,6 @@ void Swizzle4(void * __ptr32 val) {
 	__asm        mov    [ecx+2], ax;
 // LINE 48:
 	__asm        jmp    near ptr 0x00566956;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056695b
@@ -189,13 +142,6 @@ void Swizzle2(void * __ptr32 val) {
 	char hiByte;
 	char loByte;
 
-// LINE 51:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        mov    eax, val;
 	__asm        mov    al, [eax];
@@ -214,24 +160,12 @@ void Swizzle2(void * __ptr32 val) {
 	__asm        mov    [ecx+1], al;
 // LINE 58:
 	__asm        jmp    near ptr 0x0056698B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00566990
 void SwizzleRect(struct Rect* rect) {
 	short * pShort;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 64:
 	__asm        mov    eax, rect;
 	__asm        mov    pShort, eax;
@@ -269,10 +203,5 @@ void SwizzleRect(struct Rect* rect) {
 	__asm        add    esp, 4;
 // LINE 70:
 	__asm        jmp    near ptr 0x005669FC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

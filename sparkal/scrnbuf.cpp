@@ -274,14 +274,6 @@ protected:
 void ScreenBuffer::ScreenBuffer() {
 	struct SparkalRect rectWindowTemp;
 
-// LINE 24:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0046E690;
 	__asm        jmp    near ptr 0x0049E469;
@@ -338,25 +330,12 @@ void ScreenBuffer::ScreenBuffer() {
 // LINE 51:
 	__asm        jmp    near ptr 0x0049E52C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049e534
 void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor* pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
 	struct SparkalRect rectWindowTemp;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0046E690;
 	__asm        jmp    near ptr 0x0049E54D;
@@ -447,23 +426,10 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth
 // LINE 103:
 	__asm        jmp    near ptr 0x0049E65D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0049e667
 void ScreenBuffer::~ScreenBuffer() {
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5915B0;
 // LINE 112:
@@ -476,25 +442,12 @@ void ScreenBuffer::~ScreenBuffer() {
 	__asm        jmp    near ptr 0x0049E691;
 	__asm        mov    ecx, this;
 	__asm        call   0x0046EC7A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049e69e
 int32_t ScreenBuffer::CreateSurfaces() {
 	long hResult;
 
-// LINE 127:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 131:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4C], 0;
@@ -816,23 +769,10 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049EA65;
 // LINE 230:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049ea6a
 int32_t ScreenBuffer::DeleteSurfaces() {
-// LINE 238:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
@@ -907,11 +847,6 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049EB53;
 // LINE 273:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049eb58
@@ -919,14 +854,6 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	long hResult;
 	struct _DDBLTFX ddbltfx;
 
-// LINE 281:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x80;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 286:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
@@ -1159,25 +1086,12 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049EE0E;
 // LINE 350:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ee15
 unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, long __formal) {
 	long hResult;
 
-// LINE 361:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 365:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
@@ -1342,11 +1256,6 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049EFF8;
 // LINE 409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049efff
@@ -1354,14 +1263,6 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 	long hResult;
 	int32_t bIsInVerticalBlank;
 
-// LINE 420:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 426:
 	__asm        lea    eax, bIsInVerticalBlank;
 	__asm        push   eax;
@@ -1378,25 +1279,12 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 	__asm        je     near ptr 0x0049F00B;
 // LINE 429:
 	__asm        jmp    near ptr 0x0049F03B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049f040
 void ScreenBuffer::SetPalette() {
 	long hResult;
 
-// LINE 438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 442:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -1456,11 +1344,6 @@ void ScreenBuffer::SetPalette() {
 	__asm        call   0x0042D420;
 // LINE 455:
 	__asm        jmp    near ptr 0x0049F0F5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049f0fa
@@ -1468,8 +1351,6 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 	long hResult;
 
 // LINE 471:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x49F410;
 	__asm        mov    eax, fs:[0];
@@ -1722,14 +1603,6 @@ _L40603:
 
 // FUNCTION: COPTER_D 0x0049f42b
 void ScreenBuffer::FreePalette() {
-// LINE 618:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 620:
 	__asm        cmp    dword ptr ds:[0x597268], 0;
 	__asm        je     near ptr 0x0049F468;
@@ -1746,11 +1619,6 @@ void ScreenBuffer::FreePalette() {
 	__asm        mov    dword ptr [eax+0x54], 0;
 // LINE 626:
 	__asm        jmp    near ptr 0x0049F46D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049f472
@@ -1758,14 +1626,6 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	long hResult;
 	struct tagRECT rectFillTemp;
 
-// LINE 649:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 654:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x58], 0x6C;
@@ -1949,23 +1809,10 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049F689;
 // LINE 711:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049f690
 void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
-// LINE 719:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 721:
 	__asm        mov    eax, rectWindow;
 	__asm        mov    ecx, this;
@@ -2000,11 +1847,6 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
 	__asm        mov    [ecx+0x28], eax;
 // LINE 732:
 	__asm        jmp    near ptr 0x0049F6FF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

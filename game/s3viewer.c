@@ -26,13 +26,6 @@ void S3ViewerInit() {
 	struct Point3d IdealCameraLoc;
 	int32_t rotmat[4][4];
 
-// LINE 97:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 109:
 	__asm        lea    eax, IdealCameraLoc.x;
 	__asm        push   eax;
@@ -172,11 +165,6 @@ void S3ViewerInit() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 159:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ee8f1
@@ -189,13 +177,6 @@ void S3ViewerControl() {
 	struct Point3d vec;
 	long viewSize;
 
-// LINE 169:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 177:
 	__asm        cmp    dword ptr ds:[0x5B4760], 0x200;
 	__asm        jge    near ptr 0x004EE916;
@@ -606,11 +587,6 @@ void S3ViewerControl() {
 // LINE 303:
 	__asm        inc    dword ptr ds:[0x67ED2C];
 // LINE 307:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eee12
@@ -618,13 +594,6 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	long nOriginalViewSize;
 	long nConvertedValue;
 
-// LINE 321:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 323:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        mov    nOriginalViewSize, eax;
@@ -678,43 +647,20 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	__asm        sar    eax, 1;
 	__asm        add    ds:[0x67ED2C], eax;
 // LINE 340:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eeeb7
 long GetRenderBackPlaneValue() {
-// LINE 348:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 349:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        jmp    near ptr 0x004EEEC7;
 // LINE 350:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eeecc
 long ConvertGUIBackPlaneValueToRender(long lValue) {
 	long lHalfOfGOBJRange;
 
-// LINE 360:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 361:
 	__asm        mov    lHalfOfGOBJRange, 0x18;
 // LINE 364:
@@ -735,24 +681,12 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 	__asm        mov    eax, lValue;
 	__asm        jmp    near ptr 0x004EEF04;
 // LINE 369:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eef09
 long ConvertRenderBackPlaneValueToGUI(long lValue) {
 	long lHalfOfGOBJRange;
 
-// LINE 379:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 380:
 	__asm        mov    lHalfOfGOBJRange, 0x18;
 // LINE 382:
@@ -778,50 +712,23 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 	__asm        mov    eax, lValue;
 	__asm        jmp    near ptr 0x004EEF4A;
 // LINE 388:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eef4f
 int32_t S3ViewerRotDelta() {
-// LINE 400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 401:
 	__asm        mov    eax, 0x10000;
 	__asm        sub    eax, ds:[0x606E88];
 	__asm        jmp    near ptr 0x004EEF65;
 // LINE 402:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eef6a
 int32_t S3ViewerPosDelta() {
-// LINE 411:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 412:
 	__asm        mov    eax, ds:[0x606E8C];
 	__asm        jmp    near ptr 0x004EEF7A;
 // LINE 413:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eef7f
@@ -829,13 +736,6 @@ void S3ViewerSetView() {
 	int32_t matrix[4][4];
 	struct Point3d p;
 
-// LINE 423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 427:
 	__asm        mov    eax, ds:[0x6C1318];
 	__asm        neg    eax;
@@ -867,21 +767,10 @@ void S3ViewerSetView() {
 	__asm        call   0x004D6A12;
 	__asm        add    esp, 8;
 // LINE 432:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004eefd9
 void S3ViewerCommand(int32_t nCommand) {
-// LINE 443:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 445:
 	__asm        cmp    nCommand, 0x1B;
 	__asm        jl     near ptr 0x004EF004;
@@ -981,21 +870,10 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 476:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 2;
 // LINE 481:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ef14b
 void S3SetDayNight(int32_t nDayOrNight) {
-// LINE 488:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 489:
 	__asm        mov    eax, nDayOrNight;
 	__asm        mov    ds:[0x598E90], eax;
@@ -1030,11 +908,6 @@ void S3SetDayNight(int32_t nDayOrNight) {
 // LINE 498:
 	__asm        call   0x00461180;
 // LINE 500:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

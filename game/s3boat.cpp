@@ -268,67 +268,31 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00527470
 void $E7() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0052748A;
 	__asm        call   0x005274A9;
 	__asm        jmp    near ptr 0x00527485;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052748a
 void $E3() {
-// LINE 136:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x62B5F0], 0x593200;
 	__asm        jmp    near ptr 0x0052749F;
 	__asm        jmp    near ptr 0x005274A4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005274a9
 void $E6() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x5274C6;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x005274C1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005274c6
 void $E4() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B6E4];
 	__asm        test   al, 1;
@@ -340,11 +304,6 @@ void $E4() {
 	__asm        mov    ecx, 0x62B5F0;
 	__asm        call   0x0052762D;
 	__asm        jmp    near ptr 0x005274F8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005274fd
@@ -352,14 +311,6 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 	long odds;
 	int32_t currentFlag;
 
-// LINE 153:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593200;
 // LINE 156:
@@ -455,23 +406,10 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 // LINE 194:
 	__asm        jmp    near ptr 0x00527623;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0052762d
 void BoatClass::~BoatClass() {
-// LINE 213:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593200;
 // LINE 218:
@@ -497,21 +435,10 @@ void BoatClass::~BoatClass() {
 	__asm        mov    byte ptr [eax+4], 0;
 // LINE 235:
 	__asm        jmp    near ptr 0x00527685;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052768a
 class BoatClass* BoatClass::GetBoatPointer(long index) {
-// LINE 254:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 255:
 	__asm        cmp    index, 3;
 	__asm        jl     near ptr 0x005276A1;
@@ -523,21 +450,10 @@ class BoatClass* BoatClass::GetBoatPointer(long index) {
 	__asm        mov    eax, [eax*4+0x62B6D8];
 	__asm        jmp    near ptr 0x005276B0;
 // LINE 259:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005276b5
 class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
-// LINE 281:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 282:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -547,24 +463,12 @@ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005276D0;
 // LINE 319:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005276d5
 class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
 	class BoatClass* newboat;
 
-// LINE 341:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 344:
 	__asm        push   0xE3;
 	__asm        call   0x0056A600;
@@ -615,23 +519,10 @@ class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanc
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00527774;
 // LINE 368:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00527779
 int32_t BoatClass::Initialize(int32_t instanceID) {
-// LINE 443:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 444:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -645,24 +536,12 @@ int32_t BoatClass::Initialize(int32_t instanceID) {
 	__asm        call   0x0052A81C;
 	__asm        jmp    near ptr 0x005277A4;
 // LINE 445:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005277ab
 void BoatClass::ResetAll() {
 	int32_t currentBoatIndex;
 
-// LINE 468:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 489:
 	__asm        mov    currentBoatIndex, 0;
 	__asm        jmp    near ptr 0x005277C3;
@@ -677,24 +556,12 @@ void BoatClass::ResetAll() {
 	__asm        jmp    near ptr 0x005277C0;
 // LINE 494:
 	__asm        jmp    near ptr 0x005277E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005277eb
 void BoatClass::ItterateAll() {
 	int32_t currentBoatIndex;
 
-// LINE 516:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 537:
 	__asm        mov    currentBoatIndex, 0;
 	__asm        jmp    near ptr 0x00527803;
@@ -709,23 +576,10 @@ void BoatClass::ItterateAll() {
 	__asm        jmp    near ptr 0x00527800;
 // LINE 542:
 	__asm        jmp    near ptr 0x00527826;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052782b
 void BoatClass::Itterate() {
-// LINE 563:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 565:
 	__asm        jmp    near ptr 0x0052783C;
 	__asm        mov    eax, this;
@@ -817,23 +671,10 @@ void BoatClass::Itterate() {
 	__asm        jmp    near ptr 0x0052794A;
 // LINE 607:
 	__asm        jmp    near ptr 0x0052794F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00527954
 void BoatClass::Reset() {
-// LINE 628:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 629:
 	__asm        mov    ecx, this;
 	__asm        call   0x00529EE6;
@@ -881,23 +722,10 @@ void BoatClass::Reset() {
 	__asm        mov    dword ptr [eax+0x47], 0xFFFFFFFF;
 // LINE 645:
 	__asm        jmp    near ptr 0x005279EA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005279ef
 void BoatClass::ItterateFSM() {
-// LINE 686:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 688:
 	__asm        mov    ecx, this;
 	__asm        call   0x005280BB;
@@ -1122,25 +950,12 @@ void BoatClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x00527C4A;
 // LINE 839:
 	__asm        jmp    near ptr 0x00527C75;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
 	static const int32_t speedAdjustor = { /* <data@0x005b73f0> */ };
 
-// LINE 858:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 861:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2F];
@@ -1154,11 +969,6 @@ void BoatClass::AdjustSpeed() {
 	__asm        mov    dword ptr [eax+0x2B], 1;
 // LINE 867:
 	__asm        jmp    near ptr 0x00527CAE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00527cb3
@@ -1166,14 +976,6 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	struct Point2d boatLocation;
 	struct Point3d boatHeading;
 
-// LINE 887:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 893:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8F];
@@ -1234,11 +1036,6 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        call   0x00527D76;
 	__asm        jmp    near ptr 0x00527D71;
 // LINE 901:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00527d76
@@ -1251,14 +1048,6 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 	struct _DYOBJ_INST* currentObject;
 	int32_t ydiff;
 
-// LINE 920:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 923:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, collisionPoint;
@@ -1532,11 +1321,6 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005280B4;
 // LINE 1055:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005280bb
@@ -1544,14 +1328,6 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 	int32_t deltaY;
 	int32_t deltaX;
 
-// LINE 1074:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1078:
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
@@ -1624,11 +1400,6 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005281A3;
 // LINE 1120:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005281a8
@@ -1638,14 +1409,6 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 	enum DirectionTypes validdirs[4];
 	int32_t i;
 
-// LINE 1139:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1141:
 	__asm        mov    validdirs[0], 0;
 // LINE 1142:
@@ -1845,69 +1608,30 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 	__asm        add    al, 3;
 // LINE 1196:
 	__asm        jmp    near ptr 0x00528473;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052847a
 void BoatClass::SlowDown() {
-// LINE 1214:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1215:
 	__asm        mov    eax, this;
 	__asm        sub    dword ptr [eax+0x2B], 0x20000;
 // LINE 1216:
 	__asm        jmp    near ptr 0x00528495;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052849a
 void BoatClass::Stop() {
-// LINE 1235:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1236:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2B], 0;
 // LINE 1237:
 	__asm        jmp    near ptr 0x005284B5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005284ba
 void BoatClass::MoveForward() {
 	int32_t distance;
 
-// LINE 1256:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1259:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -2012,23 +1736,10 @@ void BoatClass::MoveForward() {
 	__asm        mov    byte ptr [eax+7], 0;
 // LINE 1285:
 	__asm        jmp    near ptr 0x00528623;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00528628
 int32_t BoatClass::HaveIReachedNextLoc() {
-// LINE 1305:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1306:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1F], 0;
@@ -2042,23 +1753,10 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00528657;
 // LINE 1314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052865c
 int32_t BoatClass::AmIInANewCell() {
-// LINE 1332:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1338:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x97];
@@ -2120,25 +1818,12 @@ int32_t BoatClass::AmIInANewCell() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00528741;
 // LINE 1351:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00528746
 void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 1370:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1373:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -2217,25 +1902,12 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 // LINE 1399:
 // Block end:
 	__asm        jmp    near ptr 0x00528855;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0052885c
 void BoatClass::LinkToCell(const struct Point2d& point) {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 1418:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1421:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -2283,11 +1955,6 @@ void BoatClass::LinkToCell(const struct Point2d& point) {
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1427:
 	__asm        jmp    near ptr 0x00528911;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00528918
@@ -2303,14 +1970,6 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 	struct _CELL_INFO* ecptr;
 	unsigned short northTile;
 
-// LINE 1450:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1465:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax];
@@ -2932,23 +2591,10 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 	__asm        mov    eax, intersection;
 	__asm        jmp    near ptr 0x005290DE;
 // LINE 1623:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005290e5
 int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
-// LINE 1644:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1654:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    eax, 0xFFFF;
@@ -3013,23 +2659,10 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short t
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    near ptr 0x0052922B;
 // LINE 1655:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00529232
 void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
-// LINE 1674:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1675:
 	__asm        mov    eax, intersectionType;
 	__asm        mov    [ebp-8], eax;
@@ -3173,23 +2806,10 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 	__asm        (bad);
 // LINE 1765:
 	__asm        jmp    near ptr 0x005293EC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005293f3
 enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
-// LINE 1784:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1788:
 	__asm        jmp    near ptr 0x00529404;
 	__asm        mov    eax, this;
@@ -3226,23 +2846,10 @@ enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 	__asm        mov    eax, 3;
 	__asm        jmp    near ptr 0x00529489;
 // LINE 1798:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052948e
 void BoatClass::AdjustCurrentPosition() {
-// LINE 1818:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1831:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
@@ -3299,25 +2906,12 @@ void BoatClass::AdjustCurrentPosition() {
 	__asm        mov    [ecx+8], eax;
 // LINE 1833:
 	__asm        jmp    near ptr 0x0052953E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529543
 void BoatClass::AdjustNextPosition() {
 	struct Point3d nextFineLocation;
 
-// LINE 1853:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1856:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x47];
@@ -3410,23 +3004,10 @@ void BoatClass::AdjustNextPosition() {
 	__asm        add    esp, 8;
 // LINE 1873:
 	__asm        jmp    near ptr 0x0052965A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052965f
 void BoatClass::GoStraight() {
-// LINE 1892:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1895:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 0;
@@ -3521,23 +3102,10 @@ void BoatClass::GoStraight() {
 	__asm        jmp    near ptr 0x0052977E;
 // LINE 1923:
 	__asm        jmp    near ptr 0x00529783;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529788
 void BoatClass::TurnLeft() {
-// LINE 1942:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1945:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 1;
@@ -3632,23 +3200,10 @@ void BoatClass::TurnLeft() {
 	__asm        jmp    near ptr 0x005298A7;
 // LINE 1974:
 	__asm        jmp    near ptr 0x005298AC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005298b1
 void BoatClass::TurnRight() {
-// LINE 1993:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1996:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 1;
@@ -3743,23 +3298,10 @@ void BoatClass::TurnRight() {
 	__asm        jmp    near ptr 0x005299D0;
 // LINE 2029:
 	__asm        jmp    near ptr 0x005299D5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005299da
 void BoatClass::MakeUturn() {
-// LINE 2050:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2051:
 	__asm        jmp    near ptr 0x005299EB;
 	__asm        jmp    near ptr 0x005299F0;
@@ -3782,32 +3324,14 @@ void BoatClass::MakeUturn() {
 	__asm        call   0x00529543;
 // LINE 2136:
 	__asm        jmp    near ptr 0x00529A31;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529a36
 int32_t BoatClass::FinishedUturn() {
-// LINE 2156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2158:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00529A4C;
 // LINE 2170:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529a51
@@ -3827,14 +3351,6 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 2189:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2192:
 	__asm        mov    curr_dist, 0;
 // LINE 2193:
@@ -4204,23 +3720,10 @@ foundCell:
 // LINE 2347:
 	__asm        jmp    near ptr 0x00529EE1;
 	__asm        jmp    near ptr 0x00529E22;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529ee6
 void BoatClass::UnPlaceBoat() {
-// LINE 2367:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2370:
 	__asm        jmp    near ptr 0x00529EF7;
 	__asm        mov    eax, this;
@@ -4239,11 +3742,6 @@ void BoatClass::UnPlaceBoat() {
 	__asm        mov    byte ptr [eax+5], 0;
 // LINE 2375:
 	__asm        jmp    near ptr 0x00529F26;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00529f2b
@@ -4262,14 +3760,6 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 2394:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x9C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2397:
 	__asm        mov    curr_dist, 0;
 // LINE 2398:
@@ -4850,11 +4340,6 @@ foundCell:
 	__asm        jmp    near ptr 0x0052A815;
 // LINE 2536:
 	__asm        jmp    near ptr 0x0052A6F4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0052a81c
@@ -4862,14 +4347,6 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	int32_t object;
 	struct VRObjInfo objectInfo;
 
-// LINE 2811:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2816:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x87], 0;
@@ -5121,21 +4598,10 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052AB1D;
 // LINE 2953:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0052ab24
 int32_t CreateBoatInstance(int32_t instanceID) {
-// LINE 3000:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3001:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -5148,49 +4614,22 @@ int32_t CreateBoatInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0052AB4F;
 // LINE 3002:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ab54
 void ItterateAllBoats() {
-// LINE 3023:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3024:
 	__asm        call   0x005277EB;
 // LINE 3025:
 	__asm        jmp    near ptr 0x0052AB64;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ab69
 void ResetAllBoats() {
-// LINE 3046:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3047:
 	__asm        call   0x005277AB;
 // LINE 3048:
 	__asm        jmp    near ptr 0x0052AB79;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ab7e
@@ -5203,13 +4642,6 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 	long totalpersons;
 	class BoatClass* capboat;
 
-// LINE 3059:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3066:
 	__asm        mov    eax, ds:[0x62B6D8];
 	__asm        mov    capboat, eax;
@@ -5350,24 +4782,12 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 	__asm        add    eax, 0x7F;
 	__asm        jmp    near ptr 0x0052ACF6;
 // LINE 3116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052acfb
 struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 	class BoatClass* capboat;
 
-// LINE 3127:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3129:
 	__asm        mov    eax, ds:[0x62B6D8];
 	__asm        mov    capboat, eax;
@@ -5385,21 +4805,10 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 	__asm        add    eax, 0x7F;
 	__asm        jmp    near ptr 0x0052AD32;
 // LINE 3135:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ad37
 struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
-// LINE 3147:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3148:
 	__asm        mov    eax, timetolive;
 	__asm        push   eax;
@@ -5409,40 +4818,18 @@ struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0052AD52;
 // LINE 3149:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ad57
 struct _DYOBJ_INST* GetCapsizedBoat() {
-// LINE 3161:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3162:
 	__asm        call   0x0052ACFB;
 	__asm        jmp    near ptr 0x0052AD67;
 // LINE 3163:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
 int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
-// LINE 3174:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3175:
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -5450,21 +4837,10 @@ int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052AD83;
 // LINE 3176:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
 int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
-// LINE 3187:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3188:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -5472,11 +4848,6 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0052AD9F;
 // LINE 3189:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052ada4
@@ -5485,13 +4856,6 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t ret;
 	class BoatClass* b;
 
-// LINE 3199:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3207:
 	__asm        push   0xE3;
 	__asm        push   0x62B5F0;
@@ -5698,11 +5062,6 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052B005;
 // LINE 3253:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052b00a
@@ -5710,13 +5069,6 @@ int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 	int32_t i;
 	int32_t ret;
 
-// LINE 3263:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3266:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0052B022;
@@ -5746,11 +5098,6 @@ int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0052B070;
 // LINE 3276:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

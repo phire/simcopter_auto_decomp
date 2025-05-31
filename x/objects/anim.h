@@ -1,14 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f5b0
 void cCopterAnim::Destroy() {
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 224:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE3FC;
@@ -18,24 +10,11 @@ void cCopterAnim::Destroy() {
 	__asm        add    esp, 0x10;
 // LINE 225:
 	__asm        jmp    near ptr 0x0055F5DD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f5f0
 void cCopterAnim::WriteToDisk() {
-// LINE 227:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 228:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -47,24 +26,11 @@ void cCopterAnim::WriteToDisk() {
 	__asm        jmp    near ptr 0x0055F611;
 // LINE 230:
 	__asm        jmp    near ptr 0x0055F616;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f620
 unsigned short cCopterAnim::IsDirty() {
-// LINE 231:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE44C;
 	__asm        push   0xE7;
@@ -73,24 +39,11 @@ unsigned short cCopterAnim::IsDirty() {
 	__asm        add    esp, 0x10;
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055F650;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f660
 unsigned long cCopterAnim::GetBodyType() {
-// LINE 233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE470;
 	__asm        push   0xE9;
@@ -99,44 +52,18 @@ unsigned long cCopterAnim::GetBodyType() {
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F68F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6a0
 class cBList<cBBase>* cCopterAnim::GetList() {
-// LINE 237:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ds:[0x5BF6D4];
 	__asm        jmp    near ptr 0x0055F6B6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6c0
 struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum) {
-// LINE 239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-4], eax;
@@ -180,24 +107,11 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        movsx  ecx, partnum;
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        jmp    near ptr 0x0055F778;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f780
 struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
-// LINE 240:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-4], eax;
@@ -236,10 +150,5 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        jmp    near ptr 0x0055F827;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 

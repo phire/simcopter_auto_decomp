@@ -28,13 +28,6 @@ void S3RoadDataInit() {
 	double DiagShortDist;
 	double DiagLongDist;
 
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        mov    reinterpret_cast<uint32_t>(straightLegSize), 0x9999999A;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4), 0x40199999;
@@ -973,11 +966,6 @@ void S3RoadDataInit() {
 	__asm        jmp    near ptr 0x00538FCC;
 // LINE 274:
 	__asm        jmp    near ptr 0x0053925B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00539260
@@ -985,13 +973,6 @@ int32_t IsThisAnIntersection(long x, long y) {
 	unsigned short t2;
 	unsigned short t;
 
-// LINE 419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 420:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00539297;
@@ -1255,11 +1236,6 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539645;
 // LINE 470:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053964a
@@ -1268,13 +1244,6 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	enum DirectionTypes fromConnections;
 	enum DirectionTypes toConnections;
 
-// LINE 492:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ax, toTile;
 	__asm        mov    [ebp-0x24], ax;
 // LINE 498:
@@ -1658,11 +1627,6 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539BEE;
 // LINE 566:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -224,86 +224,36 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e30
 void $E55() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00441E45;
 	__asm        jmp    near ptr 0x00441E40;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e45
 void $E54() {
-// LINE 33:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x5C37F0], 0x2710;
 	__asm        jmp    near ptr 0x00441E5A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e5f
 void $E58() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00441E74;
 	__asm        jmp    near ptr 0x00441E6F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e74
 void $E57() {
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C8;
 	__asm        jmp    near ptr 0x00441E89;
 	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C0;
 	__asm        jmp    near ptr 0x00441E98;
 	__asm        jmp    near ptr 0x00441E9D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00441ea2
 int32_t SoundChangeNotificationSink::Initialize() {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 57:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
 	__asm        je     near ptr 0x00441ED9;
@@ -320,11 +270,6 @@ int32_t SoundChangeNotificationSink::Initialize() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00441EE0;
 // LINE 61:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00441ee5
@@ -334,14 +279,6 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	struct SoundPreferences* currentSoundPreferences;
 	int32_t i;
 
-// LINE 78:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 84:
 	__asm        cmp    lPreferenceType, 0x4FFFFFF;
 	__asm        jne    near ptr 0x00441FA9;
@@ -400,24 +337,12 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	__asm        jmp    near ptr 0x00441F37;
 // LINE 97:
 	__asm        jmp    near ptr 0x00441FAE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00441fb5
 int32_t S3DSInit(void * __ptr32 hWnd) {
 	int32_t i;
 
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 131:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00441FCD;
@@ -436,11 +361,6 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 	__asm        call   0x0042E009;
 	__asm        jmp    near ptr 0x00441FFD;
 // LINE 135:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00442002
@@ -448,13 +368,6 @@ int32_t S3LoadSounds() {
 	int32_t count;
 	char szFullSoundPath[260];
 
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x8AC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 153:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
@@ -4653,11 +4566,6 @@ int32_t S3LoadSounds() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00446A66;
 // LINE 454:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446a6b
@@ -4665,13 +4573,6 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	class DigitalSound* theSound;
 	char szFullSoundPath[260];
 
-// LINE 466:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x134;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 472:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    eax, [eax*4+0x604604];
@@ -4799,11 +4700,6 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        jmp    near ptr 0x00446CB8;
 // LINE 477:
 	__asm        jmp    near ptr 0x00446CBD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
@@ -4816,13 +4712,6 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	int32_t lastparam;
 	class DigitalSound* theSound;
 
-// LINE 491:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 500:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    eax, [eax*4+0x604604];
@@ -4928,21 +4817,10 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x00446DFF;
 // LINE 533:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446e04
 void S3DSStopPlay(int32_t nSoundIndex) {
-// LINE 547:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 552:
 	__asm        mov    eax, nSoundIndex;
 	__asm        push   eax;
@@ -4950,44 +4828,21 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 	__asm        call   0x0042E663;
 // LINE 553:
 	__asm        jmp    near ptr 0x00446E1D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446e22
 void S3DSStopAllSounds() {
-// LINE 564:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 569:
 	__asm        mov    ecx, 0x604600;
 	__asm        call   0x0042E6A5;
 // LINE 570:
 	__asm        jmp    near ptr 0x00446E37;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446e3c
 void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	class DigitalSound* theSound;
 
-// LINE 584:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 589:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    eax, [eax*4+0x604604];
@@ -5009,22 +4864,10 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	__asm        call   dword ptr [eax+0x64];
 // LINE 593:
 	__asm        jmp    near ptr 0x00446E7D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446e82
 void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
-// LINE 607:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 614:
 	__asm        add    lNewVolume, 0x2710;
 	__asm        mov    eax, lNewVolume;
@@ -5060,21 +4903,10 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 619:
 	__asm        jmp    near ptr 0x00446EFD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446f02
 int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
-// LINE 633:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 638:
 	__asm        mov    eax, nSoundIndex;
 	__asm        cmp    dword ptr [eax*4+0x604604], 0;
@@ -5091,11 +4923,6 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00446F3E;
 // LINE 641:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00446f43
@@ -5107,13 +4934,6 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	class DigitalSound* theSound;
 	struct Point3d positionTemp;
 
-// LINE 674:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 680:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    eax, [eax*4+0x604604];
@@ -5251,11 +5071,6 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	__asm        call   dword ptr [eax+0x54];
 // LINE 730:
 	__asm        jmp    near ptr 0x004470F5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004470fa
@@ -5263,13 +5078,6 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	long lNewVolume;
 	class DigitalSound* theSound;
 
-// LINE 736:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 737:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    eax, [eax*4+0x604604];
@@ -5322,11 +5130,6 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        call   0x0042185B;
 // LINE 744:
 	__asm        jmp    near ptr 0x004471A8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

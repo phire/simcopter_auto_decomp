@@ -267,14 +267,6 @@ protected:
 // Contribution: 1:00094400-00094b31 Module: 20, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495400
 void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nNewBitmapHeight) {
-// LINE 30:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0;
 	__asm        mov    eax, nNewBitmapHeight;
 	__asm        push   eax;
@@ -331,23 +323,10 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 // LINE 52:
 	__asm        jmp    near ptr 0x004954C4;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004954ce
 void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
-// LINE 59:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewSkyType;
@@ -362,23 +341,10 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        call   0x00495575;
 // LINE 64:
 	__asm        jmp    near ptr 0x00495505;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049550c
 void SkyImage::SwitchToProperSkyType() {
-// LINE 70:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 71:
 	__asm        cmp    dword ptr ds:[0x598E90], 0;
 	__asm        jne    near ptr 0x00495544;
@@ -402,11 +368,6 @@ void SkyImage::SwitchToProperSkyType() {
 	__asm        call   0x004954CE;
 // LINE 75:
 	__asm        jmp    near ptr 0x00495570;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00495575
@@ -418,14 +379,6 @@ int32_t SkyImage::LoadImageA() {
 	char * pSourceImage;
 	struct VRBmpHdr* bmpHeader;
 
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 102:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 0;
@@ -702,11 +655,6 @@ int32_t SkyImage::LoadImageA() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004958E2;
 // LINE 205:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004958e7
@@ -720,14 +668,6 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	struct SparkalRect rectSource;
 	long start_row;
 
-// LINE 213:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 218:
 	__asm        jmp    near ptr 0x004958F8;
 // LINE 219:
@@ -939,11 +879,6 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00495B2B;
 // LINE 300:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 

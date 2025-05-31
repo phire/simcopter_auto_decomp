@@ -393,12 +393,6 @@ public:
 // Contribution: 1:00135e00-00137427 Module: 158, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536e00
 int32_t CreatePoliceCarInstance(int32_t instanceID) {
-// LINE 89:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 90:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -411,23 +405,10 @@ int32_t CreatePoliceCarInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00536E2B;
 // LINE 91:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536e30
 void PoliceCarClass::PoliceCarClass() {
-// LINE 95:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x005415D5;
 	__asm        mov    eax, this;
@@ -441,33 +422,15 @@ void PoliceCarClass::PoliceCarClass() {
 // LINE 98:
 	__asm        jmp    near ptr 0x00536E69;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536e71
 void PoliceCarClass::~PoliceCarClass() {
-// LINE 102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593310;
 	__asm        jmp    near ptr 0x00536E8B;
 	__asm        mov    ecx, this;
 	__asm        call   0x0054163A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00536e98
@@ -476,13 +439,6 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	class PoliceCarClass* youveWonABrandNewCar;
 	char * objectMemory;
 
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 125:
 	__asm        push   0x326;
 	__asm        call   0x0056A600;
@@ -631,21 +587,10 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053707C;
 // LINE 189:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00537081
 unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 217:
 	__asm        push   5;
 	__asm        push   0x62B9E8;
@@ -661,11 +606,6 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        call   0x0053AB93;
 	__asm        jmp    near ptr 0x005370AE;
 // LINE 218:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005370b3
@@ -677,14 +617,6 @@ void PoliceCarClass::ItterateFSM() {
 	int32_t dist;
 	struct _GridCoordinates badGuyLoc;
 
-// LINE 240:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 248:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x31E], 0;
@@ -1419,25 +1351,12 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        (bad);
 // LINE 535:
 	__asm        jmp    near ptr 0x00537A27;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00537a2c
 enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	struct _GridCoordinates startLoc;
 
-// LINE 540:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 545:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11E], 3;
@@ -1740,11 +1659,6 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        call   0x00542373;
 	__asm        jmp    near ptr 0x00537E28;
 // LINE 637:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00537e2f
@@ -1752,14 +1666,6 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	struct _GridCoordinates loc;
 	class SpiralScan scan;
 
-// LINE 642:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 643:
 	__asm        push   4;
 	__asm        lea    ecx, scan.currDist;
@@ -1841,23 +1747,10 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00537F67;
 // LINE 662:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00537f6c
 int32_t PoliceCarClass::AtScene() {
-// LINE 668:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 669:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11E];
@@ -1884,11 +1777,6 @@ int32_t PoliceCarClass::AtScene() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00537FD4;
 // LINE 682:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00537fd9
@@ -1897,14 +1785,6 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 	struct _DYOBJ_INST* dyptr;
 	class SpiralScan spiral;
 
-// LINE 686:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 690:
 	__asm        push   3;
 	__asm        lea    ecx, spiral.currDist;
@@ -1999,23 +1879,10 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x00538118;
 // LINE 718:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053811f
 void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 728:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 730:
 	__asm        mov    esi, this;
 	__asm        mov    edi, sd;
@@ -2092,11 +1959,6 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x00542A75;
 // LINE 749:
 	__asm        jmp    near ptr 0x00538227;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053822e
@@ -2104,14 +1966,6 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	unsigned char yindex;
 	struct _GridCoordinates badGuyLoc;
 
-// LINE 760:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 764:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -2265,11 +2119,6 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    [ecx+0x322], eax;
 // LINE 807:
 	__asm        jmp    near ptr 0x00538421;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

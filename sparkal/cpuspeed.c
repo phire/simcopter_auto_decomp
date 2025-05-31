@@ -38,21 +38,10 @@ public:
 // Contribution: 1:00046b60-00047268 Module: 48, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00447b60
 int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpReserved) {
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 65:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00447B70;
 // LINE 67:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00447b77
@@ -74,13 +63,6 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	unsigned long ticks;
 	unsigned long stamp1;
 
-// LINE 88:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 96:
 	__asm        call   0x0047B67A;
 	__asm        mov    processor, ax;
@@ -489,11 +471,6 @@ loop1:
 	__asm        mov    eax, [ebp+8];
 	__asm        jmp    near ptr 0x00447FC9;
 // LINE 409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447fce
@@ -505,13 +482,6 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	unsigned short iPentiumProSpeeds[10];
 	int32_t ptr;
 
-// LINE 428:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 431:
 	__asm        mov    i386Speeds[0], 0x10;
 	__asm        mov    i386Speeds[1], 0x14;
@@ -712,11 +682,6 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    eax, freq;
 	__asm        jmp    near ptr 0x00448264;
 // LINE 515:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

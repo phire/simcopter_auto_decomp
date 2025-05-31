@@ -620,14 +620,6 @@ class bidirectional_iterator<basic_string<char>,int>{
 // Contribution: 1:00080b20-00085dca Module: 29, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00481b20
 void DirectoryEntry::DirectoryEntry() {
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -660,23 +652,10 @@ void DirectoryEntry::DirectoryEntry() {
 // LINE 36:
 	__asm        jmp    near ptr 0x00481BA6;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00481bae
 void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class basic_string<char>& sNewName, long lNewType) {
-// LINE 45:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, directoryNewParent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -801,25 +780,12 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 // LINE 46:
 	__asm        jmp    near ptr 0x00481D80;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00481d8a
 int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtension) {
 	uint32_t nPosition;
 
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    byte ptr [ebp-0x1C], 0x2E;
 // LINE 60:
 	__asm        jmp    near ptr 0x00481D9F;
@@ -1227,25 +1193,12 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482375;
 // LINE 69:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048237c
 int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryMinusExtension) {
 	uint32_t nPosition;
 
-// LINE 80:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    byte ptr [ebp-0x40], 0x2E;
 // LINE 84:
 	__asm        jmp    near ptr 0x00482391;
@@ -1562,23 +1515,10 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0048282C;
 // LINE 93:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00482833
 void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
-// LINE 100:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 101:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -1936,128 +1876,50 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        jmp    near ptr 0x00482D3C;
 // LINE 106:
 	__asm        jmp    near ptr 0x00482D41;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00482d48
 int32_t DirectoryEntry::IsMediaRemovable() {
-// LINE 111:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 112:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482D5B;
 // LINE 113:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00482d60
 unsigned long DirectoryEntry::GetSize() {
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 119:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482D73;
 // LINE 131:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00482d78
 int32_t DirectoryEntry::GetCreationDate() {
-// LINE 136:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 137:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482D8B;
 // LINE 138:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00482d90
 int32_t DirectoryEntry::GetlastModificationDate() {
-// LINE 143:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 144:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482DA3;
 // LINE 145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00482da8
 int32_t DirectoryEntry::GetSerialNumber() {
-// LINE 150:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 151:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00482DBB;
 // LINE 152:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00482dc0
 int32_t DirectoryEntry::CreatePhysicalEntry() {
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x98;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 158:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 4;
@@ -2395,23 +2257,10 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048329E;
 // LINE 178:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004832a3
  Directory::Directory(class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
-// LINE 198:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        inc    dword ptr ds:[0x5974AC];
@@ -2756,32 +2605,14 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 // LINE 202:
 	__asm        jmp    near ptr 0x004837A5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004837af
 int  Directory::IsDirectoryRoot() {
-// LINE 208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 209:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004837C2;
 // LINE 210:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004837c7
@@ -2794,14 +2625,6 @@ int  Directory::ReadDirectoryEntries() {
 	class DirectoryEntry directoryEntryCurrent;
 	struct _WIN32_FIND_DATAA findData;
 
-// LINE 220:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x370;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 222:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
@@ -3750,11 +3573,6 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x1E4];
 	__asm        jmp    near ptr 0x00484948;
 // LINE 328:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048494d
@@ -3767,14 +3585,6 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	class DirectoryEntry directoryEntryCurrent;
 	struct _WIN32_FIND_DATAA findData;
 
-// LINE 347:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x338;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 349:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
@@ -4522,11 +4332,6 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048572E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00485735
@@ -4535,13 +4340,6 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	class DirectoryEntry directoryEntryCurrent;
 	struct _WIN32_FIND_DATAA findData;
 
-// LINE 431:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x190;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 435:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
 	__asm        call   0x00481B20;
@@ -4685,25 +4483,12 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        mov    eax, [ebp-0x158];
 	__asm        jmp    near ptr 0x004859BD;
 // LINE 440:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004859c2
 int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sEntry) {
 	class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
 
-// LINE 447:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 448:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -4803,23 +4588,10 @@ int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sE
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00485B2F;
 // LINE 456:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00485b36
 int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t bReadNow) {
-// LINE 470:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 474:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -4959,25 +4731,12 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00485D2D;
 // LINE 479:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00485d34
 int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	class DirectoryEntry tempDirectoryEntry;
 
-// LINE 486:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 487:
 	__asm        mov    eax, lType;
 	__asm        push   eax;
@@ -5042,11 +4801,6 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x00485E1B;
 // LINE 489:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00485e22
@@ -5055,14 +4809,6 @@ class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 496:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 498:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5107,23 +4853,10 @@ class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00485EB7;
 // LINE 505:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00485ebe
 void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
-// LINE 511:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 512:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
@@ -5429,11 +5162,6 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        call   0x004837C7;
 // LINE 517:
 	__asm        jmp    near ptr 0x00486315;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048631c
@@ -5441,14 +5169,6 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	uint32_t nDirectoryPathLength;
 	char chLastCharacter;
 
-// LINE 523:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 527:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -5778,11 +5498,6 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        jmp    near ptr 0x004867C8;
 // LINE 533:
 	__asm        jmp    near ptr 0x004867CD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004867d2
@@ -5790,13 +5505,6 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	uint32_t nDirectoryPathLength;
 	uint32_t nPosition;
 
-// LINE 544:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 548:
 	__asm        mov    eax, sPath;
 	__asm        mov    eax, [eax+4];
@@ -6233,11 +5941,6 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jmp    near ptr 0x00486DC1;
 // LINE 572:
 	__asm        jmp    near ptr 0x00486DC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

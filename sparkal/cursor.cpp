@@ -33,41 +33,15 @@ public:
 // Contribution: 1:000737f0-00073953 Module: 35, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004747f0
 void Cursor::Cursor() {
-// LINE 19:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 20:
 	__asm        jmp    near ptr 0x00474801;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00474809
 void Cursor::~Cursor() {
-// LINE 22:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 23:
 	__asm        jmp    near ptr 0x0047481A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047481f
@@ -75,13 +49,6 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	const int32_t nAndValue;
 	int32_t nKeyState;
 
-// LINE 35:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 40:
 	__asm        mov    nAndValue, 0x80000000;
 // LINE 47:
@@ -158,11 +125,6 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047491C;
 // LINE 77:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00474921
@@ -170,13 +132,6 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 	struct tagPOINT ptCursor;
 	int32_t nReturnValue;
 
-// LINE 89:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 95:
 	__asm        lea    eax, ptCursor.x;
 	__asm        push   eax;
@@ -194,10 +149,5 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0047494F;
 // LINE 104:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

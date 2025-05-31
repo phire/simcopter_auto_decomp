@@ -192,14 +192,6 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	unsigned char * resMapPtr;
 	long err;
 
-// LINE 97:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 101:
 	__asm        mov    eax, newMap;
 	__asm        mov    dword ptr [eax], 0;
@@ -444,23 +436,10 @@ error:
 	__asm        jmp    near ptr 0x00552DDF;
 	__asm        jmp    near ptr 0x00552DDF;
 	__asm        jmp    near ptr 0x00552DDF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00552e51
 long FlatResFile::Open(char * name) {
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 158:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -492,23 +471,10 @@ long FlatResFile::Open(char * name) {
 	__asm        mov    eax, [eax+0x114];
 	__asm        jmp    near ptr 0x00552EBE;
 // LINE 172:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00552ec5
 long FlatResFile::Open(unsigned char * name) {
-// LINE 178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 179:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -540,23 +506,10 @@ long FlatResFile::Open(unsigned char * name) {
 	__asm        mov    eax, [eax+0x114];
 	__asm        jmp    near ptr 0x00552F32;
 // LINE 192:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00552f39
 long ResFile::OpenFromOtherFile(class ResFile* otherFile) {
-// LINE 197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 198:
 	__asm        mov    eax, otherFile;
 	__asm        push   eax;
@@ -566,23 +519,10 @@ long ResFile::OpenFromOtherFile(class ResFile* otherFile) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00552F58;
 // LINE 200:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00552f5f
 long FlatResFile::Close() {
-// LINE 206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 207:
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C5CB;
@@ -607,24 +547,12 @@ long FlatResFile::Close() {
 	__asm        mov    eax, [eax+0x114];
 	__asm        jmp    near ptr 0x00552FC5;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00552fca
 short FlatResFile::CheckForLeaks() {
 	short total;
 
-// LINE 259:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 260:
 	__asm        call   0x00553E96;
 	__asm        mov    total, ax;
@@ -638,40 +566,20 @@ short FlatResFile::CheckForLeaks() {
 	__asm        mov    ax, total;
 	__asm        jmp    near ptr 0x00552FF7;
 // LINE 263:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00552ffc
 long FlatResFile::GetError() {
-// LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 270:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
 	__asm        jmp    near ptr 0x00553016;
 // LINE 271:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055301b
 void FlatResFile::~FlatResFile() {
 // LINE 277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553086;
 	__asm        mov    eax, fs:[0];
@@ -716,14 +624,6 @@ _L27083:
 
 // FUNCTION: COPTER_D 0x0055309e
 short FlatResFile::CountTypes() {
-// LINE 286:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 287:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -745,25 +645,12 @@ short FlatResFile::CountTypes() {
 	__asm        mov    ax, [eax+6];
 	__asm        jmp    near ptr 0x00553108;
 // LINE 304:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055310d
 unsigned long FlatResFile::GetIndType(short index) {
 	unsigned long type;
 
-// LINE 311:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 312:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -794,23 +681,10 @@ unsigned long FlatResFile::GetIndType(short index) {
 	__asm        mov    eax, type;
 	__asm        jmp    near ptr 0x00553193;
 // LINE 318:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055319a
 short FlatResFile::Count(unsigned long type) {
-// LINE 325:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 326:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -833,25 +707,12 @@ short FlatResFile::Count(unsigned long type) {
 	__asm        call   0x005541FE;
 	__asm        jmp    near ptr 0x00553204;
 // LINE 329:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055320b
 void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
-// LINE 336:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 337:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -933,25 +794,12 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x00553316;
 // LINE 356:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0055331d
 void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 364:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1043,25 +891,12 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x0055344B;
 // LINE 385:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00553452
 void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*Swizzler)(void * __ptr32, long)) {
 	struct ResMap::Entry* entry;
 
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1143,25 +978,12 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x0055355D;
 // LINE 412:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00553564
 void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	struct ResMap::Entry* entry;
 
-// LINE 419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 420:
 	__asm        mov    eax, name;
 	__asm        mov    byte ptr [eax], 0;
@@ -1201,25 +1023,12 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	__asm        call   0x005545F1;
 // LINE 429:
 	__asm        jmp    near ptr 0x00553606;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055360d
 void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	struct ResMap::Entry* entry;
 
-// LINE 436:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 437:
 	__asm        mov    eax, id;
 	__asm        mov    word ptr [eax], 0xFFFF;
@@ -1256,11 +1065,6 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	__asm        mov    [ecx], ax;
 // LINE 446:
 	__asm        jmp    near ptr 0x005536A7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005536ae
@@ -1268,14 +1072,6 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	unsigned long returnType;
 	struct ResMap::Entry* entry;
 
-// LINE 449:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 450:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1329,25 +1125,12 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        mov    eax, returnType;
 	__asm        jmp    near ptr 0x0055378D;
 // LINE 461:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00553794
 void FlatResFile::Release(void * __ptr32 res) {
 	struct ResMap::Entry* entry;
 
-// LINE 468:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 469:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1386,25 +1169,12 @@ void FlatResFile::Release(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 489:
 	__asm        jmp    near ptr 0x00553833;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055383a
 void FlatResFile::Detach(void * __ptr32 res) {
 	struct ResMap::Entry* entry;
 
-// LINE 496:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 497:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1436,11 +1206,6 @@ void FlatResFile::Detach(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 515:
 	__asm        jmp    near ptr 0x005538CA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005538d1
@@ -1449,14 +1214,6 @@ void FlatResFile::Load(void * __ptr32 res) {
 	unsigned char oldState;
 	unsigned char * ptr;
 
-// LINE 522:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 523:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1522,11 +1279,6 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        call   0x00553EDB;
 // LINE 538:
 	__asm        jmp    near ptr 0x005539B7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005539be
@@ -1534,8 +1286,6 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	class StringSet tempStrs;
 
 // LINE 595:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553A6A;
 	__asm        mov    eax, fs:[0];
@@ -1618,14 +1368,6 @@ _L27093:
 	short resCnt;
 	unsigned char * mapStart;
 
-// LINE 671:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 672:
 	__asm        mov    eax, resMap;
 	__asm        mov    ecx, this;
@@ -1720,11 +1462,6 @@ _L27093:
 // LINE 722:
 	__asm        jmp    near ptr 0x00553B96;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00553ba0
@@ -1733,14 +1470,6 @@ _L27093:
 	struct ResMap::Entry* last;
 	unsigned char hState;
 
-// LINE 728:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 729:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -1806,11 +1535,6 @@ _L27093:
 	__asm        add    esp, 4;
 // LINE 747:
 	__asm        jmp    near ptr 0x00553C56;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00553c5b
@@ -1822,8 +1546,6 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 	unsigned char * resPtr;
 
 // LINE 753:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553DB3;
 	__asm        mov    eax, fs:[0];
@@ -1951,14 +1673,6 @@ _L27101:
 
 // FUNCTION: COPTER_D 0x00553dcc
 void  ResMap::Release() {
-// LINE 785:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 786:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -2017,11 +1731,6 @@ void  ResMap::Release() {
 // LINE 796:
 // Block end:
 	__asm        jmp    near ptr 0x00553E91;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00553e96
@@ -2029,13 +1738,6 @@ short  ResMap::CheckForLeaks() {
 	class ResMap* srch;
 	short total;
 
-// LINE 802:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 803:
 	__asm        mov    total, 0;
 // LINE 804:
@@ -2054,11 +1756,6 @@ short  ResMap::CheckForLeaks() {
 	__asm        mov    ax, total;
 	__asm        jmp    near ptr 0x00553ED6;
 // LINE 807:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00553edb
@@ -2068,14 +1765,6 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	long err;
 	long size;
 
-// LINE 814:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 815:
 	__asm        mov    err, 0;
 // LINE 819:
@@ -2297,25 +1986,12 @@ done:
 	__asm        jmp    near ptr 0x00554147;
 	__asm        jmp    near ptr 0x00554147;
 	__asm        jmp    near ptr 0x00554147;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x005541a4
 unsigned long  ResMap::GetIndType(short index) {
 	unsigned long type;
 
-// LINE 882:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 883:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+6];
@@ -2340,11 +2016,6 @@ unsigned long  ResMap::GetIndType(short index) {
 	__asm        mov    eax, type;
 	__asm        jmp    near ptr 0x005541F7;
 // LINE 892:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005541fe
@@ -2352,14 +2023,6 @@ short  ResMap::Count(unsigned long type) {
 	struct ResMap::TypeHead* typeList;
 	short cnt;
 
-// LINE 895:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 896:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -2396,11 +2059,6 @@ short  ResMap::Count(unsigned long type) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055426B;
 // LINE 908:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00554272
@@ -2410,14 +2068,6 @@ unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 	short cnt;
 	short numEntries;
 
-// LINE 911:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 912:
 	__asm        mov    type, 0;
 // LINE 914:
@@ -2471,11 +2121,6 @@ unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00554304;
 // LINE 931:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055430b
@@ -2484,14 +2129,6 @@ struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
 	struct ResMap::Entry* srch;
 	struct ResMap::Entry* last;
 
-// LINE 934:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 935:
 	__asm        mov    found, 0;
 // LINE 936:
@@ -2526,11 +2163,6 @@ struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
 	__asm        mov    eax, found;
 	__asm        jmp    near ptr 0x00554373;
 // LINE 944:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055437a
@@ -2539,14 +2171,6 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 	struct ResMap::TypeHead* typeList;
 	short cnt;
 
-// LINE 947:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 948:
 	__asm        mov    found, 0;
 // LINE 950:
@@ -2615,11 +2239,6 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 	__asm        mov    eax, found;
 	__asm        jmp    near ptr 0x00554436;
 // LINE 972:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0055443d
@@ -2628,14 +2247,6 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 	struct ResMap::TypeHead* typeList;
 	short cnt;
 
-// LINE 975:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 976:
 	__asm        mov    found, 0;
 // LINE 978:
@@ -2723,11 +2334,6 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 	__asm        mov    eax, found;
 	__asm        jmp    near ptr 0x0055452F;
 // LINE 1004:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00554536
@@ -2736,14 +2342,6 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 	struct ResMap::TypeHead* typeList;
 	short cnt;
 
-// LINE 1007:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1008:
 	__asm        mov    found, 0;
 // LINE 1010:
@@ -2807,25 +2405,12 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 	__asm        mov    eax, found;
 	__asm        jmp    near ptr 0x005545EA;
 // LINE 1029:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005545f1
 void  ResMap::GetName(struct ResMap::Entry* entry, unsigned char * name) {
 	unsigned char * namePtr;
 
-// LINE 1032:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1033:
 	__asm        mov    eax, name;
 	__asm        mov    byte ptr [eax], 0;
@@ -2858,21 +2443,10 @@ void  ResMap::GetName(struct ResMap::Entry* entry, unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 1042:
 	__asm        jmp    near ptr 0x0055464A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00554651
 void  ResMap::SwapTypeHead(struct ResMap::TypeHead* typeHead) {
-// LINE 1048:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1058:
 	__asm        mov    eax, typeHead;
 	__asm        push   eax;
@@ -2892,11 +2466,6 @@ void  ResMap::SwapTypeHead(struct ResMap::TypeHead* typeHead) {
 	__asm        add    esp, 4;
 // LINE 1062:
 	__asm        jmp    near ptr 0x00554686;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055468b
@@ -2907,13 +2476,6 @@ void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
 	unsigned char loWord;
 	unsigned char midWord;
 
-// LINE 1069:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1081:
 	__asm        mov    eax, resEntry;
 	__asm        push   eax;
@@ -2972,11 +2534,6 @@ void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
 	__asm        mov    [ecx+4], eax;
 // LINE 1100:
 	__asm        jmp    near ptr 0x00554719;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -159,14 +159,6 @@ protected:
 // Contribution: 1:00094b40-000953a2 Module: 19, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495b40
 void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) {
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 68:
 	__asm        cmp    dword ptr ds:[0x598F00], 0;
 	__asm        jne    near ptr 0x00495B70;
@@ -208,25 +200,12 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 	__asm        mov    dword ptr [eax], 0x300;
 // LINE 84:
 	__asm        jmp    near ptr 0x00495BDC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00495be3
 int  CGameApp::S3PreRender() {
 	struct SparkalRect rectFill;
 
-// LINE 92:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 93:
 	__asm        jmp    near ptr 0x00495BF4;
 // LINE 95:
@@ -452,23 +431,10 @@ int  CGameApp::S3PreRender() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00495EF2;
 // LINE 189:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00495ef7
 void  CGameApp::S3PostRender() {
-// LINE 197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 198:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
 	__asm        jne    near ptr 0x00495F8B;
@@ -536,11 +502,6 @@ void  CGameApp::S3PostRender() {
 	__asm        add    esp, 4;
 // LINE 216:
 	__asm        jmp    near ptr 0x00495FBF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
@@ -552,14 +513,6 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 	int32_t nSurfaceStride;
 	char * pBufferCurrentPosition;
 
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 235:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        je     near ptr 0x004960B9;
@@ -643,11 +596,6 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 	__asm        call   dword ptr [eax+4];
 // LINE 257:
 	__asm        jmp    near ptr 0x004960BE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004960c5
@@ -657,14 +605,6 @@ void  CGameApp::S3ShowInfo() {
 	char szBuffer1[256];
 	long nTextLeft;
 
-// LINE 265:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 267:
 	__asm        mov    nTextLeft, 0;
 // LINE 268:
@@ -880,11 +820,6 @@ void  CGameApp::S3ShowInfo() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 380:
 	__asm        jmp    near ptr 0x0049639E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

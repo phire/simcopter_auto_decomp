@@ -11,12 +11,6 @@
 // Contribution: 1:00030b60-00030c4c Module: 63, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00431b60
 int32_t IsEventSet(int32_t nEvent) {
-// LINE 22:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 23:
 	__asm        jmp    near ptr 0x00431B6B;
 	__asm        mov    eax, nEvent;
@@ -26,21 +20,10 @@ int32_t IsEventSet(int32_t nEvent) {
 	__asm        mov    eax, edx;
 	__asm        jmp    near ptr 0x00431B84;
 // LINE 24:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431b89
 int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
-// LINE 32:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 33:
 	__asm        mov    eax, nEventStart;
 	__asm        cmp    nEventEnd, eax;
@@ -64,21 +47,10 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00431BD1;
 // LINE 39:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431bd6
 long GetJoystickValue(int32_t nCommand) {
-// LINE 46:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 47:
 	__asm        jmp    near ptr 0x00431BE1;
 	__asm        mov    eax, nCommand;
@@ -86,24 +58,12 @@ long GetJoystickValue(int32_t nCommand) {
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        jmp    near ptr 0x00431BF6;
 // LINE 48:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431bfb
 long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	long lReturnValue;
 
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 58:
 	__asm        mov    eax, nCommand1;
 	__asm        mov    ecx, ds:[0x599BBC];
@@ -122,10 +82,5 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        jmp    near ptr 0x00431C48;
 // LINE 61:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

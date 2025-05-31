@@ -25,13 +25,6 @@
 struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	struct alloc_handle_t* old;
 
-// LINE 267:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 268:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
@@ -73,11 +66,6 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    eax, old;
 	__asm        jmp    near ptr 0x004CB348;
 // LINE 280:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
@@ -85,13 +73,6 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	char * block;
 	struct alloc_hdr_s* hdr;
 
-// LINE 234:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 238:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -148,11 +129,6 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        mov    eax, hdr;
 	__asm        jmp    near ptr 0x004CB3FC;
 // LINE 254:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb401
@@ -160,13 +136,6 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	int32_t index;
 	struct alloc_handle_t* lastPool;
 
-// LINE 291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 295:
 	__asm        cmp    dword ptr ds:[0x59B534], 0x20;
 	__asm        jne    near ptr 0x004CB421;
@@ -215,11 +184,6 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	__asm        mov    eax, index;
 	__asm        jmp    near ptr 0x004CB4A7;
 // LINE 315:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb4ac
@@ -227,13 +191,6 @@ char * S2Alloc(int32_t index, int32_t size) {
 	struct alloc_hdr_s* hdr;
 	char * ptr;
 
-// LINE 330:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 331:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
@@ -320,21 +277,10 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    eax, ptr;
 	__asm        jmp    near ptr 0x004CB5A6;
 // LINE 384:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb5ab
 char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short protMem) {
-// LINE 393:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 399:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -346,24 +292,12 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CB5CA;
 // LINE 400:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb5cf
 char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	char * ptr;
 
-// LINE 408:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 416:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -376,24 +310,12 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	__asm        mov    eax, ptr;
 	__asm        jmp    near ptr 0x004CB5F3;
 // LINE 424:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb5f8
 struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newPtr) {
 	struct alloc_handle_t* old;
 
-// LINE 437:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 438:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
@@ -406,24 +328,12 @@ struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newP
 	__asm        mov    eax, old;
 	__asm        jmp    near ptr 0x004CB623;
 // LINE 443:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb628
 void S2AllocReset(int32_t index) {
 	struct alloc_hdr_s* hdr;
 
-// LINE 456:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 459:
 	__asm        mov    eax, index;
 	__asm        cmp    dword ptr [eax*4+0x6069D8], 0;
@@ -470,11 +380,6 @@ void S2AllocReset(int32_t index) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+8], eax;
 // LINE 474:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb6c3
@@ -482,13 +387,6 @@ void S2AllocFreePool(int32_t index) {
 	struct alloc_hdr_s* hdr;
 	struct alloc_hdr_s* next_hdr;
 
-// LINE 489:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 493:
 	__asm        mov    eax, index;
 	__asm        cmp    dword ptr [eax*4+0x6069D8], 0;
@@ -562,43 +460,20 @@ void S2AllocFreePool(int32_t index) {
 // LINE 517:
 	__asm        call   0x00575030;
 // LINE 523:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb7a5
 void * __ptr32 S2AllocAligned() {
-// LINE 554:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 591:
 	__asm        call   0x004CB7BA;
 	__asm        jmp    near ptr 0x004CB7B5;
 // LINE 592:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb7ba
 void * __ptr32 DOSAllocAlignedHack() {
 	void * __ptr32 retaddr;
 
-// LINE 749:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 753:
 	__asm        push   0x20000;
 	__asm        call   0x00572C10;
@@ -632,21 +507,10 @@ void * __ptr32 DOSAllocAlignedHack() {
 	__asm        mov    eax, retaddr;
 	__asm        jmp    near ptr 0x004CB83A;
 // LINE 771:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cb83f
 void S2FreeAligned(void * __ptr32 mem) {
-// LINE 785:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 787:
 	__asm        push   0x8000;
 	__asm        push   0;
@@ -660,11 +524,6 @@ void S2FreeAligned(void * __ptr32 mem) {
 // LINE 791:
 	__asm        add    dword ptr ds:[0x59B528], 0x10000;
 // LINE 797:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -692,14 +692,6 @@ protected:
 // Contribution: 1:0006d690-0007056d Module: 39, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046e690
 void CBackBuffer::CBackBuffer() {
-// LINE 44:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0048F120;
 	__asm        mov    eax, this;
@@ -716,11 +708,6 @@ void CBackBuffer::CBackBuffer() {
 // LINE 46:
 	__asm        jmp    near ptr 0x0046E6D7;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046e6df
@@ -731,14 +718,6 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	struct tagBITMAPFILEHEADER bfHeader;
 	class PFile* fileImage;
 
-// LINE 60:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0048F120;
 	__asm        mov    eax, this;
@@ -987,25 +966,12 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 // LINE 145:
 	__asm        jmp    near ptr 0x0046E9FC;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046ea06
 void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor* __formal) {
 	long ddrval;
 
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0048F120;
 	__asm        mov    eax, this;
@@ -1112,23 +1078,10 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 // LINE 208:
 	__asm        jmp    near ptr 0x0046EB4E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046eb58
 void CBackBuffer::InitializeMemberVariables() {
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 216:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2C], 0;
@@ -1217,23 +1170,10 @@ void CBackBuffer::InitializeMemberVariables() {
 	__asm        mov    dword ptr [eax+0x12C], 0;
 // LINE 245:
 	__asm        jmp    near ptr 0x0046EC75;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046ec7a
 void CBackBuffer::~CBackBuffer() {
-// LINE 253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590808;
 // LINE 254:
@@ -1338,11 +1278,6 @@ void CBackBuffer::~CBackBuffer() {
 	__asm        mov    dword ptr [eax+0x128], 0;
 // LINE 297:
 	__asm        jmp    near ptr 0x0046EDC5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046edca
@@ -1357,14 +1292,6 @@ unsigned long CBackBuffer::Load() {
 	int32_t nFileLength;
 	int32_t nBytesRead;
 
-// LINE 305:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x47C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 316:
 	__asm        push   0x110;
 	__asm        call   0x0056A600;
@@ -1634,11 +1561,6 @@ unsigned long CBackBuffer::Load() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046F1B8;
 // LINE 369:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046f1bd
@@ -1650,14 +1572,6 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 	uint32_t nFormat;
 	void * __ptr32 hFontOriginal;
 
-// LINE 378:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 389:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1872,11 +1786,6 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046F3FC;
 // LINE 449:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0046f403
@@ -1887,14 +1796,6 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 	uint32_t nFormat;
 	void * __ptr32 hFontOriginal;
 
-// LINE 458:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 468:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2053,11 +1954,6 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046F5BF;
 // LINE 509:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046f5c6
@@ -2069,14 +1965,6 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 	struct tagPOINT ptPositionOld;
 	unsigned long crPen;
 
-// LINE 522:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 546:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2243,25 +2131,12 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046F7B4;
 // LINE 585:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0046f7bb
 unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long DestTop) {
 	long ddrval;
 
-// LINE 598:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 602:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
@@ -2294,11 +2169,6 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046F821;
 // LINE 611:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046f828
@@ -2309,14 +2179,6 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 	struct _DDBLTFX ddbltfx;
 	struct tagRECT srcRect;
 
-// LINE 627:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x98;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 634:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2400,11 +2262,6 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 	__asm        call   dword ptr [eax+0x14];
 	__asm        jmp    near ptr 0x0046F941;
 // LINE 658:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0046f948
@@ -2418,14 +2275,6 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 	struct _DDBLTFX ddbltfx;
 	struct tagRECT srcRect;
 
-// LINE 673:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 682:
 	__asm        jmp    near ptr 0x0046F95F;
 	__asm        mov    eax, pDestImage;
@@ -2609,11 +2458,6 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046FBAA;
 // LINE 787:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0046fbb1
@@ -2626,14 +2470,6 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long Dest
 	struct _DDBLTFX ddbltfx;
 	class MRect sourceRect;
 
-// LINE 796:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x9C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 802:
 	__asm        jmp    near ptr 0x0046FBC8;
 	__asm        mov    eax, DestLeft;
@@ -2715,23 +2551,10 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long Dest
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046FCDD;
 // LINE 825:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0046fce4
 unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, const struct SparkalPoint& ptDestination, const struct SparkalRect& rectSource) {
-// LINE 834:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 836:
 	__asm        mov    eax, rectSource;
 	__asm        mov    eax, [eax+0xC];
@@ -2759,23 +2582,10 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, const str
 	__asm        call   dword ptr [eax+0x3C];
 	__asm        jmp    near ptr 0x0046FD2C;
 // LINE 837:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046fd33
 unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, const struct SparkalPoint& ptDestination, const struct SparkalRect& rectSource) {
-// LINE 846:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 848:
 	__asm        mov    eax, rectSource;
 	__asm        mov    eax, [eax+0xC];
@@ -2803,11 +2613,6 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, const struct Sp
 	__asm        call   dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0046FD7B;
 // LINE 849:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046fd82
@@ -2817,14 +2622,6 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const st
 	unsigned long ddBltFlags;
 	struct _DDBLTFX ddbltfx;
 
-// LINE 866:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 872:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2873,11 +2670,6 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const st
 	__asm        call   dword ptr [eax+0x14];
 	__asm        jmp    near ptr 0x0046FE0C;
 // LINE 892:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0046fe13
@@ -2885,14 +2677,6 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long Des
 	struct SparkalRect destRect;
 	struct SparkalRect srcRect;
 
-// LINE 903:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 904:
 	__asm        jmp    near ptr 0x0046FE24;
 	__asm        jmp    near ptr 0x0046FE29;
@@ -2933,11 +2717,6 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long Des
 	__asm        call   dword ptr [eax+0x30];
 	__asm        jmp    near ptr 0x0046FE75;
 // LINE 917:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x0046fe7c
@@ -2950,14 +2729,6 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 	struct _DDBLTFX ddbltfx;
 	struct tagRECT srcRect;
 
-// LINE 931:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x9C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 939:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3043,32 +2814,14 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046FFC5;
 // LINE 967:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0046ffcc
 unsigned long CBackBuffer::StretchRect(class CSparkalWindow* pDest, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal) {
-// LINE 980:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 981:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046FFDF;
 // LINE 982:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x0046ffe6
@@ -3076,14 +2829,6 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 	struct IDirectDrawSurface* pOurSurface;
 	struct _DDCOLORKEY DDColorKey;
 
-// LINE 991:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 992:
 	__asm        cmp    bEnable, 0;
 	__asm        je     near ptr 0x00470014;
@@ -3130,11 +2875,6 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 	__asm        call   dword ptr [eax+0x74];
 // LINE 1014:
 	__asm        jmp    near ptr 0x00470068;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047006f
@@ -3142,14 +2882,6 @@ unsigned long CBackBuffer::Lock() {
 	struct IDirectDrawSurface* pOurSurface;
 	long ddrval;
 
-// LINE 1027:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1036:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3224,11 +2956,6 @@ unsigned long CBackBuffer::Lock() {
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x00470144;
 // LINE 1064:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00470149
@@ -3236,14 +2963,6 @@ unsigned long CBackBuffer::Unlock() {
 	struct IDirectDrawSurface* pOurSurface;
 	long ddrval;
 
-// LINE 1080:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1089:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
@@ -3316,11 +3035,6 @@ unsigned long CBackBuffer::Unlock() {
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0047021C;
 // LINE 1119:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00470221
@@ -3328,14 +3042,6 @@ void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColo
 	int32_t i;
 	struct tagPALETTEENTRY palColors[256];
 
-// LINE 1127:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x408;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1132:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -3389,11 +3095,6 @@ void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColo
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1145:
 	__asm        jmp    near ptr 0x004702EA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004702f1
@@ -3403,14 +3104,6 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 	long ddrval;
 	struct tagRECT* rectToUse;
 
-// LINE 1169:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1176:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3526,23 +3219,10 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00470439;
 // LINE 1212:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00470440
 unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
-// LINE 1224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1225:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 0;
@@ -3571,23 +3251,10 @@ unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004704A0;
 // LINE 1229:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004704a7
 struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
-// LINE 1243:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1244:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -3601,11 +3268,6 @@ struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 	__asm        mov    eax, [eax+0x4C];
 	__asm        jmp    near ptr 0x004704D6;
 // LINE 1247:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004704db
@@ -3614,13 +3276,6 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	struct tagBITMAPFILEHEADER bfHeader;
 	class PFile* fileImage;
 
-// LINE 1255:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1263:
 	__asm        push   0x110;
 	__asm        call   0x0056A600;
@@ -3773,23 +3428,10 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004706DF;
 // LINE 1290:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004706e4
 unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect& rectOutline, long nThickness) {
-// LINE 1297:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1301:
 	__asm        mov    eax, nThickness;
 	__asm        push   eax;
@@ -3868,23 +3510,10 @@ unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect& rectOu
 	__asm        call   dword ptr [eax+0x54];
 	__asm        jmp    near ptr 0x0047079D;
 // LINE 1314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004707a4
 unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRect& rectOutline, long nThickness) {
-// LINE 1321:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1325:
 	__asm        mov    eax, nThickness;
 	__asm        push   eax;
@@ -3963,11 +3592,6 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRec
 	__asm        call   dword ptr [eax+0x50];
 	__asm        jmp    near ptr 0x0047085D;
 // LINE 1338:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00470864
@@ -3980,14 +3604,6 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	int32_t bufferHeight;
 	char * address;
 
-// LINE 1455:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1456:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -4368,11 +3984,6 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00470C1B;
 // LINE 1614:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00470c22
@@ -4385,14 +3996,6 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	int32_t bufferHeight;
 	char * address;
 
-// LINE 1625:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1626:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5153,11 +4756,6 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00471567;
 // LINE 1869:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 

@@ -43,37 +43,16 @@ protected:
 // Contribution: 1:0003c3f0-0003c841 Module: 57, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043d3f0
 void CharData::CharData() {
-// LINE 9:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 10:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax], 0;
 // LINE 11:
 	__asm        jmp    near ptr 0x0043D407;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d40f
 void CharData::CharData(unsigned char chNewValue) {
-// LINE 14:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 15:
 	__asm        mov    al, chNewValue;
 	__asm        mov    ecx, this;
@@ -81,23 +60,10 @@ void CharData::CharData(unsigned char chNewValue) {
 // LINE 16:
 	__asm        jmp    near ptr 0x0043D428;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d432
 void CharList::CharList() {
-// LINE 24:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 25:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -115,25 +81,12 @@ void CharList::CharList() {
 // LINE 29:
 	__asm        jmp    near ptr 0x0043D46E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d476
 void CharList::~CharList() {
 	class CharData* nextCharData;
 
-// LINE 32:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -170,25 +123,12 @@ void CharList::~CharList() {
 	__asm        jmp    near ptr 0x0043D49F;
 // LINE 44:
 	__asm        jmp    near ptr 0x0043D4E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d4eb
 void CharList::AddItem(unsigned char chNewValue) {
 	class CharData* tempCharData;
 
-// LINE 49:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 52:
 	__asm        push   9;
 	__asm        call   0x0056A600;
@@ -210,23 +150,10 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        call   0x0043D541;
 // LINE 54:
 	__asm        jmp    near ptr 0x0043D53A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d541
 void CharList::AddItem(class CharData* charDataToAdd) {
-// LINE 59:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax];
@@ -273,23 +200,10 @@ void CharList::AddItem(class CharData* charDataToAdd) {
 	__asm        mov    [ecx+8], eax;
 // LINE 74:
 	__asm        jmp    near ptr 0x0043D5C2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d5c9
 void CharList::DeleteItem(class CharData* charDataToDelete) {
-// LINE 79:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 1;
@@ -351,25 +265,12 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 	__asm        add    esp, 4;
 // LINE 96:
 	__asm        jmp    near ptr 0x0043D678;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d67f
 void CharList::DeleteItem(unsigned char chValue) {
 	class CharData* charDataToDelete;
 
-// LINE 100:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 103:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chValue);
 	__asm        push   eax;
@@ -388,25 +289,12 @@ void CharList::DeleteItem(unsigned char chValue) {
 	__asm        call   0x0043D5C9;
 // LINE 107:
 	__asm        jmp    near ptr 0x0043D6BA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d6c1
 void CharList::DeleteItem(int32_t nIndex) {
 	class CharData* charDataToDelete;
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 113:
 	__asm        mov    eax, nIndex;
 	__asm        push   eax;
@@ -425,11 +313,6 @@ void CharList::DeleteItem(int32_t nIndex) {
 	__asm        call   0x0043D5C9;
 // LINE 117:
 	__asm        jmp    near ptr 0x0043D6FC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d703
@@ -437,14 +320,6 @@ void CharList::DeleteAllItems() {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 121:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -464,11 +339,6 @@ void CharList::DeleteAllItems() {
 	__asm        jmp    near ptr 0x0043D723;
 // LINE 125:
 	__asm        jmp    near ptr 0x0043D748;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043d74d
@@ -476,14 +346,6 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	int32_t nPresentIndex;
 	class CharData* nextCharData;
 
-// LINE 128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nIndex;
@@ -522,25 +384,12 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    near ptr 0x0043D7C7;
 // LINE 145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043d7ce
 class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	class CharData* nextCharData;
 
-// LINE 149:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 152:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -578,10 +427,5 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0043D83B;
 // LINE 161:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 

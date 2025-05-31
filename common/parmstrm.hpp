@@ -1,14 +1,6 @@
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004cd5a0
 void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint32_t pagesize) {
-// LINE 233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923F8;
 	__asm        jmp    near ptr 0x004CD5C3;
@@ -577,47 +569,21 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 // LINE 242:
 	__asm        jmp    near ptr 0x004CDF54;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004cdf70
 void cGZXParamBitstream<t_alloc,t_free>::Rewind() {
-// LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xC], 0;
 	__asm        jmp    near ptr 0x004CDF94;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004cdfa0
 void cGZXParamBitstream<t_alloc,t_free>::RewindToMark() {
-// LINE 270:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -627,24 +593,11 @@ void cGZXParamBitstream<t_alloc,t_free>::RewindToMark() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], ax;
 	__asm        jmp    near ptr 0x004CDFCB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004cdfd0
 void cGZXParamBitstream<t_alloc,t_free>::Mark() {
-// LINE 271:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -654,11 +607,6 @@ void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE], ax;
 	__asm        jmp    near ptr 0x004CDFFB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: scxload.obj
@@ -666,14 +614,6 @@ void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	int32_t loop;
 
-// LINE 365:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 366:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x004CE01B;
@@ -744,11 +684,6 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	__asm        mov    [ecx+0xC], ax;
 // LINE 375:
 	__asm        jmp    near ptr 0x004CE0FA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: scxload.obj
@@ -756,14 +691,6 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, unsigned long nBytes) {
 	unsigned long i;
 
-// LINE 284:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 285:
 	__asm        mov    i, 0;
 // LINE 287:
@@ -832,11 +759,6 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, u
 	__asm        mov    eax, i;
 	__asm        jmp    near ptr 0x004CE1EB;
 // LINE 297:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // Function in module: scxload.obj
@@ -844,14 +766,6 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, u
 unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, unsigned long nBytes) {
 	unsigned long i;
 
-// LINE 304:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x124;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 305:
 	__asm        mov    i, 0;
 // LINE 307:
@@ -1625,11 +1539,6 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        mov    eax, i;
 	__asm        jmp    near ptr 0x004CEF35;
 // LINE 349:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // Function in module: scxload.obj
@@ -1638,14 +1547,6 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 	long retVal;
 	int32_t loop;
 
-// LINE 354:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 355:
 	__asm        mov    retVal, 0;
 // LINE 356:
@@ -1675,10 +1576,5 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 	__asm        mov    eax, retVal;
 	__asm        jmp    near ptr 0x004CEFA8;
 // LINE 361:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

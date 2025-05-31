@@ -44,13 +44,6 @@ void S3MapInit() {
 	struct VRBmpHdr* bhdr;
 	char * ptr;
 
-// LINE 184:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 192:
 	__asm        mov    dword ptr ds:[0x5B5248], 0x40;
 // LINE 193:
@@ -236,27 +229,11 @@ void S3MapInit() {
 // LINE 265:
 	__asm        jmp    near ptr 0x004FE9E0;
 // LINE 267:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fea08
 void S3MapDestroy() {
-// LINE 278:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 281:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fea13
@@ -272,13 +249,6 @@ void S3MapRender(long posx, long posy) {
 	long x;
 	char * ptr;
 
-// LINE 294:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 298:
 	__asm        mov    eax, ds:[0x5B5270];
 	__asm        mov    ptr, eax;
@@ -2313,11 +2283,6 @@ void S3MapRender(long posx, long posy) {
 // LINE 951:
 	__asm        call   0x00501018;
 // LINE 952:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005001cb
@@ -2335,13 +2300,6 @@ void S3MapDrawPosLines(long posx, long posy) {
 	long pickicon;
 	char * ptr;
 
-// LINE 965:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 967:
 	__asm        mov    eax, ds:[0x5B5270];
 	__asm        mov    ptr, eax;
@@ -2634,11 +2592,6 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1058:
 	__asm        jmp    near ptr 0x00500479;
 // LINE 1059:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005004cf
@@ -2652,13 +2605,6 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	int32_t xpos;
 	char * writeBuffer;
 
-// LINE 1072:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1076:
 	__asm        mov    error, 0;
 // LINE 1080:
@@ -2826,11 +2772,6 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        call   0x00500A12;
 	__asm        add    esp, 0xC;
 // LINE 1148:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005006b9
@@ -2841,13 +2782,6 @@ void S3MapBlit(char * destbuf, long destpitch) {
 	long x;
 	long * ptr;
 
-// LINE 1160:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1163:
 	__asm        mov    eax, destbuf;
 	__asm        mov    cptr, eax;
@@ -2892,11 +2826,6 @@ void S3MapBlit(char * destbuf, long destpitch) {
 // LINE 1178:
 	__asm        jmp    near ptr 0x005006EE;
 // LINE 1179:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050074d
@@ -2907,13 +2836,6 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 	long x;
 	long * ptr;
 
-// LINE 1188:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1191:
 	__asm        mov    eax, destbuf;
 	__asm        mov    cptr, eax;
@@ -2957,21 +2879,10 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 // LINE 1201:
 	__asm        jmp    near ptr 0x0050077D;
 // LINE 1202:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005007dc
 void S3MapSet3dRender() {
-// LINE 1218:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1220:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
 	__asm        jne    near ptr 0x00500816;
@@ -3018,21 +2929,10 @@ void S3MapSet3dRender() {
 	__asm        mov    eax, ds:[0x5B5270];
 	__asm        mov    ds:[0x598EAC], eax;
 // LINE 1244:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500880
 void S3MapRestore3dRender() {
-// LINE 1256:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1258:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
 	__asm        jne    near ptr 0x005008A9;
@@ -3062,11 +2962,6 @@ void S3MapRestore3dRender() {
 	__asm        mov    eax, ds:[0x5B528C];
 	__asm        mov    ds:[0x598EAC], eax;
 // LINE 1270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005008ea
@@ -3075,13 +2970,6 @@ int32_t S3MapCursorDown(long posx, long posy) {
 	long i;
 	long car_id;
 
-// LINE 1283:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1286:
 	__asm        mov    car_id, 0xFFFFFFFF;
 // LINE 1290:
@@ -3128,140 +3016,58 @@ int32_t S3MapCursorDown(long posx, long posy) {
 	__asm        mov    eax, car_id;
 	__asm        jmp    near ptr 0x00500986;
 // LINE 1306:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050098b
 int32_t S3MapCursorUp(long posx, long posy) {
-// LINE 1313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1314:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0050099B;
 // LINE 1315:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005009a0
 void S3MapCommandZoomIn() {
-// LINE 1322:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1323:
 	__asm        cmp    dword ptr ds:[0x5B5298], 3;
 	__asm        jge    near ptr 0x005009B9;
 // LINE 1324:
 	__asm        inc    dword ptr ds:[0x5B5298];
 // LINE 1325:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005009be
 void S3MapCommandZoomOut() {
-// LINE 1332:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1333:
 	__asm        cmp    dword ptr ds:[0x5B5298], 0;
 	__asm        jle    near ptr 0x005009D7;
 // LINE 1334:
 	__asm        dec    dword ptr ds:[0x5B5298];
 // LINE 1335:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005009dc
 void S3MapCommandPreviousMission() {
-// LINE 1341:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1342:
 	__asm        call   0x004FC9AC;
 // LINE 1343:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005009ec
 void S3MapCommandNextMission() {
-// LINE 1350:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1351:
 	__asm        call   0x004FC89B;
 // LINE 1352:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005009fc
 void S3MapCommandCurrentMissionVehicleFilter(int32_t onOrOff) {
-// LINE 1359:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1361:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500a07
 void S3MapCommandOtherMissionVehicleFilter(int32_t onOrOff) {
-// LINE 1368:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1370:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500a12
@@ -3271,13 +3077,6 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	long mapx;
 	char * iptr;
 
-// LINE 1385:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1389:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00500A2A;
@@ -3374,22 +3173,10 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 // LINE 1419:
 	__asm        jmp    near ptr 0x00500AE3;
 // LINE 1421:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500b65
 void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
-// LINE 1431:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1432:
 	__asm        mov    eax, mission_type;
 	__asm        mov    [ebp-4], eax;
@@ -3550,11 +3337,6 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 	__asm        je     near ptr 0x00500B90;
 	__asm        jmp    near ptr 0x00500C76;
 // LINE 1492:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500de3
@@ -3565,13 +3347,6 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	struct MISSION_DATA* currmd;
 	long pickicon;
 
-// LINE 1503:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1508:
 	__asm        call   0x004FC39D;
 	__asm        mov    currmd, eax;
@@ -3682,11 +3457,6 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 // LINE 1548:
 	__asm        jmp    near ptr 0x00500E00;
 // LINE 1549:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500f34
@@ -3694,13 +3464,6 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 	struct _MAP_CARINFO* ci;
 	long i;
 
-// LINE 1562:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1567:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00500F4C;
@@ -3749,24 +3512,12 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 	__asm        mov    eax, ci;
 	__asm        or     dword ptr [eax], 1;
 // LINE 1585:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00500fc3
 void S3MapRemoveCarInfo(long car_id) {
 	long i;
 
-// LINE 1597:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1601:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00500FDB;
@@ -3788,11 +3539,6 @@ void S3MapRemoveCarInfo(long car_id) {
 // LINE 1608:
 	__asm        jmp    near ptr 0x00500FD8;
 // LINE 1610:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501018
@@ -3803,13 +3549,6 @@ void S3MapDrawCarIcons() {
 	long i;
 	long color;
 
-// LINE 1624:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1631:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00501030;
@@ -3980,11 +3719,6 @@ void S3MapDrawCarIcons() {
 // LINE 1683:
 	__asm        jmp    near ptr 0x0050102D;
 // LINE 1684:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501220
@@ -3994,13 +3728,6 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	long mapx;
 	char * iptr;
 
-// LINE 1697:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1701:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00501238;
@@ -4067,11 +3794,6 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 // LINE 1729:
 	__asm        jmp    near ptr 0x00501273;
 // LINE 1731:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005012f5
@@ -4083,13 +3805,6 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	int32_t Yunit;
 	char * writeBuffer;
 
-// LINE 1742:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1746:
 	__asm        mov    error, 0;
 // LINE 1749:
@@ -4243,11 +3958,6 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 // LINE 1808:
 	__asm        jmp    near ptr 0x00501432;
 // LINE 1811:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005014c6
@@ -4257,13 +3967,6 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	long dist2;
 	long dist1;
 
-// LINE 1826:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1832:
 	__asm        cmp    x1, 0x80;
 	__asm        jge    near ptr 0x00501514;
@@ -4356,11 +4059,6 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1867:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -51,13 +51,6 @@ public:
 void S3MissionReset() {
 	long i;
 
-// LINE 134:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 138:
 	__asm        mov    dword ptr ds:[0x5B4EC4], 0x6BF060;
 // LINE 141:
@@ -106,11 +99,6 @@ void S3MissionReset() {
 // LINE 160:
 	__asm        mov    dword ptr ds:[0x5B4E2C], 0xB40000;
 // LINE 162:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fa175
@@ -118,13 +106,6 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 	float fSumOfAllValues;
 	float fMultiplier;
 
-// LINE 177:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 182:
 	__asm        mov    eax, citySettingsIn;
 	__asm        mov    eax, [eax];
@@ -281,11 +262,6 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 	__asm        mov    ecx, citySettingsOut;
 	__asm        add    [ecx+0x1C], eax;
 // LINE 224:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fa33b
@@ -295,13 +271,6 @@ void S3MissionGenerator() {
 	struct tagCitySettings currentCitySettingPercentages;
 	long adjustor;
 
-// LINE 237:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 243:
 	__asm        call   0x00429075;
 	__asm        mov    currentCitySettings, eax;
@@ -616,11 +585,6 @@ void S3MissionGenerator() {
 // LINE 408:
 	__asm        call   0x004FA71D;
 // LINE 410:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fa71d
@@ -639,13 +603,6 @@ void S3MissionDriver() {
 	int32_t personresc_done;
 	int32_t vehiclejam_done;
 
-// LINE 421:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 437:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FA735;
@@ -1020,11 +977,6 @@ void S3MissionDriver() {
 // LINE 640:
 	__asm        jmp    near ptr 0x004FA732;
 // LINE 641:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fac6d
@@ -1036,13 +988,6 @@ long S3MissionStart(long x, long y, long type) {
 	int32_t count;
 	struct _CELL_FIRE_DATA* cfd;
 
-// LINE 654:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 659:
 	__asm        mov    startthismission, 0;
 // LINE 663:
@@ -2297,11 +2242,6 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, [eax+0x24];
 	__asm        jmp    near ptr 0x004FBB71;
 // LINE 1061:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbb76
@@ -2309,13 +2249,6 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 	struct MISSION_DATA* md;
 	long mission_id;
 
-// LINE 1073:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1075:
 	__asm        mov    eax, key;
 	__asm        push   eax;
@@ -2342,11 +2275,6 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 	__asm        add    eax, 0x28;
 	__asm        jmp    near ptr 0x004FBBC5;
 // LINE 1089:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbbca
@@ -2354,13 +2282,6 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 	struct MISSION_DATA* md;
 	long mission_id;
 
-// LINE 1100:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1102:
 	__asm        mov    eax, key;
 	__asm        push   eax;
@@ -2394,11 +2315,6 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 	__asm        add    eax, 0x30;
 	__asm        jmp    near ptr 0x004FBC2D;
 // LINE 1119:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbc32
@@ -2406,13 +2322,6 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 	struct MISSION_DATA* md;
 	long mission_id;
 
-// LINE 1131:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1133:
 	__asm        mov    eax, key;
 	__asm        push   eax;
@@ -2446,21 +2355,10 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 	__asm        add    eax, 0x38;
 	__asm        jmp    near ptr 0x004FBC95;
 // LINE 1150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbc9a
 struct Point2d* S3MissionGetCurrMapLoc() {
-// LINE 1161:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1162:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
 	__asm        jne    near ptr 0x004FBCB4;
@@ -2472,21 +2370,10 @@ struct Point2d* S3MissionGetCurrMapLoc() {
 	__asm        add    eax, 0x28;
 	__asm        jmp    near ptr 0x004FBCC1;
 // LINE 1166:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbcc6
 struct Point2d* S3MissionGetCurrDestMapLoc() {
-// LINE 1178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1179:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
 	__asm        jne    near ptr 0x004FBCE0;
@@ -2505,21 +2392,10 @@ struct Point2d* S3MissionGetCurrDestMapLoc() {
 	__asm        add    eax, 0x30;
 	__asm        jmp    near ptr 0x004FBD03;
 // LINE 1186:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbd08
 struct Point2d* S3MissionGetCurrPickupLoc() {
-// LINE 1198:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1199:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
 	__asm        jne    near ptr 0x004FBD22;
@@ -2538,11 +2414,6 @@ struct Point2d* S3MissionGetCurrPickupLoc() {
 	__asm        add    eax, 0x38;
 	__asm        jmp    near ptr 0x004FBD45;
 // LINE 1206:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fbd4a
@@ -2550,13 +2421,6 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	struct MISSION_DATA* md;
 	long mission_id;
 
-// LINE 1216:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1220:
 	__asm        lea    eax, mission_id;
 	__asm        push   eax;
@@ -2995,11 +2859,6 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        dec    edi;
 	__asm        (bad);
 // LINE 1387:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc218
@@ -3007,13 +2866,6 @@ void S3MissionEnd(long mission_id) {
 	struct MISSION_DATA* md;
 	long i;
 
-// LINE 1396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1400:
 	__asm        mov    eax, mission_id;
 	__asm        mov    ecx, eax;
@@ -3072,24 +2924,12 @@ void S3MissionEnd(long mission_id) {
 // LINE 1421:
 	__asm        jmp    near ptr 0x004FC282;
 // LINE 1424:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc2db
 struct MISSION_DATA* S3MissionGetByID(long key) {
 	long mission_id;
 
-// LINE 1435:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1436:
 	__asm        mov    eax, key;
 	__asm        push   eax;
@@ -3111,24 +2951,12 @@ struct MISSION_DATA* S3MissionGetByID(long key) {
 	__asm        lea    eax, [eax*4+0x6072F0];
 	__asm        jmp    near ptr 0x004FC31E;
 // LINE 1442:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc323
 long S3MissionGetByType(long mission_type) {
 	long count;
 
-// LINE 1446:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1448:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x004FC33B;
@@ -3163,30 +2991,14 @@ long S3MissionGetByType(long mission_type) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004FC398;
 // LINE 1456:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc39d
 struct MISSION_DATA* S3MissionGetCurr() {
-// LINE 1467:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1468:
 	__asm        mov    eax, ds:[0x6072EC];
 	__asm        jmp    near ptr 0x004FC3AD;
 // LINE 1469:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc3b2
@@ -3197,13 +3009,6 @@ void S3MissionGenerate(long type) {
 	long i;
 	long x;
 
-// LINE 1479:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1484:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0x18], eax;
@@ -3608,11 +3413,6 @@ void S3MissionGenerate(long type) {
 	__asm        je     near ptr 0x004FC46A;
 	__asm        jmp    near ptr 0x004FC896;
 // LINE 1590:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc89b
@@ -3620,13 +3420,6 @@ void S3MissionSetCurrNext() {
 	struct MISSION_DATA* md;
 	long i;
 
-// LINE 1599:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1601:
 	__asm        mov    md, 0;
 // LINE 1603:
@@ -3708,11 +3501,6 @@ void S3MissionSetCurrNext() {
 // LINE 1624:
 	__asm        jmp    near ptr 0x004FC93D;
 // LINE 1625:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fc9ac
@@ -3720,13 +3508,6 @@ void S3MissionSetCurrPrev() {
 	struct MISSION_DATA* md;
 	long i;
 
-// LINE 1634:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1636:
 	__asm        mov    md, 0;
 // LINE 1638:
@@ -3808,11 +3589,6 @@ void S3MissionSetCurrPrev() {
 // LINE 1659:
 	__asm        jmp    near ptr 0x004FCA4E;
 // LINE 1660:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fcabd
@@ -3820,13 +3596,6 @@ int32_t S3MissionIsType(long key, long mission_type) {
 	struct MISSION_DATA* md;
 	long mission_id;
 
-// LINE 1672:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1674:
 	__asm        mov    eax, key;
 	__asm        push   eax;
@@ -3867,22 +3636,10 @@ int32_t S3MissionIsType(long key, long mission_type) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004FCB35;
 // LINE 1689:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fcb3a
 void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
-// LINE 1802:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1803:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3943,24 +3700,12 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 	__asm        je     near ptr 0x004FCB69;
 	__asm        jmp    near ptr 0x004FCBAD;
 // LINE 1831:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel(long mission_id) {
 	struct MISSION_DATA* md;
 
-// LINE 1843:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1844:
 	__asm        mov    eax, mission_id;
 	__asm        mov    ecx, eax;
@@ -4036,11 +3781,6 @@ void S3MissionCancel(long mission_id) {
 	__asm        call   0x004EBC2B;
 	__asm        add    esp, 8;
 // LINE 1877:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fccd0
@@ -4048,13 +3788,6 @@ long S3MissionStartDirect(long type) {
 	struct MISSION_DATA* md;
 	long i;
 
-// LINE 1893:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1898:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FCCE8;
@@ -4358,11 +4091,6 @@ long S3MissionStartDirect(long type) {
 	__asm        mov    eax, [eax+0x24];
 	__asm        jmp    near ptr 0x004FD0E1;
 // LINE 1985:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fd0e6
@@ -4374,13 +4102,6 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	int32_t money;
 	char * reason;
 
-// LINE 2012:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2014:
 	__asm        mov    mname, 0x5B5098;
 // LINE 2015:
@@ -4963,11 +4684,6 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        call   0x004EBC2B;
 	__asm        add    esp, 8;
 // LINE 2214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fd755
@@ -4976,13 +4692,6 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	int32_t timetmp;
 	long total_pts;
 
-// LINE 2225:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2226:
 	__asm        mov    total_pts, 0;
 // LINE 2227:
@@ -5378,27 +5087,11 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	__asm        call   0x00428FF1;
 	__asm        add    esp, 4;
 // LINE 2403:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fdc22
 void S3MissionTweakInit() {
-// LINE 2414:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2426:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fdc2d
@@ -5406,13 +5099,6 @@ long S3MissionGetIDByKey(long key) {
 	struct MISSION_DATA* md;
 	long i;
 
-// LINE 2436:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2440:
 	__asm        cmp    key, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004FDC4A;
@@ -5454,21 +5140,10 @@ long S3MissionGetIDByKey(long key) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004FDCB6;
 // LINE 2457:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fdcbb
 struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
-// LINE 2466:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2468:
 	__asm        cmp    index, 0;
 	__asm        jl     near ptr 0x004FDCD5;
@@ -5486,11 +5161,6 @@ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 	__asm        lea    eax, [eax*4+0x6072F0];
 	__asm        jmp    near ptr 0x004FDCF6;
 // LINE 2472:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fdcfb
@@ -5499,13 +5169,6 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	long i;
 	long ret;
 
-// LINE 2487:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2494:
 	__asm        push   0x1910;
 	__asm        push   0x6072B8;
@@ -5557,24 +5220,12 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004FDDA8;
 // LINE 2513:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fddad
 int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 	long ret;
 
-// LINE 2517:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2523:
 	__asm        push   0x1910;
 	__asm        push   0x6072B8;
@@ -5595,11 +5246,6 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004FDDF0;
 // LINE 2528:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fddf5
@@ -5608,13 +5254,6 @@ void S3MissionDispatch(long x, long y, long type) {
 	long sid2;
 	long sid1;
 
-// LINE 2552:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2555:
 	__asm        mov    sid1, 0xFFFFFFFF;
 // LINE 2556:
@@ -6210,21 +5849,10 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        call   0x004470FA;
 	__asm        add    esp, 0xC;
 // LINE 2774:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004fe5fe
 long S3MissionGetSoundQuadrant(long x, long y) {
-// LINE 2785:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2786:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x004FE681;
@@ -6324,11 +5952,6 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2834:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -547,14 +547,6 @@ class bidirectional_iterator<HotSpot,int>{
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471f70
 void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x00471F81;
 	__asm        jmp    near ptr 0x00471F86;
 	__asm        mov    eax, windowNewParent;
@@ -817,23 +809,10 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 // LINE 59:
 	__asm        jmp    near ptr 0x004723A5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004723af
 void HangarWindow::~HangarWindow() {
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590C20;
 // LINE 66:
@@ -985,11 +964,6 @@ void HangarWindow::~HangarWindow() {
 	__asm        call   0x0042F2E9;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00472611
@@ -999,15 +973,6 @@ int32_t HangarWindow::Initialize() {
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
-// LINE 73:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x40BC;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 76:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1615,23 +1580,10 @@ int32_t HangarWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        jmp    near ptr 0x00472F5C;
 // LINE 113:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00472f61
 int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
-// LINE 121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -1722,23 +1674,10 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047309C;
 // LINE 123:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004730a3
 int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-// LINE 129:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11E], 0;
@@ -1845,23 +1784,10 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [eax+0x11E];
 	__asm        jmp    near ptr 0x00473222;
 // LINE 138:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00473229
 void HangarWindow::DestroyImage() {
-// LINE 143:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 144:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11E], 0;
@@ -1887,25 +1813,12 @@ void HangarWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x11E], 0;
 // LINE 148:
 	__asm        jmp    near ptr 0x00473291;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00473296
 int32_t HangarWindow::ComposeSelf() {
 	long lHelpID;
 
-// LINE 153:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 156:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x44], 0;
@@ -2069,25 +1982,12 @@ int32_t HangarWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004734E8;
 // LINE 177:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004734ed
 int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lOwnerMessage;
 
-// LINE 183:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 186:
 	__asm        cmp    lWindowID, 0;
 	__asm        jne    near ptr 0x00473530;
@@ -2175,23 +2075,10 @@ int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, l
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004735DA;
 // LINE 203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004735e1
 long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 216:
 	__asm        cmp    lKey, 0x25;
 	__asm        jne    near ptr 0x00473610;
@@ -2217,25 +2104,12 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00473635;
 // LINE 225:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047363c
 long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 	long lHotspotID;
 
-// LINE 232:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 236:
 	__asm        jmp    near ptr 0x0047364D;
 	__asm        mov    eax, nCursorX;
@@ -2270,44 +2144,18 @@ long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004736A1;
 // LINE 242:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004736a8
 long HangarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 251:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004736BE;
 // LINE 252:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004736c5
 long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 259:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 262:
 	__asm        cmp    nCursorX, 8;
 	__asm        jge    near ptr 0x004736ED;
@@ -2390,23 +2238,10 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047381F;
 // LINE 273:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00473826
 void HangarWindow::GetImagePath() {
-// LINE 279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 280:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xF2], 0;
@@ -2631,11 +2466,6 @@ void HangarWindow::GetImagePath() {
 	__asm        jmp    near ptr 0x00473B52;
 // LINE 285:
 	__asm        jmp    near ptr 0x00473B57;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00473b5c
@@ -2643,14 +2473,6 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 	class list<HotSpot>::iterator iterator;
 	int32_t i;
 
-// LINE 292:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 293:
 	__asm        mov    i, 0;
 // LINE 294:
@@ -2728,11 +2550,6 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00473C65;
 // LINE 306:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00473c6c
@@ -2740,14 +2557,6 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 	long lHangarGraphicWidth;
 	long lHangarWindowWidth;
 
-// LINE 313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 314:
 	__asm        jmp    near ptr 0x00473C7D;
 	__asm        mov    eax, this;
@@ -2839,11 +2648,6 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 	__asm        call   0x00474577;
 // LINE 325:
 	__asm        jmp    near ptr 0x00473DDA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00473de1
@@ -2851,14 +2655,6 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 	class MRect rectCompare;
 	class MRect rectWindowLocal;
 
-// LINE 364:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 367:
 	__asm        mov    eax, rectHangar;
 	__asm        lea    ecx, rectCompare.left;
@@ -2930,23 +2726,10 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x00473EBE;
 // LINE 374:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00473ec5
 void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
-// LINE 383:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 384:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectToClip;
@@ -2993,11 +2776,6 @@ void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
 	__asm        add    [ecx+0xC], eax;
 // LINE 392:
 	__asm        jmp    near ptr 0x00473F4C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00473f53
@@ -3006,15 +2784,6 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	class basic_string<char> sHelp;
 	int32_t nFullStringID;
 
-// LINE 438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1094;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 440:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3448,23 +3217,10 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047456B;
 	__asm        jmp    near ptr 0x00474570;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00474577
 void HangarWindow::HideHelp() {
-// LINE 485:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-4], eax;
@@ -3474,23 +3230,10 @@ void HangarWindow::HideHelp() {
 	__asm        jmp    near ptr 0x0047459B;
 // LINE 487:
 	__asm        jmp    near ptr 0x004745A0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004745a5
 int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_string<char>& sSoundFileName) {
-// LINE 494:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 496:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3604,23 +3347,10 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00474747;
 // LINE 498:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047474e
 void HangarWindow::LoadHotSpots() {
-// LINE 504:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 505:
 	__asm        push   0x6A;
 	__asm        mov    eax, this;
@@ -3630,11 +3360,6 @@ void HangarWindow::LoadHotSpots() {
 	__asm        add    esp, 8;
 // LINE 506:
 	__asm        jmp    near ptr 0x00474772;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

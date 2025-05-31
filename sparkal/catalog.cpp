@@ -478,15 +478,6 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	int32_t i;
 	int32_t nFullStringID;
 
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x417C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x0047497B;
 	__asm        jmp    near ptr 0x00474980;
 	__asm        mov    eax, windowNewParent;
@@ -1613,23 +1604,10 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 // LINE 116:
 	__asm        jmp    near ptr 0x00475F40;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00475f4d
 void CatalogWindow::~CatalogWindow() {
-// LINE 122:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x94;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590CE8;
 // LINE 123:
@@ -1943,11 +1921,6 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   0x0042F2E9;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00476517
@@ -1955,15 +1928,6 @@ int32_t CatalogWindow::Initialize() {
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x3084;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 134:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -2419,11 +2383,6 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    near ptr 0x00476C5F;
 // LINE 161:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00476c64
@@ -2441,15 +2400,6 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	class MRect rectEquipmentDescriptionTitles[5];
 	char szFilePath[260];
 
-// LINE 167:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x4A58;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 168:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -5165,11 +5115,6 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479DAF;
 	__asm        jmp    near ptr 0x00479DB4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00479dbb
@@ -5180,14 +5125,6 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	static const int32_t nColorArrayCurrentIndex = { /* <data@0x00599834> */ };
 	unsigned long lIndexArray[6];
 
-// LINE 394:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x98;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 397:
 	__asm        jmp    near ptr 0x00479DD2;
 	__asm        jmp    near ptr 0x00479DD7;
@@ -5362,11 +5299,6 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        call   dword ptr [edx+0x5C];
 // LINE 431:
 	__asm        jmp    near ptr 0x0047A09A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047a09f
@@ -5374,14 +5306,6 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	struct tagUserPersonalInfo* currentUserPersonalInfo;
 	class MRect rectFill;
 
-// LINE 442:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 443:
 	__asm        call   0x00428F4A;
 	__asm        mov    currentUserPersonalInfo, eax;
@@ -5562,25 +5486,12 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 466:
 	__asm        jmp    near ptr 0x0047A307;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047a30e
 int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 	int32_t i;
 
-// LINE 474:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 477:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047A329;
@@ -5602,25 +5513,12 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047A35F;
 // LINE 482:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047a366
 int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 	int32_t i;
 
-// LINE 488:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 491:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047A381;
@@ -5642,11 +5540,6 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047A3B7;
 // LINE 496:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047a3be
@@ -5654,14 +5547,6 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	char * szTabFileNames[9];
 	char * szHelicopterFileNames[9];
 
-// LINE 504:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 506:
 	__asm        mov    szHelicopterFileNames[0], 0x5998CC;
 	__asm        mov    szHelicopterFileNames[1], 0x5998DC;
@@ -6020,23 +5905,10 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        jmp    near ptr 0x0047A9A7;
 // LINE 514:
 	__asm        jmp    near ptr 0x0047A9AC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047a9b3
 int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
-// LINE 521:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 522:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -6127,23 +5999,10 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047AAEE;
 // LINE 523:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047aaf5
 int32_t CatalogWindow::CreateImage(int32_t __formal) {
-// LINE 529:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 530:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -6169,23 +6028,10 @@ int32_t CatalogWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x0047AB47;
 // LINE 536:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047ab4e
 int32_t CatalogWindow::ComposeSelf() {
-// LINE 543:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 544:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A60A3;
@@ -6200,11 +6046,6 @@ int32_t CatalogWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AB84;
 // LINE 550:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047ab89
@@ -6212,14 +6053,6 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 	int32_t i;
 	const class MRect rectEquipment[5];
 
-// LINE 557:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 560:
 	__asm        jmp    near ptr 0x0047AB9A;
 	__asm        mov    rectEquipment[0].left, 0x3A;
@@ -6304,23 +6137,10 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047AD06;
 // LINE 573:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047ad0d
 int32_t CatalogWindow::DoesCursorHitTab(long lXPosition, long lYPosition, long& lTab) {
-// LINE 580:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 581:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lXPosition;
@@ -6375,23 +6195,10 @@ int32_t CatalogWindow::DoesCursorHitTab(long lXPosition, long lYPosition, long& 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047ADC7;
 // LINE 589:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047adce
 long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 596:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 600:
 	__asm        cmp    lKey, 0x31;
 	__asm        jl     near ptr 0x0047ADFD;
@@ -6407,11 +6214,6 @@ long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AE07;
 // LINE 609:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047ae0e
@@ -6419,14 +6221,6 @@ long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	long lEquipment;
 	long lTab;
 
-// LINE 615:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 619:
 	__asm        lea    eax, lTab;
 	__asm        push   eax;
@@ -6475,67 +6269,28 @@ long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AE95;
 // LINE 628:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047ae9c
 long CatalogWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 635:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 636:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AEB2;
 // LINE 637:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0047aeb9
 long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 643:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 646:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AECF;
 // LINE 647:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0047aed6
 void CatalogWindow::SetButtonStates() {
 	const struct tagUserPersonalInfo* currentUserPersonalInfo;
 
-// LINE 654:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 655:
 	__asm        call   0x00428F4A;
 	__asm        mov    currentUserPersonalInfo, eax;
@@ -6677,25 +6432,12 @@ void CatalogWindow::SetButtonStates() {
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 693:
 	__asm        jmp    near ptr 0x0047B0D3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b0d8
 int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMyMessage[2];
 
-// LINE 700:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 704:
 	__asm        cmp    lWindowID, 1;
 	__asm        je     near ptr 0x0047B0F8;
@@ -6810,25 +6552,12 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047B22C;
 // LINE 728:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0047b233
 long CatalogWindow::GetHelicopterFromTab(long lTab) {
 	const long lHelicopterTabs[8];
 
-// LINE 734:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 736:
 	__asm        mov    lHelicopterTabs[0], 3;
 	__asm        mov    lHelicopterTabs[1], 5;
@@ -6844,25 +6573,12 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 	__asm        mov    eax, [ebp+eax*4-0x20];
 	__asm        jmp    near ptr 0x0047B283;
 // LINE 739:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047b28a
 long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 	const long lEquipmentChoices[5];
 
-// LINE 745:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 747:
 	__asm        mov    lEquipmentChoices[0], 0;
 	__asm        mov    lEquipmentChoices[1], 1;
@@ -6875,11 +6591,6 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 	__asm        mov    eax, [ebp+eax*4-0x14];
 	__asm        jmp    near ptr 0x0047B2C5;
 // LINE 750:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0047b2cc
@@ -6887,14 +6598,6 @@ int32_t CatalogWindow::CanUserBuy() {
 	long lCurrentValue;
 	long lCurrentFunds;
 
-// LINE 762:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 766:
 	__asm        call   0x00428FB5;
 	__asm        mov    lCurrentFunds, eax;
@@ -6933,25 +6636,12 @@ int32_t CatalogWindow::CanUserBuy() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047B34E;
 // LINE 772:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b353
 int32_t CatalogWindow::CanUserSell() {
 	const struct tagUserPersonalInfo* currentUserPersonalInfo;
 
-// LINE 783:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 784:
 	__asm        call   0x00428F4A;
 	__asm        mov    currentUserPersonalInfo, eax;
@@ -6988,11 +6678,6 @@ int32_t CatalogWindow::CanUserSell() {
 	__asm        mov    eax, ebx;
 	__asm        jmp    near ptr 0x0047B3CC;
 // LINE 790:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b3d1
@@ -7003,14 +6688,6 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 	long lCurrentFunds;
 	long lFixedCurrentEquipmentSelection;
 
-// LINE 800:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 804:
 	__asm        call   0x00428F4A;
 	__asm        mov    currentUserPersonalInfo, eax;
@@ -7096,11 +6773,6 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047B4CB;
 // LINE 827:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0047b4d0
@@ -7111,14 +6783,6 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 	long lCurrentFunds;
 	long lFixedCurrentEquipmentSelection;
 
-// LINE 833:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 836:
 	__asm        call   0x00428F4A;
 	__asm        mov    currentUserPersonalInfo, eax;
@@ -7205,11 +6869,6 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047B5CC;
 // LINE 861:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

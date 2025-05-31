@@ -92,51 +92,22 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a480
 void $E2() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0049A495;
 	__asm        jmp    near ptr 0x0049A490;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a495
 void $E1() {
-// LINE 16:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   0x0049A4AF;
 	__asm        jmp    near ptr 0x0049A4AA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049a4af
 void JoystickManager::JoystickManager() {
 	int32_t i;
 
-// LINE 24:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 29:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0xFFFFFF9C;
@@ -168,11 +139,6 @@ void JoystickManager::JoystickManager() {
 // LINE 38:
 	__asm        jmp    near ptr 0x0049A51F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049a527
@@ -182,14 +148,6 @@ int32_t JoystickManager::Initialize() {
 	int32_t i;
 	uint32_t mmResult;
 
-// LINE 50:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 51:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -273,25 +231,12 @@ int32_t JoystickManager::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        jmp    near ptr 0x0049A624;
 // LINE 83:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049a629
 int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	int32_t i;
 
-// LINE 90:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 93:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A644;
@@ -323,23 +268,10 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049A68F;
 // LINE 100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049a696
 int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickName) {
-// LINE 106:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 107:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jb     near ptr 0x0049A6B3;
@@ -373,25 +305,12 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0049A6FA;
 // LINE 115:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049a701
 int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoystick) {
 	int32_t i;
 
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 127:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A71C;
@@ -427,23 +346,10 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0049A772;
 // LINE 136:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049a779
 int32_t JoystickManager::Normalize(int32_t nPosition) {
-// LINE 151:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 160:
 	__asm        push   0xFFFF;
 	__asm        mov    eax, nPosition;
@@ -462,11 +368,6 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 	__asm        mov    eax, nPosition;
 	__asm        jmp    near ptr 0x0049A7B4;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049a7bb
@@ -474,14 +375,6 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	int32_t nOneQuarterOfTheRange;
 	int32_t nValue;
 
-// LINE 186:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 191:
 	__asm        mov    eax, bUseCache;
 	__asm        push   eax;
@@ -521,11 +414,6 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049A82F;
 // LINE 200:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049a836
@@ -537,14 +425,6 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	uint32_t mmResult;
 	unsigned long * dwResultToUse;
 
-// LINE 217:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 227:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    near ptr 0x0049A853;
@@ -691,11 +571,6 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 279:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049a9dd
@@ -704,14 +579,6 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 	struct joyinfoex_tag* joyInfoExToUse;
 	uint32_t mmResult;
 
-// LINE 297:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 304:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jg     near ptr 0x0049A9FD;
@@ -769,25 +636,12 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 	__asm        and    eax, [ecx+0x20];
 	__asm        jmp    near ptr 0x0049AA92;
 // LINE 323:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0049aa99
 int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 	uint32_t mmResult;
 
-// LINE 336:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 341:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    near ptr 0x0049AAB6;
@@ -834,11 +688,6 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049AB33;
 // LINE 351:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ab3a
@@ -847,14 +696,6 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	struct joyinfoex_tag* joyInfoExToUse;
 	uint32_t mmResult;
 
-// LINE 375:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 382:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    near ptr 0x0049AB57;
@@ -908,25 +749,12 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	__asm        mov    eax, [eax+0x28];
 	__asm        jmp    near ptr 0x0049ABDB;
 // LINE 401:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049abe2
 int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 	uint32_t nReturnValue;
 
-// LINE 415:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 419:
 	__asm        push   1;
 	__asm        push   0x59A28C;
@@ -942,25 +770,12 @@ int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049AC19;
 // LINE 427:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ac20
 int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshold) {
 	uint32_t mmResult;
 
-// LINE 448:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 453:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    near ptr 0x0049AC3D;
@@ -987,25 +802,12 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049AC75;
 // LINE 463:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049ac7c
 int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold) {
 	uint32_t mmResult;
 
-// LINE 472:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 477:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    near ptr 0x0049AC99;
@@ -1032,23 +834,10 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0049ACD1;
 // LINE 487:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0049acd8
 void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
-// LINE 497:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 499:
 	__asm        mov    eax, lNewMin;
 	__asm        mov    ecx, this;
@@ -1072,11 +861,6 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 	__asm        mov    [eax+0x5C], ecx;
 // LINE 503:
 	__asm        jmp    near ptr 0x0049AD1B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 

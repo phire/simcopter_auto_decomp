@@ -4,14 +4,6 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	int32_t nChars;
 	char szString[4096];
 
-// LINE 120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1070;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 123:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -433,10 +425,5 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, nChars;
 	__asm        jmp    near ptr 0x0040FE4F;
 // LINE 139:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

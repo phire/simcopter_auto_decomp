@@ -44,86 +44,39 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c50
 void $E4() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00431C6A;
 	__asm        call   0x00431C84;
 	__asm        jmp    near ptr 0x00431C65;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c6a
 void $E1() {
-// LINE 10:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   0x00431CE4;
 	__asm        jmp    near ptr 0x00431C7F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c84
 void $E3() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x431CA1;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00431C9C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431ca1
 void $E2() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00431CAC;
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   0x0043D476;
 	__asm        jmp    near ptr 0x00431CBB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431cc0
 int32_t IsModifierSet(unsigned char chModifiers) {
-// LINE 16:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 17:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   0x00431EB1;
@@ -133,23 +86,10 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 	__asm        and    eax, ecx;
 	__asm        jmp    near ptr 0x00431CDF;
 // LINE 18:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
-// LINE 31:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0043D432;
 // LINE 32:
@@ -158,23 +98,10 @@ void Keyboard::Keyboard() {
 // LINE 33:
 	__asm        jmp    near ptr 0x00431D05;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431d0d
 int32_t Keyboard::IsKeyDown(unsigned char chKey) {
-// LINE 40:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 41:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -182,25 +109,12 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
 	__asm        jmp    near ptr 0x00431D2B;
 // LINE 42:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431d32
 int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	char chCurrentModifiers;
 
-// LINE 49:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
 	__asm        push   eax;
@@ -226,23 +140,10 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00431D86;
 // LINE 59:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00431d8d
 void Keyboard::ProcessKeyDown(unsigned char chKey) {
-// LINE 66:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 70:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -262,23 +163,10 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        call   0x0043D4EB;
 // LINE 74:
 	__asm        jmp    near ptr 0x00431DCC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431dd3
 void Keyboard::ProcessKeyUp(unsigned char chKey) {
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 83:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -298,25 +186,12 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        call   0x0043D67F;
 // LINE 87:
 	__asm        jmp    near ptr 0x00431E12;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431e19
 void Keyboard::ClearSettings() {
 	int32_t i;
 
-// LINE 95:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 98:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00431E34;
@@ -333,23 +208,10 @@ void Keyboard::ClearSettings() {
 	__asm        call   0x0043D703;
 // LINE 101:
 	__asm        jmp    near ptr 0x00431E5E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431e63
 int32_t Keyboard::CharIsModifier(unsigned char chKey) {
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 111:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -370,25 +232,12 @@ int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00431EAA;
 // LINE 116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00431eb1
 char Keyboard::GetCurrentModifierState() {
 	char chReturnValue;
 
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 125:
 	__asm        mov    chReturnValue, 0;
 // LINE 128:
@@ -425,11 +274,6 @@ char Keyboard::GetCurrentModifierState() {
 	__asm        mov    al, chReturnValue;
 	__asm        jmp    near ptr 0x00431F1A;
 // LINE 137:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431f1f
@@ -438,13 +282,6 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	char chIndex;
 	static const char chNumberArray[10] = { /* <data@0x00598350> */ };
 
-// LINE 165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 171:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -672,21 +509,10 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        xor    al, al;
 	__asm        jmp    near ptr 0x00432221;
 // LINE 226:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432226
 int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
-// LINE 241:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 243:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chToggleKey;
@@ -702,11 +528,6 @@ int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00432254;
 // LINE 249:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

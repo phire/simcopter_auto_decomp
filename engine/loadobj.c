@@ -118,13 +118,6 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	struct GEOM_Resource* res;
 	char * group;
 
-// LINE 145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 152:
 	__asm        mov    eax, objs;
 	__asm        shl    eax, 2;
@@ -289,11 +282,6 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    eax, res;
 	__asm        jmp    near ptr 0x004D2374;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2379
@@ -301,13 +289,6 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 	struct GEOM_Resource* geo;
 	int32_t i;
 
-// LINE 225:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 229:
 	__asm        mov    eax, res;
 	__asm        mov    geo, eax;
@@ -331,24 +312,12 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 // LINE 232:
 	__asm        jmp    near ptr 0x004D2394;
 // LINE 233:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d23c7
 int32_t VRGetResObjectCnt(struct VRResource* res) {
 	struct GEOM_Resource* geo;
 
-// LINE 244:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 247:
 	__asm        mov    eax, res;
 	__asm        mov    geo, eax;
@@ -357,24 +326,12 @@ int32_t VRGetResObjectCnt(struct VRResource* res) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        jmp    near ptr 0x004D23E1;
 // LINE 250:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d23e6
 int32_t VRGetResObject(struct VRResource* res, int32_t i) {
 	struct GEOM_Resource* geo;
 
-// LINE 261:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 264:
 	__asm        mov    eax, res;
 	__asm        mov    geo, eax;
@@ -384,11 +341,6 @@ int32_t VRGetResObject(struct VRResource* res, int32_t i) {
 	__asm        mov    eax, [ecx+eax*4+0x18];
 	__asm        jmp    near ptr 0x004D2404;
 // LINE 267:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2409
@@ -411,13 +363,6 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	int32_t uses_gouraud;
 	struct Point3d* v1;
 
-// LINE 280:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1E0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 296:
 	__asm        mov    uses_gouraud, 0;
 // LINE 299:
@@ -942,11 +887,6 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D2AC1;
 // LINE 711:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
@@ -955,13 +895,6 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 	int32_t tmat[4][4];
 	int32_t flags;
 
-// LINE 730:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 733:
 	__asm        mov    flags, 0;
 // LINE 736:
@@ -999,11 +932,6 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 	__asm        add    esp, 0x20;
 	__asm        jmp    near ptr 0x004D2B23;
 // LINE 744:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d2b28
@@ -1032,13 +960,6 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	struct _FaceHdr* faceptr;
 	int32_t check_for_overhang;
 
-// LINE 775:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 776:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -1617,11 +1538,6 @@ do_2d_face:
 	__asm        mov    eax, altyupbelow;
 	__asm        jmp    near ptr 0x004D31E2;
 // LINE 1067:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d31e7
@@ -1650,13 +1566,6 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	struct _FaceHdr* faceptr;
 	int32_t check_for_overhang;
 
-// LINE 1087:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1088:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2284,11 +2193,6 @@ do_2d_face:
 	__asm        mov    eax, altyupbelow;
 	__asm        jmp    near ptr 0x004D392A;
 // LINE 1409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d392f
@@ -2309,13 +2213,6 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	int32_t * vertno;
 	struct _FaceHdr* faceptr;
 
-// LINE 1423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1424:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2490,11 +2387,6 @@ next_face:
 	__asm        mov    eax, distz;
 	__asm        jmp    near ptr 0x004D3B3E;
 // LINE 1511:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3b43
@@ -2515,13 +2407,6 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	int32_t * vertno;
 	struct _FaceHdr* faceptr;
 
-// LINE 1525:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1526:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2696,11 +2581,6 @@ next_face:
 	__asm        mov    eax, distx;
 	__asm        jmp    near ptr 0x004D3D50;
 // LINE 1613:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3d55
@@ -2713,13 +2593,6 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 	struct _FaceHdr* faceptr;
 	struct Point3d* vert1;
 
-// LINE 1629:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1630:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2798,11 +2671,6 @@ next_face:
 // LINE 1671:
 	__asm        jmp    near ptr 0x004D3D82;
 // LINE 1673:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3e24
@@ -2811,13 +2679,6 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	int32_t i;
 	struct Point3d* vert;
 
-// LINE 1684:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1685:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2860,11 +2721,6 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        mov    ecx, oh;
 	__asm        add    [ecx+0x20], eax;
 // LINE 1701:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3e9d
@@ -2874,13 +2730,6 @@ int32_t VRObjGetHeight(int32_t obj) {
 	int32_t i;
 	struct Point3d* vert;
 
-// LINE 1712:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1713:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -2913,11 +2762,6 @@ int32_t VRObjGetHeight(int32_t obj) {
 	__asm        mov    eax, maxy;
 	__asm        jmp    near ptr 0x004D3F03;
 // LINE 1725:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3f08
@@ -2931,13 +2775,6 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	struct Point3d* vert1;
 	int32_t ydiff;
 
-// LINE 1739:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1740:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -3030,11 +2867,6 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        mov    ecx, oh;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 1787:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d3fea
@@ -3042,13 +2874,6 @@ struct _BSPtree* ReadTree() {
 	unsigned short FaceIndex;
 	unsigned short ThisIndex;
 
-// LINE 1799:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1803:
 	__asm        push   2;
 	__asm        lea    eax, FaceIndex;
@@ -3122,11 +2947,6 @@ struct _BSPtree* ReadTree() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D40DC;
 // LINE 1833:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d40e1
@@ -3136,13 +2956,6 @@ void NormalizeObj(struct ObjectHdr* obj) {
 	struct Point3d c;
 	struct Point3d* s;
 
-// LINE 1844:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1848:
 	__asm        mov    eax, obj;
 	__asm        add    eax, 0x18;
@@ -3205,11 +3018,6 @@ void NormalizeObj(struct ObjectHdr* obj) {
 	__asm        mov    ecx, obj;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1859:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4192
@@ -3226,13 +3034,6 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	struct VRObjInfo oinfo;
 	int32_t loword;
 
-// LINE 1870:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1880:
 	__asm        mov    eax, g;
 	__asm        mov    geo, eax;
@@ -3372,11 +3173,6 @@ next_face:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D4332;
 // LINE 1923:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4337
@@ -3387,13 +3183,6 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 	struct MapVert* barry;
 	struct MapVert* mv;
 
-// LINE 1933:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1937:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x20];
@@ -3444,24 +3233,12 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 1959:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d43c3
 struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	struct VRMemPool* mp;
 
-// LINE 1970:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1975:
 	__asm        mov    eax, d2;
 	__asm        add    eax, xf;
@@ -3538,21 +3315,10 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        mov    eax, mp;
 	__asm        jmp    near ptr 0x004D44B6;
 // LINE 1997:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d44bb
 void VRFreeMemPool(struct VRMemPool* mp) {
-// LINE 2009:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2010:
 	__asm        mov    eax, mp;
 	__asm        push   eax;
@@ -3564,11 +3330,6 @@ void VRFreeMemPool(struct VRMemPool* mp) {
 	__asm        call   0x005737A0;
 	__asm        add    esp, 4;
 // LINE 2012:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d44de
@@ -3583,13 +3344,6 @@ void FaceCalcNormal(struct Point3d* v0, struct Point3d* v1, struct Point3d* vlst
 	struct FPoint3d fV2;
 	struct FPoint3d fV1;
 
-// LINE 2027:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xBC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2034:
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax];
@@ -3731,11 +3485,6 @@ void FaceCalcNormal(struct Point3d* v0, struct Point3d* v1, struct Point3d* vlst
 	__asm        mov    ecx, norm;
 	__asm        mov    [ecx+8], eax;
 // LINE 2067:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d46bc
@@ -3752,13 +3501,6 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	double tmpY;
 	double tmpX;
 
-// LINE 2092:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2105:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+4];
@@ -3988,24 +3730,12 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        neg    eax;
 	__asm        sub    ds:[0x59B530], eax;
 // LINE 2192:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d494c
 void VRObjAssignLowRes(int32_t dest, int32_t src) {
 	struct ObjectHdr* destptr;
 
-// LINE 2203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2204:
 	__asm        mov    eax, dest;
 	__asm        mov    destptr, eax;
@@ -4016,11 +3746,6 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 // LINE 2207:
 	__asm        jmp    near ptr 0x004D4969;
 // LINE 2208:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d496e
@@ -4034,13 +3759,6 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	int32_t * iptr;
 	char * ptr;
 
-// LINE 2224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2238:
 	__asm        mov    eax, nverts;
 	__asm        mov    ecx, nverts;
@@ -4235,11 +3953,6 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        mov    eax, dataptr;
 	__asm        jmp    near ptr 0x004D4B7B;
 // LINE 2314:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4b80
@@ -4253,13 +3966,6 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	int32_t * iptr;
 	char * ptr;
 
-// LINE 2329:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2343:
 	__asm        mov    eax, nverts;
 	__asm        mov    ecx, nverts;
@@ -4440,11 +4146,6 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        mov    eax, dataptr;
 	__asm        jmp    near ptr 0x004D4D6E;
 // LINE 2417:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4d73
@@ -4454,13 +4155,6 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 	int32_t size2;
 	int32_t size1;
 
-// LINE 2431:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2434:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -4487,11 +4181,6 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 	__asm        add    eax, size1;
 	__asm        jmp    near ptr 0x004D4DBA;
 // LINE 2441:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4dbf
@@ -4503,13 +4192,6 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	struct _FaceHdr* fh;
 	char * to;
 
-// LINE 2451:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2452:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -4649,11 +4331,6 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x004D4F20;
 // LINE 2508:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d4f25
@@ -4677,13 +4354,6 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	int32_t dotp1;
 	struct Point3d iloc;
 
-// LINE 2528:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2529:
 	__asm        mov    eax, tobj;
 	__asm        mov    oh, eax;
@@ -5010,11 +4680,6 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004D52B6;
 // LINE 2637:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

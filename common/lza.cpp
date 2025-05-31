@@ -54,13 +54,6 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	unsigned char header[5];
 	struct tACompModel* model;
 
-// LINE 646:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 648:
 	__asm        mov    header[0], 0;
 	__asm        mov    header[1], 0;
@@ -264,11 +257,6 @@ CompressDone:
 	__asm        jmp    near ptr 0x004CF279;
 	__asm        jmp    near ptr 0x004CF279;
 	__asm        jmp    near ptr 0x004CF279;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cf2ed
@@ -282,13 +270,6 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	long s;
 	long r;
 
-// LINE 525:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 530:
 	__asm        mov    tempDebug, 0;
 // LINE 532:
@@ -562,24 +543,12 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004CF602;
 // LINE 589:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cf607
 void InitTree(struct tLZSSBinaryForest* forest) {
 	long i;
 
-// LINE 195:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 206:
 	__asm        mov    i, 0x1001;
 	__asm        jmp    near ptr 0x004CF61F;
@@ -602,11 +571,6 @@ void InitTree(struct tLZSSBinaryForest* forest) {
 	__asm        jmp    near ptr 0x004CF64E;
 // LINE 208:
 	__asm        jmp    near ptr 0x004CF679;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cf67e
@@ -617,13 +581,6 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	unsigned char * key;
 	long p;
 
-// LINE 217:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 221:
 	__asm        mov    cmp, 1;
 // LINE 222:
@@ -828,24 +785,12 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 263:
 	__asm        jmp    near ptr 0x004CF965;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cf96a
 void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 	long q;
 
-// LINE 266:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 269:
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
@@ -974,11 +919,6 @@ void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 290:
 	__asm        jmp    near ptr 0x004CFB6E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cfb73
@@ -987,13 +927,6 @@ void StartModel(struct tACompModel* model) {
 	long i;
 	long sym;
 
-// LINE 300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 303:
 	__asm        mov    eax, model;
 	__asm        mov    dword ptr [eax+0x13B8], 0;
@@ -1061,11 +994,6 @@ void StartModel(struct tACompModel* model) {
 	__asm        jmp    near ptr 0x004CFC29;
 // LINE 317:
 	__asm        jmp    near ptr 0x004CFC6D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cfc72
@@ -1073,13 +1001,6 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	unsigned long range;
 	long sym;
 
-// LINE 356:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 360:
 	__asm        mov    eax, ch;
 	__asm        mov    ecx, model;
@@ -1198,11 +1119,6 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004CFDDD;
 // LINE 383:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cfde2
@@ -1212,13 +1128,6 @@ void UpdateModel(long sym, struct tACompModel* model) {
 	long c;
 	long ch_sym;
 
-// LINE 320:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 323:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+0xED0], 0x7FFF;
@@ -1316,21 +1225,10 @@ void UpdateModel(long sym, struct tACompModel* model) {
 	__asm        jmp    near ptr 0x004CFF16;
 // LINE 342:
 	__asm        jmp    near ptr 0x004CFF36;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cff3b
 short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
-// LINE 346:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 347:
 	__asm        mov    eax, dest;
 	__asm        push   eax;
@@ -1370,24 +1268,12 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004CFFB3;
 // LINE 353:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004cffb8
 short PutBit(long bit, struct tCompressState* dest) {
 	unsigned char tempByte;
 
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 127:
 	__asm        cmp    bit, 0;
 	__asm        je     near ptr 0x004CFFD6;
@@ -1433,24 +1319,12 @@ short PutBit(long bit, struct tCompressState* dest) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D003C;
 // LINE 142:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0041
 short EncodePosition(long position, struct tACompModel* model, struct tCompressState* dest) {
 	unsigned long range;
 
-// LINE 386:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 389:
 	__asm        mov    eax, model;
 	__asm        mov    eax, [eax+4];
@@ -1557,21 +1431,10 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D018F;
 // LINE 409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0194
 short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
-// LINE 412:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 413:
 	__asm        mov    eax, model;
 	__asm        inc    dword ptr [eax+0xC];
@@ -1614,11 +1477,6 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004D0211;
 // LINE 420:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0216
@@ -1626,13 +1484,6 @@ short FlushBitBuffer(struct tCompressState* dest) {
 	short retVal;
 	long i;
 
-// LINE 145:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 149:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D022E;
@@ -1659,11 +1510,6 @@ short FlushBitBuffer(struct tCompressState* dest) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D026C;
 // LINE 159:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0271
@@ -1673,13 +1519,6 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	struct tCompressState* state;
 	struct tACompModel* model;
 
-// LINE 731:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 737:
 	__asm        push   0x53C0;
 	__asm        call   0x0056A600;
@@ -1802,11 +1641,6 @@ ExpandDone:
 	__asm        jmp    near ptr 0x004D0381;
 	__asm        jmp    near ptr 0x004D0381;
 	__asm        jmp    near ptr 0x004D0381;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d03e6
@@ -1819,13 +1653,6 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	long c;
 	long r;
 
-// LINE 592:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 597:
 	__asm        push   4;
 	__asm        mov    eax, state;
@@ -1986,24 +1813,12 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D05B3;
 // LINE 632:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d05b8
 void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 	long i;
 
-// LINE 455:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 458:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D05D0;
@@ -2023,11 +1838,6 @@ void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 	__asm        jmp    near ptr 0x004D05CD;
 // LINE 460:
 	__asm        jmp    near ptr 0x004D05FF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0604
@@ -2035,13 +1845,6 @@ long GetBit(struct tCompressState* source) {
 	unsigned char tempByte;
 	unsigned char kludger;
 
-// LINE 162:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 173:
 	__asm        mov    kludger, 0;
 // LINE 176:
@@ -2093,11 +1896,6 @@ long GetBit(struct tCompressState* source) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D06A0;
 // LINE 188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d06a5
@@ -2106,13 +1904,6 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	unsigned long range;
 	long sym;
 
-// LINE 463:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 467:
 	__asm        mov    eax, model;
 	__asm        mov    eax, [eax+4];
@@ -2233,11 +2024,6 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	__asm        mov    eax, ch;
 	__asm        jmp    near ptr 0x004D0817;
 // LINE 491:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d081c
@@ -2246,13 +2032,6 @@ long BinarySearchSym(unsigned long x, struct tACompModel* model) {
 	long j;
 	long i;
 
-// LINE 426:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 429:
 	__asm        mov    i, 1;
 	__asm        mov    j, 0x13A;
@@ -2286,11 +2065,6 @@ long BinarySearchSym(unsigned long x, struct tACompModel* model) {
 	__asm        mov    eax, i;
 	__asm        jmp    near ptr 0x004D0883;
 // LINE 436:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d0888
@@ -2298,13 +2072,6 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 	unsigned long range;
 	long position;
 
-// LINE 494:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 498:
 	__asm        mov    eax, model;
 	__asm        mov    eax, [eax+4];
@@ -2413,11 +2180,6 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 	__asm        mov    eax, position;
 	__asm        jmp    near ptr 0x004D09DA;
 // LINE 520:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d09df
@@ -2426,13 +2188,6 @@ long BinarySearchPos(unsigned long x, struct tACompModel* model) {
 	long j;
 	long i;
 
-// LINE 442:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 445:
 	__asm        mov    i, 1;
 	__asm        mov    j, 0x1000;
@@ -2467,10 +2222,5 @@ long BinarySearchPos(unsigned long x, struct tACompModel* model) {
 	__asm        dec    eax;
 	__asm        jmp    near ptr 0x004D0A47;
 // LINE 452:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

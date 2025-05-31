@@ -256,13 +256,6 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	int32_t i;
 	char * szString;
 
-// LINE 33:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 34:
 	__asm        mov    i, 0;
 // LINE 36:
@@ -644,11 +637,6 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        jmp    near ptr 0x0048FEF0;
 // LINE 49:
 	__asm        jmp    near ptr 0x00490434;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00490439
@@ -656,14 +644,6 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	class basic_string<char> sFilter;
 	class basic_string<char> sTitle;
 
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x207C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 63:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -989,24 +969,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00490925;
 // LINE 73:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049092a
 unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilter, char * pInitialDirectory) {
 	struct tagOFNA ofn;
 
-// LINE 83:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 86:
 	__asm        mov    ofn.lStructSize, 0x4C;
 // LINE 87:
@@ -1066,11 +1034,6 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004909DE;
 // LINE 111:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004909e3
@@ -1078,14 +1041,6 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	class basic_string<char> sFilter;
 	class basic_string<char> sTitle;
 
-// LINE 120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x207C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 121:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1411,24 +1366,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00490ECF;
 // LINE 131:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00490ed4
 unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilter, char * pInitialDirectory) {
 	struct tagOFNA ofn;
 
-// LINE 140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 143:
 	__asm        mov    ofn.lStructSize, 0x4C;
 // LINE 144:
@@ -1488,10 +1431,5 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00490F88;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

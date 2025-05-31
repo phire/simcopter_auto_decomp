@@ -1155,14 +1155,6 @@ class bidirectional_iterator<basic_string<char>,int>{
 // Contribution: 1:000aba90-000b7247 Module: 5, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004aca90
 void BoxWindow::BoxWindow() {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        mov    eax, this;
@@ -1189,23 +1181,10 @@ void BoxWindow::BoxWindow() {
 // LINE 30:
 	__asm        jmp    near ptr 0x004ACAF8;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004acb00
 void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 41:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1242,23 +1221,10 @@ void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class Grap
 // LINE 45:
 	__asm        jmp    near ptr 0x004ACB7C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x004acb86
 int32_t BoxWindow::DrawSelf() {
-// LINE 51:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 52:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -1290,23 +1256,10 @@ int32_t BoxWindow::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ACBE5;
 // LINE 57:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004acbea
 void BoxWindow::SetColors(struct SparkalColor& colorNewOutline, int32_t nNewPaletteIndexFill) {
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 64:
 	__asm        mov    eax, colorNewOutline;
 	__asm        mov    eax, [eax];
@@ -1318,23 +1271,10 @@ void BoxWindow::SetColors(struct SparkalColor& colorNewOutline, int32_t nNewPale
 	__asm        mov    [ecx+0x80], eax;
 // LINE 66:
 	__asm        jmp    near ptr 0x004ACC12;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004acc19
 void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDrawFill) {
-// LINE 72:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 73:
 	__asm        mov    eax, bNewDrawOutline;
 	__asm        mov    ecx, this;
@@ -1345,23 +1285,10 @@ void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDr
 	__asm        mov    [ecx+0x78], eax;
 // LINE 75:
 	__asm        jmp    near ptr 0x004ACC3C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004acc43
 void TextWindow::TextWindow() {
-// LINE 95:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        jmp    near ptr 0x004ACC5C;
@@ -1404,23 +1331,10 @@ void TextWindow::TextWindow() {
 // LINE 104:
 	__asm        jmp    near ptr 0x004ACCDE;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004acce6
 void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 113:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1475,23 +1389,10 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 // LINE 122:
 	__asm        jmp    near ptr 0x004ACD98;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004acda2
 void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 131:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1669,26 +1570,12 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 // LINE 141:
 	__asm        jmp    near ptr 0x004AD014;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004ad01e
 void TextWindow::LoadStrings() {
 	int32_t nFullStringID;
 
-// LINE 149:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1070;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 152:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2090,23 +1977,10 @@ void TextWindow::LoadStrings() {
 	__asm        jmp    near ptr 0x004AD76B;
 // LINE 154:
 	__asm        jmp    near ptr 0x004AD770;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ad775
 void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
-// LINE 159:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 160:
 	__asm        mov    eax, nNewWindowTitleTextID;
 	__asm        mov    ecx, this;
@@ -2125,23 +1999,10 @@ void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 163:
 	__asm        jmp    near ptr 0x004AD7AF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ad7b6
 void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle) {
-// LINE 168:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -2277,25 +2138,12 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        call   dword ptr [eax+0x30];
 // LINE 171:
 	__asm        jmp    near ptr 0x004AD99D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ad9a4
 int32_t TextWindow::DrawSelf() {
 	class MRect rectText;
 
-// LINE 178:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 179:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
@@ -2451,46 +2299,20 @@ int32_t TextWindow::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ADB7E;
 // LINE 191:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004adb83
 void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
-// LINE 198:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 199:
 	__asm        mov    eax, bNewDrawOpaqueBackground;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 // LINE 200:
 	__asm        jmp    near ptr 0x004ADB9D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004adba4
 void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
-// LINE 206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 207:
 	__asm        mov    eax, lNewAttributes;
 	__asm        push   eax;
@@ -2510,23 +2332,10 @@ void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lN
 	__asm        call   dword ptr [eax+0x30];
 // LINE 209:
 	__asm        jmp    near ptr 0x004ADBDE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004adbe5
 void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
-// LINE 215:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 216:
 	__asm        mov    eax, nNewTextDrawStyle;
 	__asm        mov    ecx, this;
@@ -2540,11 +2349,6 @@ void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 218:
 	__asm        jmp    near ptr 0x004ADC11;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004adc18
@@ -2552,14 +2356,6 @@ void TextWindow::FitWindowToText() {
 	long lHeight;
 	long lWidth;
 
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 227:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -2661,23 +2457,10 @@ void TextWindow::FitWindowToText() {
 	__asm        call   dword ptr [eax+0x38];
 // LINE 230:
 	__asm        jmp    near ptr 0x004ADD6A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004add6f
 void TextWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
-// LINE 236:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 237:
 	__asm        mov    eax, colorNewFont;
 	__asm        mov    eax, [eax];
@@ -2692,11 +2475,6 @@ void TextWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 239:
 	__asm        jmp    near ptr 0x004ADD9A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004adda1
@@ -2707,14 +2485,6 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 	long lTextWidth;
 	long lFixedHeight;
 
-// LINE 249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 252:
 	__asm        mov    lVisibleLines, 0;
 // LINE 253:
@@ -2769,23 +2539,10 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ADE38;
 // LINE 264:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ade3d
 void ButtonWindow::ButtonWindow() {
-// LINE 292:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        mov    eax, this;
@@ -2918,23 +2675,10 @@ void ButtonWindow::ButtonWindow() {
 // LINE 294:
 	__asm        jmp    near ptr 0x004AE055;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ae05d
 void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 306:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -3145,23 +2889,10 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 // LINE 311:
 	__asm        jmp    near ptr 0x004AE37B;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004ae385
 int32_t ButtonWindow::Initialize() {
-// LINE 318:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 319:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        mov    ecx, this;
@@ -3174,23 +2905,10 @@ int32_t ButtonWindow::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x004AE3AE;
 // LINE 321:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ae3b3
 void ButtonWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
-// LINE 328:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 329:
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     near ptr 0x004AE3D7;
@@ -3209,32 +2927,14 @@ void ButtonWindow::SetTextColor(const struct SparkalColor* colorNewFont, const s
 	__asm        mov    [ecx+0x90], eax;
 // LINE 333:
 	__asm        jmp    near ptr 0x004AE3F4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004ae3fb
 int32_t ButtonWindow::GetImageCount() {
-// LINE 339:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 340:
 	__asm        mov    eax, 3;
 	__asm        jmp    near ptr 0x004AE411;
 // LINE 341:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ae416
@@ -3246,14 +2946,6 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	int32_t nWindowHeight;
 	class MRect rectCurrent;
 
-// LINE 348:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xD8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 354:
 	__asm        jmp    near ptr 0x004AE42D;
 	__asm        jmp    near ptr 0x004AE432;
@@ -3700,23 +3392,10 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004AEAC7;
 // LINE 401:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004aeace
 void ButtonWindow::SetState(int32_t nNewButtonState) {
-// LINE 408:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 409:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
@@ -3735,23 +3414,10 @@ void ButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 413:
 	__asm        jmp    near ptr 0x004AEB06;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004aeb0d
 void ButtonWindow::Enable() {
-// LINE 419:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 420:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 1;
@@ -3764,23 +3430,10 @@ void ButtonWindow::Enable() {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 422:
 	__asm        jmp    near ptr 0x004AEB37;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aeb3c
 void ButtonWindow::Disable() {
-// LINE 427:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 428:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
@@ -3793,11 +3446,6 @@ void ButtonWindow::Disable() {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 430:
 	__asm        jmp    near ptr 0x004AEB66;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aeb6b
@@ -3805,14 +3453,6 @@ int32_t ButtonWindow::ComposeSelf() {
 	int32_t nStartXPosition;
 	int32_t nWindowWidth;
 
-// LINE 436:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 441:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -3887,23 +3527,10 @@ int32_t ButtonWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AEC42;
 // LINE 458:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aec47
 long ButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
-// LINE 465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 466:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -3928,23 +3555,10 @@ long ButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __fo
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AEC93;
 // LINE 473:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004aec9a
 long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal) {
-// LINE 480:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 481:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -3999,23 +3613,10 @@ long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __form
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AED46;
 // LINE 488:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004aed4d
 long ButtonWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 495:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 496:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -4061,23 +3662,10 @@ long ButtonWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AEDDC;
 // LINE 504:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004aede3
 int32_t ButtonWindow::CanWeRespondToMessage() {
-// LINE 511:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 512:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A786B;
@@ -4097,23 +3685,10 @@ int32_t ButtonWindow::CanWeRespondToMessage() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AEE24;
 // LINE 517:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aee29
 void CheckBoxWindow::CheckBoxWindow() {
-// LINE 539:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004ADE3D;
 	__asm        mov    eax, this;
@@ -4286,23 +3861,10 @@ void CheckBoxWindow::CheckBoxWindow() {
 // LINE 541:
 	__asm        jmp    near ptr 0x004AF0A3;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004af0ab
 void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 552:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -4655,32 +4217,14 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 // LINE 557:
 	__asm        jmp    near ptr 0x004AF59C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004af5a6
 int32_t CheckBoxWindow::GetImageCount() {
-// LINE 563:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 564:
 	__asm        mov    eax, 4;
 	__asm        jmp    near ptr 0x004AF5BC;
 // LINE 565:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004af5c1
@@ -4688,14 +4232,6 @@ int32_t CheckBoxWindow::ComposeSelf() {
 	int32_t nStartXPosition;
 	int32_t nWindowWidth;
 
-// LINE 571:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 576:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -4777,23 +4313,10 @@ int32_t CheckBoxWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AF6A6;
 // LINE 592:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004af6ab
 void CheckBoxWindow::SetState(int32_t nNewButtonState) {
-// LINE 601:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 602:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
@@ -4844,23 +4367,10 @@ void CheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        mov    dword ptr [eax+0x88], 0;
 // LINE 613:
 	__asm        jmp    near ptr 0x004AF746;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004af74d
 long CheckBoxWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
-// LINE 621:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 622:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -4893,65 +4403,26 @@ long CheckBoxWindow::DoCursorDown(long __formal, long __formal, unsigned long __
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AF7B6;
 // LINE 631:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004af7bd
 long CheckBoxWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
-// LINE 638:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 639:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AF7D3;
 // LINE 640:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004af7da
 long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
-// LINE 647:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 648:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AF7F0;
 // LINE 649:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004af7f7
 void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 676:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -5307,23 +4778,10 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 // LINE 681:
 	__asm        jmp    near ptr 0x004AFCF4;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x004afcfe
 void RadioButtonWindow::~RadioButtonWindow() {
-// LINE 687:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591D38;
 // LINE 703:
@@ -5331,23 +4789,10 @@ void RadioButtonWindow::~RadioButtonWindow() {
 	__asm        jmp    near ptr 0x004AFD1D;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004afd2a
 int32_t RadioButtonWindow::Initialize() {
-// LINE 710:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 711:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0;
@@ -5363,11 +4808,6 @@ int32_t RadioButtonWindow::Initialize() {
 	__asm        call   0x004AE385;
 	__asm        jmp    near ptr 0x004AFD65;
 // LINE 714:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004afd6a
@@ -5375,14 +4815,6 @@ int32_t RadioButtonWindow::ComposeSelf() {
 	int32_t nStartXPosition;
 	int32_t nWindowWidth;
 
-// LINE 720:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 725:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -5464,44 +4896,18 @@ int32_t RadioButtonWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AFE4F;
 // LINE 741:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004afe54
 int32_t RadioButtonWindow::GetImageCount() {
-// LINE 751:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 752:
 	__asm        mov    eax, 4;
 	__asm        jmp    near ptr 0x004AFE6A;
 // LINE 753:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004afe6f
 void RadioButtonWindow::AddToGroup(class ButtonGroup* myNewRadioButtonGroup) {
-// LINE 759:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 760:
 	__asm        mov    eax, myNewRadioButtonGroup;
 	__asm        mov    ecx, this;
@@ -5513,23 +4919,10 @@ void RadioButtonWindow::AddToGroup(class ButtonGroup* myNewRadioButtonGroup) {
 	__asm        call   0x004B05E2;
 // LINE 762:
 	__asm        jmp    near ptr 0x004AFE98;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004afe9f
 int32_t RadioButtonWindow::RemoveFromGroup() {
-// LINE 768:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 769:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0;
@@ -5547,23 +4940,10 @@ int32_t RadioButtonWindow::RemoveFromGroup() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AFEDE;
 // LINE 774:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004afee3
 void RadioButtonWindow::SetState(int32_t nNewButtonState) {
-// LINE 781:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 782:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
@@ -5639,23 +5019,10 @@ void RadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        mov    dword ptr [eax+0x88], 0;
 // LINE 797:
 	__asm        jmp    near ptr 0x004AFFCD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004affd4
 long RadioButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
-// LINE 805:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 806:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -5689,65 +5056,26 @@ long RadioButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B0042;
 // LINE 825:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b0049
 long RadioButtonWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
-// LINE 830:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 831:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B005F;
 // LINE 832:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b0066
 long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
-// LINE 837:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 838:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B007C;
 // LINE 839:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b0083
  ButtonGroup::ButtonGroup() {
-// LINE 855:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        mov    eax, this;
@@ -5911,23 +5239,10 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 857:
 	__asm        jmp    near ptr 0x004B0305;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b030d
  ButtonGroup::ButtonGroup(long lNewID, class GraphicWindow* windowNewParent, class GraphicWindow* gwMyNewOwner, int32_t bAddToParentList) {
-// LINE 868:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x004B031E;
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        mov    dword ptr [ebp-0xC], 0;
@@ -6111,23 +5426,10 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 870:
 	__asm        jmp    near ptr 0x004B05D8;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004b05e2
 void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
-// LINE 878:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 879:
 	__asm        mov    eax, buttonNew;
 	__asm        push   eax;
@@ -6317,25 +5619,12 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        jmp    near ptr 0x004B08A8;
 // LINE 881:
 	__asm        jmp    near ptr 0x004B08AD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b08b4
 void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
-// LINE 892:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 893:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6424,25 +5713,12 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	__asm        mov    dword ptr [eax+0x7C], 0;
 // LINE 907:
 	__asm        jmp    near ptr 0x004B09E6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b09ed
 void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
-// LINE 919:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 920:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6550,25 +5826,12 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 937:
 	__asm        jmp    near ptr 0x004B0B54;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b0b5b
 void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
-// LINE 949:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 950:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6679,11 +5942,6 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 968:
 	__asm        jmp    near ptr 0x004B0CCD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b0cd4
@@ -6691,14 +5949,6 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	class list<RadioButtonWindow *>::iterator iterator;
 	int32_t i;
 
-// LINE 980:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 981:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6810,25 +6060,12 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 1001:
 	__asm        jmp    near ptr 0x004B0E46;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b0e4d
 int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
-// LINE 1011:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1012:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6897,25 +6134,12 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B0F3A;
 // LINE 1022:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b0f41
 int  ButtonGroup::GetSelection(long& lCurrentSelection) {
 	class RadioButtonWindow* tempRadioButtonWindow;
 
-// LINE 1032:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1035:
 	__asm        lea    eax, tempRadioButtonWindow;
 	__asm        push   eax;
@@ -6930,11 +6154,6 @@ int  ButtonGroup::GetSelection(long& lCurrentSelection) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B0F72;
 // LINE 1040:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b0f79
@@ -6942,14 +6161,6 @@ int  ButtonGroup::GetSelectionIndex() {
 	class list<RadioButtonWindow *>::iterator iterator;
 	int32_t i;
 
-// LINE 1049:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1050:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -7016,25 +6227,12 @@ int  ButtonGroup::GetSelectionIndex() {
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004B1062;
 // LINE 1060:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b1067
 int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 	class list<RadioButtonWindow *>::iterator i;
 
-// LINE 1068:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1069:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -7090,23 +6288,10 @@ int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B112D;
 // LINE 1077:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b1134
 void SliderWindow::SliderWindow() {
-// LINE 1109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        mov    eax, this;
@@ -7162,23 +6347,10 @@ void SliderWindow::SliderWindow() {
 // LINE 1110:
 	__asm        jmp    near ptr 0x004B124E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b1256
 void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
-// LINE 1133:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x7C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -7684,23 +6856,10 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 // LINE 1152:
 	__asm        jmp    near ptr 0x004B19D6;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x004b19e0
 void SliderWindow::~SliderWindow() {
-// LINE 1158:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591EE8;
 // LINE 1159:
@@ -7762,25 +6921,12 @@ void SliderWindow::~SliderWindow() {
 	__asm        jmp    near ptr 0x004B1ACF;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b1adc
 int32_t SliderWindow::Initialize() {
 	int32_t nReturnValue;
 
-// LINE 1166:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1169:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -7823,11 +6969,6 @@ int32_t SliderWindow::Initialize() {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004B1B60;
 // LINE 1176:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b1b65
@@ -7835,14 +6976,6 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	int32_t nReturnValue;
 	class basic_string<char> sBackgroundPath;
 
-// LINE 1183:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1184:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -8055,23 +7188,10 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x004B1E5D;
 // LINE 1199:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b1e64
 void SliderWindow::DestroyImage() {
-// LINE 1206:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1208:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4CAB;
@@ -8100,23 +7220,10 @@ void SliderWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0xA4], 0;
 // LINE 1213:
 	__asm        jmp    near ptr 0x004B1ED4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b1ed9
 void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
-// LINE 1219:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1220:
 	__asm        mov    eax, nYPosition;
 	__asm        push   eax;
@@ -8131,23 +7238,10 @@ void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1222:
 	__asm        jmp    near ptr 0x004B1F08;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b1f0f
 void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
-// LINE 1228:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1229:
 	__asm        mov    eax, nNewHeight;
 	__asm        push   eax;
@@ -8162,11 +7256,6 @@ void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1231:
 	__asm        jmp    near ptr 0x004B1F3E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b1f45
@@ -8176,14 +7265,6 @@ int32_t SliderWindow::ComposeSelf() {
 	long lThumbHeight;
 	long lThumbWidth;
 
-// LINE 1239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1246:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -8434,25 +7515,12 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B21FD;
 // LINE 1285:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b2202
 long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 	long lNewValue;
 
-// LINE 1292:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1295:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -8487,25 +7555,12 @@ long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B2264;
 // LINE 1301:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b226b
 long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 	long lNewValue;
 
-// LINE 1307:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1310:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -8544,25 +7599,12 @@ long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B22E8;
 // LINE 1316:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b22ef
 long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	long lNewValue;
 
-// LINE 1323:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1326:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -8594,11 +7636,6 @@ long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B235A;
 // LINE 1331:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b2361
@@ -8607,14 +7644,6 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	long lPositionScale;
 	long lValueScale;
 
-// LINE 1346:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1351:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -8713,23 +7742,10 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B2499;
 // LINE 1371:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b24a0
 void SliderWindow::CalculateAllMetrics() {
-// LINE 1379:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1382:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -8783,11 +7799,6 @@ void SliderWindow::CalculateAllMetrics() {
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1392:
 	__asm        jmp    near ptr 0x004B255B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b2560
@@ -8795,14 +7806,6 @@ void SliderWindow::CalculateThumbPosition() {
 	long lPositionScale;
 	long lValueScale;
 
-// LINE 1400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1406:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -8938,45 +7941,19 @@ void SliderWindow::CalculateThumbPosition() {
 	__asm        mov    [eax+0xA0], ecx;
 // LINE 1431:
 	__asm        jmp    near ptr 0x004B2716;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b271b
 long SliderWindow::GetValue() {
-// LINE 1438:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1439:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
 	__asm        jmp    near ptr 0x004B2735;
 // LINE 1440:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b273a
 void SliderWindow::SetValue(long lNewSliderValue) {
-// LINE 1447:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1448:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB0], 0;
@@ -9055,23 +8032,10 @@ void SliderWindow::SetValue(long lNewSliderValue) {
 	__asm        mov    dword ptr [eax+0xB0], 0;
 // LINE 1467:
 	__asm        jmp    near ptr 0x004B282D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b2834
 void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
-// LINE 1472:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1473:
 	__asm        mov    eax, lNewSliderMinimumValue;
 	__asm        mov    ecx, this;
@@ -9090,23 +8054,10 @@ void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1476:
 	__asm        jmp    near ptr 0x004B286B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b2872
 void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
-// LINE 1481:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1482:
 	__asm        mov    eax, lNewSliderMaximumValue;
 	__asm        mov    ecx, this;
@@ -9125,23 +8076,10 @@ void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1485:
 	__asm        jmp    near ptr 0x004B28A9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b28b0
 long SliderWindow::GetThumbWidth() {
-// LINE 1495:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1496:
 	__asm        jmp    near ptr 0x004B28C1;
 	__asm        mov    eax, this;
@@ -9149,23 +8087,10 @@ long SliderWindow::GetThumbWidth() {
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x004B28CF;
 // LINE 1497:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b28d4
 long SliderWindow::GetThumbHeight() {
-// LINE 1506:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1507:
 	__asm        jmp    near ptr 0x004B28E5;
 	__asm        mov    eax, this;
@@ -9173,23 +8098,10 @@ long SliderWindow::GetThumbHeight() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    near ptr 0x004B28F3;
 // LINE 1508:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b28f8
 void ScrollBarWindow::ScrollBarWindow() {
-// LINE 1546:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004B1134;
 	__asm        mov    eax, this;
@@ -9399,23 +8311,10 @@ void ScrollBarWindow::ScrollBarWindow() {
 // LINE 1550:
 	__asm        jmp    near ptr 0x004B2C1D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b2c25
 void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
-// LINE 1565:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   8;
 	__asm        push   0;
 	__asm        mov    eax, szImageFileName;
@@ -9683,25 +8582,12 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 // LINE 1573:
 	__asm        jmp    near ptr 0x004B3003;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x004b300d
 int32_t ScrollBarWindow::Initialize() {
 	int32_t nReturnValue;
 
-// LINE 1581:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1584:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -9757,11 +8643,6 @@ int32_t ScrollBarWindow::Initialize() {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004B30A9;
 // LINE 1595:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b30ae
@@ -9773,14 +8654,6 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	long lThumbWidth;
 	long lPageDownButtonStartPosition;
 
-// LINE 1603:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1612:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -10219,23 +9092,10 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B35D8;
 // LINE 1710:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b35dd
 long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 1716:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1717:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -10401,25 +9261,12 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B3849;
 // LINE 1750:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b3850
 long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 	long lNewValue;
 
-// LINE 1757:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1760:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -10462,11 +9309,6 @@ long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B38DD;
 // LINE 1768:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b38e4
@@ -10474,14 +9316,6 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	enum ScrollBarWindow::ScrollHitTestResult currentScrollHitTestResult;
 	long lNewValue;
 
-// LINE 1775:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1779:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -10547,11 +9381,6 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B39C9;
 // LINE 1792:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b39d0
@@ -10559,14 +9388,6 @@ void ScrollBarWindow::MoveLinePrevious() {
 	long lValueDelta;
 	long lNewValue;
 
-// LINE 1800:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1801:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10603,11 +9424,6 @@ void ScrollBarWindow::MoveLinePrevious() {
 	__asm        call   0x004B273A;
 // LINE 1810:
 	__asm        jmp    near ptr 0x004B3A41;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3a46
@@ -10615,14 +9431,6 @@ void ScrollBarWindow::MoveLineNext() {
 	long lValueDelta;
 	long lNewValue;
 
-// LINE 1818:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1819:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10660,11 +9468,6 @@ void ScrollBarWindow::MoveLineNext() {
 	__asm        call   0x004B273A;
 // LINE 1828:
 	__asm        jmp    near ptr 0x004B3AB9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3abe
@@ -10672,14 +9475,6 @@ void ScrollBarWindow::MovePagePrevious() {
 	long lValueDelta;
 	long lNewValue;
 
-// LINE 1835:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1836:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10716,11 +9511,6 @@ void ScrollBarWindow::MovePagePrevious() {
 	__asm        call   0x004B273A;
 // LINE 1845:
 	__asm        jmp    near ptr 0x004B3B2F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3b34
@@ -10728,14 +9518,6 @@ void ScrollBarWindow::MovePageNext() {
 	long lValueDelta;
 	long lNewValue;
 
-// LINE 1852:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1853:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10773,23 +9555,10 @@ void ScrollBarWindow::MovePageNext() {
 	__asm        call   0x004B273A;
 // LINE 1862:
 	__asm        jmp    near ptr 0x004B3BA7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3bac
 void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount) {
-// LINE 1872:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1873:
 	__asm        cmp    lNewLineCount, 0;
 	__asm        jle    near ptr 0x004B3BCC;
@@ -10834,25 +9603,12 @@ void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1885:
 	__asm        jmp    near ptr 0x004B3C41;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b3c48
 long ScrollBarWindow::GetCurrentLine() {
 	long lValueRange;
 
-// LINE 1892:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1893:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10879,25 +9635,12 @@ long ScrollBarWindow::GetCurrentLine() {
 	__asm        idiv   lValueRange;
 	__asm        jmp    near ptr 0x004B3C9F;
 // LINE 1898:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3ca4
 long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 	long lValueRange;
 
-// LINE 1905:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1906:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10924,25 +9667,12 @@ long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 	__asm        add    eax, [ecx+0x78];
 	__asm        jmp    near ptr 0x004B3CF9;
 // LINE 1911:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b3d00
 long ScrollBarWindow::GetCurrentPage() {
 	long lValueRange;
 
-// LINE 1919:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1920:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -10969,25 +9699,12 @@ long ScrollBarWindow::GetCurrentPage() {
 	__asm        idiv   lValueRange;
 	__asm        jmp    near ptr 0x004B3D57;
 // LINE 1925:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b3d5c
 long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 	long lValueRange;
 
-// LINE 1932:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1933:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -11014,11 +9731,6 @@ long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 	__asm        add    eax, [ecx+0x78];
 	__asm        jmp    near ptr 0x004B3DB1;
 // LINE 1938:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b3db8
@@ -11026,14 +9738,6 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	int32_t nPrevNextButtonWidth;
 	int32_t nPrevNextButtonHeight;
 
-// LINE 1964:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1968:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -11169,23 +9873,10 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B3F6C;
 // LINE 2000:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b3f73
 void ScrollBarWindow::CalculateAllMetrics() {
-// LINE 2007:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2008:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -11249,23 +9940,10 @@ void ScrollBarWindow::CalculateAllMetrics() {
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 2017:
 	__asm        jmp    near ptr 0x004B4046;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b404b
 long ScrollBarWindow::GetThumbWidth() {
-// LINE 2027:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2028:
 	__asm        jmp    near ptr 0x004B405C;
 	__asm        mov    eax, this;
@@ -11276,23 +9954,10 @@ long ScrollBarWindow::GetThumbWidth() {
 	__asm        idiv   ecx;
 	__asm        jmp    near ptr 0x004B4072;
 // LINE 2029:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b4077
 long ScrollBarWindow::GetThumbHeight() {
-// LINE 2035:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2036:
 	__asm        jmp    near ptr 0x004B4088;
 	__asm        mov    eax, this;
@@ -11300,23 +9965,10 @@ long ScrollBarWindow::GetThumbHeight() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    near ptr 0x004B4096;
 // LINE 2037:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b409b
 long ScrollBarWindow::GetPrevNextButtonWidth() {
-// LINE 2044:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2045:
 	__asm        jmp    near ptr 0x004B40AC;
 	__asm        mov    eax, this;
@@ -11324,23 +9976,10 @@ long ScrollBarWindow::GetPrevNextButtonWidth() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    near ptr 0x004B40BA;
 // LINE 2046:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b40bf
 long ScrollBarWindow::GetPrevNextButtonHeight() {
-// LINE 2053:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2054:
 	__asm        jmp    near ptr 0x004B40D0;
 	__asm        mov    eax, this;
@@ -11348,23 +9987,10 @@ long ScrollBarWindow::GetPrevNextButtonHeight() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    near ptr 0x004B40DE;
 // LINE 2055:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b40e3
 void ListBoxWindow::ListBoxWindow() {
-// LINE 2076:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A2A3F;
 	__asm        mov    eax, this;
@@ -11593,23 +10219,10 @@ void ListBoxWindow::ListBoxWindow() {
 // LINE 2096:
 	__asm        jmp    near ptr 0x004B445A;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b4462
 void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 2105:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -11848,23 +10461,10 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 // LINE 2125:
 	__asm        jmp    near ptr 0x004B47ED;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x004b47f7
 int32_t ListBoxWindow::Initialize() {
-// LINE 2132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2133:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -11876,23 +10476,10 @@ int32_t ListBoxWindow::Initialize() {
 	__asm        call   0x004A44D4;
 	__asm        jmp    near ptr 0x004B481D;
 // LINE 2135:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b4822
 int32_t ListBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-// LINE 2141:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2142:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    near ptr 0x004B4859;
@@ -11911,11 +10498,6 @@ int32_t ListBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B4860;
 // LINE 2150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004b4867
@@ -11924,14 +10506,6 @@ void ListBoxWindow::CalculateAllMetrics() {
 	long lHeight;
 	long lWidth;
 
-// LINE 2157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2161:
 	__asm        lea    eax, lHeight;
 	__asm        push   eax;
@@ -11962,23 +10536,10 @@ void ListBoxWindow::CalculateAllMetrics() {
 	__asm        mov    [ecx+0xB0], eax;
 // LINE 2166:
 	__asm        jmp    near ptr 0x004B48CD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b48d2
 void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
-// LINE 2172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2173:
 	__asm        mov    eax, lNewAttributes;
 	__asm        push   eax;
@@ -12003,11 +10564,6 @@ void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2176:
 	__asm        jmp    near ptr 0x004B491A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b4921
@@ -12016,14 +10572,6 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 	long lOriginalHeight;
 	long lFixedHeight;
 
-// LINE 2188:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2193:
 	__asm        jmp    near ptr 0x004B4932;
 	__asm        mov    eax, this;
@@ -12074,23 +10622,10 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B49B1;
 // LINE 2203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b49b6
 void ListBoxWindow::SetBackgroundDrawing(int32_t bNewBackgroundDrawing) {
-// LINE 2210:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2211:
 	__asm        cmp    bNewBackgroundDrawing, 0;
 	__asm        je     near ptr 0x004B49EB;
@@ -12110,23 +10645,10 @@ void ListBoxWindow::SetBackgroundDrawing(int32_t bNewBackgroundDrawing) {
 	__asm        mov    dword ptr [eax+0x88], 0xFFFFFFFE;
 // LINE 2219:
 	__asm        jmp    near ptr 0x004B4A0A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b4a11
 void ListBoxWindow::SetBackgroundPaletteIndex(int32_t nNewBackgroundIndex, int32_t nNewBackgroundIndexHighlighted) {
-// LINE 2227:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2228:
 	__asm        cmp    nNewBackgroundIndex, 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B4A33;
@@ -12143,23 +10665,10 @@ void ListBoxWindow::SetBackgroundPaletteIndex(int32_t nNewBackgroundIndex, int32
 	__asm        mov    [ecx+0x88], eax;
 // LINE 2232:
 	__asm        jmp    near ptr 0x004B4A4E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b4a55
 void ListBoxWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
-// LINE 2241:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2242:
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     near ptr 0x004B4A76;
@@ -12178,11 +10687,6 @@ void ListBoxWindow::SetTextColor(const struct SparkalColor* colorNewFont, const 
 	__asm        mov    [ecx+0x80], eax;
 // LINE 2246:
 	__asm        jmp    near ptr 0x004B4A93;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b4a9a
@@ -12194,14 +10698,6 @@ int32_t ListBoxWindow::DrawSelf() {
 	long lRelativeCurrentSelection;
 	class MRect rectCurrentText;
 
-// LINE 2253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xBC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2258:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -12696,11 +11192,6 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B5209;
 // LINE 2324:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b520e
@@ -12708,14 +11199,6 @@ int32_t ListBoxWindow::RemoveString(class basic_string<char>& sToRemove) {
 	long lIndex;
 	int32_t nReturnValue;
 
-// LINE 2338:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2342:
 	__asm        mov    eax, sToRemove;
 	__asm        push   eax;
@@ -12741,11 +11224,6 @@ int32_t ListBoxWindow::RemoveString(class basic_string<char>& sToRemove) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B525B;
 // LINE 2347:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b5262
@@ -12753,14 +11231,6 @@ int32_t ListBoxWindow::RemoveString(long lIndex) {
 	long lOriginalLineCount;
 	long lNewSelection;
 
-// LINE 2354:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2355:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -12838,23 +11308,10 @@ int32_t ListBoxWindow::RemoveString(long lIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B5340;
 // LINE 2378:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b5347
 void ListBoxWindow::RemoveAllStrings() {
-// LINE 2385:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2386:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -12979,11 +11436,6 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        call   dword ptr [eax+0x134];
 // LINE 2389:
 	__asm        jmp    near ptr 0x004B5509;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b550e
@@ -12991,14 +11443,6 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 	long lOriginalLineCount;
 	long lNewSelection;
 
-// LINE 2396:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2397:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -13072,11 +11516,6 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B55E7;
 // LINE 2422:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b55ee
@@ -13084,15 +11523,6 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	class basic_string<char> sNew;
 	int32_t nFullStringID;
 
-// LINE 2430:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1078;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2432:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -13453,25 +11883,12 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    near ptr 0x004B5BFF;
 // LINE 2437:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b5c06
 int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew) {
 	class basic_string<char>* sAddress;
 
-// LINE 2445:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2448:
 	__asm        lea    eax, sAddress;
 	__asm        push   eax;
@@ -13624,11 +12041,6 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B5E1A;
 // LINE 2454:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b5e21
@@ -13637,14 +12049,6 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 	long i;
 	class list<basic_string<char>>::iterator tempStringListIterator;
 
-// LINE 2464:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2466:
 	__asm        jmp    near ptr 0x004B5E32;
 	__asm        mov    eax, this;
@@ -13703,25 +12107,12 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B5ED5;
 // LINE 2483:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b5edc
 int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>& sFound) {
 	class basic_string<char>* sAddress;
 
-// LINE 2495:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2498:
 	__asm        lea    eax, sAddress;
 	__asm        push   eax;
@@ -13864,11 +12255,6 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B60D7;
 // LINE 2502:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b60de
@@ -13876,14 +12262,6 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	long i;
 	class list<basic_string<char>>::iterator tempStringListIterator;
 
-// LINE 2510:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2511:
 	__asm        mov    i, 0;
 // LINE 2512:
@@ -13991,25 +12369,12 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B625F;
 // LINE 2523:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b6266
 int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	long lOriginalLineCount;
 
-// LINE 2535:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2536:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -14246,25 +12611,12 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B657E;
 // LINE 2563:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6585
 int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
 	long lOriginalLineCount;
 
-// LINE 2580:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2581:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -14599,44 +12951,18 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B6AA8;
 // LINE 2606:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b6aaf
 long ListBoxWindow::DoCharacter(long lCharacter) {
-// LINE 2617:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2619:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B6AC2;
 // LINE 2620:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6ac9
 long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 2629:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2630:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -14695,11 +13021,6 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B6B87;
 // LINE 2650:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b6b8e
@@ -14707,14 +13028,6 @@ long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	long lAbsoluteSelectionIndex;
 	long lRelativeSelectionIndex;
 
-// LINE 2656:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2662:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, nCursorY;
@@ -14753,23 +13066,10 @@ long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B6C0A;
 // LINE 2671:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b6c11
 int32_t ListBoxWindow::SetSelection(long lIndex) {
-// LINE 2681:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2682:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC8], 0;
@@ -14865,45 +13165,19 @@ int32_t ListBoxWindow::SetSelection(long lIndex) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B6D47;
 // LINE 2707:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6d4e
 long ListBoxWindow::GetSelection() {
-// LINE 2713:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2714:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        jmp    near ptr 0x004B6D68;
 // LINE 2715:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b6d6d
 int32_t ListBoxWindow::IsIndexInView(long lIndex) {
-// LINE 2721:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2722:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lIndex;
@@ -14920,23 +13194,10 @@ int32_t ListBoxWindow::IsIndexInView(long lIndex) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B6DB7;
 // LINE 2723:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6dbe
 void ListBoxWindow::PutIndexInView(long lIndex) {
-// LINE 2729:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2730:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lIndex;
@@ -14983,23 +13244,10 @@ void ListBoxWindow::PutIndexInView(long lIndex) {
 	__asm        call   dword ptr [eax+0x150];
 // LINE 2738:
 	__asm        jmp    near ptr 0x004B6E4F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6e56
 void ListBoxWindow::SetIndexOfTopLine(long lIndex) {
-// LINE 2750:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2751:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lIndex;
@@ -15071,23 +13319,10 @@ void ListBoxWindow::SetIndexOfTopLine(long lIndex) {
 	__asm        call   dword ptr [edx];
 // LINE 2763:
 	__asm        jmp    near ptr 0x004B6F40;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b6f47
 int32_t ListBoxWindow::ScrollToStart() {
-// LINE 2771:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2772:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15105,25 +13340,12 @@ int32_t ListBoxWindow::ScrollToStart() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B6F80;
 // LINE 2775:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b6f85
 int32_t ListBoxWindow::ScrollToEnd() {
 	long lCurrentLineCount;
 
-// LINE 2785:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2788:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15159,25 +13381,12 @@ int32_t ListBoxWindow::ScrollToEnd() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B6FF8;
 // LINE 2798:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b6ffd
 int32_t ListBoxWindow::MoveLineUp() {
 	long lCurrentLineCount;
 
-// LINE 2809:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2812:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15210,25 +13419,12 @@ int32_t ListBoxWindow::MoveLineUp() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B7065;
 // LINE 2821:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b706a
 int32_t ListBoxWindow::MoveLineDown() {
 	long lCurrentLineCount;
 
-// LINE 2834:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2837:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15263,11 +13459,6 @@ int32_t ListBoxWindow::MoveLineDown() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B70D5;
 // LINE 2846:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b70da
@@ -15275,14 +13466,6 @@ int32_t ListBoxWindow::ScrollPageUp() {
 	long lNewFirstVisibleLine;
 	long lCurrentLineCount;
 
-// LINE 2858:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2862:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB4];
@@ -15319,11 +13502,6 @@ int32_t ListBoxWindow::ScrollPageUp() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B7149;
 // LINE 2871:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b714e
@@ -15331,14 +13509,6 @@ int32_t ListBoxWindow::ScrollPageDown() {
 	long lNewFirstVisibleLine;
 	long lCurrentLineCount;
 
-// LINE 2878:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2882:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB4];
@@ -15387,11 +13557,6 @@ int32_t ListBoxWindow::ScrollPageDown() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B71EF;
 // LINE 2894:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b71f4
@@ -15399,14 +13564,6 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	int32_t i;
 	class list<basic_string<char>>::iterator tempStringListIterator;
 
-// LINE 2901:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2902:
 	__asm        mov    i, 0;
 // LINE 2903:
@@ -15553,23 +13710,10 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B73E2;
 // LINE 2914:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b73e9
 void ListBoxWindow::SetShouldSort() {
-// LINE 2922:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2923:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
@@ -15584,11 +13728,6 @@ void ListBoxWindow::SetShouldSort() {
 	__asm        call   dword ptr [eax+0xE8];
 // LINE 2927:
 	__asm        jmp    near ptr 0x004B7425;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b742a
@@ -15596,14 +13735,6 @@ void ListBoxWindow::Sort() {
 	class basic_string<char> sSaved;
 	long lNewSelectionIndex;
 
-// LINE 2938:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x27C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2939:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -15865,68 +13996,29 @@ void ListBoxWindow::Sort() {
 	__asm        jmp    near ptr 0x004B78DB;
 // LINE 2951:
 	__asm        jmp    near ptr 0x004B78E0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b78e5
 long ListBoxWindow::GetLineCount() {
-// LINE 2957:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2958:
 	__asm        jmp    near ptr 0x004B78F6;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        jmp    near ptr 0x004B7901;
 // LINE 2959:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b7906
 long ListBoxWindow::GetIndexOfTopLine() {
-// LINE 2965:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2966:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB4];
 	__asm        jmp    near ptr 0x004B7920;
 // LINE 2967:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b7925
 int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * szImageFileName) {
-// LINE 2974:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2978:
 	__asm        cmp    bVertical, 0;
 	__asm        je     near ptr 0x004B7A18;
@@ -16009,23 +14101,10 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B7A22;
 // LINE 2992:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b7a29
 void ListBoxWindow::RemoveScrollBar(int32_t bVertical, int32_t bHorizontal) {
-// LINE 2999:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3000:
 	__asm        cmp    bVertical, 0;
 	__asm        je     near ptr 0x004B7A61;
@@ -16056,23 +14135,10 @@ void ListBoxWindow::RemoveScrollBar(int32_t bVertical, int32_t bHorizontal) {
 	__asm        mov    dword ptr [eax+0xC4], 0;
 // LINE 3008:
 	__asm        jmp    near ptr 0x004B7A92;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b7a99
 void ListBoxWindow::SetScrollBarValue() {
-// LINE 3015:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3016:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
@@ -16133,11 +14199,6 @@ void ListBoxWindow::SetScrollBarValue() {
 // LINE 3025:
 // Block end:
 	__asm        jmp    near ptr 0x004B7B5C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b7b61
@@ -16145,14 +14206,6 @@ void ListBoxWindow::SetScrollBarSizes() {
 	int32_t nScrollBarYPosition;
 	int32_t nScrollBarXPosition;
 
-// LINE 3031:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3035:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
@@ -16207,23 +14260,10 @@ void ListBoxWindow::SetScrollBarSizes() {
 	__asm        call   dword ptr [edx+0x38];
 // LINE 3041:
 	__asm        jmp    near ptr 0x004B7C20;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b7c25
 void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 3059:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -16241,25 +14281,12 @@ void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID
 // LINE 3060:
 	__asm        jmp    near ptr 0x004B7C5B;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x004b7c65
 int32_t PopupMenuWindow::Initialize() {
 	int32_t nReturnValue;
 
-// LINE 3066:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3067:
 	__asm        mov    ecx, this;
 	__asm        call   0x004B47F7;
@@ -16290,23 +14317,10 @@ int32_t PopupMenuWindow::Initialize() {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004B7CBC;
 // LINE 3073:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004b7cc1
 long PopupMenuWindow::DoKeyDown(long lKey, char chModifiers) {
-// LINE 3080:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3081:
 	__asm        cmp    lKey, 0xD;
 	__asm        je     near ptr 0x004B7CE1;
@@ -16377,23 +14391,10 @@ long PopupMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   0x004B6AC9;
 	__asm        jmp    near ptr 0x004B7D8B;
 // LINE 3093:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b7d92
 long PopupMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 3104:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3105:
 	__asm        cmp    nCursorX, 0;
 	__asm        jl     near ptr 0x004B7DE6;
@@ -16459,23 +14460,10 @@ long PopupMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        call   0x004B6B8E;
 	__asm        jmp    near ptr 0x004B7E5C;
 // LINE 3113:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b7e63
 long PopupMenuWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 3120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -16515,23 +14503,10 @@ long PopupMenuWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B7ED8;
 // LINE 3126:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004b7edf
 long PopupMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 3138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3139:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, nCursorY;
@@ -16546,25 +14521,12 @@ long PopupMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B7F11;
 // LINE 3141:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b7f18
 int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 	int32_t nReturnValue;
 
-// LINE 3147:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3150:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xB0];
@@ -16583,25 +14545,12 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004B7F52;
 // LINE 3154:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004b7f59
 int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
 	int32_t nReturnValue;
 
-// LINE 3160:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3163:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0xB0];
@@ -16622,11 +14571,6 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, class basic_string<cha
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004B7F97;
 // LINE 3167:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004b7f9e
@@ -16637,14 +14581,6 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	long lCurrentLineHeight;
 	class MRect rectNewWindow;
 
-// LINE 3173:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3174:
 	__asm        mov    lCurrentLongestLineWidth, 1;
 // LINE 3177:
@@ -16855,11 +14791,6 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        jmp    near ptr 0x004B823E;
 // LINE 3190:
 	__asm        jmp    near ptr 0x004B8243;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

@@ -3,13 +3,6 @@
 void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	short size1;
 
-// LINE 225:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 227:
 	__asm        mov    size1, 0x40;
 // LINE 228:
@@ -29,24 +22,11 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        add    esp, 4;
 // LINE 231:
 	__asm        jmp    near ptr 0x0055E739;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f1e0
 unsigned long cBBase::GetBodyType() {
-// LINE 18:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE330;
 	__asm        push   0x12;
@@ -55,24 +35,11 @@ unsigned long cBBase::GetBodyType() {
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F20C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f220
 class cBList<cBBase>* cBBase::GetList() {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE358;
 	__asm        push   0x15;
@@ -81,44 +48,18 @@ class cBList<cBBase>* cBBase::GetList() {
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F24C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f260
 unsigned short cBBase::CanDestroy() {
-// LINE 23:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0055F275;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f280
 void cBBase::InstallArrayPointers(unsigned short fromdisk) {
-// LINE 28:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE37C;
 	__asm        push   0x1C;
@@ -126,24 +67,11 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 	__asm        call   0x00554F30;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F2AA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f2c0
 void cBBase::~cBBase() {
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593688;
 // LINE 44:
@@ -164,24 +92,11 @@ void cBBase::~cBBase() {
 	__asm        add    esp, 4;
 // LINE 53:
 	__asm        jmp    near ptr 0x0055F305;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f310
 void cBBase::Destroy() {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 57:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -328,76 +243,32 @@ void cBBase::Destroy() {
 	__asm        jmp    near ptr 0x0055F4CF;
 // LINE 68:
 	__asm        jmp    near ptr 0x0055F4D4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f4e0
 void cBBase::Dirty() {
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 76:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x22], 1;
 // LINE 77:
 	__asm        jmp    near ptr 0x0055F4FA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f500
 unsigned short cBBase::IsDirty() {
-// LINE 79:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x22];
 	__asm        jmp    near ptr 0x0055F518;
 // LINE 81:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f520
 void cBBase::WriteToDisk() {
-// LINE 84:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 113:
 	__asm        jmp    near ptr 0x0055F531;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

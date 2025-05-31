@@ -637,13 +637,6 @@ public:
 // Contribution: 1:00138c00-0013ad38 Module: 156, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00539c00
 void S3StationInit() {
-// LINE 27:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 28:
 	__asm        push   0x1C;
 	__asm        call   0x0056A600;
@@ -685,22 +678,10 @@ void S3StationInit() {
 	__asm        mov    dword ptr ds:[0x5C3AA8], 0;
 // LINE 31:
 	__asm        jmp    near ptr 0x00539CB6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00539cbb
 void S3StationReset() {
-// LINE 36:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 40:
 	__asm        mov    eax, ds:[0x5C3820];
 	__asm        mov    [ebp-8], eax;
@@ -745,21 +726,10 @@ void S3StationReset() {
 	__asm        jmp    near ptr 0x00539D5D;
 // LINE 43:
 	__asm        jmp    near ptr 0x00539D62;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00539d67
 short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, struct _GridCoordinates* result) {
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 49:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -769,21 +739,10 @@ short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, st
 	__asm        call   0x0053AA5F;
 	__asm        jmp    near ptr 0x00539D82;
 // LINE 50:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00539d87
 short S3GetNextNearest(class Station* station, struct _GridCoordinates* result) {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 57:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -791,11 +750,6 @@ short S3GetNextNearest(class Station* station, struct _GridCoordinates* result) 
 	__asm        call   0x0053AACD;
 	__asm        jmp    near ptr 0x00539D9E;
 // LINE 58:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00539da3
@@ -804,14 +758,6 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	struct _GridCoordinates center;
 	int32_t direction;
 
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 80:
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
@@ -1001,25 +947,12 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        mov    eax, 0xFF;
 	__asm        jmp    near ptr 0x0053A017;
 // LINE 104:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a01e
 int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	class SpiralScan spiral;
 
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 110:
 	__asm        push   0x80;
 	__asm        lea    ecx, spiral.currDist;
@@ -1143,11 +1076,6 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0053A1F4;
 // LINE 123:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a1fb
@@ -1157,14 +1085,6 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 	int32_t deltax;
 	int32_t i;
 
-// LINE 127:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 132:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
@@ -1288,11 +1208,6 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 	__asm        jmp    near ptr 0x0053A21D;
 // LINE 166:
 	__asm        jmp    near ptr 0x0053A351;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a358
@@ -1302,14 +1217,6 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 	int32_t i;
 	struct _VehicleHeapStruct vehicle;
 
-// LINE 173:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 178:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -1430,11 +1337,6 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 	__asm        jmp    near ptr 0x0053A37A;
 // LINE 218:
 	__asm        jmp    near ptr 0x0053A499;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
@@ -1442,14 +1344,6 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 	int32_t code;
 	int32_t i;
 
-// LINE 225:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 227:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053A4BB;
@@ -1505,11 +1399,6 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053A55F;
 // LINE 245:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0053a566
@@ -1517,14 +1406,6 @@ void Station::StationHeapInsert(const struct _StationHeapStruct* pInsertStruct) 
 	int32_t index;
 	struct _StationHeapStruct tempStruct;
 
-// LINE 249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 252:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0xC];
@@ -1601,11 +1482,6 @@ void Station::StationHeapInsert(const struct _StationHeapStruct* pInsertStruct) 
 	__asm        jmp    near ptr 0x0053A59A;
 // LINE 268:
 	__asm        jmp    near ptr 0x0053A630;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a637
@@ -1615,14 +1491,6 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 	int32_t parent;
 	struct _StationHeapStruct tempStruct;
 
-// LINE 272:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1748,11 +1616,6 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 	__asm        mov    [edx+4], ecx;
 // LINE 311:
 	__asm        jmp    near ptr 0x0053A791;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a798
@@ -1760,14 +1623,6 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 	int32_t index;
 	struct _VehicleHeapStruct tempStruct;
 
-// LINE 315:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 318:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0x14];
@@ -1861,11 +1716,6 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) 
 	__asm        jmp    near ptr 0x0053A7D7;
 // LINE 334:
 	__asm        jmp    near ptr 0x0053A899;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
@@ -1875,14 +1725,6 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 	int32_t parent;
 	struct _VehicleHeapStruct tempStruct;
 
-// LINE 338:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 344:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -2036,23 +1878,10 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 	__asm        mov    [ecx+8], ax;
 // LINE 377:
 	__asm        jmp    near ptr 0x0053AA58;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
 short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordinates* result) {
-// LINE 384:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 385:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(gc.x);
 	__asm        push   eax;
@@ -2090,23 +1919,10 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0053AAC6;
 // LINE 399:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0053aacd
 short Station::GetNextNearest(struct _GridCoordinates* result) {
-// LINE 403:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 404:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2139,23 +1955,10 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0053AB28;
 // LINE 417:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053ab2f
 void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
-// LINE 421:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 423:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2180,11 +1983,6 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 	__asm        dec    dword ptr [eax+ecx+0x5C];
 // LINE 426:
 	__asm        jmp    near ptr 0x0053AB8C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
@@ -2204,14 +2002,6 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	struct Goal result;
 	struct _RGIndex startVertex;
 
-// LINE 432:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x288;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 433:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -3098,29 +2888,14 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, [ebp-0x1EC];
 	__asm        jmp    near ptr 0x0053B994;
 // LINE 585:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0053b99b
 void $E36() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   0x0042F2E9;
 	__asm        jmp    near ptr 0x0053B9B0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0053b9b5
@@ -3131,14 +2906,6 @@ void Station::Station(unsigned char stationScurkID) {
 	unsigned char * tempBuildMap;
 	struct _GridCoordinates workingLoc;
 
-// LINE 591:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 594:
 	__asm        mov    tempBuildMap, 0x5C3AB0;
 // LINE 596:
@@ -3431,11 +3198,6 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 694:
 	__asm        jmp    near ptr 0x0053BD2F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

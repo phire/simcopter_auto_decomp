@@ -160,12 +160,6 @@ private:
 // Contribution: 1:000aa530-000ab9b5 Module: 6, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ab530
 int32_t ReadFirstMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrData, long lDataLength) {
-// LINE 17:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 18:
 	__asm        mov    eax, miffReader;
 	__asm        mov    eax, [eax];
@@ -194,21 +188,10 @@ int32_t ReadFirstMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptr
 	__asm        call   dword ptr [eax+0x40];
 	__asm        jmp    near ptr 0x004AB577;
 // LINE 22:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab57c
 int32_t ReadNextMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrData, long lDataLength) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 30:
 	__asm        mov    eax, lDataType;
 	__asm        push   eax;
@@ -232,21 +215,10 @@ int32_t ReadNextMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrD
 	__asm        call   dword ptr [eax+0x40];
 	__asm        jmp    near ptr 0x004AB5B8;
 // LINE 33:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab5bd
 int32_t WriteMIFFChunk(void * __ptr32 miffWriter, long lDataType, char * ptrData, long lDataLength) {
-// LINE 40:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 41:
 	__asm        mov    eax, lDataLength;
 	__asm        push   eax;
@@ -260,23 +232,10 @@ int32_t WriteMIFFChunk(void * __ptr32 miffWriter, long lDataType, char * ptrData
 	__asm        call   dword ptr [eax+0x64];
 	__asm        jmp    near ptr 0x004AB5DF;
 // LINE 42:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab5e4
 void MIFF::MIFF() {
-// LINE 56:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
 	__asm        mov    eax, this;
@@ -334,23 +293,10 @@ void MIFF::MIFF() {
 // LINE 71:
 	__asm        jmp    near ptr 0x004AB6ED;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab6f5
 void MIFF::MIFF(char * szFileOrPath) {
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
 	__asm        mov    eax, this;
@@ -397,23 +343,10 @@ void MIFF::MIFF(char * szFileOrPath) {
 // LINE 91:
 	__asm        jmp    near ptr 0x004AB7C5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ab7cf
 void MIFF::~MIFF() {
-// LINE 97:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591950;
 // LINE 98:
@@ -449,23 +382,10 @@ void MIFF::~MIFF() {
 	__asm        call   0x00578E50;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AB873;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab878
 long MIFF::OpenForReading() {
-// LINE 113:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 114:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -516,23 +436,10 @@ long MIFF::OpenForReading() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AB932;
 // LINE 124:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab937
 long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) {
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 139:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -602,23 +509,10 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004ABA25;
 // LINE 154:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004aba2c
 long MIFF::OpenForAppending() {
-// LINE 168:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 169:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -698,23 +592,10 @@ long MIFF::OpenForAppending() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004ABB42;
 // LINE 186:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abb47
 long MIFF::Close() {
-// LINE 193:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 194:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x120], 2;
@@ -734,23 +615,10 @@ long MIFF::Close() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ABB90;
 // LINE 198:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abb95
 long MIFF::VerifyFile() {
-// LINE 205:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 206:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -790,23 +658,10 @@ long MIFF::VerifyFile() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004ABC2D;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abc32
 long MIFF::ReadMIFFHeader() {
-// LINE 222:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 223:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -843,11 +698,6 @@ long MIFF::ReadMIFFHeader() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004ABCB5;
 // LINE 229:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abcba
@@ -855,14 +705,6 @@ long MIFF::ReadFileCreator() {
 	long lResult;
 	long bWeOpenedFile;
 
-// LINE 236:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 237:
 	__asm        mov    bWeOpenedFile, 0;
 // LINE 240:
@@ -915,11 +757,6 @@ long MIFF::ReadFileCreator() {
 	__asm        mov    eax, lResult;
 	__asm        jmp    near ptr 0x004ABD69;
 // LINE 251:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abd6e
@@ -927,14 +764,6 @@ long MIFF::ReadFileType() {
 	long lResult;
 	long bWeOpenedFile;
 
-// LINE 258:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 259:
 	__asm        mov    bWeOpenedFile, 0;
 // LINE 262:
@@ -987,11 +816,6 @@ long MIFF::ReadFileType() {
 	__asm        mov    eax, lResult;
 	__asm        jmp    near ptr 0x004ABE1D;
 // LINE 273:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abe22
@@ -999,14 +823,6 @@ long MIFF::ReadFileVersion() {
 	long lResult;
 	long bWeOpenedFile;
 
-// LINE 279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 280:
 	__asm        mov    bWeOpenedFile, 0;
 // LINE 283:
@@ -1059,25 +875,12 @@ long MIFF::ReadFileVersion() {
 	__asm        mov    eax, lResult;
 	__asm        jmp    near ptr 0x004ABED1;
 // LINE 294:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abed6
 long MIFF::ReadRecordHeader() {
 	long lBytesRead;
 
-// LINE 308:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 314:
 	__asm        push   4;
 	__asm        mov    eax, this;
@@ -1149,11 +952,6 @@ long MIFF::ReadRecordHeader() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ABFC7;
 // LINE 329:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004abfcc
@@ -1161,14 +959,6 @@ long MIFF::CountRecords() {
 	long lCount;
 	long bWeOpenedFile;
 
-// LINE 349:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 352:
 	__asm        mov    bWeOpenedFile, 0;
 // LINE 353:
@@ -1241,23 +1031,10 @@ long MIFF::CountRecords() {
 	__asm        mov    eax, lCount;
 	__asm        jmp    near ptr 0x004AC0AF;
 // LINE 374:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ac0b4
 long MIFF::GoToFirstRecord() {
-// LINE 390:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 391:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1297,11 +1074,6 @@ long MIFF::GoToFirstRecord() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC14A;
 // LINE 398:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ac14f
@@ -1309,14 +1081,6 @@ long MIFF::GoToNextRecord() {
 	long lResult;
 	long lSavedPreviousStart;
 
-// LINE 413:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 420:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x110];
@@ -1441,25 +1205,12 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC2EC;
 // LINE 452:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ac2f1
 long MIFF::GoToPreviousRecord() {
 	long lTempPresentRecord;
 
-// LINE 467:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 473:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11C];
@@ -1480,23 +1231,10 @@ long MIFF::GoToPreviousRecord() {
 	__asm        mov    eax, lTempPresentRecord;
 	__asm        jmp    near ptr 0x004AC32D;
 // LINE 478:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ac332
 long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
-// LINE 491:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 492:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1535,23 +1273,10 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AC3A4;
 // LINE 501:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ac3ab
 long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
-// LINE 514:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 515:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1575,25 +1300,12 @@ long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AC3F4;
 // LINE 520:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ac3fb
 long MIFF::GoToNthRecord(long lRecordToGoTo) {
 	long lTempPresentRecord;
 
-// LINE 535:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 540:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1616,11 +1328,6 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC447;
 // LINE 544:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004ac44e
@@ -1628,14 +1335,6 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 	long lReturnValue;
 	long lActualDataBytesToRead;
 
-// LINE 553:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 563:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1707,11 +1406,6 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC53D;
 // LINE 582:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004ac544
@@ -1719,14 +1413,6 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	long lReturnValue;
 	long lActualBytesToRead;
 
-// LINE 591:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 601:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1796,25 +1482,12 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC634;
 // LINE 619:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004ac63b
 long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion) {
 	long lReturnValue;
 
-// LINE 639:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 645:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1890,11 +1563,6 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC751;
 // LINE 662:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004ac758
@@ -1902,14 +1570,6 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 	long lReturnValue;
 	long lAmountOfDataToWrite;
 
-// LINE 669:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 678:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1960,11 +1620,6 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC80A;
 // LINE 693:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004ac811
@@ -1972,14 +1627,6 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	long lReturnValue;
 	long lRecordLength;
 
-// LINE 701:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 704:
 	__asm        mov    eax, lDataLength;
 	__asm        add    eax, 8;
@@ -2046,11 +1693,6 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC8F4;
 // LINE 724:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004ac8fb
@@ -2058,14 +1700,6 @@ long MIFF::WriteEnd() {
 	long lPresentPosition;
 	long lFileLength;
 
-// LINE 735:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 739:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
@@ -2122,11 +1756,6 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AC9B1;
 // LINE 748:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

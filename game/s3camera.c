@@ -46,13 +46,6 @@ void S3CameraMove(struct Point3d* P) {
 	struct Point3d viewerPos;
 	int32_t mat[4][4];
 
-// LINE 100:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 101:
 	__asm        mov    Velocity, 0;
 // LINE 124:
@@ -411,21 +404,10 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        mov    eax, ds:[0x5B4E00];
 	__asm        add    ds:[0x6C131C], eax;
 // LINE 276:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
 void NormalizeGridPoint(struct Point3d* P) {
-// LINE 283:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 284:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax], 0xD0000000;
@@ -457,11 +439,6 @@ void NormalizeGridPoint(struct Point3d* P) {
 	__asm        mov    eax, P;
 	__asm        sub    dword ptr [eax+8], 0x40000000;
 // LINE 293:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f8fe2
@@ -471,13 +448,6 @@ void SetIdealCameraPos() {
 	int32_t Acceleration;
 	int32_t cameraDistance;
 
-// LINE 306:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 308:
 	__asm        mov    AccelAdjust, 0;
 // LINE 309:
@@ -658,21 +628,10 @@ void SetIdealCameraPos() {
 	__asm        and    eax, 0xFFFFFF00;
 	__asm        mov    ds:[0x6BF1A4], eax;
 // LINE 398:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9240
 void GetIdealCameraPos(struct Point3d* P) {
-// LINE 403:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 404:
 	__asm        mov    eax, 0x6BF1A0;
 	__asm        mov    ecx, P;
@@ -683,11 +642,6 @@ void GetIdealCameraPos(struct Point3d* P) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 405:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9263
@@ -702,13 +656,6 @@ void CalcCameraAngles(struct Point3d* Vector) {
 	int32_t cosineYaw;
 	int32_t LengthXZ;
 
-// LINE 423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 434:
 	__asm        mov    eax, Vector;
 	__asm        mov    eax, [eax];
@@ -974,11 +921,6 @@ void CalcCameraAngles(struct Point3d* Vector) {
 	__asm        call   0x004D2034;
 	__asm        add    esp, 8;
 // LINE 520:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f955f
@@ -990,13 +932,6 @@ void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll)
 	int32_t cosineRoll;
 	int32_t cosineYaw;
 
-// LINE 528:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 533:
 	__asm        lea    eax, cosineYaw;
 	__asm        push   eax;
@@ -1179,11 +1114,6 @@ void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    eax, matrix;
 	__asm        mov    dword ptr [eax+0x3C], 0x10000;
 // LINE 561:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9735
@@ -1192,13 +1122,6 @@ void S3CameraRotate() {
 	int32_t temp;
 	struct Point3d cameraDelta;
 
-// LINE 564:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 606:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        jne    near ptr 0x004F9791;
@@ -1321,24 +1244,12 @@ void S3CameraRotate() {
 	__asm        call   0x004F9263;
 	__asm        add    esp, 4;
 // LINE 699:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f98dc
 void S3CameraTweakInit() {
 	int32_t * pvals[10];
 
-// LINE 711:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 726:
 	__asm        mov    pvals[0], 0x5B4DF4;
 // LINE 727:
@@ -1353,22 +1264,10 @@ void S3CameraTweakInit() {
 	__asm        call   0x004C9AD0;
 	__asm        add    esp, 0xC;
 // LINE 732:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9912
 void S3CameraChaseAdjust(int32_t camevent) {
-// LINE 742:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 743:
 	__asm        mov    eax, camevent;
 	__asm        mov    [ebp-4], eax;
@@ -1453,21 +1352,10 @@ void S3CameraChaseAdjust(int32_t camevent) {
 	__asm        dec    edi;
 	__asm        (bad);
 // LINE 772:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9a4e
 void S3CameraCycleChase() {
-// LINE 781:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 782:
 	__asm        inc    dword ptr ds:[0x5B4DFC];
 // LINE 783:
@@ -1476,51 +1364,24 @@ void S3CameraCycleChase() {
 // LINE 784:
 	__asm        mov    dword ptr ds:[0x5B4DFC], 0;
 // LINE 785:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9a76
 struct _CHASE_INFO* S3CameraGetChaseInfo() {
-// LINE 794:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 795:
 	__asm        mov    eax, 0x6BF160;
 	__asm        jmp    near ptr 0x004F9A86;
 // LINE 796:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
 void S3CameraSetChaseInfo(struct _CHASE_INFO* cinfo) {
-// LINE 805:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 806:
 	__asm        mov    edi, 0x6BF160;
 	__asm        mov    esi, cinfo;
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 807:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004f9aa5
@@ -1536,13 +1397,6 @@ int32_t S3CameraGetBldAlt(struct Point3d* loc) {
 	int32_t normz;
 	int32_t flags;
 
-// LINE 817:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 825:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax];
@@ -1638,11 +1492,6 @@ int32_t S3CameraGetBldAlt(struct Point3d* loc) {
 	__asm        mov    eax, maxobjy;
 	__asm        jmp    near ptr 0x004F9BAC;
 // LINE 854:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

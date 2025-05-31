@@ -21,13 +21,6 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	char message[256];
 	int32_t answer;
 
-// LINE 36:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x204;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 46:
 	__asm        push   0xAF;
 	__asm        mov    eax, failureDescription;
@@ -80,11 +73,6 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	__asm        call   0x0056F350;
 // LINE 70:
 	__asm        jmp    near ptr 0x00554FE6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

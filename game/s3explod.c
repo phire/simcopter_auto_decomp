@@ -67,13 +67,6 @@ void S3ExplosionReset() {
 	long i;
 	struct _SMOKE_DATA* sd;
 
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 59:
 	__asm        mov    dword ptr ds:[0x5B7380], 0;
 // LINE 60:
@@ -105,11 +98,6 @@ void S3ExplosionReset() {
 // LINE 75:
 	__asm        jmp    near ptr 0x00523972;
 // LINE 77:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00523996
@@ -122,13 +110,6 @@ void S3ExplosionInit() {
 	long size;
 	int32_t mat[4][4];
 
-// LINE 86:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 96:
 	__asm        push   0x7F;
 	__asm        call   0x004D8821;
@@ -639,11 +620,6 @@ void S3ExplosionInit() {
 	__asm        neg    eax;
 	__asm        mov    ds:[0x62AA2C], eax;
 // LINE 220:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00523f50
@@ -653,13 +629,6 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 	struct VRFaceInfo finfo;
 	long dim;
 
-// LINE 233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 240:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
@@ -803,11 +772,6 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 // LINE 303:
 	__asm        inc    dword ptr ds:[0x5B7380];
 // LINE 304:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005240dc
@@ -816,13 +780,6 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 	struct VRFaceInfo finfo;
 	struct _SMOKE_DATA* sd;
 
-// LINE 313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 319:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
@@ -993,11 +950,6 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 // LINE 388:
 	__asm        inc    dword ptr ds:[0x5B7384];
 // LINE 389:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0052429d
@@ -1011,13 +963,6 @@ void S3ExplosionDriver() {
 	struct VRFaceInfo finfo;
 	struct _SMOKE_DATA* sd;
 
-// LINE 400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x94;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 410:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
@@ -1287,11 +1232,6 @@ void S3ExplosionDriver() {
 // LINE 510:
 	__asm        jmp    near ptr 0x005245E9;
 // LINE 511:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

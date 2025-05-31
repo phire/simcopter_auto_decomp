@@ -293,31 +293,14 @@ public:
 // Contribution: 1:000294f0-0002c41c Module: 66, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042a4f0
 int32_t LanguageManager::Initialize() {
-// LINE 43:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 44:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042A500;
 // LINE 45:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042a505
 int32_t LanguageManager::Uninitialize() {
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 53:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        push   eax;
@@ -327,24 +310,12 @@ int32_t LanguageManager::Uninitialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042A523;
 // LINE 55:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042a528
 int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	class basic_string<char> sLocale;
 
-// LINE 64:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x80;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 65:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -629,11 +600,6 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x0042A927;
 // LINE 81:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042a92c
@@ -641,14 +607,6 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	int32_t nStringFound;
 	class basic_string<char> stringLanguage;
 
-// LINE 95:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1070;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 96:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -936,11 +894,6 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    near ptr 0x0042AD90;
 // LINE 111:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ad95
@@ -950,13 +903,6 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	int32_t i;
 	class basic_string<char> stringLanguageName;
 
-// LINE 128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x78;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 129:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1221,21 +1167,10 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    near ptr 0x0042B15A;
 // LINE 146:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042b15f
 int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
-// LINE 155:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 156:
 	__asm        cmp    nLanguage, 0;
 	__asm        jl     near ptr 0x0042B179;
@@ -1259,11 +1194,6 @@ int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
 	__asm        add    eax, nStringID;
 	__asm        jmp    near ptr 0x0042B1AA;
 // LINE 161:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042b1af
@@ -1271,14 +1201,6 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	int32_t nFullStringID;
 	class basic_string<char> sMessage;
 
-// LINE 173:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1074;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 178:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1634,24 +1556,12 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    near ptr 0x0042B7A9;
 // LINE 183:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042b7ae
 int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 	int32_t nInitialLanguage;
 
-// LINE 192:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 193:
 	__asm        mov    eax, nCurrentLanguage;
 	__asm        mov    nInitialLanguage, eax;
@@ -1684,21 +1594,10 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 	__asm        mov    eax, nCurrentLanguage;
 	__asm        jmp    near ptr 0x0042B814;
 // LINE 204:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042b819
 int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
-// LINE 229:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 230:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042B831;
@@ -1773,21 +1672,10 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 	__asm        mov    eax, nLanguage;
 	__asm        jmp    near ptr 0x0042B915;
 // LINE 261:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042b91a
 int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t nLanguage) {
-// LINE 275:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 299:
 	__asm        cmp    nLanguage, 1;
 	__asm        je     near ptr 0x0042BA10;
@@ -1842,21 +1730,10 @@ int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t nLanguage) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042BA21;
 // LINE 300:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ba26
 int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
-// LINE 313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 314:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -1866,25 +1743,12 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLan
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0042BA41;
 // LINE 315:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ba46
 int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
-// LINE 325:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x106C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 328:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042BA68;
@@ -2304,25 +2168,12 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042C0D9;
 // LINE 337:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042c0de
 int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
-// LINE 347:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x106C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 350:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042C100;
@@ -2742,25 +2593,12 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042C771;
 // LINE 359:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042c776
 int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
-// LINE 369:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x106C;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 372:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042C798;
@@ -3180,21 +3018,10 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042CE09;
 // LINE 381:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ce0e
 int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType, char * szFaceName) {
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 393:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042CE26;
@@ -3239,21 +3066,10 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042CE9A;
 // LINE 413:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ce9f
 int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t nType, char * szFontFilePath) {
-// LINE 426:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 427:
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    near ptr 0x0042CECE;
@@ -3272,11 +3088,6 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042CED5;
 // LINE 434:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ceda
@@ -3284,13 +3095,6 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	char szFontPath[260];
 	int32_t nReturnValue;
 
-// LINE 448:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x108;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 459:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -3347,11 +3151,6 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042CF89;
 // LINE 477:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042cf8e
@@ -3359,13 +3158,6 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 	char szFontPath[260];
 	int32_t nReturnValue;
 
-// LINE 488:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x108;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 492:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -3413,11 +3205,6 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042D01E;
 // LINE 507:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042d023
@@ -3425,13 +3212,6 @@ int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 	struct TypefaceTestStruct tempTypefaceTestStruct;
 	void * __ptr32 hdcScreen;
 
-// LINE 524:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 527:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -3464,11 +3244,6 @@ int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042D07E;
 // LINE 542:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042d083
@@ -3477,13 +3252,6 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 	unsigned short currentLanguageID;
 	unsigned long currentLCID;
 
-// LINE 549:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 554:
 	__asm        call   dword ptr ds:[0x6C364C];
 	__asm        mov    currentLCID, eax;
@@ -3709,21 +3477,10 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 	__asm        je     near ptr 0x0042D0FC;
 	__asm        jmp    near ptr 0x0042D20A;
 // LINE 596:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042d387
 int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t nLanguage) {
-// LINE 603:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 604:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    near ptr 0x0042D39F;
@@ -3742,11 +3499,6 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t nLanguage) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042D3C4;
 // LINE 613:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
@@ -3754,13 +3506,6 @@ int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXT
 	struct TypefaceTestStruct* tempTypefaceTestStruct;
 	char * szEnumeratedFaceName;
 
-// LINE 626:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 627:
 	__asm        mov    eax, lParam;
 	__asm        mov    tempTypefaceTestStruct, eax;
@@ -3788,11 +3533,6 @@ int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXT
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042D416;
 // LINE 635:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 

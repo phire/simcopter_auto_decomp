@@ -156,14 +156,6 @@ public:
 void CSparkalWindow::CSparkalWindow() {
 	int32_t i;
 
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590EF8;
 // LINE 55:
@@ -207,11 +199,6 @@ void CSparkalWindow::CSparkalWindow() {
 // LINE 67:
 	__asm        jmp    near ptr 0x00480730;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00480738
@@ -225,14 +212,6 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	struct tagWNDCLASSA ClassInfo;
 	unsigned long ScreenHeight;
 
-// LINE 76:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x474;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590EF8;
 // LINE 80:
@@ -703,25 +682,12 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // Block end:
 	__asm        jmp    near ptr 0x00480CF4;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00480d01
 void CSparkalWindow::~CSparkalWindow() {
 	int32_t i;
 
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590EF8;
 // LINE 251:
@@ -782,25 +748,12 @@ void CSparkalWindow::~CSparkalWindow() {
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 269:
 	__asm        jmp    near ptr 0x00480DC5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00480dca
 unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 	unsigned long Error;
 
-// LINE 276:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 277:
 	__asm        cmp    pWidth, 0;
 	__asm        je     near ptr 0x00480DEA;
@@ -854,11 +807,6 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 	__asm        mov    eax, Error;
 	__asm        jmp    near ptr 0x00480E6D;
 // LINE 293:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00480e74
@@ -866,14 +814,6 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 	void * __ptr32 hNewCursor;
 	unsigned long ReturnCode;
 
-// LINE 308:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 309:
 	__asm        mov    ReturnCode, 0;
 // LINE 312:
@@ -932,25 +872,12 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 	__asm        mov    eax, ReturnCode;
 	__asm        jmp    near ptr 0x00480F2B;
 // LINE 330:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00480f32
 unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 	unsigned long ReturnCode;
 
-// LINE 337:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 338:
 	__asm        mov    ReturnCode, 0;
 // LINE 340:
@@ -972,51 +899,20 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 	__asm        mov    eax, ReturnCode;
 	__asm        jmp    near ptr 0x00480F79;
 // LINE 345:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00480f80
 unsigned long CSparkalWindow::LoadGameCursors() {
-// LINE 352:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 353:
 	__asm        mov    eax, 0x80000007;
 	__asm        jmp    near ptr 0x00480F96;
 // LINE 354:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00480f9b
 void CSparkalWindow::FreeGameCursors() {
-// LINE 360:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 362:
 	__asm        jmp    near ptr 0x00480FAC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00480fb1
@@ -1028,14 +924,6 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 	struct tagSIZE TextSize;
 	struct tagRECT TextRect;
 
-// LINE 372:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 373:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -1229,25 +1117,12 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004811B4;
 // LINE 452:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x20;
 }
 
 // FUNCTION: COPTER_D 0x004811bb
 unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long Bottom, long ScrollRightAmount, long ScrollDownAmount) {
 	void * __ptr32 hdc;
 
-// LINE 462:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 463:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -1302,11 +1177,6 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048125E;
 // LINE 474:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00481265
@@ -1314,14 +1184,6 @@ void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* 
 	int32_t i;
 	struct tagPALETTEENTRY palColors[256];
 
-// LINE 482:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x408;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 486:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -1371,11 +1233,6 @@ void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* 
 	__asm        call   dword ptr ds:[0x6C35AC];
 // LINE 496:
 	__asm        jmp    near ptr 0x00481324;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0048132b
@@ -1386,13 +1243,6 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	void * __ptr32 MemDC;
 	unsigned char Bits[256];
 
-// LINE 505:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x540;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 506:
 	__asm        mov    IsID, 0;
 // LINE 512:
@@ -1563,24 +1413,12 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	__asm        mov    eax, IsID;
 	__asm        jmp    near ptr 0x004815D8;
 // LINE 571:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004815dd
 long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
 	class CSparkalWindow* pWindow;
 
-// LINE 584:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 585:
 	__asm        jmp    near ptr 0x004815EB;
 	__asm        push   0;
@@ -1618,22 +1456,10 @@ long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam,
 	__asm        call   dword ptr ds:[0x6C3860];
 	__asm        jmp    near ptr 0x00481640;
 // LINE 589:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00481647
 long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-// LINE 602:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 603:
 	__asm        mov    eax, Message;
 	__asm        mov    [ebp-0x70], eax;
@@ -2025,11 +1851,6 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 	__asm        call   dword ptr ds:[0x6C3860];
 	__asm        jmp    near ptr 0x00481ACA;
 // LINE 706:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 

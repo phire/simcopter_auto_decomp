@@ -97,8 +97,6 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	unsigned char tmp[16];
 
 // LINE 37:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5674BB;
 	__asm        mov    eax, fs:[0];

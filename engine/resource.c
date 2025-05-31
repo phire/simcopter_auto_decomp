@@ -26,12 +26,6 @@ public:
 // Contribution: 1:000d42c0-000d505d Module: 146, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d52c0
 void InitResource() {
-// LINE 92:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 93:
 	__asm        push   0x59C230;
 	__asm        push   0x6663F0;
@@ -48,24 +42,12 @@ void InitResource() {
 // LINE 98:
 	__asm        mov    dword ptr ds:[0x666690], 0;
 // LINE 100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d530f
 void VRResFreeBarrys(struct VRResource* res) {
 	struct GEOM_Resource* geo;
 
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 113:
 	__asm        mov    eax, res;
 	__asm        mov    geo, eax;
@@ -88,11 +70,6 @@ void VRResFreeBarrys(struct VRResource* res) {
 	__asm        call   0x004CB6C3;
 	__asm        add    esp, 4;
 // LINE 122:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5356
@@ -100,13 +77,6 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	int32_t i;
 	struct VRResource* res;
 
-// LINE 138:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 142:
 	__asm        mov    eax, Flags;
 	__asm        mov    [ebp-0xC], eax;
@@ -505,24 +475,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D5820;
 // LINE 257:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5825
 int32_t VRUnLoadAllResources() {
 	struct VRResource* res;
 
-// LINE 275:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 278:
 	__asm        cmp    dword ptr ds:[0x59C224], 0;
 	__asm        je     near ptr 0x004D5863;
@@ -545,24 +503,12 @@ int32_t VRUnLoadAllResources() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D586D;
 // LINE 284:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5872
 int32_t VRUnLoadResource(struct VRResource* res) {
 	struct GEOM_Resource* geo;
 
-// LINE 301:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 305:
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+8];
@@ -620,11 +566,6 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D5921;
 // LINE 338:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5926
@@ -632,13 +573,6 @@ int32_t GetDir_GEOM(char * name) {
 	struct Chunk chunk;
 	int32_t i;
 
-// LINE 358:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 364:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -828,11 +762,6 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D5BAA;
 // LINE 615:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5baf
@@ -840,13 +769,6 @@ int32_t GetDir_CMAP(char * name) {
 	struct Chunk chunk;
 	int32_t i;
 
-// LINE 635:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 640:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -968,24 +890,12 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D5D43;
 // LINE 732:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5d48
 int32_t GetResourceDir(char * name) {
 	struct Chunk chunk;
 
-// LINE 752:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 758:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -1083,21 +993,10 @@ int32_t GetResourceDir(char * name) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D5E7C;
 // LINE 849:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5e81
 int32_t OpenResourceFile(char * name) {
-// LINE 868:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 872:
 	__asm        call   0x004D5F63;
 // LINE 873:
@@ -1141,21 +1040,10 @@ int32_t OpenResourceFile(char * name) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D5F19;
 // LINE 887:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5f1e
 int32_t ReadResource(void * __ptr32 buf, int32_t s) {
-// LINE 915:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1058:
 	__asm        mov    eax, s;
 	__asm        push   eax;
@@ -1176,21 +1064,10 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D5F5E;
 // LINE 1064:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5f63
 void VRCloseResourceFile() {
-// LINE 1079:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1092:
 	__asm        cmp    dword ptr ds:[0x6666A0], 0;
 	__asm        je     near ptr 0x004D5F84;
@@ -1210,21 +1087,10 @@ void VRCloseResourceFile() {
 // LINE 1099:
 	__asm        call   0x004D52C0;
 // LINE 1100:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5fa9
 int32_t RegisterResource(struct VRResource* res) {
-// LINE 1117:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1119:
 	__asm        cmp    dword ptr ds:[0x59C224], 0x64;
 	__asm        jl     near ptr 0x004D5FCD;
@@ -1246,11 +1112,6 @@ int32_t RegisterResource(struct VRResource* res) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D5FF8;
 // LINE 1127:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
@@ -1258,13 +1119,6 @@ void UnRegisterResource(struct VRResource* res) {
 	int32_t i;
 	struct VRResource* r;
 
-// LINE 1142:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1146:
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+0xC];
@@ -1291,11 +1145,6 @@ void UnRegisterResource(struct VRResource* res) {
 	__asm        mov    ecx, r;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1153:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

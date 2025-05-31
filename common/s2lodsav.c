@@ -59,13 +59,6 @@ int32_t S2CityValidate(char * filepath) {
 	long lChunkDataSize;
 	long lChunkType;
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 115:
 	__asm        push   0x59AFF0;
 	__asm        mov    eax, filepath;
@@ -209,11 +202,6 @@ exit:
 	__asm        mov    eax, bOK;
 	__asm        jmp    near ptr 0x004C4819;
 // LINE 160:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c481e
@@ -226,13 +214,6 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	long count;
 	long size;
 
-// LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 185:
 	__asm        mov    eax, cityName;
 	__asm        mov    byte ptr [eax], 0;
@@ -388,11 +369,6 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C49D3;
 // LINE 231:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c49d8
@@ -400,13 +376,6 @@ long stol(char * tag) {
 	long buildval;
 	char * s;
 
-// LINE 245:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 249:
 	__asm        lea    eax, buildval;
 	__asm        mov    s, eax;
@@ -437,11 +406,6 @@ long stol(char * tag) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004C4A26;
 // LINE 257:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c4a2b
@@ -449,13 +413,6 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	struct _iobuf* fp;
 	char buf[5];
 
-// LINE 272:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 273:
 	__asm        push   0x59B000;
 	__asm        mov    eax, szFilePath;
@@ -503,11 +460,6 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004C4AB1;
 // LINE 284:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c4ab6
@@ -522,13 +474,6 @@ short S2CityLoad(char * filePath) {
 	char tempCityName[256];
 	long size;
 
-// LINE 298:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x120;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 305:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
@@ -1191,11 +1136,6 @@ badread:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004C536E;
 // LINE 459:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c5373
@@ -1203,13 +1143,6 @@ void label_kludge() {
 	short len;
 	short i;
 
-// LINE 473:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 476:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C538B;
@@ -1252,11 +1185,6 @@ void label_kludge() {
 // LINE 481:
 	__asm        jmp    near ptr 0x004C5387;
 // LINE 482:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c5412
@@ -1264,13 +1192,6 @@ void clear_label() {
 	short j;
 	short i;
 
-// LINE 496:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 499:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C542A;
@@ -1297,11 +1218,6 @@ void clear_label() {
 // LINE 502:
 	__asm        jmp    near ptr 0x004C5426;
 // LINE 503:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c547e
@@ -1309,13 +1225,6 @@ void graph_kludge() {
 	short j;
 	short i;
 
-// LINE 516:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 519:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5496;
@@ -1372,11 +1281,6 @@ void graph_kludge() {
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        jmp    near ptr 0x004C5530;
 // LINE 528:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c555f
@@ -1387,13 +1291,6 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	char szSplitPathDrive[3];
 	char szSplitPathExtension[256];
 
-// LINE 542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x308;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 549:
 	__asm        lea    eax, szSplitPathExtension[0];
 	__asm        push   eax;
@@ -1426,21 +1323,10 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	__asm        call   0x0056CEB0;
 	__asm        add    esp, 8;
 // LINE 555:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c55d7
 void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
-// LINE 568:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 569:
 	__asm        mov    eax, cityName;
 	__asm        push   eax;
@@ -1449,24 +1335,12 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 	__asm        call   0x0056CEB0;
 	__asm        add    esp, 8;
 // LINE 570:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c55f2
 unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	long data;
 
-// LINE 588:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 591:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -1551,11 +1425,6 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C56DD;
 // LINE 614:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c56e2
@@ -1565,13 +1434,6 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	short i;
 	short ix;
 
-// LINE 629:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 633:
 	__asm        push   0x12C0;
 	__asm        mov    eax, ds:[0x63923C];
@@ -2608,21 +2470,10 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C65DA;
 // LINE 846:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c65df
 unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char * data) {
-// LINE 861:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 863:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -2642,11 +2493,6 @@ unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C6614;
 // LINE 866:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c6619
@@ -2654,13 +2500,6 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	char * temp;
 	long count;
 
-// LINE 883:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 887:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -2707,11 +2546,6 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C669F;
 // LINE 898:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c66a4
@@ -2723,13 +2557,6 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	long ix;
 	char b;
 
-// LINE 915:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 920:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -2853,11 +2680,6 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C6809;
 // LINE 953:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c680e
@@ -2865,13 +2687,6 @@ short S2CitySave(char * filePath) {
 	char tempCityNameString[33];
 	struct _iobuf* filNum;
 
-// LINE 976:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 980:
 	__asm        push   0x59B0FC;
 	__asm        mov    eax, filePath;
@@ -3284,11 +3099,6 @@ badwrite:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004C6CF9;
 // LINE 1053:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c6cfe
@@ -3296,13 +3106,6 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	long count;
 	long size;
 
-// LINE 1072:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1075:
 	__asm        mov    count, 4;
 // LINE 1076:
@@ -3380,11 +3183,6 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C6DD0;
 // LINE 1094:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c6dd5
@@ -3392,13 +3190,6 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	long count;
 	long size;
 
-// LINE 1111:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1114:
 	__asm        mov    count, 4;
 // LINE 1115:
@@ -3498,11 +3289,6 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C6ED6;
 // LINE 1138:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c6edb
@@ -3510,13 +3296,6 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	long count;
 	long data;
 
-// LINE 1156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1159:
 	__asm        push   0;
 	__asm        push   0;
@@ -3612,11 +3391,6 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C6FE1;
 // LINE 1181:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c6fe6
@@ -3627,13 +3401,6 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	long ix;
 	unsigned char b;
 
-// LINE 1197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1202:
 	__asm        mov    eax, count;
 	__asm        lea    eax, [eax+eax*2];
@@ -3929,11 +3696,6 @@ BadCompWrite:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004C7329;
 // LINE 1284:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c732e
@@ -3942,13 +3704,6 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	short i;
 	short ix;
 
-// LINE 1300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1303:
 	__asm        mov    ix, 0;
 // LINE 1304:
@@ -4947,11 +4702,6 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x004C81C4;
 // LINE 1480:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c81c9
@@ -4960,13 +4710,6 @@ void swizzle_buffer(char * data, long count) {
 	long lval;
 	long i;
 
-// LINE 1494:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1501:
 	__asm        mov    eax, count;
 	__asm        cdq;
@@ -5000,11 +4743,6 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1507:
 	__asm        jmp    near ptr 0x004C81F3;
 // LINE 1509:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c822d
@@ -5012,13 +4750,6 @@ void swizzle_Micro(char * data, long count) {
 	struct Micro* mptr;
 	long i;
 
-// LINE 1522:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1529:
 	__asm        mov    eax, count;
 	__asm        shr    eax, 3;
@@ -5062,11 +4793,6 @@ void swizzle_Micro(char * data, long count) {
 // LINE 1537:
 	__asm        jmp    near ptr 0x004C8251;
 // LINE 1539:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c82b3
@@ -5075,13 +4801,6 @@ void swizzle_shorts(char * data, long count) {
 	short sval;
 	long i;
 
-// LINE 1552:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1559:
 	__asm        mov    eax, count;
 	__asm        cdq;
@@ -5114,11 +4833,6 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1565:
 	__asm        jmp    near ptr 0x004C82DA;
 // LINE 1567:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c8317
@@ -5126,13 +4840,6 @@ short swizzle_short(short svalue) {
 	unsigned char cval;
 	unsigned char * byteptr;
 
-// LINE 1580:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1585:
 	__asm        lea    eax, svalue;
 	__asm        mov    byteptr, eax;
@@ -5153,11 +4860,6 @@ short swizzle_short(short svalue) {
 	__asm        mov    ax, svalue;
 	__asm        jmp    near ptr 0x004C834B;
 // LINE 1592:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c8350
@@ -5165,13 +4867,6 @@ long swap_long(long lvalue) {
 	unsigned short sval;
 	unsigned short * shortptr;
 
-// LINE 1605:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1610:
 	__asm        lea    eax, lvalue;
 	__asm        mov    shortptr, eax;
@@ -5192,11 +4887,6 @@ long swap_long(long lvalue) {
 	__asm        mov    eax, lvalue;
 	__asm        jmp    near ptr 0x004C8389;
 // LINE 1618:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c838e
@@ -5204,13 +4894,6 @@ long swizzle_long(long lvalue) {
 	unsigned char cval;
 	unsigned char * byteptr;
 
-// LINE 1631:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1636:
 	__asm        lea    eax, lvalue;
 	__asm        mov    byteptr, eax;
@@ -5244,30 +4927,14 @@ long swizzle_long(long lvalue) {
 	__asm        mov    eax, lvalue;
 	__asm        jmp    near ptr 0x004C83DF;
 // LINE 1648:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c83e4
 void GetStringResource(unsigned char * theString, short resourceID, short index) {
-// LINE 1667:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1671:
 	__asm        mov    eax, theString;
 	__asm        mov    byte ptr [eax], 0;
 // LINE 1674:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c83f5
@@ -5280,13 +4947,6 @@ short S2CityAlloc() {
 	unsigned long poolsize;
 	long cnt;
 
-// LINE 1703:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1711:
 	__asm        mov    dword ptr ds:[0x639FE0], 0;
 // LINE 1712:
@@ -6227,32 +5887,16 @@ alloc_failure:
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C9209;
 // LINE 1953:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c920e
 void S2CityFree() {
-// LINE 1967:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1969:
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
 	__asm        call   0x004CB6C3;
 	__asm        add    esp, 4;
 // LINE 1970:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9227
@@ -6260,13 +5904,6 @@ void PStringToCString(char * string) {
 	int32_t i;
 	char sizePString;
 
-// LINE 1979:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1980:
 	__asm        mov    eax, string;
 	__asm        mov    al, [eax];
@@ -6291,11 +5928,6 @@ void PStringToCString(char * string) {
 	__asm        mov    ecx, string;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 1986:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c927b
@@ -6303,13 +5935,6 @@ void CStringToPString(char * string) {
 	int32_t i;
 	int32_t sizeCString;
 
-// LINE 1993:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1994:
 	__asm        mov    eax, string;
 	__asm        push   eax;
@@ -6342,11 +5967,6 @@ void CStringToPString(char * string) {
 	__asm        mov    ecx, string;
 	__asm        mov    [ecx], al;
 // LINE 2003:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c92e5
@@ -6354,13 +5974,6 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	int32_t i;
 	int32_t iEnd;
 
-// LINE 2010:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2013:
 	__asm        mov    eax, stringSource;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6387,11 +6000,6 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        mov    [ecx+edx], al;
 	__asm        jmp    near ptr 0x004C930E;
 // LINE 2017:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9339
@@ -6399,13 +6007,6 @@ void check_backslash_terminate(char * path) {
 	short len;
 	char * s;
 
-// LINE 2039:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2043:
 	__asm        mov    eax, path;
 	__asm        push   eax;
@@ -6431,11 +6032,6 @@ void check_backslash_terminate(char * path) {
 	__asm        mov    eax, s;
 	__asm        mov    byte ptr [eax+1], 0;
 // LINE 2051:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9381
@@ -6446,13 +6042,6 @@ short check_root(char * pathname) {
 	char * t;
 	char * s;
 
-// LINE 2066:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x114;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2071:
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
@@ -6542,11 +6131,6 @@ short check_root(char * pathname) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C9490;
 // LINE 2104:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9495
@@ -6555,13 +6139,6 @@ void get_path_at_start(char * ref, char * ret) {
 	short off;
 	char * s;
 
-// LINE 2121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2125:
 	__asm        mov    eax, ret;
 	__asm        mov    byte ptr [eax], 0;
@@ -6625,11 +6202,6 @@ void get_path_at_start(char * ref, char * ret) {
 	__asm        mov    ecx, ret;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 2145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9545
@@ -6638,13 +6210,6 @@ void do_uppercase(char * ref, char * res) {
 	short i;
 	char * s;
 
-// LINE 2160:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2165:
 	__asm        mov    eax, res;
 	__asm        mov    byte ptr [eax], 0;
@@ -6697,11 +6262,6 @@ void do_uppercase(char * ref, char * res) {
 // LINE 2177:
 	__asm        jmp    near ptr 0x004C9596;
 // LINE 2178:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c95e3
@@ -6709,13 +6269,6 @@ void get_name_at_end(char * ref, char * ret) {
 	short len;
 	char * s;
 
-// LINE 2193:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2197:
 	__asm        mov    eax, ret;
 	__asm        mov    byte ptr [eax], 0;
@@ -6779,11 +6332,6 @@ void get_name_at_end(char * ref, char * ret) {
 	__asm        call   0x0056CEB0;
 	__asm        add    esp, 8;
 // LINE 2218:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9694
@@ -6791,13 +6339,6 @@ void strip_extension(char * ref) {
 	short len;
 	char * s;
 
-// LINE 2233:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2237:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -6834,11 +6375,6 @@ void strip_extension(char * ref) {
 // LINE 2248:
 	__asm        jmp    near ptr 0x004C96C9;
 // LINE 2249:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c96fc
@@ -6847,13 +6383,6 @@ void check_extension(char * pathname, char * ext) {
 	char nameonly[64];
 	char * s;
 
-// LINE 2266:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2271:
 	__asm        mov    nameonly[0], 0;
 // LINE 2272:
@@ -6972,24 +6501,12 @@ void check_extension(char * pathname, char * ext) {
 	__asm        call   0x0056CEC0;
 	__asm        add    esp, 8;
 // LINE 2303:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9835
 short check_file_exist(char * filename) {
 	struct _iobuf* fileNum;
 
-// LINE 2318:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2321:
 	__asm        push   0x59B3A4;
 	__asm        mov    eax, filename;
@@ -7012,11 +6529,6 @@ short check_file_exist(char * filename) {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x004C9879;
 // LINE 2326:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c987e
@@ -7026,13 +6538,6 @@ void remove_illegals(char * ref) {
 	char * s;
 	char * r;
 
-// LINE 2344:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2349:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -7157,11 +6662,6 @@ void remove_illegals(char * ref) {
 	__asm        call   0x0056CEB0;
 	__asm        add    esp, 8;
 // LINE 2371:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004c9a2e
@@ -7171,13 +6671,6 @@ void compress_spaces(char * ref) {
 	char * s;
 	char * r;
 
-// LINE 2385:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2390:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -7230,11 +6723,6 @@ void compress_spaces(char * ref) {
 	__asm        call   0x0056CEB0;
 	__asm        add    esp, 8;
 // LINE 2405:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

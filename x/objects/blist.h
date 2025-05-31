@@ -2,8 +2,6 @@
 // FUNCTION: COPTER_D 0x0055e830
 cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
 // LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55E8AD;
 	__asm        mov    eax, fs:[0];
@@ -54,8 +52,6 @@ _L44595:
 // FUNCTION: COPTER_D 0x0055e9b0
 cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>::~cBList<cCopterAnim>() {
 // LINE 44:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55EAA5;
 	__asm        mov    eax, fs:[0];
@@ -134,14 +130,6 @@ _L44658:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055eac0
 void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim* thing) {
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 119:
 	__asm        jmp    near ptr 0x0055EAD1;
 	__asm        mov    eax, thing;
@@ -278,11 +266,6 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 	__asm        jmp    near ptr 0x0055ECF0;
 // LINE 121:
 	__asm        jmp    near ptr 0x0055ECF5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Bodydefs.obj
@@ -294,8 +277,6 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	short numThings;
 
 // LINE 180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55F1C0;
 	__asm        mov    eax, fs:[0];
@@ -645,8 +626,6 @@ _L45273:
 // FUNCTION: COPTER_D 0x0055fdd0
 void cBList<cCopterBody>::~cBList<cCopterBody>() {
 // LINE 44:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55FEC5;
 	__asm        mov    eax, fs:[0];
@@ -725,14 +704,6 @@ _L45611:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fee0
 void cBList<cCopterBody>::Add(class cCopterBody* thing) {
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 119:
 	__asm        jmp    near ptr 0x0055FEF1;
 	__asm        mov    eax, thing;
@@ -869,10 +840,5 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 	__asm        jmp    near ptr 0x00560110;
 // LINE 121:
 	__asm        jmp    near ptr 0x00560115;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 

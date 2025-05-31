@@ -9,20 +9,9 @@
 // Contribution: 1:000d7450-000d7464 Module: 136, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d8450
 int32_t VRGetError() {
-// LINE 28:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 30:
 	__asm        mov    eax, ds:[0x662810];
 	__asm        jmp    near ptr 0x004D8460;
 // LINE 32:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

@@ -228,14 +228,6 @@ public:
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bba30
 unsigned long  CGameApp::FinishGame() {
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 50:
 	__asm        mov    ecx, this;
 	__asm        call   0x004330EA;
@@ -315,11 +307,6 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BBB12;
 // LINE 74:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bbb17
@@ -340,15 +327,6 @@ int  CGameApp::BackgroundVRAppInit() {
 	unsigned long lFullStringIndex;
 	class SmackerBackBuffer tempHourglassVideoBuffer;
 
-// LINE 92:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x1534;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        call   0x0056F980;
 	__asm        mov    [ebp-0x4CC], eax;
 // LINE 97:
@@ -852,11 +830,6 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    eax, [ebp-0x4C0];
 	__asm        jmp    near ptr 0x004BC3D6;
 // LINE 150:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004bc3db
@@ -864,8 +837,6 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	struct VRAppInitThreadStruct* tempVRAppInitThreadStruct;
 
 // LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x4BC440;
 	__asm        mov    eax, fs:[0];

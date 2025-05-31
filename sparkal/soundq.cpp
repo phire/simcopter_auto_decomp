@@ -310,14 +310,6 @@ public:
 // Contribution: 1:0001f5f0-00021277 Module: 71, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004205f0
 void SoundQueueItem::SoundQueueItem() {
-// LINE 17:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -347,23 +339,10 @@ void SoundQueueItem::SoundQueueItem() {
 // LINE 22:
 	__asm        jmp    near ptr 0x0042066D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00420675
 void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
-// LINE 29:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -408,23 +387,10 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBefor
 // LINE 34:
 	__asm        jmp    near ptr 0x00420716;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00420720
 void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
-// LINE 41:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -470,23 +436,10 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID
 // LINE 46:
 	__asm        jmp    near ptr 0x004207C0;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004207ca
 void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string<char>& sNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -657,23 +610,10 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 // LINE 59:
 	__asm        jmp    near ptr 0x00420A32;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00420a3c
 void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
-// LINE 67:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -881,23 +821,10 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 // LINE 73:
 	__asm        jmp    near ptr 0x00420D2D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00420d37
 void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>& sNewDigitalSoundFile, long lNewTimeToWaitBeforePlaying) {
-// LINE 89:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004205F0;
 // LINE 90:
@@ -930,23 +857,10 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 // LINE 94:
 	__asm        jmp    near ptr 0x00420DA5;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00420daf
 void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lNewTimeToWaitBeforePlaying) {
-// LINE 102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        mov    ecx, this;
 	__asm        call   0x004205F0;
@@ -1088,23 +1002,10 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 // LINE 107:
 	__asm        jmp    near ptr 0x00420FB0;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00420fba
 void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceID, long lNewTimeToWaitBeforePlaying) {
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x004205F0;
 // LINE 117:
@@ -1136,23 +1037,10 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceI
 // LINE 121:
 	__asm        jmp    near ptr 0x00421026;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00421030
 void SoundQueue::SoundQueue() {
-// LINE 144:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        inc    dword ptr ds:[0x597354];
@@ -1317,23 +1205,10 @@ void SoundQueue::SoundQueue() {
 // LINE 148:
 	__asm        jmp    near ptr 0x004212B1;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004212b9
 void SoundQueue::~SoundQueue() {
-// LINE 155:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3F0;
 // LINE 156:
@@ -1447,23 +1322,10 @@ void SoundQueue::~SoundQueue() {
 	__asm        mov    dword ptr ds:[0x597358], 0;
 	__asm        jmp    near ptr 0x0042147A;
 	__asm        jmp    near ptr 0x0042147F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421484
 int32_t SoundQueue::Initialize() {
-// LINE 164:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 165:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1483,23 +1345,10 @@ int32_t SoundQueue::Initialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004214C4;
 // LINE 173:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004214c9
 void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
-// LINE 179:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 180:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1524,25 +1373,12 @@ void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
 	__asm        call   dword ptr [eax+8];
 // LINE 187:
 	__asm        jmp    near ptr 0x00421513;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042151a
 void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	struct SoundQueueItem* currentSoundQueueItem;
 
-// LINE 196:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 199:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
@@ -1754,23 +1590,10 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 218:
 	__asm        jmp    near ptr 0x004217CF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004217d6
 class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
-// LINE 224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 225:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1810,23 +1633,10 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x00421854;
 // LINE 232:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042185b
 class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueItem) {
-// LINE 239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2050,23 +1860,10 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x00421B7D;
 // LINE 253:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00421b84
 int32_t SoundQueue::StartPauseCallback(long lMillisecondsToPause) {
-// LINE 260:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 267:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2083,23 +1880,10 @@ int32_t SoundQueue::StartPauseCallback(long lMillisecondsToPause) {
 	__asm        mov    eax, [eax+0x14];
 	__asm        jmp    near ptr 0x00421BB8;
 // LINE 270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00421bbf
 void SoundQueue::EndPauseCallback() {
-// LINE 276:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 279:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2114,25 +1898,12 @@ void SoundQueue::EndPauseCallback() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 284:
 	__asm        jmp    near ptr 0x00421BF4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421bf9
 void SoundQueue::PlayNextSoundInQueue() {
 	struct SoundQueueItem* currentSoundQueueItem;
 
-// LINE 299:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 302:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
@@ -2234,25 +2005,12 @@ void SoundQueue::PlayNextSoundInQueue() {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 321:
 	__asm        jmp    near ptr 0x00421D14;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421d19
 void SoundQueue::RemoveNextSoundInQueue() {
 	struct SoundQueueItem* currentSoundQueueItem;
 
-// LINE 333:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 336:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
@@ -2396,21 +2154,10 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 345:
 	__asm        jmp    near ptr 0x00421F00;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421f05
 void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-// LINE 355:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 356:
 	__asm        mov    eax, dwUser;
 	__asm        push   eax;
@@ -2418,21 +2165,10 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 	__asm        add    esp, 4;
 // LINE 357:
 	__asm        jmp    near ptr 0x00421F1C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00421f23
 void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-// LINE 367:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 368:
 	__asm        mov    eax, dwUser;
 	__asm        push   eax;
@@ -2440,21 +2176,10 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint
 	__asm        add    esp, 4;
 // LINE 369:
 	__asm        jmp    near ptr 0x00421F3A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00421f41
 void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
-// LINE 376:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 377:
 	__asm        mov    eax, lData;
 	__asm        mov    eax, [eax];
@@ -2462,25 +2187,12 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 378:
 	__asm        jmp    near ptr 0x00421F57;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421f5c
 void SoundQueue::SoundQueueCompletionCallback() {
 	struct SoundQueueItem* currentSoundQueueItem;
 
-// LINE 384:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 390:
 	__asm        jmp    near ptr 0x00421F6D;
 	__asm        mov    eax, this;
@@ -2531,21 +2243,10 @@ void SoundQueue::SoundQueueCompletionCallback() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 400:
 	__asm        jmp    near ptr 0x00421FF9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00421ffe
 void SoundQueue::StaticSoundQueueWaitTimeCallback(long lData) {
-// LINE 406:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 407:
 	__asm        mov    eax, lData;
 	__asm        mov    eax, [eax];
@@ -2553,23 +2254,10 @@ void SoundQueue::StaticSoundQueueWaitTimeCallback(long lData) {
 	__asm        call   dword ptr [eax+0x20];
 // LINE 408:
 	__asm        jmp    near ptr 0x00422014;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00422019
 void SoundQueue::SoundQueueWaitTimeCallback() {
-// LINE 414:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 415:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -2585,11 +2273,6 @@ void SoundQueue::SoundQueueWaitTimeCallback() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 421:
 	__asm        jmp    near ptr 0x00422051;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00422056
@@ -2597,14 +2280,6 @@ int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 	const class SoundQueue& soundQueueReference;
 	class MTimer timeoutTimer;
 
-// LINE 428:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 429:
 	__asm        mov    eax, this;
 	__asm        mov    soundQueueReference, eax;
@@ -2734,33 +2409,15 @@ WeDidNotGetIt:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00422251;
 // LINE 449:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00422258
 void SoundQueue::ReleaseMutex() {
-// LINE 455:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 456:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 457:
 	__asm        jmp    near ptr 0x00422273;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

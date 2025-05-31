@@ -2574,27 +2574,15 @@ protected:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f70
 void $E75() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00543F8A;
 	__asm        call   0x005440A0;
 	__asm        jmp    near ptr 0x00543F85;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f8a
 void $E71() {
 // LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x544088;
 	__asm        mov    eax, fs:[0];
@@ -2661,30 +2649,15 @@ _L54996:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440a0
 void $E74() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x5440BD;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x005440B8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440bd
 void $E72() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A0];
 	__asm        test   al, 1;
@@ -2696,37 +2669,20 @@ void $E72() {
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   0x0049A1F5;
 	__asm        jmp    near ptr 0x005440EF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440f4
 void $E81() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0054410E;
 	__asm        call   0x005441C8;
 	__asm        jmp    near ptr 0x00544109;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054410e
 void $E77() {
 // LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5441B0;
 	__asm        mov    eax, fs:[0];
@@ -2775,27 +2731,15 @@ _L55021:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441c8
 void $E80() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x5441E5;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x005441E0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441e5
 void $E78() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x54424A;
 	__asm        mov    eax, fs:[0];
@@ -2836,12 +2780,6 @@ _L55033:
 
 // FUNCTION: COPTER_D 0x00544262
 void RemoveAvatarFromBuilding() {
-// LINE 133:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 134:
 	__asm        cmp    dword ptr ds:[0x598EB8], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054427F;
@@ -2849,41 +2787,19 @@ void RemoveAvatarFromBuilding() {
 	__asm        mov    dword ptr ds:[0x598EB8], 0xFFFFFFFF;
 // LINE 140:
 	__asm        jmp    near ptr 0x00544284;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00544289
 void $E86() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x005442A3;
 	__asm        call   0x0054430D;
 	__asm        jmp    near ptr 0x0054429E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005442a3
 void $E83() {
-// LINE 146:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr ds:[0x635258], 1;
 	__asm        mov    dword ptr ds:[0x63525C], 0;
 	__asm        mov    dword ptr ds:[0x635260], 0;
@@ -2900,58 +2816,26 @@ void $E83() {
 	__asm        jmp    near ptr 0x005442FE;
 	__asm        jmp    near ptr 0x00544303;
 	__asm        jmp    near ptr 0x00544308;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054430d
 void $E85() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x54432A;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00544325;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054432a
 void $E84() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00544335;
 	__asm        jmp    near ptr 0x0054433A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054433f
 void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t * failedtobeam, int32_t * numbeamed, int32_t * beamslices, int32_t * forwardweight) {
-// LINE 149:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 150:
 	__asm        jmp    near ptr 0x0054434D;
 	__asm        cmp    dword ptr ds:[0x63525C], 0;
@@ -3072,21 +2956,10 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        mov    word ptr ds:[0x5B868C], 0;
 // LINE 162:
 	__asm        jmp    near ptr 0x00544549;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054454e
 unsigned short GetOutOfHeli(long personID) {
-// LINE 166:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 167:
 	__asm        mov    eax, personID;
 	__asm        push   eax;
@@ -3094,24 +2967,12 @@ unsigned short GetOutOfHeli(long personID) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00544565;
 // LINE 168:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054456a
 unsigned short cYObject::GetOutOfHeli(long personID) {
 	class cYObject* obj;
 
-// LINE 171:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 172:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        cmp    eax, 0x7D00;
@@ -3233,21 +3094,10 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0054475B;
 // LINE 182:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00544760
 void AdjustPersonBeamingSlices(int32_t velocity) {
-// LINE 191:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 192:
 	__asm        cmp    velocity, 0;
 	__asm        jne    near ptr 0x00544775;
@@ -3309,11 +3159,6 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        mov    word ptr ds:[0x5B8648], 4;
 // LINE 220:
 	__asm        jmp    near ptr 0x0054486F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00544874
@@ -3322,13 +3167,6 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	short count;
 	class cYObject* foundobj;
 
-// LINE 223:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 225:
 	__asm        mov    foundobj, 0;
 // LINE 226:
@@ -3497,11 +3335,6 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    near ptr 0x00544B36;
 // LINE 245:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00544b3b
@@ -3510,14 +3343,6 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 	short cellx;
 	struct _DYOBJ_INST* dyobj;
 
-// LINE 248:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 249:
 	__asm        mov    eax, this;
 	__asm        movzx  ax, byte ptr [eax+0x88];
@@ -3556,11 +3381,6 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 	__asm        mov    eax, dyobj;
 	__asm        jmp    near ptr 0x00544BD7;
 // LINE 255:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00544bde
@@ -3574,14 +3394,6 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	short count;
 	short smallradius;
 
-// LINE 258:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 260:
 	__asm        mov    maxcount, 2;
 // LINE 261:
@@ -3885,11 +3697,6 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00544F71;
 // LINE 298:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00544f78
@@ -3897,14 +3704,6 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 	int32_t offsetz;
 	int32_t offsetx;
 
-// LINE 303:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 305:
 	__asm        mov    eax, searchType;
 	__asm        push   eax;
@@ -3973,11 +3772,6 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00545042;
 // LINE 313:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00545049
@@ -3987,14 +3781,6 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	unsigned short ret;
 	int32_t twiceradius;
 
-// LINE 318:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x19C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 319:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -4904,27 +4690,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x00545CBC;
 // LINE 401:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x00545cc3
 void duh(double __formal) {
-// LINE 403:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x00545CCE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545cd3
@@ -4934,13 +4704,6 @@ void S3PersonInit() {
 	double y;
 	double x;
 
-// LINE 405:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 406:
 	__asm        mov    success, 0;
 // LINE 409:
@@ -4980,84 +4743,39 @@ void S3PersonInit() {
 	__asm        add    esp, 8;
 // LINE 420:
 	__asm        jmp    near ptr 0x00545D6F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545d74
 void S3PersonDelete() {
-// LINE 423:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 427:
 	__asm        call   0x0055E29E;
 // LINE 428:
 	__asm        call   0x00547E59;
 // LINE 429:
 	__asm        jmp    near ptr 0x00545D89;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545d8e
 void S3PersonNextFrame() {
-// LINE 433:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 435:
 	__asm        call   0x0054C671;
 // LINE 437:
 	__asm        jmp    near ptr 0x00545D9E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545da3
 void S3PersonUserNextFrame() {
-// LINE 440:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 441:
 	__asm        mov    ecx, ds:[0x5B8680];
 	__asm        call   0x0054DE18;
 // LINE 442:
 	__asm        jmp    near ptr 0x00545DB9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545dbe
 void S3PersonReset() {
 	short count;
 
-// LINE 445:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 446:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00545DD6;
@@ -5125,22 +4843,10 @@ void S3PersonReset() {
 	__asm        call   dword ptr [eax+0x18];
 // LINE 452:
 	__asm        jmp    near ptr 0x00545EC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00545ecb
 void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
-// LINE 455:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 456:
 	__asm        mov    eax, dz;
 	__asm        push   eax;
@@ -5309,22 +5015,10 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        call   0x0054CECA;
 // LINE 461:
 	__asm        jmp    near ptr 0x00546177;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054617c
 void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
-// LINE 464:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 465:
 	__asm        push   0;
 	__asm        mov    ecx, ds:[0x5B8680];
@@ -5455,24 +5149,12 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 // LINE 487:
 // Block end:
 	__asm        jmp    near ptr 0x00546347;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054634c
 void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	struct Point3d loc;
 
-// LINE 490:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 491:
 	__asm        xor    eax, eax;
 	__asm        mov    al, reinterpret_cast<uint8_t>(y);
@@ -5546,11 +5228,6 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        add    esp, 8;
 // LINE 493:
 	__asm        jmp    near ptr 0x00546429;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054642e
@@ -5558,13 +5235,6 @@ int32_t IsThisABadGuy(struct _DYOBJ_INST* guy) {
 	enum MissionSupertype mt;
 	class cYObject* obj;
 
-// LINE 496:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 497:
 	__asm        mov    eax, guy;
 	__asm        push   eax;
@@ -5587,21 +5257,10 @@ int32_t IsThisABadGuy(struct _DYOBJ_INST* guy) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00546473;
 // LINE 503:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546478
 unsigned char GetAvatarCellX() {
-// LINE 506:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 507:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x005464A7;
@@ -5616,21 +5275,10 @@ unsigned char GetAvatarCellX() {
 	__asm        mov    al, [eax+0x88];
 	__asm        jmp    near ptr 0x005464B7;
 // LINE 509:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005464bc
 unsigned char GetAvatarCellY() {
-// LINE 512:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 513:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x005464EB;
@@ -5645,21 +5293,10 @@ unsigned char GetAvatarCellY() {
 	__asm        mov    al, [eax+0x89];
 	__asm        jmp    near ptr 0x005464FB;
 // LINE 515:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546500
 struct _DYOBJ_INST* GetAvatarDYOBJ() {
-// LINE 518:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 519:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x0054652F;
@@ -5674,21 +5311,10 @@ struct _DYOBJ_INST* GetAvatarDYOBJ() {
 	__asm        add    eax, 0x24;
 	__asm        jmp    near ptr 0x0054653C;
 // LINE 521:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546541
 struct Point3d* GetAvatarVector() {
-// LINE 524:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 525:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x00546570;
@@ -5703,24 +5329,12 @@ struct Point3d* GetAvatarVector() {
 	__asm        add    eax, 0x168;
 	__asm        jmp    near ptr 0x0054657F;
 // LINE 527:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546584
 void S3DrawPerson(struct VRBlit* blit) {
 	short id;
 
-// LINE 530:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 531:
 	__asm        call   0x00551D36;
 // LINE 532:
@@ -5803,11 +5417,6 @@ void S3DrawPerson(struct VRBlit* blit) {
 // LINE 543:
 // Block end:
 	__asm        jmp    near ptr 0x005466C0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005466c5
@@ -5819,14 +5428,6 @@ void cAvatar::GetControlInput() {
 	int32_t fwdrate;
 	int32_t rotateMult;
 
-// LINE 554:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 555:
 	__asm        mov    fwdrate, 0x140000;
 // LINE 556:
@@ -6131,21 +5732,10 @@ void cAvatar::GetControlInput() {
 	__asm        mov    [ecx+0x178], eax;
 // LINE 619:
 	__asm        jmp    near ptr 0x00546AC9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546ace
 void PersonHeliHasLanded() {
-// LINE 623:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 624:
 	__asm        jmp    near ptr 0x00546AD9;
 	__asm        mov    eax, ds:[0x5B8680];
@@ -6181,11 +5771,6 @@ void PersonHeliHasLanded() {
 	__asm        add    esp, 0x10;
 // LINE 635:
 	__asm        jmp    near ptr 0x00546B51;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546b56
@@ -6196,13 +5781,6 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 	long x;
 	struct _DYOBJ_INST* dyobj;
 
-// LINE 647:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 654:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax];
@@ -6300,11 +5878,6 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 	__asm        mov    eax, hd;
 	__asm        jmp    near ptr 0x00546C80;
 // LINE 692:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546c85
@@ -6312,13 +5885,6 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	short scurkID;
 	short count;
 
-// LINE 695:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 696:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
@@ -6445,25 +6011,12 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00546E6B;
 // LINE 706:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00546e70
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST* onTopOf, int32_t offsetx, int32_t offsetz) {
 	struct Point3d loc;
 
-// LINE 710:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        movsx  eax, celly;
 	__asm        and    eax, 0xFF;
 	__asm        movsx  ecx, cellx;
@@ -6531,25 +6084,12 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        call   0x00546F45;
 	__asm        jmp    near ptr 0x00546F3E;
 // LINE 713:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x20;
 }
 
 // FUNCTION: COPTER_D 0x00546f45
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST* onTopOf, struct Point3d* loc) {
 	unsigned short ret;
 
-// LINE 717:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 719:
 	__asm        mov    eax, loc;
 	__asm        push   eax;
@@ -6616,11 +6156,6 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x0054703D;
 // LINE 726:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x00547044
@@ -6630,13 +6165,6 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	int32_t offsetz;
 	int32_t offsetx;
 
-// LINE 731:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 732:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x00547073;
@@ -6739,11 +6267,6 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        add    esp, 0x20;
 // LINE 741:
 	__asm        jmp    near ptr 0x005471AD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005471b2
@@ -6753,13 +6276,6 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	struct Point3d loc;
 	short ret;
 
-// LINE 747:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 748:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x005471E1;
@@ -6932,11 +6448,6 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        mov    [ecx+0xFC], ax;
 // LINE 774:
 	__asm        jmp    near ptr 0x0054743B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547440
@@ -6944,13 +6455,6 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	 // Switch table at 0x00547907
 	short scurkID;
 
-// LINE 778:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 780:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
@@ -7340,11 +6844,6 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        (bad);
 // LINE 832:
 	__asm        jmp    near ptr 0x00547932;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547937
@@ -7355,13 +6854,6 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	short count;
 	struct Rect r;
 
-// LINE 837:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 839:
 	__asm        movsx  eax, word ptr ds:[0x5B867C];
 	__asm        movsx  ecx, word ptr ds:[0x5B8674];
@@ -7479,24 +6971,12 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	__asm        jmp    near ptr 0x00547A28;
 // LINE 868:
 	__asm        jmp    near ptr 0x00547ABD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547ac2
 void cYObject::BeamRemainingAmbients() {
 	short numtries;
 
-// LINE 871:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 872:
 	__asm        mov    numtries, 0;
 // LINE 873:
@@ -7602,22 +7082,10 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        jmp    near ptr 0x00547AD1;
 // LINE 885:
 	__asm        jmp    near ptr 0x00547C66;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547c6b
 void cYObject::TryStartAllAmbient() {
-// LINE 888:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 890:
 	__asm        mov    eax, 0xC;
 	__asm        movsx  ecx, word ptr ds:[0x5B8688];
@@ -7639,11 +7107,6 @@ void cYObject::TryStartAllAmbient() {
 	__asm        call   0x00547AC2;
 // LINE 895:
 	__asm        jmp    near ptr 0x00547CC3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547cc8
@@ -7652,13 +7115,6 @@ class cYObject* cYObject::GetSleepingPerson() {
 	short count;
 	class cYObject* test;
 
-// LINE 898:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 899:
 	__asm        mov    sleeper, 0;
 // LINE 900:
@@ -7727,11 +7183,6 @@ class cYObject* cYObject::GetSleepingPerson() {
 	__asm        mov    eax, sleeper;
 	__asm        jmp    near ptr 0x00547DDC;
 // LINE 909:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547de1
@@ -7739,13 +7190,6 @@ void MakeAllPeople() {
 	struct _SYSTEMTIME st;
 	char peoplepath[260];
 
-// LINE 913:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x114;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 915:
 	__asm        lea    eax, st.wYear;
 	__asm        push   eax;
@@ -7779,22 +7223,10 @@ void MakeAllPeople() {
 	__asm        mov    ds:[0x5B8680], eax;
 // LINE 926:
 	__asm        jmp    near ptr 0x00547E54;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547e59
 void DeleteAllPeople() {
-// LINE 929:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 930:
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    [ebp-8], eax;
@@ -7812,11 +7244,6 @@ void DeleteAllPeople() {
 	__asm        call   0x00550567;
 // LINE 932:
 	__asm        jmp    near ptr 0x00547E96;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00547e9b
@@ -7825,13 +7252,6 @@ void cYObject::MakePlebes() {
 	int32_t pindex;
 	struct Point3d p;
 
-// LINE 944:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 947:
 	__asm        mov    p.x, 0;
 	__asm        mov    p.y, 0;
@@ -7938,18 +7358,11 @@ void cYObject::MakePlebes() {
 	__asm        jmp    near ptr 0x00547EC5;
 // LINE 961:
 	__asm        jmp    near ptr 0x00548042;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00548047
 void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 964:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x549BC5;
 	__asm        mov    eax, fs:[0];
@@ -9560,14 +8973,6 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	int32_t ydir;
 	int32_t xdir;
 
-// LINE 1279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1283:
 	__asm        mov    curr_dist, 0;
 // LINE 1284:
@@ -9840,23 +9245,10 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	__asm        call   0x00554F30;
 	__asm        add    esp, 0x10;
 // LINE 1409:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00549f04
 unsigned short cYObject::OutOfCameraRange() {
-// LINE 1413:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1414:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
@@ -10075,12 +9467,6 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0054A1CE;
 // LINE 1459:
-// Block end:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054a1d3
@@ -10088,13 +9474,6 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	short ret;
 	class cYObject* newperson;
 
-// LINE 1465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1466:
 	__asm        mov    ret, 0xFFFF;
 // LINE 1467:
@@ -10130,24 +9509,12 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x0054A23A;
 // LINE 1473:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054a23f
 void LiberateMissionPeople(long missionid) {
 	short count;
 
-// LINE 1476:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1477:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054A257;
@@ -10217,11 +9584,6 @@ void LiberateMissionPeople(long missionid) {
 	__asm        jmp    near ptr 0x0054A253;
 // LINE 1484:
 	__asm        jmp    near ptr 0x0054A355;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054a35a
@@ -10229,13 +9591,6 @@ void KillMissionPeople(long missionid) {
 	struct _MISSION_PARMS mp;
 	short count;
 
-// LINE 1487:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1493:
 	__asm        mov    eax, missionid;
 	__asm        mov    mp.id, eax;
@@ -10393,23 +9748,10 @@ void KillMissionPeople(long missionid) {
 	__asm        jmp    near ptr 0x0054A389;
 // LINE 1530:
 	__asm        jmp    near ptr 0x0054A59F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054a5a4
 void cYObject::SetPersonData(enum PersonType persontype, enum MissionType mission, long missionid) {
-// LINE 1533:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1534:
 	__asm        mov    eax, mission;
 	__asm        push   eax;
@@ -10447,24 +9789,12 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 	__asm        call   0x0054FFB7;
 // LINE 1537:
 	__asm        jmp    near ptr 0x0054A639;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0054a640
 unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short cellx, short celly) {
 	unsigned short ret;
 
-// LINE 1540:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1541:
 	__asm        mov    ret, 0;
 // LINE 1542:
@@ -10571,25 +9901,12 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x0054A7A0;
 // LINE 1561:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054a7a5
 unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, struct _DYOBJ_INST* onTopOf, struct Point3d* loc) {
 	short ret;
 
-// LINE 1566:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xEC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1571:
 	__asm        cmp    mission, 0;
 	__asm        je     near ptr 0x0054A7F7;
@@ -11802,23 +11119,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    ax, ret;
 	__asm        jmp    near ptr 0x0054B819;
 // LINE 1801:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0054b820
 void cYObject::ResetToAmbient() {
-// LINE 1805:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1806:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
@@ -11919,25 +11223,12 @@ void cYObject::ResetToAmbient() {
 	__asm        jmp    near ptr 0x0054B9DC;
 // LINE 1810:
 	__asm        jmp    near ptr 0x0054B9E1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054b9e6
 long cYObject::JoinRiot() {
 	long riotMissionID;
 
-// LINE 1813:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1816:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xE0];
@@ -12085,11 +11376,6 @@ long cYObject::JoinRiot() {
 	__asm        mov    eax, riotMissionID;
 	__asm        jmp    near ptr 0x0054BC37;
 // LINE 1836:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054bc3c
@@ -12098,13 +11384,6 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	short nextsoundchannel;
 	short count;
 
-// LINE 1839:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1842:
 	__asm        mov    count, 0;
 // LINE 1843:
@@ -12293,11 +11572,6 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        add    esp, 8;
 // LINE 1861:
 	__asm        jmp    near ptr 0x0054BF1B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054bf20
@@ -12306,13 +11580,6 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	short soundchannel;
 	short count;
 
-// LINE 1864:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1865:
 	__asm        mov    ax, firstsoundchannel;
 	__asm        mov    soundchannel, ax;
@@ -12437,23 +11704,10 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	__asm        mov    ax, soundchannel;
 	__asm        jmp    near ptr 0x0054C0E2;
 // LINE 1883:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054c0e7
 void cYObject::SetSoundChannel(short soundchannel) {
-// LINE 1887:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1888:
 	__asm        movsx  eax, soundchannel;
 	__asm        test   eax, eax;
@@ -12509,11 +11763,6 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        mov    [ecx+0x102], ax;
 // LINE 1894:
 	__asm        jmp    near ptr 0x0054C1D6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0054c1dd
@@ -12526,14 +11775,6 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	short freqadj;
 	int32_t flags;
 
-// LINE 1897:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1899:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        je     near ptr 0x0054C21A;
@@ -12870,11 +12111,6 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0054C66A;
 // LINE 2023:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0054c671
@@ -12882,13 +12118,6 @@ void cYObject::SimulateAll() {
 	long debuglooptime;
 	unsigned short simulate;
 
-// LINE 2034:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE0;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2085:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        add    ds:[0x5B869C], eax;
@@ -13282,25 +12511,12 @@ void cYObject::SimulateAll() {
 // LINE 2134:
 // Block end:
 	__asm        jmp    near ptr 0x0054CCB8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054ccbd
 unsigned short cYObject::AddToHeli() {
 	struct tagPassengerInfo tempPassengerInfo;
 
-// LINE 2137:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2143:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x9C];
@@ -13341,25 +12557,12 @@ unsigned short cYObject::AddToHeli() {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0054CD44;
 // LINE 2155:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054cd49
 void cYObject::RemoveFromHeli() {
 	int32_t yes;
 
-// LINE 2158:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2159:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
@@ -13384,25 +12587,12 @@ void cYObject::RemoveFromHeli() {
 	__asm        mov    word ptr [eax+0xE2], 1;
 // LINE 2162:
 	__asm        jmp    near ptr 0x0054CDAD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054cdb2
 class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	short count;
 
-// LINE 2165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2166:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054CDCD;
@@ -13471,25 +12661,12 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0054CEC3;
 // LINE 2173:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0054ceca
 unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	unsigned short success;
 
-// LINE 2176:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2177:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -13624,11 +12801,6 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    ax, success;
 	__asm        jmp    near ptr 0x0054D0DC;
 // LINE 2218:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0054d0e3
@@ -13636,14 +12808,6 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	int32_t celly;
 	int32_t cellx;
 
-// LINE 2221:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2222:
 	__asm        mov    eax, pos.x;
 	__asm        add    eax, 0x20000000;
@@ -13959,11 +13123,6 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0054D65B;
 // LINE 2236:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0054d662
@@ -13978,14 +13137,6 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	short scurkID2;
 	enum cYObject::LocationType loctype;
 
-// LINE 2239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x88;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2243:
 	__asm        mov    eax, celly;
 	__asm        mov    eax, [eax];
@@ -14300,23 +13451,10 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0054DAEC;
 // LINE 2274:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0054daf3
 void cYObject::Simulate() {
-// LINE 2277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2278:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -14437,11 +13575,6 @@ void cYObject::Simulate() {
 	__asm        jmp    near ptr 0x0054DCD4;
 // LINE 2284:
 	__asm        jmp    near ptr 0x0054DCD9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054dcde
@@ -14449,14 +13582,6 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 	unsigned short yaw;
 	enum cYObject::MoveErrorCode movecode;
 
-// LINE 2289:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2290:
 	__asm        mov    yaw, 0;
 // LINE 2291:
@@ -14552,11 +13677,6 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 	__asm        mov    eax, movecode;
 	__asm        jmp    near ptr 0x0054DE11;
 // LINE 2305:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0054de18
@@ -14565,14 +13685,6 @@ void cAvatar::Simulate() {
 	struct cYObject::MoveInfo moveinfo;
 	enum cYObject::MoveErrorCode movecode;
 
-// LINE 2308:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2309:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xE2];
@@ -15068,23 +14180,10 @@ void cAvatar::Simulate() {
 	__asm        jmp    near ptr 0x0054E56F;
 // LINE 2381:
 	__asm        jmp    near ptr 0x0054E574;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054e579
 void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, struct cYObject::MoveInfo* moveinfo) {
-// LINE 2404:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2406:
 	__asm        mov    eax, movecode;
 	__asm        mov    [ebp-0xC], eax;
@@ -16314,11 +15413,6 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        (bad);
 // LINE 2498:
 	__asm        jmp    near ptr 0x0054FAE7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0054faee
@@ -16327,14 +15421,6 @@ void cAvatar::ResetView() {
 	struct Point3D view;
 	int32_t yRot;
 
-// LINE 2501:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2506:
 	__asm        call   0x004EE8F1;
 // LINE 2508:
@@ -16426,11 +15512,6 @@ void cAvatar::ResetView() {
 	__asm        call   0x004F8FE2;
 // LINE 2526:
 	__asm        jmp    near ptr 0x0054FC29;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0054fc2e
@@ -16438,14 +15519,6 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 	short loccellx;
 	short loccelly;
 
-// LINE 2535:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2537:
 	__asm        mov    eax, loc.x;
 	__asm        add    eax, 0x20000000;
@@ -16529,25 +15602,12 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 	__asm        jmp    near ptr 0x0054FD41;
 // LINE 2556:
 	__asm        jmp    near ptr 0x0054FD46;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0054fd4d
 void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32_t dz) {
 	struct Point3d loc;
 
-// LINE 2560:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2561:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -16628,25 +15688,12 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 	__asm        call   0x0054FC2E;
 // LINE 2567:
 	__asm        jmp    near ptr 0x0054FE3B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0054fe42
 void cYObject::SetMissionType(enum MissionType type) {
 	 // Switch table at 0x0054ff24
 
-// LINE 2570:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2571:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -16747,11 +15794,6 @@ void cYObject::SetMissionType(enum MissionType type) {
 	__asm        jmp    near ptr 0x0054FFAB;
 // LINE 2611:
 	__asm        jmp    near ptr 0x0054FFB0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0054ffb7
@@ -16762,14 +15804,6 @@ void cYObject::SetPersonType(enum PersonType type) {
 	unsigned long bodyname;
 	short faceindex;
 
-// LINE 2614:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2616:
 	__asm        mov    count, 0;
 // LINE 2617:
@@ -17198,22 +16232,10 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        mov    [ecx+0xF0], ax;
 // LINE 2735:
 	__asm        jmp    near ptr 0x00550560;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00550567
 void cYObject::DestroyObjects() {
-// LINE 2759:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2760:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, ds:[0x5B8668];
@@ -17293,25 +16315,12 @@ void cYObject::DestroyObjects() {
 // LINE 2774:
 // Block end:
 	__asm        jmp    near ptr 0x00550696;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055069b
 void cYObject::Link() {
 	struct _CELL_INFO* ncptr;
 
-// LINE 2779:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2780:
 	__asm        jmp    near ptr 0x005506AC;
 	__asm        mov    eax, this;
@@ -17395,11 +16404,6 @@ void cYObject::Link() {
 	__asm        mov    word ptr [eax+0x20], 1;
 // LINE 2791:
 	__asm        jmp    near ptr 0x005507E7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005507ec
@@ -17407,14 +16411,6 @@ void cYObject::Unlink() {
 	struct _DYOBJ_INST** dyptrptr;
 	struct _CELL_INFO* cptr;
 
-// LINE 2794:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2798:
 	__asm        jmp    near ptr 0x005507FD;
 	__asm        mov    eax, this;
@@ -17470,11 +16466,6 @@ void cYObject::Unlink() {
 	__asm        mov    word ptr [eax+0x20], 0;
 // LINE 2813:
 	__asm        jmp    near ptr 0x0055089E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005508a3
@@ -17483,8 +16474,6 @@ class cAvatar* cAvatar::MakeAvatar() {
 	struct Point3d p;
 
 // LINE 2817:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5509B2;
 	__asm        mov    eax, fs:[0];
@@ -17582,8 +16571,6 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 	short id;
 
 // LINE 2825:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x550B17;
 	__asm        mov    eax, fs:[0];
@@ -17704,14 +16691,6 @@ void cYObject::InitForEngine(short id) {
 	struct VRFaceInfo finfo;
 	int32_t face;
 
-// LINE 2844:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2845:
 	__asm        push   0x16;
 	__asm        push   1;
@@ -17797,24 +16776,12 @@ void cYObject::InitForEngine(short id) {
 	__asm        add    esp, 4;
 // LINE 2869:
 	__asm        jmp    near ptr 0x00550C29;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00550c30
 void cYObject::KillObject(short id) {
 	class cYObject* obj;
 
-// LINE 2872:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2873:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
@@ -17881,11 +16848,6 @@ void cYObject::KillObject(short id) {
 	__asm        jmp    near ptr 0x00550D43;
 // LINE 2880:
 	__asm        jmp    near ptr 0x00550D48;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00550d4d
@@ -17893,8 +16855,6 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 	short cnt;
 
 // LINE 2885:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x550EFD;
 	__asm        mov    eax, fs:[0];
@@ -18031,14 +16991,6 @@ _L56467:
 
 // FUNCTION: COPTER_D 0x00550f18
 void cAvatar::Reset() {
-// LINE 2915:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2916:
 	__asm        mov    ecx, this;
 	__asm        call   0x00550F9F;
@@ -18070,23 +17022,10 @@ void cAvatar::Reset() {
 	__asm        mov    dword ptr [eax+0x17C], 0;
 // LINE 2928:
 	__asm        jmp    near ptr 0x00550F9A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00550f9f
 void cYObject::Reset() {
-// LINE 2931:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2932:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x98], 0;
@@ -18314,11 +17253,6 @@ void cYObject::Reset() {
 	__asm        mov    word ptr [eax+0x22], 0;
 // LINE 2960:
 	__asm        jmp    near ptr 0x00551383;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551388
@@ -18336,14 +17270,6 @@ void cYObject::Draw(struct VRBlit* blit) {
 	unsigned short highres;
 	struct BodyDebugInfo bdi;
 
-// LINE 2963:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2968:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -18641,22 +17567,10 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        inc    word ptr ds:[0x5B86A0];
 // LINE 3044:
 	__asm        jmp    near ptr 0x00551813;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0055181a
 void BodyDrawDebugInfo(class CBackBuffer* buf) {
-// LINE 3050:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3051:
 	__asm        push   0x91;
 	__asm        call   0x00432226;
@@ -18707,11 +17621,6 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 	__asm        mov    word ptr ds:[0x5B86A0], 0;
 // LINE 3058:
 	__asm        jmp    near ptr 0x005518A8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005518ad
@@ -18720,8 +17629,6 @@ void cYObject::~cYObject() {
 	class cYObject** srch;
 
 // LINE 3062:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5519BE;
 	__asm        mov    eax, fs:[0];
@@ -18813,13 +17720,6 @@ _L56641:
 void S3PersonTweakInit() {
 	int32_t * pvals[10];
 
-// LINE 3080:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3083:
 	__asm        mov    pvals[0], 0x5B8678;
 // LINE 3084:
@@ -18843,42 +17743,18 @@ void S3PersonTweakInit() {
 	__asm        add    esp, 0xC;
 // LINE 3092:
 	__asm        jmp    near ptr 0x00551A28;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551a2d
 void UpdateFigureVals() {
-// LINE 3095:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3096:
 	__asm        jmp    near ptr 0x00551A38;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551a3d
 void cAvatar::RotateMatrixAndYawForEngine() {
 	int32_t matrix[4][4];
 
-// LINE 3099:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3102:
 	__asm        push   0xF0000;
 	__asm        mov    eax, ds:[0x5B4768];
@@ -18928,11 +17804,6 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 	__asm        add    esp, 8;
 // LINE 3112:
 	__asm        jmp    near ptr 0x00551AEC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551af1
@@ -18943,13 +17814,6 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 	int32_t absy;
 	int32_t absx;
 
-// LINE 3116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3119:
 	__asm        mov    eax, destx;
 	__asm        sub    eax, orgx;
@@ -19027,11 +17891,6 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 	__asm        movsx  eax, dir;
 	__asm        jmp    near ptr 0x00551BF2;
 // LINE 3149:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551bf7
@@ -19046,13 +17905,6 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	int32_t maxobjy;
 	int32_t normz;
 
-// LINE 3152:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3159:
 	__asm        mov    eax, 0x20000000;
 	__asm        sub    eax, z;
@@ -19165,21 +18017,10 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	__asm        mov    eax, alt;
 	__asm        jmp    near ptr 0x00551D31;
 // LINE 3188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00551d36
 void FrameInit() {
-// LINE 3196:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3205:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
 	__asm        jne    near ptr 0x00551D6E;
@@ -19209,11 +18050,6 @@ void FrameInit() {
 	__asm        mov    ds:[0x5BEF30], eax;
 // LINE 3218:
 	__asm        jmp    near ptr 0x00551D93;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 
@@ -19236,8 +18072,6 @@ void FrameInit() {
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
  ResFile::~ResFile() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x551F87;
 	__asm        mov    eax, fs:[0];

@@ -222,14 +222,6 @@ protected:
 void PaletteBuffer::PaletteBuffer() {
 	char szTypeFaceName[64];
 
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0;
 	__asm        push   0x1B8;
 	__asm        push   0x258;
@@ -298,25 +290,12 @@ void PaletteBuffer::PaletteBuffer() {
 // LINE 42:
 	__asm        jmp    near ptr 0x00447338;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00447340
 void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	char szTypeFaceName[64];
 
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0;
 	__asm        push   0x1B8;
 	__asm        push   0x258;
@@ -391,23 +370,10 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 // LINE 61:
 	__asm        jmp    near ptr 0x0044744C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00447456
 void PaletteBuffer::~PaletteBuffer() {
-// LINE 69:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5E0;
 // LINE 70:
@@ -428,25 +394,12 @@ void PaletteBuffer::~PaletteBuffer() {
 	__asm        jmp    near ptr 0x0044749E;
 	__asm        mov    ecx, this;
 	__asm        call   0x0046EC7A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004474ab
 int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 	int32_t i;
 
-// LINE 78:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 81:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004474C6;
@@ -467,11 +420,6 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004474FA;
 // LINE 85:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00447501
@@ -480,14 +428,6 @@ int32_t PaletteBuffer::SetPalette() {
 	int32_t i;
 	struct tagPALETTEENTRY* paletteEntries;
 
-// LINE 96:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 100:
 	__asm        push   0x400;
 	__asm        call   0x0056A600;
@@ -556,11 +496,6 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004475DD;
 // LINE 114:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004475e2
@@ -569,14 +504,6 @@ void PaletteBuffer::DrawPalette() {
 	int32_t i;
 	struct SparkalRect rectFill;
 
-// LINE 125:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x118;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 127:
 	__asm        jmp    near ptr 0x004475F9;
 // LINE 131:
@@ -692,23 +619,10 @@ void PaletteBuffer::DrawPalette() {
 	__asm        jmp    near ptr 0x00447645;
 // LINE 152:
 	__asm        jmp    near ptr 0x00447746;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044774b
 unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-// LINE 161:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -728,11 +642,6 @@ unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft
 	__asm        call   0x0046F948;
 	__asm        jmp    near ptr 0x00447782;
 // LINE 163:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 

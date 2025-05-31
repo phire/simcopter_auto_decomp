@@ -63,13 +63,6 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	int32_t maxval;
 	struct VRBmpHdr* bhdr;
 
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 122:
 	__asm        mov    eax, res;
 	__asm        mov    hdr, eax;
@@ -205,11 +198,6 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D8E53;
 // LINE 175:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d8e58
@@ -224,13 +212,6 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	int32_t maxval;
 	int32_t notiles;
 
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 201:
 	__asm        mov    ecx, bhdr;
 	__asm        mov    eax, 0x100;
@@ -356,11 +337,6 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D8FD2;
 // LINE 256:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d8fd7
@@ -370,13 +346,6 @@ void VRFaceSetTexColor(int32_t face) {
 	struct _FaceHdr* fh;
 	int32_t loword;
 
-// LINE 271:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 272:
 	__asm        mov    eax, face;
 	__asm        mov    fh, eax;
@@ -435,11 +404,6 @@ void VRFaceSetTexColor(int32_t face) {
 // LINE 301:
 	__asm        jmp    near ptr 0x004D908E;
 // LINE 302:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d9093
@@ -449,13 +413,6 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	int32_t color;
 	int32_t loword;
 
-// LINE 313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 322:
 	__asm        mov    eax, bitmap;
 	__asm        sar    eax, 0x10;
@@ -490,24 +447,12 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        mov    eax, color;
 	__asm        jmp    near ptr 0x004D90F5;
 // LINE 335:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d90fa
 struct COLOR_SHADE* VRGetColorShade(int32_t color) {
 	struct COLOR_SHADE* cptr;
 
-// LINE 347:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 348:
 	__asm        mov    cptr, 0x5ADC10;
 // LINE 350:
@@ -537,21 +482,10 @@ struct COLOR_SHADE* VRGetColorShade(int32_t color) {
 // LINE 359:
 	__asm        jmp    near ptr 0x004D9128;
 // LINE 361:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d9160
 void VRSetIntensities(int32_t ambient, int32_t var1, int32_t var2, int32_t var3) {
-// LINE 370:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 371:
 	__asm        mov    eax, ambient;
 	__asm        mov    ds:[0x5ADD5C], eax;
@@ -565,11 +499,6 @@ void VRSetIntensities(int32_t ambient, int32_t var1, int32_t var2, int32_t var3)
 	__asm        mov    eax, var3;
 	__asm        mov    ds:[0x5ADD68], eax;
 // LINE 375:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d918b
@@ -584,13 +513,6 @@ void VRObjSetShading(int32_t obj) {
 	int32_t diffuse;
 	int32_t level;
 
-// LINE 389:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 399:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -790,11 +712,6 @@ next_face:
 // LINE 462:
 	__asm        jmp    near ptr 0x004D91BF;
 // LINE 463:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
@@ -809,13 +726,6 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	int32_t diffuse;
 	int32_t level;
 
-// LINE 480:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 481:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -968,11 +878,6 @@ next_face:
 // LINE 540:
 	__asm        jmp    near ptr 0x004D9421;
 // LINE 541:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d958c
@@ -983,13 +888,6 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 	int32_t stvert;
 	int32_t minu;
 
-// LINE 562:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 563:
 	__asm        mov    eax, face;
 	__asm        mov    fh, eax;
@@ -1122,11 +1020,6 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 600:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d9712
@@ -1143,13 +1036,6 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	int32_t level;
 	int32_t vertidx;
 
-// LINE 610:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 621:
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+0x4C];
@@ -1327,11 +1213,6 @@ next_face:
 // LINE 682:
 	__asm        jmp    near ptr 0x004D9730;
 // LINE 683:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d9907
@@ -1341,13 +1222,6 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 	struct _FaceHdr* fh;
 	struct VRBmpHdr* bhdr;
 
-// LINE 698:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 699:
 	__asm        mov    eax, obj;
 	__asm        mov    oh, eax;
@@ -1388,24 +1262,12 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 // LINE 715:
 	__asm        jmp    near ptr 0x004D993E;
 // LINE 716:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004d997f
 void VRFaceSetColor(int32_t face, int32_t color) {
 	struct _FaceHdr* fh;
 
-// LINE 727:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 728:
 	__asm        mov    eax, face;
 	__asm        mov    fh, eax;
@@ -1418,11 +1280,6 @@ void VRFaceSetColor(int32_t face, int32_t color) {
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 732:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

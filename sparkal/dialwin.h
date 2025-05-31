@@ -1,14 +1,6 @@
 // Function in module: Dialwin.obj
 // FUNCTION: COPTER_D 0x0044fce0
 void DialHand::DialHand() {
-// LINE 341:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 1;
 	__asm        mov    eax, this;
@@ -96,10 +88,5 @@ void DialHand::DialHand() {
 // LINE 344:
 	__asm        jmp    near ptr 0x0044FE31;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

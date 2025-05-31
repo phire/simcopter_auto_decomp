@@ -176,14 +176,6 @@ private:
 int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal, int32_t bCreateIfNotFound) {
 	const uint32_t shareFlags;
 
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 37:
 	__asm        mov    shareFlags, 0xF0;
 // LINE 39:
@@ -287,23 +279,10 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    near ptr 0x004A04E9;
 // LINE 67:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x004a04f0
 int32_t PFile::Close() {
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 76:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -331,25 +310,12 @@ int32_t PFile::Close() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A055D;
 // LINE 83:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a0562
 long PFile::Length() {
 	long lFileLength;
 
-// LINE 91:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 94:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -389,23 +355,10 @@ long PFile::Length() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A05EE;
 // LINE 102:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a05f3
 long PFile::FileCreate(char * name, int32_t nAccessMode) {
-// LINE 112:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -479,11 +432,6 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    near ptr 0x004A06DF;
 // LINE 130:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004a06e6
@@ -491,14 +439,6 @@ long PFile::FileExists(char * name) {
 	char * szFilePathToUse;
 	struct _OFSTRUCT ofStruct;
 
-// LINE 139:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x90;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 142:
 	__asm        cmp    name, 0;
 	__asm        je     near ptr 0x004A0710;
@@ -525,23 +465,10 @@ long PFile::FileExists(char * name) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A0752;
 // LINE 152:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004a0759
 long PFile::SetPath(char * szPath) {
-// LINE 160:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -566,11 +493,6 @@ long PFile::SetPath(char * szPath) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004A07B2;
 // LINE 166:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004a07b9
@@ -585,13 +507,6 @@ unsigned long PFile::Checksum(char * name) {
 	long lCurrentBlockStartPosition;
 	long lUsedBlockSize;
 
-// LINE 172:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x140;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 174:
 	__asm        mov    lCurrentValue, 0;
 // LINE 180:
@@ -740,10 +655,5 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    eax, [ebp-0x138];
 	__asm        jmp    near ptr 0x004A09F2;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

@@ -425,14 +425,6 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	char FileName[13];
 	class ostrstream NameOut;
 
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -651,23 +643,10 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        call   0x0056B140;
 	__asm        jmp    near ptr 0x004AABAA;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004aabb7
 void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
-// LINE 97:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -675,23 +654,10 @@ void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, lo
 // LINE 104:
 	__asm        jmp    near ptr 0x004AABDB;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x004aabe5
 void CRLECompressedImage::~CRLECompressedImage() {
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 111:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -727,23 +693,10 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        jmp    near ptr 0x004AAC70;
 // LINE 115:
 	__asm        jmp    near ptr 0x004AAC75;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aac7a
 unsigned long CRLECompressedImage::Lock() {
-// LINE 121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -796,23 +749,10 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x004AAD35;
 // LINE 132:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aad3a
 unsigned long CRLECompressedImage::Unlock() {
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 136:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -866,23 +806,10 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    near ptr 0x004AADFD;
 // LINE 147:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004aae02
 unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
-// LINE 156:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 157:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1103,28 +1030,12 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004AB05C;
 // LINE 224:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x004ab063
 void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
-// LINE 232:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 312:
 	__asm        jmp    near ptr 0x004AB06E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab073
@@ -1133,13 +1044,6 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	unsigned char * pDest;
 	unsigned char * pNextSourceLine;
 
-// LINE 322:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 323:
 	__asm        mov    eax, pDestBuffer;
 	__asm        mov    pDestinationEdge, eax;
@@ -1308,11 +1212,6 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	__asm        jmp    near ptr 0x004AB09A;
 // LINE 399:
 	__asm        jmp    near ptr 0x004AB1F2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004ab1f7
@@ -1322,13 +1221,6 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 	unsigned char * pDest;
 	unsigned char * pNextSourceLine;
 
-// LINE 404:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 405:
 	__asm        mov    eax, pDestBuffer;
 	__asm        mov    pDestinationEdge, eax;
@@ -1651,11 +1543,6 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 	__asm        jmp    near ptr 0x004AB228;
 // LINE 580:
 	__asm        jmp    near ptr 0x004AB524;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

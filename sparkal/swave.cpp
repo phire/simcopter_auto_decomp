@@ -69,13 +69,6 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	struct _MMCKINFO ckIn;
 	int32_t nError;
 
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 49:
 	__asm        mov    hmmioIn, 0;
 // LINE 53:
@@ -239,24 +232,12 @@ END_OF_ROUTINE:
 	__asm        jmp    near ptr 0x0048ED5A;
 	__asm        jmp    near ptr 0x0048ED5A;
 	__asm        jmp    near ptr 0x0048ED5A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
 int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, struct _MMCKINFO* pckInRIFF) {
 	int32_t nError;
 
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 160:
 	__asm        push   0;
 	__asm        mov    eax, pckInRIFF;
@@ -293,11 +274,6 @@ ERROR_READING_WAVE:
 	__asm        jmp    near ptr 0x0048EE20;
 // LINE 169:
 	__asm        jmp    near ptr 0x0048EE13;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
@@ -307,13 +283,6 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	int32_t nError;
 	unsigned char * tempBYTEPointerToFoolCrappyMicrosoftCompiler;
 
-// LINE 191:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 197:
 	__asm        push   0;
 	__asm        lea    eax, mmioinfoIn.dwFlags;
@@ -426,21 +395,10 @@ FINISHED_READING:
 	__asm        jmp    near ptr 0x0048EF40;
 	__asm        jmp    near ptr 0x0048EF40;
 	__asm        jmp    near ptr 0x0048EF40;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
 int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
-// LINE 251:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 252:
 	__asm        mov    eax, phmmio;
 	__asm        cmp    dword ptr [eax], 0;
@@ -458,11 +416,6 @@ int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048EF9F;
 // LINE 258:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048efa4
@@ -473,13 +426,6 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	struct _MMCKINFO ckIn;
 	int32_t nError;
 
-// LINE 278:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 285:
 	__asm        mov    eax, ppbData;
 	__asm        mov    dword ptr [eax], 0;
@@ -608,10 +554,5 @@ DONE_LOADING:
 	__asm        jmp    near ptr 0x0048F0B6;
 	__asm        jmp    near ptr 0x0048F0B6;
 	__asm        jmp    near ptr 0x0048F0B6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

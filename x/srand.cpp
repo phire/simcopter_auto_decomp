@@ -15,55 +15,22 @@
 // Contribution: 1:0015c500-0015c948 Module: 193, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d500
 void SetRRandSeed(unsigned long n) {
-// LINE 33:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, n;
 	__asm        mov    ds:[0x5BDFDC], eax;
 	__asm        jmp    near ptr 0x0055D513;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d518
 unsigned long GetSRandSeed() {
-// LINE 45:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, ds:[0x6376A8];
 	__asm        jmp    near ptr 0x0055D528;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d52d
 void SetSRandSeed(unsigned long theSeed) {
-// LINE 48:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, theSeed;
 	__asm        mov    ds:[0x6376A8], eax;
 	__asm        jmp    near ptr 0x0055D540;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d545
@@ -75,13 +42,6 @@ unsigned short RRand(unsigned short lim) {
 	unsigned long myRandom5;
 	unsigned long myRandom0;
 
-// LINE 55:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 59:
 	__asm        mov    myRandom0, 0x41C64E6D;
 // LINE 60:
@@ -195,24 +155,12 @@ unsigned short RRand(unsigned short lim) {
 	__asm        mov    ax, dx;
 	__asm        jmp    near ptr 0x0055D69E;
 // LINE 97:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d6a3
 unsigned short GetNextRandomNumber() {
 	unsigned short temp;
 
-// LINE 104:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 107:
 	__asm        mov    eax, ds:[0x6376A8];
 	__asm        mov    temp, ax;
@@ -244,24 +192,12 @@ unsigned short GetNextRandomNumber() {
 	__asm        mov    ax, temp;
 	__asm        jmp    near ptr 0x0055D712;
 // LINE 116:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d717
 unsigned short SRand(unsigned short lim) {
 	unsigned short next;
 
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        mov    next, ax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(next);
@@ -272,163 +208,70 @@ unsigned short SRand(unsigned short lim) {
 	__asm        idiv   ecx;
 	__asm        mov    ax, dx;
 	__asm        jmp    near ptr 0x0055D745;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d74a
 unsigned short SRand2() {
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 1;
 	__asm        jmp    near ptr 0x0055D760;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d765
 unsigned short SRand4() {
-// LINE 120:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 3;
 	__asm        jmp    near ptr 0x0055D77B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d780
 unsigned short SRand8() {
-// LINE 121:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 7;
 	__asm        jmp    near ptr 0x0055D796;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d79b
 unsigned short SRand16() {
-// LINE 122:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xF;
 	__asm        jmp    near ptr 0x0055D7B1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7b6
 unsigned short SRand32() {
-// LINE 123:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x1F;
 	__asm        jmp    near ptr 0x0055D7CC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7d1
 unsigned short SRand64() {
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x3F;
 	__asm        jmp    near ptr 0x0055D7E7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d7ec
 unsigned short SRand128() {
-// LINE 125:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x7F;
 	__asm        jmp    near ptr 0x0055D802;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d807
 unsigned short SRand256() {
-// LINE 126:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0055D6A3;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xFF;
 	__asm        jmp    near ptr 0x0055D81F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d824
@@ -436,13 +279,6 @@ unsigned short SGIRand(unsigned short limit) {
 	unsigned short z;
 	unsigned short x;
 
-// LINE 132:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 135:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
@@ -471,11 +307,6 @@ unsigned short SGIRand(unsigned short limit) {
 	__asm        mov    ax, x;
 	__asm        jmp    near ptr 0x0055D87D;
 // LINE 141:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d882
@@ -483,13 +314,6 @@ unsigned short SGRand(unsigned short limit) {
 	unsigned short z;
 	unsigned short x;
 
-// LINE 147:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 150:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
@@ -518,11 +342,6 @@ unsigned short SGRand(unsigned short limit) {
 	__asm        mov    ax, x;
 	__asm        jmp    near ptr 0x0055D8DB;
 // LINE 156:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055d8e0
@@ -530,13 +349,6 @@ short SGSRand(unsigned short limit) {
 	short z;
 	short x;
 
-// LINE 162:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 165:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
@@ -570,11 +382,6 @@ short SGSRand(unsigned short limit) {
 	__asm        mov    ax, x;
 	__asm        jmp    near ptr 0x0055D944;
 // LINE 172:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

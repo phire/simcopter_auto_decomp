@@ -542,328 +542,147 @@ class bidirectional_iterator<CopterGameMode,int>{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487830
 void $E118() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0048784A;
 	__asm        call   0x00487864;
 	__asm        jmp    near ptr 0x00487845;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048784a
 void $E115() {
-// LINE 61:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604808;
 	__asm        call   0x004979CF;
 	__asm        jmp    near ptr 0x0048785F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487864
 void $E117() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x487881;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048787C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487881
 void $E116() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        jmp    near ptr 0x0048788C;
 	__asm        mov    ecx, 0x604808;
 	__asm        call   0x0049642F;
 	__asm        jmp    near ptr 0x0048789B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878a0
 void $E123() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x004878BA;
 	__asm        call   0x004878D4;
 	__asm        jmp    near ptr 0x004878B5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878ba
 void $E120() {
-// LINE 62:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604588;
 	__asm        call   0x0042DF60;
 	__asm        jmp    near ptr 0x004878CF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878d4
 void $E122() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x4878F1;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004878EC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878f1
 void $E121() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604588;
 	__asm        call   0x0042DFE2;
 	__asm        jmp    near ptr 0x00487906;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048790b
 void $E128() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00487925;
 	__asm        call   0x0048793F;
 	__asm        jmp    near ptr 0x00487920;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487925
 void $E125() {
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604600;
 	__asm        call   0x0042E3A1;
 	__asm        jmp    near ptr 0x0048793A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048793f
 void $E127() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x48795C;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00487957;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048795c
 void $E126() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604600;
 	__asm        call   0x0042E3F2;
 	__asm        jmp    near ptr 0x00487971;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487976
 void $E133() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00487990;
 	__asm        call   0x004879AA;
 	__asm        jmp    near ptr 0x0048798B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487990
 void $E130() {
-// LINE 64:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   0x00437B10;
 	__asm        jmp    near ptr 0x004879A5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879aa
 void $E132() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x4879C7;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004879C2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879c7
 void $E131() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   0x00437BBA;
 	__asm        jmp    near ptr 0x004879DC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879e1
 void $E138() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x004879FB;
 	__asm        call   0x00487A3B;
 	__asm        jmp    near ptr 0x004879F6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879fb
 void $E135() {
-// LINE 65:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
 	__asm        dec    dword ptr [ebp-4];
@@ -874,41 +693,20 @@ void $E135() {
 	__asm        jmp    near ptr 0x00487A12;
 	__asm        jmp    near ptr 0x00487A31;
 	__asm        jmp    near ptr 0x00487A36;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487a3b
 void $E137() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x487A58;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00487A53;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487a58
 void $E136() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
 	__asm        mov    eax, [ebp-4];
@@ -923,97 +721,43 @@ void $E136() {
 	__asm        jmp    near ptr 0x00487A7B;
 	__asm        jmp    near ptr 0x00487A9A;
 	__asm        jmp    near ptr 0x00487A9F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487aa4
 void $E143() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00487ABE;
 	__asm        call   0x00487AD8;
 	__asm        jmp    near ptr 0x00487AB9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487abe
 void $E140() {
-// LINE 66:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604530;
 	__asm        call   0x0046D388;
 	__asm        jmp    near ptr 0x00487AD3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487ad8
 void $E142() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        push   0x487AF5;
 	__asm        call   0x0056D090;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00487AF0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487af5
 void $E141() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    ecx, 0x604530;
 	__asm        call   0x0046D496;
 	__asm        jmp    near ptr 0x00487B0A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00487b0f
 void GamePreferences::GamePreferences() {
-// LINE 96:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 1;
 	__asm        mov    eax, this;
@@ -1033,23 +777,10 @@ void GamePreferences::GamePreferences() {
 // LINE 97:
 	__asm        jmp    near ptr 0x00487B6F;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00487b77
 void RenderPreferences::RenderPreferences() {
-// LINE 105:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 1;
 	__asm        mov    eax, this;
@@ -1061,23 +792,10 @@ void RenderPreferences::RenderPreferences() {
 // LINE 106:
 	__asm        jmp    near ptr 0x00487BAF;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00487bb7
  CGameApp::CGameApp() {
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x00426FC0;
 	__asm        mov    eax, this;
@@ -1307,23 +1025,10 @@ void RenderPreferences::RenderPreferences() {
 // LINE 124:
 	__asm        jmp    near ptr 0x00487F6A;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00487f72
  CGameApp::~CGameApp() {
-// LINE 131:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x84;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F38;
 	__asm        mov    eax, this;
@@ -1714,23 +1419,10 @@ void RenderPreferences::RenderPreferences() {
 	__asm        call   0x004A1A60;
 	__asm        mov    ecx, this;
 	__asm        call   0x004270E1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004885ed
 void  CGameApp::InitializeMemberVariables() {
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 204:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0;
@@ -1854,11 +1546,6 @@ void  CGameApp::InitializeMemberVariables() {
 	__asm        mov    [ecx+8], eax;
 // LINE 250:
 	__asm        jmp    near ptr 0x004887B2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004887b7
@@ -1870,15 +1557,6 @@ unsigned long  CGameApp::PrepareGame() {
 	int32_t nFullStringID;
 	class basic_string<char> sApplicationTitle;
 
-// LINE 258:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x5200;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 260:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -2785,23 +2463,10 @@ unsigned long  CGameApp::PrepareGame() {
 	__asm        mov    eax, [ebp-0x158];
 	__asm        jmp    near ptr 0x004896CC;
 // LINE 361:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004896d1
 class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
-// LINE 373:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 374:
 	__asm        push   0x9C;
 	__asm        call   0x0056A600;
@@ -2825,25 +2490,12 @@ class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long H
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048971F;
 // LINE 375:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00489726
 unsigned long  CGameApp::Initialize() {
 	int32_t i;
 
-// LINE 386:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 389:
 	__asm        mov    dword ptr ds:[0x5B5200], 0;
 // LINE 390:
@@ -3153,11 +2805,6 @@ unsigned long  CGameApp::Initialize() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00489C3E;
 // LINE 496:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00489c43
@@ -3166,14 +2813,6 @@ void  CGameApp::ParseCommandLine() {
 	int32_t nLanguage;
 	char szCommandValue[128];
 
-// LINE 506:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x8C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 511:
 	__asm        push   0;
 	__asm        push   0x77;
@@ -3375,11 +3014,6 @@ void  CGameApp::ParseCommandLine() {
 	__asm        mov    ds:[0x598EB4], eax;
 // LINE 573:
 	__asm        jmp    near ptr 0x00489F38;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00489f3d
@@ -3391,14 +3025,6 @@ int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	short i;
 	char chLowerToCheck;
 
-// LINE 593:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 596:
 	__asm        mov    bInQuotation, 0;
 // LINE 598:
@@ -3544,23 +3170,10 @@ int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048A156;
 // LINE 635:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048a15d
 int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
-// LINE 650:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 651:
 	__asm        mov    eax, nLanguageID;
 	__asm        push   eax;
@@ -3570,11 +3183,6 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0048A17F;
 // LINE 654:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048a186
@@ -3585,14 +3193,6 @@ void  CGameApp::DisplayDebugSystemInformation() {
 	class Version tempVersion;
 	struct _MEMORYSTATUS tempMemoryStatus;
 
-// LINE 661:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x154;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 662:
 	__asm        lea    ecx, tempVersion.<vftable>;
 	__asm        call   0x0043DAE0;
@@ -3737,11 +3337,6 @@ void  CGameApp::DisplayDebugSystemInformation() {
 	__asm        lea    ecx, tempVersion.<vftable>;
 	__asm        call   0x0043DC10;
 	__asm        jmp    near ptr 0x0048A36B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048a370
@@ -3749,14 +3344,6 @@ void  CGameApp::SetSystemPriorityLevel(long lLevel) {
 	int32_t bReturnValue;
 	void * __ptr32 hThread;
 
-// LINE 719:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 728:
 	__asm        cmp    lLevel, 0;
 	__asm        jne    near ptr 0x0048A398;
@@ -3795,25 +3382,12 @@ void  CGameApp::SetSystemPriorityLevel(long lLevel) {
 	__asm        mov    bReturnValue, eax;
 // LINE 740:
 	__asm        jmp    near ptr 0x0048A402;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0048a409
 void  CGameApp::InitializeCommandSystem() {
 	struct Shortcut tempShortcut;
 
-// LINE 747:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 751:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3794];
@@ -4131,23 +3705,10 @@ void  CGameApp::InitializeCommandSystem() {
 	__asm        call   0x0048B6ED;
 // LINE 785:
 	__asm        jmp    near ptr 0x0048A93E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048a943
 void  CGameApp::InitializeJoysticks() {
-// LINE 792:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 793:
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   0x0049A527;
@@ -4161,11 +3722,6 @@ void  CGameApp::InitializeJoysticks() {
 	__asm        jmp    near ptr 0x0048A976;
 // LINE 796:
 	__asm        jmp    near ptr 0x0048A97B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048a980
@@ -4178,14 +3734,6 @@ int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 	char * chLastJoystickName;
 	char * chPrefData;
 
-// LINE 809:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 817:
 	__asm        jmp    near ptr 0x0048A991;
 	__asm        mov    eax, ds:[0x604C78];
@@ -4275,11 +3823,6 @@ int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048AA98;
 // LINE 839:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

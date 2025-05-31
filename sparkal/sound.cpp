@@ -473,14 +473,6 @@ public:
 // Contribution: 1:0002cf60-00030abe Module: 64, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042df60
 void SoundSystem::SoundSystem() {
-// LINE 87:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F440;
 // LINE 89:
@@ -517,23 +509,10 @@ void SoundSystem::SoundSystem() {
 // LINE 104:
 	__asm        jmp    near ptr 0x0042DFDA;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042dfe2
 void SoundSystem::~SoundSystem() {
-// LINE 107:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F440;
 // LINE 108:
@@ -541,11 +520,6 @@ void SoundSystem::~SoundSystem() {
 	__asm        call   0x0042E2CD;
 // LINE 109:
 	__asm        jmp    near ptr 0x0042E004;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e009
@@ -553,14 +527,6 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	long hResult;
 	int32_t bReturnValue;
 
-// LINE 119:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 122:
 	__asm        mov    bReturnValue, 1;
 // LINE 126:
@@ -789,23 +755,10 @@ END_OF_ROUTINE:
 	__asm        jmp    near ptr 0x0042E232;
 	__asm        jmp    near ptr 0x0042E232;
 	__asm        jmp    near ptr 0x0042E232;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042e2cd
 void SoundSystem::DeInitialize() {
-// LINE 230:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 232:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -832,23 +785,10 @@ void SoundSystem::DeInitialize() {
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 239:
 	__asm        jmp    near ptr 0x0042E329;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e32e
 int32_t SoundSystem::GetVolume(long * lVolume) {
-// LINE 252:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 253:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -869,23 +809,10 @@ int32_t SoundSystem::GetVolume(long * lVolume) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042E36D;
 // LINE 258:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042e374
 int32_t SoundSystem::SetVolume(long lNewVolume) {
-// LINE 271:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 272:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
@@ -897,25 +824,12 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 	__asm        call   dword ptr [edx+0x24];
 	__asm        jmp    near ptr 0x0042E39A;
 // LINE 273:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042e3a1
 void SoundManager::SoundManager() {
 	int32_t i;
 
-// LINE 283:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F448;
 // LINE 285:
@@ -932,23 +846,10 @@ void SoundManager::SoundManager() {
 // LINE 287:
 	__asm        jmp    near ptr 0x0042E3EA;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e3f2
 void SoundManager::~SoundManager() {
-// LINE 290:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F448;
 // LINE 291:
@@ -956,25 +857,12 @@ void SoundManager::~SoundManager() {
 	__asm        call   0x0042E419;
 // LINE 292:
 	__asm        jmp    near ptr 0x0042E414;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e419
 void SoundManager::DeleteAllSounds() {
 	int32_t i;
 
-// LINE 295:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 297:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042E434;
@@ -999,23 +887,10 @@ void SoundManager::DeleteAllSounds() {
 	__asm        jmp    near ptr 0x0042E431;
 // LINE 299:
 	__asm        jmp    near ptr 0x0042E479;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e47e
 void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
-// LINE 315:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 316:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -1043,25 +918,12 @@ void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 319:
 	__asm        jmp    near ptr 0x0042E4DB;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 	class DigitalSound* newDigitalSound;
 
-// LINE 340:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 341:
 	__asm        push   0x7A;
 	__asm        call   0x0056A600;
@@ -1103,25 +965,12 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 345:
 	__asm        jmp    near ptr 0x0042E571;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042e578
 void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
 	class DigitalSound* newDigitalSound;
 
-// LINE 347:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 348:
 	__asm        push   0x7A;
 	__asm        call   0x0056A600;
@@ -1165,23 +1014,10 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 352:
 	__asm        jmp    near ptr 0x0042E60B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0042e612
 long SoundManager::PlaySoundA(int32_t nIndex, long bPlayLooping, int32_t nDuplicateType) {
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 364:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -1205,23 +1041,10 @@ long SoundManager::PlaySoundA(int32_t nIndex, long bPlayLooping, int32_t nDuplic
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042E65C;
 // LINE 367:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0042e663
 void SoundManager::StopSound(int32_t nIndex) {
-// LINE 378:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 379:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -1238,25 +1061,12 @@ void SoundManager::StopSound(int32_t nIndex) {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 381:
 	__asm        jmp    near ptr 0x0042E69E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042e6a5
 void SoundManager::StopAllSounds() {
 	int32_t i;
 
-// LINE 392:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 394:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042E6C0;
@@ -1281,23 +1091,10 @@ void SoundManager::StopAllSounds() {
 	__asm        jmp    near ptr 0x0042E6BD;
 // LINE 398:
 	__asm        jmp    near ptr 0x0042E701;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e706
 void Sound::Sound() {
-// LINE 413:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -1356,23 +1153,10 @@ void Sound::Sound() {
 // LINE 423:
 	__asm        jmp    near ptr 0x0042E7E6;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e7ee
 void Sound::~Sound() {
-// LINE 432:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F458;
 // LINE 434:
@@ -1429,23 +1213,10 @@ void Sound::~Sound() {
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042E8C6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042e8cb
 class Sound& Sound::operator=(const class Sound& newSound) {
-// LINE 443:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 444:
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+4];
@@ -1608,21 +1379,10 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0042EAF3;
 // LINE 452:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042eafa
 int32_t operator<(const class Sound& compareSound1, const class Sound& compareSound2) {
-// LINE 467:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 468:
 	__asm        mov    eax, compareSound2;
 	__asm        mov    ecx, compareSound1;
@@ -1634,22 +1394,10 @@ int32_t operator<(const class Sound& compareSound1, const class Sound& compareSo
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042EB23;
 // LINE 469:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042eb28
 int32_t operator==(const class Sound& compareSound1, const class Sound& compareSound2) {
-// LINE 484:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 485:
 	__asm        mov    eax, compareSound1;
 	__asm        mov    ecx, compareSound2;
@@ -1800,23 +1548,10 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042ED62;
 // LINE 492:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ed67
 void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
-// LINE 501:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 502:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -1951,65 +1686,28 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    dword ptr [eax+0x30], 1;
 // LINE 505:
 	__asm        jmp    near ptr 0x0042EF53;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042ef5a
 int32_t Sound::GetSoundType() {
-// LINE 511:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 512:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042EF6D;
 // LINE 513:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ef72
 unsigned long Sound::GetTotalMemoryUsage() {
-// LINE 519:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 520:
 	__asm        mov    eax, ds:[0x597E5C];
 	__asm        jmp    near ptr 0x0042EF82;
 // LINE 521:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ef87
 void DigitalSound::DigitalSound() {
 	int32_t i;
 
-// LINE 538:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0042E706;
 	__asm        mov    eax, this;
@@ -2043,25 +1741,12 @@ void DigitalSound::DigitalSound() {
 // LINE 556:
 	__asm        jmp    near ptr 0x0042F007;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f00f
 void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
 	int32_t i;
 
-// LINE 566:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0042E706;
 	__asm        mov    eax, nNewStreamingType;
@@ -2238,23 +1923,10 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 // LINE 587:
 	__asm        jmp    near ptr 0x0042F28C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042f296
 void DigitalSound::DigitalSound(long lNewResID) {
-// LINE 595:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0042E706;
 	__asm        mov    eax, this;
@@ -2275,23 +1947,10 @@ void DigitalSound::DigitalSound(long lNewResID) {
 // LINE 608:
 	__asm        jmp    near ptr 0x0042F2DF;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042f2e9
 void DigitalSound::~DigitalSound() {
-// LINE 615:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 616:
@@ -2301,23 +1960,10 @@ void DigitalSound::~DigitalSound() {
 	__asm        jmp    near ptr 0x0042F30B;
 	__asm        mov    ecx, this;
 	__asm        call   0x0042E7EE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f318
 void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
-// LINE 638:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 639:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -2474,23 +2120,10 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    [ecx+0x20], eax;
 // LINE 648:
 	__asm        jmp    near ptr 0x0042F542;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0042f549
 void DigitalSound::Unload() {
-// LINE 654:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 655:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -2536,23 +2169,10 @@ void DigitalSound::Unload() {
 	__asm        call   dword ptr [eax+0x74];
 // LINE 671:
 	__asm        jmp    near ptr 0x0042F5D0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f5d5
 class DigitalSound& DigitalSound::operator=(class DigitalSound& newSound) {
-// LINE 682:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 683:
 	__asm        mov    eax, newSound;
 	__asm        push   eax;
@@ -2562,23 +2182,10 @@ class DigitalSound& DigitalSound::operator=(class DigitalSound& newSound) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0042F5F5;
 // LINE 685:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042f5fc
 int32_t DigitalSound::Load() {
-// LINE 702:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 703:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
@@ -2611,32 +2218,14 @@ int32_t DigitalSound::Load() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042F665;
 // LINE 710:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f66a
 int32_t DigitalSound::LoadFromResource() {
-// LINE 716:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 717:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042F67D;
 // LINE 718:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f682
@@ -2652,14 +2241,6 @@ int32_t DigitalSound::LoadFromFile() {
 	struct _MMCKINFO ckIn;
 	unsigned long dwBufferLength;
 
-// LINE 733:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 735:
 	__asm        mov    bReturnValue, 1;
 // LINE 737:
@@ -2925,25 +2506,12 @@ ERROR_DONE_ROUTINE:
 	__asm        jmp    near ptr 0x0042F962;
 	__asm        jmp    near ptr 0x0042F962;
 	__asm        jmp    near ptr 0x0042F962;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f989
 int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	struct _DSBUFFERDESC dsBufferDescription;
 
-// LINE 839:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 843:
 	__asm        push   0x14;
 	__asm        push   0;
@@ -2968,11 +2536,6 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	__asm        call   dword ptr [eax+0x6C];
 	__asm        jmp    near ptr 0x0042F9D5;
 // LINE 853:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042f9da
@@ -2980,14 +2543,6 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 	long hResult;
 	struct _DSBUFFERDESC dsBufferDescription;
 
-// LINE 876:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 881:
 	__asm        cmp    dword ptr ds:[0x597E60], 0;
 	__asm        jne    near ptr 0x0042F9FA;
@@ -3099,25 +2654,12 @@ ERROR_IN_ROUTINE:
 // LINE 925:
 	__asm        jmp    near ptr 0x0042FAE9;
 	__asm        jmp    near ptr 0x0042FAE9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fb2a
 int32_t DigitalSound::ReleaseSoundBuffer() {
 	int32_t i;
 
-// LINE 938:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 939:
 	__asm        mov    i, 0;
 // LINE 943:
@@ -3158,25 +2700,12 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042FBB0;
 // LINE 958:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042fbb5
 int32_t DigitalSound::GetPan(long * lPan) {
 	long hResult;
 
-// LINE 976:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 980:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3209,25 +2738,12 @@ int32_t DigitalSound::GetPan(long * lPan) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042FC1A;
 // LINE 989:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fc21
 int32_t DigitalSound::SetPan(long lNewPan) {
 	long hResult;
 
-// LINE 1005:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1009:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3270,25 +2786,12 @@ int32_t DigitalSound::SetPan(long lNewPan) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042FCAE;
 // LINE 1022:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fcb5
 int32_t DigitalSound::GetFrequency(long * lFrequency) {
 	long hResult;
 
-// LINE 1038:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1041:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3321,25 +2824,12 @@ int32_t DigitalSound::GetFrequency(long * lFrequency) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042FD1A;
 // LINE 1050:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fd21
 int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 	long hResult;
 
-// LINE 1064:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1067:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3382,25 +2872,12 @@ int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042FDAB;
 // LINE 1080:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fdb2
 int32_t DigitalSound::GetVolume(long * lVolume) {
 	long hResult;
 
-// LINE 1096:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1099:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3439,25 +2916,12 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042FE27;
 // LINE 1110:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042fe2e
 int32_t DigitalSound::SetVolume(long lNewVolume) {
 	long hResult;
 
-// LINE 1124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1128:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    ecx, this;
@@ -3499,11 +2963,6 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042FEAA;
 // LINE 1140:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0042feb1
@@ -3511,14 +2970,6 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 	long lNewVolume;
 	long lDistance;
 
-// LINE 1165:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1171:
 	__asm        mov    eax, lZ;
 	__asm        imul   eax, lZ;
@@ -3570,45 +3021,19 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 	__asm        call   dword ptr [eax+0x24];
 	__asm        jmp    near ptr 0x0042FF4A;
 // LINE 1185:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0042ff51
 long DigitalSound::GetOriginalFrequency() {
-// LINE 1192:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1194:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x44];
 	__asm        jmp    near ptr 0x0042FF68;
 // LINE 1196:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ff6d
 long DigitalSound::IsPlaying() {
-// LINE 1219:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1221:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3617,11 +3042,6 @@ long DigitalSound::IsPlaying() {
 	__asm        call   dword ptr [eax+0x4C];
 	__asm        jmp    near ptr 0x0042FF8B;
 // LINE 1223:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0042ff90
@@ -3630,14 +3050,6 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 	int32_t i;
 	unsigned long dwStatus;
 
-// LINE 1226:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1230:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042FFAB;
@@ -3700,11 +3112,6 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00430053;
 // LINE 1251:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043005a
@@ -3713,14 +3120,6 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	unsigned long dwLooped;
 	struct IDirectSoundBuffer* lpSoundBufferToPlay;
 
-// LINE 1268:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1271:
 	__asm        mov    dwLooped, 0;
 // LINE 1274:
@@ -3940,11 +3339,6 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004302F2;
 // LINE 1346:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x004302f9
@@ -3953,14 +3347,6 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 	int32_t i;
 	unsigned long dwStatus;
 
-// LINE 1364:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1373:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00430314;
@@ -4050,11 +3436,6 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00430414;
 // LINE 1396:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0043041b
@@ -4062,14 +3443,6 @@ long DigitalSound::Stop() {
 	int32_t i;
 	int32_t bWasPlaying;
 
-// LINE 1409:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1414:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -4134,11 +3507,6 @@ long DigitalSound::Stop() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004304E7;
 // LINE 1432:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004304ec
@@ -4147,14 +3515,6 @@ long DigitalSound::ShouldWeStream() {
 	struct _OFSTRUCT ofStruct;
 	unsigned long dwFileSize;
 
-// LINE 1446:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xB4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1452:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -4265,11 +3625,6 @@ long DigitalSound::ShouldWeStream() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004306C5;
 // LINE 1463:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004306ca
@@ -4277,14 +3632,6 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	long hResult;
 	struct _DSBUFFERDESC dsBufferDescription;
 
-// LINE 1485:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x40;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1491:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -4595,11 +3942,6 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00430A6D;
 // LINE 1570:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00430a74
@@ -4613,14 +3955,6 @@ long DigitalSound::PlayStream() {
 	int32_t bStopIfCurrentlyPlaying;
 	uint32_t nError;
 
-// LINE 1582:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1589:
 	__asm        mov    bStopIfCurrentlyPlaying, 0;
 // LINE 1593:
@@ -5108,25 +4442,12 @@ long DigitalSound::PlayStream() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00430FB1;
 // LINE 1729:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00430fb6
 long DigitalSound::StopStream() {
 	uint32_t mmResult;
 
-// LINE 1743:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1750:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -5201,24 +4522,12 @@ long DigitalSound::StopStream() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004310A0;
 // LINE 1781:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 	class DigitalSound* digitalSoundObject;
 
-// LINE 1797:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1798:
 	__asm        mov    eax, dwUser;
 	__asm        mov    digitalSoundObject, eax;
@@ -5229,11 +4538,6 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 	__asm        call   dword ptr [eax+0x7C];
 // LINE 1800:
 	__asm        jmp    near ptr 0x004310C4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x004310cb
@@ -5248,14 +4552,6 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	int32_t nError;
 	unsigned char * lpTemp;
 
-// LINE 1806:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1813:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -5946,23 +5242,10 @@ END_OF_FUNCTION:
 	__asm        jmp    near ptr 0x004317E7;
 	__asm        jmp    near ptr 0x004317E7;
 	__asm        jmp    near ptr 0x004317E7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431821
 int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunction)(long), long lNewSoundCompletionData) {
-// LINE 2043:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2044:
 	__asm        mov    eax, newSoundCompletionFunction;
 	__asm        mov    ecx, this;
@@ -5975,23 +5258,10 @@ int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunctio
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00431849;
 // LINE 2047:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x00431850
 void DigitalSound::StopCompletionNotification() {
-// LINE 2054:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2055:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28], 0;
@@ -6006,11 +5276,6 @@ void DigitalSound::StopCompletionNotification() {
 	__asm        call   dword ptr [eax+0x84];
 // LINE 2058:
 	__asm        jmp    near ptr 0x00431886;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043188b
@@ -6018,14 +5283,6 @@ long DigitalSound::EstimateRemainingPlayTime() {
 	unsigned long dwPlay;
 	unsigned long dwWrite;
 
-// LINE 2071:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2075:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6090,24 +5347,12 @@ long DigitalSound::EstimateRemainingPlayTime() {
 	__asm        div    dword ptr [ecx+0x44];
 	__asm        jmp    near ptr 0x00431942;
 // LINE 2096:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 	class DigitalSound* digitalSoundObject;
 
-// LINE 2106:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2107:
 	__asm        mov    eax, dwUser;
 	__asm        mov    digitalSoundObject, eax;
@@ -6118,23 +5363,10 @@ void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, uns
 	__asm        call   dword ptr [eax+0x80];
 // LINE 2109:
 	__asm        jmp    near ptr 0x00431969;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x00431970
 void DigitalSound::ProcessCompletionEstimationTimerCallback() {
-// LINE 2115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2116:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6171,25 +5403,12 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 	__asm        call   dword ptr [eax+0x88];
 // LINE 2129:
 	__asm        jmp    near ptr 0x004319E0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004319e5
 int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 	long lRemainingPlayTime;
 
-// LINE 2135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2138:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -6237,23 +5456,10 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 	__asm        mov    eax, [eax+0x38];
 	__asm        jmp    near ptr 0x00431A78;
 // LINE 2170:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00431a7d
 void DigitalSound::StopCompletionNotificationEstimationTimer() {
-// LINE 2176:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2177:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -6271,11 +5477,6 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 	__asm        mov    dword ptr [eax+0x38], 0;
 // LINE 2182:
 	__asm        jmp    near ptr 0x00431ABA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

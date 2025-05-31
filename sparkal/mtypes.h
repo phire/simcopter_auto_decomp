@@ -1,22 +1,9 @@
 // Function in module: Catalog.obj
 // FUNCTION: COPTER_D 0x0047b5e0
 void MPoint::MPoint() {
-// LINE 279:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x0047B5F1;
 	__asm        jmp    near ptr 0x0047B5F6;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Dialwin.obj
@@ -24,14 +11,6 @@ void MPoint::MPoint() {
 void MRect::NormalizeRect() {
 	long nTemp;
 
-// LINE 589:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 592:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -72,31 +51,13 @@ void MRect::NormalizeRect() {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 602:
 	__asm        jmp    near ptr 0x0044FCCE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040dc80
 void MRect::MRect() {
-// LINE 329:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x0040DC91;
 	__asm        jmp    near ptr 0x0040DC96;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

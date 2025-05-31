@@ -1076,14 +1076,6 @@ public:
 void cYObject::Error(short errNum) {
 	 // Switch table at 0x005625e6
 
-// LINE 13:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 14:
 	__asm        movsx  eax, errNum;
 	__asm        mov    [ebp-8], eax;
@@ -1162,11 +1154,6 @@ void cYObject::Error(short errNum) {
 	__asm        (bad);
 // LINE 69:
 	__asm        jmp    near ptr 0x00562604;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

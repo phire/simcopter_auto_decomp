@@ -130,14 +130,6 @@ protected:
 // Contribution: 1:0008e120-0008ee82 Module: 24, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048f120
 void IFlatImage::IFlatImage() {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -153,11 +145,6 @@ void IFlatImage::IFlatImage() {
 // LINE 27:
 	__asm        jmp    near ptr 0x0048F16C;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048f174
@@ -172,14 +159,6 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 	unsigned char * pDestLeft;
 	long SourceStride;
 
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 39:
 	__asm        cmp    pDest, 0;
 	__asm        jne    near ptr 0x0048F1A3;
@@ -342,11 +321,6 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 	__asm        mov    eax, ReturnCode;
 	__asm        jmp    near ptr 0x0048F327;
 // LINE 102:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
@@ -360,14 +334,6 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct Sp
 	long DestWidth;
 	long SrcLeft;
 
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 114:
 	__asm        mov    eax, srcRect.left;
 	__asm        mov    SrcLeft, eax;
@@ -421,11 +387,6 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct Sp
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0048F3AA;
 // LINE 127:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1
@@ -437,14 +398,6 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	long Height;
 	unsigned long Error;
 
-// LINE 133:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 134:
 	__asm        cmp    pDest, 0;
 	__asm        jne    near ptr 0x0048F3E3;
@@ -603,11 +556,6 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	__asm        mov    eax, Error;
 	__asm        jmp    near ptr 0x0048F564;
 // LINE 188:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
@@ -620,14 +568,6 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	unsigned char * pBits;
 	int32_t Bottom;
 
-// LINE 197:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 206:
 	__asm        cmp    rectFill, 0;
 	__asm        je     near ptr 0x0048F5FB;
@@ -739,23 +679,10 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048F697;
 // LINE 239:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0048f69e
 void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor) {
-// LINE 253:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0048F120;
 	__asm        mov    eax, this;
@@ -882,23 +809,10 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 // LINE 271:
 	__asm        jmp    near ptr 0x0048F863;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0048f86d
 void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-// LINE 278:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    ecx, this;
 	__asm        call   0x0048F120;
 	__asm        mov    eax, this;
@@ -1170,23 +1084,10 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 // LINE 330:
 	__asm        jmp    near ptr 0x0048FC19;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0048fc23
 void CFlatImage::~CFlatImage() {
-// LINE 336:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591070;
 // LINE 337:
@@ -1224,23 +1125,10 @@ void CFlatImage::~CFlatImage() {
 	__asm        jmp    near ptr 0x0048FCBC;
 // LINE 340:
 	__asm        jmp    near ptr 0x0048FCC1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048fcc6
 unsigned long CFlatImage::Lock() {
-// LINE 348:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 349:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1293,23 +1181,10 @@ unsigned long CFlatImage::Lock() {
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0048FD83;
 // LINE 361:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0048fd88
 unsigned long CFlatImage::Unlock() {
-// LINE 363:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 364:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1374,11 +1249,6 @@ unsigned long CFlatImage::Unlock() {
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0048FE7E;
 // LINE 381:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

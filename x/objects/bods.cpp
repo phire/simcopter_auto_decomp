@@ -158,14 +158,6 @@ public:
 class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	short count;
 
-// LINE 1937:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1943:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00560C0B;
@@ -332,25 +324,12 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00560E71;
 // LINE 1952:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00560e78
 void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	short count;
 
-// LINE 2061:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2062:
 	__asm        cmp    this, 0;
 	__asm        jne    near ptr 0x00560EAA;
@@ -461,22 +440,10 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        jmp    near ptr 0x00560EB5;
 // LINE 2081:
 	__asm        jmp    near ptr 0x00560FFE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00561005
 class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
-// LINE 2084:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   0x005661F4;
@@ -569,11 +536,6 @@ class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    near ptr 0x0056118B;
 // LINE 2088:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00561190
@@ -581,14 +543,6 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 	struct cCopterBody::Part* part;
 	short count;
 
-// LINE 2091:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2093:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005611AB;
@@ -652,11 +606,6 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0056127A;
 // LINE 2099:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00561281
@@ -668,14 +617,6 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	short color;
 	struct Point3d sPt;
 
-// LINE 2102:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2103:
 	__asm        cmp    part, 0;
 	__asm        jne    near ptr 0x005612B3;
@@ -980,11 +921,6 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        (bad);
 // LINE 2176:
 	__asm        jmp    near ptr 0x0056160A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x1C;
 }
 
 // FUNCTION: COPTER_D 0x00561611
@@ -1000,14 +936,6 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	float sinY;
 	float sinX;
 
-// LINE 2180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xA4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2181:
 	__asm        jmp    near ptr 0x00561628;
 	__asm        mov    eax, privanim;
@@ -1455,11 +1383,6 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        jmp    near ptr 0x00561AE4;
 // LINE 2282:
 	__asm        jmp    near ptr 0x00561B6D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x24;
 }
 
 // FUNCTION: COPTER_D 0x00561b74
@@ -1468,8 +1391,6 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	unsigned char tmp[16];
 
 // LINE 2285:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x562095;
 	__asm        mov    eax, fs:[0];
@@ -1805,13 +1726,6 @@ void  cCopterBody::DestroyAll() {
 	void * __ptr32 h;
 	short count;
 
-// LINE 2300:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x4C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x18], eax;
@@ -2029,21 +1943,10 @@ void  cCopterBody::DestroyAll() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 2321:
 	__asm        jmp    near ptr 0x005623C8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005623cd
 int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
-// LINE 2324:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2325:
 	__asm        mov    eax, p2;
 	__asm        mov    eax, [eax];
@@ -2062,11 +1965,6 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00562406;
 // LINE 2329:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056240b
@@ -2074,13 +1972,6 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 	struct cCopterBody::Part* part;
 	short debugbodypartsize;
 
-// LINE 2332:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2334:
 	__asm        mov    debugbodypartsize, 0x28;
 // LINE 2335:
@@ -2127,24 +2018,12 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 	__asm        add    esp, 4;
 // LINE 2343:
 	__asm        jmp    near ptr 0x00562496;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056249b
 void SwizzleAnimLookup(void * __ptr32 val, long size) {
 	struct AnimLookup* al;
 
-// LINE 2346:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2348:
 	__asm        cmp    size, 8;
 	__asm        je     near ptr 0x005624CA;
@@ -2170,11 +2049,6 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 	__asm        add    esp, 4;
 // LINE 2353:
 	__asm        jmp    near ptr 0x005624F0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

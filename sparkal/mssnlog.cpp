@@ -458,14 +458,6 @@ public:
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046bca0
 void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 47:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x0046BCB1;
 	__asm        jmp    near ptr 0x0046BCB6;
 	__asm        mov    eax, windowNewParent;
@@ -681,23 +673,10 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 // LINE 52:
 	__asm        jmp    near ptr 0x0046BFAA;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0046bfb4
 void MissionLogWindow::~MissionLogWindow() {
-// LINE 58:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590708;
 // LINE 59:
@@ -707,11 +686,6 @@ void MissionLogWindow::~MissionLogWindow() {
 	__asm        jmp    near ptr 0x0046BFD6;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046bfe3
@@ -721,15 +695,6 @@ int32_t MissionLogWindow::Initialize() {
 	int32_t nFullStringID;
 	struct SparkalColor tempSparkalColor;
 
-// LINE 66:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        mov    eax, 0x30B4;
-	__asm        call   0x0056AC60;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 68:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1326,23 +1291,10 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        jmp    near ptr 0x0046C905;
 // LINE 111:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046c90a
 int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
-// LINE 118:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 119:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -1433,25 +1385,12 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046CA45;
 // LINE 120:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046ca4c
 int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	char szBackgroundBufferPath[260];
 
-// LINE 126:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 129:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -1490,23 +1429,10 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x0046CAEF;
 // LINE 136:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046caf6
 void MissionLogWindow::DestroyImage() {
-// LINE 142:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 143:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -1535,23 +1461,10 @@ void MissionLogWindow::DestroyImage() {
 	__asm        call   0x004A4CAB;
 // LINE 148:
 	__asm        jmp    near ptr 0x0046CB5D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046cb62
 int32_t MissionLogWindow::ComposeSelf() {
-// LINE 159:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 160:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -1628,11 +1541,6 @@ int32_t MissionLogWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046CC3F;
 // LINE 176:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046cc44
@@ -1641,14 +1549,6 @@ void MissionLogWindow::DrawBackground() {
 	int32_t i;
 	long x;
 
-// LINE 186:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 192:
 	__asm        mov    i, 0;
 	__asm        mov    x, 0x42;
@@ -1681,25 +1581,12 @@ void MissionLogWindow::DrawBackground() {
 	__asm        jmp    near ptr 0x0046CC6A;
 // LINE 196:
 	__asm        jmp    near ptr 0x0046CCB0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046ccb5
 int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMyMessage;
 
-// LINE 203:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 206:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    near ptr 0x0046CCE5;
@@ -1744,11 +1631,6 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046CD3E;
 // LINE 218:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0046cd45
@@ -1756,14 +1638,6 @@ void MissionLogWindow::SortByTimeDate() {
 	class list<tagLogBase *>::iterator iterator;
 	class basic_string<char> sCurrentText;
 
-// LINE 224:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x54;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 225:
 	__asm        jmp    near ptr 0x0046CD56;
 // LINE 226:
@@ -1921,11 +1795,6 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046CF6D;
 	__asm        jmp    near ptr 0x0046CF72;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046cf77
@@ -1934,14 +1803,6 @@ void MissionLogWindow::SortByType() {
 	class list<tagLogBase *>::iterator iterator;
 	class basic_string<char> sCurrentText;
 
-// LINE 244:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x84;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 245:
 	__asm        jmp    near ptr 0x0046CF8E;
 // LINE 246:
@@ -2227,23 +2088,10 @@ void MissionLogWindow::SortByType() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D37E;
 	__asm        jmp    near ptr 0x0046D383;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046d388
 void MessageDisplayManager::MessageDisplayManager() {
-// LINE 291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        jmp    near ptr 0x0046D399;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0x14;
@@ -2309,23 +2157,10 @@ void MessageDisplayManager::MessageDisplayManager() {
 // LINE 294:
 	__asm        jmp    near ptr 0x0046D48E;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046d496
 void MessageDisplayManager::~MessageDisplayManager() {
-// LINE 299:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907D0;
 // LINE 300:
@@ -2428,23 +2263,10 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        add    ecx, 0x24;
 	__asm        call   0x0049FC4E;
 	__asm        jmp    near ptr 0x0046D60D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046d612
 int32_t MessageDisplayManager::Initialize() {
-// LINE 309:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 310:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2586,11 +2408,6 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046D7FD;
 // LINE 317:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0046d802
@@ -2598,14 +2415,6 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	int32_t i;
 	class MRect rectCurrentMessage;
 
-// LINE 323:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 324:
 	__asm        jmp    near ptr 0x0046D813;
 	__asm        jmp    near ptr 0x0046D818;
@@ -2948,25 +2757,12 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        jmp    near ptr 0x0046DC2B;
 // LINE 350:
 	__asm        jmp    near ptr 0x0046DCC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046dccd
 void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	int32_t i;
 
-// LINE 356:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x88;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 359:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -3420,23 +3216,10 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        jmp    near ptr 0x0046E3BE;
 // LINE 377:
 	__asm        jmp    near ptr 0x0046E3C3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0046e3ca
 void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage) {
-// LINE 382:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 383:
 	__asm        mov    eax, sNewMessage;
 	__asm        cmp    dword ptr [eax], 0;
@@ -3522,11 +3305,6 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 	__asm        call   dword ptr [eax+0xC];
 // LINE 384:
 	__asm        jmp    near ptr 0x0046E4EA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

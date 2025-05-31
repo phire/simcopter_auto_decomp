@@ -64,14 +64,6 @@ public:
 // Contribution: 1:0009e780-0009f398 Module: 11, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049f780
 void MFont::MFont() {
-// LINE 28:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ds:[0x59A950];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
@@ -145,23 +137,10 @@ void MFont::MFont() {
 // LINE 32:
 	__asm        jmp    near ptr 0x0049F893;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049f89b
 void MFont::MFont(const class MFont& copyMFont) {
-// LINE 40:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -198,23 +177,10 @@ void MFont::MFont(const class MFont& copyMFont) {
 // LINE 44:
 	__asm        jmp    near ptr 0x0049F92D;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049f937
 void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes, int32_t bCreateNow) {
-// LINE 54:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
 	__asm        add    esp, 4;
@@ -430,23 +396,10 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 // LINE 64:
 	__asm        jmp    near ptr 0x0049FC44;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0049fc4e
 void MFont::~MFont() {
-// LINE 72:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591640;
 // LINE 73:
@@ -506,23 +459,10 @@ void MFont::~MFont() {
 	__asm        call   0x0056A740;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FD2E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0049fd33
 class MFont& MFont::operator=(const class MFont& copyMFont) {
-// LINE 81:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 82:
 	__asm        mov    eax, copyMFont;
 	__asm        cmp    this, eax;
@@ -691,11 +631,6 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0049FF6D;
 // LINE 96:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049ff74
@@ -705,14 +640,6 @@ int32_t MFont::CreateFontA() {
 	int32_t nWeight;
 	unsigned long dwUnderline;
 
-// LINE 125:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 128:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -870,25 +797,12 @@ int32_t MFont::CreateFontA() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A0158;
 // LINE 151:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a015d
 void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 	int32_t bFontChanged;
 
-// LINE 163:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 164:
 	__asm        mov    bFontChanged, 0;
 // LINE 166:
@@ -933,23 +847,10 @@ void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAtt
 	__asm        call   dword ptr [eax];
 // LINE 182:
 	__asm        jmp    near ptr 0x004A01E2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x004a01e9
 void MFont::DestroyFont() {
-// LINE 190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 192:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -964,43 +865,20 @@ void MFont::DestroyFont() {
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 199:
 	__asm        jmp    near ptr 0x004A021E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a0223
 int32_t MFont::IsFontAvailable(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes) {
-// LINE 208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 210:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A0230;
 // LINE 214:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a0235
 int32_t MFont::LoadFont(char * szPath) {
 	int32_t nReturnValue;
 
-// LINE 222:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 224:
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
@@ -1019,24 +897,12 @@ int32_t MFont::LoadFont(char * szPath) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004A026E;
 // LINE 231:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a0273
 int32_t MFont::UnloadFont(char * szPath) {
 	int32_t nReturnValue;
 
-// LINE 239:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 241:
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
@@ -1055,11 +921,6 @@ int32_t MFont::UnloadFont(char * szPath) {
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    near ptr 0x004A02AC;
 // LINE 248:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004a02b1
@@ -1071,14 +932,6 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 	int32_t nReturnValue;
 	void * __ptr32 hFontOriginal;
 
-// LINE 259:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 265:
 	__asm        mov    nReturnValue, 1;
 // LINE 268:
@@ -1160,11 +1013,6 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A0392;
 // LINE 300:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 

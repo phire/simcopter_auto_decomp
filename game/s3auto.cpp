@@ -398,13 +398,6 @@ int32_t S3StartSpeederMission() {
 	int32_t i;
 	class AutomobileClass* pCar;
 
-// LINE 70:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 74:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x005015F8;
@@ -461,11 +454,6 @@ int32_t S3StartSpeederMission() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005016C4;
 // LINE 99:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005016c9
@@ -473,13 +461,6 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 	int32_t deltay;
 	int32_t deltax;
 
-// LINE 104:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 109:
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc2.x;
@@ -543,11 +524,6 @@ int32_t Distance(struct _GridCoordinates loc1, struct _GridCoordinates loc2) {
 	__asm        add    eax, deltay;
 	__asm        jmp    near ptr 0x00501769;
 // LINE 127:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050176e
@@ -559,13 +535,6 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	int32_t dist;
 	int32_t carID;
 
-// LINE 135:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 142:
 	__asm        mov    minDist, 0x7D00;
 // LINE 147:
@@ -812,21 +781,10 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00501A84;
 // LINE 241:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501a89
 int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
-// LINE 245:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 246:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(messID);
 	__asm        push   eax;
@@ -835,23 +793,10 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 	__asm        call   0x00501AAD;
 	__asm        jmp    near ptr 0x00501AA8;
 // LINE 247:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501aad
 int32_t AutomobileClass::AutoMessage(short messID) {
-// LINE 251:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 252:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -871,40 +816,18 @@ int32_t AutomobileClass::AutoMessage(short messID) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00501AF2;
 // LINE 262:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00501af9
 int32_t GetTheCurrentNumberOfAutomobiles() {
-// LINE 268:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 269:
 	__asm        mov    eax, ds:[0x5B52C8];
 	__asm        jmp    near ptr 0x00501B09;
 // LINE 270:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501b0e
 int32_t SetTheCurrentNumberOfAutomobiles(int32_t num) {
-// LINE 274:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 275:
 	__asm        cmp    num, 0x32;
 	__asm        jg     near ptr 0x00501B30;
@@ -918,21 +841,10 @@ int32_t SetTheCurrentNumberOfAutomobiles(int32_t num) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00501B37;
 // LINE 282:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501b3c
 int32_t CreateAutomobileInstance(int32_t instanceID) {
-// LINE 303:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 304:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -945,25 +857,12 @@ int32_t CreateAutomobileInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00501B67;
 // LINE 305:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501b6c
 void AutomobileClass::AutomobileClass() {
 	long odds;
 
-// LINE 326:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x592D98;
 // LINE 327:
@@ -1078,23 +977,10 @@ void AutomobileClass::AutomobileClass() {
 // LINE 402:
 	__asm        jmp    near ptr 0x00501D01;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501d09
 void AutomobileClass::~AutomobileClass() {
-// LINE 411:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x592D98;
 // LINE 414:
@@ -1116,21 +1002,10 @@ void AutomobileClass::~AutomobileClass() {
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
 // LINE 431:
 	__asm        jmp    near ptr 0x00501D53;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501d58
 class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
-// LINE 450:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 451:
 	__asm        mov    eax, index;
 	__asm        cmp    ds:[0x5B52C8], eax;
@@ -1154,24 +1029,12 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        jmp    near ptr 0x00501DB3;
 // LINE 457:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501db8
 class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 	class AutomobileClass* youveWonABrandNewCar;
 
-// LINE 478:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 480:
 	__asm        push   0x11A;
 	__asm        call   0x0056A600;
@@ -1224,24 +1087,12 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00501E6C;
 // LINE 501:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501e71
 void AutomobileClass::ResetAll() {
 	int32_t currentCarIndex;
 
-// LINE 540:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 543:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x00501E89;
@@ -1256,24 +1107,12 @@ void AutomobileClass::ResetAll() {
 	__asm        jmp    near ptr 0x00501E86;
 // LINE 547:
 	__asm        jmp    near ptr 0x00501EAC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501eb1
 void AutomobileClass::ItterateAll() {
 	int32_t currentCarIndex;
 
-// LINE 571:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 574:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x00501EC9;
@@ -1288,23 +1127,10 @@ void AutomobileClass::ItterateAll() {
 	__asm        jmp    near ptr 0x00501EC6;
 // LINE 578:
 	__asm        jmp    near ptr 0x00501EEC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00501ef1
 void AutomobileClass::Itterate() {
-// LINE 599:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x6C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 601:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 1;
@@ -1478,11 +1304,6 @@ void AutomobileClass::Itterate() {
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 685:
 	__asm        jmp    near ptr 0x00502177;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050217c
@@ -1495,14 +1316,6 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	struct Point3d vehicleLoc;
 	int32_t rcos;
 
-// LINE 747:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 749:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x24;
@@ -1606,11 +1419,6 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005022A9;
 // LINE 772:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005022b0
@@ -1620,14 +1428,6 @@ void AutomobileClass::ItterateFSM() {
 	struct _DYOBJ_INST* dyblock;
 	class AutomobileClass* carblock;
 
-// LINE 782:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x68;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 796:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 1;
@@ -2196,25 +1996,12 @@ void AutomobileClass::ItterateFSM() {
 	__asm        add    [ecx+0xEA], eax;
 // LINE 1044:
 	__asm        jmp    near ptr 0x00502A96;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00502a9b
 void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 	struct _CELL_INFO* pCell;
 
-// LINE 1052:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1054:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -2281,25 +2068,12 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 // LINE 1075:
 // Block end:
 	__asm        jmp    near ptr 0x00502B6D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00502b74
 void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	struct _CELL_INFO* pCell;
 
-// LINE 1084:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1086:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -2390,11 +2164,6 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 // LINE 1109:
 // Block end:
 	__asm        jmp    near ptr 0x00502C8B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00502c92
@@ -2403,14 +2172,6 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	int32_t rightleftorstraight;
 	enum TurnIndex turn;
 
-// LINE 1123:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1152:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0x12];
@@ -2584,11 +2345,6 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    eax, turn;
 	__asm        jmp    near ptr 0x00502F0A;
 // LINE 1194:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00502f11
@@ -2596,14 +2352,6 @@ void AutomobileClass::BeamToWithinCameraRange() {
 	struct Point3d vec;
 	struct _GridCoordinates beamCell;
 
-// LINE 1208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1209:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
@@ -2745,11 +2493,6 @@ void AutomobileClass::BeamToWithinCameraRange() {
 	__asm        call   dword ptr [eax+0x20];
 // LINE 1262:
 	__asm        jmp    near ptr 0x005030A5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005030aa
@@ -2763,14 +2506,6 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	class SpiralScan scan;
 	struct Goal goal1;
 
-// LINE 1282:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x118;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1284:
 	__asm        mov    eax, cell;
 	__asm        mov    ax, [eax];
@@ -3648,23 +3383,10 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1646:
 // Block end:
 	__asm        jmp    near ptr 0x00503E67;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00503e6e
 void AutomobileClass::UnPlaceCar() {
-// LINE 1659:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1662:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFEFF;
@@ -3698,25 +3420,12 @@ void AutomobileClass::UnPlaceCar() {
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFD;
 // LINE 1674:
 	__asm        jmp    near ptr 0x00503ED9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00503ede
 void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 	struct _MISSION_PARMS mp;
 
-// LINE 1684:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1690:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 3;
@@ -3790,25 +3499,12 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 	__asm        add    esp, 0xC;
 // LINE 1725:
 	__asm        jmp    near ptr 0x00503FC9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00503fd0
 void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 	struct _MISSION_PARMS mp;
 
-// LINE 1734:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1735:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 0x10;
@@ -3867,23 +3563,10 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 	__asm        add    esp, 0xC;
 // LINE 1764:
 	__asm        jmp    near ptr 0x00504093;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0050409a
 void AutomobileClass::AdjustSpeed() {
-// LINE 1772:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1773:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x92], 0;
@@ -3912,23 +3595,10 @@ void AutomobileClass::AdjustSpeed() {
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 1777:
 	__asm        jmp    near ptr 0x00504111;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00504116
 void AutomobileClass::Reset() {
-// LINE 1790:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1791:
 	__asm        mov    ecx, this;
 	__asm        call   0x00503E6E;
@@ -3937,23 +3607,10 @@ void AutomobileClass::Reset() {
 	__asm        mov    dword ptr [eax+8], 1;
 // LINE 1794:
 	__asm        jmp    near ptr 0x00504139;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050413e
 int32_t AutomobileClass::AmIABadGuy() {
-// LINE 1798:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1799:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0x11E;
@@ -3968,11 +3625,6 @@ int32_t AutomobileClass::AmIABadGuy() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00504178;
 // LINE 1803:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050417d
@@ -3981,14 +3633,6 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	class SpiralScan spiral;
 	struct _DYOBJ_INST* currentObject;
 
-// LINE 1807:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1808:
 	__asm        push   1;
 	__asm        lea    ecx, spiral.currDist;
@@ -4110,11 +3754,6 @@ void AutomobileClass::PullOverCiviliansInWay() {
 // LINE 1844:
 	__asm        jmp    near ptr 0x0050432D;
 	__asm        jmp    near ptr 0x00504332;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00504337
@@ -4122,14 +3761,6 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	int32_t object;
 	struct VRObjInfo objectInfo;
 
-// LINE 1874:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1878:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -4299,23 +3930,10 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0050454D;
 // LINE 1953:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00504554
 int32_t AutomobileClass::Initialize(int32_t instanceID) {
-// LINE 1978:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1979:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -4323,68 +3941,30 @@ int32_t AutomobileClass::Initialize(int32_t instanceID) {
 	__asm        call   0x00504337;
 	__asm        jmp    near ptr 0x00504571;
 // LINE 1980:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00504578
 short GetMaximumNumberOfAutomobiles() {
-// LINE 2000:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2001:
 	__asm        mov    ax, 0x32;
 	__asm        jmp    near ptr 0x00504587;
 // LINE 2002:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050458c
 void ItterateAllAutomobiles() {
-// LINE 2023:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2024:
 	__asm        call   0x00501EB1;
 // LINE 2025:
 	__asm        jmp    near ptr 0x0050459C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005045a1
 void ResetAllAutomobiles() {
-// LINE 2045:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 2046:
 	__asm        call   0x00501E71;
 // LINE 2047:
 	__asm        jmp    near ptr 0x005045B1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005045b6
@@ -4394,14 +3974,6 @@ int32_t AutomobileClass::CanIPullOver() {
 	unsigned char x;
 	struct _DYOBJ_INST* currentObject;
 
-// LINE 2094:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x3C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2099:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4635,23 +4207,10 @@ int32_t AutomobileClass::CanIPullOver() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005048C8;
 // LINE 2147:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005048cd
 void AutomobileClass::PullOver(short __formal) {
-// LINE 2152:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2153:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 0x13;
@@ -4722,25 +4281,12 @@ void AutomobileClass::PullOver(short __formal) {
 	__asm        mov    dword ptr [eax+0xFE], 0x780000;
 // LINE 2173:
 	__asm        jmp    near ptr 0x005049F7;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005049fe
 int32_t AutomobileClass::CanIPullOut() {
 	struct _DYOBJ_INST* currentObject;
 
-// LINE 2177:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -4815,23 +4361,10 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00504B05;
 // LINE 2203:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00504b0a
 void AutomobileClass::PullOut() {
-// LINE 2208:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2209:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
@@ -4847,23 +4380,10 @@ void AutomobileClass::PullOut() {
 	__asm        mov    dword ptr [eax+0x9A], 0xD0000;
 // LINE 2215:
 	__asm        jmp    near ptr 0x00504B43;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00504b48
 void AutomobileClass::TransitionBetweenGoals() {
-// LINE 2229:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2230:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEE], 9;
@@ -5245,11 +4765,6 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        call   dword ptr [eax+8];
 // LINE 2345:
 	__asm        jmp    near ptr 0x0050503A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050503f
@@ -5257,14 +4772,6 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 	int32_t roadTile;
 	int32_t diagRoad;
 
-// LINE 2352:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2362:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -5392,11 +4899,6 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 	__asm        (bad);
 // LINE 2404:
 	__asm        jmp    near ptr 0x0050522F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00505234
@@ -5408,14 +4910,6 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	int32_t zOffset;
 	int32_t diagRoad;
 
-// LINE 2418:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -5775,23 +5269,10 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        rep movsd;
 // LINE 2507:
 	__asm        jmp    near ptr 0x005056FF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00505706
 void AutomobileClass::DoAUTurn() {
-// LINE 2513:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2515:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEE], 0xA;
@@ -5863,32 +5344,14 @@ void AutomobileClass::DoAUTurn() {
 	__asm        mov    [ecx+0xEA], eax;
 // LINE 2545:
 	__asm        jmp    near ptr 0x0050581B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00505820
 int32_t AutomobileClass::CanIDoAUTurn() {
-// LINE 2551:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2552:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00505836;
 // LINE 2553:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050583b
@@ -5896,14 +5359,6 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	struct Point3d pulloverVector;
 	int32_t PulloverStepSize;
 
-// LINE 2560:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2562:
 	__asm        push   0x8000;
 	__asm        mov    eax, dist;
@@ -6007,11 +5462,6 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        add    [ecx+0x2C], eax;
 // LINE 2594:
 	__asm        jmp    near ptr 0x00505985;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0050598c
@@ -6027,14 +5477,6 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	struct _GridCoordinates currentLocation;
 	int32_t ydiff;
 
-// LINE 2615:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x58;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2625:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -6769,25 +6211,12 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005062A0;
 // LINE 2924:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x005062a7
 int32_t AutomobileClass::AreCarsHeadOn(struct Point3d* dirvect) {
 	int32_t dotp;
 
-// LINE 2944:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2952:
 	__asm        mov    eax, dirvect;
 	__asm        mov    eax, [eax+8];
@@ -6830,11 +6259,6 @@ int32_t AutomobileClass::AreCarsHeadOn(struct Point3d* dirvect) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0050632C;
 // LINE 2959:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00506333
@@ -6843,14 +6267,6 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 	int32_t dist;
 	int32_t ydiff;
 
-// LINE 2982:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2985:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 8;
@@ -6929,23 +6345,10 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0050640E;
 // LINE 3014:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506413
 void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, long mission_id, long xtra_msg) {
-// LINE 3027:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3029:
 	__asm        mov    eax, hitter_type;
 	__asm        mov    [ebp-8], eax;
@@ -7056,21 +6459,10 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 	__asm        (bad);
 // LINE 3075:
 	__asm        jmp    near ptr 0x00506545;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0050654c
 void AutoHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
-// LINE 3085:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3086:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
@@ -7086,21 +6478,10 @@ void AutoHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYO
 	__asm        call   0x00506413;
 // LINE 3087:
 	__asm        jmp    near ptr 0x0050657A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050657f
 int32_t AutoMissionStartFire(long mission_id, struct Point2d* celloc) {
-// LINE 3097:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3098:
 	__asm        mov    eax, celloc;
 	__asm        push   eax;
@@ -7110,21 +6491,10 @@ int32_t AutoMissionStartFire(long mission_id, struct Point2d* celloc) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0050659A;
 // LINE 3099:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050659f
 int32_t AutoMissionStartJam(long mission_id, struct Point2d* celloc) {
-// LINE 3110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3111:
 	__asm        mov    eax, celloc;
 	__asm        push   eax;
@@ -7134,11 +6504,6 @@ int32_t AutoMissionStartJam(long mission_id, struct Point2d* celloc) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x005065BA;
 // LINE 3112:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005065bf
@@ -7146,13 +6511,6 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 	class AutomobileClass* targcar;
 	int32_t currentCarIndex;
 
-// LINE 3124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3128:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x005065D7;
@@ -7203,11 +6561,6 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00506660;
 // LINE 3145:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506665
@@ -7215,13 +6568,6 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 	class AutomobileClass* targcar;
 	int32_t currentCarIndex;
 
-// LINE 3157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3161:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x0050667D;
@@ -7272,11 +6618,6 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00506706;
 // LINE 3178:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050670b
@@ -7284,14 +6625,6 @@ void AutomobileClass::StartFire(long mission_id) {
 	struct _MISSION_PARMS mp;
 	struct Point2d celloc;
 
-// LINE 3190:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3195:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 1;
@@ -7390,11 +6723,6 @@ void AutomobileClass::StartFire(long mission_id) {
 	__asm        add    esp, 4;
 // LINE 3233:
 	__asm        jmp    near ptr 0x00506852;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00506859
@@ -7402,14 +6730,6 @@ void AutomobileClass::StartJam(long mission_id) {
 	struct _MISSION_PARMS mp;
 	struct Point2d celloc;
 
-// LINE 3244:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3249:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 3;
@@ -7489,11 +6809,6 @@ void AutomobileClass::StartJam(long mission_id) {
 	__asm        add    esp, 4;
 // LINE 3281:
 	__asm        jmp    near ptr 0x0050696A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00506971
@@ -7503,14 +6818,6 @@ void AutomobileClass::RunFireState() {
 	struct Point3d vec;
 	int32_t mat[4][4];
 
-// LINE 3291:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3298:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4760];
@@ -7711,25 +7018,12 @@ void AutomobileClass::RunFireState() {
 	__asm        add    esp, 4;
 // LINE 3362:
 	__asm        jmp    near ptr 0x00506BCA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506bcf
 void AutomobileClass::RunJamState() {
 	struct _MISSION_PARMS mp;
 
-// LINE 3372:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3375:
 	__asm        mov    ecx, this;
 	__asm        call   0x005098B0;
@@ -7772,21 +7066,10 @@ void AutomobileClass::RunJamState() {
 	__asm        add    esp, 4;
 // LINE 3397:
 	__asm        jmp    near ptr 0x00506C5C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506c61
 void AutoMissionCancel(long mission_id) {
-// LINE 3408:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3409:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
@@ -7794,25 +7077,12 @@ void AutoMissionCancel(long mission_id) {
 	__asm        add    esp, 4;
 // LINE 3410:
 	__asm        jmp    near ptr 0x00506C78;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506c7d
 void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST* dyhitter) {
 	struct Point3d spotLoc;
 
-// LINE 3422:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3433:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0xA;
@@ -7834,11 +7104,6 @@ void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST* dyhitter) {
 	__asm        add    dword ptr [eax+0x116], 2;
 // LINE 3449:
 	__asm        jmp    near ptr 0x00506CC6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00506ccd
@@ -7846,13 +7111,6 @@ void AutomobileClass::MissionCancel(long mission_id) {
 	class AutomobileClass* targcar;
 	int32_t currentCarIndex;
 
-// LINE 3460:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3464:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x00506CE5;
@@ -7885,21 +7143,10 @@ void AutomobileClass::MissionCancel(long mission_id) {
 	__asm        jmp    near ptr 0x00506CE2;
 // LINE 3482:
 	__asm        jmp    near ptr 0x00506D49;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506d4e
 void AutoSetAllHeadlights(int32_t lights_on) {
-// LINE 3493:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3494:
 	__asm        mov    eax, lights_on;
 	__asm        push   eax;
@@ -7907,11 +7154,6 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 	__asm        add    esp, 4;
 // LINE 3495:
 	__asm        jmp    near ptr 0x00506D65;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506d6a
@@ -7919,13 +7161,6 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 	class AutomobileClass* targcar;
 	int32_t currentCarIndex;
 
-// LINE 3507:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 3511:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    near ptr 0x00506D82;
@@ -7955,11 +7190,6 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 	__asm        jmp    near ptr 0x00506D7F;
 // LINE 3524:
 	__asm        jmp    near ptr 0x00506DCF;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506dd4
@@ -7969,14 +7199,6 @@ void AutomobileClass::TurnOnHeadlight() {
 	int32_t face;
 	struct VRObjInfo oinfo;
 
-// LINE 3538:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3544:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -8028,11 +7250,6 @@ void AutomobileClass::TurnOnHeadlight() {
 	__asm        jmp    near ptr 0x00506E11;
 // LINE 3556:
 	__asm        jmp    near ptr 0x00506E6A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506e6f
@@ -8042,14 +7259,6 @@ void AutomobileClass::TurnOffHeadlight() {
 	int32_t face;
 	struct VRObjInfo oinfo;
 
-// LINE 3561:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3567:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -8103,23 +7312,10 @@ void AutomobileClass::TurnOffHeadlight() {
 	__asm        jmp    near ptr 0x00506EAC;
 // LINE 3579:
 	__asm        jmp    near ptr 0x00506F09;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506f0e
 int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
-// LINE 3585:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3586:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -8141,11 +7337,6 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00506F6A;
 // LINE 3595:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00506f6f
@@ -8155,14 +7346,6 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	enum DirectionTypes validdirs[8];
 	int32_t i;
 
-// LINE 3614:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3616:
 	__asm        mov    validdirs[0], 0;
 // LINE 3617:
@@ -8537,23 +7720,10 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        or     [edi], al;
 // LINE 3706:
 	__asm        jmp    near ptr 0x00507481;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00507488
 int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
-// LINE 3727:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 3731:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    eax, 0xFFFF;
@@ -8739,25 +7909,12 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0050777B;
 // LINE 3791:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00507782
 void AutomobileClass::AdjustCurrentHiwayPosition() {
 	struct _CELL_INFO* cellPointer;
 
-// LINE 3812:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD3];
@@ -8862,11 +8019,6 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        add    dword ptr [eax+0x28], 0x1F0000;
 // LINE 3848:
 	__asm        jmp    near ptr 0x00507907;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050790c
@@ -8879,14 +8031,6 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	int32_t ydiff;
 	enum DirectionTypes connectionType;
 
-// LINE 3868:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD5];
@@ -9453,11 +8597,6 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        add    esp, 8;
 // LINE 4011:
 	__asm        jmp    near ptr 0x0050817B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00508180
@@ -9469,14 +8608,6 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	long intersection;
 	unsigned short northTile;
 
-// LINE 4035:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4045:
 	__asm        mov    eax, point;
 	__asm        mov    al, [eax];
@@ -10191,25 +9322,12 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, intersection;
 	__asm        jmp    near ptr 0x00508ACD;
 // LINE 4217:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00508ad4
 void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes intersectionType) {
 	 // Switch table at 0x00508ca6
 
-// LINE 4236:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4237:
 	__asm        mov    eax, intersectionType;
 	__asm        mov    [ebp-8], eax;
@@ -10363,23 +9481,10 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        (bad);
 // LINE 4325:
 	__asm        jmp    near ptr 0x00508CBC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00508cc3
 void AutomobileClass::GoStraight() {
-// LINE 4344:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4347:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 1;
@@ -10431,23 +9536,10 @@ void AutomobileClass::GoStraight() {
 	__asm        jmp    near ptr 0x00508D94;
 // LINE 4371:
 	__asm        jmp    near ptr 0x00508D99;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00508d9e
 void AutomobileClass::TurnLeft() {
-// LINE 4390:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4393:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 1;
@@ -10499,23 +9591,10 @@ void AutomobileClass::TurnLeft() {
 	__asm        jmp    near ptr 0x00508E6F;
 // LINE 4418:
 	__asm        jmp    near ptr 0x00508E74;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00508e79
 void AutomobileClass::TurnRight() {
-// LINE 4437:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4440:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 1;
@@ -10567,25 +9646,12 @@ void AutomobileClass::TurnRight() {
 	__asm        jmp    near ptr 0x00508F4A;
 // LINE 4469:
 	__asm        jmp    near ptr 0x00508F4F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00508f54
 void AutomobileClass::MoveForwardOnHiway() {
 	int32_t distance;
 
-// LINE 4487:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4490:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -10642,21 +9708,10 @@ void AutomobileClass::MoveForwardOnHiway() {
 	__asm        add    [ecx+0x2C], eax;
 // LINE 4506:
 	__asm        jmp    near ptr 0x00509002;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00509007
 int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
-// LINE 4517:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4518:
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -10664,21 +9719,10 @@ int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0050901E;
 // LINE 4519:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00509023
 int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
-// LINE 4530:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4531:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -10686,11 +9730,6 @@ int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0050903A;
 // LINE 4532:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050903f
@@ -10698,13 +9737,6 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t i;
 	int32_t ret;
 
-// LINE 4542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4549:
 	__asm        push   0x344;
 	__asm        push   0x608C28;
@@ -10757,11 +9789,6 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005090F6;
 // LINE 4567:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005090fb
@@ -10769,13 +9796,6 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 	int32_t i;
 	int32_t ret;
 
-// LINE 4577:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4580:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00509113;
@@ -10811,23 +9831,10 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00509179;
 // LINE 4593:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050917e
 void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
-// LINE 4604:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4605:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -11049,25 +10056,12 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    [ecx+0x108], ax;
 // LINE 4655:
 	__asm        jmp    near ptr 0x00509482;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00509489
 void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	unsigned char yindex;
 
-// LINE 4666:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4670:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -11372,23 +10366,10 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   0x00502B74;
 // LINE 4727:
 	__asm        jmp    near ptr 0x005098A9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x005098b0
 void AutomobileClass::HonkHorn() {
-// LINE 4738:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4740:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 2;
@@ -11439,21 +10420,10 @@ void AutomobileClass::HonkHorn() {
 	__asm        add    esp, 0xC;
 // LINE 4759:
 	__asm        jmp    near ptr 0x00509946;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0050994b
 void S3AutoSoundDistReset() {
-// LINE 4772:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4773:
 	__asm        mov    dword ptr ds:[0x608F78], 0x7800000;
 // LINE 4774:
@@ -11464,11 +10434,6 @@ void S3AutoSoundDistReset() {
 	__asm        mov    dword ptr ds:[0x608F6C], 0x7800000;
 // LINE 4777:
 	__asm        jmp    near ptr 0x0050997E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00509983
@@ -11477,13 +10442,6 @@ void S3AutoSoundDriver() {
 	struct Point3d loc;
 	int32_t dist;
 
-// LINE 4788:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 4794:
 	__asm        mov    eax, ds:[0x608F78];
 	__asm        mov    dist, eax;
@@ -11796,11 +10754,6 @@ void S3AutoSoundDriver() {
 	__asm        add    esp, 4;
 // LINE 4912:
 	__asm        jmp    near ptr 0x00509CF2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00509cf7
@@ -11815,14 +10768,6 @@ void AutomobileClass::ChangeAutoColor() {
 	int32_t newbase;
 	struct VRObjInfo oinfo;
 
-// LINE 4925:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x64;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 4935:
 	__asm        call   0x0056EC50;
 	__asm        mov    ecx, 0xD;
@@ -12183,11 +11128,6 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        jmp    near ptr 0x00509D74;
 // LINE 4988:
 	__asm        jmp    near ptr 0x00509FAD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

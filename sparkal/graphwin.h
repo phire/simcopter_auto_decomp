@@ -1,108 +1,48 @@
 // Function in module: Graphwin.obj
 // FUNCTION: COPTER_D 0x004a7b60
 int32_t GraphicWindowManager::IncrementBusyCount() {
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x004A7B7D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Graphwin.obj
 // FUNCTION: COPTER_D 0x004a7b90
 int32_t GraphicWindowManager::DecrementBusyCount() {
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x004A7BAD;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d7e0
 void  GraphicWindow::SetParent(class GraphicWindow* windowNewParent) {
-// LINE 323:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 324:
 	__asm        mov    eax, windowNewParent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 // LINE 325:
 	__asm        jmp    near ptr 0x0040D7FA;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d810
 void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
-// LINE 327:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 328:
 	__asm        mov    eax, bNewDrawBorder;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 // LINE 329:
 	__asm        jmp    near ptr 0x0040D82A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d840
 void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
-// LINE 335:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ptNewPosition;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -132,24 +72,11 @@ void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
 	__asm        jmp    near ptr 0x0040D89B;
 // LINE 337:
 	__asm        jmp    near ptr 0x0040D8A0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d8b0
 int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
-// LINE 362:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 364:
 	__asm        cmp    nXPosition, 0;
 	__asm        jle    near ptr 0x0040D90E;
@@ -174,10 +101,5 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0040D915;
 // LINE 365:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 

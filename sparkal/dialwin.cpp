@@ -728,14 +728,6 @@ protected:
 // Contribution: 1:00047270-0004ec1a Module: 47, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00448270
 void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class Radio* myNewRadio, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 75:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
@@ -845,23 +837,10 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 // LINE 76:
 	__asm        jmp    near ptr 0x00448435;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x0044843f
 void RadioCompassWindow::~RadioCompassWindow() {
-// LINE 82:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F650;
 // LINE 83:
@@ -923,23 +902,10 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        jmp    near ptr 0x0044852E;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044853b
 int32_t RadioCompassWindow::Initialize() {
-// LINE 90:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 93:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -988,23 +954,10 @@ int32_t RadioCompassWindow::Initialize() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004485CE;
 // LINE 107:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004485d3
 void RadioCompassWindow::InitializeCachedSettings() {
-// LINE 113:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 114:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0xFFFFFFFF;
@@ -1016,23 +969,10 @@ void RadioCompassWindow::InitializeCachedSettings() {
 	__asm        mov    dword ptr [eax+0x90], 0xF4240;
 // LINE 117:
 	__asm        jmp    near ptr 0x00448608;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044860d
 void RadioCompassWindow::DestroyImage() {
-// LINE 124:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 126:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4CAB;
@@ -1061,25 +1001,12 @@ void RadioCompassWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 132:
 	__asm        jmp    near ptr 0x0044867D;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00448682
 int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	class basic_string<char> sCompassPath;
 
-// LINE 140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 141:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -1263,25 +1190,12 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    near ptr 0x00448921;
 // LINE 152:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00448928
 int32_t RadioCompassWindow::ComposeSelf() {
 	int32_t nCurrentCompassPosition;
 
-// LINE 166:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -1377,11 +1291,6 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00448A40;
 // LINE 193:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00448a45
@@ -1389,14 +1298,6 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	int32_t nNewRadioStationIndex;
 	long lNewRadioStationVolume;
 
-// LINE 201:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 205:
 	__asm        jmp    near ptr 0x00448A56;
 	__asm        mov    eax, nCursorX;
@@ -1579,11 +1480,6 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00448CB0;
 // LINE 226:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00448cb7
@@ -1591,14 +1487,6 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	int32_t nRadioStationCount;
 	int32_t nStationXPosition;
 
-// LINE 238:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 242:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1776,25 +1664,12 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        mov    [ecx+0x7C], eax;
 // LINE 270:
 	__asm        jmp    near ptr 0x00448EA5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00448eac
 void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	int32_t nVolumeYPosition;
 
-// LINE 282:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 286:
 	__asm        mov    eax, lNewRadioStationVolume;
 	__asm        push   eax;
@@ -1940,11 +1815,6 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    [ecx+0x80], eax;
 // LINE 305:
 	__asm        jmp    near ptr 0x0044905F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00449066
@@ -1952,14 +1822,6 @@ void RadioCompassWindow::CheckForRadioChange() {
 	int32_t nNewRadioStationIndex;
 	long lNewRadioStationVolume;
 
-// LINE 313:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 314:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
@@ -1994,23 +1856,10 @@ void RadioCompassWindow::CheckForRadioChange() {
 	__asm        call   0x00448EAC;
 // LINE 322:
 	__asm        jmp    near ptr 0x004490D2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x004490d7
 void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct CommandSystem* myNewCommandSystem, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 366:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x88;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -2561,23 +2410,10 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 // LINE 401:
 	__asm        jmp    near ptr 0x00449A4A;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00449a54
 void DialWindow::~DialWindow() {
-// LINE 407:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F738;
 // LINE 408:
@@ -2587,23 +2423,10 @@ void DialWindow::~DialWindow() {
 	__asm        jmp    near ptr 0x00449A76;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00449a83
 int32_t DialWindow::Initialize() {
-// LINE 416:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 419:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -2615,23 +2438,10 @@ int32_t DialWindow::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x00449AA9;
 // LINE 421:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00449aae
 void DialWindow::InitializeCachedSettings() {
-// LINE 430:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 431:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x98], 0xFFFFFC18;
@@ -2814,23 +2624,10 @@ void DialWindow::InitializeCachedSettings() {
 	__asm        mov    dword ptr [eax+0x1E4], 0xFFFFFFFF;
 // LINE 454:
 	__asm        jmp    near ptr 0x00449DC5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00449dca
 void DialWindow::DestroyImage() {
-// LINE 461:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x48;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 463:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4CAB;
@@ -3049,23 +2846,10 @@ void DialWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x1E4], 0xFFFFFFFF;
 // LINE 503:
 	__asm        jmp    near ptr 0x0044A0F1;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044a0f6
 void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
-// LINE 509:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 510:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
@@ -3131,23 +2915,10 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 	__asm        jmp    near ptr 0x0044A1CD;
 // LINE 518:
 	__asm        jmp    near ptr 0x0044A1D2;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044a1d9
 void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
-// LINE 525:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 526:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
@@ -3213,25 +2984,12 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 	__asm        jmp    near ptr 0x0044A2B0;
 // LINE 534:
 	__asm        jmp    near ptr 0x0044A2B5;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044a2bc
 int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	char szFullPath[260];
 
-// LINE 542:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x128;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 546:
 	__asm        mov    eax, bResizeWindowToFitImage;
 	__asm        push   eax;
@@ -3522,11 +3280,6 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [eax+0x7C];
 	__asm        jmp    near ptr 0x0044A77D;
 // LINE 591:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044a784
@@ -3536,14 +3289,6 @@ void DialWindow::DrawCurrentDamage() {
 	static const int32_t nDamageArray[6][2] = { /* <data@0x00598f80> */ };
 	int32_t nDamageInRangeOf0to15;
 
-// LINE 610:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 618:
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x98];
@@ -3612,25 +3357,12 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        jmp    near ptr 0x0044A7C3;
 // LINE 631:
 	__asm        jmp    near ptr 0x0044A85E;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044a863
 long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 	int32_t i;
 
-// LINE 637:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 640:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -3703,23 +3435,10 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044A973;
 // LINE 651:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044a97a
 long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 657:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 658:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -3753,11 +3472,6 @@ long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044A9F8;
 // LINE 665:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044a9ff
@@ -3765,14 +3479,6 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	int32_t i;
 	long lNewSpotlightCommand;
 
-// LINE 672:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 676:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
@@ -3847,11 +3553,6 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044AB18;
 // LINE 690:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0044ab1f
@@ -3862,14 +3563,6 @@ int32_t DialWindow::ComposeSelf() {
 	class MPoint ptSpotLightBackPositionCoordinates;
 	char szMoneyString[16];
 
-// LINE 697:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xE4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 700:
 	__asm        jmp    near ptr 0x0044AB36;
 	__asm        jmp    near ptr 0x0044AB3B;
@@ -4709,23 +4402,10 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044B9DB;
 // LINE 787:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044b9e0
 int32_t DialWindow::DoesWindowNeedUpdating() {
-// LINE 794:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 798:
 	__asm        jmp    near ptr 0x0044B9F1;
 	__asm        mov    eax, this;
@@ -4749,11 +4429,6 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0044BA56;
 // LINE 799:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044ba5b
@@ -4762,14 +4437,6 @@ void DialWindow::SetNewDialPositions() {
 	static const long lFrameCounter = { /* <data@0x00598fb4> */ };
 	long lNewAltitude;
 
-// LINE 807:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 816:
 	__asm        mov    eax, ds:[0x598FB4];
 	__asm        and    al, 7;
@@ -5059,23 +4726,10 @@ void DialWindow::SetNewDialPositions() {
 	__asm        inc    dword ptr ds:[0x598FB4];
 // LINE 846:
 	__asm        jmp    near ptr 0x0044BE45;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044be4a
 void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 910:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -5196,23 +4850,10 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 // LINE 912:
 	__asm        jmp    near ptr 0x0044C028;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0044c032
 void PassengerWindow::~PassengerWindow() {
-// LINE 919:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F800;
 // LINE 920:
@@ -5275,23 +4916,10 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        jmp    near ptr 0x0044C126;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044c133
 int32_t PassengerWindow::Initialize() {
-// LINE 928:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 931:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -5303,23 +4931,10 @@ int32_t PassengerWindow::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0044C159;
 // LINE 933:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044c15e
 void PassengerWindow::InitializeCachedSettings() {
-// LINE 940:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 941:
 	__asm        cmp    dword ptr ds:[0x5B4968], 0;
 	__asm        je     near ptr 0x0044C18A;
@@ -5331,25 +4946,12 @@ void PassengerWindow::InitializeCachedSettings() {
 	__asm        add    esp, 4;
 // LINE 943:
 	__asm        jmp    near ptr 0x0044C18F;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044c194
 int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	class basic_string<char> sPassengerPath;
 
-// LINE 950:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 951:
 	__asm        push   0x10;
 	__asm        call   0x0056A600;
@@ -5563,23 +5165,10 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    near ptr 0x0044C487;
 // LINE 967:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044c48e
 void PassengerWindow::DestroyImage() {
-// LINE 973:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 975:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4CAB;
@@ -5627,23 +5216,10 @@ void PassengerWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x94], 0xFFFFFFFF;
 // LINE 984:
 	__asm        jmp    near ptr 0x0044C544;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044c549
 int32_t PassengerWindow::ComposeSelf() {
-// LINE 990:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x5C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 991:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -5972,11 +5548,6 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044C962;
 // LINE 1057:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044c967
@@ -5988,14 +5559,6 @@ void PassengerWindow::DrawPassengers() {
 	class MRect rectSource;
 	int32_t bSeats[16];
 
-// LINE 1063:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x70;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1064:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        add    eax, 0x1C4;
@@ -6232,23 +5795,10 @@ void PassengerWindow::DrawPassengers() {
 	__asm        add    esp, 4;
 // LINE 1110:
 	__asm        jmp    near ptr 0x0044CC1A;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044cc1f
 void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassengerExpression, class MRect& rectPosition) {
-// LINE 1128:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1129:
 	__asm        mov    eax, face;
 	__asm        lea    eax, [eax+eax*2+3];
@@ -6276,23 +5826,10 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassenger
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1133:
 	__asm        jmp    near ptr 0x0044CC6C;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044cc73
 int32_t PassengerWindow::DoesWindowNeedUpdating() {
-// LINE 1140:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1146:
 	__asm        jmp    near ptr 0x0044CC84;
 	__asm        mov    eax, this;
@@ -6316,23 +5853,10 @@ int32_t PassengerWindow::DoesWindowNeedUpdating() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0044CCDA;
 // LINE 1147:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044ccdf
 void PassengerWindow::MoveToUpPosition() {
-// LINE 1154:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1155:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
@@ -6385,23 +5909,10 @@ void PassengerWindow::MoveToUpPosition() {
 	__asm        mov    dword ptr [eax+0x90], 1;
 // LINE 1161:
 	__asm        jmp    near ptr 0x0044CDCC;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044cdd1
 void PassengerWindow::MoveToDownPosition() {
-// LINE 1167:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1168:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
@@ -6454,23 +5965,10 @@ void PassengerWindow::MoveToDownPosition() {
 	__asm        mov    dword ptr [eax+0x90], 0xFFFFFFFF;
 // LINE 1174:
 	__asm        jmp    near ptr 0x0044CEBE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044cec3
 void PassengerWindow::TogglePosition() {
-// LINE 1180:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1181:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 1;
@@ -6489,11 +5987,6 @@ void PassengerWindow::TogglePosition() {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1185:
 	__asm        jmp    near ptr 0x0044CF02;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044cf07
@@ -6502,14 +5995,6 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	class MRect rectButtonPositionUp;
 	class MRect rectButtonPositionDown;
 
-// LINE 1192:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1193:
 	__asm        jmp    near ptr 0x0044CF18;
 	__asm        mov    rectButtonPositionUp.left, 0xAD;
@@ -6622,23 +6107,10 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D0BC;
 // LINE 1215:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044d0c3
 long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 1221:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1222:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -6683,23 +6155,10 @@ long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D15F;
 // LINE 1232:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044d166
 long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
-// LINE 1238:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1239:
 	__asm        mov    eax, nCursorX;
 	__asm        mov    ecx, this;
@@ -6712,11 +6171,6 @@ long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D194;
 // LINE 1242:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0044d19b
@@ -6726,14 +6180,6 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 	struct tagHeliPassengerData* tempHeliPassengerData;
 	class MRect rectCurrent;
 
-// LINE 1249:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1251:
 	__asm        jmp    near ptr 0x0044D1AC;
 	__asm        jmp    near ptr 0x0044D1B1;
@@ -6825,23 +6271,10 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0044D2BD;
 // LINE 1269:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044d2c4
 void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
-// LINE 1307:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -6973,23 +6406,10 @@ void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class Graph
 // LINE 1319:
 	__asm        jmp    near ptr 0x0044D540;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x14;
 }
 
 // FUNCTION: COPTER_D 0x0044d54a
 void MapWindow::~MapWindow() {
-// LINE 1325:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F8D8;
 // LINE 1326:
@@ -7002,23 +6422,10 @@ void MapWindow::~MapWindow() {
 	__asm        call   0x0049FC4E;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044d587
 int32_t MapWindow::Initialize() {
-// LINE 1335:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1338:
 	__asm        mov    ecx, this;
 	__asm        call   0x004A44D4;
@@ -7030,23 +6437,10 @@ int32_t MapWindow::Initialize() {
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0044D5AD;
 // LINE 1340:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044d5b2
 void MapWindow::InitializeCachedSettings() {
-// LINE 1346:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1347:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 1;
@@ -7058,25 +6452,12 @@ void MapWindow::InitializeCachedSettings() {
 	__asm        mov    dword ptr [eax+0x88], 0xFFFFFFFF;
 // LINE 1350:
 	__asm        jmp    near ptr 0x0044D5E4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044d5e9
 int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	char szFullPath[260];
 
-// LINE 1357:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x114;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1362:
 	__asm        mov    eax, bResizeWindowToFitImage;
 	__asm        push   eax;
@@ -7148,23 +6529,10 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x0044D712;
 // LINE 1372:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044d719
 void MapWindow::DestroyImage() {
-// LINE 1381:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1382:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -7212,11 +6580,6 @@ void MapWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x80], 0xFFFFFFFF;
 // LINE 1391:
 	__asm        jmp    near ptr 0x0044D7C6;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044d7cb
@@ -7225,14 +6588,6 @@ int32_t MapWindow::ComposeSelf() {
 	static const int32_t lFrameCounter = { /* <data@0x00598fc8> */ };
 	long lNewMissionID;
 
-// LINE 1400:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1405:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -7366,11 +6721,6 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D947;
 // LINE 1434:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044d94c
@@ -7378,14 +6728,6 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	class MPoint ptDestination;
 	class MRect rectSource;
 
-// LINE 1440:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1441:
 	__asm        jmp    near ptr 0x0044D95D;
 	__asm        jmp    near ptr 0x0044D962;
@@ -7539,25 +6881,12 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1476:
 	__asm        jmp    near ptr 0x0044DC20;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0044dc27
 long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __formal) {
 	int32_t i;
 
-// LINE 1486:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1490:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    ds:[0x5B5258], eax;
@@ -7763,23 +7092,10 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044DF22;
 // LINE 1517:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044df29
 long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal) {
-// LINE 1527:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1528:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -7933,25 +7249,12 @@ long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal)
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044E1B0;
 // LINE 1551:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044e1b7
 int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMessageData;
 
-// LINE 1557:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1560:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    near ptr 0x0044E200;
@@ -7975,11 +7278,6 @@ int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044E20A;
 // LINE 1566:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0044e211
@@ -7987,14 +7285,6 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 	int32_t StringID;
 	class PopupMenuWindow* tempPopupMenuWindow;
 
-// LINE 1572:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x30;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1575:
 	__asm        mov    eax, ptPosition;
 	__asm        add    eax, 4;
@@ -8089,25 +7379,12 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 	__asm        call   dword ptr [eax+0xD0];
 // LINE 1586:
 	__asm        jmp    near ptr 0x0044E326;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044e32d
 int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 	long lCarModel;
 
-// LINE 1592:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1595:
 	__asm        cmp    nAutoID, 0x46;
 	__asm        jl     near ptr 0x0044E34A;
@@ -8176,23 +7453,10 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0044E443;
 // LINE 1619:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044e44a
 void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MRect& rectNewPosition, long lNewID, struct CommandSystem* myNewCommandSystem, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner) {
-// LINE 1667:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   1;
 	__asm        mov    eax, myNewOwner;
@@ -8335,23 +7599,10 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 // LINE 1684:
 	__asm        jmp    near ptr 0x0044E6E7;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x0044e6f1
 void EquipmentPanelWindow::~EquipmentPanelWindow() {
-// LINE 1690:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F9B0;
 // LINE 1691:
@@ -8361,23 +7612,10 @@ void EquipmentPanelWindow::~EquipmentPanelWindow() {
 	__asm        jmp    near ptr 0x0044E713;
 	__asm        mov    ecx, this;
 	__asm        call   0x004A4045;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044e720
 int32_t EquipmentPanelWindow::Initialize() {
-// LINE 1699:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1700:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -8389,23 +7627,10 @@ int32_t EquipmentPanelWindow::Initialize() {
 	__asm        call   0x004A44D4;
 	__asm        jmp    near ptr 0x0044E746;
 // LINE 1702:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044e74b
 void EquipmentPanelWindow::InitializeCachedSettings() {
-// LINE 1707:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1708:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC4], 0;
@@ -8414,25 +7639,12 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 	__asm        mov    dword ptr [eax+0xC8], 0;
 // LINE 1710:
 	__asm        jmp    near ptr 0x0044E776;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044e77b
 int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	char szPath[260];
 
-// LINE 1717:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x110;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1720:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -8546,23 +7758,10 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   0x004A4AA0;
 	__asm        jmp    near ptr 0x0044E944;
 // LINE 1739:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0044e94b
 void EquipmentPanelWindow::DestroyImage() {
-// LINE 1745:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1746:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
@@ -8633,23 +7832,10 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0xB4], 0;
 // LINE 1759:
 	__asm        jmp    near ptr 0x0044EA58;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044ea5d
 int32_t EquipmentPanelWindow::DrawSelf() {
-// LINE 1765:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1766:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -8669,25 +7855,12 @@ int32_t EquipmentPanelWindow::DrawSelf() {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044EAA2;
 // LINE 1771:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	static const long lFrameCounter = { /* <data@0x00598fdc> */ };
 
-// LINE 1777:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1780:
 	__asm        test   byte ptr ds:[0x598FDC], 4;
 	__asm        je     near ptr 0x0044EB52;
@@ -8737,11 +7910,6 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	__asm        call   0x004A646B;
 	__asm        jmp    near ptr 0x0044EB65;
 // LINE 1789:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044eb6a
@@ -8749,14 +7917,6 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	class MPoint ptDestination;
 	class MRect rectSource;
 
-// LINE 1796:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1797:
 	__asm        jmp    near ptr 0x0044EB7B;
 	__asm        jmp    near ptr 0x0044EB80;
@@ -8971,11 +8131,6 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1861:
 	__asm        jmp    near ptr 0x0044EF00;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    8;
 }
 
 // FUNCTION: COPTER_D 0x0044ef07
@@ -8986,14 +8141,6 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	const int32_t nYPosition;
 	int32_t iLitEnd;
 
-// LINE 1868:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1869:
 	__asm        mov    nXPosition, 0x10;
 // LINE 1870:
@@ -9093,11 +8240,6 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        jmp    near ptr 0x0044EFF4;
 // LINE 1887:
 	__asm        jmp    near ptr 0x0044F03B;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044f040
@@ -9108,14 +8250,6 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 	class MRect rectSourceEnabled;
 	long lTeargasUsed;
 
-// LINE 1893:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1894:
 	__asm        jmp    near ptr 0x0044F051;
 	__asm        mov    rectSourceEnabled.left, 0x22;
@@ -9230,23 +8364,10 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 	__asm        jmp    near ptr 0x0044F14D;
 // LINE 1916:
 	__asm        jmp    near ptr 0x0044F1B8;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044f1bd
 int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-// LINE 1922:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1923:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    near ptr 0x0044F1EE;
@@ -9262,23 +8383,10 @@ int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow* gwSource, long lWin
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044F1F8;
 // LINE 1926:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 // FUNCTION: COPTER_D 0x0044f1ff
 long EquipmentPanelWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 1932:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1933:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -9554,23 +8662,10 @@ long EquipmentPanelWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044F647;
 // LINE 1973:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044f64e
 long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
-// LINE 1980:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 1981:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
@@ -9649,23 +8744,10 @@ long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044F778;
 // LINE 1998:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x0044f77f
 void EquipmentPanelWindow::DoCurrentControlStart() {
-// LINE 2005:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2006:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
@@ -9801,23 +8883,10 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        call   0x0044FB06;
 // LINE 2028:
 	__asm        jmp    near ptr 0x0044F955;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044f95a
 void EquipmentPanelWindow::DoCurrentControlEnd() {
-// LINE 2037:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x20;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2038:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
@@ -9938,11 +9007,6 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        jmp    near ptr 0x0044FAFC;
 // LINE 2054:
 	__asm        jmp    near ptr 0x0044FB01;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0044fb06
@@ -9952,14 +9016,6 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	long nMenuXPosition;
 	class PopupMenuWindow* tempPopupMenuWindow;
 
-// LINE 2062:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x38;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 2063:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -10049,11 +9105,6 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        jmp    near ptr 0x0044FBE6;
 // LINE 2076:
 	__asm        jmp    near ptr 0x0044FC16;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

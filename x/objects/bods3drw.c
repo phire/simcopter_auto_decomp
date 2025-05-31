@@ -64,34 +64,16 @@ public:
 // Contribution: 1:00162ea0-00164a36 Module: 186, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00563ea0
 int32_t Check_Pointer(char * ptr, short numchars, char * text) {
-// LINE 93:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 119:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00563EB0;
 // LINE 120:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563eb5
 void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	char * ptr;
 
-// LINE 144:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 148:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00563ED2;
@@ -182,11 +164,6 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 169:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00563fd1
@@ -206,13 +183,6 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	unsigned char shftCt;
 	int32_t endX;
 
-// LINE 176:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x11C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 189:
 	__asm        mov    shftCt, 0;
 // LINE 191:
@@ -723,11 +693,6 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        call   0x00565898;
 	__asm        add    esp, 0x10;
 // LINE 328:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00564770
@@ -746,13 +711,6 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	struct Point3d faceCenter;
 	long yScanLine;
 
-// LINE 404:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 416:
 	__asm        mov    bhdr, 0;
 // LINE 422:
@@ -967,30 +925,14 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        call   0x005649D3;
 	__asm        add    esp, 0x28;
 // LINE 482:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005649c1
 long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
-// LINE 489:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 516:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005649CE;
 // LINE 517:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005649d3
@@ -1002,13 +944,6 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	long end;
 	unsigned char * ptr;
 
-// LINE 523:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x2C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 536:
 	__asm        mov    eax, offset.x;
 	__asm        mov    [ebp-0x24], eax;
@@ -1203,24 +1138,12 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        call   0x00565641;
 	__asm        add    esp, 0x1C;
 // LINE 576:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
 void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, struct Point3d* faceCenter) {
 	double widthOverTwo;
 
-// LINE 583:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 586:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax];
@@ -1248,11 +1171,6 @@ void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, s
 // LINE 594:
 	__asm        jmp    near ptr 0x00564C0B;
 // LINE 595:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00564c10
@@ -1260,13 +1178,6 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	double widthOverTwo;
 	double mydir;
 
-// LINE 599:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 604:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax];
@@ -1366,11 +1277,6 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 // LINE 630:
 	__asm        jmp    near ptr 0x00564D88;
 // LINE 631:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00564d8d
@@ -1396,13 +1302,6 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	long endWidth;
 	char col[26];
 
-// LINE 637:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x84;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 648:
 	__asm        mov    error, 0;
 // LINE 656:
@@ -1810,11 +1709,6 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 816:
 	__asm        jmp    near ptr 0x005650C2;
 // LINE 818:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565225
@@ -1836,13 +1730,6 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	char * writeBuffer;
 	char col[26];
 
-// LINE 824:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 833:
 	__asm        mov    error, 0;
 // LINE 836:
@@ -2195,11 +2082,6 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 963:
 	__asm        jmp    near ptr 0x005654C7;
 // LINE 966:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565641
@@ -2215,13 +2097,6 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	double stride4;
 	unsigned char * writeBuffer;
 
-// LINE 972:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x44;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 989:
 	__asm        mov    reinterpret_cast<uint32_t>(curPatOffset), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&curPatOffset) + 4), 0;
@@ -2418,11 +2293,6 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 // LINE 1047:
 	__asm        jmp    near ptr 0x005657CF;
 // LINE 1050:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00565898
@@ -2433,13 +2303,6 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	unsigned long fourByteColor;
 	char * writeBuffer;
 
-// LINE 1056:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 1075:
 	__asm        cmp    startX, 0;
 	__asm        jl     near ptr 0x005658B5;
@@ -2574,11 +2437,6 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 // LINE 1120:
 	__asm        jmp    near ptr 0x005659EE;
 // LINE 1123:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

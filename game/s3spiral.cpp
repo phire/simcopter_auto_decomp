@@ -34,14 +34,6 @@ public:
 // Contribution: 1:00141dc0-00141f77 Module: 153, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00542dc0
 void SpiralScan::SpiralScan(int32_t radius) {
-// LINE 9:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 10:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -59,23 +51,10 @@ void SpiralScan::SpiralScan(int32_t radius) {
 // LINE 14:
 	__asm        jmp    near ptr 0x00542DF9;
 	__asm        mov    eax, this;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00542e03
 int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
-// LINE 17:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0xC;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 21:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -159,23 +138,10 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00542EFE;
 // LINE 49:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00542f05
 int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
-// LINE 52:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 53:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currLoc.x;
@@ -208,10 +174,5 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00542F71;
 // LINE 59:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 

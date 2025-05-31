@@ -25,13 +25,6 @@ void VRFrustSetNormals() {
 	int32_t distx;
 	struct Point3d vect;
 
-// LINE 49:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 74:
 	__asm        mov    eax, ds:[0x59C248];
 	__asm        shl    eax, 4;
@@ -129,10 +122,5 @@ void VRFrustSetNormals() {
 	__asm        neg    eax;
 	__asm        mov    ds:[0x6663E4], eax;
 // LINE 114:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

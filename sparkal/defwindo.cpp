@@ -72,14 +72,6 @@ protected:
 class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 	class ICommander* ReturnCommander;
 
-// LINE 18:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 19:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -120,25 +112,12 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 	__asm        mov    eax, ReturnCommander;
 	__asm        jmp    near ptr 0x004322D0;
 // LINE 33:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004322d7
 class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer* pBuffer) {
 	class ScreenBuffer* ReturnBuffer;
 
-// LINE 41:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 42:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -151,23 +130,10 @@ class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer* pBuffer) {
 	__asm        mov    eax, ReturnBuffer;
 	__asm        jmp    near ptr 0x004322FD;
 // LINE 45:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x00432304
 unsigned long CSparkalWindow::Draw() {
-// LINE 53:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 55:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -175,23 +141,10 @@ unsigned long CSparkalWindow::Draw() {
 	__asm        call   dword ptr [eax+0x28];
 	__asm        jmp    near ptr 0x00432320;
 // LINE 56:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00432325
 unsigned long CSparkalWindow::SwapBuffer() {
-// LINE 63:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 64:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -227,25 +180,12 @@ unsigned long CSparkalWindow::SwapBuffer() {
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00432387;
 // LINE 71:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0043238c
 unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long Bottom) {
 	unsigned long Error;
 
-// LINE 80:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 81:
 	__asm        mov    Error, 0;
 // LINE 86:
@@ -377,11 +317,6 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        mov    eax, Error;
 	__asm        jmp    near ptr 0x004324CE;
 // LINE 111:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x10;
 }
 
 

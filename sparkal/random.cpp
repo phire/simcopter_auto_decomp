@@ -28,30 +28,13 @@ protected:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490f90
 void $E2() {
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x00490FA5;
 	__asm        jmp    near ptr 0x00490FA0;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490fa5
 void $E1() {
-// LINE 20:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 	__asm        call   0x0056F980;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -60,21 +43,10 @@ void $E1() {
 	__asm        call   0x00490FF1;
 	__asm        jmp    near ptr 0x00490FC9;
 	__asm        jmp    near ptr 0x00490FCE;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00490fd3
 unsigned long __long_random(unsigned long limit) {
-// LINE 26:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
 // LINE 27:
 	__asm        mov    eax, limit;
 	__asm        push   eax;
@@ -82,11 +54,6 @@ unsigned long __long_random(unsigned long limit) {
 	__asm        call   0x004910EA;
 	__asm        jmp    near ptr 0x00490FEC;
 // LINE 28:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00490ff1
@@ -95,14 +62,6 @@ void Random::seed(unsigned long j) {
 	uint32_t i;
 	int32_t loop;
 
-// LINE 34:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 35:
 	__asm        mov    k, 1;
 // LINE 36:
@@ -179,23 +138,10 @@ void Random::seed(unsigned long j) {
 	__asm        mov    dword ptr [eax+0xE0], 0x1F;
 // LINE 49:
 	__asm        jmp    near ptr 0x004910E3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x004910ea
 unsigned long Random::operator()(unsigned long limit) {
-// LINE 58:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 59:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDC];
@@ -235,11 +181,6 @@ unsigned long Random::operator()(unsigned long limit) {
 	__asm        mov    eax, edx;
 	__asm        jmp    near ptr 0x0049116B;
 // LINE 63:
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

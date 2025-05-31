@@ -4,14 +4,6 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 	struct PtrList<cBBase>::PtrNode** srch;
 	struct PtrList<cBBase>::PtrNode* del;
 
-// LINE 42:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x14;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 43:
 	__asm        mov    eax, this;
 	__asm        mov    srch, eax;
@@ -69,24 +61,11 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 	__asm        jmp    near ptr 0x0055E752;
 // LINE 55:
 	__asm        jmp    near ptr 0x0055E7E4;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e7f0
 void PtrList<cCopterAnim>::Iter::Reset() {
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055E81A;
@@ -99,24 +78,11 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0055E829;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e8d0
 void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 22:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -174,24 +140,11 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x0055E9A3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fcb0
 void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 22:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -249,24 +202,11 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x0055FD83;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fd90
 void PtrList<cCopterBody>::Iter::Reset() {
-// LINE 109:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055FDBA;
@@ -279,24 +219,11 @@ void PtrList<cCopterBody>::Iter::Reset() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0055FDC9;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00551de0
 void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
-// LINE 21:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
 // LINE 22:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -354,10 +281,5 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x00551EB3;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
