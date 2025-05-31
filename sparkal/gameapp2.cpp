@@ -1048,7 +1048,10 @@ unsigned long  CGameApp::TickGame() {
 void  CGameApp::ComposeFrame() {
 	int32_t nCurrentMode;
 
+	// Couldn't match prolog
 // LINE 269:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x461EA1;
 	__asm        mov    eax, fs:[0];

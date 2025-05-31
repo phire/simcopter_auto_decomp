@@ -1,7 +1,10 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e830
 cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
+	// Couldn't match prolog
 // LINE 38:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55E8AD;
 	__asm        mov    eax, fs:[0];
@@ -51,7 +54,10 @@ _L44595:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e9b0
 cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>::~cBList<cCopterAnim>() {
+	// Couldn't match prolog
 // LINE 44:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55EAA5;
 	__asm        mov    eax, fs:[0];
@@ -276,7 +282,10 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	short count;
 	short numThings;
 
+	// Couldn't match prolog
 // LINE 180:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55F1C0;
 	__asm        mov    eax, fs:[0];
@@ -625,7 +634,10 @@ _L45273:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fdd0
 void cBList<cCopterBody>::~cBList<cCopterBody>() {
+	// Couldn't match prolog
 // LINE 44:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55FEC5;
 	__asm        mov    eax, fs:[0];

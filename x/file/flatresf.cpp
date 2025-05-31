@@ -579,7 +579,10 @@ long FlatResFile::GetError() {
 
 // FUNCTION: COPTER_D 0x0055301b
 void FlatResFile::~FlatResFile() {
+	// Couldn't match prolog
 // LINE 277:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553086;
 	__asm        mov    eax, fs:[0];
@@ -1285,7 +1288,10 @@ void FlatResFile::Load(void * __ptr32 res) {
 void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	class StringSet tempStrs;
 
+	// Couldn't match prolog
 // LINE 595:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553A6A;
 	__asm        mov    eax, fs:[0];
@@ -1545,7 +1551,10 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 	void * __ptr32 newMap;
 	unsigned char * resPtr;
 
+	// Couldn't match prolog
 // LINE 753:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x553DB3;
 	__asm        mov    eax, fs:[0];

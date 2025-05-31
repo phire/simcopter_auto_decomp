@@ -3,7 +3,10 @@
 class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	class cCopterBody* thing;
 
+	// Couldn't match prolog
 // LINE 110:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55FC56;
 	__asm        mov    eax, fs:[0];

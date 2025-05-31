@@ -621,7 +621,10 @@ void InitBodiesAndAnimations() {
 	char animpath[260];
 	unsigned char privname[256];
 
+	// Couldn't match prolog
 // LINE 175:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55E286;
 	__asm        mov    eax, fs:[0];

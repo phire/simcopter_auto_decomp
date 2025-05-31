@@ -836,7 +836,10 @@ int  CGameApp::BackgroundVRAppInit() {
 void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	struct VRAppInitThreadStruct* tempVRAppInitThreadStruct;
 
+	// Couldn't match prolog
 // LINE 157:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x4BC440;
 	__asm        mov    eax, fs:[0];

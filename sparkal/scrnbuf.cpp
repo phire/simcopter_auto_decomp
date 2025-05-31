@@ -1350,7 +1350,10 @@ void ScreenBuffer::SetPalette() {
 int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 	long hResult;
 
+	// Couldn't match prolog
 // LINE 471:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x49F410;
 	__asm        mov    eax, fs:[0];

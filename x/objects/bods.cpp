@@ -1390,7 +1390,10 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	short numRealAnims;
 	unsigned char tmp[16];
 
+	// Couldn't match prolog
 // LINE 2285:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x562095;
 	__asm        mov    eax, fs:[0];

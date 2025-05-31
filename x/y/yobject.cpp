@@ -2582,7 +2582,10 @@ void $E75() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f8a
 void $E71() {
+	// Couldn't match prolog
 // LINE 115:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x544088;
 	__asm        mov    eax, fs:[0];
@@ -2682,7 +2685,10 @@ void $E81() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054410e
 void $E77() {
+	// Couldn't match prolog
 // LINE 116:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5441B0;
 	__asm        mov    eax, fs:[0];
@@ -2740,6 +2746,9 @@ void $E80() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441e5
 void $E78() {
+	// Couldn't match prolog
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x54424A;
 	__asm        mov    eax, fs:[0];
@@ -7362,7 +7371,10 @@ void cYObject::MakePlebes() {
 
 // FUNCTION: COPTER_D 0x00548047
 void cYObject::InitObjects(char * globalBehaviorFileName) {
+	// Couldn't match prolog
 // LINE 964:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x549BC5;
 	__asm        mov    eax, fs:[0];
@@ -16473,7 +16485,10 @@ class cAvatar* cAvatar::MakeAvatar() {
 	class cAvatar* avatar;
 	struct Point3d p;
 
+	// Couldn't match prolog
 // LINE 2817:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5509B2;
 	__asm        mov    eax, fs:[0];
@@ -16570,7 +16585,10 @@ _L56431:
 short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* behavior) {
 	short id;
 
+	// Couldn't match prolog
 // LINE 2825:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x550B17;
 	__asm        mov    eax, fs:[0];
@@ -16854,7 +16872,10 @@ void cYObject::KillObject(short id) {
 void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d loc, short id) {
 	short cnt;
 
+	// Couldn't match prolog
 // LINE 2885:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x550EFD;
 	__asm        mov    eax, fs:[0];
@@ -17628,7 +17649,10 @@ void cYObject::~cYObject() {
 	unsigned short found;
 	class cYObject** srch;
 
+	// Couldn't match prolog
 // LINE 3062:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x5519BE;
 	__asm        mov    eax, fs:[0];
@@ -18072,6 +18096,9 @@ void FrameInit() {
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
  ResFile::~ResFile() {
+	// Couldn't match prolog
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x551F87;
 	__asm        mov    eax, fs:[0];

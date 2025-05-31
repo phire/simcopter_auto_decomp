@@ -1761,7 +1761,10 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	long xcnt;
 	unsigned char * dest;
 
+	// Couldn't match prolog
 // LINE 465:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x56885E;
 	__asm        mov    eax, fs:[0];
@@ -2569,7 +2572,10 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	struct _cArray::FileAndType ft;
 	struct _cArray::Header* header;
 
+	// Couldn't match prolog
 // LINE 705:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x569305;
 	__asm        mov    eax, fs:[0];

@@ -1,7 +1,10 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e660
 void FlatResFile::FlatResFile() {
+	// Couldn't match prolog
 // LINE 38:
+	__asm        push   ebp;
+	__asm        mov    ebp, esp;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0x55E6D0;
 	__asm        mov    eax, fs:[0];

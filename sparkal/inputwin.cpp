@@ -1758,10 +1758,6 @@ public:
 class bidirectional_iterator<Shortcut,int>{
 };
 
-// Type: struct bidirectional_iterator<long,int>;
-class bidirectional_iterator<long,int>{
-};
-
 // Type: struct SparkalRect;
 class SparkalRect{
 public:
@@ -1780,6 +1776,10 @@ public:
 	long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
+};
+
+// Type: struct bidirectional_iterator<long,int>;
+class bidirectional_iterator<long,int>{
 };
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
