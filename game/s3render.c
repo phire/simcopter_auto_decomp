@@ -154,10 +154,13 @@ int32_t VRAppInit() {
 // LINE 305:
 	__asm        cmp    dword ptr ds:[0x5B476C], 0;
 	__asm        je     near ptr 0x004EADFD;
+
 	__asm        cmp    dword ptr ds:[0x5B4774], 0;
 	__asm        je     near ptr 0x004EADFD;
+
 	__asm        cmp    dword ptr ds:[0x5B4778], 0;
 	__asm        je     near ptr 0x004EADFD;
+
 	__asm        cmp    dword ptr ds:[0x5B477C], 0;
 	__asm        jne    near ptr 0x004EAE0A;
 // LINE 306:
@@ -246,6 +249,7 @@ int32_t VRAppInit() {
 // LINE 340:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004EAF1B;
+
 	__asm        inc    j;
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -268,6 +272,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    memxf, eax;
 	__asm        jge    near ptr 0x004EAF7B;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    memxf, eax;
 // LINE 345:
@@ -280,6 +285,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    mem2d, eax;
 	__asm        jge    near ptr 0x004EAFAE;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    mem2d, eax;
 // LINE 347:
@@ -293,6 +299,7 @@ int32_t VRAppInit() {
 // LINE 350:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004EAFDC;
+
 	__asm        inc    j;
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -315,6 +322,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    memxf, eax;
 	__asm        jge    near ptr 0x004EB03C;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    memxf, eax;
 // LINE 355:
@@ -327,6 +335,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    mem2d, eax;
 	__asm        jge    near ptr 0x004EB06F;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    mem2d, eax;
 // LINE 357:
@@ -340,6 +349,7 @@ int32_t VRAppInit() {
 // LINE 361:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004EB09D;
+
 	__asm        inc    j;
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -362,6 +372,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    memxf, eax;
 	__asm        jge    near ptr 0x004EB0FD;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    memxf, eax;
 // LINE 366:
@@ -374,6 +385,7 @@ int32_t VRAppInit() {
 	__asm        mov    eax, maxval;
 	__asm        cmp    mem2d, eax;
 	__asm        jge    near ptr 0x004EB130;
+
 	__asm        mov    eax, maxval;
 	__asm        mov    mem2d, eax;
 // LINE 368:
@@ -548,6 +560,7 @@ int32_t VRAppInit() {
 // LINE 439:
 	__asm        mov    instanceID, 0;
 	__asm        jmp    near ptr 0x004EB376;
+
 	__asm        inc    instanceID;
 	__asm        cmp    instanceID, 0x32;
 	__asm        jge    near ptr 0x004EB3A4;
@@ -568,6 +581,7 @@ int32_t VRAppInit() {
 	__asm        mov    totalVehicles, eax;
 // LINE 446:
 	__asm        jmp    near ptr 0x004EB3BE;
+
 	__asm        inc    instanceID;
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -589,6 +603,7 @@ int32_t VRAppInit() {
 	__asm        mov    totalVehicles, eax;
 // LINE 453:
 	__asm        jmp    near ptr 0x004EB40B;
+
 	__asm        inc    instanceID;
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -610,6 +625,7 @@ int32_t VRAppInit() {
 	__asm        mov    totalVehicles, eax;
 // LINE 460:
 	__asm        jmp    near ptr 0x004EB458;
+
 	__asm        inc    instanceID;
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -633,6 +649,7 @@ int32_t VRAppInit() {
 	__asm        mov    totalVehicles, eax;
 // LINE 469:
 	__asm        jmp    near ptr 0x004EB4AF;
+
 	__asm        inc    instanceID;
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -651,6 +668,7 @@ int32_t VRAppInit() {
 // LINE 476:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004EB4F7;
+
 	__asm        inc    i;
 	__asm        cmp    i, 1;
 	__asm        jge    near ptr 0x004EB518;
@@ -664,6 +682,7 @@ int32_t VRAppInit() {
 // LINE 488:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004EB52D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 2;
 	__asm        jge    near ptr 0x004EB54E;
@@ -677,6 +696,7 @@ int32_t VRAppInit() {
 // LINE 499:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004EB563;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x004EB584;
@@ -842,6 +862,7 @@ int32_t VRAppCityInit(int32_t reload) {
 // LINE 648:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004EB781;
+
 	__asm        inc    i;
 	__asm        cmp    i, 9;
 	__asm        jge    near ptr 0x004EB868;

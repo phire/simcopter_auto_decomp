@@ -40,6 +40,7 @@ protected:
 // Contribution: 1:000467b0-00046b55 Module: 49, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004477b0
 void ResourceRCData::ResourceRCData() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -56,11 +57,13 @@ void ResourceRCData::ResourceRCData() {
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 27:
 	__asm        jmp    near ptr 0x00447806;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0044780e
 void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
+
 	__asm        mov    eax, nTheResource;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -88,11 +91,13 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        call   ResourceRCData::ReadResource;
 // LINE 47:
 	__asm        jmp    near ptr 0x00447876;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00447880
 void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 55:
@@ -143,11 +148,13 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // LINE 65:
 // Block end:
 	__asm        jmp    near ptr 0x00447912;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0044791c
 void ResourceRCData::~ResourceRCData() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 73:

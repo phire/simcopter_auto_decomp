@@ -132,6 +132,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 // LINE 104:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0046B9D1;
+
 	__asm        inc    y;
 	__asm        mov    eax, y;
 	__asm        cmp    ydim, eax;
@@ -175,6 +176,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 // LINE 114:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0046BA4C;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x0046BA9A;
@@ -240,6 +242,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        movsx  ecx, byte ptr [ecx+edx];
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x0046BB60;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
@@ -249,10 +252,12 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
 	__asm        jge    near ptr 0x0046BB60;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(i);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jge    near ptr 0x0046BB60;
+
 	__asm        inc    i;
 	__asm        jmp    near ptr 0x0046BAE4;
 // LINE 142:
@@ -269,6 +274,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BB9A;
+
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0046BC9A;
 // LINE 144:
@@ -283,6 +289,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BBC9;
+
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0046BC9A;
 // LINE 145:
@@ -315,6 +322,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BC31;
+
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0046BC9A;
 // LINE 151:
@@ -334,6 +342,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BC70;
+
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0046BC9A;
 // LINE 154:

@@ -1,6 +1,7 @@
 // Function in module: Graphwin.obj
 // FUNCTION: COPTER_D 0x004a7b60
 int32_t GraphicWindowManager::IncrementBusyCount() {
+
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 	__asm        mov    eax, this;
@@ -11,6 +12,7 @@ int32_t GraphicWindowManager::IncrementBusyCount() {
 // Function in module: Graphwin.obj
 // FUNCTION: COPTER_D 0x004a7b90
 int32_t GraphicWindowManager::DecrementBusyCount() {
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
 	__asm        mov    eax, this;
@@ -43,6 +45,7 @@ void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d840
 void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
+
 	__asm        mov    eax, ptNewPosition;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -80,24 +83,31 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 // LINE 364:
 	__asm        cmp    nXPosition, 0;
 	__asm        jle    near ptr 0x0040D90E;
+
 	__asm        jmp    near ptr 0x0040D8CB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x10];
 	__asm        cmp    eax, nXPosition;
 	__asm        jle    near ptr 0x0040D90E;
+
 	__asm        cmp    nYPosition, 0;
 	__asm        jle    near ptr 0x0040D90E;
+
 	__asm        jmp    near ptr 0x0040D8EF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x14];
 	__asm        cmp    eax, nYPosition;
 	__asm        jle    near ptr 0x0040D90E;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0040D910;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0040D915;
 // LINE 365:

@@ -109,6 +109,7 @@ void S3CameraMove(struct Point3d* P) {
 // LINE 142:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    near ptr 0x004F8BC7;
+
 	__asm        mov    altdiff, 0;
 // LINE 144:
 	__asm        mov    eax, ds:[0x5B4E00];
@@ -123,6 +124,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        add    ds:[0x6C131C], eax;
 // LINE 148:
 	__asm        jmp    near ptr 0x004F8D28;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
 	__asm        jne    near ptr 0x004F8C62;
 // LINE 151:
@@ -155,6 +157,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        mov    ds:[0x6C1320], eax;
 // LINE 156:
 	__asm        jmp    near ptr 0x004F8D28;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
 	__asm        jne    near ptr 0x004F8CE2;
 // LINE 158:
@@ -390,6 +393,7 @@ void S3CameraMove(struct Point3d* P) {
 // LINE 272:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    near ptr 0x004F8F42;
+
 	__asm        mov    altdiff, 0;
 // LINE 274:
 	__asm        mov    eax, ds:[0x5B4E00];
@@ -416,6 +420,7 @@ void NormalizeGridPoint(struct Point3d* P) {
 	__asm        add    dword ptr [eax], 0x40000000;
 // LINE 286:
 	__asm        jmp    near ptr 0x004F8FA4;
+
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax], 0x10000000;
 	__asm        jl     near ptr 0x004F8FA4;
@@ -431,6 +436,7 @@ void NormalizeGridPoint(struct Point3d* P) {
 	__asm        add    dword ptr [eax+8], 0x40000000;
 // LINE 291:
 	__asm        jmp    near ptr 0x004F8FDD;
+
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
 	__asm        jl     near ptr 0x004F8FDD;
@@ -573,6 +579,7 @@ void SetIdealCameraPos() {
 // LINE 372:
 	__asm        cmp    temp, 0;
 	__asm        jge    near ptr 0x004F9192;
+
 	__asm        mov    temp, 0;
 // LINE 373:
 	__asm        mov    eax, ds:[0x5B4968];
@@ -907,6 +914,7 @@ void CalcCameraAngles(struct Point3d* Vector) {
 // LINE 515:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        je     near ptr 0x004F953A;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
 	__asm        jne    near ptr 0x004F955A;
 // LINE 517:
@@ -1152,14 +1160,17 @@ void S3CameraRotate() {
 // LINE 636:
 // Block end:
 	__asm        jmp    near ptr 0x004F98D7;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
 	__asm        jne    near ptr 0x004F980B;
 // LINE 639:
 	__asm        cmp    dword ptr ds:[0x6BF190], 0;
 	__asm        je     near ptr 0x004F97B8;
+
 	__asm        mov    eax, ds:[0x6BF194];
 	__asm        mov    alt, eax;
 	__asm        jmp    near ptr 0x004F97C0;
+
 	__asm        mov    eax, ds:[0x6BF194];
 	__asm        mov    alt, eax;
 // LINE 640:
@@ -1185,6 +1196,7 @@ void S3CameraRotate() {
 	__asm        add    esp, 4;
 // LINE 656:
 	__asm        jmp    near ptr 0x004F98D7;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        je     near ptr 0x004F9849;
 // LINE 658:
@@ -1212,6 +1224,7 @@ void S3CameraRotate() {
 // LINE 677:
 	__asm        cmp    temp, 0;
 	__asm        jge    near ptr 0x004F986E;
+
 	__asm        mov    temp, 0;
 // LINE 678:
 	__asm        mov    eax, ds:[0x5B4968];
@@ -1331,9 +1344,11 @@ void S3CameraChaseAdjust(int32_t camevent) {
 	__asm        jmp    near ptr 0x004F9A49;
 // LINE 771:
 	__asm        jmp    near ptr 0x004F9A49;
+
 	__asm        sub    dword ptr [ebp-4], 0x1B;
 	__asm        cmp    dword ptr [ebp-4], 5;
 	__asm        ja     near ptr 0x004F9A49;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    dword ptr [eax*4+0x4F9A31];
 // Switch pointers

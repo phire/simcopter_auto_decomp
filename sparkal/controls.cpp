@@ -1151,6 +1151,7 @@ struct bidirectional_iterator<basic_string<char>,int>{
 // Contribution: 1:000aba90-000b7247 Module: 5, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004aca90
 void BoxWindow::BoxWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
@@ -1158,6 +1159,7 @@ void BoxWindow::BoxWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    near ptr 0x004ACABD;
+
 	__asm        mov    eax, ds:[0x606974];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
@@ -1176,11 +1178,13 @@ void BoxWindow::BoxWindow() {
 	__asm        mov    [ecx+0x7E], al;
 // LINE 30:
 	__asm        jmp    near ptr 0x004ACAF8;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004acb00
 void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1198,6 +1202,7 @@ void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class Grap
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    near ptr 0x004ACB41;
+
 	__asm        mov    eax, ds:[0x606974];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
@@ -1216,6 +1221,7 @@ void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class Grap
 	__asm        mov    [ecx+0x7E], al;
 // LINE 45:
 	__asm        jmp    near ptr 0x004ACB7C;
+
 	__asm        mov    eax, this;
 }
 
@@ -1285,9 +1291,11 @@ void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDr
 
 // FUNCTION: COPTER_D 0x004acc43
 void TextWindow::TextWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    near ptr 0x004ACC5C;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   MFont::MFont;
@@ -1326,11 +1334,13 @@ void TextWindow::TextWindow() {
 	__asm        call   dword ptr [eax];
 // LINE 104:
 	__asm        jmp    near ptr 0x004ACCDE;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004acce6
 void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1344,6 +1354,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    near ptr 0x004ACD13;
+
 	__asm        mov    eax, nNewWindowTitleTextID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
@@ -1384,11 +1395,13 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 	__asm        call   TextWindow::LoadStrings;
 // LINE 122:
 	__asm        jmp    near ptr 0x004ACD98;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004acda2
 void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -1402,6 +1415,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    near ptr 0x004ACDCF;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   MFont::MFont;
@@ -1436,6 +1450,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        add    eax, 8;
 	__asm        cmp    eax, sNewWindowTitle;
 	__asm        je     near ptr 0x004ACFF6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1443,6 +1458,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004ACECF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xC], eax;
@@ -1450,9 +1466,11 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004ACECF;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004ACEAF;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -1467,19 +1485,26 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004ACEB4;
+
 	__asm        jmp    near ptr 0x004ACEB9;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004ACECA;
+
 	__asm        jmp    near ptr 0x004ACECF;
+
 	__asm        jmp    near ptr 0x004ACED4;
+
 	__asm        jmp    near ptr 0x004ACED9;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004ACF03;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -1488,13 +1513,16 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    eax, [eax+0xC];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004ACFF6;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004ACFEC;
+
 	__asm        jmp    near ptr 0x004ACF1F;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -1509,6 +1537,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004ACFC6;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1517,18 +1546,23 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004ACF66;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004ACF8B;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004ACF97;
+
 	__asm        jmp    near ptr 0x004ACF97;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x004ACF97;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1544,16 +1578,20 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ACFC1;
+
 	__asm        jmp    near ptr 0x004ACFCF;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004ACFDE;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    near ptr 0x004ACFF6;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        jmp    near ptr 0x004ACFFB;
@@ -1565,6 +1603,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        call   dword ptr [eax];
 // LINE 141:
 	__asm        jmp    near ptr 0x004AD014;
+
 	__asm        mov    eax, this;
 }
 
@@ -1592,6 +1631,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x1008], eax;
 	__asm        cmp    dword ptr [ebp-0x1008], 0;
 	__asm        jne    near ptr 0x004AD4B1;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
 	__asm        push   eax;
@@ -1605,6 +1645,7 @@ void TextWindow::LoadStrings() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
 	__asm        jmp    near ptr 0x004AD0AD;
+
 	__asm        lea    eax, [ebp-0x1004];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1612,6 +1653,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x1024], eax;
 	__asm        cmp    dword ptr [ebp-0x1024], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AD107;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -1621,29 +1663,37 @@ void TextWindow::LoadStrings() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD0F8;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD107;
+
 	__asm        jmp    near ptr 0x004AD10C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AD149;
+
 	__asm        cmp    dword ptr [ebp-0x1024], 0;
 	__asm        je     near ptr 0x004AD206;
+
 	__asm        jmp    near ptr 0x004AD131;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, [ebp-0x1024];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AD206;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1010], eax;
 	__asm        cmp    dword ptr [ebp-0x1010], 0;
 	__asm        je     near ptr 0x004AD18A;
+
 	__asm        mov    eax, [ebp-0x1024];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1004];
@@ -1652,6 +1702,7 @@ void TextWindow::LoadStrings() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x100C], eax;
 	__asm        jmp    near ptr 0x004AD194;
+
 	__asm        mov    dword ptr [ebp-0x100C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1660,6 +1711,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AD1ED;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x1020], eax;
@@ -1667,18 +1719,24 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x101C], eax;
 	__asm        cmp    dword ptr [ebp-0x101C], 0;
 	__asm        je     near ptr 0x004AD1ED;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x101C];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004AD1ED;
+
 	__asm        jmp    near ptr 0x004AD1F2;
+
 	__asm        mov    eax, [ebp-0x100C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    near ptr 0x004AD24B;
+
 	__asm        cmp    dword ptr [ebp-0x1024], 0;
 	__asm        je     near ptr 0x004AD24B;
+
 	__asm        jmp    near ptr 0x004AD218;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
@@ -1692,24 +1750,30 @@ void TextWindow::LoadStrings() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AD24B;
+
 	__asm        mov    eax, [ebp-0x1024];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AD262;
+
 	__asm        jmp    near ptr 0x004AD267;
+
 	__asm        jmp    near ptr 0x004AD26C;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        jmp    near ptr 0x004AD284;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    ecx, [ebp-0x1044];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jb     near ptr 0x004AD2D9;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -1719,17 +1783,23 @@ void TextWindow::LoadStrings() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD2CA;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD2D9;
+
 	__asm        jmp    near ptr 0x004AD2DE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AD31F;
+
 	__asm        jmp    near ptr 0x004AD2F6;
+
 	__asm        jmp    near ptr 0x004AD2FB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+8];
@@ -1738,27 +1808,36 @@ void TextWindow::LoadStrings() {
 	__asm        sub    eax, [ecx+4];
 	__asm        cmp    eax, [ebp-0x1044];
 	__asm        jae    near ptr 0x004AD43C;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x102C], eax;
 	__asm        cmp    dword ptr [ebp-0x102C], 0;
 	__asm        je     near ptr 0x004AD3C5;
+
 	__asm        jmp    near ptr 0x004AD341;
+
 	__asm        jmp    near ptr 0x004AD346;
+
 	__asm        jmp    near ptr 0x004AD34B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AD379;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    near ptr 0x004AD388;
+
 	__asm        jmp    near ptr 0x004AD388;
+
 	__asm        mov    dword ptr [ebp-0x1034], 0;
 	__asm        jmp    near ptr 0x004AD388;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -1774,6 +1853,7 @@ void TextWindow::LoadStrings() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1028], eax;
 	__asm        jmp    near ptr 0x004AD3CF;
+
 	__asm        mov    dword ptr [ebp-0x1028], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1782,6 +1862,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AD428;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x1040], eax;
@@ -1789,18 +1870,24 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        cmp    dword ptr [ebp-0x103C], 0;
 	__asm        je     near ptr 0x004AD428;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x103C];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004AD428;
+
 	__asm        jmp    near ptr 0x004AD42D;
+
 	__asm        mov    eax, [ebp-0x1028];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     near ptr 0x004AD490;
+
 	__asm        jmp    near ptr 0x004AD44E;
+
 	__asm        jmp    near ptr 0x004AD453;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -1816,14 +1903,19 @@ void TextWindow::LoadStrings() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AD490;
+
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AD4A7;
+
 	__asm        jmp    near ptr 0x004AD4AC;
+
 	__asm        jmp    near ptr 0x004AD76B;
+
 	__asm        jmp    near ptr 0x004AD4B6;
+
 	__asm        lea    eax, [ebp-0x1004];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1831,6 +1923,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x106C], eax;
 	__asm        cmp    dword ptr [ebp-0x106C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AD510;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -1840,31 +1933,40 @@ void TextWindow::LoadStrings() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD501;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD510;
+
 	__asm        jmp    near ptr 0x004AD515;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AD552;
+
 	__asm        cmp    dword ptr [ebp-0x106C], 0;
 	__asm        je     near ptr 0x004AD705;
+
 	__asm        jmp    near ptr 0x004AD53A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, [ebp-0x106C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AD705;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        cmp    dword ptr [ebp-0x104C], 0;
 	__asm        je     near ptr 0x004AD672;
+
 	__asm        cmp    dword ptr [ebp-0x106C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AD5B4;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -1874,10 +1976,12 @@ void TextWindow::LoadStrings() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD5A5;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD5B4;
+
 	__asm        mov    eax, [ebp-0x106C];
 	__asm        mov    ecx, [ebp-0x104C];
 	__asm        mov    [ecx+4], eax;
@@ -1888,6 +1992,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    eax, [ebp-0x104C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AD643;
+
 	__asm        mov    eax, [ebp-0x104C];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1910,15 +2015,19 @@ void TextWindow::LoadStrings() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AD63E;
+
 	__asm        jmp    near ptr 0x004AD64F;
+
 	__asm        mov    eax, [ebp-0x104C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x104C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AD661;
+
 	__asm        mov    eax, [ebp-0x104C];
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    near ptr 0x004AD67C;
+
 	__asm        mov    dword ptr [ebp-0x1048], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1927,6 +2036,7 @@ void TextWindow::LoadStrings() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AD6EC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x105C], eax;
@@ -1934,23 +2044,31 @@ void TextWindow::LoadStrings() {
 	__asm        mov    [ebp-0x1058], eax;
 	__asm        cmp    dword ptr [ebp-0x1058], 0;
 	__asm        je     near ptr 0x004AD6EC;
+
 	__asm        mov    ecx, [ebp-0x1058];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004AD6D3;
+
 	__asm        mov    eax, [ebp-0x1058];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD6E7;
+
 	__asm        jmp    near ptr 0x004AD6EC;
+
 	__asm        jmp    near ptr 0x004AD6F1;
+
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    near ptr 0x004AD74A;
+
 	__asm        cmp    dword ptr [ebp-0x106C], 0;
 	__asm        je     near ptr 0x004AD74A;
+
 	__asm        jmp    near ptr 0x004AD717;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
@@ -1964,12 +2082,15 @@ void TextWindow::LoadStrings() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AD74A;
+
 	__asm        mov    eax, [ebp-0x106C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AD761;
+
 	__asm        jmp    near ptr 0x004AD766;
+
 	__asm        jmp    near ptr 0x004AD76B;
 // LINE 154:
 	__asm        jmp    near ptr 0x004AD770;
@@ -2004,6 +2125,7 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        add    eax, 8;
 	__asm        cmp    eax, sNewWindowTitle;
 	__asm        je     near ptr 0x004AD984;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -2011,6 +2133,7 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AD85D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xC], eax;
@@ -2018,9 +2141,11 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AD85D;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AD83D;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -2035,19 +2160,26 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AD842;
+
 	__asm        jmp    near ptr 0x004AD847;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AD858;
+
 	__asm        jmp    near ptr 0x004AD85D;
+
 	__asm        jmp    near ptr 0x004AD862;
+
 	__asm        jmp    near ptr 0x004AD867;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004AD891;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -2056,13 +2188,16 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    eax, [eax+0xC];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004AD984;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004AD97A;
+
 	__asm        jmp    near ptr 0x004AD8AD;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2077,6 +2212,7 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AD954;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2085,18 +2221,23 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004AD8F4;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AD919;
+
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004AD925;
+
 	__asm        jmp    near ptr 0x004AD925;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x004AD925;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -2112,16 +2253,20 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AD94F;
+
 	__asm        jmp    near ptr 0x004AD95D;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AD96C;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    near ptr 0x004AD984;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        jmp    near ptr 0x004AD989;
@@ -2196,6 +2341,7 @@ int32_t TextWindow::DrawSelf() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004ADA5E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -2206,6 +2352,7 @@ int32_t TextWindow::DrawSelf() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004ADA63;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2216,24 +2363,32 @@ int32_t TextWindow::DrawSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004ADA81;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004ADAFA;
+
 	__asm        jmp    near ptr 0x004ADA96;
+
 	__asm        jmp    near ptr 0x004ADA9B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004ADAC0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004ADACC;
+
 	__asm        jmp    near ptr 0x004ADACC;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x004ADACC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2250,12 +2405,16 @@ int32_t TextWindow::DrawSelf() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ADAFA;
+
 	__asm        jmp    near ptr 0x004ADAFF;
+
 	__asm        mov    byte ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x004ADB08;
+
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004ADB13;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2267,7 +2426,9 @@ int32_t TextWindow::DrawSelf() {
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004ADB34;
+
 	__asm        jmp    near ptr 0x004ADB39;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x84;
 	__asm        push   eax;
@@ -2356,6 +2517,7 @@ void TextWindow::FitWindowToText() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004ADC4C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xC], eax;
@@ -2366,6 +2528,7 @@ void TextWindow::FitWindowToText() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004ADC51;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2376,24 +2539,32 @@ void TextWindow::FitWindowToText() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004ADC6F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004ADCE8;
+
 	__asm        jmp    near ptr 0x004ADC84;
+
 	__asm        jmp    near ptr 0x004ADC89;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004ADCAE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004ADCBA;
+
 	__asm        jmp    near ptr 0x004ADCBA;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x004ADCBA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2410,12 +2581,16 @@ void TextWindow::FitWindowToText() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ADCE8;
+
 	__asm        jmp    near ptr 0x004ADCED;
+
 	__asm        mov    byte ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x004ADCF6;
+
 	__asm        lea    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004ADD01;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -2427,7 +2602,9 @@ void TextWindow::FitWindowToText() {
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004ADD22;
+
 	__asm        jmp    near ptr 0x004ADD27;
+
 	__asm        lea    eax, lHeight;
 	__asm        push   eax;
 	__asm        lea    eax, lWidth;
@@ -2498,6 +2675,7 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 	__asm        call   MFont::GetTextDimensions;
 // LINE 257:
 	__asm        jmp    near ptr 0x004ADDDF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -2539,6 +2717,7 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 
 // FUNCTION: COPTER_D 0x004ade3d
 void ButtonWindow::ButtonWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
@@ -2548,11 +2727,13 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        jmp    near ptr 0x004ADE74;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 2;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 2;
 	__asm        jmp    near ptr 0x004ADE93;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
@@ -2562,6 +2743,7 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x8E], 0;
 	__asm        jmp    near ptr 0x004ADEC3;
+
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x90], 0;
 	__asm        mov    eax, this;
@@ -2569,12 +2751,14 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x92], 0;
 	__asm        jmp    near ptr 0x004ADEE6;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591B78;
 	__asm        mov    eax, ds:[0x59ABA0];
 	__asm        mov    [ebp-0x20], eax;
 // LINE 293:
 	__asm        jmp    near ptr 0x004ADEFC;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2582,6 +2766,7 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004ADF47;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2591,29 +2776,37 @@ void ButtonWindow::ButtonWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004ADF38;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004ADF47;
+
 	__asm        jmp    near ptr 0x004ADF4C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004ADF7D;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004AE007;
+
 	__asm        jmp    near ptr 0x004ADF6B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AE007;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004ADFAC;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
@@ -2622,6 +2815,7 @@ void ButtonWindow::ButtonWindow() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004ADFB3;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -2630,6 +2824,7 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004ADFF4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -2637,18 +2832,24 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004ADFF4;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004ADFF4;
+
 	__asm        jmp    near ptr 0x004ADFF9;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AE03A;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004AE03A;
+
 	__asm        jmp    near ptr 0x004AE016;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -2662,19 +2863,23 @@ void ButtonWindow::ButtonWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE03A;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AE04B;
+
 	__asm        jmp    near ptr 0x004AE050;
 // LINE 294:
 	__asm        jmp    near ptr 0x004AE055;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004ae05d
 void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -2694,11 +2899,13 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        jmp    near ptr 0x004AE0A8;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 2;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 2;
 	__asm        jmp    near ptr 0x004AE0C7;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
@@ -2708,6 +2915,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x8E], 0;
 	__asm        jmp    near ptr 0x004AE0F7;
+
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x90], 0;
 	__asm        mov    eax, this;
@@ -2715,6 +2923,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x92], 0;
 	__asm        jmp    near ptr 0x004AE11A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591B78;
 // LINE 307:
@@ -2722,6 +2931,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        je     near ptr 0x004AE250;
 // LINE 308:
 	__asm        jmp    near ptr 0x004AE132;
+
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2729,6 +2939,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AE17D;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2738,29 +2949,37 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE16E;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE17D;
+
 	__asm        jmp    near ptr 0x004AE182;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AE1B3;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004AE202;
+
 	__asm        jmp    near ptr 0x004AE1A1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AE202;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AE1E2;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    eax, szImageFileName;
@@ -2769,6 +2988,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004AE1E9;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -2777,9 +2997,12 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AE235;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004AE235;
+
 	__asm        jmp    near ptr 0x004AE211;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -2793,11 +3016,13 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE235;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AE246;
+
 	__asm        jmp    near ptr 0x004AE24B;
 // LINE 309:
 	__asm        jmp    near ptr 0x004AE376;
@@ -2805,6 +3030,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    eax, ds:[0x59ABA0];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004AE25D;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2812,6 +3038,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AE2A8;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2821,29 +3048,37 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE299;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE2A8;
+
 	__asm        jmp    near ptr 0x004AE2AD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AE2DE;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x004AE32D;
+
 	__asm        jmp    near ptr 0x004AE2CC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AE32D;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004AE30D;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
@@ -2852,6 +3087,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004AE314;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -2860,9 +3096,12 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AE360;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x004AE360;
+
 	__asm        jmp    near ptr 0x004AE33C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -2876,14 +3115,17 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE360;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AE371;
+
 	__asm        jmp    near ptr 0x004AE376;
 // LINE 311:
 	__asm        jmp    near ptr 0x004AE37B;
+
 	__asm        mov    eax, this;
 }
 
@@ -2944,6 +3186,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 
 // LINE 354:
 	__asm        jmp    near ptr 0x004AE42D;
+
 	__asm        jmp    near ptr 0x004AE432;
 // LINE 356:
 	__asm        push   1;
@@ -2955,6 +3198,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        je     near ptr 0x004AEABF;
 // LINE 359:
 	__asm        jmp    near ptr 0x004AE451;
+
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x40];
 	__asm        mov    eax, this;
@@ -2991,6 +3235,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ecx+0x7C], eax;
 // LINE 364:
 	__asm        jmp    near ptr 0x004AE4D2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3009,6 +3254,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x64], eax;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004AE530;
+
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -3021,6 +3267,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   MFont::MFont;
 	__asm        mov    fontText, eax;
 	__asm        jmp    near ptr 0x004AE537;
+
 	__asm        mov    fontText, 0;
 // LINE 367:
 	__asm        mov    rectCurrent.top, 5;
@@ -3045,6 +3292,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AE5A2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x78], eax;
@@ -3055,6 +3303,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE5A7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3065,24 +3314,32 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004AE5CB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE668;
+
 	__asm        jmp    near ptr 0x004AE5E3;
+
 	__asm        jmp    near ptr 0x004AE5E8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE616;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x004AE625;
+
 	__asm        jmp    near ptr 0x004AE625;
+
 	__asm        mov    dword ptr [ebp-0x8C], 0;
 	__asm        jmp    near ptr 0x004AE625;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3099,12 +3356,16 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE668;
+
 	__asm        jmp    near ptr 0x004AE66D;
+
 	__asm        mov    byte ptr [ebp-0x7C], 0;
 	__asm        jmp    near ptr 0x004AE676;
+
 	__asm        lea    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x84], eax;
 	__asm        jmp    near ptr 0x004AE684;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3116,7 +3377,9 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x88];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004AE6B4;
+
 	__asm        jmp    near ptr 0x004AE6B9;
+
 	__asm        mov    eax, fontText;
 	__asm        push   eax;
 	__asm        lea    eax, rectCurrent.bottom;
@@ -3148,6 +3411,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AE739;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x98], eax;
@@ -3158,6 +3422,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE73E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3168,24 +3433,32 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004AE762;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE7FF;
+
 	__asm        jmp    near ptr 0x004AE77A;
+
 	__asm        jmp    near ptr 0x004AE77F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE7AD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004AE7BC;
+
 	__asm        jmp    near ptr 0x004AE7BC;
+
 	__asm        mov    dword ptr [ebp-0xAC], 0;
 	__asm        jmp    near ptr 0x004AE7BC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3202,12 +3475,16 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE7FF;
+
 	__asm        jmp    near ptr 0x004AE804;
+
 	__asm        mov    byte ptr [ebp-0x9C], 0;
 	__asm        jmp    near ptr 0x004AE810;
+
 	__asm        lea    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004AE821;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3219,7 +3496,9 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0xA8];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004AE851;
+
 	__asm        jmp    near ptr 0x004AE856;
+
 	__asm        mov    eax, fontText;
 	__asm        push   eax;
 	__asm        lea    eax, rectCurrent.bottom;
@@ -3277,6 +3556,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AE937;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xB8], eax;
@@ -3287,6 +3567,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AE93C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3297,24 +3578,32 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004AE960;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE9FD;
+
 	__asm        jmp    near ptr 0x004AE978;
+
 	__asm        jmp    near ptr 0x004AE97D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004AE9AB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    near ptr 0x004AE9BA;
+
 	__asm        jmp    near ptr 0x004AE9BA;
+
 	__asm        mov    dword ptr [ebp-0xCC], 0;
 	__asm        jmp    near ptr 0x004AE9BA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3331,12 +3620,16 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AE9FD;
+
 	__asm        jmp    near ptr 0x004AEA02;
+
 	__asm        mov    byte ptr [ebp-0xBC], 0;
 	__asm        jmp    near ptr 0x004AEA0E;
+
 	__asm        lea    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004AEA1F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -3348,7 +3641,9 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0xC8];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004AEA4F;
+
 	__asm        jmp    near ptr 0x004AEA54;
+
 	__asm        mov    eax, fontText;
 	__asm        push   eax;
 	__asm        lea    eax, rectCurrent.bottom;
@@ -3376,6 +3671,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     near ptr 0x004AEABF;
+
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        call   MFont::~MFont;
 	__asm        mov    eax, [ebp-0x68];
@@ -3383,6 +3679,7 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AEABA;
+
 	__asm        jmp    near ptr 0x004AEABF;
 // LINE 400:
 	__asm        mov    eax, nReturnValue;
@@ -3458,6 +3755,7 @@ int32_t ButtonWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004AEC42;
 // LINE 443:
 	__asm        jmp    near ptr 0x004AEB93;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    near ptr 0x004AEBAA;
@@ -3493,6 +3791,7 @@ int32_t ButtonWindow::ComposeSelf() {
 	__asm        mov    nStartXPosition, 0;
 // LINE 456:
 	__asm        jmp    near ptr 0x004AEBF8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -3559,9 +3858,13 @@ long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __form
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004AECB9;
+
 	__asm        jmp    near ptr 0x004AECBE;
+
 	__asm        jmp    near ptr 0x004AED3C;
+
 	__asm        jmp    near ptr 0x004AECCD;
+
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004AED3C;
 // LINE 482:
@@ -3588,6 +3891,7 @@ long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __form
 	__asm        call   dword ptr [eax+0xA8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004AED3C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     near ptr 0x004AED3C;
@@ -3617,9 +3921,13 @@ long ButtonWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004AED6C;
+
 	__asm        jmp    near ptr 0x004AED71;
+
 	__asm        jmp    near ptr 0x004AEDD2;
+
 	__asm        jmp    near ptr 0x004AED80;
+
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004AEDD2;
 // LINE 497:
@@ -3685,6 +3993,7 @@ int32_t ButtonWindow::CanWeRespondToMessage() {
 
 // FUNCTION: COPTER_D 0x004aee29
 void CheckBoxWindow::CheckBoxWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   ButtonWindow::ButtonWindow;
 	__asm        mov    eax, this;
@@ -3693,6 +4002,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    [ebp-0x34], eax;
 // LINE 540:
 	__asm        jmp    near ptr 0x004AEE53;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3700,6 +4010,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AEE9E;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3709,31 +4020,40 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AEE8F;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AEE9E;
+
 	__asm        jmp    near ptr 0x004AEEA3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AEED4;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AF055;
+
 	__asm        jmp    near ptr 0x004AEEC2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AF055;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AEFAF;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AEF27;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3743,10 +4063,12 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AEF18;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AEF27;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -3757,6 +4079,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AEF8C;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -3779,15 +4102,19 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AEF87;
+
 	__asm        jmp    near ptr 0x004AEF95;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AEFA4;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004AEFB6;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -3796,6 +4123,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AF042;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -3803,9 +4131,11 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004AF042;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF022;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -3820,21 +4150,29 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AF027;
+
 	__asm        jmp    near ptr 0x004AF02C;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF03D;
+
 	__asm        jmp    near ptr 0x004AF042;
+
 	__asm        jmp    near ptr 0x004AF047;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AF088;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AF088;
+
 	__asm        jmp    near ptr 0x004AF064;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -3848,19 +4186,23 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF088;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AF099;
+
 	__asm        jmp    near ptr 0x004AF09E;
 // LINE 541:
 	__asm        jmp    near ptr 0x004AF0A3;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004af0ab
 void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -3882,6 +4224,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        je     near ptr 0x004AF33F;
 // LINE 554:
 	__asm        jmp    near ptr 0x004AF0EF;
+
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3889,6 +4232,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF13A;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3898,31 +4242,40 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF12B;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF13A;
+
 	__asm        jmp    near ptr 0x004AF13F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AF170;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AF2F1;
+
 	__asm        jmp    near ptr 0x004AF15E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AF2F1;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AF24B;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF1C3;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3932,10 +4285,12 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF1B4;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF1C3;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -3946,6 +4301,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF228;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -3968,15 +4324,19 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF223;
+
 	__asm        jmp    near ptr 0x004AF231;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AF240;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004AF252;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -3985,6 +4345,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AF2DE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -3992,9 +4353,11 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004AF2DE;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF2BE;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -4009,21 +4372,29 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AF2C3;
+
 	__asm        jmp    near ptr 0x004AF2C8;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF2D9;
+
 	__asm        jmp    near ptr 0x004AF2DE;
+
 	__asm        jmp    near ptr 0x004AF2E3;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AF324;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AF324;
+
 	__asm        jmp    near ptr 0x004AF300;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -4037,11 +4408,13 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF324;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AF335;
+
 	__asm        jmp    near ptr 0x004AF33A;
 // LINE 555:
 	__asm        jmp    near ptr 0x004AF597;
@@ -4049,6 +4422,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, ds:[0x59ABA4];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004AF34C;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -4056,6 +4430,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    [ebp-0x60], eax;
 	__asm        cmp    dword ptr [ebp-0x60], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF397;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4065,31 +4440,40 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF388;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF397;
+
 	__asm        jmp    near ptr 0x004AF39C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AF3CD;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004AF54E;
+
 	__asm        jmp    near ptr 0x004AF3BB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AF54E;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004AF4A8;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF420;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4099,10 +4483,12 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF411;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF420;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx+4], eax;
@@ -4113,6 +4499,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF485;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -4135,15 +4522,19 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF480;
+
 	__asm        jmp    near ptr 0x004AF48E;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AF49D;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004AF4AF;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4152,6 +4543,7 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AF53B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x48], eax;
@@ -4159,9 +4551,11 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x004AF53B;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF51B;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -4176,21 +4570,29 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AF520;
+
 	__asm        jmp    near ptr 0x004AF525;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF536;
+
 	__asm        jmp    near ptr 0x004AF53B;
+
 	__asm        jmp    near ptr 0x004AF540;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AF581;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004AF581;
+
 	__asm        jmp    near ptr 0x004AF55D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -4204,14 +4606,17 @@ void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, 
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF581;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AF592;
+
 	__asm        jmp    near ptr 0x004AF597;
 // LINE 557:
 	__asm        jmp    near ptr 0x004AF59C;
+
 	__asm        mov    eax, this;
 }
 
@@ -4237,6 +4642,7 @@ int32_t CheckBoxWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004AF6A6;
 // LINE 578:
 	__asm        jmp    near ptr 0x004AF5E9;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    near ptr 0x004AF600;
@@ -4279,6 +4685,7 @@ int32_t CheckBoxWindow::ComposeSelf() {
 	__asm        mov    nStartXPosition, eax;
 // LINE 590:
 	__asm        jmp    near ptr 0x004AF65C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -4386,6 +4793,7 @@ long CheckBoxWindow::DoCursorDown(long __formal, long __formal, unsigned long __
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 627:
 	__asm        jmp    near ptr 0x004AF7AC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 2;
 	__asm        jne    near ptr 0x004AF7AC;
@@ -4419,6 +4827,7 @@ long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 
 // FUNCTION: COPTER_D 0x004af7f7
 void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -4443,6 +4852,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        je     near ptr 0x004AFA97;
 // LINE 678:
 	__asm        jmp    near ptr 0x004AF847;
+
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -4450,6 +4860,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF892;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4459,31 +4870,40 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF883;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF892;
+
 	__asm        jmp    near ptr 0x004AF897;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AF8C8;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AFA49;
+
 	__asm        jmp    near ptr 0x004AF8B6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AFA49;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AF9A3;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AF91B;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4493,10 +4913,12 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF90C;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AF91B;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -4507,6 +4929,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AF980;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -4529,15 +4952,19 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AF97B;
+
 	__asm        jmp    near ptr 0x004AF989;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AF998;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004AF9AA;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4546,6 +4973,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AFA36;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -4553,9 +4981,11 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004AFA36;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AFA16;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -4570,21 +5000,29 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AFA1B;
+
 	__asm        jmp    near ptr 0x004AFA20;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFA31;
+
 	__asm        jmp    near ptr 0x004AFA36;
+
 	__asm        jmp    near ptr 0x004AFA3B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AFA7C;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004AFA7C;
+
 	__asm        jmp    near ptr 0x004AFA58;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -4598,11 +5036,13 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AFA7C;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AFA8D;
+
 	__asm        jmp    near ptr 0x004AFA92;
 // LINE 679:
 	__asm        jmp    near ptr 0x004AFCEF;
@@ -4610,6 +5050,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, ds:[0x59ABA8];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004AFAA4;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -4617,6 +5058,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    [ebp-0x60], eax;
 	__asm        cmp    dword ptr [ebp-0x60], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AFAEF;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4626,31 +5068,40 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFAE0;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFAEF;
+
 	__asm        jmp    near ptr 0x004AFAF4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004AFB25;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004AFCA6;
+
 	__asm        jmp    near ptr 0x004AFB13;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004AFCA6;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004AFC00;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004AFB78;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4660,10 +5111,12 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFB69;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFB78;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx+4], eax;
@@ -4674,6 +5127,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AFBDD;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -4696,15 +5150,19 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AFBD8;
+
 	__asm        jmp    near ptr 0x004AFBE6;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004AFBF5;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004AFC07;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4713,6 +5171,7 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004AFC93;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x48], eax;
@@ -4720,9 +5179,11 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x004AFC93;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AFC73;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -4737,21 +5198,29 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004AFC78;
+
 	__asm        jmp    near ptr 0x004AFC7D;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AFC8E;
+
 	__asm        jmp    near ptr 0x004AFC93;
+
 	__asm        jmp    near ptr 0x004AFC98;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004AFCD9;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004AFCD9;
+
 	__asm        jmp    near ptr 0x004AFCB5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -4765,24 +5234,30 @@ void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGro
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AFCD9;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004AFCEA;
+
 	__asm        jmp    near ptr 0x004AFCEF;
 // LINE 681:
 	__asm        jmp    near ptr 0x004AFCF4;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004afcfe
 void RadioButtonWindow::~RadioButtonWindow() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591D38;
 // LINE 703:
 	__asm        jmp    near ptr 0x004AFD18;
+
 	__asm        jmp    near ptr 0x004AFD1D;
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -4820,6 +5295,7 @@ int32_t RadioButtonWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004AFE4F;
 // LINE 727:
 	__asm        jmp    near ptr 0x004AFD92;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    near ptr 0x004AFDA9;
@@ -4862,6 +5338,7 @@ int32_t RadioButtonWindow::ComposeSelf() {
 	__asm        mov    nStartXPosition, eax;
 // LINE 739:
 	__asm        jmp    near ptr 0x004AFE05;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -4991,6 +5468,7 @@ void RadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   dword ptr [edx];
 // LINE 792:
 	__asm        jmp    near ptr 0x004AFFBB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     near ptr 0x004AFFBB;
@@ -5072,6 +5550,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 
 // FUNCTION: COPTER_D 0x004b0083
  ButtonGroup::ButtonGroup() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
@@ -5081,15 +5560,18 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
 	__asm        je     near ptr 0x004B00D3;
+
 	__asm        mov    eax, ds:[0x59AC3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59AC3C], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B02B0;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        cmp    ds:[0x59AC34], eax;
 	__asm        jne    near ptr 0x004B029B;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -5099,6 +5581,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x004B0132;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5108,11 +5591,14 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B0128;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B0137;
+
 	__asm        jmp    near ptr 0x004B013C;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x155;
@@ -5126,14 +5612,19 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B0177;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B017D;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B0182;
+
 	__asm        jmp    near ptr 0x004B0187;
+
 	__asm        jmp    near ptr 0x004B018C;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -5149,6 +5640,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x004B01EA;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5158,11 +5650,14 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B01E0;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B01EF;
+
 	__asm        jmp    near ptr 0x004B01F4;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -5185,14 +5680,19 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B0251;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B0257;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B025C;
+
 	__asm        jmp    near ptr 0x004B0261;
+
 	__asm        jmp    near ptr 0x004B0266;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
@@ -5200,18 +5700,21 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        add    eax, ds:[0x59AC38];
 	__asm        mov    ds:[0x59AC34], eax;
 	__asm        jmp    near ptr 0x004B0281;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-8], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B02B0;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B02B5;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
@@ -5226,6 +5729,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx+0x74];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B02E0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        mov    eax, this;
@@ -5234,17 +5738,21 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    dword ptr [eax], 0x591E20;
 // LINE 857:
 	__asm        jmp    near ptr 0x004B0305;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b030d
  ButtonGroup::ButtonGroup(long lNewID, class GraphicWindow* windowNewParent, class GraphicWindow* gwMyNewOwner, int32_t bAddToParentList) {
+
 	__asm        jmp    near ptr 0x004B031E;
+
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        mov    dword ptr [ebp-8], 1;
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        jmp    near ptr 0x004B033F;
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, gwMyNewOwner;
@@ -5264,15 +5772,18 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
 	__asm        je     near ptr 0x004B0397;
+
 	__asm        mov    eax, ds:[0x59AC3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59AC3C], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004B0574;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        cmp    ds:[0x59AC34], eax;
 	__asm        jne    near ptr 0x004B055F;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -5282,6 +5793,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        jne    near ptr 0x004B03F6;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5291,11 +5803,14 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B03EC;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B03FB;
+
 	__asm        jmp    near ptr 0x004B0400;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    dword ptr [ebp-0x24], 0x155;
@@ -5309,14 +5824,19 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B043B;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B0441;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B0446;
+
 	__asm        jmp    near ptr 0x004B044B;
+
 	__asm        jmp    near ptr 0x004B0450;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x5C], eax;
@@ -5332,6 +5852,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    near ptr 0x004B04AE;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5341,11 +5862,14 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B04A4;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B04B3;
+
 	__asm        jmp    near ptr 0x004B04B8;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx+4], eax;
@@ -5368,14 +5892,19 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B0515;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x004B051B;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x004B0520;
+
 	__asm        jmp    near ptr 0x004B0525;
+
 	__asm        jmp    near ptr 0x004B052A;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
@@ -5383,18 +5912,21 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        add    eax, ds:[0x59AC38];
 	__asm        mov    ds:[0x59AC34], eax;
 	__asm        jmp    near ptr 0x004B0545;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004B0574;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004B0579;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
@@ -5409,6 +5941,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        mov    ecx, [ecx+0x74];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B05A4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        mov    eax, this;
@@ -5421,6 +5954,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        jmp    near ptr 0x004B05D3;
 // LINE 870:
 	__asm        jmp    near ptr 0x004B05D8;
+
 	__asm        mov    eax, this;
 }
 
@@ -5440,22 +5974,27 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B0616;
+
 	__asm        jmp    near ptr 0x004B061B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, ds:[0x59AC3C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
 	__asm        je     near ptr 0x004B064D;
+
 	__asm        mov    eax, ds:[0x59AC3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59AC3C], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004B082A;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        cmp    ds:[0x59AC34], eax;
 	__asm        jne    near ptr 0x004B0815;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -5465,6 +6004,7 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x004B06AC;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5474,11 +6014,14 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B06A2;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B06B1;
+
 	__asm        jmp    near ptr 0x004B06B6;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
@@ -5492,14 +6035,19 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B06F1;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B06F7;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B06FC;
+
 	__asm        jmp    near ptr 0x004B0701;
+
 	__asm        jmp    near ptr 0x004B0706;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -5515,6 +6063,7 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    near ptr 0x004B0764;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -5524,11 +6073,14 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B075A;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B0769;
+
 	__asm        jmp    near ptr 0x004B076E;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -5551,14 +6103,19 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B07CB;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004B07D1;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004B07D6;
+
 	__asm        jmp    near ptr 0x004B07DB;
+
 	__asm        jmp    near ptr 0x004B07E0;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
@@ -5566,32 +6123,40 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        add    eax, ds:[0x59AC38];
 	__asm        mov    ds:[0x59AC34], eax;
 	__asm        jmp    near ptr 0x004B07FB;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004B082A;
+
 	__asm        mov    eax, ds:[0x59AC38];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        add    dword ptr ds:[0x59AC38], 0xC;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004B082F;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B083A;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B0848;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B085F;
+
 	__asm        mov    eax, buttonNew;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B085F;
+
 	__asm        jmp    near ptr 0x004B0864;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -5611,7 +6176,9 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B089E;
+
 	__asm        jmp    near ptr 0x004B08A3;
+
 	__asm        jmp    near ptr 0x004B08A8;
 // LINE 881:
 	__asm        jmp    near ptr 0x004B08AD;
@@ -5629,6 +6196,7 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B08D6;
+
 	__asm        jmp    near ptr 0x004B08DB;
 // LINE 895:
 	__asm        mov    eax, this;
@@ -5646,26 +6214,38 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B090B;
+
 	__asm        jmp    near ptr 0x004B0910;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x004B0926;
+
 	__asm        jmp    near ptr 0x004B093A;
+
 	__asm        jmp    near ptr 0x004B0926;
+
 	__asm        jmp    near ptr 0x004B0935;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    near ptr 0x004B093A;
+
 	__asm        jmp    near ptr 0x004B093F;
+
 	__asm        jmp    near ptr 0x004B09D7;
+
 	__asm        jmp    near ptr 0x004B094E;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x004B09D7;
 // LINE 900:
 	__asm        jmp    near ptr 0x004B0953;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    ecx, buttonToRemove;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    near ptr 0x004B09B4;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x24], eax;
 // LINE 901:
@@ -5680,13 +6260,16 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B0988;
+
 	__asm        jmp    near ptr 0x004B098D;
+
 	__asm        mov    eax, ds:[0x59AC3C];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ds:[0x59AC3C], eax;
 	__asm        jmp    near ptr 0x004B09A4;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x78];
 	__asm        jmp    near ptr 0x004B09AF;
@@ -5699,6 +6282,7 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B09C7;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B09D2;
@@ -5723,6 +6307,7 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0A0F;
+
 	__asm        jmp    near ptr 0x004B0A14;
 // LINE 922:
 	__asm        mov    eax, this;
@@ -5740,28 +6325,40 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B0A4A;
+
 	__asm        jmp    near ptr 0x004B0A4F;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x004B0A65;
+
 	__asm        jmp    near ptr 0x004B0A79;
+
 	__asm        jmp    near ptr 0x004B0A65;
+
 	__asm        jmp    near ptr 0x004B0A74;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x004B0A79;
+
 	__asm        jmp    near ptr 0x004B0A7E;
+
 	__asm        jmp    near ptr 0x004B0B11;
+
 	__asm        jmp    near ptr 0x004B0A8D;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x004B0B11;
 // LINE 927:
 	__asm        jmp    near ptr 0x004B0A92;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    ecx, buttonToSelect;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    near ptr 0x004B0ACA;
 // LINE 928:
 	__asm        jmp    near ptr 0x004B0AA6;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -5776,6 +6373,7 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	__asm        jmp    near ptr 0x004B0AEE;
 // LINE 930:
 	__asm        jmp    near ptr 0x004B0ACF;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -5793,6 +6391,7 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0B01;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B0B0C;
@@ -5836,6 +6435,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0B7D;
+
 	__asm        jmp    near ptr 0x004B0B82;
 // LINE 952:
 	__asm        mov    eax, this;
@@ -5853,22 +6453,33 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B0BB8;
+
 	__asm        jmp    near ptr 0x004B0BBD;
+
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    near ptr 0x004B0BD3;
+
 	__asm        jmp    near ptr 0x004B0BE7;
+
 	__asm        jmp    near ptr 0x004B0BD3;
+
 	__asm        jmp    near ptr 0x004B0BE2;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x004B0BE7;
+
 	__asm        jmp    near ptr 0x004B0BEC;
+
 	__asm        jmp    near ptr 0x004B0C82;
+
 	__asm        jmp    near ptr 0x004B0BFB;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x004B0C82;
 // LINE 957:
 	__asm        jmp    near ptr 0x004B0C00;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lIDOfButtonToSelect;
@@ -5876,6 +6487,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        jne    near ptr 0x004B0C3B;
 // LINE 958:
 	__asm        jmp    near ptr 0x004B0C17;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -5890,6 +6502,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        jmp    near ptr 0x004B0C5F;
 // LINE 960:
 	__asm        jmp    near ptr 0x004B0C40;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -5907,6 +6520,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0C72;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B0C7D;
@@ -5918,6 +6532,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        je     near ptr 0x004B0CBB;
 // LINE 965:
 	__asm        jmp    near ptr 0x004B0C94;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -5953,6 +6568,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0CF6;
+
 	__asm        jmp    near ptr 0x004B0CFB;
 // LINE 982:
 	__asm        mov    i, 0;
@@ -5972,18 +6588,28 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B0D38;
+
 	__asm        jmp    near ptr 0x004B0D3D;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x004B0D53;
+
 	__asm        jmp    near ptr 0x004B0D67;
+
 	__asm        jmp    near ptr 0x004B0D53;
+
 	__asm        jmp    near ptr 0x004B0D62;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x004B0D67;
+
 	__asm        jmp    near ptr 0x004B0D6C;
+
 	__asm        jmp    near ptr 0x004B0DFB;
+
 	__asm        jmp    near ptr 0x004B0D7B;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004B0DFB;
 // LINE 989:
@@ -5992,6 +6618,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        jne    near ptr 0x004B0DB0;
 // LINE 990:
 	__asm        jmp    near ptr 0x004B0D8C;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
@@ -6006,6 +6633,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        jmp    near ptr 0x004B0DD4;
 // LINE 992:
 	__asm        jmp    near ptr 0x004B0DB5;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x1C], eax;
@@ -6025,6 +6653,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0DEB;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B0DF6;
@@ -6036,6 +6665,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        je     near ptr 0x004B0E34;
 // LINE 998:
 	__asm        jmp    near ptr 0x004B0E0D;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -6070,6 +6700,7 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0E6F;
+
 	__asm        jmp    near ptr 0x004B0E74;
 // LINE 1014:
 	__asm        mov    eax, this;
@@ -6078,22 +6709,33 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B0E88;
+
 	__asm        jmp    near ptr 0x004B0E8D;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x004B0EA3;
+
 	__asm        jmp    near ptr 0x004B0EB7;
+
 	__asm        jmp    near ptr 0x004B0EA3;
+
 	__asm        jmp    near ptr 0x004B0EB2;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x004B0EB7;
+
 	__asm        jmp    near ptr 0x004B0EBC;
+
 	__asm        jmp    near ptr 0x004B0F33;
+
 	__asm        jmp    near ptr 0x004B0ECB;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B0F33;
 // LINE 1015:
 	__asm        jmp    near ptr 0x004B0ED0;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -6107,6 +6749,7 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	__asm        jne    near ptr 0x004B0F10;
 // LINE 1016:
 	__asm        jmp    near ptr 0x004B0EFB;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, radioButtonWindow;
@@ -6121,6 +6764,7 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0F23;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B0F2E;
@@ -6165,6 +6809,7 @@ int  ButtonGroup::GetSelectionIndex() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B0F9B;
+
 	__asm        jmp    near ptr 0x004B0FA0;
 // LINE 1051:
 	__asm        mov    i, 0;
@@ -6175,22 +6820,33 @@ int  ButtonGroup::GetSelectionIndex() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B0FBB;
+
 	__asm        jmp    near ptr 0x004B0FC0;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x004B0FD6;
+
 	__asm        jmp    near ptr 0x004B0FEA;
+
 	__asm        jmp    near ptr 0x004B0FD6;
+
 	__asm        jmp    near ptr 0x004B0FE5;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    near ptr 0x004B0FEA;
+
 	__asm        jmp    near ptr 0x004B0FEF;
+
 	__asm        jmp    near ptr 0x004B1058;
+
 	__asm        jmp    near ptr 0x004B0FFE;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004B1058;
 // LINE 1054:
 	__asm        jmp    near ptr 0x004B1003;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
@@ -6214,6 +6870,7 @@ int  ButtonGroup::GetSelectionIndex() {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004B1048;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B1053;
@@ -6237,6 +6894,7 @@ int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x004B1089;
+
 	__asm        jmp    near ptr 0x004B108E;
 // LINE 1071:
 	__asm        mov    eax, this;
@@ -6245,22 +6903,33 @@ int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B10A2;
+
 	__asm        jmp    near ptr 0x004B10A7;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    near ptr 0x004B10BD;
+
 	__asm        jmp    near ptr 0x004B10D1;
+
 	__asm        jmp    near ptr 0x004B10BD;
+
 	__asm        jmp    near ptr 0x004B10CC;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    near ptr 0x004B10D1;
+
 	__asm        jmp    near ptr 0x004B10D6;
+
 	__asm        jmp    near ptr 0x004B1126;
+
 	__asm        jmp    near ptr 0x004B10E5;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x004B1126;
 // LINE 1072:
 	__asm        jmp    near ptr 0x004B10EA;
+
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, buttonToFind;
 	__asm        cmp    [eax+8], ecx;
@@ -6275,6 +6944,7 @@ int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x004B1116;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B1121;
@@ -6288,6 +6958,7 @@ int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 
 // FUNCTION: COPTER_D 0x004b1134
 void SliderWindow::SliderWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
@@ -6307,7 +6978,9 @@ void SliderWindow::SliderWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 8;
 	__asm        jmp    near ptr 0x004B11AC;
+
 	__asm        jmp    near ptr 0x004B11B1;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 0;
 	__asm        push   0x10;
@@ -6316,6 +6989,7 @@ void SliderWindow::SliderWindow() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004B1214;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-4];
@@ -6327,26 +7001,31 @@ void SliderWindow::SliderWindow() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B1203;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    near ptr 0x004B1221;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xAC], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA8], 0;
 	__asm        jmp    near ptr 0x004B1233;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB0], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591EE8;
 // LINE 1110:
 	__asm        jmp    near ptr 0x004B124E;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b1256
 void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -6378,7 +7057,9 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x90], eax;
 	__asm        jmp    near ptr 0x004B12E0;
+
 	__asm        jmp    near ptr 0x004B12E5;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 0;
 	__asm        push   0x10;
@@ -6387,6 +7068,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x78], eax;
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x004B1348;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x78];
@@ -6398,15 +7080,18 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B1337;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    near ptr 0x004B1355;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xAC], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA8], 0;
 	__asm        jmp    near ptr 0x004B1367;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB0], 0;
 	__asm        mov    eax, this;
@@ -6416,6 +7101,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        je     near ptr 0x004B13B2;
 // LINE 1135:
 	__asm        jmp    near ptr 0x004B138C;
+
 	__asm        mov    eax, szThumbImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6437,6 +7123,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    eax, ds:[0x59ABB0];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B13CC;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6444,6 +7131,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B1417;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6453,29 +7141,37 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1408;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1417;
+
 	__asm        jmp    near ptr 0x004B141C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B144D;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B149C;
+
 	__asm        jmp    near ptr 0x004B143B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B149C;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B147C;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x18];
@@ -6484,6 +7180,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B1483;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -6492,9 +7189,12 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004B14CF;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B14CF;
+
 	__asm        jmp    near ptr 0x004B14AB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -6508,11 +7208,13 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B14CF;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B14E0;
+
 	__asm        jmp    near ptr 0x004B14E5;
 // LINE 1140:
 	__asm        jmp    near ptr 0x004B1610;
@@ -6520,6 +7222,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    eax, ds:[0x59ABAC];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004B14F7;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6527,6 +7230,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B1542;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6536,29 +7240,37 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1533;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1542;
+
 	__asm        jmp    near ptr 0x004B1547;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B1578;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004B15C7;
+
 	__asm        jmp    near ptr 0x004B1566;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B15C7;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B15A7;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -6567,6 +7279,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004B15AE;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -6575,9 +7288,12 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004B15FA;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004B15FA;
+
 	__asm        jmp    near ptr 0x004B15D6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -6591,17 +7307,20 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B15FA;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B160B;
+
 	__asm        jmp    near ptr 0x004B1610;
 // LINE 1143:
 	__asm        cmp    szBackgroundImageFileName, 0;
 	__asm        je     near ptr 0x004B174F;
 // LINE 1144:
 	__asm        jmp    near ptr 0x004B161F;
+
 	__asm        mov    eax, szBackgroundImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6609,6 +7328,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B166A;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6618,29 +7338,37 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B165B;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B166A;
+
 	__asm        jmp    near ptr 0x004B166F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B16A6;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x004B16FB;
+
 	__asm        jmp    near ptr 0x004B1691;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B16FB;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004B16D5;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        mov    eax, szBackgroundImageFileName;
@@ -6649,6 +7377,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B16DC;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -6657,9 +7386,12 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    near ptr 0x004B1731;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x004B1731;
+
 	__asm        jmp    near ptr 0x004B170A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    eax, [eax];
@@ -6673,11 +7405,13 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B1731;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xAC];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B1745;
+
 	__asm        jmp    near ptr 0x004B174A;
 // LINE 1146:
 	__asm        jmp    near ptr 0x004B19D1;
@@ -6689,6 +7423,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    eax, ds:[0x59ABB8];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004B1769;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6696,6 +7431,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B17B4;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6705,29 +7441,37 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B17A5;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B17B4;
+
 	__asm        jmp    near ptr 0x004B17B9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B17F0;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004B1845;
+
 	__asm        jmp    near ptr 0x004B17DB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B1845;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x004B181F;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x5C];
@@ -6736,6 +7480,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x004B1826;
+
 	__asm        mov    dword ptr [ebp-0x48], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -6744,9 +7489,12 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    near ptr 0x004B187B;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004B187B;
+
 	__asm        jmp    near ptr 0x004B1854;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    eax, [eax];
@@ -6760,11 +7508,13 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B187B;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xAC];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B188F;
+
 	__asm        jmp    near ptr 0x004B1894;
 // LINE 1149:
 	__asm        jmp    near ptr 0x004B19D1;
@@ -6772,6 +7522,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    eax, ds:[0x59ABB4];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x004B18A6;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6779,6 +7530,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ebp-0x70], eax;
 	__asm        cmp    dword ptr [ebp-0x70], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B18F1;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6788,29 +7540,37 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B18E2;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B18F1;
+
 	__asm        jmp    near ptr 0x004B18F6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B192D;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        je     near ptr 0x004B1982;
+
 	__asm        jmp    near ptr 0x004B1918;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B1982;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004B195C;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x74];
@@ -6819,6 +7579,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004B1963;
+
 	__asm        mov    dword ptr [ebp-0x60], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -6827,9 +7588,12 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    near ptr 0x004B19B8;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        je     near ptr 0x004B19B8;
+
 	__asm        jmp    near ptr 0x004B1991;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    eax, [eax];
@@ -6843,19 +7607,23 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B19B8;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xAC];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B19CC;
+
 	__asm        jmp    near ptr 0x004B19D1;
 // LINE 1152:
 	__asm        jmp    near ptr 0x004B19D6;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b19e0
 void SliderWindow::~SliderWindow() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591EE8;
 // LINE 1159:
@@ -6863,6 +7631,7 @@ void SliderWindow::~SliderWindow() {
 	__asm        call   SliderWindow::DestroyImage;
 // LINE 1160:
 	__asm        jmp    near ptr 0x004B1A02;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -6870,6 +7639,7 @@ void SliderWindow::~SliderWindow() {
 	__asm        mov    eax, [eax+0xAC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B1A97;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    [ebp-0x10], eax;
@@ -6877,9 +7647,11 @@ void SliderWindow::~SliderWindow() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004B1A97;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B1A77;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -6894,17 +7666,23 @@ void SliderWindow::~SliderWindow() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B1A7C;
+
 	__asm        jmp    near ptr 0x004B1A81;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1A92;
+
 	__asm        jmp    near ptr 0x004B1A97;
+
 	__asm        jmp    near ptr 0x004B1A9C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA8], 0;
 	__asm        je     near ptr 0x004B1ACA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA8];
 	__asm        mov    [ebp-4], eax;
@@ -6915,6 +7693,7 @@ void SliderWindow::~SliderWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1ACF;
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -6943,7 +7722,9 @@ int32_t SliderWindow::Initialize() {
 	__asm        je     near ptr 0x004B1B4A;
 // LINE 1173:
 	__asm        jmp    near ptr 0x004B1B20;
+
 	__asm        jmp    near ptr 0x004B1B25;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0xC];
@@ -6979,6 +7760,7 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x004B1BC1;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x18];
@@ -6990,9 +7772,11 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B1BB6;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    sBackgroundPath.reference, eax;
 	__asm        jmp    near ptr 0x004B1BC8;
+
 	__asm        mov    sBackgroundPath.reference, 0;
 	__asm        mov    sBackgroundPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B1BD4;
@@ -7018,10 +7802,12 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        call   dword ptr [edx+8];
 // LINE 1192:
 	__asm        jmp    near ptr 0x004B1C0D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B1DA0;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    near ptr 0x004B1DA0;
@@ -7043,8 +7829,10 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004B1D66;
+
 	__asm        cmp    sBackgroundPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004B1C8C;
+
 	__asm        mov    eax, sBackgroundPath.c_str_ptr;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
@@ -7054,6 +7842,7 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1C91;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -7062,21 +7851,29 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        add    esp, 4;
 	__asm        mov    sBackgroundPath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x004B1CA9;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B1D13;
+
 	__asm        jmp    near ptr 0x004B1CBB;
+
 	__asm        jmp    near ptr 0x004B1CC0;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B1CDF;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x004B1CEB;
+
 	__asm        jmp    near ptr 0x004B1CEB;
+
 	__asm        mov    dword ptr [ebp-0x48], 0;
 	__asm        jmp    near ptr 0x004B1CEB;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x4C], eax;
@@ -7091,12 +7888,16 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B1D13;
+
 	__asm        jmp    near ptr 0x004B1D18;
+
 	__asm        mov    byte ptr [ebp-0x38], 0;
 	__asm        jmp    near ptr 0x004B1D21;
+
 	__asm        lea    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004B1D2C;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sBackgroundPath.c_str_ptr;
@@ -7106,7 +7907,9 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004B1D47;
+
 	__asm        jmp    near ptr 0x004B1D4C;
+
 	__asm        mov    eax, sBackgroundPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x10];
@@ -7114,6 +7917,7 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA4], eax;
 	__asm        jmp    near ptr 0x004B1D73;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 0;
 // LINE 1195:
@@ -7139,15 +7943,18 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B1E29;
+
 	__asm        mov    eax, sBackgroundPath.reference;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004B1E29;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B1E09;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
@@ -7162,16 +7969,22 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B1E0E;
+
 	__asm        jmp    near ptr 0x004B1E13;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1E24;
+
 	__asm        jmp    near ptr 0x004B1E29;
+
 	__asm        jmp    near ptr 0x004B1E2E;
+
 	__asm        cmp    sBackgroundPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004B1E50;
+
 	__asm        mov    eax, sBackgroundPath.c_str_ptr;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
@@ -7181,6 +7994,7 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1E55;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x004B1E5D;
 // LINE 1199:
@@ -7203,6 +8017,7 @@ void SliderWindow::DestroyImage() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004B1EC2;
+
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
@@ -7210,6 +8025,7 @@ void SliderWindow::DestroyImage() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B1EBD;
+
 	__asm        jmp    near ptr 0x004B1EC2;
 // LINE 1211:
 	__asm        mov    eax, this;
@@ -7270,6 +8086,7 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004B21FD;
 // LINE 1248:
 	__asm        jmp    near ptr 0x004B1F6D;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    near ptr 0x004B1F84;
@@ -7289,7 +8106,9 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        je     near ptr 0x004B1FFC;
 // LINE 1255:
 	__asm        jmp    near ptr 0x004B1FA8;
+
 	__asm        jmp    near ptr 0x004B1FAD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0xC];
@@ -7335,7 +8154,9 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        jne    near ptr 0x004B209F;
 // LINE 1263:
 	__asm        jmp    near ptr 0x004B202C;
+
 	__asm        jmp    near ptr 0x004B2031;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -7379,7 +8200,9 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004B2112;
 // LINE 1268:
 	__asm        jmp    near ptr 0x004B20A4;
+
 	__asm        jmp    near ptr 0x004B20A9;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
@@ -7561,9 +8384,13 @@ long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004B228A;
+
 	__asm        jmp    near ptr 0x004B228F;
+
 	__asm        jmp    near ptr 0x004B22DE;
+
 	__asm        jmp    near ptr 0x004B229E;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B22DE;
 // LINE 1311:
@@ -7605,9 +8432,13 @@ long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004B230E;
+
 	__asm        jmp    near ptr 0x004B2313;
+
 	__asm        jmp    near ptr 0x004B2350;
+
 	__asm        jmp    near ptr 0x004B2322;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B2350;
 // LINE 1327:
@@ -7670,6 +8501,7 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        mov    lPosition, eax;
 // LINE 1358:
 	__asm        jmp    near ptr 0x004B23C7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -7680,6 +8512,7 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        jge    near ptr 0x004B2402;
 // LINE 1359:
 	__asm        jmp    near ptr 0x004B23EA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -7703,6 +8536,7 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        mov    lPosition, eax;
 // LINE 1365:
 	__asm        jmp    near ptr 0x004B2430;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -7713,6 +8547,7 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        jge    near ptr 0x004B246B;
 // LINE 1366:
 	__asm        jmp    near ptr 0x004B2453;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -7753,6 +8588,7 @@ void SliderWindow::CalculateAllMetrics() {
 	__asm        mov    [ecx+0x84], eax;
 // LINE 1384:
 	__asm        jmp    near ptr 0x004B24D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x18];
 	__asm        mov    eax, this;
@@ -7770,6 +8606,7 @@ void SliderWindow::CalculateAllMetrics() {
 	__asm        jmp    near ptr 0x004B2548;
 // LINE 1388:
 	__asm        jmp    near ptr 0x004B2508;
+
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x1C];
 	__asm        mov    eax, this;
@@ -7860,6 +8697,7 @@ void SliderWindow::CalculateThumbPosition() {
 	__asm        mov    [eax+0x9C], ecx;
 // LINE 1422:
 	__asm        jmp    near ptr 0x004B2629;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -7892,6 +8730,7 @@ void SliderWindow::CalculateThumbPosition() {
 	__asm        jmp    near ptr 0x004B2711;
 // LINE 1426:
 	__asm        jmp    near ptr 0x004B2688;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -8078,6 +8917,7 @@ void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 long SliderWindow::GetThumbWidth() {
 // LINE 1496:
 	__asm        jmp    near ptr 0x004B28C1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+8];
@@ -8089,6 +8929,7 @@ long SliderWindow::GetThumbWidth() {
 long SliderWindow::GetThumbHeight() {
 // LINE 1507:
 	__asm        jmp    near ptr 0x004B28E5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -8098,6 +8939,7 @@ long SliderWindow::GetThumbHeight() {
 
 // FUNCTION: COPTER_D 0x004b28f8
 void ScrollBarWindow::ScrollBarWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   SliderWindow::SliderWindow;
 	__asm        mov    eax, this;
@@ -8111,6 +8953,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B2971;
+
 	__asm        lea    eax, [ebp-0x40];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -8120,7 +8963,9 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC8], eax;
 	__asm        jmp    near ptr 0x004B2971;
+
 	__asm        jmp    near ptr 0x004B2976;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 1;
 	__asm        mov    eax, this;
@@ -8140,6 +8985,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    [ebp-0x34], eax;
 // LINE 1548:
 	__asm        jmp    near ptr 0x004B29C0;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -8147,6 +8993,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B2A0B;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -8156,31 +9003,40 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B29FC;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2A0B;
+
 	__asm        jmp    near ptr 0x004B2A10;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B2A41;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004B2BC2;
+
 	__asm        jmp    near ptr 0x004B2A2F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B2BC2;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B2B1C;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B2A94;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -8190,10 +9046,12 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2A85;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2A94;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -8204,6 +9062,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B2AF9;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -8226,15 +9085,19 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B2AF4;
+
 	__asm        jmp    near ptr 0x004B2B02;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B2B11;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B2B23;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -8243,6 +9106,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B2BAF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -8250,9 +9114,11 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B2BAF;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B2B8F;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -8267,21 +9133,29 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B2B94;
+
 	__asm        jmp    near ptr 0x004B2B99;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2BAA;
+
 	__asm        jmp    near ptr 0x004B2BAF;
+
 	__asm        jmp    near ptr 0x004B2BB4;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004B2BF5;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004B2BF5;
+
 	__asm        jmp    near ptr 0x004B2BD1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -8295,22 +9169,26 @@ void ScrollBarWindow::ScrollBarWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B2BF5;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B2C06;
+
 	__asm        jmp    near ptr 0x004B2C0B;
 // LINE 1549:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
 // LINE 1550:
 	__asm        jmp    near ptr 0x004B2C1D;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b2c25
 void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
+
 	__asm        push   8;
 	__asm        push   0;
 	__asm        mov    eax, szImageFileName;
@@ -8340,6 +9218,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B2CBE;
+
 	__asm        lea    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -8349,7 +9228,9 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC8], eax;
 	__asm        jmp    near ptr 0x004B2CBE;
+
 	__asm        jmp    near ptr 0x004B2CC3;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 1;
 	__asm        mov    eax, this;
@@ -8373,6 +9254,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        je     near ptr 0x004B2E89;
 // LINE 1570:
 	__asm        jmp    near ptr 0x004B2D1C;
+
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -8380,6 +9262,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B2D67;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -8389,29 +9272,37 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2D58;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2D67;
+
 	__asm        jmp    near ptr 0x004B2D6C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B2D9D;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B2E3B;
+
 	__asm        jmp    near ptr 0x004B2D8B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B2E3B;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B2DCC;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        mov    eax, szImageFileName;
@@ -8420,6 +9311,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B2DD3;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -8428,6 +9320,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B2E28;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x18], eax;
@@ -8435,23 +9328,31 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B2E28;
+
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004B2E12;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2E23;
+
 	__asm        jmp    near ptr 0x004B2E28;
+
 	__asm        jmp    near ptr 0x004B2E2D;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004B2E6E;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B2E6E;
+
 	__asm        jmp    near ptr 0x004B2E4A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -8465,11 +9366,13 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B2E6E;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B2E7F;
+
 	__asm        jmp    near ptr 0x004B2E84;
 // LINE 1571:
 	__asm        jmp    near ptr 0x004B2FFE;
@@ -8477,6 +9380,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    eax, ds:[0x59ABBC];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B2E96;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -8484,6 +9388,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B2EE1;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -8493,29 +9398,37 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2ED2;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2EE1;
+
 	__asm        jmp    near ptr 0x004B2EE6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B2F17;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004B2FB5;
+
 	__asm        jmp    near ptr 0x004B2F05;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B2FB5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004B2F46;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x3C];
@@ -8524,6 +9437,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004B2F4D;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -8532,6 +9446,7 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B2FA2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x34], eax;
@@ -8539,23 +9454,31 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x004B2FA2;
+
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004B2F8C;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B2F9D;
+
 	__asm        jmp    near ptr 0x004B2FA2;
+
 	__asm        jmp    near ptr 0x004B2FA7;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004B2FE8;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004B2FE8;
+
 	__asm        jmp    near ptr 0x004B2FC4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -8569,14 +9492,17 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B2FE8;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B2FF9;
+
 	__asm        jmp    near ptr 0x004B2FFE;
 // LINE 1573:
 	__asm        jmp    near ptr 0x004B3003;
+
 	__asm        mov    eax, this;
 }
 
@@ -8608,6 +9534,7 @@ int32_t ScrollBarWindow::Initialize() {
 	__asm        jne    near ptr 0x004B3077;
 // LINE 1589:
 	__asm        jmp    near ptr 0x004B305B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -8621,6 +9548,7 @@ int32_t ScrollBarWindow::Initialize() {
 	__asm        jmp    near ptr 0x004B3093;
 // LINE 1591:
 	__asm        jmp    near ptr 0x004B307C;
+
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
@@ -8659,6 +9587,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004B35D8;
 // LINE 1614:
 	__asm        jmp    near ptr 0x004B30D6;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    near ptr 0x004B30ED;
@@ -8690,11 +9619,16 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004B313D;
+
 	__asm        jmp    near ptr 0x004B3142;
+
 	__asm        jmp    near ptr 0x004B334F;
+
 	__asm        jmp    near ptr 0x004B3151;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B334F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xD0], 0;
 	__asm        je     near ptr 0x004B334F;
@@ -8702,6 +9636,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 1;
 	__asm        jl     near ptr 0x004B334F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 4;
 	__asm        jg     near ptr 0x004B334F;
@@ -8713,6 +9648,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        inc    nLineUpImageIndexToUse;
 // LINE 1641:
 	__asm        jmp    near ptr 0x004B31AC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 2;
 	__asm        jne    near ptr 0x004B31AC;
@@ -8723,19 +9659,25 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, [eax+0xC4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B31BD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
 	__asm        je     near ptr 0x004B324C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 1;
 	__asm        jne    near ptr 0x004B31F0;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B3237;
+
 	__asm        jmp    near ptr 0x004B3237;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B3220;
+
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -8744,13 +9686,16 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B3237;
+
 	__asm        jmp    near ptr 0x004B3237;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B3237;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC0];
@@ -8760,9 +9705,11 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B329A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC8], 0;
 	__asm        je     near ptr 0x004B329A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        push   eax;
@@ -8773,10 +9720,14 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0xC8;
 	__asm        jbe    near ptr 0x004B3340;
+
 	__asm        jmp    near ptr 0x004B32B9;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0xC8;
 	__asm        jbe    near ptr 0x004B3340;
+
 	__asm        jmp    near ptr 0x004B32B9;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0xC8;
 	__asm        jbe    near ptr 0x004B3340;
 // LINE 1645:
@@ -8790,6 +9741,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 1647:
 	__asm        jmp    near ptr 0x004B3340;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 2;
 	__asm        jne    near ptr 0x004B32FF;
@@ -8800,6 +9752,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        call   dword ptr [eax+0xE0];
 // LINE 1649:
 	__asm        jmp    near ptr 0x004B3340;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 3;
 	__asm        jne    near ptr 0x004B3322;
@@ -8810,6 +9763,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        call   dword ptr [eax+0xE4];
 // LINE 1651:
 	__asm        jmp    near ptr 0x004B3340;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 4;
 	__asm        jne    near ptr 0x004B3340;
@@ -8878,6 +9832,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        add    eax, lThumbWidth;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004B33DE;
+
 	__asm        mov    eax, lThumbWidth;
 	__asm        add    i, eax;
 	__asm        mov    eax, lPageDownButtonStartPosition;
@@ -9000,6 +9955,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        add    eax, lThumbHeight;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004B3507;
+
 	__asm        mov    eax, lThumbHeight;
 	__asm        add    i, eax;
 	__asm        mov    eax, lPageDownButtonStartPosition;
@@ -9123,20 +10079,27 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        call   dword ptr [eax+0x98];
 // LINE 1722:
 	__asm        jmp    near ptr 0x004B3640;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
 	__asm        jne    near ptr 0x004B3655;
+
 	__asm        jmp    near ptr 0x004B36E6;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 1;
 	__asm        jne    near ptr 0x004B3678;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B36BF;
+
 	__asm        jmp    near ptr 0x004B36BF;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B36A8;
+
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -9145,13 +10108,16 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B36BF;
+
 	__asm        jmp    near ptr 0x004B36BF;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B36BF;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC0];
@@ -9162,21 +10128,28 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        jmp    near ptr 0x004B36E6;
 // LINE 1723:
 	__asm        jmp    near ptr 0x004B36EB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
 	__asm        je     near ptr 0x004B3700;
+
 	__asm        jmp    near ptr 0x004B3781;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 1;
 	__asm        jne    near ptr 0x004B3729;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC0], eax;
 	__asm        jmp    near ptr 0x004B377C;
+
 	__asm        jmp    near ptr 0x004B377C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    near ptr 0x004B375F;
+
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -9186,7 +10159,9 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC0], eax;
 	__asm        jmp    near ptr 0x004B377C;
+
 	__asm        jmp    near ptr 0x004B377C;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
@@ -9194,6 +10169,7 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC0], eax;
 	__asm        jmp    near ptr 0x004B377C;
+
 	__asm        jmp    near ptr 0x004B3781;
 // LINE 1724:
 	__asm        push   1;
@@ -9216,6 +10192,7 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        jmp    near ptr 0x004B3849;
 // LINE 1730:
 	__asm        jmp    near ptr 0x004B383F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 2;
 	__asm        jne    near ptr 0x004B37EA;
@@ -9229,6 +10206,7 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        jmp    near ptr 0x004B3849;
 // LINE 1734:
 	__asm        jmp    near ptr 0x004B383F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 3;
 	__asm        jne    near ptr 0x004B3817;
@@ -9242,6 +10220,7 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        jmp    near ptr 0x004B3849;
 // LINE 1738:
 	__asm        jmp    near ptr 0x004B383F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xCC], 4;
 	__asm        jne    near ptr 0x004B383F;
@@ -9267,9 +10246,13 @@ long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004B386F;
+
 	__asm        jmp    near ptr 0x004B3874;
+
 	__asm        jmp    near ptr 0x004B38D3;
+
 	__asm        jmp    near ptr 0x004B3883;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B38D3;
 // LINE 1761:
@@ -9316,9 +10299,13 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
 	__asm        jne    near ptr 0x004B3903;
+
 	__asm        jmp    near ptr 0x004B3908;
+
 	__asm        jmp    near ptr 0x004B39BF;
+
 	__asm        jmp    near ptr 0x004B3917;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004B39BF;
 // LINE 1780:
@@ -9368,9 +10355,11 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    ecx, currentScrollHitTestResult;
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        jne    near ptr 0x004B39B2;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 1;
 	__asm        jmp    near ptr 0x004B39BF;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 0;
 // LINE 1791:
@@ -9558,6 +10547,7 @@ void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount
 // LINE 1873:
 	__asm        cmp    lNewLineCount, 0;
 	__asm        jle    near ptr 0x004B3BCC;
+
 	__asm        cmp    lNewPageCount, 0;
 	__asm        jg     near ptr 0x004B3BD1;
 // LINE 1874:
@@ -9770,6 +10760,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1977:
 	__asm        jmp    near ptr 0x004B3EAE;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x88], ecx;
@@ -9779,6 +10770,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 3;
 // LINE 1979:
 	__asm        jmp    near ptr 0x004B3EAE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -9793,7 +10785,9 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 5;
 // LINE 1981:
 	__asm        jmp    near ptr 0x004B3EAE;
+
 	__asm        jmp    near ptr 0x004B3E7F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -9826,6 +10820,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1990:
 	__asm        jmp    near ptr 0x004B3F62;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x88], ecx;
@@ -9835,6 +10830,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 3;
 // LINE 1992:
 	__asm        jmp    near ptr 0x004B3F62;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -9849,7 +10845,9 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        mov    dword ptr [eax], 5;
 // LINE 1994:
 	__asm        jmp    near ptr 0x004B3F62;
+
 	__asm        jmp    near ptr 0x004B3F33;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -9886,6 +10884,7 @@ void ScrollBarWindow::CalculateAllMetrics() {
 	__asm        mov    [ecx+0x84], eax;
 // LINE 2010:
 	__asm        jmp    near ptr 0x004B3FA8;
+
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x18];
 	__asm        mov    eax, this;
@@ -9913,6 +10912,7 @@ void ScrollBarWindow::CalculateAllMetrics() {
 	__asm        mov    [ecx+0x84], eax;
 // LINE 2014:
 	__asm        jmp    near ptr 0x004B3FFE;
+
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x1C];
 	__asm        mov    eax, this;
@@ -9942,6 +10942,7 @@ void ScrollBarWindow::CalculateAllMetrics() {
 long ScrollBarWindow::GetThumbWidth() {
 // LINE 2028:
 	__asm        jmp    near ptr 0x004B405C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    ecx, 0xC;
@@ -9956,6 +10957,7 @@ long ScrollBarWindow::GetThumbWidth() {
 long ScrollBarWindow::GetThumbHeight() {
 // LINE 2036:
 	__asm        jmp    near ptr 0x004B4088;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -9967,6 +10969,7 @@ long ScrollBarWindow::GetThumbHeight() {
 long ScrollBarWindow::GetPrevNextButtonWidth() {
 // LINE 2045:
 	__asm        jmp    near ptr 0x004B40AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -9978,6 +10981,7 @@ long ScrollBarWindow::GetPrevNextButtonWidth() {
 long ScrollBarWindow::GetPrevNextButtonHeight() {
 // LINE 2054:
 	__asm        jmp    near ptr 0x004B40D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -9987,6 +10991,7 @@ long ScrollBarWindow::GetPrevNextButtonHeight() {
 
 // FUNCTION: COPTER_D 0x004b40e3
 void ListBoxWindow::ListBoxWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
@@ -9996,15 +11001,18 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x59856C], 0;
 	__asm        je     near ptr 0x004B4133;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B430A;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        cmp    ds:[0x598564], eax;
 	__asm        jne    near ptr 0x004B42F5;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -10014,6 +11022,7 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x004B4192;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -10023,11 +11032,14 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B4188;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B4197;
+
 	__asm        jmp    near ptr 0x004B419C;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x100;
@@ -10041,14 +11053,19 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B41D7;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B41DD;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B41E2;
+
 	__asm        jmp    near ptr 0x004B41E7;
+
 	__asm        jmp    near ptr 0x004B41EC;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -10063,6 +11080,7 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x004B4247;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -10072,11 +11090,14 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B423D;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B424C;
+
 	__asm        jmp    near ptr 0x004B4251;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -10099,32 +11120,40 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B42AE;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B42B4;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B42B9;
+
 	__asm        jmp    near ptr 0x004B42BE;
+
 	__asm        jmp    near ptr 0x004B42C3;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
 	__asm        add    eax, ds:[0x598568];
 	__asm        mov    ds:[0x598564], eax;
 	__asm        jmp    near ptr 0x004B42DB;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-8], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B430A;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B430F;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
@@ -10139,8 +11168,11 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        mov    ecx, [ecx+0x74];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B433A;
+
 	__asm        jmp    near ptr 0x004B433F;
+
 	__asm        jmp    near ptr 0x004B4344;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   MFont::MFont;
@@ -10214,11 +11246,13 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2096:
 	__asm        jmp    near ptr 0x004B445A;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b4462
 void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -10238,15 +11272,18 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x59856C], 0;
 	__asm        je     near ptr 0x004B44C6;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B469D;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        cmp    ds:[0x598564], eax;
 	__asm        jne    near ptr 0x004B4688;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -10256,6 +11293,7 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x004B4525;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -10265,11 +11303,14 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B451B;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B452A;
+
 	__asm        jmp    near ptr 0x004B452F;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x100;
@@ -10283,14 +11324,19 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B456A;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B4570;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B4575;
+
 	__asm        jmp    near ptr 0x004B457A;
+
 	__asm        jmp    near ptr 0x004B457F;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -10305,6 +11351,7 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x004B45DA;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -10314,11 +11361,14 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B45D0;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B45DF;
+
 	__asm        jmp    near ptr 0x004B45E4;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -10341,32 +11391,40 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B4641;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B4647;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B464C;
+
 	__asm        jmp    near ptr 0x004B4651;
+
 	__asm        jmp    near ptr 0x004B4656;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
 	__asm        add    eax, ds:[0x598568];
 	__asm        mov    ds:[0x598564], eax;
 	__asm        jmp    near ptr 0x004B466E;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-8], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B469D;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B46A2;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
@@ -10381,8 +11439,11 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        mov    ecx, [ecx+0x74];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B46CD;
+
 	__asm        jmp    near ptr 0x004B46D2;
+
 	__asm        jmp    near ptr 0x004B46D7;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   MFont::MFont;
@@ -10456,6 +11517,7 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2125:
 	__asm        jmp    near ptr 0x004B47ED;
+
 	__asm        mov    eax, this;
 }
 
@@ -10521,6 +11583,7 @@ void ListBoxWindow::CalculateAllMetrics() {
 	__asm        mov    [ecx+0xB8], eax;
 // LINE 2164:
 	__asm        jmp    near ptr 0x004B48A9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -10570,6 +11633,7 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 
 // LINE 2193:
 	__asm        jmp    near ptr 0x004B4932;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -10702,12 +11766,15 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B4AC5;
+
 	__asm        jmp    near ptr 0x004B4ACA;
 // LINE 2259:
 	__asm        jmp    near ptr 0x004B4ACF;
+
 	__asm        jmp    near ptr 0x004B4AD4;
 // LINE 2260:
 	__asm        jmp    near ptr 0x004B4AD9;
+
 	__asm        jmp    near ptr 0x004B4ADE;
 // LINE 2264:
 	__asm        mov    eax, this;
@@ -10823,24 +11890,35 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
 	__asm        jle    near ptr 0x004B4D03;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B4C9A;
+
 	__asm        jmp    near ptr 0x004B4C9F;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    tempStringListIterator.node, eax;
 	__asm        jne    near ptr 0x004B4CB5;
+
 	__asm        jmp    near ptr 0x004B4CC9;
+
 	__asm        jmp    near ptr 0x004B4CB5;
+
 	__asm        jmp    near ptr 0x004B4CC4;
+
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        jne    near ptr 0x004B4CC9;
+
 	__asm        jmp    near ptr 0x004B4CCE;
+
 	__asm        jmp    near ptr 0x004B4D03;
+
 	__asm        jmp    near ptr 0x004B4CDD;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004B4D03;
 // LINE 2291:
@@ -10850,6 +11928,7 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B4CF0;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B4CFB;
@@ -10869,20 +11948,31 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B4D29;
+
 	__asm        jmp    near ptr 0x004B4D2E;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    tempStringListIterator.node, eax;
 	__asm        jne    near ptr 0x004B4D44;
+
 	__asm        jmp    near ptr 0x004B4D58;
+
 	__asm        jmp    near ptr 0x004B4D44;
+
 	__asm        jmp    near ptr 0x004B4D53;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x004B4D58;
+
 	__asm        jmp    near ptr 0x004B4D5D;
+
 	__asm        jmp    near ptr 0x004B51DC;
+
 	__asm        jmp    near ptr 0x004B4D6C;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     near ptr 0x004B51DC;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+0xB0], ecx;
@@ -10924,12 +12014,14 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        jmp    near ptr 0x004B4E05;
 // LINE 2305:
 	__asm        jmp    near ptr 0x004B4E0A;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x94], eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004B4E42;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x74], eax;
@@ -10940,6 +12032,7 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B4E47;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -10950,24 +12043,32 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    ecx, [ebp-0x94];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B4E6A;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B4F06;
+
 	__asm        jmp    near ptr 0x004B4E82;
+
 	__asm        jmp    near ptr 0x004B4E87;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B4EB5;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x004B4EC4;
+
 	__asm        jmp    near ptr 0x004B4EC4;
+
 	__asm        mov    dword ptr [ebp-0x88], 0;
 	__asm        jmp    near ptr 0x004B4EC4;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -10984,12 +12085,16 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B4F06;
+
 	__asm        jmp    near ptr 0x004B4F0B;
+
 	__asm        mov    byte ptr [ebp-0x78], 0;
 	__asm        jmp    near ptr 0x004B4F14;
+
 	__asm        lea    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    near ptr 0x004B4F1F;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -11001,7 +12106,9 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004B4F4B;
+
 	__asm        jmp    near ptr 0x004B4F50;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x8C;
 	__asm        push   eax;
@@ -11059,12 +12166,14 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    rectCurrentText.bottom, eax;
 // LINE 2315:
 	__asm        jmp    near ptr 0x004B500F;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004B5053;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x98], eax;
@@ -11075,6 +12184,7 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5058;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -11085,24 +12195,32 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    ecx, [ebp-0xB8];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B507B;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B5117;
+
 	__asm        jmp    near ptr 0x004B5093;
+
 	__asm        jmp    near ptr 0x004B5098;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B50C6;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004B50D5;
+
 	__asm        jmp    near ptr 0x004B50D5;
+
 	__asm        mov    dword ptr [ebp-0xAC], 0;
 	__asm        jmp    near ptr 0x004B50D5;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -11119,12 +12237,16 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B5117;
+
 	__asm        jmp    near ptr 0x004B511C;
+
 	__asm        mov    byte ptr [ebp-0x9C], 0;
 	__asm        jmp    near ptr 0x004B5128;
+
 	__asm        lea    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004B5139;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -11136,7 +12258,9 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    ecx, [ebp-0xA8];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004B5168;
+
 	__asm        jmp    near ptr 0x004B516D;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x8C;
 	__asm        push   eax;
@@ -11167,6 +12291,7 @@ int32_t ListBoxWindow::DrawSelf() {
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B51C9;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004B51D4;
@@ -11272,6 +12397,7 @@ int32_t ListBoxWindow::RemoveString(long lIndex) {
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2371:
 	__asm        jmp    near ptr 0x004B5319;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lIndex;
 	__asm        cmp    [eax+0xAC], ecx;
@@ -11315,7 +12441,9 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B5367;
+
 	__asm        jmp    near ptr 0x004B536C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    eax, [eax];
@@ -11323,7 +12451,9 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B5382;
+
 	__asm        jmp    near ptr 0x004B5387;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-8];
@@ -11331,25 +12461,36 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    [ebp-0x3C], eax;
 	__asm        jne    near ptr 0x004B53A9;
+
 	__asm        jmp    near ptr 0x004B53BD;
+
 	__asm        jmp    near ptr 0x004B53A9;
+
 	__asm        jmp    near ptr 0x004B53B8;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x004B53BD;
+
 	__asm        jmp    near ptr 0x004B53C2;
+
 	__asm        jmp    near ptr 0x004B54E1;
+
 	__asm        jmp    near ptr 0x004B53D1;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B54E1;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B53E4;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B53EF;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
@@ -11363,6 +12504,7 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B5415;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -11370,6 +12512,7 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B546A;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x30], eax;
@@ -11377,19 +12520,25 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004B546A;
+
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004B5454;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5465;
+
 	__asm        jmp    near ptr 0x004B546A;
+
 	__asm        jmp    near ptr 0x004B546F;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B5497;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x24], eax;
@@ -11400,24 +12549,31 @@ void ListBoxWindow::RemoveAllStrings() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B549C;
+
 	__asm        jmp    near ptr 0x004B54B0;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B54B5;
+
 	__asm        jmp    near ptr 0x004B54BA;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x004B54D1;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x78];
 	__asm        jmp    near ptr 0x004B54DC;
+
 	__asm        jmp    near ptr 0x004B5393;
+
 	__asm        jmp    near ptr 0x004B54E6;
 // LINE 2387:
 	__asm        push   0xFFFFFFFF;
@@ -11453,6 +12609,7 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 	__asm        mov    lIndex, eax;
 // LINE 2402:
 	__asm        jmp    near ptr 0x004B5551;
+
 	__asm        cmp    lIndex, 0;
 	__asm        jge    near ptr 0x004B5551;
 // LINE 2403:
@@ -11480,6 +12637,7 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2412:
 	__asm        jmp    near ptr 0x004B55C0;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lIndex;
 	__asm        cmp    [eax+0xAC], ecx;
@@ -11526,6 +12684,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B5654;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x14];
@@ -11537,9 +12696,11 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B5649;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    sNew.reference, eax;
 	__asm        jmp    near ptr 0x004B565B;
+
 	__asm        mov    sNew.reference, 0;
 	__asm        mov    sNew.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B5667;
@@ -11562,6 +12723,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    [ebp-0x1030], eax;
 	__asm        cmp    dword ptr [ebp-0x1030], 0;
 	__asm        jne    near ptr 0x004B5995;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
@@ -11575,6 +12737,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
 	__asm        jmp    near ptr 0x004B56D7;
+
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -11582,6 +12745,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        cmp    dword ptr [ebp-0x1044], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B5731;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -11591,27 +12755,35 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5722;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5731;
+
 	__asm        jmp    near ptr 0x004B5736;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B5767;
+
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     near ptr 0x004B57C8;
+
 	__asm        jmp    near ptr 0x004B5755;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    ecx, [ebp-0x1044];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B57C8;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1038], eax;
 	__asm        cmp    dword ptr [ebp-0x1038], 0;
 	__asm        je     near ptr 0x004B57A8;
+
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x102C];
@@ -11620,15 +12792,19 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    near ptr 0x004B57B2;
+
 	__asm        mov    dword ptr [ebp-0x1034], 0;
 	__asm        lea    ecx, sNew.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x1034];
 	__asm        mov    sNew.reference, eax;
 	__asm        jmp    near ptr 0x004B5807;
+
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     near ptr 0x004B5807;
+
 	__asm        jmp    near ptr 0x004B57DA;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x103C], eax;
@@ -11641,22 +12817,28 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B5807;
+
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        mov    ecx, sNew.reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B5818;
+
 	__asm        jmp    near ptr 0x004B581D;
+
 	__asm        jmp    near ptr 0x004B5822;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1058], eax;
 	__asm        jmp    near ptr 0x004B583A;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    ecx, [ebp-0x1058];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jb     near ptr 0x004B5889;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -11666,30 +12848,40 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B587A;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5889;
+
 	__asm        jmp    near ptr 0x004B588E;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B58BD;
+
 	__asm        jmp    near ptr 0x004B58A0;
+
 	__asm        jmp    near ptr 0x004B58A5;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, sNew.reference;
 	__asm        sub    eax, [ecx+4];
 	__asm        cmp    eax, [ebp-0x1058];
 	__asm        jae    near ptr 0x004B5932;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        cmp    dword ptr [ebp-0x104C], 0;
 	__asm        je     near ptr 0x004B5917;
+
 	__asm        jmp    near ptr 0x004B58DF;
+
 	__asm        jmp    near ptr 0x004B58E4;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, [ebp-0x1058];
@@ -11704,6 +12896,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    near ptr 0x004B5921;
+
 	__asm        mov    dword ptr [ebp-0x1048], 0;
 	__asm        lea    ecx, sNew.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -11711,8 +12904,11 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    sNew.reference, eax;
 	__asm        cmp    dword ptr [ebp-0x1058], 0;
 	__asm        je     near ptr 0x004B597A;
+
 	__asm        jmp    near ptr 0x004B5944;
+
 	__asm        jmp    near ptr 0x004B5949;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, sNew.reference;
@@ -11726,13 +12922,18 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B597A;
+
 	__asm        mov    eax, [ebp-0x1058];
 	__asm        mov    ecx, sNew.reference;
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B598B;
+
 	__asm        jmp    near ptr 0x004B5990;
+
 	__asm        jmp    near ptr 0x004B5B29;
+
 	__asm        jmp    near ptr 0x004B599A;
+
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -11740,6 +12941,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    [ebp-0x1074], eax;
 	__asm        cmp    dword ptr [ebp-0x1074], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004B59F4;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -11749,27 +12951,35 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B59E5;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B59F4;
+
 	__asm        jmp    near ptr 0x004B59F9;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x004B5A2A;
+
 	__asm        cmp    dword ptr [ebp-0x1074], 0;
 	__asm        je     near ptr 0x004B5ACF;
+
 	__asm        jmp    near ptr 0x004B5A18;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    ecx, [ebp-0x1074];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004B5ACF;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1060], eax;
 	__asm        cmp    dword ptr [ebp-0x1060], 0;
 	__asm        je     near ptr 0x004B5A6B;
+
 	__asm        mov    eax, [ebp-0x1074];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x102C];
@@ -11778,29 +12988,37 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    near ptr 0x004B5A75;
+
 	__asm        mov    dword ptr [ebp-0x105C], 0;
 	__asm        mov    eax, sNew.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sNew.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B5ABC;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        mov    [ebp-0x106C], eax;
 	__asm        cmp    dword ptr [ebp-0x106C], 0;
 	__asm        je     near ptr 0x004B5ABC;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x106C];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004B5ABC;
+
 	__asm        jmp    near ptr 0x004B5AC1;
+
 	__asm        mov    eax, [ebp-0x105C];
 	__asm        mov    sNew.reference, eax;
 	__asm        jmp    near ptr 0x004B5B0E;
+
 	__asm        cmp    dword ptr [ebp-0x1074], 0;
 	__asm        je     near ptr 0x004B5B0E;
+
 	__asm        jmp    near ptr 0x004B5AE1;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1064], eax;
@@ -11813,11 +13031,14 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B5B0E;
+
 	__asm        mov    eax, [ebp-0x1074];
 	__asm        mov    ecx, sNew.reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B5B1F;
+
 	__asm        jmp    near ptr 0x004B5B24;
+
 	__asm        jmp    near ptr 0x004B5B29;
 // LINE 2436:
 	__asm        mov    eax, lInsertPosition;
@@ -11834,15 +13055,18 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    eax, sNew.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B5BCB;
+
 	__asm        mov    eax, sNew.reference;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B5BCB;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B5BAB;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
@@ -11857,16 +13081,22 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B5BB0;
+
 	__asm        jmp    near ptr 0x004B5BB5;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5BC6;
+
 	__asm        jmp    near ptr 0x004B5BCB;
+
 	__asm        jmp    near ptr 0x004B5BD0;
+
 	__asm        cmp    sNew.c_str_ptr, 0;
 	__asm        je     near ptr 0x004B5BF2;
+
 	__asm        mov    eax, sNew.c_str_ptr;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
@@ -11876,6 +13106,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5BF7;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    near ptr 0x004B5BFF;
 // LINE 2437:
@@ -11896,12 +13127,14 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        call   dword ptr [eax+0x138];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004B5E13;
+
 	__asm        mov    eax, sAddress;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 2449:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    sNew, eax;
 	__asm        je     near ptr 0x004B5DF5;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        dec    dword ptr [eax+0xC];
@@ -11909,6 +13142,7 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B5CCE;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
@@ -11916,9 +13150,11 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004B5CCE;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B5CAE;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -11933,19 +13169,26 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B5CB3;
+
 	__asm        jmp    near ptr 0x004B5CB8;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5CC9;
+
 	__asm        jmp    near ptr 0x004B5CCE;
+
 	__asm        jmp    near ptr 0x004B5CD3;
+
 	__asm        jmp    near ptr 0x004B5CD8;
+
 	__asm        mov    eax, sNew;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B5D02;
+
 	__asm        mov    eax, sNew;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x2C];
@@ -11954,13 +13197,16 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004B5DF5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B5DEB;
+
 	__asm        jmp    near ptr 0x004B5D1E;
+
 	__asm        mov    eax, sNew;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -11975,6 +13221,7 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B5DC5;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -11983,18 +13230,23 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B5D65;
+
 	__asm        mov    eax, sNew;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B5D8A;
+
 	__asm        mov    eax, sNew;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004B5D96;
+
 	__asm        jmp    near ptr 0x004B5D96;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x004B5D96;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
@@ -12010,16 +13262,20 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B5DC0;
+
 	__asm        jmp    near ptr 0x004B5DCE;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B5DDD;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B5DF5;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x004B5DFA;
@@ -12047,6 +13303,7 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 
 // LINE 2466:
 	__asm        jmp    near ptr 0x004B5E32;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    lStringCount, eax;
@@ -12066,10 +13323,12 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B5E65;
+
 	__asm        jmp    near ptr 0x004B5E6A;
 // LINE 2473:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004B5E79;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    lStringCount, eax;
@@ -12080,6 +13339,7 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 	__asm        jne    near ptr 0x004B5EAB;
 // LINE 2477:
 	__asm        jmp    near ptr 0x004B5E96;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    ecx, sFound;
@@ -12094,6 +13354,7 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B5EBE;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B5EC9;
@@ -12120,12 +13381,14 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        call   dword ptr [eax+0x138];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004B60D0;
+
 	__asm        mov    eax, sAddress;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 2499:
 	__asm        mov    eax, sFound;
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        je     near ptr 0x004B60CB;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    eax, [eax+4];
 	__asm        dec    dword ptr [eax+0xC];
@@ -12133,6 +13396,7 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B5FA4;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
@@ -12140,9 +13404,11 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004B5FA4;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B5F84;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -12157,19 +13423,26 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B5F89;
+
 	__asm        jmp    near ptr 0x004B5F8E;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B5F9F;
+
 	__asm        jmp    near ptr 0x004B5FA4;
+
 	__asm        jmp    near ptr 0x004B5FA9;
+
 	__asm        jmp    near ptr 0x004B5FAE;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B5FD8;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, sFound;
@@ -12178,13 +13451,16 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004B60CB;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004B60C1;
+
 	__asm        jmp    near ptr 0x004B5FF4;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -12199,6 +13475,7 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B609B;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -12207,18 +13484,23 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B603B;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B6060;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004B606C;
+
 	__asm        jmp    near ptr 0x004B606C;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x004B606C;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
@@ -12234,16 +13516,20 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B6096;
+
 	__asm        jmp    near ptr 0x004B60A4;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B60B3;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, sFound;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B60CB;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x004B60D0;
@@ -12268,6 +13554,7 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B6107;
+
 	__asm        jmp    near ptr 0x004B610C;
 // LINE 2514:
 	__asm        mov    eax, this;
@@ -12276,52 +13563,74 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B6120;
+
 	__asm        jmp    near ptr 0x004B6125;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    tempStringListIterator.node, eax;
 	__asm        jne    near ptr 0x004B613B;
+
 	__asm        jmp    near ptr 0x004B614F;
+
 	__asm        jmp    near ptr 0x004B613B;
+
 	__asm        jmp    near ptr 0x004B614A;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x004B614F;
+
 	__asm        jmp    near ptr 0x004B6154;
+
 	__asm        jmp    near ptr 0x004B6258;
+
 	__asm        jmp    near ptr 0x004B6163;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004B6258;
 // LINE 2515:
 	__asm        jmp    near ptr 0x004B6168;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004B6176;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
 	__asm        jae    near ptr 0x004B619C;
+
 	__asm        jmp    near ptr 0x004B618B;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B61A3;
+
 	__asm        mov    dword ptr [ebp-0x14], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004B61A8;
+
 	__asm        jmp    near ptr 0x004B61AD;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B61D2;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B61DE;
+
 	__asm        jmp    near ptr 0x004B61DE;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x004B61DE;
+
 	__asm        jmp    near ptr 0x004B61E3;
+
 	__asm        mov    eax, sFound;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -12335,9 +13644,13 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004B620C;
+
 	__asm        jmp    near ptr 0x004B6211;
+
 	__asm        jmp    near ptr 0x004B6232;
+
 	__asm        jmp    near ptr 0x004B6220;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B6232;
 // LINE 2516:
@@ -12354,6 +13667,7 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B6245;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B6250;
@@ -12394,7 +13708,9 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B62B4;
+
 	__asm        jmp    near ptr 0x004B62B9;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
@@ -12408,26 +13724,31 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B62DF;
+
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        add    ecx, 8;
 	__asm        call   basic_string<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004B62F1;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x004B6308;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x78], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004B6314;
+
 	__asm        jmp    near ptr 0x004B6319;
 // LINE 2544:
 	__asm        jmp    near ptr 0x004B6574;
 // LINE 2545:
 	__asm        cmp    lIndex, 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B6334;
+
 	__asm        mov    eax, lIndex;
 	__asm        cmp    lOriginalLineCount, eax;
 	__asm        jg     near ptr 0x004B63D7;
@@ -12438,11 +13759,14 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B6348;
+
 	__asm        jmp    near ptr 0x004B634D;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B635B;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
@@ -12456,26 +13780,32 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B6381;
+
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        add    ecx, 8;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004B63A0;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B63A5;
+
 	__asm        jmp    near ptr 0x004B63AA;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x004B63C1;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x78], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004B63CD;
+
 	__asm        jmp    near ptr 0x004B63D2;
 // LINE 2549:
 	__asm        jmp    near ptr 0x004B6574;
@@ -12492,6 +13822,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B63F4;
+
 	__asm        jmp    near ptr 0x004B63F9;
 // LINE 2553:
 	__asm        mov    eax, this;
@@ -12500,24 +13831,35 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B640D;
+
 	__asm        jmp    near ptr 0x004B6412;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        cmp    [ebp-0x10], eax;
 	__asm        jne    near ptr 0x004B6428;
+
 	__asm        jmp    near ptr 0x004B643C;
+
 	__asm        jmp    near ptr 0x004B6428;
+
 	__asm        jmp    near ptr 0x004B6437;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x004B643C;
+
 	__asm        jmp    near ptr 0x004B6441;
+
 	__asm        jmp    near ptr 0x004B6574;
+
 	__asm        jmp    near ptr 0x004B6450;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004B6574;
 // LINE 2554:
 	__asm        mov    eax, i;
 	__asm        cmp    lIndex, eax;
 	__asm        jne    near ptr 0x004B654E;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        mov    [ebp-0x54], eax;
 // LINE 2555:
@@ -12532,6 +13874,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B6482;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -12539,6 +13882,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B64D7;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x50], eax;
@@ -12546,19 +13890,25 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x004B64D7;
+
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004B64C1;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B64D2;
+
 	__asm        jmp    near ptr 0x004B64D7;
+
 	__asm        jmp    near ptr 0x004B64DC;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B6504;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x44], eax;
@@ -12569,20 +13919,25 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B6509;
+
 	__asm        jmp    near ptr 0x004B651D;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B6522;
+
 	__asm        jmp    near ptr 0x004B6527;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x004B653E;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x78];
 	__asm        jmp    near ptr 0x004B6549;
@@ -12595,6 +13950,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B6561;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B656C;
@@ -12630,7 +13986,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004B65D1;
+
 	__asm        jmp    near ptr 0x004B65D6;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    ecx, this;
@@ -12638,12 +13996,15 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B65F2;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B6600;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x004B661F;
+
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, sToInsert;
@@ -12651,7 +14012,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x004B661F;
+
 	__asm        jmp    near ptr 0x004B6624;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], eax;
@@ -12671,13 +14034,16 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004B6661;
+
 	__asm        jmp    near ptr 0x004B6666;
+
 	__asm        jmp    near ptr 0x004B666B;
 // LINE 2587:
 	__asm        jmp    near ptr 0x004B6A9E;
 // LINE 2588:
 	__asm        cmp    lIndex, 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B6686;
+
 	__asm        mov    eax, lOriginalLineCount;
 	__asm        cmp    lIndex, eax;
 	__asm        jl     near ptr 0x004B673C;
@@ -12688,7 +14054,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x004B669D;
+
 	__asm        jmp    near ptr 0x004B66A2;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    ecx, this;
@@ -12696,12 +14064,15 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B66BE;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    near ptr 0x004B66CC;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     near ptr 0x004B66EB;
+
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, sToInsert;
@@ -12709,7 +14080,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x004B66EB;
+
 	__asm        jmp    near ptr 0x004B66F0;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx], eax;
@@ -12729,7 +14102,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x004B672D;
+
 	__asm        jmp    near ptr 0x004B6732;
+
 	__asm        jmp    near ptr 0x004B6737;
 // LINE 2592:
 	__asm        jmp    near ptr 0x004B6A9E;
@@ -12746,6 +14121,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B675C;
+
 	__asm        jmp    near ptr 0x004B6761;
 // LINE 2596:
 	__asm        mov    eax, this;
@@ -12754,24 +14130,35 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B6778;
+
 	__asm        jmp    near ptr 0x004B677D;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    tempStringListIterator.node, eax;
 	__asm        jne    near ptr 0x004B6793;
+
 	__asm        jmp    near ptr 0x004B67A7;
+
 	__asm        jmp    near ptr 0x004B6793;
+
 	__asm        jmp    near ptr 0x004B67A2;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    near ptr 0x004B67A7;
+
 	__asm        jmp    near ptr 0x004B67AC;
+
 	__asm        jmp    near ptr 0x004B6A9E;
+
 	__asm        jmp    near ptr 0x004B67BB;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004B6A9E;
 // LINE 2597:
 	__asm        mov    eax, i;
 	__asm        cmp    lIndex, eax;
 	__asm        jne    near ptr 0x004B6A78;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        mov    [ebp-0xB0], eax;
 // LINE 2598:
@@ -12779,16 +14166,20 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr ds:[0x59856C], 0;
 	__asm        je     near ptr 0x004B67FF;
+
 	__asm        mov    eax, ds:[0x59856C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004B69E0;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        cmp    ds:[0x598564], eax;
 	__asm        jne    near ptr 0x004B69C8;
+
 	__asm        jmp    near ptr 0x004B6815;
+
 	__asm        push   0;
 	__asm        push   1;
 	__asm        call   allocate;
@@ -12805,14 +14196,19 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B6865;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x004B686E;
+
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x004B6873;
+
 	__asm        jmp    near ptr 0x004B6878;
+
 	__asm        jmp    near ptr 0x004B687D;
+
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA8], eax;
@@ -12827,6 +14223,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        cmp    dword ptr [ebp-0xA0], 0;
 	__asm        jne    near ptr 0x004B68ED;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -12836,11 +14233,14 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B68E3;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B68F2;
+
 	__asm        jmp    near ptr 0x004B68F7;
+
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    ecx, [ebp-0x74];
 	__asm        mov    [ecx+4], eax;
@@ -12863,41 +14263,52 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B6975;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    near ptr 0x004B6981;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    near ptr 0x004B6986;
+
 	__asm        jmp    near ptr 0x004B698B;
+
 	__asm        jmp    near ptr 0x004B6990;
+
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
 	__asm        add    eax, ds:[0x598568];
 	__asm        mov    ds:[0x598564], eax;
 	__asm        jmp    near ptr 0x004B69AB;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004B69E0;
+
 	__asm        mov    eax, ds:[0x598568];
 	__asm        mov    [ebp-0x70], eax;
 	__asm        add    dword ptr ds:[0x598568], 0x10;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004B69E5;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004B69F3;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004B6A01;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004B6A20;
+
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, sToInsert;
@@ -12905,7 +14316,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x004B6A20;
+
 	__asm        jmp    near ptr 0x004B6A25;
+
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    [ecx], eax;
@@ -12925,6 +14338,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B6A6E;
+
 	__asm        jmp    near ptr 0x004B6A73;
 // LINE 2599:
 	__asm        jmp    near ptr 0x004B6A9E;
@@ -12935,6 +14349,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B6A8B;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B6A96;
@@ -12979,6 +14394,7 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x004B6B87;
 // LINE 2637:
 	__asm        jmp    near ptr 0x004B6B80;
+
 	__asm        cmp    lKey, 0x26;
 	__asm        jne    near ptr 0x004B6B37;
 // LINE 2638:
@@ -12991,6 +14407,7 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x004B6B87;
 // LINE 2641:
 	__asm        jmp    near ptr 0x004B6B80;
+
 	__asm        cmp    lKey, 0x21;
 	__asm        jne    near ptr 0x004B6B5E;
 // LINE 2642:
@@ -13003,6 +14420,7 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x004B6B87;
 // LINE 2645:
 	__asm        jmp    near ptr 0x004B6B80;
+
 	__asm        cmp    lKey, 0x22;
 	__asm        jne    near ptr 0x004B6B80;
 // LINE 2646:
@@ -13040,6 +14458,7 @@ long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    ecx, lAbsoluteSelectionIndex;
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        je     near ptr 0x004B6BF4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -13079,8 +14498,10 @@ int32_t ListBoxWindow::SetSelection(long lIndex) {
 // LINE 2686:
 	__asm        cmp    lIndex, 0xFFFFFFFF;
 	__asm        je     near ptr 0x004B6C80;
+
 	__asm        cmp    lIndex, 0;
 	__asm        jl     near ptr 0x004B6C6C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -13179,14 +14600,17 @@ int32_t ListBoxWindow::IsIndexInView(long lIndex) {
 	__asm        mov    ecx, lIndex;
 	__asm        cmp    [eax+0xB4], ecx;
 	__asm        jg     near ptr 0x004B6DB0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+0xB4];
 	__asm        cmp    eax, lIndex;
 	__asm        jle    near ptr 0x004B6DB0;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B6DB2;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004B6DB7;
 // LINE 2723:
@@ -13208,6 +14632,7 @@ void ListBoxWindow::PutIndexInView(long lIndex) {
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2733:
 	__asm        jmp    near ptr 0x004B6E2D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        dec    eax;
@@ -13570,6 +14995,7 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B721D;
+
 	__asm        jmp    near ptr 0x004B7222;
 // LINE 2905:
 	__asm        mov    eax, this;
@@ -13578,28 +15004,40 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B7236;
+
 	__asm        jmp    near ptr 0x004B723B;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    near ptr 0x004B7251;
+
 	__asm        jmp    near ptr 0x004B7265;
+
 	__asm        jmp    near ptr 0x004B7251;
+
 	__asm        jmp    near ptr 0x004B7260;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    near ptr 0x004B7265;
+
 	__asm        jmp    near ptr 0x004B726A;
+
 	__asm        jmp    near ptr 0x004B73DB;
+
 	__asm        jmp    near ptr 0x004B7279;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B73DB;
 // LINE 2906:
 	__asm        jmp    near ptr 0x004B727E;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004B72AD;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
@@ -13610,6 +15048,7 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B72B2;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -13620,24 +15059,32 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B72CF;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B7347;
+
 	__asm        jmp    near ptr 0x004B72E4;
+
 	__asm        jmp    near ptr 0x004B72E9;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B730E;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B731A;
+
 	__asm        jmp    near ptr 0x004B731A;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x004B731A;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -13654,12 +15101,16 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B7347;
+
 	__asm        jmp    near ptr 0x004B734C;
+
 	__asm        mov    byte ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x004B7355;
+
 	__asm        lea    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004B7360;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -13671,7 +15122,9 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004B7380;
+
 	__asm        jmp    near ptr 0x004B7385;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, byte ptr [eax];
@@ -13695,6 +15148,7 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B73C8;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B73D3;
@@ -13738,6 +15192,7 @@ void ListBoxWindow::Sort() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004B748C;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x10];
@@ -13749,9 +15204,11 @@ void ListBoxWindow::Sort() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004B7481;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    sSaved.reference, eax;
 	__asm        jmp    near ptr 0x004B7493;
+
 	__asm        mov    sSaved.reference, 0;
 	__asm        mov    sSaved.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B749F;
@@ -13771,10 +15228,13 @@ void ListBoxWindow::Sort() {
 	__asm        call   dword ptr [eax+0x13C];
 // LINE 2945:
 	__asm        jmp    near ptr 0x004B74DC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 2;
 	__asm        jae    near ptr 0x004B74F1;
+
 	__asm        jmp    near ptr 0x004B77E5;
+
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        inc    dword ptr ds:[0x598560];
 	__asm        lea    ecx, [ebp-0x34];
@@ -13787,25 +15247,34 @@ void ListBoxWindow::Sort() {
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004B751F;
+
 	__asm        mov    dword ptr [ebp-0x25C], 0x40;
 	__asm        lea    eax, [ebp-0x234];
 	__asm        mov    [ebp-0x260], eax;
 	__asm        dec    dword ptr [ebp-0x25C];
 	__asm        js     near ptr 0x004B7558;
+
 	__asm        mov    ecx, [ebp-0x260];
 	__asm        call   list<basic_string<char>>::list<basic_string<char>>;
 	__asm        add    dword ptr [ebp-0x260], 8;
 	__asm        jmp    near ptr 0x004B7535;
+
 	__asm        jmp    near ptr 0x004B755D;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    near ptr 0x004B757E;
+
 	__asm        jmp    near ptr 0x004B7754;
+
 	__asm        jmp    near ptr 0x004B757E;
+
 	__asm        jmp    near ptr 0x004B7590;
+
 	__asm        cmp    dword ptr [ebp-0x258], 0;
 	__asm        jne    near ptr 0x004B7754;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    eax, [eax];
@@ -13813,14 +15282,18 @@ void ListBoxWindow::Sort() {
 	__asm        mov    eax, [ebp-0x250];
 	__asm        mov    [ebp-0x23C], eax;
 	__asm        jmp    near ptr 0x004B75B2;
+
 	__asm        jmp    near ptr 0x004B75B7;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x254], eax;
 	__asm        mov    eax, [ebp-0x254];
 	__asm        mov    [ebp-0x240], eax;
 	__asm        jmp    near ptr 0x004B75D3;
+
 	__asm        jmp    near ptr 0x004B75D8;
+
 	__asm        mov    eax, [ebp-0x23C];
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -13834,14 +15307,20 @@ void ListBoxWindow::Sort() {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x238], eax;
 	__asm        jge    near ptr 0x004B76D6;
+
 	__asm        mov    eax, [ebp-0x238];
 	__asm        cmp    dword ptr [ebp+eax*8-0x230], 0;
 	__asm        jne    near ptr 0x004B762F;
+
 	__asm        jmp    near ptr 0x004B76D6;
+
 	__asm        jmp    near ptr 0x004B762F;
+
 	__asm        jmp    near ptr 0x004B7641;
+
 	__asm        cmp    dword ptr [ebp-0x24C], 0;
 	__asm        jne    near ptr 0x004B76D6;
+
 	__asm        lea    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x238];
@@ -13859,6 +15338,7 @@ void ListBoxWindow::Sort() {
 	__asm        mov    ecx, [ebp-0x244];
 	__asm        mov    [ebp+ecx*8-0x234], eax;
 	__asm        jmp    near ptr 0x004B769B;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x268], eax;
 	__asm        mov    eax, [ebp-0x244];
@@ -13868,8 +15348,11 @@ void ListBoxWindow::Sort() {
 	__asm        mov    ecx, [ebp-0x244];
 	__asm        mov    [ebp+ecx*8-0x230], eax;
 	__asm        jmp    near ptr 0x004B76CC;
+
 	__asm        jmp    near ptr 0x004B76D1;
+
 	__asm        jmp    near ptr 0x004B7602;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x26C], eax;
 	__asm        mov    eax, [ebp-0x238];
@@ -13879,6 +15362,7 @@ void ListBoxWindow::Sort() {
 	__asm        mov    ecx, [ebp-0x238];
 	__asm        mov    [ebp+ecx*8-0x234], eax;
 	__asm        jmp    near ptr 0x004B7707;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x270], eax;
 	__asm        mov    eax, [ebp-0x238];
@@ -13888,17 +15372,22 @@ void ListBoxWindow::Sort() {
 	__asm        mov    ecx, [ebp-0x238];
 	__asm        mov    [ebp+ecx*8-0x230], eax;
 	__asm        jmp    near ptr 0x004B7738;
+
 	__asm        jmp    near ptr 0x004B773D;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x238], eax;
 	__asm        jne    near ptr 0x004B774F;
+
 	__asm        inc    dword ptr [ebp-0x2C];
 	__asm        jmp    near ptr 0x004B7564;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x248], eax;
 	__asm        dec    dword ptr [ebp-0x2C];
 	__asm        cmp    dword ptr [ebp-0x248], 0;
 	__asm        je     near ptr 0x004B778B;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        lea    eax, [ebp+eax*8-0x234];
 	__asm        push   eax;
@@ -13906,6 +15395,7 @@ void ListBoxWindow::Sort() {
 	__asm        add    ecx, 0x74;
 	__asm        call   list<basic_string<char>>::merge;
 	__asm        jmp    near ptr 0x004B7754;
+
 	__asm        mov    dword ptr [ebp-0x274], 0x40;
 	__asm        lea    eax, [ebp-0x234];
 	__asm        mov    [ebp-0x278], eax;
@@ -13914,11 +15404,14 @@ void ListBoxWindow::Sort() {
 	__asm        add    [ebp-0x278], eax;
 	__asm        dec    dword ptr [ebp-0x274];
 	__asm        js     near ptr 0x004B77D3;
+
 	__asm        sub    dword ptr [ebp-0x278], 8;
 	__asm        mov    ecx, [ebp-0x278];
 	__asm        call   list<basic_string<char>>::~list<basic_string<char>>;
 	__asm        jmp    near ptr 0x004B77B0;
+
 	__asm        jmp    near ptr 0x004B77D8;
+
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        call   list<basic_string<char>>::~list<basic_string<char>>;
 	__asm        jmp    near ptr 0x004B77E5;
@@ -13948,15 +15441,18 @@ void ListBoxWindow::Sort() {
 	__asm        mov    eax, sSaved.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004B78AF;
+
 	__asm        mov    eax, sSaved.reference;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B78AF;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004B788F;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x24], eax;
@@ -13971,16 +15467,22 @@ void ListBoxWindow::Sort() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004B7894;
+
 	__asm        jmp    near ptr 0x004B7899;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B78AA;
+
 	__asm        jmp    near ptr 0x004B78AF;
+
 	__asm        jmp    near ptr 0x004B78B4;
+
 	__asm        cmp    sSaved.c_str_ptr, 0;
 	__asm        je     near ptr 0x004B78D6;
+
 	__asm        mov    eax, sSaved.c_str_ptr;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
@@ -13998,6 +15500,7 @@ void ListBoxWindow::Sort() {
 long ListBoxWindow::GetLineCount() {
 // LINE 2958:
 	__asm        jmp    near ptr 0x004B78F6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        jmp    near ptr 0x004B7901;
@@ -14018,6 +15521,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 // LINE 2978:
 	__asm        cmp    bVertical, 0;
 	__asm        je     near ptr 0x004B7A18;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -14029,11 +15533,13 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 // Block start:
 	class MRect rectScrollBar;
 	__asm        jmp    near ptr 0x004B7955;
+
 	__asm        jmp    near ptr 0x004B795A;
 // LINE 2980:
 	__asm        mov    rectScrollBar.top, 0;
 // LINE 2981:
 	__asm        jmp    near ptr 0x004B7966;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -14045,6 +15551,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 	__asm        mov    rectScrollBar.left, eax;
 // LINE 2983:
 	__asm        jmp    near ptr 0x004B7983;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -14057,6 +15564,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004B79D8;
+
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        push   1;
@@ -14073,6 +15581,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC0], eax;
 	__asm        jmp    near ptr 0x004B79E5;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC0], 0;
 // LINE 2987:
@@ -14208,7 +15717,9 @@ void ListBoxWindow::SetScrollBarSizes() {
 	__asm        je     near ptr 0x004B7C1B;
 // LINE 3036:
 	__asm        jmp    near ptr 0x004B7B82;
+
 	__asm        jmp    near ptr 0x004B7B87;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -14225,8 +15736,10 @@ void ListBoxWindow::SetScrollBarSizes() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
 	__asm        je     near ptr 0x004B7BC9;
+
 	__asm        mov    nScrollBarYPosition, 1;
 	__asm        jmp    near ptr 0x004B7BD0;
+
 	__asm        mov    nScrollBarYPosition, 0;
 // LINE 3038:
 	__asm        mov    eax, nScrollBarYPosition;
@@ -14241,6 +15754,7 @@ void ListBoxWindow::SetScrollBarSizes() {
 	__asm        call   dword ptr [edx+0x34];
 // LINE 3039:
 	__asm        jmp    near ptr 0x004B7BF4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -14260,6 +15774,7 @@ void ListBoxWindow::SetScrollBarSizes() {
 
 // FUNCTION: COPTER_D 0x004b7c25
 void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -14276,6 +15791,7 @@ void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID
 	__asm        mov    dword ptr [eax], 0x592220;
 // LINE 3060:
 	__asm        jmp    near ptr 0x004B7C5B;
+
 	__asm        mov    eax, this;
 }
 
@@ -14320,6 +15836,7 @@ long PopupMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 3081:
 	__asm        cmp    lKey, 0xD;
 	__asm        je     near ptr 0x004B7CE1;
+
 	__asm        cmp    lKey, 0x1B;
 	__asm        jne    near ptr 0x004B7D76;
 // LINE 3082:
@@ -14394,16 +15911,21 @@ long PopupMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 // LINE 3105:
 	__asm        cmp    nCursorX, 0;
 	__asm        jl     near ptr 0x004B7DE6;
+
 	__asm        cmp    nCursorY, 0;
 	__asm        jl     near ptr 0x004B7DE6;
+
 	__asm        jmp    near ptr 0x004B7DB7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x10];
 	__asm        cmp    eax, nCursorX;
 	__asm        jl     near ptr 0x004B7DE6;
+
 	__asm        jmp    near ptr 0x004B7DD1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -14464,6 +15986,7 @@ long PopupMenuWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     near ptr 0x004B7EC3;
+
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
 	__asm        mov    eax, nCursorX;
@@ -14587,7 +16110,9 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B7FC7;
+
 	__asm        jmp    near ptr 0x004B7FCC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        inc    eax;
@@ -14604,6 +16129,7 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    [ebp-0x4C], eax;
 // LINE 3178:
 	__asm        jmp    near ptr 0x004B7FF9;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    rectNewWindow.left, eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -14620,28 +16146,40 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B802A;
+
 	__asm        jmp    near ptr 0x004B802F;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    tempStringListIterator.node, eax;
 	__asm        jne    near ptr 0x004B8045;
+
 	__asm        jmp    near ptr 0x004B8059;
+
 	__asm        jmp    near ptr 0x004B8045;
+
 	__asm        jmp    near ptr 0x004B8054;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    near ptr 0x004B8059;
+
 	__asm        jmp    near ptr 0x004B805E;
+
 	__asm        jmp    near ptr 0x004B81CA;
+
 	__asm        jmp    near ptr 0x004B806D;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x004B81CA;
 // LINE 3181:
 	__asm        jmp    near ptr 0x004B8072;
+
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004B80A1;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x50], eax;
@@ -14652,6 +16190,7 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B80A6;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -14662,24 +16201,32 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x004B80C3;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B813B;
+
 	__asm        jmp    near ptr 0x004B80D8;
+
 	__asm        jmp    near ptr 0x004B80DD;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004B8102;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004B810E;
+
 	__asm        jmp    near ptr 0x004B810E;
+
 	__asm        mov    dword ptr [ebp-0x64], 0;
 	__asm        jmp    near ptr 0x004B810E;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -14696,12 +16243,16 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004B813B;
+
 	__asm        jmp    near ptr 0x004B8140;
+
 	__asm        mov    byte ptr [ebp-0x54], 0;
 	__asm        jmp    near ptr 0x004B8149;
+
 	__asm        lea    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004B8154;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -14713,7 +16264,9 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004B8174;
+
 	__asm        jmp    near ptr 0x004B8179;
+
 	__asm        lea    eax, lCurrentLineHeight;
 	__asm        push   eax;
 	__asm        lea    eax, lCurrentLineWidth;
@@ -14738,6 +16291,7 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    eax, [eax];
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004B81BA;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004B81C5;
@@ -14750,6 +16304,7 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	__asm        mov    rectNewWindow.right, eax;
 // LINE 3187:
 	__asm        jmp    near ptr 0x004B81DB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    ecx, this;

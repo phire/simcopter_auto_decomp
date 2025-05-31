@@ -55,6 +55,7 @@ void S3MissionReset() {
 // LINE 141:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FA0B2;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FA0DA;
@@ -368,15 +369,20 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA496;
 // LINE 299:
 	__asm        jmp    near ptr 0x004FA496;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x004FA41F;
+
 	__asm        cmp    dword ptr [ebp-0x34], 1;
 	__asm        jl     near ptr 0x004FA440;
+
 	__asm        cmp    dword ptr [ebp-0x34], 5;
 	__asm        jle    near ptr 0x004FA431;
+
 	__asm        jmp    near ptr 0x004FA440;
 // LINE 302:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyCrime, eax;
 	__asm        jle    near ptr 0x004FA538;
@@ -417,15 +423,20 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA533;
 // LINE 319:
 	__asm        jmp    near ptr 0x004FA533;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004FA4C3;
+
 	__asm        cmp    dword ptr [ebp-0x38], 1;
 	__asm        je     near ptr 0x004FA4D5;
+
 	__asm        cmp    dword ptr [ebp-0x38], 2;
 	__asm        je     near ptr 0x004FA4E7;
+
 	__asm        jmp    near ptr 0x004FA4F9;
 // LINE 322:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyRescue, eax;
 	__asm        jle    near ptr 0x004FA599;
@@ -451,11 +462,14 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA594;
 // LINE 333:
 	__asm        jmp    near ptr 0x004FA594;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x004FA55C;
+
 	__asm        jmp    near ptr 0x004FA56E;
 // LINE 336:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyRiot, eax;
 	__asm        jle    near ptr 0x004FA5FE;
@@ -484,11 +498,14 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA5F9;
 // LINE 347:
 	__asm        jmp    near ptr 0x004FA5F9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x004FA5C1;
+
 	__asm        jmp    near ptr 0x004FA5D3;
 // LINE 350:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyTraffic, eax;
 	__asm        jle    near ptr 0x004FA66D;
@@ -517,13 +534,17 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA668;
 // LINE 368:
 	__asm        jmp    near ptr 0x004FA668;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jl     near ptr 0x004FA638;
+
 	__asm        cmp    dword ptr [ebp-0x44], 2;
 	__asm        jle    near ptr 0x004FA626;
+
 	__asm        jmp    near ptr 0x004FA638;
 // LINE 371:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyMedEvac, eax;
 	__asm        jle    near ptr 0x004FA6AF;
@@ -543,9 +564,11 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA6AA;
 // LINE 385:
 	__asm        jmp    near ptr 0x004FA6AA;
+
 	__asm        jmp    near ptr 0x004FA691;
 // LINE 388:
 	__asm        jmp    near ptr 0x004FA713;
+
 	__asm        mov    eax, pct;
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyTransport, eax;
 	__asm        jle    near ptr 0x004FA70E;
@@ -574,8 +597,10 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA709;
 // LINE 399:
 	__asm        jmp    near ptr 0x004FA709;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x004FA6D7;
+
 	__asm        jmp    near ptr 0x004FA6E6;
 // LINE 401:
 	__asm        jmp    near ptr 0x004FA713;
@@ -605,6 +630,7 @@ void S3MissionDriver() {
 // LINE 437:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FA735;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FAC68;
@@ -635,6 +661,7 @@ void S3MissionDriver() {
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x40], 0x3C0000;
 	__asm        jle    near ptr 0x004FA7AD;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x51], 8;
 	__asm        je     near ptr 0x004FA7AD;
@@ -759,6 +786,7 @@ void S3MissionDriver() {
 	__asm        mov    ecx, [ecx+0x84];
 	__asm        cmp    [eax+0xA0], ecx;
 	__asm        jne    near ptr 0x004FA93F;
+
 	__asm        mov    eax, md;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x84];
@@ -790,6 +818,7 @@ void S3MissionDriver() {
 	__asm        mov    ecx, md;
 	__asm        cmp    eax, [ecx+0x8C];
 	__asm        jne    near ptr 0x004FA9C1;
+
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xB4];
 	__asm        mov    ecx, md;
@@ -877,6 +906,7 @@ void S3MissionDriver() {
 	__asm        mov    ecx, [ecx+0x88];
 	__asm        cmp    [eax+0x9C], ecx;
 	__asm        jne    near ptr 0x004FAB05;
+
 	__asm        mov    eax, md;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x88];
@@ -948,24 +978,34 @@ void S3MissionDriver() {
 // LINE 636:
 	__asm        cmp    fires_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    debris_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    personriot_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    personmed_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    persontrans_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    personresc_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    personfire_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    vehiclefire_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    vehiclejam_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    criminal_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
+
 	__asm        cmp    speeder_done, 1;
 	__asm        jne    near ptr 0x004FAC63;
 // LINE 638:
@@ -992,6 +1032,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 663:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FAC8C;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FACD7;
@@ -1095,6 +1136,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 697:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x004FADC6;
+
 	__asm        inc    count;
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
@@ -1121,6 +1163,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 706:
 	__asm        cmp    count, 4;
 	__asm        jle    near ptr 0x004FAE37;
+
 	__asm        cmp    numstarted, 0;
 	__asm        jne    near ptr 0x004FAE37;
 // LINE 707:
@@ -1142,6 +1185,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    ecx, numstarted;
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jne    near ptr 0x004FAE5D;
+
 	__asm        jmp    near ptr 0x004FAE5D;
 // LINE 712:
 	__asm        jmp    near ptr 0x004FAE81;
@@ -1242,6 +1286,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 748:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x004FAF7C;
+
 	__asm        inc    count;
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
@@ -1535,6 +1580,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 859:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x004FB2D8;
+
 	__asm        inc    count;
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
@@ -2143,48 +2189,76 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FBACD;
 // LINE 1040:
 	__asm        jmp    near ptr 0x004FBACD;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 4;
 	__asm        jg     near ptr 0x004FB9EE;
+
 	__asm        je     near ptr 0x004FB49D;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 1;
 	__asm        je     near ptr 0x004FB3B5;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x40;
 	__asm        jg     near ptr 0x004FBA0D;
+
 	__asm        je     near ptr 0x004FB29A;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x20;
 	__asm        je     near ptr 0x004FB178;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x100;
 	__asm        jg     near ptr 0x004FBA32;
+
 	__asm        je     near ptr 0x004FB510;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x90;
 	__asm        je     near ptr 0x004FB043;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x200;
 	__asm        jg     near ptr 0x004FBA57;
+
 	__asm        je     near ptr 0x004FB7D3;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x110;
 	__asm        je     near ptr 0x004FB0E0;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x800;
 	__asm        jg     near ptr 0x004FBA7C;
+
 	__asm        je     near ptr 0x004FB935;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x408;
 	__asm        je     near ptr 0x004FB8B1;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x2000;
 	__asm        jg     near ptr 0x004FBAA1;
+
 	__asm        je     near ptr 0x004FB617;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x1000;
 	__asm        je     near ptr 0x004FAD74;
+
 	__asm        jmp    near ptr 0x004FB9A6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x4000;
 	__asm        je     near ptr 0x004FB583;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x20000;
 	__asm        je     near ptr 0x004FB6F5;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x80010;
 	__asm        je     near ptr 0x004FAF10;
+
 	__asm        jmp    near ptr 0x004FB9A6;
 // LINE 1046:
 	__asm        mov    eax, 0x5B4FF0;
@@ -2217,6 +2291,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 1050:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
 	__asm        jne    near ptr 0x004FBB3E;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FBB3E;
@@ -2768,6 +2843,7 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    near ptr 0x004FC14C;
+
 	__asm        mov    eax, mp;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    near ptr 0x004FC14C;
@@ -2802,8 +2878,10 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        jmp    near ptr 0x004FC213;
 // LINE 1386:
 	__asm        jmp    near ptr 0x004FC213;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x25;
 	__asm        ja     near ptr 0x004FC213;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x4FC17B];
 // Switch pointers
@@ -2846,6 +2924,7 @@ void S3MissionEnd(long mission_id) {
 // LINE 1413:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC285;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FC2D6;
@@ -2862,6 +2941,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FC2D1;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FC2D1;
@@ -2909,6 +2989,7 @@ long S3MissionGetByType(long mission_type) {
 // LINE 1448:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x004FC33B;
+
 	__asm        inc    count;
 	__asm        cmp    count, 0x1E;
 	__asm        jge    near ptr 0x004FC38E;
@@ -2965,6 +3046,7 @@ void S3MissionGenerate(long type) {
 // LINE 1487:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC3D5;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC442;
@@ -3023,6 +3105,7 @@ void S3MissionGenerate(long type) {
 // LINE 1509:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC479;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC508;
@@ -3056,6 +3139,7 @@ void S3MissionGenerate(long type) {
 // LINE 1517:
 	__asm        cmp    tile, 0x70;
 	__asm        jl     near ptr 0x004FC4DD;
+
 	__asm        cmp    tile, 0xDB;
 	__asm        jle    near ptr 0x004FC4E2;
 // LINE 1518:
@@ -3098,6 +3182,7 @@ void S3MissionGenerate(long type) {
 // LINE 1535:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC546;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC5A4;
@@ -3141,6 +3226,7 @@ void S3MissionGenerate(long type) {
 // LINE 1547:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC5B8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC616;
@@ -3184,6 +3270,7 @@ void S3MissionGenerate(long type) {
 // LINE 1557:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC62A;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC688;
@@ -3227,6 +3314,7 @@ void S3MissionGenerate(long type) {
 // LINE 1567:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC69C;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC6FA;
@@ -3270,6 +3358,7 @@ void S3MissionGenerate(long type) {
 // LINE 1577:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC70E;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC76C;
@@ -3312,54 +3401,86 @@ void S3MissionGenerate(long type) {
 	__asm        jmp    near ptr 0x004FC896;
 // LINE 1587:
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 4;
 	__asm        jg     near ptr 0x004FC795;
+
 	__asm        je     near ptr 0x004FC50D;
+
 	__asm        cmp    dword ptr [ebp-0x18], 1;
 	__asm        je     near ptr 0x004FC3C6;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x20;
 	__asm        jg     near ptr 0x004FC7B4;
+
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x10;
 	__asm        je     near ptr 0x004FC5A9;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x90;
 	__asm        jg     near ptr 0x004FC7D6;
+
 	__asm        je     near ptr 0x004FC5A9;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x40;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x110;
 	__asm        jg     near ptr 0x004FC7FB;
+
 	__asm        je     near ptr 0x004FC5A9;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x100;
 	__asm        je     near ptr 0x004FC522;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x408;
 	__asm        jg     near ptr 0x004FC820;
+
 	__asm        je     near ptr 0x004FC68D;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x200;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x1000;
 	__asm        jg     near ptr 0x004FC845;
+
 	__asm        je     near ptr 0x004FC61B;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x800;
 	__asm        je     near ptr 0x004FC6FF;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x4000;
 	__asm        jg     near ptr 0x004FC86A;
+
 	__asm        je     near ptr 0x004FC537;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x2000;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        jmp    near ptr 0x004FC896;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x10000;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x20000;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0x40000;
 	__asm        je     near ptr 0x004FC46A;
+
 	__asm        jmp    near ptr 0x004FC896;
 // LINE 1590:
 }
@@ -3387,6 +3508,7 @@ void S3MissionSetCurrNext() {
 	__asm        inc    eax;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004FC8E0;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FC931;
@@ -3403,6 +3525,7 @@ void S3MissionSetCurrNext() {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FC92C;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FC92C;
@@ -3416,6 +3539,7 @@ void S3MissionSetCurrNext() {
 // LINE 1616:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FC940;
+
 	__asm        inc    i;
 	__asm        mov    eax, ds:[0x6072EC];
 	__asm        mov    ecx, 0x6072B8;
@@ -3439,6 +3563,7 @@ void S3MissionSetCurrNext() {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FC9A2;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FC9A2;
@@ -3475,6 +3600,7 @@ void S3MissionSetCurrPrev() {
 	__asm        dec    eax;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004FC9F1;
+
 	__asm        dec    i;
 	__asm        cmp    i, 0;
 	__asm        jl     near ptr 0x004FCA42;
@@ -3491,6 +3617,7 @@ void S3MissionSetCurrPrev() {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FCA3D;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FCA3D;
@@ -3504,6 +3631,7 @@ void S3MissionSetCurrPrev() {
 // LINE 1651:
 	__asm        mov    i, 0x1E;
 	__asm        jmp    near ptr 0x004FCA51;
+
 	__asm        dec    i;
 	__asm        mov    eax, ds:[0x6072EC];
 	__asm        mov    ecx, 0x6072B8;
@@ -3527,6 +3655,7 @@ void S3MissionSetCurrPrev() {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FCAB3;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FCAB3;
@@ -3643,10 +3772,13 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 	__asm        jmp    near ptr 0x004FCBE5;
 // LINE 1830:
 	__asm        jmp    near ptr 0x004FCBE5;
+
 	__asm        cmp    dword ptr [ebp-4], 1;
 	__asm        je     near ptr 0x004FCB69;
+
 	__asm        cmp    dword ptr [ebp-4], 9;
 	__asm        je     near ptr 0x004FCB69;
+
 	__asm        jmp    near ptr 0x004FCBAD;
 // LINE 1831:
 }
@@ -3699,8 +3831,10 @@ void S3MissionCancel(long mission_id) {
 	__asm        jmp    near ptr 0x004FCC7C;
 // LINE 1860:
 	__asm        jmp    near ptr 0x004FCC7C;
+
 	__asm        cmp    dword ptr [ebp-8], 0x800;
 	__asm        je     near ptr 0x004FCC2E;
+
 	__asm        jmp    near ptr 0x004FCC51;
 // LINE 1863:
 	__asm        mov    eax, md;
@@ -3740,6 +3874,7 @@ long S3MissionStartDirect(long type) {
 // LINE 1898:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FCCE8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FCD33;
@@ -3956,38 +4091,57 @@ long S3MissionStartDirect(long type) {
 	__asm        jmp    near ptr 0x004FD03D;
 // LINE 1964:
 	__asm        jmp    near ptr 0x004FD03D;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x10;
 	__asm        jg     near ptr 0x004FCFCD;
+
 	__asm        je     near ptr 0x004FCDF6;
+
 	__asm        cmp    dword ptr [ebp-0xC], 1;
 	__asm        je     near ptr 0x004FCE62;
+
 	__asm        cmp    dword ptr [ebp-0xC], 2;
 	__asm        je     near ptr 0x004FCE86;
+
 	__asm        cmp    dword ptr [ebp-0xC], 4;
 	__asm        je     near ptr 0x004FCEAA;
+
 	__asm        jmp    near ptr 0x004FCF71;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x40;
 	__asm        jg     near ptr 0x004FCFEC;
+
 	__asm        je     near ptr 0x004FCE3E;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x20;
 	__asm        je     near ptr 0x004FCE1A;
+
 	__asm        jmp    near ptr 0x004FCF71;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x200;
 	__asm        jg     near ptr 0x004FD011;
+
 	__asm        je     near ptr 0x004FCEF2;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x100;
 	__asm        je     near ptr 0x004FCECE;
+
 	__asm        jmp    near ptr 0x004FCF71;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x408;
 	__asm        je     near ptr 0x004FCF16;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x800;
 	__asm        je     near ptr 0x004FCF3A;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x1000;
 	__asm        je     near ptr 0x004FCDD2;
+
 	__asm        jmp    near ptr 0x004FCF71;
 // LINE 1966:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
 	__asm        jne    near ptr 0x004FD05F;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FD05F;
@@ -4507,9 +4661,11 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        jmp    near ptr 0x004FD6D8;
 // LINE 2188:
 	__asm        jmp    near ptr 0x004FD6D8;
+
 	__asm        dec    dword ptr [ebp-0x1C];
 	__asm        cmp    dword ptr [ebp-0x1C], 0x26;
 	__asm        ja     near ptr 0x004FD6D8;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    dword ptr [eax*4+0x4FD63C];
 // Switch pointers
@@ -4927,6 +5083,7 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 // LINE 2385:
 	__asm        cmp    total_money, 0;
 	__asm        jge    near ptr 0x004FDBCC;
+
 	__asm        mov    total_money, 0;
 // LINE 2389:
 	__asm        mov    eax, md;
@@ -4981,6 +5138,7 @@ long S3MissionGetIDByKey(long key) {
 // LINE 2444:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FDC59;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FDCAC;
@@ -5020,6 +5178,7 @@ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 // LINE 2468:
 	__asm        cmp    index, 0;
 	__asm        jl     near ptr 0x004FDCD5;
+
 	__asm        cmp    index, 0x1E;
 	__asm        jl     near ptr 0x004FDCDC;
 // LINE 2469:
@@ -5063,6 +5222,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2501:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004FDD4D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x004FDD9E;
@@ -5079,6 +5239,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        je     near ptr 0x004FDD99;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     near ptr 0x004FDD99;
@@ -5200,10 +5361,13 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FDEEA;
 // LINE 2583:
 	__asm        jmp    near ptr 0x004FDEEA;
+
 	__asm        cmp    dword ptr [ebp-0x14], 1;
 	__asm        je     near ptr 0x004FDE95;
+
 	__asm        cmp    dword ptr [ebp-0x14], 2;
 	__asm        je     near ptr 0x004FDEB4;
+
 	__asm        jmp    near ptr 0x004FDEC0;
 // LINE 2584:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5237,10 +5401,13 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FDF63;
 // LINE 2598:
 	__asm        jmp    near ptr 0x004FDF63;
+
 	__asm        cmp    dword ptr [ebp-0x18], 1;
 	__asm        je     near ptr 0x004FDF0E;
+
 	__asm        cmp    dword ptr [ebp-0x18], 2;
 	__asm        je     near ptr 0x004FDF2D;
+
 	__asm        jmp    near ptr 0x004FDF39;
 // LINE 2599:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5274,10 +5441,13 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FDFDC;
 // LINE 2618:
 	__asm        jmp    near ptr 0x004FDFDC;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 1;
 	__asm        je     near ptr 0x004FDF87;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 2;
 	__asm        je     near ptr 0x004FDFA6;
+
 	__asm        jmp    near ptr 0x004FDFB2;
 // LINE 2619:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5315,12 +5485,16 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE06B;
 // LINE 2636:
 	__asm        jmp    near ptr 0x004FE06B;
+
 	__asm        cmp    dword ptr [ebp-0x20], 1;
 	__asm        je     near ptr 0x004FE000;
+
 	__asm        cmp    dword ptr [ebp-0x20], 2;
 	__asm        je     near ptr 0x004FE01F;
+
 	__asm        cmp    dword ptr [ebp-0x20], 3;
 	__asm        je     near ptr 0x004FE02B;
+
 	__asm        jmp    near ptr 0x004FE037;
 // LINE 2637:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5346,6 +5520,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE0B8;
 // LINE 2645:
 	__asm        jmp    near ptr 0x004FE0B8;
+
 	__asm        jmp    near ptr 0x004FE08F;
 // LINE 2646:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5379,10 +5554,13 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE131;
 // LINE 2660:
 	__asm        jmp    near ptr 0x004FE131;
+
 	__asm        cmp    dword ptr [ebp-0x28], 1;
 	__asm        je     near ptr 0x004FE0DC;
+
 	__asm        cmp    dword ptr [ebp-0x28], 2;
 	__asm        je     near ptr 0x004FE0FB;
+
 	__asm        jmp    near ptr 0x004FE107;
 // LINE 2661:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5416,10 +5594,13 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE1AA;
 // LINE 2675:
 	__asm        jmp    near ptr 0x004FE1AA;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 1;
 	__asm        je     near ptr 0x004FE155;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 2;
 	__asm        je     near ptr 0x004FE174;
+
 	__asm        jmp    near ptr 0x004FE180;
 // LINE 2676:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5457,12 +5638,16 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE239;
 // LINE 2693:
 	__asm        jmp    near ptr 0x004FE239;
+
 	__asm        cmp    dword ptr [ebp-0x30], 1;
 	__asm        je     near ptr 0x004FE1CE;
+
 	__asm        cmp    dword ptr [ebp-0x30], 2;
 	__asm        je     near ptr 0x004FE1ED;
+
 	__asm        cmp    dword ptr [ebp-0x30], 3;
 	__asm        je     near ptr 0x004FE1F9;
+
 	__asm        jmp    near ptr 0x004FE205;
 // LINE 2694:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5500,12 +5685,16 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE2C8;
 // LINE 2711:
 	__asm        jmp    near ptr 0x004FE2C8;
+
 	__asm        cmp    dword ptr [ebp-0x34], 1;
 	__asm        je     near ptr 0x004FE25D;
+
 	__asm        cmp    dword ptr [ebp-0x34], 2;
 	__asm        je     near ptr 0x004FE27C;
+
 	__asm        cmp    dword ptr [ebp-0x34], 3;
 	__asm        je     near ptr 0x004FE288;
+
 	__asm        jmp    near ptr 0x004FE294;
 // LINE 2712:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5543,12 +5732,16 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE357;
 // LINE 2729:
 	__asm        jmp    near ptr 0x004FE357;
+
 	__asm        cmp    dword ptr [ebp-0x38], 1;
 	__asm        je     near ptr 0x004FE2EC;
+
 	__asm        cmp    dword ptr [ebp-0x38], 2;
 	__asm        je     near ptr 0x004FE30B;
+
 	__asm        cmp    dword ptr [ebp-0x38], 3;
 	__asm        je     near ptr 0x004FE317;
+
 	__asm        jmp    near ptr 0x004FE323;
 // LINE 2730:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5586,12 +5779,16 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE3E6;
 // LINE 2747:
 	__asm        jmp    near ptr 0x004FE3E6;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 1;
 	__asm        je     near ptr 0x004FE37B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 2;
 	__asm        je     near ptr 0x004FE39A;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 3;
 	__asm        je     near ptr 0x004FE3A6;
+
 	__asm        jmp    near ptr 0x004FE3B2;
 // LINE 2748:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5621,8 +5818,10 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE449;
 // LINE 2759:
 	__asm        jmp    near ptr 0x004FE449;
+
 	__asm        cmp    dword ptr [ebp-0x40], 1;
 	__asm        je     near ptr 0x004FE40A;
+
 	__asm        jmp    near ptr 0x004FE429;
 // LINE 2760:
 	__asm        jmp    near ptr 0x004FE59A;
@@ -5630,60 +5829,96 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        jmp    near ptr 0x004FE59A;
 // LINE 2763:
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 4;
 	__asm        jg     near ptr 0x004FE477;
+
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        cmp    dword ptr [ebp-0x10], 1;
 	__asm        je     near ptr 0x004FE0BD;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x1C;
 	__asm        jg     near ptr 0x004FE496;
+
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0xC;
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x40;
 	__asm        jg     near ptr 0x004FE4B5;
+
 	__asm        je     near ptr 0x004FE070;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x20;
 	__asm        je     near ptr 0x004FDFE1;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x100;
 	__asm        jg     near ptr 0x004FE4DA;
+
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x90;
 	__asm        je     near ptr 0x004FDE76;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x110;
 	__asm        jg     near ptr 0x004FE4FF;
+
 	__asm        je     near ptr 0x004FDEEF;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x108;
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x200;
 	__asm        jg     near ptr 0x004FE524;
+
 	__asm        je     near ptr 0x004FE2CD;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x118;
 	__asm        je     near ptr 0x004FDF68;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x800;
 	__asm        jg     near ptr 0x004FE549;
+
 	__asm        je     near ptr 0x004FE3EB;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x408;
 	__asm        je     near ptr 0x004FE35C;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x2000;
 	__asm        jg     near ptr 0x004FE56E;
+
 	__asm        je     near ptr 0x004FE1AF;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x1000;
 	__asm        je     near ptr 0x004FDE2A;
+
 	__asm        jmp    near ptr 0x004FE59A;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x4000;
 	__asm        je     near ptr 0x004FE136;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x20000;
 	__asm        je     near ptr 0x004FE23E;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x80010;
 	__asm        je     near ptr 0x004FDE63;
+
 	__asm        jmp    near ptr 0x004FE59A;
 // LINE 2765:
 	__asm        push   0x96;
@@ -5729,11 +5964,13 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 // LINE 2786:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x004FE681;
+
 	__asm        cmp    x, 0x2A;
 	__asm        jg     near ptr 0x004FE681;
 // LINE 2788:
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x004FE63B;
+
 	__asm        cmp    y, 0x2A;
 	__asm        jg     near ptr 0x004FE63B;
 // LINE 2790:
@@ -5741,8 +5978,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2792:
 	__asm        jmp    near ptr 0x004FE67C;
+
 	__asm        cmp    y, 0x2B;
 	__asm        jl     near ptr 0x004FE65E;
+
 	__asm        cmp    y, 0x54;
 	__asm        jg     near ptr 0x004FE65E;
 // LINE 2794:
@@ -5750,8 +5989,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2796:
 	__asm        jmp    near ptr 0x004FE67C;
+
 	__asm        cmp    y, 0x55;
 	__asm        jl     near ptr 0x004FE67C;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jg     near ptr 0x004FE67C;
 // LINE 2798:
@@ -5759,13 +6000,16 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2801:
 	__asm        jmp    near ptr 0x004FE776;
+
 	__asm        cmp    x, 0x2B;
 	__asm        jl     near ptr 0x004FE6FE;
+
 	__asm        cmp    x, 0x54;
 	__asm        jg     near ptr 0x004FE6FE;
 // LINE 2803:
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x004FE6B8;
+
 	__asm        cmp    y, 0x2A;
 	__asm        jg     near ptr 0x004FE6B8;
 // LINE 2805:
@@ -5773,8 +6017,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2807:
 	__asm        jmp    near ptr 0x004FE6F9;
+
 	__asm        cmp    y, 0x2B;
 	__asm        jl     near ptr 0x004FE6DB;
+
 	__asm        cmp    y, 0x54;
 	__asm        jg     near ptr 0x004FE6DB;
 // LINE 2809:
@@ -5782,8 +6028,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2811:
 	__asm        jmp    near ptr 0x004FE6F9;
+
 	__asm        cmp    y, 0x55;
 	__asm        jl     near ptr 0x004FE6F9;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jg     near ptr 0x004FE6F9;
 // LINE 2813:
@@ -5791,13 +6039,16 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2816:
 	__asm        jmp    near ptr 0x004FE776;
+
 	__asm        cmp    x, 0x55;
 	__asm        jl     near ptr 0x004FE776;
+
 	__asm        cmp    x, 0x7F;
 	__asm        jg     near ptr 0x004FE776;
 // LINE 2818:
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x004FE735;
+
 	__asm        cmp    y, 0x2A;
 	__asm        jg     near ptr 0x004FE735;
 // LINE 2820:
@@ -5805,8 +6056,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2822:
 	__asm        jmp    near ptr 0x004FE776;
+
 	__asm        cmp    y, 0x2B;
 	__asm        jl     near ptr 0x004FE758;
+
 	__asm        cmp    y, 0x54;
 	__asm        jg     near ptr 0x004FE758;
 // LINE 2824:
@@ -5814,8 +6067,10 @@ long S3MissionGetSoundQuadrant(long x, long y) {
 	__asm        jmp    near ptr 0x004FE780;
 // LINE 2826:
 	__asm        jmp    near ptr 0x004FE776;
+
 	__asm        cmp    y, 0x55;
 	__asm        jl     near ptr 0x004FE776;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jg     near ptr 0x004FE776;
 // LINE 2828:

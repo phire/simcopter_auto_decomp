@@ -100,6 +100,7 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 // LINE 76:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9C96;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004F9CF5;
@@ -162,6 +163,7 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 // LINE 114:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9D4D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004F9DF8;
@@ -238,6 +240,7 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 // LINE 147:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9E1C;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004F9E4C;
@@ -381,6 +384,7 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 220:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9FA2;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004F9FBC;
@@ -391,6 +395,7 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 223:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004F9FCB;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004FA02E;
@@ -436,6 +441,7 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 // LINE 245:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004FA04B;
+
 	__asm        inc    j;
 	__asm        mov    eax, nSeatsTotal;
 	__asm        cmp    j, eax;

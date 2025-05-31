@@ -75,6 +75,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    retVal, 3;
 // LINE 658:
 	__asm        jmp    near ptr 0x004CF2E3;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 660:
 	__asm        push   0xD44F;
@@ -88,6 +89,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    retVal, 3;
 // LINE 663:
 	__asm        jmp    near ptr 0x004CF2DE;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 665:
 	__asm        push   0x20;
@@ -101,6 +103,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    retVal, 3;
 // LINE 668:
 	__asm        jmp    near ptr 0x004CF2D9;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 671:
 	__asm        mov    eax, state;
@@ -166,6 +169,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    retVal, 2;
 // LINE 690:
 	__asm        jmp    near ptr 0x004CF2D4;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 693:
 	__asm        mov    eax, state;
@@ -183,6 +187,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        je     near ptr 0x004CF21C;
 // LINE 696:
 	__asm        jmp    near ptr 0x004CF2CF;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 700:
 	__asm        mov    eax, state;
@@ -211,6 +216,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    retVal, 2;
 // LINE 705:
 	__asm        jmp    near ptr 0x004CF2CA;
+
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 707:
 	__asm        mov    eax, state;
@@ -252,10 +258,15 @@ CompressDone:
 	__asm        jmp    near ptr 0x004CF2E8;
 // LINE 720:
 	__asm        jmp    near ptr 0x004CF279;
+
 	__asm        jmp    near ptr 0x004CF279;
+
 	__asm        jmp    near ptr 0x004CF279;
+
 	__asm        jmp    near ptr 0x004CF279;
+
 	__asm        jmp    near ptr 0x004CF279;
+
 	__asm        jmp    near ptr 0x004CF279;
 }
 
@@ -295,10 +306,12 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, s;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004CF342;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    r, eax;
 	__asm        jle    near ptr 0x004CF35D;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, forest;
 	__asm        mov    byte ptr [eax+ecx], 0x20;
@@ -306,9 +319,11 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 538:
 	__asm        mov    len, 0;
 	__asm        jmp    near ptr 0x004CF36C;
+
 	__asm        inc    len;
 	__asm        cmp    len, 0x3C;
 	__asm        jge    near ptr 0x004CF3B0;
+
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
 	__asm        push   eax;
@@ -339,9 +354,11 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 543:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004CF3C8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x3C;
 	__asm        jg     near ptr 0x004CF3EA;
+
 	__asm        mov    eax, forest;
 	__asm        push   eax;
 	__asm        mov    eax, r;
@@ -362,6 +379,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    ecx, len;
 	__asm        cmp    [eax+0x103F], ecx;
 	__asm        jle    near ptr 0x004CF418;
+
 	__asm        mov    eax, len;
 	__asm        mov    ecx, forest;
 	__asm        mov    [ecx+0x103F], eax;
@@ -433,10 +451,12 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 561:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004CF4E7;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    last_match_length, eax;
 	__asm        jle    near ptr 0x004CF57C;
+
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
 	__asm        push   eax;
@@ -467,6 +487,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 565:
 	__asm        cmp    s, 0x3B;
 	__asm        jge    near ptr 0x004CF54F;
+
 	__asm        mov    al, reinterpret_cast<uint8_t>(c);
 	__asm        mov    ecx, s;
 	__asm        mov    edx, forest;
@@ -521,6 +542,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 575:
 	__asm        dec    len;
 	__asm        je     near ptr 0x004CF5DB;
+
 	__asm        mov    eax, forest;
 	__asm        push   eax;
 	__asm        mov    eax, r;
@@ -552,9 +574,11 @@ void InitTree(struct tLZSSBinaryForest* forest) {
 // LINE 206:
 	__asm        mov    i, 0x1001;
 	__asm        jmp    near ptr 0x004CF61F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1100;
 	__asm        jg     near ptr 0x004CF642;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, forest;
 	__asm        mov    dword ptr [ecx+eax*4+0x5047], 0x1000;
@@ -562,9 +586,11 @@ void InitTree(struct tLZSSBinaryForest* forest) {
 // LINE 207:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004CF651;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1000;
 	__asm        jge    near ptr 0x004CF674;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, forest;
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
@@ -614,6 +640,7 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x5047], 0x1000;
 	__asm        je     near ptr 0x004CF715;
+
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        mov    eax, [ecx+eax*4+0x5047];
@@ -639,6 +666,7 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x1043], 0x1000;
 	__asm        je     near ptr 0x004CF76B;
+
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        mov    eax, [ecx+eax*4+0x1043];
@@ -660,6 +688,7 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 // LINE 242:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004CF79F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x3C;
 	__asm        jge    near ptr 0x004CF7DB;
@@ -677,9 +706,11 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    cmp, edx;
 	__asm        cmp    cmp, 0;
 	__asm        je     near ptr 0x004CF7D6;
+
 	__asm        jmp    near ptr 0x004CF7DB;
 // LINE 245:
 	__asm        jmp    near ptr 0x004CF79C;
+
 	__asm        cmp    i, 2;
 	__asm        jle    near ptr 0x004CF86F;
 // LINE 246:
@@ -700,9 +731,11 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    eax, forest;
 	__asm        cmp    dword ptr [eax+0x103F], 0x3C;
 	__asm        jl     near ptr 0x004CF82C;
+
 	__asm        jmp    near ptr 0x004CF874;
 // LINE 249:
 	__asm        jmp    near ptr 0x004CF86F;
+
 	__asm        mov    eax, forest;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x103F], ecx;
@@ -765,6 +798,7 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    edx, p;
 	__asm        cmp    [ecx+eax*4+0x5047], edx;
 	__asm        jne    near ptr 0x004CF935;
+
 	__asm        mov    eax, r;
 	__asm        mov    ecx, p;
 	__asm        mov    edx, forest;
@@ -773,6 +807,7 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 	__asm        mov    [edx+ecx*4+0x5047], eax;
 // LINE 261:
 	__asm        jmp    near ptr 0x004CF94F;
+
 	__asm        mov    eax, r;
 	__asm        mov    ecx, p;
 	__asm        mov    edx, forest;
@@ -796,22 +831,26 @@ void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x944B], 0x1000;
 	__asm        jne    near ptr 0x004CF98F;
+
 	__asm        jmp    near ptr 0x004CFB6E;
 // LINE 270:
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x5047], 0x1000;
 	__asm        jne    near ptr 0x004CF9BB;
+
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        mov    eax, [ecx+eax*4+0x1043];
 	__asm        mov    q, eax;
 // LINE 271:
 	__asm        jmp    near ptr 0x004CFAE5;
+
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x1043], 0x1000;
 	__asm        jne    near ptr 0x004CF9E7;
+
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
 	__asm        mov    eax, [ecx+eax*4+0x5047];
@@ -899,6 +938,7 @@ void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 	__asm        mov    edx, p;
 	__asm        cmp    [ecx+eax*4+0x5047], edx;
 	__asm        jne    near ptr 0x004CFB3E;
+
 	__asm        mov    eax, q;
 	__asm        mov    ecx, p;
 	__asm        mov    edx, forest;
@@ -907,6 +947,7 @@ void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 	__asm        mov    [edx+ecx*4+0x5047], eax;
 // LINE 288:
 	__asm        jmp    near ptr 0x004CFB58;
+
 	__asm        mov    eax, q;
 	__asm        mov    ecx, p;
 	__asm        mov    edx, forest;
@@ -933,6 +974,7 @@ void StartModel(struct tACompModel* model) {
 // LINE 304:
 	__asm        mov    sym, 0x13A;
 	__asm        jmp    near ptr 0x004CFB98;
+
 	__asm        dec    sym;
 	__asm        cmp    sym, 1;
 	__asm        jl     near ptr 0x004CFC03;
@@ -975,6 +1017,7 @@ void StartModel(struct tACompModel* model) {
 // LINE 313:
 	__asm        mov    i, 0x1000;
 	__asm        jmp    near ptr 0x004CFC2C;
+
 	__asm        dec    i;
 	__asm        cmp    i, 1;
 	__asm        jl     near ptr 0x004CFC68;
@@ -1050,10 +1093,12 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004CFD16;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004CFDDD;
 // LINE 368:
 	__asm        jmp    near ptr 0x004CFDAA;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x10000;
 	__asm        jb     near ptr 0x004CFD68;
@@ -1068,6 +1113,7 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004CFD50;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004CFDDD;
 // LINE 370:
@@ -1078,9 +1124,11 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 372:
 	__asm        jmp    near ptr 0x004CFDAA;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
 	__asm        jb     near ptr 0x004CFDA5;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     near ptr 0x004CFDA5;
@@ -1095,6 +1143,7 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 376:
 	__asm        jmp    near ptr 0x004CFDAA;
+
 	__asm        jmp    near ptr 0x004CFDC5;
 // LINE 377:
 	__asm        mov    eax, model;
@@ -1137,6 +1186,7 @@ void UpdateModel(long sym, struct tACompModel* model) {
 // LINE 325:
 	__asm        mov    i, 0x13A;
 	__asm        jmp    near ptr 0x004CFE14;
+
 	__asm        dec    i;
 	__asm        cmp    i, 0;
 	__asm        jle    near ptr 0x004CFE64;
@@ -1169,6 +1219,7 @@ void UpdateModel(long sym, struct tACompModel* model) {
 	__asm        mov    eax, sym;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004CFE7E;
+
 	__asm        dec    i;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
@@ -1177,6 +1228,7 @@ void UpdateModel(long sym, struct tACompModel* model) {
 	__asm        mov    edx, [ebx+edx*4+0x9E4];
 	__asm        cmp    [ecx+eax*4+0x9E0], edx;
 	__asm        jne    near ptr 0x004CFEA3;
+
 	__asm        jmp    near ptr 0x004CFE7B;
 // LINE 332:
 	__asm        mov    eax, i;
@@ -1219,6 +1271,7 @@ void UpdateModel(long sym, struct tACompModel* model) {
 // LINE 341:
 	__asm        dec    i;
 	__asm        js     near ptr 0x004CFF31;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
 	__asm        inc    dword ptr [ecx+eax*4+0xED0];
@@ -1239,10 +1292,12 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004CFF65;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004CFFB3;
 // LINE 348:
 	__asm        jmp    near ptr 0x004CFF70;
+
 	__asm        mov    eax, model;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, model;
@@ -1260,6 +1315,7 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004CFFA6;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004CFFB3;
 // LINE 350:
@@ -1277,6 +1333,7 @@ short PutBit(long bit, struct tCompressState* dest) {
 // LINE 127:
 	__asm        cmp    bit, 0;
 	__asm        je     near ptr 0x004CFFD6;
+
 	__asm        mov    eax, dest;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, dest;
@@ -1369,10 +1426,12 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004D00D8;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004D018F;
 // LINE 395:
 	__asm        jmp    near ptr 0x004D016C;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x10000;
 	__asm        jb     near ptr 0x004D012A;
@@ -1387,6 +1446,7 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004D0112;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004D018F;
 // LINE 397:
@@ -1397,9 +1457,11 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 399:
 	__asm        jmp    near ptr 0x004D016C;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
 	__asm        jb     near ptr 0x004D0167;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     near ptr 0x004D0167;
@@ -1414,6 +1476,7 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 403:
 	__asm        jmp    near ptr 0x004D016C;
+
 	__asm        jmp    near ptr 0x004D0187;
 // LINE 404:
 	__asm        mov    eax, model;
@@ -1453,6 +1516,7 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004D01D5;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004D0211;
 // LINE 416:
@@ -1468,6 +1532,7 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004D0200;
+
 	__asm        mov    ax, 2;
 	__asm        jmp    near ptr 0x004D0211;
 // LINE 419:
@@ -1487,6 +1552,7 @@ short FlushBitBuffer(struct tCompressState* dest) {
 // LINE 149:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D022E;
+
 	__asm        inc    i;
 	__asm        cmp    i, 7;
 	__asm        jge    near ptr 0x004D0264;
@@ -1531,6 +1597,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        mov    retVal, 3;
 // LINE 740:
 	__asm        jmp    near ptr 0x004D03DC;
+
 	__asm        jmp    near ptr 0x004D0381;
 // LINE 742:
 	__asm        push   0xD44F;
@@ -1544,6 +1611,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        mov    retVal, 3;
 // LINE 745:
 	__asm        jmp    near ptr 0x004D03D7;
+
 	__asm        jmp    near ptr 0x004D0381;
 // LINE 747:
 	__asm        push   0x20;
@@ -1557,6 +1625,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        mov    retVal, 3;
 // LINE 750:
 	__asm        jmp    near ptr 0x004D03D2;
+
 	__asm        jmp    near ptr 0x004D0381;
 // LINE 753:
 	__asm        mov    eax, inStream;
@@ -1639,7 +1708,9 @@ ExpandDone:
 	__asm        jmp    near ptr 0x004D03E1;
 // LINE 775:
 	__asm        jmp    near ptr 0x004D0381;
+
 	__asm        jmp    near ptr 0x004D0381;
+
 	__asm        jmp    near ptr 0x004D0381;
 }
 
@@ -1673,6 +1744,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, state;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    near ptr 0x004D042F;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x004D05B3;
 // LINE 601:
@@ -1690,9 +1762,11 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 603:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D045A;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xFC4;
 	__asm        jge    near ptr 0x004D0476;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, forest;
 	__asm        mov    byte ptr [eax+ecx], 0x20;
@@ -1765,6 +1839,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 618:
 	__asm        mov    k, 0;
 	__asm        jmp    near ptr 0x004D0538;
+
 	__asm        inc    k;
 	__asm        mov    eax, k;
 	__asm        cmp    j, eax;
@@ -1822,6 +1897,7 @@ void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 // LINE 458:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D05D0;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x11;
 	__asm        jge    near ptr 0x004D05FA;
@@ -1874,12 +1950,14 @@ long GetBit(struct tCompressState* source) {
 	__asm        mov    al, kludger;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D0669;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, tempByte;
 	__asm        mov    ecx, source;
 	__asm        mov    [ecx+8], eax;
 // LINE 182:
 	__asm        jmp    near ptr 0x004D0673;
+
 	__asm        mov    eax, source;
 	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
 // LINE 183:
@@ -1891,8 +1969,10 @@ long GetBit(struct tCompressState* source) {
 	__asm        mov    ecx, source;
 	__asm        test   [ecx+0xC], eax;
 	__asm        je     near ptr 0x004D0699;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004D069B;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D06A0;
 // LINE 188:
@@ -1965,9 +2045,11 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 478:
 	__asm        jmp    near ptr 0x004D07B9;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
 	__asm        jb     near ptr 0x004D07A4;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     near ptr 0x004D07A4;
@@ -1982,9 +2064,11 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 482:
 	__asm        jmp    near ptr 0x004D07B9;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x10000;
 	__asm        jbe    near ptr 0x004D07B9;
+
 	__asm        jmp    near ptr 0x004D07EF;
 // LINE 484:
 	__asm        mov    eax, model;
@@ -2052,11 +2136,13 @@ long BinarySearchSym(unsigned long x, struct tACompModel* model) {
 	__asm        mov    edx, x;
 	__asm        cmp    [ecx+eax*4+0xED0], edx;
 	__asm        jbe    near ptr 0x004D0870;
+
 	__asm        mov    eax, k;
 	__asm        inc    eax;
 	__asm        mov    i, eax;
 // LINE 433:
 	__asm        jmp    near ptr 0x004D0876;
+
 	__asm        mov    eax, k;
 	__asm        mov    j, eax;
 // LINE 434:
@@ -2133,9 +2219,11 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 509:
 	__asm        jmp    near ptr 0x004D099C;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
 	__asm        jb     near ptr 0x004D0987;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     near ptr 0x004D0987;
@@ -2150,9 +2238,11 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 513:
 	__asm        jmp    near ptr 0x004D099C;
+
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x10000;
 	__asm        jbe    near ptr 0x004D099C;
+
 	__asm        jmp    near ptr 0x004D09D2;
 // LINE 515:
 	__asm        mov    eax, model;
@@ -2208,11 +2298,13 @@ long BinarySearchPos(unsigned long x, struct tACompModel* model) {
 	__asm        mov    edx, x;
 	__asm        cmp    [ecx+eax*4+0x13BC], edx;
 	__asm        jbe    near ptr 0x004D0A33;
+
 	__asm        mov    eax, k;
 	__asm        inc    eax;
 	__asm        mov    i, eax;
 // LINE 449:
 	__asm        jmp    near ptr 0x004D0A39;
+
 	__asm        mov    eax, k;
 	__asm        mov    j, eax;
 // LINE 450:

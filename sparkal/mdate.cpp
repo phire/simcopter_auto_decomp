@@ -423,6 +423,7 @@ void MDate::MDate() {
 	struct tm* now;
 	long clk;
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -456,11 +457,13 @@ void MDate::MDate() {
 	__asm        mov    [ecx+4], eax;
 // LINE 79:
 	__asm        jmp    near ptr 0x004BC4C9;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004bc4d1
 void MDate::MDate(uint32_t day, uint32_t year) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -489,11 +492,13 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 	__asm        mov    [ecx+4], eax;
 // LINE 99:
 	__asm        jmp    near ptr 0x004BC52E;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004bc538
 void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -514,11 +519,13 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	__asm        mov    [ecx+4], eax;
 // LINE 114:
 	__asm        jmp    near ptr 0x004BC57F;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004bc589
 void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -536,6 +543,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	__asm        mov    [ecx+4], eax;
 // LINE 129:
 	__asm        jmp    near ptr 0x004BC5C7;
+
 	__asm        mov    eax, this;
 }
 
@@ -562,16 +570,23 @@ char * MDate::DayName(uint32_t weekDayNumber) {
 // LINE 153:
 	__asm        cmp    weekDayNumber, 1;
 	__asm        jb     near ptr 0x004BC620;
+
 	__asm        cmp    weekDayNumber, 7;
 	__asm        ja     near ptr 0x004BC620;
+
 	__asm        jmp    near ptr 0x004BC625;
+
 	__asm        jmp    near ptr 0x004BC643;
+
 	__asm        jmp    near ptr 0x004BC634;
+
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004BC643;
+
 	__asm        mov    eax, weekDayNumber;
 	__asm        mov    eax, [eax*4+0x59ACF4];
 	__asm        jmp    near ptr 0x004BC645;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC64A;
 // LINE 154:
@@ -637,13 +652,19 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 // LINE 182:
 	__asm        cmp    day, 0;
 	__asm        jbe    near ptr 0x004BC717;
+
 	__asm        cmp    month, 1;
 	__asm        jb     near ptr 0x004BC708;
+
 	__asm        cmp    month, 0xC;
 	__asm        ja     near ptr 0x004BC708;
+
 	__asm        jmp    near ptr 0x004BC71E;
+
 	__asm        jmp    near ptr 0x004BC708;
+
 	__asm        jmp    near ptr 0x004BC717;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x004BC71E;
 // LINE 183:
@@ -661,6 +682,7 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004BC74D;
+
 	__asm        cmp    month, 2;
 	__asm        jne    near ptr 0x004BC74D;
 // LINE 186:
@@ -669,8 +691,10 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 	__asm        mov    eax, day;
 	__asm        cmp    d, eax;
 	__asm        jb     near ptr 0x004BC763;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BC765;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC76A;
 // LINE 188:
@@ -685,8 +709,10 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004BC793;
+
 	__asm        mov    eax, 0x16E;
 	__asm        jmp    near ptr 0x004BC798;
+
 	__asm        mov    eax, 0x16D;
 	__asm        jmp    near ptr 0x004BC79D;
 // LINE 202:
@@ -794,20 +820,24 @@ int32_t MDate::LeapYear(uint32_t year) {
 // LINE 263:
 	__asm        test   reinterpret_cast<uint8_t>(year), 3;
 	__asm        jne    near ptr 0x004BC8C3;
+
 	__asm        mov    ecx, 0x64;
 	__asm        mov    eax, year;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        test   edx, edx;
 	__asm        jne    near ptr 0x004BC8D7;
+
 	__asm        mov    ecx, 0x190;
 	__asm        mov    eax, year;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        test   edx, edx;
 	__asm        jne    near ptr 0x004BC8E1;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BC8E3;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC8E8;
 // LINE 264:
@@ -818,16 +848,23 @@ char * MDate::MonthName(uint32_t monthNumber) {
 // LINE 278:
 	__asm        cmp    monthNumber, 1;
 	__asm        jb     near ptr 0x004BC90F;
+
 	__asm        cmp    monthNumber, 0xC;
 	__asm        ja     near ptr 0x004BC90F;
+
 	__asm        jmp    near ptr 0x004BC914;
+
 	__asm        jmp    near ptr 0x004BC932;
+
 	__asm        jmp    near ptr 0x004BC923;
+
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004BC932;
+
 	__asm        mov    eax, monthNumber;
 	__asm        mov    eax, [eax*4+0x59AC94];
 	__asm        jmp    near ptr 0x004BC934;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BC939;
 // LINE 279:
@@ -846,6 +883,7 @@ int32_t MDate::CompareTo(const class MDate& d) {
 	__asm        jmp    near ptr 0x004BC993;
 // LINE 295:
 	__asm        jmp    near ptr 0x004BC993;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, d;
 	__asm        mov    ecx, [ecx+4];
@@ -909,11 +947,16 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 // LINE 337:
 	__asm        cmp    month, 1;
 	__asm        jb     near ptr 0x004BCA27;
+
 	__asm        cmp    month, 0xC;
 	__asm        ja     near ptr 0x004BCA27;
+
 	__asm        jmp    near ptr 0x004BCA3D;
+
 	__asm        jmp    near ptr 0x004BCA27;
+
 	__asm        jmp    near ptr 0x004BCA36;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x004BCA3D;
 // LINE 338:
@@ -926,7 +969,9 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 // LINE 340:
 	__asm        cmp    month, 2;
 	__asm        jbe    near ptr 0x004BCA75;
+
 	__asm        jmp    near ptr 0x004BCA59;
+
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -1077,9 +1122,11 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jae    near ptr 0x004BCBF6;
+
 	__asm        mov    eax, dt;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004BCBFC;
+
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -1095,6 +1142,7 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    near ptr 0x004BCC28;
+
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCC30;
 // LINE 398:
@@ -1108,9 +1156,11 @@ class MDate MDate::MinDate(const class MDate& dt) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     near ptr 0x004BCC60;
+
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004BCC66;
+
 	__asm        mov    eax, dt;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -1126,6 +1176,7 @@ class MDate MDate::MinDate(const class MDate& dt) {
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    near ptr 0x004BCC92;
+
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCC9A;
 // LINE 408:
@@ -1212,6 +1263,7 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 	__asm        mov    ecx, __$ReturnUdt;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004BCD6D;
+
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x004BCD75;
 // LINE 464:
@@ -1298,6 +1350,7 @@ char * MDate::PrintString(char * szDate) {
 	__asm        mov    eax, szDate;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004BCE54;
+
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
@@ -1323,9 +1376,13 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    ecx, s;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BCEA4;
+
 	__asm        jmp    near ptr 0x004BCEA9;
+
 	__asm        jmp    near ptr 0x004BD09B;
+
 	__asm        jmp    near ptr 0x004BCEB8;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004BD09B;
 // LINE 582:
@@ -1345,6 +1402,7 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        add    esp, 4;
 // LINE 585:
 	__asm        jmp    near ptr 0x004BCEE1;
+
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1355,12 +1413,14 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        jmp    near ptr 0x004BD16E;
 // LINE 587:
 	__asm        jmp    near ptr 0x004BCF01;
+
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, s;
 	__asm        test   byte ptr [eax+ecx+8], 6;
 	__asm        je     near ptr 0x004BCFB5;
+
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1370,25 +1430,31 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BCF46;
+
 	__asm        jmp    near ptr 0x004BCF37;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BCF4B;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BCF76;
+
 	__asm        jmp    near ptr 0x004BCF67;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BCF7B;
+
 	__asm        jmp    near ptr 0x004BCF80;
 // LINE 589:
 	__asm        mov    eax, s;
@@ -1418,15 +1484,18 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        call   istream::operator>>;
 // LINE 595:
 	__asm        jmp    near ptr 0x004BCFC6;
+
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, s;
 	__asm        test   byte ptr [eax+ecx+8], 1;
 	__asm        je     near ptr 0x004BCFE1;
+
 	__asm        jmp    near ptr 0x004BD16E;
 // LINE 596:
 	__asm        jmp    near ptr 0x004BCFE6;
+
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1445,25 +1514,31 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BD031;
+
 	__asm        jmp    near ptr 0x004BD022;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BD036;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BD061;
+
 	__asm        jmp    near ptr 0x004BD052;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BD066;
+
 	__asm        jmp    near ptr 0x004BD06B;
 // LINE 599:
 	__asm        mov    eax, s;
@@ -1491,11 +1566,16 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    ecx, s;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD0B6;
+
 	__asm        jmp    near ptr 0x004BD0BB;
+
 	__asm        jmp    near ptr 0x004BD0E9;
+
 	__asm        jmp    near ptr 0x004BD0CA;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004BD0E9;
+
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, d;
@@ -1507,6 +1587,7 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004BD0F3;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 606:
@@ -1522,25 +1603,31 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BD12F;
+
 	__asm        jmp    near ptr 0x004BD120;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BD134;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+8], 4;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    near ptr 0x004BD15F;
+
 	__asm        jmp    near ptr 0x004BD150;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BD164;
+
 	__asm        jmp    near ptr 0x004BD169;
 // LINE 608:
 	__asm        jmp    near ptr 0x004BD16E;
@@ -1557,9 +1644,13 @@ void SkipDelim(class istream& strm) {
 	__asm        mov    ecx, strm;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD19E;
+
 	__asm        jmp    near ptr 0x004BD1B2;
+
 	__asm        jmp    near ptr 0x004BD19E;
+
 	__asm        jmp    near ptr 0x004BD1AD;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    near ptr 0x004BD1B2;
 // LINE 528:
@@ -1576,13 +1667,19 @@ void SkipDelim(class istream& strm) {
 	__asm        mov    ecx, strm;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD1D9;
+
 	__asm        jmp    near ptr 0x004BD1DE;
+
 	__asm        jmp    near ptr 0x004BD237;
+
 	__asm        jmp    near ptr 0x004BD1ED;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004BD237;
+
 	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
 	__asm        jle    near ptr 0x004BD214;
+
 	__asm        push   0x107;
 	__asm        movsx  eax, c;
 	__asm        push   eax;
@@ -1590,6 +1687,7 @@ void SkipDelim(class istream& strm) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004BD22D;
+
 	__asm        movsx  eax, c;
 	__asm        mov    ecx, ds:[0x5C0998];
 	__asm        xor    edx, edx;
@@ -1605,9 +1703,13 @@ void SkipDelim(class istream& strm) {
 	__asm        mov    ecx, strm;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD252;
+
 	__asm        jmp    near ptr 0x004BD257;
+
 	__asm        jmp    near ptr 0x004BD272;
+
 	__asm        jmp    near ptr 0x004BD266;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004BD272;
 // LINE 535:
@@ -1644,13 +1746,19 @@ char * ParseMonth(class istream& s) {
 	__asm        mov    ecx, s;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD2BF;
+
 	__asm        jmp    near ptr 0x004BD2C4;
+
 	__asm        jmp    near ptr 0x004BD34A;
+
 	__asm        jmp    near ptr 0x004BD2D3;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004BD34A;
+
 	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
 	__asm        jle    near ptr 0x004BD2FA;
+
 	__asm        push   0x103;
 	__asm        movsx  eax, c;
 	__asm        push   eax;
@@ -1658,6 +1766,7 @@ char * ParseMonth(class istream& s) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004BD313;
+
 	__asm        movsx  eax, c;
 	__asm        mov    ecx, ds:[0x5C0998];
 	__asm        xor    edx, edx;
@@ -1666,6 +1775,7 @@ char * ParseMonth(class istream& s) {
 	__asm        mov    [ebp-0xC], edx;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004BD34A;
+
 	__asm        mov    eax, 0x6069A8;
 	__asm        add    eax, 0xA;
 	__asm        cmp    eax, p;
@@ -1689,9 +1799,13 @@ char * ParseMonth(class istream& s) {
 	__asm        mov    ecx, s;
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    near ptr 0x004BD365;
+
 	__asm        jmp    near ptr 0x004BD36A;
+
 	__asm        jmp    near ptr 0x004BD385;
+
 	__asm        jmp    near ptr 0x004BD379;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x004BD385;
 // LINE 558:
@@ -1728,6 +1842,7 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        jmp    near ptr 0x004BD5F3;
 // LINE 630:
 	__asm        jmp    near ptr 0x004BD3D1;
+
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -1762,6 +1877,7 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        jmp    near ptr 0x004BD621;
 // LINE 636:
 	__asm        jmp    near ptr 0x004BD44A;
+
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        mov    ecx, 0x64;
@@ -1854,6 +1970,7 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        jmp    near ptr 0x004BD621;
 // LINE 651:
 	__asm        jmp    near ptr 0x004BD57A;
+
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -1888,8 +2005,10 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        jmp    near ptr 0x004BD621;
 // LINE 653:
 	__asm        jmp    near ptr 0x004BD621;
+
 	__asm        cmp    dword ptr [ebp-0xC0], 4;
 	__asm        ja     near ptr 0x004BD621;
+
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        jmp    dword ptr [eax*4+0x4BD60D];
 // Switch pointers
@@ -1902,6 +2021,7 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004BD63B;
+
 	__asm        lea    ecx, out.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out.<ostrstream+0x08>;

@@ -34,6 +34,7 @@ struct tagPOINT{
 void Cursor::Cursor() {
 // LINE 20:
 	__asm        jmp    near ptr 0x00474801;
+
 	__asm        mov    eax, this;
 }
 
@@ -57,12 +58,14 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	__asm        mov    nCursor, 1;
 // LINE 49:
 	__asm        jmp    near ptr 0x0047486C;
+
 	__asm        cmp    nCursor, 2;
 	__asm        jne    near ptr 0x0047485B;
 // LINE 50:
 	__asm        mov    nCursor, 2;
 // LINE 51:
 	__asm        jmp    near ptr 0x0047486C;
+
 	__asm        cmp    nCursor, 4;
 	__asm        jne    near ptr 0x0047486C;
 // LINE 52:

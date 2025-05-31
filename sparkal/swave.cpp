@@ -83,6 +83,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        mov    nError, 0xE100;
 // LINE 63:
 	__asm        jmp    near ptr 0x0048EDAF;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 67:
 	__asm        push   0;
@@ -97,11 +98,13 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        je     near ptr 0x0048EC1F;
 // LINE 68:
 	__asm        jmp    near ptr 0x0048EDAA;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 70:
 	__asm        mov    eax, pckInRIFF;
 	__asm        cmp    dword ptr [eax], 0x46464952;
 	__asm        jne    near ptr 0x0048EC3E;
+
 	__asm        mov    eax, pckInRIFF;
 	__asm        cmp    dword ptr [eax+8], 0x45564157;
 	__asm        je     near ptr 0x0048EC4F;
@@ -109,6 +112,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        mov    nError, 0xE101;
 // LINE 72:
 	__asm        jmp    near ptr 0x0048EDA5;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 76:
 	__asm        mov    ckIn.ckid, 0x20746D66;
@@ -126,6 +130,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        je     near ptr 0x0048EC81;
 // LINE 78:
 	__asm        jmp    near ptr 0x0048EDA0;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 83:
 	__asm        cmp    ckIn.cksize, 0x10;
@@ -134,6 +139,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        mov    nError, 0xE101;
 // LINE 85:
 	__asm        jmp    near ptr 0x0048ED9B;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 89:
 	__asm        push   0x10;
@@ -148,6 +154,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        mov    nError, 0xE102;
 // LINE 91:
 	__asm        jmp    near ptr 0x0048ED96;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 98:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(pcmWaveFormat.wf.wFormatTag);
@@ -171,6 +178,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        mov    nError, 0xE102;
 // LINE 105:
 	__asm        jmp    near ptr 0x0048ED91;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 110:
 	__asm        push   0x10;
@@ -196,9 +204,11 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        je     near ptr 0x0048ED50;
 // LINE 127:
 	__asm        jmp    near ptr 0x0048ED8C;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 // LINE 129:
 	__asm        jmp    near ptr 0x0048ED87;
+
 	__asm        jmp    near ptr 0x0048ED77;
 // LINE 132:
 ERROR_READING_WAVE:
@@ -221,13 +231,21 @@ END_OF_ROUTINE:
 	__asm        jmp    near ptr 0x0048EDB4;
 // LINE 141:
 	__asm        jmp    near ptr 0x0048ED77;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
+
 	__asm        jmp    near ptr 0x0048ED5A;
 }
 
@@ -250,6 +268,7 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 	__asm        jne    near ptr 0x0048EDF1;
 // LINE 161:
 	__asm        jmp    near ptr 0x0048EE1B;
+
 	__asm        jmp    near ptr 0x0048EE13;
 // LINE 164:
 	__asm        mov    eax, pckIn;
@@ -293,6 +312,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        je     near ptr 0x0048EE55;
 // LINE 200:
 	__asm        jmp    near ptr 0x0048EF65;
+
 	__asm        jmp    near ptr 0x0048EF40;
 // LINE 203:
 	__asm        mov    eax, pckIn;
@@ -312,6 +332,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 // LINE 208:
 	__asm        mov    cT, 0;
 	__asm        jmp    near ptr 0x0048EE89;
+
 	__asm        inc    cT;
 	__asm        mov    eax, cbRead;
 	__asm        cmp    cT, eax;
@@ -332,6 +353,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        je     near ptr 0x0048EEC8;
 // LINE 212:
 	__asm        jmp    near ptr 0x0048EF60;
+
 	__asm        jmp    near ptr 0x0048EF40;
 // LINE 214:
 	__asm        mov    eax, mmioinfoIn.pchEndRead;
@@ -341,6 +363,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        mov    nError, 0xE103;
 // LINE 216:
 	__asm        jmp    near ptr 0x0048EF5B;
+
 	__asm        jmp    near ptr 0x0048EF40;
 // LINE 222:
 	__asm        mov    eax, mmioinfoIn.pchNext;
@@ -370,6 +393,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        je     near ptr 0x0048EF2E;
 // LINE 229:
 	__asm        jmp    near ptr 0x0048EF56;
+
 	__asm        jmp    near ptr 0x0048EF40;
 // LINE 231:
 	__asm        mov    eax, cbRead;
@@ -377,6 +401,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        mov    [ecx], eax;
 // LINE 232:
 	__asm        jmp    near ptr 0x0048EF51;
+
 	__asm        jmp    near ptr 0x0048EF49;
 // LINE 235:
 ERROR_CANNOT_READ:
@@ -388,9 +413,13 @@ FINISHED_READING:
 	__asm        jmp    near ptr 0x0048EF6A;
 // LINE 239:
 	__asm        jmp    near ptr 0x0048EF49;
+
 	__asm        jmp    near ptr 0x0048EF40;
+
 	__asm        jmp    near ptr 0x0048EF40;
+
 	__asm        jmp    near ptr 0x0048EF40;
+
 	__asm        jmp    near ptr 0x0048EF40;
 }
 
@@ -445,6 +474,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        je     near ptr 0x0048EFEE;
 // LINE 289:
 	__asm        jmp    near ptr 0x0048F115;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 // LINE 294:
 	__asm        push   0;
@@ -458,6 +488,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        jne    near ptr 0x0048F014;
 // LINE 295:
 	__asm        jmp    near ptr 0x0048F110;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 // LINE 298:
 	__asm        mov    ckIn.ckid, 0x61746164;
@@ -474,6 +505,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        je     near ptr 0x0048F041;
 // LINE 300:
 	__asm        jmp    near ptr 0x0048F10B;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 // LINE 303:
 	__asm        mov    eax, ckIn.cksize;
@@ -489,6 +521,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        mov    nError, 0xE000;
 // LINE 305:
 	__asm        jmp    near ptr 0x0048F106;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 // LINE 311:
 	__asm        lea    eax, cbActualRead;
@@ -509,6 +542,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        je     near ptr 0x0048F0A4;
 // LINE 312:
 	__asm        jmp    near ptr 0x0048F101;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 // LINE 315:
 	__asm        mov    eax, cbActualRead;
@@ -516,6 +550,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        mov    [ecx], eax;
 // LINE 316:
 	__asm        jmp    near ptr 0x0048F0FC;
+
 	__asm        jmp    near ptr 0x0048F0D7;
 // LINE 319:
 ERROR_LOADING:
@@ -546,10 +581,15 @@ DONE_LOADING:
 	__asm        jmp    near ptr 0x0048F11A;
 // LINE 332:
 	__asm        jmp    near ptr 0x0048F0D7;
+
 	__asm        jmp    near ptr 0x0048F0B6;
+
 	__asm        jmp    near ptr 0x0048F0B6;
+
 	__asm        jmp    near ptr 0x0048F0B6;
+
 	__asm        jmp    near ptr 0x0048F0B6;
+
 	__asm        jmp    near ptr 0x0048F0B6;
 }
 

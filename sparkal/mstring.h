@@ -32,6 +32,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    nChars, eax;
 // LINE 131:
 	__asm        jmp    near ptr 0x0040F77F;
+
 	__asm        lea    eax, szString[0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -39,6 +40,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    [ebp-0x1020], eax;
 	__asm        cmp    dword ptr [ebp-0x1020], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0040F7D9;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -48,29 +50,37 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040F7CA;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040F7D9;
+
 	__asm        jmp    near ptr 0x0040F7DE;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0040F815;
+
 	__asm        cmp    dword ptr [ebp-0x1020], 0;
 	__asm        je     near ptr 0x0040F8DD;
+
 	__asm        jmp    near ptr 0x0040F800;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1020];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0040F8DD;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x100C], eax;
 	__asm        cmp    dword ptr [ebp-0x100C], 0;
 	__asm        je     near ptr 0x0040F856;
+
 	__asm        mov    eax, [ebp-0x1020];
 	__asm        push   eax;
 	__asm        lea    eax, szString[0];
@@ -79,6 +89,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1008], eax;
 	__asm        jmp    near ptr 0x0040F860;
+
 	__asm        mov    dword ptr [ebp-0x1008], 0;
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -87,6 +98,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0040F8C7;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x101C], eax;
@@ -94,23 +106,31 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    [ebp-0x1018], eax;
 	__asm        cmp    dword ptr [ebp-0x1018], 0;
 	__asm        je     near ptr 0x0040F8C7;
+
 	__asm        mov    ecx, [ebp-0x1018];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0040F8AE;
+
 	__asm        mov    eax, [ebp-0x1018];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040F8C2;
+
 	__asm        jmp    near ptr 0x0040F8C7;
+
 	__asm        jmp    near ptr 0x0040F8CC;
+
 	__asm        mov    eax, [ebp-0x1008];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0040F91F;
+
 	__asm        cmp    dword ptr [ebp-0x1020], 0;
 	__asm        je     near ptr 0x0040F91F;
+
 	__asm        jmp    near ptr 0x0040F8EF;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -124,25 +144,30 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0040F91F;
+
 	__asm        mov    eax, [ebp-0x1020];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0040F933;
+
 	__asm        jmp    near ptr 0x0040F938;
 // LINE 132:
 	__asm        jmp    near ptr 0x0040F93D;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1040], eax;
 	__asm        jmp    near ptr 0x0040F955;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    ecx, [ebp-0x1040];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jb     near ptr 0x0040F9A7;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -152,17 +177,23 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040F998;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040F9A7;
+
 	__asm        jmp    near ptr 0x0040F9AC;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0040F9E4;
+
 	__asm        jmp    near ptr 0x0040F9C1;
+
 	__asm        jmp    near ptr 0x0040F9C6;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+8];
@@ -171,27 +202,36 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        sub    eax, [ecx+4];
 	__asm        cmp    eax, [ebp-0x1040];
 	__asm        jae    near ptr 0x0040FAE9;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1028], eax;
 	__asm        cmp    dword ptr [ebp-0x1028], 0;
 	__asm        je     near ptr 0x0040FA7E;
+
 	__asm        jmp    near ptr 0x0040FA06;
+
 	__asm        jmp    near ptr 0x0040FA0B;
+
 	__asm        jmp    near ptr 0x0040FA10;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0040FA38;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1030], eax;
 	__asm        jmp    near ptr 0x0040FA47;
+
 	__asm        jmp    near ptr 0x0040FA47;
+
 	__asm        mov    dword ptr [ebp-0x1030], 0;
 	__asm        jmp    near ptr 0x0040FA47;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -207,6 +247,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1024], eax;
 	__asm        jmp    near ptr 0x0040FA88;
+
 	__asm        mov    dword ptr [ebp-0x1024], 0;
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -215,6 +256,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0040FAD8;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x103C], eax;
@@ -222,18 +264,24 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    [ebp-0x1038], eax;
 	__asm        cmp    dword ptr [ebp-0x1038], 0;
 	__asm        je     near ptr 0x0040FAD8;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x1038];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0040FAD8;
+
 	__asm        jmp    near ptr 0x0040FADD;
+
 	__asm        mov    eax, [ebp-0x1024];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    [ecx+4], eax;
 	__asm        cmp    dword ptr [ebp-0x1040], 0;
 	__asm        je     near ptr 0x0040FB37;
+
 	__asm        jmp    near ptr 0x0040FAFB;
+
 	__asm        jmp    near ptr 0x0040FB00;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -249,17 +297,20 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0040FB37;
+
 	__asm        mov    eax, [ebp-0x1040];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    ecx, [ecx+4];
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0040FB4B;
+
 	__asm        jmp    near ptr 0x0040FB50;
 // LINE 133:
 	__asm        mov    eax, nChars;
 	__asm        jmp    near ptr 0x0040FE4F;
 // LINE 136:
 	__asm        jmp    near ptr 0x0040FB60;
+
 	__asm        lea    eax, szString[0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -267,6 +318,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        cmp    dword ptr [ebp-0x1070], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0040FBBA;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -276,31 +328,40 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040FBAB;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040FBBA;
+
 	__asm        jmp    near ptr 0x0040FBBF;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0040FBF6;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        je     near ptr 0x0040FDE9;
+
 	__asm        jmp    near ptr 0x0040FBE1;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1070];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0040FDE9;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        cmp    dword ptr [ebp-0x1048], 0;
 	__asm        je     near ptr 0x0040FD16;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0040FC58;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -310,10 +371,12 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040FC49;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040FC58;
+
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        mov    ecx, [ebp-0x1048];
 	__asm        mov    [ecx+4], eax;
@@ -324,6 +387,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0040FCE7;
+
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -346,15 +410,19 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0040FCE2;
+
 	__asm        jmp    near ptr 0x0040FCF3;
+
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0040FD05;
+
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        jmp    near ptr 0x0040FD20;
+
 	__asm        mov    dword ptr [ebp-0x1044], 0;
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -363,6 +431,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0040FDD3;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1058], eax;
@@ -370,9 +439,11 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    [ebp-0x1054], eax;
 	__asm        cmp    dword ptr [ebp-0x1054], 0;
 	__asm        je     near ptr 0x0040FDD3;
+
 	__asm        mov    eax, [ebp-0x1054];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0040FDB0;
+
 	__asm        mov    eax, [ebp-0x1054];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x105C], eax;
@@ -387,21 +458,29 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        mov    eax, [ebp-0x1054];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0040FDB5;
+
 	__asm        jmp    near ptr 0x0040FDBA;
+
 	__asm        mov    eax, [ebp-0x1054];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0040FDCE;
+
 	__asm        jmp    near ptr 0x0040FDD3;
+
 	__asm        jmp    near ptr 0x0040FDD8;
+
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0040FE2B;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        je     near ptr 0x0040FE2B;
+
 	__asm        jmp    near ptr 0x0040FDFB;
+
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -415,11 +494,13 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0040FE2B;
+
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0040FE3F;
+
 	__asm        jmp    near ptr 0x0040FE44;
 // LINE 137:
 	__asm        mov    eax, nChars;

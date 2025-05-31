@@ -78,6 +78,7 @@ public:
 // Contribution: 1:0015b270-0015bac4 Module: 195, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055c270
 void FlatFile::FlatFile() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593620;
 // LINE 14:
@@ -94,17 +95,20 @@ void FlatFile::FlatFile() {
 	__asm        call   FlatFile::Link;
 // LINE 23:
 	__asm        jmp    near ptr 0x0055C2B3;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0055c2bb
 void FlatFile::~FlatFile() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593620;
 // LINE 30:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     near ptr 0x0055C2E8;
+
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Close;
 // LINE 32:
@@ -122,6 +126,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    srch, eax;
 	__asm        jmp    near ptr 0x0055C319;
+
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    srch, eax;
@@ -133,6 +138,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055C359;
+
 	__asm        mov    eax, srch;
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -142,6 +148,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055C359;
+
 	__asm        mov    eax, srch;
 	__asm        jmp    near ptr 0x0055C365;
 // LINE 47:
@@ -191,6 +198,7 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055C3F9;
+
 	__asm        mov    eax, 0xFFFFFFD1;
 	__asm        jmp    near ptr 0x0055C57F;
 // LINE 63:
@@ -210,6 +218,7 @@ long FlatFile::Open(unsigned char * name) {
 	long test;
 	__asm        mov    test, 1;
 	__asm        jmp    near ptr 0x0055C428;
+
 	__asm        inc    test;
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
@@ -219,6 +228,7 @@ long FlatFile::Open(unsigned char * name) {
 // LINE 74:
 	__asm        cmp    test, 2;
 	__asm        je     near ptr 0x0055C46F;
+
 	__asm        mov    eax, test;
 	__asm        mov    ecx, name;
 	__asm        xor    edx, edx;
@@ -259,9 +269,11 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     near ptr 0x0055C4E1;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0055C4E8;
+
 	__asm        mov    err, 0xFFFFFFCE;
 // LINE 85:
 	__asm        inc    dword ptr ds:[0x5BDDDC];
@@ -338,6 +350,7 @@ long FlatFile::Close() {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055C603;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BDE18;
 	__asm        push   0x76;
@@ -352,6 +365,7 @@ long FlatFile::Close() {
 	__asm        mov    err, 0xFFFFFFCF;
 // LINE 133:
 	__asm        jmp    near ptr 0x0055C66B;
+
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Exclusive;
 	__asm        movzx  eax, ax;
@@ -365,9 +379,11 @@ long FlatFile::Close() {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055C658;
+
 	__asm        mov    err, 0xFFFFFFCE;
 // LINE 136:
 	__asm        jmp    near ptr 0x0055C65F;
+
 	__asm        mov    err, 0;
 // LINE 138:
 	__asm        jmp    near ptr 0x0055C66B;
@@ -398,6 +414,7 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055C6C5;
+
 	__asm        mov    eax, 0xFFFFFFCF;
 	__asm        jmp    near ptr 0x0055C70A;
 // LINE 172:
@@ -418,10 +435,12 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	__asm        mov    ecx, actualSize;
 	__asm        cmp    [eax], ecx;
 	__asm        je     near ptr 0x0055C703;
+
 	__asm        mov    eax, 0xFFFFFFD0;
 	__asm        jmp    near ptr 0x0055C70A;
 // LINE 174:
 	__asm        jmp    near ptr 0x0055C70A;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C70A;
 // LINE 176:
@@ -435,6 +454,7 @@ long FlatFile::SetPos(long fromStart) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055C73A;
+
 	__asm        mov    eax, 0xFFFFFFCF;
 	__asm        jmp    near ptr 0x0055C770;
 // LINE 185:
@@ -448,10 +468,12 @@ long FlatFile::SetPos(long fromStart) {
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055C769;
+
 	__asm        mov    eax, 0xFFFFFFCE;
 	__asm        jmp    near ptr 0x0055C770;
 // LINE 186:
 	__asm        jmp    near ptr 0x0055C770;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C770;
 // LINE 188:
@@ -465,6 +487,7 @@ long FlatFile::Advance(long skipAmt) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055C7A0;
+
 	__asm        mov    eax, 0xFFFFFFCF;
 	__asm        jmp    near ptr 0x0055C7D6;
 // LINE 197:
@@ -478,10 +501,12 @@ long FlatFile::Advance(long skipAmt) {
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055C7CF;
+
 	__asm        mov    eax, 0xFFFFFFCE;
 	__asm        jmp    near ptr 0x0055C7D6;
 // LINE 198:
 	__asm        jmp    near ptr 0x0055C7D6;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055C7D6;
 // LINE 200:
@@ -493,10 +518,12 @@ unsigned short FlatFile::ValidFile() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        jne    near ptr 0x0055C806;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055C80F;
 // LINE 222:
 	__asm        jmp    near ptr 0x0055C80F;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0055C80F;
 // LINE 223:
@@ -508,10 +535,13 @@ unsigned short FlatFile::SameFile(class FlatFile* other) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        je     near ptr 0x0055C86B;
+
 	__asm        jmp    near ptr 0x0055C835;
+
 	__asm        mov    eax, other;
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        je     near ptr 0x0055C86B;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, other;
 	__asm        mov    ecx, [ecx+0x108];
@@ -546,6 +576,7 @@ long FlatFile::Read4(long * val) {
 // LINE 246:
 	__asm        cmp    err, 0;
 	__asm        jne    near ptr 0x0055C8B6;
+
 	__asm        mov    eax, val;
 	__asm        push   eax;
 	__asm        call   Swizzle4;
@@ -574,6 +605,7 @@ long FlatFile::Read2(short * val) {
 // LINE 254:
 	__asm        cmp    err, 0;
 	__asm        jne    near ptr 0x0055C901;
+
 	__asm        mov    eax, val;
 	__asm        push   eax;
 	__asm        call   Swizzle2;
@@ -673,6 +705,7 @@ unsigned short FlatFile::Exclusive() {
 	__asm        mov    eax, this;
 	__asm        cmp    srch, eax;
 	__asm        je     near ptr 0x0055CA2C;
+
 	__asm        mov    eax, srch;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -727,6 +760,7 @@ short FlatFile::CheckForLeaks() {
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    list, eax;
 	__asm        jmp    near ptr 0x0055CAA4;
+
 	__asm        mov    eax, list;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    list, eax;

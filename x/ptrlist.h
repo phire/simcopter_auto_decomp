@@ -44,6 +44,7 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0055E7CA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x32;
@@ -66,15 +67,18 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e7f0
 void PtrList<cCopterAnim>::Iter::Reset() {
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055E81A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0055E824;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0055E829;
@@ -87,6 +91,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055E949;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-4], eax;
@@ -109,6 +114,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0055E944;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
@@ -116,10 +122,12 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055E8DC;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055E971;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
@@ -132,6 +140,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055E99E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A274;
 	__asm        push   0x17;
@@ -149,6 +158,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055FD29;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-4], eax;
@@ -171,6 +181,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0055FD24;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
@@ -178,10 +189,12 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055FCBC;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055FD51;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
@@ -194,6 +207,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055FD7E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A274;
 	__asm        push   0x17;
@@ -207,15 +221,18 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fd90
 void PtrList<cCopterBody>::Iter::Reset() {
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055FDBA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0055FDC4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0055FDC9;
@@ -228,6 +245,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00551E59;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-4], eax;
@@ -250,6 +268,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00551E54;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
@@ -257,10 +276,12 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00551DEC;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00551E81;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
@@ -273,6 +294,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00551EAE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A274;
 	__asm        push   0x17;

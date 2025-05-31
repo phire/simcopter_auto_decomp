@@ -1044,7 +1044,7 @@ public:
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562500
 void cYObject::Error(short errNum) {
-	 // Switch table at 0x005625e6
+	static const <NoType> = { /* <data@0x005625e6> */ };
 
 // LINE 14:
 	__asm        movsx  eax, errNum;
@@ -1097,9 +1097,11 @@ void cYObject::Error(short errNum) {
 	__asm        jmp    near ptr 0x005625FF;
 // LINE 34:
 	__asm        jmp    near ptr 0x005625FF;
+
 	__asm        dec    dword ptr [ebp-8];
 	__asm        cmp    dword ptr [ebp-8], 0x18;
 	__asm        ja     near ptr 0x00562590;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5625E6];

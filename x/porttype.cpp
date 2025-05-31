@@ -207,6 +207,7 @@ void CtoPstr(char * cstr) {
 	__asm        movsx  eax, len;
 	__asm        cmp    eax, 0xFF;
 	__asm        jle    near ptr 0x00566B80;
+
 	__asm        mov    len, 0xFF;
 // LINE 55:
 	__asm        movsx  eax, len;
@@ -342,6 +343,7 @@ void CleanUpPort() {
 // LINE 87:
 	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
 	__asm        jne    near ptr 0x00566D08;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF640;
 	__asm        push   0x57;
@@ -385,6 +387,7 @@ void SetPort(struct GrafPtr newPort) {
 // LINE 121:
 	__asm        cmp    newPort.window, 0;
 	__asm        je     near ptr 0x00566D8C;
+
 	__asm        mov    eax, newPort.window;
 	__asm        push   eax;
 	__asm        call   SetPort;
@@ -421,6 +424,7 @@ void EraseRect(struct tagRECT* rect) {
 // LINE 136:
 	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
 	__asm        jne    near ptr 0x00566DFC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF684;
 	__asm        push   0x88;
@@ -501,6 +505,7 @@ void FrameRect(struct Rect* rect) {
 // LINE 154:
 	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
 	__asm        jne    near ptr 0x00566EDF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF6AC;
 	__asm        push   0x9A;
@@ -655,6 +660,7 @@ unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        je     near ptr 0x00567081;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x005670A4;
 // LINE 197:
@@ -663,6 +669,7 @@ unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
 	__asm        je     near ptr 0x0056709B;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x005670A4;
 // LINE 198:
@@ -713,25 +720,30 @@ unsigned short PtInRect(struct Point p, struct Rect* r) {
 	__asm        movsx  ecx, p.h;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00567158;
+
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        movsx  ecx, p.h;
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x00567158;
+
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        movsx  ecx, p.v;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00567158;
+
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        movsx  ecx, p.v;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00567165;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0056716E;
 // LINE 212:
 	__asm        jmp    near ptr 0x0056716E;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0056716E;
 // LINE 213:
@@ -746,12 +758,14 @@ unsigned short EmptyRect(struct Rect* r) {
 	__asm        movsx  ecx, word ptr [ecx];
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x005671A4;
+
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        mov    ecx, r;
 	__asm        movsx  ecx, word ptr [ecx+6];
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005671AD;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005671B5;
 // LINE 218:

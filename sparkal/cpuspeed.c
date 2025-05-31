@@ -116,8 +116,10 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    cycles, eax;
 // LINE 142:
 	__asm        jmp    near ptr 0x00447C84;
+
 	__asm        cmp    clocks, 0;
 	__asm        jle    near ptr 0x00447C60;
+
 	__asm        cmp    clocks, 0x96;
 	__asm        jg     near ptr 0x00447C60;
 // LINE 143:
@@ -166,6 +168,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 166:
 	__asm        test   reinterpret_cast<uint8_t>(features), 0x10;
 	__asm        je     near ptr 0x00447E72;
+
 	__asm        cmp    manual, 0;
 	__asm        jne    near ptr 0x00447E72;
 // LINE 183:
@@ -283,8 +286,10 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 285:
 	__asm        cmp    tries, 3;
 	__asm        jl     near ptr 0x00447CCE;
+
 	__asm        cmp    tries, 0x14;
 	__asm        jge    near ptr 0x00447E38;
+
 	__asm        mov    eax, freq;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
@@ -293,6 +298,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
 	__asm        jg     near ptr 0x00447CCE;
+
 	__asm        mov    eax, freq2;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
@@ -301,6 +307,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
 	__asm        jg     near ptr 0x00447CCE;
+
 	__asm        mov    eax, freq3;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
@@ -332,6 +339,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    freq, eax;
 // LINE 298:
 	__asm        jmp    near ptr 0x00447F80;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 3;
@@ -347,6 +355,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 325:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00447EA0;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x00447EF2;
@@ -563,6 +572,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        jmp    near ptr 0x00448264;
 // LINE 458:
 	__asm        jmp    near ptr 0x00448264;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 4;
@@ -601,6 +611,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        jmp    near ptr 0x00448264;
 // LINE 476:
 	__asm        jmp    near ptr 0x00448264;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -639,6 +650,7 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        jmp    near ptr 0x00448264;
 // LINE 494:
 	__asm        jmp    near ptr 0x00448264;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 6;

@@ -139,6 +139,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 // LINE 162:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x40;
 	__asm        je     near ptr 0x00554782;
+
 	__asm        or     wstate, 0xF00;
 // LINE 165:
 	__asm        mov    eax, size;
@@ -150,8 +151,10 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 // LINE 166:
 	__asm        cmp    mem, 0;
 	__asm        je     near ptr 0x005547B3;
+
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
 	__asm        je     near ptr 0x005547B3;
+
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
@@ -159,6 +162,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 // LINE 168:
 	__asm        cmp    mem, 0;
 	__asm        jne    near ptr 0x005547D9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC130;
 	__asm        push   0xA8;
@@ -240,6 +244,7 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 // LINE 211:
 	__asm        cmp    mem, 0;
 	__asm        jne    near ptr 0x005548B6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC1A4;
 	__asm        push   0xD3;
@@ -301,6 +306,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055496C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC218;
 	__asm        push   0xF2;
@@ -335,6 +341,7 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005549D6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC248;
 	__asm        push   0x103;
@@ -365,6 +372,7 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554A30;
+
 	__asm        movsx  eax, err;
 	__asm        push   eax;
 	__asm        push   0x5BC278;
@@ -396,6 +404,7 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554A8A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC2B0;
 	__asm        push   0x131;
@@ -466,6 +475,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 // LINE 361:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&flags) + 1), 0xF;
 	__asm        je     near ptr 0x00554B60;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC384;
 	__asm        push   0x169;
@@ -486,6 +496,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 // LINE 371:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jb     near ptr 0x00554BA5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC3C4;
 	__asm        push   0x173;
@@ -510,6 +521,7 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 // LINE 381:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jb     near ptr 0x00554BF2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC41C;
 	__asm        push   0x17D;
@@ -553,6 +565,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554C69;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC474;
 	__asm        push   0x18E;
@@ -576,8 +589,10 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00554C9E;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x00554CA1;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00554CA6;
 // LINE 403:
@@ -627,6 +642,7 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554D4D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC514;
 	__asm        push   0x1AF;
@@ -655,6 +671,7 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554DA2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC54C;
 	__asm        push   0x1BE;
@@ -680,8 +697,10 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 // LINE 456:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
 	__asm        je     near ptr 0x00554DDA;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x00554DDD;
+
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00554DE2;
 // LINE 457:
@@ -705,15 +724,18 @@ long Memory::HGetState(void * __ptr32 h) {
 // LINE 470:
 	__asm        cmp    reinterpret_cast<uint8_t>(wstate), 0;
 	__asm        je     near ptr 0x00554E1D;
+
 	__asm        or     state, 0x80;
 // LINE 471:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&wstate) + 1), 0xF;
 	__asm        je     near ptr 0x00554E2B;
+
 	__asm        or     state, 0x40;
 // LINE 472:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554E55;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC584;
 	__asm        push   0x1D8;
@@ -731,12 +753,14 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 // LINE 486:
 	__asm        test   reinterpret_cast<uint8_t>(newState), 0x80;
 	__asm        je     near ptr 0x00554E83;
+
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 // LINE 487:
 	__asm        jmp    near ptr 0x00554E8F;
+
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        call   Memory::HUnlock;
@@ -760,6 +784,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554EDD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BC5C4;
 	__asm        push   0x1F6;

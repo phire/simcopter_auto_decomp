@@ -309,6 +309,7 @@ struct SparkalPoint{
 // Contribution: 1:000b8040-000ba946 Module: 4, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004b9040
 void HotSpot::HotSpot() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -322,11 +323,13 @@ void HotSpot::HotSpot() {
 	__asm        jmp    near ptr 0x004B9082;
 // LINE 26:
 	__asm        jmp    near ptr 0x004B9087;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b908f
 void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -351,12 +354,19 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        add    ecx, 8;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x004B90ED;
+
 	__asm        jmp    near ptr 0x004B947B;
+
 	__asm        jmp    near ptr 0x004B90F2;
+
 	__asm        jmp    near ptr 0x004B90F7;
+
 	__asm        jmp    near ptr 0x004B90FC;
+
 	__asm        jmp    near ptr 0x004B9101;
+
 	__asm        jmp    near ptr 0x004B9106;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -369,6 +379,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        sar    ecx, 3;
 	__asm        cmp    eax, ecx;
 	__asm        jbe    near ptr 0x004B9237;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -376,10 +387,14 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9152;
+
 	__asm        jmp    near ptr 0x004B9149;
+
 	__asm        add    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x004B9135;
+
 	__asm        jmp    near ptr 0x004B9157;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-8], eax;
@@ -388,9 +403,13 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B9171;
+
 	__asm        jmp    near ptr 0x004B9176;
+
 	__asm        jmp    near ptr 0x004B917B;
+
 	__asm        jmp    near ptr 0x004B9180;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -398,6 +417,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        sar    eax, 3;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B9197;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -406,7 +426,9 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004B91B0;
+
 	__asm        jmp    near ptr 0x004B91B5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x3C], eax;
@@ -419,6 +441,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        cmp    [ebp-0x44], eax;
 	__asm        je     near ptr 0x004B9224;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        add    dword ptr [ebp-0x44], 8;
@@ -428,8 +451,10 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B91FB;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004B921A;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -437,19 +462,30 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B921A;
+
 	__asm        jmp    near ptr 0x004B921F;
+
 	__asm        jmp    near ptr 0x004B91D0;
+
 	__asm        jmp    near ptr 0x004B9229;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004B9444;
+
 	__asm        jmp    near ptr 0x004B923C;
+
 	__asm        jmp    near ptr 0x004B9241;
+
 	__asm        jmp    near ptr 0x004B9246;
+
 	__asm        jmp    near ptr 0x004B924B;
+
 	__asm        jmp    near ptr 0x004B9250;
+
 	__asm        jmp    near ptr 0x004B9255;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -462,9 +498,13 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        sar    ecx, 3;
 	__asm        cmp    eax, ecx;
 	__asm        ja     near ptr 0x004B9306;
+
 	__asm        jmp    near ptr 0x004B9280;
+
 	__asm        jmp    near ptr 0x004B9285;
+
 	__asm        jmp    near ptr 0x004B928A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -477,6 +517,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    [ebp-0x20], eax;
 	__asm        je     near ptr 0x004B92CE;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -486,7 +527,9 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        add    dword ptr [ebp-0x20], 8;
 	__asm        add    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x004B92A5;
+
 	__asm        jmp    near ptr 0x004B92D3;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -495,17 +538,28 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B92FC;
+
 	__asm        jmp    near ptr 0x004B92F3;
+
 	__asm        add    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x004B92DF;
+
 	__asm        jmp    near ptr 0x004B9301;
+
 	__asm        jmp    near ptr 0x004B9444;
+
 	__asm        jmp    near ptr 0x004B930B;
+
 	__asm        jmp    near ptr 0x004B9310;
+
 	__asm        jmp    near ptr 0x004B9315;
+
 	__asm        jmp    near ptr 0x004B931A;
+
 	__asm        jmp    near ptr 0x004B931F;
+
 	__asm        jmp    near ptr 0x004B9324;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x24], eax;
@@ -524,6 +578,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        je     near ptr 0x004B937A;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -533,16 +588,27 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        add    dword ptr [ebp-0x2C], 8;
 	__asm        add    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x004B9351;
+
 	__asm        jmp    near ptr 0x004B937F;
+
 	__asm        jmp    near ptr 0x004B9384;
+
 	__asm        jmp    near ptr 0x004B9389;
+
 	__asm        jmp    near ptr 0x004B938E;
+
 	__asm        jmp    near ptr 0x004B9393;
+
 	__asm        jmp    near ptr 0x004B9398;
+
 	__asm        jmp    near ptr 0x004B939D;
+
 	__asm        jmp    near ptr 0x004B93A2;
+
 	__asm        jmp    near ptr 0x004B93A7;
+
 	__asm        jmp    near ptr 0x004B93AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -567,6 +633,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        je     near ptr 0x004B943F;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        add    dword ptr [ebp-0x5C], 8;
@@ -576,8 +643,10 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B9416;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x004B9435;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -585,13 +654,21 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9435;
+
 	__asm        jmp    near ptr 0x004B943A;
+
 	__asm        jmp    near ptr 0x004B93EB;
+
 	__asm        jmp    near ptr 0x004B9444;
+
 	__asm        jmp    near ptr 0x004B9449;
+
 	__asm        jmp    near ptr 0x004B944E;
+
 	__asm        jmp    near ptr 0x004B9453;
+
 	__asm        jmp    near ptr 0x004B9458;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -605,12 +682,14 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        jmp    near ptr 0x004B947B;
 // LINE 38:
 	__asm        jmp    near ptr 0x004B9480;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b948a
 void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoordinates) {
 	int32_t i;
+
 
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
@@ -628,10 +707,12 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 // LINE 50:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004B94EE;
+
 	__asm        inc    i;
 	__asm        mov    eax, lNewCount;
 	__asm        cmp    i, eax;
 	__asm        jge    near ptr 0x004B9961;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, lCoordinates;
 	__asm        mov    eax, [ecx+eax*8+4];
@@ -642,35 +723,44 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [ebp-0x14], eax;
 // LINE 52:
 	__asm        jmp    near ptr 0x004B9518;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004B9529;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9589;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B9558;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x004B9575;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    edx, [ebp-0x18];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004B9575;
+
 	__asm        jmp    near ptr 0x004B957A;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004B9957;
+
 	__asm        jmp    near ptr 0x004B958E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x8C], eax;
@@ -679,6 +769,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B966B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        sub    eax, 8;
@@ -689,8 +780,10 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004B95DB;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x004B95FA;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -698,7 +791,9 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B95FA;
+
 	__asm        jmp    near ptr 0x004B95FF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x44], eax;
@@ -709,6 +804,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    [ebp-0x8C], eax;
 	__asm        je     near ptr 0x004B9646;
+
 	__asm        sub    dword ptr [ebp-0x44], 8;
 	__asm        sub    dword ptr [ebp-0x48], 8;
 	__asm        mov    eax, [ebp-0x48];
@@ -718,7 +814,9 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B961A;
+
 	__asm        jmp    near ptr 0x004B964B;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    edx, [ebp-0x8C];
@@ -727,9 +825,13 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004B9952;
+
 	__asm        jmp    near ptr 0x004B9670;
+
 	__asm        jmp    near ptr 0x004B9675;
+
 	__asm        jmp    near ptr 0x004B967A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -737,9 +839,13 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        sar    eax, 3;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004B96C5;
+
 	__asm        jmp    near ptr 0x004B969C;
+
 	__asm        jmp    near ptr 0x004B96A1;
+
 	__asm        jmp    near ptr 0x004B96A6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -748,6 +854,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B9712;
+
 	__asm        mov    dword ptr [ebp-0x30], 0x200;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -759,17 +866,22 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B96FA;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004B9700;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004B9705;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B9712;
+
 	__asm        jmp    near ptr 0x004B9717;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
@@ -777,6 +889,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004B972D;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, this;
@@ -785,6 +898,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x70];
 	__asm        cmp    [ebp-0x8C], eax;
 	__asm        je     near ptr 0x004B9796;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        add    dword ptr [ebp-0x70], 8;
@@ -794,8 +908,10 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x004B976D;
+
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     near ptr 0x004B978C;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -803,10 +919,15 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B978C;
+
 	__asm        jmp    near ptr 0x004B9791;
+
 	__asm        jmp    near ptr 0x004B973F;
+
 	__asm        jmp    near ptr 0x004B979B;
+
 	__asm        jmp    near ptr 0x004B97A0;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -820,17 +941,23 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x004B97CC;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004B97E9;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    edx, [ebp-0x58];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004B97E9;
+
 	__asm        jmp    near ptr 0x004B97EE;
+
 	__asm        jmp    near ptr 0x004B97F3;
+
 	__asm        jmp    near ptr 0x004B97F8;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -850,6 +977,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x84];
 	__asm        cmp    [ebp-0x88], eax;
 	__asm        je     near ptr 0x004B9897;
+
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        add    dword ptr [ebp-0x88], 8;
@@ -859,8 +987,10 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    near ptr 0x004B986E;
+
 	__asm        cmp    dword ptr [ebp-0x7C], 0;
 	__asm        je     near ptr 0x004B988D;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -868,11 +998,17 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B988D;
+
 	__asm        jmp    near ptr 0x004B9892;
+
 	__asm        jmp    near ptr 0x004B9837;
+
 	__asm        jmp    near ptr 0x004B989C;
+
 	__asm        jmp    near ptr 0x004B98A1;
+
 	__asm        jmp    near ptr 0x004B98A6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x2C], eax;
@@ -880,11 +1016,16 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B98D2;
+
 	__asm        jmp    near ptr 0x004B98C9;
+
 	__asm        add    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x004B98B2;
+
 	__asm        jmp    near ptr 0x004B98D7;
+
 	__asm        jmp    near ptr 0x004B98DC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x28], eax;
@@ -893,15 +1034,20 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B98F9;
+
 	__asm        jmp    near ptr 0x004B98FE;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        shl    eax, 3;
 	__asm        add    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004B9915;
+
 	__asm        jmp    near ptr 0x004B991A;
+
 	__asm        jmp    near ptr 0x004B991F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -916,11 +1062,13 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004B9957;
+
 	__asm        jmp    near ptr 0x004B995C;
 // LINE 53:
 	__asm        jmp    near ptr 0x004B94EB;
 // LINE 54:
 	__asm        jmp    near ptr 0x004B9966;
+
 	__asm        mov    eax, this;
 }
 
@@ -928,6 +1076,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	int32_t i;
 	long lCount;
+
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -953,10 +1102,12 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 // LINE 70:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004B99E6;
+
 	__asm        inc    i;
 	__asm        mov    eax, lCount;
 	__asm        cmp    i, eax;
 	__asm        jge    near ptr 0x004B9E63;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, hotSpotResourceRecord;
 	__asm        mov    eax, [ecx+eax*8+0x14];
@@ -967,35 +1118,44 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [ebp-0x18], eax;
 // LINE 72:
 	__asm        jmp    near ptr 0x004B9A11;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004B9A22;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9A82;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004B9A51;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004B9A6E;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0x1C];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004B9A6E;
+
 	__asm        jmp    near ptr 0x004B9A73;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004B9E59;
+
 	__asm        jmp    near ptr 0x004B9A87;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x90], eax;
@@ -1004,6 +1164,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9B64;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        sub    eax, 8;
@@ -1014,8 +1175,10 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004B9AD4;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x004B9AF3;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1023,7 +1186,9 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9AF3;
+
 	__asm        jmp    near ptr 0x004B9AF8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x48], eax;
@@ -1034,6 +1199,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    [ebp-0x4C], eax;
 	__asm        je     near ptr 0x004B9B3F;
+
 	__asm        sub    dword ptr [ebp-0x48], 8;
 	__asm        sub    dword ptr [ebp-0x4C], 8;
 	__asm        mov    eax, [ebp-0x4C];
@@ -1043,7 +1209,9 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9B13;
+
 	__asm        jmp    near ptr 0x004B9B44;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0x90];
@@ -1052,9 +1220,13 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004B9E54;
+
 	__asm        jmp    near ptr 0x004B9B69;
+
 	__asm        jmp    near ptr 0x004B9B6E;
+
 	__asm        jmp    near ptr 0x004B9B73;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1062,9 +1234,13 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        sar    eax, 3;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004B9BBE;
+
 	__asm        jmp    near ptr 0x004B9B95;
+
 	__asm        jmp    near ptr 0x004B9B9A;
+
 	__asm        jmp    near ptr 0x004B9B9F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1073,6 +1249,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004B9C0B;
+
 	__asm        mov    dword ptr [ebp-0x34], 0x200;
 	__asm        lea    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
@@ -1084,17 +1261,22 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004B9BF3;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x004B9BF9;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x004B9BFE;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004B9C0B;
+
 	__asm        jmp    near ptr 0x004B9C10;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -1102,6 +1284,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B9C26;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, this;
@@ -1110,6 +1293,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x74];
 	__asm        cmp    [ebp-0x90], eax;
 	__asm        je     near ptr 0x004B9C8F;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        add    dword ptr [ebp-0x74], 8;
@@ -1119,8 +1303,10 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x004B9C66;
+
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     near ptr 0x004B9C85;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1128,10 +1314,15 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9C85;
+
 	__asm        jmp    near ptr 0x004B9C8A;
+
 	__asm        jmp    near ptr 0x004B9C38;
+
 	__asm        jmp    near ptr 0x004B9C94;
+
 	__asm        jmp    near ptr 0x004B9C99;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1145,17 +1336,23 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004B9CC5;
+
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        je     near ptr 0x004B9CE2;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0x5C];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004B9CE2;
+
 	__asm        jmp    near ptr 0x004B9CE7;
+
 	__asm        jmp    near ptr 0x004B9CEC;
+
 	__asm        jmp    near ptr 0x004B9CF1;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1175,6 +1372,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x88];
 	__asm        cmp    [ebp-0x8C], eax;
 	__asm        je     near ptr 0x004B9D99;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        add    dword ptr [ebp-0x8C], 8;
@@ -1184,8 +1382,10 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    near ptr 0x004B9D70;
+
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        je     near ptr 0x004B9D8F;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1193,11 +1393,17 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9D8F;
+
 	__asm        jmp    near ptr 0x004B9D94;
+
 	__asm        jmp    near ptr 0x004B9D33;
+
 	__asm        jmp    near ptr 0x004B9D9E;
+
 	__asm        jmp    near ptr 0x004B9DA3;
+
 	__asm        jmp    near ptr 0x004B9DA8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x30], eax;
@@ -1205,11 +1411,16 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9DD4;
+
 	__asm        jmp    near ptr 0x004B9DCB;
+
 	__asm        add    dword ptr [ebp-0x30], 8;
 	__asm        jmp    near ptr 0x004B9DB4;
+
 	__asm        jmp    near ptr 0x004B9DD9;
+
 	__asm        jmp    near ptr 0x004B9DDE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x2C], eax;
@@ -1218,15 +1429,20 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B9DFB;
+
 	__asm        jmp    near ptr 0x004B9E00;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        shl    eax, 3;
 	__asm        add    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004B9E17;
+
 	__asm        jmp    near ptr 0x004B9E1C;
+
 	__asm        jmp    near ptr 0x004B9E21;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1241,16 +1457,19 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004B9E59;
+
 	__asm        jmp    near ptr 0x004B9E5E;
 // LINE 73:
 	__asm        jmp    near ptr 0x004B99E3;
 // LINE 74:
 	__asm        jmp    near ptr 0x004B9E68;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004b9e75
 void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
+
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -1263,6 +1482,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        jmp    near ptr 0x004B9ECB;
+
 	__asm        mov    eax, rectHotspot;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
@@ -1271,35 +1491,44 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [ebp-0x18], eax;
 // LINE 89:
 	__asm        jmp    near ptr 0x004B9EE1;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004B9EF2;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004B9F52;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B9F21;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004B9F3E;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    edx, [ebp-0x24];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004B9F3E;
+
 	__asm        jmp    near ptr 0x004B9F43;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004BA338;
+
 	__asm        jmp    near ptr 0x004B9F57;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x98], eax;
@@ -1308,6 +1537,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA034;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        sub    eax, 8;
@@ -1318,8 +1548,10 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x004B9FA4;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004B9FC3;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1327,7 +1559,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9FC3;
+
 	__asm        jmp    near ptr 0x004B9FC8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x50], eax;
@@ -1338,6 +1572,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x98];
 	__asm        cmp    [ebp-0x54], eax;
 	__asm        je     near ptr 0x004BA00F;
+
 	__asm        sub    dword ptr [ebp-0x50], 8;
 	__asm        sub    dword ptr [ebp-0x54], 8;
 	__asm        mov    eax, [ebp-0x54];
@@ -1347,7 +1582,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004B9FE3;
+
 	__asm        jmp    near ptr 0x004BA014;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    edx, [ebp-0x98];
@@ -1356,9 +1593,13 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004BA333;
+
 	__asm        jmp    near ptr 0x004BA039;
+
 	__asm        jmp    near ptr 0x004BA03E;
+
 	__asm        jmp    near ptr 0x004BA043;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1366,9 +1607,13 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        sar    eax, 3;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004BA08E;
+
 	__asm        jmp    near ptr 0x004BA065;
+
 	__asm        jmp    near ptr 0x004BA06A;
+
 	__asm        jmp    near ptr 0x004BA06F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1377,6 +1622,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004BA0DB;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0x200;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
@@ -1388,17 +1634,22 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004BA0C3;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004BA0C9;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004BA0CE;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004BA0DB;
+
 	__asm        jmp    near ptr 0x004BA0E0;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
@@ -1406,6 +1657,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004BA0F6;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, this;
@@ -1414,6 +1666,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        cmp    [ebp-0x98], eax;
 	__asm        je     near ptr 0x004BA15F;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        add    dword ptr [ebp-0x7C], 8;
@@ -1423,8 +1676,10 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x004BA136;
+
 	__asm        cmp    dword ptr [ebp-0x74], 0;
 	__asm        je     near ptr 0x004BA155;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1432,10 +1687,15 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BA155;
+
 	__asm        jmp    near ptr 0x004BA15A;
+
 	__asm        jmp    near ptr 0x004BA108;
+
 	__asm        jmp    near ptr 0x004BA164;
+
 	__asm        jmp    near ptr 0x004BA169;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1449,17 +1709,23 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004BA195;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004BA1B2;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    edx, [ebp-0x64];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004BA1B2;
+
 	__asm        jmp    near ptr 0x004BA1B7;
+
 	__asm        jmp    near ptr 0x004BA1BC;
+
 	__asm        jmp    near ptr 0x004BA1C1;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1479,6 +1745,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    [ebp-0x94], eax;
 	__asm        je     near ptr 0x004BA278;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        add    dword ptr [ebp-0x94], 8;
@@ -1488,8 +1755,10 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x004BA249;
+
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        je     near ptr 0x004BA26E;
+
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1497,11 +1766,17 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BA26E;
+
 	__asm        jmp    near ptr 0x004BA273;
+
 	__asm        jmp    near ptr 0x004BA203;
+
 	__asm        jmp    near ptr 0x004BA27D;
+
 	__asm        jmp    near ptr 0x004BA282;
+
 	__asm        jmp    near ptr 0x004BA287;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x38], eax;
@@ -1509,11 +1784,16 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA2B3;
+
 	__asm        jmp    near ptr 0x004BA2AA;
+
 	__asm        add    dword ptr [ebp-0x38], 8;
 	__asm        jmp    near ptr 0x004BA293;
+
 	__asm        jmp    near ptr 0x004BA2B8;
+
 	__asm        jmp    near ptr 0x004BA2BD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x34], eax;
@@ -1522,15 +1802,20 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA2DA;
+
 	__asm        jmp    near ptr 0x004BA2DF;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        shl    eax, 3;
 	__asm        add    eax, [ebp-0x2C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004BA2F6;
+
 	__asm        jmp    near ptr 0x004BA2FB;
+
 	__asm        jmp    near ptr 0x004BA300;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1545,7 +1830,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004BA338;
+
 	__asm        jmp    near ptr 0x004BA33D;
+
 	__asm        mov    eax, rectHotspot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1554,35 +1841,44 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [ebp-0x20], eax;
 // LINE 90:
 	__asm        jmp    near ptr 0x004BA354;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004BA365;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA3D4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    near ptr 0x004BA39D;
+
 	__asm        cmp    dword ptr [ebp-0x9C], 0;
 	__asm        je     near ptr 0x004BA3C0;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0x9C];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004BA3C0;
+
 	__asm        jmp    near ptr 0x004BA3C5;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004BA778;
+
 	__asm        jmp    near ptr 0x004BA3D9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xE4], eax;
@@ -1591,6 +1887,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA4E0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        sub    eax, 8;
@@ -1601,8 +1898,10 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0xD8];
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        jmp    near ptr 0x004BA432;
+
 	__asm        cmp    dword ptr [ebp-0xD0], 0;
 	__asm        je     near ptr 0x004BA45A;
+
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1610,7 +1909,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BA45A;
+
 	__asm        jmp    near ptr 0x004BA45F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xC8], eax;
@@ -1621,6 +1922,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        cmp    [ebp-0xCC], eax;
 	__asm        je     near ptr 0x004BA4BB;
+
 	__asm        sub    dword ptr [ebp-0xC8], 8;
 	__asm        sub    dword ptr [ebp-0xCC], 8;
 	__asm        mov    eax, [ebp-0xCC];
@@ -1630,7 +1932,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BA480;
+
 	__asm        jmp    near ptr 0x004BA4C0;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0xE4];
@@ -1639,9 +1943,13 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xC], 8;
 	__asm        jmp    near ptr 0x004BA773;
+
 	__asm        jmp    near ptr 0x004BA4E5;
+
 	__asm        jmp    near ptr 0x004BA4EA;
+
 	__asm        jmp    near ptr 0x004BA4EF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1649,9 +1957,13 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        sar    eax, 3;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004BA53D;
+
 	__asm        jmp    near ptr 0x004BA511;
+
 	__asm        jmp    near ptr 0x004BA516;
+
 	__asm        jmp    near ptr 0x004BA51B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1660,6 +1972,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    near ptr 0x004BA5B4;
+
 	__asm        mov    dword ptr [ebp-0xB4], 0x200;
 	__asm        lea    eax, [ebp-0xB4];
 	__asm        mov    [ebp-0xBC], eax;
@@ -1671,17 +1984,22 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004BA590;
+
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004BA59C;
+
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004BA5A1;
+
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    near ptr 0x004BA5B4;
+
 	__asm        jmp    near ptr 0x004BA5B9;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        push   eax;
@@ -1689,6 +2007,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004BA5D5;
+
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xE4];
@@ -1699,6 +2018,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004BA5FA;
+
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1712,17 +2032,23 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        jmp    near ptr 0x004BA632;
+
 	__asm        cmp    dword ptr [ebp-0xDC], 0;
 	__asm        je     near ptr 0x004BA655;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    edx, [ebp-0xDC];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    near ptr 0x004BA655;
+
 	__asm        jmp    near ptr 0x004BA65A;
+
 	__asm        jmp    near ptr 0x004BA65F;
+
 	__asm        jmp    near ptr 0x004BA664;
+
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+8];
@@ -1742,7 +2068,9 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004BA6A7;
+
 	__asm        jmp    near ptr 0x004BA6AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xB0], eax;
@@ -1750,11 +2078,16 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, [ebp-0xB0];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA6E1;
+
 	__asm        jmp    near ptr 0x004BA6D5;
+
 	__asm        add    dword ptr [ebp-0xB0], 8;
 	__asm        jmp    near ptr 0x004BA6BB;
+
 	__asm        jmp    near ptr 0x004BA6E6;
+
 	__asm        jmp    near ptr 0x004BA6EB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xAC], eax;
@@ -1763,15 +2096,20 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA70E;
+
 	__asm        jmp    near ptr 0x004BA713;
+
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        shl    eax, 3;
 	__asm        add    eax, [ebp-0xA4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004BA730;
+
 	__asm        jmp    near ptr 0x004BA735;
+
 	__asm        jmp    near ptr 0x004BA73A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1786,9 +2124,11 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004BA778;
+
 	__asm        jmp    near ptr 0x004BA77D;
 // LINE 91:
 	__asm        jmp    near ptr 0x004BA782;
+
 	__asm        mov    eax, this;
 }
 
@@ -1818,12 +2158,19 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        add    ecx, 8;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x004BA7DE;
+
 	__asm        jmp    near ptr 0x004BAB6C;
+
 	__asm        jmp    near ptr 0x004BA7E3;
+
 	__asm        jmp    near ptr 0x004BA7E8;
+
 	__asm        jmp    near ptr 0x004BA7ED;
+
 	__asm        jmp    near ptr 0x004BA7F2;
+
 	__asm        jmp    near ptr 0x004BA7F7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    ecx, this;
@@ -1836,6 +2183,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        sar    ecx, 3;
 	__asm        cmp    eax, ecx;
 	__asm        jae    near ptr 0x004BA928;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -1843,10 +2191,14 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA843;
+
 	__asm        jmp    near ptr 0x004BA83A;
+
 	__asm        add    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x004BA826;
+
 	__asm        jmp    near ptr 0x004BA848;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-8], eax;
@@ -1855,9 +2207,13 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA862;
+
 	__asm        jmp    near ptr 0x004BA867;
+
 	__asm        jmp    near ptr 0x004BA86C;
+
 	__asm        jmp    near ptr 0x004BA871;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -1865,6 +2221,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        sar    eax, 3;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004BA888;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -1873,7 +2230,9 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x004BA8A1;
+
 	__asm        jmp    near ptr 0x004BA8A6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x3C], eax;
@@ -1886,6 +2245,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        cmp    [ebp-0x44], eax;
 	__asm        je     near ptr 0x004BA915;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        add    dword ptr [ebp-0x44], 8;
@@ -1895,8 +2255,10 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004BA8EC;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x004BA90B;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1904,19 +2266,30 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BA90B;
+
 	__asm        jmp    near ptr 0x004BA910;
+
 	__asm        jmp    near ptr 0x004BA8C1;
+
 	__asm        jmp    near ptr 0x004BA91A;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x004BAB35;
+
 	__asm        jmp    near ptr 0x004BA92D;
+
 	__asm        jmp    near ptr 0x004BA932;
+
 	__asm        jmp    near ptr 0x004BA937;
+
 	__asm        jmp    near ptr 0x004BA93C;
+
 	__asm        jmp    near ptr 0x004BA941;
+
 	__asm        jmp    near ptr 0x004BA946;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -1929,9 +2302,13 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        sar    ecx, 3;
 	__asm        cmp    eax, ecx;
 	__asm        jb     near ptr 0x004BA9F7;
+
 	__asm        jmp    near ptr 0x004BA971;
+
 	__asm        jmp    near ptr 0x004BA976;
+
 	__asm        jmp    near ptr 0x004BA97B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -1944,6 +2321,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    [ebp-0x20], eax;
 	__asm        je     near ptr 0x004BA9BF;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1953,7 +2331,9 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        add    dword ptr [ebp-0x20], 8;
 	__asm        add    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x004BA996;
+
 	__asm        jmp    near ptr 0x004BA9C4;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -1962,17 +2342,28 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004BA9ED;
+
 	__asm        jmp    near ptr 0x004BA9E4;
+
 	__asm        add    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x004BA9D0;
+
 	__asm        jmp    near ptr 0x004BA9F2;
+
 	__asm        jmp    near ptr 0x004BAB35;
+
 	__asm        jmp    near ptr 0x004BA9FC;
+
 	__asm        jmp    near ptr 0x004BAA01;
+
 	__asm        jmp    near ptr 0x004BAA06;
+
 	__asm        jmp    near ptr 0x004BAA0B;
+
 	__asm        jmp    near ptr 0x004BAA10;
+
 	__asm        jmp    near ptr 0x004BAA15;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x24], eax;
@@ -1991,6 +2382,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        je     near ptr 0x004BAA6B;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -2000,16 +2392,27 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        add    dword ptr [ebp-0x2C], 8;
 	__asm        add    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x004BAA42;
+
 	__asm        jmp    near ptr 0x004BAA70;
+
 	__asm        jmp    near ptr 0x004BAA75;
+
 	__asm        jmp    near ptr 0x004BAA7A;
+
 	__asm        jmp    near ptr 0x004BAA7F;
+
 	__asm        jmp    near ptr 0x004BAA84;
+
 	__asm        jmp    near ptr 0x004BAA89;
+
 	__asm        jmp    near ptr 0x004BAA8E;
+
 	__asm        jmp    near ptr 0x004BAA93;
+
 	__asm        jmp    near ptr 0x004BAA98;
+
 	__asm        jmp    near ptr 0x004BAA9D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -2034,6 +2437,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        je     near ptr 0x004BAB30;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        add    dword ptr [ebp-0x5C], 8;
@@ -2043,8 +2447,10 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004BAB07;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x004BAB26;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
@@ -2052,13 +2458,21 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    near ptr 0x004BAB26;
+
 	__asm        jmp    near ptr 0x004BAB2B;
+
 	__asm        jmp    near ptr 0x004BAADC;
+
 	__asm        jmp    near ptr 0x004BAB35;
+
 	__asm        jmp    near ptr 0x004BAB3A;
+
 	__asm        jmp    near ptr 0x004BAB3F;
+
 	__asm        jmp    near ptr 0x004BAB44;
+
 	__asm        jmp    near ptr 0x004BAB49;
+
 	__asm        mov    eax, newHotSpot;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, newHotSpot;
@@ -2098,11 +2512,17 @@ int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
 	__asm        jmp    near ptr 0x004BAD00;
 // LINE 121:
 	__asm        jmp    near ptr 0x004BABB9;
+
 	__asm        jmp    near ptr 0x004BABBE;
+
 	__asm        jmp    near ptr 0x004BABC3;
+
 	__asm        jmp    near ptr 0x004BABC8;
+
 	__asm        jmp    near ptr 0x004BABCD;
+
 	__asm        jmp    near ptr 0x004BABD2;
+
 	__asm        mov    eax, hs1;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, hs1;
@@ -2115,9 +2535,13 @@ int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
 	__asm        sar    ecx, 3;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x004BACC7;
+
 	__asm        jmp    near ptr 0x004BABFD;
+
 	__asm        jmp    near ptr 0x004BAC02;
+
 	__asm        jmp    near ptr 0x004BAC07;
+
 	__asm        mov    eax, hs2;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -2134,46 +2558,68 @@ int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    [ebp-0x14], eax;
 	__asm        je     near ptr 0x004BAC82;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x004BAC61;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x004BAC61;
+
 	__asm        jmp    near ptr 0x004BAC66;
+
 	__asm        jmp    near ptr 0x004BAC82;
+
 	__asm        jmp    near ptr 0x004BAC75;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004BAC82;
+
 	__asm        add    dword ptr [ebp-0x14], 8;
 	__asm        add    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x004BAC2E;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004BAC93;
+
 	__asm        jmp    near ptr 0x004BAC98;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    near ptr 0x004BACA9;
+
 	__asm        jmp    near ptr 0x004BACAE;
+
 	__asm        jmp    near ptr 0x004BACC7;
+
 	__asm        jmp    near ptr 0x004BACBD;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004BACC7;
+
 	__asm        jmp    near ptr 0x004BACDB;
+
 	__asm        jmp    near ptr 0x004BACC7;
+
 	__asm        jmp    near ptr 0x004BACD6;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x004BACDB;
+
 	__asm        jmp    near ptr 0x004BACE0;
+
 	__asm        jmp    near ptr 0x004BACF6;
+
 	__asm        jmp    near ptr 0x004BACEF;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004BACF6;
 // LINE 122:
@@ -2193,37 +2639,51 @@ int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 	__asm        jne    near ptr 0x004BADA6;
 // LINE 134:
 	__asm        jmp    near ptr 0x004BAD23;
+
 	__asm        jmp    near ptr 0x004BAD28;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [eax], ecx;
 	__asm        jg     near ptr 0x004BAD97;
+
 	__asm        jmp    near ptr 0x004BAD3E;
+
 	__asm        jmp    near ptr 0x004BAD43;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jl     near ptr 0x004BAD97;
+
 	__asm        jmp    near ptr 0x004BAD5A;
+
 	__asm        jmp    near ptr 0x004BAD5F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jg     near ptr 0x004BAD97;
+
 	__asm        jmp    near ptr 0x004BAD76;
+
 	__asm        jmp    near ptr 0x004BAD7B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jl     near ptr 0x004BAD97;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BAD99;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BADA1;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x004BADF1;
 // LINE 135:
@@ -2263,21 +2723,37 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 
 // LINE 160:
 	__asm        jmp    near ptr 0x004BAE09;
+
 	__asm        jmp    near ptr 0x004BAE0E;
+
 	__asm        jmp    near ptr 0x004BAE13;
+
 	__asm        jmp    near ptr 0x004BAE18;
+
 	__asm        jmp    near ptr 0x004BAE1D;
+
 	__asm        jmp    near ptr 0x004BAE22;
+
 	__asm        jmp    near ptr 0x004BAE27;
+
 	__asm        jmp    near ptr 0x004BAE2C;
+
 	__asm        jmp    near ptr 0x004BAE31;
+
 	__asm        jmp    near ptr 0x004BAE36;
+
 	__asm        jmp    near ptr 0x004BAE3B;
+
 	__asm        jmp    near ptr 0x004BAE40;
+
 	__asm        jmp    near ptr 0x004BAE45;
+
 	__asm        jmp    near ptr 0x004BAE4A;
+
 	__asm        jmp    near ptr 0x004BAE4F;
+
 	__asm        jmp    near ptr 0x004BAE54;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2308,13 +2784,21 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 	__asm        mov    nRadiusOfCircle, eax;
 // LINE 165:
 	__asm        jmp    near ptr 0x004BAEAA;
+
 	__asm        jmp    near ptr 0x004BAEAF;
+
 	__asm        jmp    near ptr 0x004BAEB4;
+
 	__asm        jmp    near ptr 0x004BAEB9;
+
 	__asm        jmp    near ptr 0x004BAEBE;
+
 	__asm        jmp    near ptr 0x004BAEC3;
+
 	__asm        jmp    near ptr 0x004BAEC8;
+
 	__asm        jmp    near ptr 0x004BAECD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -2339,8 +2823,10 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 	__asm        mov    eax, nRadiusOfCircle;
 	__asm        cmp    nDistanceToPosition, eax;
 	__asm        jg     near ptr 0x004BAF1C;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BAF1E;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004BAF23;
 // LINE 168:
@@ -2355,8 +2841,11 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 
 // LINE 184:
 	__asm        jmp    near ptr 0x004BAF3B;
+
 	__asm        jmp    near ptr 0x004BAF40;
+
 	__asm        jmp    near ptr 0x004BAF45;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -2370,6 +2859,7 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 	__asm        dec    eax;
 	__asm        mov    j, eax;
 	__asm        jmp    near ptr 0x004BAF7A;
+
 	__asm        mov    eax, i;
 	__asm        mov    j, eax;
 	__asm        inc    i;
@@ -2378,49 +2868,73 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 	__asm        jle    near ptr 0x004BB0C3;
 // LINE 191:
 	__asm        jmp    near ptr 0x004BAF8B;
+
 	__asm        jmp    near ptr 0x004BAF90;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
 	__asm        mov    edx, lYPosition;
 	__asm        cmp    [eax+ecx*8+4], edx;
 	__asm        jg     near ptr 0x004BAFC6;
+
 	__asm        jmp    near ptr 0x004BAFAB;
+
 	__asm        jmp    near ptr 0x004BAFB0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, j;
 	__asm        mov    edx, lYPosition;
 	__asm        cmp    [eax+ecx*8+4], edx;
 	__asm        jg     near ptr 0x004BB006;
+
 	__asm        jmp    near ptr 0x004BAFCB;
+
 	__asm        jmp    near ptr 0x004BAFD0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, j;
 	__asm        mov    edx, lYPosition;
 	__asm        cmp    [eax+ecx*8+4], edx;
 	__asm        jg     near ptr 0x004BB0BE;
+
 	__asm        jmp    near ptr 0x004BAFEB;
+
 	__asm        jmp    near ptr 0x004BAFF0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
 	__asm        mov    edx, lYPosition;
 	__asm        cmp    [eax+ecx*8+4], edx;
 	__asm        jle    near ptr 0x004BB0BE;
+
 	__asm        jmp    near ptr 0x004BB00B;
+
 	__asm        jmp    near ptr 0x004BB010;
+
 	__asm        jmp    near ptr 0x004BB015;
+
 	__asm        jmp    near ptr 0x004BB01A;
+
 	__asm        jmp    near ptr 0x004BB01F;
+
 	__asm        jmp    near ptr 0x004BB024;
+
 	__asm        jmp    near ptr 0x004BB029;
+
 	__asm        jmp    near ptr 0x004BB02E;
+
 	__asm        jmp    near ptr 0x004BB033;
+
 	__asm        jmp    near ptr 0x004BB038;
+
 	__asm        jmp    near ptr 0x004BB03D;
+
 	__asm        jmp    near ptr 0x004BB042;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, j;
@@ -2455,8 +2969,10 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 // LINE 192:
 	__asm        cmp    c, 0;
 	__asm        jne    near ptr 0x004BB0B7;
+
 	__asm        mov    c, 1;
 	__asm        jmp    near ptr 0x004BB0BE;
+
 	__asm        mov    c, 0;
 // LINE 193:
 	__asm        jmp    near ptr 0x004BAF71;
@@ -2482,7 +2998,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jne    near ptr 0x004BB152;
 // LINE 212:
 	__asm        jmp    near ptr 0x004BB0F0;
+
 	__asm        jmp    near ptr 0x004BB0F5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -2490,7 +3008,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx], eax;
 // LINE 213:
 	__asm        jmp    near ptr 0x004BB107;
+
 	__asm        jmp    near ptr 0x004BB10C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2498,7 +3018,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx+4], eax;
 // LINE 214:
 	__asm        jmp    near ptr 0x004BB120;
+
 	__asm        jmp    near ptr 0x004BB125;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+8];
@@ -2506,7 +3028,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx+8], eax;
 // LINE 215:
 	__asm        jmp    near ptr 0x004BB139;
+
 	__asm        jmp    near ptr 0x004BB13E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+0xC];
@@ -2520,21 +3044,37 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jne    near ptr 0x004BB28B;
 // LINE 224:
 	__asm        jmp    near ptr 0x004BB164;
+
 	__asm        jmp    near ptr 0x004BB169;
+
 	__asm        jmp    near ptr 0x004BB16E;
+
 	__asm        jmp    near ptr 0x004BB173;
+
 	__asm        jmp    near ptr 0x004BB178;
+
 	__asm        jmp    near ptr 0x004BB17D;
+
 	__asm        jmp    near ptr 0x004BB182;
+
 	__asm        jmp    near ptr 0x004BB187;
+
 	__asm        jmp    near ptr 0x004BB18C;
+
 	__asm        jmp    near ptr 0x004BB191;
+
 	__asm        jmp    near ptr 0x004BB196;
+
 	__asm        jmp    near ptr 0x004BB19B;
+
 	__asm        jmp    near ptr 0x004BB1A0;
+
 	__asm        jmp    near ptr 0x004BB1A5;
+
 	__asm        jmp    near ptr 0x004BB1AA;
+
 	__asm        jmp    near ptr 0x004BB1AF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2572,7 +3112,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    nRadiusOfCircle, eax;
 // LINE 226:
 	__asm        jmp    near ptr 0x004BB21E;
+
 	__asm        jmp    near ptr 0x004BB223;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -2581,7 +3123,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx], eax;
 // LINE 227:
 	__asm        jmp    near ptr 0x004BB238;
+
 	__asm        jmp    near ptr 0x004BB23D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2590,7 +3134,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx+4], eax;
 // LINE 228:
 	__asm        jmp    near ptr 0x004BB254;
+
 	__asm        jmp    near ptr 0x004BB259;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -2599,7 +3145,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    [ecx+8], eax;
 // LINE 229:
 	__asm        jmp    near ptr 0x004BB26F;
+
 	__asm        jmp    near ptr 0x004BB274;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2614,8 +3162,11 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jne    near ptr 0x004BB45D;
 // LINE 234:
 	__asm        jmp    near ptr 0x004BB29D;
+
 	__asm        jmp    near ptr 0x004BB2A2;
+
 	__asm        jmp    near ptr 0x004BB2A7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -2645,7 +3196,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jmp    near ptr 0x004BB494;
 // LINE 239:
 	__asm        jmp    near ptr 0x004BB2FF;
+
 	__asm        jmp    near ptr 0x004BB304;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -2654,7 +3207,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    nMinX, eax;
 // LINE 240:
 	__asm        jmp    near ptr 0x004BB31A;
+
 	__asm        jmp    near ptr 0x004BB31F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -2664,13 +3219,16 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 // LINE 242:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004BB340;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    nPointCount, eax;
 	__asm        jle    near ptr 0x004BB435;
 // LINE 243:
 	__asm        jmp    near ptr 0x004BB351;
+
 	__asm        jmp    near ptr 0x004BB356;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2679,7 +3237,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jge    near ptr 0x004BB384;
 // LINE 244:
 	__asm        jmp    near ptr 0x004BB370;
+
 	__asm        jmp    near ptr 0x004BB375;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2687,7 +3247,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    nMinX, eax;
 // LINE 245:
 	__asm        jmp    near ptr 0x004BB389;
+
 	__asm        jmp    near ptr 0x004BB38E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2696,7 +3258,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jle    near ptr 0x004BB3BC;
 // LINE 246:
 	__asm        jmp    near ptr 0x004BB3A8;
+
 	__asm        jmp    near ptr 0x004BB3AD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2704,7 +3268,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    nMaxX, eax;
 // LINE 248:
 	__asm        jmp    near ptr 0x004BB3C1;
+
 	__asm        jmp    near ptr 0x004BB3C6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2713,7 +3279,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jge    near ptr 0x004BB3F6;
 // LINE 249:
 	__asm        jmp    near ptr 0x004BB3E1;
+
 	__asm        jmp    near ptr 0x004BB3E6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2721,7 +3289,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        mov    nMinY, eax;
 // LINE 250:
 	__asm        jmp    near ptr 0x004BB3FB;
+
 	__asm        jmp    near ptr 0x004BB400;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2730,7 +3300,9 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 	__asm        jle    near ptr 0x004BB430;
 // LINE 251:
 	__asm        jmp    near ptr 0x004BB41B;
+
 	__asm        jmp    near ptr 0x004BB420;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, i;
@@ -2838,6 +3410,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 // LINE 288:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004BB555;
+
 	__asm        inc    i;
 	__asm        mov    eax, nHotspotRecordCount;
 	__asm        cmp    i, eax;
@@ -2858,22 +3431,27 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004BB58F;
+
 	__asm        jmp    near ptr 0x004BB594;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        mov    eax, ds:[0x5971D8];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        cmp    dword ptr ds:[0x5971D8], 0;
 	__asm        je     near ptr 0x004BB5CC;
+
 	__asm        mov    eax, ds:[0x5971D8];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x5971D8], eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004BB835;
+
 	__asm        mov    eax, ds:[0x5971D0];
 	__asm        cmp    ds:[0x5971D4], eax;
 	__asm        jne    near ptr 0x004BB81D;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -2883,6 +3461,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        cmp    dword ptr [ebp-0xB0], 0;
 	__asm        jne    near ptr 0x004BB637;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2892,11 +3471,14 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB62D;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB63C;
+
 	__asm        jmp    near ptr 0x004BB641;
+
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0x84], eax;
 	__asm        mov    dword ptr [ebp-0x88], 0x92;
@@ -2910,14 +3492,19 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004BB6A0;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    near ptr 0x004BB6AC;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    near ptr 0x004BB6B1;
+
 	__asm        jmp    near ptr 0x004BB6B6;
+
 	__asm        jmp    near ptr 0x004BB6BB;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xC0], eax;
@@ -2935,6 +3522,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        cmp    dword ptr [ebp-0xB8], 0;
 	__asm        jne    near ptr 0x004BB732;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2944,11 +3532,14 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB728;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB737;
+
 	__asm        jmp    near ptr 0x004BB73C;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx+4], eax;
@@ -2971,14 +3562,19 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x004BB7C3;
+
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004BB7CF;
+
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004BB7D4;
+
 	__asm        jmp    near ptr 0x004BB7D9;
+
 	__asm        jmp    near ptr 0x004BB7DE;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, eax;
@@ -2988,33 +3584,41 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        add    eax, ds:[0x5971D4];
 	__asm        mov    ds:[0x5971D0], eax;
 	__asm        jmp    near ptr 0x004BB800;
+
 	__asm        mov    eax, ds:[0x5971D4];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004BB835;
+
 	__asm        mov    eax, ds:[0x5971D4];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x004BB83A;
+
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    [ebp-0x70], eax;
 	__asm        jmp    near ptr 0x004BB848;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x004BB856;
+
 	__asm        cmp    dword ptr [ebp-0x74], 0;
 	__asm        je     near ptr 0x004BB874;
+
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x74];
 	__asm        call   HotSpot::HotSpot;
 	__asm        jmp    near ptr 0x004BB874;
+
 	__asm        jmp    near ptr 0x004BB879;
+
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx], eax;
@@ -3034,18 +3638,26 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x004BB8BF;
+
 	__asm        jmp    near ptr 0x004BB8C4;
+
 	__asm        jmp    near ptr 0x004BB8C9;
+
 	__asm        jmp    near ptr 0x004BB8CE;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        cmp    [ebp-0x48], eax;
 	__asm        je     near ptr 0x004BB8EE;
+
 	__asm        jmp    near ptr 0x004BB8E5;
+
 	__asm        add    dword ptr [ebp-0x60], 8;
 	__asm        jmp    near ptr 0x004BB8D4;
+
 	__asm        jmp    near ptr 0x004BB8F3;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
@@ -3053,7 +3665,9 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB90A;
+
 	__asm        jmp    near ptr 0x004BB90F;
+
 	__asm        jmp    near ptr 0x004BB914;
 // LINE 291:
 	__asm        mov    eax, currentHotspotRecord;

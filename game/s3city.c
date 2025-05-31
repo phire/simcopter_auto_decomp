@@ -92,6 +92,7 @@ short S3CityInit() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050A072;
+
 	__asm        jmp    near ptr 0x0050A072;
 // LINE 221:
 	__asm        lea    eax, szFilePath[0];
@@ -131,6 +132,7 @@ short S3CityInit() {
 // LINE 238:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0050A0FE;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x0050A1BE;
@@ -522,12 +524,14 @@ short S3CityInitOmap() {
 // LINE 467:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0050A605;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0050E426;
 // LINE 469:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0050A621;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0050E421;
@@ -544,6 +548,7 @@ short S3CityInitOmap() {
 // LINE 477:
 	__asm        cmp    dword ptr ds:[0x5B491C], 0;
 	__asm        jne    near ptr 0x0050A6A2;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x639DE0];
 	__asm        mov    ecx, y;
@@ -601,6 +606,7 @@ short S3CityInitOmap() {
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x0050A72C;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -622,6 +628,7 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050A61E;
 // LINE 512:
 	__asm        jmp    near ptr 0x0050DDF3;
+
 	__asm        cmp    tile, 4;
 	__asm        jg     near ptr 0x0050A778;
 // LINE 514:
@@ -633,6 +640,7 @@ short S3CityInitOmap() {
 	__asm        mov    obj1user, 0x400;
 // LINE 518:
 	__asm        jmp    near ptr 0x0050DDF3;
+
 	__asm        cmp    tile, 0x1D;
 	__asm        jge    near ptr 0x0050AB9D;
 // LINE 520:
@@ -962,14 +970,17 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050AB98;
 // LINE 646:
 	__asm        jmp    near ptr 0x0050AB98;
+
 	__asm        sub    dword ptr [ebp-0x44], 6;
 	__asm        cmp    dword ptr [ebp-0x44], 0x16;
 	__asm        ja     near ptr 0x0050A61E;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    dword ptr [eax*4+0x50AB3C];
 // Switch pointers
 // LINE 649:
 	__asm        jmp    near ptr 0x0050DDF3;
+
 	__asm        cmp    tile, 0x70;
 	__asm        jge    near ptr 0x0050BDF5;
 // LINE 653:
@@ -1979,6 +1990,7 @@ short S3CityInitOmap() {
 	__asm        mov    dl, [eax+ecx+1];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x0050B700;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A274];
 	__asm        mov    ecx, y;
@@ -2020,6 +2032,7 @@ short S3CityInitOmap() {
 	__asm        mov    dl, [eax+ecx+1];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x0050B77C;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A274];
 	__asm        mov    ecx, y;
@@ -2475,9 +2488,11 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050A61E;
 // LINE 1210:
 	__asm        jmp    near ptr 0x0050BDF0;
+
 	__asm        sub    dword ptr [ebp-0x48], 0x1D;
 	__asm        cmp    dword ptr [ebp-0x48], 0x4E;
 	__asm        ja     near ptr 0x0050A61E;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    dword ptr [eax*4+0x50BCB4];
 // Switch pointers
@@ -5255,9 +5270,11 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050A61E;
 // LINE 2012:
 	__asm        jmp    near ptr 0x0050DDF3;
+
 	__asm        sub    dword ptr [ebp-0x4C], 0x70;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x8F;
 	__asm        ja     near ptr 0x0050A61E;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x50DBB3];
 // Switch pointers
@@ -5651,9 +5668,11 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050E346;
 // LINE 2084:
 	__asm        jmp    near ptr 0x0050E346;
+
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        cmp    dword ptr [ebp-0x50], 3;
 	__asm        ja     near ptr 0x0050E346;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    dword ptr [eax*4+0x50E336];
 // Switch pointers
@@ -5705,6 +5724,7 @@ short S3CityInitOmap() {
 // LINE 2100:
 	__asm        cmp    objcount, 2;
 	__asm        jne    near ptr 0x0050E41C;
+
 	__asm        cmp    dword ptr ds:[0x598E98], 0;
 	__asm        jne    near ptr 0x0050E41C;
 // LINE 2102:
@@ -5740,12 +5760,14 @@ short S3CityInitOmap() {
 // LINE 2119:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0050E435;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0050EBB0;
 // LINE 2121:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0050E451;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0050EBAB;
@@ -5768,6 +5790,7 @@ short S3CityInitOmap() {
 	__asm        sub    ecx, y;
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x0050E4AE;
+
 	__asm        mov    eax, 0x80;
 	__asm        sub    eax, y;
 	__asm        mov    size, ax;
@@ -5777,12 +5800,14 @@ short S3CityInitOmap() {
 	__asm        movsx  ecx, size;
 	__asm        cmp    eax, ecx;
 	__asm        jge    near ptr 0x0050E4CE;
+
 	__asm        mov    eax, 0x80;
 	__asm        sub    eax, x;
 	__asm        mov    size, ax;
 // LINE 2135:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0050E4DD;
+
 	__asm        inc    j;
 	__asm        movsx  eax, size;
 	__asm        cmp    eax, j;
@@ -5790,6 +5815,7 @@ short S3CityInitOmap() {
 // LINE 2137:
 	__asm        mov    k, 0;
 	__asm        jmp    near ptr 0x0050E4F9;
+
 	__asm        inc    k;
 	__asm        movsx  eax, size;
 	__asm        cmp    eax, k;
@@ -5820,10 +5846,12 @@ short S3CityInitOmap() {
 	__asm        movsx  eax, size;
 	__asm        cmp    eax, j;
 	__asm        jle    near ptr 0x0050E565;
+
 	__asm        mov    eax, j;
 	__asm        mov    size, ax;
 // LINE 2152:
 	__asm        jmp    near ptr 0x0050E5A3;
+
 	__asm        mov    eax, j;
 	__asm        cmp    k, eax;
 	__asm        jle    near ptr 0x0050E58F;
@@ -5831,6 +5859,7 @@ short S3CityInitOmap() {
 	__asm        movsx  eax, size;
 	__asm        cmp    eax, k;
 	__asm        jle    near ptr 0x0050E58A;
+
 	__asm        mov    eax, k;
 	__asm        mov    size, ax;
 // LINE 2156:
@@ -5839,6 +5868,7 @@ short S3CityInitOmap() {
 	__asm        movsx  eax, size;
 	__asm        cmp    eax, k;
 	__asm        jle    near ptr 0x0050E5A3;
+
 	__asm        mov    eax, k;
 	__asm        mov    size, ax;
 // LINE 2160:
@@ -6230,9 +6260,11 @@ short S3CityInitOmap() {
 	__asm        jmp    near ptr 0x0050EAF3;
 // LINE 2231:
 	__asm        jmp    near ptr 0x0050EAF3;
+
 	__asm        dec    dword ptr [ebp-0x54];
 	__asm        cmp    dword ptr [ebp-0x54], 3;
 	__asm        ja     near ptr 0x0050EABC;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        jmp    dword ptr [eax*4+0x50EAE3];
 // Switch pointers
@@ -6252,6 +6284,7 @@ short S3CityInitOmap() {
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x0050EB3D;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -6302,12 +6335,14 @@ short S3CityInitOmap() {
 // LINE 2264:
 	__asm        mov    x, 0x80;
 	__asm        jmp    near ptr 0x0050EBC0;
+
 	__asm        add    x, 0x10;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x0050ED22;
 // LINE 2266:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0050EBDD;
+
 	__asm        add    y, 0x10;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0050ED1D;
@@ -6328,6 +6363,7 @@ short S3CityInitOmap() {
 // LINE 2272:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0050EC23;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -6335,6 +6371,7 @@ short S3CityInitOmap() {
 // LINE 2273:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0050EC3F;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0x10;
 	__asm        jge    near ptr 0x0050EC74;
@@ -6349,6 +6386,7 @@ short S3CityInitOmap() {
 	__asm        and    edx, 0xFF;
 	__asm        mov    [ecx+edx*4+0x67ED30], eax;
 	__asm        jmp    near ptr 0x0050EC3C;
+
 	__asm        jmp    near ptr 0x0050EC1F;
 // LINE 2276:
 	__asm        mov    eax, x;
@@ -6407,20 +6445,24 @@ short S3CityInitOmap() {
 // LINE 2294:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0050ED32;
+
 	__asm        add    x, 0x10;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x0050EED0;
 // LINE 2296:
 	__asm        mov    y, 0x80;
 	__asm        jmp    near ptr 0x0050ED4F;
+
 	__asm        add    y, 0x10;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x0050EECB;
 // LINE 2299:
 	__asm        cmp    x, 0x80;
 	__asm        jne    near ptr 0x0050ED98;
+
 	__asm        cmp    y, 0x80;
 	__asm        jne    near ptr 0x0050ED98;
+
 	__asm        cmp    dword ptr ds:[0x5B491C], 0;
 	__asm        jne    near ptr 0x0050ED98;
 // LINE 2301:
@@ -6449,6 +6491,7 @@ short S3CityInitOmap() {
 // LINE 2309:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0050EDD1;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -6456,6 +6499,7 @@ short S3CityInitOmap() {
 // LINE 2310:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0050EDED;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0x10;
 	__asm        jge    near ptr 0x0050EE22;
@@ -6470,6 +6514,7 @@ short S3CityInitOmap() {
 	__asm        and    edx, 0xFF;
 	__asm        mov    [ecx+edx*4+0x67ED30], eax;
 	__asm        jmp    near ptr 0x0050EDEA;
+
 	__asm        jmp    near ptr 0x0050EDCD;
 // LINE 2314:
 	__asm        mov    eax, x;
@@ -6528,12 +6573,14 @@ short S3CityInitOmap() {
 // LINE 2419:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0050EEDF;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x0050EF41;
 // LINE 2421:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0050EEFB;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x0050EF3C;
@@ -6596,6 +6643,7 @@ void S3CityGrid() {
 // LINE 2462:
 	__asm        cmp    dword ptr ds:[0x6BF1B0], 0x2BC0000;
 	__asm        jl     near ptr 0x0050F000;
+
 	__asm        cmp    dword ptr ds:[0x6BF1B0], 0x3840000;
 	__asm        jg     near ptr 0x0050F000;
 // LINE 2466:
@@ -6759,6 +6807,7 @@ void S3CityGrid() {
 	__asm        call   city_fovscan_horizedge;
 // LINE 2739:
 	__asm        jmp    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx];
@@ -6768,11 +6817,13 @@ void S3CityGrid() {
 	__asm        call   city_fovscan_vertedge;
 // LINE 2743:
 	__asm        jmp    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jle    near ptr 0x0050F336;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx+4];
@@ -6783,6 +6834,7 @@ void S3CityGrid() {
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jl     near ptr 0x0050F2D4;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
@@ -6853,11 +6905,13 @@ void S3CityGrid() {
 	__asm        call   city_fovscan_horizedge;
 // LINE 2780:
 	__asm        jmp    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jle    near ptr 0x0050F448;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx+4];
@@ -6868,6 +6922,7 @@ void S3CityGrid() {
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jg     near ptr 0x0050F3E6;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
@@ -6938,11 +6993,13 @@ void S3CityGrid() {
 	__asm        call   city_fovscan_horizedge;
 // LINE 2817:
 	__asm        jmp    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jge    near ptr 0x0050F55A;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx+4];
@@ -6953,6 +7010,7 @@ void S3CityGrid() {
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jg     near ptr 0x0050F4F8;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
@@ -7023,11 +7081,13 @@ void S3CityGrid() {
 	__asm        call   city_fovscan_horizedge;
 // LINE 2854:
 	__asm        jmp    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jge    near ptr 0x0050F667;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
 	__asm        mov    ecx, [ecx+4];
@@ -7038,6 +7098,7 @@ void S3CityGrid() {
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jl     near ptr 0x0050F60A;
+
 	__asm        mov    eax, ds:[0x609104];
 	__asm        movsx  ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
@@ -7152,6 +7213,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    eax, vec;
 	__asm        cmp    dword ptr [eax+8], 0xFFFFFFEC;
 	__asm        jl     near ptr 0x0050F7CF;
+
 	__asm        mov    eax, vec;
 	__asm        cmp    dword ptr [eax+8], 0x14;
 	__asm        jg     near ptr 0x0050F7CF;
@@ -7239,6 +7301,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    ecx, curr_cell;
 	__asm        cmp    eax, [ecx];
 	__asm        jg     near ptr 0x0050F7B5;
+
 	__asm        mov    eax, ds:[0x67ED28];
 	__asm        add    eax, ds:[0x6663A0];
 	__asm        inc    eax;
@@ -7260,6 +7323,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    eax, vec;
 	__asm        cmp    dword ptr [eax], 0xFFFFFFEC;
 	__asm        jl     near ptr 0x0050F908;
+
 	__asm        mov    eax, vec;
 	__asm        cmp    dword ptr [eax], 0x14;
 	__asm        jg     near ptr 0x0050F908;
@@ -7349,6 +7413,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    ecx, curr_cell;
 	__asm        cmp    eax, [ecx+4];
 	__asm        jg     near ptr 0x0050F8EE;
+
 	__asm        mov    eax, ds:[0x67ED2C];
 	__asm        add    eax, ds:[0x6663A0];
 	__asm        inc    eax;
@@ -7597,6 +7662,7 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    get_y_next, 0;
 // LINE 3141:
 	__asm        jmp    near ptr 0x0050FC56;
+
 	__asm        fld    xdist;
 	__asm        fcomp  ydist;
 	__asm        fnstsw ax;
@@ -7650,17 +7716,20 @@ void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Poin
 	__asm        mov    ecx, curr_cell;
 	__asm        cmp    eax, [ecx+4];
 	__asm        jg     near ptr 0x0050FCA8;
+
 	__asm        mov    eax, ds:[0x67ED2C];
 	__asm        add    eax, ds:[0x6663A0];
 	__asm        inc    eax;
 	__asm        mov    ecx, curr_cell;
 	__asm        cmp    eax, [ecx+4];
 	__asm        jl     near ptr 0x0050FCA8;
+
 	__asm        mov    eax, ds:[0x67ED28];
 	__asm        dec    eax;
 	__asm        mov    ecx, curr_cell;
 	__asm        cmp    eax, [ecx];
 	__asm        jg     near ptr 0x0050FCA8;
+
 	__asm        mov    eax, ds:[0x67ED28];
 	__asm        add    eax, ds:[0x6663A0];
 	__asm        inc    eax;
@@ -7836,6 +7905,7 @@ void city_fovscan_horizedge() {
 	__asm        mov    eax, y_start;
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x0050FEDF;
+
 	__asm        mov    eax, y_dir;
 	__asm        add    y, eax;
 	__asm        mov    eax, y_dir;
@@ -7847,10 +7917,12 @@ void city_fovscan_horizedge() {
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x0050FEFE;
+
 	__asm        inc    x;
 	__asm        mov    eax, x;
 	__asm        cmp    x_pos, eax;
 	__asm        jle    near ptr 0x00510084;
+
 	__asm        mov    eax, rcell;
 	__asm        mov    ecx, x;
 	__asm        cmp    [eax], ecx;
@@ -7874,10 +7946,12 @@ void city_fovscan_horizedge() {
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510040;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510040;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, y_dir;
 	__asm        and    eax, 0xFF;
@@ -7983,10 +8057,12 @@ void city_fovscan_horizedge() {
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x00510094;
+
 	__asm        dec    x;
 	__asm        mov    eax, x;
 	__asm        cmp    x_pos, eax;
 	__asm        jge    near ptr 0x0051021A;
+
 	__asm        mov    eax, lcell;
 	__asm        mov    ecx, x;
 	__asm        cmp    [eax], ecx;
@@ -8010,10 +8086,12 @@ void city_fovscan_horizedge() {
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x005101D6;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x005101D6;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, y_dir;
 	__asm        and    eax, 0xFF;
@@ -8119,6 +8197,7 @@ void city_fovscan_horizedge() {
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(x_pos);
 	__asm        cmp    [eax], ecx;
 	__asm        jg     near ptr 0x00510277;
+
 	__asm        mov    eax, rcell;
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(x_pos);
 	__asm        cmp    [eax], ecx;
@@ -8150,6 +8229,7 @@ void city_fovscan_horizedge() {
 	__asm        mov    ecx, y;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x0051029B;
+
 	__asm        mov    eax, lcell;
 	__asm        cmp    lend, eax;
 	__asm        jae    near ptr 0x0051029B;
@@ -8161,6 +8241,7 @@ void city_fovscan_horizedge() {
 	__asm        mov    ecx, y;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x005102BF;
+
 	__asm        mov    eax, rcell;
 	__asm        cmp    rend, eax;
 	__asm        jae    near ptr 0x005102BF;
@@ -8243,6 +8324,7 @@ void city_fovscan_vertedge() {
 	__asm        mov    eax, x_start;
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x0051037F;
+
 	__asm        mov    eax, x_dir;
 	__asm        add    x, eax;
 	__asm        mov    eax, x_dir;
@@ -8254,10 +8336,12 @@ void city_fovscan_vertedge() {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x0051039F;
+
 	__asm        inc    y;
 	__asm        mov    eax, y_pos;
 	__asm        cmp    y, eax;
 	__asm        jge    near ptr 0x00510526;
+
 	__asm        mov    eax, bcell;
 	__asm        mov    ecx, y;
 	__asm        cmp    [eax+4], ecx;
@@ -8281,10 +8365,12 @@ void city_fovscan_vertedge() {
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x005104E2;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x005104E2;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, x_dir;
 	__asm        and    eax, 0xFF;
@@ -8306,6 +8392,7 @@ void city_fovscan_vertedge() {
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00510460;
+
 	__asm        inc    y_last;
 	__asm        jmp    near ptr 0x00510434;
 // LINE 3415:
@@ -8351,6 +8438,7 @@ void city_fovscan_vertedge() {
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005104D7;
+
 	__asm        push   0x5B5ACC;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8377,6 +8465,7 @@ void city_fovscan_vertedge() {
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510521;
+
 	__asm        push   0x5B5ADC;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8387,10 +8476,12 @@ void city_fovscan_vertedge() {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x00510537;
+
 	__asm        dec    y;
 	__asm        mov    eax, y_pos;
 	__asm        cmp    y, eax;
 	__asm        jle    near ptr 0x005106BE;
+
 	__asm        mov    eax, tcell;
 	__asm        mov    ecx, y;
 	__asm        cmp    [eax+4], ecx;
@@ -8414,10 +8505,12 @@ void city_fovscan_vertedge() {
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x0051067A;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x0051067A;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, x_dir;
 	__asm        and    eax, 0xFF;
@@ -8439,6 +8532,7 @@ void city_fovscan_vertedge() {
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x005105F8;
+
 	__asm        dec    y_last;
 	__asm        jmp    near ptr 0x005105CC;
 // LINE 3455:
@@ -8484,6 +8578,7 @@ void city_fovscan_vertedge() {
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0051066F;
+
 	__asm        push   0x5B5AEC;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8510,6 +8605,7 @@ void city_fovscan_vertedge() {
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005106B9;
+
 	__asm        push   0x5B5AFC;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8520,6 +8616,7 @@ void city_fovscan_vertedge() {
 	__asm        mov    ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jg     near ptr 0x0051071B;
+
 	__asm        mov    eax, bcell;
 	__asm        mov    ecx, y_pos;
 	__asm        cmp    [eax+4], ecx;
@@ -8542,6 +8639,7 @@ void city_fovscan_vertedge() {
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0051071B;
+
 	__asm        push   0x5B5B0C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8550,9 +8648,11 @@ void city_fovscan_vertedge() {
 	__asm        mov    ecx, x;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x0051073E;
+
 	__asm        mov    eax, tcell;
 	__asm        cmp    tend, eax;
 	__asm        jae    near ptr 0x0051073E;
+
 	__asm        sub    tcell, 8;
 	__asm        jmp    near ptr 0x0051071B;
 // LINE 3491:
@@ -8560,9 +8660,11 @@ void city_fovscan_vertedge() {
 	__asm        mov    ecx, x;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00510761;
+
 	__asm        mov    eax, bcell;
 	__asm        cmp    bend, eax;
 	__asm        jae    near ptr 0x00510761;
+
 	__asm        sub    bcell, 8;
 	__asm        jmp    near ptr 0x0051073E;
 // LINE 3492:
@@ -8601,9 +8703,11 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    ecx, y;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x005107CE;
+
 	__asm        mov    eax, edge;
 	__asm        cmp    endedge, eax;
 	__asm        jae    near ptr 0x005107CE;
+
 	__asm        sub    edge, 8;
 	__asm        jmp    near ptr 0x005107AA;
 // LINE 3533:
@@ -8627,6 +8731,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
 	__asm        cmp    [eax], ecx;
 	__asm        jle    near ptr 0x00510813;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(cellpos);
 	__asm        mov    ecx, edge;
 	__asm        mov    [ecx], eax;
@@ -8635,6 +8740,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x00510823;
+
 	__asm        inc    x;
 	__asm        mov    eax, cellpos;
 	__asm        cmp    x, eax;
@@ -8658,10 +8764,12 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510936;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510936;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, y_dir;
 	__asm        and    eax, 0xFF;
@@ -8704,6 +8812,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510902;
+
 	__asm        push   0x5B5B1C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8716,6 +8825,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x0051092E;
+
 	__asm        inc    x;
 	__asm        jmp    near ptr 0x00510902;
 // LINE 3566:
@@ -8740,6 +8850,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510975;
+
 	__asm        push   0x5B5B2C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8752,6 +8863,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
 	__asm        cmp    [eax], ecx;
 	__asm        jge    near ptr 0x00510997;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(cellpos);
 	__asm        mov    ecx, edge;
 	__asm        mov    [ecx], eax;
@@ -8760,6 +8872,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x005109A7;
+
 	__asm        dec    x;
 	__asm        mov    eax, cellpos;
 	__asm        cmp    x, eax;
@@ -8783,10 +8896,12 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510ABA;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510ABA;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, y_dir;
 	__asm        and    eax, 0xFF;
@@ -8829,6 +8944,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510A86;
+
 	__asm        push   0x5B5B3C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8841,6 +8957,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00510AB2;
+
 	__asm        dec    x;
 	__asm        jmp    near ptr 0x00510A86;
 // LINE 3601:
@@ -8865,6 +8982,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510AF9;
+
 	__asm        push   0x5B5B4C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -8889,10 +9007,12 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510B92;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510B92;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, y_dir;
 	__asm        and    eax, 0xFF;
@@ -8938,6 +9058,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00510BE0;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(x_dir);
 	__asm        mov    ecx, edge;
 	__asm        add    [ecx], eax;
@@ -8967,9 +9088,11 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    ecx, x;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00510C27;
+
 	__asm        mov    eax, edge;
 	__asm        cmp    endedge, eax;
 	__asm        jae    near ptr 0x00510C27;
+
 	__asm        sub    edge, 8;
 	__asm        jmp    near ptr 0x00510C04;
 // LINE 3645:
@@ -8991,6 +9114,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    near ptr 0x00510C66;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(cellpos);
 	__asm        mov    ecx, edge;
 	__asm        mov    [ecx+4], eax;
@@ -8999,6 +9123,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x00510C77;
+
 	__asm        inc    y;
 	__asm        mov    eax, cellpos;
 	__asm        cmp    y, eax;
@@ -9022,10 +9147,12 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510D8A;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510D8A;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, x_dir;
 	__asm        and    eax, 0xFF;
@@ -9068,6 +9195,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510D56;
+
 	__asm        push   0x5B5B5C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -9080,6 +9208,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    edx, cptr;
 	__asm        cmp    [eax+ecx*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00510D82;
+
 	__asm        inc    y;
 	__asm        jmp    near ptr 0x00510D56;
 // LINE 3673:
@@ -9104,6 +9233,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510DC9;
+
 	__asm        push   0x5B5B6C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -9116,6 +9246,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
 	__asm        cmp    [eax+4], ecx;
 	__asm        jge    near ptr 0x00510DED;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(cellpos);
 	__asm        mov    ecx, edge;
 	__asm        mov    [ecx+4], eax;
@@ -9124,6 +9255,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x00510DFE;
+
 	__asm        dec    y;
 	__asm        mov    eax, cellpos;
 	__asm        cmp    y, eax;
@@ -9147,10 +9279,12 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510F11;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510F11;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, x_dir;
 	__asm        and    eax, 0xFF;
@@ -9193,6 +9327,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510EDD;
+
 	__asm        push   0x5B5B7C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -9205,6 +9340,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    edx, cptr;
 	__asm        cmp    [eax+ecx*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00510F09;
+
 	__asm        dec    y;
 	__asm        jmp    near ptr 0x00510EDD;
 // LINE 3708:
@@ -9229,6 +9365,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510F50;
+
 	__asm        push   0x5B5B8C;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
@@ -9253,10 +9390,12 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00510FE9;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00510FE9;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, x_dir;
 	__asm        and    eax, 0xFF;
@@ -9302,6 +9441,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        mov    edx, cptr;
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
 	__asm        jne    near ptr 0x00511039;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(y_dir);
 	__asm        mov    ecx, edge;
 	__asm        add    [ecx+4], eax;
@@ -9345,6 +9485,7 @@ void S3CityDrawGrid() {
 	__asm        mov    sface, eax;
 // LINE 3778:
 	__asm        jmp    near ptr 0x00511097;
+
 	__asm        add    cellptr, 8;
 	__asm        mov    eax, cellptr;
 	__asm        cmp    ds:[0x609BE8], eax;
@@ -9362,11 +9503,14 @@ void S3CityDrawGrid() {
 // LINE 3785:
 	__asm        cmp    gx, 0;
 	__asm        jl     near ptr 0x005110F3;
+
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cmp    gx, eax;
 	__asm        jge    near ptr 0x005110F3;
+
 	__asm        cmp    gy, 0;
 	__asm        jl     near ptr 0x005110F3;
+
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cmp    gy, eax;
 	__asm        jl     near ptr 0x005110F8;
@@ -9416,6 +9560,7 @@ void S3CityDrawGrid() {
 // LINE 3799:
 	__asm        cmp    texid, 0;
 	__asm        je     near ptr 0x00511185;
+
 	__asm        cmp    texid, 5;
 	__asm        jne    near ptr 0x0051118D;
 // LINE 3801:
@@ -9514,6 +9659,7 @@ void S3CityDrawGrid() {
 	__asm        movsx  eax, xdiff;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00511298;
+
 	__asm        movsx  eax, xdiff;
 	__asm        neg    eax;
 	__asm        mov    xdiff, ax;
@@ -9521,6 +9667,7 @@ void S3CityDrawGrid() {
 	__asm        movsx  eax, ydiff;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x005112AE;
+
 	__asm        movsx  eax, ydiff;
 	__asm        neg    eax;
 	__asm        mov    ydiff, ax;
@@ -9626,10 +9773,13 @@ void S3CityDrawGrid() {
 	__asm        jmp    near ptr 0x005113E5;
 // LINE 3874:
 	__asm        jmp    near ptr 0x005113E5;
+
 	__asm        cmp    dword ptr [ebp-0x34], 1;
 	__asm        je     near ptr 0x005112F2;
+
 	__asm        cmp    dword ptr [ebp-0x34], 2;
 	__asm        je     near ptr 0x00511337;
+
 	__asm        jmp    near ptr 0x0051137F;
 // LINE 3875:
 	__asm        mov    eax, cptrptr;
@@ -9710,6 +9860,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    eax, endcaddr;
 	__asm        mov    caddr1, eax;
 	__asm        jmp    near ptr 0x005114B1;
+
 	__asm        inc    i;
 	__asm        sub    cptrptr1, 4;
 	__asm        sub    caddr1, 4;
@@ -9759,6 +9910,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 // LINE 4044:
 	__asm        cmp    dword ptr ds:[0x6090A4], 1;
 	__asm        jne    near ptr 0x005115C0;
+
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0xA4], ecx;
@@ -9772,12 +9924,14 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x00511590;
+
 	__asm        push   0xFD0;
 	__asm        push   0x5B5B9C;
 	__asm        push   0x5B5BBC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00511595;
+
 	__asm        jmp    near ptr 0x00511595;
 // LINE 4049:
 	__asm        mov    eax, cptr1;
@@ -9912,9 +10066,11 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    eax, cptr1;
 	__asm        cmp    cptr2, eax;
 	__asm        jne    near ptr 0x0051172E;
+
 	__asm        mov    eax, cptr2;
 	__asm        cmp    cptr3, eax;
 	__asm        jne    near ptr 0x0051172E;
+
 	__asm        mov    eax, cptr3;
 	__asm        cmp    cptr4, eax;
 	__asm        jne    near ptr 0x0051172E;
@@ -9926,6 +10082,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    eax, endcaddr;
 	__asm        mov    caddr2, eax;
 	__asm        jmp    near ptr 0x00511747;
+
 	__asm        sub    cptrptr2, 4;
 	__asm        sub    caddr2, 4;
 	__asm        mov    eax, cptrptr1;
@@ -9948,11 +10105,13 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x005117C5;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x005117C5;
+
 	__asm        lea    eax, cptr1;
 	__asm        push   eax;
 	__asm        mov    eax, cadd1;
@@ -9974,12 +10133,14 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x005117F0;
+
 	__asm        push   0x1008;
 	__asm        push   0x5B5BD4;
 	__asm        push   0x5B5BF4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005117F5;
+
 	__asm        jmp    near ptr 0x005117F5;
 // LINE 4105:
 	__asm        mov    eax, cptr1;
@@ -10000,6 +10161,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        jmp    near ptr 0x00511A59;
 // LINE 4110:
 	__asm        jmp    near ptr 0x00511A54;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr2;
 	__asm        cmp    [eax], ecx;
@@ -10010,11 +10172,13 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x00511881;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x00511881;
+
 	__asm        lea    eax, cptr2;
 	__asm        push   eax;
 	__asm        mov    eax, cadd2;
@@ -10036,12 +10200,14 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x005118AC;
+
 	__asm        push   0x101C;
 	__asm        push   0x5B5C0C;
 	__asm        push   0x5B5C2C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005118B1;
+
 	__asm        jmp    near ptr 0x005118B1;
 // LINE 4125:
 	__asm        mov    eax, cptr2;
@@ -10062,6 +10228,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        jmp    near ptr 0x00511A59;
 // LINE 4130:
 	__asm        jmp    near ptr 0x00511A54;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr3;
 	__asm        cmp    [eax], ecx;
@@ -10072,11 +10239,13 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x0051193D;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x0051193D;
+
 	__asm        lea    eax, cptr3;
 	__asm        push   eax;
 	__asm        mov    eax, cadd3;
@@ -10098,12 +10267,14 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x00511968;
+
 	__asm        push   0x1030;
 	__asm        push   0x5B5C44;
 	__asm        push   0x5B5C64;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0051196D;
+
 	__asm        jmp    near ptr 0x0051196D;
 // LINE 4145:
 	__asm        mov    eax, cptr3;
@@ -10124,6 +10295,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        jmp    near ptr 0x00511A59;
 // LINE 4150:
 	__asm        jmp    near ptr 0x00511A54;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr4;
 	__asm        cmp    [eax], ecx;
@@ -10134,11 +10306,13 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        cmp    eax, 1;
 	__asm        jle    near ptr 0x005119F9;
+
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x005119F9;
+
 	__asm        lea    eax, cptr4;
 	__asm        push   eax;
 	__asm        mov    eax, cadd4;
@@ -10160,12 +10334,14 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x00511A24;
+
 	__asm        push   0x1044;
 	__asm        push   0x5B5C7C;
 	__asm        push   0x5B5C9C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00511A29;
+
 	__asm        jmp    near ptr 0x00511A29;
 // LINE 4165:
 	__asm        mov    eax, cptr4;
@@ -10858,6 +11034,7 @@ next_dyobj:
 	__asm        mov    dyobj, eax;
 // LINE 4291:
 	__asm        jmp    near ptr 0x00512147;
+
 	__asm        cmp    dword ptr ds:[0x5B59E4], 1;
 	__asm        jne    near ptr 0x00512147;
 // LINE 4293:
@@ -11013,6 +11190,7 @@ void S3CityCheckGridPos() {
 	__asm        mov    word ptr ds:[0x62A4D4], 0xA;
 // LINE 4370:
 	__asm        jmp    near ptr 0x005122E2;
+
 	__asm        cmp    dword ptr ds:[0x5B59D0], 0xA0;
 	__asm        jge    near ptr 0x005122D9;
 // LINE 4371:
@@ -11030,6 +11208,7 @@ void S3CityCheckGridPos() {
 	__asm        mov    dword ptr ds:[0x5B59DC], 0;
 // LINE 4380:
 	__asm        jmp    near ptr 0x00512334;
+
 	__asm        cmp    altdiff, 0;
 	__asm        jle    near ptr 0x00512320;
 // LINE 4382:
@@ -11053,10 +11232,12 @@ void S3CityCheckGridPos() {
 // LINE 4393:
 	__asm        cmp    gsize, 0x11;
 	__asm        jge    near ptr 0x0051235A;
+
 	__asm        mov    gsize, 0x11;
 // LINE 4394:
 	__asm        cmp    gsize, 0x3D;
 	__asm        jle    near ptr 0x0051236B;
+
 	__asm        mov    gsize, 0x3D;
 // LINE 4398:
 	__asm        cmp    dword ptr ds:[0x598EA8], 0;
@@ -11082,8 +11263,10 @@ void S3CityCheckGridPos() {
 	__asm        mov    eax, ds:[0x5B59D4];
 	__asm        cmp    gsize, eax;
 	__asm        je     near ptr 0x0051248B;
+
 	__asm        cmp    dword ptr ds:[0x5B59DC], 0xA;
 	__asm        jg     near ptr 0x005123DB;
+
 	__asm        cmp    dword ptr ds:[0x5B59D8], 0xA;
 	__asm        jle    near ptr 0x0051248B;
 // LINE 4417:
@@ -11142,10 +11325,13 @@ void S3CityCheckGridPos() {
 	__asm        sub    ds:[0x666308], eax;
 // LINE 4430:
 	__asm        jmp    near ptr 0x005124F9;
+
 	__asm        cmp    xdiff, 0;
 	__asm        jne    near ptr 0x005124AC;
+
 	__asm        cmp    ydiff, 0;
 	__asm        jne    near ptr 0x005124AC;
+
 	__asm        cmp    dword ptr ds:[0x5B59E8], 1;
 	__asm        jne    near ptr 0x005124F9;
 // LINE 4432:
@@ -11247,8 +11433,10 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 	__asm        jmp    near ptr 0x005125E5;
 // LINE 4501:
 	__asm        jmp    near ptr 0x005125E5;
+
 	__asm        cmp    dword ptr [ebp-0x20], 4;
 	__asm        ja     near ptr 0x005125E5;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x5125D1];
 // Switch pointers
@@ -11263,6 +11451,7 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 // LINE 4512:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051260A;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -11319,6 +11508,7 @@ int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 0x10;
 	__asm        jne    near ptr 0x0051269D;
+
 	__asm        cmp    dword ptr ds:[0x6090A4], 0;
 	__asm        jne    near ptr 0x0051269D;
 // LINE 4746:
@@ -11664,6 +11854,7 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	__asm        mov    eax, startx;
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x00512A63;
+
 	__asm        inc    x;
 	__asm        mov    eax, size;
 	__asm        add    eax, startx;
@@ -11673,6 +11864,7 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	__asm        mov    eax, starty;
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x00512A80;
+
 	__asm        inc    y;
 	__asm        mov    eax, starty;
 	__asm        add    eax, size;
@@ -11702,6 +11894,7 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	__asm        mov    minalt, ax;
 // LINE 4953:
 	__asm        jmp    near ptr 0x00512A7D;
+
 	__asm        jmp    near ptr 0x00512A60;
 // LINE 4955:
 	__asm        mov    ax, minalt;
@@ -11737,6 +11930,7 @@ int32_t S3CityIsCellFlat(long x, long y) {
 	__asm        mov    bx, [eax+ecx];
 	__asm        cmp    edx, ebx;
 	__asm        jne    near ptr 0x00512C1F;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -11762,6 +11956,7 @@ int32_t S3CityIsCellFlat(long x, long y) {
 	__asm        mov    bx, [eax+ecx];
 	__asm        cmp    edx, ebx;
 	__asm        jne    near ptr 0x00512C1F;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -11804,10 +11999,13 @@ int32_t S3CityGetBase(long x, long y, long size) {
 // LINE 4987:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00512C5C;
+
 	__asm        cmp    x, 0x7F;
 	__asm        jg     near ptr 0x00512C5C;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x00512C5C;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jle    near ptr 0x00512C68;
 // LINE 4988:
@@ -11825,6 +12023,7 @@ int32_t S3CityGetBase(long x, long y, long size) {
 // LINE 4992:
 	__asm        cmp    zone, 1;
 	__asm        je     near ptr 0x00512C94;
+
 	__asm        cmp    zone, 2;
 	__asm        jne    near ptr 0x00512D0C;
 // LINE 4994:
@@ -11853,16 +12052,20 @@ int32_t S3CityGetBase(long x, long y, long size) {
 	__asm        jmp    near ptr 0x00512E35;
 // LINE 5004:
 	__asm        jmp    near ptr 0x00512D07;
+
 	__asm        dec    dword ptr [ebp-8];
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     near ptr 0x00512D07;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x512CF7];
 // Switch pointers
 // LINE 5006:
 	__asm        jmp    near ptr 0x00512E23;
+
 	__asm        cmp    zone, 3;
 	__asm        je     near ptr 0x00512D20;
+
 	__asm        cmp    zone, 4;
 	__asm        jne    near ptr 0x00512DA4;
 // LINE 5008:
@@ -11891,9 +12094,11 @@ int32_t S3CityGetBase(long x, long y, long size) {
 	__asm        jmp    near ptr 0x00512E35;
 // LINE 5018:
 	__asm        jmp    near ptr 0x00512D9F;
+
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        cmp    dword ptr [ebp-0xC], 3;
 	__asm        ja     near ptr 0x00512D9F;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x512D8F];
 // Switch pointers
@@ -11925,9 +12130,11 @@ int32_t S3CityGetBase(long x, long y, long size) {
 	__asm        jmp    near ptr 0x00512E35;
 // LINE 5032:
 	__asm        jmp    near ptr 0x00512E23;
+
 	__asm        dec    dword ptr [ebp-0x10];
 	__asm        cmp    dword ptr [ebp-0x10], 3;
 	__asm        ja     near ptr 0x00512E23;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    dword ptr [eax*4+0x512E13];
 // Switch pointers
@@ -11954,6 +12161,7 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5061:
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00513022;
+
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00513022;
 // LINE 5063:
@@ -11962,6 +12170,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, x;
 	__asm        mov    px, eax;
 	__asm        jmp    near ptr 0x00512E79;
+
 	__asm        inc    px;
 	__asm        mov    eax, x;
 	__asm        add    eax, 4;
@@ -11971,6 +12180,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    near ptr 0x00512E96;
+
 	__asm        inc    py;
 	__asm        mov    eax, y;
 	__asm        add    eax, 4;
@@ -11979,6 +12189,7 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5071:
 	__asm        cmp    px, 0x7F;
 	__asm        jg     near ptr 0x00512EB9;
+
 	__asm        cmp    py, 0x7F;
 	__asm        jle    near ptr 0x00512EBE;
 // LINE 5072:
@@ -12021,6 +12232,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        movsx  eax, i;
 	__asm        cmp    edx, eax;
 	__asm        jne    near ptr 0x00512F76;
+
 	__asm        mov    eax, px;
 	__asm        mov    eax, [eax*4+0x639848];
 	__asm        mov    ecx, py;
@@ -12029,6 +12241,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        movsx  eax, i;
 	__asm        cmp    edx, eax;
 	__asm        jne    near ptr 0x00512F7B;
+
 	__asm        mov    eax, px;
 	__asm        mov    eax, [eax*4+0x639844];
 	__asm        mov    ecx, py;
@@ -12066,6 +12279,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        movsx  eax, i;
 	__asm        cmp    edx, eax;
 	__asm        jne    near ptr 0x00513013;
+
 	__asm        mov    eax, px;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, py;
@@ -12074,6 +12288,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        movsx  eax, i;
 	__asm        cmp    edx, eax;
 	__asm        jne    near ptr 0x00513018;
+
 	__asm        mov    eax, px;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, py;
@@ -12267,6 +12482,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    near ptr 0x00513257;
+
 	__asm        inc    px;
 	__asm        mov    eax, x;
 	__asm        add    eax, 4;
@@ -12366,6 +12582,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        add    eax, 3;
 	__asm        mov    py, eax;
 	__asm        jmp    near ptr 0x00513383;
+
 	__asm        inc    px;
 	__asm        mov    eax, x;
 	__asm        add    eax, 4;
@@ -12831,12 +13048,14 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5330:
 	__asm        cmp    x, 0x7F;
 	__asm        jle    near ptr 0x00513C00;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jle    near ptr 0x00513C00;
 // LINE 5332:
 	__asm        mov    eax, x;
 	__asm        mov    px, eax;
 	__asm        jmp    near ptr 0x005138FD;
+
 	__asm        add    px, 4;
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x10;
@@ -12846,6 +13065,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    near ptr 0x0051391B;
+
 	__asm        add    py, 4;
 	__asm        mov    eax, y;
 	__asm        add    eax, 0x10;
@@ -12855,9 +13075,11 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, px;
 	__asm        cmp    x, eax;
 	__asm        jne    near ptr 0x00513947;
+
 	__asm        mov    eax, py;
 	__asm        cmp    y, eax;
 	__asm        jne    near ptr 0x00513947;
+
 	__asm        jmp    near ptr 0x00513917;
 // LINE 5338:
 	__asm        push   0x18;

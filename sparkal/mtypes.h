@@ -1,8 +1,11 @@
 // Function in module: Catalog.obj
 // FUNCTION: COPTER_D 0x0047b5e0
 void MPoint::MPoint() {
+
 	__asm        jmp    near ptr 0x0047B5F1;
+
 	__asm        jmp    near ptr 0x0047B5F6;
+
 	__asm        mov    eax, this;
 }
 
@@ -56,8 +59,11 @@ void MRect::NormalizeRect() {
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040dc80
 void MRect::MRect() {
+
 	__asm        jmp    near ptr 0x0040DC91;
+
 	__asm        jmp    near ptr 0x0040DC96;
+
 	__asm        mov    eax, this;
 }
 

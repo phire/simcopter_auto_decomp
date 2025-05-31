@@ -71,6 +71,7 @@ void S3ExplosionReset() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    near ptr 0x00523947;
+
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
 	__asm        cmp    i, 0x14;
@@ -84,6 +85,7 @@ void S3ExplosionReset() {
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    near ptr 0x00523979;
+
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
 	__asm        cmp    i, 0x64;
@@ -118,6 +120,7 @@ void S3ExplosionInit() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    near ptr 0x005239CF;
+
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
 	__asm        cmp    i, 0x14;
@@ -227,6 +230,7 @@ void S3ExplosionInit() {
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    near ptr 0x00523B13;
+
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
 	__asm        cmp    i, 0x64;
@@ -629,6 +633,7 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    near ptr 0x00523F73;
+
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
 	__asm        cmp    i, 0x14;
@@ -780,6 +785,7 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    near ptr 0x005240FF;
+
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
 	__asm        cmp    i, 0x64;
@@ -906,8 +912,10 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 	__asm        jmp    near ptr 0x00524292;
 // LINE 386:
 	__asm        jmp    near ptr 0x00524292;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0xA;
 	__asm        ja     near ptr 0x0052423E;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x524266];
 // Switch pointers
@@ -931,10 +939,12 @@ void S3ExplosionDriver() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    near ptr 0x005242C9;
+
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
 	__asm        cmp    dword ptr ds:[0x5B7380], 0;
 	__asm        jle    near ptr 0x005244B5;
+
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x005244B5;
 // LINE 412:
@@ -965,6 +975,7 @@ void S3ExplosionDriver() {
 // LINE 424:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x00524344;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xE;
 	__asm        jge    near ptr 0x0052439C;
@@ -1091,10 +1102,12 @@ void S3ExplosionDriver() {
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    near ptr 0x005244CF;
+
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
 	__asm        cmp    dword ptr ds:[0x5B7384], 0;
 	__asm        jle    near ptr 0x005245E4;
+
 	__asm        cmp    i, 0x64;
 	__asm        jge    near ptr 0x005245E4;
 // LINE 474:

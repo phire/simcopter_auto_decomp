@@ -31,6 +31,7 @@ void cCopterAnim::WriteToDisk() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f620
 unsigned short cCopterAnim::IsDirty() {
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE44C;
 	__asm        push   0xE7;
@@ -44,6 +45,7 @@ unsigned short cCopterAnim::IsDirty() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f660
 unsigned long cCopterAnim::GetBodyType() {
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE470;
 	__asm        push   0xE9;
@@ -57,6 +59,7 @@ unsigned long cCopterAnim::GetBodyType() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6a0
 class cBList<cBBase>* cCopterAnim::GetList() {
+
 	__asm        mov    eax, ds:[0x5BF6D4];
 	__asm        jmp    near ptr 0x0055F6B6;
 }
@@ -64,6 +67,7 @@ class cBList<cBBase>* cCopterAnim::GetList() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6c0
 struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum) {
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-4], eax;
@@ -73,6 +77,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     near ptr 0x0055F706;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
@@ -83,16 +88,20 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        movsx  ecx, framenum;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    near ptr 0x0055F73E;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, partnum;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    near ptr 0x0055F73E;
+
 	__asm        movsx  eax, framenum;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0055F73E;
+
 	__asm        movsx  eax, partnum;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0055F75A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
@@ -100,6 +109,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F75F;
+
 	__asm        movsx  eax, framenum;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx+4];
@@ -112,6 +122,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f780
 struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-4], eax;
@@ -121,6 +132,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     near ptr 0x0055F7C6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
@@ -131,13 +143,17 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        movsx  ecx, framenum;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    near ptr 0x0055F7F4;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jle    near ptr 0x0055F7F4;
+
 	__asm        movsx  eax, framenum;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0055F7F4;
+
 	__asm        jmp    near ptr 0x0055F810;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
@@ -145,6 +161,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F815;
+
 	__asm        movsx  eax, framenum;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx+4];

@@ -64,10 +64,12 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0041F900;
+
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   CGameApp::CGameApp;
 	__asm        mov    ds:[0x598580], eax;
 	__asm        jmp    near ptr 0x0041F90A;
+
 	__asm        mov    dword ptr ds:[0x598580], 0;
 // LINE 50:
 	__asm        cmp    dword ptr ds:[0x598580], 0;
@@ -93,6 +95,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0041F969;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
@@ -126,6 +129,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x0041F9CF;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax];
@@ -137,6 +141,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        jmp    near ptr 0x0041FABB;
 // LINE 70:
 	__asm        jmp    near ptr 0x0041F9DB;
+
 	__asm        mov    eax, ds:[0x598580];
 	__asm        test   byte ptr [eax+0xC], 1;
 	__asm        je     near ptr 0x0041FA71;
@@ -153,6 +158,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 // LINE 72:
 	__asm        cmp    Message.message, 0x12;
 	__asm        jne    near ptr 0x0041FA2C;
+
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    [ebp-0x48], eax;
 // LINE 73:
@@ -161,6 +167,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        jmp    near ptr 0x0041FA22;
 // LINE 74:
 	__asm        jmp    near ptr 0x0041FAB6;
+
 	__asm        jmp    near ptr 0x0041FA71;
 // LINE 76:
 	__asm        lea    eax, Message.hwnd;
@@ -174,6 +181,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        jmp    near ptr 0x0041F9EA;
 // LINE 82:
 	__asm        jmp    near ptr 0x0041FA4A;
+
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax+0xC];
 	__asm        and    al, 3;
@@ -201,6 +209,7 @@ Cleanup:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x0041FAAF;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax];

@@ -431,13 +431,16 @@ public:
 // Contribution: 1:0015f9d0-0015fba1 Module: 190, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005609d0
 void YObjLang::YObjLang(unsigned char * fileName) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x005609EA;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 48:
 	__asm        jmp    near ptr 0x005609F8;
+
 	__asm        mov    eax, this;
 }
 
@@ -500,12 +503,16 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 	__asm        jmp    near ptr 0x00560AB4;
 // LINE 71:
 	__asm        jmp    near ptr 0x00560AB4;
+
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        je     near ptr 0x00560A17;
+
 	__asm        cmp    dword ptr [ebp-8], 2;
 	__asm        je     near ptr 0x00560A28;
+
 	__asm        cmp    dword ptr [ebp-8], 6;
 	__asm        je     near ptr 0x00560A17;
+
 	__asm        jmp    near ptr 0x00560A4E;
 // LINE 72:
 	__asm        jmp    near ptr 0x00560AB9;
@@ -532,18 +539,22 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 
 // FUNCTION: COPTER_D 0x00560aec
 void YObjLang::YObjLang(class YObjLang& otherLanguage) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x00560B06;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 88:
 	__asm        jmp    near ptr 0x00560B14;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00560b1e
 void YObjLang::~YObjLang() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936E8;
 // LINE 95:

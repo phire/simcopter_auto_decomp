@@ -635,11 +635,14 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, Vmax;
 	__asm        jle    near ptr 0x00543597;
+
 	__asm        cmp    nv, 0;
 	__asm        jle    near ptr 0x0054358F;
+
 	__asm        mov    eax, Vmax;
 	__asm        mov    nv, eax;
 	__asm        jmp    near ptr 0x00543597;
+
 	__asm        mov    eax, Vmax;
 	__asm        neg    eax;
 	__asm        mov    nv, eax;
@@ -693,6 +696,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 // LINE 341:
 	__asm        cmp    j, 0;
 	__asm        jle    near ptr 0x0054361D;
+
 	__asm        mov    eax, j;
 	__asm        push   eax;
 	__asm        mov    eax, V;
@@ -711,19 +715,23 @@ int32_t AngleBounds(int32_t a) {
 // LINE 359:
 	__asm        cmp    a, 0;
 	__asm        jge    near ptr 0x00543645;
+
 	__asm        add    a, 0xE100000;
 	__asm        jmp    near ptr 0x0054362F;
 // LINE 360:
 	__asm        cmp    a, 0xE100000;
 	__asm        jle    near ptr 0x0054365E;
+
 	__asm        sub    a, 0xE100000;
 	__asm        jmp    near ptr 0x00543645;
 // LINE 361:
 	__asm        cmp    a, 0x7080000;
 	__asm        jl     near ptr 0x00543678;
+
 	__asm        mov    eax, a;
 	__asm        sub    eax, 0xE100000;
 	__asm        jmp    near ptr 0x0054367B;
+
 	__asm        mov    eax, a;
 	__asm        jmp    near ptr 0x00543680;
 // LINE 362:

@@ -329,6 +329,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 	__asm        jmp    near ptr 0x004275DC;
 // LINE 67:
 	__asm        jmp    near ptr 0x004275D2;
+
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
 	__asm        call   ValidateSCXSaveGameFile;
@@ -391,8 +392,10 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 	__asm        jmp    near ptr 0x0042768A;
 // LINE 93:
 	__asm        jmp    near ptr 0x00427680;
+
 	__asm        cmp    lFileType, 3;
 	__asm        je     near ptr 0x0042764D;
+
 	__asm        cmp    lFileType, 4;
 	__asm        jne    near ptr 0x00427663;
 // LINE 94:
@@ -403,6 +406,7 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 	__asm        jmp    near ptr 0x0042768A;
 // LINE 96:
 	__asm        jmp    near ptr 0x00427680;
+
 	__asm        cmp    lFileType, 5;
 	__asm        jne    near ptr 0x00427680;
 // LINE 97:
@@ -471,6 +475,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	__asm        call   dword ptr [eax+0x24];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00427756;
+
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4174];
@@ -497,6 +502,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 138:
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        je     near ptr 0x004277E1;
+
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        je     near ptr 0x004277E1;
 // LINE 139:
@@ -544,6 +550,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 152:
 	__asm        cmp    lPresentRecordType, 0x55494E46;
 	__asm        jne    near ptr 0x004278C6;
+
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        jne    near ptr 0x004278C6;
 // LINE 154:
@@ -562,6 +569,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 158:
 	__asm        cmp    lPresentRecordType, 0x43494E46;
 	__asm        jne    near ptr 0x00427911;
+
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        jne    near ptr 0x00427911;
 // LINE 160:
@@ -578,6 +586,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 163:
 	__asm        cmp    bPathInfoFound, 0;
 	__asm        je     near ptr 0x00427930;
+
 	__asm        cmp    bSaveGameInfoFound, 0;
 	__asm        je     near ptr 0x00427930;
 // LINE 164:
@@ -593,6 +602,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 167:
 	__asm        cmp    bPathInfoFound, 0;
 	__asm        je     near ptr 0x0042796D;
+
 	__asm        cmp    bSaveGameInfoFound, 0;
 	__asm        jne    near ptr 0x00427992;
 // LINE 168:
@@ -738,8 +748,10 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 204:
 	__asm        cmp    lActualCityFileChecksum, 0;
 	__asm        je     near ptr 0x00427BBE;
+
 	__asm        cmp    lSavedCityFileChecksum, 0;
 	__asm        je     near ptr 0x00427BBE;
+
 	__asm        mov    eax, lActualCityFileChecksum;
 	__asm        cmp    lSavedCityFileChecksum, eax;
 	__asm        jne    near ptr 0x00427BBE;
@@ -795,6 +807,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	__asm        mov    lFileType, 0x43524552;
 // LINE 238:
 	__asm        jmp    near ptr 0x00427C6E;
+
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00427C6E;
 // LINE 239:
@@ -923,6 +936,7 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	__asm        jmp    near ptr 0x00427F91;
 // LINE 267:
 	__asm        jmp    near ptr 0x00427EAC;
+
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    near ptr 0x00427EAC;
 // LINE 268:
@@ -1052,27 +1066,33 @@ unsigned long  CGameApp::DoSaveGameAs() {
 // LINE 329:
 	__asm        cmp    chPrefData, 0;
 	__asm        je     near ptr 0x004282A4;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7CC], eax;
 	__asm        cmp    dword ptr [ebp-0x7CC], 0;
 	__asm        je     near ptr 0x00428035;
+
 	__asm        mov    eax, chPrefData;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7CC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x728], eax;
 	__asm        jmp    near ptr 0x0042803F;
+
 	__asm        mov    dword ptr [ebp-0x728], 0;
 	__asm        mov    dword ptr [ebp-0x72C], 0;
 	__asm        jmp    near ptr 0x0042804E;
+
 	__asm        push   0x5974A8;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7FC], eax;
 	__asm        jmp    near ptr 0x00428066;
+
 	__asm        jmp    near ptr 0x0042806B;
+
 	__asm        mov    eax, [ebp-0x7FC];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x728];
@@ -1085,8 +1105,11 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        cmp    dword ptr [ebp-0x7FC], 0;
 	__asm        je     near ptr 0x004280E1;
+
 	__asm        jmp    near ptr 0x004280A5;
+
 	__asm        jmp    near ptr 0x004280AA;
+
 	__asm        mov    eax, [ebp-0x7F4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x728];
@@ -1100,10 +1123,12 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004280E1;
+
 	__asm        mov    eax, [ebp-0x7F4];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x800], eax;
 	__asm        jmp    near ptr 0x004280F5;
+
 	__asm        mov    eax, [ebp-0x7FC];
 	__asm        mov    ecx, [ebp-0x800];
 	__asm        add    [ecx], eax;
@@ -1116,6 +1141,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        lea    ecx, [ebp-0x7F8];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00428129;
+
 	__asm        lea    eax, [ebp-0x734];
 	__asm        push   eax;
 	__asm        call   Directory::DoesAnyEntryExistThatMatchesPattern;
@@ -1126,19 +1152,24 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    eax, [ebp-0x730];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042818E;
+
 	__asm        mov    eax, [ebp-0x730];
 	__asm        mov    [ebp-0x788], eax;
 	__asm        mov    eax, [ebp-0x788];
 	__asm        mov    [ebp-0x784], eax;
 	__asm        cmp    dword ptr [ebp-0x784], 0;
 	__asm        je     near ptr 0x0042818E;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x784];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042818E;
+
 	__asm        jmp    near ptr 0x00428193;
+
 	__asm        cmp    dword ptr [ebp-0x734], 0;
 	__asm        je     near ptr 0x004281C7;
+
 	__asm        mov    eax, [ebp-0x734];
 	__asm        mov    [ebp-0x77C], eax;
 	__asm        mov    eax, [ebp-0x77C];
@@ -1148,24 +1179,30 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004281CC;
+
 	__asm        mov    eax, [ebp-0x728];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x728];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042821C;
+
 	__asm        mov    eax, [ebp-0x728];
 	__asm        mov    [ebp-0x798], eax;
 	__asm        mov    eax, [ebp-0x798];
 	__asm        mov    [ebp-0x794], eax;
 	__asm        cmp    dword ptr [ebp-0x794], 0;
 	__asm        je     near ptr 0x0042821C;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x794];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042821C;
+
 	__asm        jmp    near ptr 0x00428221;
+
 	__asm        cmp    dword ptr [ebp-0x72C], 0;
 	__asm        je     near ptr 0x00428255;
+
 	__asm        mov    eax, [ebp-0x72C];
 	__asm        mov    [ebp-0x78C], eax;
 	__asm        mov    eax, [ebp-0x78C];
@@ -1175,6 +1212,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042825A;
+
 	__asm        mov    eax, [ebp-0x724];
 	__asm        mov    [ebp-0x774], eax;
 	__asm        cmp    dword ptr [ebp-0x774], 0;
@@ -1220,6 +1258,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x7F0], eax;
 	__asm        cmp    dword ptr [ebp-0x7F0], 0;
 	__asm        jne    near ptr 0x00428344;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, szNewDirectory[0];
 	__asm        push   eax;
@@ -1238,6 +1277,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x00428349;
+
 	__asm        jmp    near ptr 0x00428349;
 // LINE 343:
 	__asm        lea    eax, szNewDirectory[0];
@@ -1253,42 +1293,52 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x7D0], eax;
 	__asm        cmp    dword ptr [ebp-0x7D0], 0;
 	__asm        je     near ptr 0x00428399;
+
 	__asm        lea    eax, szGameFileSavePath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7D0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x73C], eax;
 	__asm        jmp    near ptr 0x004283A3;
+
 	__asm        mov    dword ptr [ebp-0x73C], 0;
 	__asm        mov    dword ptr [ebp-0x740], 0;
 	__asm        jmp    near ptr 0x004283B2;
+
 	__asm        lea    eax, [ebp-0x740];
 	__asm        push   eax;
 	__asm        call   Directory::DoesAnyEntryExistThatMatchesPattern;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004283D8;
+
 	__asm        mov    dword ptr [ebp-0x738], 1;
 	__asm        jmp    near ptr 0x004283E2;
+
 	__asm        mov    dword ptr [ebp-0x738], 0;
 	__asm        mov    eax, [ebp-0x73C];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x73C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00428432;
+
 	__asm        mov    eax, [ebp-0x73C];
 	__asm        mov    [ebp-0x7A8], eax;
 	__asm        mov    eax, [ebp-0x7A8];
 	__asm        mov    [ebp-0x7A4], eax;
 	__asm        cmp    dword ptr [ebp-0x7A4], 0;
 	__asm        je     near ptr 0x00428432;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x7A4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00428432;
+
 	__asm        jmp    near ptr 0x00428437;
+
 	__asm        cmp    dword ptr [ebp-0x740], 0;
 	__asm        je     near ptr 0x0042846B;
+
 	__asm        mov    eax, [ebp-0x740];
 	__asm        mov    [ebp-0x79C], eax;
 	__asm        mov    eax, [ebp-0x79C];
@@ -1298,6 +1348,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00428470;
+
 	__asm        mov    eax, [ebp-0x738];
 	__asm        mov    [ebp-0x778], eax;
 	__asm        cmp    dword ptr [ebp-0x778], 0;
@@ -1309,6 +1360,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x7D4], eax;
 	__asm        cmp    dword ptr [ebp-0x7D4], 0;
 	__asm        je     near ptr 0x00428572;
+
 	__asm        lea    eax, szNewDirectory[0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1316,6 +1368,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    ecx, [ebp-0x7D4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004284C3;
+
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x7D4];
@@ -1323,6 +1376,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00428543;
+
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1345,18 +1399,23 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042853E;
+
 	__asm        jmp    near ptr 0x0042854F;
+
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00428561;
+
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    [ebp-0x76C], eax;
 	__asm        jmp    near ptr 0x0042857C;
+
 	__asm        mov    dword ptr [ebp-0x76C], 0;
 	__asm        mov    dword ptr [ebp-0x770], 0;
 	__asm        jmp    near ptr 0x0042858B;
+
 	__asm        mov    eax, ds:[0x598F04];
 	__asm        mov    [ebp-0x7E4], eax;
 	__asm        push   0x10;
@@ -1365,15 +1424,18 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x7E0], eax;
 	__asm        cmp    dword ptr [ebp-0x7E0], 0;
 	__asm        je     near ptr 0x004285D0;
+
 	__asm        mov    eax, [ebp-0x7E4];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7E0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x764], eax;
 	__asm        jmp    near ptr 0x004285DA;
+
 	__asm        mov    dword ptr [ebp-0x764], 0;
 	__asm        mov    dword ptr [ebp-0x768], 0;
 	__asm        jmp    near ptr 0x004285E9;
+
 	__asm        push   4;
 	__asm        lea    eax, [ebp-0x770];
 	__asm        push   eax;
@@ -1391,19 +1453,24 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    eax, [ebp-0x76C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00428661;
+
 	__asm        mov    eax, [ebp-0x76C];
 	__asm        mov    [ebp-0x7B8], eax;
 	__asm        mov    eax, [ebp-0x7B8];
 	__asm        mov    [ebp-0x7B4], eax;
 	__asm        cmp    dword ptr [ebp-0x7B4], 0;
 	__asm        je     near ptr 0x00428661;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x7B4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00428661;
+
 	__asm        jmp    near ptr 0x00428666;
+
 	__asm        cmp    dword ptr [ebp-0x770], 0;
 	__asm        je     near ptr 0x0042869A;
+
 	__asm        mov    eax, [ebp-0x770];
 	__asm        mov    [ebp-0x7AC], eax;
 	__asm        mov    eax, [ebp-0x7AC];
@@ -1413,11 +1480,14 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042869F;
+
 	__asm        jmp    near ptr 0x004286A4;
+
 	__asm        lea    ecx, [ebp-0x750];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x750], 0;
 	__asm        je     near ptr 0x004286E3;
+
 	__asm        mov    eax, [ebp-0x750];
 	__asm        mov    [ebp-0x7E8], eax;
 	__asm        mov    eax, [ebp-0x7E8];
@@ -1427,6 +1497,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004286E8;
+
 	__asm        lea    ecx, [ebp-0x758];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, [ebp-0x760];
@@ -1436,19 +1507,24 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    eax, [ebp-0x764];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042874E;
+
 	__asm        mov    eax, [ebp-0x764];
 	__asm        mov    [ebp-0x7C8], eax;
 	__asm        mov    eax, [ebp-0x7C8];
 	__asm        mov    [ebp-0x7C4], eax;
 	__asm        cmp    dword ptr [ebp-0x7C4], 0;
 	__asm        je     near ptr 0x0042874E;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x7C4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042874E;
+
 	__asm        jmp    near ptr 0x00428753;
+
 	__asm        cmp    dword ptr [ebp-0x768], 0;
 	__asm        je     near ptr 0x00428787;
+
 	__asm        mov    eax, [ebp-0x768];
 	__asm        mov    [ebp-0x7BC], eax;
 	__asm        mov    eax, [ebp-0x7BC];
@@ -1550,6 +1626,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        movsx  eax, szSplitPathExtension[0];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00428902;
+
 	__asm        mov    eax, ds:[0x597488];
 	__asm        push   eax;
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -1585,6 +1662,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        movsx  eax, szSplitPathExtension[0];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00428974;
+
 	__asm        mov    eax, ds:[0x59748C];
 	__asm        push   eax;
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -1705,6 +1783,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        call   MIFF::VerifyFile;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00428AF1;
+
 	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
 	__asm        call   MIFF::ReadFileCreator;
 	__asm        cmp    eax, 0x43505452;
@@ -1725,6 +1804,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 435:
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        je     near ptr 0x00428B6F;
+
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        je     near ptr 0x00428B6F;
 // LINE 437:
@@ -1762,6 +1842,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        jmp    near ptr 0x00428C31;
 // LINE 452:
 	__asm        jmp    near ptr 0x00428C11;
+
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        jne    near ptr 0x00428C11;
 // LINE 453:

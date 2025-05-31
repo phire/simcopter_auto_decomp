@@ -138,6 +138,7 @@ void StringSet::StringSet(class ResFile* file, short resID) {
 	__asm        call   StringSet::LoadStrings;
 // LINE 16:
 	__asm        jmp    near ptr 0x00565A65;
+
 	__asm        mov    eax, this;
 }
 
@@ -168,6 +169,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 	__asm        add    esp, 0x10;
 // LINE 28:
 	__asm        jmp    near ptr 0x00565AC2;
+
 	__asm        mov    eax, this;
 }
 
@@ -180,6 +182,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00565B06;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF4BC;
 	__asm        push   0x21;
@@ -212,6 +215,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00565B6C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF4F0;
 	__asm        push   0x27;
@@ -280,6 +284,7 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jl     near ptr 0x00565C28;
+
 	__asm        movsx  eax, which;
 	__asm        cmp    eax, 1;
 	__asm        jge    near ptr 0x00565C48;
@@ -301,6 +306,7 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        add    eax, 2;
 	__asm        mov    str, eax;
 	__asm        jmp    near ptr 0x00565C65;
+
 	__asm        dec    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 1;

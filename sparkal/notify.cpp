@@ -31,12 +31,14 @@ public:
 // Contribution: 1:0003d160-0003d24d Module: 54, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043e160
 void NotificationItem::NotificationItem() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 10:
 	__asm        jmp    near ptr 0x0043E184;
+
 	__asm        mov    eax, this;
 }
 
@@ -49,11 +51,13 @@ void NotificationItem::NotificationItem(const class NotificationItem& newNotific
 	__asm        call   NotificationItem::operator=;
 // LINE 14:
 	__asm        jmp    near ptr 0x0043E1A9;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0043e1b3
 void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink* newNotificationSink) {
+
 	__asm        mov    eax, lNewPreferenceType;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -62,6 +66,7 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, class Notificat
 	__asm        mov    [ecx+4], eax;
 // LINE 20:
 	__asm        jmp    near ptr 0x0043E1D5;
+
 	__asm        mov    eax, this;
 }
 
@@ -91,13 +96,16 @@ int32_t operator==(const class NotificationItem& P1, const class NotificationIte
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x0043E242;
+
 	__asm        mov    eax, P1;
 	__asm        mov    ecx, P2;
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x0043E242;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043E244;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0043E249;
 // LINE 32:

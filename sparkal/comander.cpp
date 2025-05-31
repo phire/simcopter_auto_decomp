@@ -88,6 +88,7 @@ protected:
 // Contribution: 1:00099d30-00099eff Module: 14, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049ad30
 void ICommander::ICommander() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912A8;
 // LINE 15:
@@ -95,11 +96,13 @@ void ICommander::ICommander() {
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 16:
 	__asm        jmp    near ptr 0x0049AD54;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049ad5c
 void ICommander::~ICommander() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912A8;
 // LINE 25:
@@ -135,21 +138,25 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 
 // FUNCTION: COPTER_D 0x0049adc3
 void CDefaultCommander::CDefaultCommander() {
+
 	__asm        mov    ecx, this;
 	__asm        call   ICommander::ICommander;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
 	__asm        jmp    near ptr 0x0049ADE5;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049aded
 void CDefaultCommander::~CDefaultCommander() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 49:
 	__asm        jmp    near ptr 0x0049AE07;
+
 	__asm        mov    ecx, this;
 	__asm        call   ICommander::~ICommander;
 }
@@ -200,12 +207,14 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x0049AEC6;
+
 	__asm        push   0x51;
 	__asm        push   0x59A29C;
 	__asm        push   0x59A2C4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049AECB;
+
 	__asm        jmp    near ptr 0x0049AECB;
 // LINE 82:
 	__asm        push   0;

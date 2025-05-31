@@ -28,6 +28,7 @@ protected:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490f90
 void $E2() {
+
 	__asm        call   $E1;
 	__asm        jmp    near ptr 0x00490FA0;
 }
@@ -35,6 +36,7 @@ void $E2() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490fa5
 void $E1() {
+
 	__asm        call   clock;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
@@ -42,6 +44,7 @@ void $E1() {
 	__asm        mov    ecx, 0x604B18;
 	__asm        call   Random::seed;
 	__asm        jmp    near ptr 0x00490FC9;
+
 	__asm        jmp    near ptr 0x00490FCE;
 }
 
@@ -71,6 +74,7 @@ void Random::seed(unsigned long j) {
 // LINE 37:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049101F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x36;
 	__asm        jae    near ptr 0x00491066;
@@ -105,12 +109,14 @@ void Random::seed(unsigned long j) {
 // LINE 43:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x00491075;
+
 	__asm        inc    loop;
 	__asm        cmp    loop, 4;
 	__asm        jge    near ptr 0x004910C4;
 // LINE 44:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049108E;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x37;
 	__asm        jae    near ptr 0x004910BF;

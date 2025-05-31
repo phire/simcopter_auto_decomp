@@ -131,6 +131,7 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    tempTimer.lFrequency, 0;
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0043D969;
+
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -139,20 +140,28 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    tempTimer.lFrequency, eax;
 	__asm        jmp    near ptr 0x0043D969;
+
 	__asm        jmp    near ptr 0x0043D96E;
 // LINE 104:
 	__asm        jmp    near ptr 0x0043D973;
+
 	__asm        cmp    tempTimer.lStartTime, 0;
 	__asm        je     near ptr 0x0043D982;
+
 	__asm        jmp    near ptr 0x0043D9E5;
+
 	__asm        cmp    tempTimer.nTimerResolution, 1;
 	__asm        jne    near ptr 0x0043D99F;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    tempTimer.lStartTime, eax;
 	__asm        jmp    near ptr 0x0043D9E0;
+
 	__asm        jmp    near ptr 0x0043D9E0;
+
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0043D9C9;
+
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -161,28 +170,37 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    tempTimer.lStartTime, eax;
 	__asm        jmp    near ptr 0x0043D9E0;
+
 	__asm        jmp    near ptr 0x0043D9E0;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    tempTimer.lStartTime, eax;
 	__asm        jmp    near ptr 0x0043D9E0;
+
 	__asm        jmp    near ptr 0x0043D9E5;
 // LINE 105:
 	__asm        mov    eax, tempTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0043D9F0;
+
 	__asm        cmp    tempTimer.lStartTime, 0;
 	__asm        je     near ptr 0x0043DA67;
+
 	__asm        cmp    tempTimer.nTimerResolution, 1;
 	__asm        jne    near ptr 0x0043DA17;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0043DA58;
+
 	__asm        jmp    near ptr 0x0043DA58;
+
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0043DA41;
+
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -191,13 +209,16 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0043DA58;
+
 	__asm        jmp    near ptr 0x0043DA58;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0043DA58;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        sub    eax, tempTimer.lStartTime;
 	__asm        mov    [ebp-0x2C], eax;
@@ -205,8 +226,10 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        add    [ebp-0x30], eax;
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0043DAA2;
+
 	__asm        cmp    tempTimer.lFrequency, 0;
 	__asm        je     near ptr 0x0043DAA2;
+
 	__asm        mov    eax, tempTimer.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -217,11 +240,15 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x30], eax;
 	__asm        jae    near ptr 0x0043DAC4;
+
 	__asm        jmp    near ptr 0x0043DABF;
+
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x30], eax;
 	__asm        jae    near ptr 0x0043DAC4;
+
 	__asm        jmp    near ptr 0x0043DABF;
+
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x44], eax;
 	__asm        jae    near ptr 0x0043DAC4;
@@ -229,6 +256,7 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        jmp    near ptr 0x0043D9E5;
 // LINE 107:
 	__asm        jmp    near ptr 0x0043DAC9;
+
 	__asm        jmp    near ptr 0x0043DACE;
 }
 

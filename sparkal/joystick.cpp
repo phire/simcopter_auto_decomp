@@ -90,6 +90,7 @@ struct joyinfoex_tag{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a480
 void $E2() {
+
 	__asm        call   $E1;
 	__asm        jmp    near ptr 0x0049A490;
 }
@@ -97,6 +98,7 @@ void $E2() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a495
 void $E1() {
+
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::JoystickManager;
 	__asm        jmp    near ptr 0x0049A4AA;
@@ -121,6 +123,7 @@ void JoystickManager::JoystickManager() {
 // LINE 33:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A4F2;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x0049A51A;
@@ -136,6 +139,7 @@ void JoystickManager::JoystickManager() {
 	__asm        jmp    near ptr 0x0049A4EF;
 // LINE 38:
 	__asm        jmp    near ptr 0x0049A51F;
+
 	__asm        mov    eax, this;
 }
 
@@ -155,6 +159,7 @@ int32_t JoystickManager::Initialize() {
 // LINE 61:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A554;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x0049A57C;
@@ -179,6 +184,7 @@ int32_t JoystickManager::Initialize() {
 // LINE 70:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A5A5;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    nMaxJoysticks, eax;
@@ -238,6 +244,7 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 // LINE 93:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A644;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x0049A688;
@@ -312,6 +319,7 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 // LINE 127:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049A71C;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x0049A768;
@@ -503,8 +511,10 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        jmp    near ptr 0x0049A9D6;
 // LINE 262:
 	__asm        jmp    near ptr 0x0049A942;
+
 	__asm        cmp    dword ptr [ebp-0x50], 5;
 	__asm        ja     near ptr 0x0049A90A;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    dword ptr [eax*4+0x49A92A];
 // Switch pointers
@@ -520,6 +530,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        mov    [ecx+4], eax;
 // LINE 266:
 	__asm        jmp    near ptr 0x0049A963;
+
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -548,6 +559,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        add    eax, [ecx+0x60];
 	__asm        cmp    eax, nReturnValue;
 	__asm        jle    near ptr 0x0049A9CE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x5C];
 	__asm        mov    ecx, this;
@@ -572,6 +584,7 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 // LINE 304:
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jg     near ptr 0x0049A9FD;
+
 	__asm        cmp    nButton, 0x20;
 	__asm        jle    near ptr 0x0049AA04;
 // LINE 305:
@@ -605,6 +618,7 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 	__asm        mov    dword ptr [eax+4], 0x80;
 // LINE 314:
 	__asm        jmp    near ptr 0x0049AA54;
+
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -654,6 +668,7 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 	__asm        mov    dword ptr [ecx+eax*4+0x19A8], 0xFF;
 // LINE 345:
 	__asm        jmp    near ptr 0x0049AAED;
+
 	__asm        mov    eax, nJoystick;
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
@@ -720,6 +735,7 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	__asm        mov    dword ptr [eax+4], 0x40;
 // LINE 392:
 	__asm        jmp    near ptr 0x0049ABA7;
+
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -774,6 +790,7 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 	__asm        jmp    near ptr 0x0049AC75;
 // LINE 455:
 	__asm        jmp    near ptr 0x0049AC42;
+
 	__asm        mov    eax, lThreshold;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -806,6 +823,7 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 	__asm        jmp    near ptr 0x0049ACD1;
 // LINE 479:
 	__asm        jmp    near ptr 0x0049AC9E;
+
 	__asm        mov    eax, lThreshold;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;

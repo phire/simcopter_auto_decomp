@@ -2501,6 +2501,7 @@ protected:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f70
 void $E75() {
+
 	__asm        call   $E71;
 	__asm        call   $E74;
 	__asm        jmp    near ptr 0x00543F85;
@@ -2510,6 +2511,7 @@ void $E75() {
 // FUNCTION: COPTER_D 0x00543f8a
 void $E71() {
 	// Function registers exception cleanup function at 0x00544088
+
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatFile::FlatFile;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -2517,6 +2519,7 @@ void $E71() {
 	__asm        mov    dword ptr ds:[0x636CCC], 0;
 	__asm        mov    dword ptr ds:[0x636CC8], 0;
 	__asm        jmp    near ptr 0x00543FDC;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x10], 0x636BB8;
 	__asm        jmp    near ptr 0x00543FFA;
@@ -2527,6 +2530,7 @@ _L55004:
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        mov    dword ptr ds:[0x636BB8], 0x593518;
 	__asm        jmp    near ptr 0x00544010;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x14], 0x636BB8;
 	__asm        jmp    near ptr 0x0054402E;
@@ -2538,9 +2542,11 @@ _L55002:
 	__asm        mov    dword ptr ds:[0x636CD4], 0;
 	__asm        mov    word ptr ds:[0x636CD8], 0;
 	__asm        jmp    near ptr 0x0054404D;
+
 	__asm        mov    byte ptr [ebp-4], 3;
 	__asm        mov    dword ptr ds:[0x636BB8], 0x591218;
 	__asm        jmp    near ptr 0x00544060;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x00544083;
 _L54999:
@@ -2555,6 +2561,7 @@ _L54998:
 _L54996:
 	__asm        mov    eax, 0x595D38;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2562,6 +2569,7 @@ _L54996:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440a0
 void $E74() {
+
 	__asm        push   0x5440BD;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -2571,10 +2579,12 @@ void $E74() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440bd
 void $E72() {
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A0];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x005440EA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A0];
 	__asm        or     al, 1;
@@ -2587,6 +2597,7 @@ void $E72() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440f4
 void $E81() {
+
 	__asm        call   $E77;
 	__asm        call   $E80;
 	__asm        jmp    near ptr 0x00544109;
@@ -2596,6 +2607,7 @@ void $E81() {
 // FUNCTION: COPTER_D 0x0054410e
 void $E77() {
 	// Function registers exception cleanup function at 0x005441b0
+
 	__asm        mov    ecx, 0x635590;
 	__asm        call   FlatFile::FlatFile;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -2603,6 +2615,7 @@ void $E77() {
 	__asm        mov    dword ptr ds:[0x6356A4], 0;
 	__asm        mov    dword ptr ds:[0x6356A0], 0;
 	__asm        jmp    near ptr 0x00544160;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x10], 0x635590;
 	__asm        jmp    near ptr 0x0054417E;
@@ -2613,6 +2626,7 @@ _L55025:
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        mov    dword ptr ds:[0x635590], 0x593518;
 	__asm        jmp    near ptr 0x00544194;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x005441AB;
 _L55023:
@@ -2623,6 +2637,7 @@ _L55023:
 _L55021:
 	__asm        mov    eax, 0x595D78;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2630,6 +2645,7 @@ _L55021:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441c8
 void $E80() {
+
 	__asm        push   0x5441E5;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -2640,16 +2656,19 @@ void $E80() {
 // FUNCTION: COPTER_D 0x005441e5
 void $E78() {
 	// Function registers exception cleanup function at 0x0054424a
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A4];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x00544245;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A4];
 	__asm        or     al, 1;
 	__asm        mov    ds:[0x6375A4], al;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x00544229;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   0x0054423A;
 	__asm        jmp    near ptr 0x00544245;
@@ -2661,6 +2680,7 @@ _L55035:
 _L55033:
 	__asm        mov    eax, 0x595DA8;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2679,6 +2699,7 @@ void RemoveAvatarFromBuilding() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00544289
 void $E86() {
+
 	__asm        call   $E83;
 	__asm        call   $E85;
 	__asm        jmp    near ptr 0x0054429E;
@@ -2687,12 +2708,14 @@ void $E86() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005442a3
 void $E83() {
+
 	__asm        mov    dword ptr ds:[0x635258], 1;
 	__asm        mov    dword ptr ds:[0x63525C], 0;
 	__asm        mov    dword ptr ds:[0x635260], 0;
 	__asm        mov    dword ptr ds:[0x635264], 0;
 	__asm        cmp    dword ptr ds:[0x635258], 0;
 	__asm        jne    near ptr 0x005442FE;
+
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -2701,13 +2724,16 @@ void $E83() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x635264], eax;
 	__asm        jmp    near ptr 0x005442FE;
+
 	__asm        jmp    near ptr 0x00544303;
+
 	__asm        jmp    near ptr 0x00544308;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054430d
 void $E85() {
+
 	__asm        push   0x54432A;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -2717,7 +2743,9 @@ void $E85() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054432a
 void $E84() {
+
 	__asm        jmp    near ptr 0x00544335;
+
 	__asm        jmp    near ptr 0x0054433A;
 }
 
@@ -2725,21 +2753,29 @@ void $E84() {
 void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t * failedtobeam, int32_t * numbeamed, int32_t * beamslices, int32_t * forwardweight) {
 // LINE 150:
 	__asm        jmp    near ptr 0x0054434D;
+
 	__asm        cmp    dword ptr ds:[0x63525C], 0;
 	__asm        jne    near ptr 0x005443E0;
 // LINE 151:
 	__asm        jmp    near ptr 0x0054435F;
+
 	__asm        cmp    dword ptr ds:[0x63525C], 0;
 	__asm        je     near ptr 0x00544371;
+
 	__asm        jmp    near ptr 0x005443E0;
+
 	__asm        cmp    dword ptr ds:[0x635258], 1;
 	__asm        jne    near ptr 0x00544393;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x63525C], eax;
 	__asm        jmp    near ptr 0x005443DB;
+
 	__asm        jmp    near ptr 0x005443DB;
+
 	__asm        cmp    dword ptr ds:[0x635258], 0;
 	__asm        jne    near ptr 0x005443C2;
+
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -2748,13 +2784,16 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x63525C], eax;
 	__asm        jmp    near ptr 0x005443DB;
+
 	__asm        jmp    near ptr 0x005443DB;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x63525C], eax;
 	__asm        jmp    near ptr 0x005443DB;
+
 	__asm        jmp    near ptr 0x005443E0;
 // LINE 152:
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
@@ -2786,16 +2825,22 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        mov    eax, ds:[0x635260];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0054443C;
+
 	__asm        cmp    dword ptr ds:[0x63525C], 0;
 	__asm        je     near ptr 0x005444BF;
+
 	__asm        cmp    dword ptr ds:[0x635258], 1;
 	__asm        jne    near ptr 0x00544469;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x005444AD;
+
 	__asm        jmp    near ptr 0x005444AD;
+
 	__asm        cmp    dword ptr ds:[0x635258], 0;
 	__asm        jne    near ptr 0x00544496;
+
 	__asm        lea    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -2804,13 +2849,16 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x005444AD;
+
 	__asm        jmp    near ptr 0x005444AD;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x005444AD;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        sub    eax, ds:[0x63525C];
 	__asm        mov    [ebp-0x10], eax;
@@ -2818,8 +2866,10 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        add    [ebp-0x14], eax;
 	__asm        cmp    dword ptr ds:[0x635258], 0;
 	__asm        jne    near ptr 0x00544503;
+
 	__asm        cmp    dword ptr ds:[0x635264], 0;
 	__asm        je     near ptr 0x00544503;
+
 	__asm        mov    eax, ds:[0x635264];
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -2829,10 +2879,14 @@ void JacquesGetDebugData(int32_t * missionawake, int32_t * ambientawake, int32_t
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0x1F4;
 	__asm        jb     near ptr 0x00544544;
+
 	__asm        jmp    near ptr 0x00544522;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0x1F4;
 	__asm        jb     near ptr 0x00544544;
+
 	__asm        jmp    near ptr 0x00544522;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x1F4;
 	__asm        jb     near ptr 0x00544544;
 // LINE 159:
@@ -2864,15 +2918,19 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054458F;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054460B;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005445A8;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x005445C4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -2882,6 +2940,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x005445F2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -2892,11 +2951,13 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054460B;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    obj, eax;
 // LINE 173:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00544631;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B86B8;
 	__asm        push   0xAD;
@@ -2908,6 +2969,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        movsx  eax, word ptr [eax+0xE2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054465F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8704;
 	__asm        push   0xAE;
@@ -2920,9 +2982,11 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054470C;
+
 	__asm        mov    eax, obj;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    near ptr 0x0054469E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB998;
 	__asm        push   0x41E;
@@ -2935,6 +2999,7 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        mov    [ebp-0xC], ax;
 	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
 	__asm        jne    near ptr 0x005446D5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB978;
 	__asm        push   0x420;
@@ -2956,10 +3021,15 @@ unsigned short cYObject::GetOutOfHeli(long personID) {
 	__asm        mov    ecx, obj;
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    near ptr 0x00544702;
+
 	__asm        jmp    near ptr 0x00544723;
+
 	__asm        jmp    near ptr 0x00544716;
+
 	__asm        jmp    near ptr 0x00544753;
+
 	__asm        jmp    near ptr 0x00544723;
+
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        je     near ptr 0x00544753;
 // LINE 177:
@@ -2988,12 +3058,14 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 // LINE 192:
 	__asm        cmp    velocity, 0;
 	__asm        jne    near ptr 0x00544775;
+
 	__asm        jmp    near ptr 0x0054486F;
 // LINE 193:
 	__asm        inc    word ptr ds:[0x5B864C];
 	__asm        movsx  eax, word ptr ds:[0x5B864C];
 	__asm        cmp    eax, 4;
 	__asm        jle    near ptr 0x00544795;
+
 	__asm        mov    word ptr ds:[0x5B864C], 0;
 // LINE 194:
 	__asm        movsx  eax, word ptr ds:[0x5B864C];
@@ -3008,6 +3080,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        mov    word ptr ds:[0x5B8648], 8;
 // LINE 199:
 	__asm        jmp    near ptr 0x0054486A;
+
 	__asm        cmp    velocity, 0x960000;
 	__asm        jle    near ptr 0x005447EC;
 // LINE 200:
@@ -3016,6 +3089,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        mov    word ptr ds:[0x5B8648], 6;
 // LINE 203:
 	__asm        jmp    near ptr 0x0054486A;
+
 	__asm        cmp    velocity, 0x640000;
 	__asm        jle    near ptr 0x00544810;
 // LINE 204:
@@ -3024,6 +3098,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        mov    word ptr ds:[0x5B8648], 5;
 // LINE 207:
 	__asm        jmp    near ptr 0x0054486A;
+
 	__asm        cmp    velocity, 0x410000;
 	__asm        jle    near ptr 0x00544834;
 // LINE 208:
@@ -3032,6 +3107,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        mov    word ptr ds:[0x5B8648], 4;
 // LINE 211:
 	__asm        jmp    near ptr 0x0054486A;
+
 	__asm        cmp    velocity, 0x1E0000;
 	__asm        jle    near ptr 0x00544858;
 // LINE 212:
@@ -3059,6 +3135,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 // LINE 226:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00544893;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -3067,15 +3144,19 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x005448BC;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00544938;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005448D5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x005448F1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -3085,6 +3166,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054491F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -3095,17 +3177,20 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00544938;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    obj, eax;
 // LINE 228:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00544947;
+
 	__asm        jmp    near ptr 0x0054488F;
 // LINE 229:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054495E;
+
 	__asm        jmp    near ptr 0x0054488F;
 // LINE 230:
 	__asm        mov    eax, obj;
@@ -3147,16 +3232,21 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x005449F3;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        cmp    foundobj, eax;
 	__asm        je     near ptr 0x00544A97;
+
 	__asm        jmp    near ptr 0x00544A7B;
+
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00544A0C;
+
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00544A28;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -3166,6 +3256,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00544A56;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -3176,10 +3267,13 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        mov    ecx, foundobj;
 	__asm        cmp    [eax*4+0x636D40], ecx;
 	__asm        je     near ptr 0x00544A97;
+
 	__asm        jmp    near ptr 0x00544A7B;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    foundobj, eax;
 	__asm        je     near ptr 0x00544A97;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B87A0;
 	__asm        push   0xF2;
@@ -3193,14 +3287,18 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00544ABB;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        jmp    near ptr 0x00544B31;
+
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00544AD4;
+
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00544AF0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -3210,6 +3308,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00544B1E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -3219,6 +3318,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        jmp    near ptr 0x00544B31;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    near ptr 0x00544B36;
 // LINE 245:
@@ -3248,20 +3348,25 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x00544BBD;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        movsx  ecx, objtypeflag;
 	__asm        test   ecx, eax;
 	__asm        je     near ptr 0x00544BB0;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dyobj, eax;
 	__asm        jmp    near ptr 0x00544BCF;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00544B88;
+
 	__asm        mov    dyobj, 0;
 	__asm        jmp    near ptr 0x00544BCF;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dyobj, eax;
 // LINE 254:
@@ -3288,6 +3393,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x80;
 	__asm        jne    near ptr 0x00544C25;
+
 	__asm        mov    eax, ds:[0x5BC634];
 	__asm        push   eax;
 	__asm        mov    eax, master;
@@ -3298,9 +3404,12 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        sar    eax, 0x10;
 	__asm        mov    fullradius, ax;
 	__asm        jmp    near ptr 0x00544C3A;
+
 	__asm        jmp    near ptr 0x00544C30;
+
 	__asm        mov    fullradius, 8;
 	__asm        jmp    near ptr 0x00544C3A;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        sar    eax, 0x10;
 	__asm        mov    fullradius, ax;
@@ -3314,6 +3423,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 // LINE 265:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00544C5C;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, maxcount;
@@ -3342,6 +3452,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        movsx  ecx, fullradius;
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x00544CB5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B87F8;
 	__asm        push   0x10C;
@@ -3352,10 +3463,12 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        movsx  eax, radius;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00544CD3;
+
 	__asm        mov    offsetz, 0;
 	__asm        mov    eax, offsetz;
 	__asm        mov    offsetx, eax;
 	__asm        jmp    near ptr 0x00544DA7;
+
 	__asm        movsx  ebx, radius;
 	__asm        dec    ebx;
 	__asm        movsx  eax, radius;
@@ -3385,6 +3498,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        sar    eax, 0x10;
 	__asm        mov    [ebp-0x5C], ax;
 	__asm        jmp    near ptr 0x00544D34;
+
 	__asm        movsx  eax, word ptr [ebp-0x58];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3394,6 +3508,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00544D6B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44A;
@@ -3401,6 +3516,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00544D70;
+
 	__asm        movsx  eax, word ptr [ebp-0x5C];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3410,6 +3526,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00544DA7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44B;
@@ -3474,6 +3591,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        movsx  eax, word ptr [eax+0x30];
 	__asm        test   al, 0x80;
 	__asm        jne    near ptr 0x00544E5E;
+
 	__asm        mov    eax, ds:[0x5BC634];
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -3483,7 +3601,9 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        add    esp, 8;
 	__asm        mov    myrad, eax;
 	__asm        jmp    near ptr 0x00544E6A;
+
 	__asm        jmp    near ptr 0x00544E6A;
+
 	__asm        mov    myrad, 0x80000;
 	__asm        jmp    near ptr 0x00544E6A;
 // LINE 285:
@@ -3491,6 +3611,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x80;
 	__asm        jne    near ptr 0x00544E9B;
+
 	__asm        mov    eax, ds:[0x5BC634];
 	__asm        push   eax;
 	__asm        mov    eax, master;
@@ -3500,7 +3621,9 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 	__asm        add    esp, 8;
 	__asm        mov    masterrad, eax;
 	__asm        jmp    near ptr 0x00544EA7;
+
 	__asm        jmp    near ptr 0x00544EA7;
+
 	__asm        mov    masterrad, 0x80000;
 	__asm        jmp    near ptr 0x00544EA7;
 // LINE 286:
@@ -3605,6 +3728,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054503A;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, offsetx;
@@ -3634,6 +3758,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x00545000;
+
 	__asm        lea    eax, [ebp-0x20];
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        mov    edx, [eax];
@@ -3678,10 +3803,12 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x00545088;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 0x14;
 	__asm        jl     near ptr 0x005450A4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B88A8;
 	__asm        push   0x140;
@@ -3692,15 +3819,19 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, halfwidth;
 	__asm        cmp    eax, 0x20;
 	__asm        je     near ptr 0x005450F6;
+
 	__asm        movsx  eax, halfwidth;
 	__asm        cmp    eax, 0x40;
 	__asm        je     near ptr 0x005450F6;
+
 	__asm        movsx  eax, halfwidth;
 	__asm        cmp    eax, 0x60;
 	__asm        je     near ptr 0x005450F6;
+
 	__asm        movsx  eax, halfwidth;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x005450F6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B88F8;
 	__asm        push   0x141;
@@ -3726,6 +3857,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	short count;
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00545133;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -3737,6 +3869,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, halfwidth;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054516E;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, offsetz;
@@ -3744,6 +3877,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ecx, offsetx;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00545221;
+
 	__asm        movsx  ebx, halfwidth;
 	__asm        dec    ebx;
 	__asm        movsx  eax, halfwidth;
@@ -3761,10 +3895,12 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005451BA;
+
 	__asm        movsx  eax, halfwidth;
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    near ptr 0x005451C7;
+
 	__asm        movsx  eax, halfwidth;
 	__asm        neg    eax;
 	__asm        inc    eax;
@@ -3778,6 +3914,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00545206;
+
 	__asm        mov    eax, [ebp-0x174];
 	__asm        mov    ecx, offsetx;
 	__asm        mov    [ecx], eax;
@@ -3785,6 +3922,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ecx, offsetz;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0054521C;
+
 	__asm        mov    eax, [ebp-0x174];
 	__asm        mov    ecx, offsetz;
 	__asm        mov    [ecx], eax;
@@ -3798,6 +3936,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, halfwidth;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054524A;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, offsetz;
@@ -3805,6 +3944,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ecx, offsetx;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00545332;
+
 	__asm        movsx  ebx, halfwidth;
 	__asm        dec    ebx;
 	__asm        movsx  eax, halfwidth;
@@ -3838,6 +3978,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        sar    eax, 0x10;
 	__asm        mov    [ebp-0x184], ax;
 	__asm        jmp    near ptr 0x005452B9;
+
 	__asm        movsx  eax, word ptr [ebp-0x180];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3847,6 +3988,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005452F3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44A;
@@ -3854,6 +3996,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x005452F8;
+
 	__asm        movsx  eax, word ptr [ebp-0x184];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3863,6 +4006,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00545332;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44B;
@@ -3870,6 +4014,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00545337;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x128], eax;
@@ -3901,6 +4046,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x005453AF;
+
 	__asm        lea    eax, [ebp-0xDC];
 	__asm        lea    ecx, [ebp-0xAC];
 	__asm        mov    edx, [eax];
@@ -3937,12 +4083,14 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        jmp    near ptr 0x0054512F;
 // LINE 337:
 	__asm        jmp    near ptr 0x00545414;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        and    eax, 1;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054548D;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        add    eax, 0xA;
@@ -3960,9 +4108,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    eax, 0x10;
 	__asm        cmp    eax, [ebp-0x104];
 	__asm        jge    near ptr 0x0054546E;
+
 	__asm        jmp    near ptr 0x00545473;
+
 	__asm        jmp    near ptr 0x0054548D;
+
 	__asm        jmp    near ptr 0x00545488;
+
 	__asm        test   dword ptr [ebp-0x10C], 0xFFFF;
 	__asm        je     near ptr 0x0054548D;
 // LINE 338:
@@ -3981,6 +4133,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	short count;
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005454B1;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -3989,6 +4142,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, halfwidth;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005454E2;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, offsetz;
@@ -3996,6 +4150,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ecx, offsetx;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x005455CA;
+
 	__asm        movsx  ebx, halfwidth;
 	__asm        dec    ebx;
 	__asm        movsx  eax, halfwidth;
@@ -4029,6 +4184,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        sar    eax, 0x10;
 	__asm        mov    [ebp-0x18C], ax;
 	__asm        jmp    near ptr 0x00545551;
+
 	__asm        movsx  eax, word ptr [ebp-0x188];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -4038,6 +4194,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0054558B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44A;
@@ -4045,6 +4202,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00545590;
+
 	__asm        movsx  eax, word ptr [ebp-0x18C];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -4054,6 +4212,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005455CA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44B;
@@ -4061,6 +4220,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x005455CF;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x13C], eax;
@@ -4092,6 +4252,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x00545647;
+
 	__asm        lea    eax, [ebp-0xE8];
 	__asm        lea    ecx, [ebp-0xB8];
 	__asm        mov    edx, [eax];
@@ -4128,12 +4289,14 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        jmp    near ptr 0x005454AD;
 // LINE 354:
 	__asm        jmp    near ptr 0x005456AC;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        and    eax, 1;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00545720;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        add    eax, 0xA;
@@ -4151,9 +4314,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    eax, 0x10;
 	__asm        cmp    eax, [ebp-0x110];
 	__asm        jge    near ptr 0x0054570B;
+
 	__asm        jmp    near ptr 0x00545725;
+
 	__asm        jmp    near ptr 0x0054570B;
+
 	__asm        jmp    near ptr 0x00545720;
+
 	__asm        test   dword ptr [ebp-0x118], 0xFFFF;
 	__asm        jne    near ptr 0x00545725;
 // LINE 355:
@@ -4172,6 +4339,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	short count;
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00545749;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -4180,6 +4348,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, halfwidth;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054577A;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, offsetz;
@@ -4187,6 +4356,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    ecx, offsetx;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00545862;
+
 	__asm        movsx  ebx, halfwidth;
 	__asm        dec    ebx;
 	__asm        movsx  eax, halfwidth;
@@ -4220,6 +4390,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        sar    eax, 0x10;
 	__asm        mov    [ebp-0x194], ax;
 	__asm        jmp    near ptr 0x005457E9;
+
 	__asm        movsx  eax, word ptr [ebp-0x190];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -4229,6 +4400,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00545823;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44A;
@@ -4236,6 +4408,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00545828;
+
 	__asm        movsx  eax, word ptr [ebp-0x194];
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -4245,6 +4418,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        shl    ecx, 0x10;
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00545862;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x44B;
@@ -4252,6 +4426,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00545867;
+
 	__asm        mov    eax, offsetz;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x150], eax;
@@ -4283,6 +4458,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x005458DF;
+
 	__asm        lea    eax, [ebp-0xF4];
 	__asm        lea    ecx, [ebp-0xC4];
 	__asm        mov    edx, [eax];
@@ -4319,6 +4495,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        jmp    near ptr 0x00545745;
 // LINE 368:
 	__asm        jmp    near ptr 0x00545944;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        and    eax, 1;
@@ -4345,8 +4522,10 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        add    esp, 0x10;
 // LINE 377:
 	__asm        jmp    near ptr 0x005459BD;
+
 	__asm        cmp    dword ptr [ebp-0x19C], 3;
 	__asm        ja     near ptr 0x00545972;
+
 	__asm        mov    eax, [ebp-0x19C];
 	__asm        jmp    dword ptr [eax*4+0x5459AD];
 // Switch pointers
@@ -4409,6 +4588,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x00545A6E;
+
 	__asm        lea    eax, [ebp-0x100];
 	__asm        lea    ecx, [ebp-0xD0];
 	__asm        mov    edx, [eax];
@@ -4439,17 +4619,22 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcellx);
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00545AF1;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcelly);
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00545AF1;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcellx);
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00545AF1;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcelly);
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00545AFC;
+
 	__asm        mov    centerscurk, 0xFFFF;
 	__asm        jmp    near ptr 0x00545B64;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcellx);
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(centcelly);
@@ -4458,9 +4643,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, word ptr [ebp-0x16C];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00545B38;
+
 	__asm        movsx  eax, word ptr [ebp-0x16C];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x00545B54;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -4474,17 +4661,22 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcellx);
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00545B96;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcelly);
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00545B96;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcellx);
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00545B96;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcelly);
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00545BA1;
+
 	__asm        mov    offscurk, 0xFFFF;
 	__asm        jmp    near ptr 0x00545C09;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcellx);
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(offcelly);
@@ -4493,9 +4685,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        movsx  eax, word ptr [ebp-0x170];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00545BDD;
+
 	__asm        movsx  eax, word ptr [ebp-0x170];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x00545BF9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -4559,6 +4753,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        mov    eax, cellcenterloctype;
 	__asm        cmp    celloffsetloctype, eax;
 	__asm        je     near ptr 0x00545CB3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B89CC;
 	__asm        push   0x18D;
@@ -4574,6 +4769,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 
 // FUNCTION: COPTER_D 0x00545cc3
 void duh(double __formal) {
+
 	__asm        jmp    near ptr 0x00545CCE;
 }
 
@@ -4589,6 +4785,7 @@ void S3PersonInit() {
 // LINE 409:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00545CF2;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x271;
 	__asm        jge    near ptr 0x00545D30;
@@ -4659,6 +4856,7 @@ void S3PersonReset() {
 // LINE 446:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00545DD6;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -4669,15 +4867,19 @@ void S3PersonReset() {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00545DFF;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00545E7B;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00545E18;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00545E34;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -4687,6 +4889,7 @@ void S3PersonReset() {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00545E62;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -4697,11 +4900,13 @@ void S3PersonReset() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00545E7B;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    obj, eax;
 // LINE 448:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00545EA1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8A2C;
 	__asm        push   0x1C0;
@@ -4743,6 +4948,7 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00545F1F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8A74;
 	__asm        push   0x1C9;
@@ -4756,6 +4962,7 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00545F55;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA9C;
 	__asm        push   0x2D3;
@@ -4771,6 +4978,7 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   TreeSim::Reset;
 	__asm        jmp    near ptr 0x00545F77;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    word ptr [eax+0xD2], 1;
 	__asm        mov    eax, [ebp-0x64];
@@ -4780,19 +4988,23 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        jne    near ptr 0x00545FB9;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x00545FC7;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x00545FCC;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        movsx  ecx, word ptr ds:[0x5B8670];
 	__asm        add    eax, ecx;
 	__asm        cmp    eax, 0x64;
 	__asm        jle    near ptr 0x00546001;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA7C;
 	__asm        push   0x2D9;
@@ -4804,11 +5016,13 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054604A;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00546045;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -4816,11 +5030,13 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054607A;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054607A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -4832,11 +5048,16 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00546098;
+
 	__asm        jmp    near ptr 0x005460C6;
+
 	__asm        jmp    near ptr 0x00546098;
+
 	__asm        jmp    near ptr 0x005460AA;
+
 	__asm        test   dword ptr [ebp-0x60], 0xFFFF;
 	__asm        jne    near ptr 0x005460C6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA54;
 	__asm        push   0x2DA;
@@ -4846,11 +5067,13 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   cYObject::Link;
 	__asm        jmp    near ptr 0x005460D3;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x00546100;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -4883,6 +5106,7 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00546148;
+
 	__asm        jmp    near ptr 0x0054614D;
 // LINE 459:
 	__asm        mov    eax, ds:[0x5B8680];
@@ -4908,6 +5132,7 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005461C2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8ADC;
 	__asm        push   0x1D2;
@@ -4940,21 +5165,27 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 // LINE 472:
 	__asm        mov    word ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x0054621F;
+
 	__asm        inc    word ptr [ebp-0x14];
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    eax, 3;
 	__asm        jge    near ptr 0x00546255;
+
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        movsx  eax, word ptr [eax*2+0x6356C8];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00546250;
+
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        add    eax, 0xC;
 	__asm        mov    [ebp-0x18], ax;
 	__asm        jmp    near ptr 0x00546260;
+
 	__asm        jmp    near ptr 0x0054621B;
+
 	__asm        mov    word ptr [ebp-0x18], 0xC;
 	__asm        jmp    near ptr 0x00546260;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5B8680];
@@ -4966,11 +5197,13 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 	__asm        mov    [ebp-0x74], eax;
 // LINE 475:
 	__asm        jmp    near ptr 0x00546287;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x005462B4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -5067,6 +5300,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x005463B9;
+
 	__asm        lea    eax, [ebp-0x40];
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        mov    edx, [eax];
@@ -5084,6 +5318,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x005463EA;
+
 	__asm        lea    eax, [ebp-0x24];
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        mov    edx, [eax];
@@ -5144,6 +5379,7 @@ unsigned char GetAvatarCellX() {
 // LINE 507:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x005464A7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8B30;
 	__asm        push   0x1FB;
@@ -5162,6 +5398,7 @@ unsigned char GetAvatarCellY() {
 // LINE 513:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x005464EB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8B64;
 	__asm        push   0x201;
@@ -5180,6 +5417,7 @@ struct _DYOBJ_INST* GetAvatarDYOBJ() {
 // LINE 519:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x0054652F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8B98;
 	__asm        push   0x207;
@@ -5198,6 +5436,7 @@ struct Point3d* GetAvatarVector() {
 // LINE 525:
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x00546570;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8BD8;
 	__asm        push   0x20D;
@@ -5238,15 +5477,19 @@ void S3DrawPerson(struct VRBlit* blit) {
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x005465DB;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00546657;
+
 	__asm        movsx  eax, id;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005465F4;
+
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00546610;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -5256,6 +5499,7 @@ void S3DrawPerson(struct VRBlit* blit) {
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054663E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -5266,11 +5510,13 @@ void S3DrawPerson(struct VRBlit* blit) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00546657;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    obj, eax;
 // LINE 538:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x0054667D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8C18;
 	__asm        push   0x21A;
@@ -5283,6 +5529,7 @@ void S3DrawPerson(struct VRBlit* blit) {
 	__asm        movsx  ecx, id;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x005466AF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8C44;
 	__asm        push   0x21B;
@@ -5315,6 +5562,7 @@ void cAvatar::GetControlInput() {
 // LINE 559:
 	__asm        cmp    dword ptr ds:[0x5C3808], 0;
 	__asm        je     near ptr 0x005467CD;
+
 	__asm        push   1;
 	__asm        call   IsModifierSet;
 	__asm        add    esp, 4;
@@ -5336,21 +5584,27 @@ void cAvatar::GetControlInput() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054678D;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00546768;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0x1C], ax;
 	__asm        jmp    near ptr 0x0054677B;
+
 	__asm        jmp    near ptr 0x00546773;
+
 	__asm        mov    word ptr [ebp-0x1C], 0xFFFF;
 	__asm        jmp    near ptr 0x0054677B;
+
 	__asm        mov    ax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], ax;
 	__asm        jmp    near ptr 0x00546780;
+
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
@@ -5376,6 +5630,7 @@ void cAvatar::GetControlInput() {
 	__asm        mov    fwdmult, eax;
 // LINE 571:
 	__asm        jmp    near ptr 0x00546861;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD6];
 	__asm        cmp    eax, 1;
@@ -5391,21 +5646,27 @@ void cAvatar::GetControlInput() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054685C;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00546837;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0x24], ax;
 	__asm        jmp    near ptr 0x0054684A;
+
 	__asm        jmp    near ptr 0x00546842;
+
 	__asm        mov    word ptr [ebp-0x24], 0xFFFF;
 	__asm        jmp    near ptr 0x0054684A;
+
 	__asm        mov    ax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], ax;
 	__asm        jmp    near ptr 0x0054684F;
+
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
@@ -5432,6 +5693,7 @@ void cAvatar::GetControlInput() {
 	__asm        add    [ecx+0x174], eax;
 // LINE 582:
 	__asm        jmp    near ptr 0x0054696F;
+
 	__asm        push   9;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
@@ -5451,6 +5713,7 @@ void cAvatar::GetControlInput() {
 	__asm        sub    [eax+0x174], ebx;
 // LINE 584:
 	__asm        jmp    near ptr 0x0054696F;
+
 	__asm        push   8;
 	__asm        push   9;
 	__asm        call   GetJoystickValueEither;
@@ -5544,6 +5807,7 @@ void cAvatar::GetControlInput() {
 	__asm        add    [ecx+0x178], eax;
 // LINE 606:
 	__asm        jmp    near ptr 0x00546A84;
+
 	__asm        push   6;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
@@ -5563,6 +5827,7 @@ void cAvatar::GetControlInput() {
 	__asm        sub    [eax+0x178], ebx;
 // LINE 608:
 	__asm        jmp    near ptr 0x00546A84;
+
 	__asm        push   6;
 	__asm        push   7;
 	__asm        call   GetJoystickValueEither;
@@ -5618,6 +5883,7 @@ void cAvatar::GetControlInput() {
 void PersonHeliHasLanded() {
 // LINE 624:
 	__asm        jmp    near ptr 0x00546AD9;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -5630,7 +5896,9 @@ void PersonHeliHasLanded() {
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 2;
 	__asm        jge    near ptr 0x00546B30;
+
 	__asm        jmp    near ptr 0x00546B07;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -5643,6 +5911,7 @@ void PersonHeliHasLanded() {
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 2;
 	__asm        jl     near ptr 0x00546B4C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8C7C;
 	__asm        push   0x270;
@@ -5714,18 +5983,21 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx];
 	__asm        jg     near ptr 0x00546C3D;
+
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, 0x40000;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx];
 	__asm        jl     near ptr 0x00546C3D;
+
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    eax, 0x40000;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx+8];
 	__asm        jl     near ptr 0x00546C3D;
+
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        sub    eax, 0x40000;
@@ -5769,17 +6041,22 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00546CC0;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00546CC0;
+
 	__asm        movsx  eax, cellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00546CC0;
+
 	__asm        movsx  eax, celly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00546CCB;
+
 	__asm        mov    scurkID, 0xFFFF;
 	__asm        jmp    near ptr 0x00546D27;
+
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, celly;
@@ -5788,9 +6065,11 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        movsx  eax, word ptr [ebp-0x10];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00546CFE;
+
 	__asm        movsx  eax, word ptr [ebp-0x10];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x00546D1A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -5803,6 +6082,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 // LINE 697:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00546D36;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -5813,15 +6093,19 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00546D5F;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00546DDB;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00546D78;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00546D94;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -5831,6 +6115,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00546DC2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -5841,6 +6126,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00546DDB;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    obj, eax;
 // LINE 699:
@@ -5850,6 +6136,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        je     near ptr 0x00546E5F;
 // LINE 700:
 	__asm        jmp    near ptr 0x00546DF2;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -5862,7 +6149,9 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 4;
 	__asm        jge    near ptr 0x00546E5F;
+
 	__asm        jmp    near ptr 0x00546E1C;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -5897,6 +6186,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST* onTopOf, int32_t offsetx, int32_t offsetz) {
 	struct Point3d loc;
 
+
 	__asm        movsx  eax, celly;
 	__asm        and    eax, 0xFF;
 	__asm        movsx  ecx, cellx;
@@ -5929,6 +6219,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x00546EE9;
+
 	__asm        lea    eax, [ebp-0x24];
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        mov    edx, [eax];
@@ -5989,6 +6280,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 // LINE 720:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
 	__asm        jne    near ptr 0x00546F9E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8CD8;
 	__asm        push   0x2D0;
@@ -6000,14 +6292,17 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00546FD5;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD6];
 	__asm        cmp    eax, persontype;
 	__asm        jne    near ptr 0x00546FD5;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00546FF1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8D34;
 	__asm        push   0x2D1;
@@ -6031,6 +6326,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::Reset;
 	__asm        jmp    near ptr 0x0054702F;
+
 	__asm        jmp    near ptr 0x00547034;
 // LINE 725:
 	__asm        mov    ax, ret;
@@ -6048,6 +6344,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 // LINE 732:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x00547073;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8D60;
 	__asm        push   0x2DC;
@@ -6058,17 +6355,22 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x005470A5;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x005470A5;
+
 	__asm        movsx  eax, cellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005470A5;
+
 	__asm        movsx  eax, celly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x005470B0;
+
 	__asm        mov    id, 0xFFFF;
 	__asm        jmp    near ptr 0x0054710C;
+
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, celly;
@@ -6077,9 +6379,11 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005470E3;
+
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x005470FF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -6098,6 +6402,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 // LINE 735:
 	__asm        cmp    li, 0;
 	__asm        jne    near ptr 0x00547142;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8DB0;
 	__asm        push   0x2DF;
@@ -6159,6 +6464,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 // LINE 748:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x005471E1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8DDC;
 	__asm        push   0x2EC;
@@ -6169,17 +6475,22 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00547213;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x00547213;
+
 	__asm        movsx  eax, cellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547213;
+
 	__asm        movsx  eax, celly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054721E;
+
 	__asm        mov    id, 0xFFFF;
 	__asm        jmp    near ptr 0x0054727A;
+
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, celly;
@@ -6188,9 +6499,11 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, word ptr [ebp-0x44];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547251;
+
 	__asm        movsx  eax, word ptr [ebp-0x44];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x0054726D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -6200,6 +6513,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        mov    ax, [ebp-0x44];
 	__asm        mov    id, ax;
 	__asm        jmp    near ptr 0x0054727A;
+
 	__asm        movsx  eax, cellx;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 0xA;
@@ -6232,6 +6546,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x005472E7;
+
 	__asm        lea    eax, [ebp-0x30];
 	__asm        lea    ecx, [ebp-0x24];
 	__asm        mov    edx, [eax];
@@ -6283,15 +6598,19 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00547386;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00547402;
+
 	__asm        movsx  eax, ret;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054739F;
+
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x005473BB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -6301,6 +6620,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        movsx  eax, ret;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x005473E9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -6311,11 +6631,13 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00547402;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    obj, eax;
 // LINE 770:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00547428;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8E7C;
 	__asm        push   0x302;
@@ -6332,24 +6654,29 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 
 // FUNCTION: COPTER_D 0x00547440
 void cYObject::StartScurkPeople(short cellx, short celly) {
-	 // Switch table at 0x00547907
+	static const <NoType> = { /* <data@0x00547907> */ };
 	short scurkID;
 
 // LINE 780:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054747B;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054747B;
+
 	__asm        movsx  eax, cellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054747B;
+
 	__asm        movsx  eax, celly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00547486;
+
 	__asm        mov    scurkID, 0xFFFF;
 	__asm        jmp    near ptr 0x005474E2;
+
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, celly;
@@ -6358,9 +6685,11 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005474B9;
+
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x005474D5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -6400,6 +6729,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 // LINE 787:
 	__asm        cmp    medic, 0;
 	__asm        je     near ptr 0x0054753A;
+
 	__asm        movsx  eax, dist;
 	__asm        cmp    eax, 0x64;
 	__asm        jle    near ptr 0x00547552;
@@ -6455,12 +6785,17 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 // LINE 800:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
 	__asm        jne    near ptr 0x005475D0;
+
 	__asm        call   GetUserPoints;
 	__asm        cmp    eax, 0x3E8;
 	__asm        jl     near ptr 0x005475D0;
+
 	__asm        jmp    near ptr 0x005475D5;
+
 	__asm        jmp    near ptr 0x00547600;
+
 	__asm        jmp    near ptr 0x005475E4;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00547600;
 // LINE 801:
@@ -6491,6 +6826,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x0054767A;
+
 	__asm        push   0xFFBA0000;
 	__asm        push   0x460000;
 	__asm        push   0;
@@ -6507,6 +6843,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054767A;
+
 	__asm        push   0xA;
 	__asm        call   SRand;
 	__asm        add    esp, 4;
@@ -6522,6 +6859,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x005476DA;
+
 	__asm        push   0xFFBA0000;
 	__asm        push   0x140000;
 	__asm        push   0;
@@ -6538,6 +6876,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005476DA;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6546,6 +6885,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x0054772C;
+
 	__asm        push   0xFFEC0000;
 	__asm        push   0x140000;
 	__asm        push   0;
@@ -6562,6 +6902,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054772C;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6570,6 +6911,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x0054777E;
+
 	__asm        push   0xFFEC0000;
 	__asm        push   0x460000;
 	__asm        push   0;
@@ -6586,6 +6928,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054777E;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6594,6 +6937,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x005477D0;
+
 	__asm        push   0xFFD30000;
 	__asm        push   0x2D0000;
 	__asm        push   0;
@@ -6610,6 +6954,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005477D0;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6618,6 +6963,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x00547822;
+
 	__asm        push   0xFFD80000;
 	__asm        push   0xFFD80000;
 	__asm        push   0;
@@ -6634,6 +6980,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00547822;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6642,6 +6989,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x00547874;
+
 	__asm        push   0x280000;
 	__asm        push   0x280000;
 	__asm        push   0;
@@ -6658,6 +7006,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00547874;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6666,6 +7015,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        mov    newperson, eax;
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x005478C6;
+
 	__asm        push   0x280000;
 	__asm        push   0xFFD80000;
 	__asm        push   0;
@@ -6682,6 +7032,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005478C6;
+
 	__asm        mov    ax, fieldershift;
 	__asm        mov    ecx, newperson;
 	__asm        mov    [ecx+0xF0], ax;
@@ -6690,9 +7041,11 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 // LINE 831:
 // Block end:
 	__asm        jmp    near ptr 0x0054792D;
+
 	__asm        sub    dword ptr [ebp-0x20], 0xD1;
 	__asm        cmp    dword ptr [ebp-0x20], 0x25;
 	__asm        ja     near ptr 0x0054792D;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x547907];
@@ -6731,6 +7084,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	__asm        movsx  ecx, word ptr ds:[0x5B86A8];
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x005479A8;
+
 	__asm        movsx  eax, celly;
 	__asm        movsx  ecx, word ptr ds:[0x5B86AC];
 	__asm        cmp    eax, ecx;
@@ -6776,6 +7130,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 // LINE 860:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00547A2C;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, rectdiam;
@@ -6841,6 +7196,7 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  ecx, word ptr ds:[0x5B8674];
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x00547C61;
+
 	__asm        mov    ax, numtries;
 	__asm        mov    [ebp-0x10], ax;
 	__asm        inc    numtries;
@@ -6873,9 +7229,11 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  eax, id;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547B4F;
+
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00547B6B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8F0C;
 	__asm        push   0x36D;
@@ -6888,6 +7246,7 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  ecx, word ptr ds:[0x5B8674];
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00547B9B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8F60;
 	__asm        push   0x36E;
@@ -6898,15 +7257,20 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00547BBC;
+
 	__asm        cmp    dword ptr ds:[0x5B8680], 0;
 	__asm        jne    near ptr 0x00547C5C;
+
 	__asm        jmp    near ptr 0x00547C40;
+
 	__asm        movsx  eax, id;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547BD5;
+
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00547BF1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -6916,6 +7280,7 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00547C1F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -6925,9 +7290,12 @@ void cYObject::BeamRemainingAmbients() {
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00547C5C;
+
 	__asm        jmp    near ptr 0x00547C40;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    near ptr 0x00547C5C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8F8C;
 	__asm        push   0x36F;
@@ -6954,10 +7322,15 @@ void cYObject::TryStartAllAmbient() {
 	__asm        movzx  eax, ax;
 	__asm        cmp    eax, 3;
 	__asm        jge    near ptr 0x00547CA2;
+
 	__asm        jmp    near ptr 0x00547CB9;
+
 	__asm        jmp    near ptr 0x00547CAC;
+
 	__asm        jmp    near ptr 0x00547CBE;
+
 	__asm        jmp    near ptr 0x00547CB9;
+
 	__asm        test   dword ptr [ebp-4], 0xFFFF;
 	__asm        je     near ptr 0x00547CBE;
 // LINE 893:
@@ -6977,6 +7350,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 // LINE 900:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00547CE7;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -6985,15 +7359,19 @@ class cYObject* cYObject::GetSleepingPerson() {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00547D10;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    test, eax;
 	__asm        jmp    near ptr 0x00547D8C;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547D29;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00547D45;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -7003,6 +7381,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00547D73;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -7013,11 +7392,13 @@ class cYObject* cYObject::GetSleepingPerson() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    test, eax;
 	__asm        jmp    near ptr 0x00547D8C;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    test, eax;
 // LINE 902:
 	__asm        cmp    test, 0;
 	__asm        jne    near ptr 0x00547DB2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B8FCC;
 	__asm        push   0x386;
@@ -7091,6 +7472,7 @@ void DeleteAllPeople() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00547E8C;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
@@ -7116,6 +7498,7 @@ void cYObject::MakePlebes() {
 // LINE 950:
 	__asm        mov    pindex, 0;
 	__asm        jmp    near ptr 0x00547EC8;
+
 	__asm        inc    pindex;
 	__asm        cmp    pindex, 0x64;
 	__asm        jge    near ptr 0x0054803D;
@@ -7139,15 +7522,19 @@ void cYObject::MakePlebes() {
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00547F10;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    personobj, eax;
 	__asm        jmp    near ptr 0x00547F8C;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00547F29;
+
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00547F45;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -7157,6 +7544,7 @@ void cYObject::MakePlebes() {
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00547F73;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -7167,11 +7555,13 @@ void cYObject::MakePlebes() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    personobj, eax;
 	__asm        jmp    near ptr 0x00547F8C;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    personobj, eax;
 // LINE 955:
 	__asm        cmp    personobj, 0;
 	__asm        jne    near ptr 0x00547FB2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9004;
 	__asm        push   0x3BB;
@@ -7183,6 +7573,7 @@ void cYObject::MakePlebes() {
 	__asm        movsx  eax, word ptr [eax+0xBC];
 	__asm        cmp    eax, newnum;
 	__asm        je     near ptr 0x00547FE1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9034;
 	__asm        push   0x3BC;
@@ -7194,6 +7585,7 @@ void cYObject::MakePlebes() {
 	__asm        movsx  eax, word ptr [eax+0xDE];
 	__asm        cmp    eax, newnum;
 	__asm        je     near ptr 0x00548010;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9060;
 	__asm        push   0x3BD;
@@ -7204,6 +7596,7 @@ void cYObject::MakePlebes() {
 	__asm        mov    eax, pindex;
 	__asm        cmp    newnum, eax;
 	__asm        je     near ptr 0x00548038;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B908C;
 	__asm        push   0x3BF;
@@ -7263,6 +7656,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 992:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00548124;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
@@ -7275,6 +7669,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 995:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00548157;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
@@ -7319,6 +7714,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1005:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005481FF;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -7381,9 +7777,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054835B;
 // LINE 1035:
 	__asm        jmp    near ptr 0x0054835B;
+
 	__asm        dec    dword ptr [ebp-0x28];
 	__asm        cmp    dword ptr [ebp-0x28], 0xB;
 	__asm        ja     near ptr 0x005482FC;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    dword ptr [eax*4+0x54832B];
 // Switch pointers
@@ -7392,6 +7790,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1039:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054836F;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x14;
@@ -7400,9 +7799,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00548395;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x14;
 	__asm        jl     near ptr 0x005483B1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7416,6 +7817,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054836B;
 // LINE 1043:
 	__asm        jmp    near ptr 0x005483EA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7426,6 +7828,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005483F8;
 // LINE 1046:
 	__asm        jmp    near ptr 0x00548419;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7436,6 +7839,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548427;
 // LINE 1047:
 	__asm        jmp    near ptr 0x00548448;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7446,6 +7850,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548456;
 // LINE 1048:
 	__asm        jmp    near ptr 0x00548477;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7456,6 +7861,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548485;
 // LINE 1049:
 	__asm        jmp    near ptr 0x005484A6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7466,6 +7872,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005484B4;
 // LINE 1050:
 	__asm        jmp    near ptr 0x005484D5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7476,6 +7883,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005484E3;
 // LINE 1051:
 	__asm        jmp    near ptr 0x00548504;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7486,6 +7894,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548512;
 // LINE 1052:
 	__asm        jmp    near ptr 0x00548533;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7496,6 +7905,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548541;
 // LINE 1053:
 	__asm        jmp    near ptr 0x00548562;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7506,6 +7916,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548570;
 // LINE 1054:
 	__asm        jmp    near ptr 0x00548591;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7516,6 +7927,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054859F;
 // LINE 1055:
 	__asm        jmp    near ptr 0x005485C0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7526,6 +7938,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005485CE;
 // LINE 1056:
 	__asm        jmp    near ptr 0x005485EF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7536,6 +7949,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005485FD;
 // LINE 1057:
 	__asm        jmp    near ptr 0x0054861E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7546,6 +7960,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054862C;
 // LINE 1058:
 	__asm        jmp    near ptr 0x0054864D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7556,6 +7971,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054865B;
 // LINE 1059:
 	__asm        jmp    near ptr 0x0054867C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7566,6 +7982,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x0054868A;
 // LINE 1060:
 	__asm        jmp    near ptr 0x005486AB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7576,6 +7993,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005486B9;
 // LINE 1061:
 	__asm        jmp    near ptr 0x005486DA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB18;
 	__asm        push   0x129;
@@ -7587,6 +8005,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1069:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005486F7;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -7602,10 +8021,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1081:
 	__asm        mov    n, 1;
 	__asm        jmp    near ptr 0x00548731;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x0054875C;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7633,10 +8054,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1088:
 	__asm        mov    n, 4;
 	__asm        jmp    near ptr 0x005487B8;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x005487E3;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7652,10 +8075,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1094:
 	__asm        mov    n, 3;
 	__asm        jmp    near ptr 0x00548809;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x00548834;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7671,10 +8096,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1098:
 	__asm        mov    n, 1;
 	__asm        jmp    near ptr 0x0054885A;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x00548885;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7706,10 +8133,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1113:
 	__asm        mov    n, 5;
 	__asm        jmp    near ptr 0x005488F3;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x0054891E;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7720,9 +8149,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548953;
 // LINE 1116:
 	__asm        jmp    near ptr 0x00548953;
+
 	__asm        dec    dword ptr [ebp-0x2C];
 	__asm        cmp    dword ptr [ebp-0x2C], 4;
 	__asm        ja     near ptr 0x0054888A;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x54893F];
 // Switch pointers
@@ -7731,6 +8162,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1119:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00548967;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x12;
@@ -7746,10 +8178,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1123:
 	__asm        mov    n, 1;
 	__asm        jmp    near ptr 0x005489A1;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x005489CC;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7773,10 +8207,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1129:
 	__asm        mov    n, 3;
 	__asm        jmp    near ptr 0x00548A16;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x00548A41;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7804,10 +8240,12 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1142:
 	__asm        mov    n, 4;
 	__asm        jmp    near ptr 0x00548A9D;
+
 	__asm        inc    n;
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x00548AC8;
+
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
@@ -7816,16 +8254,20 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x00548A99;
 // LINE 1143:
 	__asm        jmp    near ptr 0x00548AE6;
+
 	__asm        cmp    dword ptr [ebp-0x30], 7;
 	__asm        je     near ptr 0x00548980;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x11;
 	__asm        je     near ptr 0x005489D1;
+
 	__asm        jmp    near ptr 0x00548A46;
 // LINE 1144:
 	__asm        jmp    near ptr 0x00548963;
 // LINE 1145:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00548AFA;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -7834,15 +8276,19 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x00548B48;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 3;
 	__asm        je     near ptr 0x00548B48;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
 	__asm        je     near ptr 0x00548B48;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x00548B48;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jne    near ptr 0x00548B8A;
@@ -7874,6 +8320,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1162:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00548BBB;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x100;
@@ -7887,9 +8334,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 2;
 // LINE 1165:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 1;
 	__asm        jl     near ptr 0x00548C18;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
 	__asm        jg     near ptr 0x00548C18;
@@ -7898,9 +8347,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 4;
 // LINE 1167:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 6;
 	__asm        jl     near ptr 0x00548C46;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xC;
 	__asm        jg     near ptr 0x00548C46;
@@ -7909,12 +8360,15 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 3;
 // LINE 1169:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD;
 	__asm        je     near ptr 0x00548C71;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD5;
 	__asm        je     near ptr 0x00548C71;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xDA;
 	__asm        jne    near ptr 0x00548C85;
@@ -7923,9 +8377,11 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 5;
 // LINE 1171:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
 	__asm        jl     near ptr 0x00548CB3;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x1C;
 	__asm        jg     near ptr 0x00548CB3;
@@ -7934,27 +8390,35 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 6;
 // LINE 1173:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x00548CCD;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x00548D1B;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x43;
 	__asm        jl     near ptr 0x00548CE7;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x44;
 	__asm        jle    near ptr 0x00548D1B;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x00548D01;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x50;
 	__asm        jle    near ptr 0x00548D1B;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x61;
 	__asm        jl     near ptr 0x00548D2F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x69;
 	__asm        jg     near ptr 0x00548D2F;
@@ -7963,18 +8427,23 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 7;
 // LINE 1175:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x51;
 	__asm        jl     near ptr 0x00548D49;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x5A;
 	__asm        jle    near ptr 0x00548D70;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x49;
 	__asm        je     near ptr 0x00548D70;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x6A;
 	__asm        jl     near ptr 0x00548D84;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x00548D84;
@@ -7983,27 +8452,35 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 8;
 // LINE 1177:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x2C;
 	__asm        jl     near ptr 0x00548D9E;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x3E;
 	__asm        jle    near ptr 0x00548DEC;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x00548DB8;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x50;
 	__asm        jle    near ptr 0x00548DEC;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x45;
 	__asm        jl     near ptr 0x00548DD2;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x49;
 	__asm        jle    near ptr 0x00548DEC;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x5B;
 	__asm        jl     near ptr 0x00548E00;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x60;
 	__asm        jg     near ptr 0x00548E00;
@@ -8012,27 +8489,35 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 9;
 // LINE 1179:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x70;
 	__asm        jl     near ptr 0x00548E1A;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7B;
 	__asm        jle    near ptr 0x00548E74;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x8C;
 	__asm        jl     near ptr 0x00548E38;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x93;
 	__asm        jle    near ptr 0x00548E74;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xAA;
 	__asm        jl     near ptr 0x00548E56;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xB1;
 	__asm        jle    near ptr 0x00548E74;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xFB;
 	__asm        jl     near ptr 0x00548E88;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xFF;
 	__asm        jg     near ptr 0x00548E88;
@@ -8041,30 +8526,39 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 0xA;
 // LINE 1181:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xB2;
 	__asm        jl     near ptr 0x00548EA6;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xBB;
 	__asm        jle    near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD0;
 	__asm        jl     near ptr 0x00548EC4;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD1;
 	__asm        jle    near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD9;
 	__asm        je     near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE1;
 	__asm        je     near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF1;
 	__asm        je     near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF3;
 	__asm        je     near ptr 0x00548F0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF7;
 	__asm        jne    near ptr 0x00548F23;
@@ -8073,45 +8567,59 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 0xC;
 // LINE 1183:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x82;
 	__asm        je     near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x84;
 	__asm        jl     near ptr 0x00548F50;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x8B;
 	__asm        jle    near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x9E;
 	__asm        jl     near ptr 0x00548F6E;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xA9;
 	__asm        jle    near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xBC;
 	__asm        jl     near ptr 0x00548F8C;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xCF;
 	__asm        jle    near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE2;
 	__asm        jl     near ptr 0x00548FAA;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xEF;
 	__asm        jle    near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF2;
 	__asm        je     near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF4;
 	__asm        je     near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF6;
 	__asm        je     near ptr 0x00548FF5;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xF9;
 	__asm        jl     near ptr 0x00549009;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xFA;
 	__asm        jg     near ptr 0x00549009;
@@ -8120,21 +8628,27 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [eax*4+0x636ED0], 0xD;
 // LINE 1185:
 	__asm        jmp    near ptr 0x00549084;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7C;
 	__asm        jl     near ptr 0x00549025;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x83;
 	__asm        jle    near ptr 0x00549061;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x94;
 	__asm        jl     near ptr 0x00549043;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x9D;
 	__asm        jle    near ptr 0x00549061;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xD2;
 	__asm        jl     near ptr 0x00549075;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xFA;
 	__asm        jg     near ptr 0x00549075;
@@ -8151,6 +8665,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1192:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00549098;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -8164,6 +8679,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1197:
 	__asm        cmp    globalBehaviorFileName, 0;
 	__asm        jne    near ptr 0x005490E8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B90B8;
 	__asm        push   0x4AD;
@@ -8181,6 +8697,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00549127;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9108;
 	__asm        push   0x4AF;
@@ -8205,11 +8722,13 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00549179;
+
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   YObjLang::YObjLang;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00549180;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -8222,6 +8741,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x005491CD;
+
 	__asm        push   0x636BB8;
 	__asm        push   0x636BB8;
 	__asm        mov    eax, ds:[0x635250];
@@ -8230,6 +8750,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        call   Behavior::Behavior;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x005491D4;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -8237,6 +8758,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 1208:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005491F2;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x40;
@@ -8247,6 +8769,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jmp    near ptr 0x005491EE;
 // LINE 1210:
 	__asm        jmp    near ptr 0x00549234;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9178;
 	__asm        push   0x4BA;
@@ -8256,6 +8779,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375A8], 0x552370;
 // LINE 1211:
 	__asm        jmp    near ptr 0x0054925F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B91D4;
 	__asm        push   0x4BB;
@@ -8265,6 +8789,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375AC], 0x552390;
 // LINE 1212:
 	__asm        jmp    near ptr 0x0054928A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9230;
 	__asm        push   0x4BC;
@@ -8274,6 +8799,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375B0], 0x5523B0;
 // LINE 1214:
 	__asm        jmp    near ptr 0x005492B5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B928C;
 	__asm        push   0x4BE;
@@ -8283,6 +8809,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375B8], 0x5523D0;
 // LINE 1215:
 	__asm        jmp    near ptr 0x005492E0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B92E8;
 	__asm        push   0x4BF;
@@ -8292,6 +8819,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375C0], 0x5523F0;
 // LINE 1216:
 	__asm        jmp    near ptr 0x0054930B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9344;
 	__asm        push   0x4C0;
@@ -8301,6 +8829,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375C4], 0x552410;
 // LINE 1221:
 	__asm        jmp    near ptr 0x00549336;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B93A0;
 	__asm        push   0x4C5;
@@ -8310,6 +8839,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375D8], 0x552430;
 // LINE 1222:
 	__asm        jmp    near ptr 0x00549361;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B93FC;
 	__asm        push   0x4C6;
@@ -8319,6 +8849,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375DC], 0x552450;
 // LINE 1223:
 	__asm        jmp    near ptr 0x0054938C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9458;
 	__asm        push   0x4C7;
@@ -8328,6 +8859,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375E0], 0x552470;
 // LINE 1224:
 	__asm        jmp    near ptr 0x005493B7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B94B4;
 	__asm        push   0x4C8;
@@ -8337,6 +8869,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375E4], 0x552490;
 // LINE 1225:
 	__asm        jmp    near ptr 0x005493E2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9510;
 	__asm        push   0x4C9;
@@ -8346,6 +8879,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375E8], 0x5524B0;
 // LINE 1226:
 	__asm        jmp    near ptr 0x0054940D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B956C;
 	__asm        push   0x4CA;
@@ -8355,6 +8889,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375EC], 0x5524D0;
 // LINE 1227:
 	__asm        jmp    near ptr 0x00549438;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B95C8;
 	__asm        push   0x4CB;
@@ -8364,6 +8899,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375F0], 0x5524F0;
 // LINE 1228:
 	__asm        jmp    near ptr 0x00549463;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9624;
 	__asm        push   0x4CC;
@@ -8373,6 +8909,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375F4], 0x552510;
 // LINE 1229:
 	__asm        jmp    near ptr 0x0054948E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9680;
 	__asm        push   0x4CD;
@@ -8382,6 +8919,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375F8], 0x552530;
 // LINE 1230:
 	__asm        jmp    near ptr 0x005494B9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B96DC;
 	__asm        push   0x4CE;
@@ -8391,6 +8929,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6375FC], 0x552550;
 // LINE 1231:
 	__asm        jmp    near ptr 0x005494E4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9738;
 	__asm        push   0x4CF;
@@ -8400,6 +8939,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637600], 0x552570;
 // LINE 1232:
 	__asm        jmp    near ptr 0x0054950F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9794;
 	__asm        push   0x4D0;
@@ -8409,6 +8949,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637604], 0x552590;
 // LINE 1233:
 	__asm        jmp    near ptr 0x0054953A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B97F0;
 	__asm        push   0x4D1;
@@ -8418,6 +8959,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637608], 0x5525B0;
 // LINE 1234:
 	__asm        jmp    near ptr 0x00549565;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B984C;
 	__asm        push   0x4D2;
@@ -8427,6 +8969,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63760C], 0x5525D0;
 // LINE 1235:
 	__asm        jmp    near ptr 0x00549590;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B98A8;
 	__asm        push   0x4D3;
@@ -8436,6 +8979,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637610], 0x5525F0;
 // LINE 1236:
 	__asm        jmp    near ptr 0x005495BB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9904;
 	__asm        push   0x4D4;
@@ -8445,6 +8989,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637614], 0x552610;
 // LINE 1237:
 	__asm        jmp    near ptr 0x005495E6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9960;
 	__asm        push   0x4D5;
@@ -8454,6 +8999,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637618], 0x552630;
 // LINE 1238:
 	__asm        jmp    near ptr 0x00549611;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B99BC;
 	__asm        push   0x4D6;
@@ -8463,6 +9009,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63761C], 0x552650;
 // LINE 1239:
 	__asm        jmp    near ptr 0x0054963C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9A18;
 	__asm        push   0x4D7;
@@ -8472,6 +9019,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637620], 0x552670;
 // LINE 1240:
 	__asm        jmp    near ptr 0x00549667;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9A74;
 	__asm        push   0x4D8;
@@ -8481,6 +9029,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637624], 0x552690;
 // LINE 1241:
 	__asm        jmp    near ptr 0x00549692;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9AD0;
 	__asm        push   0x4D9;
@@ -8490,6 +9039,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637628], 0x5526B0;
 // LINE 1242:
 	__asm        jmp    near ptr 0x005496BD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9B2C;
 	__asm        push   0x4DA;
@@ -8499,6 +9049,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63762C], 0x5526D0;
 // LINE 1243:
 	__asm        jmp    near ptr 0x005496E8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9B88;
 	__asm        push   0x4DB;
@@ -8508,6 +9059,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637630], 0x5526F0;
 // LINE 1244:
 	__asm        jmp    near ptr 0x00549713;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9BE4;
 	__asm        push   0x4DC;
@@ -8517,6 +9069,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637634], 0x552710;
 // LINE 1245:
 	__asm        jmp    near ptr 0x0054973E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9C40;
 	__asm        push   0x4DD;
@@ -8526,6 +9079,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637638], 0x552730;
 // LINE 1246:
 	__asm        jmp    near ptr 0x00549769;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9C9C;
 	__asm        push   0x4DE;
@@ -8535,6 +9089,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63763C], 0x552750;
 // LINE 1247:
 	__asm        jmp    near ptr 0x00549794;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9CF8;
 	__asm        push   0x4DF;
@@ -8544,6 +9099,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637640], 0x552770;
 // LINE 1248:
 	__asm        jmp    near ptr 0x005497BF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9D54;
 	__asm        push   0x4E0;
@@ -8553,6 +9109,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637644], 0x552790;
 // LINE 1249:
 	__asm        jmp    near ptr 0x005497EA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9DB0;
 	__asm        push   0x4E1;
@@ -8562,6 +9119,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637648], 0x5527B0;
 // LINE 1251:
 	__asm        jmp    near ptr 0x00549815;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9E0C;
 	__asm        push   0x4E3;
@@ -8571,6 +9129,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637650], 0x5527D0;
 // LINE 1252:
 	__asm        jmp    near ptr 0x00549840;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9E68;
 	__asm        push   0x4E4;
@@ -8580,6 +9139,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637654], 0x5527F0;
 // LINE 1253:
 	__asm        jmp    near ptr 0x0054986B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9EC4;
 	__asm        push   0x4E5;
@@ -8589,6 +9149,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637658], 0x552810;
 // LINE 1254:
 	__asm        jmp    near ptr 0x00549896;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9F20;
 	__asm        push   0x4E6;
@@ -8598,6 +9159,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63765C], 0x552830;
 // LINE 1255:
 	__asm        jmp    near ptr 0x005498C1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9F7C;
 	__asm        push   0x4E7;
@@ -8607,6 +9169,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637660], 0x552850;
 // LINE 1256:
 	__asm        jmp    near ptr 0x005498EC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5B9FD8;
 	__asm        push   0x4E8;
@@ -8616,6 +9179,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637664], 0x552870;
 // LINE 1257:
 	__asm        jmp    near ptr 0x00549917;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA034;
 	__asm        push   0x4E9;
@@ -8625,6 +9189,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637668], 0x552890;
 // LINE 1258:
 	__asm        jmp    near ptr 0x00549942;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA090;
 	__asm        push   0x4EA;
@@ -8634,6 +9199,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63766C], 0x5528B0;
 // LINE 1259:
 	__asm        jmp    near ptr 0x0054996D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA0EC;
 	__asm        push   0x4EB;
@@ -8643,6 +9209,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637670], 0x5528D0;
 // LINE 1260:
 	__asm        jmp    near ptr 0x00549998;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA148;
 	__asm        push   0x4EC;
@@ -8652,6 +9219,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637674], 0x5528F0;
 // LINE 1261:
 	__asm        jmp    near ptr 0x005499C3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA1A4;
 	__asm        push   0x4ED;
@@ -8661,6 +9229,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637678], 0x552910;
 // LINE 1262:
 	__asm        jmp    near ptr 0x005499EE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA200;
 	__asm        push   0x4EE;
@@ -8670,6 +9239,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63767C], 0x552930;
 // LINE 1263:
 	__asm        jmp    near ptr 0x00549A19;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA25C;
 	__asm        push   0x4EF;
@@ -8679,6 +9249,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637680], 0x552950;
 // LINE 1264:
 	__asm        jmp    near ptr 0x00549A44;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA2B8;
 	__asm        push   0x4F0;
@@ -8688,6 +9259,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637684], 0x552970;
 // LINE 1265:
 	__asm        jmp    near ptr 0x00549A6F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA314;
 	__asm        push   0x4F1;
@@ -8697,6 +9269,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637688], 0x552990;
 // LINE 1266:
 	__asm        jmp    near ptr 0x00549A9A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA370;
 	__asm        push   0x4F2;
@@ -8706,6 +9279,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63768C], 0x5529B0;
 // LINE 1267:
 	__asm        jmp    near ptr 0x00549AC5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA3CC;
 	__asm        push   0x4F3;
@@ -8715,6 +9289,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637690], 0x5529D0;
 // LINE 1268:
 	__asm        jmp    near ptr 0x00549AF0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA428;
 	__asm        push   0x4F4;
@@ -8724,6 +9299,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637694], 0x5529F0;
 // LINE 1269:
 	__asm        jmp    near ptr 0x00549B1B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA484;
 	__asm        push   0x4F5;
@@ -8733,6 +9309,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x637698], 0x552A10;
 // LINE 1270:
 	__asm        jmp    near ptr 0x00549B46;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA4E0;
 	__asm        push   0x4F6;
@@ -8742,6 +9319,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x63769C], 0x552A30;
 // LINE 1271:
 	__asm        jmp    near ptr 0x00549B71;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA53C;
 	__asm        push   0x4F7;
@@ -8751,6 +9329,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    dword ptr ds:[0x6376A0], 0x552A50;
 // LINE 1272:
 	__asm        jmp    near ptr 0x00549B9C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA598;
 	__asm        push   0x4F8;
@@ -8776,6 +9355,7 @@ _L55486:
 _L55485:
 	__asm        mov    eax, 0x595DD0;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -8906,12 +9486,16 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	__asm        jmp    near ptr 0x00549D33;
 // LINE 1329:
 	__asm        jmp    near ptr 0x00549D33;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x00549C3F;
+
 	__asm        cmp    dword ptr [ebp-0x44], 1;
 	__asm        je     near ptr 0x00549C79;
+
 	__asm        cmp    dword ptr [ebp-0x44], 2;
 	__asm        je     near ptr 0x00549CB3;
+
 	__asm        jmp    near ptr 0x00549CE6;
 // LINE 1331:
 	__asm        shl    vec.x, 6;
@@ -8968,8 +9552,10 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	__asm        jmp    near ptr 0x00549DF8;
 // LINE 1365:
 	__asm        jmp    near ptr 0x00549DF8;
+
 	__asm        cmp    dword ptr [ebp-0x48], 4;
 	__asm        ja     near ptr 0x00549DF8;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    dword ptr [eax*4+0x549DE4];
 // Switch pointers
@@ -8984,6 +9570,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 // LINE 1376:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00549E1C;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -9069,6 +9656,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00549F3E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA630;
 	__asm        push   0x586;
@@ -9082,6 +9670,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        je     near ptr 0x00549FD2;
 // LINE 1420:
 	__asm        jmp    near ptr 0x00549F56;
+
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -9096,7 +9685,9 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        add    ecx, ecx;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00549FB7;
+
 	__asm        jmp    near ptr 0x00549F89;
+
 	__asm        mov    eax, ds:[0x6BF18C];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -9187,6 +9778,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x2C], ax;
 	__asm        jmp    near ptr 0x0054A090;
+
 	__asm        lea    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        movsx  eax, deltaX;
@@ -9195,6 +9787,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x30], ax;
 	__asm        jmp    near ptr 0x0054A0A8;
+
 	__asm        lea    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -9203,12 +9796,15 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        movsx  ecx, word ptr [ecx];
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0054A0CD;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0054A0D3;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0054A0D8;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ax, [eax];
 	__asm        mov    deltaX, ax;
@@ -9237,18 +9833,25 @@ unsigned short cYObject::OutOfCameraRange() {
 // LINE 1447:
 	__asm        cmp    xtoview, 0;
 	__asm        jge    near ptr 0x0054A135;
+
 	__asm        cmp    viewvec.x, 0;
 	__asm        jg     near ptr 0x0054A149;
+
 	__asm        cmp    xtoview, 0;
 	__asm        jle    near ptr 0x0054A177;
+
 	__asm        cmp    viewvec.x, 0;
 	__asm        jge    near ptr 0x0054A177;
+
 	__asm        cmp    ztoview, 0;
 	__asm        jge    near ptr 0x0054A15D;
+
 	__asm        cmp    viewvec.z, 0;
 	__asm        jg     near ptr 0x0054A171;
+
 	__asm        cmp    ztoview, 0;
 	__asm        jle    near ptr 0x0054A177;
+
 	__asm        cmp    viewvec.z, 0;
 	__asm        jge    near ptr 0x0054A177;
 // LINE 1448:
@@ -9298,6 +9901,7 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 // LINE 1470:
 	__asm        cmp    newperson, 0;
 	__asm        je     near ptr 0x0054A231;
+
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        mov    eax, onTopOf;
@@ -9334,6 +9938,7 @@ void LiberateMissionPeople(long missionid) {
 // LINE 1477:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054A257;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -9344,15 +9949,19 @@ void LiberateMissionPeople(long missionid) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054A280;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054A2FC;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054A299;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054A2B5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -9362,6 +9971,7 @@ void LiberateMissionPeople(long missionid) {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054A2E3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -9372,11 +9982,13 @@ void LiberateMissionPeople(long missionid) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054A2FC;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    obj, eax;
 // LINE 1479:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x0054A322;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA688;
 	__asm        push   0x5C7;
@@ -9388,6 +10000,7 @@ void LiberateMissionPeople(long missionid) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054A34B;
+
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, missionid;
 	__asm        cmp    [eax+0x1C], ecx;
@@ -9419,6 +10032,7 @@ void KillMissionPeople(long missionid) {
 // LINE 1499:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054A38D;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -9429,15 +10043,19 @@ void KillMissionPeople(long missionid) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054A3B6;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054A432;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054A3CF;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054A3EB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -9447,6 +10065,7 @@ void KillMissionPeople(long missionid) {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054A419;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -9457,11 +10076,13 @@ void KillMissionPeople(long missionid) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054A432;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    obj, eax;
 // LINE 1501:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x0054A458;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA6B4;
 	__asm        push   0x5DD;
@@ -9473,6 +10094,7 @@ void KillMissionPeople(long missionid) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054A595;
+
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, missionid;
 	__asm        cmp    [eax+0x1C], ecx;
@@ -9499,11 +10121,13 @@ void KillMissionPeople(long missionid) {
 	__asm        mov    eax, obj;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        je     near ptr 0x0054A4FE;
+
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, ds:[0x5B4968];
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        je     near ptr 0x0054A4FE;
+
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, ds:[0x5B4968];
 	__asm        mov    ecx, [ecx+0xBC];
@@ -9522,10 +10146,13 @@ void KillMissionPeople(long missionid) {
 	__asm        add    esp, 0x10;
 // LINE 1520:
 	__asm        jmp    near ptr 0x0054A53D;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0054A491;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 1;
 	__asm        je     near ptr 0x0054A4B2;
+
 	__asm        jmp    near ptr 0x0054A503;
 // LINE 1521:
 	__asm        test   reinterpret_cast<uint32_t>(die), 0xFFFF;
@@ -9579,18 +10206,22 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        cmp    missionid, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054A623;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054A623;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x0054A623;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x0054A623;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -9616,6 +10247,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // LINE 1542:
 	__asm        cmp    mission, 0;
 	__asm        jne    near ptr 0x0054A664;
+
 	__asm        mov    ret, 1;
 // LINE 1543:
 	__asm        jmp    near ptr 0x0054A797;
@@ -9625,17 +10257,22 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054A696;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054A696;
+
 	__asm        movsx  eax, cellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054A696;
+
 	__asm        movsx  eax, celly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054A6A1;
+
 	__asm        mov    scurkID, 0xFFFF;
 	__asm        jmp    near ptr 0x0054A6FD;
+
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, celly;
@@ -9644,9 +10281,11 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054A6D4;
+
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x0054A6F0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -9671,6 +10310,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // LINE 1547:
 	__asm        cmp    li, 0;
 	__asm        je     near ptr 0x0054A730;
+
 	__asm        mov    eax, li;
 	__asm        test   byte ptr [eax], 1;
 	__asm        je     near ptr 0x0054A73B;
@@ -9692,6 +10332,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 // LINE 1551:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054A75D;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xA;
@@ -9730,9 +10371,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054A7DB;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054A7F7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA788;
 	__asm        push   0x624;
@@ -9744,6 +10387,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054A828;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA7D4;
 	__asm        push   0x626;
@@ -9752,11 +10396,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        add    esp, 0x10;
 // LINE 1575:
 	__asm        jmp    near ptr 0x0054A82D;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        je     near ptr 0x0054A85D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA82C;
 	__asm        push   0x627;
@@ -9769,6 +10415,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054A892;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA87C;
 	__asm        push   0x629;
@@ -9783,6 +10430,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054A8D4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -9792,10 +10440,12 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054A900;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4E6F4D6F;
 	__asm        je     near ptr 0x0054A951;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -9805,6 +10455,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054A951;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -9827,8 +10478,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	short count;
 	__asm        cmp    loc, 0;
 	__asm        jne    near ptr 0x0054A987;
+
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054A9A3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA8B4;
 	__asm        push   0x62F;
@@ -9845,6 +10498,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, word ptr [eax+0xE0];
 	__asm        cmp    eax, 5;
 	__asm        jle    near ptr 0x0054A9EE;
+
 	__asm        push   0x20000;
 	__asm        push   0x50000;
 	__asm        call   0x004D19DF;
@@ -9852,12 +10506,14 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x34], eax;
 	__asm        jmp    near ptr 0x0054A9FB;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x34], 0x50000;
 	__asm        jmp    near ptr 0x0054AA00;
 // LINE 1588:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054AA0F;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
@@ -9884,6 +10540,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054AAA0;
+
 	__asm        mov    eax, loctype;
 	__asm        mov    eax, [eax*8+0x635268];
 	__asm        push   eax;
@@ -9938,6 +10595,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1600:
 	__asm        cmp    testID, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054AB10;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA8EC;
 	__asm        push   0x640;
@@ -9948,6 +10606,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, testID;
 	__asm        cmp    missionid, eax;
 	__asm        je     near ptr 0x0054AB38;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA934;
 	__asm        push   0x641;
@@ -9975,18 +10634,22 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        cmp    missionid, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054ABD0;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054ABD0;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x0054ABD0;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x0054ABD0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -10028,6 +10691,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  ecx, word ptr ds:[0x5B8674];
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x0054ACAA;
+
 	__asm        mov    eax, 0xC;
 	__asm        movsx  ecx, word ptr ds:[0x5B8688];
 	__asm        sub    eax, ecx;
@@ -10038,12 +10702,18 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movzx  eax, ax;
 	__asm        cmp    eax, 3;
 	__asm        jge    near ptr 0x0054AC6F;
+
 	__asm        jmp    near ptr 0x0054AC89;
+
 	__asm        jmp    near ptr 0x0054AC79;
+
 	__asm        jmp    near ptr 0x0054ACAA;
+
 	__asm        jmp    near ptr 0x0054AC89;
+
 	__asm        test   dword ptr [ebp-0x84], 0xFFFF;
 	__asm        je     near ptr 0x0054ACAA;
+
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::BeamIntoCameraRange;
 	__asm        movzx  eax, ax;
@@ -10058,6 +10728,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1628:
 	__asm        cmp    missionid, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054ACD6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA99C;
 	__asm        push   0x65C;
@@ -10069,6 +10740,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1632:
 	__asm        cmp    loc, 0;
 	__asm        jne    near ptr 0x0054AD01;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BA9F0;
 	__asm        push   0x660;
@@ -10102,16 +10774,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1637:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054AD7A;
+
 	__asm        mov    eax, onTopOf;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
 	__asm        je     near ptr 0x0054AD7A;
+
 	__asm        mov    eax, onTopOf;
 	__asm        mov    ax, [eax+0xE];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    near ptr 0x0054AD8E;
+
 	__asm        jmp    near ptr 0x0054AD8E;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x100], 0xFFFF;
 	__asm        jmp    near ptr 0x0054AD8E;
@@ -10147,8 +10823,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	short count;
 	__asm        cmp    loc, 0;
 	__asm        jne    near ptr 0x0054ADE7;
+
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054AE03;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAA30;
 	__asm        push   0x66E;
@@ -10160,6 +10838,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1649:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054AE18;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
@@ -10186,6 +10865,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054B0A2;
+
 	__asm        mov    eax, loctype;
 	__asm        mov    eax, [eax*8+0x635268];
 	__asm        push   eax;
@@ -10238,6 +10918,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1662:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x0054AEEE;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0xA;
@@ -10254,7 +10935,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    loctype2, eax;
 // LINE 1665:
 	__asm        jmp    near ptr 0x0054AF13;
+
 	__asm        jmp    near ptr 0x0054AF18;
+
 	__asm        movsx  eax, destcelly;
 	__asm        movsx  ecx, celly;
 	__asm        sub    eax, ecx;
@@ -10274,6 +10957,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        add    ecx, eax;
 	__asm        cmp    ecx, 0x10;
 	__asm        jle    near ptr 0x0054AF7C;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destcelly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destcellx);
@@ -10310,9 +10994,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, destcellx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054AFB7;
+
 	__asm        movsx  eax, destcelly;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054AFBC;
+
 	__asm        jmp    near ptr 0x0054AFC1;
 // LINE 1676:
 // Block end:
@@ -10325,6 +11011,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1697:
 	__asm        test   reinterpret_cast<uint32_t>(founddest), 0xFFFF;
 	__asm        jne    near ptr 0x0054AFDE;
+
 	__asm        jmp    near ptr 0x0054B0CA;
 // LINE 1700:
 	__asm        mov    eax, offsetz;
@@ -10435,6 +11122,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
 	__asm        jne    near ptr 0x0054B119;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAA98;
 	__asm        push   0x6CA;
@@ -10444,6 +11132,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1739:
 	__asm        cmp    loc, 0;
 	__asm        je     near ptr 0x0054B13F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAAE4;
 	__asm        push   0x6CB;
@@ -10453,6 +11142,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1740:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054B165;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAB50;
 	__asm        push   0x6CC;
@@ -10511,8 +11201,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1751:
 	__asm        cmp    loc, 0;
 	__asm        jne    near ptr 0x0054B1FA;
+
 	__asm        cmp    onTopOf, 0;
 	__asm        jne    near ptr 0x0054B216;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAB98;
 	__asm        push   0x6D7;
@@ -10535,9 +11227,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, mycellx;
 	__asm        jne    near ptr 0x0054B252;
+
 	__asm        movsx  eax, celly;
 	__asm        cmp    eax, mycelly;
 	__asm        je     near ptr 0x0054B26E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BABC8;
 	__asm        push   0x6DB;
@@ -10558,11 +11252,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // Block start:
 	unsigned short setmaster;
 	__asm        jmp    near ptr 0x0054B291;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        je     near ptr 0x0054B2C1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBBB8;
 	__asm        push   0x210;
@@ -10595,6 +11291,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1762:
 	__asm        test   reinterpret_cast<uint32_t>(setmaster), 0xFFFF;
 	__asm        jne    near ptr 0x0054B33C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAC40;
 	__asm        push   0x6E2;
@@ -10646,16 +11343,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1775:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054B3E1;
+
 	__asm        mov    eax, onTopOf;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
 	__asm        je     near ptr 0x0054B3E1;
+
 	__asm        mov    eax, onTopOf;
 	__asm        mov    ax, [eax+0xE];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    near ptr 0x0054B3F5;
+
 	__asm        jmp    near ptr 0x0054B3F5;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x100], 0xFFFF;
 	__asm        jmp    near ptr 0x0054B3F5;
@@ -10708,16 +11409,20 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1784:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     near ptr 0x0054B4AF;
+
 	__asm        mov    eax, onTopOf;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
 	__asm        je     near ptr 0x0054B4AF;
+
 	__asm        mov    eax, onTopOf;
 	__asm        mov    ax, [eax+0xE];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    near ptr 0x0054B4C3;
+
 	__asm        jmp    near ptr 0x0054B4C3;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x100], 0xFFFF;
 	__asm        jmp    near ptr 0x0054B4C3;
@@ -10748,8 +11453,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        jmp    near ptr 0x0054B53B;
 // LINE 1792:
 	__asm        jmp    near ptr 0x0054B53B;
+
 	__asm        cmp    dword ptr [ebp-0xEC], 6;
 	__asm        ja     near ptr 0x0054B35E;
+
 	__asm        mov    eax, [ebp-0xEC];
 	__asm        jmp    dword ptr [eax*4+0x54B51F];
 // Switch pointers
@@ -10757,9 +11464,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, ret;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054B570;
+
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 1;
 	__asm        je     near ptr 0x0054B570;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAC84;
 	__asm        push   0x701;
@@ -10785,6 +11494,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054B5D9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA9C;
 	__asm        push   0x2D3;
@@ -10800,6 +11510,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::Reset;
 	__asm        jmp    near ptr 0x0054B604;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 1;
 	__asm        mov    eax, this;
@@ -10809,19 +11520,23 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    [ebp-0x88], eax;
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    near ptr 0x0054B655;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054B663;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054B668;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        movsx  ecx, word ptr ds:[0x5B8670];
 	__asm        add    eax, ecx;
 	__asm        cmp    eax, 0x64;
 	__asm        jle    near ptr 0x0054B69D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA7C;
 	__asm        push   0x2D9;
@@ -10833,11 +11548,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054B6EC;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054B6E7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -10845,11 +11562,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054B71F;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054B71F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -10861,11 +11580,16 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054B740;
+
 	__asm        jmp    near ptr 0x0054B771;
+
 	__asm        jmp    near ptr 0x0054B740;
+
 	__asm        jmp    near ptr 0x0054B755;
+
 	__asm        test   dword ptr [ebp-0xE4], 0xFFFF;
 	__asm        jne    near ptr 0x0054B771;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA54;
 	__asm        push   0x2DA;
@@ -10875,11 +11599,13 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Link;
 	__asm        jmp    near ptr 0x0054B781;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054B7B1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -10912,6 +11638,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0054B80B;
+
 	__asm        jmp    near ptr 0x0054B810;
 // LINE 1800:
 	__asm        mov    ax, ret;
@@ -10926,6 +11653,7 @@ void cYObject::ResetToAmbient() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054B85A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BACB8;
 	__asm        push   0x70E;
@@ -10937,6 +11665,7 @@ void cYObject::ResetToAmbient() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054B888;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAD0C;
 	__asm        push   0x70F;
@@ -10948,6 +11677,7 @@ void cYObject::ResetToAmbient() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054B8B6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBBF0;
 	__asm        push   0x2C2;
@@ -10959,14 +11689,17 @@ void cYObject::ResetToAmbient() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        jne    near ptr 0x0054B8E0;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054B8EE;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054B8F3;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        push   0;
@@ -10978,14 +11711,17 @@ void cYObject::ResetToAmbient() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054B967;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x0054B967;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x0054B967;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -10993,6 +11729,7 @@ void cYObject::ResetToAmbient() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054B96C;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 1;
 	__asm        mov    eax, this;
@@ -11000,14 +11737,17 @@ void cYObject::ResetToAmbient() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x0054B9A2;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054B9B0;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        inc    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054B9B5;
+
 	__asm        jmp    near ptr 0x0054B9BA;
 // LINE 1809:
 	__asm        mov    eax, this;
@@ -11032,6 +11772,7 @@ long cYObject::JoinRiot() {
 	__asm        movsx  eax, word ptr [eax+0xE0];
 	__asm        test   eax, eax;
 	__asm        jg     near ptr 0x0054BA20;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAD74;
 	__asm        push   0x718;
@@ -11074,6 +11815,7 @@ long cYObject::JoinRiot() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054BAA3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBBF0;
 	__asm        push   0x2C2;
@@ -11085,14 +11827,17 @@ long cYObject::JoinRiot() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x0054BACD;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054BADB;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054BAE0;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        push   3;
@@ -11103,18 +11848,22 @@ long cYObject::JoinRiot() {
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        cmp    riotMissionID, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054BB5D;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054BB5D;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x0054BB5D;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x0054BB5D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -11122,6 +11871,7 @@ long cYObject::JoinRiot() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054BB62;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 1;
 	__asm        mov    eax, this;
@@ -11129,14 +11879,17 @@ long cYObject::JoinRiot() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x0054BB9A;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        add    eax, 1;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054BBAA;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        add    eax, 1;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054BBAF;
+
 	__asm        jmp    near ptr 0x0054BBB4;
 // LINE 1830:
 	__asm        jmp    near ptr 0x0054BC2F;
@@ -11150,18 +11903,22 @@ long cYObject::JoinRiot() {
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        cmp    riotMissionID, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054BC2A;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054BC2A;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x0054BC2A;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x0054BC2A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -11195,15 +11952,19 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054BC80;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054BCFC;
+
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054BC99;
+
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054BCB5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -11213,6 +11974,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054BCE3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -11223,6 +11985,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054BCFC;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    obj, eax;
 // LINE 1845:
@@ -11238,6 +12001,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054BD3D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BADC4;
 	__asm        push   0x736;
@@ -11279,32 +12043,40 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054BE40;
+
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054BE1B;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054BDF6;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0x2C], ax;
 	__asm        jmp    near ptr 0x0054BE09;
+
 	__asm        jmp    near ptr 0x0054BE01;
+
 	__asm        mov    word ptr [ebp-0x2C], 0xFFFF;
 	__asm        jmp    near ptr 0x0054BE09;
+
 	__asm        mov    ax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], ax;
 	__asm        jmp    near ptr 0x0054BE0E;
+
 	__asm        movsx  eax, word ptr [ebp-0x2C];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0054BE20;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    word ptr [eax*2+0x6356B0], 0;
@@ -11318,17 +12090,22 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054BE78;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0054BE8B;
+
 	__asm        jmp    near ptr 0x0054BE83;
+
 	__asm        mov    word ptr [ebp-0x20], 0xFFFF;
 	__asm        jmp    near ptr 0x0054BE8B;
+
 	__asm        mov    ax, [ebp-0x1C];
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0054BE90;
+
 	__asm        mov    eax, obj;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
@@ -11342,20 +12119,26 @@ void cYObject::PhaseAndBeamSoundChannels() {
 // LINE 1858:
 	__asm        mov    word ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0054BEB8;
+
 	__asm        inc    word ptr [ebp-0x24];
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        cmp    eax, 0xC;
 	__asm        jge    near ptr 0x0054BEEB;
+
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054BEE6;
+
 	__asm        mov    ax, [ebp-0x24];
 	__asm        mov    [ebp-0x28], ax;
 	__asm        jmp    near ptr 0x0054BEF6;
+
 	__asm        jmp    near ptr 0x0054BEB4;
+
 	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
 	__asm        jmp    near ptr 0x0054BEF6;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        push   1;
@@ -11387,6 +12170,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	__asm        movsx  eax, soundchannel;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054C0D9;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    near ptr 0x0054C0D9;
@@ -11397,15 +12181,19 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054BF79;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054BFF5;
+
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054BF92;
+
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054BFAE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -11415,6 +12203,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	__asm        movsx  eax, word ptr [ebp-0x18];
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054BFDC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -11425,6 +12214,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054BFF5;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    obj, eax;
 // LINE 1871:
@@ -11481,18 +12271,23 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 // LINE 1878:
 	__asm        mov    word ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0054C096;
+
 	__asm        inc    word ptr [ebp-0x1C];
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0xC;
 	__asm        jge    near ptr 0x0054C0C9;
+
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054C0C4;
+
 	__asm        mov    ax, [ebp-0x1C];
 	__asm        mov    soundchannel, ax;
 	__asm        jmp    near ptr 0x0054C0D4;
+
 	__asm        jmp    near ptr 0x0054C092;
+
 	__asm        mov    soundchannel, 0xFFFF;
 	__asm        jmp    near ptr 0x0054C0D4;
 // LINE 1881:
@@ -11510,9 +12305,11 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        movsx  eax, soundchannel;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054C10C;
+
 	__asm        movsx  eax, soundchannel;
 	__asm        cmp    eax, 0xF;
 	__asm        jl     near ptr 0x0054C128;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAE18;
 	__asm        push   0x760;
@@ -11524,6 +12321,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054C156;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAE5C;
 	__asm        push   0x761;
@@ -11535,6 +12333,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054C186;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAEA4;
 	__asm        push   0x762;
@@ -11546,6 +12345,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054C1B5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAEF4;
 	__asm        push   0x763;
@@ -11565,7 +12365,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 
 // FUNCTION: COPTER_D 0x0054c1dd
 unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned short playforsure) {
-	 // Switch table at 0x0054c54b
+	static const <NoType> = { /* <data@0x0054c54b> */ };
 	int32_t success;
 	short actualSoundChannel;
 	char * soundfile;
@@ -11576,6 +12376,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 // LINE 1899:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        je     near ptr 0x0054C21A;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ds:[0x5B4968];
 	__asm        mov    ecx, [ecx+0xA4];
@@ -11594,6 +12395,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        movsx  eax, word ptr [eax+0x104];
 	__asm        cmp    eax, 0xE;
 	__asm        jne    near ptr 0x0054C306;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -11606,14 +12408,18 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054C281;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    actualchannel, ax;
 	__asm        jmp    near ptr 0x0054C294;
+
 	__asm        jmp    near ptr 0x0054C28C;
+
 	__asm        mov    actualchannel, 0xFFFF;
 	__asm        jmp    near ptr 0x0054C294;
+
 	__asm        mov    ax, [ebp-0x24];
 	__asm        mov    actualchannel, ax;
 	__asm        jmp    near ptr 0x0054C299;
@@ -11624,6 +12430,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 // LINE 1908:
 	__asm        cmp    theSound, 0;
 	__asm        jne    near ptr 0x0054C2CD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BAF40;
 	__asm        push   0x774;
@@ -11670,20 +12477,25 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 // LINE 1919:
 	__asm        mov    word ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0054C354;
+
 	__asm        inc    word ptr [ebp-0x2C];
 	__asm        movsx  eax, word ptr [ebp-0x2C];
 	__asm        cmp    eax, 3;
 	__asm        jge    near ptr 0x0054C390;
+
 	__asm        movsx  eax, word ptr [ebp-0x2C];
 	__asm        movsx  eax, word ptr [eax*2+0x6356C8];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054C38B;
+
 	__asm        movsx  eax, word ptr [ebp-0x2C];
 	__asm        add    eax, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x102], ax;
 	__asm        jmp    near ptr 0x0054C3A1;
+
 	__asm        jmp    near ptr 0x0054C350;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x102], 0xC;
 	__asm        jmp    near ptr 0x0054C3A1;
@@ -11692,14 +12504,18 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054C3CF;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    actualSoundChannel, ax;
 	__asm        jmp    near ptr 0x0054C3E2;
+
 	__asm        jmp    near ptr 0x0054C3DA;
+
 	__asm        mov    actualSoundChannel, 0xFFFF;
 	__asm        jmp    near ptr 0x0054C3E2;
+
 	__asm        mov    ax, [ebp-0x28];
 	__asm        mov    actualSoundChannel, ax;
 	__asm        jmp    near ptr 0x0054C3E7;
@@ -11808,8 +12624,10 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        mov    soundfile, 0x5BB06C;
 // LINE 2002:
 	__asm        jmp    near ptr 0x0054C55A;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0xE;
 	__asm        ja     near ptr 0x0054C517;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x54C54B];
@@ -11837,9 +12655,11 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        add    esp, 0x10;
 // LINE 2008:
 	__asm        jmp    near ptr 0x0054C60B;
+
 	__asm        inc    dword ptr [ebp-0x34];
 	__asm        cmp    dword ptr [ebp-0x34], 0x13;
 	__asm        ja     near ptr 0x0054C583;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x54C5BB];
 // Switch pointers
@@ -11916,6 +12736,7 @@ void cYObject::SimulateAll() {
 	short count;
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054C6E8;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -11926,15 +12747,19 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054C711;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054C790;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054C72A;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054C746;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -11944,6 +12769,7 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054C774;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -11954,6 +12780,7 @@ void cYObject::SimulateAll() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054C790;
+
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    obj, eax;
 // LINE 2101:
@@ -11963,11 +12790,13 @@ void cYObject::SimulateAll() {
 	__asm        je     near ptr 0x0054C81C;
 // LINE 2102:
 	__asm        jmp    near ptr 0x0054C7A7;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054C7D4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -12013,16 +12842,19 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, word ptr ds:[0x5B8644];
 	__asm        cmp    eax, ds:[0x5B8694];
 	__asm        jge    near ptr 0x0054C849;
+
 	__asm        mov    dword ptr ds:[0x5B8694], 0;
 // LINE 2107:
 	__asm        inc    word ptr ds:[0x5B86B0];
 	__asm        movsx  eax, word ptr ds:[0x5B86B0];
 	__asm        cmp    eax, 2;
 	__asm        jle    near ptr 0x0054C869;
+
 	__asm        mov    word ptr ds:[0x5B86B0], 0;
 // LINE 2108:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054C878;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -12033,15 +12865,19 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054C8A1;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054C920;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054C8BA;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054C8D6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -12051,6 +12887,7 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054C904;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -12061,6 +12898,7 @@ void cYObject::SimulateAll() {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054C920;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    obj, eax;
 // LINE 2110:
@@ -12076,6 +12914,7 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054CBFD;
+
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::OutOfCameraRange;
 	__asm        movzx  eax, ax;
@@ -12086,6 +12925,7 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054C992;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC88;
 	__asm        push   0x2E4;
@@ -12093,11 +12933,13 @@ void cYObject::SimulateAll() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054C997;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054C9C4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC5C;
 	__asm        push   0x2E5;
@@ -12109,11 +12951,13 @@ void cYObject::SimulateAll() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054CA0D;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CA08;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -12121,11 +12965,13 @@ void cYObject::SimulateAll() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054CA3D;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054CA3D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -12137,11 +12983,16 @@ void cYObject::SimulateAll() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CA5B;
+
 	__asm        jmp    near ptr 0x0054CA8C;
+
 	__asm        jmp    near ptr 0x0054CA5B;
+
 	__asm        jmp    near ptr 0x0054CA70;
+
 	__asm        test   dword ptr [ebp-0xE0], 0xFFFF;
 	__asm        jne    near ptr 0x0054CA8C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC3C;
 	__asm        push   0x2E6;
@@ -12152,38 +13003,47 @@ void cYObject::SimulateAll() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CB45;
+
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CB20;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CAEF;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0xD8], ax;
 	__asm        jmp    near ptr 0x0054CB0B;
+
 	__asm        jmp    near ptr 0x0054CAFD;
+
 	__asm        mov    word ptr [ebp-0xD8], 0xFFFF;
 	__asm        jmp    near ptr 0x0054CB0B;
+
 	__asm        mov    ax, [ebp-0xDC];
 	__asm        mov    [ebp-0xD8], ax;
 	__asm        jmp    near ptr 0x0054CB10;
+
 	__asm        movsx  eax, word ptr [ebp-0xD8];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0054CB25;
+
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    word ptr [eax*2+0x6356B0], 0;
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 	__asm        jmp    near ptr 0x0054CB4A;
+
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        mov    eax, obj;
@@ -12195,20 +13055,25 @@ void cYObject::SimulateAll() {
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        cmp    dword ptr [ebp-0xD4], 0;
 	__asm        jne    near ptr 0x0054CB9E;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x0054CBAC;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x0054CBB1;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054CBCF;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054CBEB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC24;
 	__asm        push   0x2EC;
@@ -12222,11 +13087,13 @@ void cYObject::SimulateAll() {
 	__asm        jmp    near ptr 0x0054C874;
 // LINE 2123:
 	__asm        jmp    near ptr 0x0054CC02;
+
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054CC2F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -12344,6 +13211,7 @@ void cYObject::RemoveFromHeli() {
 // LINE 2160:
 	__asm        cmp    yes, 0;
 	__asm        jne    near ptr 0x0054CD9C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB0BC;
 	__asm        push   0x870;
@@ -12364,6 +13232,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 // LINE 2166:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x0054CDCD;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -12374,15 +13243,19 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x0054CDF6;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054CE72;
+
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054CE0F;
+
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x0054CE2B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -12392,6 +13265,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	__asm        movsx  eax, count;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x0054CE59;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -12402,11 +13276,13 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x0054CE72;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    obj, eax;
 // LINE 2168:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x0054CE98;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB10C;
 	__asm        push   0x878;
@@ -12415,6 +13291,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 	__asm        add    esp, 0x10;
 // LINE 2169:
 	__asm        jmp    near ptr 0x0054CE9D;
+
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x130], ecx;
@@ -12441,11 +13318,13 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054CF1F;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CF1A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -12453,11 +13332,13 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054CF4F;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054CF4F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -12469,11 +13350,16 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054CF6D;
+
 	__asm        jmp    near ptr 0x0054CF9B;
+
 	__asm        jmp    near ptr 0x0054CF6D;
+
 	__asm        jmp    near ptr 0x0054CF7F;
+
 	__asm        test   dword ptr [ebp-8], 0xFFFF;
 	__asm        jne    near ptr 0x0054CF9B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB154;
 	__asm        push   0x881;
@@ -12485,6 +13371,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        movsx  eax, word ptr [eax+0xBC];
 	__asm        cmp    eax, 0x7D00;
 	__asm        je     near ptr 0x0054CFDD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        je     near ptr 0x0054CFDD;
@@ -12502,6 +13389,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 // LINE 2189:
 	__asm        cmp    obj, 0;
 	__asm        je     near ptr 0x0054D091;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
 	__asm        cmp    eax, 0x7D00;
@@ -12521,6 +13409,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    success, 0;
 // LINE 2196:
 	__asm        jmp    near ptr 0x0054D091;
+
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, obj;
 	__asm        cmp    [eax+0xBC], ecx;
@@ -12529,6 +13418,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
 	__asm        je     near ptr 0x0054D06C;
+
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
 	__asm        je     near ptr 0x0054D077;
@@ -12536,6 +13426,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 	__asm        mov    success, 0;
 // LINE 2202:
 	__asm        jmp    near ptr 0x0054D091;
+
 	__asm        mov    eax, obj;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -12591,27 +13482,36 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0054D247;
+
 	__asm        mov    eax, cellx;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D247;
+
 	__asm        cmp    celly, 0x80;
 	__asm        jge    near ptr 0x0054D247;
+
 	__asm        cmp    celly, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D247;
+
 	__asm        mov    eax, cellx;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0054D169;
+
 	__asm        mov    eax, cellx;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054D169;
+
 	__asm        cmp    celly, 0;
 	__asm        jl     near ptr 0x0054D169;
+
 	__asm        cmp    celly, 0x7F;
 	__asm        jle    near ptr 0x0054D175;
+
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x0054D230;
+
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x63984C];
 	__asm        mov    ecx, celly;
@@ -12621,71 +13521,96 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0054D1AD;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x0054D213;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x0054D1CF;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    near ptr 0x0054D213;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x0054D1F1;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    near ptr 0x0054D213;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x0054D224;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x0054D224;
+
 	__asm        mov    dword ptr [ebp-0x10], 1;
 	__asm        jmp    near ptr 0x0054D230;
+
 	__asm        jmp    near ptr 0x0054D230;
+
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x0054D230;
+
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        jmp    near ptr 0x0054D259;
+
 	__asm        jmp    near ptr 0x0054D24C;
+
 	__asm        jmp    near ptr 0x0054D259;
+
 	__asm        test   dword ptr [ebp-0x14], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        mov    eax, cellx;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0054D395;
+
 	__asm        mov    eax, cellx;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D395;
+
 	__asm        cmp    celly, 0x80;
 	__asm        jge    near ptr 0x0054D395;
+
 	__asm        cmp    celly, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D395;
+
 	__asm        mov    eax, cellx;
 	__asm        inc    eax;
 	__asm        js     near ptr 0x0054D2B7;
+
 	__asm        mov    eax, cellx;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054D2B7;
+
 	__asm        cmp    celly, 0;
 	__asm        jl     near ptr 0x0054D2B7;
+
 	__asm        cmp    celly, 0x7F;
 	__asm        jle    near ptr 0x0054D2C3;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0054D37E;
+
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x639854];
 	__asm        mov    ecx, celly;
@@ -12695,71 +13620,96 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0054D2FB;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x0054D361;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x0054D31D;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    near ptr 0x0054D361;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x0054D33F;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    near ptr 0x0054D361;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x0054D372;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x0054D372;
+
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    near ptr 0x0054D37E;
+
 	__asm        jmp    near ptr 0x0054D37E;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0054D37E;
+
 	__asm        test   dword ptr [ebp-0x1C], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        jmp    near ptr 0x0054D3A7;
+
 	__asm        jmp    near ptr 0x0054D39A;
+
 	__asm        jmp    near ptr 0x0054D3A7;
+
 	__asm        test   dword ptr [ebp-0x20], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        cmp    cellx, 0x80;
 	__asm        jge    near ptr 0x0054D4E4;
+
 	__asm        cmp    cellx, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D4E4;
+
 	__asm        mov    eax, celly;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0054D4E4;
+
 	__asm        mov    eax, celly;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D4E4;
+
 	__asm        cmp    cellx, 0;
 	__asm        jl     near ptr 0x0054D405;
+
 	__asm        cmp    cellx, 0x7F;
 	__asm        jg     near ptr 0x0054D405;
+
 	__asm        mov    eax, celly;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0054D405;
+
 	__asm        mov    eax, celly;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x7F;
 	__asm        jle    near ptr 0x0054D411;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0054D4CD;
+
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, celly;
@@ -12769,71 +13719,96 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0054D44A;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x0054D4B0;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x0054D46C;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    near ptr 0x0054D4B0;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x0054D48E;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    near ptr 0x0054D4B0;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x0054D4C1;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x0054D4C1;
+
 	__asm        mov    dword ptr [ebp-0x28], 1;
 	__asm        jmp    near ptr 0x0054D4CD;
+
 	__asm        jmp    near ptr 0x0054D4CD;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0054D4CD;
+
 	__asm        test   dword ptr [ebp-0x28], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        jmp    near ptr 0x0054D4F6;
+
 	__asm        jmp    near ptr 0x0054D4E9;
+
 	__asm        jmp    near ptr 0x0054D4F6;
+
 	__asm        test   dword ptr [ebp-0x2C], 0xFFFF;
 	__asm        jne    near ptr 0x0054D64A;
+
 	__asm        cmp    cellx, 0x80;
 	__asm        jge    near ptr 0x0054D633;
+
 	__asm        cmp    cellx, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D633;
+
 	__asm        mov    eax, celly;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0054D633;
+
 	__asm        mov    eax, celly;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    near ptr 0x0054D633;
+
 	__asm        cmp    cellx, 0;
 	__asm        jl     near ptr 0x0054D554;
+
 	__asm        cmp    cellx, 0x7F;
 	__asm        jg     near ptr 0x0054D554;
+
 	__asm        mov    eax, celly;
 	__asm        inc    eax;
 	__asm        js     near ptr 0x0054D554;
+
 	__asm        mov    eax, celly;
 	__asm        inc    eax;
 	__asm        cmp    eax, 0x7F;
 	__asm        jle    near ptr 0x0054D560;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x0054D61C;
+
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, celly;
@@ -12843,45 +13818,61 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0054D599;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x0054D5FF;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x0054D5BB;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    near ptr 0x0054D5FF;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x0054D5DD;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    near ptr 0x0054D5FF;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x0054D610;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x0054D610;
+
 	__asm        mov    dword ptr [ebp-0x34], 1;
 	__asm        jmp    near ptr 0x0054D61C;
+
 	__asm        jmp    near ptr 0x0054D61C;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x0054D61C;
+
 	__asm        test   dword ptr [ebp-0x34], 0xFFFF;
 	__asm        je     near ptr 0x0054D653;
+
 	__asm        jmp    near ptr 0x0054D64A;
+
 	__asm        jmp    near ptr 0x0054D63D;
+
 	__asm        jmp    near ptr 0x0054D653;
+
 	__asm        jmp    near ptr 0x0054D64A;
+
 	__asm        test   dword ptr [ebp-0x38], 0xFFFF;
 	__asm        je     near ptr 0x0054D653;
 // LINE 2234:
@@ -12945,10 +13936,12 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 // LINE 2251:
 	__asm        mov    word ptr [ebp-0x68], 0;
 	__asm        jmp    near ptr 0x0054D6EC;
+
 	__asm        inc    word ptr [ebp-0x68];
 	__asm        movsx  eax, word ptr [ebp-0x68];
 	__asm        cmp    eax, 0xA;
 	__asm        jge    near ptr 0x0054D730;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD6];
 	__asm        lea    eax, [eax+eax*4];
@@ -12957,43 +13950,59 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    edx, loctype;
 	__asm        cmp    [ecx+eax*8+0x6372D0], edx;
 	__asm        jne    near ptr 0x0054D72B;
+
 	__asm        mov    word ptr [ebp-0x64], 1;
 	__asm        jmp    near ptr 0x0054D73B;
+
 	__asm        jmp    near ptr 0x0054D6E8;
+
 	__asm        mov    word ptr [ebp-0x64], 0;
 	__asm        jmp    near ptr 0x0054D73B;
+
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    word ptr [ebp-0x70], 0;
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     near ptr 0x0054D774;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
 	__asm        je     near ptr 0x0054D767;
+
 	__asm        inc    word ptr [ebp-0x70];
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x0054D74A;
+
 	__asm        jmp    near ptr 0x0054D779;
+
 	__asm        mov    eax, loctype;
 	__asm        movsx  eax, word ptr [eax*8+0x63526C];
 	__asm        movsx  ecx, word ptr [ebp-0x70];
 	__asm        cmp    eax, ecx;
 	__asm        jle    near ptr 0x0054D79B;
+
 	__asm        mov    word ptr [ebp-0x60], 1;
 	__asm        jmp    near ptr 0x0054D7A1;
+
 	__asm        mov    word ptr [ebp-0x60], 0;
 	__asm        test   dword ptr [ebp-0x64], 0xFFFF;
 	__asm        je     near ptr 0x0054D7CA;
+
 	__asm        test   dword ptr [ebp-0x60], 0xFFFF;
 	__asm        je     near ptr 0x0054D7CA;
+
 	__asm        jmp    near ptr 0x0054D7E4;
+
 	__asm        jmp    near ptr 0x0054D7DC;
+
 	__asm        jmp    near ptr 0x0054D7CF;
+
 	__asm        jmp    near ptr 0x0054D7DC;
+
 	__asm        test   dword ptr [ebp-0x74], 0xFFFF;
 	__asm        jne    near ptr 0x0054D7E4;
 // LINE 2252:
@@ -13054,6 +14063,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0054D887;
+
 	__asm        lea    eax, [ebp-0x48];
 	__asm        lea    ecx, [ebp-0x3C];
 	__asm        mov    edx, [eax];
@@ -13122,6 +14132,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    eax, cptr;
 	__asm        cmp    newcptr, eax;
 	__asm        je     near ptr 0x0054D967;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB1A4;
 	__asm        push   0x8DC;
@@ -13138,17 +14149,22 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        movsx  eax, word ptr [ebp-0x80];
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054D9AB;
+
 	__asm        movsx  eax, word ptr [ebp-0x7C];
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054D9AB;
+
 	__asm        movsx  eax, word ptr [ebp-0x80];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054D9AB;
+
 	__asm        movsx  eax, word ptr [ebp-0x7C];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054D9B6;
+
 	__asm        mov    scurkID1, 0xFFFF;
 	__asm        jmp    near ptr 0x0054DA12;
+
 	__asm        movsx  eax, word ptr [ebp-0x80];
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, word ptr [ebp-0x7C];
@@ -13157,9 +14173,11 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        movsx  eax, word ptr [ebp-0x78];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054D9E9;
+
 	__asm        movsx  eax, word ptr [ebp-0x78];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x0054DA05;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -13173,17 +14191,22 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        movsx  eax, cx;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054DA44;
+
 	__asm        movsx  eax, cy;
 	__asm        cmp    eax, 0x7F;
 	__asm        jg     near ptr 0x0054DA44;
+
 	__asm        movsx  eax, cx;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054DA44;
+
 	__asm        movsx  eax, cy;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0054DA4F;
+
 	__asm        mov    scurkID2, 0xFFFF;
 	__asm        jmp    near ptr 0x0054DAB7;
+
 	__asm        movsx  eax, cx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        movsx  ecx, cy;
@@ -13192,9 +14215,11 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        movsx  eax, word ptr [ebp-0x84];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0054DA8B;
+
 	__asm        movsx  eax, word ptr [ebp-0x84];
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x0054DAA7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBA34;
 	__asm        push   0x18A;
@@ -13209,6 +14234,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        movsx  ecx, scurkID1;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x0054DAE3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB1EC;
 	__asm        push   0x8DF;
@@ -13228,6 +14254,7 @@ void cYObject::Simulate() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0054DB2D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB24C;
 	__asm        push   0x8E6;
@@ -13240,11 +14267,13 @@ void cYObject::Simulate() {
 	__asm        je     near ptr 0x0054DC50;
 // LINE 2281:
 	__asm        jmp    near ptr 0x0054DB42;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054DB6F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD20;
 	__asm        push   0x262;
@@ -13254,6 +14283,7 @@ void cYObject::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    near ptr 0x0054DB9B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCFC;
 	__asm        push   0x263;
@@ -13292,6 +14322,7 @@ void cYObject::Simulate() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0054DC26;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCCC;
 	__asm        push   0x268;
@@ -13319,6 +14350,7 @@ void cYObject::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054DC8D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCAC;
 	__asm        push   0x27F;
@@ -13326,9 +14358,11 @@ void cYObject::Simulate() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054DCD4;
+
 	__asm        mov    eax, this;
 	__asm        inc    word ptr [eax+0xDC];
 	__asm        jmp    near ptr 0x0054DC9C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax+0x28];
@@ -13337,9 +14371,11 @@ void cYObject::Simulate() {
 	__asm        movsx  ecx, word ptr [ecx+0xDC];
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x0054DCCA;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xDC], 0;
 	__asm        jmp    near ptr 0x0054DCCF;
+
 	__asm        jmp    near ptr 0x0054DCD4;
 // LINE 2284:
 	__asm        jmp    near ptr 0x0054DCD9;
@@ -13364,6 +14400,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 // LINE 2295:
 	__asm        cmp    moveinfo, 0;
 	__asm        jne    near ptr 0x0054DD34;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB290;
 	__asm        push   0x8F7;
@@ -13397,6 +14434,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 // LINE 2298:
 	__asm        test   reinterpret_cast<uint32_t>(yaw), 0xFFFF;
 	__asm        jne    near ptr 0x0054DD87;
+
 	__asm        cmp    movecode, 0;
 	__asm        jne    near ptr 0x0054DE09;
 // LINE 2299:
@@ -13404,11 +14442,13 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 	__asm        call   cAvatar::ResetView;
 // LINE 2300:
 	__asm        jmp    near ptr 0x0054DD94;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054DDC1;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAEC;
 	__asm        push   0x1F8;
@@ -13463,6 +14503,7 @@ void cAvatar::Simulate() {
 	struct _DYOBJ_INST* dy;
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        jne    near ptr 0x0054DE5F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB2D8;
 	__asm        push   0x906;
@@ -13471,16 +14512,19 @@ void cAvatar::Simulate() {
 	__asm        add    esp, 0x10;
 // LINE 2311:
 	__asm        jmp    near ptr 0x0054DE64;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
 	__asm        mov    dy, eax;
 // LINE 2312:
 	__asm        cmp    dy, 0;
 	__asm        je     near ptr 0x0054DE8E;
+
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, dy;
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        je     near ptr 0x0054DEAA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB330;
 	__asm        push   0x908;
@@ -13489,11 +14533,13 @@ void cAvatar::Simulate() {
 	__asm        add    esp, 0x10;
 // LINE 2313:
 	__asm        jmp    near ptr 0x0054DEAF;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0054DEDC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD20;
 	__asm        push   0x262;
@@ -13503,6 +14549,7 @@ void cAvatar::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    near ptr 0x0054DF08;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCFC;
 	__asm        push   0x263;
@@ -13541,6 +14588,7 @@ void cAvatar::Simulate() {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x0054DF93;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCCC;
 	__asm        push   0x268;
@@ -13565,6 +14613,7 @@ void cAvatar::Simulate() {
 // Block end:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        je     near ptr 0x0054DFEB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB35C;
 	__asm        push   0x90C;
@@ -13634,6 +14683,7 @@ void cAvatar::Simulate() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;
 	__asm        je     near ptr 0x0054E0BD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB3B8;
 	__asm        push   0x922;
@@ -13642,6 +14692,7 @@ void cAvatar::Simulate() {
 	__asm        add    esp, 0x10;
 // LINE 2340:
 	__asm        jmp    near ptr 0x0054E0C2;
+
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0xA4];
 	__asm        push   eax;
@@ -13651,6 +14702,7 @@ void cAvatar::Simulate() {
 // LINE 2341:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x0054E0FF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB408;
 	__asm        push   0x925;
@@ -13673,10 +14725,12 @@ void cAvatar::Simulate() {
 // LINE 2349:
 	__asm        mov    word ptr [ebp-0x30], 0;
 	__asm        jmp    near ptr 0x0054E130;
+
 	__asm        inc    word ptr [ebp-0x30];
 	__asm        movsx  eax, word ptr [ebp-0x30];
 	__asm        cmp    eax, 0x64;
 	__asm        jge    near ptr 0x0054E1DA;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        call   cYObject::GetObjectA;
@@ -13686,33 +14740,42 @@ void cAvatar::Simulate() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054E1D5;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054E1D0;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0054E1AB;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-0x38], ax;
 	__asm        jmp    near ptr 0x0054E1BE;
+
 	__asm        jmp    near ptr 0x0054E1B6;
+
 	__asm        mov    word ptr [ebp-0x38], 0xFFFF;
 	__asm        jmp    near ptr 0x0054E1BE;
+
 	__asm        mov    ax, [ebp-0x3C];
 	__asm        mov    [ebp-0x38], ax;
 	__asm        jmp    near ptr 0x0054E1C3;
+
 	__asm        movsx  eax, word ptr [ebp-0x38];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0054E1D5;
+
 	__asm        jmp    near ptr 0x0054E12C;
+
 	__asm        jmp    near ptr 0x0054E1DF;
 // LINE 2350:
 	__asm        push   0;
@@ -13743,6 +14806,7 @@ void cAvatar::Simulate() {
 // LINE 2362:
 // Block end:
 	__asm        jmp    near ptr 0x0054E482;
+
 	__asm        cmp    movecode, 5;
 	__asm        jne    near ptr 0x0054E482;
 // LINE 2363:
@@ -13756,6 +14820,7 @@ void cAvatar::Simulate() {
 // LINE 2364:
 	__asm        cmp    person, 0;
 	__asm        jne    near ptr 0x0054E276;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB434;
 	__asm        push   0x93C;
@@ -13767,6 +14832,7 @@ void cAvatar::Simulate() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;
 	__asm        jne    near ptr 0x0054E482;
+
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
 	__asm        test   eax, eax;
@@ -13795,11 +14861,13 @@ void cAvatar::Simulate() {
 	__asm        sar    eax, 0x16;
 	__asm        mov    [ebp-0x4C], al;
 	__asm        jmp    near ptr 0x0054E2E4;
+
 	__asm        mov    eax, person;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        je     near ptr 0x0054E311;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBBB8;
 	__asm        push   0x210;
@@ -13813,6 +14881,7 @@ void cAvatar::Simulate() {
 	__asm        mov    ecx, person;
 	__asm        mov    [ecx+0x89], al;
 	__asm        jmp    near ptr 0x0054E32E;
+
 	__asm        mov    ecx, person;
 	__asm        call   cYObject::Link;
 	__asm        jmp    near ptr 0x0054E33B;
@@ -13824,7 +14893,9 @@ void cAvatar::Simulate() {
 	__asm        call   cYObject::SetMaster;
 // LINE 2368:
 	__asm        jmp    near ptr 0x0054E34F;
+
 	__asm        jmp    near ptr 0x0054E354;
+
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -13834,8 +14905,11 @@ void cAvatar::Simulate() {
 	__asm        movsx  eax, word ptr [eax+ecx];
 	__asm        cmp    eax, 0x322;
 	__asm        je     near ptr 0x0054E3D2;
+
 	__asm        jmp    near ptr 0x0054E37F;
+
 	__asm        jmp    near ptr 0x0054E384;
+
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        dec    eax;
@@ -13843,6 +14917,7 @@ void cAvatar::Simulate() {
 	__asm        movsx  ecx, word ptr [ecx+8];
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x0054E3B7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD3C;
 	__asm        push   0xCE;
@@ -13855,12 +14930,15 @@ void cAvatar::Simulate() {
 	__asm        mov    ecx, person;
 	__asm        call   TreeSim::Gosub;
 	__asm        jmp    near ptr 0x0054E3D7;
+
 	__asm        jmp    near ptr 0x0054E3D7;
+
 	__asm        jmp    near ptr 0x0054E3D7;
 // LINE 2369:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E403;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -13870,10 +14948,12 @@ void cAvatar::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E429;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x546F7465;
 	__asm        je     near ptr 0x0054E471;
+
 	__asm        push   0x546F7465;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -13883,6 +14963,7 @@ void cAvatar::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E471;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -13900,16 +14981,22 @@ void cAvatar::Simulate() {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0x10000;
 	__asm        jge    near ptr 0x0054E4B3;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0xFFFF0000;
 	__asm        jle    near ptr 0x0054E4B3;
+
 	__asm        mov    word ptr [ebp-0x40], 0;
 	__asm        jmp    near ptr 0x0054E4DE;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0xD0000;
 	__asm        jge    near ptr 0x0054E4D8;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0xFFF30000;
 	__asm        jle    near ptr 0x0054E4D8;
+
 	__asm        mov    word ptr [ebp-0x40], 4;
 	__asm        jmp    near ptr 0x0054E4DE;
+
 	__asm        mov    word ptr [ebp-0x40], 8;
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -13924,6 +15011,7 @@ void cAvatar::Simulate() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E528;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBCAC;
 	__asm        push   0x27F;
@@ -13931,9 +15019,11 @@ void cAvatar::Simulate() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054E56F;
+
 	__asm        mov    eax, this;
 	__asm        inc    word ptr [eax+0xDC];
 	__asm        jmp    near ptr 0x0054E537;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax+0x28];
@@ -13942,9 +15032,11 @@ void cAvatar::Simulate() {
 	__asm        movsx  ecx, word ptr [ecx+0xDC];
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x0054E565;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xDC], 0;
 	__asm        jmp    near ptr 0x0054E56A;
+
 	__asm        jmp    near ptr 0x0054E56F;
 // LINE 2381:
 	__asm        jmp    near ptr 0x0054E574;
@@ -13960,6 +15052,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, speed;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054E5B8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB46C;
 	__asm        push   0x968;
@@ -13971,13 +15064,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054E723;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054E684;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E60C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -13987,10 +15083,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E632;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054E67A;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14000,6 +15098,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E67A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14007,10 +15106,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054E67F;
+
 	__asm        jmp    near ptr 0x0054E723;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E6B0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14020,10 +15122,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E6D6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4E6F4D6F;
 	__asm        je     near ptr 0x0054E71E;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14033,6 +15137,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E71E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14051,13 +15156,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054E89F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054E800;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E788;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14067,10 +15175,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E7AE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054E7F6;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14080,6 +15190,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E7F6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14087,10 +15198,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054E7FB;
+
 	__asm        jmp    near ptr 0x0054E89F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E82C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14100,10 +15214,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E852;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4E6F4D6F;
 	__asm        je     near ptr 0x0054E89A;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14113,6 +15229,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E89A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14130,12 +15247,14 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054E8D0;
+
 	__asm        push   0;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::PlaySoundA;
 // LINE 2418:
 	__asm        jmp    near ptr 0x0054EBF9;
+
 	__asm        movsx  eax, speed;
 	__asm        cmp    eax, 7;
 	__asm        jge    near ptr 0x0054EA70;
@@ -14144,13 +15263,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EA4D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054E9AE;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E936;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14160,10 +15282,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054E95C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4467526E;
 	__asm        je     near ptr 0x0054E9A4;
+
 	__asm        push   0x4467526E;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14173,6 +15297,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054E9A4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14180,10 +15305,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054E9A9;
+
 	__asm        jmp    near ptr 0x0054EA4D;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054E9DA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14193,10 +15321,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EA00;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x3157616C;
 	__asm        je     near ptr 0x0054EA48;
+
 	__asm        push   0x3157616C;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14206,6 +15336,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054EA48;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14218,6 +15349,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EA6B;
+
 	__asm        push   0;
 	__asm        push   0xE;
 	__asm        mov    ecx, this;
@@ -14229,13 +15361,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EBDB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054EB3C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054EAC4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14245,10 +15380,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EAEA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4467526E;
 	__asm        je     near ptr 0x0054EB32;
+
 	__asm        push   0x4467526E;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14258,6 +15395,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054EB32;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14265,10 +15403,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054EB37;
+
 	__asm        jmp    near ptr 0x0054EBDB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054EB68;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14278,10 +15419,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EB8E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x3152756E;
 	__asm        je     near ptr 0x0054EBD6;
+
 	__asm        push   0x3152756E;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14291,6 +15434,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054EBD6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14303,6 +15447,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EBF9;
+
 	__asm        push   0;
 	__asm        push   0xE;
 	__asm        mov    ecx, this;
@@ -14314,13 +15459,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054ED69;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054ECCA;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054EC52;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14330,10 +15478,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EC78;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054ECC0;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14343,6 +15493,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054ECC0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14350,10 +15501,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054ECC5;
+
 	__asm        jmp    near ptr 0x0054ED69;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054ECF6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14363,10 +15517,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054ED1C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4661436C;
 	__asm        je     near ptr 0x0054ED64;
+
 	__asm        push   0x4661436C;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14376,6 +15532,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054ED64;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14388,6 +15545,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054ED87;
+
 	__asm        push   0;
 	__asm        push   8;
 	__asm        mov    ecx, this;
@@ -14399,13 +15557,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EEF7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054EE58;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054EDE0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14415,10 +15576,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EE06;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054EE4E;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14428,6 +15591,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054EE4E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14435,10 +15599,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054EE53;
+
 	__asm        jmp    near ptr 0x0054EEF7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054EE84;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14448,10 +15615,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054EEAA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x57686F61;
 	__asm        je     near ptr 0x0054EEF2;
+
 	__asm        push   0x57686F61;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14461,6 +15630,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054EEF2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14473,6 +15643,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054EF15;
+
 	__asm        push   0;
 	__asm        push   9;
 	__asm        mov    ecx, this;
@@ -14482,9 +15653,11 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 // LINE 2438:
 	__asm        cmp    moveinfo, 0;
 	__asm        je     near ptr 0x0054EF31;
+
 	__asm        mov    eax, moveinfo;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    near ptr 0x0054EF4D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB498;
 	__asm        push   0x986;
@@ -14496,6 +15669,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    [ebp-4], eax;
 // LINE 2439:
 	__asm        jmp    near ptr 0x0054EF5B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -14532,13 +15706,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F126;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F087;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F00F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14548,10 +15725,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F035;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F07D;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14561,6 +15740,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F07D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14568,10 +15748,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F082;
+
 	__asm        jmp    near ptr 0x0054F126;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F0B3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14581,10 +15764,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F0D9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32476162;
 	__asm        je     near ptr 0x0054F121;
+
 	__asm        push   0x32476162;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14594,6 +15779,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F121;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14608,13 +15794,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F296;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F1F7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F17F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14624,10 +15813,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F1A5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F1ED;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14637,6 +15828,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F1ED;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14644,10 +15836,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F1F2;
+
 	__asm        jmp    near ptr 0x0054F296;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F223;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14657,10 +15852,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F249;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32476162;
 	__asm        je     near ptr 0x0054F291;
+
 	__asm        push   0x32476162;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14670,6 +15867,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F291;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14684,13 +15882,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F406;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F367;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F2EF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14700,10 +15901,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F315;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F35D;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14713,6 +15916,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F35D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14720,10 +15924,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F362;
+
 	__asm        jmp    near ptr 0x0054F406;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F393;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14733,10 +15940,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F3B9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x426F7750;
 	__asm        je     near ptr 0x0054F401;
+
 	__asm        push   0x426F7750;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14746,6 +15955,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F401;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14760,13 +15970,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F576;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F4D7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F45F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14776,10 +15989,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F485;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F4CD;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14789,6 +16004,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F4CD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14796,10 +16012,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F4D2;
+
 	__asm        jmp    near ptr 0x0054F576;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F503;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14809,10 +16028,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F529;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x48697048;
 	__asm        je     near ptr 0x0054F571;
+
 	__asm        push   0x48697048;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14822,6 +16043,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F571;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14833,12 +16055,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        jmp    near ptr 0x0054F5A3;
 // LINE 2454:
 	__asm        jmp    near ptr 0x0054F5A3;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x0054EFBB;
+
 	__asm        cmp    dword ptr [ebp-0x10], 1;
 	__asm        je     near ptr 0x0054F12B;
+
 	__asm        cmp    dword ptr [ebp-0x10], 3;
 	__asm        je     near ptr 0x0054F29B;
+
 	__asm        jmp    near ptr 0x0054F40B;
 // LINE 2455:
 	__asm        push   9;
@@ -14852,6 +16078,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F5D6;
+
 	__asm        push   0;
 	__asm        push   0xA;
 	__asm        mov    ecx, this;
@@ -14863,6 +16090,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F5F9;
+
 	__asm        push   0;
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -14874,6 +16102,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F61C;
+
 	__asm        push   0;
 	__asm        push   4;
 	__asm        mov    ecx, this;
@@ -14885,6 +16114,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F63F;
+
 	__asm        push   0;
 	__asm        push   0xB;
 	__asm        mov    ecx, this;
@@ -14896,6 +16126,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F662;
+
 	__asm        push   0;
 	__asm        push   2;
 	__asm        mov    ecx, this;
@@ -14907,6 +16138,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F685;
+
 	__asm        push   0;
 	__asm        push   0x12;
 	__asm        mov    ecx, this;
@@ -14918,6 +16150,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F6A8;
+
 	__asm        push   0;
 	__asm        push   6;
 	__asm        mov    ecx, this;
@@ -14929,6 +16162,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F6CB;
+
 	__asm        push   0;
 	__asm        push   7;
 	__asm        mov    ecx, this;
@@ -14940,6 +16174,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F6EE;
+
 	__asm        push   0;
 	__asm        push   3;
 	__asm        mov    ecx, this;
@@ -14948,8 +16183,10 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        jmp    near ptr 0x0054F72C;
 // LINE 2483:
 	__asm        jmp    near ptr 0x0054F72C;
+
 	__asm        cmp    dword ptr [ebp-0x14], 7;
 	__asm        ja     near ptr 0x0054F6D0;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x54F70C];
 // Switch pointers
@@ -14960,13 +16197,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F89C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F7FD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F785;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -14976,10 +16216,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F7AB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F7F3;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -14989,6 +16231,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F7F3;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -14996,10 +16239,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F7F8;
+
 	__asm        jmp    near ptr 0x0054F89C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F829;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -15009,10 +16255,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F84F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4E6F4D6F;
 	__asm        je     near ptr 0x0054F897;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -15022,6 +16270,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F897;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -15034,6 +16283,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054F8BA;
+
 	__asm        push   0;
 	__asm        push   9;
 	__asm        mov    ecx, this;
@@ -15045,13 +16295,16 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054FA2A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054F98B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F913;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -15061,10 +16314,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F939;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x44675374;
 	__asm        je     near ptr 0x0054F981;
+
 	__asm        push   0x44675374;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -15074,6 +16329,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054F981;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -15081,10 +16337,13 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0054F986;
+
 	__asm        jmp    near ptr 0x0054FA2A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x0054F9B7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
 	__asm        push   0x2F8;
@@ -15094,10 +16353,12 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        je     near ptr 0x0054F9DD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+0x1C], 0x4E6F4D6F;
 	__asm        je     near ptr 0x0054FA25;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x90];
@@ -15107,6 +16368,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    near ptr 0x0054FA25;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
 	__asm        push   0x2FB;
@@ -15119,6 +16381,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0x106];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054FA48;
+
 	__asm        push   0;
 	__asm        push   0xC;
 	__asm        mov    ecx, this;
@@ -15130,14 +16393,17 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        movsx  eax, word ptr [eax+0xF2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054FA94;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    near ptr 0x0054FA87;
+
 	__asm        push   0x44675374;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetAnim;
 	__asm        jmp    near ptr 0x0054FA94;
+
 	__asm        push   0x4E6F4D6F;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetAnim;
@@ -15145,8 +16411,10 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        jmp    near ptr 0x0054FAE2;
 // LINE 2497:
 	__asm        jmp    near ptr 0x0054FAE2;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0xB;
 	__asm        ja     near ptr 0x0054FA4D;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x54FAB2];
 // Switch pointers
@@ -15297,6 +16565,7 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        je     near ptr 0x0054FCC5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB4E8;
 	__asm        push   0x9F9;
@@ -15321,11 +16590,13 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 	__asm        jmp    near ptr 0x0054FCF2;
 // LINE 2555:
 	__asm        jmp    near ptr 0x0054FCF7;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        je     near ptr 0x0054FD24;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBBB8;
 	__asm        push   0x210;
@@ -15379,6 +16650,7 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0054FDBD;
+
 	__asm        lea    eax, [ebp-0x40];
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        mov    edx, [eax];
@@ -15396,6 +16668,7 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0054FDEE;
+
 	__asm        lea    eax, [ebp-0x24];
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        mov    edx, [eax];
@@ -15431,13 +16704,14 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 
 // FUNCTION: COPTER_D 0x0054fe42
 void cYObject::SetMissionType(enum MissionType type) {
-	 // Switch table at 0x0054ff24
+	static const <NoType> = { /* <data@0x0054ff24> */ };
 
 // LINE 2571:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054FE7C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB544;
 	__asm        push   0xA0B;
@@ -15478,9 +16752,11 @@ void cYObject::SetMissionType(enum MissionType type) {
 	__asm        jmp    near ptr 0x0054FF2F;
 // LINE 2594:
 	__asm        jmp    near ptr 0x0054FF2F;
+
 	__asm        sub    dword ptr [ebp-8], 3;
 	__asm        cmp    dword ptr [ebp-8], 0xA;
 	__asm        ja     near ptr 0x0054FF2F;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x54FF24];
@@ -15546,20 +16822,26 @@ void cYObject::SetPersonType(enum PersonType type) {
 // LINE 2621:
 	__asm        cmp    type, 0x11;
 	__asm        je     near ptr 0x00550015;
+
 	__asm        cmp    type, 0x10;
 	__asm        je     near ptr 0x00550015;
+
 	__asm        cmp    type, 0xE;
 	__asm        je     near ptr 0x00550015;
+
 	__asm        cmp    type, 0xD;
 	__asm        je     near ptr 0x00550015;
+
 	__asm        cmp    type, 0xC;
 	__asm        jne    near ptr 0x00550048;
+
 	__asm        push   0x1E;
 	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00550048;
+
 	__asm        mov    ax, count;
 	__asm        mov    [ebp-0x18], ax;
 	__asm        inc    count;
@@ -15789,8 +17071,10 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        add    esp, 0x10;
 // LINE 2724:
 	__asm        jmp    near ptr 0x0055031C;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x11;
 	__asm        ja     near ptr 0x0055029F;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    dword ptr [eax*4+0x5502D4];
 // Switch pointers
@@ -15804,8 +17088,10 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jl     near ptr 0x0055034D;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0x20;
 	__asm        jb     near ptr 0x00550366;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD7C;
 	__asm        push   0x6D;
@@ -15814,50 +17100,71 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x0055037E;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x00550385;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x005503A2;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x005503A9;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x005503AE;
+
 	__asm        jmp    near ptr 0x005503B3;
+
 	__asm        jmp    near ptr 0x005503D0;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x005503CB;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x005503D0;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x005503F0;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00550484;
+
 	__asm        jmp    near ptr 0x00550404;
+
 	__asm        jmp    near ptr 0x005503FA;
+
 	__asm        jmp    near ptr 0x00550484;
+
 	__asm        jmp    near ptr 0x00550404;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00550484;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00550420;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0055042C;
+
 	__asm        jmp    near ptr 0x0055042C;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0055042C;
+
 	__asm        jmp    near ptr 0x00550431;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    cl, [ebp-0x1C];
@@ -15867,27 +17174,36 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        shr    edx, cl;
 	__asm        cmp    eax, edx;
 	__asm        jne    near ptr 0x0055047F;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00550468;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0055047A;
+
 	__asm        jmp    near ptr 0x00550474;
+
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    near ptr 0x0055047A;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00550490;
+
 	__asm        jmp    near ptr 0x005503B8;
+
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    near ptr 0x00550490;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x90], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x005504C8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD68;
 	__asm        push   0x27A;
@@ -15899,6 +17215,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x005504F9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB5E4;
 	__asm        push   0xAA7;
@@ -15910,6 +17227,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        movsx  eax, word ptr [eax+0x9C];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00550534;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
 	__asm        cmp    eax, 0x7D00;
@@ -15946,6 +17264,7 @@ void cYObject::DestroyObjects() {
 	short cnt;
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x0055058F;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x64;
@@ -15954,6 +17273,7 @@ void cYObject::DestroyObjects() {
 	__asm        movsx  eax, cnt;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        je     near ptr 0x005505DE;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    [ebp-0xC], eax;
@@ -15961,6 +17281,7 @@ void cYObject::DestroyObjects() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x005505DE;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
@@ -15969,6 +17290,7 @@ void cYObject::DestroyObjects() {
 	__asm        jmp    near ptr 0x005505DE;
 // LINE 2765:
 	__asm        jmp    near ptr 0x0055058B;
+
 	__asm        mov    word ptr ds:[0x5B8668], 0;
 // LINE 2767:
 	__asm        mov    ecx, 0x636BB8;
@@ -15976,17 +17298,20 @@ void cYObject::DestroyObjects() {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055060B;
+
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatResFile::Close;
 // LINE 2770:
 	__asm        cmp    dword ptr ds:[0x635250], 0;
 	__asm        je     near ptr 0x0055064E;
+
 	__asm        mov    eax, ds:[0x635250];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x0055064E;
+
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   YObjLang::~YObjLang;
 	__asm        mov    eax, [ebp-0x10];
@@ -15994,16 +17319,19 @@ void cYObject::DestroyObjects() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00550649;
+
 	__asm        jmp    near ptr 0x0055064E;
 // LINE 2771:
 	__asm        cmp    dword ptr ds:[0x636B8C], 0;
 	__asm        je     near ptr 0x00550691;
+
 	__asm        mov    eax, ds:[0x636B8C];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00550691;
+
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   Behavior::~Behavior;
 	__asm        mov    eax, [ebp-0x18];
@@ -16011,6 +17339,7 @@ void cYObject::DestroyObjects() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0055068C;
+
 	__asm        jmp    near ptr 0x00550691;
 // LINE 2774:
 // Block end:
@@ -16023,11 +17352,13 @@ void cYObject::Link() {
 
 // LINE 2780:
 	__asm        jmp    near ptr 0x005506AC;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        je     near ptr 0x005506D9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB61C;
 	__asm        push   0xADC;
@@ -16040,11 +17371,13 @@ void cYObject::Link() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00550722;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0055071D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -16052,11 +17385,13 @@ void cYObject::Link() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00550752;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00550752;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -16068,11 +17403,16 @@ void cYObject::Link() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00550770;
+
 	__asm        jmp    near ptr 0x0055079E;
+
 	__asm        jmp    near ptr 0x00550770;
+
 	__asm        jmp    near ptr 0x00550782;
+
 	__asm        test   dword ptr [ebp-8], 0xFFFF;
 	__asm        jne    near ptr 0x0055079E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB65C;
 	__asm        push   0xADE;
@@ -16113,11 +17453,13 @@ void cYObject::Unlink() {
 
 // LINE 2798:
 	__asm        jmp    near ptr 0x005507FD;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0055082A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB6A0;
 	__asm        push   0xAEE;
@@ -16186,6 +17528,7 @@ class cAvatar* cAvatar::MakeAvatar() {
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0055097E;
+
 	__asm        lea    eax, p.x;
 	__asm        lea    ecx, [ebp-0x30];
 	__asm        mov    edx, [eax];
@@ -16216,7 +17559,9 @@ class cAvatar* cAvatar::MakeAvatar() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    word ptr [eax+0x9C], 0;
 	__asm        jmp    near ptr 0x0055095C;
+
 	__asm        jmp    near ptr 0x00550961;
+
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x24], eax;
@@ -16226,6 +17571,7 @@ _L56436:
 	__asm        call   cYObject::~cYObject;
 	__asm        ret;
 	__asm        jmp    near ptr 0x00550985;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -16248,6 +17594,7 @@ _L56432:
 _L56431:
 	__asm        mov    eax, 0x595E00;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -16262,6 +17609,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 	__asm        mov    ax, ds:[0x5B8668];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00550A15;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB6E0;
 	__asm        push   0xB0A;
@@ -16271,6 +17619,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 // LINE 2828:
 	__asm        mov    id, 0;
 	__asm        jmp    near ptr 0x00550A24;
+
 	__asm        inc    id;
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
@@ -16279,9 +17628,11 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        je     near ptr 0x00550A4D;
+
 	__asm        jmp    near ptr 0x00550A20;
 // LINE 2830:
 	__asm        jmp    near ptr 0x00550A52;
+
 	__asm        jmp    near ptr 0x00550A57;
 // LINE 2831:
 	__asm        jmp    near ptr 0x00550A20;
@@ -16303,6 +17654,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00550ABB;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
 	__asm        push   eax;
 	__asm        mov    eax, loc.z;
@@ -16319,6 +17671,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 	__asm        call   cYObject::cYObject;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00550AC2;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -16354,6 +17707,7 @@ _L56449:
 _L56448:
 	__asm        mov    eax, 0x595E30;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -16374,6 +17728,7 @@ void cYObject::InitForEngine(short id) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        jne    near ptr 0x00550B77;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB75C;
 	__asm        push   0xB1E;
@@ -16458,15 +17813,19 @@ void cYObject::KillObject(short id) {
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00550C55;
+
 	__asm        mov    eax, ds:[0x5B8680];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00550CD1;
+
 	__asm        movsx  eax, id;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00550C6E;
+
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00550C8A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -16476,6 +17835,7 @@ void cYObject::KillObject(short id) {
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
 	__asm        jne    near ptr 0x00550CB8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
 	__asm        push   0x205;
@@ -16486,11 +17846,13 @@ void cYObject::KillObject(short id) {
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        mov    obj, eax;
 	__asm        jmp    near ptr 0x00550CD1;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    obj, eax;
 // LINE 2874:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00550CF7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB794;
 	__asm        push   0xB3A;
@@ -16500,6 +17862,7 @@ void cYObject::KillObject(short id) {
 // LINE 2875:
 	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00550D06;
+
 	__asm        jmp    near ptr 0x00550D48;
 // LINE 2877:
 	__asm        mov    eax, obj;
@@ -16512,6 +17875,7 @@ void cYObject::KillObject(short id) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00550D43;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
@@ -16527,6 +17891,7 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 	short cnt;
 
 	// Function registers exception cleanup function at 0x00550efd
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC0;
 	__asm        push   eax;
@@ -16570,6 +17935,7 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 // LINE 2893:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00550E0B;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x30;
@@ -16585,6 +17951,7 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 // LINE 2896:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00550E49;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 4;
@@ -16627,6 +17994,7 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 	__asm        call   cYObject::InitForEngine;
 // LINE 2912:
 	__asm        jmp    near ptr 0x00550ED9;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x00550F07;
@@ -16642,6 +18010,7 @@ _L56468:
 _L56467:
 	__asm        mov    eax, 0x595E58;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -16736,6 +18105,7 @@ void cYObject::Reset() {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055108E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC88;
 	__asm        push   0x2E4;
@@ -16743,11 +18113,13 @@ void cYObject::Reset() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00551093;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x005510C0;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC5C;
 	__asm        push   0x2E5;
@@ -16759,11 +18131,13 @@ void cYObject::Reset() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00551109;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00551104;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBAD4;
 	__asm        push   0x22E;
@@ -16771,11 +18145,13 @@ void cYObject::Reset() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00551139;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00551139;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBABC;
 	__asm        push   0x231;
@@ -16787,11 +18163,16 @@ void cYObject::Reset() {
 	__asm        mov    cl, [eax+0x88];
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00551157;
+
 	__asm        jmp    near ptr 0x00551185;
+
 	__asm        jmp    near ptr 0x00551157;
+
 	__asm        jmp    near ptr 0x00551169;
+
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        jne    near ptr 0x00551185;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC3C;
 	__asm        push   0x2E6;
@@ -16802,38 +18183,47 @@ void cYObject::Reset() {
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0055122F;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x0055120A;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x005511E5;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        add    eax, 0x62;
 	__asm        mov    [ebp-8], ax;
 	__asm        jmp    near ptr 0x005511F8;
+
 	__asm        jmp    near ptr 0x005511F0;
+
 	__asm        mov    word ptr [ebp-8], 0xFFFF;
 	__asm        jmp    near ptr 0x005511F8;
+
 	__asm        mov    ax, [ebp-0xC];
 	__asm        mov    [ebp-8], ax;
 	__asm        jmp    near ptr 0x005511FD;
+
 	__asm        movsx  eax, word ptr [ebp-8];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0055120F;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    word ptr [eax*2+0x6356B0], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 	__asm        jmp    near ptr 0x00551234;
+
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        mov    eax, this;
@@ -16845,20 +18235,25 @@ void cYObject::Reset() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        jne    near ptr 0x00551282;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8674], ax;
 	__asm        jmp    near ptr 0x00551290;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        dec    eax;
 	__asm        mov    ds:[0x5B8670], ax;
 	__asm        jmp    near ptr 0x00551295;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8670];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005512B3;
+
 	__asm        movsx  eax, word ptr ds:[0x5B8674];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x005512CF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBC24;
 	__asm        push   0x2EC;
@@ -16890,14 +18285,17 @@ void cYObject::Reset() {
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00551370;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 5;
 	__asm        je     near ptr 0x00551370;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 7;
 	__asm        je     near ptr 0x00551370;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB34;
 	__asm        push   0x2BD;
@@ -16932,6 +18330,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005513CB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB7D8;
 	__asm        push   0xB98;
@@ -16948,13 +18347,16 @@ void cYObject::Draw(struct VRBlit* blit) {
 // LINE 2976:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
 	__asm        jne    near ptr 0x005513FD;
+
 	__asm        mov    highres, 1;
 	__asm        jmp    near ptr 0x00551403;
+
 	__asm        mov    highres, 0;
 // LINE 2978:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    near ptr 0x00551432;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB820;
 	__asm        push   0xBA2;
@@ -17061,6 +18463,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        jmp    near ptr 0x00551813;
 // LINE 3013:
 	__asm        jmp    near ptr 0x0055161B;
+
 	__asm        mov    eax, ds:[0x5B8654];
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    near ptr 0x005515D2;
@@ -17069,6 +18472,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        mov    word ptr [eax+0xE6], 4;
 // LINE 3015:
 	__asm        jmp    near ptr 0x0055161B;
+
 	__asm        mov    eax, ds:[0x5B8658];
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    near ptr 0x005515F4;
@@ -17077,6 +18481,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        mov    word ptr [eax+0xE6], 2;
 // LINE 3017:
 	__asm        jmp    near ptr 0x0055161B;
+
 	__asm        mov    eax, ds:[0x5B865C];
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    near ptr 0x00551616;
@@ -17102,6 +18507,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        movsx  eax, word ptr [eax+0x9C];
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00551665;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB864;
 	__asm        push   0xBD0;
@@ -17113,6 +18519,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        movsx  eax, word ptr [eax+0x9C];
 	__asm        cmp    eax, 0xB;
 	__asm        jl     near ptr 0x00551697;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB8AC;
 	__asm        push   0xBD1;
@@ -17206,6 +18613,7 @@ void cYObject::Draw(struct VRBlit* blit) {
 	__asm        movsx  eax, word ptr ds:[0x5B86A0];
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x005517E8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB8EC;
 	__asm        push   0xBE0;
@@ -17239,6 +18647,7 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 	short count;
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00551847;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, word ptr ds:[0x5B86A0];
@@ -17286,6 +18695,7 @@ void cYObject::~cYObject() {
 	class cYObject** srch;
 
 	// Function registers exception cleanup function at 0x005519be
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5935E0;
 	__asm        mov    eax, this;
@@ -17297,6 +18707,7 @@ void cYObject::~cYObject() {
 // LINE 3064:
 	__asm        mov    srch, 0x5B8684;
 	__asm        jmp    near ptr 0x0055190B;
+
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0xB8;
@@ -17321,8 +18732,10 @@ void cYObject::~cYObject() {
 	__asm        jmp    near ptr 0x00551945;
 // LINE 3072:
 	__asm        jmp    near ptr 0x005518FE;
+
 	__asm        test   reinterpret_cast<uint32_t>(found), 0xFFFF;
 	__asm        jne    near ptr 0x0055196E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BB918;
 	__asm        push   0xC00;
@@ -17331,6 +18744,7 @@ void cYObject::~cYObject() {
 	__asm        add    esp, 0x10;
 // LINE 3073:
 	__asm        jmp    near ptr 0x00551973;
+
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        call   0x0055198D;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -17339,10 +18753,12 @@ void cYObject::~cYObject() {
 _L56643:
 	__asm        cmp    this, 0;
 	__asm        je     near ptr 0x005519A5;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x005519AC;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   YObjLang::~YObjLang;
@@ -17354,6 +18770,7 @@ _L56642:
 _L56641:
 	__asm        mov    eax, 0x595E88;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -17420,6 +18837,7 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 	__asm        sub    dword ptr [eax+0x17C], 0xE100000;
 // LINE 3106:
 	__asm        jmp    near ptr 0x00551ABA;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x17C], 0;
 	__asm        jge    near ptr 0x00551ABA;
@@ -17467,21 +18885,25 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 // LINE 3122:
 	__asm        cmp    deltax, 0;
 	__asm        jge    near ptr 0x00551B23;
+
 	__asm        mov    eax, deltax;
 	__asm        neg    eax;
 	__asm        mov    absx, eax;
 // LINE 3123:
 	__asm        jmp    near ptr 0x00551B29;
+
 	__asm        mov    eax, deltax;
 	__asm        mov    absx, eax;
 // LINE 3124:
 	__asm        cmp    deltay, 0;
 	__asm        jge    near ptr 0x00551B40;
+
 	__asm        mov    eax, deltay;
 	__asm        neg    eax;
 	__asm        mov    absy, eax;
 // LINE 3125:
 	__asm        jmp    near ptr 0x00551B46;
+
 	__asm        mov    eax, deltay;
 	__asm        mov    absy, eax;
 // LINE 3127:
@@ -17492,12 +18914,15 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 // LINE 3129:
 	__asm        cmp    deltax, 0;
 	__asm        jle    near ptr 0x00551B6A;
+
 	__asm        mov    dir, 2;
 // LINE 3130:
 	__asm        jmp    near ptr 0x00551B70;
+
 	__asm        mov    dir, 6;
 // LINE 3132:
 	__asm        jmp    near ptr 0x00551BE9;
+
 	__asm        mov    eax, absy;
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, absx;
@@ -17505,29 +18930,36 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 // LINE 3134:
 	__asm        cmp    deltay, 0;
 	__asm        jle    near ptr 0x00551B99;
+
 	__asm        mov    dir, 4;
 // LINE 3135:
 	__asm        jmp    near ptr 0x00551B9F;
+
 	__asm        mov    dir, 0;
 // LINE 3138:
 	__asm        jmp    near ptr 0x00551BE9;
+
 	__asm        cmp    deltax, 0;
 	__asm        jle    near ptr 0x00551BCE;
 // LINE 3140:
 	__asm        cmp    deltay, 0;
 	__asm        jge    near ptr 0x00551BC3;
+
 	__asm        mov    dir, 1;
 // LINE 3141:
 	__asm        jmp    near ptr 0x00551BC9;
+
 	__asm        mov    dir, 3;
 // LINE 3143:
 	__asm        jmp    near ptr 0x00551BE9;
 // LINE 3145:
 	__asm        cmp    deltay, 0;
 	__asm        jge    near ptr 0x00551BE3;
+
 	__asm        mov    dir, 7;
 // LINE 3146:
 	__asm        jmp    near ptr 0x00551BE9;
+
 	__asm        mov    dir, 5;
 // LINE 3148:
 	__asm        movsx  eax, dir;
@@ -17562,6 +18994,7 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 // LINE 3161:
 	__asm        cmp    cptr, 0;
 	__asm        jne    near ptr 0x00551C50;
+
 	__asm        push   0;
 	__asm        mov    eax, z;
 	__asm        push   eax;
@@ -17715,8 +19148,10 @@ void FrameInit() {
 // FUNCTION: COPTER_D 0x00551f40
  ResFile::~ResFile() {
 	// Function registers exception cleanup function at 0x00551f87
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x00551F6D;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   0x00551F7E;
 	__asm        jmp    near ptr 0x00551F91;
@@ -17727,6 +19162,7 @@ _L55562:
 _L55561:
 	__asm        mov    eax, 0x595EE0;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

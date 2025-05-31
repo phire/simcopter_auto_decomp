@@ -26,6 +26,7 @@
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e80
 void $E48() {
+
 	__asm        call   $E45;
 	__asm        call   $E47;
 	__asm        jmp    near ptr 0x00428E95;
@@ -34,12 +35,14 @@ void $E48() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e9a
 void $E45() {
+
 	__asm        mov    dword ptr ds:[0x5C33D4], 1;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33E0], 0;
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
 	__asm        jne    near ptr 0x00428EF5;
+
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -48,15 +51,19 @@ void $E45() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x5C33E0], eax;
 	__asm        jmp    near ptr 0x00428EF5;
+
 	__asm        jmp    near ptr 0x00428EFA;
+
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
 	__asm        jmp    near ptr 0x00428F09;
+
 	__asm        jmp    near ptr 0x00428F0E;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f13
 void $E47() {
+
 	__asm        push   0x428F30;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -66,8 +73,11 @@ void $E47() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428f30
 void $E46() {
+
 	__asm        jmp    near ptr 0x00428F3B;
+
 	__asm        jmp    near ptr 0x00428F40;
+
 	__asm        jmp    near ptr 0x00428F45;
 }
 
@@ -274,6 +284,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        add    esp, 8;
 // LINE 219:
 	__asm        jmp    near ptr 0x004291E4;
+
 	__asm        cmp    nCityFileType, 2;
 	__asm        jne    near ptr 0x004291C8;
 // LINE 220:
@@ -285,6 +296,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        add    esp, 8;
 // LINE 221:
 	__asm        jmp    near ptr 0x004291E4;
+
 	__asm        cmp    nCityFileType, 3;
 	__asm        jne    near ptr 0x004291E4;
 // LINE 222:
@@ -366,6 +378,7 @@ void CareerCityTweakInit() {
 // LINE 273:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042930B;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1F;
 	__asm        jge    near ptr 0x00429391;
@@ -433,6 +446,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 // LINE 303:
 	__asm        cmp    lNewCareerCityIndex, 0x1F;
 	__asm        jge    near ptr 0x004293BB;
+
 	__asm        cmp    lNewCareerCityIndex, 0;
 	__asm        jge    near ptr 0x004293C2;
 // LINE 304:
@@ -494,18 +508,26 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
 	__asm        jmp    near ptr 0x004294AF;
+
 	__asm        jmp    near ptr 0x004294B4;
+
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
 	__asm        je     near ptr 0x004294C6;
+
 	__asm        jmp    near ptr 0x00429541;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
 	__asm        jne    near ptr 0x004294E8;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042953C;
+
 	__asm        jmp    near ptr 0x0042953C;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
 	__asm        jne    near ptr 0x00429523;
+
 	__asm        lea    eax, [ebp-0x10C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -514,16 +536,22 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, [ebp-0x104];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042953C;
+
 	__asm        jmp    near ptr 0x0042953C;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042953C;
+
 	__asm        jmp    near ptr 0x00429541;
+
 	__asm        jmp    near ptr 0x00429546;
+
 	__asm        jmp    near ptr 0x0042954B;
+
 	__asm        jmp    near ptr 0x00429550;
 // LINE 327:
 	__asm        mov    dword ptr ds:[0x5C2AFC], 0xFA0;
@@ -609,18 +637,26 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
 	__asm        jmp    near ptr 0x00429699;
+
 	__asm        jmp    near ptr 0x0042969E;
+
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
 	__asm        je     near ptr 0x004296B0;
+
 	__asm        jmp    near ptr 0x0042971F;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
 	__asm        jne    near ptr 0x004296D2;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042971A;
+
 	__asm        jmp    near ptr 0x0042971A;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
 	__asm        jne    near ptr 0x00429701;
+
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -629,16 +665,22 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042971A;
+
 	__asm        jmp    near ptr 0x0042971A;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x0042971A;
+
 	__asm        jmp    near ptr 0x0042971F;
+
 	__asm        jmp    near ptr 0x00429724;
+
 	__asm        jmp    near ptr 0x00429729;
+
 	__asm        jmp    near ptr 0x0042972E;
 // LINE 372:
 	__asm        mov    dword ptr ds:[0x5C2A88], 0xFA0;
@@ -708,18 +750,26 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
 	__asm        jmp    near ptr 0x00429822;
+
 	__asm        jmp    near ptr 0x00429827;
+
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
 	__asm        je     near ptr 0x00429839;
+
 	__asm        jmp    near ptr 0x004298B4;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
 	__asm        jne    near ptr 0x0042985B;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x004298AF;
+
 	__asm        jmp    near ptr 0x004298AF;
+
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
 	__asm        jne    near ptr 0x00429896;
+
 	__asm        lea    eax, [ebp-0x110];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -728,16 +778,22 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x004298AF;
+
 	__asm        jmp    near ptr 0x004298AF;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
 	__asm        jmp    near ptr 0x004298AF;
+
 	__asm        jmp    near ptr 0x004298B4;
+
 	__asm        jmp    near ptr 0x004298B9;
+
 	__asm        jmp    near ptr 0x004298BE;
+
 	__asm        jmp    near ptr 0x004298C3;
 // LINE 407:
 	__asm        push   0;
@@ -1362,6 +1418,7 @@ void InitializeAllCareerCitiesInfo() {
 // LINE 744:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042A42F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1F;
 	__asm        jge    near ptr 0x0042A4E1;

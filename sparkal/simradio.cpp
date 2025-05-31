@@ -897,6 +897,7 @@ struct bidirectional_iterator<basic_string<char>,int>{
 // Contribution: 1:00032120-000389b8 Module: 59, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00433120
 void RadioStation::RadioStation() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 1;
 	__asm        mov    eax, this;
@@ -906,11 +907,13 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        jmp    near ptr 0x00433159;
+
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x20;
 	__asm        call   MTimer::MTimer;
 	__asm        jmp    near ptr 0x0043316B;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
 	__asm        mov    eax, this;
@@ -921,6 +924,7 @@ void RadioStation::RadioStation() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004331D2;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x2C];
@@ -932,21 +936,25 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004331C4;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    near ptr 0x004331DC;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x3C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x38], 0;
 	__asm        jmp    near ptr 0x004331EB;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0043323E;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x30];
@@ -958,21 +966,25 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00433230;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    near ptr 0x00433248;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x44], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0;
 	__asm        jmp    near ptr 0x00433257;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x004332AA;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x34];
@@ -984,15 +996,18 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0043329C;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    near ptr 0x004332B4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x48], 0;
 	__asm        jmp    near ptr 0x004332C3;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1012,13 +1027,16 @@ void RadioStation::RadioStation() {
 	__asm        mov    ecx, [ecx+0x50];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00433306;
+
 	__asm        jmp    near ptr 0x0043330B;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x0043335E;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x38];
@@ -1030,15 +1048,18 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00433350;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x00433368;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
 	__asm        jmp    near ptr 0x00433377;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x68], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1058,13 +1079,16 @@ void RadioStation::RadioStation() {
 	__asm        mov    ecx, [ecx+0x64];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004333BA;
+
 	__asm        jmp    near ptr 0x004333BF;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x00433412;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x3C];
@@ -1076,15 +1100,18 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00433404;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    near ptr 0x0043341C;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x70], 0;
 	__asm        jmp    near ptr 0x0043342B;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1104,23 +1131,28 @@ void RadioStation::RadioStation() {
 	__asm        mov    ecx, [ecx+0x78];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0043346E;
+
 	__asm        jmp    near ptr 0x00433473;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x004334A0;
+
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 	__asm        jmp    near ptr 0x004334AD;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 	__asm        jmp    near ptr 0x004334BF;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1140,7 +1172,9 @@ void RadioStation::RadioStation() {
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00433517;
+
 	__asm        jmp    near ptr 0x0043351C;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F518;
 // LINE 64:
@@ -1181,7 +1215,9 @@ void RadioStation::RadioStation() {
 	__asm        call   vector<int>::push_back;
 // LINE 68:
 	__asm        jmp    near ptr 0x0043359A;
+
 	__asm        jmp    near ptr 0x0043359F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x24], eax;
@@ -1189,6 +1225,7 @@ void RadioStation::RadioStation() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004335B6;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
@@ -1213,11 +1250,13 @@ void RadioStation::RadioStation() {
 	__asm        call   MTimer::SetResolution;
 // LINE 73:
 	__asm        jmp    near ptr 0x004335FD;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00433605
 void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
@@ -1225,17 +1264,20 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        jmp    near ptr 0x00433634;
+
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x20;
 	__asm        call   MTimer::MTimer;
 	__asm        jmp    near ptr 0x00433646;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00433699;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-4];
@@ -1247,21 +1289,25 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0043368B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    near ptr 0x004336A3;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x3C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x38], 0;
 	__asm        jmp    near ptr 0x004336B2;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00433705;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-8];
@@ -1273,21 +1319,25 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004336F7;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    near ptr 0x0043370F;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x44], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0;
 	__asm        jmp    near ptr 0x0043371E;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00433771;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0xC];
@@ -1299,15 +1349,18 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00433763;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    near ptr 0x0043377B;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x48], 0;
 	__asm        jmp    near ptr 0x0043378A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1327,23 +1380,28 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, [ecx+0x50];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004337CD;
+
 	__asm        jmp    near ptr 0x004337D2;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004337FC;
+
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x00433806;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
 	__asm        jmp    near ptr 0x00433815;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x68], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1363,23 +1421,28 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, [ecx+0x64];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00433858;
+
 	__asm        jmp    near ptr 0x0043385D;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00433887;
+
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    near ptr 0x00433891;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x70], 0;
 	__asm        jmp    near ptr 0x004338A0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1399,23 +1462,28 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, [ecx+0x78];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004338E3;
+
 	__asm        jmp    near ptr 0x004338E8;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00433915;
+
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 	__asm        jmp    near ptr 0x00433922;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 	__asm        jmp    near ptr 0x00433934;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
 	__asm        inc    dword ptr ds:[0x598560];
@@ -1435,7 +1503,9 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0043398C;
+
 	__asm        jmp    near ptr 0x00433991;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F518;
 // LINE 81:
@@ -1492,14 +1562,17 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        add    ecx, 0x38;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433AB5;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x38;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00433A3F;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433A69;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, this;
@@ -1508,13 +1581,16 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, [eax+0x3C];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433AB5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x00433AAB;
+
 	__asm        jmp    near ptr 0x00433A85;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    eax, [eax+4];
@@ -1528,6 +1604,7 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    near ptr 0x00433AB5;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x3C], 0;
 	__asm        jmp    near ptr 0x00433ABA;
@@ -1538,14 +1615,17 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        add    ecx, 0x40;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433B54;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x40;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00433ADE;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433B08;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        mov    ecx, this;
@@ -1554,13 +1634,16 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    eax, [eax+0x44];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433B54;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00433B4A;
+
 	__asm        jmp    near ptr 0x00433B24;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        mov    eax, [eax+4];
@@ -1574,6 +1657,7 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    near ptr 0x00433B54;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x44], 0;
 	__asm        jmp    near ptr 0x00433B59;
@@ -1655,6 +1739,7 @@ void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 	__asm        mov    [ecx+0x94], eax;
 // LINE 99:
 	__asm        jmp    near ptr 0x00433C34;
+
 	__asm        mov    eax, this;
 }
 
@@ -1721,6 +1806,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x38;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433DB4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1728,6 +1814,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x3C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00433D34;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    [ebp-0xC], eax;
@@ -1735,16 +1822,21 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00433D34;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00433D34;
+
 	__asm        jmp    near ptr 0x00433D39;
+
 	__asm        jmp    near ptr 0x00433D3E;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433D68;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, this;
@@ -1753,13 +1845,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x3C];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433DB4;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00433DAA;
+
 	__asm        jmp    near ptr 0x00433D84;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    eax, [eax+4];
@@ -1773,6 +1868,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    near ptr 0x00433DB4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x3C], 0;
 	__asm        jmp    near ptr 0x00433DB9;
@@ -1783,6 +1879,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x40;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433E8E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x44];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1790,6 +1887,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x44];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00433E0E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x44];
 	__asm        mov    [ebp-0x18], eax;
@@ -1797,16 +1895,21 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00433E0E;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00433E0E;
+
 	__asm        jmp    near ptr 0x00433E13;
+
 	__asm        jmp    near ptr 0x00433E18;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433E42;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        mov    ecx, this;
@@ -1815,13 +1918,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x44];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433E8E;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x00433E84;
+
 	__asm        jmp    near ptr 0x00433E5E;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x44];
 	__asm        mov    eax, [eax+4];
@@ -1835,6 +1941,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    near ptr 0x00433E8E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x44], 0;
 	__asm        jmp    near ptr 0x00433E93;
@@ -1845,14 +1952,17 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x48;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433F2D;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x48;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00433EB7;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433EE1;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        mov    ecx, this;
@@ -1861,13 +1971,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x4C];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433F2D;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x00433F23;
+
 	__asm        jmp    near ptr 0x00433EFD;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        mov    eax, [eax+4];
@@ -1881,6 +1994,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    near ptr 0x00433F2D;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4C], 0;
 	__asm        jmp    near ptr 0x00433F32;
@@ -1903,14 +2017,17 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x5C;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00433FEA;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00433F74;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00433F9E;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, this;
@@ -1919,13 +2036,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x60];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00433FEA;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00433FE0;
+
 	__asm        jmp    near ptr 0x00433FBA;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax+4];
@@ -1939,6 +2059,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x00433FEA;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
 	__asm        jmp    near ptr 0x00433FEF;
@@ -1961,14 +2082,17 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x70;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x004340A7;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00434031;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x74];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0043405B;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    ecx, this;
@@ -1977,13 +2101,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x74];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004340A7;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x0043409D;
+
 	__asm        jmp    near ptr 0x00434077;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    eax, [eax+4];
@@ -1997,6 +2124,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    near ptr 0x004340A7;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        jmp    near ptr 0x004340AC;
@@ -2019,14 +2147,17 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        add    ecx, 0x84;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00434189;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x004340FC;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x88];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00434132;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x88];
 	__asm        mov    ecx, this;
@@ -2035,13 +2166,16 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    eax, [eax+0x88];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00434189;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0043417C;
+
 	__asm        jmp    near ptr 0x0043414E;
+
 	__asm        mov    eax, copyRadioStation;
 	__asm        mov    eax, [eax+0x88];
 	__asm        mov    eax, [eax+4];
@@ -2055,6 +2189,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 	__asm        jmp    near ptr 0x00434189;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        jmp    near ptr 0x0043418E;
@@ -2078,17 +2213,21 @@ class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioS
 
 // FUNCTION: COPTER_D 0x004341c6
 void RadioStation::~RadioStation() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F518;
 // LINE 140:
 	__asm        jmp    near ptr 0x004341E0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x004341F7;
+
 	__asm        jmp    near ptr 0x004341FC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    eax, [eax];
@@ -2096,7 +2235,9 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x00434215;
+
 	__asm        jmp    near ptr 0x0043421A;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x5C];
@@ -2113,12 +2254,15 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x00434253;
+
 	__asm        dec    dword ptr ds:[0x598560];
 	__asm        jne    near ptr 0x0043426D;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   list<basic_string<char>>::deallocate_buffers;
 	__asm        jmp    near ptr 0x00434272;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x88];
 	__asm        dec    dword ptr [eax+0xC];
@@ -2126,6 +2270,7 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [eax+0x88];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004342BC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x88];
 	__asm        mov    [ebp-0x14], eax;
@@ -2133,14 +2278,18 @@ void RadioStation::~RadioStation() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004342BC;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004342BC;
+
 	__asm        jmp    near ptr 0x004342C1;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
 	__asm        je     near ptr 0x004342EF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
 	__asm        mov    [ebp-8], eax;
@@ -2151,13 +2300,16 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004342F4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x00434308;
+
 	__asm        jmp    near ptr 0x0043430D;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x70];
@@ -2179,12 +2331,15 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x0043434E;
+
 	__asm        dec    dword ptr ds:[0x598560];
 	__asm        jne    near ptr 0x00434365;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   list<basic_string<char>>::deallocate_buffers;
 	__asm        jmp    near ptr 0x0043436A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        dec    dword ptr [eax+0xC];
@@ -2192,6 +2347,7 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [eax+0x74];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004343AB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x24], eax;
@@ -2199,14 +2355,18 @@ void RadioStation::~RadioStation() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x004343AB;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004343AB;
+
 	__asm        jmp    near ptr 0x004343B0;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x70], 0;
 	__asm        je     near ptr 0x004343D8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x70];
 	__asm        mov    [ebp-0x18], eax;
@@ -2217,6 +2377,7 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004343DD;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x64;
 	__asm        call   list<basic_string<char>>::~list<basic_string<char>>;
@@ -2227,6 +2388,7 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00434429;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    [ebp-0x34], eax;
@@ -2234,14 +2396,18 @@ void RadioStation::~RadioStation() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00434429;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00434429;
+
 	__asm        jmp    near ptr 0x0043442E;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x5C], 0;
 	__asm        je     near ptr 0x00434456;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x5C];
 	__asm        mov    [ebp-0x28], eax;
@@ -2252,6 +2418,7 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043445B;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x50;
 	__asm        call   list<basic_string<char>>::~list<basic_string<char>>;
@@ -2262,6 +2429,7 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, [eax+0x4C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004344A7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        mov    [ebp-0x44], eax;
@@ -2269,14 +2437,18 @@ void RadioStation::~RadioStation() {
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x004344A7;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004344A7;
+
 	__asm        jmp    near ptr 0x004344AC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        je     near ptr 0x004344D4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x48];
 	__asm        mov    [ebp-0x38], eax;
@@ -2287,12 +2459,14 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004344D9;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x40;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        je     near ptr 0x0043450C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-0x48], eax;
@@ -2303,12 +2477,14 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00434511;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x38;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     near ptr 0x00434544;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        mov    [ebp-0x50], eax;
@@ -2319,9 +2495,13 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00434549;
+
 	__asm        jmp    near ptr 0x0043454E;
+
 	__asm        jmp    near ptr 0x00434553;
+
 	__asm        jmp    near ptr 0x00434558;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-4], eax;
@@ -2330,7 +2510,9 @@ void RadioStation::~RadioStation() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00434572;
+
 	__asm        jmp    near ptr 0x00434577;
+
 	__asm        jmp    near ptr 0x0043457C;
 }
 
@@ -2400,19 +2582,25 @@ int32_t RadioStation::DoState() {
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00434649;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x24], 0;
 	__asm        je     near ptr 0x004346CC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 1;
 	__asm        jne    near ptr 0x00434676;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004346BA;
+
 	__asm        jmp    near ptr 0x004346BA;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        jne    near ptr 0x004346A3;
+
 	__asm        lea    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -2421,13 +2609,16 @@ int32_t RadioStation::DoState() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004346BA;
+
 	__asm        jmp    near ptr 0x004346BA;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004346BA;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
@@ -2437,9 +2628,11 @@ int32_t RadioStation::DoState() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        jne    near ptr 0x0043470A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     near ptr 0x0043470A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
@@ -2451,6 +2644,7 @@ int32_t RadioStation::DoState() {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    lElapsedTime, eax;
 	__asm        jmp    near ptr 0x00434715;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    lElapsedTime, eax;
 	__asm        jmp    near ptr 0x00434715;
@@ -2459,7 +2653,9 @@ int32_t RadioStation::DoState() {
 	__asm        jb     near ptr 0x00434964;
 // LINE 194:
 	__asm        jmp    near ptr 0x00434727;
+
 	__asm        jmp    near ptr 0x0043472C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, this;
@@ -2501,8 +2697,11 @@ int32_t RadioStation::DoState() {
 	__asm        inc    dword ptr [eax+0x14];
 // LINE 209:
 	__asm        jmp    near ptr 0x0043479F;
+
 	__asm        jmp    near ptr 0x004347A4;
+
 	__asm        jmp    near ptr 0x004347A9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -2521,7 +2720,9 @@ int32_t RadioStation::DoState() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 213:
 	__asm        jmp    near ptr 0x004347DE;
+
 	__asm        jmp    near ptr 0x004347E3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, this;
@@ -2547,8 +2748,11 @@ int32_t RadioStation::DoState() {
 	__asm        call   dword ptr [eax+0x40];
 // LINE 221:
 	__asm        jmp    near ptr 0x0043495A;
+
 	__asm        jmp    near ptr 0x0043482F;
+
 	__asm        jmp    near ptr 0x00434834;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, this;
@@ -2562,6 +2766,7 @@ int32_t RadioStation::DoState() {
 	__asm        idiv   ecx;
 	__asm        cmp    edx, 0x32;
 	__asm        jge    near ptr 0x0043488C;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2580,8 +2785,11 @@ int32_t RadioStation::DoState() {
 	__asm        call   dword ptr [eax+0x40];
 // LINE 234:
 	__asm        jmp    near ptr 0x0043495A;
+
 	__asm        jmp    near ptr 0x00434896;
+
 	__asm        jmp    near ptr 0x0043489B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, this;
@@ -2595,6 +2803,7 @@ int32_t RadioStation::DoState() {
 	__asm        idiv   ecx;
 	__asm        cmp    edx, 0xA;
 	__asm        jge    near ptr 0x004348F3;
+
 	__asm        push   2;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2613,8 +2822,11 @@ int32_t RadioStation::DoState() {
 	__asm        call   dword ptr [eax+0x40];
 // LINE 243:
 	__asm        jmp    near ptr 0x0043495A;
+
 	__asm        jmp    near ptr 0x004348FD;
+
 	__asm        jmp    near ptr 0x00434902;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, this;
@@ -2628,6 +2840,7 @@ int32_t RadioStation::DoState() {
 	__asm        idiv   ecx;
 	__asm        cmp    edx, 0xA;
 	__asm        jge    near ptr 0x0043495A;
+
 	__asm        push   3;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2671,21 +2884,28 @@ int32_t RadioStation::DoState() {
 	__asm        jmp    near ptr 0x004349AE;
 // LINE 261:
 	__asm        jmp    near ptr 0x004349B3;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x24], 0;
 	__asm        je     near ptr 0x004349C5;
+
 	__asm        jmp    near ptr 0x00434A37;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 1;
 	__asm        jne    near ptr 0x004349E8;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24], eax;
 	__asm        jmp    near ptr 0x00434A32;
+
 	__asm        jmp    near ptr 0x00434A32;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        jne    near ptr 0x00434A18;
+
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -2695,7 +2915,9 @@ int32_t RadioStation::DoState() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24], eax;
 	__asm        jmp    near ptr 0x00434A32;
+
 	__asm        jmp    near ptr 0x00434A32;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
@@ -2703,6 +2925,7 @@ int32_t RadioStation::DoState() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24], eax;
 	__asm        jmp    near ptr 0x00434A32;
+
 	__asm        jmp    near ptr 0x00434A37;
 // LINE 263:
 	__asm        mov    eax, 1;
@@ -2734,14 +2957,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00434A9B;
+
 	__asm        jmp    near ptr 0x00434AA0;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0x58], ecx;
 	__asm        jne    near ptr 0x00434AB7;
+
 	__asm        jmp    near ptr 0x00434ABC;
+
 	__asm        jmp    near ptr 0x00434AEB;
+
 	__asm        jmp    near ptr 0x00434ACE;
+
 	__asm        cmp    dword ptr [ebp-0x118], 0;
 	__asm        je     near ptr 0x00434AEB;
 // LINE 277:
@@ -2755,6 +2984,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    [ecx+0x58], eax;
 // LINE 278:
 	__asm        jmp    near ptr 0x00434AF0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];
 	__asm        add    eax, 8;
@@ -2773,6 +3003,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 281:
 	__asm        jmp    near ptr 0x004352FB;
+
 	__asm        cmp    radioStationCycleType, 1;
 	__asm        jne    near ptr 0x00434D3E;
 // LINE 282:
@@ -2789,14 +3020,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0xD8];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x00434B64;
+
 	__asm        jmp    near ptr 0x00434B69;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        cmp    [eax+0x6C], ecx;
 	__asm        jne    near ptr 0x00434B80;
+
 	__asm        jmp    near ptr 0x00434B85;
+
 	__asm        jmp    near ptr 0x00434BC7;
+
 	__asm        jmp    near ptr 0x00434B97;
+
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
 	__asm        je     near ptr 0x00434BC7;
 // LINE 284:
@@ -2807,18 +3044,23 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x00434BB6;
+
 	__asm        jmp    near ptr 0x00434BBB;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 // LINE 285:
 	__asm        jmp    near ptr 0x00434BCC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x6C];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        jmp    near ptr 0x00434BE3;
+
 	__asm        jmp    near ptr 0x00434BE8;
+
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2834,13 +3076,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0xF4];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00434C21;
+
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00434CA2;
+
 	__asm        jmp    near ptr 0x00434C39;
+
 	__asm        jmp    near ptr 0x00434C3E;
+
 	__asm        jmp    near ptr 0x00434C43;
+
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2863,11 +3110,14 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00434CA2;
+
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0xF8], eax;
 	__asm        jmp    near ptr 0x00434CB6;
+
 	__asm        jmp    near ptr 0x00434CBB;
+
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2882,6 +3132,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0xF4];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00434CF2;
+
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
@@ -2890,6 +3141,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00434D34;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        mov    eax, [ebp-0xE0];
@@ -2901,6 +3153,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        jmp    near ptr 0x00434D39;
 // LINE 288:
 	__asm        jmp    near ptr 0x004352FB;
+
 	__asm        cmp    radioStationCycleType, 2;
 	__asm        jne    near ptr 0x00435002;
 // LINE 289:
@@ -2913,6 +3166,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 	__asm        jmp    near ptr 0x00434D79;
+
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x00434D87;
@@ -2923,14 +3177,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00434DA4;
+
 	__asm        jmp    near ptr 0x00434DA9;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jne    near ptr 0x00434DC3;
+
 	__asm        jmp    near ptr 0x00434DC8;
+
 	__asm        jmp    near ptr 0x00434E0D;
+
 	__asm        jmp    near ptr 0x00434DDA;
+
 	__asm        cmp    dword ptr [ebp-0xD4], 0;
 	__asm        je     near ptr 0x00434E0D;
 // LINE 291:
@@ -2941,18 +3201,23 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x00434DF9;
+
 	__asm        jmp    near ptr 0x00434DFE;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 // LINE 292:
 	__asm        jmp    near ptr 0x00434E12;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        jmp    near ptr 0x00434E2C;
+
 	__asm        jmp    near ptr 0x00434E31;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2968,13 +3233,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0xBC];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00434E6A;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00434EEB;
+
 	__asm        jmp    near ptr 0x00434E82;
+
 	__asm        jmp    near ptr 0x00434E87;
+
 	__asm        jmp    near ptr 0x00434E8C;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2997,11 +3267,14 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00434EEB;
+
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    near ptr 0x00434EFF;
+
 	__asm        jmp    near ptr 0x00434F04;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3016,28 +3289,35 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0xBC];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00434F3B;
+
 	__asm        lea    eax, [ebp-0x44];
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00434FBD;
+
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00434F56;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00434F74;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    sFullSelectionPath.reference, eax;
 	__asm        mov    eax, sFullSelectionPath.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00434FBD;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xEC], eax;
 	__asm        cmp    dword ptr [ebp-0xEC], 0;
 	__asm        je     near ptr 0x00434FB6;
+
 	__asm        jmp    near ptr 0x00434F96;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -3048,12 +3328,15 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sFullSelectionPath.reference, eax;
 	__asm        jmp    near ptr 0x00434FBD;
+
 	__asm        mov    sFullSelectionPath.reference, 0;
 	__asm        jmp    near ptr 0x00434FC2;
+
 	__asm        lea    ecx, [ebp-0x44];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x00434FF8;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        mov    eax, [ebp-0xA8];
@@ -3065,6 +3348,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        jmp    near ptr 0x00434FFD;
 // LINE 295:
 	__asm        jmp    near ptr 0x004352FB;
+
 	__asm        cmp    radioStationCycleType, 3;
 	__asm        jne    near ptr 0x004352BD;
 // LINE 296:
@@ -3077,6 +3361,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
 	__asm        jmp    near ptr 0x0043503D;
+
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x0043504B;
@@ -3087,14 +3372,20 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x00435065;
+
 	__asm        jmp    near ptr 0x0043506A;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        cmp    [eax+0x94], ecx;
 	__asm        jne    near ptr 0x00435084;
+
 	__asm        jmp    near ptr 0x00435089;
+
 	__asm        jmp    near ptr 0x004350D1;
+
 	__asm        jmp    near ptr 0x0043509B;
+
 	__asm        cmp    dword ptr [ebp-0x9C], 0;
 	__asm        je     near ptr 0x004350D1;
 // LINE 298:
@@ -3105,18 +3396,23 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004350BD;
+
 	__asm        jmp    near ptr 0x004350C2;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
 // LINE 299:
 	__asm        jmp    near ptr 0x004350D6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x94];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    near ptr 0x004350F0;
+
 	__asm        jmp    near ptr 0x004350F5;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3132,13 +3428,18 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0x84];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00435134;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004351B5;
+
 	__asm        jmp    near ptr 0x0043514C;
+
 	__asm        jmp    near ptr 0x00435151;
+
 	__asm        jmp    near ptr 0x00435156;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3161,11 +3462,14 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004351B5;
+
 	__asm        mov    eax, [ebp-0x80];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x004351C6;
+
 	__asm        jmp    near ptr 0x004351CB;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3180,28 +3484,35 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        lea    ecx, [ebp-0x84];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00435202;
+
 	__asm        lea    eax, [ebp-0x58];
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00435284;
+
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x0043521D;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0043523B;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    sFullSelectionPath.reference, eax;
 	__asm        mov    eax, sFullSelectionPath.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00435284;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        cmp    dword ptr [ebp-0xB4], 0;
 	__asm        je     near ptr 0x0043527D;
+
 	__asm        jmp    near ptr 0x0043525D;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -3212,12 +3523,15 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sFullSelectionPath.reference, eax;
 	__asm        jmp    near ptr 0x00435284;
+
 	__asm        mov    sFullSelectionPath.reference, 0;
 	__asm        jmp    near ptr 0x00435289;
+
 	__asm        lea    ecx, [ebp-0x58];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004352B3;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
@@ -3235,6 +3549,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sFullSelectionPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004352EE;
+
 	__asm        mov    eax, sFullSelectionPath.c_str_ptr;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x70];
@@ -3244,6 +3559,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004352F3;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    near ptr 0x004353DB;
 // LINE 304:
@@ -3302,6 +3618,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sFullSelectionPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004353CE;
+
 	__asm        mov    eax, sFullSelectionPath.c_str_ptr;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, [ebp-0x78];
@@ -3311,6 +3628,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004353D3;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    near ptr 0x004353DB;
 // LINE 310:
@@ -3327,6 +3645,7 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    [ebp-0x74], eax;
 	__asm        cmp    dword ptr [ebp-0x74], 0;
 	__asm        je     near ptr 0x00435444;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x74];
@@ -3338,12 +3657,15 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00435439;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0043544B;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x00435457;
+
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0;
@@ -3355,6 +3677,7 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0043549F;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        mov    eax, [ebp-0xD8];
@@ -3364,6 +3687,7 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004354A4;
+
 	__asm        mov    eax, ds:[0x5984C4];
 	__asm        mov    [ebp-0xEC], eax;
 // LINE 320:
@@ -3373,15 +3697,18 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    [ebp-0xE8], eax;
 	__asm        cmp    dword ptr [ebp-0xE8], 0;
 	__asm        je     near ptr 0x004354E6;
+
 	__asm        mov    eax, [ebp-0xEC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xE8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004354ED;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    near ptr 0x004354F9;
+
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
@@ -3391,6 +3718,7 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0043553D;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        mov    eax, [ebp-0xE0];
@@ -3407,7 +3735,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x00435559;
+
 	__asm        jmp    near ptr 0x0043555E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    eax, [eax];
@@ -3415,7 +3745,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00435577;
+
 	__asm        jmp    near ptr 0x0043557C;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -3423,31 +3755,43 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x88];
 	__asm        cmp    [ebp-0x8C], eax;
 	__asm        jne    near ptr 0x004355AA;
+
 	__asm        jmp    near ptr 0x004355BE;
+
 	__asm        jmp    near ptr 0x004355AA;
+
 	__asm        jmp    near ptr 0x004355B9;
+
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        jne    near ptr 0x004355BE;
+
 	__asm        jmp    near ptr 0x004355C3;
+
 	__asm        jmp    near ptr 0x00435613;
+
 	__asm        jmp    near ptr 0x004355D5;
+
 	__asm        cmp    dword ptr [ebp-0x84], 0;
 	__asm        je     near ptr 0x00435613;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x004355F1;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        jmp    near ptr 0x004355FC;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x50;
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        jmp    near ptr 0x0043558E;
+
 	__asm        jmp    near ptr 0x00435618;
 // LINE 323:
 	__asm        push   0;
@@ -3471,7 +3815,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0043565C;
+
 	__asm        jmp    near ptr 0x00435661;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    eax, [eax];
@@ -3479,7 +3825,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0043567A;
+
 	__asm        jmp    near ptr 0x0043567F;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        mov    eax, [ebp-0x40];
@@ -3487,31 +3835,43 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        cmp    [ebp-0xA4], eax;
 	__asm        jne    near ptr 0x004356AD;
+
 	__asm        jmp    near ptr 0x004356C4;
+
 	__asm        jmp    near ptr 0x004356AD;
+
 	__asm        jmp    near ptr 0x004356BF;
+
 	__asm        cmp    dword ptr [ebp-0x98], 0;
 	__asm        jne    near ptr 0x004356C4;
+
 	__asm        jmp    near ptr 0x004356C9;
+
 	__asm        jmp    near ptr 0x00435725;
+
 	__asm        jmp    near ptr 0x004356DB;
+
 	__asm        cmp    dword ptr [ebp-0x9C], 0;
 	__asm        je     near ptr 0x00435725;
+
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    [ebp-0x94], eax;
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004356FA;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        jmp    near ptr 0x0043570B;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x64;
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        jmp    near ptr 0x00435691;
+
 	__asm        jmp    near ptr 0x0043572A;
 // LINE 327:
 	__asm        push   0;
@@ -3535,7 +3895,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x0043576E;
+
 	__asm        jmp    near ptr 0x00435773;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    eax, [eax];
@@ -3543,7 +3905,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x0043578C;
+
 	__asm        jmp    near ptr 0x00435791;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -3551,31 +3915,43 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        cmp    [ebp-0xBC], eax;
 	__asm        jne    near ptr 0x004357BF;
+
 	__asm        jmp    near ptr 0x004357D6;
+
 	__asm        jmp    near ptr 0x004357BF;
+
 	__asm        jmp    near ptr 0x004357D1;
+
 	__asm        cmp    dword ptr [ebp-0xB0], 0;
 	__asm        jne    near ptr 0x004357D6;
+
 	__asm        jmp    near ptr 0x004357DB;
+
 	__asm        jmp    near ptr 0x00435837;
+
 	__asm        jmp    near ptr 0x004357ED;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0;
 	__asm        je     near ptr 0x00435837;
+
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xBC], eax;
 	__asm        jmp    near ptr 0x0043580C;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    near ptr 0x0043581D;
+
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        jmp    near ptr 0x004357A3;
+
 	__asm        jmp    near ptr 0x0043583C;
 // LINE 331:
 	__asm        push   0;
@@ -3599,7 +3975,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x00435883;
+
 	__asm        jmp    near ptr 0x00435888;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    eax, [eax];
@@ -3607,7 +3985,9 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004358A4;
+
 	__asm        jmp    near ptr 0x004358A9;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        mov    eax, [ebp-0x50];
@@ -3615,31 +3995,43 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        cmp    [ebp-0xD4], eax;
 	__asm        jne    near ptr 0x004358D7;
+
 	__asm        jmp    near ptr 0x004358EE;
+
 	__asm        jmp    near ptr 0x004358D7;
+
 	__asm        jmp    near ptr 0x004358E9;
+
 	__asm        cmp    dword ptr [ebp-0xC8], 0;
 	__asm        jne    near ptr 0x004358EE;
+
 	__asm        jmp    near ptr 0x004358F3;
+
 	__asm        jmp    near ptr 0x00435952;
+
 	__asm        jmp    near ptr 0x00435905;
+
 	__asm        cmp    dword ptr [ebp-0xCC], 0;
 	__asm        je     near ptr 0x00435952;
+
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    near ptr 0x00435924;
+
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    near ptr 0x00435935;
+
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        jmp    near ptr 0x004358BB;
+
 	__asm        jmp    near ptr 0x00435957;
 // LINE 335:
 	__asm        push   0;
@@ -3658,10 +4050,12 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        jmp    near ptr 0x00435988;
 // LINE 337:
 	__asm        jmp    near ptr 0x0043598D;
+
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004359C3;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    eax, [ebp-0xF0];
@@ -3671,6 +4065,7 @@ void RadioStation::LoadAllPlaylists() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004359C8;
+
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
@@ -3690,6 +4085,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    [ebp-0x114], eax;
 	__asm        cmp    dword ptr [ebp-0x114], 0;
 	__asm        je     near ptr 0x00435A5C;
+
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x114];
@@ -3701,9 +4097,11 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00435A4E;
+
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    sCurrentLastItem.reference, eax;
 	__asm        jmp    near ptr 0x00435A63;
+
 	__asm        mov    sCurrentLastItem.reference, 0;
 	__asm        mov    sCurrentLastItem.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00435A6F;
@@ -3714,6 +4112,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    [ebp-0x118], eax;
 	__asm        cmp    dword ptr [ebp-0x118], 0;
 	__asm        je     near ptr 0x00435AD7;
+
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x118];
@@ -3725,14 +4124,17 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00435AC9;
+
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    sTempItem.reference, eax;
 	__asm        jmp    near ptr 0x00435ADE;
+
 	__asm        mov    sTempItem.reference, 0;
 	__asm        mov    sTempItem.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00435AEA;
 // LINE 357:
 	__asm        jmp    near ptr 0x00435AEF;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        je     near ptr 0x00435FBD;
@@ -3743,39 +4145,50 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x100];
 	__asm        mov    [ebp-0xFC], eax;
 	__asm        jmp    near ptr 0x00435B1F;
+
 	__asm        jmp    near ptr 0x00435B24;
+
 	__asm        mov    eax, [ebp-0xFC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xFC], eax;
 	__asm        jmp    near ptr 0x00435B38;
+
 	__asm        jmp    near ptr 0x00435B3D;
+
 	__asm        jmp    near ptr 0x00435B42;
+
 	__asm        mov    eax, [ebp-0xFC];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x130], eax;
 	__asm        lea    eax, sCurrentLastItem.c_str_ptr;
 	__asm        cmp    [ebp-0x130], eax;
 	__asm        je     near ptr 0x00435BE9;
+
 	__asm        lea    ecx, sCurrentLastItem.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00435B6D;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00435B97;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    sCurrentLastItem.reference, eax;
 	__asm        mov    eax, sCurrentLastItem.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00435BE9;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        cmp    dword ptr [ebp-0x12C], 0;
 	__asm        je     near ptr 0x00435BE2;
+
 	__asm        jmp    near ptr 0x00435BB9;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3787,6 +4200,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sCurrentLastItem.reference, eax;
 	__asm        jmp    near ptr 0x00435BE9;
+
 	__asm        mov    sCurrentLastItem.reference, 0;
 	__asm        jmp    near ptr 0x00435BEE;
 // LINE 359:
@@ -3805,7 +4219,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        jmp    near ptr 0x00435C29;
+
 	__asm        jmp    near ptr 0x00435C2E;
+
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -3818,9 +4234,13 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00435C5F;
+
 	__asm        jmp    near ptr 0x00435C64;
+
 	__asm        jmp    near ptr 0x00435F8D;
+
 	__asm        jmp    near ptr 0x00435C76;
+
 	__asm        cmp    dword ptr [ebp-0xF8], 0;
 	__asm        je     near ptr 0x00435F8D;
 // LINE 361:
@@ -3830,39 +4250,50 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    [ebp-0xE4], eax;
 	__asm        jmp    near ptr 0x00435C96;
+
 	__asm        jmp    near ptr 0x00435C9B;
+
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xE4], eax;
 	__asm        jmp    near ptr 0x00435CAF;
+
 	__asm        jmp    near ptr 0x00435CB4;
+
 	__asm        jmp    near ptr 0x00435CB9;
+
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x138], eax;
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        cmp    [ebp-0x138], eax;
 	__asm        je     near ptr 0x00435D60;
+
 	__asm        lea    ecx, sTempItem.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00435CE4;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00435D0E;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    sTempItem.reference, eax;
 	__asm        mov    eax, sTempItem.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00435D60;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x134], eax;
 	__asm        cmp    dword ptr [ebp-0x134], 0;
 	__asm        je     near ptr 0x00435D59;
+
 	__asm        jmp    near ptr 0x00435D30;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3874,6 +4305,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sTempItem.reference, eax;
 	__asm        jmp    near ptr 0x00435D60;
+
 	__asm        mov    sTempItem.reference, 0;
 	__asm        jmp    near ptr 0x00435D65;
 // LINE 362:
@@ -3884,20 +4316,27 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        jmp    near ptr 0x00435D85;
+
 	__asm        jmp    near ptr 0x00435D8A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    [ebp-0xEC], eax;
 	__asm        jmp    near ptr 0x00435DAA;
+
 	__asm        jmp    near ptr 0x00435DAF;
+
 	__asm        mov    eax, [ebp-0xEC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xEC], eax;
 	__asm        jmp    near ptr 0x00435DC3;
+
 	__asm        jmp    near ptr 0x00435DC8;
+
 	__asm        jmp    near ptr 0x00435DCD;
+
 	__asm        mov    eax, [ebp-0xD8];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -3908,13 +4347,16 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x140];
 	__asm        cmp    [ebp-0x144], eax;
 	__asm        je     near ptr 0x00435EA4;
+
 	__asm        mov    ecx, [ebp-0x144];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00435E0F;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00435E46;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x144];
@@ -3923,13 +4365,16 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [eax+4];
 	__asm        add    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00435EA4;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        cmp    dword ptr [ebp-0x13C], 0;
 	__asm        je     near ptr 0x00435E97;
+
 	__asm        jmp    near ptr 0x00435E68;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3942,6 +4387,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    ecx, [ebp-0x144];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00435EA4;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x00435EA9;
@@ -3953,21 +4399,28 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        jmp    near ptr 0x00435ECB;
+
 	__asm        jmp    near ptr 0x00435ED0;
+
 	__asm        jmp    near ptr 0x00435ED5;
+
 	__asm        jmp    near ptr 0x00435EDA;
+
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14C], eax;
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        cmp    [ebp-0x14C], eax;
 	__asm        je     near ptr 0x00435F88;
+
 	__asm        mov    ecx, [ebp-0x14C];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00435F08;
+
 	__asm        mov    eax, sTempItem.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00435F33;
+
 	__asm        mov    eax, sTempItem.reference;
 	__asm        mov    ecx, [ebp-0x14C];
 	__asm        mov    [ecx+4], eax;
@@ -3975,13 +4428,16 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [eax+4];
 	__asm        add    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00435F88;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x148], eax;
 	__asm        cmp    dword ptr [ebp-0x148], 0;
 	__asm        je     near ptr 0x00435F7B;
+
 	__asm        jmp    near ptr 0x00435F55;
+
 	__asm        mov    eax, sTempItem.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -3993,6 +4449,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    ecx, [ebp-0x14C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00435F88;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x00435F8D;
@@ -4004,12 +4461,15 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x104];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x00435FAC;
+
 	__asm        jmp    near ptr 0x00435FB1;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 369:
 	__asm        jmp    near ptr 0x00435FC2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x68], 0;
 	__asm        je     near ptr 0x00436323;
@@ -4020,39 +4480,50 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x00435FF2;
+
 	__asm        jmp    near ptr 0x00435FF7;
+
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    near ptr 0x0043600B;
+
 	__asm        jmp    near ptr 0x00436010;
+
 	__asm        jmp    near ptr 0x00436015;
+
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x154], eax;
 	__asm        lea    eax, sCurrentLastItem.c_str_ptr;
 	__asm        cmp    [ebp-0x154], eax;
 	__asm        je     near ptr 0x004360BC;
+
 	__asm        lea    ecx, sCurrentLastItem.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00436040;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0043606A;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    sCurrentLastItem.reference, eax;
 	__asm        mov    eax, sCurrentLastItem.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004360BC;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x150], eax;
 	__asm        cmp    dword ptr [ebp-0x150], 0;
 	__asm        je     near ptr 0x004360B5;
+
 	__asm        jmp    near ptr 0x0043608C;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -4064,6 +4535,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sCurrentLastItem.reference, eax;
 	__asm        jmp    near ptr 0x004360BC;
+
 	__asm        mov    sCurrentLastItem.reference, 0;
 	__asm        jmp    near ptr 0x004360C1;
 // LINE 371:
@@ -4082,7 +4554,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    near ptr 0x004360FC;
+
 	__asm        jmp    near ptr 0x00436101;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4095,9 +4569,13 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00436132;
+
 	__asm        jmp    near ptr 0x00436137;
+
 	__asm        jmp    near ptr 0x004362F3;
+
 	__asm        jmp    near ptr 0x00436149;
+
 	__asm        cmp    dword ptr [ebp-0xC0], 0;
 	__asm        je     near ptr 0x004362F3;
 // LINE 373:
@@ -4107,39 +4585,50 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x00436169;
+
 	__asm        jmp    near ptr 0x0043616E;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x00436182;
+
 	__asm        jmp    near ptr 0x00436187;
+
 	__asm        jmp    near ptr 0x0043618C;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        cmp    [ebp-0x15C], eax;
 	__asm        je     near ptr 0x00436233;
+
 	__asm        lea    ecx, sTempItem.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x004361B7;
+
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004361E1;
+
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    sTempItem.reference, eax;
 	__asm        mov    eax, sTempItem.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00436233;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x158], eax;
 	__asm        cmp    dword ptr [ebp-0x158], 0;
 	__asm        je     near ptr 0x0043622C;
+
 	__asm        jmp    near ptr 0x00436203;
+
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -4151,6 +4640,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sTempItem.reference, eax;
 	__asm        jmp    near ptr 0x00436233;
+
 	__asm        mov    sTempItem.reference, 0;
 	__asm        jmp    near ptr 0x00436238;
 // LINE 374:
@@ -4161,20 +4651,27 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        jmp    near ptr 0x00436258;
+
 	__asm        jmp    near ptr 0x0043625D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        jmp    near ptr 0x0043627D;
+
 	__asm        jmp    near ptr 0x00436282;
+
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        jmp    near ptr 0x00436296;
+
 	__asm        jmp    near ptr 0x0043629B;
+
 	__asm        jmp    near ptr 0x004362A0;
+
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4190,7 +4687,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    near ptr 0x004362DA;
+
 	__asm        jmp    near ptr 0x004362DF;
+
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xA8];
@@ -4205,12 +4704,15 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00436312;
+
 	__asm        jmp    near ptr 0x00436317;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 // LINE 381:
 	__asm        jmp    near ptr 0x00436328;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        je     near ptr 0x00436519;
@@ -4221,13 +4723,18 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x00436358;
+
 	__asm        jmp    near ptr 0x0043635D;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x00436371;
+
 	__asm        jmp    near ptr 0x00436376;
+
 	__asm        jmp    near ptr 0x0043637B;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -4249,7 +4756,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004363C2;
+
 	__asm        jmp    near ptr 0x004363C7;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4262,9 +4771,13 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004363F5;
+
 	__asm        jmp    near ptr 0x004363FA;
+
 	__asm        jmp    near ptr 0x004364E6;
+
 	__asm        jmp    near ptr 0x0043640C;
+
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        je     near ptr 0x004364E6;
 // LINE 385:
@@ -4274,13 +4787,18 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x00436423;
+
 	__asm        jmp    near ptr 0x00436428;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x00436436;
+
 	__asm        jmp    near ptr 0x0043643B;
+
 	__asm        jmp    near ptr 0x00436440;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -4294,20 +4812,27 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x00436469;
+
 	__asm        jmp    near ptr 0x0043646E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    near ptr 0x00436485;
+
 	__asm        jmp    near ptr 0x0043648A;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    near ptr 0x00436498;
+
 	__asm        jmp    near ptr 0x0043649D;
+
 	__asm        jmp    near ptr 0x004364A2;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4323,7 +4848,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        jmp    near ptr 0x004364D0;
+
 	__asm        jmp    near ptr 0x004364D5;
+
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x70];
@@ -4338,12 +4865,15 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00436505;
+
 	__asm        jmp    near ptr 0x0043650A;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 // LINE 393:
 	__asm        jmp    near ptr 0x0043651E;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        je     near ptr 0x0043670E;
@@ -4354,13 +4884,18 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    near ptr 0x0043654B;
+
 	__asm        jmp    near ptr 0x00436550;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    near ptr 0x0043655E;
+
 	__asm        jmp    near ptr 0x00436563;
+
 	__asm        jmp    near ptr 0x00436568;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -4382,7 +4917,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004365B1;
+
 	__asm        jmp    near ptr 0x004365B6;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4395,9 +4932,13 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004365DE;
+
 	__asm        jmp    near ptr 0x004365E3;
+
 	__asm        jmp    near ptr 0x004366D8;
+
 	__asm        jmp    near ptr 0x004365F2;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x004366D8;
 // LINE 397:
@@ -4407,13 +4948,18 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0043660C;
+
 	__asm        jmp    near ptr 0x00436611;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0043661F;
+
 	__asm        jmp    near ptr 0x00436624;
+
 	__asm        jmp    near ptr 0x00436629;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -4427,20 +4973,27 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x00436655;
+
 	__asm        jmp    near ptr 0x0043665A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x00436674;
+
 	__asm        jmp    near ptr 0x00436679;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x00436687;
+
 	__asm        jmp    near ptr 0x0043668C;
+
 	__asm        jmp    near ptr 0x00436691;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
@@ -4456,7 +5009,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004366C2;
+
 	__asm        jmp    near ptr 0x004366C7;
+
 	__asm        lea    eax, sTempItem.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -4471,7 +5026,9 @@ void RadioStation::ShufflePlaylist() {
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004366FA;
+
 	__asm        jmp    near ptr 0x004366FF;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
@@ -4480,6 +5037,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTempItem.c_str_ptr, 0;
 	__asm        je     near ptr 0x00436744;
+
 	__asm        mov    eax, sTempItem.c_str_ptr;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        mov    eax, [ebp-0x11C];
@@ -4489,10 +5047,12 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436749;
+
 	__asm        lea    ecx, sCurrentLastItem.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sCurrentLastItem.c_str_ptr, 0;
 	__asm        je     near ptr 0x0043677F;
+
 	__asm        mov    eax, sCurrentLastItem.c_str_ptr;
 	__asm        mov    [ebp-0x124], eax;
 	__asm        mov    eax, [ebp-0x124];
@@ -4502,6 +5062,7 @@ void RadioStation::ShufflePlaylist() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436784;
+
 	__asm        jmp    near ptr 0x00436789;
 }
 
@@ -4514,6 +5075,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 
 // LINE 412:
 	__asm        jmp    near ptr 0x004367A5;
+
 	__asm        mov    eax, stringList;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x004367B7;
@@ -4527,6 +5089,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    stringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004367CC;
+
 	__asm        jmp    near ptr 0x004367D1;
 // LINE 416:
 	__asm        mov    stringArray.start, 0;
@@ -4540,35 +5103,49 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004367FE;
+
 	__asm        jmp    near ptr 0x00436803;
+
 	__asm        mov    eax, stringListIterator.node;
 	__asm        cmp    [ebp-0x1C], eax;
 	__asm        jne    near ptr 0x00436819;
+
 	__asm        jmp    near ptr 0x0043682D;
+
 	__asm        jmp    near ptr 0x00436819;
+
 	__asm        jmp    near ptr 0x00436828;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    near ptr 0x0043682D;
+
 	__asm        jmp    near ptr 0x00436832;
+
 	__asm        jmp    near ptr 0x004368F4;
+
 	__asm        jmp    near ptr 0x00436841;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x004368F4;
 // LINE 420:
 	__asm        jmp    near ptr 0x00436846;
+
 	__asm        mov    eax, stringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        mov    eax, stringArray.end_of_storage;
 	__asm        cmp    stringArray.finish, eax;
 	__asm        je     near ptr 0x004368AE;
+
 	__asm        mov    eax, stringArray.finish;
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    near ptr 0x00436878;
+
 	__asm        cmp    dword ptr [ebp-0x9C], 0;
 	__asm        je     near ptr 0x004368A0;
+
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xA4];
@@ -4576,10 +5153,14 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    ecx, [ebp-0x9C];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x004368A0;
+
 	__asm        jmp    near ptr 0x004368A5;
+
 	__asm        add    stringArray.finish, 8;
 	__asm        jmp    near ptr 0x004368C6;
+
 	__asm        jmp    near ptr 0x004368B3;
+
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        push   eax;
 	__asm        mov    eax, stringArray.finish;
@@ -4594,6 +5175,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [eax];
 	__asm        mov    stringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004368E1;
+
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004368EF;
@@ -4601,24 +5183,31 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        jmp    near ptr 0x004367EB;
 // LINE 425:
 	__asm        jmp    near ptr 0x004368F9;
+
 	__asm        jmp    near ptr 0x004368FE;
+
 	__asm        mov    eax, stringArray.finish;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, stringArray.start;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0043690F;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    [ebp-0x40], eax;
 	__asm        jne    near ptr 0x00436920;
+
 	__asm        jmp    near ptr 0x00436980;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x00436932;
+
 	__asm        add    dword ptr [ebp-0x34], 8;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x3C], eax;
 	__asm        je     near ptr 0x0043697B;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        sub    eax, [ebp-0x40];
 	__asm        sar    eax, 3;
@@ -4630,6 +5219,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        add    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0043695F;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
@@ -4638,8 +5228,11 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        call   __iter_swap;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00436976;
+
 	__asm        jmp    near ptr 0x0043692E;
+
 	__asm        jmp    near ptr 0x00436980;
+
 	__asm        jmp    near ptr 0x00436985;
 // LINE 428:
 	__asm        mov    eax, stringList;
@@ -4648,7 +5241,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x00436998;
+
 	__asm        jmp    near ptr 0x0043699D;
+
 	__asm        mov    eax, stringList;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
@@ -4656,7 +5251,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004369B2;
+
 	__asm        jmp    near ptr 0x004369B7;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -4664,48 +5261,66 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    [ebp-0x94], eax;
 	__asm        jne    near ptr 0x004369E5;
+
 	__asm        jmp    near ptr 0x004369FC;
+
 	__asm        jmp    near ptr 0x004369E5;
+
 	__asm        jmp    near ptr 0x004369F7;
+
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    near ptr 0x004369FC;
+
 	__asm        jmp    near ptr 0x00436A01;
+
 	__asm        jmp    near ptr 0x00436A51;
+
 	__asm        jmp    near ptr 0x00436A13;
+
 	__asm        cmp    dword ptr [ebp-0x8C], 0;
 	__asm        je     near ptr 0x00436A51;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x84], eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x94], eax;
 	__asm        jmp    near ptr 0x00436A32;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    near ptr 0x00436A40;
+
 	__asm        mov    eax, [ebp-0x80];
 	__asm        push   eax;
 	__asm        mov    ecx, stringList;
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        jmp    near ptr 0x004369C9;
+
 	__asm        jmp    near ptr 0x00436A56;
 // LINE 431:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00436A62;
+
 	__asm        jmp    near ptr 0x00436A67;
+
 	__asm        jmp    near ptr 0x00436A6C;
+
 	__asm        mov    eax, stringArray.finish;
 	__asm        sub    eax, stringArray.start;
 	__asm        sar    eax, 3;
 	__asm        mov    iEnd, eax;
 	__asm        jmp    near ptr 0x00436A80;
+
 	__asm        inc    i;
 	__asm        mov    eax, iEnd;
 	__asm        cmp    i, eax;
 	__asm        jge    near ptr 0x00436B2C;
 // LINE 432:
 	__asm        jmp    near ptr 0x00436A91;
+
 	__asm        jmp    near ptr 0x00436A96;
+
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
 	__asm        add    eax, stringArray.start;
@@ -4716,13 +5331,16 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    near ptr 0x00436AB5;
+
 	__asm        jmp    near ptr 0x00436ABA;
+
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    ecx, stringList;
 	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x00436AD0;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -4749,7 +5367,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x00436B1D;
+
 	__asm        jmp    near ptr 0x00436B22;
+
 	__asm        jmp    near ptr 0x00436B27;
 // LINE 433:
 	__asm        jmp    near ptr 0x00436A7D;
@@ -4761,11 +5381,13 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        mov    eax, [ebp-0x78];
 	__asm        cmp    [ebp-0x7C], eax;
 	__asm        je     near ptr 0x00436B9B;
+
 	__asm        mov    ecx, [ebp-0x7C];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00436B72;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x70], eax;
@@ -4776,16 +5398,22 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436B77;
+
 	__asm        jmp    near ptr 0x00436B88;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436B8D;
+
 	__asm        jmp    near ptr 0x00436B92;
+
 	__asm        add    dword ptr [ebp-0x7C], 8;
 	__asm        jmp    near ptr 0x00436B38;
+
 	__asm        jmp    near ptr 0x00436BA0;
+
 	__asm        mov    eax, stringArray.start;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
@@ -4793,8 +5421,11 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436BB7;
+
 	__asm        jmp    near ptr 0x00436BBC;
+
 	__asm        jmp    near ptr 0x00436BC1;
+
 	__asm        jmp    near ptr 0x00436BC6;
 }
 
@@ -4805,10 +5436,15 @@ void RadioStation::ShuffleCycle() {
 
 // LINE 450:
 	__asm        jmp    near ptr 0x00436BDE;
+
 	__asm        jmp    near ptr 0x00436BE3;
+
 	__asm        jmp    near ptr 0x00436BE8;
+
 	__asm        jmp    near ptr 0x00436BED;
+
 	__asm        jmp    near ptr 0x00436BF2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -4820,7 +5456,9 @@ void RadioStation::ShuffleCycle() {
 	__asm        mov    nCurrentCycleLastItem, eax;
 // LINE 451:
 	__asm        jmp    near ptr 0x00436C13;
+
 	__asm        jmp    near ptr 0x00436C18;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x20], eax;
@@ -4828,18 +5466,23 @@ void RadioStation::ShuffleCycle() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x00436C2F;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    [ebp-0x24], eax;
 	__asm        jne    near ptr 0x00436C40;
+
 	__asm        jmp    near ptr 0x00436CAD;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x00436C52;
+
 	__asm        add    dword ptr [ebp-0x14], 4;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x20], eax;
 	__asm        je     near ptr 0x00436CA8;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        sub    eax, [ebp-0x24];
 	__asm        sar    eax, 2;
@@ -4851,6 +5494,7 @@ void RadioStation::ShuffleCycle() {
 	__asm        add    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00436C7F;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
@@ -4862,15 +5506,22 @@ void RadioStation::ShuffleCycle() {
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00436C9E;
+
 	__asm        jmp    near ptr 0x00436CA3;
+
 	__asm        jmp    near ptr 0x00436C4E;
+
 	__asm        jmp    near ptr 0x00436CAD;
+
 	__asm        jmp    near ptr 0x00436CB2;
 // LINE 456:
 	__asm        cmp    nCurrentCycleLastItem, 0;
 	__asm        je     near ptr 0x00436D76;
+
 	__asm        jmp    near ptr 0x00436CC1;
+
 	__asm        jmp    near ptr 0x00436CC6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, nCurrentCycleLastItem;
@@ -4878,22 +5529,31 @@ void RadioStation::ShuffleCycle() {
 	__asm        jne    near ptr 0x00436D76;
 // LINE 458:
 	__asm        jmp    near ptr 0x00436CDC;
+
 	__asm        jmp    near ptr 0x00436CE1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
 	__asm        mov    nTempCycleItem, eax;
 // LINE 459:
 	__asm        jmp    near ptr 0x00436CF1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00436CFF;
+
 	__asm        jmp    near ptr 0x00436D04;
+
 	__asm        jmp    near ptr 0x00436D09;
+
 	__asm        jmp    near ptr 0x00436D0E;
+
 	__asm        jmp    near ptr 0x00436D13;
+
 	__asm        jmp    near ptr 0x00436D18;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -4906,9 +5566,13 @@ void RadioStation::ShuffleCycle() {
 	__asm        mov    [ecx], eax;
 // LINE 460:
 	__asm        jmp    near ptr 0x00436D3B;
+
 	__asm        jmp    near ptr 0x00436D40;
+
 	__asm        jmp    near ptr 0x00436D45;
+
 	__asm        jmp    near ptr 0x00436D4A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, this;
@@ -4919,6 +5583,7 @@ void RadioStation::ShuffleCycle() {
 	__asm        add    eax, [ecx+8];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00436D6E;
+
 	__asm        mov    eax, nTempCycleItem;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -4933,6 +5598,7 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        add    eax, 0x38;
 	__asm        cmp    eax, sStationCallSign;
 	__asm        je     near ptr 0x00436F4E;
+
 	__asm        mov    eax, sStationCallSign;
 	__asm        mov    eax, [eax+4];
 	__asm        dec    dword ptr [eax+0xC];
@@ -4940,6 +5606,7 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00436E27;
+
 	__asm        mov    eax, sStationCallSign;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
@@ -4947,9 +5614,11 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00436E27;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00436E07;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -4964,19 +5633,26 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00436E0C;
+
 	__asm        jmp    near ptr 0x00436E11;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00436E22;
+
 	__asm        jmp    near ptr 0x00436E27;
+
 	__asm        jmp    near ptr 0x00436E2C;
+
 	__asm        jmp    near ptr 0x00436E31;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00436E5B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, sStationCallSign;
@@ -4985,13 +5661,16 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00436F4E;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00436F44;
+
 	__asm        jmp    near ptr 0x00436E77;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    eax, [eax+4];
@@ -5006,6 +5685,7 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00436F1E;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -5014,18 +5694,23 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00436EBE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00436EE3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00436EEF;
+
 	__asm        jmp    near ptr 0x00436EEF;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x00436EEF;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -5041,16 +5726,20 @@ void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00436F19;
+
 	__asm        jmp    near ptr 0x00436F27;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00436F36;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, sStationCallSign;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00436F4E;
+
 	__asm        mov    eax, sStationCallSign;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x00436F53;
@@ -5074,11 +5763,13 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 	__asm        jne    near ptr 0x00436FA6;
 // LINE 489:
 	__asm        jmp    near ptr 0x00436F96;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x54];
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 491:
 	__asm        jmp    near ptr 0x00437046;
+
 	__asm        cmp    radioStationCycleType, 1;
 	__asm        jne    near ptr 0x00436FDC;
 // LINE 492:
@@ -5091,11 +5782,13 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 494:
 	__asm        jmp    near ptr 0x00436FCC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 496:
 	__asm        jmp    near ptr 0x00437046;
+
 	__asm        cmp    radioStationCycleType, 2;
 	__asm        jne    near ptr 0x00437012;
 // LINE 497:
@@ -5108,11 +5801,13 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 499:
 	__asm        jmp    near ptr 0x00437002;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 501:
 	__asm        jmp    near ptr 0x00437046;
+
 	__asm        cmp    radioStationCycleType, 3;
 	__asm        jne    near ptr 0x00437046;
 // LINE 502:
@@ -5125,6 +5820,7 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 	__asm        jmp    near ptr 0x0043704D;
 // LINE 504:
 	__asm        jmp    near ptr 0x00437038;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        jmp    near ptr 0x0043704D;
@@ -5149,6 +5845,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 	__asm        jmp    near ptr 0x00437086;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x00437091;
@@ -5159,14 +5856,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x004370A5;
+
 	__asm        jmp    near ptr 0x004370AA;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-8];
 	__asm        cmp    [eax+0x58], ecx;
 	__asm        jne    near ptr 0x004370BE;
+
 	__asm        jmp    near ptr 0x004370C3;
+
 	__asm        jmp    near ptr 0x00437106;
+
 	__asm        jmp    near ptr 0x004370D2;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x00437106;
 // LINE 518:
@@ -5177,15 +5880,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004370E8;
+
 	__asm        jmp    near ptr 0x004370ED;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0x58], ecx;
 	__asm        jne    near ptr 0x00437101;
+
 	__asm        jmp    near ptr 0x00437101;
+
 	__asm        jmp    near ptr 0x00437106;
 // LINE 520:
 	__asm        jmp    near ptr 0x0043732B;
+
 	__asm        cmp    radioStationCycleType, 1;
 	__asm        jne    near ptr 0x004371B6;
 // LINE 521:
@@ -5198,6 +5906,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 	__asm        jmp    near ptr 0x00437131;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0043713C;
@@ -5208,14 +5917,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x00437150;
+
 	__asm        jmp    near ptr 0x00437155;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0x6C], ecx;
 	__asm        jne    near ptr 0x00437169;
+
 	__asm        jmp    near ptr 0x0043716E;
+
 	__asm        jmp    near ptr 0x004371B1;
+
 	__asm        jmp    near ptr 0x0043717D;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     near ptr 0x004371B1;
 // LINE 523:
@@ -5226,15 +5941,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00437193;
+
 	__asm        jmp    near ptr 0x00437198;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0x6C], ecx;
 	__asm        jne    near ptr 0x004371AC;
+
 	__asm        jmp    near ptr 0x004371AC;
+
 	__asm        jmp    near ptr 0x004371B1;
 // LINE 525:
 	__asm        jmp    near ptr 0x0043732B;
+
 	__asm        cmp    radioStationCycleType, 2;
 	__asm        jne    near ptr 0x00437270;
 // LINE 526:
@@ -5247,6 +5967,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 	__asm        jmp    near ptr 0x004371E5;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x004371F0;
@@ -5257,14 +5978,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x00437204;
+
 	__asm        jmp    near ptr 0x00437209;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jne    near ptr 0x00437220;
+
 	__asm        jmp    near ptr 0x00437225;
+
 	__asm        jmp    near ptr 0x0043726B;
+
 	__asm        jmp    near ptr 0x00437234;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     near ptr 0x0043726B;
 // LINE 528:
@@ -5275,15 +6002,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0043724A;
+
 	__asm        jmp    near ptr 0x0043724F;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jne    near ptr 0x00437266;
+
 	__asm        jmp    near ptr 0x00437266;
+
 	__asm        jmp    near ptr 0x0043726B;
 // LINE 530:
 	__asm        jmp    near ptr 0x0043732B;
+
 	__asm        cmp    radioStationCycleType, 3;
 	__asm        jne    near ptr 0x0043732B;
 // LINE 531:
@@ -5296,6 +6028,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
 	__asm        jmp    near ptr 0x0043729F;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004372AA;
@@ -5306,14 +6039,20 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004372C1;
+
 	__asm        jmp    near ptr 0x004372C6;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        cmp    [eax+0x94], ecx;
 	__asm        jne    near ptr 0x004372DD;
+
 	__asm        jmp    near ptr 0x004372E2;
+
 	__asm        jmp    near ptr 0x0043732B;
+
 	__asm        jmp    near ptr 0x004372F1;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x0043732B;
 // LINE 533:
@@ -5324,12 +6063,16 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0043730A;
+
 	__asm        jmp    near ptr 0x0043730F;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+0x94], ecx;
 	__asm        jne    near ptr 0x00437326;
+
 	__asm        jmp    near ptr 0x00437326;
+
 	__asm        jmp    near ptr 0x0043732B;
 // LINE 535:
 	__asm        jmp    near ptr 0x00437330;
@@ -5347,6 +6090,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x00437399;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x40];
@@ -5358,12 +6102,15 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0043738E;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004373A0;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x004373AC;
+
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0;
@@ -5376,24 +6123,31 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0043740A;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x0043740A;
+
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004373F4;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437405;
+
 	__asm        jmp    near ptr 0x0043740A;
+
 	__asm        jmp    near ptr 0x0043740F;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x00437431;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
@@ -5403,6 +6157,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437436;
+
 	__asm        mov    eax, ds:[0x5984C8];
 	__asm        mov    [ebp-0x70], eax;
 // LINE 546:
@@ -5412,6 +6167,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    [ebp-0x64], eax;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004374EB;
+
 	__asm        mov    eax, [ebp-0x70];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -5419,6 +6175,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0043746C;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x64];
@@ -5426,6 +6183,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    eax, [ebp-0x64];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004374C8;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -5448,18 +6206,23 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004374C3;
+
 	__asm        jmp    near ptr 0x004374D1;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004374E0;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004374F2;
+
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x004374FE;
+
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x34];
 	__asm        push   eax;
@@ -5470,24 +6233,31 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00437558;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        je     near ptr 0x00437558;
+
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00437542;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437553;
+
 	__asm        jmp    near ptr 0x00437558;
+
 	__asm        jmp    near ptr 0x0043755D;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x0043757F;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
@@ -5506,7 +6276,9 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   Directory::ChangeDirectory;
 // LINE 549:
 	__asm        jmp    near ptr 0x0043759D;
+
 	__asm        jmp    near ptr 0x004375A2;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00437645;
 // LINE 550:
@@ -5523,10 +6295,12 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 552:
 	__asm        mov    dword ptr [ebp-0x38], 1;
 	__asm        jmp    near ptr 0x004375D7;
+
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00437601;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
@@ -5536,10 +6310,12 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437606;
+
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x00437630;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, [ebp-0x7C];
@@ -5549,6 +6325,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437635;
+
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x38];
@@ -5556,10 +6333,12 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 554:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x00437651;
+
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00437687;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x84], eax;
 	__asm        mov    eax, [ebp-0x84];
@@ -5569,10 +6348,12 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043768C;
+
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004376C2;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        mov    eax, [ebp-0x8C];
@@ -5582,6 +6363,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004376C7;
+
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x3C];
@@ -5602,6 +6384,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        cmp    dword ptr [ebp-0x8C], 0;
 	__asm        je     near ptr 0x00437756;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x8C];
@@ -5613,9 +6396,11 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00437748;
+
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    sStationDirectoryParent.reference, eax;
 	__asm        jmp    near ptr 0x0043775D;
+
 	__asm        mov    sStationDirectoryParent.reference, 0;
 	__asm        mov    sStationDirectoryParent.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00437769;
@@ -5626,6 +6411,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    [ebp-0x90], eax;
 	__asm        cmp    dword ptr [ebp-0x90], 0;
 	__asm        je     near ptr 0x004377D1;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x90];
@@ -5637,9 +6423,11 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004377C3;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    sStationDirectoryName.reference, eax;
 	__asm        jmp    near ptr 0x004377D8;
+
 	__asm        mov    sStationDirectoryName.reference, 0;
 	__asm        mov    sStationDirectoryName.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004377E4;
@@ -5656,9 +6444,11 @@ int32_t RadioStation::DetectRadioStationType() {
 // LINE 570:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0043780D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 9;
 	__asm        jge    near ptr 0x00437A34;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x598488];
 	__asm        mov    [ebp-0x84], eax;
@@ -5669,27 +6459,36 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    [ebp-0x80], eax;
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        je     near ptr 0x00437855;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0043785C;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x00437868;
+
 	__asm        jmp    near ptr 0x0043786D;
+
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
 	__asm        jae    near ptr 0x00437890;
+
 	__asm        jmp    near ptr 0x0043787F;
+
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x0043789A;
+
 	__asm        mov    dword ptr [ebp-0x88], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0043789F;
+
 	__asm        jmp    near ptr 0x004378A4;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -5703,28 +6502,36 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004378D9;
+
 	__asm        mov    dword ptr [ebp-0x18], 1;
 	__asm        jmp    near ptr 0x004378E0;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x004378E5;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0043791D;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x0043791D;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0043791D;
+
 	__asm        jmp    near ptr 0x00437922;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00437944;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -5734,6 +6541,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437949;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -5746,19 +6554,24 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00437997;
+
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     near ptr 0x00437997;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00437997;
+
 	__asm        jmp    near ptr 0x0043799C;
+
 	__asm        cmp    sStationDirectoryName.c_str_ptr, 0;
 	__asm        je     near ptr 0x004379BE;
+
 	__asm        mov    eax, sStationDirectoryName.c_str_ptr;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
@@ -5768,24 +6581,30 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004379C3;
+
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004379FB;
+
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004379FB;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004379FB;
+
 	__asm        jmp    near ptr 0x00437A00;
+
 	__asm        cmp    sStationDirectoryParent.c_str_ptr, 0;
 	__asm        je     near ptr 0x00437A22;
+
 	__asm        mov    eax, sStationDirectoryParent.c_str_ptr;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
@@ -5795,6 +6614,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437A27;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x00437B0B;
 // LINE 577:
@@ -5806,19 +6626,24 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00437A73;
+
 	__asm        mov    eax, sStationDirectoryName.reference;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     near ptr 0x00437A73;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00437A73;
+
 	__asm        jmp    near ptr 0x00437A78;
+
 	__asm        cmp    sStationDirectoryName.c_str_ptr, 0;
 	__asm        je     near ptr 0x00437A9A;
+
 	__asm        mov    eax, sStationDirectoryName.c_str_ptr;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -5828,24 +6653,30 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437A9F;
+
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00437AD7;
+
 	__asm        mov    eax, sStationDirectoryParent.reference;
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x78], eax;
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x00437AD7;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00437AD7;
+
 	__asm        jmp    near ptr 0x00437ADC;
+
 	__asm        cmp    sStationDirectoryParent.c_str_ptr, 0;
 	__asm        je     near ptr 0x00437AFE;
+
 	__asm        mov    eax, sStationDirectoryParent.c_str_ptr;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x70];
@@ -5855,6 +6686,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437B03;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    near ptr 0x00437B0B;
 // LINE 579:
@@ -5862,6 +6694,7 @@ int32_t RadioStation::DetectRadioStationType() {
 
 // FUNCTION: COPTER_D 0x00437b10
  Radio::Radio() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -5869,6 +6702,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        jmp    near ptr 0x00437B3F;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0x2710;
 	__asm        mov    eax, this;
@@ -5894,11 +6728,13 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    dword ptr [eax], 0x58F560;
 // LINE 604:
 	__asm        jmp    near ptr 0x00437BB2;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00437bba
  Radio::~Radio() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F560;
 // LINE 611:
@@ -5909,6 +6745,7 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 612:
 	__asm        jmp    near ptr 0x00437BE3;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x34;
 	__asm        call   DigitalSound::~DigitalSound;
@@ -5921,15 +6758,19 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        je     near ptr 0x00437C29;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax];
 	__asm        jmp    near ptr 0x00437C1D;
+
 	__asm        add    dword ptr [ebp-0xC], 0x98;
 	__asm        jmp    near ptr 0x00437C00;
+
 	__asm        jmp    near ptr 0x00437C2E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
@@ -5938,7 +6779,9 @@ int32_t RadioStation::DetectRadioStationType() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00437C48;
+
 	__asm        jmp    near ptr 0x00437C4D;
+
 	__asm        jmp    near ptr 0x00437C52;
 }
 
@@ -6111,6 +6954,7 @@ int  Radio::GetPreferences() {
 // LINE 686:
 	__asm        cmp    tempRadioPreferences.bPreferToBeOn, 0;
 	__asm        je     near ptr 0x00437E38;
+
 	__asm        cmp    tempRadioPreferences.bPreferToBeOn, 1;
 	__asm        je     near ptr 0x00437E38;
 // LINE 687:
@@ -6191,9 +7035,13 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    near ptr 0x00437FC9;
+
 	__asm        jmp    near ptr 0x00437F0F;
+
 	__asm        jmp    near ptr 0x00437F14;
+
 	__asm        jmp    near ptr 0x00437F19;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6208,6 +7056,7 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        mov    dword ptr [eax+0x1C], 1;
 // LINE 735:
 	__asm        jmp    near ptr 0x00437F44;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -6218,6 +7067,7 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x00437F63;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
@@ -6226,6 +7076,7 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        call   dword ptr [eax+8];
 // LINE 736:
 	__asm        jmp    near ptr 0x00437F79;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -6236,6 +7087,7 @@ int  Radio::SetOn(int32_t bNewOn) {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00437F98;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -6287,6 +7139,7 @@ void  Radio::SetMute(int32_t bNewMute) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 1;
 	__asm        jne    near ptr 0x0043804C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0x64;
 	__asm        jle    near ptr 0x0043804C;
@@ -6299,6 +7152,7 @@ void  Radio::SetMute(int32_t bNewMute) {
 	__asm        call   dword ptr [eax+0x24];
 // LINE 767:
 	__asm        jmp    near ptr 0x00438094;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jle    near ptr 0x00438094;
@@ -6309,6 +7163,7 @@ void  Radio::SetMute(int32_t bNewMute) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    near ptr 0x00438094;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0x64;
 	__asm        jle    near ptr 0x00438094;
@@ -6336,6 +7191,7 @@ void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
 	__asm        mov    [ecx+0x24], eax;
 // LINE 783:
 	__asm        jmp    near ptr 0x004380EF;
+
 	__asm        cmp    nRadioOption, 1;
 	__asm        jne    near ptr 0x004380DC;
 // LINE 784:
@@ -6344,6 +7200,7 @@ void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
 	__asm        mov    [ecx+0x28], eax;
 // LINE 785:
 	__asm        jmp    near ptr 0x004380EF;
+
 	__asm        cmp    nRadioOption, 2;
 	__asm        jne    near ptr 0x004380EF;
 // LINE 786:
@@ -6365,6 +7222,7 @@ int  Radio::GetOption(enum RadioOption nRadioOption) {
 	__asm        jmp    near ptr 0x00438157;
 // LINE 796:
 	__asm        jmp    near ptr 0x00438150;
+
 	__asm        cmp    nRadioOption, 1;
 	__asm        jne    near ptr 0x0043813B;
 // LINE 797:
@@ -6373,6 +7231,7 @@ int  Radio::GetOption(enum RadioOption nRadioOption) {
 	__asm        jmp    near ptr 0x00438157;
 // LINE 798:
 	__asm        jmp    near ptr 0x00438150;
+
 	__asm        cmp    nRadioOption, 2;
 	__asm        jne    near ptr 0x00438150;
 // LINE 799:
@@ -6446,8 +7305,11 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        call   dword ptr [eax+0xC];
 // LINE 832:
 	__asm        jmp    near ptr 0x0043821C;
+
 	__asm        jmp    near ptr 0x00438221;
+
 	__asm        jmp    near ptr 0x00438226;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6459,8 +7321,11 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        jg     near ptr 0x0043826A;
 // LINE 833:
 	__asm        jmp    near ptr 0x00438248;
+
 	__asm        jmp    near ptr 0x0043824D;
+
 	__asm        jmp    near ptr 0x00438252;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6482,6 +7347,7 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        mov    [ecx+0x20], eax;
 // LINE 837:
 	__asm        jmp    near ptr 0x00438289;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -6492,6 +7358,7 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004382A8;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
@@ -6512,8 +7379,11 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 // LINE 849:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004382E2;
+
 	__asm        jmp    near ptr 0x004382E7;
+
 	__asm        jmp    near ptr 0x004382EC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6523,12 +7393,14 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 	__asm        idiv   ecx;
 	__asm        mov    iEnd, eax;
 	__asm        jmp    near ptr 0x0043830B;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    near ptr 0x0043836B;
 // LINE 850:
 	__asm        jmp    near ptr 0x0043831C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
@@ -6538,6 +7410,7 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00438338;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -6570,8 +7443,11 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 // LINE 863:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00438391;
+
 	__asm        jmp    near ptr 0x00438396;
+
 	__asm        jmp    near ptr 0x0043839B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6581,12 +7457,14 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	__asm        idiv   ecx;
 	__asm        mov    iEnd, eax;
 	__asm        jmp    near ptr 0x004383BA;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    near ptr 0x00438410;
 // LINE 864:
 	__asm        jmp    near ptr 0x004383CB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
@@ -6596,6 +7474,7 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x004383E7;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -6619,8 +7498,11 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 int  Radio::GetStationCount() {
 // LINE 876:
 	__asm        jmp    near ptr 0x0043842F;
+
 	__asm        jmp    near ptr 0x00438434;
+
 	__asm        jmp    near ptr 0x00438439;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -6643,6 +7525,7 @@ int  Radio::DoState() {
 	__asm        jmp    near ptr 0x004384B1;
 // LINE 887:
 	__asm        jmp    near ptr 0x0043847C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -6653,6 +7536,7 @@ int  Radio::DoState() {
 	__asm        lea    eax, [eax+ecx*8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0043849B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
@@ -6670,15 +7554,19 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 // LINE 898:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004384D1;
+
 	__asm        inc    i;
 	__asm        cmp    i, 9;
 	__asm        jge    near ptr 0x0043866F;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x598488];
 	__asm        mov    [ebp-0x24], eax;
 // LINE 899:
 	__asm        jmp    near ptr 0x004384ED;
+
 	__asm        jmp    near ptr 0x004384F2;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -6689,10 +7577,12 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x00438512;
+
 	__asm        mov    eax, sStationDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jae    near ptr 0x00438554;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -6702,48 +7592,65 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00438545;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00438554;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    eax, ecx;
 	__asm        jb     near ptr 0x00438564;
+
 	__asm        mov    eax, ecx;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0043856C;
+
 	__asm        mov    eax, sStationDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x004385B8;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004385A2;
+
 	__asm        jmp    near ptr 0x0043858B;
+
 	__asm        jmp    near ptr 0x00438590;
+
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        movsx  ecx, byte ptr [ecx];
 	__asm        sub    eax, ecx;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004385B3;
+
 	__asm        jmp    near ptr 0x004385A7;
+
 	__asm        jmp    near ptr 0x004385AC;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x00438638;
+
 	__asm        jmp    near ptr 0x004385BD;
+
 	__asm        mov    eax, sStationDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004385E2;
+
 	__asm        mov    eax, sStationDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004385EE;
+
 	__asm        jmp    near ptr 0x004385EE;
+
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x004385EE;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x24];
@@ -6754,24 +7661,34 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 	__asm        add    esp, 0xC;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0043860A;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0043861F;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00438633;
+
 	__asm        jmp    near ptr 0x00438624;
+
 	__asm        mov    eax, sStationDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00438638;
+
 	__asm        jmp    near ptr 0x0043863D;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    near ptr 0x0043864C;
+
 	__asm        jmp    near ptr 0x00438651;
+
 	__asm        jmp    near ptr 0x0043866A;
+
 	__asm        jmp    near ptr 0x00438660;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0043866A;
 // LINE 900:
@@ -6846,6 +7763,7 @@ int  Radio::SetupStations() {
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x0043873A;
+
 	__asm        lea    ecx, [ebp-0x100];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 928:
@@ -6890,7 +7808,9 @@ int  Radio::SetupStations() {
 	__asm        call   Directory::ReadDirectoryDirectoryEntriesIntoStringList;
 // LINE 936:
 	__asm        jmp    near ptr 0x004387D2;
+
 	__asm        jmp    near ptr 0x004387D7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -6918,28 +7838,40 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, [ebp-0x164];
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    near ptr 0x00438840;
+
 	__asm        jmp    near ptr 0x00438845;
+
 	__asm        mov    eax, [ebp-0x118];
 	__asm        cmp    radioStationStringListIterator.node, eax;
 	__asm        jne    near ptr 0x0043885E;
+
 	__asm        jmp    near ptr 0x00438875;
+
 	__asm        jmp    near ptr 0x0043885E;
+
 	__asm        jmp    near ptr 0x00438870;
+
 	__asm        cmp    dword ptr [ebp-0x24C], 0;
 	__asm        jne    near ptr 0x00438875;
+
 	__asm        jmp    near ptr 0x0043887A;
+
 	__asm        jmp    near ptr 0x004393F8;
+
 	__asm        jmp    near ptr 0x0043888C;
+
 	__asm        cmp    dword ptr [ebp-0x250], 0;
 	__asm        je     near ptr 0x004393F8;
 // LINE 943:
 	__asm        jmp    near ptr 0x00438891;
+
 	__asm        push   0x5C;
 	__asm        mov    ecx, radioStationStringListIterator.node;
 	__asm        add    ecx, 8;
 	__asm        call   basic_string<char>::operator+=;
 // LINE 946:
 	__asm        jmp    near ptr 0x004388A3;
+
 	__asm        mov    eax, radioStationStringListIterator.node;
 	__asm        add    eax, 8;
 	__asm        push   eax;
@@ -6978,6 +7910,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x128], 0;
 	__asm        je     near ptr 0x00438953;
+
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    [ebp-0x244], eax;
 	__asm        mov    eax, [ebp-0x244];
@@ -7003,6 +7936,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x130], 0;
 	__asm        je     near ptr 0x004389B9;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    [ebp-0x23C], eax;
 	__asm        mov    eax, [ebp-0x23C];
@@ -7034,6 +7968,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x138], 0;
 	__asm        je     near ptr 0x00438A34;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    [ebp-0x230], eax;
 	__asm        mov    eax, [ebp-0x230];
@@ -7046,6 +7981,7 @@ int  Radio::SetupStations() {
 // LINE 959:
 	__asm        cmp    dword ptr ds:[0x597664], 1;
 	__asm        je     near ptr 0x00438AA6;
+
 	__asm        lea    eax, sScratch.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7077,6 +8013,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::remove;
 // LINE 965:
 	__asm        jmp    near ptr 0x00438AAB;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7086,6 +8023,7 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, tempRadioStation.sDJDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00438ACE;
+
 	__asm        mov    eax, ds:[0x5984B0];
 	__asm        mov    [ebp-0x22C], eax;
 // LINE 969:
@@ -7095,7 +8033,9 @@ int  Radio::SetupStations() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x220], eax;
 	__asm        jmp    near ptr 0x00438AF3;
+
 	__asm        jmp    near ptr 0x00438AF8;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        push   eax;
 	__asm        mov    eax, sRadioDirectory.reference;
@@ -7108,8 +8048,11 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        cmp    dword ptr [ebp-0x220], 0;
 	__asm        je     near ptr 0x00438B67;
+
 	__asm        jmp    near ptr 0x00438B2C;
+
 	__asm        jmp    near ptr 0x00438B31;
+
 	__asm        mov    eax, [ebp-0x218];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, sRadioDirectory.reference;
@@ -7124,10 +8067,12 @@ int  Radio::SetupStations() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00438B67;
+
 	__asm        mov    eax, [ebp-0x218];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x224], eax;
 	__asm        jmp    near ptr 0x00438B7B;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    ecx, [ebp-0x224];
 	__asm        add    [ecx], eax;
@@ -7140,28 +8085,35 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x21C];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00438BAF;
+
 	__asm        lea    eax, tempRadioStation.sCommercialDirectory.c_str_ptr;
 	__asm        lea    ecx, [ebp-0x140];
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00438C40;
+
 	__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00438BCD;
+
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00438BF1;
+
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
 	__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00438C40;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x238], eax;
 	__asm        cmp    dword ptr [ebp-0x238], 0;
 	__asm        je     near ptr 0x00438C39;
+
 	__asm        jmp    near ptr 0x00438C13;
+
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7172,12 +8124,15 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
 	__asm        jmp    near ptr 0x00438C40;
+
 	__asm        mov    tempRadioStation.sCommercialDirectory.reference, 0;
 	__asm        jmp    near ptr 0x00438C45;
+
 	__asm        lea    ecx, [ebp-0x140];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x140], 0;
 	__asm        je     near ptr 0x00438C84;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    [ebp-0x20C], eax;
 	__asm        mov    eax, [ebp-0x20C];
@@ -7195,7 +8150,9 @@ int  Radio::SetupStations() {
 	__asm        add    esp, 8;
 // LINE 971:
 	__asm        jmp    near ptr 0x00438C9F;
+
 	__asm        jmp    near ptr 0x00438CA4;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7208,12 +8165,17 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x1F8];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00438CCE;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00438D43;
+
 	__asm        jmp    near ptr 0x00438CE3;
+
 	__asm        jmp    near ptr 0x00438CE8;
+
 	__asm        jmp    near ptr 0x00438CED;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x200], eax;
@@ -7234,11 +8196,14 @@ int  Radio::SetupStations() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00438D43;
+
 	__asm        mov    eax, [ebp-0x1F4];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x1FC], eax;
 	__asm        jmp    near ptr 0x00438D57;
+
 	__asm        jmp    near ptr 0x00438D5C;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1FC];
@@ -7252,28 +8217,35 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x1F8];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00438D93;
+
 	__asm        lea    eax, sScratch.c_str_ptr;
 	__asm        lea    ecx, [ebp-0x148];
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00438E36;
+
 	__asm        lea    ecx, sScratch.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00438DB7;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00438DE1;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    sScratch.reference, eax;
 	__asm        mov    eax, sScratch.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00438E36;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x214], eax;
 	__asm        cmp    dword ptr [ebp-0x214], 0;
 	__asm        je     near ptr 0x00438E2C;
+
 	__asm        jmp    near ptr 0x00438E03;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7284,12 +8256,15 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sScratch.reference, eax;
 	__asm        jmp    near ptr 0x00438E36;
+
 	__asm        mov    sScratch.reference, 0;
 	__asm        jmp    near ptr 0x00438E3B;
+
 	__asm        lea    ecx, [ebp-0x148];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x148], 0;
 	__asm        je     near ptr 0x00438E7A;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    [ebp-0x1E8], eax;
 	__asm        mov    eax, [ebp-0x1E8];
@@ -7302,6 +8277,7 @@ int  Radio::SetupStations() {
 // LINE 972:
 	__asm        cmp    dword ptr ds:[0x597664], 1;
 	__asm        je     near ptr 0x00438EEC;
+
 	__asm        lea    eax, sScratch.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7333,6 +8309,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::remove;
 // LINE 978:
 	__asm        jmp    near ptr 0x00438EF1;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7342,6 +8319,7 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00438F14;
+
 	__asm        mov    eax, ds:[0x5984C0];
 	__asm        mov    [ebp-0x1E4], eax;
 // LINE 982:
@@ -7351,7 +8329,9 @@ int  Radio::SetupStations() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1D8], eax;
 	__asm        jmp    near ptr 0x00438F39;
+
 	__asm        jmp    near ptr 0x00438F3E;
+
 	__asm        mov    eax, [ebp-0x1D8];
 	__asm        push   eax;
 	__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
@@ -7364,8 +8344,11 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        cmp    dword ptr [ebp-0x1D8], 0;
 	__asm        je     near ptr 0x00438FAD;
+
 	__asm        jmp    near ptr 0x00438F72;
+
 	__asm        jmp    near ptr 0x00438F77;
+
 	__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1D0];
@@ -7380,10 +8363,12 @@ int  Radio::SetupStations() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00438FAD;
+
 	__asm        mov    eax, [ebp-0x1D0];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x1DC], eax;
 	__asm        jmp    near ptr 0x00438FC1;
+
 	__asm        mov    eax, [ebp-0x1D8];
 	__asm        mov    ecx, [ebp-0x1DC];
 	__asm        add    [ecx], eax;
@@ -7396,28 +8381,35 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x1D4];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00438FF5;
+
 	__asm        lea    eax, tempRadioStation.sJingleDirectory.c_str_ptr;
 	__asm        lea    ecx, [ebp-0x150];
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00439086;
+
 	__asm        lea    ecx, tempRadioStation.sJingleDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00439013;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00439037;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
 	__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00439086;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1F0], eax;
 	__asm        cmp    dword ptr [ebp-0x1F0], 0;
 	__asm        je     near ptr 0x0043907F;
+
 	__asm        jmp    near ptr 0x00439059;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7428,12 +8420,15 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
 	__asm        jmp    near ptr 0x00439086;
+
 	__asm        mov    tempRadioStation.sJingleDirectory.reference, 0;
 	__asm        jmp    near ptr 0x0043908B;
+
 	__asm        lea    ecx, [ebp-0x150];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x150], 0;
 	__asm        je     near ptr 0x004390CA;
+
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    [ebp-0x1C4], eax;
 	__asm        mov    eax, [ebp-0x1C4];
@@ -7451,7 +8446,9 @@ int  Radio::SetupStations() {
 	__asm        add    esp, 8;
 // LINE 984:
 	__asm        jmp    near ptr 0x004390E5;
+
 	__asm        jmp    near ptr 0x004390EA;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7464,12 +8461,17 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x1B0];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00439114;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00439189;
+
 	__asm        jmp    near ptr 0x00439129;
+
 	__asm        jmp    near ptr 0x0043912E;
+
 	__asm        jmp    near ptr 0x00439133;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1B8], eax;
@@ -7490,11 +8492,14 @@ int  Radio::SetupStations() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00439189;
+
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x1B4], eax;
 	__asm        jmp    near ptr 0x0043919D;
+
 	__asm        jmp    near ptr 0x004391A2;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1B4];
@@ -7508,28 +8513,35 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x1B0];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004391D9;
+
 	__asm        lea    eax, sScratch.c_str_ptr;
 	__asm        lea    ecx, [ebp-0x158];
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x0043927C;
+
 	__asm        lea    ecx, sScratch.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x004391FD;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00439227;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    sScratch.reference, eax;
 	__asm        mov    eax, sScratch.reference;
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0043927C;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1CC], eax;
 	__asm        cmp    dword ptr [ebp-0x1CC], 0;
 	__asm        je     near ptr 0x00439272;
+
 	__asm        jmp    near ptr 0x00439249;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7540,12 +8552,15 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sScratch.reference, eax;
 	__asm        jmp    near ptr 0x0043927C;
+
 	__asm        mov    sScratch.reference, 0;
 	__asm        jmp    near ptr 0x00439281;
+
 	__asm        lea    ecx, [ebp-0x158];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x158], 0;
 	__asm        je     near ptr 0x004392C0;
+
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    [ebp-0x168], eax;
 	__asm        mov    eax, [ebp-0x168];
@@ -7558,6 +8573,7 @@ int  Radio::SetupStations() {
 // LINE 985:
 	__asm        cmp    dword ptr ds:[0x597664], 1;
 	__asm        je     near ptr 0x00439332;
+
 	__asm        lea    eax, sScratch.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7589,6 +8605,7 @@ int  Radio::SetupStations() {
 	__asm        call   basic_string<char>::remove;
 // LINE 991:
 	__asm        jmp    near ptr 0x00439337;
+
 	__asm        mov    eax, sCurrentLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -7606,6 +8623,7 @@ int  Radio::SetupStations() {
 	__asm        mov    ecx, [ecx+8];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     near ptr 0x004393A3;
+
 	__asm        lea    eax, tempRadioStation.<vftable>;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7616,7 +8634,9 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+8], 0x98;
 	__asm        jmp    near ptr 0x004393C7;
+
 	__asm        jmp    near ptr 0x004393A8;
+
 	__asm        lea    eax, tempRadioStation.<vftable>;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7633,6 +8653,7 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, [eax];
 	__asm        mov    radioStationStringListIterator.node, eax;
 	__asm        jmp    near ptr 0x004393E2;
+
 	__asm        mov    eax, [ebp-0x198];
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        jmp    near ptr 0x004393F3;
@@ -7640,8 +8661,11 @@ int  Radio::SetupStations() {
 	__asm        jmp    near ptr 0x00438823;
 // LINE 1002:
 	__asm        jmp    near ptr 0x004393FD;
+
 	__asm        jmp    near ptr 0x00439402;
+
 	__asm        jmp    near ptr 0x00439407;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -7659,6 +8683,7 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, nStationCount;
 	__asm        mov    [ebp-0x160], eax;
 	__asm        jmp    near ptr 0x0043944E;
+
 	__asm        lea    ecx, [ebp-0xC8];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, [ebp-0xD0];
@@ -7672,7 +8697,9 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, [ebp-0x1A8];
 	__asm        mov    [ebp-0x19C], eax;
 	__asm        jmp    near ptr 0x00439497;
+
 	__asm        jmp    near ptr 0x0043949C;
+
 	__asm        mov    eax, [ebp-0x19C];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1A0];
@@ -7691,15 +8718,19 @@ int  Radio::SetupStations() {
 	__asm        mov    eax, [ebp-0x1A4];
 	__asm        mov    ds:[0x59856C], eax;
 	__asm        jmp    near ptr 0x004394EC;
+
 	__asm        dec    dword ptr ds:[0x598560];
 	__asm        jne    near ptr 0x00439503;
+
 	__asm        lea    ecx, radioStationStringList.node;
 	__asm        call   list<basic_string<char>>::deallocate_buffers;
 	__asm        jmp    near ptr 0x00439508;
+
 	__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sCurrentLanguage.c_str_ptr, 0;
 	__asm        je     near ptr 0x00439547;
+
 	__asm        mov    eax, sCurrentLanguage.c_str_ptr;
 	__asm        mov    [ebp-0x170], eax;
 	__asm        mov    eax, [ebp-0x170];
@@ -7709,10 +8740,12 @@ int  Radio::SetupStations() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043954C;
+
 	__asm        lea    ecx, sScratch.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sScratch.c_str_ptr, 0;
 	__asm        je     near ptr 0x0043958B;
+
 	__asm        mov    eax, sScratch.c_str_ptr;
 	__asm        mov    [ebp-0x178], eax;
 	__asm        mov    eax, [ebp-0x178];
@@ -7722,10 +8755,12 @@ int  Radio::SetupStations() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439590;
+
 	__asm        lea    ecx, sCommercialDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sCommercialDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x004395CF;
+
 	__asm        mov    eax, sCommercialDirectory.c_str_ptr;
 	__asm        mov    [ebp-0x180], eax;
 	__asm        mov    eax, [ebp-0x180];
@@ -7735,10 +8770,12 @@ int  Radio::SetupStations() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004395D4;
+
 	__asm        lea    ecx, sStationDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sStationDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x00439613;
+
 	__asm        mov    eax, sStationDirectory.c_str_ptr;
 	__asm        mov    [ebp-0x188], eax;
 	__asm        mov    eax, [ebp-0x188];
@@ -7748,10 +8785,12 @@ int  Radio::SetupStations() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439618;
+
 	__asm        lea    ecx, sRadioDirectory.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sRadioDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x0043964E;
+
 	__asm        mov    eax, sRadioDirectory.c_str_ptr;
 	__asm        mov    [ebp-0x190], eax;
 	__asm        mov    eax, [ebp-0x190];
@@ -7761,6 +8800,7 @@ int  Radio::SetupStations() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439653;
+
 	__asm        mov    eax, [ebp-0x160];
 	__asm        jmp    near ptr 0x0043965E;
 // LINE 1006:
@@ -7768,6 +8808,7 @@ int  Radio::SetupStations() {
 
 // FUNCTION: COPTER_D 0x00439663
 int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_string<char>& sDirectory) {
+
 	__asm        mov    eax, ds:[0x5984C4];
 	__asm        mov    [ebp-0x6C], eax;
 // LINE 1014:
@@ -7777,20 +8818,27 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0043968B;
+
 	__asm        jmp    near ptr 0x00439690;
+
 	__asm        jmp    near ptr 0x00439695;
+
 	__asm        mov    eax, sDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004396BA;
+
 	__asm        mov    eax, sDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004396C6;
+
 	__asm        jmp    near ptr 0x004396C6;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x004396C6;
+
 	__asm        mov    eax, sDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -7799,6 +8847,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        sub    eax, [ebp-0x30];
 	__asm        cmp    eax, [ebp-0x68];
 	__asm        ja     near ptr 0x00439715;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -7808,16 +8857,19 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439706;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439715;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004397C1;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        add    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x58];
@@ -7828,6 +8880,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0043979E;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -7838,6 +8891,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00439799;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x60], eax;
@@ -7853,22 +8907,30 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00439799;
+
 	__asm        jmp    near ptr 0x004397A7;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004397B6;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004397C8;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x004397D4;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00439812;
+
 	__asm        jmp    near ptr 0x004397E3;
+
 	__asm        jmp    near ptr 0x004397E8;
+
 	__asm        mov    eax, sDirectory;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -7884,10 +8946,12 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00439812;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x00439820;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        add    [ecx], eax;
@@ -7902,15 +8966,18 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004398BB;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     near ptr 0x004398BB;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0043989B;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x50], eax;
@@ -7925,16 +8992,22 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x004398A0;
+
 	__asm        jmp    near ptr 0x004398A5;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004398B6;
+
 	__asm        jmp    near ptr 0x004398BB;
+
 	__asm        jmp    near ptr 0x004398C0;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004398E2;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
@@ -7944,7 +9017,9 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004398E7;
+
 	__asm        jmp    near ptr 0x004398EC;
+
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   Directory::DoesAnyEntryExistThatMatchesPattern;
@@ -7955,15 +9030,18 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0043997E;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0043997E;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0043995E;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
@@ -7978,16 +9056,22 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00439963;
+
 	__asm        jmp    near ptr 0x00439968;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00439979;
+
 	__asm        jmp    near ptr 0x0043997E;
+
 	__asm        jmp    near ptr 0x00439983;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004399A5;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
@@ -7997,6 +9081,7 @@ int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004399AA;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x004399B2;
 // LINE 1015:

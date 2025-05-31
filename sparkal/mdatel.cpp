@@ -580,6 +580,7 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 	__asm        mov    eax, szTime;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x0041FB4B;
+
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
@@ -591,7 +592,7 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 
 // FUNCTION: COPTER_D 0x0041fb6a
 class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
-	 // Switch table at 0x0041fde4
+	static const <NoType> = { /* <data@0x0041fde4> */ };
 	uint32_t hh;
 	uint32_t mm;
 	int32_t nLanguageToUse;
@@ -646,10 +647,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 59:
 	__asm        cmp    t, 0;
 	__asm        je     near ptr 0x0041FC18;
+
 	__asm        mov    eax, t;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    near ptr 0x0041FC22;
+
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 	__asm        push   0x5972A0;
 	__asm        mov    eax, [ebp-0x11C];
@@ -681,10 +684,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 65:
 	__asm        cmp    hh, 0xC;
 	__asm        jbe    near ptr 0x0041FCB0;
+
 	__asm        mov    eax, hh;
 	__asm        sub    eax, 0xC;
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    near ptr 0x0041FCBC;
+
 	__asm        mov    eax, hh;
 	__asm        mov    [ebp-0x120], eax;
 	__asm        mov    eax, 0x5972A8;
@@ -748,9 +753,11 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        add    esp, 0x10;
 // LINE 101:
 	__asm        jmp    near ptr 0x0041FE09;
+
 	__asm        sub    dword ptr [ebp-0x128], 2;
 	__asm        cmp    dword ptr [ebp-0x128], 0x24;
 	__asm        ja     near ptr 0x0041FD57;
+
 	__asm        mov    eax, [ebp-0x128];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x41FDE4];
@@ -770,6 +777,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    near ptr 0x0041FE31;
+
 	__asm        lea    ecx, out.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out.<ostrstream+0x08>;
@@ -781,6 +789,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 
 // FUNCTION: COPTER_D 0x0041fe57
 void MDateLocalized::MDateLocalized() {
+
 	__asm        mov    ecx, this;
 	__asm        call   MDate::MDate;
 	__asm        mov    eax, this;
@@ -789,11 +798,13 @@ void MDateLocalized::MDateLocalized() {
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 122:
 	__asm        jmp    near ptr 0x0041FE83;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0041fe8b
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
+
 	__asm        mov    eax, year;
 	__asm        push   eax;
 	__asm        mov    eax, day;
@@ -806,11 +817,13 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 130:
 	__asm        jmp    near ptr 0x0041FEBF;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0041fec9
 void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t year) {
+
 	__asm        mov    eax, year;
 	__asm        push   eax;
 	__asm        mov    eax, monthName;
@@ -840,11 +853,13 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 	__asm        mov    [ecx+4], eax;
 // LINE 139:
 	__asm        jmp    near ptr 0x0041FF26;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0041ff30
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year) {
+
 	__asm        mov    eax, year;
 	__asm        push   eax;
 	__asm        mov    eax, month;
@@ -859,11 +874,13 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year)
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 147:
 	__asm        jmp    near ptr 0x0041FF68;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0041ff72
 void MDateLocalized::MDateLocalized(class istream& s) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        mov    eax, s;
@@ -871,17 +888,20 @@ void MDateLocalized::MDateLocalized(class istream& s) {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::ParseFrom;
 	__asm        jmp    near ptr 0x0041FF98;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 155:
 	__asm        jmp    near ptr 0x0041FFB0;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0041ffba
 void MDateLocalized::MDateLocalized(const class MTime& time) {
+
 	__asm        mov    eax, time;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -892,6 +912,7 @@ void MDateLocalized::MDateLocalized(const class MTime& time) {
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 163:
 	__asm        jmp    near ptr 0x0041FFEA;
+
 	__asm        mov    eax, this;
 }
 
@@ -1008,6 +1029,7 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 	__asm        mov    eax, szDate;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x0042012D;
+
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
@@ -1070,6 +1092,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 // LINE 246:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004201E8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 7;
 	__asm        jg     near ptr 0x0042022B;
@@ -1108,6 +1131,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 // LINE 267:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x00420256;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1F;
 	__asm        jg     near ptr 0x00420299;
@@ -1165,6 +1189,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x0042032A;
+
 	__asm        push   0xFFF;
 	__asm        mov    eax, szDayName;
 	__asm        push   eax;
@@ -1183,6 +1208,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0042032F;
+
 	__asm        jmp    near ptr 0x0042032F;
 // LINE 292:
 	__asm        mov    eax, szDayName;
@@ -1217,6 +1243,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x004203C1;
+
 	__asm        push   0xFFF;
 	__asm        mov    eax, szMonthName;
 	__asm        push   eax;
@@ -1235,6 +1262,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004203C6;
+
 	__asm        jmp    near ptr 0x004203C6;
 // LINE 312:
 	__asm        mov    eax, szMonthName;
@@ -1244,7 +1272,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 
 // FUNCTION: COPTER_D 0x004203d3
 class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
-	 // Switch table at 0x0042058b
+	static const <NoType> = { /* <data@0x0042058b> */ };
 	int32_t nLanguageToUse;
 	char buf[80];
 
@@ -1364,9 +1392,11 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        add    esp, 0x14;
 // LINE 402:
 	__asm        jmp    near ptr 0x004205B3;
+
 	__asm        inc    dword ptr [ebp-0x58];
 	__asm        cmp    dword ptr [ebp-0x58], 0x27;
 	__asm        ja     near ptr 0x004204F7;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x42058B];

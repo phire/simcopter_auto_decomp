@@ -263,6 +263,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    szString, eax;
 // LINE 38:
 	__asm        jmp    near ptr 0x0048FEF0;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
@@ -270,11 +271,13 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        jle    near ptr 0x0049042F;
 // LINE 39:
 	__asm        jmp    near ptr 0x0048FF07;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     near ptr 0x0048FF4B;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -284,36 +287,48 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048FF3C;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048FF4B;
+
 	__asm        jmp    near ptr 0x0048FF50;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x00490035;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0048FFDF;
+
 	__asm        jmp    near ptr 0x0048FF7C;
+
 	__asm        jmp    near ptr 0x0048FF81;
+
 	__asm        jmp    near ptr 0x0048FF86;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0048FFAB;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0048FFB7;
+
 	__asm        jmp    near ptr 0x0048FFB7;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0048FFB7;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -328,6 +343,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0048FFE6;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -336,6 +352,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490027;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x2C], eax;
@@ -343,16 +360,21 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x00490027;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490027;
+
 	__asm        jmp    near ptr 0x0049002C;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, sFilter;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049003A;
+
 	__asm        jmp    near ptr 0x0049003F;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -366,11 +388,13 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        jne    near ptr 0x00490427;
 // LINE 41:
 	__asm        jmp    near ptr 0x00490065;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     near ptr 0x004900A9;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -380,36 +404,48 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049009A;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004900A9;
+
 	__asm        jmp    near ptr 0x004900AE;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x00490193;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x0049013D;
+
 	__asm        jmp    near ptr 0x004900DA;
+
 	__asm        jmp    near ptr 0x004900DF;
+
 	__asm        jmp    near ptr 0x004900E4;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00490109;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00490115;
+
 	__asm        jmp    near ptr 0x00490115;
+
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    near ptr 0x00490115;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -424,6 +460,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x00490144;
+
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -432,6 +469,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490185;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x44], eax;
@@ -439,31 +477,38 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x00490185;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490185;
+
 	__asm        jmp    near ptr 0x0049018A;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, sFilter;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00490198;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, i;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004901AB;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    byte ptr [eax], 0;
 // LINE 42:
 	__asm        jmp    near ptr 0x004901B6;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
 	__asm        inc    ecx;
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     near ptr 0x004901FB;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -473,36 +518,48 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004901EC;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004901FB;
+
 	__asm        jmp    near ptr 0x00490200;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x004902E5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x0049028F;
+
 	__asm        jmp    near ptr 0x0049022C;
+
 	__asm        jmp    near ptr 0x00490231;
+
 	__asm        jmp    near ptr 0x00490236;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049025B;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x00490267;
+
 	__asm        jmp    near ptr 0x00490267;
+
 	__asm        mov    dword ptr [ebp-0x50], 0;
 	__asm        jmp    near ptr 0x00490267;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -517,6 +574,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x00490296;
+
 	__asm        mov    dword ptr [ebp-0x48], 0;
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -525,6 +583,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004902D7;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x5C], eax;
@@ -532,16 +591,21 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x004902D7;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004902D7;
+
 	__asm        jmp    near ptr 0x004902DC;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, sFilter;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004902EA;
+
 	__asm        jmp    near ptr 0x004902EF;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -552,12 +616,14 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        jne    near ptr 0x00490427;
 // LINE 43:
 	__asm        jmp    near ptr 0x00490310;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
 	__asm        inc    ecx;
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     near ptr 0x00490355;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -567,36 +633,48 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490346;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490355;
+
 	__asm        jmp    near ptr 0x0049035A;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x00490401;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     near ptr 0x004903E9;
+
 	__asm        jmp    near ptr 0x00490386;
+
 	__asm        jmp    near ptr 0x0049038B;
+
 	__asm        jmp    near ptr 0x00490390;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004903B5;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x004903C1;
+
 	__asm        jmp    near ptr 0x004903C1;
+
 	__asm        mov    dword ptr [ebp-0x68], 0;
 	__asm        jmp    near ptr 0x004903C1;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -611,6 +689,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x004903F0;
+
 	__asm        mov    dword ptr [ebp-0x60], 0;
 	__asm        mov    ecx, sFilter;
 	__asm        call   basic_string<char>::delete_ref;
@@ -618,6 +697,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        mov    ecx, sFilter;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00490406;
+
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -626,6 +706,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	__asm        add    eax, ecx;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0049041C;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    byte ptr [eax], 0;
 // LINE 44:
@@ -650,6 +731,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00490499;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x20];
@@ -661,9 +743,11 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049048E;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    sTitle.reference, eax;
 	__asm        jmp    near ptr 0x004904A0;
+
 	__asm        mov    sTitle.reference, 0;
 	__asm        mov    sTitle.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004904AC;
@@ -674,6 +758,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004904FC;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x24];
@@ -685,9 +770,11 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004904F1;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    sFilter.reference, eax;
 	__asm        jmp    near ptr 0x00490503;
+
 	__asm        mov    sFilter.reference, 0;
 	__asm        mov    sFilter.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049050F;
@@ -703,6 +790,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x004905C9;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
@@ -716,6 +804,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        jmp    near ptr 0x0049056E;
+
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -726,7 +815,9 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00490592;
+
 	__asm        jmp    near ptr 0x00490597;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -735,10 +826,14 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004905B7;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x004906E8;
+
 	__asm        jmp    near ptr 0x00490611;
+
 	__asm        jmp    near ptr 0x004905CE;
+
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -749,9 +844,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004905F2;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x004906E8;
+
 	__asm        jmp    near ptr 0x00490611;
+
 	__asm        cmp    dword ptr [ebp-0x1074], 0;
 	__asm        jne    near ptr 0x004906E8;
 // LINE 67:
@@ -761,19 +859,24 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, sFilter.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490650;
+
 	__asm        mov    eax, sFilter.reference;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00490650;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490650;
+
 	__asm        jmp    near ptr 0x00490655;
+
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490677;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -783,24 +886,30 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049067C;
+
 	__asm        mov    eax, sTitle.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTitle.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004906B4;
+
 	__asm        mov    eax, sTitle.reference;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x004906B4;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004906B4;
+
 	__asm        jmp    near ptr 0x004906B9;
+
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x004906DB;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -810,6 +919,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004906E0;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x00490925;
 // LINE 68:
@@ -824,6 +934,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x2078], eax;
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x004907A2;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
@@ -837,6 +948,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
 	__asm        jmp    near ptr 0x00490747;
+
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -847,7 +959,9 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049076B;
+
 	__asm        jmp    near ptr 0x00490770;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -856,10 +970,14 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00490790;
+
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x00490857;
+
 	__asm        jmp    near ptr 0x004907EA;
+
 	__asm        jmp    near ptr 0x004907A7;
+
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -870,9 +988,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004907CB;
+
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x00490857;
+
 	__asm        jmp    near ptr 0x004907EA;
+
 	__asm        cmp    dword ptr [ebp-0x207C], 0;
 	__asm        jne    near ptr 0x00490857;
 // LINE 69:
@@ -881,6 +1002,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049081B;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -890,10 +1012,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490820;
+
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049084A;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
@@ -903,6 +1027,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049084F;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    near ptr 0x00490925;
 // LINE 70:
@@ -930,19 +1055,24 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, sFilter.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x004908C2;
+
 	__asm        mov    eax, sFilter.reference;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x004908C2;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004908C2;
+
 	__asm        jmp    near ptr 0x004908C7;
+
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x004908E9;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
@@ -952,10 +1082,12 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004908EE;
+
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490918;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
@@ -965,6 +1097,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049091D;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00490925;
 // LINE 73:
@@ -1047,6 +1180,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x00490A43;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x20];
@@ -1058,9 +1192,11 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00490A38;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    sTitle.reference, eax;
 	__asm        jmp    near ptr 0x00490A4A;
+
 	__asm        mov    sTitle.reference, 0;
 	__asm        mov    sTitle.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00490A56;
@@ -1071,6 +1207,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x00490AA6;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x24];
@@ -1082,9 +1219,11 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00490A9B;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    sFilter.reference, eax;
 	__asm        jmp    near ptr 0x00490AAD;
+
 	__asm        mov    sFilter.reference, 0;
 	__asm        mov    sFilter.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00490AB9;
@@ -1100,6 +1239,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x00490B73;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
@@ -1113,6 +1253,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
 	__asm        jmp    near ptr 0x00490B18;
+
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1123,7 +1264,9 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00490B3C;
+
 	__asm        jmp    near ptr 0x00490B41;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1132,10 +1275,14 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00490B61;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x00490C92;
+
 	__asm        jmp    near ptr 0x00490BBB;
+
 	__asm        jmp    near ptr 0x00490B78;
+
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1146,9 +1293,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00490B9C;
+
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        jne    near ptr 0x00490C92;
+
 	__asm        jmp    near ptr 0x00490BBB;
+
 	__asm        cmp    dword ptr [ebp-0x1074], 0;
 	__asm        jne    near ptr 0x00490C92;
 // LINE 125:
@@ -1158,19 +1308,24 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, sFilter.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490BFA;
+
 	__asm        mov    eax, sFilter.reference;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00490BFA;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490BFA;
+
 	__asm        jmp    near ptr 0x00490BFF;
+
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490C21;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -1180,24 +1335,30 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490C26;
+
 	__asm        mov    eax, sTitle.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTitle.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490C5E;
+
 	__asm        mov    eax, sTitle.reference;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x00490C5E;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490C5E;
+
 	__asm        jmp    near ptr 0x00490C63;
+
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490C85;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -1207,6 +1368,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490C8A;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x00490ECF;
 // LINE 126:
@@ -1221,6 +1383,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    [ebp-0x2078], eax;
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x00490D4C;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
@@ -1234,6 +1397,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
 	__asm        jmp    near ptr 0x00490CF1;
+
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1244,7 +1408,9 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00490D15;
+
 	__asm        jmp    near ptr 0x00490D1A;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1253,10 +1419,14 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00490D3A;
+
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x00490E01;
+
 	__asm        jmp    near ptr 0x00490D94;
+
 	__asm        jmp    near ptr 0x00490D51;
+
 	__asm        lea    eax, [ebp-0x2074];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1267,9 +1437,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        lea    ecx, sFilter.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00490D75;
+
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
 	__asm        jne    near ptr 0x00490E01;
+
 	__asm        jmp    near ptr 0x00490D94;
+
 	__asm        cmp    dword ptr [ebp-0x207C], 0;
 	__asm        jne    near ptr 0x00490E01;
 // LINE 127:
@@ -1278,6 +1451,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490DC5;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -1287,10 +1461,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490DCA;
+
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490DF4;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
@@ -1300,6 +1476,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490DF9;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    near ptr 0x00490ECF;
 // LINE 128:
@@ -1327,19 +1504,24 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    eax, sFilter.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00490E6C;
+
 	__asm        mov    eax, sFilter.reference;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     near ptr 0x00490E6C;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00490E6C;
+
 	__asm        jmp    near ptr 0x00490E71;
+
 	__asm        cmp    sFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490E93;
+
 	__asm        mov    eax, sFilter.c_str_ptr;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
@@ -1349,10 +1531,12 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490E98;
+
 	__asm        lea    ecx, sTitle.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00490EC2;
+
 	__asm        mov    eax, sTitle.c_str_ptr;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
@@ -1362,6 +1546,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00490EC7;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00490ECF;
 // LINE 131:

@@ -267,6 +267,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 226:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x004D6E3F;
+
 	__asm        inc    y;
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6663A0], eax;
@@ -274,6 +275,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 228:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x004D6E5D;
+
 	__asm        inc    x;
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6663A0], eax;
@@ -356,6 +358,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 258:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D6F5C;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, ds:[0x666358];
@@ -366,6 +369,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 261:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004D6F81;
+
 	__asm        inc    j;
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, ds:[0x666358];
@@ -398,6 +402,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 276:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x004D6FD7;
+
 	__asm        inc    y;
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6663A0], eax;
@@ -405,6 +410,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 278:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x004D6FF5;
+
 	__asm        inc    x;
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6663A0], eax;
@@ -417,6 +423,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 303:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D7022;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 2;
@@ -530,10 +537,13 @@ short VRInitGridObj(long ViewSize) {
 	__asm        jmp    near ptr 0x004D7175;
 // LINE 342:
 	__asm        jmp    near ptr 0x004D7175;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x004D706D;
+
 	__asm        cmp    dword ptr [ebp-0x44], 1;
 	__asm        je     near ptr 0x004D70E2;
+
 	__asm        jmp    near ptr 0x004D7175;
 // LINE 343:
 	__asm        jmp    near ptr 0x004D701E;

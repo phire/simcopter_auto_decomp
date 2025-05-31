@@ -14,16 +14,20 @@ long S2TileSize(long tile) {
 // LINE 46:
 	__asm        cmp    tile, 0x61;
 	__asm        jl     near ptr 0x0058E38D;
+
 	__asm        cmp    tile, 0x6C;
 	__asm        jl     near ptr 0x0058E3A1;
+
 	__asm        cmp    tile, 0x49;
 	__asm        jl     near ptr 0x0058E3AD;
+
 	__asm        cmp    tile, 0x51;
 	__asm        jge    near ptr 0x0058E3AD;
 // LINE 47:
 	__asm        mov    size, 2;
 // LINE 49:
 	__asm        jmp    near ptr 0x0058E3D1;
+
 	__asm        cmp    tile, 0x70;
 	__asm        jge    near ptr 0x0058E3C3;
 // LINE 50:

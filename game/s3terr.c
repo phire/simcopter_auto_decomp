@@ -41,6 +41,7 @@ short GetAltitude(int32_t x, int32_t y) {
 // LINE 96:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00513D6D;
+
 	__asm        cmp    y, 0;
 	__asm        jge    near ptr 0x00513D75;
 // LINE 97:
@@ -49,6 +50,7 @@ short GetAltitude(int32_t x, int32_t y) {
 // LINE 98:
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00513D8F;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x00513D97;
 // LINE 99:
@@ -76,6 +78,7 @@ short GetAltitude(int32_t x, int32_t y) {
 	__asm        movsx  ecx, wat;
 	__asm        cmp    eax, ecx;
 	__asm        jge    near ptr 0x00513E07;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -107,6 +110,7 @@ void S3TerrainInit() {
 // LINE 135:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00513E44;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x40;
 	__asm        jge    near ptr 0x00513E77;
@@ -129,7 +133,7 @@ void S3TerrainInit() {
 
 // FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
-	 // Switch table at 0x00515521
+	static const <NoType> = { /* <data@0x00515521> */ };
 	short tile;
 	short alt;
 	long y;
@@ -184,12 +188,14 @@ short S3TerrainInitMap() {
 // LINE 190:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00513F31;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00514025;
 // LINE 191:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00513F4D;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00514020;
@@ -209,6 +215,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x00513FA4;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -255,6 +262,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 208:
 	__asm        jmp    near ptr 0x00513F4A;
+
 	__asm        jmp    near ptr 0x00513F2E;
 // LINE 211:
 	__asm        sub    dword ptr ds:[0x66EB00], 0x32;
@@ -263,16 +271,19 @@ short S3TerrainInitMap() {
 // LINE 213:
 	__asm        cmp    dword ptr ds:[0x66EB00], 0;
 	__asm        jge    near ptr 0x0051404A;
+
 	__asm        mov    dword ptr ds:[0x66EB00], 0;
 // LINE 219:
 	__asm        mov    x, 1;
 	__asm        jmp    near ptr 0x0051405A;
+
 	__asm        add    x, 2;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x005141FD;
 // LINE 220:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00514077;
+
 	__asm        add    y, 2;
 	__asm        cmp    y, 0x100;
 	__asm        jg     near ptr 0x005141F8;
@@ -308,6 +319,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 227:
 	__asm        jmp    near ptr 0x005141F3;
+
 	__asm        cmp    y, 0x100;
 	__asm        jne    near ptr 0x00514165;
 // LINE 229:
@@ -381,16 +393,19 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 237:
 	__asm        jmp    near ptr 0x00514073;
+
 	__asm        jmp    near ptr 0x00514056;
 // LINE 242:
 	__asm        mov    y, 1;
 	__asm        jmp    near ptr 0x0051420D;
+
 	__asm        add    y, 2;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x005143B0;
 // LINE 243:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0051422A;
+
 	__asm        add    x, 2;
 	__asm        cmp    x, 0x100;
 	__asm        jg     near ptr 0x005143AB;
@@ -426,6 +441,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 250:
 	__asm        jmp    near ptr 0x005143A6;
+
 	__asm        cmp    x, 0x100;
 	__asm        jne    near ptr 0x00514318;
 // LINE 252:
@@ -499,16 +515,19 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 260:
 	__asm        jmp    near ptr 0x00514226;
+
 	__asm        jmp    near ptr 0x00514209;
 // LINE 264:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x005143C0;
+
 	__asm        add    y, 2;
 	__asm        cmp    y, 0x100;
 	__asm        jg     near ptr 0x0051455F;
 // LINE 265:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005143DD;
+
 	__asm        add    x, 2;
 	__asm        cmp    x, 0x100;
 	__asm        jg     near ptr 0x0051455A;
@@ -544,6 +563,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 272:
 	__asm        jmp    near ptr 0x00514555;
+
 	__asm        cmp    x, 0x100;
 	__asm        jne    near ptr 0x005144C7;
 // LINE 274:
@@ -617,16 +637,19 @@ short S3TerrainInitMap() {
 	__asm        mov    [edx+ecx], ax;
 // LINE 282:
 	__asm        jmp    near ptr 0x005143D9;
+
 	__asm        jmp    near ptr 0x005143BC;
 // LINE 290:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0051456E;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00514640;
 // LINE 292:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0051458A;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x005145F2;
@@ -683,6 +706,7 @@ short S3TerrainInitMap() {
 // LINE 302:
 	__asm        mov    y, 0x80;
 	__asm        jmp    near ptr 0x0051464F;
+
 	__asm        inc    y;
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        cmp    y, eax;
@@ -709,6 +733,7 @@ short S3TerrainInitMap() {
 // LINE 311:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x005146A4;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0051474F;
@@ -755,6 +780,7 @@ short S3TerrainInitMap() {
 // LINE 317:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0051475E;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0051480E;
@@ -816,12 +842,14 @@ short S3TerrainInitMap() {
 // LINE 326:
 	__asm        mov    x, 0x80;
 	__asm        jmp    near ptr 0x00514849;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x90;
 	__asm        jg     near ptr 0x005148A9;
 // LINE 328:
 	__asm        mov    y, 0x80;
 	__asm        jmp    near ptr 0x00514865;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x90;
 	__asm        jg     near ptr 0x005148A4;
@@ -865,6 +893,7 @@ short S3TerrainInitMap() {
 // LINE 354:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005148FA;
+
 	__asm        inc    x;
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        cmp    x, eax;
@@ -872,6 +901,7 @@ short S3TerrainInitMap() {
 // LINE 356:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00514917;
+
 	__asm        inc    y;
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        cmp    y, eax;
@@ -881,10 +911,12 @@ short S3TerrainInitMap() {
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, x;
 	__asm        jle    near ptr 0x0051494C;
+
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, y;
 	__asm        jle    near ptr 0x0051494C;
+
 	__asm        jmp    near ptr 0x00514914;
 // LINE 365:
 	__asm        mov    eax, y;
@@ -965,12 +997,14 @@ short S3TerrainInitMap() {
 // LINE 383:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00514A57;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x00514A9B;
 // LINE 385:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00514A73;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x00514A96;
@@ -986,12 +1020,14 @@ short S3TerrainInitMap() {
 // LINE 402:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00514AAA;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00514C0E;
 // LINE 404:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00514AC6;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00514C09;
@@ -1005,6 +1041,7 @@ short S3TerrainInitMap() {
 	__asm        movsx  eax, tile;
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x00514B2E;
+
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 5;
 	__asm        jge    near ptr 0x00514B2E;
@@ -1024,12 +1061,15 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 412:
 	__asm        jmp    near ptr 0x00514C04;
+
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 6;
 	__asm        jl     near ptr 0x00514B48;
+
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 0xD;
 	__asm        jle    near ptr 0x00514B57;
+
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 0xD5;
 	__asm        jne    near ptr 0x00514B6D;
@@ -1040,6 +1080,7 @@ short S3TerrainInitMap() {
 	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
 // LINE 416:
 	__asm        jmp    near ptr 0x00514C04;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -1055,6 +1096,7 @@ short S3TerrainInitMap() {
 // LINE 420:
 	__asm        test   reinterpret_cast<uint8_t>(x), 1;
 	__asm        jne    near ptr 0x00514C04;
+
 	__asm        test   reinterpret_cast<uint8_t>(y), 1;
 	__asm        jne    near ptr 0x00514C04;
 // LINE 421:
@@ -1087,12 +1129,14 @@ short S3TerrainInitMap() {
 // LINE 430:
 	__asm        mov    x, 1;
 	__asm        jmp    near ptr 0x00514C1D;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x7F;
 	__asm        jge    near ptr 0x00514D68;
 // LINE 432:
 	__asm        mov    y, 1;
 	__asm        jmp    near ptr 0x00514C36;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x00514D63;
@@ -1109,6 +1153,7 @@ short S3TerrainInitMap() {
 	__asm        mov    al, texid;
 	__asm        cmp    eax, 0x30;
 	__asm        je     near ptr 0x00514C6F;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, texid;
 	__asm        cmp    eax, 0x20;
@@ -1122,6 +1167,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, x;
 	__asm        shl    eax, 8;
 	__asm        mov    ecx, y;
@@ -1129,6 +1175,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        shl    eax, 8;
@@ -1137,6 +1184,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
@@ -1145,6 +1193,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
@@ -1153,6 +1202,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
@@ -1161,6 +1211,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB11];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -1168,6 +1219,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB11];
 	__asm        cmp    edx, 5;
 	__asm        je     near ptr 0x00514D4D;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
@@ -1189,12 +1241,14 @@ short S3TerrainInitMap() {
 // LINE 456:
 	__asm        mov    x, 1;
 	__asm        jmp    near ptr 0x00514D77;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x7F;
 	__asm        jge    near ptr 0x00514EB4;
 // LINE 458:
 	__asm        mov    y, 1;
 	__asm        jmp    near ptr 0x00514D90;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x00514EAF;
@@ -1220,6 +1274,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, x;
 	__asm        shl    eax, 8;
 	__asm        mov    ecx, y;
@@ -1227,6 +1282,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        shl    eax, 8;
@@ -1235,6 +1291,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB0F];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
@@ -1243,6 +1300,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
@@ -1251,6 +1309,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
@@ -1259,6 +1318,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB11];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -1266,6 +1326,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB11];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00514E99;
+
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
@@ -1287,12 +1348,14 @@ short S3TerrainInitMap() {
 // LINE 482:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00514EC3;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0051547B;
 // LINE 484:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00514EDF;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00515476;
@@ -1320,6 +1383,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x00514F61;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1331,6 +1395,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00514FBC;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1342,6 +1407,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00514FB1;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1368,6 +1434,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x00515009;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1378,6 +1445,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515062;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1388,6 +1456,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515057;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1414,6 +1483,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x005150B1;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1425,6 +1495,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051510C;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1436,6 +1507,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515101;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1462,6 +1534,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x00515159;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1472,6 +1545,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005151B2;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1482,6 +1556,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005151A7;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -1507,6 +1582,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x005151FF;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1517,6 +1593,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515258;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1527,6 +1604,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051524D;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1553,6 +1631,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x005152A7;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1564,6 +1643,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515302;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1575,6 +1655,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005152F7;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1601,6 +1682,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x0051534F;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1611,6 +1693,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005153A8;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1621,6 +1704,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051539D;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1647,6 +1731,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x005153F7;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1658,6 +1743,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515454;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1669,6 +1755,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00515447;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -1700,12 +1787,14 @@ short S3TerrainInitMap() {
 // LINE 520:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0051548A;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0051565D;
 // LINE 522:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005154A6;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00515658;
@@ -1729,9 +1818,11 @@ short S3TerrainInitMap() {
 	__asm        jmp    near ptr 0x005154A3;
 // LINE 559:
 	__asm        jmp    near ptr 0x0051553F;
+
 	__asm        sub    dword ptr [ebp-0x34], 0x1D;
 	__asm        cmp    dword ptr [ebp-0x34], 0x1D;
 	__asm        ja     near ptr 0x005154A3;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x515521];
@@ -1754,6 +1845,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0xD;
 	__asm        je     near ptr 0x00515589;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x63A270];
 	__asm        mov    ecx, y;
@@ -1835,18 +1927,21 @@ short S3TerrainInitMap() {
 // LINE 584:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00515686;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x005157DD;
 // LINE 586:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x005156A2;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x005157D8;
 // LINE 589:
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x005156CE;
+
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x005156CE;
 // LINE 590:
@@ -1935,12 +2030,14 @@ short S3TerrainInitMap() {
 // LINE 605:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005157EC;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x005159F2;
 // LINE 607:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00515808;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x005159ED;
@@ -2030,6 +2127,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        je     near ptr 0x005159AE;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2040,6 +2138,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        je     near ptr 0x005159AE;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2050,6 +2149,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        je     near ptr 0x005159AE;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2084,12 +2184,14 @@ short S3TerrainInitMap() {
 // LINE 641:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00515A01;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x00515C0C;
 // LINE 643:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00515A1D;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x00515C07;
@@ -2179,6 +2281,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00515BC7;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2189,6 +2292,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00515BC7;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2199,6 +2303,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        je     near ptr 0x00515BC7;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2233,12 +2338,14 @@ short S3TerrainInitMap() {
 // LINE 677:
 	__asm        mov    x, 0x80;
 	__asm        jmp    near ptr 0x00515C1B;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x84;
 	__asm        jge    near ptr 0x00515C5F;
 // LINE 679:
 	__asm        mov    y, 0x80;
 	__asm        jmp    near ptr 0x00515C37;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x84;
 	__asm        jge    near ptr 0x00515C5A;
@@ -2254,12 +2361,14 @@ short S3TerrainInitMap() {
 // LINE 686:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00515C6E;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x00515F11;
 // LINE 688:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00515C8A;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x00515F0C;
@@ -2362,6 +2471,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        je     near ptr 0x00515E0C;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2372,6 +2482,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x00515F07;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2382,6 +2493,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        je     near ptr 0x00515E5A;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2392,6 +2504,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x00515F07;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2402,6 +2515,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        je     near ptr 0x00515EA8;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2412,6 +2526,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x00515F07;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2422,6 +2537,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        je     near ptr 0x00515EF6;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2444,12 +2560,14 @@ short S3TerrainInitMap() {
 // LINE 728:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00515F20;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x005161C1;
 // LINE 730:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00515F3C;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x005161BC;
@@ -2551,6 +2669,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x005160BC;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2561,6 +2680,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x005161B7;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2571,6 +2691,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x0051610A;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2581,6 +2702,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x005161B7;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2591,6 +2713,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x00516158;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2601,6 +2724,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x005161B7;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2611,6 +2735,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x005161A6;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2633,12 +2758,14 @@ short S3TerrainInitMap() {
 // LINE 770:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005161D0;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x0051646D;
 // LINE 772:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x005161EC;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x00516468;
@@ -2738,6 +2865,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x00516368;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2748,6 +2876,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    near ptr 0x00516463;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2758,6 +2887,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x005163B6;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2768,6 +2898,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    near ptr 0x00516463;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2778,6 +2909,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x00516404;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2788,6 +2920,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    near ptr 0x00516463;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2798,6 +2931,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        je     near ptr 0x00516452;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2820,12 +2954,14 @@ short S3TerrainInitMap() {
 // LINE 812:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0051647C;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x00516FB6;
 // LINE 814:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00516498;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x00516FB1;
@@ -2852,6 +2988,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x0051651C;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2862,6 +2999,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051656A;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2872,6 +3010,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00516573;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -2898,6 +3037,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x005165C0;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2908,6 +3048,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051660E;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2918,6 +3059,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00516619;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2944,6 +3086,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x00516666;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2954,6 +3097,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005166B4;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2964,6 +3108,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x005166BF;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -2990,6 +3135,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        test   edx, edx;
 	__asm        jl     near ptr 0x0051670C;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3000,6 +3146,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x0051675A;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3010,6 +3157,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 5;
 	__asm        jl     near ptr 0x00516765;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3033,6 +3181,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 834:
 	__asm        jmp    near ptr 0x00516FAC;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3055,6 +3204,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     near ptr 0x005167FE;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3081,6 +3231,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     near ptr 0x00516857;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3107,6 +3258,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     near ptr 0x005168B0;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3133,6 +3285,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     near ptr 0x00516909;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3156,6 +3309,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 852:
 	__asm        jmp    near ptr 0x00516FAC;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3178,6 +3332,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     near ptr 0x005169A2;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3204,6 +3359,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     near ptr 0x005169FB;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3230,6 +3386,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     near ptr 0x00516A54;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3256,6 +3413,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     near ptr 0x00516AAD;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3279,6 +3437,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 870:
 	__asm        jmp    near ptr 0x00516FAC;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3301,6 +3460,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     near ptr 0x00516B46;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3327,6 +3487,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     near ptr 0x00516B9F;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3353,6 +3514,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     near ptr 0x00516BF8;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3379,6 +3541,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     near ptr 0x00516C51;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3402,6 +3565,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 888:
 	__asm        jmp    near ptr 0x00516FAC;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3424,6 +3588,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     near ptr 0x00516CEA;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3450,6 +3615,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     near ptr 0x00516D43;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3476,6 +3642,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     near ptr 0x00516D9C;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3502,6 +3669,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     near ptr 0x00516DF5;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3525,6 +3693,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 906:
 	__asm        jmp    near ptr 0x00516FAC;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3547,6 +3716,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     near ptr 0x00516E8E;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3573,6 +3743,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     near ptr 0x00516EE7;
+
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3599,6 +3770,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     near ptr 0x00516F40;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -3625,6 +3797,7 @@ short S3TerrainInitMap() {
 	__asm        mov    dl, [eax+ecx+0x66EB10];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     near ptr 0x00516F99;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -3653,12 +3826,14 @@ short S3TerrainInitMap() {
 // LINE 930:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00516FC5;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x100;
 	__asm        jge    near ptr 0x005171FB;
 // LINE 932:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x00516FE1;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x100;
 	__asm        jge    near ptr 0x005171F6;
@@ -3695,6 +3870,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 941:
 	__asm        jmp    near ptr 0x005171F1;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3727,6 +3903,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 948:
 	__asm        jmp    near ptr 0x005171F1;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3759,6 +3936,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 955:
 	__asm        jmp    near ptr 0x005171F1;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -3791,6 +3969,7 @@ short S3TerrainInitMap() {
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 962:
 	__asm        jmp    near ptr 0x005171F1;
+
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 8;
@@ -4744,7 +4923,9 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        call   rand;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00517E20;
+
 	__asm        jmp    near ptr 0x00517E28;
+
 	__asm        mov    eax, delta;
 	__asm        neg    eax;
 	__asm        mov    delta, eax;
@@ -4757,6 +4938,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        mov    eax, ds:[0x66EB00];
 	__asm        cmp    new_height, eax;
 	__asm        jge    near ptr 0x00517E4F;
+
 	__asm        xor    eax, eax;
 	__asm        mov    ax, ds:[0x66EB00];
 	__asm        mov    new_height, eax;
@@ -4789,6 +4971,7 @@ void S3TerrSetGridObj() {
 	__asm        mov    eax, ulp.y;
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x00517E99;
+
 	__asm        inc    y;
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, ds:[0x666358];
@@ -4798,6 +4981,7 @@ void S3TerrSetGridObj() {
 	__asm        mov    eax, ulp.x;
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x00517EB9;
+
 	__asm        inc    x;
 	__asm        mov    eax, ulp.x;
 	__asm        add    eax, ds:[0x666358];
@@ -4807,23 +4991,27 @@ void S3TerrSetGridObj() {
 	__asm        mov    eax, yptr;
 	__asm        cmp    ds:[0x666368], eax;
 	__asm        jbe    near ptr 0x00517EF6;
+
 	__asm        push   0x482;
 	__asm        push   0x5B5D90;
 	__asm        push   0x5B5DB0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00517EFB;
+
 	__asm        jmp    near ptr 0x00517EFB;
 // LINE 1155:
 	__asm        mov    eax, yptr;
 	__asm        cmp    ds:[0x662874], eax;
 	__asm        ja     near ptr 0x00517F26;
+
 	__asm        push   0x483;
 	__asm        push   0x5B5DD0;
 	__asm        push   0x5B5DF0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00517F2B;
+
 	__asm        jmp    near ptr 0x00517F2B;
 // LINE 1158:
 	__asm        mov    eax, ds:[0x5B5CBC];
@@ -5110,11 +5298,14 @@ void S3TerrainMorph() {
 // LINE 1255:
 	__asm        cmp    mcell.x, 0;
 	__asm        jl     near ptr 0x00518348;
+
 	__asm        cmp    mcell.y, 0;
 	__asm        jl     near ptr 0x00518348;
+
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cmp    mcell.x, eax;
 	__asm        jge    near ptr 0x00518348;
+
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cmp    mcell.y, eax;
 	__asm        jl     near ptr 0x0051834D;
@@ -5134,23 +5325,27 @@ void S3TerrainMorph() {
 	__asm        mov    eax, ds:[0x666368];
 	__asm        cmp    v, eax;
 	__asm        jae    near ptr 0x00518399;
+
 	__asm        push   0x4ED;
 	__asm        push   0x5B5E14;
 	__asm        push   0x5B5E34;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0051839E;
+
 	__asm        jmp    near ptr 0x0051839E;
 // LINE 1262:
 	__asm        mov    eax, ds:[0x662874];
 	__asm        cmp    v, eax;
 	__asm        jb     near ptr 0x005183C8;
+
 	__asm        push   0x4EE;
 	__asm        push   0x5B5E44;
 	__asm        push   0x5B5E64;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005183CD;
+
 	__asm        jmp    near ptr 0x005183CD;
 // LINE 1265:
 	__asm        mov    eax, ds:[0x62A500];
@@ -5280,8 +5475,10 @@ int32_t S3TerrMorphWater() {
 	__asm        jmp    near ptr 0x0051855D;
 // LINE 1464:
 	__asm        jmp    near ptr 0x0051855D;
+
 	__asm        cmp    dword ptr [ebp-0x20], 3;
 	__asm        ja     near ptr 0x0051855D;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x51854D];
 // Switch pointers
@@ -5291,6 +5488,7 @@ int32_t S3TerrMorphWater() {
 	__asm        movsx  eax, word ptr ds:[0x5B5CE4];
 	__asm        cmp    eax, 4;
 	__asm        jne    near ptr 0x0051857D;
+
 	__asm        mov    word ptr ds:[0x5B5CE4], 0;
 // LINE 1469:
 	__asm        mov    eax, cycle;
@@ -5306,6 +5504,7 @@ int32_t S3TerrMorphWater() {
 	__asm        mov    eax, xstart;
 	__asm        mov    x, eax;
 	__asm        jmp    near ptr 0x005185A6;
+
 	__asm        add    x, 2;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0051864C;
@@ -5313,6 +5512,7 @@ int32_t S3TerrMorphWater() {
 	__asm        mov    eax, ystart;
 	__asm        mov    y, eax;
 	__asm        jmp    near ptr 0x005185C2;
+
 	__asm        add    y, 2;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x00518647;
@@ -5383,6 +5583,7 @@ void AdjustTerrainMap() {
 	__asm        mov    eax, start;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x0051868B;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    end, eax;
@@ -5397,6 +5598,7 @@ void AdjustTerrainMap() {
 	__asm        mov    z, eax;
 // LINE 1553:
 	__asm        jmp    near ptr 0x005186B1;
+
 	__asm        dec    z;
 	__asm        mov    eax, i;
 	__asm        neg    eax;
@@ -5465,6 +5667,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x00518793;
+
 	__asm        mov    eax, alt1;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5472,6 +5675,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x005187AB;
+
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5479,6 +5683,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x005187C3;
+
 	__asm        mov    eax, alt3;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5486,6 +5691,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x005187DB;
+
 	__asm        mov    eax, alt3;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5493,6 +5699,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x005187F3;
+
 	__asm        mov    eax, alt2;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5500,6 +5707,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x0051880B;
+
 	__asm        mov    eax, alt2;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5526,6 +5734,7 @@ void AdjustTerrainMap() {
 	__asm        mov    z, eax;
 // LINE 1566:
 	__asm        jmp    near ptr 0x00518856;
+
 	__asm        dec    x;
 	__asm        mov    eax, i;
 	__asm        neg    eax;
@@ -5594,6 +5803,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x00518939;
+
 	__asm        mov    eax, alt1;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5601,6 +5811,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x00518951;
+
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5608,6 +5819,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x00518969;
+
 	__asm        mov    eax, alt3;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5615,6 +5827,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x00518981;
+
 	__asm        mov    eax, alt3;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5622,6 +5835,7 @@ void AdjustTerrainMap() {
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    near ptr 0x00518999;
+
 	__asm        mov    eax, alt2;
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5629,6 +5843,7 @@ void AdjustTerrainMap() {
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    near ptr 0x005189B1;
+
 	__asm        mov    eax, alt2;
 	__asm        sub    eax, 0x20;
 	__asm        mov    alt, eax;
@@ -5663,12 +5878,14 @@ void AdjustTerrainMap() {
 // LINE 1580:
 	__asm        mov    x, 0x80;
 	__asm        jmp    near ptr 0x00518A28;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x90;
 	__asm        jg     near ptr 0x00518A87;
 // LINE 1582:
 	__asm        mov    z, 0x80;
 	__asm        jmp    near ptr 0x00518A44;
+
 	__asm        inc    z;
 	__asm        cmp    z, 0x90;
 	__asm        jg     near ptr 0x00518A82;
@@ -5839,6 +6056,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    near ptr 0x00518C55;
+
 	__asm        mov    eax, hypalt;
 	__asm        sub    eax, alt2;
 	__asm        cdq;
@@ -5856,6 +6074,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1670:
 	__asm        jmp    near ptr 0x00518DE6;
+
 	__asm        mov    eax, worldz;
 	__asm        cmp    hypz, eax;
 	__asm        jle    near ptr 0x00518D2D;
@@ -5903,6 +6122,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    near ptr 0x00518D1F;
+
 	__asm        mov    eax, hypalt;
 	__asm        sub    eax, alt2;
 	__asm        cdq;
@@ -5961,6 +6181,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    near ptr 0x00518DD5;
+
 	__asm        mov    eax, hypalt;
 	__asm        sub    eax, alt2;
 	__asm        cdq;
@@ -5997,6 +6218,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 // LINE 1718:
 	__asm        cmp    zdist, 0x64;
 	__asm        jge    near ptr 0x00518E26;
+
 	__asm        cmp    zdist, 0xFFFFFF9C;
 	__asm        jle    near ptr 0x00518E26;
 // LINE 1719:

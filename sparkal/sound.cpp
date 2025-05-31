@@ -468,6 +468,7 @@ public:
 // Contribution: 1:0002cf60-00030abe Module: 64, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042df60
 void SoundSystem::SoundSystem() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F440;
 // LINE 89:
@@ -503,11 +504,13 @@ void SoundSystem::SoundSystem() {
 	__asm        mov    dword ptr [eax+0x14], 0x60;
 // LINE 104:
 	__asm        jmp    near ptr 0x0042DFDA;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042dfe2
 void SoundSystem::~SoundSystem() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F440;
 // LINE 108:
@@ -531,11 +534,13 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042E046;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0042E050;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 134:
@@ -581,6 +586,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0042E0CE;
+
 	__asm        push   0x597E64;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
@@ -591,6 +597,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    bReturnValue, 0;
 // LINE 150:
 	__asm        jmp    near ptr 0x0042E2C1;
+
 	__asm        jmp    near ptr 0x0042E232;
 // LINE 155:
 	__asm        mov    eax, this;
@@ -615,6 +622,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0042E132;
+
 	__asm        push   0x597EA4;
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectSoundError::DisplayError;
@@ -622,6 +630,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    bReturnValue, 0;
 // LINE 162:
 	__asm        jmp    near ptr 0x0042E2BC;
+
 	__asm        jmp    near ptr 0x0042E232;
 // LINE 168:
 	__asm        push   1;
@@ -642,11 +651,13 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0042E180;
+
 	__asm        push   0x597EDC;
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 171:
 	__asm        jmp    near ptr 0x0042E2B7;
+
 	__asm        jmp    near ptr 0x0042E232;
 // LINE 175:
 	__asm        mov    eax, this;
@@ -661,6 +672,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    bReturnValue, 0;
 // LINE 177:
 	__asm        jmp    near ptr 0x0042E2B2;
+
 	__asm        jmp    near ptr 0x0042E232;
 // LINE 179:
 	__asm        mov    eax, this;
@@ -687,6 +699,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042E200;
+
 	__asm        push   0x597F20;
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectSoundError::DisplayError;
@@ -694,12 +707,14 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    bReturnValue, 0;
 // LINE 195:
 	__asm        jmp    near ptr 0x0042E2AD;
+
 	__asm        jmp    near ptr 0x0042E232;
 // LINE 197:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 1;
 // LINE 198:
 	__asm        jmp    near ptr 0x0042E2A8;
+
 	__asm        jmp    near ptr 0x0042E2A0;
 // LINE 201:
 ERROR_CLEANUP:
@@ -745,10 +760,15 @@ END_OF_ROUTINE:
 	__asm        jmp    near ptr 0x0042E2C6;
 // LINE 218:
 	__asm        jmp    near ptr 0x0042E2A0;
+
 	__asm        jmp    near ptr 0x0042E232;
+
 	__asm        jmp    near ptr 0x0042E232;
+
 	__asm        jmp    near ptr 0x0042E232;
+
 	__asm        jmp    near ptr 0x0042E232;
+
 	__asm        jmp    near ptr 0x0042E232;
 }
 
@@ -766,6 +786,7 @@ void SoundSystem::DeInitialize() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042E310;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
@@ -825,11 +846,13 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 void SoundManager::SoundManager() {
 	int32_t i;
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F448;
 // LINE 285:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042E3C5;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x80;
 	__asm        jge    near ptr 0x0042E3E5;
@@ -840,11 +863,13 @@ void SoundManager::SoundManager() {
 	__asm        jmp    near ptr 0x0042E3C2;
 // LINE 287:
 	__asm        jmp    near ptr 0x0042E3EA;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042e3f2
 void SoundManager::~SoundManager() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F448;
 // LINE 291:
@@ -861,6 +886,7 @@ void SoundManager::DeleteAllSounds() {
 // LINE 297:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042E434;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x80;
 	__asm        jge    near ptr 0x0042E474;
@@ -873,12 +899,14 @@ void SoundManager::DeleteAllSounds() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042E46F;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   dword ptr [eax];
 	__asm        jmp    near ptr 0x0042E46F;
+
 	__asm        jmp    near ptr 0x0042E431;
 // LINE 299:
 	__asm        jmp    near ptr 0x0042E479;
@@ -900,6 +928,7 @@ void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042E4C9;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
@@ -926,12 +955,14 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042E519;
+
 	__asm        mov    eax, lResID;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    newDigitalSound, eax;
 	__asm        jmp    near ptr 0x0042E520;
+
 	__asm        mov    newDigitalSound, 0;
 // LINE 342:
 	__asm        mov    eax, nIndex;
@@ -947,6 +978,7 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042E55F;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -973,6 +1005,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042E5B3;
+
 	__asm        mov    eax, nStreamingType;
 	__asm        push   eax;
 	__asm        mov    eax, sNewSoundFile;
@@ -981,6 +1014,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    newDigitalSound, eax;
 	__asm        jmp    near ptr 0x0042E5BA;
+
 	__asm        mov    newDigitalSound, 0;
 // LINE 349:
 	__asm        mov    eax, nIndex;
@@ -996,6 +1030,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042E5F9;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -1065,6 +1100,7 @@ void SoundManager::StopAllSounds() {
 // LINE 394:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042E6C0;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x80;
 	__asm        jge    near ptr 0x0042E6FC;
@@ -1090,12 +1126,14 @@ void SoundManager::StopAllSounds() {
 
 // FUNCTION: COPTER_D 0x0042e706
 void Sound::Sound() {
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042E765;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-4];
@@ -1107,15 +1145,18 @@ void Sound::Sound() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0042E757;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    near ptr 0x0042E76F;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
 	__asm        jmp    near ptr 0x0042E77E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F458;
 // LINE 414:
@@ -1147,15 +1188,18 @@ void Sound::Sound() {
 	__asm        mov    dword ptr [eax+0x30], 0;
 // LINE 423:
 	__asm        jmp    near ptr 0x0042E7E6;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042e7ee
 void Sound::~Sound() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F458;
 // LINE 434:
 	__asm        jmp    near ptr 0x0042E808;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1163,6 +1207,7 @@ void Sound::~Sound() {
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042E894;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x10], eax;
@@ -1170,9 +1215,11 @@ void Sound::~Sound() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042E894;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042E874;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -1187,17 +1234,23 @@ void Sound::~Sound() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0042E879;
+
 	__asm        jmp    near ptr 0x0042E87E;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042E88F;
+
 	__asm        jmp    near ptr 0x0042E894;
+
 	__asm        jmp    near ptr 0x0042E899;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x0042E8C1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-4], eax;
@@ -1244,6 +1297,7 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        add    ecx, 0x14;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x0042EADA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1251,6 +1305,7 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042E9B3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0xC], eax;
@@ -1258,9 +1313,11 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042E9B3;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042E993;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -1275,19 +1332,26 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0042E998;
+
 	__asm        jmp    near ptr 0x0042E99D;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042E9AE;
+
 	__asm        jmp    near ptr 0x0042E9B3;
+
 	__asm        jmp    near ptr 0x0042E9B8;
+
 	__asm        jmp    near ptr 0x0042E9BD;
+
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0042E9E7;
+
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -1296,13 +1360,16 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0042EADA;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042EAD0;
+
 	__asm        jmp    near ptr 0x0042EA03;
+
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -1317,6 +1384,7 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042EAAA;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1325,18 +1393,23 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0042EA4A;
+
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042EA6F;
+
 	__asm        mov    eax, newSound;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0042EA7B;
+
 	__asm        jmp    near ptr 0x0042EA7B;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0042EA7B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1352,16 +1425,20 @@ class Sound& Sound::operator=(const class Sound& newSound) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042EAA5;
+
 	__asm        jmp    near ptr 0x0042EAB3;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0042EAC2;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    near ptr 0x0042EADA;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        jmp    near ptr 0x0042EADF;
@@ -1384,8 +1461,10 @@ int32_t operator<(const class Sound& compareSound1, const class Sound& compareSo
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jle    near ptr 0x0042EB1C;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042EB1E;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042EB23;
 // LINE 469:
@@ -1408,40 +1487,52 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 	__asm        jne    near ptr 0x0042ED28;
 // LINE 488:
 	__asm        jmp    near ptr 0x0042EB5C;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
 	__asm        jae    near ptr 0x0042EB82;
+
 	__asm        jmp    near ptr 0x0042EB71;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0042EB89;
+
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0042EB8E;
+
 	__asm        jmp    near ptr 0x0042EB93;
+
 	__asm        mov    eax, compareSound2;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042EBB8;
+
 	__asm        mov    eax, compareSound2;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042EBC4;
+
 	__asm        jmp    near ptr 0x0042EBC4;
+
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0042EBC4;
+
 	__asm        mov    eax, compareSound2;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0042EBD5;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jae    near ptr 0x0042EC17;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -1451,48 +1542,65 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042EC08;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042EC17;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    eax, ecx;
 	__asm        jb     near ptr 0x0042EC27;
+
 	__asm        mov    eax, ecx;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0042EC2F;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x0042EC7B;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042EC65;
+
 	__asm        jmp    near ptr 0x0042EC4E;
+
 	__asm        jmp    near ptr 0x0042EC53;
+
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, [ebp-8];
 	__asm        movsx  ecx, byte ptr [ecx];
 	__asm        sub    eax, ecx;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042EC76;
+
 	__asm        jmp    near ptr 0x0042EC6A;
+
 	__asm        jmp    near ptr 0x0042EC6F;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0042ECFB;
+
 	__asm        jmp    near ptr 0x0042EC80;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042ECA5;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0042ECB1;
+
 	__asm        jmp    near ptr 0x0042ECB1;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x0042ECB1;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-8];
@@ -1503,29 +1611,39 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 	__asm        add    esp, 0xC;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0042ECCD;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042ECE2;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042ECF6;
+
 	__asm        jmp    near ptr 0x0042ECE7;
+
 	__asm        mov    eax, compareSound1;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042ECFB;
+
 	__asm        jmp    near ptr 0x0042ED00;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x0042ED14;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042ED16;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042ED1E;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x0042ED62;
 // LINE 489:
 	__asm        jmp    near ptr 0x0042ED58;
+
 	__asm        mov    eax, compareSound1;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x0042ED58;
@@ -1535,8 +1653,10 @@ int32_t operator==(const class Sound& compareSound1, const class Sound& compareS
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    near ptr 0x0042ED51;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0042ED53;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0042ED62;
 // LINE 491:
@@ -1552,6 +1672,7 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        add    eax, 0x14;
 	__asm        cmp    eax, sNewSoundFile;
 	__asm        je     near ptr 0x0042EF35;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1559,6 +1680,7 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042EE0E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0xC], eax;
@@ -1566,9 +1688,11 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042EE0E;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042EDEE;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -1583,19 +1707,26 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0042EDF3;
+
 	__asm        jmp    near ptr 0x0042EDF8;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042EE09;
+
 	__asm        jmp    near ptr 0x0042EE0E;
+
 	__asm        jmp    near ptr 0x0042EE13;
+
 	__asm        jmp    near ptr 0x0042EE18;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0042EE42;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -1604,13 +1735,16 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0042EF35;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042EF2B;
+
 	__asm        jmp    near ptr 0x0042EE5E;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -1625,6 +1759,7 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042EF05;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1633,18 +1768,23 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0042EEA5;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042EECA;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0042EED6;
+
 	__asm        jmp    near ptr 0x0042EED6;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0042EED6;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1660,16 +1800,20 @@ void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042EF00;
+
 	__asm        jmp    near ptr 0x0042EF0E;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0042EF1D;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    near ptr 0x0042EF35;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        jmp    near ptr 0x0042EF3A;
@@ -1703,6 +1847,7 @@ unsigned long Sound::GetTotalMemoryUsage() {
 void DigitalSound::DigitalSound() {
 	int32_t i;
 
+
 	__asm        mov    ecx, this;
 	__asm        call   Sound::Sound;
 	__asm        mov    eax, this;
@@ -1725,6 +1870,7 @@ void DigitalSound::DigitalSound() {
 // LINE 549:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042EFE5;
+
 	__asm        inc    i;
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0042F002;
@@ -1735,12 +1881,14 @@ void DigitalSound::DigitalSound() {
 	__asm        jmp    near ptr 0x0042EFE2;
 // LINE 556:
 	__asm        jmp    near ptr 0x0042F007;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042f00f
 void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
 	int32_t i;
+
 
 	__asm        mov    ecx, this;
 	__asm        call   Sound::Sound;
@@ -1763,6 +1911,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        add    eax, 0x14;
 	__asm        cmp    eax, sNewSoundFile;
 	__asm        je     near ptr 0x0042F215;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1770,6 +1919,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042F0EE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x10], eax;
@@ -1777,9 +1927,11 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0042F0EE;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042F0CE;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -1794,19 +1946,26 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0042F0D3;
+
 	__asm        jmp    near ptr 0x0042F0D8;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042F0E9;
+
 	__asm        jmp    near ptr 0x0042F0EE;
+
 	__asm        jmp    near ptr 0x0042F0F3;
+
 	__asm        jmp    near ptr 0x0042F0F8;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0042F122;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -1815,13 +1974,16 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [eax+0x18];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0042F215;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042F20B;
+
 	__asm        jmp    near ptr 0x0042F13E;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -1836,6 +1998,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042F1E5;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1844,18 +2007,23 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0042F185;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042F1AA;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042F1B6;
+
 	__asm        jmp    near ptr 0x0042F1B6;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0042F1B6;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
@@ -1871,16 +2039,20 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042F1E0;
+
 	__asm        jmp    near ptr 0x0042F1EE;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0042F1FD;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    near ptr 0x0042F215;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        jmp    near ptr 0x0042F21A;
@@ -1896,6 +2068,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    dword ptr [eax+0x20], 1;
 // LINE 578:
 	__asm        jmp    near ptr 0x0042F25B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 2;
 	__asm        jne    near ptr 0x0042F25B;
@@ -1907,6 +2080,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 // LINE 580:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042F26A;
+
 	__asm        inc    i;
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0042F287;
@@ -1917,11 +2091,13 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        jmp    near ptr 0x0042F267;
 // LINE 587:
 	__asm        jmp    near ptr 0x0042F28C;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042f296
 void DigitalSound::DigitalSound(long lNewResID) {
+
 	__asm        mov    ecx, this;
 	__asm        call   Sound::Sound;
 	__asm        mov    eax, this;
@@ -1941,11 +2117,13 @@ void DigitalSound::DigitalSound(long lNewResID) {
 	__asm        mov    dword ptr [eax+0x38], 0;
 // LINE 608:
 	__asm        jmp    near ptr 0x0042F2DF;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0042f2e9
 void DigitalSound::~DigitalSound() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 616:
@@ -1953,6 +2131,7 @@ void DigitalSound::~DigitalSound() {
 	__asm        call   DigitalSound::Unload;
 // LINE 624:
 	__asm        jmp    near ptr 0x0042F30B;
+
 	__asm        mov    ecx, this;
 	__asm        call   Sound::~Sound;
 }
@@ -1964,6 +2143,7 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        add    eax, 0x14;
 	__asm        cmp    eax, sNewSoundFile;
 	__asm        je     near ptr 0x0042F4E6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1971,6 +2151,7 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0042F3BF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0xC], eax;
@@ -1978,9 +2159,11 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042F3BF;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042F39F;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -1995,19 +2178,26 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0042F3A4;
+
 	__asm        jmp    near ptr 0x0042F3A9;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042F3BA;
+
 	__asm        jmp    near ptr 0x0042F3BF;
+
 	__asm        jmp    near ptr 0x0042F3C4;
+
 	__asm        jmp    near ptr 0x0042F3C9;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0042F3F3;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -2016,13 +2206,16 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [eax+0x18];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0042F4E6;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0042F4DC;
+
 	__asm        jmp    near ptr 0x0042F40F;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2037,6 +2230,7 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0042F4B6;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2045,18 +2239,23 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0042F456;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042F47B;
+
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0042F487;
+
 	__asm        jmp    near ptr 0x0042F487;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0042F487;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -2072,16 +2271,20 @@ void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, i
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042F4B1;
+
 	__asm        jmp    near ptr 0x0042F4BF;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0042F4CE;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    near ptr 0x0042F4E6;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        jmp    near ptr 0x0042F4EB;
@@ -2200,6 +2403,7 @@ int32_t DigitalSound::Load() {
 	__asm        jmp    near ptr 0x0042F665;
 // LINE 707:
 	__asm        jmp    near ptr 0x0042F65E;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x0042F65E;
@@ -2246,6 +2450,7 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x0042F6CB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-0x54], eax;
@@ -2256,6 +2461,7 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042F6D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -2266,24 +2472,32 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x0042F6EE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042F767;
+
 	__asm        jmp    near ptr 0x0042F703;
+
 	__asm        jmp    near ptr 0x0042F708;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0042F72D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x0042F739;
+
 	__asm        jmp    near ptr 0x0042F739;
+
 	__asm        mov    dword ptr [ebp-0x68], 0;
 	__asm        jmp    near ptr 0x0042F739;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -2300,12 +2514,16 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042F767;
+
 	__asm        jmp    near ptr 0x0042F76C;
+
 	__asm        mov    byte ptr [ebp-0x58], 0;
 	__asm        jmp    near ptr 0x0042F775;
+
 	__asm        lea    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x0042F780;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -2317,7 +2535,9 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0042F7A1;
+
 	__asm        jmp    near ptr 0x0042F7A6;
+
 	__asm        lea    eax, ckInRiff.ckid;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -2390,6 +2610,7 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    bReturnValue, 0;
 // LINE 780:
 	__asm        jmp    near ptr 0x0042F97F;
+
 	__asm        jmp    near ptr 0x0042F962;
 // LINE 785:
 	__asm        push   0;
@@ -2420,11 +2641,13 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0042F8AC;
+
 	__asm        push   0x597F54;
 	__asm        lea    ecx, [ebp-0x4C];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 788:
 	__asm        jmp    near ptr 0x0042F97A;
+
 	__asm        jmp    near ptr 0x0042F962;
 // LINE 797:
 	__asm        lea    eax, cbActualRead;
@@ -2479,11 +2702,13 @@ int32_t DigitalSound::LoadFromFile() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0042F943;
+
 	__asm        push   0x597F88;
 	__asm        lea    ecx, [ebp-0x50];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 809:
 	__asm        jmp    near ptr 0x0042F975;
+
 	__asm        jmp    near ptr 0x0042F962;
 // LINE 819:
 	__asm        mov    eax, bReturnValue;
@@ -2499,7 +2724,9 @@ ERROR_DONE_ROUTINE:
 	__asm        jmp    near ptr 0x0042F984;
 // LINE 825:
 	__asm        jmp    near ptr 0x0042F962;
+
 	__asm        jmp    near ptr 0x0042F962;
+
 	__asm        jmp    near ptr 0x0042F962;
 }
 
@@ -2567,11 +2794,13 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0042FA39;
+
 	__asm        push   0x597FC0;
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 888:
 	__asm        jmp    near ptr 0x0042FB1E;
+
 	__asm        jmp    near ptr 0x0042FAE9;
 // LINE 893:
 	__asm        mov    eax, dsNewBufferDescription;
@@ -2615,11 +2844,13 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0042FABF;
+
 	__asm        push   0x598008;
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 908:
 	__asm        jmp    near ptr 0x0042FB19;
+
 	__asm        jmp    near ptr 0x0042FAE9;
 // LINE 913:
 	__asm        mov    eax, dsBufferDescription.dwBufferBytes;
@@ -2648,6 +2879,7 @@ ERROR_IN_ROUTINE:
 	__asm        jmp    near ptr 0x0042FB23;
 // LINE 925:
 	__asm        jmp    near ptr 0x0042FAE9;
+
 	__asm        jmp    near ptr 0x0042FAE9;
 }
 
@@ -2673,6 +2905,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        mov    ecx, this;
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
 	__asm        je     near ptr 0x0042FBA6;
+
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0042FBA6;
 // LINE 954:
@@ -2723,6 +2956,7 @@ int32_t DigitalSound::GetPan(long * lPan) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FBFC;
+
 	__asm        push   0x598050;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -2771,6 +3005,7 @@ int32_t DigitalSound::SetPan(long lNewPan) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FC90;
+
 	__asm        push   0x598084;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -2809,6 +3044,7 @@ int32_t DigitalSound::GetFrequency(long * lFrequency) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FCFC;
+
 	__asm        push   0x5980B8;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -2857,6 +3093,7 @@ int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FD8D;
+
 	__asm        push   0x5980F8;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -2895,6 +3132,7 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FDF9;
+
 	__asm        push   0x598138;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -2945,6 +3183,7 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0042FE85;
+
 	__asm        push   0x598174;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3048,6 +3287,7 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 // LINE 1230:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0042FFAB;
+
 	__asm        inc    i;
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0043004C;
@@ -3076,6 +3316,7 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0042FFFC;
+
 	__asm        push   0x5981B0;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3195,9 +3436,11 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    near ptr 0x00430172;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     near ptr 0x00430172;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    near ptr 0x00430172;
@@ -3211,6 +3454,7 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        jmp    near ptr 0x004302F2;
 // LINE 1307:
 	__asm        jmp    near ptr 0x004301C2;
+
 	__asm        cmp    nDuplicateType, 2;
 	__asm        jne    near ptr 0x0043019A;
 // LINE 1308:
@@ -3218,6 +3462,7 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        jmp    near ptr 0x004302F2;
 // LINE 1310:
 	__asm        jmp    near ptr 0x004301C2;
+
 	__asm        cmp    nDuplicateType, 3;
 	__asm        jne    near ptr 0x004301C2;
 // LINE 1314:
@@ -3279,6 +3524,7 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00430244;
+
 	__asm        push   0x5981E8;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3298,9 +3544,11 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    near ptr 0x004302A2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     near ptr 0x004302A2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    near ptr 0x004302A2;
@@ -3319,9 +3567,11 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    near ptr 0x004302E8;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     near ptr 0x004302E8;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    near ptr 0x004302E8;
@@ -3345,6 +3595,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 // LINE 1373:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00430314;
+
 	__asm        inc    i;
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0043040D;
@@ -3372,6 +3623,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00430365;
+
 	__asm        push   0x598218;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3416,6 +3668,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004303EA;
+
 	__asm        push   0x59824C;
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3457,11 +3710,13 @@ long DigitalSound::Stop() {
 // LINE 1419:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00430461;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
 	__asm        je     near ptr 0x0043049B;
+
 	__asm        cmp    i, 8;
 	__asm        jge    near ptr 0x0043049B;
 // LINE 1424:
@@ -3488,6 +3743,7 @@ long DigitalSound::Stop() {
 // LINE 1428:
 	__asm        cmp    bWasPlaying, 0;
 	__asm        je     near ptr 0x004304DD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     near ptr 0x004304DD;
@@ -3514,6 +3770,7 @@ long DigitalSound::ShouldWeStream() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x00430538;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-0x94], eax;
@@ -3524,6 +3781,7 @@ long DigitalSound::ShouldWeStream() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043053D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3534,24 +3792,32 @@ long DigitalSound::ShouldWeStream() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x00430561;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004305FE;
+
 	__asm        jmp    near ptr 0x00430579;
+
 	__asm        jmp    near ptr 0x0043057E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004305AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    near ptr 0x004305BB;
+
 	__asm        jmp    near ptr 0x004305BB;
+
 	__asm        mov    dword ptr [ebp-0xA8], 0;
 	__asm        jmp    near ptr 0x004305BB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3568,12 +3834,16 @@ long DigitalSound::ShouldWeStream() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004305FE;
+
 	__asm        jmp    near ptr 0x00430603;
+
 	__asm        mov    byte ptr [ebp-0x98], 0;
 	__asm        jmp    near ptr 0x0043060F;
+
 	__asm        lea    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        jmp    near ptr 0x00430620;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3585,7 +3855,9 @@ long DigitalSound::ShouldWeStream() {
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x00430650;
+
 	__asm        jmp    near ptr 0x00430655;
+
 	__asm        push   0;
 	__asm        lea    eax, ofStruct.cBytes;
 	__asm        push   eax;
@@ -3726,6 +3998,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x0043081F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-0x20], eax;
@@ -3736,6 +4009,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00430824;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3746,24 +4020,32 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x00430842;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004308BB;
+
 	__asm        jmp    near ptr 0x00430857;
+
 	__asm        jmp    near ptr 0x0043085C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00430881;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0043088D;
+
 	__asm        jmp    near ptr 0x0043088D;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x0043088D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3780,12 +4062,16 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004308BB;
+
 	__asm        jmp    near ptr 0x004308C0;
+
 	__asm        mov    byte ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x004308C9;
+
 	__asm        lea    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004308D4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3797,7 +4083,9 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004308F5;
+
 	__asm        jmp    near ptr 0x004308FA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        add    eax, 0x18;
@@ -3919,6 +4207,7 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00430A3A;
+
 	__asm        push   0x598288;
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectSoundError::DisplayError;
@@ -3974,6 +4263,7 @@ long DigitalSound::PlayStream() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x00430AE1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-0x2C], eax;
@@ -3984,6 +4274,7 @@ long DigitalSound::PlayStream() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00430AE6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -3994,24 +4285,32 @@ long DigitalSound::PlayStream() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x00430B04;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00430B7D;
+
 	__asm        jmp    near ptr 0x00430B19;
+
 	__asm        jmp    near ptr 0x00430B1E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00430B43;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x00430B4F;
+
 	__asm        jmp    near ptr 0x00430B4F;
+
 	__asm        mov    dword ptr [ebp-0x40], 0;
 	__asm        jmp    near ptr 0x00430B4F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -4028,12 +4327,16 @@ long DigitalSound::PlayStream() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00430B7D;
+
 	__asm        jmp    near ptr 0x00430B82;
+
 	__asm        mov    byte ptr [ebp-0x30], 0;
 	__asm        jmp    near ptr 0x00430B8B;
+
 	__asm        lea    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00430B96;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    eax, [eax+4];
@@ -4045,7 +4348,9 @@ long DigitalSound::PlayStream() {
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x00430BB7;
+
 	__asm        jmp    near ptr 0x00430BBC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        add    eax, 0x18;
@@ -4133,6 +4438,7 @@ long DigitalSound::PlayStream() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x00430C9F;
+
 	__asm        push   0x5982D4;
 	__asm        lea    ecx, [ebp-0x28];
 	__asm        call   DirectSoundError::DisplayError;
@@ -4576,6 +4882,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        mov    ecx, dwPlay;
 	__asm        cmp    [eax+0x34], ecx;
 	__asm        jae    near ptr 0x0043114A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        mov    eax, [eax+0x30];
@@ -4586,12 +4893,14 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        jbe    near ptr 0x0043114A;
 // LINE 1826:
 	__asm        jmp    near ptr 0x00431817;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1830:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x44], 0;
 	__asm        je     near ptr 0x0043119C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -4612,6 +4921,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1835:
 	__asm        jmp    near ptr 0x00431812;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1841:
 	__asm        mov    eax, this;
@@ -4650,6 +4960,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x44], 0;
 	__asm        je     near ptr 0x00431308;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -4692,6 +5003,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        je     near ptr 0x00431275;
 // LINE 1863:
 	__asm        jmp    near ptr 0x0043180D;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1880:
 	__asm        mov    eax, dwLength1;
@@ -4750,6 +5062,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        sub    [ecx+0x34], eax;
 // LINE 1895:
 	__asm        jmp    near ptr 0x00431808;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1902:
 	__asm        push   0;
@@ -4780,10 +5093,12 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        je     near ptr 0x00431352;
 // LINE 1904:
 	__asm        jmp    near ptr 0x00431803;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1907:
 	__asm        cmp    dwLength1, 0;
 	__asm        je     near ptr 0x00431513;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -4836,6 +5151,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1914:
 	__asm        jmp    near ptr 0x004317FE;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1916:
 	__asm        mov    eax, nActualBytesRead;
@@ -4953,8 +5269,10 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        ja     near ptr 0x004314A2;
 // LINE 1961:
 	__asm        jmp    near ptr 0x00431554;
+
 	__asm        cmp    dwLength1, 0;
 	__asm        je     near ptr 0x00431554;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -4977,6 +5295,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1966:
 	__asm        cmp    dwLength2, 0;
 	__asm        je     near ptr 0x00431744;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -5029,6 +5348,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1973:
 	__asm        jmp    near ptr 0x004317F9;
+
 	__asm        jmp    near ptr 0x004317E7;
 // LINE 1975:
 	__asm        mov    eax, nActualBytesRead;
@@ -5056,6 +5376,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        add    esp, 0xC;
 // LINE 1980:
 	__asm        jmp    near ptr 0x0043165B;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x4E];
@@ -5162,8 +5483,10 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        ja     near ptr 0x004316D3;
 // LINE 2016:
 	__asm        jmp    near ptr 0x00431785;
+
 	__asm        cmp    dwLength2, 0;
 	__asm        je     near ptr 0x00431785;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -5230,12 +5553,19 @@ END_OF_FUNCTION:
 	__asm        mov    dword ptr [eax+0x58], 0;
 // LINE 2032:
 	__asm        jmp    near ptr 0x0043181C;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
+
 	__asm        jmp    near ptr 0x004317E7;
 }
 
@@ -5408,6 +5738,7 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    near ptr 0x00431A0B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        jne    near ptr 0x00431A12;

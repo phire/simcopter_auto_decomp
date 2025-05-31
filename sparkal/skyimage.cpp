@@ -266,6 +266,7 @@ protected:
 // Contribution: 1:00094400-00094b31 Module: 20, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495400
 void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nNewBitmapHeight) {
+
 	__asm        push   0;
 	__asm        mov    eax, nNewBitmapHeight;
 	__asm        push   eax;
@@ -321,6 +322,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        call   SkyImage::LoadImageA;
 // LINE 52:
 	__asm        jmp    near ptr 0x004954C4;
+
 	__asm        mov    eax, this;
 }
 
@@ -347,6 +349,7 @@ void SkyImage::SwitchToProperSkyType() {
 // LINE 71:
 	__asm        cmp    dword ptr ds:[0x598E90], 0;
 	__asm        jne    near ptr 0x00495544;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 0;
 	__asm        je     near ptr 0x00495544;
@@ -356,8 +359,10 @@ void SkyImage::SwitchToProperSkyType() {
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 73:
 	__asm        jmp    near ptr 0x0049556B;
+
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
 	__asm        jne    near ptr 0x0049556B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 1;
 	__asm        je     near ptr 0x0049556B;
@@ -441,12 +446,14 @@ int32_t SkyImage::LoadImageA() {
 	__asm        je     near ptr 0x004956E1;
 // LINE 118:
 	__asm        jmp    near ptr 0x00495647;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    pDestinationImage, eax;
 // LINE 119:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049566B;
+
 	__asm        inc    i;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -464,6 +471,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        add    esp, 0xC;
 // LINE 121:
 	__asm        jmp    near ptr 0x004956A8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        add    pDestinationImage, eax;

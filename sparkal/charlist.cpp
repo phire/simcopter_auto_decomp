@@ -48,6 +48,7 @@ void CharData::CharData() {
 	__asm        mov    byte ptr [eax], 0;
 // LINE 11:
 	__asm        jmp    near ptr 0x0043D407;
+
 	__asm        mov    eax, this;
 }
 
@@ -59,6 +60,7 @@ void CharData::CharData(unsigned char chNewValue) {
 	__asm        mov    [ecx], al;
 // LINE 16:
 	__asm        jmp    near ptr 0x0043D428;
+
 	__asm        mov    eax, this;
 }
 
@@ -80,6 +82,7 @@ void CharList::CharList() {
 	__asm        mov    [ecx+4], eax;
 // LINE 29:
 	__asm        jmp    near ptr 0x0043D46E;
+
 	__asm        mov    eax, this;
 }
 
@@ -98,6 +101,7 @@ void CharList::~CharList() {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 38:
 	__asm        jmp    near ptr 0x0043D4A8;
+
 	__asm        mov    eax, nextCharData;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -136,12 +140,14 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0043D522;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chNewValue);
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   CharData::CharData;
 	__asm        mov    tempCharData, eax;
 	__asm        jmp    near ptr 0x0043D529;
+
 	__asm        mov    tempCharData, 0;
 // LINE 53:
 	__asm        mov    eax, tempCharData;
@@ -327,6 +333,7 @@ void CharList::DeleteAllItems() {
 // LINE 123:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0043D726;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -362,6 +369,7 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 138:
 	__asm        jmp    near ptr 0x0043D792;
+
 	__asm        inc    nPresentIndex;
 	__asm        mov    eax, nextCharData;
 	__asm        mov    ecx, this;
@@ -369,6 +377,7 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	__asm        mov    eax, nIndex;
 	__asm        cmp    nPresentIndex, eax;
 	__asm        jge    near ptr 0x0043D7BC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     near ptr 0x0043D7BC;
@@ -397,6 +406,7 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 154:
 	__asm        jmp    near ptr 0x0043D7F4;
+
 	__asm        mov    eax, nextCharData;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;

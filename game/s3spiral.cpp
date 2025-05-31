@@ -49,6 +49,7 @@ void SpiralScan::SpiralScan(int32_t radius) {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 14:
 	__asm        jmp    near ptr 0x00542DF9;
+
 	__asm        mov    eax, this;
 }
 
@@ -84,6 +85,7 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00542E71;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
 	__asm        jne    near ptr 0x00542E77;
@@ -113,8 +115,10 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        jmp    near ptr 0x00542ED8;
 // LINE 43:
 	__asm        jmp    near ptr 0x00542ED8;
+
 	__asm        cmp    dword ptr [ebp-0xC], 3;
 	__asm        ja     near ptr 0x00542ED8;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x542EC8];
 // Switch pointers
@@ -142,6 +146,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        mov    al, currLoc.x;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00542F28;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00542F71;
 // LINE 54:
@@ -149,6 +154,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        mov    al, currLoc.x;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00542F3C;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00542F71;
 // LINE 55:
@@ -156,6 +162,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        mov    al, currLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00542F53;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00542F71;
 // LINE 56:
@@ -163,6 +170,7 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        mov    al, currLoc.y;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00542F67;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00542F71;
 // LINE 58:

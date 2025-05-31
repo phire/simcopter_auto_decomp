@@ -93,6 +93,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 148:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D5394;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666A4], eax;
@@ -239,6 +240,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 193:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D5551;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666B0], eax;
@@ -360,6 +362,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 224:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D56C8;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666B4], eax;
@@ -456,9 +459,11 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        jmp    near ptr 0x004D5820;
 // LINE 255:
 	__asm        jmp    near ptr 0x004D5819;
+
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        cmp    dword ptr [ebp-0xC], 3;
 	__asm        ja     near ptr 0x004D57E6;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x4D5809];
 // Switch pointers
@@ -536,12 +541,16 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 	__asm        jmp    near ptr 0x004D5921;
 // LINE 331:
 	__asm        jmp    near ptr 0x004D58FB;
+
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        je     near ptr 0x004D5889;
+
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        je     near ptr 0x004D58A0;
+
 	__asm        cmp    dword ptr [ebp-8], 4;
 	__asm        je     near ptr 0x004D58B1;
+
 	__asm        jmp    near ptr 0x004D58C2;
 // LINE 334:
 	__asm        mov    eax, res;
@@ -577,6 +586,7 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 369:
 	__asm        cmp    dword ptr ds:[0x666698], 0;
 	__asm        je     near ptr 0x004D596E;
+
 	__asm        cmp    dword ptr ds:[0x66669C], 0;
 	__asm        je     near ptr 0x004D596E;
 // LINE 370:
@@ -585,6 +595,7 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 375:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D597D;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x666694], eax;
@@ -667,6 +678,7 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 441:
 	__asm        cmp    dword ptr ds:[0x666698], 0;
 	__asm        jne    near ptr 0x004D5ABF;
+
 	__asm        cmp    dword ptr ds:[0x66669C], 0;
 	__asm        jne    near ptr 0x004D5ABF;
 // LINE 442:
@@ -779,6 +791,7 @@ int32_t GetDir_CMAP(char * name) {
 // LINE 651:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D5BF9;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x666694], eax;

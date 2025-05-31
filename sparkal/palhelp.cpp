@@ -135,6 +135,7 @@ public:
 // Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004963b0
 void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
+
 	__asm        mov    eax, pNewColors;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -148,11 +149,13 @@ void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNe
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 31:
 	__asm        jmp    near ptr 0x004963E5;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004963ef
 void SparkalPalette::SparkalPalette() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
@@ -163,17 +166,20 @@ void SparkalPalette::SparkalPalette() {
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 41:
 	__asm        jmp    near ptr 0x00496427;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049642f
 void SparkalPalette::~SparkalPalette() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 48:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     near ptr 0x00496479;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00496479;
@@ -205,6 +211,7 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 	__asm        mov    eax, nCurrentBestMatch;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004964AB;
+
 	__asm        inc    i;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -327,6 +334,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    timerFade.lFrequency, 0;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496633;
+
 	__asm        lea    eax, [ebp-0x440];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -335,6 +343,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x438];
 	__asm        mov    timerFade.lFrequency, eax;
 	__asm        jmp    near ptr 0x00496633;
+
 	__asm        jmp    near ptr 0x00496638;
 // LINE 113:
 	__asm        call   dword ptr ds:[0x6C35F4];
@@ -351,10 +360,12 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        jne    near ptr 0x0049666E;
 // LINE 117:
 	__asm        jmp    near ptr 0x00496669;
+
 	__asm        jmp    near ptr 0x00496A0D;
 // LINE 118:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049667D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF6;
 	__asm        jge    near ptr 0x004966E7;
@@ -391,6 +402,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 // LINE 126:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00496704;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x40;
 	__asm        jge    near ptr 0x004969F2;
@@ -398,18 +410,26 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    timerFade.lTotalElapsedTime, 0;
 	__asm        mov    timerFade.lStartTime, 0;
 	__asm        jmp    near ptr 0x00496727;
+
 	__asm        jmp    near ptr 0x0049672C;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x0049673E;
+
 	__asm        jmp    near ptr 0x004967BC;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00496761;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x004967B7;
+
 	__asm        jmp    near ptr 0x004967B7;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0049679D;
+
 	__asm        lea    eax, [ebp-0x434];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -418,14 +438,18 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x42C];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x004967B7;
+
 	__asm        jmp    near ptr 0x004967B7;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x004967B7;
+
 	__asm        jmp    near ptr 0x004967BC;
+
 	__asm        jmp    near ptr 0x004967C1;
 // LINE 128:
 	__asm        mov    eax, i;
@@ -445,6 +469,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 // LINE 132:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x004967F0;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF6;
 	__asm        jge    near ptr 0x00496886;
@@ -512,16 +537,22 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x448], eax;
 	__asm        jmp    near ptr 0x004968CB;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x0049696F;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x004968FB;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496951;
+
 	__asm        jmp    near ptr 0x00496951;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496937;
+
 	__asm        lea    eax, [ebp-0x454];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -530,13 +561,16 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x44C];
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496951;
+
 	__asm        jmp    near ptr 0x00496951;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496951;
+
 	__asm        mov    eax, [ebp-0x458];
 	__asm        sub    eax, timerFade.lStartTime;
 	__asm        mov    [ebp-0x444], eax;
@@ -544,8 +578,10 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        add    [ebp-0x448], eax;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x004969BF;
+
 	__asm        cmp    timerFade.lFrequency, 0;
 	__asm        je     near ptr 0x004969BF;
+
 	__asm        mov    eax, timerFade.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -556,14 +592,19 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x448], eax;
 	__asm        jae    near ptr 0x004969ED;
+
 	__asm        jmp    near ptr 0x004969E8;
+
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x448], eax;
 	__asm        jae    near ptr 0x004969ED;
+
 	__asm        jmp    near ptr 0x004969E8;
+
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x45C], eax;
 	__asm        jae    near ptr 0x004969ED;
+
 	__asm        jmp    near ptr 0x004968BA;
 // LINE 145:
 	__asm        jmp    near ptr 0x00496701;
@@ -575,6 +616,7 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 171:
 	__asm        jmp    near ptr 0x00496A08;
+
 	__asm        jmp    near ptr 0x00496A0D;
 }
 
@@ -603,6 +645,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    timerFade.lFrequency, 0;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496A97;
+
 	__asm        lea    eax, [ebp-0x440];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -611,6 +654,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x438];
 	__asm        mov    timerFade.lFrequency, eax;
 	__asm        jmp    near ptr 0x00496A97;
+
 	__asm        jmp    near ptr 0x00496A9C;
 // LINE 200:
 	__asm        call   dword ptr ds:[0x6C35F4];
@@ -627,10 +671,12 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        jne    near ptr 0x00496AD2;
 // LINE 204:
 	__asm        jmp    near ptr 0x00496ACD;
+
 	__asm        jmp    near ptr 0x00496E4D;
 // LINE 206:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x00496AE1;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF6;
 	__asm        jge    near ptr 0x00496B4B;
@@ -667,6 +713,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 // LINE 215:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00496B68;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x40;
 	__asm        jge    near ptr 0x00496E32;
@@ -674,18 +721,26 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    timerFade.lTotalElapsedTime, 0;
 	__asm        mov    timerFade.lStartTime, 0;
 	__asm        jmp    near ptr 0x00496B8B;
+
 	__asm        jmp    near ptr 0x00496B90;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00496BA2;
+
 	__asm        jmp    near ptr 0x00496C20;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00496BC5;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00496C1B;
+
 	__asm        jmp    near ptr 0x00496C1B;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496C01;
+
 	__asm        lea    eax, [ebp-0x434];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -694,14 +749,18 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x42C];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00496C1B;
+
 	__asm        jmp    near ptr 0x00496C1B;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00496C1B;
+
 	__asm        jmp    near ptr 0x00496C20;
+
 	__asm        jmp    near ptr 0x00496C25;
 // LINE 217:
 	__asm        mov    eax, i;
@@ -721,6 +780,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 // LINE 221:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x00496C54;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF6;
 	__asm        jge    near ptr 0x00496CC6;
@@ -779,16 +839,22 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x448], eax;
 	__asm        jmp    near ptr 0x00496D0B;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00496DAF;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00496D3B;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496D91;
+
 	__asm        jmp    near ptr 0x00496D91;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496D77;
+
 	__asm        lea    eax, [ebp-0x454];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -797,13 +863,16 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x44C];
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496D91;
+
 	__asm        jmp    near ptr 0x00496D91;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x458], eax;
 	__asm        jmp    near ptr 0x00496D91;
+
 	__asm        mov    eax, [ebp-0x458];
 	__asm        sub    eax, timerFade.lStartTime;
 	__asm        mov    [ebp-0x444], eax;
@@ -811,8 +880,10 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        add    [ebp-0x448], eax;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496DFF;
+
 	__asm        cmp    timerFade.lFrequency, 0;
 	__asm        je     near ptr 0x00496DFF;
+
 	__asm        mov    eax, timerFade.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -823,14 +894,19 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        mov    eax, [ebp-0x448];
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    near ptr 0x00496E2D;
+
 	__asm        jmp    near ptr 0x00496E28;
+
 	__asm        mov    eax, [ebp-0x448];
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    near ptr 0x00496E2D;
+
 	__asm        jmp    near ptr 0x00496E28;
+
 	__asm        mov    eax, [ebp-0x45C];
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    near ptr 0x00496E2D;
+
 	__asm        jmp    near ptr 0x00496CFA;
 // LINE 234:
 	__asm        jmp    near ptr 0x00496B65;
@@ -842,6 +918,7 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 260:
 	__asm        jmp    near ptr 0x00496E48;
+
 	__asm        jmp    near ptr 0x00496E4D;
 }
 
@@ -871,6 +948,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    timerFade.lFrequency, 0;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00496ED7;
+
 	__asm        lea    eax, [ebp-0x444];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -879,6 +957,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    eax, [ebp-0x43C];
 	__asm        mov    timerFade.lFrequency, eax;
 	__asm        jmp    near ptr 0x00496ED7;
+
 	__asm        jmp    near ptr 0x00496EDC;
 // LINE 290:
 	__asm        call   dword ptr ds:[0x6C35F4];
@@ -895,10 +974,12 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        jne    near ptr 0x00496F12;
 // LINE 294:
 	__asm        jmp    near ptr 0x00496F0D;
+
 	__asm        jmp    near ptr 0x004972E0;
 // LINE 295:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x00496F21;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF6;
 	__asm        jge    near ptr 0x00496F8B;
@@ -935,6 +1016,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 // LINE 304:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00496FA8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x40;
 	__asm        jge    near ptr 0x004972C5;
@@ -942,18 +1024,26 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    timerFade.lTotalElapsedTime, 0;
 	__asm        mov    timerFade.lStartTime, 0;
 	__asm        jmp    near ptr 0x00496FCB;
+
 	__asm        jmp    near ptr 0x00496FD0;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00496FE2;
+
 	__asm        jmp    near ptr 0x00497060;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00497005;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x0049705B;
+
 	__asm        jmp    near ptr 0x0049705B;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00497041;
+
 	__asm        lea    eax, [ebp-0x438];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -962,14 +1052,18 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    eax, [ebp-0x430];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x0049705B;
+
 	__asm        jmp    near ptr 0x0049705B;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x0049705B;
+
 	__asm        jmp    near ptr 0x00497060;
+
 	__asm        jmp    near ptr 0x00497065;
 // LINE 306:
 	__asm        mov    eax, i;
@@ -989,6 +1083,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 // LINE 310:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x00497094;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF6;
 	__asm        jge    near ptr 0x00497159;
@@ -1077,16 +1172,22 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x44C], eax;
 	__asm        jmp    near ptr 0x0049719E;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00497242;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x004971CE;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x45C], eax;
 	__asm        jmp    near ptr 0x00497224;
+
 	__asm        jmp    near ptr 0x00497224;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0049720A;
+
 	__asm        lea    eax, [ebp-0x458];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -1095,13 +1196,16 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    eax, [ebp-0x450];
 	__asm        mov    [ebp-0x45C], eax;
 	__asm        jmp    near ptr 0x00497224;
+
 	__asm        jmp    near ptr 0x00497224;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x45C], eax;
 	__asm        jmp    near ptr 0x00497224;
+
 	__asm        mov    eax, [ebp-0x45C];
 	__asm        sub    eax, timerFade.lStartTime;
 	__asm        mov    [ebp-0x448], eax;
@@ -1109,8 +1213,10 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        add    [ebp-0x44C], eax;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x00497292;
+
 	__asm        cmp    timerFade.lFrequency, 0;
 	__asm        je     near ptr 0x00497292;
+
 	__asm        mov    eax, timerFade.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -1121,14 +1227,19 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        mov    eax, [ebp-0x44C];
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    near ptr 0x004972C0;
+
 	__asm        jmp    near ptr 0x004972BB;
+
 	__asm        mov    eax, [ebp-0x44C];
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    near ptr 0x004972C0;
+
 	__asm        jmp    near ptr 0x004972BB;
+
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x460], eax;
 	__asm        jae    near ptr 0x004972C0;
+
 	__asm        jmp    near ptr 0x0049718D;
 // LINE 327:
 	__asm        jmp    near ptr 0x00496FA5;
@@ -1140,6 +1251,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTim
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 353:
 	__asm        jmp    near ptr 0x004972DB;
+
 	__asm        jmp    near ptr 0x004972E0;
 }
 
@@ -1187,6 +1299,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    timerFade.lFrequency, 0;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0049736E;
+
 	__asm        lea    eax, [ebp-0x54];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
@@ -1195,6 +1308,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    timerFade.lFrequency, eax;
 	__asm        jmp    near ptr 0x0049736E;
+
 	__asm        jmp    near ptr 0x00497373;
 // LINE 384:
 	__asm        cmp    lSteps, 0xC8;
@@ -1227,10 +1341,12 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        jne    near ptr 0x004973D6;
 // LINE 400:
 	__asm        jmp    near ptr 0x004973D1;
+
 	__asm        jmp    near ptr 0x0049783F;
 // LINE 401:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004973E5;
+
 	__asm        inc    i;
 	__asm        mov    eax, lSteps;
 	__asm        cmp    i, eax;
@@ -1238,6 +1354,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 // LINE 402:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x00497400;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF5;
 	__asm        jge    near ptr 0x00497426;
@@ -1254,6 +1371,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 // LINE 406:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x0049743A;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF6;
 	__asm        jge    near ptr 0x004974C7;
@@ -1311,6 +1429,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 // LINE 419:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004974E4;
+
 	__asm        inc    i;
 	__asm        mov    eax, nLastStepIndex;
 	__asm        cmp    i, eax;
@@ -1319,18 +1438,26 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    timerFade.lTotalElapsedTime, 0;
 	__asm        mov    timerFade.lStartTime, 0;
 	__asm        jmp    near ptr 0x00497503;
+
 	__asm        jmp    near ptr 0x00497508;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00497517;
+
 	__asm        jmp    near ptr 0x0049757A;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00497534;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00497575;
+
 	__asm        jmp    near ptr 0x00497575;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0049755E;
+
 	__asm        lea    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -1339,14 +1466,18 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00497575;
+
 	__asm        jmp    near ptr 0x00497575;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    timerFade.lStartTime, eax;
 	__asm        jmp    near ptr 0x00497575;
+
 	__asm        jmp    near ptr 0x0049757A;
+
 	__asm        jmp    near ptr 0x0049757F;
 // LINE 421:
 	__asm        mov    ecx, lSteps;
@@ -1365,6 +1496,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 // LINE 425:
 	__asm        mov    j, 0xA;
 	__asm        jmp    near ptr 0x004975AD;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0xF6;
 	__asm        jge    near ptr 0x004976B4;
@@ -1489,16 +1621,22 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004976F9;
+
 	__asm        cmp    timerFade.lStartTime, 0;
 	__asm        je     near ptr 0x00497770;
+
 	__asm        cmp    timerFade.nTimerResolution, 1;
 	__asm        jne    near ptr 0x00497720;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x00497761;
+
 	__asm        jmp    near ptr 0x00497761;
+
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x0049774A;
+
 	__asm        lea    eax, [ebp-0x68];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
@@ -1507,13 +1645,16 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x00497761;
+
 	__asm        jmp    near ptr 0x00497761;
+
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x00497761;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        sub    eax, timerFade.lStartTime;
 	__asm        mov    [ebp-0x58], eax;
@@ -1521,8 +1662,10 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        add    [ebp-0x5C], eax;
 	__asm        cmp    timerFade.nTimerResolution, 0;
 	__asm        jne    near ptr 0x004977AB;
+
 	__asm        cmp    timerFade.lFrequency, 0;
 	__asm        je     near ptr 0x004977AB;
+
 	__asm        mov    eax, timerFade.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
@@ -1533,14 +1676,19 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        jae    near ptr 0x004977CD;
+
 	__asm        jmp    near ptr 0x004977C8;
+
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        jae    near ptr 0x004977CD;
+
 	__asm        jmp    near ptr 0x004977C8;
+
 	__asm        mov    eax, lDelayTime;
 	__asm        cmp    [ebp-0x70], eax;
 	__asm        jae    near ptr 0x004977CD;
+
 	__asm        jmp    near ptr 0x004976EE;
 // LINE 442:
 	__asm        jmp    near ptr 0x004974E1;
@@ -1583,6 +1731,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        add    esp, 4;
 // LINE 456:
 	__asm        jmp    near ptr 0x0049783A;
+
 	__asm        jmp    near ptr 0x0049783F;
 }
 
@@ -1594,6 +1743,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 // LINE 467:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049785F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF6;
 	__asm        jge    near ptr 0x004978AB;
@@ -1649,6 +1799,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 // LINE 503:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049790A;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF6;
 	__asm        jge    near ptr 0x00497962;
@@ -1697,6 +1848,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x40C], eax;
 	__asm        jmp    near ptr 0x004979B3;
+
 	__asm        push   0x59A1C8;
 	__asm        lea    ecx, [ebp-0x40C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1706,17 +1858,20 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 
 // FUNCTION: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
+
 	__asm        mov    ecx, this;
 	__asm        call   SparkalPalette::SparkalPalette;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 535:
 	__asm        jmp    near ptr 0x004979F1;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004979f9
 void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors) {
+
 	__asm        push   0x100;
 	__asm        mov    eax, bNewOwnColors;
 	__asm        push   eax;
@@ -1728,6 +1883,7 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors,
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 544:
 	__asm        jmp    near ptr 0x00497A28;
+
 	__asm        mov    eax, this;
 }
 
@@ -1749,6 +1905,7 @@ void ClearWindowsSystemPalette() {
 // LINE 573:
 	__asm        mov    Counter, 0;
 	__asm        jmp    near ptr 0x00497A6E;
+
 	__asm        inc    Counter;
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    near ptr 0x00497AAC;

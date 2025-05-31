@@ -30,6 +30,7 @@ void ERexit(char * p) {
 	__asm        call   abort;
 // LINE 59:
 	__asm        jmp    near ptr 0x0058E369;
+
 	__asm        cmp    answer, 4;
 	__asm        jne    near ptr 0x0058E369;
 // LINE 60:

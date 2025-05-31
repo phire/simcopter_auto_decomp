@@ -84,6 +84,7 @@ unsigned short wincpuid() {
 // LINE 119:
 	__asm        test   reinterpret_cast<uint32_t>(cpuid), 0xFFFF;
 	__asm        jne    near ptr 0x0047B6C9;
+
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 121:
 	__asm        call   check_80286;
@@ -93,6 +94,7 @@ unsigned short wincpuid() {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 2;
 	__asm        jne    near ptr 0x0047B6E8;
+
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 124:
 	__asm        call   check_80386;
@@ -102,6 +104,7 @@ unsigned short wincpuid() {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 3;
 	__asm        jne    near ptr 0x0047B707;
+
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 127:
 	__asm        mov    cpuid, 4;
@@ -170,6 +173,7 @@ unsigned short wincpuidext() {
 // LINE 183:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047B7B1;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xC;
 	__asm        jge    near ptr 0x0047B7E4;
@@ -264,6 +268,7 @@ unsigned long wincpufeatures() {
 // LINE 273:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047B898;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xC;
 	__asm        jge    near ptr 0x0047B8CB;
@@ -572,6 +577,7 @@ unsigned short check_IDProc() {
 // LINE 581:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047BAF7;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xC;
 	__asm        jge    near ptr 0x0047BB2A;

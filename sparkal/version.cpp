@@ -67,6 +67,7 @@ void Version::Version() {
 	uint32_t nValueSize;
 	char szFileName[260];
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5B8;
 // LINE 31:
@@ -141,11 +142,13 @@ void Version::Version() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 50:
 	__asm        jmp    near ptr 0x0043DC05;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0043dc10
 void Version::~Version() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5B8;
 // LINE 59:
@@ -400,6 +403,7 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        jmp    near ptr 0x0043DF7C;
 // LINE 200:
 	__asm        jmp    near ptr 0x0043DF72;
+
 	__asm        cmp    nVersionComponent, 1;
 	__asm        jne    near ptr 0x0043DF33;
 // LINE 201:
@@ -410,6 +414,7 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        jmp    near ptr 0x0043DF7C;
 // LINE 202:
 	__asm        jmp    near ptr 0x0043DF72;
+
 	__asm        cmp    nVersionComponent, 2;
 	__asm        jne    near ptr 0x0043DF58;
 // LINE 203:
@@ -421,6 +426,7 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        jmp    near ptr 0x0043DF7C;
 // LINE 204:
 	__asm        jmp    near ptr 0x0043DF72;
+
 	__asm        cmp    nVersionComponent, 3;
 	__asm        jne    near ptr 0x0043DF72;
 // LINE 205:
@@ -518,6 +524,7 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 	__asm        jmp    near ptr 0x0043E081;
 // LINE 311:
 	__asm        jmp    near ptr 0x0043E077;
+
 	__asm        cmp    nVersionComponent, 1;
 	__asm        jne    near ptr 0x0043E077;
 // LINE 312:

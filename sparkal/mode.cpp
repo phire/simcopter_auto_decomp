@@ -42,6 +42,7 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 // LINE 62:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0048B158;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x599D80], eax;
@@ -52,11 +53,13 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	__asm        mov    ecx, lWidth;
 	__asm        cmp    [eax*4+0x604818], ecx;
 	__asm        jne    near ptr 0x0048B1B3;
+
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lHeight;
 	__asm        cmp    [eax*4+0x60481C], ecx;
 	__asm        jne    near ptr 0x0048B1B3;
+
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lBPP;

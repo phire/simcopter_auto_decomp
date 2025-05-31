@@ -459,148 +459,242 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        jmp    near ptr 0x0042DC43;
 // LINE 180:
 	__asm        jmp    near ptr 0x0042DC43;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80004005;
 	__asm        jg     near ptr 0x0042D8F7;
+
 	__asm        je     near ptr 0x0042D4AD;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80004001;
 	__asm        je     near ptr 0x0042D81D;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80070057;
 	__asm        jg     near ptr 0x0042D91C;
+
 	__asm        je     near ptr 0x0042D51B;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
 	__asm        je     near ptr 0x0042D6FF;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760028;
 	__asm        jg     near ptr 0x0042D941;
+
 	__asm        je     near ptr 0x0042D497;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876000A;
 	__asm        je     near ptr 0x0042D481;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760064;
 	__asm        jg     near ptr 0x0042D966;
+
 	__asm        je     near ptr 0x0042D4D9;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876005A;
 	__asm        je     near ptr 0x0042D4C3;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760078;
 	__asm        jg     near ptr 0x0042D98B;
+
 	__asm        je     near ptr 0x0042D505;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876006E;
 	__asm        je     near ptr 0x0042D4EF;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760096;
 	__asm        jg     near ptr 0x0042D9B0;
+
 	__asm        je     near ptr 0x0042D547;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760091;
 	__asm        je     near ptr 0x0042D531;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600B4;
 	__asm        jg     near ptr 0x0042D9D5;
+
 	__asm        je     near ptr 0x0042D573;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600AA;
 	__asm        je     near ptr 0x0042D55D;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600D2;
 	__asm        jg     near ptr 0x0042D9FA;
+
 	__asm        je     near ptr 0x0042D59F;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600CD;
 	__asm        je     near ptr 0x0042D589;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600E6;
 	__asm        jg     near ptr 0x0042DA1F;
+
 	__asm        je     near ptr 0x0042D5CB;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600E1;
 	__asm        je     near ptr 0x0042D5B5;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600FA;
 	__asm        jg     near ptr 0x0042DA44;
+
 	__asm        je     near ptr 0x0042D5F7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600F0;
 	__asm        je     near ptr 0x0042D5E1;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760104;
 	__asm        jg     near ptr 0x0042DA69;
+
 	__asm        je     near ptr 0x0042D623;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887600FF;
 	__asm        je     near ptr 0x0042D60D;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760136;
 	__asm        jg     near ptr 0x0042DA8E;
+
 	__asm        je     near ptr 0x0042D64F;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760118;
 	__asm        je     near ptr 0x0042D639;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876014A;
 	__asm        jg     near ptr 0x0042DACD;
+
 	__asm        je     near ptr 0x0042D6A7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876013C;
 	__asm        je     near ptr 0x0042D665;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876013D;
 	__asm        je     near ptr 0x0042D67B;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760140;
 	__asm        je     near ptr 0x0042D691;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760154;
 	__asm        jg     near ptr 0x0042DAF2;
+
 	__asm        je     near ptr 0x0042D6D3;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876014F;
 	__asm        je     near ptr 0x0042D6BD;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876017C;
 	__asm        jg     near ptr 0x0042DB17;
+
 	__asm        je     near ptr 0x0042D715;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760168;
 	__asm        je     near ptr 0x0042D6E9;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760183;
 	__asm        jg     near ptr 0x0042DB3C;
+
 	__asm        je     near ptr 0x0042D741;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876017E;
 	__asm        je     near ptr 0x0042D72B;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601A4;
 	__asm        jg     near ptr 0x0042DB61;
+
 	__asm        je     near ptr 0x0042D76D;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876019A;
 	__asm        je     near ptr 0x0042D757;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601B8;
 	__asm        jg     near ptr 0x0042DB86;
+
 	__asm        je     near ptr 0x0042D799;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601AE;
 	__asm        je     near ptr 0x0042D783;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601CC;
 	__asm        jg     near ptr 0x0042DBAB;
+
 	__asm        je     near ptr 0x0042D7C5;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601C2;
 	__asm        je     near ptr 0x0042D7AF;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601E0;
 	__asm        jg     near ptr 0x0042DBD0;
+
 	__asm        je     near ptr 0x0042D7F1;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601D6;
 	__asm        je     near ptr 0x0042D7DB;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601FE;
 	__asm        jg     near ptr 0x0042DBF5;
+
 	__asm        je     near ptr 0x0042D833;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887601EA;
 	__asm        je     near ptr 0x0042D807;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760219;
 	__asm        jg     near ptr 0x0042DC1A;
+
 	__asm        je     near ptr 0x0042D85F;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760208;
 	__asm        je     near ptr 0x0042D849;
+
 	__asm        jmp    near ptr 0x0042D8B7;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8876021C;
 	__asm        je     near ptr 0x0042D875;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88760230;
 	__asm        je     near ptr 0x0042D88B;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042D8A1;
+
 	__asm        jmp    near ptr 0x0042D8B7;
 // LINE 181:
 	__asm        cmp    szErrorDescription, 0;
@@ -774,48 +868,76 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        jmp    near ptr 0x0042DF36;
 // LINE 259:
 	__asm        jmp    near ptr 0x0042DF36;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80004005;
 	__asm        jg     near ptr 0x0042DE54;
+
 	__asm        je     near ptr 0x0042DD22;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80004001;
 	__asm        je     near ptr 0x0042DD7A;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
 	__asm        jg     near ptr 0x0042DE79;
+
 	__asm        je     near ptr 0x0042DD4E;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80040110;
 	__asm        je     near ptr 0x0042DDBC;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8878000A;
 	__asm        jg     near ptr 0x0042DE9E;
+
 	__asm        je     near ptr 0x0042DCCA;
+
 	__asm        cmp    dword ptr [ebp-8], 0x80070057;
 	__asm        je     near ptr 0x0042DCF6;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780032;
 	__asm        jg     near ptr 0x0042DEC3;
+
 	__asm        je     near ptr 0x0042DD0C;
+
 	__asm        cmp    dword ptr [ebp-8], 0x8878001E;
 	__asm        je     near ptr 0x0042DCE0;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780064;
 	__asm        jg     near ptr 0x0042DEE8;
+
 	__asm        je     near ptr 0x0042DD64;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780046;
 	__asm        je     near ptr 0x0042DD38;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780082;
 	__asm        jg     near ptr 0x0042DF0D;
+
 	__asm        je     near ptr 0x0042DDA6;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780078;
 	__asm        je     near ptr 0x0042DD90;
+
 	__asm        jmp    near ptr 0x0042DE14;
+
 	__asm        cmp    dword ptr [ebp-8], 0x88780096;
 	__asm        je     near ptr 0x0042DDD2;
+
 	__asm        cmp    dword ptr [ebp-8], 0x887800A0;
 	__asm        je     near ptr 0x0042DDE8;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042DDFE;
+
 	__asm        jmp    near ptr 0x0042DE14;
 // LINE 260:
 	__asm        cmp    szErrorDescription, 0;

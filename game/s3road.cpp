@@ -34,6 +34,7 @@ void S3RoadDataInit() {
 // LINE 54:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538499;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x005384EA;
@@ -58,6 +59,7 @@ void S3RoadDataInit() {
 // LINE 59:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x005384F9;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x0053854A;
@@ -82,6 +84,7 @@ void S3RoadDataInit() {
 // LINE 64:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538559;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x005385AA;
@@ -106,6 +109,7 @@ void S3RoadDataInit() {
 // LINE 69:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x005385B9;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x0053860A;
@@ -294,6 +298,7 @@ void S3RoadDataInit() {
 // LINE 153:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x005388A3;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538910;
@@ -326,6 +331,7 @@ void S3RoadDataInit() {
 // LINE 158:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x0053891F;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x0053898C;
@@ -358,6 +364,7 @@ void S3RoadDataInit() {
 // LINE 163:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x0053899B;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538A08;
@@ -390,6 +397,7 @@ void S3RoadDataInit() {
 // LINE 168:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538A17;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538A84;
@@ -429,6 +437,7 @@ void S3RoadDataInit() {
 // LINE 178:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538AB0;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538B1D;
@@ -461,6 +470,7 @@ void S3RoadDataInit() {
 // LINE 183:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538B2C;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538B99;
@@ -493,6 +503,7 @@ void S3RoadDataInit() {
 // LINE 188:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538BA8;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538C15;
@@ -525,6 +536,7 @@ void S3RoadDataInit() {
 // LINE 193:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x00538C24;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xB;
 	__asm        jge    near ptr 0x00538C9D;
@@ -573,6 +585,7 @@ void S3RoadDataInit() {
 // LINE 206:
 	__asm        mov    leg, 1;
 	__asm        jmp    near ptr 0x00538CF4;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xA;
 	__asm        jge    near ptr 0x00538D63;
@@ -619,6 +632,7 @@ void S3RoadDataInit() {
 // LINE 216:
 	__asm        mov    leg, 1;
 	__asm        jmp    near ptr 0x00538DB2;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xA;
 	__asm        jge    near ptr 0x00538E23;
@@ -666,6 +680,7 @@ void S3RoadDataInit() {
 // LINE 226:
 	__asm        mov    leg, 1;
 	__asm        jmp    near ptr 0x00538E72;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xA;
 	__asm        jge    near ptr 0x00538EE5;
@@ -714,6 +729,7 @@ void S3RoadDataInit() {
 // LINE 236:
 	__asm        mov    leg, 1;
 	__asm        jmp    near ptr 0x00538F34;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xA;
 	__asm        jge    near ptr 0x00538FA5;
@@ -753,6 +769,7 @@ void S3RoadDataInit() {
 // LINE 249:
 	__asm        mov    incline, 0;
 	__asm        jmp    near ptr 0x00538FCF;
+
 	__asm        inc    incline;
 	__asm        cmp    incline, 3;
 	__asm        jge    near ptr 0x00539256;
@@ -761,18 +778,21 @@ void S3RoadDataInit() {
 	int32_t tType;
 	__asm        mov    tType, 0;
 	__asm        jmp    near ptr 0x00538FE8;
+
 	__asm        inc    tType;
 	__asm        cmp    tType, 4;
 	__asm        jge    near ptr 0x00539251;
 // LINE 252:
 	__asm        mov    dir, 0;
 	__asm        jmp    near ptr 0x00539001;
+
 	__asm        inc    dir;
 	__asm        cmp    dir, 4;
 	__asm        jge    near ptr 0x0053924C;
 // LINE 254:
 	__asm        mov    leg, 0;
 	__asm        jmp    near ptr 0x0053901A;
+
 	__asm        inc    leg;
 	__asm        cmp    leg, 0xA;
 	__asm        jge    near ptr 0x00539247;
@@ -976,14 +996,19 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 420:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00539297;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x00539297;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00539297;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x005392A2;
+
 	__asm        mov    t, 0;
 	__asm        jmp    near ptr 0x005392DA;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -1010,6 +1035,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x005392FE;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539645;
 // LINE 426:
@@ -1017,14 +1043,17 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00539311;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539645;
 // LINE 430:
 	__asm        jmp    near ptr 0x0053963E;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x27;
 	__asm        jl     near ptr 0x00539347;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
@@ -1034,10 +1063,12 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        jmp    near ptr 0x00539645;
 // LINE 436:
 	__asm        jmp    near ptr 0x0053963E;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jne    near ptr 0x005394C7;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        test   al, 1;
@@ -1049,16 +1080,21 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053939E;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053939E;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053939E;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x005393A9;
+
 	__asm        mov    t2, 0;
 	__asm        jmp    near ptr 0x005393E1;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F6C];
 	__asm        mov    ecx, y;
@@ -1080,6 +1116,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x805F;
 	__asm        je     near ptr 0x00539407;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t2);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x8060;
@@ -1094,16 +1131,21 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        mov    eax, x;
 	__asm        add    eax, 2;
 	__asm        js     near ptr 0x0053944F;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053944F;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, 2;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053944F;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053945A;
+
 	__asm        mov    t2, 0;
 	__asm        jmp    near ptr 0x00539492;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F78];
 	__asm        mov    ecx, y;
@@ -1125,6 +1167,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x805D;
 	__asm        je     near ptr 0x005394B8;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t2);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x805E;
@@ -1134,10 +1177,12 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        jmp    near ptr 0x00539645;
 // LINE 452:
 	__asm        jmp    near ptr 0x0053963E;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x4A;
 	__asm        jne    near ptr 0x0053963E;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        test   al, 1;
@@ -1148,17 +1193,22 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 456:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053951E;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053951E;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053951E;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00539529;
+
 	__asm        mov    t2, 0;
 	__asm        jmp    near ptr 0x00539563;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -1180,6 +1230,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x60;
 	__asm        je     near ptr 0x00539585;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t2);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5F;
@@ -1193,17 +1244,22 @@ int32_t IsThisAnIntersection(long x, long y) {
 // LINE 463:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x005395CD;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, 2;
 	__asm        js     near ptr 0x005395CD;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x005395CD;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, 2;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x005395D8;
+
 	__asm        mov    t2, 0;
 	__asm        jmp    near ptr 0x00539612;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -1225,6 +1281,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5E;
 	__asm        je     near ptr 0x00539634;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t2);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
@@ -1240,9 +1297,10 @@ int32_t IsThisAnIntersection(long x, long y) {
 
 // FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
-	 // Switch table at 0x00539a7e
+	static const <NoType> = { /* <data@0x00539a7e> */ };
 	enum DirectionTypes fromConnections;
 	enum DirectionTypes toConnections;
+
 
 	__asm        mov    ax, toTile;
 	__asm        mov    [ebp-0x24], ax;
@@ -1254,40 +1312,53 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x00539689;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    near ptr 0x005396EF;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
 	__asm        jl     near ptr 0x005396AB;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    near ptr 0x005396EF;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x49;
 	__asm        jl     near ptr 0x005396CD;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    near ptr 0x005396EF;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x005396FE;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     near ptr 0x005396FE;
+
 	__asm        jmp    near ptr 0x00539714;
+
 	__asm        jmp    near ptr 0x0053970D;
+
 	__asm        jmp    near ptr 0x00539703;
+
 	__asm        jmp    near ptr 0x0053970D;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x00539714;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539BEE;
 // LINE 501:
@@ -1300,16 +1371,23 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x00539759;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x60;
 	__asm        jg     near ptr 0x00539759;
+
 	__asm        jmp    near ptr 0x005397BC;
+
 	__asm        jmp    near ptr 0x00539768;
+
 	__asm        jmp    near ptr 0x0053975E;
+
 	__asm        jmp    near ptr 0x00539768;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        jne    near ptr 0x005397BC;
+
 	__asm        mov    ax, toTile;
 	__asm        mov    [ebp-0x14], ax;
 	__asm        mov    eax, [ebp-0x14];
@@ -1319,14 +1397,20 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x5D;
 	__asm        jl     near ptr 0x005397A8;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x60;
 	__asm        jg     near ptr 0x005397A8;
+
 	__asm        jmp    near ptr 0x005397BC;
+
 	__asm        jmp    near ptr 0x005397B2;
+
 	__asm        jmp    near ptr 0x0053998C;
+
 	__asm        jmp    near ptr 0x005397BC;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0053998C;
 // LINE 503:
@@ -1368,12 +1452,16 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        jmp    near ptr 0x00539BEE;
 // LINE 513:
 	__asm        jmp    near ptr 0x00539890;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x805D;
 	__asm        jg     near ptr 0x00539864;
+
 	__asm        je     near ptr 0x005397D7;
+
 	__asm        sub    dword ptr [ebp-0x2C], 0x5D;
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     near ptr 0x00539890;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x539854];
 // Switch pointers
@@ -1421,15 +1509,20 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00539919;
+
 	__asm        jmp    near ptr 0x00539919;
 // LINE 527:
 	__asm        jmp    near ptr 0x00539985;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x805D;
 	__asm        jg     near ptr 0x00539959;
+
 	__asm        je     near ptr 0x005398AB;
+
 	__asm        sub    dword ptr [ebp-0x30], 0x5D;
 	__asm        cmp    dword ptr [ebp-0x30], 3;
 	__asm        ja     near ptr 0x005398F8;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    dword ptr [eax*4+0x539949];
 // Switch pointers
@@ -1441,14 +1534,17 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x4B;
 	__asm        je     near ptr 0x005399D0;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x4C;
 	__asm        je     near ptr 0x005399D0;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x4B;
 	__asm        je     near ptr 0x005399D0;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x4C;
@@ -1460,35 +1556,45 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 // LINE 540:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 1;
 	__asm        je     near ptr 0x005399EF;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00539BEE;
+
 	__asm        jmp    near ptr 0x00539A86;
 // LINE 541:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 2;
 	__asm        je     near ptr 0x00539A08;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00539BEE;
+
 	__asm        jmp    near ptr 0x00539A86;
 // LINE 542:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 4;
 	__asm        je     near ptr 0x00539A21;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00539BEE;
+
 	__asm        jmp    near ptr 0x00539A86;
 // LINE 543:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 8;
 	__asm        je     near ptr 0x00539A3A;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00539BEE;
+
 	__asm        jmp    near ptr 0x00539A86;
 // LINE 544:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539BEE;
 // LINE 545:
 	__asm        jmp    near ptr 0x00539A86;
+
 	__asm        dec    dword ptr [ebp-0x34];
 	__asm        cmp    dword ptr [ebp-0x34], 7;
 	__asm        ja     near ptr 0x00539A3F;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x539A7E];
@@ -1505,19 +1611,24 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00539AB6;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    fromConnections, eax;
 	__asm        jmp    near ptr 0x00539AEA;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00539AD5;
+
 	__asm        mov    eax, 0x5B57E8;
 	__asm        add    eax, 0xF40;
 	__asm        cmp    eax, [ebp-0x1C];
 	__asm        jae    near ptr 0x00539AE1;
+
 	__asm        mov    fromConnections, 0;
 	__asm        jmp    near ptr 0x00539AEA;
+
 	__asm        add    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x00539A94;
 // LINE 553:
@@ -1527,26 +1638,33 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00539B13;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    toConnections, eax;
 	__asm        jmp    near ptr 0x00539B47;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00539B32;
+
 	__asm        mov    eax, 0x5B57E8;
 	__asm        add    eax, 0xF40;
 	__asm        cmp    eax, [ebp-0x20];
 	__asm        jae    near ptr 0x00539B3E;
+
 	__asm        mov    toConnections, 0;
 	__asm        jmp    near ptr 0x00539B47;
+
 	__asm        add    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x00539AF1;
 // LINE 556:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 1;
 	__asm        je     near ptr 0x00539B6F;
+
 	__asm        test   reinterpret_cast<uint8_t>(fromConnections), 1;
 	__asm        je     near ptr 0x00539B6F;
+
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 4;
 	__asm        je     near ptr 0x00539B6F;
 // LINE 557:
@@ -1555,8 +1673,10 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 // LINE 558:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 4;
 	__asm        je     near ptr 0x00539B97;
+
 	__asm        test   reinterpret_cast<uint8_t>(fromConnections), 4;
 	__asm        je     near ptr 0x00539B97;
+
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 1;
 	__asm        je     near ptr 0x00539B97;
 // LINE 559:
@@ -1565,8 +1685,10 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 // LINE 560:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 8;
 	__asm        je     near ptr 0x00539BBF;
+
 	__asm        test   reinterpret_cast<uint8_t>(fromConnections), 8;
 	__asm        je     near ptr 0x00539BBF;
+
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 2;
 	__asm        je     near ptr 0x00539BBF;
 // LINE 561:
@@ -1575,8 +1697,10 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 // LINE 562:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 2;
 	__asm        je     near ptr 0x00539BE7;
+
 	__asm        test   reinterpret_cast<uint8_t>(fromConnections), 2;
 	__asm        je     near ptr 0x00539BE7;
+
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 8;
 	__asm        je     near ptr 0x00539BE7;
 // LINE 563:

@@ -169,6 +169,7 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 	__asm        mov    dword ptr [eax], 0xF0;
 // LINE 72:
 	__asm        jmp    near ptr 0x00495BD7;
+
 	__asm        cmp    dword ptr ds:[0x598F00], 1;
 	__asm        jne    near ptr 0x00495B94;
 // LINE 73:
@@ -179,6 +180,7 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 	__asm        mov    dword ptr [eax], 0x1E0;
 // LINE 76:
 	__asm        jmp    near ptr 0x00495BD7;
+
 	__asm        cmp    dword ptr ds:[0x598F00], 2;
 	__asm        jne    near ptr 0x00495BB8;
 // LINE 77:
@@ -189,6 +191,7 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 	__asm        mov    dword ptr [eax], 0x258;
 // LINE 80:
 	__asm        jmp    near ptr 0x00495BD7;
+
 	__asm        cmp    dword ptr ds:[0x598F00], 3;
 	__asm        jne    near ptr 0x00495BD7;
 // LINE 81:
@@ -231,6 +234,7 @@ int  CGameApp::S3PreRender() {
 	__asm        shl    dword ptr ds:[0x59C248], cl;
 // LINE 104:
 	__asm        jmp    near ptr 0x00495D4F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4308], 1;
 	__asm        jne    near ptr 0x00495D1B;
@@ -241,6 +245,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   S3ViewerPosDelta;
 	__asm        cmp    eax, 0x30000;
 	__asm        jge    near ptr 0x00495CBF;
+
 	__asm        call   S3ViewerRotDelta;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    near ptr 0x00495CBF;
@@ -264,6 +269,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   S3ViewerPosDelta;
 	__asm        cmp    eax, 0x30000;
 	__asm        jge    near ptr 0x00495CE2;
+
 	__asm        call   S3ViewerRotDelta;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00495D16;
@@ -366,6 +372,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   dword ptr [edx];
 // LINE 159:
 	__asm        jmp    near ptr 0x00495E34;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        mov    eax, [eax+0x10];
@@ -422,6 +429,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   dword ptr [edx];
 // LINE 176:
 	__asm        jmp    near ptr 0x00495EDA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x10];
@@ -515,6 +523,7 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 // LINE 235:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        je     near ptr 0x004960B9;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        je     near ptr 0x004960B9;
 // LINE 237:
@@ -524,11 +533,13 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 	__asm        call   dword ptr [eax];
 // LINE 238:
 	__asm        jmp    near ptr 0x00495FF9;
+
 	__asm        mov    eax, bufferToDrawTo;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    pBufferStart, eax;
 // LINE 239:
 	__asm        jmp    near ptr 0x00496007;
+
 	__asm        mov    eax, bufferToDrawTo;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    nSurfaceStride, eax;
@@ -550,6 +561,7 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 // LINE 244:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00496048;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1C;
 	__asm        jge    near ptr 0x0049606A;
@@ -574,6 +586,7 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 // LINE 250:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049608C;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1C;
 	__asm        jge    near ptr 0x004960AE;
@@ -632,13 +645,18 @@ void  CGameApp::S3ShowInfo() {
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    [ebp-0x114], eax;
 	__asm        jmp    near ptr 0x00496148;
+
 	__asm        jmp    near ptr 0x0049614D;
+
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x114], eax;
 	__asm        jmp    near ptr 0x00496161;
+
 	__asm        jmp    near ptr 0x00496166;
+
 	__asm        jmp    near ptr 0x0049616B;
+
 	__asm        mov    eax, [ebp-0x114];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     near ptr 0x004961D7;
@@ -798,6 +816,7 @@ void  CGameApp::S3ShowInfo() {
 // LINE 379:
 // Block end:
 	__asm        jmp    near ptr 0x0049635C;
+
 	__asm        mov    eax, nTextBottom;
 	__asm        push   eax;
 	__asm        mov    eax, this;

@@ -475,8 +475,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	int32_t i;
 	int32_t nFullStringID;
 
+
 	__asm        jmp    near ptr 0x0047497B;
+
 	__asm        jmp    near ptr 0x00474980;
+
 	__asm        mov    eax, windowNewParent;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, windowNewParent;
@@ -488,6 +491,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        sub    eax, [ecx+0x10];
 	__asm        mov    [ebp-0x168], eax;
 	__asm        jmp    near ptr 0x004749A9;
+
 	__asm        mov    dword ptr [ebp-0xFC], 0;
 	__asm        mov    dword ptr [ebp-0xF8], 0;
 	__asm        mov    eax, [ebp-0x168];
@@ -495,6 +499,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x164];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        jmp    near ptr 0x004749DA;
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -508,6 +513,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    near ptr 0x00474A01;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0x50;
 	__asm        mov    eax, this;
@@ -517,34 +523,43 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0x1CC;
 	__asm        jmp    near ptr 0x00474A3D;
+
 	__asm        jmp    near ptr 0x00474A42;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0x3C;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0x42;
 	__asm        jmp    near ptr 0x00474A67;
+
 	__asm        mov    dword ptr [ebp-0x110], 3;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x98;
 	__asm        mov    [ebp-0x114], eax;
 	__asm        dec    dword ptr [ebp-0x110];
 	__asm        js     near ptr 0x00474AA5;
+
 	__asm        mov    ecx, [ebp-0x114];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x114], 8;
 	__asm        jmp    near ptr 0x00474A82;
+
 	__asm        jmp    near ptr 0x00474AAA;
+
 	__asm        mov    dword ptr [ebp-0x118], 3;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBC;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        dec    dword ptr [ebp-0x118];
 	__asm        js     near ptr 0x00474AE8;
+
 	__asm        mov    ecx, [ebp-0x11C];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x11C], 8;
 	__asm        jmp    near ptr 0x00474AC5;
+
 	__asm        jmp    near ptr 0x00474AED;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xD4;
 	__asm        call   DigitalSound::DigitalSound;
@@ -558,34 +573,40 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        cmp    dword ptr [ebp-0x15C], 0;
 	__asm        je     near ptr 0x00474B5C;
+
 	__asm        push   0x599884;
 	__asm        mov    ecx, [ebp-0x15C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x15A], eax;
 	__asm        jmp    near ptr 0x00474B6C;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x15A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x156], 0;
 	__asm        jmp    near ptr 0x00474B81;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x160], eax;
 	__asm        cmp    dword ptr [ebp-0x160], 0;
 	__asm        je     near ptr 0x00474BBF;
+
 	__asm        push   0x599894;
 	__asm        mov    ecx, [ebp-0x160];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x162], eax;
 	__asm        jmp    near ptr 0x00474BCF;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x162], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x15E], 0;
 	__asm        jmp    near ptr 0x00474BE4;
+
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -596,6 +617,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x166;
 	__asm        call   MFont::MFont;
 	__asm        jmp    near ptr 0x00474C08;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x182], 0x46;
 	__asm        mov    eax, this;
@@ -605,7 +627,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18E], 0x168;
 	__asm        jmp    near ptr 0x00474C4D;
+
 	__asm        jmp    near ptr 0x00474C52;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x192], 0x46;
 	__asm        mov    eax, this;
@@ -615,7 +639,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x19E], 0x19A;
 	__asm        jmp    near ptr 0x00474C97;
+
 	__asm        jmp    near ptr 0x00474C9C;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1A2], 0x14E;
 	__asm        mov    eax, this;
@@ -625,8 +651,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1AE], 0x19A;
 	__asm        jmp    near ptr 0x00474CE1;
+
 	__asm        jmp    near ptr 0x00474CE6;
+
 	__asm        jmp    near ptr 0x00474CEB;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C2], 0;
 	__asm        mov    eax, this;
@@ -634,6 +663,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1CA], 0;
 	__asm        jmp    near ptr 0x00474D20;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1CE], 0x4A;
 	__asm        mov    eax, this;
@@ -643,7 +673,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1DA], 0x140;
 	__asm        jmp    near ptr 0x00474D65;
+
 	__asm        jmp    near ptr 0x00474D6A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1DE], 0x4A;
 	__asm        mov    eax, this;
@@ -653,7 +685,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1EA], 0x178;
 	__asm        jmp    near ptr 0x00474DAF;
+
 	__asm        jmp    near ptr 0x00474DB4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1EE], 0x150;
 	__asm        mov    eax, this;
@@ -663,7 +697,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1FA], 0x140;
 	__asm        jmp    near ptr 0x00474DF9;
+
 	__asm        jmp    near ptr 0x00474DFE;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1FE], 0x200;
 	__asm        mov    eax, this;
@@ -673,7 +709,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20A], 0x6A;
 	__asm        jmp    near ptr 0x00474E43;
+
 	__asm        jmp    near ptr 0x00474E48;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20E], 0x200;
 	__asm        mov    eax, this;
@@ -683,12 +721,14 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x21A], 0xB2;
 	__asm        jmp    near ptr 0x00474E8D;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x120], eax;
 	__asm        cmp    dword ptr [ebp-0x120], 0;
 	__asm        je     near ptr 0x00474EFE;
+
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x120];
@@ -700,21 +740,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00474EE7;
+
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x222], eax;
 	__asm        jmp    near ptr 0x00474F0E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x222], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x21E], 0;
 	__asm        jmp    near ptr 0x00474F23;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x124], eax;
 	__asm        cmp    dword ptr [ebp-0x124], 0;
 	__asm        je     near ptr 0x00474F94;
+
 	__asm        mov    eax, [ebp-0x124];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x124];
@@ -726,21 +770,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x124];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00474F7D;
+
 	__asm        mov    eax, [ebp-0x124];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x22A], eax;
 	__asm        jmp    near ptr 0x00474FA4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x22A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x226], 0;
 	__asm        jmp    near ptr 0x00474FB9;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x128], eax;
 	__asm        cmp    dword ptr [ebp-0x128], 0;
 	__asm        je     near ptr 0x0047502A;
+
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x128];
@@ -752,21 +800,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00475013;
+
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x232], eax;
 	__asm        jmp    near ptr 0x0047503A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x232], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x22E], 0;
 	__asm        jmp    near ptr 0x0047504F;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        cmp    dword ptr [ebp-0x12C], 0;
 	__asm        je     near ptr 0x004750C0;
+
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x12C];
@@ -778,21 +830,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004750A9;
+
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x23A], eax;
 	__asm        jmp    near ptr 0x004750D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x23A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x236], 0;
 	__asm        jmp    near ptr 0x004750E5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x130], eax;
 	__asm        cmp    dword ptr [ebp-0x130], 0;
 	__asm        je     near ptr 0x00475156;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x130];
@@ -804,21 +860,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047513F;
+
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x242], eax;
 	__asm        jmp    near ptr 0x00475166;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x242], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x23E], 0;
 	__asm        jmp    near ptr 0x0047517B;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x134], eax;
 	__asm        cmp    dword ptr [ebp-0x134], 0;
 	__asm        je     near ptr 0x004751EC;
+
 	__asm        mov    eax, [ebp-0x134];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x134];
@@ -830,21 +890,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x134];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004751D5;
+
 	__asm        mov    eax, [ebp-0x134];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24A], eax;
 	__asm        jmp    near ptr 0x004751FC;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x24A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x246], 0;
 	__asm        jmp    near ptr 0x00475211;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x138], eax;
 	__asm        cmp    dword ptr [ebp-0x138], 0;
 	__asm        je     near ptr 0x00475282;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x138];
@@ -856,21 +920,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047526B;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x252], eax;
 	__asm        jmp    near ptr 0x00475292;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x252], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x24E], 0;
 	__asm        jmp    near ptr 0x004752A7;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        cmp    dword ptr [ebp-0x13C], 0;
 	__asm        je     near ptr 0x00475318;
+
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x13C];
@@ -882,25 +950,33 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00475301;
+
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x25A], eax;
 	__asm        jmp    near ptr 0x00475328;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x25A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x256], 0;
 	__asm        jmp    near ptr 0x0047533D;
+
 	__asm        jmp    near ptr 0x00475342;
+
 	__asm        jmp    near ptr 0x00475347;
+
 	__asm        jmp    near ptr 0x0047534C;
+
 	__asm        jmp    near ptr 0x00475351;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x140], eax;
 	__asm        cmp    dword ptr [ebp-0x140], 0;
 	__asm        je     near ptr 0x004753C2;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x140];
@@ -912,21 +988,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004753AB;
+
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x282], eax;
 	__asm        jmp    near ptr 0x004753D2;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x282], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x27E], 0;
 	__asm        jmp    near ptr 0x004753E7;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x144], eax;
 	__asm        cmp    dword ptr [ebp-0x144], 0;
 	__asm        je     near ptr 0x00475458;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x144];
@@ -938,21 +1018,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00475441;
+
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x28A], eax;
 	__asm        jmp    near ptr 0x00475468;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x286], 0;
 	__asm        jmp    near ptr 0x0047547D;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x148], eax;
 	__asm        cmp    dword ptr [ebp-0x148], 0;
 	__asm        je     near ptr 0x004754EE;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x148];
@@ -964,21 +1048,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004754D7;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x292], eax;
 	__asm        jmp    near ptr 0x004754FE;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x292], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28E], 0;
 	__asm        jmp    near ptr 0x00475513;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14C], eax;
 	__asm        cmp    dword ptr [ebp-0x14C], 0;
 	__asm        je     near ptr 0x00475584;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x14C];
@@ -990,21 +1078,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047556D;
+
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x29A], eax;
 	__asm        jmp    near ptr 0x00475594;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x29A], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x296], 0;
 	__asm        jmp    near ptr 0x004755A9;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x150], eax;
 	__asm        cmp    dword ptr [ebp-0x150], 0;
 	__asm        je     near ptr 0x0047561A;
+
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x150];
@@ -1016,21 +1108,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00475603;
+
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2A2], eax;
 	__asm        jmp    near ptr 0x0047562A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2A2], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x29E], 0;
 	__asm        jmp    near ptr 0x0047563F;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x154], eax;
 	__asm        cmp    dword ptr [ebp-0x154], 0;
 	__asm        je     near ptr 0x004756B0;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x154];
@@ -1042,21 +1138,25 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00475699;
+
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2AA], eax;
 	__asm        jmp    near ptr 0x004756C0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2AA], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2A6], 0;
 	__asm        jmp    near ptr 0x004756D5;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x158], eax;
 	__asm        cmp    dword ptr [ebp-0x158], 0;
 	__asm        je     near ptr 0x00475746;
+
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x158];
@@ -1068,15 +1168,18 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047572F;
+
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2B2], eax;
 	__asm        jmp    near ptr 0x00475756;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2B2], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2AE], 0;
 	__asm        jmp    near ptr 0x0047576B;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590CE8;
 	__asm        call   clock;
@@ -1087,10 +1190,12 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        lea    ecx, tempRandom.table[0];
 	__asm        call   Random::seed;
 	__asm        jmp    near ptr 0x00475799;
+
 	__asm        mov    eax, ds:[0x59981C];
 	__asm        mov    [ebp-0x104], eax;
 // LINE 70:
 	__asm        jmp    near ptr 0x004757A9;
+
 	__asm        mov    eax, [ebp-0x104];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1104,18 +1209,23 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        jmp    near ptr 0x004757D3;
 // LINE 74:
 	__asm        jmp    near ptr 0x004757D8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047580C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x108], eax;
 	__asm        jmp    near ptr 0x0047581B;
+
 	__asm        jmp    near ptr 0x0047581B;
+
 	__asm        mov    dword ptr [ebp-0x108], 0;
 	__asm        jmp    near ptr 0x0047581B;
+
 	__asm        call   GetUserMoney;
 	__asm        push   eax;
 	__asm        push   0x5998A4;
@@ -1125,18 +1235,23 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    esp, 0xC;
 // LINE 75:
 	__asm        jmp    near ptr 0x0047583A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047586E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        jmp    near ptr 0x0047587D;
+
 	__asm        jmp    near ptr 0x0047587D;
+
 	__asm        mov    dword ptr [ebp-0x10C], 0;
 	__asm        jmp    near ptr 0x0047587D;
+
 	__asm        push   0;
 	__asm        push   0x5998A8;
 	__asm        mov    eax, [ebp-0x10C];
@@ -1146,6 +1261,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 // LINE 77:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004758A2;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x00475914;
@@ -1177,6 +1293,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 // LINE 82:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00475923;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x00475995;
@@ -1223,6 +1340,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    [ebp-0x116C], eax;
 	__asm        cmp    dword ptr [ebp-0x116C], 0;
 	__asm        jne    near ptr 0x00475A66;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1168];
 	__asm        push   eax;
@@ -1236,6 +1354,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x116C], eax;
 	__asm        jmp    near ptr 0x00475A06;
+
 	__asm        lea    eax, [ebp-0x1168];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1247,7 +1366,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x21E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475A33;
+
 	__asm        jmp    near ptr 0x00475A38;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1257,8 +1378,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x21E;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00475A61;
+
 	__asm        jmp    near ptr 0x00475A9D;
+
 	__asm        jmp    near ptr 0x00475A6B;
+
 	__asm        lea    eax, [ebp-0x1168];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1270,6 +1394,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x21E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475A98;
+
 	__asm        jmp    near ptr 0x00475A9D;
 // LINE 89:
 	__asm        push   0;
@@ -1289,6 +1414,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    [ebp-0x2170], eax;
 	__asm        cmp    dword ptr [ebp-0x2170], 0;
 	__asm        jne    near ptr 0x00475B6E;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x216C];
 	__asm        push   eax;
@@ -1302,6 +1428,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2170], eax;
 	__asm        jmp    near ptr 0x00475B0E;
+
 	__asm        lea    eax, [ebp-0x216C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1313,7 +1440,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x22E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475B3B;
+
 	__asm        jmp    near ptr 0x00475B40;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1323,8 +1452,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x22E;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00475B69;
+
 	__asm        jmp    near ptr 0x00475BA5;
+
 	__asm        jmp    near ptr 0x00475B73;
+
 	__asm        lea    eax, [ebp-0x216C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1336,6 +1468,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x22E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475BA0;
+
 	__asm        jmp    near ptr 0x00475BA5;
 // LINE 91:
 	__asm        push   0;
@@ -1355,6 +1488,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    [ebp-0x3174], eax;
 	__asm        cmp    dword ptr [ebp-0x3174], 0;
 	__asm        jne    near ptr 0x00475C76;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3170];
 	__asm        push   eax;
@@ -1368,6 +1502,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3174], eax;
 	__asm        jmp    near ptr 0x00475C16;
+
 	__asm        lea    eax, [ebp-0x3170];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1379,7 +1514,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x23E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475C43;
+
 	__asm        jmp    near ptr 0x00475C48;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1389,8 +1526,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x23E;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00475C71;
+
 	__asm        jmp    near ptr 0x00475CAD;
+
 	__asm        jmp    near ptr 0x00475C7B;
+
 	__asm        lea    eax, [ebp-0x3170];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1402,6 +1542,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x23E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475CA8;
+
 	__asm        jmp    near ptr 0x00475CAD;
 // LINE 93:
 	__asm        push   0;
@@ -1421,6 +1562,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        mov    [ebp-0x4178], eax;
 	__asm        cmp    dword ptr [ebp-0x4178], 0;
 	__asm        jne    near ptr 0x00475D7E;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4174];
 	__asm        push   eax;
@@ -1434,6 +1576,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4178], eax;
 	__asm        jmp    near ptr 0x00475D1E;
+
 	__asm        lea    eax, [ebp-0x4174];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1445,7 +1588,9 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x24E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475D4B;
+
 	__asm        jmp    near ptr 0x00475D50;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -1455,8 +1600,11 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x24E;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00475D79;
+
 	__asm        jmp    near ptr 0x00475DB5;
+
 	__asm        jmp    near ptr 0x00475D83;
+
 	__asm        lea    eax, [ebp-0x4174];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1468,6 +1616,7 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    ecx, 0x24E;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00475DB0;
+
 	__asm        jmp    near ptr 0x00475DB5;
 // LINE 95:
 	__asm        push   0;
@@ -1600,11 +1749,13 @@ void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNew
 	__asm        add    esp, 4;
 // LINE 116:
 	__asm        jmp    near ptr 0x00475F40;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00475f4d
 void CatalogWindow::~CatalogWindow() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590CE8;
 // LINE 123:
@@ -1622,12 +1773,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        add    esp, 4;
 // LINE 126:
 	__asm        jmp    near ptr 0x00475F99;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2AE;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2AE], 0;
 	__asm        je     near ptr 0x00475FDE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2AE];
 	__asm        mov    [ebp-4], eax;
@@ -1638,12 +1791,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00475FE3;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2A6;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A6], 0;
 	__asm        je     near ptr 0x00476028;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A6];
 	__asm        mov    [ebp-0xC], eax;
@@ -1654,12 +1809,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047602D;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x29E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x29E], 0;
 	__asm        je     near ptr 0x00476072;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x29E];
 	__asm        mov    [ebp-0x14], eax;
@@ -1670,12 +1827,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476077;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x296;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x296], 0;
 	__asm        je     near ptr 0x004760BC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x296];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1686,12 +1845,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004760C1;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x28E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28E], 0;
 	__asm        je     near ptr 0x00476106;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28E];
 	__asm        mov    [ebp-0x24], eax;
@@ -1702,12 +1863,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047610B;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x286;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x286], 0;
 	__asm        je     near ptr 0x00476150;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x286];
 	__asm        mov    [ebp-0x2C], eax;
@@ -1718,12 +1881,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476155;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x27E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x27E], 0;
 	__asm        je     near ptr 0x0047619A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x27E];
 	__asm        mov    [ebp-0x34], eax;
@@ -1734,12 +1899,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047619F;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x256;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x256], 0;
 	__asm        je     near ptr 0x004761E4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x256];
 	__asm        mov    [ebp-0x3C], eax;
@@ -1750,12 +1917,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004761E9;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x24E], 0;
 	__asm        je     near ptr 0x0047622E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24E];
 	__asm        mov    [ebp-0x44], eax;
@@ -1766,12 +1935,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476233;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x246;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x246], 0;
 	__asm        je     near ptr 0x00476278;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x246];
 	__asm        mov    [ebp-0x4C], eax;
@@ -1782,12 +1953,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047627D;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x23E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x23E], 0;
 	__asm        je     near ptr 0x004762C2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23E];
 	__asm        mov    [ebp-0x54], eax;
@@ -1798,12 +1971,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004762C7;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x236;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x236], 0;
 	__asm        je     near ptr 0x0047630C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x236];
 	__asm        mov    [ebp-0x5C], eax;
@@ -1814,12 +1989,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476311;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x22E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x22E], 0;
 	__asm        je     near ptr 0x00476356;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22E];
 	__asm        mov    [ebp-0x64], eax;
@@ -1830,12 +2007,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047635B;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x226;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x226], 0;
 	__asm        je     near ptr 0x004763A0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x226];
 	__asm        mov    [ebp-0x6C], eax;
@@ -1846,12 +2025,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004763A5;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x21E;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x21E], 0;
 	__asm        je     near ptr 0x004763EA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x21E];
 	__asm        mov    [ebp-0x74], eax;
@@ -1862,6 +2043,7 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004763EF;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x166;
 	__asm        call   MFont::~MFont;
@@ -1872,6 +2054,7 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00476462;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    [ebp-0x88], eax;
@@ -1879,14 +2062,18 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
 	__asm        je     near ptr 0x00476462;
+
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00476462;
+
 	__asm        jmp    near ptr 0x00476467;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15E], 0;
 	__asm        je     near ptr 0x0047649B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15E];
 	__asm        mov    [ebp-0x7C], eax;
@@ -1897,12 +2084,14 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004764A0;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x156;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x156], 0;
 	__asm        je     near ptr 0x004764F1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x156];
 	__asm        mov    [ebp-0x8C], eax;
@@ -1913,6 +2102,7 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004764F6;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xD4;
 	__asm        call   DigitalSound::~DigitalSound;
@@ -1932,6 +2122,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x0047657D;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x50];
@@ -1943,9 +2134,11 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00476572;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    near ptr 0x00476584;
+
 	__asm        mov    sText.reference, 0;
 	__asm        mov    sText.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00476590;
@@ -1959,12 +2152,15 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x00476610;
+
 	__asm        jmp    near ptr 0x004765BA;
+
 	__asm        mov    dword ptr [ebp-0x20], 0x1FC;
 	__asm        mov    dword ptr [ebp-0x1C], 0xCE;
 	__asm        mov    dword ptr [ebp-0x18], 0x1FE;
 	__asm        mov    dword ptr [ebp-0x14], 0xD0;
 	__asm        jmp    near ptr 0x004765DB;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1980,6 +2176,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1C2], eax;
 	__asm        jmp    near ptr 0x00476620;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C2], 0;
 // LINE 140:
@@ -2000,6 +2197,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x1064], eax;
 	__asm        cmp    dword ptr [ebp-0x1064], 0;
 	__asm        jne    near ptr 0x004766DF;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
 	__asm        push   eax;
@@ -2013,6 +2211,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
 	__asm        jmp    near ptr 0x00476691;
+
 	__asm        lea    eax, [ebp-0x1060];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2023,7 +2222,9 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004766B5;
+
 	__asm        jmp    near ptr 0x004766BA;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -2032,8 +2233,11 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004766DA;
+
 	__asm        jmp    near ptr 0x0047670D;
+
 	__asm        jmp    near ptr 0x004766E4;
+
 	__asm        lea    eax, [ebp-0x1060];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2044,6 +2248,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00476708;
+
 	__asm        jmp    near ptr 0x0047670D;
 // LINE 142:
 	__asm        lea    eax, sText.c_str_ptr;
@@ -2068,12 +2273,15 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x004767C0;
+
 	__asm        jmp    near ptr 0x0047676A;
+
 	__asm        mov    dword ptr [ebp-0x34], 0x1FC;
 	__asm        mov    dword ptr [ebp-0x30], 0xEC;
 	__asm        mov    dword ptr [ebp-0x2C], 0x1FE;
 	__asm        mov    dword ptr [ebp-0x28], 0xEE;
 	__asm        jmp    near ptr 0x0047678B;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -2089,6 +2297,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1C6], eax;
 	__asm        jmp    near ptr 0x004767D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C6], 0;
 // LINE 147:
@@ -2109,6 +2318,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x2068], eax;
 	__asm        cmp    dword ptr [ebp-0x2068], 0;
 	__asm        jne    near ptr 0x0047688F;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2064];
 	__asm        push   eax;
@@ -2122,6 +2332,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2068], eax;
 	__asm        jmp    near ptr 0x00476841;
+
 	__asm        lea    eax, [ebp-0x2064];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2132,7 +2343,9 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00476865;
+
 	__asm        jmp    near ptr 0x0047686A;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -2141,8 +2354,11 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0047688A;
+
 	__asm        jmp    near ptr 0x004769DF;
+
 	__asm        jmp    near ptr 0x00476894;
+
 	__asm        lea    eax, [ebp-0x2064];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2150,6 +2366,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x207C], eax;
 	__asm        cmp    dword ptr [ebp-0x207C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004768EE;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2159,27 +2376,35 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004768DF;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004768EE;
+
 	__asm        jmp    near ptr 0x004768F3;
+
 	__asm        mov    eax, sText.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x00476924;
+
 	__asm        cmp    dword ptr [ebp-0x207C], 0;
 	__asm        je     near ptr 0x00476985;
+
 	__asm        jmp    near ptr 0x00476912;
+
 	__asm        mov    eax, sText.reference;
 	__asm        mov    ecx, [ebp-0x207C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00476985;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2070], eax;
 	__asm        cmp    dword ptr [ebp-0x2070], 0;
 	__asm        je     near ptr 0x00476965;
+
 	__asm        mov    eax, [ebp-0x207C];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2064];
@@ -2188,15 +2413,19 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x206C], eax;
 	__asm        jmp    near ptr 0x0047696F;
+
 	__asm        mov    dword ptr [ebp-0x206C], 0;
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x206C];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    near ptr 0x004769C4;
+
 	__asm        cmp    dword ptr [ebp-0x207C], 0;
 	__asm        je     near ptr 0x004769C4;
+
 	__asm        jmp    near ptr 0x00476997;
+
 	__asm        mov    eax, sText.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2074], eax;
@@ -2209,11 +2438,14 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004769C4;
+
 	__asm        mov    eax, [ebp-0x207C];
 	__asm        mov    ecx, sText.reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004769D5;
+
 	__asm        jmp    near ptr 0x004769DA;
+
 	__asm        jmp    near ptr 0x004769DF;
 // LINE 149:
 	__asm        lea    eax, sText.c_str_ptr;
@@ -2238,12 +2470,15 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x00476A92;
+
 	__asm        jmp    near ptr 0x00476A3C;
+
 	__asm        mov    dword ptr [ebp-0x48], 0x1FC;
 	__asm        mov    dword ptr [ebp-0x44], 0x10A;
 	__asm        mov    dword ptr [ebp-0x40], 0x1FE;
 	__asm        mov    dword ptr [ebp-0x3C], 0x10C;
 	__asm        jmp    near ptr 0x00476A5D;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -2259,6 +2494,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1CA], eax;
 	__asm        jmp    near ptr 0x00476AA2;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1CA], 0;
 // LINE 154:
@@ -2279,6 +2515,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    [ebp-0x3080], eax;
 	__asm        cmp    dword ptr [ebp-0x3080], 0;
 	__asm        jne    near ptr 0x00476B61;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x307C];
 	__asm        push   eax;
@@ -2292,6 +2529,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3080], eax;
 	__asm        jmp    near ptr 0x00476B13;
+
 	__asm        lea    eax, [ebp-0x307C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2302,7 +2540,9 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00476B37;
+
 	__asm        jmp    near ptr 0x00476B3C;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -2311,8 +2551,11 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00476B5C;
+
 	__asm        jmp    near ptr 0x00476B8F;
+
 	__asm        jmp    near ptr 0x00476B66;
+
 	__asm        lea    eax, [ebp-0x307C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2323,6 +2566,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00476B8A;
+
 	__asm        jmp    near ptr 0x00476B8F;
 // LINE 156:
 	__asm        lea    eax, sText.c_str_ptr;
@@ -2350,24 +2594,31 @@ int32_t CatalogWindow::Initialize() {
 	__asm        mov    eax, sText.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00476C2B;
+
 	__asm        mov    eax, sText.reference;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        je     near ptr 0x00476C2B;
+
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00476C15;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476C26;
+
 	__asm        jmp    near ptr 0x00476C2B;
+
 	__asm        jmp    near ptr 0x00476C30;
+
 	__asm        cmp    sText.c_str_ptr, 0;
 	__asm        je     near ptr 0x00476C52;
+
 	__asm        mov    eax, sText.c_str_ptr;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
@@ -2377,6 +2628,7 @@ int32_t CatalogWindow::Initialize() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00476C57;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    near ptr 0x00476C5F;
 // LINE 161:
@@ -2404,6 +2656,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x8E0], eax;
 	__asm        cmp    dword ptr [ebp-0x8E0], 0;
 	__asm        je     near ptr 0x00476CE5;
+
 	__asm        mov    eax, [ebp-0x8E0];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x8E0];
@@ -2415,9 +2668,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x8E0];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00476CD4;
+
 	__asm        mov    eax, [ebp-0x8E0];
 	__asm        mov    sTempMainGraphicFilePath.reference, eax;
 	__asm        jmp    near ptr 0x00476CEF;
+
 	__asm        mov    sTempMainGraphicFilePath.reference, 0;
 	__asm        mov    sTempMainGraphicFilePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00476CFE;
@@ -2428,6 +2683,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x8E4], eax;
 	__asm        cmp    dword ptr [ebp-0x8E4], 0;
 	__asm        je     near ptr 0x00476D69;
+
 	__asm        mov    eax, [ebp-0x8E4];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x8E4];
@@ -2439,9 +2695,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x8E4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00476D58;
+
 	__asm        mov    eax, [ebp-0x8E4];
 	__asm        mov    sTempTabFilePath.reference, eax;
 	__asm        jmp    near ptr 0x00476D73;
+
 	__asm        mov    sTempTabFilePath.reference, 0;
 	__asm        mov    sTempTabFilePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00476D82;
@@ -2452,6 +2710,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x8E8], eax;
 	__asm        cmp    dword ptr [ebp-0x8E8], 0;
 	__asm        je     near ptr 0x00476DED;
+
 	__asm        mov    eax, [ebp-0x8E8];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x8E8];
@@ -2463,9 +2722,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x8E8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00476DDC;
+
 	__asm        mov    eax, [ebp-0x8E8];
 	__asm        mov    sTempMainGraphicFileName.reference, eax;
 	__asm        jmp    near ptr 0x00476DF7;
+
 	__asm        mov    sTempMainGraphicFileName.reference, 0;
 	__asm        mov    sTempMainGraphicFileName.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00476E06;
@@ -2476,6 +2737,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x8EC], eax;
 	__asm        cmp    dword ptr [ebp-0x8EC], 0;
 	__asm        je     near ptr 0x00476E71;
+
 	__asm        mov    eax, [ebp-0x8EC];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x8EC];
@@ -2487,56 +2749,69 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x8EC];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00476E60;
+
 	__asm        mov    eax, [ebp-0x8EC];
 	__asm        mov    sTempTabFileName.reference, eax;
 	__asm        jmp    near ptr 0x00476E7B;
+
 	__asm        mov    sTempTabFileName.reference, 0;
 	__asm        mov    sTempTabFileName.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00476E8A;
+
 	__asm        mov    dword ptr [ebp-0x8C8], 5;
 	__asm        lea    eax, sEquipmentDescriptions[0].c_str_ptr;
 	__asm        mov    [ebp-0x8CC], eax;
 // LINE 175:
 	__asm        dec    dword ptr [ebp-0x8C8];
 	__asm        js     near ptr 0x00476EC3;
+
 	__asm        mov    ecx, [ebp-0x8CC];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x8CC], 8;
 	__asm        jmp    near ptr 0x00476EA0;
+
 	__asm        jmp    near ptr 0x00476EC8;
+
 	__asm        mov    dword ptr [ebp-0x8D0], 5;
 	__asm        lea    eax, rectEquipmentDescriptions[0].left;
 	__asm        mov    [ebp-0x8D4], eax;
 // LINE 176:
 	__asm        dec    dword ptr [ebp-0x8D0];
 	__asm        js     near ptr 0x00476F01;
+
 	__asm        mov    ecx, [ebp-0x8D4];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x8D4], 0x10;
 	__asm        jmp    near ptr 0x00476EDE;
+
 	__asm        jmp    near ptr 0x00476F06;
+
 	__asm        mov    dword ptr [ebp-0x8D8], 5;
 	__asm        lea    eax, rectEquipmentDescriptionTitles[0].left;
 	__asm        mov    [ebp-0x8DC], eax;
 // LINE 177:
 	__asm        dec    dword ptr [ebp-0x8D8];
 	__asm        js     near ptr 0x00476F3F;
+
 	__asm        mov    ecx, [ebp-0x8DC];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x8DC], 0x10;
 	__asm        jmp    near ptr 0x00476F1C;
+
 	__asm        jmp    near ptr 0x00476F44;
 // LINE 178:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    currentUserPersonalInfo, eax;
 // LINE 179:
 	__asm        jmp    near ptr 0x00476F54;
+
 	__asm        jmp    near ptr 0x00476F59;
 // LINE 181:
 	__asm        mov    byte ptr [ebp-0x810], 0x2F;
 	__asm        mov    byte ptr [ebp-0x80F], 0x2F;
 	__asm        mov    byte ptr [ebp-0x80E], 0x2F;
 	__asm        jmp    near ptr 0x00476F73;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-0x8C4], eax;
@@ -2547,6 +2822,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 182:
 	__asm        cmp    lNewTab, 0;
 	__asm        jl     near ptr 0x004786A7;
+
 	__asm        cmp    lNewTab, 7;
 	__asm        jg     near ptr 0x004786A7;
 // LINE 184:
@@ -2564,6 +2840,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x814], eax;
 	__asm        cmp    dword ptr [ebp-0x814], 0;
 	__asm        je     near ptr 0x00477006;
+
 	__asm        mov    ecx, [ebp-0x814];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0x814];
@@ -2571,11 +2848,13 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00477001;
+
 	__asm        jmp    near ptr 0x00477006;
 // LINE 186:
 	__asm        mov    eax, ds:[0x59981C];
 	__asm        mov    [ebp-0x84C], eax;
 	__asm        jmp    near ptr 0x00477016;
+
 	__asm        mov    eax, [ebp-0x84C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2606,9 +2885,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x81C], eax;
 	__asm        cmp    dword ptr [ebp-0x81C], 0;
 	__asm        je     near ptr 0x00477201;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
 	__asm        je     near ptr 0x004770C1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    [ebp-0x49B8], eax;
@@ -2619,6 +2900,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004770C6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -2629,24 +2911,32 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    near ptr 0x004770EA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477187;
+
 	__asm        jmp    near ptr 0x00477102;
+
 	__asm        jmp    near ptr 0x00477107;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477135;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x49CC], eax;
 	__asm        jmp    near ptr 0x00477144;
+
 	__asm        jmp    near ptr 0x00477144;
+
 	__asm        mov    dword ptr [ebp-0x49CC], 0;
 	__asm        jmp    near ptr 0x00477144;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -2663,12 +2953,16 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00477187;
+
 	__asm        jmp    near ptr 0x0047718C;
+
 	__asm        mov    byte ptr [ebp-0x49BC], 0;
 	__asm        jmp    near ptr 0x00477198;
+
 	__asm        lea    eax, [ebp-0x49BC];
 	__asm        mov    [ebp-0x49C4], eax;
 	__asm        jmp    near ptr 0x004771A9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -2680,7 +2974,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, [ebp-0x49C8];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004771D9;
+
 	__asm        jmp    near ptr 0x004771DE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
@@ -2689,6 +2985,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    near ptr 0x0047720E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0;
 // LINE 190:
@@ -2725,6 +3022,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 195:
 	__asm        cmp    sTempMainGraphicFilePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004772AC;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        mov    [ebp-0x49D8], eax;
 	__asm        mov    eax, [ebp-0x49D8];
@@ -2734,6 +3032,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004772B1;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -2742,21 +3041,29 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 4;
 	__asm        mov    sTempMainGraphicFilePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x004772CF;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047735D;
+
 	__asm        jmp    near ptr 0x004772E4;
+
 	__asm        jmp    near ptr 0x004772E9;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477311;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x49EC], eax;
 	__asm        jmp    near ptr 0x00477320;
+
 	__asm        jmp    near ptr 0x00477320;
+
 	__asm        mov    dword ptr [ebp-0x49EC], 0;
 	__asm        jmp    near ptr 0x00477320;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x49F0], eax;
@@ -2771,12 +3078,16 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047735D;
+
 	__asm        jmp    near ptr 0x00477362;
+
 	__asm        mov    byte ptr [ebp-0x49DC], 0;
 	__asm        jmp    near ptr 0x0047736E;
+
 	__asm        lea    eax, [ebp-0x49DC];
 	__asm        mov    [ebp-0x49E4], eax;
 	__asm        jmp    near ptr 0x0047737F;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sTempMainGraphicFilePath.c_str_ptr;
@@ -2786,7 +3097,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, [ebp-0x49E8];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004773A9;
+
 	__asm        jmp    near ptr 0x004773AE;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
@@ -2794,6 +3107,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 196:
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x004773F4;
+
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        mov    [ebp-0x49F8], eax;
 	__asm        mov    eax, [ebp-0x49F8];
@@ -2803,6 +3117,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004773F9;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -2811,21 +3126,29 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 4;
 	__asm        mov    sTempTabFilePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x00477417;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004774A5;
+
 	__asm        jmp    near ptr 0x0047742C;
+
 	__asm        jmp    near ptr 0x00477431;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477459;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4A0C], eax;
 	__asm        jmp    near ptr 0x00477468;
+
 	__asm        jmp    near ptr 0x00477468;
+
 	__asm        mov    dword ptr [ebp-0x4A0C], 0;
 	__asm        jmp    near ptr 0x00477468;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x4A10], eax;
@@ -2840,12 +3163,16 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004774A5;
+
 	__asm        jmp    near ptr 0x004774AA;
+
 	__asm        mov    byte ptr [ebp-0x49FC], 0;
 	__asm        jmp    near ptr 0x004774B6;
+
 	__asm        lea    eax, [ebp-0x49FC];
 	__asm        mov    [ebp-0x4A04], eax;
 	__asm        jmp    near ptr 0x004774C7;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sTempTabFilePath.c_str_ptr;
@@ -2855,14 +3182,18 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, [ebp-0x4A08];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004774F1;
+
 	__asm        jmp    near ptr 0x004774F6;
+
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 199:
 	__asm        jmp    near ptr 0x0047750D;
+
 	__asm        jmp    near ptr 0x00477512;
+
 	__asm        mov    eax, tempHelicopterBuffer.mHeight;
 	__asm        push   eax;
 	__asm        mov    eax, tempHelicopterBuffer.mWidth;
@@ -2882,7 +3213,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   CBackBuffer::Compose;
 // LINE 202:
 	__asm        jmp    near ptr 0x00477558;
+
 	__asm        jmp    near ptr 0x0047755D;
+
 	__asm        mov    eax, tempTabBuffer.mHeight;
 	__asm        push   eax;
 	__asm        mov    eax, tempTabBuffer.mWidth;
@@ -2921,6 +3254,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x1958], eax;
 	__asm        cmp    dword ptr [ebp-0x1958], 0;
 	__asm        jne    near ptr 0x0047767F;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1954];
 	__asm        push   eax;
@@ -2934,6 +3268,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1958], eax;
 	__asm        jmp    near ptr 0x0047761F;
+
 	__asm        lea    eax, [ebp-0x1954];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2945,7 +3280,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x226;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0047764C;
+
 	__asm        jmp    near ptr 0x00477651;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -2955,8 +3292,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x226;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0047767A;
+
 	__asm        jmp    near ptr 0x00477805;
+
 	__asm        jmp    near ptr 0x00477684;
+
 	__asm        lea    eax, [ebp-0x1954];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2964,6 +3304,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x196C], eax;
 	__asm        cmp    dword ptr [ebp-0x196C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004776DE;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2973,29 +3314,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004776CF;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004776DE;
+
 	__asm        jmp    near ptr 0x004776E3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22A];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x00477726;
+
 	__asm        cmp    dword ptr [ebp-0x196C], 0;
 	__asm        je     near ptr 0x00477799;
+
 	__asm        jmp    near ptr 0x0047770B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22A];
 	__asm        mov    ecx, [ebp-0x196C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00477799;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1960], eax;
 	__asm        cmp    dword ptr [ebp-0x1960], 0;
 	__asm        je     near ptr 0x00477767;
+
 	__asm        mov    eax, [ebp-0x196C];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1954];
@@ -3004,6 +3353,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x195C], eax;
 	__asm        jmp    near ptr 0x00477771;
+
 	__asm        mov    dword ptr [ebp-0x195C], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x226;
@@ -3012,9 +3362,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x22A], eax;
 	__asm        jmp    near ptr 0x004777E1;
+
 	__asm        cmp    dword ptr [ebp-0x196C], 0;
 	__asm        je     near ptr 0x004777E1;
+
 	__asm        jmp    near ptr 0x004777AB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22A];
 	__asm        mov    eax, [eax];
@@ -3028,12 +3381,15 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004777E1;
+
 	__asm        mov    eax, [ebp-0x196C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x22A];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004777FB;
+
 	__asm        jmp    near ptr 0x00477800;
+
 	__asm        jmp    near ptr 0x00477805;
 // LINE 207:
 	__asm        push   0;
@@ -3056,6 +3412,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x2970], eax;
 	__asm        cmp    dword ptr [ebp-0x2970], 0;
 	__asm        jne    near ptr 0x004778EC;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x296C];
 	__asm        push   eax;
@@ -3069,6 +3426,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2970], eax;
 	__asm        jmp    near ptr 0x0047788C;
+
 	__asm        lea    eax, [ebp-0x296C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3080,7 +3438,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x236;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004778B9;
+
 	__asm        jmp    near ptr 0x004778BE;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -3090,8 +3450,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x236;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004778E7;
+
 	__asm        jmp    near ptr 0x00477A72;
+
 	__asm        jmp    near ptr 0x004778F1;
+
 	__asm        lea    eax, [ebp-0x296C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3099,6 +3462,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x2984], eax;
 	__asm        cmp    dword ptr [ebp-0x2984], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047794B;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3108,29 +3472,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047793C;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047794B;
+
 	__asm        jmp    near ptr 0x00477950;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23A];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x00477993;
+
 	__asm        cmp    dword ptr [ebp-0x2984], 0;
 	__asm        je     near ptr 0x00477A06;
+
 	__asm        jmp    near ptr 0x00477978;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23A];
 	__asm        mov    ecx, [ebp-0x2984];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00477A06;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2978], eax;
 	__asm        cmp    dword ptr [ebp-0x2978], 0;
 	__asm        je     near ptr 0x004779D4;
+
 	__asm        mov    eax, [ebp-0x2984];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x296C];
@@ -3139,6 +3511,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2974], eax;
 	__asm        jmp    near ptr 0x004779DE;
+
 	__asm        mov    dword ptr [ebp-0x2974], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x236;
@@ -3147,9 +3520,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x23A], eax;
 	__asm        jmp    near ptr 0x00477A4E;
+
 	__asm        cmp    dword ptr [ebp-0x2984], 0;
 	__asm        je     near ptr 0x00477A4E;
+
 	__asm        jmp    near ptr 0x00477A18;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23A];
 	__asm        mov    eax, [eax];
@@ -3163,12 +3539,15 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00477A4E;
+
 	__asm        mov    eax, [ebp-0x2984];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x23A];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00477A68;
+
 	__asm        jmp    near ptr 0x00477A6D;
+
 	__asm        jmp    near ptr 0x00477A72;
 // LINE 209:
 	__asm        push   0;
@@ -3191,6 +3570,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x3988], eax;
 	__asm        cmp    dword ptr [ebp-0x3988], 0;
 	__asm        jne    near ptr 0x00477B59;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3984];
 	__asm        push   eax;
@@ -3204,6 +3584,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3988], eax;
 	__asm        jmp    near ptr 0x00477AF9;
+
 	__asm        lea    eax, [ebp-0x3984];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3215,7 +3596,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x246;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00477B26;
+
 	__asm        jmp    near ptr 0x00477B2B;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -3225,8 +3608,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    ecx, 0x246;
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00477B54;
+
 	__asm        jmp    near ptr 0x00477CDF;
+
 	__asm        jmp    near ptr 0x00477B5E;
+
 	__asm        lea    eax, [ebp-0x3984];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3234,6 +3620,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x399C], eax;
 	__asm        cmp    dword ptr [ebp-0x399C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00477BB8;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -3243,29 +3630,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00477BA9;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00477BB8;
+
 	__asm        jmp    near ptr 0x00477BBD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24A];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x00477C00;
+
 	__asm        cmp    dword ptr [ebp-0x399C], 0;
 	__asm        je     near ptr 0x00477C73;
+
 	__asm        jmp    near ptr 0x00477BE5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24A];
 	__asm        mov    ecx, [ebp-0x399C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00477C73;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3990], eax;
 	__asm        cmp    dword ptr [ebp-0x3990], 0;
 	__asm        je     near ptr 0x00477C41;
+
 	__asm        mov    eax, [ebp-0x399C];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x3984];
@@ -3274,6 +3669,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x398C], eax;
 	__asm        jmp    near ptr 0x00477C4B;
+
 	__asm        mov    dword ptr [ebp-0x398C], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x246;
@@ -3282,9 +3678,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24A], eax;
 	__asm        jmp    near ptr 0x00477CBB;
+
 	__asm        cmp    dword ptr [ebp-0x399C], 0;
 	__asm        je     near ptr 0x00477CBB;
+
 	__asm        jmp    near ptr 0x00477C85;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24A];
 	__asm        mov    eax, [eax];
@@ -3298,28 +3697,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00477CBB;
+
 	__asm        mov    eax, [ebp-0x399C];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x24A];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00477CD5;
+
 	__asm        jmp    near ptr 0x00477CDA;
+
 	__asm        jmp    near ptr 0x00477CDF;
 // LINE 213:
 	__asm        jmp    near ptr 0x00477CE4;
+
 	__asm        jmp    near ptr 0x00477CE9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x222];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477D1D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x222];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x854], eax;
 	__asm        jmp    near ptr 0x00477D2C;
+
 	__asm        jmp    near ptr 0x00477D2C;
+
 	__asm        mov    dword ptr [ebp-0x854], 0;
 	__asm        jmp    near ptr 0x00477D2C;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3341,19 +3749,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 215:
 	__asm        jmp    near ptr 0x00477D79;
+
 	__asm        jmp    near ptr 0x00477D7E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477DB2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x22A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x858], eax;
 	__asm        jmp    near ptr 0x00477DC1;
+
 	__asm        jmp    near ptr 0x00477DC1;
+
 	__asm        mov    dword ptr [ebp-0x858], 0;
 	__asm        jmp    near ptr 0x00477DC1;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3375,19 +3789,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 218:
 	__asm        jmp    near ptr 0x00477E0E;
+
 	__asm        jmp    near ptr 0x00477E13;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x232];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477E47;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x232];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x85C], eax;
 	__asm        jmp    near ptr 0x00477E56;
+
 	__asm        jmp    near ptr 0x00477E56;
+
 	__asm        mov    dword ptr [ebp-0x85C], 0;
 	__asm        jmp    near ptr 0x00477E56;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3409,19 +3829,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 220:
 	__asm        jmp    near ptr 0x00477EA3;
+
 	__asm        jmp    near ptr 0x00477EA8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477EDC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x23A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x860], eax;
 	__asm        jmp    near ptr 0x00477EEB;
+
 	__asm        jmp    near ptr 0x00477EEB;
+
 	__asm        mov    dword ptr [ebp-0x860], 0;
 	__asm        jmp    near ptr 0x00477EEB;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3443,19 +3869,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 223:
 	__asm        jmp    near ptr 0x00477F38;
+
 	__asm        jmp    near ptr 0x00477F3D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x242];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00477F71;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x242];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x864], eax;
 	__asm        jmp    near ptr 0x00477F80;
+
 	__asm        jmp    near ptr 0x00477F80;
+
 	__asm        mov    dword ptr [ebp-0x864], 0;
 	__asm        jmp    near ptr 0x00477F80;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3477,19 +3909,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 225:
 	__asm        jmp    near ptr 0x00477FCD;
+
 	__asm        jmp    near ptr 0x00477FD2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478006;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x868], eax;
 	__asm        jmp    near ptr 0x00478015;
+
 	__asm        jmp    near ptr 0x00478015;
+
 	__asm        mov    dword ptr [ebp-0x868], 0;
 	__asm        jmp    near ptr 0x00478015;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3511,19 +3949,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 228:
 	__asm        jmp    near ptr 0x00478062;
+
 	__asm        jmp    near ptr 0x00478067;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x252];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047809B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x252];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x86C], eax;
 	__asm        jmp    near ptr 0x004780AA;
+
 	__asm        jmp    near ptr 0x004780AA;
+
 	__asm        mov    dword ptr [ebp-0x86C], 0;
 	__asm        jmp    near ptr 0x004780AA;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3551,18 +3995,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x0047811F;
 // LINE 230:
 	__asm        jmp    near ptr 0x00478124;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478158;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x870], eax;
 	__asm        jmp    near ptr 0x00478167;
+
 	__asm        jmp    near ptr 0x00478167;
+
 	__asm        mov    dword ptr [ebp-0x870], 0;
 	__asm        jmp    near ptr 0x00478167;
+
 	__asm        call   GetUserMoney;
 	__asm        push   eax;
 	__asm        push   0x5998AC;
@@ -3572,31 +4021,41 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 0xC;
 // LINE 232:
 	__asm        jmp    near ptr 0x00478186;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004781BA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x874], eax;
 	__asm        jmp    near ptr 0x004781C9;
+
 	__asm        jmp    near ptr 0x004781C9;
+
 	__asm        mov    dword ptr [ebp-0x874], 0;
 	__asm        jmp    near ptr 0x004781C9;
+
 	__asm        jmp    near ptr 0x004781CE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478202;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x878], eax;
 	__asm        jmp    near ptr 0x00478211;
+
 	__asm        jmp    near ptr 0x00478211;
+
 	__asm        mov    dword ptr [ebp-0x878], 0;
 	__asm        jmp    near ptr 0x00478211;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3618,19 +4077,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 236:
 	__asm        jmp    near ptr 0x00478259;
+
 	__asm        jmp    near ptr 0x0047825E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x25A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478292;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x25A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x87C], eax;
 	__asm        jmp    near ptr 0x004782A1;
+
 	__asm        jmp    near ptr 0x004782A1;
+
 	__asm        mov    dword ptr [ebp-0x87C], 0;
 	__asm        jmp    near ptr 0x004782A1;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3674,18 +4139,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        je     near ptr 0x004783E1;
 // LINE 241:
 	__asm        jmp    near ptr 0x00478363;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478397;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x880], eax;
 	__asm        jmp    near ptr 0x004783A6;
+
 	__asm        jmp    near ptr 0x004783A6;
+
 	__asm        mov    dword ptr [ebp-0x880], 0;
 	__asm        jmp    near ptr 0x004783A6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14E];
 	__asm        push   eax;
@@ -3704,18 +4174,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x0047845F;
 // LINE 244:
 	__asm        jmp    near ptr 0x004783E6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047841A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x884], eax;
 	__asm        jmp    near ptr 0x00478429;
+
 	__asm        jmp    near ptr 0x00478429;
+
 	__asm        mov    dword ptr [ebp-0x884], 0;
 	__asm        jmp    near ptr 0x00478429;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14E];
 	__asm        push   eax;
@@ -3732,31 +4207,41 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 0xC;
 // LINE 247:
 	__asm        jmp    near ptr 0x00478464;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478498;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x888], eax;
 	__asm        jmp    near ptr 0x004784A7;
+
 	__asm        jmp    near ptr 0x004784A7;
+
 	__asm        mov    dword ptr [ebp-0x888], 0;
 	__asm        jmp    near ptr 0x004784A7;
+
 	__asm        jmp    near ptr 0x004784AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004784E0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x88C], eax;
 	__asm        jmp    near ptr 0x004784EF;
+
 	__asm        jmp    near ptr 0x004784EF;
+
 	__asm        mov    dword ptr [ebp-0x88C], 0;
 	__asm        jmp    near ptr 0x004784EF;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3779,25 +4264,33 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 250:
 	__asm        jmp    near ptr 0x0047853C;
+
 	__asm        jmp    near ptr 0x00478541;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x282];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478575;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x282];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x890], eax;
 	__asm        jmp    near ptr 0x00478584;
+
 	__asm        jmp    near ptr 0x00478584;
+
 	__asm        mov    dword ptr [ebp-0x890], 0;
 	__asm        jmp    near ptr 0x00478584;
+
 	__asm        jmp    near ptr 0x00478589;
+
 	__asm        mov    dword ptr [ebp-0x82C], 0x8E;
 	__asm        mov    dword ptr [ebp-0x828], 0x1BA;
 	__asm        mov    dword ptr [ebp-0x824], 0x133;
 	__asm        mov    dword ptr [ebp-0x820], 0x1C7;
 	__asm        jmp    near ptr 0x004785B6;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -3872,6 +4365,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x830], eax;
 	__asm        cmp    dword ptr [ebp-0x830], 0;
 	__asm        je     near ptr 0x00478703;
+
 	__asm        mov    ecx, [ebp-0x830];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0x830];
@@ -3879,11 +4373,13 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004786FE;
+
 	__asm        jmp    near ptr 0x00478703;
 // LINE 273:
 	__asm        mov    eax, ds:[0x599820];
 	__asm        mov    [ebp-0x850], eax;
 	__asm        jmp    near ptr 0x00478713;
+
 	__asm        mov    eax, [ebp-0x850];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3914,9 +4410,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x838], eax;
 	__asm        cmp    dword ptr [ebp-0x838], 0;
 	__asm        je     near ptr 0x004788FE;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
 	__asm        je     near ptr 0x004787BE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    [ebp-0x4A18], eax;
@@ -3927,6 +4425,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004787C3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -3937,24 +4436,32 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    near ptr 0x004787E7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478884;
+
 	__asm        jmp    near ptr 0x004787FF;
+
 	__asm        jmp    near ptr 0x00478804;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478832;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4A2C], eax;
 	__asm        jmp    near ptr 0x00478841;
+
 	__asm        jmp    near ptr 0x00478841;
+
 	__asm        mov    dword ptr [ebp-0x4A2C], 0;
 	__asm        jmp    near ptr 0x00478841;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -3971,12 +4478,16 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00478884;
+
 	__asm        jmp    near ptr 0x00478889;
+
 	__asm        mov    byte ptr [ebp-0x4A1C], 0;
 	__asm        jmp    near ptr 0x00478895;
+
 	__asm        lea    eax, [ebp-0x4A1C];
 	__asm        mov    [ebp-0x4A24], eax;
 	__asm        jmp    near ptr 0x004788A6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -3988,7 +4499,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, [ebp-0x4A28];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004788D6;
+
 	__asm        jmp    near ptr 0x004788DB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
@@ -3997,6 +4510,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    near ptr 0x0047890B;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0;
 // LINE 277:
@@ -4025,6 +4539,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
 	__asm        je     near ptr 0x00478991;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    [ebp-0x4A38], eax;
@@ -4035,6 +4550,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00478996;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -4045,24 +4561,32 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    near ptr 0x004789BA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478A57;
+
 	__asm        jmp    near ptr 0x004789D2;
+
 	__asm        jmp    near ptr 0x004789D7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478A05;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4A4C], eax;
 	__asm        jmp    near ptr 0x00478A14;
+
 	__asm        jmp    near ptr 0x00478A14;
+
 	__asm        mov    dword ptr [ebp-0x4A4C], 0;
 	__asm        jmp    near ptr 0x00478A14;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -4079,12 +4603,16 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00478A57;
+
 	__asm        jmp    near ptr 0x00478A5C;
+
 	__asm        mov    byte ptr [ebp-0x4A3C], 0;
 	__asm        jmp    near ptr 0x00478A68;
+
 	__asm        lea    eax, [ebp-0x4A3C];
 	__asm        mov    [ebp-0x4A44], eax;
 	__asm        jmp    near ptr 0x00478A79;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -4096,7 +4624,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, [ebp-0x4A48];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x00478AA9;
+
 	__asm        jmp    near ptr 0x00478AAE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
@@ -4104,7 +4634,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 283:
 	__asm        jmp    near ptr 0x00478AC8;
+
 	__asm        jmp    near ptr 0x00478ACD;
+
 	__asm        mov    eax, tempTabBuffer.mHeight;
 	__asm        push   eax;
 	__asm        mov    eax, tempTabBuffer.mWidth;
@@ -4155,24 +4687,31 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 290:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00478BFE;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x00478CAA;
 // LINE 293:
 	__asm        jmp    near ptr 0x00478C10;
+
 	__asm        jmp    near ptr 0x00478C15;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00478C49;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x894], eax;
 	__asm        jmp    near ptr 0x00478C58;
+
 	__asm        jmp    near ptr 0x00478C58;
+
 	__asm        mov    dword ptr [ebp-0x894], 0;
 	__asm        jmp    near ptr 0x00478C58;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4228,6 +4767,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 300:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00478DA0;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x004790BE;
@@ -4251,6 +4791,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x49A0], eax;
 	__asm        cmp    dword ptr [ebp-0x49A0], 0;
 	__asm        jne    near ptr 0x00478E90;
+
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x499C];
 	__asm        push   eax;
@@ -4264,6 +4805,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x49A0], eax;
 	__asm        jmp    near ptr 0x00478E2E;
+
 	__asm        lea    eax, [ebp-0x499C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -4275,7 +4817,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        lea    ecx, [ebp+eax*8-0x17C];
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00478E5C;
+
 	__asm        jmp    near ptr 0x00478E61;
+
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -4285,8 +4829,11 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        lea    ecx, [ebp+eax*8-0x17C];
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00478E8B;
+
 	__asm        jmp    near ptr 0x0047901C;
+
 	__asm        jmp    near ptr 0x00478E95;
+
 	__asm        lea    eax, [ebp-0x499C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -4294,6 +4841,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    [ebp-0x49B4], eax;
 	__asm        cmp    dword ptr [ebp-0x49B4], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00478EEF;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -4303,29 +4851,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00478EE0;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00478EEF;
+
 	__asm        jmp    near ptr 0x00478EF4;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [ebp+eax*8-0x178];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x00478F39;
+
 	__asm        cmp    dword ptr [ebp-0x49B4], 0;
 	__asm        je     near ptr 0x00478FAE;
+
 	__asm        jmp    near ptr 0x00478F1D;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [ebp+eax*8-0x178];
 	__asm        mov    ecx, [ebp-0x49B4];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00478FAE;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x49A8], eax;
 	__asm        cmp    dword ptr [ebp-0x49A8], 0;
 	__asm        je     near ptr 0x00478F7A;
+
 	__asm        mov    eax, [ebp-0x49B4];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x499C];
@@ -4334,6 +4890,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x49A4], eax;
 	__asm        jmp    near ptr 0x00478F84;
+
 	__asm        mov    dword ptr [ebp-0x49A4], 0;
 	__asm        mov    eax, i;
 	__asm        lea    ecx, [ebp+eax*8-0x17C];
@@ -4342,9 +4899,12 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx*8-0x178], eax;
 	__asm        jmp    near ptr 0x00478FF7;
+
 	__asm        cmp    dword ptr [ebp-0x49B4], 0;
 	__asm        je     near ptr 0x00478FF7;
+
 	__asm        jmp    near ptr 0x00478FC0;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [ebp+eax*8-0x178];
 	__asm        mov    eax, [eax];
@@ -4358,28 +4918,37 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00478FF7;
+
 	__asm        mov    eax, [ebp-0x49B4];
 	__asm        mov    ecx, i;
 	__asm        mov    ecx, [ebp+ecx*8-0x178];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00479012;
+
 	__asm        jmp    near ptr 0x00479017;
+
 	__asm        jmp    near ptr 0x0047901C;
 // LINE 306:
 	__asm        jmp    near ptr 0x00479021;
+
 	__asm        jmp    near ptr 0x00479026;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [ebp+eax*8-0x178];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047905C;
+
 	__asm        mov    eax, i;
 	__asm        mov    eax, [ebp+eax*8-0x178];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x898], eax;
 	__asm        jmp    near ptr 0x0047906B;
+
 	__asm        jmp    near ptr 0x0047906B;
+
 	__asm        mov    dword ptr [ebp-0x898], 0;
 	__asm        jmp    near ptr 0x0047906B;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4414,19 +4983,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x00479103;
 // LINE 312:
 	__asm        jmp    near ptr 0x00479108;
+
 	__asm        jmp    near ptr 0x0047910D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x292];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479141;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x292];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x89C], eax;
 	__asm        jmp    near ptr 0x00479150;
+
 	__asm        jmp    near ptr 0x00479150;
+
 	__asm        mov    dword ptr [ebp-0x89C], 0;
 	__asm        jmp    near ptr 0x00479150;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4458,19 +5033,25 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004791DD;
 // LINE 318:
 	__asm        jmp    near ptr 0x004791E2;
+
 	__asm        jmp    near ptr 0x004791E7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x29A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047921B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x29A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8A0], eax;
 	__asm        jmp    near ptr 0x0047922A;
+
 	__asm        jmp    near ptr 0x0047922A;
+
 	__asm        mov    dword ptr [ebp-0x8A0], 0;
 	__asm        jmp    near ptr 0x0047922A;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4504,18 +5085,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        je     near ptr 0x00479325;
 // LINE 322:
 	__asm        jmp    near ptr 0x004792A7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004792DB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8A4], eax;
 	__asm        jmp    near ptr 0x004792EA;
+
 	__asm        jmp    near ptr 0x004792EA;
+
 	__asm        mov    dword ptr [ebp-0x8A4], 0;
 	__asm        jmp    near ptr 0x004792EA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
 	__asm        push   eax;
@@ -4534,18 +5120,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004793A3;
 // LINE 325:
 	__asm        jmp    near ptr 0x0047932A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047935E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8A8], eax;
 	__asm        jmp    near ptr 0x0047936D;
+
 	__asm        jmp    near ptr 0x0047936D;
+
 	__asm        mov    dword ptr [ebp-0x8A8], 0;
 	__asm        jmp    near ptr 0x0047936D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
 	__asm        push   eax;
@@ -4572,31 +5163,41 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004793E8;
 // LINE 329:
 	__asm        jmp    near ptr 0x004793ED;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479421;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8AC], eax;
 	__asm        jmp    near ptr 0x00479430;
+
 	__asm        jmp    near ptr 0x00479430;
+
 	__asm        mov    dword ptr [ebp-0x8AC], 0;
 	__asm        jmp    near ptr 0x00479430;
+
 	__asm        jmp    near ptr 0x00479435;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479469;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8B0], eax;
 	__asm        jmp    near ptr 0x00479478;
+
 	__asm        jmp    near ptr 0x00479478;
+
 	__asm        mov    dword ptr [ebp-0x8B0], 0;
 	__asm        jmp    near ptr 0x00479478;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4625,18 +5226,23 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jmp    near ptr 0x004794ED;
 // LINE 332:
 	__asm        jmp    near ptr 0x004794F2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479526;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8B4], eax;
 	__asm        jmp    near ptr 0x00479535;
+
 	__asm        jmp    near ptr 0x00479535;
+
 	__asm        mov    dword ptr [ebp-0x8B4], 0;
 	__asm        jmp    near ptr 0x00479535;
+
 	__asm        call   GetUserMoney;
 	__asm        push   eax;
 	__asm        push   0x5998C0;
@@ -4646,31 +5252,41 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    esp, 0xC;
 // LINE 334:
 	__asm        jmp    near ptr 0x00479554;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479588;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8B8], eax;
 	__asm        jmp    near ptr 0x00479597;
+
 	__asm        jmp    near ptr 0x00479597;
+
 	__asm        mov    dword ptr [ebp-0x8B8], 0;
 	__asm        jmp    near ptr 0x00479597;
+
 	__asm        jmp    near ptr 0x0047959C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004795D0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15A];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8BC], eax;
 	__asm        jmp    near ptr 0x004795DF;
+
 	__asm        jmp    near ptr 0x004795DF;
+
 	__asm        mov    dword ptr [ebp-0x8BC], 0;
 	__asm        jmp    near ptr 0x004795DF;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4692,25 +5308,33 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   dword ptr [edx+0x48];
 // LINE 337:
 	__asm        jmp    near ptr 0x00479627;
+
 	__asm        jmp    near ptr 0x0047962C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x282];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00479660;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x282];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x8C0], eax;
 	__asm        jmp    near ptr 0x0047966F;
+
 	__asm        jmp    near ptr 0x0047966F;
+
 	__asm        mov    dword ptr [ebp-0x8C0], 0;
 	__asm        jmp    near ptr 0x0047966F;
+
 	__asm        jmp    near ptr 0x00479674;
+
 	__asm        mov    dword ptr [ebp-0x848], 0x8E;
 	__asm        mov    dword ptr [ebp-0x844], 0x1BA;
 	__asm        mov    dword ptr [ebp-0x840], 0x133;
 	__asm        mov    dword ptr [ebp-0x83C], 0x1C7;
 	__asm        jmp    near ptr 0x004796A1;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -4800,6 +5424,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 369:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004797F5;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x00479885;
@@ -4812,7 +5437,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jne    near ptr 0x00479880;
 // LINE 372:
 	__asm        jmp    near ptr 0x0047982C;
+
 	__asm        jmp    near ptr 0x00479831;
+
 	__asm        mov    eax, tempStainImage.mHeight;
 	__asm        push   eax;
 	__asm        mov    eax, tempStainImage.mWidth;
@@ -4871,6 +5498,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 380:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00479903;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x00479993;
@@ -4883,7 +5511,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        jne    near ptr 0x0047998E;
 // LINE 383:
 	__asm        jmp    near ptr 0x0047993A;
+
 	__asm        jmp    near ptr 0x0047993F;
+
 	__asm        mov    eax, tempPaperClipImage.mHeight;
 	__asm        push   eax;
 	__asm        mov    eax, tempPaperClipImage.mWidth;
@@ -4918,25 +5548,31 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        add    [ebp-0x954], eax;
 	__asm        dec    dword ptr [ebp-0x950];
 	__asm        js     near ptr 0x004799E6;
+
 	__asm        sub    dword ptr [ebp-0x954], 8;
 	__asm        mov    ecx, [ebp-0x954];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004799C3;
+
 	__asm        jmp    near ptr 0x004799EB;
+
 	__asm        mov    eax, sTempTabFileName.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTempTabFileName.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00479A9E;
+
 	__asm        mov    eax, sTempTabFileName.reference;
 	__asm        mov    [ebp-0x8FC], eax;
 	__asm        mov    eax, [ebp-0x8FC];
 	__asm        mov    [ebp-0x8F8], eax;
 	__asm        cmp    dword ptr [ebp-0x8F8], 0;
 	__asm        je     near ptr 0x00479A9E;
+
 	__asm        mov    eax, [ebp-0x8F8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00479A7B;
+
 	__asm        mov    eax, [ebp-0x8F8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x900], eax;
@@ -4951,16 +5587,22 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x8F8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00479A80;
+
 	__asm        jmp    near ptr 0x00479A85;
+
 	__asm        mov    eax, [ebp-0x8F8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479A99;
+
 	__asm        jmp    near ptr 0x00479A9E;
+
 	__asm        jmp    near ptr 0x00479AA3;
+
 	__asm        cmp    sTempTabFileName.c_str_ptr, 0;
 	__asm        je     near ptr 0x00479AD7;
+
 	__asm        mov    eax, sTempTabFileName.c_str_ptr;
 	__asm        mov    [ebp-0x8F0], eax;
 	__asm        mov    eax, [ebp-0x8F0];
@@ -4970,20 +5612,24 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479ADC;
+
 	__asm        mov    eax, sTempMainGraphicFileName.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTempMainGraphicFileName.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00479B8F;
+
 	__asm        mov    eax, sTempMainGraphicFileName.reference;
 	__asm        mov    [ebp-0x914], eax;
 	__asm        mov    eax, [ebp-0x914];
 	__asm        mov    [ebp-0x910], eax;
 	__asm        cmp    dword ptr [ebp-0x910], 0;
 	__asm        je     near ptr 0x00479B8F;
+
 	__asm        mov    eax, [ebp-0x910];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00479B6C;
+
 	__asm        mov    eax, [ebp-0x910];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x918], eax;
@@ -4998,16 +5644,22 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x910];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00479B71;
+
 	__asm        jmp    near ptr 0x00479B76;
+
 	__asm        mov    eax, [ebp-0x910];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479B8A;
+
 	__asm        jmp    near ptr 0x00479B8F;
+
 	__asm        jmp    near ptr 0x00479B94;
+
 	__asm        cmp    sTempMainGraphicFileName.c_str_ptr, 0;
 	__asm        je     near ptr 0x00479BC8;
+
 	__asm        mov    eax, sTempMainGraphicFileName.c_str_ptr;
 	__asm        mov    [ebp-0x908], eax;
 	__asm        mov    eax, [ebp-0x908];
@@ -5017,20 +5669,24 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479BCD;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00479C80;
+
 	__asm        mov    eax, sTempTabFilePath.reference;
 	__asm        mov    [ebp-0x92C], eax;
 	__asm        mov    eax, [ebp-0x92C];
 	__asm        mov    [ebp-0x928], eax;
 	__asm        cmp    dword ptr [ebp-0x928], 0;
 	__asm        je     near ptr 0x00479C80;
+
 	__asm        mov    eax, [ebp-0x928];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00479C5D;
+
 	__asm        mov    eax, [ebp-0x928];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x930], eax;
@@ -5045,16 +5701,22 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x928];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00479C62;
+
 	__asm        jmp    near ptr 0x00479C67;
+
 	__asm        mov    eax, [ebp-0x928];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479C7B;
+
 	__asm        jmp    near ptr 0x00479C80;
+
 	__asm        jmp    near ptr 0x00479C85;
+
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x00479CB9;
+
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        mov    [ebp-0x920], eax;
 	__asm        mov    eax, [ebp-0x920];
@@ -5064,20 +5726,24 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479CBE;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00479D71;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
 	__asm        mov    [ebp-0x944], eax;
 	__asm        mov    eax, [ebp-0x944];
 	__asm        mov    [ebp-0x940], eax;
 	__asm        cmp    dword ptr [ebp-0x940], 0;
 	__asm        je     near ptr 0x00479D71;
+
 	__asm        mov    eax, [ebp-0x940];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x00479D4E;
+
 	__asm        mov    eax, [ebp-0x940];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x948], eax;
@@ -5092,16 +5758,22 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        mov    eax, [ebp-0x940];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x00479D53;
+
 	__asm        jmp    near ptr 0x00479D58;
+
 	__asm        mov    eax, [ebp-0x940];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479D6C;
+
 	__asm        jmp    near ptr 0x00479D71;
+
 	__asm        jmp    near ptr 0x00479D76;
+
 	__asm        cmp    sTempMainGraphicFilePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x00479DAA;
+
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        mov    [ebp-0x938], eax;
 	__asm        mov    eax, [ebp-0x938];
@@ -5111,6 +5783,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00479DAF;
+
 	__asm        jmp    near ptr 0x00479DB4;
 }
 
@@ -5124,6 +5797,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 
 // LINE 397:
 	__asm        jmp    near ptr 0x00479DD2;
+
 	__asm        jmp    near ptr 0x00479DD7;
 // LINE 398:
 	__asm        mov    nColorArraySize, 6;
@@ -5140,6 +5814,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 // LINE 405:
 	__asm        cmp    dword ptr ds:[0x599834], 5;
 	__asm        je     near ptr 0x00479E2D;
+
 	__asm        cmp    dword ptr ds:[0x599834], 0;
 	__asm        jne    near ptr 0x00479E39;
 // LINE 406:
@@ -5161,6 +5836,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     near ptr 0x00479E85;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 3;
 	__asm        jne    near ptr 0x00479F80;
@@ -5170,6 +5846,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    rectOutline.right, 0x140;
 	__asm        mov    rectOutline.bottom, 0xC3;
 	__asm        jmp    near ptr 0x00479EA6;
+
 	__asm        mov    eax, rectOutline.bottom;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, rectOutline.right;
@@ -5180,6 +5857,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    [ebp-0x74], eax;
 // LINE 414:
 	__asm        jmp    near ptr 0x00479EC3;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x70];
@@ -5189,6 +5867,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x00479EE0;
+
 	__asm        push   3;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
@@ -5204,6 +5883,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    rectOutline.right, 0x24E;
 	__asm        mov    rectOutline.bottom, 0xC3;
 	__asm        jmp    near ptr 0x00479F1E;
+
 	__asm        mov    eax, rectOutline.bottom;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, rectOutline.right;
@@ -5214,6 +5894,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    [ebp-0x84], eax;
 // LINE 418:
 	__asm        jmp    near ptr 0x00479F3E;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x80];
@@ -5223,6 +5904,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x00479F5E;
+
 	__asm        push   3;
 	__asm        lea    eax, [ebp-0x4C];
 	__asm        push   eax;
@@ -5234,6 +5916,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        call   dword ptr [edx+0x5C];
 // LINE 421:
 	__asm        jmp    near ptr 0x0047A026;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 1;
 	__asm        jne    near ptr 0x00479FB9;
@@ -5245,6 +5928,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        jmp    near ptr 0x00479FB4;
 // LINE 423:
 	__asm        jmp    near ptr 0x0047A026;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 2;
 	__asm        jne    near ptr 0x00479FF2;
@@ -5256,6 +5940,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        jmp    near ptr 0x00479FED;
 // LINE 425:
 	__asm        jmp    near ptr 0x0047A026;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 4;
 	__asm        jne    near ptr 0x0047A026;
@@ -5276,6 +5961,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    [ebp-0x94], eax;
 // LINE 430:
 	__asm        jmp    near ptr 0x0047A04F;
+
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x90];
@@ -5285,6 +5971,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047A078;
+
 	__asm        push   3;
 	__asm        lea    eax, [ebp-0x5C];
 	__asm        push   eax;
@@ -5308,6 +5995,7 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        mov    currentUserPersonalInfo, eax;
 // LINE 444:
 	__asm        jmp    near ptr 0x0047A0B8;
+
 	__asm        jmp    near ptr 0x0047A0BD;
 // LINE 446:
 	__asm        mov    eax, this;
@@ -5332,18 +6020,23 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        je     near ptr 0x0047A170;
 // LINE 451:
 	__asm        jmp    near ptr 0x0047A107;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047A132;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x0047A13E;
+
 	__asm        jmp    near ptr 0x0047A13E;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0047A13E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
 	__asm        push   eax;
@@ -5362,18 +6055,23 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        jmp    near ptr 0x0047A1D9;
 // LINE 454:
 	__asm        jmp    near ptr 0x0047A175;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047A1A0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0047A1AC;
+
 	__asm        jmp    near ptr 0x0047A1AC;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0047A1AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
 	__asm        push   eax;
@@ -5417,6 +6115,7 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        mov    byte ptr [ebp-0x17], 0x2F;
 	__asm        mov    byte ptr [ebp-0x16], 0x2F;
 	__asm        jmp    near ptr 0x0047A226;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-0x24], eax;
@@ -5426,31 +6125,41 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        jmp    near ptr 0x0047A23D;
 // LINE 461:
 	__asm        jmp    near ptr 0x0047A242;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047A26D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0047A279;
+
 	__asm        jmp    near ptr 0x0047A279;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0047A279;
+
 	__asm        jmp    near ptr 0x0047A27E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047A2A9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x162];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0047A2B5;
+
 	__asm        jmp    near ptr 0x0047A2B5;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0047A2B5;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x166;
 	__asm        push   eax;
@@ -5492,6 +6201,7 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 // LINE 477:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047A329;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x0047A358;
@@ -5519,6 +6229,7 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 // LINE 491:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047A381;
+
 	__asm        inc    i;
 	__asm        cmp    i, 3;
 	__asm        jge    near ptr 0x0047A3B0;
@@ -5572,6 +6283,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    [ebp-0x7C], eax;
 // LINE 512:
 	__asm        jmp    near ptr 0x0047A466;
+
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -5579,6 +6291,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    [ebp-0x78], eax;
 	__asm        cmp    dword ptr [ebp-0x78], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047A4B1;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -5588,31 +6301,40 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A4A2;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A4B1;
+
 	__asm        jmp    near ptr 0x0047A4B6;
+
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0047A4E7;
+
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x0047A668;
+
 	__asm        jmp    near ptr 0x0047A4D5;
+
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0047A668;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x0047A5C2;
+
 	__asm        cmp    dword ptr [ebp-0x78], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047A53A;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -5622,10 +6344,12 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A52B;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A53A;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx+4], eax;
@@ -5636,6 +6360,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [ebp-0x50];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0047A59F;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -5658,15 +6383,19 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047A59A;
+
 	__asm        jmp    near ptr 0x0047A5A8;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047A5B7;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0047A5C9;
+
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
@@ -5675,6 +6404,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0047A655;
+
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x60], eax;
@@ -5682,9 +6412,11 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        je     near ptr 0x0047A655;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0047A635;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x64], eax;
@@ -5699,21 +6431,29 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0047A63A;
+
 	__asm        jmp    near ptr 0x0047A63F;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A650;
+
 	__asm        jmp    near ptr 0x0047A655;
+
 	__asm        jmp    near ptr 0x0047A65A;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    ecx, sMainGraphicFileName;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047A69B;
+
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x0047A69B;
+
 	__asm        jmp    near ptr 0x0047A677;
+
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -5727,18 +6467,22 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047A69B;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    ecx, sMainGraphicFileName;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047A6AC;
+
 	__asm        jmp    near ptr 0x0047A6B1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14E];
 	__asm        mov    eax, [ebp+eax*4-0x48];
 	__asm        mov    [ebp-0xB0], eax;
 // LINE 513:
 	__asm        jmp    near ptr 0x0047A6CC;
+
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -5746,6 +6490,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        cmp    dword ptr [ebp-0xAC], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047A726;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -5755,31 +6500,40 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A717;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A726;
+
 	__asm        jmp    near ptr 0x0047A72B;
+
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0047A762;
+
 	__asm        cmp    dword ptr [ebp-0xAC], 0;
 	__asm        je     near ptr 0x0047A94C;
+
 	__asm        jmp    near ptr 0x0047A74D;
+
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0xAC];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0047A94C;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
 	__asm        je     near ptr 0x0047A87F;
+
 	__asm        cmp    dword ptr [ebp-0xAC], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047A7C4;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -5789,10 +6543,12 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A7B5;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A7C4;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx+4], eax;
@@ -5803,6 +6559,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [ebp-0x84];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0047A853;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -5825,15 +6582,19 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047A84E;
+
 	__asm        jmp    near ptr 0x0047A85F;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0047A871;
+
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    near ptr 0x0047A886;
+
 	__asm        mov    dword ptr [ebp-0x80], 0;
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];
@@ -5842,6 +6603,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0047A939;
+
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x94], eax;
@@ -5849,9 +6611,11 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    [ebp-0x90], eax;
 	__asm        cmp    dword ptr [ebp-0x90], 0;
 	__asm        je     near ptr 0x0047A939;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0047A916;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x98], eax;
@@ -5866,21 +6630,29 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0047A91B;
+
 	__asm        jmp    near ptr 0x0047A920;
+
 	__asm        mov    eax, [ebp-0x90];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A934;
+
 	__asm        jmp    near ptr 0x0047A939;
+
 	__asm        jmp    near ptr 0x0047A93E;
+
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, sTabFileName;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047A98E;
+
 	__asm        cmp    dword ptr [ebp-0xAC], 0;
 	__asm        je     near ptr 0x0047A98E;
+
 	__asm        jmp    near ptr 0x0047A95E;
+
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -5894,11 +6666,13 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainG
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047A98E;
+
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    ecx, sTabFileName;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047A9A2;
+
 	__asm        jmp    near ptr 0x0047A9A7;
 // LINE 514:
 	__asm        jmp    near ptr 0x0047A9AC;
@@ -5910,6 +6684,7 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
 	__asm        je     near ptr 0x0047A9E7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        mov    [ebp-4], eax;
@@ -5920,6 +6695,7 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047A9EC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -5930,24 +6706,32 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    near ptr 0x0047AA0A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047AA83;
+
 	__asm        jmp    near ptr 0x0047AA1F;
+
 	__asm        jmp    near ptr 0x0047AA24;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0047AA49;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0047AA55;
+
 	__asm        jmp    near ptr 0x0047AA55;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0047AA55;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -5964,12 +6748,16 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047AA83;
+
 	__asm        jmp    near ptr 0x0047AA88;
+
 	__asm        mov    byte ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0047AA91;
+
 	__asm        lea    eax, [ebp-8];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047AA9C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -5981,7 +6769,9 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0047AABD;
+
 	__asm        jmp    near ptr 0x0047AAC2;
+
 	__asm        mov    eax, pColorTable;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -5991,8 +6781,10 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0047AAE7;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047AAE9;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047AAEE;
 // LINE 523:
@@ -6052,18 +6844,23 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 
 // LINE 560:
 	__asm        jmp    near ptr 0x0047AB9A;
+
 	__asm        mov    rectEquipment[0].left, 0x3A;
 	__asm        mov    rectEquipment[0].top, 0x62;
 	__asm        mov    rectEquipment[0].right, 0x146;
 	__asm        mov    rectEquipment[0].bottom, 0xC8;
 	__asm        jmp    near ptr 0x0047ABBB;
+
 	__asm        jmp    near ptr 0x0047ABC0;
+
 	__asm        mov    rectEquipment[1].left, 0x3A;
 	__asm        mov    rectEquipment[1].top, 0xCD;
 	__asm        mov    rectEquipment[1].right, 0x146;
 	__asm        mov    rectEquipment[1].bottom, 0x12F;
 	__asm        jmp    near ptr 0x0047ABE1;
+
 	__asm        jmp    near ptr 0x0047ABE6;
+
 	__asm        mov    rectEquipment[2].left, 0x3A;
 	__asm        mov    rectEquipment[2].top, 0x136;
 	__asm        mov    rectEquipment[2].right, 0x146;
@@ -6071,12 +6868,15 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 	__asm        jmp    near ptr 0x0047AC07;
 // LINE 561:
 	__asm        jmp    near ptr 0x0047AC0C;
+
 	__asm        mov    rectEquipment[3].left, 0x148;
 	__asm        mov    rectEquipment[3].top, 0x62;
 	__asm        mov    rectEquipment[3].right, 0x250;
 	__asm        mov    rectEquipment[3].bottom, 0xC8;
 	__asm        jmp    near ptr 0x0047AC2D;
+
 	__asm        jmp    near ptr 0x0047AC32;
+
 	__asm        mov    rectEquipment[4].left, 0x148;
 	__asm        mov    rectEquipment[4].top, 0xCD;
 	__asm        mov    rectEquipment[4].right, 0x250;
@@ -6092,6 +6892,7 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 // LINE 566:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0047AC79;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x0047ACFF;
@@ -6101,24 +6902,31 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [ebp+eax-0x50], ecx;
 	__asm        jg     near ptr 0x0047ACD4;
+
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [ebp+eax-0x4C], ecx;
 	__asm        jg     near ptr 0x0047ACD4;
+
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [ebp+eax-0x48], ecx;
 	__asm        jle    near ptr 0x0047ACD4;
+
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [ebp+eax-0x44], ecx;
 	__asm        jle    near ptr 0x0047ACD4;
+
 	__asm        jmp    near ptr 0x0047ACD9;
+
 	__asm        jmp    near ptr 0x0047ACFA;
+
 	__asm        jmp    near ptr 0x0047ACE8;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x0047ACFA;
 // LINE 568:
@@ -6143,21 +6951,28 @@ int32_t CatalogWindow::DoesCursorHitTab(long lXPosition, long lYPosition, long& 
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        jg     near ptr 0x0047AD5D;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [eax+0x78], ecx;
 	__asm        jg     near ptr 0x0047AD5D;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lXPosition;
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jle    near ptr 0x0047AD5D;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lYPosition;
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jle    near ptr 0x0047AD5D;
+
 	__asm        jmp    near ptr 0x0047AD62;
+
 	__asm        jmp    near ptr 0x0047ADC0;
+
 	__asm        jmp    near ptr 0x0047AD71;
+
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0047ADC0;
 // LINE 582:
@@ -6173,6 +6988,7 @@ int32_t CatalogWindow::DoesCursorHitTab(long lXPosition, long lYPosition, long& 
 	__asm        jmp    near ptr 0x0047ADB6;
 // LINE 585:
 	__asm        jmp    near ptr 0x0047AD96;
+
 	__asm        mov    eax, lXPosition;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x74];
@@ -6199,6 +7015,7 @@ long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 600:
 	__asm        cmp    lKey, 0x31;
 	__asm        jl     near ptr 0x0047ADFD;
+
 	__asm        cmp    lKey, 0x39;
 	__asm        jg     near ptr 0x0047ADFD;
 // LINE 601:
@@ -6307,6 +7124,7 @@ void CatalogWindow::SetButtonStates() {
 	__asm        mov    eax, currentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 8;
 	__asm        je     near ptr 0x0047AF2F;
+
 	__asm        mov    eax, currentUserPersonalInfo;
 	__asm        cmp    dword ptr [eax+0x48], 0xA;
 	__asm        jge    near ptr 0x0047AF68;
@@ -6342,6 +7160,7 @@ void CatalogWindow::SetButtonStates() {
 	__asm        call   dword ptr [edx+0xD0];
 // LINE 674:
 	__asm        jmp    near ptr 0x0047B035;
+
 	__asm        mov    ebx, 1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
@@ -6438,14 +7257,17 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 // LINE 704:
 	__asm        cmp    lWindowID, 1;
 	__asm        je     near ptr 0x0047B0F8;
+
 	__asm        cmp    lWindowID, 2;
 	__asm        jne    near ptr 0x0047B1F0;
 // LINE 706:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 7;
 	__asm        jle    near ptr 0x0047B114;
+
 	__asm        mov    lMyMessage[0], 1;
 	__asm        jmp    near ptr 0x0047B11B;
+
 	__asm        mov    lMyMessage[0], 0;
 // LINE 707:
 	__asm        cmp    lMyMessage[0], 1;
@@ -6525,6 +7347,7 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        jmp    near ptr 0x0047B22C;
 // LINE 723:
 	__asm        jmp    near ptr 0x0047B225;
+
 	__asm        cmp    lWindowID, 3;
 	__asm        jne    near ptr 0x0047B225;
 // LINE 724:
@@ -6628,8 +7451,10 @@ int32_t CatalogWindow::CanUserBuy() {
 	__asm        mov    eax, lCurrentValue;
 	__asm        cmp    lCurrentFunds, eax;
 	__asm        jl     near ptr 0x0047B347;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047B349;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047B34E;
 // LINE 772:

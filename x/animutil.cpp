@@ -570,6 +570,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 // LINE 143:
 	__asm        cmp    ptH, 0;
 	__asm        je     near ptr 0x00562B48;
+
 	__asm        fld    transformed.x;
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, ptH;
@@ -577,6 +578,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 // LINE 144:
 	__asm        cmp    ptV, 0;
 	__asm        je     near ptr 0x00562B60;
+
 	__asm        fld    transformed.z;
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, ptV;
@@ -584,6 +586,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 // LINE 145:
 	__asm        cmp    ptDepth, 0;
 	__asm        je     near ptr 0x00562B78;
+
 	__asm        fld    transformed.y;
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, ptDepth;
@@ -733,9 +736,11 @@ float my_acos(float x, float rad) {
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
 	__asm        jne    near ptr 0x00562D09;
+
 	__asm        mov    eax, rad;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x00562D11;
+
 	__asm        fld    rad;
 	__asm        fchs;
 	__asm        fstp   dword ptr [ebp-8];
@@ -750,9 +755,11 @@ float my_acos(float x, float rad) {
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
 	__asm        jne    near ptr 0x00562D44;
+
 	__asm        mov    eax, x;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00562D4C;
+
 	__asm        fld    x;
 	__asm        fchs;
 	__asm        fstp   dword ptr [ebp-0xC];
@@ -772,6 +779,7 @@ float my_acos(float x, float rad) {
 	__asm        mov    res, 0;
 // LINE 197:
 	__asm        jmp    near ptr 0x00562DE5;
+
 	__asm        fld    x;
 	__asm        fdiv   rad;
 	__asm        fcomp  qword ptr ds:[0x593778];
@@ -782,6 +790,7 @@ float my_acos(float x, float rad) {
 	__asm        mov    res, 0;
 // LINE 199:
 	__asm        jmp    near ptr 0x00562DE5;
+
 	__asm        fld    x;
 	__asm        fdiv   rad;
 	__asm        fcomp  qword ptr ds:[0x593780];
@@ -911,6 +920,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        movsx  eax, length;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00562EFF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BED98;
 	__asm        push   0xF0;
@@ -920,6 +930,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 // LINE 241:
 	__asm        cmp    rect, 0;
 	__asm        je     near ptr 0x00562F25;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BEDDC;
 	__asm        push   0xF1;
@@ -1503,12 +1514,14 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        movsx  eax, word ptr [eax+0x12];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00563546;
+
 	__asm        mov    eax, inc;
 	__asm        fld    dword ptr [eax];
 	__asm        fcomp  dword ptr ds:[0x593750];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
 	__asm        je     near ptr 0x00563546;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BEE1C;
 	__asm        push   0x248;
@@ -1520,12 +1533,14 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        movsx  eax, word ptr [eax+0x10];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00563588;
+
 	__asm        mov    eax, inc;
 	__asm        fld    dword ptr [eax+4];
 	__asm        fcomp  dword ptr ds:[0x593750];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
 	__asm        je     near ptr 0x00563588;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BEE64;
 	__asm        push   0x249;
@@ -1537,12 +1552,14 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        movsx  eax, word ptr [eax+0x14];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005635CA;
+
 	__asm        mov    eax, inc;
 	__asm        fld    dword ptr [eax+8];
 	__asm        fcomp  dword ptr ds:[0x593750];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
 	__asm        je     near ptr 0x005635CA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BEEAC;
 	__asm        push   0x24A;
@@ -1687,6 +1704,7 @@ void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        movsx  eax, word ptr [eax+0x12];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00563736;
+
 	__asm        mov    eax, polar;
 	__asm        movsx  eax, word ptr [eax+0x10];
 	__asm        test   eax, eax;
@@ -1736,6 +1754,7 @@ void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
 	__asm        je     near ptr 0x005637BD;
+
 	__asm        mov    eax, polar;
 	__asm        fld    dword ptr [eax+4];
 	__asm        fcomp  dword ptr ds:[0x593750];
@@ -1908,24 +1927,29 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        movsx  ecx, latincs;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00563970;
+
 	__asm        mov    eax, lng;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        movsx  ecx, lngincs;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00563970;
+
 	__asm        mov    eax, trq;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        movsx  ecx, trqincs;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00563970;
+
 	__asm        mov    eax, lat;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00563970;
+
 	__asm        mov    eax, lng;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00563970;
+
 	__asm        mov    eax, trq;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   eax, eax;
@@ -1943,6 +1967,7 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        movsx  ecx, latincs;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00563994;
+
 	__asm        mov    eax, lat;
 	__asm        mov    word ptr [eax], 0;
 // LINE 668:
@@ -1951,6 +1976,7 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        movsx  ecx, lngincs;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x005639AE;
+
 	__asm        mov    eax, lng;
 	__asm        mov    word ptr [eax], 0;
 // LINE 669:
@@ -1959,6 +1985,7 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        movsx  ecx, trqincs;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x005639C8;
+
 	__asm        mov    eax, trq;
 	__asm        mov    word ptr [eax], 0;
 // LINE 670:
@@ -2212,7 +2239,9 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        fstp   rad;
 // LINE 745:
 	__asm        jmp    near ptr 0x00563C45;
+
 	__asm        jmp    near ptr 0x00563C4A;
+
 	__asm        fld    rad;
 	__asm        fabs;
 	__asm        fld    z;

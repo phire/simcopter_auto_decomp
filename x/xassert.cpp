@@ -68,8 +68,10 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 // LINE 68:
 	__asm        cmp    answer, 0;
 	__asm        je     near ptr 0x00554FDC;
+
 	__asm        cmp    answer, 3;
 	__asm        jne    near ptr 0x00554FE1;
+
 	__asm        call   abort;
 // LINE 70:
 	__asm        jmp    near ptr 0x00554FE6;

@@ -236,6 +236,7 @@ long DDEnable() {
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
 	__asm        jne    near ptr 0x0041F587;
+
 	__asm        jmp    near ptr 0x0041F567;
 // LINE 42:
 	__asm        mov    dword ptr ds:[0x597264], 0;
@@ -263,6 +264,7 @@ void DDDisable() {
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
 	__asm        jne    near ptr 0x0041F5DD;
+
 	__asm        jmp    near ptr 0x0041F5BD;
 // LINE 66:
 	__asm        mov    dword ptr ds:[0x597264], 0;
@@ -412,18 +414,23 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 // LINE 162:
 	__asm        cmp    pal.dwRiff, 0x46464952;
 	__asm        jne    near ptr 0x0041F79F;
+
 	__asm        cmp    pal.dwPal, 0x204C4150;
 	__asm        jne    near ptr 0x0041F79F;
+
 	__asm        cmp    pal.dwData, 0x61746164;
 	__asm        jne    near ptr 0x0041F79F;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(pal.palVersion);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x300;
 	__asm        jne    near ptr 0x0041F79F;
+
 	__asm        xor    eax, eax;
 	__asm        mov    ax, pal.palNumEntries;
 	__asm        cmp    eax, 0x100;
 	__asm        jg     near ptr 0x0041F79F;
+
 	__asm        xor    eax, eax;
 	__asm        mov    ax, pal.palNumEntries;
 	__asm        cmp    eax, 1;
@@ -435,6 +442,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 // LINE 166:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0041F7BB;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x100;
 	__asm        jge    near ptr 0x0041F83B;

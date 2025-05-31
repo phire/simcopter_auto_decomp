@@ -129,6 +129,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        mov    cl, startVertex.x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00543778;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.yindex;
 	__asm        xor    ecx, ecx;
@@ -164,6 +165,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 // LINE 57:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x005437AD;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0054381C;
@@ -172,6 +174,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	int32_t yindex;
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x005437C9;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
@@ -228,6 +231,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x005439AC;
+
 	__asm        cmp    pathFoundFlag, 0;
 	__asm        jne    near ptr 0x005439AC;
 // LINE 85:
@@ -273,6 +277,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        mov    cl, destVertex.x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x005438ED;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.yindexCurr;
 	__asm        xor    ecx, ecx;
@@ -288,6 +293,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	int32_t i;
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x005438FC;
+
 	__asm        inc    i;
 	__asm        cmp    i, 4;
 	__asm        jge    near ptr 0x005439A7;
@@ -402,6 +408,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    cl, startVertex.x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00543A40;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.yindex;
 	__asm        xor    ecx, ecx;
@@ -437,6 +444,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 // LINE 163:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00543A75;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00543AE4;
@@ -445,6 +453,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	int32_t yindex;
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x00543A91;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
@@ -527,6 +536,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x00543CCE;
+
 	__asm        cmp    pathFoundFlag, 0;
 	__asm        jne    near ptr 0x00543CCE;
 // LINE 195:
@@ -572,6 +582,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    cl, destVertex.x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00543BF3;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.yindexCurr;
 	__asm        xor    ecx, ecx;
@@ -587,6 +598,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	int32_t i;
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00543C02;
+
 	__asm        inc    i;
 	__asm        cmp    i, 4;
 	__asm        jge    near ptr 0x00543CC9;
@@ -844,6 +856,7 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 	__asm        mov    ecx, child;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    near ptr 0x00543EA3;
+
 	__asm        mov    eax, child;
 	__asm        lea    eax, [eax+eax*8+9];
 	__asm        mov    ecx, this;

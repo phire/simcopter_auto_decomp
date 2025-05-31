@@ -268,9 +268,11 @@ protected:
 void ScreenBuffer::ScreenBuffer() {
 	struct SparkalRect rectWindowTemp;
 
+
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        jmp    near ptr 0x0049E469;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5915B0;
 // LINE 25:
@@ -323,6 +325,7 @@ void ScreenBuffer::ScreenBuffer() {
 	__asm        mov    dword ptr [eax+0x166], 0;
 // LINE 51:
 	__asm        jmp    near ptr 0x0049E52C;
+
 	__asm        mov    eax, this;
 }
 
@@ -330,9 +333,11 @@ void ScreenBuffer::ScreenBuffer() {
 void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor* pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
 	struct SparkalRect rectWindowTemp;
 
+
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        jmp    near ptr 0x0049E54D;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5915B0;
 // LINE 63:
@@ -419,11 +424,13 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth
 	__asm        call   ScreenBuffer::UsePalette;
 // LINE 103:
 	__asm        jmp    near ptr 0x0049E65D;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049e667
 void ScreenBuffer::~ScreenBuffer() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5915B0;
 // LINE 112:
@@ -434,6 +441,7 @@ void ScreenBuffer::~ScreenBuffer() {
 	__asm        call   ScreenBuffer::FreePalette;
 // LINE 115:
 	__asm        jmp    near ptr 0x0049E691;
+
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
 }
@@ -452,6 +460,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
 	__asm        jne    near ptr 0x0049E7EE;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     near ptr 0x0049E7EE;
@@ -503,6 +512,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0049E767;
+
 	__asm        push   0x59A340;
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
@@ -540,6 +550,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0049E7D5;
+
 	__asm        push   0x59A380;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectDrawError::DisplayError;
@@ -593,6 +604,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0049E871;
+
 	__asm        push   0x59A3C4;
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectDrawError::DisplayError;
@@ -664,6 +676,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0049E93C;
+
 	__asm        push   0x59A404;
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
@@ -681,6 +694,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 1;
 	__asm        je     near ptr 0x0049E985;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        jne    near ptr 0x0049EA39;
@@ -710,6 +724,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0049E9D7;
+
 	__asm        push   0x59A444;
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -718,6 +733,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        jmp    near ptr 0x0049EA65;
 // LINE 219:
 	__asm        jmp    near ptr 0x0049E9F0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];
 	__asm        mov    eax, [eax+0x18];
@@ -852,6 +868,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
 	__asm        jne    near ptr 0x0049EC83;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     near ptr 0x0049EC83;
@@ -881,6 +898,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x0049EBCE;
+
 	__asm        push   0x59A484;
 	__asm        lea    ecx, [ebp-0x6C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -909,6 +927,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    hResult, eax;
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    near ptr 0x0049EC25;
+
 	__asm        jmp    near ptr 0x0049EBEF;
 // LINE 301:
 	__asm        push   1;
@@ -942,6 +961,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    hResult, eax;
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    near ptr 0x0049EC7E;
+
 	__asm        jmp    near ptr 0x0049EC48;
 // LINE 310:
 	__asm        jmp    near ptr 0x0049EE04;
@@ -971,6 +991,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        jmp    near ptr 0x0049ECCA;
+
 	__asm        push   0x59A4CC;
 	__asm        lea    ecx, [ebp-0x70];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1003,6 +1024,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x0049ED25;
+
 	__asm        push   0x59A514;
 	__asm        lea    ecx, [ebp-0x74];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1031,6 +1053,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    hResult, eax;
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    near ptr 0x0049ED7C;
+
 	__asm        jmp    near ptr 0x0049ED46;
 // LINE 334:
 	__asm        cmp    hResult, 0;
@@ -1039,6 +1062,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        jmp    near ptr 0x0049ED91;
+
 	__asm        push   0x59A55C;
 	__asm        lea    ecx, [ebp-0x78];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1062,6 +1086,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    hResult, eax;
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    near ptr 0x0049EDDB;
+
 	__asm        jmp    near ptr 0x0049EDA5;
 // LINE 343:
 	__asm        cmp    hResult, 0;
@@ -1070,6 +1095,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    near ptr 0x0049EDF0;
+
 	__asm        push   0x59A5A0;
 	__asm        lea    ecx, [ebp-0x7C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1090,6 +1116,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
 	__asm        jne    near ptr 0x0049EEE3;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     near ptr 0x0049EEE3;
@@ -1119,6 +1146,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0049EE88;
+
 	__asm        push   0x59A5E4;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1143,6 +1171,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0049EECA;
+
 	__asm        push   0x59A624;
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1177,6 +1206,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0049EF2A;
+
 	__asm        push   0x59A650;
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1209,6 +1239,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0049EF85;
+
 	__asm        push   0x59A690;
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1240,6 +1271,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0049EFDA;
+
 	__asm        push   0x59A6D0;
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1269,6 +1301,7 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 // LINE 427:
 	__asm        cmp    bIsInVerticalBlank, 0;
 	__asm        jne    near ptr 0x0049F036;
+
 	__asm        cmp    hResult, 0;
 	__asm        je     near ptr 0x0049F00B;
 // LINE 429:
@@ -1309,6 +1342,7 @@ void ScreenBuffer::SetPalette() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0049F0A0;
+
 	__asm        push   0x59A6FC;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1333,6 +1367,7 @@ void ScreenBuffer::SetPalette() {
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0049F0E3;
+
 	__asm        push   0x59A744;
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1345,6 +1380,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 	long hResult;
 
 	// Function registers exception cleanup function at 0x0049f410
+
 	__asm        mov    [ebp-0x10], esp;
 	__asm        mov    this, ecx;
 // LINE 475:
@@ -1385,6 +1421,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 // LINE 547:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049F19D;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x0049F201;
@@ -1420,6 +1457,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 // LINE 558:
 	__asm        mov    i, 0xA;
 	__asm        jmp    near ptr 0x0049F210;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xF5;
 	__asm        jg     near ptr 0x0049F268;
@@ -1463,6 +1501,7 @@ _L40600:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x420], eax;
 	__asm        jmp    near ptr 0x0049F29F;
+
 	__asm        push   0x59A78C;
 	__asm        lea    ecx, [ebp-0x420];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1511,6 +1550,7 @@ _L40602:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x424], eax;
 	__asm        jmp    near ptr 0x0049F33E;
+
 	__asm        push   0x59A7CC;
 	__asm        lea    ecx, [ebp-0x424];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1522,12 +1562,14 @@ _L37305:
 _L37305:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0049F360;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     near ptr 0x0049F39A;
 // LINE 593:
 	__asm        jmp    near ptr 0x0049F37B;
+
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0x30F;
@@ -1545,6 +1587,7 @@ _L37305:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x428], eax;
 	__asm        jmp    near ptr 0x0049F3BA;
+
 	__asm        push   0x59A804;
 	__asm        lea    ecx, [ebp-0x428];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1576,6 +1619,7 @@ _L37305:
 _L40603:
 	__asm        mov    eax, 0x595C58;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -1656,6 +1700,7 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
 	__asm        jne    near ptr 0x0049F57F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     near ptr 0x0049F57F;
@@ -1685,6 +1730,7 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0049F566;
+
 	__asm        push   0x59A840;
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1719,6 +1765,7 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0049F5C6;
+
 	__asm        push   0x59A884;
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1751,6 +1798,7 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0049F621;
+
 	__asm        push   0x59A8C8;
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1781,6 +1829,7 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rec
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0049F675;
+
 	__asm        push   0x59A90C;
 	__asm        lea    ecx, [ebp-0x24];
 	__asm        call   DirectDrawError::DisplayError;

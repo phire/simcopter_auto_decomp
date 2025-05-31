@@ -119,6 +119,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C2F0;
 	__asm        jmp    near ptr 0x0051E7C9;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -132,6 +133,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C5C0;
 	__asm        jmp    near ptr 0x0051E7FB;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -145,6 +147,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x0051E82D;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
@@ -158,6 +161,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66DFA0;
 	__asm        jmp    near ptr 0x0051E85F;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -171,6 +175,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C890;
 	__asm        jmp    near ptr 0x0051E891;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 2;
@@ -184,6 +189,7 @@ void S3MissileReset() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051E8C3;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -219,6 +225,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C890;
 	__asm        jmp    near ptr 0x0051E919;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 2;
@@ -296,6 +303,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C2F0;
 	__asm        jmp    near ptr 0x0051EA01;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -373,6 +381,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C5C0;
 	__asm        jmp    near ptr 0x0051EAEC;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -442,6 +451,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x0051EBBE;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
@@ -527,6 +537,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051ECBB;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -613,6 +624,7 @@ void S3MissileInit() {
 // LINE 342:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0051EDAE;
+
 	__asm        inc    j;
 	__asm        cmp    j, 3;
 	__asm        jge    near ptr 0x0051EDE3;
@@ -643,6 +655,7 @@ void S3MissileInit() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66DFA0;
 	__asm        jmp    near ptr 0x0051EE0E;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -751,6 +764,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C2F0;
 	__asm        jmp    near ptr 0x0051EF39;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -782,12 +796,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72C8];
 // LINE 443:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 0xB;
 	__asm        jne    near ptr 0x0051F011;
 // LINE 446:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C890;
 	__asm        jmp    near ptr 0x0051EFBA;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 2;
@@ -819,12 +835,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72DC];
 // LINE 465:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 2;
 	__asm        jne    near ptr 0x0051F180;
 // LINE 468:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051F03B;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -881,6 +899,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 495:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051F0E4;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -908,6 +927,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 506:
 	__asm        cmp    dword ptr ds:[0x5B7320], 0x20;
 	__asm        jl     near ptr 0x0051F145;
+
 	__asm        mov    dword ptr ds:[0x5B7320], 0x10;
 // LINE 508:
 	__asm        mov    eax, finfo.Attribute;
@@ -932,12 +952,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72CC];
 // LINE 515:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 5;
 	__asm        jne    near ptr 0x0051F2B8;
 // LINE 518:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051F1AA;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -994,6 +1016,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 544:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051F253;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1032,12 +1055,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72CC];
 // LINE 556:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 6;
 	__asm        jne    near ptr 0x0051F3CE;
 // LINE 559:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051F2E2;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -1081,6 +1106,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 577:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051F369;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1119,12 +1145,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72CC];
 // LINE 589:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 7;
 	__asm        jne    near ptr 0x0051F4E4;
 // LINE 592:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051F3F8;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -1168,6 +1196,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 610:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051F47F;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1206,12 +1235,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72CC];
 // LINE 622:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 9;
 	__asm        jne    near ptr 0x0051F677;
 // LINE 625:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0051F50E;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
@@ -1255,6 +1286,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 643:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051F595;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1283,6 +1315,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    finfo.Attribute, eax;
 // LINE 653:
 	__asm        jmp    near ptr 0x0051F647;
+
 	__asm        cmp    i, 1;
 	__asm        jne    near ptr 0x0051F618;
 // LINE 655:
@@ -1300,6 +1333,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    finfo.Attribute, eax;
 // LINE 660:
 	__asm        jmp    near ptr 0x0051F647;
+
 	__asm        cmp    i, 1;
 	__asm        jle    near ptr 0x0051F647;
 // LINE 662:
@@ -1334,6 +1368,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72CC];
 // LINE 673:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 3;
 	__asm        jne    near ptr 0x0051F75E;
 // LINE 675:
@@ -1348,6 +1383,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C5C0;
 	__asm        jmp    near ptr 0x0051F6BF;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -1396,12 +1432,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+0x54], 0;
 // LINE 703:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 4;
 	__asm        jne    near ptr 0x0051F852;
 // LINE 706:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x0051F788;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
@@ -1468,12 +1506,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        add    esp, 4;
 // LINE 736:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 0xA;
 	__asm        jne    near ptr 0x0051F91E;
 // LINE 739:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x0051F87C;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
@@ -1526,12 +1566,14 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        inc    word ptr ds:[0x5B72D4];
 // LINE 770:
 	__asm        jmp    near ptr 0x0051F99B;
+
 	__asm        cmp    msl_type, 8;
 	__asm        jne    near ptr 0x0051F994;
 // LINE 773:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66DFA0;
 	__asm        jmp    near ptr 0x0051F948;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
@@ -1649,6 +1691,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        add    esp, 8;
 // LINE 812:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 0xB;
 	__asm        jne    near ptr 0x0051FACD;
 // LINE 814:
@@ -1660,6 +1703,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        add    esp, 4;
 // LINE 816:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 3;
 	__asm        jne    near ptr 0x0051FAFE;
 // LINE 818:
@@ -1674,6 +1718,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x50000;
 // LINE 821:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 4;
 	__asm        jne    near ptr 0x0051FB33;
 // LINE 823:
@@ -1690,6 +1735,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x1E0000;
 // LINE 826:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 0xA;
 	__asm        jne    near ptr 0x0051FB68;
 // LINE 828:
@@ -1706,6 +1752,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x40000;
 // LINE 831:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 5;
 	__asm        jne    near ptr 0x0051FC01;
 // LINE 833:
@@ -1754,6 +1801,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x50000;
 // LINE 841:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 6;
 	__asm        jne    near ptr 0x0051FC36;
 // LINE 843:
@@ -1770,6 +1818,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x50000;
 // LINE 846:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 7;
 	__asm        jne    near ptr 0x0051FC6B;
 // LINE 848:
@@ -1786,6 +1835,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    dword ptr [eax+4], 0x1CCCC;
 // LINE 851:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 9;
 	__asm        jne    near ptr 0x0051FCAC;
 // LINE 853:
@@ -1806,6 +1856,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        shl    dword ptr [eax+0xC], cl;
 // LINE 857:
 	__asm        jmp    near ptr 0x0051FD5E;
+
 	__asm        cmp    msl_type, 8;
 	__asm        jne    near ptr 0x0051FCE1;
 // LINE 859:
@@ -2015,10 +2066,12 @@ void S3MissileDriver() {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x0051FF31;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x005208B0;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72D4];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x005208B0;
@@ -2139,10 +2192,12 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x10;
 	__asm        je     near ptr 0x0052020D;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
 	__asm        jne    near ptr 0x0052020D;
+
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
 	__asm        push   eax;
@@ -2490,6 +2545,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jge    near ptr 0x005205B3;
+
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    near ptr 0x005205B3;
@@ -2575,6 +2631,7 @@ void S3MissileDriver() {
 	__asm        add    esp, 0xC;
 // LINE 1119:
 	__asm        jmp    near ptr 0x005206C4;
+
 	__asm        mov    eax, lcptr;
 	__asm        cmp    cptr, eax;
 	__asm        je     near ptr 0x005206C4;
@@ -2673,6 +2730,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
 	__asm        jge    near ptr 0x00520762;
+
 	__asm        mov    eax, alt;
 	__asm        mov    newloc.y, eax;
 // LINE 1158:
@@ -2788,10 +2846,12 @@ debris_unlink_next:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C5C0;
 	__asm        jmp    near ptr 0x005208D0;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x00520FAB;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72D0];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x00520FAB;
@@ -3170,6 +3230,7 @@ debris_unlink_next:
 	__asm        add    esp, 0xC;
 // LINE 1306:
 	__asm        jmp    near ptr 0x00520E25;
+
 	__asm        mov    eax, lcptr;
 	__asm        cmp    cptr, eax;
 	__asm        je     near ptr 0x00520E25;
@@ -3268,6 +3329,7 @@ debris_unlink_next:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
 	__asm        jge    near ptr 0x00520EC3;
+
 	__asm        mov    eax, alt;
 	__asm        mov    newloc.y, eax;
 // LINE 1344:
@@ -3355,10 +3417,12 @@ teargas_unlink_next:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C2F0;
 	__asm        jmp    near ptr 0x00520FCB;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x005213A6;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72C8];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x005213A6;
@@ -3685,10 +3749,12 @@ missile_unlink_next:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C890;
 	__asm        jmp    near ptr 0x005213C6;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 2;
 	__asm        jge    near ptr 0x0052175F;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72DC];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x0052175F;
@@ -3994,10 +4060,12 @@ laser_unlink_next:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66C920;
 	__asm        jmp    near ptr 0x0052177F;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x50;
 	__asm        jge    near ptr 0x00521D18;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72CC];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x00521D18;
@@ -4131,6 +4199,7 @@ laser_unlink_next:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1615:
 	__asm        jmp    near ptr 0x00521A63;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x40;
 	__asm        je     near ptr 0x00521A19;
@@ -4196,11 +4265,13 @@ laser_unlink_next:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1625:
 	__asm        jmp    near ptr 0x00521A63;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x80;
 	__asm        je     near ptr 0x00521A2D;
 // LINE 1638:
 	__asm        jmp    near ptr 0x00521A63;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+1], 2;
 	__asm        je     near ptr 0x00521A63;
@@ -4454,10 +4525,12 @@ bullet_unlink_next:
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66DFA0;
 	__asm        jmp    near ptr 0x00521D38;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x0052208C;
+
 	__asm        movsx  eax, word ptr ds:[0x5B72D8];
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x0052208C;
@@ -4657,6 +4730,7 @@ bullet_unlink_next:
 	__asm        mov    dword ptr [eax+0x38], 1;
 // LINE 1760:
 	__asm        jmp    near ptr 0x0052202D;
+
 	__asm        mov    eax, lcptr;
 	__asm        cmp    cptr, eax;
 	__asm        je     near ptr 0x0052202D;
@@ -4696,6 +4770,7 @@ bullet_unlink_next:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
 	__asm        jge    near ptr 0x00522054;
+
 	__asm        mov    eax, alt;
 	__asm        mov    newloc.y, eax;
 // LINE 1771:
@@ -4785,6 +4860,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    hit_type, 3;
 // LINE 1822:
 	__asm        jmp    near ptr 0x00522196;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     near ptr 0x00522137;
@@ -4792,6 +4868,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    hit_type, 7;
 // LINE 1826:
 	__asm        jmp    near ptr 0x00522196;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 8;
 	__asm        je     near ptr 0x0052214F;
@@ -4799,6 +4876,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    hit_type, 0xE;
 // LINE 1830:
 	__asm        jmp    near ptr 0x00522196;
+
 	__asm        mov    eax, md;
 	__asm        test   dword ptr [eax], 0x410;
 	__asm        je     near ptr 0x0052216A;
@@ -4806,6 +4884,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    hit_type, 0;
 // LINE 1834:
 	__asm        jmp    near ptr 0x00522196;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0xE0;
 	__asm        je     near ptr 0x00522182;
@@ -4813,6 +4892,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    hit_type, 4;
 // LINE 1838:
 	__asm        jmp    near ptr 0x00522196;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+1], 2;
 	__asm        je     near ptr 0x00522196;
@@ -4845,6 +4925,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x3C], 0;
 	__asm        je     near ptr 0x00522212;
+
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -4898,10 +4979,12 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
 	__asm        je     near ptr 0x00522292;
+
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    near ptr 0x00522292;
+
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        je     near ptr 0x00522292;
 // LINE 1883:
@@ -4913,6 +4996,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 // LINE 1893:
 	__asm        cmp    hit_type, 4;
 	__asm        jne    near ptr 0x005222E7;
+
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 0x10;
@@ -5052,6 +5136,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        add    esp, 0xC;
 // LINE 1944:
 	__asm        jmp    near ptr 0x0052246E;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     near ptr 0x0052246E;
@@ -5315,6 +5400,7 @@ skip_dynamic_objs:
 	__asm        mov    eax, md;
 	__asm        test   dword ptr [eax], 0x802;
 	__asm        je     near ptr 0x00522909;
+
 	__asm        mov    eax, celloc.y;
 	__asm        push   eax;
 	__asm        mov    eax, celloc.x;
@@ -5323,6 +5409,7 @@ skip_dynamic_objs:
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00522909;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
@@ -5419,6 +5506,7 @@ skip_dynamic_objs:
 // LINE 2075:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0052283C;
+
 	__asm        inc    j;
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
@@ -5515,6 +5603,7 @@ skip_dynamic_objs:
 	__asm        add    esp, 0xC;
 // LINE 2104:
 	__asm        jmp    near ptr 0x00522A02;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x60;
 	__asm        je     near ptr 0x005229C8;
@@ -5689,12 +5778,16 @@ skip_dynamic_objs:
 // LINE 2172:
 	__asm        cmp    j, 0;
 	__asm        jl     near ptr 0x00522B52;
+
 	__asm        cmp    j, 5;
 	__asm        jl     near ptr 0x00522B6C;
+
 	__asm        cmp    j, 5;
 	__asm        jl     near ptr 0x00522BBB;
+
 	__asm        cmp    j, 0xA;
 	__asm        jge    near ptr 0x00522BBB;
+
 	__asm        mov    eax, md;
 	__asm        test   dword ptr [eax], 0x380;
 	__asm        jne    near ptr 0x00522BBB;
@@ -5725,6 +5818,7 @@ skip_dynamic_objs:
 	__asm        mov    [ecx], eax;
 // LINE 2181:
 	__asm        jmp    near ptr 0x00522DA6;
+
 	__asm        mov    eax, md;
 	__asm        test   dword ptr [eax], 0x798;
 	__asm        je     near ptr 0x00522C29;
@@ -5760,6 +5854,7 @@ skip_dynamic_objs:
 	__asm        mov    [ecx+8], eax;
 // LINE 2193:
 	__asm        jmp    near ptr 0x00522DA6;
+
 	__asm        mov    eax, md;
 	__asm        test   dword ptr [eax], 0x802;
 	__asm        je     near ptr 0x00522CE1;
@@ -5772,6 +5867,7 @@ skip_dynamic_objs:
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00522C95;
+
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
@@ -5822,6 +5918,7 @@ skip_dynamic_objs:
 	__asm        mov    [ecx], eax;
 // LINE 2214:
 	__asm        jmp    near ptr 0x00522DA6;
+
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x60;
 	__asm        je     near ptr 0x00522D5F;
@@ -6023,30 +6120,35 @@ int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 	__asm        mov    ecx, sp;
 	__asm        cmp    eax, [ecx];
 	__asm        jl     near ptr 0x00522F40;
+
 	__asm        mov    eax, tc;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, r;
 	__asm        mov    ecx, sp;
 	__asm        cmp    eax, [ecx];
 	__asm        jg     near ptr 0x00522F40;
+
 	__asm        mov    eax, tc;
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, r;
 	__asm        mov    ecx, sp;
 	__asm        cmp    eax, [ecx+4];
 	__asm        jl     near ptr 0x00522F40;
+
 	__asm        mov    eax, tc;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, r;
 	__asm        mov    ecx, sp;
 	__asm        cmp    eax, [ecx+4];
 	__asm        jg     near ptr 0x00522F40;
+
 	__asm        mov    eax, tc;
 	__asm        mov    eax, [eax+8];
 	__asm        sub    eax, r;
 	__asm        mov    ecx, sp;
 	__asm        cmp    eax, [ecx+8];
 	__asm        jl     near ptr 0x00522F40;
+
 	__asm        mov    eax, tc;
 	__asm        mov    eax, [eax+8];
 	__asm        add    eax, r;
@@ -6211,6 +6313,7 @@ int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
 	__asm        je     near ptr 0x0052317D;
+
 	__asm        mov    reinterpret_cast<uint32_t>(newdist), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&newdist) + 4), 0x3FE00000;
 // LINE 2580:
@@ -6295,6 +6398,7 @@ void S3DrawPoint(struct VRBlit* blit) {
 	__asm        mov    ptr, eax;
 // LINE 2649:
 	__asm        jmp    near ptr 0x00523260;
+
 	__asm        jmp    near ptr 0x0052326B;
 // LINE 2651:
 	__asm        mov    eax, blit;
@@ -6313,6 +6417,7 @@ struct _MISSILE_DATA* S3DebrisGetByMission(long mission_id) {
 	__asm        mov    i, 0;
 	__asm        mov    md, 0x66E270;
 	__asm        jmp    near ptr 0x00523293;
+
 	__asm        inc    i;
 	__asm        add    md, 0x48;
 	__asm        cmp    i, 0x1E;
@@ -6321,6 +6426,7 @@ struct _MISSILE_DATA* S3DebrisGetByMission(long mission_id) {
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        je     near ptr 0x005232C0;
+
 	__asm        mov    eax, md;
 	__asm        mov    ecx, mission_id;
 	__asm        cmp    [eax+0x40], ecx;
@@ -6348,6 +6454,7 @@ void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005232F9;
+
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        cmp    eax, 0x1E;
@@ -6514,6 +6621,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2791:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x005234A8;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x00523621;
@@ -6641,6 +6749,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2823:
 	__asm        cmp    ret, 0;
 	__asm        jne    near ptr 0x0052361C;
+
 	__asm        cmp    i, 9;
 	__asm        je     near ptr 0x0052361C;
 // LINE 2824:
@@ -6669,6 +6778,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2837:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00523666;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x005237DF;
@@ -6796,6 +6906,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2869:
 	__asm        cmp    ret, 0;
 	__asm        jne    near ptr 0x005237DA;
+
 	__asm        cmp    i, 0x1D;
 	__asm        je     near ptr 0x005237DA;
 // LINE 2870:
@@ -6817,6 +6928,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 // LINE 2881:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00523806;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0xA;
 	__asm        jge    near ptr 0x0052387B;
@@ -6859,6 +6971,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 // LINE 2897:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0052388A;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x1E;
 	__asm        jge    near ptr 0x005238FF;

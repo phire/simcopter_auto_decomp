@@ -13,6 +13,7 @@
 int32_t IsEventSet(int32_t nEvent) {
 // LINE 23:
 	__asm        jmp    near ptr 0x00431B6B;
+
 	__asm        mov    eax, nEvent;
 	__asm        mov    ecx, ds:[0x599BBC];
 	__asm        xor    edx, edx;
@@ -30,6 +31,7 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 	__asm        jl     near ptr 0x00431BCA;
 // LINE 34:
 	__asm        jmp    near ptr 0x00431BA0;
+
 	__asm        mov    eax, nEventStart;
 	__asm        mov    ecx, ds:[0x599BBC];
 	__asm        xor    edx, edx;
@@ -53,6 +55,7 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 long GetJoystickValue(int32_t nCommand) {
 // LINE 47:
 	__asm        jmp    near ptr 0x00431BE1;
+
 	__asm        mov    eax, nCommand;
 	__asm        mov    ecx, ds:[0x599BBC];
 	__asm        mov    eax, [ecx+eax*4+0xA28];
@@ -70,6 +73,7 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        mov    lReturnValue, eax;
 	__asm        jmp    near ptr 0x00431C1C;
+
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     near ptr 0x00431C2E;
 // LINE 59:
@@ -77,6 +81,7 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	__asm        jmp    near ptr 0x00431C48;
 // LINE 60:
 	__asm        jmp    near ptr 0x00431C33;
+
 	__asm        mov    eax, nCommand2;
 	__asm        mov    ecx, ds:[0x599BBC];
 	__asm        mov    eax, [ecx+eax*4+0xA28];

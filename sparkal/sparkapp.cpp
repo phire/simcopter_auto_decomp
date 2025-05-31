@@ -251,6 +251,7 @@ protected:
 // Contribution: 1:00025fc0-00026507 Module: 69, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00426fc0
 void CSparkalApp::CSparkalApp() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F428;
 // LINE 15:
@@ -274,38 +275,48 @@ void CSparkalApp::CSparkalApp() {
 	__asm        mov    eax, 0x59A9D4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00427034;
+
 	__asm        push   0x194;
 	__asm        push   0x597444;
 	__asm        push   0x597424;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00427039;
+
 	__asm        jmp    near ptr 0x00427039;
+
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        mov    word ptr [ebp-0xC], 0;
 	__asm        jmp    near ptr 0x00427067;
+
 	__asm        push   0x169;
 	__asm        push   0x597444;
 	__asm        push   0x597430;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042706C;
+
 	__asm        jmp    near ptr 0x0042706C;
+
 	__asm        push   2;
 	__asm        push   0x40;
 	__asm        call   dword ptr ds:[0x6C3730];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x00427089;
+
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 	__asm        jmp    near ptr 0x0042708E;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004270AD;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    word ptr [eax], 0xC;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ds:[0x59A9D4], eax;
 	__asm        jmp    near ptr 0x004270B3;
+
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 	__asm        jmp    near ptr 0x004270B8;
 // LINE 35:
@@ -318,11 +329,13 @@ void CSparkalApp::CSparkalApp() {
 	__asm        add    esp, 8;
 // LINE 38:
 	__asm        jmp    near ptr 0x004270D9;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004270e1
 void CSparkalApp::~CSparkalApp() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F428;
 	__asm        mov    eax, ds:[0x59A9D4];
@@ -330,23 +343,29 @@ void CSparkalApp::~CSparkalApp() {
 // LINE 51:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    near ptr 0x00427124;
+
 	__asm        push   0x1B5;
 	__asm        push   0x597444;
 	__asm        push   0x597468;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00427129;
+
 	__asm        jmp    near ptr 0x00427129;
+
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    near ptr 0x00427155;
+
 	__asm        push   0x173;
 	__asm        push   0x597444;
 	__asm        push   0x597474;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042715A;
+
 	__asm        jmp    near ptr 0x0042715A;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3658];
@@ -360,8 +379,10 @@ void CSparkalApp::~CSparkalApp() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0042718F;
+
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 	__asm        jmp    near ptr 0x00427194;
+
 	__asm        jmp    near ptr 0x00427199;
 // LINE 52:
 	__asm        jmp    near ptr 0x0042719E;
@@ -390,6 +411,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        mov    al, WinMajor;
 	__asm        cmp    eax, 3;
 	__asm        jne    near ptr 0x00427212;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, WinMinor;
 	__asm        cmp    eax, 0x32;
@@ -407,6 +429,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        mov    dword ptr [eax+8], 2;
 // LINE 75:
 	__asm        jmp    near ptr 0x00427247;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, WinMajor;
 	__asm        cmp    eax, 4;
@@ -416,6 +439,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        mov    dword ptr [eax+8], 3;
 // LINE 77:
 	__asm        jmp    near ptr 0x00427247;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, WinMajor;
 	__asm        cmp    eax, 4;
@@ -443,6 +467,7 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004272A8;
+
 	__asm        mov    eax, Caption;
 	__asm        push   eax;
 	__asm        mov    eax, pColors;
@@ -457,6 +482,7 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	__asm        call   GameWindow::GameWindow;
 	__asm        mov    Window, eax;
 	__asm        jmp    near ptr 0x004272AF;
+
 	__asm        mov    Window, 0;
 // LINE 108:
 	__asm        mov    eax, Window;
@@ -483,12 +509,14 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x0042730C;
+
 	__asm        mov    eax, fileName;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    near ptr 0x00427313;
+
 	__asm        mov    pDDBitmap, 0;
 // LINE 122:
 	__asm        mov    eax, pDDBitmap;
@@ -505,12 +533,14 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0042734C;
+
 	__asm        mov    eax, fileName;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    near ptr 0x00427353;
+
 	__asm        mov    pBBitmap, 0;
 // LINE 126:
 	__asm        mov    eax, pBBitmap;
@@ -544,6 +574,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x004273C8;
+
 	__asm        mov    eax, pColors;
 	__asm        push   eax;
 	__asm        mov    eax, height;
@@ -554,6 +585,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    near ptr 0x004273CF;
+
 	__asm        mov    pDDBitmap, 0;
 // LINE 149:
 	__asm        jmp    near ptr 0x00427414;
@@ -564,6 +596,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0042740D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -575,6 +608,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    near ptr 0x00427414;
+
 	__asm        mov    pDDBitmap, 0;
 // LINE 151:
 	__asm        mov    eax, pDDBitmap;
@@ -594,6 +628,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0042745F;
+
 	__asm        mov    eax, pColors;
 	__asm        push   eax;
 	__asm        mov    eax, height;
@@ -604,6 +639,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    near ptr 0x00427466;
+
 	__asm        mov    pBBitmap, 0;
 // LINE 157:
 	__asm        jmp    near ptr 0x004274AB;
@@ -614,6 +650,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004274A4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -625,6 +662,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    near ptr 0x004274AB;
+
 	__asm        mov    pBBitmap, 0;
 // LINE 159:
 	__asm        mov    eax, pBBitmap;

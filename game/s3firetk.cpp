@@ -380,8 +380,10 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00536124;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00536126;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053612B;
 // LINE 78:
@@ -389,6 +391,7 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x00536130
 void FireEngineClass::FireEngineClass() {
+
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::EmergencyVehicleClass;
 	__asm        mov    eax, this;
@@ -398,14 +401,17 @@ void FireEngineClass::FireEngineClass() {
 	__asm        mov    dword ptr [eax+4], 0x11C;
 // LINE 84:
 	__asm        jmp    near ptr 0x0053615C;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00536164
 void FireEngineClass::~FireEngineClass() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
 	__asm        jmp    near ptr 0x0053617E;
+
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -423,10 +429,12 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x005361BE;
+
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        call   FireEngineClass::FireEngineClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    near ptr 0x005361C5;
+
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 120:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -486,12 +494,14 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    near ptr 0x0053628D;
+
 	__asm        push   0x91;
 	__asm        push   0x5B7DCC;
 	__asm        push   0x5B7DF0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536292;
+
 	__asm        jmp    near ptr 0x00536292;
 // LINE 147:
 	__asm        xor    eax, eax;
@@ -501,12 +511,14 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 // LINE 153:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    near ptr 0x005362C4;
+
 	__asm        push   0x99;
 	__asm        push   0x5B7E18;
 	__asm        push   0x5B7E3C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005362C9;
+
 	__asm        jmp    near ptr 0x005362C9;
 // LINE 155:
 	__asm        xor    eax, eax;
@@ -557,6 +569,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x00536375;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
@@ -595,8 +608,10 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0xD3;
 	__asm        jne    near ptr 0x005363D6;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005363D8;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005363DD;
 // LINE 219:
@@ -607,14 +622,20 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 // LINE 225:
 	__asm        cmp    mapX, 0;
 	__asm        jl     near ptr 0x00536419;
+
 	__asm        cmp    mapY, 0;
 	__asm        jl     near ptr 0x00536419;
+
 	__asm        cmp    mapX, 0x80;
 	__asm        jge    near ptr 0x00536419;
+
 	__asm        cmp    mapY, 0x80;
 	__asm        jl     near ptr 0x00536423;
+
 	__asm        jmp    near ptr 0x00536482;
+
 	__asm        jmp    near ptr 0x00536478;
+
 	__asm        mov    eax, mapX;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, mapY;
@@ -632,13 +653,17 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 	__asm        movzx  eax, ax;
 	__asm        cmp    eax, 0xD3;
 	__asm        jne    near ptr 0x00536482;
+
 	__asm        jmp    near ptr 0x00536478;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0xD3;
 	__asm        jne    near ptr 0x00536482;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00536484;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00536489;
 // LINE 226:
@@ -663,6 +688,7 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    dl, [eax+0x11A];
 	__asm        cmp    ecx, edx;
 	__asm        jne    near ptr 0x0053650E;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -703,6 +729,7 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    dl, [eax+0x11C];
 	__asm        cmp    ecx, edx;
 	__asm        jne    near ptr 0x00536640;
+
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -864,17 +891,22 @@ void FireEngineClass::ItterateFSM() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536741;
+
 	__asm        jmp    near ptr 0x00536741;
 // LINE 346:
 	__asm        jmp    near ptr 0x0053676E;
 // LINE 347:
 	__asm        jmp    near ptr 0x0053676E;
+
 	__asm        cmp    dword ptr [ebp-0x18], 2;
 	__asm        je     near ptr 0x005364AB;
+
 	__asm        cmp    dword ptr [ebp-0x18], 4;
 	__asm        je     near ptr 0x0053651B;
+
 	__asm        cmp    dword ptr [ebp-0x18], 5;
 	__asm        je     near ptr 0x005366AC;
+
 	__asm        jmp    near ptr 0x00536720;
 // LINE 348:
 	__asm        jmp    near ptr 0x00536773;
@@ -924,6 +956,7 @@ int32_t FireEngineClass::AtScene() {
 	__asm        jmp    near ptr 0x005368C8;
 // LINE 374:
 	__asm        jmp    near ptr 0x0053686F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A8], 0;
 	__asm        je     near ptr 0x0053686F;
@@ -1042,14 +1075,18 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    near ptr 0x00536974;
+
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536979;
+
 	__asm        jmp    near ptr 0x00536979;
+
 	__asm        jmp    near ptr 0x0053697E;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    cptr, eax;
 // LINE 435:
@@ -1098,6 +1135,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 464:
 	__asm        mov    dword ptr [ebp-0x28], 1;
 	__asm        jmp    near ptr 0x00536A0B;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    near ptr 0x00536ADB;
 // LINE 468:
@@ -1125,6 +1163,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 479:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    near ptr 0x00536A5B;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    near ptr 0x00536ADB;
 // LINE 483:
@@ -1162,11 +1201,13 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 495:
 	__asm        mov    dword ptr [ebp-0x30], 1;
 	__asm        jmp    near ptr 0x00536ABF;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    near ptr 0x00536ADB;
 // LINE 497:
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00536AD3;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    near ptr 0x00536ADB;
 // LINE 498:
@@ -1220,12 +1261,14 @@ void FireEngineClass::PointStreamAtFire() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A8], 0;
 	__asm        jne    near ptr 0x00536BB6;
+
 	__asm        push   0x212;
 	__asm        push   0x5B7E78;
 	__asm        push   0x5B7E9C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536BBB;
+
 	__asm        jmp    near ptr 0x00536BBB;
 // LINE 531:
 	__asm        mov    eax, this;
@@ -1339,10 +1382,13 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        jmp    near ptr 0x00536D2D;
 // LINE 594:
 	__asm        jmp    near ptr 0x00536D2D;
+
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        jl     near ptr 0x00536D2D;
+
 	__asm        cmp    dword ptr [ebp-8], 4;
 	__asm        jle    near ptr 0x00536CF2;
+
 	__asm        jmp    near ptr 0x00536D2D;
 // LINE 596:
 	__asm        mov    eax, sd;

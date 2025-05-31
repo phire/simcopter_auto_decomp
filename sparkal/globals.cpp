@@ -10,6 +10,7 @@
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471b0
 void $E4() {
+
 	__asm        call   $E1;
 	__asm        call   $E3;
 	__asm        jmp    near ptr 0x004471C5;
@@ -18,13 +19,16 @@ void $E4() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471ca
 void $E1() {
+
 	__asm        jmp    near ptr 0x004471D5;
+
 	__asm        jmp    near ptr 0x004471DA;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471df
 void $E3() {
+
 	__asm        push   0x4471FC;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -34,13 +38,16 @@ void $E3() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471fc
 void $E2() {
+
 	__asm        jmp    near ptr 0x00447207;
+
 	__asm        jmp    near ptr 0x0044720C;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00447211
 void $E7() {
+
 	__asm        call   $E6;
 	__asm        jmp    near ptr 0x00447221;
 }
@@ -48,6 +55,7 @@ void $E7() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00447226
 void $E6() {
+
 	__asm        jmp    near ptr 0x00447231;
 }
 

@@ -328,8 +328,10 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005349E4;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x005349E6;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005349EB;
 // LINE 83:
@@ -354,6 +356,7 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 
 // FUNCTION: COPTER_D 0x00534a18
 void CriminalEvaderCarClass::CriminalEvaderCarClass() {
+
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::AutomobileClass;
 	__asm        mov    eax, this;
@@ -363,14 +366,17 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 	__asm        mov    dword ptr [eax+4], 0x11E;
 // LINE 99:
 	__asm        jmp    near ptr 0x00534A44;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00534a4c
 void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
 	__asm        jmp    near ptr 0x00534A66;
+
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::~AutomobileClass;
 }
@@ -386,10 +392,12 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00534AA6;
+
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   CriminalEvaderCarClass::CriminalEvaderCarClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    near ptr 0x00534AAD;
+
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 130:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -418,6 +426,7 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00534B15;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -445,6 +454,7 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 // LINE 165:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00534B45;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x00534C39;
@@ -603,14 +613,18 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    near ptr 0x00534D53;
+
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00534D58;
+
 	__asm        jmp    near ptr 0x00534D58;
+
 	__asm        jmp    near ptr 0x00534D5D;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
@@ -667,13 +681,16 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    dword ptr [eax+0x11A], 2;
 // LINE 253:
 	__asm        jmp    near ptr 0x00534EEA;
+
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x30;
 	__asm        jne    near ptr 0x00534E50;
+
 	__asm        mov    ecx, this;
 	__asm        call   CriminalEvaderCarClass::NearToBuilding;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00534E50;
+
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOver;
 	__asm        test   eax, eax;
@@ -686,6 +703,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        call   dword ptr [eax+4];
 // LINE 257:
 	__asm        jmp    near ptr 0x00534EEA;
+
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     near ptr 0x00534EEA;
@@ -716,6 +734,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00534EBE;
+
 	__asm        jmp    near ptr 0x00534EBE;
 // LINE 270:
 	__asm        mov    mp.op, 0x1D;
@@ -746,6 +765,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xF6], 0;
 	__asm        jne    near ptr 0x00534F2A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jg     near ptr 0x00534FAD;
@@ -770,6 +790,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     near ptr 0x00534F8B;
+
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
@@ -799,6 +820,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     near ptr 0x0053506C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     near ptr 0x0053506C;
@@ -829,6 +851,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00535040;
+
 	__asm        jmp    near ptr 0x00535040;
 // LINE 339:
 	__asm        mov    mp.op, 0x1D;
@@ -854,6 +877,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        mov    [ecx+0x126], eax;
 // LINE 354:
 	__asm        jmp    near ptr 0x005350D2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x126], 0;
 	__asm        jge    near ptr 0x005350BF;
@@ -887,8 +911,10 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 371:
 	__asm        jmp    near ptr 0x00535124;
+
 	__asm        cmp    dword ptr [ebp-0x68], 4;
 	__asm        ja     near ptr 0x00535124;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        jmp    dword ptr [eax*4+0x535110];
 // Switch pointers
@@ -902,6 +928,7 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 3;
 	__asm        je     near ptr 0x0053515A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 4;
 	__asm        jne    near ptr 0x0053515F;
@@ -911,12 +938,15 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 	__asm        movsx  eax, carModel;
 	__asm        cmp    eax, 0x11D;
 	__asm        jne    near ptr 0x0053517E;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        jne    near ptr 0x0053519B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 1;
 	__asm        jne    near ptr 0x005351A7;
+
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x30;
 	__asm        jne    near ptr 0x005351A7;
@@ -954,11 +984,11 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 
 // FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
-	 // Switch table at 0x00535675
-	 // Switch table at 0x0053557c
-	 // Switch table at 0x005354c9
-	 // Switch table at 0x005353dc
-	 // Switch table at 0x005352c5
+	static const <NoType> = { /* <data@0x00535675> */ };
+	static const <NoType> = { /* <data@0x0053557c> */ };
+	static const <NoType> = { /* <data@0x005354c9> */ };
+	static const <NoType> = { /* <data@0x005353dc> */ };
+	static const <NoType> = { /* <data@0x005352c5> */ };
 	struct _GridCoordinates scanLoc;
 	class SpiralScan scan;
 
@@ -994,15 +1024,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 480:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    near ptr 0x00535270;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 481:
 	__asm        jmp    near ptr 0x00535355;
 // LINE 482:
 	__asm        jmp    near ptr 0x00535355;
+
 	__asm        sub    dword ptr [ebp-0x3C], 0x70;
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8F;
 	__asm        ja     near ptr 0x00535355;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5352C5];
@@ -1019,15 +1052,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 510:
 	__asm        mov    dword ptr [ebp-0x20], 1;
 	__asm        jmp    near ptr 0x00535376;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 511:
 	__asm        jmp    near ptr 0x00535457;
 // LINE 512:
 	__asm        jmp    near ptr 0x00535457;
+
 	__asm        sub    dword ptr [ebp-0x40], 0x7D;
 	__asm        cmp    dword ptr [ebp-0x40], 0x7A;
 	__asm        ja     near ptr 0x00535457;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5353DC];
@@ -1044,15 +1080,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 531:
 	__asm        mov    dword ptr [ebp-0x24], 1;
 	__asm        jmp    near ptr 0x00535478;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 532:
 	__asm        jmp    near ptr 0x005354F2;
 // LINE 533:
 	__asm        jmp    near ptr 0x005354F2;
+
 	__asm        sub    dword ptr [ebp-0x44], 0x90;
 	__asm        cmp    dword ptr [ebp-0x44], 0x28;
 	__asm        ja     near ptr 0x005354F2;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5354C9];
@@ -1069,15 +1108,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 572:
 	__asm        mov    dword ptr [ebp-0x28], 1;
 	__asm        jmp    near ptr 0x00535513;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 573:
 	__asm        jmp    near ptr 0x005355EF;
 // LINE 574:
 	__asm        jmp    near ptr 0x005355EF;
+
 	__asm        sub    dword ptr [ebp-0x48], 0x80;
 	__asm        cmp    dword ptr [ebp-0x48], 0x72;
 	__asm        ja     near ptr 0x005355EF;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53557C];
@@ -1094,15 +1136,18 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 613:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    near ptr 0x00535610;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 614:
 	__asm        jmp    near ptr 0x005356AA;
 // LINE 615:
 	__asm        jmp    near ptr 0x005356AA;
+
 	__asm        sub    dword ptr [ebp-0x4C], 0xC6;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x34;
 	__asm        ja     near ptr 0x005356AA;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x535675];
@@ -1113,8 +1158,10 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	__asm        jmp    near ptr 0x005356DC;
 // LINE 617:
 	__asm        jmp    near ptr 0x005356DC;
+
 	__asm        cmp    dword ptr [ebp-0x38], 4;
 	__asm        ja     near ptr 0x005356DC;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    dword ptr [eax*4+0x5356C8];
 // Switch pointers
@@ -1129,6 +1176,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 621:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    near ptr 0x005356FC;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    near ptr 0x00535704;
 // LINE 622:

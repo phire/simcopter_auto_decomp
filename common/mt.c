@@ -546,6 +546,7 @@ void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
 // LINE 287:
 	__asm        cmp    v, 0;
 	__asm        jle    near ptr 0x004CA5E9;
+
 	__asm        cmp    v, 0x64;
 	__asm        jge    near ptr 0x004CA5E9;
 // LINE 288:
@@ -656,11 +657,14 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	__asm        add    esp, 4;
 	__asm        cmp    eax, Vmax;
 	__asm        jle    near ptr 0x004CA714;
+
 	__asm        cmp    nv, 0;
 	__asm        jle    near ptr 0x004CA70C;
+
 	__asm        mov    eax, Vmax;
 	__asm        mov    nv, eax;
 	__asm        jmp    near ptr 0x004CA714;
+
 	__asm        mov    eax, Vmax;
 	__asm        neg    eax;
 	__asm        mov    nv, eax;
@@ -680,6 +684,7 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 // LINE 361:
 	__asm        cmp    V, 0x64;
 	__asm        jg     near ptr 0x004CA73E;
+
 	__asm        cmp    V, 0xFFFFFF9C;
 	__asm        jge    near ptr 0x004CA7A8;
 // LINE 362:
@@ -716,6 +721,7 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 // LINE 366:
 	__asm        cmp    j, 0;
 	__asm        jle    near ptr 0x004CA7A8;
+
 	__asm        mov    eax, j;
 	__asm        push   eax;
 	__asm        mov    eax, V;
@@ -734,19 +740,23 @@ int32_t MTAngleBounds(int32_t a) {
 // LINE 385:
 	__asm        cmp    a, 0;
 	__asm        jge    near ptr 0x004CA7D0;
+
 	__asm        add    a, 0xE100000;
 	__asm        jmp    near ptr 0x004CA7BA;
 // LINE 386:
 	__asm        cmp    a, 0xE100000;
 	__asm        jle    near ptr 0x004CA7E9;
+
 	__asm        sub    a, 0xE100000;
 	__asm        jmp    near ptr 0x004CA7D0;
 // LINE 387:
 	__asm        cmp    a, 0x7080000;
 	__asm        jl     near ptr 0x004CA803;
+
 	__asm        mov    eax, a;
 	__asm        sub    eax, 0xE100000;
 	__asm        jmp    near ptr 0x004CA806;
+
 	__asm        mov    eax, a;
 	__asm        jmp    near ptr 0x004CA80B;
 // LINE 388:

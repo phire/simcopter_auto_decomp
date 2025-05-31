@@ -398,6 +398,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 37:
 	__asm        jmp    near ptr 0x005675CE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF788;
 	__asm        push   0x25;
@@ -437,6 +438,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	__asm        mov    al, tmpname[0];
 	__asm        test   eax, eax;
 	__asm        jg     near ptr 0x00567659;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF7C0;
 	__asm        push   0x38;
@@ -515,6 +517,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	__asm        mov    ecx, entrySize;
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     near ptr 0x0056776A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF80C;
 	__asm        push   0x4D;
@@ -557,6 +560,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x1C];
 	__asm        jbe    near ptr 0x00567808;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF868;
 	__asm        push   0x54;
@@ -575,6 +579,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	long ycount;
 	__asm        mov    xcount, 0;
 	__asm        jmp    near ptr 0x00567832;
+
 	__asm        inc    xcount;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcount;
@@ -583,6 +588,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 // LINE 95:
 	__asm        mov    ycount, 0;
 	__asm        jmp    near ptr 0x0056785C;
+
 	__asm        inc    ycount;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycount;
@@ -595,6 +601,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     near ptr 0x005678A5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF89C;
 	__asm        push   0x60;
@@ -634,8 +641,10 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 // LINE 123:
 	__asm        cmp    pFile, 0;
 	__asm        jne    near ptr 0x00567920;
+
 	__asm        cmp    rType, 0;
 	__asm        je     near ptr 0x00567939;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF8F4;
 	__asm        push   0x7B;
@@ -712,6 +721,7 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 
 // FUNCTION: COPTER_D 0x005679eb
 void _cArray::~_cArray() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593738;
 // LINE 160:
@@ -741,6 +751,7 @@ void _cArray::~_cArray() {
 // LINE 172:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00567A4D;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x400;
 	__asm        jge    near ptr 0x00567B11;
@@ -749,11 +760,13 @@ void _cArray::~_cArray() {
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     near ptr 0x00567A9F;
+
 	__asm        mov    eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    near ptr 0x00567A9F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF964;
 	__asm        push   0xAD;
@@ -765,6 +778,7 @@ void _cArray::~_cArray() {
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     near ptr 0x00567B0C;
+
 	__asm        mov    eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        mov    eax, [ecx+eax*4];
@@ -775,6 +789,7 @@ void _cArray::~_cArray() {
 // LINE 176:
 	__asm        test   reinterpret_cast<uint32_t>(bFound), 0xFFFF;
 	__asm        je     near ptr 0x00567AF6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF99C;
 	__asm        push   0xB0;
@@ -809,6 +824,7 @@ void _cArray::MakeTable() {
 // LINE 197:
 	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
 	__asm        jne    near ptr 0x00567B6C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BF9F8;
 	__asm        push   0xC5;
@@ -818,6 +834,7 @@ void _cArray::MakeTable() {
 // LINE 198:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00567B7B;
+
 	__asm        inc    count;
 	__asm        cmp    count, 0x400;
 	__asm        jge    near ptr 0x00567B9D;
@@ -869,6 +886,7 @@ void _cArray::CheckIntoTable() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    near ptr 0x00567C39;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFA38;
 	__asm        push   0xFA;
@@ -882,6 +900,7 @@ void _cArray::CheckIntoTable() {
 // LINE 255:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00567C54;
+
 	__asm        inc    count;
 	__asm        cmp    count, 0x400;
 	__asm        jge    near ptr 0x00567CD3;
@@ -890,6 +909,7 @@ void _cArray::CheckIntoTable() {
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     near ptr 0x00567CAB;
+
 	__asm        mov    eax, count;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        mov    eax, [ecx+eax*4];
@@ -897,6 +917,7 @@ void _cArray::CheckIntoTable() {
 	__asm        mov    ecx, [ecx+0x4C];
 	__asm        cmp    [eax+0x4C], ecx;
 	__asm        jne    near ptr 0x00567CAB;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFA80;
 	__asm        push   0x100;
@@ -906,6 +927,7 @@ void _cArray::CheckIntoTable() {
 // LINE 257:
 	__asm        cmp    foundcount, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00567CCE;
+
 	__asm        mov    eax, count;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
@@ -918,6 +940,7 @@ void _cArray::CheckIntoTable() {
 // LINE 261:
 	__asm        cmp    foundcount, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00567CF9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFAC0;
 	__asm        push   0x105;
@@ -951,6 +974,7 @@ void _cArray::FillHeader() {
 	__asm        mov    ecx, debugsize;
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jbe    near ptr 0x00567D5B;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFB14;
 	__asm        push   0x132;
@@ -959,6 +983,7 @@ void _cArray::FillHeader() {
 	__asm        add    esp, 0x10;
 // LINE 308:
 	__asm        jmp    near ptr 0x00567D7C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFB50;
 	__asm        push   0x134;
@@ -979,6 +1004,7 @@ void _cArray::FillHeader() {
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x1C];
 	__asm        je     near ptr 0x00567DC4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFB88;
 	__asm        push   0x135;
@@ -994,6 +1020,7 @@ void _cArray::FillHeader() {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00567DFA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFBC8;
 	__asm        push   0x136;
@@ -1056,6 +1083,7 @@ void _cArray::ClearBytes(char zeropad) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x00567E91;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    near ptr 0x00567E96;
@@ -1077,6 +1105,7 @@ void _cArray::ClearBytes(char zeropad) {
 	__asm        mov    ecx, debugsize;
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jbe    near ptr 0x00567EDC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFBFC;
 	__asm        push   0x150;
@@ -1102,6 +1131,7 @@ void _cArray::ClearBytes(char zeropad) {
 	__asm        mov    ecx, fillPtr;
 	__asm        cmp    [eax], ecx;
 	__asm        je     near ptr 0x00567F2A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFC24;
 	__asm        push   0x155;
@@ -1119,8 +1149,10 @@ void _cArray::ClearBytes(char zeropad) {
 // LINE 343:
 	__asm        cmp    numBytes, 0;
 	__asm        jle    near ptr 0x00567F58;
+
 	__asm        cmp    numBytes, 0x7A1200;
 	__asm        jl     near ptr 0x00567F74;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFC78;
 	__asm        push   0x157;
@@ -1130,6 +1162,7 @@ void _cArray::ClearBytes(char zeropad) {
 // LINE 344:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00567F83;
+
 	__asm        inc    cnt;
 	__asm        mov    eax, cnt;
 	__asm        cmp    numBytes, eax;
@@ -1141,6 +1174,7 @@ void _cArray::ClearBytes(char zeropad) {
 	__asm        mov    eax, begin;
 	__asm        cmp    writeplace, eax;
 	__asm        jb     near ptr 0x00567FAE;
+
 	__asm        mov    eax, writeplace;
 	__asm        inc    eax;
 	__asm        cmp    eax, end;
@@ -1195,10 +1229,12 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        inc    ecx;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x0056803C;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, oldysize;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x00568058;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFCF8;
 	__asm        push   0x16D;
@@ -1228,6 +1264,7 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        dec    eax;
 	__asm        mov    count, ax;
 	__asm        jmp    near ptr 0x00568092;
+
 	__asm        dec    count;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, beforewhich;
@@ -1235,6 +1272,7 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        jle    near ptr 0x00568118;
 // LINE 373:
 	__asm        jmp    near ptr 0x005680A7;
+
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1242,6 +1280,7 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        mov    movefrom, eax;
 // LINE 374:
 	__asm        jmp    near ptr 0x005680BD;
+
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1263,6 +1302,7 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00568113;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFD20;
 	__asm        push   0x17A;
@@ -1308,11 +1348,13 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        mov    ecx, oldxsize;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x0056817E;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, oldysize;
 	__asm        inc    ecx;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x0056819A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFD48;
 	__asm        push   0x188;
@@ -1335,6 +1377,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	short xcount;
 	__asm        mov    xcount, 0;
 	__asm        jmp    near ptr 0x005681C2;
+
 	__asm        inc    xcount;
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
@@ -1348,6 +1391,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        dec    eax;
 	__asm        mov    ycount, ax;
 	__asm        jmp    near ptr 0x005681E6;
+
 	__asm        dec    ycount;
 	__asm        movsx  eax, ycount;
 	__asm        movsx  ecx, beforewhich;
@@ -1357,6 +1401,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        movsx  eax, ycount;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0056821E;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFD70;
 	__asm        push   0x18F;
@@ -1365,6 +1410,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        add    esp, 0x10;
 // LINE 400:
 	__asm        jmp    near ptr 0x00568223;
+
 	__asm        movsx  eax, ycount;
 	__asm        dec    eax;
 	__asm        mov    ecx, this;
@@ -1376,6 +1422,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        mov    movefrom, eax;
 // LINE 401:
 	__asm        jmp    near ptr 0x00568244;
+
 	__asm        movsx  eax, xcount;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1426,6 +1473,7 @@ short _cArray::DeleteRow(short which) {
 // LINE 415:
 	__asm        cmp    oldxsize, 0;
 	__asm        jg     near ptr 0x005682D8;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFD98;
 	__asm        push   0x19F;
@@ -1437,9 +1485,11 @@ short _cArray::DeleteRow(short which) {
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    near ptr 0x005682F4;
+
 	__asm        movsx  eax, which;
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x00568310;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFDC8;
 	__asm        push   0x1A1;
@@ -1456,6 +1506,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        mov    ax, which;
 	__asm        mov    count, ax;
 	__asm        jmp    near ptr 0x0056832E;
+
 	__asm        inc    count;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1465,6 +1516,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        jle    near ptr 0x0056838F;
 // LINE 420:
 	__asm        jmp    near ptr 0x00568346;
+
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1472,6 +1524,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        mov    movefrom, eax;
 // LINE 421:
 	__asm        jmp    near ptr 0x0056835C;
+
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1506,6 +1559,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005683CF;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFDFC;
 	__asm        push   0x1AA;
@@ -1517,6 +1571,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        mov    ecx, oldysize;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x005683FA;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFE24;
 	__asm        push   0x1AB;
@@ -1529,6 +1584,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        dec    ecx;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        je     near ptr 0x00568426;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFE4C;
 	__asm        push   0x1AC;
@@ -1561,6 +1617,7 @@ short _cArray::DeleteColumn(short which) {
 // LINE 438:
 	__asm        cmp    oldysize, 0;
 	__asm        jg     near ptr 0x0056847D;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFE74;
 	__asm        push   0x1B6;
@@ -1571,10 +1628,12 @@ short _cArray::DeleteColumn(short which) {
 	__asm        movsx  eax, which;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00568499;
+
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jg     near ptr 0x005684B5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFEA4;
 	__asm        push   0x1B8;
@@ -1584,6 +1643,7 @@ short _cArray::DeleteColumn(short which) {
 // LINE 441:
 	__asm        mov    xcount, 0;
 	__asm        jmp    near ptr 0x005684C4;
+
 	__asm        inc    xcount;
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
@@ -1595,6 +1655,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        mov    ax, which;
 	__asm        mov    ycount, ax;
 	__asm        jmp    near ptr 0x005684E5;
+
 	__asm        inc    ycount;
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, ycount;
@@ -1608,6 +1669,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        jge    near ptr 0x00568562;
 // LINE 444:
 	__asm        jmp    near ptr 0x0056850B;
+
 	__asm        movsx  eax, xcount;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1620,6 +1682,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        mov    thisone, eax;
 // LINE 445:
 	__asm        jmp    near ptr 0x0056852F;
+
 	__asm        movsx  eax, ycount;
 	__asm        inc    eax;
 	__asm        mov    ecx, this;
@@ -1653,6 +1716,7 @@ short _cArray::DeleteColumn(short which) {
 	unsigned char * lastPart;
 	unsigned char * nextToLast;
 	__asm        jmp    near ptr 0x0056857F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        dec    eax;
@@ -1665,6 +1729,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        mov    lastPart, eax;
 // LINE 452:
 	__asm        jmp    near ptr 0x005685A2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        sub    eax, 2;
@@ -1688,6 +1753,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00568600;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFEDC;
 	__asm        push   0x1C5;
@@ -1712,6 +1778,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00568645;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFF04;
 	__asm        push   0x1C9;
@@ -1724,6 +1791,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        dec    ecx;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x00568671;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFF2C;
 	__asm        push   0x1CA;
@@ -1735,6 +1803,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        mov    ecx, oldxsize;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        je     near ptr 0x0056869C;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFF54;
 	__asm        push   0x1CB;
@@ -1757,6 +1826,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	unsigned char * dest;
 
 	// Function registers exception cleanup function at 0x0056885e
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x74], eax;
@@ -1769,6 +1839,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 // LINE 468:
 	__asm        mov    temp.<vftable>, 0x593738;
 	__asm        jmp    near ptr 0x005686FC;
+
 	__asm        call   _cArray::MakeTable;
 	__asm        push   0;
 	__asm        push   0;
@@ -1782,6 +1853,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	__asm        lea    ecx, temp.<vftable>;
 	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x0056871B;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 469:
 	__asm        lea    eax, temp.<vftable>;
@@ -1802,6 +1874,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     near ptr 0x0056876F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFF7C;
 	__asm        push   0x1D8;
@@ -1816,6 +1889,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 // LINE 477:
 	__asm        mov    xcnt, 0;
 	__asm        jmp    near ptr 0x0056878A;
+
 	__asm        inc    xcnt;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcnt;
@@ -1828,6 +1902,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 // LINE 479:
 	__asm        mov    ycnt, 0;
 	__asm        jmp    near ptr 0x005687B4;
+
 	__asm        inc    ycnt;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycnt;
@@ -1892,6 +1967,7 @@ _L27257:
 _L27256:
 	__asm        mov    eax, 0x5961E0;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -1903,19 +1979,23 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        mov    ecx, newySize;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    near ptr 0x005688AC;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, newxSize;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x005688AC;
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x005689C5;
 // LINE 496:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0xFFFFFFFF;
 	__asm        je     near ptr 0x005688E2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0xFFFFFFFF;
 	__asm        je     near ptr 0x005688E2;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x005688E2;
@@ -1934,6 +2014,7 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        mov    [ecx+0x14], eax;
 // LINE 503:
 	__asm        jmp    near ptr 0x00568915;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BFFD4;
 	__asm        push   0x1F7;
@@ -1957,6 +2038,7 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0x7A1200;
 	__asm        jb     near ptr 0x00568967;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C000C;
 	__asm        push   0x1F9;
@@ -1976,6 +2058,7 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    near ptr 0x005689A7;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0044;
 	__asm        push   0x1FB;
@@ -2010,6 +2093,7 @@ void _cArray::SetXPointers() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    near ptr 0x005689F9;
+
 	__asm        jmp    near ptr 0x00568A63;
 // LINE 521:
 	__asm        mov    eax, this;
@@ -2023,6 +2107,7 @@ void _cArray::SetXPointers() {
 // LINE 523:
 	__asm        mov    count, 1;
 	__asm        jmp    near ptr 0x00568A1F;
+
 	__asm        inc    count;
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, count;
@@ -2089,6 +2174,7 @@ void _cArray::CopyFrom(class _cArray* src) {
 // LINE 549:
 	__asm        cmp    src, 0;
 	__asm        jne    near ptr 0x00568AFC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0074;
 	__asm        push   0x225;
@@ -2101,6 +2187,7 @@ void _cArray::CopyFrom(class _cArray* src) {
 	__asm        mov    ecx, [ecx+0x18];
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     near ptr 0x00568B2A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C00B8;
 	__asm        push   0x226;
@@ -2113,11 +2200,13 @@ void _cArray::CopyFrom(class _cArray* src) {
 	__asm        mov    ecx, [ecx+0x14];
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x00568B4E;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, src;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x00568B6A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0100;
 	__asm        push   0x227;
@@ -2135,8 +2224,10 @@ void _cArray::CopyFrom(class _cArray* src) {
 // LINE 554:
 	__asm        cmp    howmuch, 0;
 	__asm        jl     near ptr 0x00568B98;
+
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     near ptr 0x00568BB4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0144;
 	__asm        push   0x22A;
@@ -2170,6 +2261,7 @@ void _cArray::CopyTo(class _cArray* dest) {
 // LINE 569:
 	__asm        cmp    dest, 0;
 	__asm        jne    near ptr 0x00568C1A;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0180;
 	__asm        push   0x239;
@@ -2182,6 +2274,7 @@ void _cArray::CopyTo(class _cArray* dest) {
 	__asm        mov    ecx, [ecx+0x18];
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     near ptr 0x00568C48;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C01C4;
 	__asm        push   0x23A;
@@ -2194,11 +2287,13 @@ void _cArray::CopyTo(class _cArray* dest) {
 	__asm        mov    ecx, [ecx+0x14];
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    near ptr 0x00568C6C;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dest;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     near ptr 0x00568C88;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C020C;
 	__asm        push   0x23B;
@@ -2216,8 +2311,10 @@ void _cArray::CopyTo(class _cArray* dest) {
 // LINE 574:
 	__asm        cmp    howmuch, 0;
 	__asm        jl     near ptr 0x00568CB6;
+
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     near ptr 0x00568CD2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C024C;
 	__asm        push   0x23E;
@@ -2311,6 +2408,7 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 // LINE 613:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00568DCE;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
@@ -2320,11 +2418,13 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     near ptr 0x00568E24;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    near ptr 0x00568E24;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0298;
 	__asm        push   0x266;
@@ -2335,10 +2435,12 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	__asm        movsx  eax, numChars;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00568E75;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     near ptr 0x00568E75;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        mov    eax, [ecx+eax*4];
@@ -2352,9 +2454,11 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	__asm        jmp    near ptr 0x00568F20;
 // LINE 618:
 	__asm        jmp    near ptr 0x00568F14;
+
 	__asm        movsx  eax, numChars;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x00568F14;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ds:[0x5BF74C];
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
@@ -2371,9 +2475,11 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 	__asm        movsx  eax, shiftnum;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00568EC1;
+
 	__asm        movsx  eax, shiftnum;
 	__asm        cmp    eax, 0x20;
 	__asm        jb     near ptr 0x00568EDD;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C02D0;
 	__asm        push   0x26C;
@@ -2419,6 +2525,7 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 // LINE 633:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00568F48;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
@@ -2465,6 +2572,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 649:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00568FCB;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
@@ -2505,6 +2613,7 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 // LINE 662:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00569033;
+
 	__asm        inc    count;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
@@ -2553,6 +2662,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 // LINE 706:
 	__asm        cmp    pFile, 0;
 	__asm        jne    near ptr 0x005690D9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0318;
 	__asm        push   0x2C2;
@@ -2569,6 +2679,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        movsx  eax, foundcount;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00569112;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0358;
 	__asm        push   0x2C9;
@@ -2602,6 +2713,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 // LINE 722:
 	__asm        mov    count, 1;
 	__asm        jmp    near ptr 0x00569163;
+
 	__asm        inc    count;
 	__asm        movsx  eax, numArrays;
 	__asm        movsx  ecx, count;
@@ -2623,6 +2735,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 // LINE 725:
 	__asm        cmp    hArray, 0;
 	__asm        jne    near ptr 0x005691AE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0398;
 	__asm        push   0x2D5;
@@ -2652,6 +2765,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        movsx  ecx, diskEntrySize;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00569205;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C03E8;
 	__asm        push   0x2DB;
@@ -2671,6 +2785,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x00569266;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax], 0x593738;
 	__asm        call   _cArray::MakeTable;
@@ -2685,9 +2800,11 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   _cArray::FromDiskCreate;
 	__asm        jmp    near ptr 0x0056925B;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0056926D;
+
 	__asm        mov    dword ptr [ebp-0x40], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x40];
@@ -2697,6 +2814,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        mov    ecx, rType;
 	__asm        cmp    [eax+0x28], ecx;
 	__asm        je     near ptr 0x005692A5;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C0440;
 	__asm        push   0x2E1;
@@ -2710,6 +2828,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	__asm        mov    ecx, tmp;
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     near ptr 0x005692D6;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C046C;
 	__asm        push   0x2E2;
@@ -2738,6 +2857,7 @@ _L27272:
 _L27271:
 	__asm        mov    eax, 0x596208;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2758,6 +2878,7 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 // LINE 781:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x00569347;
+
 	__asm        inc    cnt;
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x40;
@@ -2767,6 +2888,7 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 	__asm        mov    ecx, ft.file;
 	__asm        cmp    [eax*8+0x638998], ecx;
 	__asm        jne    near ptr 0x005693C1;
+
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ft.type;
 	__asm        cmp    [eax*8+0x63899C], ecx;
@@ -2774,12 +2896,14 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 // LINE 784:
 	__asm        cmp    ft.file, 0;
 	__asm        je     near ptr 0x005693B9;
+
 	__asm        cmp    ft.type, 0;
 	__asm        je     near ptr 0x005693B9;
 // LINE 785:
 	__asm        movsx  eax, foundcount;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     near ptr 0x005693B9;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5C04C4;
 	__asm        push   0x311;

@@ -496,6 +496,7 @@ struct SparkalPoint{
 // Contribution: 1:00099f80-0009d28b Module: 13, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049af80
 void UserMenuWindow::UserMenuWindow() {
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        push   0x10;
@@ -504,6 +505,7 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0049AFE7;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x30];
@@ -515,24 +517,36 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049AFD9;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    near ptr 0x0049AFF1;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        jmp    near ptr 0x0049B000;
+
 	__asm        jmp    near ptr 0x0049B005;
+
 	__asm        jmp    near ptr 0x0049B00A;
+
 	__asm        jmp    near ptr 0x0049B00F;
+
 	__asm        jmp    near ptr 0x0049B014;
+
 	__asm        jmp    near ptr 0x0049B019;
+
 	__asm        jmp    near ptr 0x0049B01E;
+
 	__asm        jmp    near ptr 0x0049B023;
+
 	__asm        jmp    near ptr 0x0049B028;
+
 	__asm        jmp    near ptr 0x0049B02D;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC8], 0;
 	__asm        mov    eax, this;
@@ -540,6 +554,7 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 0;
 	__asm        jmp    near ptr 0x0049B059;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD4], 0;
 	__asm        push   0x10;
@@ -548,12 +563,14 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x0049B10F;
+
 	__asm        push   0;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049B092;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x24];
@@ -561,6 +578,7 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049B0EC;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -582,18 +600,23 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049B0E7;
+
 	__asm        jmp    near ptr 0x0049B0F5;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049B104;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0049B116;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0049B122;
+
 	__asm        push   2;
 	__asm        lea    eax, [ebp-8];
 	__asm        push   eax;
@@ -605,15 +628,18 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049B1B9;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0049B1B9;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049B199;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -628,16 +654,22 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049B19E;
+
 	__asm        jmp    near ptr 0x0049B1A3;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B1B4;
+
 	__asm        jmp    near ptr 0x0049B1B9;
+
 	__asm        jmp    near ptr 0x0049B1BE;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0049B1E0;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
@@ -647,15 +679,18 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B1E5;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912F8;
 // LINE 40:
 	__asm        jmp    near ptr 0x0049B1F3;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049b1fb
 void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        add    eax, 0xC;
 	__asm        lea    ecx, [ebp-0x10];
@@ -672,6 +707,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0049B252;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
@@ -682,6 +718,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B257;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -692,24 +729,32 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    ecx, newUserMenuWindowDescription;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049B274;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049B2EC;
+
 	__asm        jmp    near ptr 0x0049B289;
+
 	__asm        jmp    near ptr 0x0049B28E;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049B2B3;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0049B2BF;
+
 	__asm        jmp    near ptr 0x0049B2BF;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0049B2BF;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -726,12 +771,16 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049B2EC;
+
 	__asm        jmp    near ptr 0x0049B2F1;
+
 	__asm        mov    byte ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0049B2FA;
+
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0049B305;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -743,7 +792,9 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0049B325;
+
 	__asm        jmp    near ptr 0x0049B32A;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -763,10 +814,12 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    near ptr 0x0049B358;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jae    near ptr 0x0049B39A;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -776,33 +829,43 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B38B;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B39A;
+
 	__asm        jmp    near ptr 0x0049B39F;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
 	__asm        jae    near ptr 0x0049B3C5;
+
 	__asm        jmp    near ptr 0x0049B3B4;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0049B3CC;
+
 	__asm        mov    dword ptr [ebp-0x38], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0049B3D1;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x0049B412;
+
 	__asm        jmp    near ptr 0x0049B3E8;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0049B412;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, this;
@@ -811,12 +874,14 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    eax, [eax+0x78];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0049B4F4;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x0049B4EA;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx+4], eax;
@@ -827,6 +892,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049B4C4;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -835,18 +901,23 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049B464;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049B489;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x0049B495;
+
 	__asm        jmp    near ptr 0x0049B495;
+
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x0049B495;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x48], eax;
@@ -862,21 +933,26 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049B4BF;
+
 	__asm        jmp    near ptr 0x0049B4CD;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049B4DC;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    near ptr 0x0049B4F4;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        jmp    near ptr 0x0049B503;
+
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -950,6 +1026,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC4], eax;
 	__asm        jmp    near ptr 0x0049B601;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC8], 0;
 	__asm        mov    eax, this;
@@ -957,6 +1034,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD0], 0;
 	__asm        jmp    near ptr 0x0049B62D;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD4], 0;
 	__asm        mov    ecx, this;
@@ -976,6 +1054,7 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 	__asm        add    esp, 4;
 // LINE 58:
 	__asm        jmp    near ptr 0x0049B66E;
+
 	__asm        mov    eax, this;
 }
 
@@ -984,12 +1063,16 @@ void UserMenuWindow::~UserMenuWindow() {
 	int32_t i;
 	int32_t iEnd;
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912F8;
 // LINE 68:
 	__asm        jmp    near ptr 0x0049B692;
+
 	__asm        jmp    near ptr 0x0049B697;
+
 	__asm        jmp    near ptr 0x0049B69C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -999,13 +1082,16 @@ void UserMenuWindow::~UserMenuWindow() {
 // LINE 70:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049B6C3;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    near ptr 0x0049B715;
 // LINE 71:
 	__asm        jmp    near ptr 0x0049B6D4;
+
 	__asm        jmp    near ptr 0x0049B6D9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1015,18 +1101,21 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0049B710;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax+0xAC];
 	__asm        jmp    near ptr 0x0049B710;
+
 	__asm        jmp    near ptr 0x0049B6C0;
 // LINE 73:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 74:
 	__asm        jmp    near ptr 0x0049B722;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xD8;
 	__asm        call   DigitalSound::~DigitalSound;
@@ -1037,10 +1126,14 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        je     near ptr 0x0049B75C;
+
 	__asm        jmp    near ptr 0x0049B753;
+
 	__asm        add    dword ptr [ebp-0x30], 4;
 	__asm        jmp    near ptr 0x0049B73C;
+
 	__asm        jmp    near ptr 0x0049B761;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x2C], eax;
@@ -1049,9 +1142,13 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B77E;
+
 	__asm        jmp    near ptr 0x0049B783;
+
 	__asm        jmp    near ptr 0x0049B788;
+
 	__asm        jmp    near ptr 0x0049B78D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1059,6 +1156,7 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    eax, [eax+0x78];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049B819;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    [ebp-0x20], eax;
@@ -1066,9 +1164,11 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0049B819;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049B7F9;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x24], eax;
@@ -1083,17 +1183,23 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049B7FE;
+
 	__asm        jmp    near ptr 0x0049B803;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B814;
+
 	__asm        jmp    near ptr 0x0049B819;
+
 	__asm        jmp    near ptr 0x0049B81E;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     near ptr 0x0049B846;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x14], eax;
@@ -1104,6 +1210,7 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049B84B;
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -1117,6 +1224,7 @@ int32_t UserMenuWindow::Initialize() {
 
 // LINE 89:
 	__asm        jmp    near ptr 0x0049B86F;
+
 	__asm        jmp    near ptr 0x0049B874;
 // LINE 93:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1134,6 +1242,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    [ebp-0x148], eax;
 	__asm        cmp    dword ptr [ebp-0x148], 0;
 	__asm        je     near ptr 0x0049B976;
+
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -1141,6 +1250,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ebp-0x148];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049B8C7;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x148];
@@ -1148,6 +1258,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x148];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049B947;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1170,18 +1281,23 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049B942;
+
 	__asm        jmp    near ptr 0x0049B953;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049B965;
+
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    near ptr 0x0049B980;
+
 	__asm        mov    dword ptr [ebp-0x120], 0;
 	__asm        mov    dword ptr [ebp-0x124], 0;
 	__asm        jmp    near ptr 0x0049B98F;
+
 	__asm        push   2;
 	__asm        lea    eax, [ebp-0x124];
 	__asm        push   eax;
@@ -1195,15 +1311,18 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x120];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049BA66;
+
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    [ebp-0x138], eax;
 	__asm        cmp    dword ptr [ebp-0x138], 0;
 	__asm        je     near ptr 0x0049BA66;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049BA43;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x140], eax;
@@ -1218,16 +1337,22 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049BA48;
+
 	__asm        jmp    near ptr 0x0049BA4D;
+
 	__asm        mov    eax, [ebp-0x138];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049BA61;
+
 	__asm        jmp    near ptr 0x0049BA66;
+
 	__asm        jmp    near ptr 0x0049BA6B;
+
 	__asm        cmp    dword ptr [ebp-0x124], 0;
 	__asm        je     near ptr 0x0049BA9F;
+
 	__asm        mov    eax, [ebp-0x124];
 	__asm        mov    [ebp-0x130], eax;
 	__asm        mov    eax, [ebp-0x130];
@@ -1255,6 +1380,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    rectTextWindow.left, 0;
 // LINE 101:
 	__asm        jmp    near ptr 0x0049BAF4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -1277,6 +1403,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    rectTextWindow.left, eax;
 // LINE 107:
 	__asm        jmp    near ptr 0x0049BB52;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -1298,6 +1425,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    [ebp-0x128], eax;
 	__asm        cmp    dword ptr [ebp-0x128], 0;
 	__asm        je     near ptr 0x0049BBF0;
+
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1313,6 +1441,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        call   TextWindow::TextWindow;
 	__asm        mov    tempTextWindow, eax;
 	__asm        jmp    near ptr 0x0049BBFA;
+
 	__asm        mov    tempTextWindow, 0;
 // LINE 113:
 	__asm        mov    eax, tempTextWindow;
@@ -1346,6 +1475,7 @@ int32_t UserMenuWindow::Initialize() {
 // LINE 121:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049BC81;
+
 	__asm        inc    i;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1357,6 +1487,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    rectTextWindow.left, eax;
 // LINE 126:
 	__asm        jmp    near ptr 0x0049BCB0;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -1372,6 +1503,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    rectTextWindow.top, eax;
 // LINE 129:
 	__asm        jmp    near ptr 0x0049BCF8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -1385,6 +1517,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        cmp    dword ptr [ebp-0x12C], 0;
 	__asm        je     near ptr 0x0049BD7D;
+
 	__asm        push   0;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1402,6 +1535,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        call   TextWindow::TextWindow;
 	__asm        mov    tempTextWindow, eax;
 	__asm        jmp    near ptr 0x0049BD87;
+
 	__asm        mov    tempTextWindow, 0;
 // LINE 139:
 	__asm        mov    eax, tempTextWindow;
@@ -1452,23 +1586,30 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ecx+0xD0];
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        je     near ptr 0x0049BEA6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    [ebp-0x158], eax;
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    [ebp-0x154], eax;
 	__asm        jmp    near ptr 0x0049BE6F;
+
 	__asm        cmp    dword ptr [ebp-0x154], 0;
 	__asm        je     near ptr 0x0049BE8F;
+
 	__asm        mov    eax, tempTextWindow;
 	__asm        mov    ecx, [ebp-0x154];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049BE8F;
+
 	__asm        jmp    near ptr 0x0049BE94;
+
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xCC], 4;
 	__asm        jmp    near ptr 0x0049C376;
+
 	__asm        jmp    near ptr 0x0049BEAB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    [ebp-0x1C8], eax;
@@ -1477,6 +1618,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ecx+0xD0];
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        je     near ptr 0x0049BFBB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        sub    eax, 4;
@@ -1487,14 +1629,18 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x190];
 	__asm        mov    [ebp-0x188], eax;
 	__asm        jmp    near ptr 0x0049BF13;
+
 	__asm        cmp    dword ptr [ebp-0x188], 0;
 	__asm        je     near ptr 0x0049BF35;
+
 	__asm        mov    eax, [ebp-0x18C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x188];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049BF35;
+
 	__asm        jmp    near ptr 0x0049BF3A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    [ebp-0x180], eax;
@@ -1505,6 +1651,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x184];
 	__asm        cmp    [ebp-0x1C8], eax;
 	__asm        je     near ptr 0x0049BF96;
+
 	__asm        sub    dword ptr [ebp-0x180], 4;
 	__asm        sub    dword ptr [ebp-0x184], 4;
 	__asm        mov    eax, [ebp-0x184];
@@ -1512,16 +1659,22 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ebp-0x180];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049BF61;
+
 	__asm        jmp    near ptr 0x0049BF9B;
+
 	__asm        mov    eax, tempTextWindow;
 	__asm        mov    ecx, [ebp-0x1C8];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0xCC], 4;
 	__asm        jmp    near ptr 0x0049C371;
+
 	__asm        jmp    near ptr 0x0049BFC0;
+
 	__asm        jmp    near ptr 0x0049BFC5;
+
 	__asm        jmp    near ptr 0x0049BFCA;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -1529,9 +1682,13 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        sar    eax, 2;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0049C024;
+
 	__asm        jmp    near ptr 0x0049BFF2;
+
 	__asm        jmp    near ptr 0x0049BFF7;
+
 	__asm        jmp    near ptr 0x0049BFFC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -1540,6 +1697,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x160], eax;
 	__asm        jmp    near ptr 0x0049C09B;
+
 	__asm        mov    dword ptr [ebp-0x16C], 0x400;
 	__asm        lea    eax, [ebp-0x16C];
 	__asm        mov    [ebp-0x174], eax;
@@ -1551,17 +1709,22 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0049C077;
+
 	__asm        mov    eax, [ebp-0x178];
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    near ptr 0x0049C083;
+
 	__asm        mov    eax, [ebp-0x174];
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    near ptr 0x0049C088;
+
 	__asm        mov    eax, [ebp-0x17C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x160], eax;
 	__asm        jmp    near ptr 0x0049C09B;
+
 	__asm        jmp    near ptr 0x0049C0A0;
+
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x160];
 	__asm        push   eax;
@@ -1569,6 +1732,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        jmp    near ptr 0x0049C0BC;
+
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        mov    [ebp-0x1A8], eax;
 	__asm        mov    eax, this;
@@ -1577,6 +1741,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        cmp    [ebp-0x1C8], eax;
 	__asm        je     near ptr 0x0049C14F;
+
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        mov    [ebp-0x19C], eax;
 	__asm        add    dword ptr [ebp-0x1AC], 4;
@@ -1586,17 +1751,24 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x1A0];
 	__asm        mov    [ebp-0x1A4], eax;
 	__asm        jmp    near ptr 0x0049C123;
+
 	__asm        cmp    dword ptr [ebp-0x1A4], 0;
 	__asm        je     near ptr 0x0049C145;
+
 	__asm        mov    eax, [ebp-0x19C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x1A4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049C145;
+
 	__asm        jmp    near ptr 0x0049C14A;
+
 	__asm        jmp    near ptr 0x0049C0DA;
+
 	__asm        jmp    near ptr 0x0049C154;
+
 	__asm        jmp    near ptr 0x0049C159;
+
 	__asm        mov    eax, [ebp-0x1C8];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC8];
@@ -1610,15 +1782,21 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x198];
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    near ptr 0x0049C194;
+
 	__asm        cmp    dword ptr [ebp-0x194], 0;
 	__asm        je     near ptr 0x0049C1B4;
+
 	__asm        mov    eax, tempTextWindow;
 	__asm        mov    ecx, [ebp-0x194];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049C1B4;
+
 	__asm        jmp    near ptr 0x0049C1B9;
+
 	__asm        jmp    near ptr 0x0049C1BE;
+
 	__asm        jmp    near ptr 0x0049C1C3;
+
 	__asm        mov    eax, [ebp-0x1C8];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC8];
@@ -1638,6 +1816,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x1C0];
 	__asm        cmp    [ebp-0x1C4], eax;
 	__asm        je     near ptr 0x0049C283;
+
 	__asm        mov    eax, [ebp-0x1C4];
 	__asm        mov    [ebp-0x1B0], eax;
 	__asm        add    dword ptr [ebp-0x1C4], 4;
@@ -1647,18 +1826,26 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x1B4];
 	__asm        mov    [ebp-0x1B8], eax;
 	__asm        jmp    near ptr 0x0049C257;
+
 	__asm        cmp    dword ptr [ebp-0x1B8], 0;
 	__asm        je     near ptr 0x0049C279;
+
 	__asm        mov    eax, [ebp-0x1B0];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x1B8];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049C279;
+
 	__asm        jmp    near ptr 0x0049C27E;
+
 	__asm        jmp    near ptr 0x0049C20E;
+
 	__asm        jmp    near ptr 0x0049C288;
+
 	__asm        jmp    near ptr 0x0049C28D;
+
 	__asm        jmp    near ptr 0x0049C292;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x168], eax;
@@ -1666,11 +1853,16 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, [ebp-0x168];
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        je     near ptr 0x0049C2CD;
+
 	__asm        jmp    near ptr 0x0049C2C1;
+
 	__asm        add    dword ptr [ebp-0x168], 4;
 	__asm        jmp    near ptr 0x0049C2A4;
+
 	__asm        jmp    near ptr 0x0049C2D2;
+
 	__asm        jmp    near ptr 0x0049C2D7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x164], eax;
@@ -1679,15 +1871,20 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049C2FD;
+
 	__asm        jmp    near ptr 0x0049C302;
+
 	__asm        mov    eax, [ebp-0x160];
 	__asm        shl    eax, 2;
 	__asm        add    eax, [ebp-0x15C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], eax;
 	__asm        jmp    near ptr 0x0049C322;
+
 	__asm        jmp    near ptr 0x0049C327;
+
 	__asm        jmp    near ptr 0x0049C32C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -1702,6 +1899,7 @@ int32_t UserMenuWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC8], eax;
 	__asm        jmp    near ptr 0x0049C376;
+
 	__asm        jmp    near ptr 0x0049C37B;
 // LINE 147:
 	__asm        jmp    near ptr 0x0049BC7B;
@@ -1726,8 +1924,11 @@ int32_t UserMenuWindow::DrawSelf() {
 
 // LINE 160:
 	__asm        jmp    near ptr 0x0049C3BE;
+
 	__asm        jmp    near ptr 0x0049C3C3;
+
 	__asm        jmp    near ptr 0x0049C3C8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -1737,13 +1938,16 @@ int32_t UserMenuWindow::DrawSelf() {
 // LINE 171:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049C3EF;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    near ptr 0x0049C42D;
 // LINE 172:
 	__asm        jmp    near ptr 0x0049C400;
+
 	__asm        jmp    near ptr 0x0049C405;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1767,6 +1971,7 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 // LINE 182:
 	__asm        cmp    nIndex, 0;
 	__asm        jl     near ptr 0x0049C47C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1774,6 +1979,7 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	__asm        dec    eax;
 	__asm        cmp    eax, nIndex;
 	__asm        jl     near ptr 0x0049C47C;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nIndex;
 	__asm        cmp    [eax+0xD4], ecx;
@@ -1783,7 +1989,9 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	__asm        jmp    near ptr 0x0049C554;
 // LINE 185:
 	__asm        jmp    near ptr 0x0049C488;
+
 	__asm        jmp    near ptr 0x0049C48D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD4];
 	__asm        mov    ecx, this;
@@ -1801,7 +2009,9 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	__asm        call   dword ptr [eax+0xD4];
 // LINE 186:
 	__asm        jmp    near ptr 0x0049C4C7;
+
 	__asm        jmp    near ptr 0x0049C4CC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, nIndex;
@@ -1887,19 +2097,24 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        call   dword ptr [eax+0xD4];
 	__asm        mov    iEnd, eax;
 	__asm        jmp    near ptr 0x0049C5D7;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    near ptr 0x0049C69F;
 // LINE 236:
 	__asm        jmp    near ptr 0x0049C5E8;
+
 	__asm        jmp    near ptr 0x0049C5ED;
+
 	__asm        jmp    near ptr 0x0049C5F2;
+
 	__asm        mov    eax, nCursorX;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, nCursorY;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0049C603;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1907,6 +2122,7 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jg     near ptr 0x0049C674;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1914,6 +2130,7 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jg     near ptr 0x0049C674;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1921,6 +2138,7 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        jle    near ptr 0x0049C674;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -1928,9 +2146,13 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jle    near ptr 0x0049C674;
+
 	__asm        jmp    near ptr 0x0049C679;
+
 	__asm        jmp    near ptr 0x0049C69A;
+
 	__asm        jmp    near ptr 0x0049C688;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0049C69A;
 // LINE 237:
@@ -1978,8 +2200,11 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    i, 0;
 // LINE 265:
 	__asm        jmp    near ptr 0x0049C70C;
+
 	__asm        jmp    near ptr 0x0049C711;
+
 	__asm        jmp    near ptr 0x0049C716;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;
@@ -1992,7 +2217,9 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        jle    near ptr 0x0049C999;
 // LINE 268:
 	__asm        jmp    near ptr 0x0049C73F;
+
 	__asm        jmp    near ptr 0x0049C744;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    ecx, i;
@@ -2000,10 +2227,12 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0049C75E;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        ja     near ptr 0x0049C7A0;
+
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -2013,36 +2242,48 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049C791;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049C7A0;
+
 	__asm        jmp    near ptr 0x0049C7A5;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x0049C957;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x0049C8B6;
+
 	__asm        jmp    near ptr 0x0049C7D1;
+
 	__asm        jmp    near ptr 0x0049C7D6;
+
 	__asm        jmp    near ptr 0x0049C7DB;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049C800;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0049C80C;
+
 	__asm        jmp    near ptr 0x0049C80C;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x0049C80C;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2060,6 +2301,7 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049C893;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2070,6 +2312,7 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049C88E;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x2C], eax;
@@ -2085,15 +2328,19 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049C88E;
+
 	__asm        jmp    near ptr 0x0049C89C;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049C8AB;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0049C8BD;
+
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
@@ -2102,6 +2349,7 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049C949;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
@@ -2109,9 +2357,11 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0049C949;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049C929;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x24], eax;
@@ -2126,19 +2376,26 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049C92E;
+
 	__asm        jmp    near ptr 0x0049C933;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049C944;
+
 	__asm        jmp    near ptr 0x0049C949;
+
 	__asm        jmp    near ptr 0x0049C94E;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049C95C;
+
 	__asm        jmp    near ptr 0x0049C961;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -2170,6 +2427,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 282:
 	__asm        cmp    lKey, 0x28;
 	__asm        je     near ptr 0x0049C9C7;
+
 	__asm        cmp    lKey, 0x22;
 	__asm        jne    near ptr 0x0049CA22;
 // LINE 283:
@@ -2203,10 +2461,13 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 289:
 	__asm        jmp    near ptr 0x0049CB7F;
+
 	__asm        cmp    lKey, 0x26;
 	__asm        je     near ptr 0x0049CA46;
+
 	__asm        cmp    lKey, 0x21;
 	__asm        jne    near ptr 0x0049CAA1;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xD4], 0;
 	__asm        jle    near ptr 0x0049CAA1;
@@ -2241,6 +2502,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 296:
 	__asm        jmp    near ptr 0x0049CB7F;
+
 	__asm        cmp    lKey, 0x24;
 	__asm        jne    near ptr 0x0049CACA;
 // LINE 297:
@@ -2254,6 +2516,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 300:
 	__asm        jmp    near ptr 0x0049CB7F;
+
 	__asm        cmp    lKey, 0x23;
 	__asm        jne    near ptr 0x0049CB01;
 // LINE 301:
@@ -2272,6 +2535,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 304:
 	__asm        jmp    near ptr 0x0049CB7F;
+
 	__asm        cmp    lKey, 0xD;
 	__asm        jne    near ptr 0x0049CB32;
 // LINE 305:
@@ -2287,6 +2551,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        jmp    near ptr 0x0049CB86;
 // LINE 308:
 	__asm        jmp    near ptr 0x0049CB7F;
+
 	__asm        cmp    lKey, 0x1B;
 	__asm        jne    near ptr 0x0049CB7F;
 // LINE 309:
@@ -2434,6 +2699,7 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0049ccbb
 void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -2454,11 +2720,13 @@ void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    dword ptr [eax], 0x5913E0;
 // LINE 394:
 	__asm        jmp    near ptr 0x0049CD0B;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049cd15
 void CopterMainMenu::~CopterMainMenu() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5913E0;
 // LINE 401:
@@ -2480,6 +2748,7 @@ void CopterMainMenu::~CopterMainMenu() {
 	__asm        call   CopterMainMenu::DestroyImage;
 // LINE 404:
 	__asm        jmp    near ptr 0x0049CD65;
+
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
 }
@@ -2493,12 +2762,15 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049CDF0;
+
 	__asm        jmp    near ptr 0x0049CD9A;
+
 	__asm        mov    dword ptr [ebp-0x14], 0x121;
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        mov    dword ptr [ebp-0xC], 0x122;
 	__asm        mov    dword ptr [ebp-8], 1;
 	__asm        jmp    near ptr 0x0049CDBB;
+
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
@@ -2517,6 +2789,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    near ptr 0x0049CDFD;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x152], 0;
 // LINE 415:
@@ -2526,12 +2799,15 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0049CE6F;
+
 	__asm        jmp    near ptr 0x0049CE19;
+
 	__asm        mov    dword ptr [ebp-0x28], 0x1AB;
 	__asm        mov    dword ptr [ebp-0x24], 0x13B;
 	__asm        mov    dword ptr [ebp-0x20], 0x1AC;
 	__asm        mov    dword ptr [ebp-0x1C], 0x13C;
 	__asm        jmp    near ptr 0x0049CE3A;
+
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
@@ -2550,6 +2826,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    near ptr 0x0049CE7C;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x156], 0;
 // LINE 416:
@@ -2577,6 +2854,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0049CEFD;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x28];
@@ -2588,9 +2866,11 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049CEF2;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    near ptr 0x0049CF04;
+
 	__asm        mov    sImageFile.reference, 0;
 	__asm        mov    sImageFile.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049CF10;
@@ -2601,6 +2881,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0049CF60;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x2C];
@@ -2612,9 +2893,11 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049CF55;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    near ptr 0x0049CF67;
+
 	__asm        mov    sImagePath.reference, 0;
 	__asm        mov    sImagePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049CF73;
@@ -2626,10 +2909,12 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15A], 0;
 	__asm        jne    near ptr 0x0049D102;
+
 	__asm        mov    eax, ds:[0x59A2E0];
 	__asm        mov    [ebp-0x20], eax;
 // LINE 431:
 	__asm        jmp    near ptr 0x0049CFA0;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2657,8 +2942,10 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0049D0F2;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049D015;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -2668,6 +2955,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D01A;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -2676,21 +2964,29 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        add    esp, 4;
 	__asm        mov    sImagePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0049D032;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049D09C;
+
 	__asm        jmp    near ptr 0x0049D044;
+
 	__asm        jmp    near ptr 0x0049D049;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049D068;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x0049D074;
+
 	__asm        jmp    near ptr 0x0049D074;
+
 	__asm        mov    dword ptr [ebp-0x74], 0;
 	__asm        jmp    near ptr 0x0049D074;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x78], eax;
@@ -2705,12 +3001,16 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049D09C;
+
 	__asm        jmp    near ptr 0x0049D0A1;
+
 	__asm        mov    byte ptr [ebp-0x64], 0;
 	__asm        jmp    near ptr 0x0049D0AA;
+
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x0049D0B5;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sImagePath.c_str_ptr;
@@ -2720,7 +3020,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0049D0D0;
+
 	__asm        jmp    near ptr 0x0049D0D5;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x14];
@@ -2728,16 +3030,19 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x15A], eax;
 	__asm        jmp    near ptr 0x0049D102;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x15A], 0;
 // LINE 435:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15E], 0;
 	__asm        jne    near ptr 0x0049D289;
+
 	__asm        mov    eax, ds:[0x59A2DC];
 	__asm        mov    [ebp-0x24], eax;
 // LINE 436:
 	__asm        jmp    near ptr 0x0049D122;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -2765,8 +3070,10 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0049D279;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049D19D;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        mov    eax, [ebp-0x80];
@@ -2776,6 +3083,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D1A2;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -2784,10 +3092,13 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        add    esp, 4;
 	__asm        mov    sImagePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0049D1BA;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049D211;
+
 	__asm        jmp    near ptr 0x0049D1CC;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x94], eax;
@@ -2805,12 +3116,16 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049D211;
+
 	__asm        jmp    near ptr 0x0049D216;
+
 	__asm        mov    byte ptr [ebp-0x84], 0;
 	__asm        jmp    near ptr 0x0049D222;
+
 	__asm        lea    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x0049D233;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sImagePath.c_str_ptr;
@@ -2820,7 +3135,9 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x90];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0049D257;
+
 	__asm        jmp    near ptr 0x0049D25C;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18];
@@ -2828,6 +3145,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x15E], eax;
 	__asm        jmp    near ptr 0x0049D289;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x15E], 0;
 // LINE 440:
@@ -2837,15 +3155,18 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049D313;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x0049D313;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049D2F3;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x40], eax;
@@ -2860,16 +3181,22 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049D2F8;
+
 	__asm        jmp    near ptr 0x0049D2FD;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D30E;
+
 	__asm        jmp    near ptr 0x0049D313;
+
 	__asm        jmp    near ptr 0x0049D318;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049D33A;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -2879,20 +3206,24 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D33F;
+
 	__asm        mov    eax, sImageFile.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sImageFile.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049D3C2;
+
 	__asm        mov    eax, sImageFile.reference;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x0049D3C2;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049D3A2;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x58], eax;
@@ -2907,16 +3238,22 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049D3A7;
+
 	__asm        jmp    near ptr 0x0049D3AC;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D3BD;
+
 	__asm        jmp    near ptr 0x0049D3C2;
+
 	__asm        jmp    near ptr 0x0049D3C7;
+
 	__asm        cmp    sImageFile.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049D3E9;
+
 	__asm        mov    eax, sImageFile.c_str_ptr;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -2926,6 +3263,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D3EE;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0049D3F6;
 // LINE 441:
@@ -2945,6 +3283,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049D453;
+
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
@@ -2952,6 +3291,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D44E;
+
 	__asm        jmp    near ptr 0x0049D453;
 // LINE 449:
 	__asm        mov    eax, this;
@@ -2968,6 +3308,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0049D4AA;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0xC];
@@ -2975,6 +3316,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049D4A5;
+
 	__asm        jmp    near ptr 0x0049D4AA;
 // LINE 453:
 	__asm        mov    eax, this;
@@ -3008,49 +3350,61 @@ void CopterMainMenu::DrawRatchetAndLights() {
 	class MRect rectRatchetsSource[5];
 	class MPoint ptRatchetsDestination[5];
 
+
 	__asm        mov    dword ptr [ebp-0xF8], 5;
 	__asm        lea    eax, ptLightsDestination[0].x;
 	__asm        mov    [ebp-0xFC], eax;
 // LINE 473:
 	__asm        dec    dword ptr [ebp-0xF8];
 	__asm        js     near ptr 0x0049D53F;
+
 	__asm        mov    ecx, [ebp-0xFC];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0xFC], 8;
 	__asm        jmp    near ptr 0x0049D51C;
+
 	__asm        jmp    near ptr 0x0049D544;
+
 	__asm        mov    dword ptr [ebp-0x100], 5;
 	__asm        lea    eax, rectLightsSource[0].left;
 	__asm        mov    [ebp-0x104], eax;
 // LINE 474:
 	__asm        dec    dword ptr [ebp-0x100];
 	__asm        js     near ptr 0x0049D57D;
+
 	__asm        mov    ecx, [ebp-0x104];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x104], 0x10;
 	__asm        jmp    near ptr 0x0049D55A;
+
 	__asm        jmp    near ptr 0x0049D582;
+
 	__asm        mov    dword ptr [ebp-0x108], 5;
 	__asm        lea    eax, ptRatchetsDestination[0].x;
 	__asm        mov    [ebp-0x10C], eax;
 // LINE 475:
 	__asm        dec    dword ptr [ebp-0x108];
 	__asm        js     near ptr 0x0049D5B8;
+
 	__asm        mov    ecx, [ebp-0x10C];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x10C], 8;
 	__asm        jmp    near ptr 0x0049D595;
+
 	__asm        jmp    near ptr 0x0049D5BD;
+
 	__asm        mov    dword ptr [ebp-0x110], 5;
 	__asm        lea    eax, rectRatchetsSource[0].left;
 	__asm        mov    [ebp-0x114], eax;
 // LINE 476:
 	__asm        dec    dword ptr [ebp-0x110];
 	__asm        js     near ptr 0x0049D5F3;
+
 	__asm        mov    ecx, [ebp-0x114];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x114], 0x10;
 	__asm        jmp    near ptr 0x0049D5D0;
+
 	__asm        jmp    near ptr 0x0049D5F8;
 // LINE 479:
 	__asm        lea    eax, rectLightsSource[0].left;
@@ -3062,6 +3416,7 @@ void CopterMainMenu::DrawRatchetAndLights() {
 // LINE 480:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049D620;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x0049D6A4;
@@ -3108,6 +3463,7 @@ void CopterMainMenu::DrawRatchetAndLights() {
 // LINE 486:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0049D6C6;
+
 	__asm        inc    i;
 	__asm        cmp    i, 5;
 	__asm        jge    near ptr 0x0049D738;
@@ -3366,6 +3722,7 @@ void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray,
 
 // FUNCTION: COPTER_D 0x0049da14
 void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
 	__asm        mov    eax, myNewOwner;
@@ -3386,11 +3743,13 @@ void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMen
 	__asm        mov    dword ptr [eax], 0x5914C8;
 // LINE 605:
 	__asm        jmp    near ptr 0x0049DA64;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049da6e
 void CopterPlayMenu::~CopterPlayMenu() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5914C8;
 // LINE 613:
@@ -3398,6 +3757,7 @@ void CopterPlayMenu::~CopterPlayMenu() {
 	__asm        call   CopterPlayMenu::DestroyImage;
 // LINE 614:
 	__asm        jmp    near ptr 0x0049DA90;
+
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
 }
@@ -3429,6 +3789,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0049DB2A;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x28];
@@ -3440,9 +3801,11 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049DB1F;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    near ptr 0x0049DB31;
+
 	__asm        mov    sImageFile.reference, 0;
 	__asm        mov    sImageFile.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049DB3D;
@@ -3453,6 +3816,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0049DB8D;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x2C];
@@ -3464,9 +3828,11 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049DB82;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    near ptr 0x0049DB94;
+
 	__asm        mov    sImagePath.reference, 0;
 	__asm        mov    sImagePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049DBA0;
@@ -3478,10 +3844,12 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        jne    near ptr 0x0049DD54;
+
 	__asm        mov    eax, ds:[0x59A2E4];
 	__asm        mov    [ebp-0x20], eax;
 // LINE 636:
 	__asm        jmp    near ptr 0x0049DBCD;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3509,8 +3877,10 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0049DD1F;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049DC42;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -3520,6 +3890,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049DC47;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -3528,21 +3899,29 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        add    esp, 4;
 	__asm        mov    sImagePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0049DC5F;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049DCC9;
+
 	__asm        jmp    near ptr 0x0049DC71;
+
 	__asm        jmp    near ptr 0x0049DC76;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049DC95;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x0049DCA1;
+
 	__asm        jmp    near ptr 0x0049DCA1;
+
 	__asm        mov    dword ptr [ebp-0x74], 0;
 	__asm        jmp    near ptr 0x0049DCA1;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x78], eax;
@@ -3557,12 +3936,16 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049DCC9;
+
 	__asm        jmp    near ptr 0x0049DCCE;
+
 	__asm        mov    byte ptr [ebp-0x64], 0;
 	__asm        jmp    near ptr 0x0049DCD7;
+
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    near ptr 0x0049DCE2;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sImagePath.c_str_ptr;
@@ -3572,7 +3955,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0049DCFD;
+
 	__asm        jmp    near ptr 0x0049DD02;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x14];
@@ -3580,6 +3965,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    near ptr 0x0049DD2F;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x152], 0;
 // LINE 639:
@@ -3596,10 +3982,12 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x156], 0;
 	__asm        jne    near ptr 0x0049DEDB;
+
 	__asm        mov    eax, ds:[0x59A2E8];
 	__asm        mov    [ebp-0x24], eax;
 // LINE 642:
 	__asm        jmp    near ptr 0x0049DD74;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -3627,8 +4015,10 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0049DECB;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049DDEF;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        mov    eax, [ebp-0x80];
@@ -3638,6 +4028,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049DDF4;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
@@ -3646,10 +4037,13 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        add    esp, 4;
 	__asm        mov    sImagePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0049DE0C;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049DE63;
+
 	__asm        jmp    near ptr 0x0049DE1E;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x94], eax;
@@ -3667,12 +4061,16 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049DE63;
+
 	__asm        jmp    near ptr 0x0049DE68;
+
 	__asm        mov    byte ptr [ebp-0x84], 0;
 	__asm        jmp    near ptr 0x0049DE74;
+
 	__asm        lea    eax, [ebp-0x84];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    near ptr 0x0049DE85;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, sImagePath.c_str_ptr;
@@ -3682,7 +4080,9 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, [ebp-0x90];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x0049DEA9;
+
 	__asm        jmp    near ptr 0x0049DEAE;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18];
@@ -3690,6 +4090,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    near ptr 0x0049DEDB;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x156], 0;
 // LINE 646:
@@ -3699,15 +4100,18 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, sImagePath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049DF65;
+
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x0049DF65;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049DF45;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x40], eax;
@@ -3722,16 +4126,22 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049DF4A;
+
 	__asm        jmp    near ptr 0x0049DF4F;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049DF60;
+
 	__asm        jmp    near ptr 0x0049DF65;
+
 	__asm        jmp    near ptr 0x0049DF6A;
+
 	__asm        cmp    sImagePath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049DF8C;
+
 	__asm        mov    eax, sImagePath.c_str_ptr;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -3741,20 +4151,24 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049DF91;
+
 	__asm        mov    eax, sImageFile.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sImageFile.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049E014;
+
 	__asm        mov    eax, sImageFile.reference;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x0049E014;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049DFF4;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x58], eax;
@@ -3769,16 +4183,22 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049DFF9;
+
 	__asm        jmp    near ptr 0x0049DFFE;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049E00F;
+
 	__asm        jmp    near ptr 0x0049E014;
+
 	__asm        jmp    near ptr 0x0049E019;
+
 	__asm        cmp    sImageFile.c_str_ptr, 0;
 	__asm        je     near ptr 0x0049E03B;
+
 	__asm        mov    eax, sImageFile.c_str_ptr;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
@@ -3788,6 +4208,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049E040;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0049E048;
 // LINE 647:
@@ -3807,6 +4228,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049E0A5;
+
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
@@ -3814,6 +4236,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049E0A0;
+
 	__asm        jmp    near ptr 0x0049E0A5;
 // LINE 655:
 	__asm        mov    eax, this;
@@ -3830,6 +4253,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0049E0FC;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0xC];
@@ -3837,6 +4261,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049E0F7;
+
 	__asm        jmp    near ptr 0x0049E0FC;
 // LINE 659:
 	__asm        mov    eax, this;
@@ -3869,15 +4294,19 @@ void CopterPlayMenu::DrawRatchet() {
 
 // LINE 678:
 	__asm        jmp    near ptr 0x0049E157;
+
 	__asm        mov    ptDestinationBackground.x, 0x1E;
 	__asm        mov    ptDestinationBackground.y, 0x23;
 	__asm        jmp    near ptr 0x0049E16A;
 // LINE 679:
 	__asm        jmp    near ptr 0x0049E16F;
+
 	__asm        jmp    near ptr 0x0049E174;
 // LINE 682:
 	__asm        jmp    near ptr 0x0049E179;
+
 	__asm        jmp    near ptr 0x0049E17E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x156];
 	__asm        mov    eax, [eax+0xC];
@@ -3908,7 +4337,9 @@ void CopterPlayMenu::DrawRatchet() {
 	__asm        call   CopterPlayMenu::GetCoordinatesForRatchet;
 // LINE 686:
 	__asm        jmp    near ptr 0x0049E1D3;
+
 	__asm        jmp    near ptr 0x0049E1D8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
 	__asm        mov    eax, [eax+0xC];
@@ -3986,8 +4417,11 @@ void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 int32_t UserMenuWindow::GetLineCount() {
 // LINE 219:
 	__asm        jmp    near ptr 0x0049E331;
+
 	__asm        jmp    near ptr 0x0049E336;
+
 	__asm        jmp    near ptr 0x0049E33B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    ecx, this;

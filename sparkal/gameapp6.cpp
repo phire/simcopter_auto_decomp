@@ -31,16 +31,21 @@ void  CGameApp::DisableSoundTrack() {
 void  CGameApp::ToggleMusicSoundTrack() {
 // LINE 48:
 	__asm        jmp    near ptr 0x00471E95;
+
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     near ptr 0x00471EE9;
 // LINE 49:
 	__asm        mov    dword ptr ds:[0x604498], 0;
 	__asm        cmp    dword ptr ds:[0x604498], 0;
 	__asm        je     near ptr 0x00471EBE;
+
 	__asm        jmp    near ptr 0x00471EDF;
+
 	__asm        jmp    near ptr 0x00471EC3;
+
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     near ptr 0x00471EDF;
+
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        mov    eax, ds:[0x604480];
@@ -52,10 +57,14 @@ void  CGameApp::ToggleMusicSoundTrack() {
 	__asm        mov    dword ptr ds:[0x604498], 1;
 	__asm        cmp    dword ptr ds:[0x604498], 0;
 	__asm        je     near ptr 0x00471F05;
+
 	__asm        jmp    near ptr 0x00471F26;
+
 	__asm        jmp    near ptr 0x00471F0A;
+
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     near ptr 0x00471F26;
+
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        mov    eax, ds:[0x604480];

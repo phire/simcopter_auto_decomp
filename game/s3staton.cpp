@@ -638,11 +638,13 @@ void S3StationInit() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00539C37;
+
 	__asm        push   0xD1;
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   Station::Station;
 	__asm        mov    ds:[0x5C3820], eax;
 	__asm        jmp    near ptr 0x00539C41;
+
 	__asm        mov    dword ptr ds:[0x5C3820], 0;
 // LINE 29:
 	__asm        push   0x1C;
@@ -651,11 +653,13 @@ void S3StationInit() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00539C6F;
+
 	__asm        push   0xD2;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   Station::Station;
 	__asm        mov    ds:[0x5C3800], eax;
 	__asm        jmp    near ptr 0x00539C79;
+
 	__asm        mov    dword ptr ds:[0x5C3800], 0;
 // LINE 30:
 	__asm        push   0x1C;
@@ -664,11 +668,13 @@ void S3StationInit() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00539CA7;
+
 	__asm        push   0xD3;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   Station::Station;
 	__asm        mov    ds:[0x5C3AA8], eax;
 	__asm        jmp    near ptr 0x00539CB1;
+
 	__asm        mov    dword ptr ds:[0x5C3AA8], 0;
 // LINE 31:
 	__asm        jmp    near ptr 0x00539CB6;
@@ -683,12 +689,15 @@ void S3StationReset() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00539CF7;
+
 	__asm        jmp    near ptr 0x00539CE1;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00539CF2;
+
 	__asm        jmp    near ptr 0x00539CF7;
 // LINE 41:
 	__asm        mov    eax, ds:[0x5C3800];
@@ -697,12 +706,15 @@ void S3StationReset() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00539D2A;
+
 	__asm        jmp    near ptr 0x00539D14;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00539D25;
+
 	__asm        jmp    near ptr 0x00539D2A;
 // LINE 42:
 	__asm        mov    eax, ds:[0x5C3AA8];
@@ -711,12 +723,15 @@ void S3StationReset() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00539D5D;
+
 	__asm        jmp    near ptr 0x00539D47;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00539D58;
+
 	__asm        jmp    near ptr 0x00539D5D;
 // LINE 43:
 	__asm        jmp    near ptr 0x00539D62;
@@ -772,23 +787,28 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        mov    cl, [eax];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x00539E10;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jg     near ptr 0x00539E10;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x00539E10;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jle    near ptr 0x00539E1C;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x00539E7A;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -802,22 +822,29 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x00539E6E;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2C;
 	__asm        jge    near ptr 0x00539E6E;
+
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x00539E7A;
+
 	__asm        jmp    near ptr 0x00539E7A;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x00539E7A;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x00539E8C;
+
 	__asm        mov    eax, direction;
 	__asm        jmp    near ptr 0x0053A017;
 // LINE 87:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00539E9B;
+
 	__asm        inc    i;
 	__asm        cmp    i, 4;
 	__asm        jge    near ptr 0x0053A00D;
@@ -867,8 +894,10 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        jmp    near ptr 0x00539F45;
 // LINE 95:
 	__asm        jmp    near ptr 0x00539F45;
+
 	__asm        cmp    dword ptr [ebp-0x24], 3;
 	__asm        ja     near ptr 0x00539F45;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x539F35];
 // Switch pointers
@@ -878,23 +907,28 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        mov    cl, [eax];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x00539F85;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jg     near ptr 0x00539F85;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x00539F85;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jle    near ptr 0x00539F91;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x00539FEF;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -908,17 +942,23 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x00539FE3;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2C;
 	__asm        jge    near ptr 0x00539FE3;
+
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    near ptr 0x00539FEF;
+
 	__asm        jmp    near ptr 0x00539FEF;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x00539FEF;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0053A001;
+
 	__asm        mov    eax, direction;
 	__asm        jmp    near ptr 0x0053A017;
 // LINE 99:
@@ -946,23 +986,28 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	__asm        mov    cl, [eax];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x0053A077;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jg     near ptr 0x0053A077;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x0053A077;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jle    near ptr 0x0053A083;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0053A0E1;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -976,20 +1021,26 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0053A0D5;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2C;
 	__asm        jge    near ptr 0x0053A0D5;
+
 	__asm        mov    dword ptr [ebp-0x24], 1;
 	__asm        jmp    near ptr 0x0053A0E1;
+
 	__asm        jmp    near ptr 0x0053A0E1;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0053A0E1;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x0053A0FF;
 // LINE 114:
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x0053A0F7;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x0053A1F4;
 // LINE 116:
@@ -1005,23 +1056,28 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	__asm        mov    cl, [eax];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x0053A153;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jg     near ptr 0x0053A153;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        test   ecx, ecx;
 	__asm        jl     near ptr 0x0053A153;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, 0x7F;
 	__asm        jle    near ptr 0x0053A15F;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0053A1BD;
+
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -1035,20 +1091,26 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
 	__asm        jl     near ptr 0x0053A1B1;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2C;
 	__asm        jge    near ptr 0x0053A1B1;
+
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    near ptr 0x0053A1BD;
+
 	__asm        jmp    near ptr 0x0053A1BD;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0053A1BD;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0053A1DB;
 // LINE 119:
 	__asm        mov    dword ptr [ebp-0x18], 1;
 	__asm        jmp    near ptr 0x0053A1D3;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    near ptr 0x0053A1F4;
 // LINE 120:
@@ -1056,6 +1118,7 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 // LINE 122:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0053A1EC;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    near ptr 0x0053A1F4;
 // LINE 123:
@@ -1074,6 +1137,7 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 // LINE 134:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053A220;
+
 	__asm        inc    i;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1206,6 +1270,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 // LINE 181:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053A37D;
+
 	__asm        inc    i;
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
@@ -1214,6 +1279,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 // Block start:
 	struct Point3d DyObjLoc;
 	__asm        jmp    near ptr 0x0053A38E;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, vehicleList;
 	__asm        mov    eax, [ecx+eax*4];
@@ -1330,6 +1396,7 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 // LINE 227:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053A4BB;
+
 	__asm        inc    i;
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
@@ -1350,6 +1417,7 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 // LINE 235:
 	__asm        mov    code, 2;
 	__asm        jmp    near ptr 0x0053A4FC;
+
 	__asm        inc    code;
 	__asm        mov    eax, code;
 	__asm        cmp    responseLevel, eax;
@@ -1357,12 +1425,14 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel r
 // LINE 237:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053A517;
+
 	__asm        inc    i;
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
 	__asm        jge    near ptr 0x0053A553;
 // LINE 239:
 	__asm        jmp    near ptr 0x0053A528;
+
 	__asm        mov    eax, i;
 	__asm        mov    ecx, vehicleList;
 	__asm        mov    eax, [ecx+eax*4];
@@ -1529,6 +1599,7 @@ void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 	__asm        mov    ecx, child;
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jle    near ptr 0x0053A6F7;
+
 	__asm        mov    eax, child;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+8];
@@ -1771,6 +1842,7 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 	__asm        mov    ecx, child;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    near ptr 0x0053A983;
+
 	__asm        mov    eax, child;
 	__asm        lea    eax, [eax+eax*4+5];
 	__asm        mov    ecx, this;
@@ -1950,12 +2022,14 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        cmp    dword ptr [eax+ecx+0x5C], 0;
 	__asm        jne    near ptr 0x0053AB70;
+
 	__asm        push   0x1A7;
 	__asm        push   0x5B8078;
 	__asm        push   0x5B809C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053AB75;
+
 	__asm        jmp    near ptr 0x0053AB75;
 // LINE 425:
 	__asm        mov    eax, stationID;
@@ -1992,6 +2066,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    [ebp-0x284], eax;
 	__asm        cmp    dword ptr [ebp-0x284], 0;
 	__asm        je     near ptr 0x0053AC10;
+
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x284];
@@ -2003,9 +2078,11 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0053ABFF;
+
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    errorMsgSoundFullPath.reference, eax;
 	__asm        jmp    near ptr 0x0053AC1A;
+
 	__asm        mov    errorMsgSoundFullPath.reference, 0;
 	__asm        mov    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0053AC29;
@@ -2014,6 +2091,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    al, ds:[0x63524C];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x0053AC5D;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x63524C];
 	__asm        or     al, 1;
@@ -2049,6 +2127,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    [ebp-0x278], eax;
 	__asm        cmp    dword ptr [ebp-0x278], 0;
 	__asm        je     near ptr 0x0053AD82;
+
 	__asm        mov    edi, 0x5B80CC;
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -2058,6 +2137,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, [ebp-0x278];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0053ACD1;
+
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x278];
@@ -2065,6 +2145,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, [ebp-0x278];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0053AD53;
+
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2088,18 +2169,23 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 	__asm        jmp    near ptr 0x0053AD4E;
+
 	__asm        jmp    near ptr 0x0053AD5F;
+
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0053AD71;
+
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    near ptr 0x0053AD8C;
+
 	__asm        mov    dword ptr [ebp-0x118], 0;
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 	__asm        jmp    near ptr 0x0053AD9B;
+
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x11C];
@@ -2109,29 +2195,37 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x0053ADBC;
+
 	__asm        mov    eax, [ebp-0x118];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x118];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053AE23;
+
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    [ebp-0x264], eax;
 	__asm        mov    eax, [ebp-0x264];
 	__asm        mov    [ebp-0x260], eax;
 	__asm        cmp    dword ptr [ebp-0x260], 0;
 	__asm        je     near ptr 0x0053AE23;
+
 	__asm        mov    ecx, [ebp-0x260];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053AE0A;
+
 	__asm        mov    eax, [ebp-0x260];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053AE1E;
+
 	__asm        jmp    near ptr 0x0053AE23;
+
 	__asm        jmp    near ptr 0x0053AE28;
+
 	__asm        cmp    dword ptr [ebp-0x11C], 0;
 	__asm        je     near ptr 0x0053AE5C;
+
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    [ebp-0x258], eax;
 	__asm        mov    eax, [ebp-0x258];
@@ -2164,24 +2258,31 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053AF03;
+
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        mov    [ebp-0x274], eax;
 	__asm        mov    eax, [ebp-0x274];
 	__asm        mov    [ebp-0x270], eax;
 	__asm        cmp    dword ptr [ebp-0x270], 0;
 	__asm        je     near ptr 0x0053AF03;
+
 	__asm        mov    ecx, [ebp-0x270];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053AEEA;
+
 	__asm        mov    eax, [ebp-0x270];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053AEFE;
+
 	__asm        jmp    near ptr 0x0053AF03;
+
 	__asm        jmp    near ptr 0x0053AF08;
+
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0053AF3C;
+
 	__asm        mov    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        mov    [ebp-0x268], eax;
 	__asm        mov    eax, [ebp-0x268];
@@ -2191,6 +2292,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053AF41;
+
 	__asm        mov    eax, [ebp-0x120];
 	__asm        jmp    near ptr 0x0053B994;
 // LINE 467:
@@ -2207,6 +2309,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    [ebp-0x24C], eax;
 	__asm        cmp    dword ptr [ebp-0x24C], 0;
 	__asm        je     near ptr 0x0053B055;
+
 	__asm        mov    edi, 0x5B80D8;
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -2216,6 +2319,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, [ebp-0x24C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0053AFA4;
+
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x24C];
@@ -2223,6 +2327,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0053B026;
+
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2246,18 +2351,23 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 	__asm        jmp    near ptr 0x0053B021;
+
 	__asm        jmp    near ptr 0x0053B032;
+
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0053B044;
+
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    [ebp-0x124], eax;
 	__asm        jmp    near ptr 0x0053B05F;
+
 	__asm        mov    dword ptr [ebp-0x124], 0;
 	__asm        mov    dword ptr [ebp-0x128], 0;
 	__asm        jmp    near ptr 0x0053B06E;
+
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x128];
@@ -2267,29 +2377,37 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x0053B08F;
+
 	__asm        mov    eax, [ebp-0x124];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x124];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053B0F6;
+
 	__asm        mov    eax, [ebp-0x124];
 	__asm        mov    [ebp-0x238], eax;
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    [ebp-0x234], eax;
 	__asm        cmp    dword ptr [ebp-0x234], 0;
 	__asm        je     near ptr 0x0053B0F6;
+
 	__asm        mov    ecx, [ebp-0x234];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053B0DD;
+
 	__asm        mov    eax, [ebp-0x234];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B0F1;
+
 	__asm        jmp    near ptr 0x0053B0F6;
+
 	__asm        jmp    near ptr 0x0053B0FB;
+
 	__asm        cmp    dword ptr [ebp-0x128], 0;
 	__asm        je     near ptr 0x0053B12F;
+
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    [ebp-0x22C], eax;
 	__asm        mov    eax, [ebp-0x22C];
@@ -2322,24 +2440,31 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053B1D6;
+
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        mov    [ebp-0x248], eax;
 	__asm        mov    eax, [ebp-0x248];
 	__asm        mov    [ebp-0x244], eax;
 	__asm        cmp    dword ptr [ebp-0x244], 0;
 	__asm        je     near ptr 0x0053B1D6;
+
 	__asm        mov    ecx, [ebp-0x244];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053B1BD;
+
 	__asm        mov    eax, [ebp-0x244];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B1D1;
+
 	__asm        jmp    near ptr 0x0053B1D6;
+
 	__asm        jmp    near ptr 0x0053B1DB;
+
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0053B20F;
+
 	__asm        mov    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        mov    [ebp-0x23C], eax;
 	__asm        mov    eax, [ebp-0x23C];
@@ -2349,6 +2474,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B214;
+
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        jmp    near ptr 0x0053B994;
 // LINE 479:
@@ -2690,6 +2816,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    [ebp-0x220], eax;
 	__asm        cmp    dword ptr [ebp-0x220], 0;
 	__asm        je     near ptr 0x0053B710;
+
 	__asm        mov    edi, 0x5B80E4;
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -2699,6 +2826,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, [ebp-0x220];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0053B65F;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x220];
@@ -2706,6 +2834,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, [ebp-0x220];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0053B6E1;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2729,18 +2858,23 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 	__asm        jmp    near ptr 0x0053B6DC;
+
 	__asm        jmp    near ptr 0x0053B6ED;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0053B6FF;
+
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    near ptr 0x0053B71A;
+
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
 	__asm        jmp    near ptr 0x0053B729;
+
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1E4];
@@ -2750,29 +2884,37 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x0053B74A;
+
 	__asm        mov    eax, [ebp-0x1E0];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x1E0];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053B7B1;
+
 	__asm        mov    eax, [ebp-0x1E0];
 	__asm        mov    [ebp-0x1FC], eax;
 	__asm        mov    eax, [ebp-0x1FC];
 	__asm        mov    [ebp-0x1F8], eax;
 	__asm        cmp    dword ptr [ebp-0x1F8], 0;
 	__asm        je     near ptr 0x0053B7B1;
+
 	__asm        mov    ecx, [ebp-0x1F8];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053B798;
+
 	__asm        mov    eax, [ebp-0x1F8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B7AC;
+
 	__asm        jmp    near ptr 0x0053B7B1;
+
 	__asm        jmp    near ptr 0x0053B7B6;
+
 	__asm        cmp    dword ptr [ebp-0x1E4], 0;
 	__asm        je     near ptr 0x0053B7EA;
+
 	__asm        mov    eax, [ebp-0x1E4];
 	__asm        mov    [ebp-0x1F0], eax;
 	__asm        mov    eax, [ebp-0x1F0];
@@ -2805,24 +2947,31 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053B891;
+
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        mov    [ebp-0x20C], eax;
 	__asm        mov    eax, [ebp-0x20C];
 	__asm        mov    [ebp-0x208], eax;
 	__asm        cmp    dword ptr [ebp-0x208], 0;
 	__asm        je     near ptr 0x0053B891;
+
 	__asm        mov    ecx, [ebp-0x208];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053B878;
+
 	__asm        mov    eax, [ebp-0x208];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B88C;
+
 	__asm        jmp    near ptr 0x0053B891;
+
 	__asm        jmp    near ptr 0x0053B896;
+
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0053B8CA;
+
 	__asm        mov    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        mov    [ebp-0x200], eax;
 	__asm        mov    eax, [ebp-0x200];
@@ -2832,6 +2981,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B8CF;
+
 	__asm        mov    eax, [ebp-0x1E8];
 	__asm        jmp    near ptr 0x0053B994;
 // LINE 584:
@@ -2841,24 +2991,31 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0053B94B;
+
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
 	__asm        mov    [ebp-0x21C], eax;
 	__asm        mov    eax, [ebp-0x21C];
 	__asm        mov    [ebp-0x218], eax;
 	__asm        cmp    dword ptr [ebp-0x218], 0;
 	__asm        je     near ptr 0x0053B94B;
+
 	__asm        mov    ecx, [ebp-0x218];
 	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0053B932;
+
 	__asm        mov    eax, [ebp-0x218];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B946;
+
 	__asm        jmp    near ptr 0x0053B94B;
+
 	__asm        jmp    near ptr 0x0053B950;
+
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     near ptr 0x0053B984;
+
 	__asm        mov    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        mov    [ebp-0x210], eax;
 	__asm        mov    eax, [ebp-0x210];
@@ -2868,6 +3025,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0053B989;
+
 	__asm        mov    eax, [ebp-0x1EC];
 	__asm        jmp    near ptr 0x0053B994;
 // LINE 585:
@@ -2876,6 +3034,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0053b99b
 void $E36() {
+
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::~DigitalSound;
 	__asm        jmp    near ptr 0x0053B9B0;
@@ -2897,12 +3056,14 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 599:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0053B9E1;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0053BA33;
 // LINE 601:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053B9FD;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BA2E;
@@ -2923,12 +3084,14 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 610:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BA42;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BB5D;
 // LINE 612:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0053BA5E;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0053BB58;
@@ -3035,12 +3198,14 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 645:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0053BB93;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0053BC81;
 // LINE 647:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BBAF;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BC7C;
@@ -3159,12 +3324,16 @@ void Station::Station(unsigned char stationScurkID) {
 	__asm        jmp    near ptr 0x0053BD0A;
 // LINE 691:
 	__asm        jmp    near ptr 0x0053BD0A;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0xD1;
 	__asm        je     near ptr 0x0053BCAC;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0xD2;
 	__asm        je     near ptr 0x0053BCBB;
+
 	__asm        cmp    dword ptr [ebp-0x54], 0xD3;
 	__asm        je     near ptr 0x0053BCCA;
+
 	__asm        jmp    near ptr 0x0053BD0A;
 // LINE 693:
 	__asm        mov    eax, this;
@@ -3180,6 +3349,7 @@ void Station::Station(unsigned char stationScurkID) {
 	__asm        mov    [ecx+0x10], eax;
 // LINE 694:
 	__asm        jmp    near ptr 0x0053BD2F;
+
 	__asm        mov    eax, this;
 }
 

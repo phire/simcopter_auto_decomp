@@ -192,6 +192,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     near ptr 0x004324C6;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14];
@@ -243,12 +244,14 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 // LINE 99:
 	__asm        cmp    Step, 0;
 	__asm        jne    near ptr 0x00432437;
+
 	__asm        push   0x63;
 	__asm        push   0x59836C;
 	__asm        push   0x598394;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0043243C;
+
 	__asm        jmp    near ptr 0x0043243C;
 // LINE 102:
 	__asm        mov    eax, DestTop;

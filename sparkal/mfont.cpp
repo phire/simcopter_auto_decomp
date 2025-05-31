@@ -62,6 +62,7 @@ struct tagRECT{
 // Contribution: 1:0009e780-0009f398 Module: 11, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049f780
 void MFont::MFont() {
+
 	__asm        mov    eax, ds:[0x59A950];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
@@ -70,6 +71,7 @@ void MFont::MFont() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049F844;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -77,6 +79,7 @@ void MFont::MFont() {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049F7C2;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-4];
@@ -84,6 +87,7 @@ void MFont::MFont() {
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049F81E;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -106,21 +110,26 @@ void MFont::MFont() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049F819;
+
 	__asm        jmp    near ptr 0x0049F827;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049F836;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0049F84E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0049F85D;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0xC;
 	__asm        mov    eax, this;
@@ -134,17 +143,20 @@ void MFont::MFont() {
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 32:
 	__asm        jmp    near ptr 0x0049F893;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049f89b
 void MFont::MFont(const class MFont& copyMFont) {
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049F8FA;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-4];
@@ -156,15 +168,18 @@ void MFont::MFont(const class MFont& copyMFont) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049F8EC;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0049F904;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0049F913;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591640;
 // LINE 43:
@@ -174,17 +189,20 @@ void MFont::MFont(const class MFont& copyMFont) {
 	__asm        call   MFont::operator=;
 // LINE 44:
 	__asm        jmp    near ptr 0x0049F92D;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049f937
 void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes, int32_t bCreateNow) {
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x0049F996;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-0x34];
@@ -196,19 +214,23 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049F988;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0049F9A0;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0049F9AF;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591640;
 // LINE 55:
 	__asm        jmp    near ptr 0x0049F9BD;
+
 	__asm        mov    eax, szFaceName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -216,6 +238,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0049FA08;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -225,31 +248,40 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049F9F9;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FA08;
+
 	__asm        jmp    near ptr 0x0049FA0D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     near ptr 0x0049FA3E;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0049FBBF;
+
 	__asm        jmp    near ptr 0x0049FA2C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0049FBBF;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0049FB19;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0049FA91;
+
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
 	__asm        call   ostream::operator<<;
@@ -259,10 +291,12 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FA82;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FA91;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -273,6 +307,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049FAF6;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -295,15 +330,19 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049FAF1;
+
 	__asm        jmp    near ptr 0x0049FAFF;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049FB0E;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0049FB20;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -312,6 +351,7 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049FBAC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
@@ -319,9 +359,11 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0049FBAC;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049FB8C;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
@@ -336,21 +378,29 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049FB91;
+
 	__asm        jmp    near ptr 0x0049FB96;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FBA7;
+
 	__asm        jmp    near ptr 0x0049FBAC;
+
 	__asm        jmp    near ptr 0x0049FBB1;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0049FBF2;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0049FBF2;
+
 	__asm        jmp    near ptr 0x0049FBCE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -364,11 +414,13 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049FBF2;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+8];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0049FC03;
+
 	__asm        jmp    near ptr 0x0049FC08;
 // LINE 56:
 	__asm        mov    eax, lNewHeight;
@@ -393,11 +445,13 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        call   MFont::CreateFontA;
 // LINE 64:
 	__asm        jmp    near ptr 0x0049FC44;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0049fc4e
 void MFont::~MFont() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591640;
 // LINE 73:
@@ -405,6 +459,7 @@ void MFont::~MFont() {
 	__asm        call   MFont::DestroyFont;
 // LINE 74:
 	__asm        jmp    near ptr 0x0049FC70;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        dec    dword ptr [eax+0xC];
@@ -412,6 +467,7 @@ void MFont::~MFont() {
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049FCFC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -419,9 +475,11 @@ void MFont::~MFont() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0049FCFC;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049FCDC;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -436,17 +494,23 @@ void MFont::~MFont() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049FCE1;
+
 	__asm        jmp    near ptr 0x0049FCE6;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FCF7;
+
 	__asm        jmp    near ptr 0x0049FCFC;
+
 	__asm        jmp    near ptr 0x0049FD01;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049FD29;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
@@ -475,6 +539,7 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        add    ecx, 4;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x0049FF1A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        dec    dword ptr [eax+0xC];
@@ -482,6 +547,7 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0049FDF3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0xC], eax;
@@ -489,9 +555,11 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0049FDF3;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049FDD3;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
@@ -506,19 +574,26 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        jmp    near ptr 0x0049FDD8;
+
 	__asm        jmp    near ptr 0x0049FDDD;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049FDEE;
+
 	__asm        jmp    near ptr 0x0049FDF3;
+
 	__asm        jmp    near ptr 0x0049FDF8;
+
 	__asm        jmp    near ptr 0x0049FDFD;
+
 	__asm        mov    eax, copyMFont;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x0049FE27;
+
 	__asm        mov    eax, copyMFont;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -527,13 +602,16 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    eax, [eax+8];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0049FF1A;
+
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0049FF10;
+
 	__asm        jmp    near ptr 0x0049FE43;
+
 	__asm        mov    eax, copyMFont;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -548,6 +626,7 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x0049FEEA;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -556,18 +635,23 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0049FE8A;
+
 	__asm        mov    eax, copyMFont;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x0049FEAF;
+
 	__asm        mov    eax, copyMFont;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0049FEBB;
+
 	__asm        jmp    near ptr 0x0049FEBB;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0049FEBB;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
@@ -583,16 +667,20 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049FEE5;
+
 	__asm        jmp    near ptr 0x0049FEF3;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0049FF02;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    near ptr 0x0049FF1A;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x0049FF1F;
@@ -655,6 +743,7 @@ int32_t MFont::CreateFontA() {
 	__asm        mov    dwStrikeOut, eax;
 // LINE 132:
 	__asm        jmp    near ptr 0x0049FFA9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -685,6 +774,7 @@ int32_t MFont::CreateFontA() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004A0020;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
@@ -695,6 +785,7 @@ int32_t MFont::CreateFontA() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A0025;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -705,24 +796,32 @@ int32_t MFont::CreateFontA() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004A0043;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004A00BC;
+
 	__asm        jmp    near ptr 0x004A0058;
+
 	__asm        jmp    near ptr 0x004A005D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     near ptr 0x004A0082;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x004A008E;
+
 	__asm        jmp    near ptr 0x004A008E;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x004A008E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -739,12 +838,16 @@ int32_t MFont::CreateFontA() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A00BC;
+
 	__asm        jmp    near ptr 0x004A00C1;
+
 	__asm        mov    byte ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x004A00CA;
+
 	__asm        lea    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004A00D5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+4];
@@ -756,7 +859,9 @@ int32_t MFont::CreateFontA() {
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], al;
 	__asm        jmp    near ptr 0x004A00F6;
+
 	__asm        jmp    near ptr 0x004A00FB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;

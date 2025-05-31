@@ -104,9 +104,11 @@ void RoadGraph::Init() {
 // LINE 91:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BD85;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BDA5;
+
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x200], 0;
@@ -114,6 +116,7 @@ void RoadGraph::Init() {
 // LINE 96:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BDB4;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BF05;
@@ -122,6 +125,7 @@ void RoadGraph::Init() {
 	int32_t y;
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x0053BDD0;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0053BF00;
@@ -137,14 +141,19 @@ void RoadGraph::Init() {
 // LINE 101:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053BE23;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053BE23;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BE23;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053BE2E;
+
 	__asm        mov    word ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0053BE66;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -161,24 +170,36 @@ void RoadGraph::Init() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x28], ax;
 	__asm        jmp    near ptr 0x0053BE66;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0053BE8A;
+
 	__asm        jmp    near ptr 0x0053BECC;
+
 	__asm        jmp    near ptr 0x0053BEEE;
+
 	__asm        jmp    near ptr 0x0053BECC;
+
 	__asm        jmp    near ptr 0x0053BEC2;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x806B;
 	__asm        jg     near ptr 0x0053BEEE;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x806A;
 	__asm        jge    near ptr 0x0053BECC;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x61;
 	__asm        jl     near ptr 0x0053BEEE;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x6B;
 	__asm        jle    near ptr 0x0053BECC;
+
 	__asm        jmp    near ptr 0x0053BEEE;
+
 	__asm        jmp    near ptr 0x0053BEEE;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0053BEEE;
 // LINE 103:
@@ -186,12 +207,14 @@ void RoadGraph::Init() {
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x0053BEDD;
+
 	__asm        jmp    near ptr 0x0053BDCD;
 // LINE 104:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x0053BEEE;
+
 	__asm        jmp    near ptr 0x0053BDCD;
 // LINE 107:
 	__asm        mov    eax, x;
@@ -204,6 +227,7 @@ void RoadGraph::Init() {
 // LINE 113:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BF14;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BF58;
@@ -228,6 +252,7 @@ void RoadGraph::Init() {
 // LINE 118:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053BF67;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053C1E7;
@@ -235,6 +260,7 @@ void RoadGraph::Init() {
 	__asm        mov    y, 0;
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053BF87;
+
 	__asm        inc    y;
 	__asm        cmp    y, 0x80;
 	__asm        jge    near ptr 0x0053C1E2;
@@ -252,14 +278,19 @@ void RoadGraph::Init() {
 	int32_t i;
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053BFDA;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053BFDA;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053BFDA;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053BFE5;
+
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0053C01D;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -276,24 +307,36 @@ void RoadGraph::Init() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0053C01D;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0053C041;
+
 	__asm        jmp    near ptr 0x0053C083;
+
 	__asm        jmp    near ptr 0x0053C0A5;
+
 	__asm        jmp    near ptr 0x0053C083;
+
 	__asm        jmp    near ptr 0x0053C079;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x806B;
 	__asm        jg     near ptr 0x0053C0A5;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x806A;
 	__asm        jge    near ptr 0x0053C083;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x61;
 	__asm        jl     near ptr 0x0053C0A5;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x6B;
 	__asm        jle    near ptr 0x0053C083;
+
 	__asm        jmp    near ptr 0x0053C0A5;
+
 	__asm        jmp    near ptr 0x0053C0A5;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x0053C0A5;
 // LINE 128:
@@ -301,12 +344,14 @@ void RoadGraph::Init() {
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x0053C094;
+
 	__asm        jmp    near ptr 0x0053BF84;
 // LINE 129:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x0053C0A5;
+
 	__asm        jmp    near ptr 0x0053BF84;
 // LINE 132:
 	__asm        mov    al, reinterpret_cast<uint8_t>(x);
@@ -357,6 +402,7 @@ void RoadGraph::Init() {
 // LINE 137:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053C12F;
+
 	__asm        inc    i;
 	__asm        cmp    i, 4;
 	__asm        jge    near ptr 0x0053C1DA;
@@ -431,12 +477,14 @@ void RoadGraph::Init() {
 // LINE 156:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053C1FE;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053C28B;
 // LINE 158:
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053C217;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -487,12 +535,14 @@ void RoadGraph::Init() {
 // LINE 167:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053C29A;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053C327;
 // LINE 169:
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053C2B3;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -571,6 +621,7 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 	__asm        jne    near ptr 0x0053C374;
 // LINE 207:
 	__asm        jmp    near ptr 0x0053C692;
+
 	__asm        jmp    near ptr 0x0053C449;
 // LINE 210:
 	__asm        mov    eax, pGoal;
@@ -730,12 +781,14 @@ IntersectionKludge:
 	__asm        mov    dl, [eax];
 	__asm        cmp    ecx, edx;
 	__asm        je     near ptr 0x0053C509;
+
 	__asm        push   0x11C;
 	__asm        push   0x5B80F0;
 	__asm        push   0x5B8114;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C50E;
+
 	__asm        jmp    near ptr 0x0053C50E;
 // LINE 285:
 	__asm        mov    eax, pGoal;
@@ -746,12 +799,14 @@ IntersectionKludge:
 	__asm        mov    dl, [eax+1];
 	__asm        cmp    ecx, edx;
 	__asm        je     near ptr 0x0053C542;
+
 	__asm        push   0x11D;
 	__asm        push   0x5B8130;
 	__asm        push   0x5B8154;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C547;
+
 	__asm        jmp    near ptr 0x0053C547;
 // LINE 293:
 	__asm        mov    eax, pGoal;
@@ -769,6 +824,7 @@ IntersectionKludge:
 	__asm        mov    cl, [eax+0xC];
 	__asm        cmp    ecx, 0x80;
 	__asm        jge    near ptr 0x0053C67D;
+
 	__asm        mov    eax, pGoal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD];
@@ -790,41 +846,51 @@ IntersectionKludge:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0x12], 3;
 	__asm        jne    near ptr 0x0053C5CA;
+
 	__asm        mov    slope, 2;
 	__asm        jmp    near ptr 0x0053C5D1;
+
 	__asm        mov    slope, 0;
 	__asm        jmp    near ptr 0x0053C678;
 // LINE 315:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0x12], 0;
 	__asm        jne    near ptr 0x0053C5EF;
+
 	__asm        mov    slope, 2;
 	__asm        jmp    near ptr 0x0053C5F6;
+
 	__asm        mov    slope, 0;
 	__asm        jmp    near ptr 0x0053C678;
 // LINE 316:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0x12], 1;
 	__asm        jne    near ptr 0x0053C614;
+
 	__asm        mov    slope, 2;
 	__asm        jmp    near ptr 0x0053C61B;
+
 	__asm        mov    slope, 0;
 	__asm        jmp    near ptr 0x0053C678;
 // LINE 317:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0x12], 2;
 	__asm        jne    near ptr 0x0053C639;
+
 	__asm        mov    slope, 2;
 	__asm        jmp    near ptr 0x0053C640;
+
 	__asm        mov    slope, 0;
 	__asm        jmp    near ptr 0x0053C678;
 // LINE 318:
 	__asm        mov    slope, 1;
 // LINE 319:
 	__asm        jmp    near ptr 0x0053C678;
+
 	__asm        dec    dword ptr [ebp-0x24];
 	__asm        cmp    dword ptr [ebp-0x24], 3;
 	__asm        ja     near ptr 0x0053C645;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x53C668];
 // Switch pointers
@@ -838,6 +904,7 @@ IntersectionKludge:
 	__asm        mov    [ecx+0x26], eax;
 // LINE 327:
 	__asm        jmp    near ptr 0x0053C697;
+
 	__asm        jmp    near ptr 0x0053C449;
 }
 
@@ -896,6 +963,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C730;
+
 	__asm        jmp    near ptr 0x0053C730;
 // LINE 356:
 	__asm        mov    eax, pGoal;
@@ -949,8 +1017,10 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        jmp    near ptr 0x0053C7D8;
 // LINE 372:
 	__asm        jmp    near ptr 0x0053C7D8;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     near ptr 0x0053C7D8;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x53C7C8];
 // Switch pointers
@@ -974,6 +1044,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 // LINE 382:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053C812;
+
 	__asm        inc    i;
 	__asm        mov    eax, pGoal;
 	__asm        mov    ecx, i;
@@ -1033,8 +1104,10 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        jmp    near ptr 0x0053C8D0;
 // LINE 390:
 	__asm        jmp    near ptr 0x0053C8D0;
+
 	__asm        cmp    dword ptr [ebp-0x30], 3;
 	__asm        ja     near ptr 0x0053C8D0;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    dword ptr [eax*4+0x53C8C0];
 // Switch pointers
@@ -1134,20 +1207,25 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053C9DE;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053C9DE;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053C9DE;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053C9E9;
+
 	__asm        mov    fromTile, 0;
 	__asm        jmp    near ptr 0x0053CA29;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -1299,21 +1377,26 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053CBB3;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053CBB3;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053CBB3;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053CBBE;
+
 	__asm        mov    word ptr [ebp-0x40], 0;
 	__asm        jmp    near ptr 0x0053CC00;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -1334,6 +1417,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x40], ax;
 	__asm        jmp    near ptr 0x0053CC00;
+
 	__asm        push   1;
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x40];
@@ -1380,21 +1464,26 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053CCA7;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053CCA7;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053CCA7;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053CCB2;
+
 	__asm        mov    word ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x0053CCF8;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        add    eax, stepSize;
@@ -1417,6 +1506,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x44], ax;
 	__asm        jmp    near ptr 0x0053CCF8;
+
 	__asm        push   2;
 	__asm        push   2;
 	__asm        mov    eax, [ebp-0x44];
@@ -1493,21 +1583,26 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053CDEC;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053CDEC;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053CDEC;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053CDF7;
+
 	__asm        mov    word ptr [ebp-0x48], 0;
 	__asm        jmp    near ptr 0x0053CE3D;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        add    eax, stepSize;
@@ -1530,6 +1625,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x48], ax;
 	__asm        jmp    near ptr 0x0053CE3D;
+
 	__asm        push   4;
 	__asm        push   4;
 	__asm        mov    eax, [ebp-0x48];
@@ -1604,21 +1700,26 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053CF26;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053CF26;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053CF26;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053CF31;
+
 	__asm        mov    word ptr [ebp-0x4C], 0;
 	__asm        jmp    near ptr 0x0053CF71;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        mov    eax, [eax*4+0x638F6C];
@@ -1639,6 +1740,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x4C], ax;
 	__asm        jmp    near ptr 0x0053CF71;
+
 	__asm        push   8;
 	__asm        push   8;
 	__asm        mov    eax, [ebp-0x4C];
@@ -1779,8 +1881,10 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        jmp    near ptr 0x0053D0FA;
 // LINE 576:
 	__asm        jmp    near ptr 0x0053D0FA;
+
 	__asm        cmp    dword ptr [ebp-0x10], 3;
 	__asm        ja     near ptr 0x0053D0FA;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    dword ptr [eax*4+0x53D0EA];
 // Switch pointers
@@ -1813,6 +1917,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        mov    al, here.x;
 	__asm        cmp    ecx, eax;
 	__asm        jne    near ptr 0x0053D08E;
+
 	__asm        mov    eax, pGoal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD];
@@ -1831,6 +1936,7 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 // LINE 597:
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053D17F;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -1859,6 +1965,7 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	__asm        jmp    near ptr 0x0053D214;
 // LINE 603:
 	__asm        jmp    near ptr 0x0053D17C;
+
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -1867,12 +1974,14 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	__asm        mov    al, yindex;
 	__asm        cmp    edx, eax;
 	__asm        jg     near ptr 0x0053D208;
+
 	__asm        push   0x25B;
 	__asm        push   0x5B819C;
 	__asm        push   0x5B81C0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053D20D;
+
 	__asm        jmp    near ptr 0x0053D20D;
 // LINE 605:
 	__asm        mov    al, 0xFF;
@@ -1916,6 +2025,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        mov    returnDir, eax;
 // LINE 642:
 	__asm        jmp    near ptr 0x0053D3F4;
+
 	__asm        jmp    near ptr 0x0053D348;
 // LINE 647:
 	__asm        xor    eax, eax;
@@ -1924,6 +2034,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        mov    cl, x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x0053D29E;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, destLoc.y;
 	__asm        xor    ecx, ecx;
@@ -1962,8 +2073,10 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        jmp    near ptr 0x0053D30D;
 // LINE 664:
 	__asm        jmp    near ptr 0x0053D30D;
+
 	__asm        cmp    dword ptr [ebp-0x20], 3;
 	__asm        ja     near ptr 0x0053D30D;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x53D2FD];
 // Switch pointers
@@ -1974,6 +2087,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        mov    cl, destLoc.x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x0053D338;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, here.y;
 	__asm        xor    ecx, ecx;
@@ -2049,6 +2163,7 @@ KlugeFirstStepIsAnIntersection:
 	__asm        mov    eax, goal;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    near ptr 0x0053D3E2;
+
 	__asm        jmp    near ptr 0x0053D3E2;
 // LINE 697:
 	__asm        jmp    near ptr 0x0053D3EC;
@@ -2071,6 +2186,7 @@ void RoadGraph::FindDeadEnds() {
 // LINE 713:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053D41B;
+
 	__asm        inc    x;
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053D8CB;
@@ -2079,6 +2195,7 @@ void RoadGraph::FindDeadEnds() {
 	int32_t yindex;
 	__asm        mov    yindex, 0;
 	__asm        jmp    near ptr 0x0053D437;
+
 	__asm        inc    yindex;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -2108,14 +2225,19 @@ void RoadGraph::FindDeadEnds() {
 // LINE 720:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053D4A4;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053D4A4;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053D4A4;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053D4AF;
+
 	__asm        mov    fromTile, 0;
 	__asm        jmp    near ptr 0x0053D4E7;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -2151,19 +2273,25 @@ void RoadGraph::FindDeadEnds() {
 	__asm        mov    eax, Offset;
 	__asm        cmp    y, eax;
 	__asm        jle    near ptr 0x0053D5FD;
+
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053D555;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053D555;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053D555;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053D560;
+
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0053D59A;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -2180,6 +2308,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0053D59A;
+
 	__asm        push   1;
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x20];
@@ -2190,6 +2319,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D5FD;
+
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -2223,19 +2353,25 @@ void RoadGraph::FindDeadEnds() {
 	__asm        sub    eax, Offset;
 	__asm        cmp    eax, x;
 	__asm        jle    near ptr 0x0053D6EE;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053D642;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053D642;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053D642;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053D64D;
+
 	__asm        mov    word ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0053D68B;
+
 	__asm        mov    eax, x;
 	__asm        add    eax, stepSize;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -2254,6 +2390,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x24], ax;
 	__asm        jmp    near ptr 0x0053D68B;
+
 	__asm        push   2;
 	__asm        push   2;
 	__asm        mov    eax, [ebp-0x24];
@@ -2264,6 +2401,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D6EE;
+
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+1];
 	__asm        push   eax;
@@ -2297,19 +2435,25 @@ void RoadGraph::FindDeadEnds() {
 	__asm        sub    eax, Offset;
 	__asm        cmp    eax, y;
 	__asm        jle    near ptr 0x0053D7DF;
+
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053D733;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053D733;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053D733;
+
 	__asm        mov    eax, y;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053D73E;
+
 	__asm        mov    word ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0053D77C;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -2328,6 +2472,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x28], ax;
 	__asm        jmp    near ptr 0x0053D77C;
+
 	__asm        push   4;
 	__asm        push   4;
 	__asm        mov    eax, [ebp-0x28];
@@ -2338,6 +2483,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D7DF;
+
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -2370,19 +2516,25 @@ void RoadGraph::FindDeadEnds() {
 	__asm        mov    eax, Offset;
 	__asm        cmp    x, eax;
 	__asm        jle    near ptr 0x0053D8C1;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053D81B;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053D81B;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053D81B;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053D826;
+
 	__asm        mov    word ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0053D85E;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F6C];
 	__asm        mov    ecx, y;
@@ -2399,6 +2551,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x2C], ax;
 	__asm        jmp    near ptr 0x0053D85E;
+
 	__asm        push   8;
 	__asm        push   8;
 	__asm        mov    eax, [ebp-0x2C];
@@ -2409,6 +2562,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D8C1;
+
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+1];
 	__asm        push   eax;
@@ -2528,8 +2682,10 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        jmp    near ptr 0x0053D9C6;
 // LINE 801:
 	__asm        jmp    near ptr 0x0053D9C6;
+
 	__asm        cmp    dword ptr [ebp-0x18], 3;
 	__asm        ja     near ptr 0x0053D9C6;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x53D9B6];
 // Switch pointers
@@ -2540,8 +2696,8 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 
 // FUNCTION: COPTER_D 0x0053d9d2
 void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
-	 // Switch table at 0x0053e04e
-	 // Switch table at 0x0053dd66
+	static const <NoType> = { /* <data@0x0053e04e> */ };
+	static const <NoType> = { /* <data@0x0053dd66> */ };
 	int32_t stepSize;
 	int32_t Offset;
 	struct Edge* pEdge;
@@ -2550,14 +2706,19 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 810:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053DA0C;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053DA0C;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053DA0C;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053DA17;
+
 	__asm        mov    fromTile, 0;
 	__asm        jmp    near ptr 0x0053DA4F;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -2579,27 +2740,39 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0053DA7C;
+
 	__asm        mov    eax, pRGV;
 	__asm        mov    byte ptr [eax+3], 1;
 	__asm        jmp    near ptr 0x0053DAD1;
+
 	__asm        mov    eax, pRGV;
 	__asm        mov    byte ptr [eax+3], 0;
 	__asm        jmp    near ptr 0x0053DAD1;
+
 	__asm        jmp    near ptr 0x0053DAC8;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x6B;
 	__asm        jg     near ptr 0x0053DAA9;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x61;
 	__asm        jge    near ptr 0x0053DA5F;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x49;
 	__asm        jl     near ptr 0x0053DA6B;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x50;
 	__asm        jle    near ptr 0x0053DA5F;
+
 	__asm        jmp    near ptr 0x0053DA6B;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x806A;
 	__asm        jl     near ptr 0x0053DA6B;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x806B;
 	__asm        jle    near ptr 0x0053DA5F;
+
 	__asm        jmp    near ptr 0x0053DA6B;
+
 	__asm        mov    al, [ebp-0x14];
 	__asm        mov    ecx, pRGV;
 	__asm        mov    [ecx+3], al;
@@ -2625,17 +2798,22 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 835:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053DB3F;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053DB3F;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053DB3F;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053DB4A;
+
 	__asm        mov    word ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0053DB84;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -2652,6 +2830,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x18], ax;
 	__asm        jmp    near ptr 0x0053DB84;
+
 	__asm        push   1;
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x18];
@@ -2671,79 +2850,119 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0053DC42;
+
 	__asm        mov    dword ptr [ebp-0x28], 8;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 0xA;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 8;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 4;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 8;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 8;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 0xA;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 8;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 0xA;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 4;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        jmp    near ptr 0x0053DD7B;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x2B;
 	__asm        jg     near ptr 0x0053DC6F;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x27;
 	__asm        jge    near ptr 0x0053DBC5;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x1D;
 	__asm        jl     near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x26;
 	__asm        jle    near ptr 0x0053DBB9;
+
 	__asm        jmp    near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x50;
 	__asm        jg     near ptr 0x0053DC9C;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x49;
 	__asm        jge    near ptr 0x0053DBDD;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x3F;
 	__asm        jl     near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x46;
 	__asm        jle    near ptr 0x0053DBD1;
+
 	__asm        jmp    near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x59;
 	__asm        jg     near ptr 0x0053DCC9;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x57;
 	__asm        jge    near ptr 0x0053DBF5;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x51;
 	__asm        jl     near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x56;
 	__asm        jle    near ptr 0x0053DBE9;
+
 	__asm        jmp    near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x68;
 	__asm        jg     near ptr 0x0053DCF6;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x61;
 	__asm        jge    near ptr 0x0053DC0D;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x5D;
 	__asm        jl     near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x60;
 	__asm        jle    near ptr 0x0053DC01;
+
 	__asm        jmp    near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x8056;
 	__asm        jg     near ptr 0x0053DD33;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x8051;
 	__asm        jge    near ptr 0x0053DBE9;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x69;
 	__asm        je     near ptr 0x0053DC19;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x6A;
 	__asm        jl     near ptr 0x0053DC31;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x6B;
 	__asm        jle    near ptr 0x0053DC25;
+
 	__asm        jmp    near ptr 0x0053DC31;
+
 	__asm        sub    dword ptr [ebp-0x38], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x38], 0x14;
 	__asm        ja     near ptr 0x0053DC31;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53DD66];
@@ -2794,16 +3013,21 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, x;
 	__asm        js     near ptr 0x0053DE23;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053DE23;
+
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053DE23;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053DE2E;
+
 	__asm        mov    word ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0053DE6C;
+
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -2822,6 +3046,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x1C], ax;
 	__asm        jmp    near ptr 0x0053DE6C;
+
 	__asm        push   2;
 	__asm        push   2;
 	__asm        mov    eax, [ebp-0x1C];
@@ -2841,79 +3066,119 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0053DF2A;
+
 	__asm        mov    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0xA;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 4;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0xA;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0xA;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 4;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        jmp    near ptr 0x0053E063;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x2B;
 	__asm        jg     near ptr 0x0053DF57;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x27;
 	__asm        jge    near ptr 0x0053DEAD;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x1D;
 	__asm        jl     near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x26;
 	__asm        jle    near ptr 0x0053DEA1;
+
 	__asm        jmp    near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x50;
 	__asm        jg     near ptr 0x0053DF84;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x49;
 	__asm        jge    near ptr 0x0053DEC5;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x3F;
 	__asm        jl     near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x46;
 	__asm        jle    near ptr 0x0053DEB9;
+
 	__asm        jmp    near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x59;
 	__asm        jg     near ptr 0x0053DFB1;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x57;
 	__asm        jge    near ptr 0x0053DEDD;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x51;
 	__asm        jl     near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x56;
 	__asm        jle    near ptr 0x0053DED1;
+
 	__asm        jmp    near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x68;
 	__asm        jg     near ptr 0x0053DFDE;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x61;
 	__asm        jge    near ptr 0x0053DEF5;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x5D;
 	__asm        jl     near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x60;
 	__asm        jle    near ptr 0x0053DEE9;
+
 	__asm        jmp    near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8056;
 	__asm        jg     near ptr 0x0053E01B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8051;
 	__asm        jge    near ptr 0x0053DED1;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x69;
 	__asm        je     near ptr 0x0053DF01;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x6A;
 	__asm        jl     near ptr 0x0053DF19;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x6B;
 	__asm        jle    near ptr 0x0053DF0D;
+
 	__asm        jmp    near ptr 0x0053DF19;
+
 	__asm        sub    dword ptr [ebp-0x3C], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x3C], 0x14;
 	__asm        ja     near ptr 0x0053DF19;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53E04E];
@@ -2963,17 +3228,22 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 857:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x0053E10B;
+
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, y;
 	__asm        js     near ptr 0x0053E10B;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x0053E10B;
+
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053E116;
+
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0053E154;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, stepSize;
@@ -2992,6 +3262,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0053E154;
+
 	__asm        push   4;
 	__asm        push   4;
 	__asm        mov    eax, [ebp-0x20];
@@ -3060,16 +3331,21 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053E223;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x0053E223;
+
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053E223;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x0053E22E;
+
 	__asm        mov    word ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0053E266;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F6C];
 	__asm        mov    ecx, y;
@@ -3086,6 +3362,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x24], ax;
 	__asm        jmp    near ptr 0x0053E266;
+
 	__asm        push   8;
 	__asm        push   8;
 	__asm        mov    eax, [ebp-0x24];
@@ -3152,7 +3429,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 
 // FUNCTION: COPTER_D 0x0053e305
 void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, enum DirIndex2 currentDir, unsigned char x, unsigned char y, int32_t fDeadEnd) {
-	 // Switch table at 0x0053e75f
+	static const <NoType> = { /* <data@0x0053e75f> */ };
 	int32_t repeatCount;
 	enum DirIndex2 returnStatus;
 	enum DirIndex2 returnDir;
@@ -3259,8 +3536,10 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        jmp    near ptr 0x0053E43A;
 // LINE 930:
 	__asm        jmp    near ptr 0x0053E43A;
+
 	__asm        cmp    dword ptr [ebp-0x28], 3;
 	__asm        ja     near ptr 0x0053E43A;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    dword ptr [eax*4+0x53E42A];
 // Switch pointers
@@ -3296,8 +3575,10 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        jmp    near ptr 0x0053E4A9;
 // LINE 949:
 	__asm        jmp    near ptr 0x0053E4A9;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     near ptr 0x0053E4A9;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x53E499];
 // Switch pointers
@@ -3319,6 +3600,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 // LINE 954:
 // Block end:
 	__asm        jmp    near ptr 0x0053E503;
+
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0053E503;
 // LINE 956:
@@ -3354,20 +3636,25 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053E557;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053E557;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053E557;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053E562;
+
 	__asm        mov    word ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0053E5A2;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -3388,83 +3675,124 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x1C], ax;
 	__asm        jmp    near ptr 0x0053E5A2;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0053E63B;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 4;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 4;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        jmp    near ptr 0x0053E774;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x2B;
 	__asm        jg     near ptr 0x0053E668;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x27;
 	__asm        jge    near ptr 0x0053E5BE;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x1D;
 	__asm        jl     near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x26;
 	__asm        jle    near ptr 0x0053E5B2;
+
 	__asm        jmp    near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x50;
 	__asm        jg     near ptr 0x0053E695;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x49;
 	__asm        jge    near ptr 0x0053E5D6;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x3F;
 	__asm        jl     near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x46;
 	__asm        jle    near ptr 0x0053E5CA;
+
 	__asm        jmp    near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x59;
 	__asm        jg     near ptr 0x0053E6C2;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x57;
 	__asm        jge    near ptr 0x0053E5EE;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x51;
 	__asm        jl     near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x56;
 	__asm        jle    near ptr 0x0053E5E2;
+
 	__asm        jmp    near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x68;
 	__asm        jg     near ptr 0x0053E6EF;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x61;
 	__asm        jge    near ptr 0x0053E606;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x5D;
 	__asm        jl     near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x60;
 	__asm        jle    near ptr 0x0053E5FA;
+
 	__asm        jmp    near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x8056;
 	__asm        jg     near ptr 0x0053E72C;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x8051;
 	__asm        jge    near ptr 0x0053E5E2;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x69;
 	__asm        je     near ptr 0x0053E612;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x6A;
 	__asm        jl     near ptr 0x0053E62A;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x6B;
 	__asm        jle    near ptr 0x0053E61E;
+
 	__asm        jmp    near ptr 0x0053E62A;
+
 	__asm        sub    dword ptr [ebp-0x30], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x30], 0x14;
 	__asm        ja     near ptr 0x0053E62A;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53E75F];
@@ -3477,12 +3805,14 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    cx, [eax+2];
 	__asm        cmp    ecx, 0x7D00;
 	__asm        jl     near ptr 0x0053E7B8;
+
 	__asm        push   0x3CA;
 	__asm        push   0x5B81D8;
 	__asm        push   0x5B81FC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053E7BD;
+
 	__asm        jmp    near ptr 0x0053E7BD;
 // LINE 972:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
@@ -3540,8 +3870,10 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        jmp    near ptr 0x0053E872;
 // LINE 997:
 	__asm        jmp    near ptr 0x0053E872;
+
 	__asm        cmp    dword ptr [ebp-0x34], 3;
 	__asm        ja     near ptr 0x0053E872;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x53E862];
 // Switch pointers
@@ -3550,11 +3882,13 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 // LINE 1007:
 	__asm        cmp    fDeadEnd, 0;
 	__asm        je     near ptr 0x0053E8A4;
+
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+4];
 	__asm        cmp    ecx, 2;
 	__asm        jne    near ptr 0x0053E8A4;
+
 	__asm        cmp    repeatCount, 0;
 	__asm        jne    near ptr 0x0053E8A4;
 // LINE 1008:
@@ -3575,20 +3909,25 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053E8F6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053E8F6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053E8F6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053E901;
+
 	__asm        mov    LocalTile, 0;
 	__asm        jmp    near ptr 0x0053E941;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -3632,20 +3971,31 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x0053E998;
+
 	__asm        jmp    near ptr 0x0053E9DA;
+
 	__asm        jmp    near ptr 0x0053EA01;
+
 	__asm        jmp    near ptr 0x0053E9DA;
+
 	__asm        jmp    near ptr 0x0053E9D0;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x806B;
 	__asm        jg     near ptr 0x0053EA01;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x806A;
 	__asm        jge    near ptr 0x0053E9DA;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x61;
 	__asm        jl     near ptr 0x0053EA01;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x6B;
 	__asm        jle    near ptr 0x0053E9DA;
+
 	__asm        jmp    near ptr 0x0053EA01;
+
 	__asm        jmp    near ptr 0x0053EA01;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     near ptr 0x0053EA01;
 // LINE 1031:
@@ -3673,20 +4023,25 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053EA49;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053EA49;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053EA49;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053EA54;
+
 	__asm        mov    LocalTile, 0;
 	__asm        jmp    near ptr 0x0053EA94;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -3710,6 +4065,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 // LINE 1047:
 	__asm        cmp    currentDir, 2;
 	__asm        je     near ptr 0x0053EB94;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, Offset;
@@ -3719,21 +4075,26 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053EAE6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053EAE6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053EAE6;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053EAF1;
+
 	__asm        mov    word ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x0053EB33;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -3754,6 +4115,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x14], ax;
 	__asm        jmp    near ptr 0x0053EB33;
+
 	__asm        push   1;
 	__asm        mov    eax, currentDir;
 	__asm        mov    eax, [eax*4+0x593430];
@@ -3792,6 +4154,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 // LINE 1057:
 	__asm        cmp    currentDir, 3;
 	__asm        je     near ptr 0x0053ECA8;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    ecx, 0x7F;
@@ -3803,21 +4166,26 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053EBF1;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053EBF1;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053EBF1;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053EBFC;
+
 	__asm        mov    word ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0053EC42;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        add    eax, stepSize;
@@ -3840,6 +4208,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x18], ax;
 	__asm        jmp    near ptr 0x0053EC42;
+
 	__asm        push   2;
 	__asm        mov    eax, currentDir;
 	__asm        mov    eax, [eax*4+0x593430];
@@ -3878,6 +4247,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 // LINE 1067:
 	__asm        cmp    currentDir, 1;
 	__asm        je     near ptr 0x0053EDA9;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, Offset;
@@ -3887,21 +4257,26 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        dec    eax;
 	__asm        js     near ptr 0x0053ECFA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053ECFA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        dec    eax;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053ECFA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053ED05;
+
 	__asm        mov    word ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0053ED45;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F6C];
@@ -3922,6 +4297,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x1C], ax;
 	__asm        jmp    near ptr 0x0053ED45;
+
 	__asm        push   8;
 	__asm        mov    eax, currentDir;
 	__asm        mov    eax, [eax*4+0x593430];
@@ -3960,6 +4336,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 // LINE 1077:
 	__asm        cmp    currentDir, 0;
 	__asm        je     near ptr 0x0053EEBD;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        mov    ecx, 0x7F;
@@ -3971,21 +4348,26 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0053EE06;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        add    eax, stepSize;
 	__asm        js     near ptr 0x0053EE06;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0053EE06;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        add    eax, stepSize;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0053EE11;
+
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0053EE57;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4008,6 +4390,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x20], ax;
 	__asm        jmp    near ptr 0x0053EE57;
+
 	__asm        push   4;
 	__asm        mov    eax, currentDir;
 	__asm        mov    eax, [eax*4+0x593430];
@@ -4055,14 +4438,14 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 
 // FUNCTION: COPTER_D 0x0053eed6
 void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) {
-	 // Switch table at 0x005403b8
-	 // Switch table at 0x00540119
-	 // Switch table at 0x0053fe7b
-	 // Switch table at 0x0053fbde
-	 // Switch table at 0x0053f940
-	 // Switch table at 0x0053f69d
-	 // Switch table at 0x0053f3fb
-	 // Switch table at 0x0053f158
+	static const <NoType> = { /* <data@0x005403b8> */ };
+	static const <NoType> = { /* <data@0x00540119> */ };
+	static const <NoType> = { /* <data@0x0053fe7b> */ };
+	static const <NoType> = { /* <data@0x0053fbde> */ };
+	static const <NoType> = { /* <data@0x0053f940> */ };
+	static const <NoType> = { /* <data@0x0053f69d> */ };
+	static const <NoType> = { /* <data@0x0053f3fb> */ };
+	static const <NoType> = { /* <data@0x0053f158> */ };
 	unsigned char yindex;
 
 // LINE 1099:
@@ -4073,6 +4456,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1102:
 	__asm        cmp    x, 1;
 	__asm        jle    near ptr 0x0053F18E;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x0053F18E;
 // LINE 1103:
@@ -4085,6 +4469,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F18E;
+
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -4137,79 +4522,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1108:
 	__asm        mov    dword ptr [ebp-0x30], 0x5D;
 	__asm        jmp    near ptr 0x0053F034;
+
 	__asm        mov    dword ptr [ebp-8], 8;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 0xA;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 8;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 4;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 8;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 8;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 0xA;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 8;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 0xA;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 4;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        jmp    near ptr 0x0053F16D;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x2B;
 	__asm        jg     near ptr 0x0053F061;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x27;
 	__asm        jge    near ptr 0x0053EFB7;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x1D;
 	__asm        jl     near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x26;
 	__asm        jle    near ptr 0x0053EFAB;
+
 	__asm        jmp    near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x50;
 	__asm        jg     near ptr 0x0053F08E;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x49;
 	__asm        jge    near ptr 0x0053EFCF;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x3F;
 	__asm        jl     near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x46;
 	__asm        jle    near ptr 0x0053EFC3;
+
 	__asm        jmp    near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x59;
 	__asm        jg     near ptr 0x0053F0BB;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x57;
 	__asm        jge    near ptr 0x0053EFE7;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x51;
 	__asm        jl     near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x56;
 	__asm        jle    near ptr 0x0053EFDB;
+
 	__asm        jmp    near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x68;
 	__asm        jg     near ptr 0x0053F0E8;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x61;
 	__asm        jge    near ptr 0x0053EFFF;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x5D;
 	__asm        jl     near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x60;
 	__asm        jle    near ptr 0x0053EFF3;
+
 	__asm        jmp    near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x8056;
 	__asm        jg     near ptr 0x0053F125;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x8051;
 	__asm        jge    near ptr 0x0053EFDB;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x69;
 	__asm        je     near ptr 0x0053F00B;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x6A;
 	__asm        jl     near ptr 0x0053F023;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0x6B;
 	__asm        jle    near ptr 0x0053F017;
+
 	__asm        jmp    near ptr 0x0053F023;
+
 	__asm        sub    dword ptr [ebp-0x30], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x30], 0x14;
 	__asm        ja     near ptr 0x0053F023;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F158];
@@ -4221,6 +4646,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1113:
 	__asm        cmp    x, 1;
 	__asm        jle    near ptr 0x0053F431;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x0053F431;
 // LINE 1114:
@@ -4233,6 +4659,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F431;
+
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -4285,79 +4712,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1119:
 	__asm        mov    dword ptr [ebp-0x34], 0x805D;
 	__asm        jmp    near ptr 0x0053F2D7;
+
 	__asm        mov    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 0xA;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 0xA;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 0xA;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        jmp    near ptr 0x0053F410;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x2B;
 	__asm        jg     near ptr 0x0053F304;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x27;
 	__asm        jge    near ptr 0x0053F25A;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x1D;
 	__asm        jl     near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x26;
 	__asm        jle    near ptr 0x0053F24E;
+
 	__asm        jmp    near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x50;
 	__asm        jg     near ptr 0x0053F331;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x49;
 	__asm        jge    near ptr 0x0053F272;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x3F;
 	__asm        jl     near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x46;
 	__asm        jle    near ptr 0x0053F266;
+
 	__asm        jmp    near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x59;
 	__asm        jg     near ptr 0x0053F35E;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x57;
 	__asm        jge    near ptr 0x0053F28A;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x51;
 	__asm        jl     near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x56;
 	__asm        jle    near ptr 0x0053F27E;
+
 	__asm        jmp    near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x68;
 	__asm        jg     near ptr 0x0053F38B;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x61;
 	__asm        jge    near ptr 0x0053F2A2;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x5D;
 	__asm        jl     near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x60;
 	__asm        jle    near ptr 0x0053F296;
+
 	__asm        jmp    near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x8056;
 	__asm        jg     near ptr 0x0053F3C8;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x8051;
 	__asm        jge    near ptr 0x0053F27E;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x69;
 	__asm        je     near ptr 0x0053F2AE;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x6A;
 	__asm        jl     near ptr 0x0053F2C6;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x6B;
 	__asm        jle    near ptr 0x0053F2BA;
+
 	__asm        jmp    near ptr 0x0053F2C6;
+
 	__asm        sub    dword ptr [ebp-0x34], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x34], 0x14;
 	__asm        ja     near ptr 0x0053F2C6;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F3FB];
@@ -4369,6 +4836,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1124:
 	__asm        cmp    x, 0;
 	__asm        jle    near ptr 0x0053F6D4;
+
 	__asm        cmp    y, 1;
 	__asm        jle    near ptr 0x0053F6D4;
 // LINE 1125:
@@ -4381,6 +4849,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F6D4;
+
 	__asm        mov    eax, y;
 	__asm        sub    eax, 2;
 	__asm        push   eax;
@@ -4432,79 +4901,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1130:
 	__asm        mov    dword ptr [ebp-0x38], 0x5E;
 	__asm        jmp    near ptr 0x0053F579;
+
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 0xA;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 4;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 0xA;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 0xA;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 4;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        jmp    near ptr 0x0053F6B2;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x2B;
 	__asm        jg     near ptr 0x0053F5A6;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x27;
 	__asm        jge    near ptr 0x0053F4FC;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x1D;
 	__asm        jl     near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x26;
 	__asm        jle    near ptr 0x0053F4F0;
+
 	__asm        jmp    near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x50;
 	__asm        jg     near ptr 0x0053F5D3;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x49;
 	__asm        jge    near ptr 0x0053F514;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x3F;
 	__asm        jl     near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x46;
 	__asm        jle    near ptr 0x0053F508;
+
 	__asm        jmp    near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x59;
 	__asm        jg     near ptr 0x0053F600;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x57;
 	__asm        jge    near ptr 0x0053F52C;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x51;
 	__asm        jl     near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x56;
 	__asm        jle    near ptr 0x0053F520;
+
 	__asm        jmp    near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x68;
 	__asm        jg     near ptr 0x0053F62D;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x61;
 	__asm        jge    near ptr 0x0053F544;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x5D;
 	__asm        jl     near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x60;
 	__asm        jle    near ptr 0x0053F538;
+
 	__asm        jmp    near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x8056;
 	__asm        jg     near ptr 0x0053F66A;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x8051;
 	__asm        jge    near ptr 0x0053F520;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x69;
 	__asm        je     near ptr 0x0053F550;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x6A;
 	__asm        jl     near ptr 0x0053F568;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x6B;
 	__asm        jle    near ptr 0x0053F55C;
+
 	__asm        jmp    near ptr 0x0053F568;
+
 	__asm        sub    dword ptr [ebp-0x38], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x38], 0x14;
 	__asm        ja     near ptr 0x0053F568;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F69D];
@@ -4516,6 +5025,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1135:
 	__asm        cmp    x, 1;
 	__asm        jle    near ptr 0x0053F977;
+
 	__asm        cmp    y, 0;
 	__asm        jle    near ptr 0x0053F977;
 // LINE 1136:
@@ -4528,6 +5038,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F977;
+
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        push   eax;
@@ -4579,79 +5090,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1141:
 	__asm        mov    dword ptr [ebp-0x3C], 0x805E;
 	__asm        jmp    near ptr 0x0053F81C;
+
 	__asm        mov    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 0xA;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 4;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 0xA;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 8;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 0xA;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 4;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        jmp    near ptr 0x0053F955;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x2B;
 	__asm        jg     near ptr 0x0053F849;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x27;
 	__asm        jge    near ptr 0x0053F79F;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x1D;
 	__asm        jl     near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x26;
 	__asm        jle    near ptr 0x0053F793;
+
 	__asm        jmp    near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x50;
 	__asm        jg     near ptr 0x0053F876;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x49;
 	__asm        jge    near ptr 0x0053F7B7;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x3F;
 	__asm        jl     near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x46;
 	__asm        jle    near ptr 0x0053F7AB;
+
 	__asm        jmp    near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x59;
 	__asm        jg     near ptr 0x0053F8A3;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x57;
 	__asm        jge    near ptr 0x0053F7CF;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x51;
 	__asm        jl     near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x56;
 	__asm        jle    near ptr 0x0053F7C3;
+
 	__asm        jmp    near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x68;
 	__asm        jg     near ptr 0x0053F8D0;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x61;
 	__asm        jge    near ptr 0x0053F7E7;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x5D;
 	__asm        jl     near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x60;
 	__asm        jle    near ptr 0x0053F7DB;
+
 	__asm        jmp    near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8056;
 	__asm        jg     near ptr 0x0053F90D;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8051;
 	__asm        jge    near ptr 0x0053F7C3;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x69;
 	__asm        je     near ptr 0x0053F7F3;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x6A;
 	__asm        jl     near ptr 0x0053F80B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x6B;
 	__asm        jle    near ptr 0x0053F7FF;
+
 	__asm        jmp    near ptr 0x0053F80B;
+
 	__asm        sub    dword ptr [ebp-0x3C], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x3C], 0x14;
 	__asm        ja     near ptr 0x0053F80B;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F940];
@@ -4663,6 +5214,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1146:
 	__asm        cmp    x, 0;
 	__asm        jle    near ptr 0x0053FC14;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x0053FC14;
 // LINE 1147:
@@ -4675,6 +5227,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FC14;
+
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -4727,79 +5280,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1152:
 	__asm        mov    dword ptr [ebp-0x40], 0x5F;
 	__asm        jmp    near ptr 0x0053FABA;
+
 	__asm        mov    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 0xA;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 4;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 0xA;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 0xA;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 4;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        jmp    near ptr 0x0053FBF3;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x2B;
 	__asm        jg     near ptr 0x0053FAE7;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x27;
 	__asm        jge    near ptr 0x0053FA3D;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x1D;
 	__asm        jl     near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x26;
 	__asm        jle    near ptr 0x0053FA31;
+
 	__asm        jmp    near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x50;
 	__asm        jg     near ptr 0x0053FB14;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x49;
 	__asm        jge    near ptr 0x0053FA55;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x3F;
 	__asm        jl     near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x46;
 	__asm        jle    near ptr 0x0053FA49;
+
 	__asm        jmp    near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x59;
 	__asm        jg     near ptr 0x0053FB41;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x57;
 	__asm        jge    near ptr 0x0053FA6D;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x51;
 	__asm        jl     near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x56;
 	__asm        jle    near ptr 0x0053FA61;
+
 	__asm        jmp    near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x68;
 	__asm        jg     near ptr 0x0053FB6E;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x61;
 	__asm        jge    near ptr 0x0053FA85;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x5D;
 	__asm        jl     near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x60;
 	__asm        jle    near ptr 0x0053FA79;
+
 	__asm        jmp    near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x8056;
 	__asm        jg     near ptr 0x0053FBAB;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x8051;
 	__asm        jge    near ptr 0x0053FA61;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x69;
 	__asm        je     near ptr 0x0053FA91;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x6A;
 	__asm        jl     near ptr 0x0053FAA9;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x6B;
 	__asm        jle    near ptr 0x0053FA9D;
+
 	__asm        jmp    near ptr 0x0053FAA9;
+
 	__asm        sub    dword ptr [ebp-0x40], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x40], 0x14;
 	__asm        ja     near ptr 0x0053FAA9;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53FBDE];
@@ -4811,6 +5404,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1157:
 	__asm        cmp    x, 0;
 	__asm        jle    near ptr 0x0053FEB1;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x0053FEB1;
 // LINE 1158:
@@ -4823,6 +5417,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FEB1;
+
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -4875,79 +5470,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1163:
 	__asm        mov    dword ptr [ebp-0x44], 0x805F;
 	__asm        jmp    near ptr 0x0053FD57;
+
 	__asm        mov    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0xA;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 4;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0xA;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0xA;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 4;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        jmp    near ptr 0x0053FE90;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x2B;
 	__asm        jg     near ptr 0x0053FD84;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x27;
 	__asm        jge    near ptr 0x0053FCDA;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x1D;
 	__asm        jl     near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x26;
 	__asm        jle    near ptr 0x0053FCCE;
+
 	__asm        jmp    near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x50;
 	__asm        jg     near ptr 0x0053FDB1;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x49;
 	__asm        jge    near ptr 0x0053FCF2;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x3F;
 	__asm        jl     near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x46;
 	__asm        jle    near ptr 0x0053FCE6;
+
 	__asm        jmp    near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x59;
 	__asm        jg     near ptr 0x0053FDDE;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x57;
 	__asm        jge    near ptr 0x0053FD0A;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x51;
 	__asm        jl     near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x56;
 	__asm        jle    near ptr 0x0053FCFE;
+
 	__asm        jmp    near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x68;
 	__asm        jg     near ptr 0x0053FE0B;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x61;
 	__asm        jge    near ptr 0x0053FD22;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x5D;
 	__asm        jl     near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x60;
 	__asm        jle    near ptr 0x0053FD16;
+
 	__asm        jmp    near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x8056;
 	__asm        jg     near ptr 0x0053FE48;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x8051;
 	__asm        jge    near ptr 0x0053FCFE;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x69;
 	__asm        je     near ptr 0x0053FD2E;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x6A;
 	__asm        jl     near ptr 0x0053FD46;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x6B;
 	__asm        jle    near ptr 0x0053FD3A;
+
 	__asm        jmp    near ptr 0x0053FD46;
+
 	__asm        sub    dword ptr [ebp-0x44], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x44], 0x14;
 	__asm        ja     near ptr 0x0053FD46;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53FE7B];
@@ -4959,6 +5594,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1168:
 	__asm        cmp    x, 0x7F;
 	__asm        jge    near ptr 0x00540150;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x00540150;
 // LINE 1169:
@@ -4971,6 +5607,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00540150;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        push   eax;
@@ -5022,79 +5659,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1174:
 	__asm        mov    dword ptr [ebp-0x48], 0x60;
 	__asm        jmp    near ptr 0x0053FFF5;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 4;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 8;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 0xA;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 4;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        jmp    near ptr 0x0054012E;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x2B;
 	__asm        jg     near ptr 0x00540022;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x27;
 	__asm        jge    near ptr 0x0053FF78;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x1D;
 	__asm        jl     near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x26;
 	__asm        jle    near ptr 0x0053FF6C;
+
 	__asm        jmp    near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x50;
 	__asm        jg     near ptr 0x0054004F;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x49;
 	__asm        jge    near ptr 0x0053FF90;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x3F;
 	__asm        jl     near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x46;
 	__asm        jle    near ptr 0x0053FF84;
+
 	__asm        jmp    near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x59;
 	__asm        jg     near ptr 0x0054007C;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x57;
 	__asm        jge    near ptr 0x0053FFA8;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x51;
 	__asm        jl     near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x56;
 	__asm        jle    near ptr 0x0053FF9C;
+
 	__asm        jmp    near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x68;
 	__asm        jg     near ptr 0x005400A9;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x61;
 	__asm        jge    near ptr 0x0053FFC0;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x5D;
 	__asm        jl     near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x60;
 	__asm        jle    near ptr 0x0053FFB4;
+
 	__asm        jmp    near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x8056;
 	__asm        jg     near ptr 0x005400E6;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x8051;
 	__asm        jge    near ptr 0x0053FF9C;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x69;
 	__asm        je     near ptr 0x0053FFCC;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x6A;
 	__asm        jl     near ptr 0x0053FFE4;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0x6B;
 	__asm        jle    near ptr 0x0053FFD8;
+
 	__asm        jmp    near ptr 0x0053FFE4;
+
 	__asm        sub    dword ptr [ebp-0x48], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x48], 0x14;
 	__asm        ja     near ptr 0x0053FFE4;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x540119];
@@ -5106,6 +5783,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1179:
 	__asm        cmp    x, 0x7F;
 	__asm        jge    near ptr 0x005403EF;
+
 	__asm        cmp    y, 0x7F;
 	__asm        jge    near ptr 0x005403EF;
 // LINE 1180:
@@ -5118,6 +5796,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005403EF;
+
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        push   eax;
@@ -5169,79 +5848,119 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 // LINE 1185:
 	__asm        mov    dword ptr [ebp-0x4C], 0x8060;
 	__asm        jmp    near ptr 0x00540294;
+
 	__asm        mov    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 0xA;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 4;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 0xA;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 0xA;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 4;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        jmp    near ptr 0x005403CD;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x2B;
 	__asm        jg     near ptr 0x005402C1;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x27;
 	__asm        jge    near ptr 0x00540217;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x1D;
 	__asm        jl     near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x26;
 	__asm        jle    near ptr 0x0054020B;
+
 	__asm        jmp    near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x50;
 	__asm        jg     near ptr 0x005402EE;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x49;
 	__asm        jge    near ptr 0x0054022F;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x3F;
 	__asm        jl     near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x46;
 	__asm        jle    near ptr 0x00540223;
+
 	__asm        jmp    near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x59;
 	__asm        jg     near ptr 0x0054031B;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x57;
 	__asm        jge    near ptr 0x00540247;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x51;
 	__asm        jl     near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x56;
 	__asm        jle    near ptr 0x0054023B;
+
 	__asm        jmp    near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x68;
 	__asm        jg     near ptr 0x00540348;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x61;
 	__asm        jge    near ptr 0x0054025F;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x5D;
 	__asm        jl     near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x60;
 	__asm        jle    near ptr 0x00540253;
+
 	__asm        jmp    near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x8056;
 	__asm        jg     near ptr 0x00540385;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x8051;
 	__asm        jge    near ptr 0x0054023B;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x69;
 	__asm        je     near ptr 0x0054026B;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x6A;
 	__asm        jl     near ptr 0x00540283;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0x6B;
 	__asm        jle    near ptr 0x00540277;
+
 	__asm        jmp    near ptr 0x00540283;
+
 	__asm        sub    dword ptr [ebp-0x4C], 0x8057;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x14;
 	__asm        ja     near ptr 0x00540283;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5403B8];
@@ -5257,15 +5976,20 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00540415;
+
 	__asm        jmp    near ptr 0x00540415;
 // LINE 1191:
 	__asm        jmp    near ptr 0x00540481;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x805D;
 	__asm        jg     near ptr 0x00540455;
+
 	__asm        je     near ptr 0x0053F193;
+
 	__asm        sub    dword ptr [ebp-0x2C], 0x5D;
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     near ptr 0x005403F4;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x540445];
 // Switch pointers
@@ -5282,14 +6006,19 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 1198:
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x005404C7;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x005404C7;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x005404C7;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x005404D2;
+
 	__asm        mov    fromTile, 0;
 	__asm        jmp    near ptr 0x0054050A;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -5460,6 +6189,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00540694;
+
 	__asm        jmp    near ptr 0x00541129;
 // LINE 1270:
 	__asm        mov    al, x;
@@ -5493,6 +6223,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 // LINE 1282:
 	__asm        cmp    deadEnd, 0;
 	__asm        je     near ptr 0x00540983;
+
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+4];
@@ -5516,20 +6247,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540753;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540753;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540753;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0054075E;
+
 	__asm        mov    word ptr [ebp-0x50], 0;
 	__asm        jmp    near ptr 0x0054079E;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -5550,29 +6286,42 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x50], ax;
 	__asm        jmp    near ptr 0x0054079E;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x005407CB;
+
 	__asm        mov    dword ptr [ebp-0x30], 1;
 	__asm        jmp    near ptr 0x00540817;
+
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    near ptr 0x00540817;
+
 	__asm        jmp    near ptr 0x00540817;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x6B;
 	__asm        jg     near ptr 0x005407F8;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x61;
 	__asm        jge    near ptr 0x005407AE;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x49;
 	__asm        jl     near ptr 0x005407BA;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x50;
 	__asm        jle    near ptr 0x005407AE;
+
 	__asm        jmp    near ptr 0x005407BA;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x806A;
 	__asm        jl     near ptr 0x005407BA;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0x806B;
 	__asm        jle    near ptr 0x005407AE;
+
 	__asm        jmp    near ptr 0x005407BA;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        and    al, 1;
 	__asm        shl    al, 4;
@@ -5587,20 +6336,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540868;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540868;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540868;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00540874;
+
 	__asm        mov    dword ptr [ebp-0x34], 1;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x639850];
@@ -5610,40 +6364,60 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    [ebp-0x5C], edx;
 	__asm        jmp    near ptr 0x0054093F;
+
 	__asm        cmp    currentDir, 3;
 	__asm        jne    near ptr 0x005408A8;
+
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    near ptr 0x005408AF;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        cmp    currentDir, 0;
 	__asm        jne    near ptr 0x005408CF;
+
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    near ptr 0x005408D6;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        cmp    currentDir, 1;
 	__asm        jne    near ptr 0x005408F6;
+
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    near ptr 0x005408FD;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        cmp    currentDir, 2;
 	__asm        jne    near ptr 0x0054091D;
+
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    near ptr 0x00540924;
+
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        mov    dword ptr [ebp-0x34], 1;
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        jmp    near ptr 0x00540967;
+
 	__asm        sub    dword ptr [ebp-0x5C], 0x1F;
 	__asm        cmp    dword ptr [ebp-0x5C], 3;
 	__asm        ja     near ptr 0x0054092E;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x540957];
 // Switch pointers
@@ -5695,8 +6469,10 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        jmp    near ptr 0x00540A20;
 // LINE 1314:
 	__asm        jmp    near ptr 0x00540A20;
+
 	__asm        cmp    dword ptr [ebp-0x60], 3;
 	__asm        ja     near ptr 0x00540A20;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    dword ptr [eax*4+0x540A10];
 // Switch pointers
@@ -5737,20 +6513,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540AA5;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540AA5;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540AA5;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00540AB0;
+
 	__asm        mov    word ptr [ebp-0x4C], 0;
 	__asm        jmp    near ptr 0x00540AF0;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -5771,29 +6552,42 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x4C], ax;
 	__asm        jmp    near ptr 0x00540AF0;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x00540B1D;
+
 	__asm        mov    dword ptr [ebp-0x38], 1;
 	__asm        jmp    near ptr 0x00540B69;
+
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    near ptr 0x00540B69;
+
 	__asm        jmp    near ptr 0x00540B69;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x6B;
 	__asm        jg     near ptr 0x00540B4A;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x61;
 	__asm        jge    near ptr 0x00540B00;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x49;
 	__asm        jl     near ptr 0x00540B0C;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x50;
 	__asm        jle    near ptr 0x00540B00;
+
 	__asm        jmp    near ptr 0x00540B0C;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x806A;
 	__asm        jl     near ptr 0x00540B0C;
+
 	__asm        cmp    dword ptr [ebp-0x64], 0x806B;
 	__asm        jle    near ptr 0x00540B00;
+
 	__asm        jmp    near ptr 0x00540B0C;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        and    al, 1;
 	__asm        shl    al, 4;
@@ -5808,20 +6602,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540BBA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540BBA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540BBA;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00540BC6;
+
 	__asm        mov    dword ptr [ebp-0x3C], 1;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x639850];
@@ -5831,40 +6630,60 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    [ebp-0x68], edx;
 	__asm        jmp    near ptr 0x00540C91;
+
 	__asm        cmp    currentDir, 3;
 	__asm        jne    near ptr 0x00540BFA;
+
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    near ptr 0x00540C01;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        cmp    currentDir, 0;
 	__asm        jne    near ptr 0x00540C21;
+
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    near ptr 0x00540C28;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        cmp    currentDir, 1;
 	__asm        jne    near ptr 0x00540C48;
+
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    near ptr 0x00540C4F;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        cmp    currentDir, 2;
 	__asm        jne    near ptr 0x00540C6F;
+
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    near ptr 0x00540C76;
+
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        mov    dword ptr [ebp-0x3C], 1;
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        jmp    near ptr 0x00540CB9;
+
 	__asm        sub    dword ptr [ebp-0x68], 0x1F;
 	__asm        cmp    dword ptr [ebp-0x68], 3;
 	__asm        ja     near ptr 0x00540C80;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        jmp    dword ptr [eax*4+0x540CA9];
 // Switch pointers
@@ -5902,18 +6721,21 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    cl, x;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00540D52;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x00540D52;
+
 	__asm        cmp    fStart, 0;
 	__asm        jne    near ptr 0x00540D52;
 // LINE 1345:
 	__asm        jmp    near ptr 0x00541124;
 // LINE 1347:
 	__asm        jmp    near ptr 0x00540DC3;
+
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00540DC3;
 // LINE 1349:
@@ -5936,8 +6758,10 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        jmp    near ptr 0x00540DB7;
 // LINE 1357:
 	__asm        jmp    near ptr 0x00540DB7;
+
 	__asm        cmp    dword ptr [ebp-0x6C], 3;
 	__asm        ja     near ptr 0x00540DB7;
+
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        jmp    dword ptr [eax*4+0x540DA7];
 // Switch pointers
@@ -6003,20 +6827,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540E82;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540E82;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540E82;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00540E8D;
+
 	__asm        mov    word ptr [ebp-0x48], 0;
 	__asm        jmp    near ptr 0x00540ECD;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -6037,29 +6866,42 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x48], ax;
 	__asm        jmp    near ptr 0x00540ECD;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        jmp    near ptr 0x00540EFA;
+
 	__asm        mov    dword ptr [ebp-0x40], 1;
 	__asm        jmp    near ptr 0x00540F46;
+
 	__asm        mov    dword ptr [ebp-0x40], 0;
 	__asm        jmp    near ptr 0x00540F46;
+
 	__asm        jmp    near ptr 0x00540F46;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x6B;
 	__asm        jg     near ptr 0x00540F27;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x61;
 	__asm        jge    near ptr 0x00540EDD;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x49;
 	__asm        jl     near ptr 0x00540EE9;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x50;
 	__asm        jle    near ptr 0x00540EDD;
+
 	__asm        jmp    near ptr 0x00540EE9;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x806A;
 	__asm        jl     near ptr 0x00540EE9;
+
 	__asm        cmp    dword ptr [ebp-0x70], 0x806B;
 	__asm        jle    near ptr 0x00540EDD;
+
 	__asm        jmp    near ptr 0x00540EE9;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        and    al, 1;
 	__asm        shl    al, 4;
@@ -6074,20 +6916,25 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540F97;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00540F97;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00540F97;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00540FA3;
+
 	__asm        mov    dword ptr [ebp-0x44], 1;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        mov    eax, [eax*4+0x639850];
@@ -6097,40 +6944,60 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    [ebp-0x74], edx;
 	__asm        jmp    near ptr 0x0054106E;
+
 	__asm        cmp    currentDir, 3;
 	__asm        jne    near ptr 0x00540FD7;
+
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    near ptr 0x00540FDE;
+
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        cmp    currentDir, 0;
 	__asm        jne    near ptr 0x00540FFE;
+
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    near ptr 0x00541005;
+
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        cmp    currentDir, 1;
 	__asm        jne    near ptr 0x00541025;
+
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    near ptr 0x0054102C;
+
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        cmp    currentDir, 2;
 	__asm        jne    near ptr 0x0054104C;
+
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    near ptr 0x00541053;
+
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        mov    dword ptr [ebp-0x44], 1;
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        jmp    near ptr 0x00541096;
+
 	__asm        sub    dword ptr [ebp-0x74], 0x1F;
 	__asm        cmp    dword ptr [ebp-0x74], 3;
 	__asm        ja     near ptr 0x0054105D;
+
 	__asm        mov    eax, [ebp-0x74];
 	__asm        jmp    dword ptr [eax*4+0x541086];
 // Switch pointers
@@ -6162,8 +7029,10 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        jmp    near ptr 0x0054111F;
 // LINE 1403:
 	__asm        jmp    near ptr 0x0054111F;
+
 	__asm        cmp    dword ptr [ebp-0x78], 3;
 	__asm        ja     near ptr 0x0054111F;
+
 	__asm        mov    eax, [ebp-0x78];
 	__asm        jmp    dword ptr [eax*4+0x54110F];
 // Switch pointers
@@ -6197,6 +7066,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        mov    al, currLoc.x;
 	__asm        cmp    ecx, eax;
 	__asm        jne    near ptr 0x00541181;
+
 	__asm        mov    eax, goal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD];
@@ -6243,8 +7113,10 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        jmp    near ptr 0x00541208;
 // LINE 1425:
 	__asm        jmp    near ptr 0x00541208;
+
 	__asm        cmp    dword ptr [ebp-0xC], 3;
 	__asm        ja     near ptr 0x00541208;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x5411F8];
 // Switch pointers
@@ -6257,6 +7129,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        mov    eax, goal;
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
 	__asm        je     near ptr 0x0054122E;
+
 	__asm        mov    eax, goal;
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0054124F;
@@ -6267,6 +7140,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0054124F;
+
 	__asm        jmp    near ptr 0x0054124F;
 // LINE 1433:
 	__asm        jmp    near ptr 0x00541157;
@@ -6329,25 +7203,37 @@ int32_t RoadGraph::SetElevation(unsigned short t) {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00541303;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00541352;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00541352;
+
 	__asm        jmp    near ptr 0x0054134F;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x6B;
 	__asm        jg     near ptr 0x00541330;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x61;
 	__asm        jge    near ptr 0x005412ED;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x49;
 	__asm        jl     near ptr 0x005412F7;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x50;
 	__asm        jle    near ptr 0x005412ED;
+
 	__asm        jmp    near ptr 0x005412F7;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x806A;
 	__asm        jl     near ptr 0x005412F7;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0x806B;
 	__asm        jle    near ptr 0x005412ED;
+
 	__asm        jmp    near ptr 0x005412F7;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    near ptr 0x00541357;
 // LINE 1448:

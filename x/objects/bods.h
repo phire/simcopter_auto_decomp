@@ -12,17 +12,20 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0055F9AB;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0x593688;
 	__asm        jmp    near ptr 0x0055F973;
+
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0x5936B0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    word ptr [eax+0x30], 0xFFFF;
 	__asm        jmp    near ptr 0x0055F98E;
+
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
@@ -32,6 +35,7 @@ _L45526:
 	__asm        call   cBBase::~cBBase;
 	__asm        ret;
 	__asm        jmp    near ptr 0x0055F9B2;
+
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x18];
@@ -43,6 +47,7 @@ _L45526:
 	__asm        call   dword ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055F9EE;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE320;
 	__asm        push   0xAA;
@@ -55,6 +60,7 @@ _L45526:
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x0055FA1F;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE310;
 	__asm        push   0xAB;
@@ -86,6 +92,7 @@ _L45526:
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     near ptr 0x0055FAA0;
+
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, thing;
@@ -102,6 +109,7 @@ _L45526:
 	__asm        call   FlatResFile::GetResType;
 	__asm        cmp    ebx, eax;
 	__asm        je     near ptr 0x0055FABC;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2FC;
 	__asm        push   0xB1;
@@ -137,6 +145,7 @@ _L45526:
 	__asm        mov    al, [ebp-0x11C];
 	__asm        cmp    eax, 0x10;
 	__asm        jbe    near ptr 0x0055FB1F;
+
 	__asm        mov    byte ptr [ebp-0x11C], 0x10;
 	__asm        push   0x10;
 	__asm        mov    eax, thing;
@@ -156,11 +165,13 @@ _L45526:
 	__asm        mov    eax, thing;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        je     near ptr 0x0055FB69;
+
 	__asm        mov    eax, thing;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
 	__asm        test   ecx, ecx;
 	__asm        jne    near ptr 0x0055FB85;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2D4;
 	__asm        push   0xBC;
@@ -178,6 +189,7 @@ _L45526:
 	__asm        call   FlatResFile::Detach;
 	__asm        test   dword ptr [ebp-0x120], 0xFFFF;
 	__asm        je     near ptr 0x0055FBE0;
+
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, thing;
@@ -231,6 +243,7 @@ _L45522:
 _L45521:
 	__asm        mov    eax, 0x5960E0;
 	__asm        jmp    near ptr 0x0056F590;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -245,6 +258,7 @@ void  cCopterBody::WriteToDisk() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc90
 class cBList<class cBBase> *  cCopterBody::GetList() {
+
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        jmp    near ptr 0x0055FCA6;
 }

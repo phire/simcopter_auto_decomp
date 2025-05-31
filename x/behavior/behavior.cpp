@@ -231,6 +231,7 @@ public:
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560290
 void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NResFile* privFile) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    eax, this;
@@ -278,11 +279,13 @@ void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NR
 	__asm        mov    [ecx+0x10], eax;
 // LINE 30:
 	__asm        jmp    near ptr 0x00560324;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0056032e
 void Behavior::~Behavior() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936D8;
 // LINE 34:
@@ -319,6 +322,7 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*par
 // LINE 50:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005603A9;
+
 	__asm        inc    count;
 	__asm        mov    eax, tree;
 	__asm        movsx  eax, word ptr [eax];
@@ -372,31 +376,41 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00560448;
+
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        add    dword ptr [ebp-0x10], 0xC;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jle    near ptr 0x00560471;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        movsx  ecx, treeID;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x0056046C;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x00560483;
+
 	__asm        jmp    near ptr 0x00560441;
+
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x00560483;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x005604A0;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    tree, eax;
 	__asm        jmp    near ptr 0x005604B2;
+
 	__asm        jmp    near ptr 0x005604AC;
+
 	__asm        mov    tree, 0;
 	__asm        jmp    near ptr 0x005604B2;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    tree, eax;
 // LINE 77:
@@ -411,36 +425,47 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x005604DA;
+
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        add    dword ptr [ebp-0x24], 0xC;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jle    near ptr 0x00560503;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        movsx  ecx, treeID;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x005604FE;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00560515;
+
 	__asm        jmp    near ptr 0x005604D3;
+
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x00560515;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x00560532;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    tree, eax;
 	__asm        jmp    near ptr 0x00560544;
+
 	__asm        jmp    near ptr 0x0056053E;
+
 	__asm        mov    tree, 0;
 	__asm        jmp    near ptr 0x00560544;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    tree, eax;
 // LINE 81:
 	__asm        cmp    tree, 0;
 	__asm        jne    near ptr 0x00560567;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE510;
 	__asm        push   0x51;
@@ -453,6 +478,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        movsx  ecx, nodeNum;
 	__asm        cmp    eax, ecx;
 	__asm        jg     near ptr 0x00560592;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE554;
 	__asm        push   0x52;
@@ -568,6 +594,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 // LINE 164:
 	__asm        cmp    tree, 0;
 	__asm        jne    near ptr 0x005606F2;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE5A0;
 	__asm        push   0xA4;
@@ -651,8 +678,10 @@ short Behavior::GetBaseID(short treeclass) {
 	__asm        jmp    near ptr 0x005607ED;
 // LINE 204:
 	__asm        jmp    near ptr 0x005607ED;
+
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     near ptr 0x005607ED;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x5607DD];
 // Switch pointers
@@ -690,8 +719,10 @@ short Behavior::GetMaxID(short treeclass) {
 	__asm        jmp    near ptr 0x0056086B;
 // LINE 223:
 	__asm        jmp    near ptr 0x0056086B;
+
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     near ptr 0x0056086B;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x56085B];
 // Switch pointers
@@ -707,6 +738,7 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        movsx  eax, treeID;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x005608A2;
+
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0xFF;
 	__asm        jg     near ptr 0x005608A2;
@@ -717,6 +749,7 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x100;
 	__asm        jl     near ptr 0x005608C9;
+
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0xFFF;
 	__asm        jg     near ptr 0x005608C9;
@@ -727,6 +760,7 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x2000;
 	__asm        jl     near ptr 0x005608F0;
+
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x7530;
 	__asm        jg     near ptr 0x005608F0;
@@ -737,6 +771,7 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x1000;
 	__asm        jl     near ptr 0x00560917;
+
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0x1FFF;
 	__asm        jg     near ptr 0x00560917;
@@ -779,8 +814,10 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        jmp    near ptr 0x0056099E;
 // LINE 257:
 	__asm        jmp    near ptr 0x0056099E;
+
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     near ptr 0x00560969;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x56098E];
 // Switch pointers

@@ -52,8 +52,8 @@ struct VRObjInfo{
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
-	 // Switch table at 0x00519437
-	 // Switch table at 0x005191e8
+	static const <NoType> = { /* <data@0x00519437> */ };
+	static const <NoType> = { /* <data@0x005191e8> */ };
 	char msg[80];
 	int32_t obj;
 	long j;
@@ -165,6 +165,7 @@ void S3ObjInit() {
 // LINE 418:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x005190BF;
+
 	__asm        inc    i;
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
@@ -220,17 +221,24 @@ void S3ObjInit() {
 	__asm        jmp    near ptr 0x005192B7;
 // LINE 526:
 	__asm        jmp    near ptr 0x005192B7;
+
 	__asm        cmp    dword ptr [ebp-0xB0], 0x83;
 	__asm        jg     near ptr 0x00519189;
+
 	__asm        je     near ptr 0x00519137;
+
 	__asm        cmp    dword ptr [ebp-0xB0], 0x76;
 	__asm        jl     near ptr 0x005192B7;
+
 	__asm        cmp    dword ptr [ebp-0xB0], 0x7E;
 	__asm        jle    near ptr 0x00519137;
+
 	__asm        jmp    near ptr 0x005192B7;
+
 	__asm        sub    dword ptr [ebp-0xB0], 0xAE;
 	__asm        cmp    dword ptr [ebp-0xB0], 0xCE;
 	__asm        ja     near ptr 0x005192B7;
+
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5191E8];
@@ -246,6 +254,7 @@ void S3ObjInit() {
 // LINE 531:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x005192D5;
+
 	__asm        inc    j;
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
@@ -288,27 +297,39 @@ void S3ObjInit() {
 	__asm        jmp    near ptr 0x00519535;
 // LINE 664:
 	__asm        jmp    near ptr 0x00519535;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x2B;
 	__asm        jg     near ptr 0x0051938A;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x1D;
 	__asm        jge    near ptr 0x00519328;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 1;
 	__asm        jl     near ptr 0x00519535;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 4;
 	__asm        jle    near ptr 0x00519328;
+
 	__asm        jmp    near ptr 0x00519535;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x7E;
 	__asm        jg     near ptr 0x005193C3;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x76;
 	__asm        jge    near ptr 0x00519310;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x3B;
 	__asm        jl     near ptr 0x00519535;
+
 	__asm        cmp    dword ptr [ebp-0xB4], 0x45;
 	__asm        jle    near ptr 0x00519328;
+
 	__asm        jmp    near ptr 0x00519535;
+
 	__asm        sub    dword ptr [ebp-0xB4], 0x7F;
 	__asm        cmp    dword ptr [ebp-0xB4], 0xFD;
 	__asm        ja     near ptr 0x00519535;
+
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x519437];
@@ -820,44 +841,52 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 // LINE 865:
 	__asm        cmp    ctr, 0;
 	__asm        je     near ptr 0x00519AEA;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 866:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 868:
 	__asm        cmp    ctr, 1;
 	__asm        je     near ptr 0x00519AFE;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 869:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 871:
 	__asm        cmp    ctr, 2;
 	__asm        je     near ptr 0x00519B12;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 872:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 874:
 	__asm        cmp    ctr, 3;
 	__asm        je     near ptr 0x00519B26;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 875:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 877:
 	__asm        cmp    ctr, 4;
 	__asm        je     near ptr 0x00519B3A;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 878:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 880:
 	__asm        cmp    ctr, 5;
 	__asm        je     near ptr 0x00519B4E;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 881:
 	__asm        jmp    near ptr 0x00519B8F;
 // LINE 882:
 	__asm        jmp    near ptr 0x00519B8F;
+
 	__asm        sub    dword ptr [ebp-0x20], 0xF6;
 	__asm        cmp    dword ptr [ebp-0x20], 6;
 	__asm        ja     near ptr 0x00519B3F;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x519B73];
 // Switch pointers
@@ -908,6 +937,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	__asm        mov    ptr, eax;
 // LINE 918:
 	__asm        jmp    near ptr 0x00519C0F;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 920:
 	__asm        mov    eax, blit;
@@ -921,6 +951,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	__asm        jle    near ptr 0x00519C40;
 // LINE 924:
 	__asm        jmp    near ptr 0x00519C31;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 925:
 	__asm        mov    eax, blit;
@@ -947,6 +978,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	__asm        jle    near ptr 0x00519C81;
 // LINE 935:
 	__asm        jmp    near ptr 0x00519C72;
+
 	__asm        jmp    near ptr 0x00519C81;
 // LINE 936:
 	__asm        mov    eax, blit;
@@ -1215,8 +1247,10 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 1058:
 	__asm        jmp    near ptr 0x00519F22;
+
 	__asm        cmp    dword ptr [ebp-0x5C], 0xB;
 	__asm        ja     near ptr 0x0051DA56;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x519EF2];
 // Switch pointers
@@ -1232,6 +1266,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1181:
 	__asm        cmp    num3, 0x1E;
 	__asm        jle    near ptr 0x00519F45;
+
 	__asm        mov    num3, 0x1E;
 // LINE 1185:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
@@ -1246,9 +1281,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        je     near ptr 0x00519F85;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 4;
 	__asm        je     near ptr 0x00519F85;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 0xB;
 	__asm        jne    near ptr 0x00519FC4;
@@ -1269,9 +1306,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    tablerows, 7;
 // LINE 1204:
 	__asm        jmp    near ptr 0x0051A07E;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 7;
 	__asm        je     near ptr 0x00519FDE;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 6;
 	__asm        jne    near ptr 0x0051A001;
@@ -1285,9 +1324,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    tablerows, 7;
 // LINE 1211:
 	__asm        jmp    near ptr 0x0051A07E;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 9;
 	__asm        je     near ptr 0x0051A01B;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 8;
 	__asm        jne    near ptr 0x0051A03E;
@@ -1305,9 +1346,11 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 2;
 	__asm        je     near ptr 0x0051A065;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 5;
 	__asm        je     near ptr 0x0051A065;
+
 	__asm        mov    eax, blit;
 	__asm        cmp    dword ptr [eax+0xC], 0xA;
 	__asm        jne    near ptr 0x0051A07E;
@@ -1334,6 +1377,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1232:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051A0B6;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
@@ -1367,22 +1411,26 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1241:
 	__asm        cmp    plotx, 0;
 	__asm        jge    near ptr 0x0051A113;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 1242:
 	__asm        cmp    ploty, 0;
 	__asm        jge    near ptr 0x0051A122;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 1243:
 	__asm        mov    eax, winwidth;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, plotx;
 	__asm        jge    near ptr 0x0051A136;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 1244:
 	__asm        mov    eax, winheight;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, ploty;
 	__asm        jge    near ptr 0x0051A14A;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 1247:
 	__asm        mov    eax, bufwidth;
@@ -5028,8 +5076,10 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    [ecx], al;
 // LINE 2414:
 	__asm        jmp    near ptr 0x0051BF5C;
+
 	__asm        cmp    dword ptr [ebp-0x60], 9;
 	__asm        ja     near ptr 0x0051BF5C;
+
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    dword ptr [eax*4+0x51BF34];
 // Switch pointers
@@ -5040,6 +5090,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 2421:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051BF75;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
@@ -5073,10 +5124,12 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 2430:
 	__asm        cmp    plotx, 0;
 	__asm        jge    near ptr 0x0051BFD2;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 2431:
 	__asm        cmp    ploty, 0;
 	__asm        jge    near ptr 0x0051BFE1;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 2432:
 	__asm        mov    eax, winwidth;
@@ -5085,6 +5138,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, plotx;
 	__asm        jge    near ptr 0x0051BFF9;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 2433:
 	__asm        mov    eax, winheight;
@@ -5093,6 +5147,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, ploty;
 	__asm        jge    near ptr 0x0051C011;
+
 	__asm        jmp    near ptr 0x0051DA56;
 // LINE 2436:
 	__asm        mov    eax, bufwidth;
@@ -8002,8 +8057,10 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        mov    [ecx], al;
 // LINE 3668:
 	__asm        jmp    near ptr 0x0051DA51;
+
 	__asm        cmp    dword ptr [ebp-0x64], 9;
 	__asm        ja     near ptr 0x0051DA51;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        jmp    dword ptr [eax*4+0x51DA29];
 // Switch pointers
@@ -8017,6 +8074,7 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 // LINE 3685:
 	__asm        cmp    tile, 0;
 	__asm        jl     near ptr 0x0051DA78;
+
 	__asm        cmp    tile, 0xFF;
 	__asm        jle    near ptr 0x0051DA7F;
 // LINE 3686:
@@ -8032,22 +8090,22 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 
 // FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
-	 // Switch table at 0x0051e624
-	 // Switch table at 0x0051e581
-	 // Switch table at 0x0051e4de
-	 // Switch table at 0x0051e43b
-	 // Switch table at 0x0051e398
-	 // Switch table at 0x0051e2f5
-	 // Switch table at 0x0051e252
-	 // Switch table at 0x0051e1af
-	 // Switch table at 0x0051e10c
-	 // Switch table at 0x0051e069
-	 // Switch table at 0x0051dfc6
-	 // Switch table at 0x0051df23
-	 // Switch table at 0x0051de64
-	 // Switch table at 0x0051ddc1
-	 // Switch table at 0x0051dd1e
-	 // Switch table at 0x0051dc7b
+	static const <NoType> = { /* <data@0x0051e624> */ };
+	static const <NoType> = { /* <data@0x0051e581> */ };
+	static const <NoType> = { /* <data@0x0051e4de> */ };
+	static const <NoType> = { /* <data@0x0051e43b> */ };
+	static const <NoType> = { /* <data@0x0051e398> */ };
+	static const <NoType> = { /* <data@0x0051e2f5> */ };
+	static const <NoType> = { /* <data@0x0051e252> */ };
+	static const <NoType> = { /* <data@0x0051e1af> */ };
+	static const <NoType> = { /* <data@0x0051e10c> */ };
+	static const <NoType> = { /* <data@0x0051e069> */ };
+	static const <NoType> = { /* <data@0x0051dfc6> */ };
+	static const <NoType> = { /* <data@0x0051df23> */ };
+	static const <NoType> = { /* <data@0x0051de64> */ };
+	static const <NoType> = { /* <data@0x0051ddc1> */ };
+	static const <NoType> = { /* <data@0x0051dd1e> */ };
+	static const <NoType> = { /* <data@0x0051dc7b> */ };
 	long hittee_type;
 
 // LINE 3707:
@@ -8079,6 +8137,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3716:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
@@ -8100,6 +8159,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3721:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
@@ -8121,6 +8181,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3726:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x80;
@@ -8129,6 +8190,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        mov    hittee_type, 0xA;
 // LINE 3728:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 1;
@@ -8150,6 +8212,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3733:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 2;
@@ -8158,6 +8221,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        mov    hittee_type, 8;
 // LINE 3735:
 	__asm        jmp    near ptr 0x0051DBE0;
+
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 4;
@@ -8207,8 +8271,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DC89;
 // LINE 3764:
 	__asm        jmp    near ptr 0x0051DC89;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0xD;
 	__asm        ja     near ptr 0x0051DC89;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DC7B];
@@ -8252,8 +8318,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DD2C;
 // LINE 3787:
 	__asm        jmp    near ptr 0x0051DD2C;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0xD;
 	__asm        ja     near ptr 0x0051DD2C;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DD1E];
@@ -8297,8 +8365,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DDCF;
 // LINE 3810:
 	__asm        jmp    near ptr 0x0051DDCF;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0xD;
 	__asm        ja     near ptr 0x0051DDCF;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DDC1];
@@ -8342,8 +8412,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DE72;
 // LINE 3833:
 	__asm        jmp    near ptr 0x0051DE72;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0xD;
 	__asm        ja     near ptr 0x0051DE72;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DE64];
@@ -8397,8 +8469,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DF31;
 // LINE 3858:
 	__asm        jmp    near ptr 0x0051DF31;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0xD;
 	__asm        ja     near ptr 0x0051DF31;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DF23];
@@ -8442,8 +8516,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051DFD4;
 // LINE 3881:
 	__asm        jmp    near ptr 0x0051DFD4;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0xD;
 	__asm        ja     near ptr 0x0051DFD4;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DFC6];
@@ -8487,8 +8563,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E077;
 // LINE 3904:
 	__asm        jmp    near ptr 0x0051E077;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0xD;
 	__asm        ja     near ptr 0x0051E077;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E069];
@@ -8532,8 +8610,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E11A;
 // LINE 3927:
 	__asm        jmp    near ptr 0x0051E11A;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0xD;
 	__asm        ja     near ptr 0x0051E11A;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E10C];
@@ -8577,8 +8657,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E1BD;
 // LINE 3950:
 	__asm        jmp    near ptr 0x0051E1BD;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0xD;
 	__asm        ja     near ptr 0x0051E1BD;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E1AF];
@@ -8622,8 +8704,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E260;
 // LINE 3973:
 	__asm        jmp    near ptr 0x0051E260;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0xD;
 	__asm        ja     near ptr 0x0051E260;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E252];
@@ -8667,8 +8751,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E303;
 // LINE 3996:
 	__asm        jmp    near ptr 0x0051E303;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0xD;
 	__asm        ja     near ptr 0x0051E303;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E2F5];
@@ -8712,8 +8798,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E3A6;
 // LINE 4019:
 	__asm        jmp    near ptr 0x0051E3A6;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0xD;
 	__asm        ja     near ptr 0x0051E3A6;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E398];
@@ -8757,8 +8845,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E449;
 // LINE 4042:
 	__asm        jmp    near ptr 0x0051E449;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0xD;
 	__asm        ja     near ptr 0x0051E449;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E43B];
@@ -8802,8 +8892,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E4EC;
 // LINE 4065:
 	__asm        jmp    near ptr 0x0051E4EC;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0xD;
 	__asm        ja     near ptr 0x0051E4EC;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E4DE];
@@ -8847,8 +8939,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E58F;
 // LINE 4088:
 	__asm        jmp    near ptr 0x0051E58F;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0xD;
 	__asm        ja     near ptr 0x0051E58F;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E581];
@@ -8892,8 +8986,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E632;
 // LINE 4111:
 	__asm        jmp    near ptr 0x0051E632;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0xD;
 	__asm        ja     near ptr 0x0051E632;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E624];
@@ -8906,8 +9002,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4115:
 	__asm        jmp    near ptr 0x0051E695;
+
 	__asm        cmp    dword ptr [ebp-8], 0xF;
 	__asm        ja     near ptr 0x0051E695;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x51E655];
 // Switch pointers
@@ -8960,6 +9058,7 @@ void S3ObjSetFlatShading() {
 // LINE 4167:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0051E72F;
+
 	__asm        inc    i;
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;

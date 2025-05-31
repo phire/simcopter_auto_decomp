@@ -288,6 +288,7 @@ struct VRObjInfo{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052dda0
 void $E7() {
+
 	__asm        call   $E3;
 	__asm        call   $E6;
 	__asm        jmp    near ptr 0x0052DDB5;
@@ -296,14 +297,17 @@ void $E7() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddba
 void $E3() {
+
 	__asm        mov    dword ptr ds:[0x62B7B8], 0x593238;
 	__asm        jmp    near ptr 0x0052DDCF;
+
 	__asm        jmp    near ptr 0x0052DDD4;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddd9
 void $E6() {
+
 	__asm        push   0x52DDF6;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
@@ -313,10 +317,12 @@ void $E6() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddf6
 void $E4() {
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B998];
 	__asm        test   al, 1;
 	__asm        jne    near ptr 0x0052DE23;
+
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B998];
 	__asm        or     al, 1;
@@ -331,11 +337,13 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 	long odds;
 	int32_t currentFlag;
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593238;
 // LINE 183:
 	__asm        mov    currentFlag, 0;
 	__asm        jmp    near ptr 0x0052DE51;
+
 	__asm        inc    currentFlag;
 	__asm        cmp    currentFlag, 9;
 	__asm        jge    near ptr 0x0052DE6B;
@@ -437,6 +445,7 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052DF88;
+
 	__asm        jmp    near ptr 0x0052DF88;
 // LINE 224:
 	__asm        mov    eax, mapx;
@@ -464,6 +473,7 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 	__asm        mov    [ecx+0x49], eax;
 // LINE 230:
 	__asm        jmp    near ptr 0x0052DFC3;
+
 	__asm        mov    eax, this;
 }
 
@@ -541,16 +551,19 @@ void TrainClass::Reset() {
 
 // FUNCTION: COPTER_D 0x0052e0a8
 void TrainClass::~TrainClass() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593238;
 // LINE 296:
 	__asm        jmp    near ptr 0x0052E0C2;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0052E130;
 // LINE 298:
 	__asm        jmp    near ptr 0x0052E0D6;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -628,6 +641,7 @@ class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0052E1C7;
+
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
@@ -636,6 +650,7 @@ class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        call   TrainClass::TrainClass;
 	__asm        mov    newtrain, eax;
 	__asm        jmp    near ptr 0x0052E1CE;
+
 	__asm        mov    newtrain, 0;
 // LINE 451:
 	__asm        cmp    newtrain, 0;
@@ -659,6 +674,7 @@ class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0052E220;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -695,6 +711,7 @@ void TrainClass::ResetAll() {
 // LINE 592:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E276;
+
 	__asm        inc    currentTrainIndex;
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    near ptr 0x0052E294;
@@ -715,6 +732,7 @@ void TrainClass::ItterateAll() {
 // LINE 641:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E2B6;
+
 	__asm        inc    currentTrainIndex;
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    near ptr 0x0052E2D4;
@@ -735,17 +753,21 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 // LINE 672:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0052E2F6;
+
 	__asm        inc    currentTrainIndex;
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    near ptr 0x0052E367;
 // LINE 675:
 	__asm        jmp    near ptr 0x0052E305;
+
 	__asm        mov    eax, currentTrainIndex;
 	__asm        mov    eax, [eax*4+0x62B994];
 	__asm        movsx  eax, byte ptr [eax+0xA];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0052E362;
+
 	__asm        jmp    near ptr 0x0052E320;
+
 	__asm        mov    eax, currentTrainIndex;
 	__asm        mov    eax, [eax*4+0x62B994];
 	__asm        movsx  eax, byte ptr [eax+0xB];
@@ -777,6 +799,7 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 void TrainClass::Itterate() {
 // LINE 707:
 	__asm        jmp    near ptr 0x0052E384;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
@@ -787,15 +810,19 @@ void TrainClass::Itterate() {
 	__asm        add    [ecx+0x61], eax;
 // LINE 711:
 	__asm        jmp    near ptr 0x0052E3A3;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0052E3E3;
+
 	__asm        jmp    near ptr 0x0052E3B7;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0052E3E3;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x61];
@@ -808,6 +835,7 @@ void TrainClass::Itterate() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 717:
 	__asm        jmp    near ptr 0x0052E3E8;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -821,6 +849,7 @@ void TrainClass::Itterate() {
 	__asm        call   dword ptr [eax+4];
 // LINE 727:
 	__asm        jmp    near ptr 0x0052E407;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -908,16 +937,19 @@ void TrainClass::Itterate() {
 	__asm        jmp    near ptr 0x0052E52A;
 // LINE 757:
 	__asm        jmp    near ptr 0x0052E4FA;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0052E525;
+
 	__asm        push   0x2F5;
 	__asm        push   0x5B7868;
 	__asm        push   0x5B788C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052E52A;
+
 	__asm        jmp    near ptr 0x0052E52A;
 // LINE 759:
 	__asm        jmp    near ptr 0x0052E52F;
@@ -931,16 +963,22 @@ void TrainClass::TrainSoundDriver() {
 
 // LINE 783:
 	__asm        jmp    near ptr 0x0052E545;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0052E57A;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2D], 0;
 	__asm        je     near ptr 0x0052E56B;
+
 	__asm        jmp    near ptr 0x0052E59C;
+
 	__asm        jmp    near ptr 0x0052E56B;
+
 	__asm        jmp    near ptr 0x0052E57A;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    near ptr 0x0052E59C;
 // LINE 785:
@@ -1031,11 +1069,14 @@ void TrainClass::TrainSoundDriver() {
 void TrainClass::ItterateFSM() {
 // LINE 843:
 	__asm        jmp    near ptr 0x0052E682;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xC];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0052E6DD;
+
 	__asm        jmp    near ptr 0x0052E696;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
@@ -1064,12 +1105,16 @@ void TrainClass::ItterateFSM() {
 	__asm        call   TrainClass::IsTrainOutOfCameraRange;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0052E722;
+
 	__asm        jmp    near ptr 0x0052E6F2;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0052E722;
+
 	__asm        jmp    near ptr 0x0052E706;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xC];
 	__asm        test   eax, eax;
@@ -1081,6 +1126,7 @@ void TrainClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x0052E90B;
 // LINE 863:
 	__asm        jmp    near ptr 0x0052E727;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xA];
 	__asm        test   eax, eax;
@@ -1090,6 +1136,7 @@ void TrainClass::ItterateFSM() {
 	__asm        call   TrainClass::SetCrashWhenReady;
 // LINE 868:
 	__asm        jmp    near ptr 0x0052E743;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
@@ -1101,6 +1148,7 @@ void TrainClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x0052E90B;
 // LINE 874:
 	__asm        jmp    near ptr 0x0052E764;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+8];
 	__asm        test   eax, eax;
@@ -1128,6 +1176,7 @@ void TrainClass::ItterateFSM() {
 	__asm        call   TrainClass::MakeATurn;
 // LINE 888:
 	__asm        jmp    near ptr 0x0052E7B0;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+8];
 	__asm        test   eax, eax;
@@ -1184,6 +1233,7 @@ void TrainClass::ItterateFSM() {
 	__asm        mov    [edx+4], eax;
 // LINE 955:
 	__asm        jmp    near ptr 0x0052E847;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xC];
 	__asm        test   eax, eax;
@@ -1220,6 +1270,7 @@ void TrainClass::ItterateFSM() {
 	__asm        call   TrainClass::MakeATurn;
 // LINE 970:
 	__asm        jmp    near ptr 0x0052E8A4;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+8];
 	__asm        test   eax, eax;
@@ -1248,10 +1299,13 @@ void TrainClass::ItterateFSM() {
 	__asm        call   TrainClass::Stop;
 // LINE 1003:
 	__asm        jmp    near ptr 0x0052E906;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0052E7DA;
+
 	__asm        cmp    dword ptr [ebp-0x20], 1;
 	__asm        je     near ptr 0x0052E8D3;
+
 	__asm        jmp    near ptr 0x0052E8E0;
 // LINE 1024:
 	__asm        jmp    near ptr 0x0052E90B;
@@ -1350,14 +1404,18 @@ void TrainClass::TrainCrashMovement() {
 	__asm        mov    [ebp-0x88], eax;
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    near ptr 0x0052EA2A;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052EA2F;
+
 	__asm        jmp    near ptr 0x0052EA2F;
+
 	__asm        jmp    near ptr 0x0052EA34;
+
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    cptr, eax;
 // LINE 1100:
@@ -1515,12 +1573,16 @@ void TrainClass::TrainCrashMovement() {
 	__asm        jmp    near ptr 0x0052EC63;
 // LINE 1138:
 	__asm        jmp    near ptr 0x0052EC63;
+
 	__asm        cmp    dword ptr [ebp-0x90], 0;
 	__asm        je     near ptr 0x0052EBC4;
+
 	__asm        cmp    dword ptr [ebp-0x90], 1;
 	__asm        je     near ptr 0x0052EBE7;
+
 	__asm        cmp    dword ptr [ebp-0x90], 2;
 	__asm        je     near ptr 0x0052EC0A;
+
 	__asm        jmp    near ptr 0x0052EC63;
 // LINE 1140:
 	__asm        jmp    near ptr 0x0052F144;
@@ -1580,6 +1642,7 @@ void TrainClass::TrainCrashMovement() {
 // LINE 1193:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0052ED1B;
+
 	__asm        inc    j;
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -1704,6 +1767,7 @@ void TrainClass::TrainCrashMovement() {
 // LINE 1227:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0052EE91;
+
 	__asm        inc    j;
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -1828,6 +1892,7 @@ void TrainClass::TrainCrashMovement() {
 // LINE 1261:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x0052F007;
+
 	__asm        inc    j;
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -1955,6 +2020,7 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x65], 0;
 // LINE 1331:
 	__asm        jmp    near ptr 0x0052F182;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -1963,7 +2029,9 @@ void TrainClass::MakeUturn() {
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x0052F1CA;
+
 	__asm        jmp    near ptr 0x0052F1A1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x12;
@@ -1977,7 +2045,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 0xC;
 // LINE 1335:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F1CF;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -1986,7 +2056,9 @@ void TrainClass::MakeUturn() {
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x0052F217;
+
 	__asm        jmp    near ptr 0x0052F1EE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -2000,7 +2072,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 6;
 // LINE 1339:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F21C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -2009,7 +2083,9 @@ void TrainClass::MakeUturn() {
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x0052F264;
+
 	__asm        jmp    near ptr 0x0052F23B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x12;
@@ -2023,7 +2099,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 9;
 // LINE 1343:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F269;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -2032,7 +2110,9 @@ void TrainClass::MakeUturn() {
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x0052F2B1;
+
 	__asm        jmp    near ptr 0x0052F288;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -2046,7 +2126,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 3;
 // LINE 1347:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F2B6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -2060,7 +2142,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 4;
 // LINE 1351:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F2E4;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -2074,7 +2158,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 1;
 // LINE 1355:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F312;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x12;
@@ -2088,7 +2174,9 @@ void TrainClass::MakeUturn() {
 	__asm        mov    dword ptr [eax+0x29], 8;
 // LINE 1359:
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F340;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -2109,6 +2197,7 @@ void TrainClass::MakeUturn() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052F38A;
+
 	__asm        jmp    near ptr 0x0052F38A;
 // LINE 1368:
 	__asm        jmp    near ptr 0x0052F38F;
@@ -2270,26 +2359,31 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        sar    eax, 0x16;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0052F597;
+
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, collisionPoint;
 	__asm        sub    eax, [ecx+8];
 	__asm        sar    eax, 0x16;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x0052F597;
+
 	__asm        mov    eax, collisionPoint;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x0052F597;
+
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, collisionPoint;
 	__asm        sub    eax, [ecx+8];
 	__asm        sar    eax, 0x16;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x0052F5A2;
+
 	__asm        mov    cellType, 0;
 	__asm        jmp    near ptr 0x0052F605;
+
 	__asm        mov    eax, collisionPoint;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x20000000;
@@ -2330,14 +2424,18 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    near ptr 0x0052F64F;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052F654;
+
 	__asm        jmp    near ptr 0x0052F654;
+
 	__asm        jmp    near ptr 0x0052F659;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    currentCell, eax;
 // LINE 1490:
@@ -2366,6 +2464,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        jmp    near ptr 0x0052F67C;
 // LINE 1508:
 	__asm        jmp    near ptr 0x0052F6ED;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currentObject;
 	__asm        cmp    [eax+0x1D1], ecx;
@@ -2378,6 +2477,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        jmp    near ptr 0x0052F67C;
 // LINE 1513:
 	__asm        jmp    near ptr 0x0052F6ED;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currentObject;
 	__asm        cmp    [eax+0x1D5], ecx;
@@ -2436,14 +2536,17 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
 	__asm        jg     near ptr 0x0052F7A5;
+
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    ydiff, eax;
 	__asm        jg     near ptr 0x0052F7A5;
+
 	__asm        mov    eax, zdiff;
 	__asm        cmp    combinedradius, eax;
 	__asm        jl     near ptr 0x0052F7A5;
 // LINE 1540:
 	__asm        jmp    near ptr 0x0052F77D;
+
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
@@ -2468,6 +2571,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        mov    ecx, [ecx+0x55];
 	__asm        cmp    [eax+0x35], ecx;
 	__asm        jne    near ptr 0x0052F7DD;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x59];
@@ -2488,14 +2592,18 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x0052F827;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0052F82C;
+
 	__asm        jmp    near ptr 0x0052F82C;
+
 	__asm        jmp    near ptr 0x0052F831;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    currentCell, eax;
 // LINE 1568:
@@ -2524,6 +2632,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        jmp    near ptr 0x0052F854;
 // LINE 1585:
 	__asm        jmp    near ptr 0x0052F8C5;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currentObject;
 	__asm        cmp    [eax+0x1D1], ecx;
@@ -2536,6 +2645,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        jmp    near ptr 0x0052F854;
 // LINE 1590:
 	__asm        jmp    near ptr 0x0052F8C5;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currentObject;
 	__asm        cmp    [eax+0x1D5], ecx;
@@ -2594,14 +2704,17 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
 	__asm        jg     near ptr 0x0052F97D;
+
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    ydiff, eax;
 	__asm        jg     near ptr 0x0052F97D;
+
 	__asm        mov    eax, zdiff;
 	__asm        cmp    combinedradius, eax;
 	__asm        jl     near ptr 0x0052F97D;
 // LINE 1616:
 	__asm        jmp    near ptr 0x0052F955;
+
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
@@ -2689,6 +2802,7 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaX;
 	__asm        jl     near ptr 0x0052FA6A;
+
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
@@ -2707,8 +2821,8 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 
 // FUNCTION: COPTER_D 0x0052fa85
 void TrainClass::SetTrainDirection(unsigned short tileType) {
-	 // Switch table at 0x00530db4
-	 // Switch table at 0x00530381
+	static const <NoType> = { /* <data@0x00530db4> */ };
+	static const <NoType> = { /* <data@0x00530381> */ };
 
 // LINE 1723:
 	__asm        mov    eax, this;
@@ -3055,12 +3169,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0052FE6C;
 // LINE 1940:
 	__asm        jmp    near ptr 0x0052FE6C;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0052FE05;
+
 	__asm        cmp    dword ptr [ebp-0x14], 1;
 	__asm        je     near ptr 0x0052FE1A;
+
 	__asm        cmp    dword ptr [ebp-0x14], 2;
 	__asm        je     near ptr 0x0052FE2F;
+
 	__asm        jmp    near ptr 0x0052FE6C;
 // LINE 1941:
 	__asm        jmp    near ptr 0x005303C3;
@@ -3098,12 +3216,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0052FEF0;
 // LINE 1959:
 	__asm        jmp    near ptr 0x0052FEF0;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0052FE89;
+
 	__asm        cmp    dword ptr [ebp-0x18], 1;
 	__asm        je     near ptr 0x0052FE9E;
+
 	__asm        cmp    dword ptr [ebp-0x18], 2;
 	__asm        je     near ptr 0x0052FEB3;
+
 	__asm        jmp    near ptr 0x0052FEF0;
 // LINE 1960:
 	__asm        jmp    near ptr 0x005303C3;
@@ -3141,12 +3263,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0052FF74;
 // LINE 1978:
 	__asm        jmp    near ptr 0x0052FF74;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0052FF0D;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 1;
 	__asm        je     near ptr 0x0052FF22;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 2;
 	__asm        je     near ptr 0x0052FF37;
+
 	__asm        jmp    near ptr 0x0052FF74;
 // LINE 1979:
 	__asm        jmp    near ptr 0x005303C3;
@@ -3184,12 +3310,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0052FFF8;
 // LINE 1997:
 	__asm        jmp    near ptr 0x0052FFF8;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0052FF91;
+
 	__asm        cmp    dword ptr [ebp-0x20], 1;
 	__asm        je     near ptr 0x0052FFA6;
+
 	__asm        cmp    dword ptr [ebp-0x20], 2;
 	__asm        je     near ptr 0x0052FFBB;
+
 	__asm        jmp    near ptr 0x0052FFF8;
 // LINE 1998:
 	__asm        jmp    near ptr 0x005303C3;
@@ -3233,8 +3363,10 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0053008D;
 // LINE 2020:
 	__asm        jmp    near ptr 0x0053008D;
+
 	__asm        cmp    dword ptr [ebp-0x24], 3;
 	__asm        ja     near ptr 0x0053008D;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x53007D];
 // Switch pointers
@@ -3447,36 +3579,48 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005302D9;
+
 	__asm        jmp    near ptr 0x005302D9;
 // LINE 2177:
 	__asm        jmp    near ptr 0x005303C3;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x805A;
 	__asm        jg     near ptr 0x005303B1;
+
 	__asm        je     near ptr 0x00530213;
+
 	__asm        sub    dword ptr [ebp-0x10], 0x2C;
 	__asm        cmp    dword ptr [ebp-0x10], 0x2F;
 	__asm        ja     near ptr 0x005302B8;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x530381];
 	__asm        jmp    dword ptr [ecx*4+0x530311];
 // Switch pointers
 // Switch table
+
+	__asm        jmp    near ptr 0x005302B8;
 // LINE 2179:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x55], 0;
 	__asm        jl     near ptr 0x005303FD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x59], 0;
 	__asm        jl     near ptr 0x005303FD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x55], 0x80;
 	__asm        jge    near ptr 0x005303FD;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x59], 0x80;
 	__asm        jl     near ptr 0x00530408;
+
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x0053044C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x55];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -3497,37 +3641,56 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-4], ax;
 	__asm        jmp    near ptr 0x0053044C;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x00530470;
+
 	__asm        jmp    near ptr 0x005304F3;
+
 	__asm        jmp    near ptr 0x005304F8;
+
 	__asm        jmp    near ptr 0x005304F3;
+
 	__asm        jmp    near ptr 0x005304E9;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x48;
 	__asm        jg     near ptr 0x0053049D;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x45;
 	__asm        jge    near ptr 0x005304F3;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x2C;
 	__asm        jl     near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x3E;
 	__asm        jle    near ptr 0x005304F3;
+
 	__asm        jmp    near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x5B;
 	__asm        jg     near ptr 0x005304CA;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x5A;
 	__asm        jge    near ptr 0x005304F3;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x4D;
 	__asm        jl     near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x4E;
 	__asm        jle    near ptr 0x005304F3;
+
 	__asm        jmp    near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x805A;
 	__asm        jl     near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0x805B;
 	__asm        jle    near ptr 0x005304F3;
+
 	__asm        jmp    near ptr 0x005304F8;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x005304F8;
 // LINE 2180:
@@ -3860,12 +4023,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x0053089F;
 // LINE 2398:
 	__asm        jmp    near ptr 0x0053089F;
+
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00530838;
+
 	__asm        cmp    dword ptr [ebp-0x30], 1;
 	__asm        je     near ptr 0x0053084D;
+
 	__asm        cmp    dword ptr [ebp-0x30], 2;
 	__asm        je     near ptr 0x00530862;
+
 	__asm        jmp    near ptr 0x0053089F;
 // LINE 2399:
 	__asm        jmp    near ptr 0x00530DF6;
@@ -3903,12 +4070,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x00530923;
 // LINE 2417:
 	__asm        jmp    near ptr 0x00530923;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x005308BC;
+
 	__asm        cmp    dword ptr [ebp-0x34], 1;
 	__asm        je     near ptr 0x005308D1;
+
 	__asm        cmp    dword ptr [ebp-0x34], 2;
 	__asm        je     near ptr 0x005308E6;
+
 	__asm        jmp    near ptr 0x00530923;
 // LINE 2418:
 	__asm        jmp    near ptr 0x00530DF6;
@@ -3946,12 +4117,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x005309A7;
 // LINE 2436:
 	__asm        jmp    near ptr 0x005309A7;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x00530940;
+
 	__asm        cmp    dword ptr [ebp-0x38], 1;
 	__asm        je     near ptr 0x00530955;
+
 	__asm        cmp    dword ptr [ebp-0x38], 2;
 	__asm        je     near ptr 0x0053096A;
+
 	__asm        jmp    near ptr 0x005309A7;
 // LINE 2437:
 	__asm        jmp    near ptr 0x00530DF6;
@@ -3989,12 +4164,16 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x00530A2B;
 // LINE 2455:
 	__asm        jmp    near ptr 0x00530A2B;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     near ptr 0x005309C4;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 1;
 	__asm        je     near ptr 0x005309D9;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 2;
 	__asm        je     near ptr 0x005309EE;
+
 	__asm        jmp    near ptr 0x00530A2B;
 // LINE 2456:
 	__asm        jmp    near ptr 0x00530DF6;
@@ -4038,8 +4217,10 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        jmp    near ptr 0x00530AC0;
 // LINE 2478:
 	__asm        jmp    near ptr 0x00530AC0;
+
 	__asm        cmp    dword ptr [ebp-0x40], 3;
 	__asm        ja     near ptr 0x00530AC0;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    dword ptr [eax*4+0x530AB0];
 // Switch pointers
@@ -4252,21 +4433,28 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00530D0C;
+
 	__asm        jmp    near ptr 0x00530D0C;
 // LINE 2635:
 	__asm        jmp    near ptr 0x00530DF6;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x805A;
 	__asm        jg     near ptr 0x00530DE4;
+
 	__asm        je     near ptr 0x00530AFC;
+
 	__asm        sub    dword ptr [ebp-0x2C], 0x2C;
 	__asm        cmp    dword ptr [ebp-0x2C], 0x2F;
 	__asm        ja     near ptr 0x00530CEB;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x530DB4];
 	__asm        jmp    dword ptr [ecx*4+0x530D44];
 // Switch pointers
 // Switch table
+
+	__asm        jmp    near ptr 0x00530CEB;
 // LINE 2638:
 	__asm        jmp    near ptr 0x00530DFB;
 }
@@ -4358,6 +4546,7 @@ void TrainClass::MoveForward() {
 	__asm        sar    eax, 0x16;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00530F5E;
+
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -4365,6 +4554,7 @@ void TrainClass::MoveForward() {
 	__asm        sar    eax, 0x16;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x00530F5E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
 	__asm        mov    eax, [eax+0x18];
@@ -4372,6 +4562,7 @@ void TrainClass::MoveForward() {
 	__asm        sar    eax, 0x16;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    near ptr 0x00530F5E;
+
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -4379,8 +4570,10 @@ void TrainClass::MoveForward() {
 	__asm        sar    eax, 0x16;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     near ptr 0x00530F69;
+
 	__asm        mov    word ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x00530FE6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
 	__asm        mov    eax, [eax+0x18];
@@ -4413,18 +4606,25 @@ void TrainClass::MoveForward() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-8], ax;
 	__asm        jmp    near ptr 0x00530FE6;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x36;
 	__asm        jl     near ptr 0x00531012;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3A;
 	__asm        jg     near ptr 0x00531012;
+
 	__asm        jmp    near ptr 0x00531026;
+
 	__asm        jmp    near ptr 0x0053101C;
+
 	__asm        jmp    near ptr 0x00531032;
+
 	__asm        jmp    near ptr 0x00531026;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00531032;
 // LINE 2719:
@@ -4483,6 +4683,7 @@ int32_t TrainClass::AmIInANewCell() {
 	__asm        mov    ecx, [ecx+0x4D];
 	__asm        cmp    [eax+0x35], ecx;
 	__asm        jne    near ptr 0x005310E5;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
@@ -4492,17 +4693,22 @@ int32_t TrainClass::AmIInANewCell() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4D], 0;
 	__asm        jl     near ptr 0x0053111F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x51], 0;
 	__asm        jl     near ptr 0x0053111F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4D], 0x80;
 	__asm        jge    near ptr 0x0053111F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x51], 0x80;
 	__asm        jl     near ptr 0x0053112A;
+
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x0053116E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4D];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4523,37 +4729,56 @@ int32_t TrainClass::AmIInANewCell() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-4], ax;
 	__asm        jmp    near ptr 0x0053116E;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00531192;
+
 	__asm        jmp    near ptr 0x00531215;
+
 	__asm        jmp    near ptr 0x0053121F;
+
 	__asm        jmp    near ptr 0x00531215;
+
 	__asm        jmp    near ptr 0x0053120B;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x48;
 	__asm        jg     near ptr 0x005311BF;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x45;
 	__asm        jge    near ptr 0x00531215;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x2C;
 	__asm        jl     near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x3E;
 	__asm        jle    near ptr 0x00531215;
+
 	__asm        jmp    near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x5B;
 	__asm        jg     near ptr 0x005311EC;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x5A;
 	__asm        jge    near ptr 0x00531215;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x4D;
 	__asm        jl     near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x4E;
 	__asm        jle    near ptr 0x00531215;
+
 	__asm        jmp    near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x805A;
 	__asm        jl     near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x805B;
 	__asm        jle    near ptr 0x00531215;
+
 	__asm        jmp    near ptr 0x0053121F;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0053121F;
 // LINE 2791:
@@ -4581,25 +4806,31 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    near ptr 0x00531280;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00531285;
+
 	__asm        jmp    near ptr 0x00531285;
+
 	__asm        jmp    near ptr 0x0053128A;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 2819:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    near ptr 0x005312B6;
+
 	__asm        push   0xB03;
 	__asm        push   0x5B7928;
 	__asm        push   0x5B794C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005312BB;
+
 	__asm        jmp    near ptr 0x005312BB;
 // LINE 2821:
 	__asm        cmp    cellPointer, 0;
@@ -4636,12 +4867,14 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    near ptr 0x0053132C;
+
 	__asm        push   0xB19;
 	__asm        push   0x5B7958;
 	__asm        push   0x5B797C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00531331;
+
 	__asm        jmp    near ptr 0x00531331;
 // LINE 2843:
 // Block end:
@@ -4664,14 +4897,18 @@ void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyo
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x00531392;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00531397;
+
 	__asm        jmp    near ptr 0x00531397;
+
 	__asm        jmp    near ptr 0x0053139C;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    cellPointer, eax;
 // LINE 2867:
@@ -4679,12 +4916,14 @@ void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyo
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    near ptr 0x005313CD;
+
 	__asm        push   0xB33;
 	__asm        push   0x5B7988;
 	__asm        push   0x5B79AC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005313D2;
+
 	__asm        jmp    near ptr 0x005313D2;
 // LINE 2869:
 	__asm        mov    eax, cellPointer;
@@ -4756,17 +4995,22 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, point;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jl     near ptr 0x005314A5;
+
 	__asm        mov    eax, point;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jl     near ptr 0x005314A5;
+
 	__asm        mov    eax, point;
 	__asm        cmp    dword ptr [eax], 0x80;
 	__asm        jge    near ptr 0x005314A5;
+
 	__asm        mov    eax, point;
 	__asm        cmp    dword ptr [eax+4], 0x80;
 	__asm        jl     near ptr 0x005314B0;
+
 	__asm        mov    currentTile, 0;
 	__asm        jmp    near ptr 0x005314F2;
+
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4791,17 +5035,22 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x75], 0;
 	__asm        jl     near ptr 0x0053152C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x79], 0;
 	__asm        jl     near ptr 0x0053152C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x75], 0x80;
 	__asm        jge    near ptr 0x0053152C;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x79], 0x80;
 	__asm        jl     near ptr 0x00531537;
+
 	__asm        mov    northTile, 0;
 	__asm        jmp    near ptr 0x0053157B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x75];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4826,17 +5075,22 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7D], 0;
 	__asm        jl     near ptr 0x005315BB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x81], 0;
 	__asm        jl     near ptr 0x005315BB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7D], 0x80;
 	__asm        jge    near ptr 0x005315BB;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x81], 0x80;
 	__asm        jl     near ptr 0x005315C6;
+
 	__asm        mov    southTile, 0;
 	__asm        jmp    near ptr 0x00531610;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7D];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4861,17 +5115,22 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x85], 0;
 	__asm        jl     near ptr 0x00531656;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x89], 0;
 	__asm        jl     near ptr 0x00531656;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x85], 0x80;
 	__asm        jge    near ptr 0x00531656;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x89], 0x80;
 	__asm        jl     near ptr 0x00531661;
+
 	__asm        mov    eastTile, 0;
 	__asm        jmp    near ptr 0x005316B1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x85];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4896,17 +5155,22 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8D], 0;
 	__asm        jl     near ptr 0x005316F7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x91], 0;
 	__asm        jl     near ptr 0x005316F7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8D], 0x80;
 	__asm        jge    near ptr 0x005316F7;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x91], 0x80;
 	__asm        jl     near ptr 0x00531702;
+
 	__asm        mov    westTile, 0;
 	__asm        jmp    near ptr 0x00531752;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8D];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -4931,6 +5195,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    intersection, 0;
 // LINE 2928:
 	__asm        jmp    near ptr 0x0053175E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -4939,7 +5204,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x005317F9;
+
 	__asm        jmp    near ptr 0x0053177D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -4953,6 +5220,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x34;
 	__asm        jne    near ptr 0x005317C8;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(westTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x33;
@@ -4962,10 +5230,12 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 6;
 // LINE 2932:
 	__asm        jmp    near ptr 0x005317F4;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x34;
 	__asm        jne    near ptr 0x005317F4;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(southTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x35;
@@ -4975,7 +5245,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 9;
 // LINE 2935:
 	__asm        jmp    near ptr 0x005319D4;
+
 	__asm        jmp    near ptr 0x005317FE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -4984,7 +5256,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531899;
+
 	__asm        jmp    near ptr 0x0053181D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -4998,6 +5272,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x33;
 	__asm        jne    near ptr 0x00531868;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(eastTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x34;
@@ -5007,10 +5282,12 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 0xC;
 // LINE 2939:
 	__asm        jmp    near ptr 0x00531894;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x33;
 	__asm        jne    near ptr 0x00531894;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(southTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x32;
@@ -5020,7 +5297,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 3;
 // LINE 2942:
 	__asm        jmp    near ptr 0x005319D4;
+
 	__asm        jmp    near ptr 0x0053189E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -5029,7 +5308,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531939;
+
 	__asm        jmp    near ptr 0x005318BD;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -5043,6 +5324,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x35;
 	__asm        jne    near ptr 0x00531908;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(westTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x32;
@@ -5052,10 +5334,12 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 3;
 // LINE 2946:
 	__asm        jmp    near ptr 0x00531934;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x35;
 	__asm        jne    near ptr 0x00531934;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(northTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x34;
@@ -5065,7 +5349,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 0xC;
 // LINE 2949:
 	__asm        jmp    near ptr 0x005319D4;
+
 	__asm        jmp    near ptr 0x0053193E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -5074,7 +5360,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x005319D4;
+
 	__asm        jmp    near ptr 0x0053195D;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -5088,6 +5376,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x32;
 	__asm        jne    near ptr 0x005319A8;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(eastTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x35;
@@ -5097,10 +5386,12 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 9;
 // LINE 2953:
 	__asm        jmp    near ptr 0x005319D4;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x32;
 	__asm        jne    near ptr 0x005319D4;
+
 	__asm        mov    eax, reinterpret_cast<uint32_t>(northTile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x33;
@@ -5110,6 +5401,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        mov    dword ptr [eax+0x11], 6;
 // LINE 2959:
 	__asm        jmp    near ptr 0x005319D9;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -5118,7 +5410,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531A53;
+
 	__asm        jmp    near ptr 0x005319F8;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -5153,7 +5447,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 4;
 // LINE 2971:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531A58;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -5162,7 +5458,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 1;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531AD2;
+
 	__asm        jmp    near ptr 0x00531A77;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -5197,7 +5495,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 2;
 // LINE 2983:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531AD7;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -5206,7 +5506,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531B51;
+
 	__asm        jmp    near ptr 0x00531AF6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -5241,7 +5543,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 2;
 // LINE 2995:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531B56;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -5250,7 +5554,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        and    ecx, 4;
 	__asm        or     eax, ecx;
 	__asm        je     near ptr 0x00531BD0;
+
 	__asm        jmp    near ptr 0x00531B75;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -5285,7 +5591,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 4;
 // LINE 3007:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531BD5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -5332,7 +5640,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 4;
 // LINE 3023:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531C53;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -5379,7 +5689,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 4;
 // LINE 3039:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531CD1;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -5426,7 +5738,9 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        or     intersection, 4;
 // LINE 3055:
 	__asm        jmp    near ptr 0x00531DF0;
+
 	__asm        jmp    near ptr 0x00531D4F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -5480,6 +5794,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00531DE9;
+
 	__asm        jmp    near ptr 0x00531DE9;
 // LINE 3075:
 	__asm        xor    eax, eax;
@@ -5499,76 +5814,105 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00531E34;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x00531E68;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00531E53;
+
 	__asm        mov    eax, 0x5B7BB8;
 	__asm        add    eax, 0x780;
 	__asm        cmp    eax, [ebp-0xC];
 	__asm        jae    near ptr 0x00531E5F;
+
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x00531E68;
+
 	__asm        add    dword ptr [ebp-0xC], 8;
 	__asm        jmp    near ptr 0x00531E12;
+
 	__asm        mov    dword ptr [ebp-0x10], 0x5B7BB8;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00531E91;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x00531EC5;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00531EB0;
+
 	__asm        mov    eax, 0x5B7BB8;
 	__asm        add    eax, 0x780;
 	__asm        cmp    eax, [ebp-0x10];
 	__asm        jae    near ptr 0x00531EBC;
+
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x00531EC5;
+
 	__asm        add    dword ptr [ebp-0x10], 8;
 	__asm        jmp    near ptr 0x00531E6F;
+
 	__asm        test   reinterpret_cast<uint8_t>(direction), 1;
 	__asm        je     near ptr 0x00531EEF;
+
 	__asm        test   byte ptr [ebp-8], 1;
 	__asm        je     near ptr 0x00531EEF;
+
 	__asm        test   byte ptr [ebp-4], 4;
 	__asm        je     near ptr 0x00531EEF;
+
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x00531F79;
+
 	__asm        test   reinterpret_cast<uint8_t>(direction), 4;
 	__asm        je     near ptr 0x00531F19;
+
 	__asm        test   byte ptr [ebp-8], 4;
 	__asm        je     near ptr 0x00531F19;
+
 	__asm        test   byte ptr [ebp-4], 1;
 	__asm        je     near ptr 0x00531F19;
+
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x00531F79;
+
 	__asm        test   reinterpret_cast<uint8_t>(direction), 8;
 	__asm        je     near ptr 0x00531F43;
+
 	__asm        test   byte ptr [ebp-8], 8;
 	__asm        je     near ptr 0x00531F43;
+
 	__asm        test   byte ptr [ebp-4], 2;
 	__asm        je     near ptr 0x00531F43;
+
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x00531F79;
+
 	__asm        test   reinterpret_cast<uint8_t>(direction), 2;
 	__asm        je     near ptr 0x00531F6D;
+
 	__asm        test   byte ptr [ebp-8], 2;
 	__asm        je     near ptr 0x00531F6D;
+
 	__asm        test   byte ptr [ebp-4], 8;
 	__asm        je     near ptr 0x00531F6D;
+
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    near ptr 0x00531F79;
+
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    near ptr 0x00531F79;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    near ptr 0x00531F81;
 // LINE 3119:
@@ -5672,16 +6016,22 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005320B1;
+
 	__asm        jmp    near ptr 0x005320B1;
+
 	__asm        jmp    near ptr 0x005320DE;
 // LINE 3218:
 	__asm        jmp    near ptr 0x005320DE;
+
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x00532069;
+
 	__asm        cmp    dword ptr [ebp-0xC], 1;
 	__asm        je     near ptr 0x00532076;
+
 	__asm        cmp    dword ptr [ebp-0xC], 2;
 	__asm        je     near ptr 0x00532083;
+
 	__asm        jmp    near ptr 0x00532090;
 // LINE 3220:
 	__asm        jmp    near ptr 0x0053213D;
@@ -5692,11 +6042,14 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00532104;
+
 	__asm        jmp    near ptr 0x00532104;
 // LINE 3228:
 	__asm        jmp    near ptr 0x0053213D;
+
 	__asm        cmp    dword ptr [ebp-8], 7;
 	__asm        ja     near ptr 0x005320E3;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x53211D];
 // Switch pointers
@@ -5710,17 +6063,22 @@ enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
 	__asm        jl     near ptr 0x0053218F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0;
 	__asm        jl     near ptr 0x0053218F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0x80;
 	__asm        jge    near ptr 0x0053218F;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     near ptr 0x0053219A;
+
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x005321DE;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -5741,37 +6099,56 @@ enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-4], ax;
 	__asm        jmp    near ptr 0x005321DE;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00532202;
+
 	__asm        jmp    near ptr 0x0053228F;
+
 	__asm        jmp    near ptr 0x00532285;
+
 	__asm        jmp    near ptr 0x00532285;
+
 	__asm        jmp    near ptr 0x0053227B;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x48;
 	__asm        jg     near ptr 0x0053222F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x45;
 	__asm        jge    near ptr 0x0053228F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x2C;
 	__asm        jl     near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x3E;
 	__asm        jle    near ptr 0x0053228F;
+
 	__asm        jmp    near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x5B;
 	__asm        jg     near ptr 0x0053225C;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x5A;
 	__asm        jge    near ptr 0x0053228F;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x4D;
 	__asm        jl     near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x4E;
 	__asm        jle    near ptr 0x0053228F;
+
 	__asm        jmp    near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x805A;
 	__asm        jl     near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-0x10], 0x805B;
 	__asm        jle    near ptr 0x0053228F;
+
 	__asm        jmp    near ptr 0x00532285;
+
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x0053228F;
 // LINE 3256:
@@ -6228,6 +6605,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    ecx, currloc.x;
 	__asm        cmp    [eax+0x3D], ecx;
 	__asm        jne    near ptr 0x0053280E;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currloc.y;
 	__asm        cmp    [eax+0x41], ecx;
@@ -6276,6 +6654,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    ecx, currloc.x;
 	__asm        cmp    [eax+0x45], ecx;
 	__asm        jne    near ptr 0x0053289D;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currloc.y;
 	__asm        cmp    [eax+0x49], ecx;
@@ -6334,25 +6713,31 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x00532959;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053295E;
+
 	__asm        jmp    near ptr 0x0053295E;
+
 	__asm        jmp    near ptr 0x00532963;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    cellPointer, eax;
 // LINE 3418:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    near ptr 0x0053298F;
+
 	__asm        push   0xD5A;
 	__asm        push   0x5B7A4C;
 	__asm        push   0x5B7A70;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00532994;
+
 	__asm        jmp    near ptr 0x00532994;
 // LINE 3422:
 	__asm        mov    eax, cellPointer;
@@ -6377,6 +6762,7 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        mov    [ecx+0x20], eax;
 // LINE 3428:
 	__asm        jmp    near ptr 0x005329DB;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -6391,7 +6777,9 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        sub    dword ptr [eax+0x20], 0x1E0000;
 // LINE 3433:
 	__asm        jmp    near ptr 0x00532AA1;
+
 	__asm        jmp    near ptr 0x00532A0F;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -6406,7 +6794,9 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        add    dword ptr [eax+0x20], 0x1E0000;
 // LINE 3438:
 	__asm        jmp    near ptr 0x00532AA1;
+
 	__asm        jmp    near ptr 0x00532A43;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -6421,7 +6811,9 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        sub    dword ptr [eax+0x18], 0x1E0000;
 // LINE 3443:
 	__asm        jmp    near ptr 0x00532AA1;
+
 	__asm        jmp    near ptr 0x00532A77;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -6459,31 +6851,40 @@ void TrainClass::AdjustNextPosition() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x00532B01;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00532B06;
+
 	__asm        jmp    near ptr 0x00532B06;
+
 	__asm        jmp    near ptr 0x00532B0B;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    cellPointer, eax;
 // LINE 3473:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
 	__asm        jl     near ptr 0x00532B4B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0;
 	__asm        jl     near ptr 0x00532B4B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0x80;
 	__asm        jge    near ptr 0x00532B4B;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     near ptr 0x00532B56;
+
 	__asm        mov    tile, 0;
 	__asm        jmp    near ptr 0x00532B9A;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -6508,17 +6909,22 @@ void TrainClass::AdjustNextPosition() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x55], 0;
 	__asm        jl     near ptr 0x00532BD4;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x59], 0;
 	__asm        jl     near ptr 0x00532BD4;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x55], 0x80;
 	__asm        jge    near ptr 0x00532BD4;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x59], 0x80;
 	__asm        jl     near ptr 0x00532BDF;
+
 	__asm        mov    ntile, 0;
 	__asm        jmp    near ptr 0x00532C23;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x55];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -6542,12 +6948,14 @@ void TrainClass::AdjustNextPosition() {
 // LINE 3476:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    near ptr 0x00532C49;
+
 	__asm        push   0xD94;
 	__asm        push   0x5B7A7C;
 	__asm        push   0x5B7AA0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00532C4E;
+
 	__asm        jmp    near ptr 0x00532C4E;
 // LINE 3478:
 	__asm        cmp    cellPointer, 0;
@@ -6584,6 +6992,7 @@ void TrainClass::AdjustNextPosition() {
 // LINE 3493:
 	__asm        cmp    xdiff, 0;
 	__asm        jge    near ptr 0x00532D28;
+
 	__asm        mov    eax, xdiff;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6619,15 +7028,20 @@ void TrainClass::AdjustNextPosition() {
 	__asm        jmp    near ptr 0x00532D23;
 // LINE 3512:
 	__asm        jmp    near ptr 0x00532D23;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x34;
 	__asm        je     near ptr 0x00532CF1;
+
 	__asm        cmp    dword ptr [ebp-0x34], 0x35;
 	__asm        je     near ptr 0x00532CE2;
+
 	__asm        jmp    near ptr 0x00532D23;
 // LINE 3514:
 	__asm        jmp    near ptr 0x00532EC9;
+
 	__asm        cmp    xdiff, 0;
 	__asm        jle    near ptr 0x00532DB3;
+
 	__asm        mov    eax, xdiff;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6663,15 +7077,20 @@ void TrainClass::AdjustNextPosition() {
 	__asm        jmp    near ptr 0x00532DAE;
 // LINE 3531:
 	__asm        jmp    near ptr 0x00532DAE;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x32;
 	__asm        je     near ptr 0x00532D6D;
+
 	__asm        cmp    dword ptr [ebp-0x38], 0x33;
 	__asm        je     near ptr 0x00532D7C;
+
 	__asm        jmp    near ptr 0x00532DAE;
 // LINE 3533:
 	__asm        jmp    near ptr 0x00532EC9;
+
 	__asm        cmp    ydiff, 0;
 	__asm        jle    near ptr 0x00532E3E;
+
 	__asm        mov    eax, ydiff;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6707,15 +7126,20 @@ void TrainClass::AdjustNextPosition() {
 	__asm        jmp    near ptr 0x00532E39;
 // LINE 3550:
 	__asm        jmp    near ptr 0x00532E39;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x33;
 	__asm        je     near ptr 0x00532DF8;
+
 	__asm        cmp    dword ptr [ebp-0x3C], 0x34;
 	__asm        je     near ptr 0x00532E07;
+
 	__asm        jmp    near ptr 0x00532E39;
 // LINE 3552:
 	__asm        jmp    near ptr 0x00532EC9;
+
 	__asm        cmp    ydiff, 0;
 	__asm        jge    near ptr 0x00532EC9;
+
 	__asm        mov    eax, ydiff;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6751,10 +7175,13 @@ void TrainClass::AdjustNextPosition() {
 	__asm        jmp    near ptr 0x00532EC4;
 // LINE 3570:
 	__asm        jmp    near ptr 0x00532EC4;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x32;
 	__asm        je     near ptr 0x00532E83;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0x35;
 	__asm        je     near ptr 0x00532E92;
+
 	__asm        jmp    near ptr 0x00532EC4;
 // LINE 3572:
 	__asm        jmp    near ptr 0x00532EC9;
@@ -6765,19 +7192,24 @@ void TrainClass::AdjustNextPosition() {
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x00532EF2;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    connectionType, eax;
 	__asm        jmp    near ptr 0x00532F26;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x00532F11;
+
 	__asm        mov    eax, 0x5B7BB8;
 	__asm        add    eax, 0x780;
 	__asm        cmp    eax, [ebp-0x2C];
 	__asm        jae    near ptr 0x00532F1D;
+
 	__asm        mov    connectionType, 0;
 	__asm        jmp    near ptr 0x00532F26;
+
 	__asm        add    dword ptr [ebp-0x2C], 8;
 	__asm        jmp    near ptr 0x00532ED0;
 // LINE 3581:
@@ -6828,13 +7260,17 @@ void TrainClass::AdjustNextPosition() {
 	__asm        jmp    near ptr 0x00533015;
 // LINE 3609:
 	__asm        jmp    near ptr 0x00533015;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x5B;
 	__asm        jg     near ptr 0x00532FF6;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0x5A;
 	__asm        jge    near ptr 0x00532FA4;
+
 	__asm        sub    dword ptr [ebp-0x44], 0x2E;
 	__asm        cmp    dword ptr [ebp-0x44], 3;
 	__asm        ja     near ptr 0x00533015;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    dword ptr [eax*4+0x532FE6];
 // Switch pointers
@@ -6895,6 +7331,7 @@ void TrainClass::GoStraight() {
 	__asm        mov    byte ptr [eax+6], 0;
 // LINE 3663:
 	__asm        jmp    near ptr 0x005330BC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -6914,7 +7351,9 @@ void TrainClass::GoStraight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3668:
 	__asm        jmp    near ptr 0x005331C4;
+
 	__asm        jmp    near ptr 0x005330F6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -6934,7 +7373,9 @@ void TrainClass::GoStraight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3673:
 	__asm        jmp    near ptr 0x005331C4;
+
 	__asm        jmp    near ptr 0x00533130;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -6954,7 +7395,9 @@ void TrainClass::GoStraight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3678:
 	__asm        jmp    near ptr 0x005331C4;
+
 	__asm        jmp    near ptr 0x0053316C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -6981,6 +7424,7 @@ void TrainClass::GoStraight() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005331C4;
+
 	__asm        jmp    near ptr 0x005331C4;
 // LINE 3687:
 	__asm        jmp    near ptr 0x005331C9;
@@ -6993,6 +7437,7 @@ void TrainClass::TurnLeft() {
 	__asm        mov    byte ptr [eax+6], 1;
 // LINE 3713:
 	__asm        jmp    near ptr 0x005331E6;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -7012,7 +7457,9 @@ void TrainClass::TurnLeft() {
 	__asm        mov    [edx+4], eax;
 // LINE 3718:
 	__asm        jmp    near ptr 0x005332EE;
+
 	__asm        jmp    near ptr 0x00533222;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -7032,7 +7479,9 @@ void TrainClass::TurnLeft() {
 	__asm        mov    [edx+4], eax;
 // LINE 3723:
 	__asm        jmp    near ptr 0x005332EE;
+
 	__asm        jmp    near ptr 0x0053325E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -7052,7 +7501,9 @@ void TrainClass::TurnLeft() {
 	__asm        mov    [edx+4], eax;
 // LINE 3728:
 	__asm        jmp    near ptr 0x005332EE;
+
 	__asm        jmp    near ptr 0x00533298;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -7079,6 +7530,7 @@ void TrainClass::TurnLeft() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005332EE;
+
 	__asm        jmp    near ptr 0x005332EE;
 // LINE 3738:
 	__asm        jmp    near ptr 0x005332F3;
@@ -7091,6 +7543,7 @@ void TrainClass::TurnRight() {
 	__asm        mov    byte ptr [eax+6], 1;
 // LINE 3764:
 	__asm        jmp    near ptr 0x00533310;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x11;
@@ -7110,7 +7563,9 @@ void TrainClass::TurnRight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3770:
 	__asm        jmp    near ptr 0x00533418;
+
 	__asm        jmp    near ptr 0x0053334C;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x14;
@@ -7130,7 +7585,9 @@ void TrainClass::TurnRight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3776:
 	__asm        jmp    near ptr 0x00533418;
+
 	__asm        jmp    near ptr 0x00533388;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 2;
@@ -7150,7 +7607,9 @@ void TrainClass::TurnRight() {
 	__asm        mov    [edx+4], eax;
 // LINE 3782:
 	__asm        jmp    near ptr 0x00533418;
+
 	__asm        jmp    near ptr 0x005333C2;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11];
 	__asm        and    eax, 0x18;
@@ -7177,6 +7636,7 @@ void TrainClass::TurnRight() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533418;
+
 	__asm        jmp    near ptr 0x00533418;
 // LINE 3793:
 	__asm        jmp    near ptr 0x0053341D;
@@ -7315,12 +7775,16 @@ void TrainClass::BeamToWithinCameraRange() {
 	__asm        jmp    near ptr 0x00533588;
 // LINE 3862:
 	__asm        jmp    near ptr 0x00533588;
+
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     near ptr 0x00533488;
+
 	__asm        cmp    dword ptr [ebp-0x58], 1;
 	__asm        je     near ptr 0x005334C5;
+
 	__asm        cmp    dword ptr [ebp-0x58], 2;
 	__asm        je     near ptr 0x00533502;
+
 	__asm        jmp    near ptr 0x0053353B;
 // LINE 3864:
 	__asm        shl    vec.x, 6;
@@ -7377,8 +7841,10 @@ void TrainClass::BeamToWithinCameraRange() {
 	__asm        jmp    near ptr 0x0053364D;
 // LINE 3898:
 	__asm        jmp    near ptr 0x0053364D;
+
 	__asm        cmp    dword ptr [ebp-0x5C], 4;
 	__asm        ja     near ptr 0x0053364D;
+
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x533639];
 // Switch pointers
@@ -7393,6 +7859,7 @@ void TrainClass::BeamToWithinCameraRange() {
 // LINE 3909:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00533672;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -7402,14 +7869,19 @@ void TrainClass::BeamToWithinCameraRange() {
 	unsigned short tile;
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x005336AC;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x005336AC;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x005336AC;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x005336B7;
+
 	__asm        mov    tile, 0;
 	__asm        jmp    near ptr 0x005336EF;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -7431,38 +7903,59 @@ void TrainClass::BeamToWithinCameraRange() {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x00533713;
+
 	__asm        jmp    near ptr 0x005337AF;
+
 	__asm        jmp    near ptr 0x00533823;
+
 	__asm        jmp    near ptr 0x005337AF;
+
 	__asm        jmp    near ptr 0x005337A5;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x3A;
 	__asm        jg     near ptr 0x00533740;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x32;
 	__asm        jge    near ptr 0x005337AF;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x2C;
 	__asm        jl     near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x2D;
 	__asm        jle    near ptr 0x005337AF;
+
 	__asm        jmp    near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x4E;
 	__asm        jg     near ptr 0x0053376D;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x4D;
 	__asm        jge    near ptr 0x005337AF;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x45;
 	__asm        jl     near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x48;
 	__asm        jle    near ptr 0x005337AF;
+
 	__asm        jmp    near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x805B;
 	__asm        jg     near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x805A;
 	__asm        jge    near ptr 0x005337AF;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x5A;
 	__asm        jl     near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x60], 0x5B;
 	__asm        jle    near ptr 0x005337AF;
+
 	__asm        jmp    near ptr 0x00533823;
+
 	__asm        jmp    near ptr 0x00533823;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x00533823;
 // LINE 3915:
@@ -7481,14 +7974,18 @@ void TrainClass::BeamToWithinCameraRange() {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    near ptr 0x005337FF;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533804;
+
 	__asm        jmp    near ptr 0x00533804;
+
 	__asm        jmp    near ptr 0x00533809;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    cptr, eax;
 // LINE 3918:
@@ -7500,7 +7997,9 @@ void TrainClass::BeamToWithinCameraRange() {
 // LINE 3923:
 	__asm        cmp    foundcell, 0;
 	__asm        je     near ptr 0x00533837;
+
 	__asm        jmp    near ptr 0x005339A6;
+
 	__asm        jmp    near ptr 0x00533861;
 // LINE 3924:
 	__asm        mov    eax, xdir;
@@ -7561,6 +8060,7 @@ foundCell:
 	__asm        jmp    near ptr 0x005338C7;
 // LINE 3959:
 	__asm        jmp    near ptr 0x005338CC;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
 	__asm        push   eax;
@@ -7571,20 +8071,26 @@ foundCell:
 	__asm        call   TrainClass::LinkToCell;
 // LINE 3963:
 	__asm        jmp    near ptr 0x005338EA;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
 	__asm        jl     near ptr 0x00533924;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0;
 	__asm        jl     near ptr 0x00533924;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0x80;
 	__asm        jge    near ptr 0x00533924;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     near ptr 0x0053392F;
+
 	__asm        mov    word ptr [ebp-0x50], 0;
 	__asm        jmp    near ptr 0x00533973;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -7605,6 +8111,7 @@ foundCell:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x50], ax;
 	__asm        jmp    near ptr 0x00533973;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7623,6 +8130,7 @@ foundCell:
 	__asm        mov    dword ptr [eax+0x61], 0;
 // LINE 3969:
 	__asm        jmp    near ptr 0x005339AB;
+
 	__asm        jmp    near ptr 0x00533861;
 }
 
@@ -7630,12 +8138,14 @@ foundCell:
 void TrainClass::UnPlaceTrain() {
 // LINE 3992:
 	__asm        jmp    near ptr 0x005339C1;
+
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00533A31;
 // LINE 3994:
 	__asm        jmp    near ptr 0x005339D5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
 	__asm        push   eax;
@@ -7646,6 +8156,7 @@ void TrainClass::UnPlaceTrain() {
 	__asm        call   TrainClass::UnlinkFromCell;
 // LINE 3995:
 	__asm        jmp    near ptr 0x005339F3;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D1];
 	__asm        push   eax;
@@ -7656,6 +8167,7 @@ void TrainClass::UnPlaceTrain() {
 	__asm        call   TrainClass::UnlinkFromCell;
 // LINE 3996:
 	__asm        jmp    near ptr 0x00533A11;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D5];
 	__asm        push   eax;
@@ -7740,8 +8252,10 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	__asm        jmp    near ptr 0x00533B0A;
 // LINE 4062:
 	__asm        jmp    near ptr 0x00533B0A;
+
 	__asm        cmp    dword ptr [ebp-0x4C], 4;
 	__asm        ja     near ptr 0x00533B0A;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x533AF6];
 // Switch pointers
@@ -7756,6 +8270,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 // LINE 4073:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x00533B2F;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -7765,14 +8280,19 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	unsigned short tile;
 	__asm        cmp    x, 0;
 	__asm        jl     near ptr 0x00533B69;
+
 	__asm        cmp    y, 0;
 	__asm        jl     near ptr 0x00533B69;
+
 	__asm        cmp    x, 0x80;
 	__asm        jge    near ptr 0x00533B69;
+
 	__asm        cmp    y, 0x80;
 	__asm        jl     near ptr 0x00533B74;
+
 	__asm        mov    tile, 0;
 	__asm        jmp    near ptr 0x00533BAC;
+
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x638F70];
 	__asm        mov    ecx, y;
@@ -7794,38 +8314,59 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x00533BD0;
+
 	__asm        jmp    near ptr 0x00533C6C;
+
 	__asm        jmp    near ptr 0x00533CE0;
+
 	__asm        jmp    near ptr 0x00533C6C;
+
 	__asm        jmp    near ptr 0x00533C62;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x3A;
 	__asm        jg     near ptr 0x00533BFD;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x32;
 	__asm        jge    near ptr 0x00533C6C;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x2C;
 	__asm        jl     near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x2D;
 	__asm        jle    near ptr 0x00533C6C;
+
 	__asm        jmp    near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x4E;
 	__asm        jg     near ptr 0x00533C2A;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x4D;
 	__asm        jge    near ptr 0x00533C6C;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x45;
 	__asm        jl     near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x48;
 	__asm        jle    near ptr 0x00533C6C;
+
 	__asm        jmp    near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x805B;
 	__asm        jg     near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x805A;
 	__asm        jge    near ptr 0x00533C6C;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x5A;
 	__asm        jl     near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x50], 0x5B;
 	__asm        jle    near ptr 0x00533C6C;
+
 	__asm        jmp    near ptr 0x00533CE0;
+
 	__asm        jmp    near ptr 0x00533CE0;
+
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x00533CE0;
 // LINE 4079:
@@ -7844,14 +8385,18 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x00533CBC;
+
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533CC1;
+
 	__asm        jmp    near ptr 0x00533CC1;
+
 	__asm        jmp    near ptr 0x00533CC6;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    cptr, eax;
 // LINE 4082:
@@ -7863,7 +8408,9 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 // LINE 4087:
 	__asm        cmp    foundcell, 0;
 	__asm        je     near ptr 0x00533CF4;
+
 	__asm        jmp    near ptr 0x00533E6A;
+
 	__asm        jmp    near ptr 0x00533D20;
 // LINE 4088:
 	__asm        mov    eax, xdir;
@@ -7925,6 +8472,7 @@ foundCell:
 	__asm        jmp    near ptr 0x00533D86;
 // LINE 4124:
 	__asm        jmp    near ptr 0x00533D8B;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
 	__asm        push   eax;
@@ -7935,20 +8483,26 @@ foundCell:
 	__asm        call   TrainClass::LinkToCell;
 // LINE 4128:
 	__asm        jmp    near ptr 0x00533DA9;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
 	__asm        jl     near ptr 0x00533DE3;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0;
 	__asm        jl     near ptr 0x00533DE3;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0x80;
 	__asm        jge    near ptr 0x00533DE3;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     near ptr 0x00533DEE;
+
 	__asm        mov    word ptr [ebp-0x44], 0;
 	__asm        jmp    near ptr 0x00533E32;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -7969,6 +8523,7 @@ foundCell:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x44], ax;
 	__asm        jmp    near ptr 0x00533E32;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -8032,39 +8587,47 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 // LINE 4424:
 	__asm        cmp    object1, 0;
 	__asm        je     near ptr 0x00533F06;
+
 	__asm        cmp    object2, 0;
 	__asm        je     near ptr 0x00533F06;
+
 	__asm        cmp    object3, 0;
 	__asm        jne    near ptr 0x00533F8E;
 // LINE 4427:
 	__asm        cmp    object1, 0;
 	__asm        jne    near ptr 0x00533F2C;
+
 	__asm        push   0x114B;
 	__asm        push   0x5B7B30;
 	__asm        push   0x5B7B54;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533F31;
+
 	__asm        jmp    near ptr 0x00533F31;
 // LINE 4428:
 	__asm        cmp    object2, 0;
 	__asm        jne    near ptr 0x00533F57;
+
 	__asm        push   0x114C;
 	__asm        push   0x5B7B5C;
 	__asm        push   0x5B7B80;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533F5C;
+
 	__asm        jmp    near ptr 0x00533F5C;
 // LINE 4429:
 	__asm        cmp    object3, 0;
 	__asm        jne    near ptr 0x00533F82;
+
 	__asm        push   0x114D;
 	__asm        push   0x5B7B88;
 	__asm        push   0x5B7BAC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00533F87;
+
 	__asm        jmp    near ptr 0x00533F87;
 // LINE 4431:
 	__asm        xor    eax, eax;
@@ -8263,6 +8826,7 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 // LINE 4538:
 	__asm        cmp    mapx, 0xFFFFFFFF;
 	__asm        je     near ptr 0x005342AF;
+
 	__asm        cmp    mapy, 0xFFFFFFFF;
 	__asm        je     near ptr 0x005342AF;
 // LINE 4542:
@@ -8278,17 +8842,22 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
 	__asm        jl     near ptr 0x00534225;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0;
 	__asm        jl     near ptr 0x00534225;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0x80;
 	__asm        jge    near ptr 0x00534225;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     near ptr 0x00534230;
+
 	__asm        mov    word ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x00534274;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -8309,6 +8878,7 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x34], ax;
 	__asm        jmp    near ptr 0x00534274;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -8365,8 +8935,10 @@ int32_t CreateTrainInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00534313;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00534315;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0053431A;
 // LINE 4627:
@@ -8426,6 +8998,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 // LINE 4743:
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    near ptr 0x0053439D;
+
 	__asm        inc    currentTrainIndex;
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    near ptr 0x00534556;
@@ -8435,16 +9008,21 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	__asm        mov    t, eax;
 // LINE 4750:
 	__asm        jmp    near ptr 0x005343B9;
+
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax+0xA];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005343F0;
+
 	__asm        jmp    near ptr 0x005343CD;
+
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005343F0;
+
 	__asm        jmp    near ptr 0x005343E1;
+
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax+0xC];
 	__asm        test   eax, eax;
@@ -8454,6 +9032,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	__asm        jmp    near ptr 0x00534567;
 // LINE 4756:
 	__asm        jmp    near ptr 0x005343FC;
+
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -8513,6 +9092,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 // LINE 4774:
 	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00534499;
+
 	__asm        inc    count;
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
@@ -8640,6 +9220,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 4862:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x005345EB;
+
 	__asm        inc    i;
 	__asm        cmp    i, 1;
 	__asm        jge    near ptr 0x005348F7;
@@ -8855,6 +9436,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        rep movsd;
 // LINE 4898:
 	__asm        jmp    near ptr 0x0053485F;
+
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -8898,6 +9480,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 4911:
 	__asm        cmp    ret, 0;
 	__asm        jne    near ptr 0x005348F2;
+
 	__asm        cmp    i, 0;
 	__asm        je     near ptr 0x005348F2;
 // LINE 4912:
@@ -8919,6 +9502,7 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 4928:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x0053491E;
+
 	__asm        inc    i;
 	__asm        cmp    i, 1;
 	__asm        jge    near ptr 0x00534962;

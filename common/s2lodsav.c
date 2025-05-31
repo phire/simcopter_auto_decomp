@@ -154,6 +154,7 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 143:
 	__asm        cmp    lChunkDataSize, 0;
 	__asm        jl     near ptr 0x004C47B4;
+
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
 	__asm        call   ftell;
@@ -353,6 +354,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 227:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        je     near ptr 0x004C49B6;
+
 	__asm        mov    eax, cityName;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
@@ -585,6 +587,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 335:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B01C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -613,6 +616,7 @@ short S2CityLoad(char * filePath) {
 	__asm        add    esp, 8;
 // LINE 340:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B024;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -635,6 +639,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 344:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B02C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -657,6 +662,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 348:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B034;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -679,6 +685,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 352:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B03C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -701,6 +708,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 356:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B044;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -723,6 +731,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 360:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B04C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -747,6 +756,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 366:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B054;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -775,6 +785,7 @@ short S2CityLoad(char * filePath) {
 	__asm        add    esp, 8;
 // LINE 372:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B05C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -797,6 +808,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 377:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B064;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -819,6 +831,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 382:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B06C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -841,6 +854,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 386:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B074;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -863,6 +877,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 390:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B07C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -885,6 +900,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 394:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B084;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -907,6 +923,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 398:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B08C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -929,6 +946,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 402:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B094;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -951,6 +969,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 406:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B09C;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -973,6 +992,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 410:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B0A4;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -995,6 +1015,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    near ptr 0x004C5357;
 // LINE 414:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B0AC;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -1023,6 +1044,7 @@ short S2CityLoad(char * filePath) {
 	__asm        add    esp, 8;
 // LINE 419:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        push   0x59B0B4;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -1046,6 +1068,7 @@ short S2CityLoad(char * filePath) {
 	__asm        mov    bFoundName, 1;
 // LINE 424:
 	__asm        jmp    near ptr 0x004C5280;
+
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
@@ -1146,6 +1169,7 @@ void label_kludge() {
 // LINE 476:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C538B;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1195,6 +1219,7 @@ void clear_label() {
 // LINE 499:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C542A;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1202,6 +1227,7 @@ void clear_label() {
 // LINE 500:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004C5448;
+
 	__asm        inc    j;
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x19;
@@ -1228,6 +1254,7 @@ void graph_kludge() {
 // LINE 519:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5496;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -1241,6 +1268,7 @@ void graph_kludge() {
 // LINE 521:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004C54CA;
+
 	__asm        inc    j;
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x34;
@@ -1269,6 +1297,7 @@ void graph_kludge() {
 // LINE 526:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004C5534;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 3;
@@ -1652,6 +1681,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 685:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C59FC;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
@@ -1685,6 +1715,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 691:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5A77;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
@@ -1718,6 +1749,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 697:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5AF4;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1734,6 +1766,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 700:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5B36;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -1751,6 +1784,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 704:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5B75;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
@@ -1767,6 +1801,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 708:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5BB3;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
@@ -1853,6 +1888,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 725:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5CDE;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -1868,6 +1904,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 728:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5D1C;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
@@ -1883,6 +1920,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 731:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5D5A;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -1926,6 +1964,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 736:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004C5DF1;
+
 	__asm        inc    j;
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
@@ -1995,6 +2034,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 749:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5EE8;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
@@ -2049,6 +2089,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 757:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C5FB2;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
@@ -2118,6 +2159,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 // LINE 769:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C60BA;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -2607,6 +2649,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        mov    eax, tp;
 	__asm        cmp    size, eax;
 	__asm        jle    near ptr 0x004C67DE;
+
 	__asm        mov    eax, dp;
 	__asm        cmp    count, eax;
 	__asm        jle    near ptr 0x004C67DE;
@@ -2632,6 +2675,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        inc    tp;
 // LINE 938:
 	__asm        jmp    near ptr 0x004C6780;
+
 	__asm        dec    ix;
 	__asm        cmp    ix, 0;
 	__asm        jl     near ptr 0x004C679E;
@@ -2649,6 +2693,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        mov    ix, eax;
 // LINE 942:
 	__asm        jmp    near ptr 0x004C67B2;
+
 	__asm        dec    ix;
 	__asm        cmp    ix, 0;
 	__asm        jle    near ptr 0x004C67D9;
@@ -3425,6 +3470,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        je     near ptr 0x004C7050;
+
 	__asm        push   0x59B1C4;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -3439,6 +3485,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        add    esp, 8;
 // LINE 1209:
 	__asm        jmp    near ptr 0x004C708B;
+
 	__asm        push   0x59B1CC;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -3484,8 +3531,10 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        mov    cl, b;
 	__asm        cmp    eax, ecx;
 	__asm        jne    near ptr 0x004C710E;
+
 	__asm        cmp    ix, 0x80;
 	__asm        jge    near ptr 0x004C710E;
+
 	__asm        mov    eax, ix;
 	__asm        add    eax, dp;
 	__asm        cmp    eax, count;
@@ -3528,8 +3577,10 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        mov    cl, b;
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x004C71AA;
+
 	__asm        cmp    ix, 0x80;
 	__asm        jge    near ptr 0x004C71AA;
+
 	__asm        mov    eax, ix;
 	__asm        add    eax, dp;
 	__asm        cmp    eax, count;
@@ -3598,6 +3649,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        add    esp, 8;
 // LINE 1252:
 	__asm        jmp    near ptr 0x004C724C;
+
 	__asm        push   0x59B1DC;
 	__asm        call   stol;
 	__asm        add    esp, 4;
@@ -3899,6 +3951,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1339:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7610;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
@@ -3932,6 +3985,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1344:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C768B;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
@@ -3965,6 +4019,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1349:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7708;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -3982,6 +4037,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1351:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C774C;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -3998,6 +4054,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1353:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C778B;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
@@ -4013,6 +4070,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1355:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C77C9;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
@@ -4054,6 +4112,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1361:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7863;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -4069,6 +4128,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1363:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C78A1;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
@@ -4084,6 +4144,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1365:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C78DF;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -4127,6 +4188,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1369:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004C7976;
+
 	__asm        inc    j;
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
@@ -4200,6 +4262,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1382:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7A76;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
@@ -4259,6 +4322,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1390:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7B4A;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
@@ -4332,6 +4396,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1403:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C7C5A;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -4679,6 +4744,7 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	__asm        inc    ix;
 // LINE 1476:
 	__asm        jmp    near ptr 0x004C8175;
+
 	__asm        inc    ix;
 	__asm        movsx  eax, ix;
 	__asm        cmp    eax, 0x4B0;
@@ -4723,6 +4789,7 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1504:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C81F6;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
@@ -4760,6 +4827,7 @@ void swizzle_Micro(char * data, long count) {
 // LINE 1532:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C8254;
+
 	__asm        inc    i;
 	__asm        mov    eax, count;
 	__asm        cmp    i, eax;
@@ -4813,6 +4881,7 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1562:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C82DD;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
@@ -5146,6 +5215,7 @@ short S2CityAlloc() {
 // LINE 1815:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C8703;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x10;
 	__asm        jge    near ptr 0x004C8772;
@@ -5161,6 +5231,7 @@ short S2CityAlloc() {
 // LINE 1817:
 	__asm        mov    j, 0;
 	__asm        jmp    near ptr 0x004C873A;
+
 	__asm        inc    j;
 	__asm        cmp    j, 0x34;
 	__asm        jge    near ptr 0x004C875D;
@@ -5203,6 +5274,7 @@ short S2CityAlloc() {
 // LINE 1828:
 	__asm        mov    cnt, 1;
 	__asm        jmp    near ptr 0x004C87E0;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C8808;
@@ -5228,6 +5300,7 @@ short S2CityAlloc() {
 // LINE 1832:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x004C8846;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C886E;
@@ -5253,6 +5326,7 @@ short S2CityAlloc() {
 // LINE 1836:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x004C88AC;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C88D4;
@@ -5278,6 +5352,7 @@ short S2CityAlloc() {
 // LINE 1840:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x004C8912;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C893A;
@@ -5303,6 +5378,7 @@ short S2CityAlloc() {
 // LINE 1844:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x004C8978;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C89A0;
@@ -5328,6 +5404,7 @@ short S2CityAlloc() {
 // LINE 1848:
 	__asm        mov    cnt, 0;
 	__asm        jmp    near ptr 0x004C89DE;
+
 	__asm        inc    cnt;
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    near ptr 0x004C8A06;
@@ -5379,6 +5456,7 @@ short S2CityAlloc() {
 // LINE 1858:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x004C8AA8;
+
 	__asm        inc    x;
 	__asm        movsx  eax, x;
 	__asm        cmp    eax, 0x80;
@@ -5386,6 +5464,7 @@ short S2CityAlloc() {
 // LINE 1859:
 	__asm        mov    y, 0;
 	__asm        jmp    near ptr 0x004C8AC6;
+
 	__asm        inc    y;
 	__asm        movsx  eax, y;
 	__asm        cmp    eax, 0x80;
@@ -5553,6 +5632,7 @@ short S2CityAlloc() {
 // LINE 1890:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C8D44;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x80;
 	__asm        jge    near ptr 0x004C8D82;
@@ -5573,6 +5653,7 @@ short S2CityAlloc() {
 // LINE 1894:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C8D91;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x40;
 	__asm        jge    near ptr 0x004C8DF8;
@@ -5605,6 +5686,7 @@ short S2CityAlloc() {
 // LINE 1900:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C8E07;
+
 	__asm        inc    i;
 	__asm        cmp    i, 0x20;
 	__asm        jge    near ptr 0x004C8E6E;
@@ -5911,6 +5993,7 @@ void PStringToCString(char * string) {
 // LINE 1983:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C9247;
+
 	__asm        inc    i;
 	__asm        movsx  eax, sizePString;
 	__asm        cmp    eax, i;
@@ -5951,6 +6034,7 @@ void CStringToPString(char * string) {
 	__asm        dec    eax;
 	__asm        mov    i, eax;
 	__asm        jmp    near ptr 0x004C92B6;
+
 	__asm        dec    i;
 	__asm        cmp    i, 0;
 	__asm        jl     near ptr 0x004C92D8;
@@ -5987,6 +6071,7 @@ void CopyPString(char * stringDestination, char * stringSource) {
 // LINE 2015:
 	__asm        mov    i, 1;
 	__asm        jmp    near ptr 0x004C9311;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -6108,6 +6193,7 @@ short check_root(char * pathname) {
 	__asm        dec    count;
 // LINE 2094:
 	__asm        jmp    near ptr 0x004C946E;
+
 	__asm        lea    eax, pathonly[0];
 	__asm        cmp    s, eax;
 	__asm        jbe    near ptr 0x004C946E;
@@ -6168,6 +6254,7 @@ void get_path_at_start(char * ref, char * ret) {
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5C;
 	__asm        je     near ptr 0x004C94FA;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x3A;
@@ -6237,6 +6324,7 @@ void do_uppercase(char * ref, char * res) {
 // LINE 2173:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004C959A;
+
 	__asm        inc    i;
 	__asm        movsx  eax, i;
 	__asm        movsx  ecx, len;
@@ -6247,6 +6335,7 @@ void do_uppercase(char * ref, char * res) {
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x61;
 	__asm        jl     near ptr 0x004C95D6;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x7A;
@@ -6298,6 +6387,7 @@ void get_name_at_end(char * ref, char * ret) {
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5C;
 	__asm        je     near ptr 0x004C9648;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x3A;
@@ -6318,6 +6408,7 @@ void get_name_at_end(char * ref, char * ret) {
 	__asm        inc    s;
 // LINE 2214:
 	__asm        jmp    near ptr 0x004C967F;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
@@ -6564,74 +6655,92 @@ void remove_illegals(char * ref) {
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5C;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x2F;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x28;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x29;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x7B;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x7D;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x2E;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x3A;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x3B;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x2A;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x3F;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x27;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x22;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x2C;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x21;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x60;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5B;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5D;
 	__asm        je     near ptr 0x004C9A01;
+
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5F;

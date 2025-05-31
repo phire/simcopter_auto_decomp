@@ -357,6 +357,7 @@ void PreferenceItem::PreferenceItem() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 21:
 	__asm        jmp    near ptr 0x0047BB9E;
+
 	__asm        mov    eax, this;
 }
 
@@ -414,6 +415,7 @@ void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 45:
 	__asm        jmp    near ptr 0x0047BC3D;
+
 	__asm        mov    eax, this;
 }
 
@@ -501,8 +503,10 @@ int32_t operator==(const class PreferenceItem& P1, const class PreferenceItem& P
 	__asm        mov    eax, P1;
 	__asm        cmp    P2, eax;
 	__asm        jne    near ptr 0x0047BD42;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047BD44;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047BD49;
 // LINE 87:
@@ -531,8 +535,10 @@ int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jge    near ptr 0x0047BD9E;
+
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047BDA0;
+
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047BDA5;
 // LINE 121:
@@ -549,10 +555,12 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0047BDDD;
+
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        mov    prefItemReturn, eax;
 	__asm        jmp    near ptr 0x0047BDE4;
+
 	__asm        mov    prefItemReturn, 0;
 // LINE 133:
 	__asm        mov    eax, this;
@@ -601,6 +609,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0047BE7F;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0xC];
@@ -608,6 +617,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047BE7A;
+
 	__asm        jmp    near ptr 0x0047BE7F;
 // LINE 143:
 	__asm        mov    prefItemReturn, 0;
@@ -624,6 +634,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 
 // FUNCTION: COPTER_D 0x0047bea2
 void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileType, long lTheFileVersion, int32_t bSaveTheFileAtAllChanges) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        inc    dword ptr ds:[0x599A5C];
@@ -631,15 +642,18 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x599A68], 0;
 	__asm        je     near ptr 0x0047BEEA;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047C0C7;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
 	__asm        jne    near ptr 0x0047C0B2;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -649,6 +663,7 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x0047BF49;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -658,11 +673,14 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047BF3F;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047BF4E;
+
 	__asm        jmp    near ptr 0x0047BF53;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0xCC;
@@ -676,14 +694,19 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047BF8E;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0047BF94;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0047BF99;
+
 	__asm        jmp    near ptr 0x0047BF9E;
+
 	__asm        jmp    near ptr 0x0047BFA3;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -699,6 +722,7 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x0047C001;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -708,11 +732,14 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047BFF7;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047C006;
+
 	__asm        jmp    near ptr 0x0047C00B;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -735,14 +762,19 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047C068;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047C06E;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047C073;
+
 	__asm        jmp    near ptr 0x0047C078;
+
 	__asm        jmp    near ptr 0x0047C07D;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
@@ -750,18 +782,21 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        add    eax, ds:[0x599A64];
 	__asm        mov    ds:[0x599A60], eax;
 	__asm        jmp    near ptr 0x0047C098;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-8], eax;
 	__asm        add    dword ptr ds:[0x599A64], 0x14;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047C0C7;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x599A64], 0x14;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047C0CC;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -776,6 +811,7 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    ecx, [ecx+8];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047C0F7;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590DB0;
 // LINE 166:
@@ -802,6 +838,7 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 172:
 	__asm        jmp    near ptr 0x0047C13D;
+
 	__asm        mov    eax, this;
 }
 
@@ -814,6 +851,7 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0047C184;
+
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
@@ -821,6 +859,7 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x0047C18E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 180:
@@ -843,6 +882,7 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x0047c1be
 void PreferenceManager::~PreferenceManager() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590DB0;
 // LINE 192:
@@ -860,6 +900,7 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0047C212;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
@@ -868,13 +909,16 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        jmp    near ptr 0x0047C212;
 // LINE 195:
 	__asm        jmp    near ptr 0x0047C217;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047C22B;
+
 	__asm        jmp    near ptr 0x0047C230;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -882,7 +926,9 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047C246;
+
 	__asm        jmp    near ptr 0x0047C24B;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x10];
@@ -890,25 +936,36 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x38], eax;
 	__asm        jne    near ptr 0x0047C26D;
+
 	__asm        jmp    near ptr 0x0047C281;
+
 	__asm        jmp    near ptr 0x0047C26D;
+
 	__asm        jmp    near ptr 0x0047C27C;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    near ptr 0x0047C281;
+
 	__asm        jmp    near ptr 0x0047C286;
+
 	__asm        jmp    near ptr 0x0047C329;
+
 	__asm        jmp    near ptr 0x0047C295;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0047C329;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047C2A8;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0047C2B3;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -922,28 +979,36 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047C2D9;
+
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        add    ecx, 8;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        jmp    near ptr 0x0047C2F8;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047C2FD;
+
 	__asm        jmp    near ptr 0x0047C302;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        jmp    near ptr 0x0047C319;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0047C324;
+
 	__asm        jmp    near ptr 0x0047C257;
+
 	__asm        jmp    near ptr 0x0047C32E;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
@@ -953,10 +1018,13 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        jmp    near ptr 0x0047C34E;
+
 	__asm        dec    dword ptr ds:[0x599A5C];
 	__asm        jne    near ptr 0x0047C3D8;
+
 	__asm        cmp    dword ptr ds:[0x599A6C], 0;
 	__asm        je     near ptr 0x0047C3B5;
+
 	__asm        mov    eax, ds:[0x599A6C];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, ds:[0x599A6C];
@@ -970,18 +1038,24 @@ void PreferenceManager::~PreferenceManager() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047C395;
+
 	__asm        jmp    near ptr 0x0047C39A;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047C3AB;
+
 	__asm        jmp    near ptr 0x0047C3B0;
+
 	__asm        jmp    near ptr 0x0047C35A;
+
 	__asm        mov    dword ptr ds:[0x599A68], 0;
 	__asm        mov    dword ptr ds:[0x599A64], 0;
 	__asm        mov    dword ptr ds:[0x599A60], 0;
 	__asm        jmp    near ptr 0x0047C3D8;
+
 	__asm        jmp    near ptr 0x0047C3DD;
 }
 
@@ -1000,7 +1074,9 @@ void PreferenceManager::EnumeratePrefs() {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047C409;
+
 	__asm        jmp    near ptr 0x0047C40E;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    i.node, eax;
 // LINE 23:
@@ -1012,31 +1088,44 @@ void PreferenceManager::EnumeratePrefs() {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x0047C42C;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047C437;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0047C44B;
+
 	__asm        jmp    near ptr 0x0047C450;
+
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0x14], eax;
 	__asm        jne    near ptr 0x0047C466;
+
 	__asm        jmp    near ptr 0x0047C47A;
+
 	__asm        jmp    near ptr 0x0047C466;
+
 	__asm        jmp    near ptr 0x0047C475;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x0047C47A;
+
 	__asm        jmp    near ptr 0x0047C47F;
+
 	__asm        jmp    near ptr 0x0047C4A3;
+
 	__asm        jmp    near ptr 0x0047C48E;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0047C4A3;
 // LINE 208:
 	__asm        jmp    near ptr 0x0047C493;
+
 	__asm        mov    eax, i.node;
 	__asm        add    eax, 8;
 	__asm        mov    eax, [eax];
@@ -1118,7 +1207,9 @@ long PreferenceManager::SaveAllPrefs() {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0047C56A;
+
 	__asm        jmp    near ptr 0x0047C56F;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    i.node, eax;
 // LINE 23:
@@ -1130,33 +1221,48 @@ long PreferenceManager::SaveAllPrefs() {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x0047C58D;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047C598;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0047C5AC;
+
 	__asm        jmp    near ptr 0x0047C5B1;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    i.node, eax;
 	__asm        jne    near ptr 0x0047C5C7;
+
 	__asm        jmp    near ptr 0x0047C5DB;
+
 	__asm        jmp    near ptr 0x0047C5C7;
+
 	__asm        jmp    near ptr 0x0047C5D6;
+
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x0047C5DB;
+
 	__asm        jmp    near ptr 0x0047C5E0;
+
 	__asm        jmp    near ptr 0x0047C629;
+
 	__asm        jmp    near ptr 0x0047C5EF;
+
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     near ptr 0x0047C629;
 // LINE 243:
 	__asm        jmp    near ptr 0x0047C5F4;
+
 	__asm        jmp    near ptr 0x0047C5F9;
+
 	__asm        jmp    near ptr 0x0047C5FE;
+
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -1271,6 +1377,7 @@ long PreferenceManager::LoadAllPrefs() {
 	__asm        mov    bStillMoreRecords, eax;
 // LINE 288:
 	__asm        jmp    near ptr 0x0047C74F;
+
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
@@ -1371,7 +1478,9 @@ long PreferenceManager::ClearPrefsMemory() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0047C854;
+
 	__asm        jmp    near ptr 0x0047C859;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax];
@@ -1379,7 +1488,9 @@ long PreferenceManager::ClearPrefsMemory() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047C86F;
+
 	__asm        jmp    near ptr 0x0047C874;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-8];
@@ -1387,25 +1498,36 @@ long PreferenceManager::ClearPrefsMemory() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        jne    near ptr 0x0047C896;
+
 	__asm        jmp    near ptr 0x0047C8AA;
+
 	__asm        jmp    near ptr 0x0047C896;
+
 	__asm        jmp    near ptr 0x0047C8A5;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x0047C8AA;
+
 	__asm        jmp    near ptr 0x0047C8AF;
+
 	__asm        jmp    near ptr 0x0047C952;
+
 	__asm        jmp    near ptr 0x0047C8BE;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0047C952;
+
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0047C8D1;
+
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0047C8DC;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
@@ -1419,27 +1541,34 @@ long PreferenceManager::ClearPrefsMemory() {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047C902;
+
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        add    ecx, 8;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        jmp    near ptr 0x0047C921;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047C926;
+
 	__asm        jmp    near ptr 0x0047C92B;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        jmp    near ptr 0x0047C942;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0047C94D;
+
 	__asm        jmp    near ptr 0x0047C880;
+
 	__asm        jmp    near ptr 0x0047C957;
 // LINE 314:
 	__asm        mov    eax, this;
@@ -1464,7 +1593,9 @@ long PreferenceManager::RemovePref(long lPrefType) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047C997;
+
 	__asm        jmp    near ptr 0x0047C99C;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    i.node, eax;
 // LINE 23:
@@ -1476,35 +1607,49 @@ long PreferenceManager::RemovePref(long lPrefType) {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x0047C9BA;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047C9C5;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047C9D9;
+
 	__asm        jmp    near ptr 0x0047C9DE;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    i.node, eax;
 	__asm        jne    near ptr 0x0047C9F4;
+
 	__asm        jmp    near ptr 0x0047CA08;
+
 	__asm        jmp    near ptr 0x0047C9F4;
+
 	__asm        jmp    near ptr 0x0047CA03;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    near ptr 0x0047CA08;
+
 	__asm        jmp    near ptr 0x0047CA0D;
+
 	__asm        jmp    near ptr 0x0047CAD2;
+
 	__asm        jmp    near ptr 0x0047CA1C;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0047CAD2;
 // LINE 330:
 	__asm        jmp    near ptr 0x0047CA21;
+
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, lPrefType;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    near ptr 0x0047CACD;
+
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x28], eax;
 // LINE 331:
@@ -1519,23 +1664,28 @@ long PreferenceManager::RemovePref(long lPrefType) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047CA56;
+
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        add    ecx, 8;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        jmp    near ptr 0x0047CA75;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        add    eax, 8;
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047CA7A;
+
 	__asm        jmp    near ptr 0x0047CA7F;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        jmp    near ptr 0x0047CA96;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0047CAA1;
@@ -1576,7 +1726,9 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047CB07;
+
 	__asm        jmp    near ptr 0x0047CB0C;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    i.node, eax;
 // LINE 23:
@@ -1588,37 +1740,51 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x0047CB2A;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047CB35;
+
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047CB49;
+
 	__asm        jmp    near ptr 0x0047CB4E;
+
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0x10], eax;
 	__asm        jne    near ptr 0x0047CB64;
+
 	__asm        jmp    near ptr 0x0047CB78;
+
 	__asm        jmp    near ptr 0x0047CB64;
+
 	__asm        jmp    near ptr 0x0047CB73;
+
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    near ptr 0x0047CB78;
+
 	__asm        jmp    near ptr 0x0047CB7D;
+
 	__asm        jmp    near ptr 0x0047CBB5;
+
 	__asm        jmp    near ptr 0x0047CB8C;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0047CBB5;
 // LINE 358:
 	__asm        jmp    near ptr 0x0047CB91;
+
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, lPrefType;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    near ptr 0x0047CBB0;
 // LINE 359:
 	__asm        jmp    near ptr 0x0047CBA5;
+
 	__asm        mov    eax, i.node;
 	__asm        add    eax, 8;
 	__asm        jmp    near ptr 0x0047CBBC;
@@ -1768,10 +1934,12 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x0047CD36;
+
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        mov    prefItemToSet, eax;
 	__asm        jmp    near ptr 0x0047CD3D;
+
 	__asm        mov    prefItemToSet, 0;
 // LINE 475:
 	__asm        mov    eax, lPrefType;
@@ -1799,6 +1967,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x0047CDA1;
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0xC];
@@ -1806,6 +1975,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047CD9C;
+
 	__asm        jmp    near ptr 0x0047CDA1;
 // LINE 480:
 	__asm        xor    eax, eax;
@@ -1834,22 +2004,27 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x0047CDE2;
+
 	__asm        jmp    near ptr 0x0047CDE7;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr ds:[0x599A68], 0;
 	__asm        je     near ptr 0x0047CE19;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0047CE64;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
 	__asm        jne    near ptr 0x0047CE4F;
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 8;
 	__asm        call   list<PreferenceItem>::add_new_buffer;
@@ -1859,27 +2034,34 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0047CE64;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        add    dword ptr ds:[0x599A64], 0x14;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0047CE69;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x0047CE74;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0047CE82;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x0047CE9D;
+
 	__asm        mov    eax, prefItemToSet;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        jmp    near ptr 0x0047CE9D;
+
 	__asm        jmp    near ptr 0x0047CEA2;
+
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
@@ -1899,7 +2081,9 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0047CEDB;
+
 	__asm        jmp    near ptr 0x0047CEE0;
+
 	__asm        jmp    near ptr 0x0047CEE5;
 // LINE 492:
 	__asm        mov    eax, prefItemToSet;
@@ -1908,6 +2092,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0047CF19;
+
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0x14];
@@ -1915,6 +2100,7 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047CF14;
+
 	__asm        jmp    near ptr 0x0047CF19;
 // LINE 494:
 	__asm        mov    eax, this;
@@ -1956,22 +2142,27 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0047CF88;
+
 	__asm        jmp    near ptr 0x0047CF8D;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr ds:[0x599A68], 0;
 	__asm        je     near ptr 0x0047CFBF;
+
 	__asm        mov    eax, ds:[0x599A68];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x599A68], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D19C;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
 	__asm        jne    near ptr 0x0047D187;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -1981,6 +2172,7 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x0047D01E;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -1990,11 +2182,14 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D014;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D023;
+
 	__asm        jmp    near ptr 0x0047D028;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0xCC;
@@ -2008,14 +2203,19 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D063;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D069;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D06E;
+
 	__asm        jmp    near ptr 0x0047D073;
+
 	__asm        jmp    near ptr 0x0047D078;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -2031,6 +2231,7 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    near ptr 0x0047D0D6;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2040,11 +2241,14 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D0CC;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D0DB;
+
 	__asm        jmp    near ptr 0x0047D0E0;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -2067,14 +2271,19 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D13D;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0047D143;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0047D148;
+
 	__asm        jmp    near ptr 0x0047D14D;
+
 	__asm        jmp    near ptr 0x0047D152;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
@@ -2082,33 +2291,41 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        add    eax, ds:[0x599A64];
 	__asm        mov    ds:[0x599A60], eax;
 	__asm        jmp    near ptr 0x0047D16D;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    dword ptr ds:[0x599A64], 0x14;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D19C;
+
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        add    dword ptr ds:[0x599A64], 0x14;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D1A1;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047D1AC;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0047D1BA;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0047D1D5;
+
 	__asm        mov    eax, prefItemToUse;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        jmp    near ptr 0x0047D1D5;
+
 	__asm        jmp    near ptr 0x0047D1DA;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -2128,7 +2345,9 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047D213;
+
 	__asm        jmp    near ptr 0x0047D218;
+
 	__asm        jmp    near ptr 0x0047D21D;
 // LINE 514:
 	__asm        mov    eax, this;
@@ -2150,6 +2369,7 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 
 // FUNCTION: COPTER_D 0x0047d250
 void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileCreator, long lTheFileType, long lTheFileVersion, int32_t bSaveTheFileAtAllChanges) {
+
 	__asm        mov    eax, bSaveTheFileAtAllChanges;
 	__asm        push   eax;
 	__asm        mov    eax, lTheFileVersion;
@@ -2167,15 +2387,18 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x599A7C], 0;
 	__asm        je     near ptr 0x0047D2B0;
+
 	__asm        mov    eax, ds:[0x599A7C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x599A7C], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047D487;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        cmp    ds:[0x599A74], eax;
 	__asm        jne    near ptr 0x0047D472;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -2185,6 +2408,7 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x0047D30F;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2194,11 +2418,14 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D305;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D314;
+
 	__asm        jmp    near ptr 0x0047D319;
+
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x100;
@@ -2212,14 +2439,19 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D354;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0047D35A;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0047D35F;
+
 	__asm        jmp    near ptr 0x0047D364;
+
 	__asm        jmp    near ptr 0x0047D369;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -2234,6 +2466,7 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x0047D3C4;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2243,11 +2476,14 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D3BA;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D3C9;
+
 	__asm        jmp    near ptr 0x0047D3CE;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -2270,32 +2506,40 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D42B;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D431;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D436;
+
 	__asm        jmp    near ptr 0x0047D43B;
+
 	__asm        jmp    near ptr 0x0047D440;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
 	__asm        add    eax, ds:[0x599A78];
 	__asm        mov    ds:[0x599A74], eax;
 	__asm        jmp    near ptr 0x0047D458;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-8], eax;
 	__asm        add    dword ptr ds:[0x599A78], 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047D487;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x599A78], 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x0047D48C;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x28], eax;
@@ -2310,10 +2554,12 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047D4B7;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590DE8;
 // LINE 535:
 	__asm        jmp    near ptr 0x0047D4C5;
+
 	__asm        mov    eax, this;
 }
 
@@ -2348,22 +2594,27 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0047D526;
+
 	__asm        jmp    near ptr 0x0047D52B;
+
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, ds:[0x599A7C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr ds:[0x599A7C], 0;
 	__asm        je     near ptr 0x0047D55D;
+
 	__asm        mov    eax, ds:[0x599A7C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x599A7C], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D734;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        cmp    ds:[0x599A74], eax;
 	__asm        jne    near ptr 0x0047D71F;
+
 	__asm        push   0;
 	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
@@ -2373,6 +2624,7 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x0047D5BC;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2382,11 +2634,14 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D5B2;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D5C1;
+
 	__asm        jmp    near ptr 0x0047D5C6;
+
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x100;
@@ -2400,14 +2655,19 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D601;
+
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D607;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x0047D60C;
+
 	__asm        jmp    near ptr 0x0047D611;
+
 	__asm        jmp    near ptr 0x0047D616;
+
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -2422,6 +2682,7 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    near ptr 0x0047D671;
+
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
 	__asm        call   ostream::operator<<;
@@ -2431,11 +2692,14 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D667;
+
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047D676;
+
 	__asm        jmp    near ptr 0x0047D67B;
+
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -2458,47 +2722,60 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
 	__asm        jb     near ptr 0x0047D6D8;
+
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0047D6DE;
+
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0047D6E3;
+
 	__asm        jmp    near ptr 0x0047D6E8;
+
 	__asm        jmp    near ptr 0x0047D6ED;
+
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
 	__asm        add    eax, ds:[0x599A78];
 	__asm        mov    ds:[0x599A74], eax;
 	__asm        jmp    near ptr 0x0047D705;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    dword ptr ds:[0x599A78], 0x10;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D734;
+
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        add    dword ptr ds:[0x599A78], 0x10;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x0047D739;
+
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047D744;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0047D752;
+
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0047D76D;
+
 	__asm        mov    eax, newNotificationItem;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   NotificationItem::NotificationItem;
 	__asm        jmp    near ptr 0x0047D76D;
+
 	__asm        jmp    near ptr 0x0047D772;
+
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -2518,7 +2795,9 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047D7AC;
+
 	__asm        jmp    near ptr 0x0047D7B1;
+
 	__asm        jmp    near ptr 0x0047D7B6;
 // LINE 557:
 	__asm        mov    eax, 1;
@@ -2543,7 +2822,9 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047D7F5;
+
 	__asm        jmp    near ptr 0x0047D7FA;
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    iterator.node, eax;
 // LINE 575:
@@ -2553,31 +2834,45 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x0047D814;
+
 	__asm        jmp    near ptr 0x0047D819;
+
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    near ptr 0x0047D82F;
+
 	__asm        jmp    near ptr 0x0047D843;
+
 	__asm        jmp    near ptr 0x0047D82F;
+
 	__asm        jmp    near ptr 0x0047D83E;
+
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x0047D843;
+
 	__asm        jmp    near ptr 0x0047D848;
+
 	__asm        jmp    near ptr 0x0047D920;
+
 	__asm        jmp    near ptr 0x0047D857;
+
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0047D920;
 // LINE 577:
 	__asm        jmp    near ptr 0x0047D85C;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    ecx, theNotificationSink;
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jne    near ptr 0x0047D8FD;
+
 	__asm        jmp    near ptr 0x0047D870;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    ecx, lPreferenceType;
 	__asm        cmp    [eax+8], ecx;
 	__asm        je     near ptr 0x0047D889;
+
 	__asm        cmp    lPreferenceType, 0;
 	__asm        jne    near ptr 0x0047D8FD;
 // LINE 579:
@@ -2587,9 +2882,11 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x0047D89C;
+
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0047D8A7;
+
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
@@ -2603,13 +2900,16 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047D8CD;
+
 	__asm        jmp    near ptr 0x0047D8D2;
+
 	__asm        mov    eax, ds:[0x599A7C];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ds:[0x599A7C], eax;
 	__asm        jmp    near ptr 0x0047D8E9;
+
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x2C];
 	__asm        jmp    near ptr 0x0047D8F4;
@@ -2624,6 +2924,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x0047D910;
+
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0047D91B;
@@ -2704,6 +3005,7 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x0047D9E1;
+
 	__asm        jmp    near ptr 0x0047D9E6;
 // LINE 620:
 	__asm        mov    eax, this;
@@ -2712,28 +3014,40 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x0047D9FA;
+
 	__asm        jmp    near ptr 0x0047D9FF;
+
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    near ptr 0x0047DA15;
+
 	__asm        jmp    near ptr 0x0047DA29;
+
 	__asm        jmp    near ptr 0x0047DA15;
+
 	__asm        jmp    near ptr 0x0047DA24;
+
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    near ptr 0x0047DA29;
+
 	__asm        jmp    near ptr 0x0047DA2E;
+
 	__asm        jmp    near ptr 0x0047DA9A;
+
 	__asm        jmp    near ptr 0x0047DA3D;
+
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     near ptr 0x0047DA9A;
 // LINE 621:
 	__asm        jmp    near ptr 0x0047DA42;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    ecx, lPrefType;
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    near ptr 0x0047DA77;
 // LINE 622:
 	__asm        jmp    near ptr 0x0047DA56;
+
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x10], eax;
@@ -2754,6 +3068,7 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x0047DA8A;
+
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x0047DA95;

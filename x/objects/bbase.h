@@ -9,6 +9,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        movsx  eax, size1;
 	__asm        cmp    eax, size;
 	__asm        jle    near ptr 0x0055E728;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE230;
 	__asm        push   0xE4;
@@ -27,6 +28,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f1e0
 unsigned long cBBase::GetBodyType() {
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE330;
 	__asm        push   0x12;
@@ -40,6 +42,7 @@ unsigned long cBBase::GetBodyType() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f220
 class cBList<cBBase>* cBBase::GetList() {
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE358;
 	__asm        push   0x15;
@@ -53,6 +56,7 @@ class cBList<cBBase>* cBBase::GetList() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f260
 unsigned short cBBase::CanDestroy() {
+
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0055F275;
 }
@@ -60,6 +64,7 @@ unsigned short cBBase::CanDestroy() {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f280
 void cBBase::InstallArrayPointers(unsigned short fromdisk) {
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE37C;
 	__asm        push   0x1C;
@@ -72,6 +77,7 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f2c0
 void cBBase::~cBBase() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593688;
 // LINE 44:
@@ -105,6 +111,7 @@ void cBBase::Destroy() {
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055F337;
+
 	__asm        jmp    near ptr 0x0055F4D4;
 // LINE 59:
 	__asm        mov    eax, this;
@@ -145,6 +152,7 @@ void cBBase::Destroy() {
 // LINE 62:
 	__asm        cmp    h, 0;
 	__asm        jne    near ptr 0x0055F3B4;
+
 	__asm        push   0x8C085;
 	__asm        push   0x5BE3AC;
 	__asm        push   0x3E;
@@ -188,11 +196,13 @@ void cBBase::Destroy() {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x0055F49D;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x0055F48D;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
@@ -215,6 +225,7 @@ void cBBase::Destroy() {
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        jge    near ptr 0x0055F488;
+
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
 	__asm        push   0x32;
@@ -222,24 +233,29 @@ void cBBase::Destroy() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F4A2;
+
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0055F410;
+
 	__asm        jmp    near ptr 0x0055F4A2;
+
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x0055F4CA;
+
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    near ptr 0x0055F4CA;
+
 	__asm        jmp    near ptr 0x0055F4CF;
 // LINE 68:
 	__asm        jmp    near ptr 0x0055F4D4;

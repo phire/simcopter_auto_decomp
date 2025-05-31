@@ -152,6 +152,7 @@ struct VRResource* LoadImages(char * name) {
 // LINE 188:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D61AD;
+
 	__asm        inc    i;
 	__asm        mov    eax, i;
 	__asm        cmp    bmp.BmpCount, eax;
@@ -339,12 +340,16 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 	__asm        jmp    near ptr 0x004D645B;
 // LINE 324:
 	__asm        jmp    near ptr 0x004D63B3;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x1F1F;
 	__asm        je     near ptr 0x004D62EE;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x3F3F;
 	__asm        je     near ptr 0x004D631D;
+
 	__asm        cmp    dword ptr [ebp-0x2C], 0x7F7F;
 	__asm        je     near ptr 0x004D634C;
+
 	__asm        jmp    near ptr 0x004D637B;
 // LINE 326:
 	__asm        mov    eax, bhdr;
@@ -368,6 +373,7 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 346:
 	__asm        mov    i, 0;
 	__asm        jmp    near ptr 0x004D63F5;
+
 	__asm        inc    i;
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
@@ -501,6 +507,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    eax, bhdr;
 	__asm        cmp    dword ptr [eax], 0x100;
 	__asm        jne    near ptr 0x004D6565;
+
 	__asm        mov    eax, bhdr;
 	__asm        cmp    dword ptr [eax+4], 0x100;
 	__asm        je     near ptr 0x004D6582;

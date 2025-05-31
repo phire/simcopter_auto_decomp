@@ -18,12 +18,14 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 22:
 	__asm        cmp    Error, 0;
 	__asm        jne    near ptr 0x0044FF6F;
+
 	__asm        push   0x16;
 	__asm        push   0x5990E4;
 	__asm        push   0x59910C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0044FF74;
+
 	__asm        jmp    near ptr 0x0044FF74;
 // LINE 24:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Error) + 3), 0x80;

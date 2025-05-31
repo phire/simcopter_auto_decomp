@@ -1,6 +1,7 @@
 // Function in module: Dialwin.obj
 // FUNCTION: COPTER_D 0x0044fce0
 void DialHand::DialHand() {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 1;
 	__asm        mov    eax, this;
@@ -18,12 +19,15 @@ void DialHand::DialHand() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0x3F800000;
 	__asm        jmp    near ptr 0x0044FD40;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x24], 0;
 	__asm        jmp    near ptr 0x0044FD59;
+
 	__asm        jmp    near ptr 0x0044FD5E;
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28], 0;
 	__asm        mov    eax, this;
@@ -87,6 +91,7 @@ void DialHand::DialHand() {
 	__asm        jmp    near ptr 0x0044FE2C;
 // LINE 344:
 	__asm        jmp    near ptr 0x0044FE31;
+
 	__asm        mov    eax, this;
 }
 

@@ -40,6 +40,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
 	__asm        jae    near ptr 0x004CB2FC;
+
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 274:
@@ -87,6 +88,7 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 // LINE 241:
 	__asm        cmp    hdr, 0;
 	__asm        je     near ptr 0x004CB386;
+
 	__asm        cmp    block, 0;
 	__asm        jne    near ptr 0x004CB3A6;
 // LINE 243:
@@ -123,6 +125,7 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
 	__asm        jae    near ptr 0x004CB3F4;
+
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 253:
@@ -145,6 +148,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 // LINE 299:
 	__asm        mov    index, 0;
 	__asm        jmp    near ptr 0x004CB430;
+
 	__asm        inc    index;
 	__asm        cmp    index, 0x20;
 	__asm        jge    near ptr 0x004CB455;
@@ -499,6 +503,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
 	__asm        jae    near ptr 0x004CB828;
+
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 768:

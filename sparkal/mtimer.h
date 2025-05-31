@@ -1,6 +1,7 @@
 // Function in module: Simradio.obj
 // FUNCTION: COPTER_D 0x00439bd0
 void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
+
 	__asm        mov    eax, nNewTimerResolution;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -29,6 +30,7 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        jmp    near ptr 0x00439C2C;
 // LINE 65:
 	__asm        jmp    near ptr 0x00439C31;
+
 	__asm        mov    eax, this;
 }
 
@@ -48,6 +50,7 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    near ptr 0x00439C99;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    near ptr 0x00439C99;

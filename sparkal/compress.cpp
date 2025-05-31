@@ -425,6 +425,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	char FileName[13];
 	class ostrstream NameOut;
 
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
@@ -454,6 +455,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        mov    dword ptr [eax+0x30], 5;
 	__asm        jmp    near ptr 0x004AA888;
+
 	__asm        mov    eax, NameOut.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [ebp+eax-0x58];
@@ -465,6 +467,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    byte ptr [eax+0x2C], 0x30;
 	__asm        jmp    near ptr 0x004AA8B6;
+
 	__asm        mov    eax, NameOut.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [ebp+eax-0x58];
@@ -476,6 +479,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    dword ptr [eax+0x24], 0x14;
 	__asm        jmp    near ptr 0x004AA8E7;
+
 	__asm        push   0x59A9DC;
 	__asm        mov    eax, ResourceID;
 	__asm        push   eax;
@@ -486,6 +490,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    [ebp-0xD8], eax;
 // LINE 56:
 	__asm        jmp    near ptr 0x004AA90A;
+
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0xD8];
 	__asm        call   ostream::operator<<;
@@ -505,15 +510,21 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        call   ifstream::ifstream;
 // LINE 66:
 	__asm        jmp    near ptr 0x004AA94B;
+
 	__asm        jmp    near ptr 0x004AA950;
+
 	__asm        mov    eax, InputFile.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [ebp+eax-0xC0];
 	__asm        cmp    dword ptr [eax+0x4C], 0xFFFFFFFF;
 	__asm        je     near ptr 0x004AA96F;
+
 	__asm        jmp    near ptr 0x004AA974;
+
 	__asm        jmp    near ptr 0x004AAB75;
+
 	__asm        jmp    near ptr 0x004AA986;
+
 	__asm        cmp    dword ptr [ebp-0xD4], 0;
 	__asm        je     near ptr 0x004AAB75;
 // LINE 70:
@@ -526,21 +537,26 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        call   istream::read;
 // LINE 71:
 	__asm        jmp    near ptr 0x004AA99F;
+
 	__asm        mov    eax, ImageByteCount;
 	__asm        mov    [ebp-0x108], eax;
 // LINE 76:
 	__asm        mov    word ptr [ebp-0x104], 0;
 	__asm        cmp    this, 0;
 	__asm        je     near ptr 0x004AA9CE;
+
 	__asm        cmp    dword ptr [ebp-0x108], 0;
 	__asm        jne    near ptr 0x004AA9EA;
+
 	__asm        push   0x12A;
 	__asm        push   0x597444;
 	__asm        push   0x59A090;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AA9EF;
+
 	__asm        jmp    near ptr 0x004AA9EF;
+
 	__asm        mov    eax, [ebp-0x108];
 	__asm        push   eax;
 	__asm        push   0x42;
@@ -550,6 +566,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    near ptr 0x004AAA1E;
+
 	__asm        mov    word ptr [ebp-0x104], 0xFFFF;
 	__asm        jmp    near ptr 0x004AAA23;
 // LINE 77:
@@ -567,20 +584,25 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    word ptr [ebp-0xFC], 0;
 	__asm        cmp    dword ptr [ebp-0x100], 0;
 	__asm        je     near ptr 0x004AAA65;
+
 	__asm        jmp    near ptr 0x004AAA81;
+
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAA86;
+
 	__asm        jmp    near ptr 0x004AAA86;
+
 	__asm        mov    eax, [ebp-0x100];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E4];
 	__asm        mov    pCompressedImage, eax;
 	__asm        cmp    pCompressedImage, 0;
 	__asm        jne    near ptr 0x004AAAAF;
+
 	__asm        mov    word ptr [ebp-0xFC], 0xFFFF;
 	__asm        jmp    near ptr 0x004AAAB4;
 // LINE 81:
@@ -595,15 +617,18 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        call   istream::read;
 // LINE 84:
 	__asm        jmp    near ptr 0x004AAADF;
+
 	__asm        mov    eax, ImageByteCount;
 	__asm        cmp    InputFile.x_gcount, eax;
 	__asm        je     near ptr 0x004AAB0A;
+
 	__asm        push   0x54;
 	__asm        push   0x59A9E4;
 	__asm        push   0x59AA0C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAB0F;
+
 	__asm        jmp    near ptr 0x004AAB0F;
 // LINE 86:
 	__asm        mov    eax, pCompressedImage;
@@ -617,13 +642,16 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    word ptr [ebp-0xF4], 0;
 	__asm        cmp    dword ptr [ebp-0xF8], 0;
 	__asm        jne    near ptr 0x004AAB5E;
+
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAB63;
+
 	__asm        jmp    near ptr 0x004AAB63;
+
 	__asm        mov    eax, [ebp-0xF8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
@@ -632,27 +660,32 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 // Block end:
 // Block end:
 	__asm        jmp    near ptr 0x004AAB7A;
+
 	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
 	__asm        call   ifstream::~ifstream;
 	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
 	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AAB95;
+
 	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AABAA;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004aabb7
 void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
+
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 104:
 	__asm        jmp    near ptr 0x004AABDB;
+
 	__asm        mov    eax, this;
 }
 
@@ -662,12 +695,14 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     near ptr 0x004AAC17;
+
 	__asm        push   0x6F;
 	__asm        push   0x59AA38;
 	__asm        push   0x59AA60;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAC1C;
+
 	__asm        jmp    near ptr 0x004AAC1C;
 // LINE 113:
 	__asm        mov    eax, this;
@@ -680,13 +715,16 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x004AAC5C;
+
 	__asm        push   0x134;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAC61;
+
 	__asm        jmp    near ptr 0x004AAC61;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3650];
@@ -701,6 +739,7 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    near ptr 0x004AAD24;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004AAD24;
@@ -712,16 +751,20 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x004AACC3;
+
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        jne    near ptr 0x004AACDF;
+
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AACE4;
+
 	__asm        jmp    near ptr 0x004AACE4;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E4];
@@ -730,6 +773,7 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    near ptr 0x004AAD07;
+
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 	__asm        jmp    near ptr 0x004AAD0C;
 // LINE 125:
@@ -757,17 +801,20 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        ja     near ptr 0x004AAD6F;
+
 	__asm        push   0x88;
 	__asm        push   0x59AA70;
 	__asm        push   0x59AA98;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAD74;
+
 	__asm        jmp    near ptr 0x004AAD74;
 // LINE 138:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 1;
 	__asm        jne    near ptr 0x004AADEC;
+
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     near ptr 0x004AADEC;
@@ -779,17 +826,21 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    near ptr 0x004AADC1;
+
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AADC6;
+
 	__asm        jmp    near ptr 0x004AADC6;
+
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
 	__asm        jmp    near ptr 0x004AADD5;
+
 	__asm        movsx  eax, word ptr [ebp-4];
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004AADE7;
@@ -814,22 +865,26 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        ja     near ptr 0x004AAE37;
+
 	__asm        push   0x9D;
 	__asm        push   0x59AAA8;
 	__asm        push   0x59AAD0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAE3C;
+
 	__asm        jmp    near ptr 0x004AAE3C;
 // LINE 158:
 	__asm        cmp    pDest, 0;
 	__asm        jne    near ptr 0x004AAE62;
+
 	__asm        push   0x9E;
 	__asm        push   0x59AAE0;
 	__asm        push   0x59AB08;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAE67;
+
 	__asm        jmp    near ptr 0x004AAE67;
 // LINE 160:
 	__asm        mov    eax, this;
@@ -934,12 +989,14 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        movsx  ecx, Height;
 	__asm        cmp    eax, ecx;
 	__asm        jge    near ptr 0x004AAF75;
+
 	__asm        push   0xC7;
 	__asm        push   0x59AB10;
 	__asm        push   0x59AB38;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAF7A;
+
 	__asm        jmp    near ptr 0x004AAF7A;
 // LINE 200:
 	__asm        mov    eax, this;
@@ -948,17 +1005,20 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        movsx  ecx, Width;
 	__asm        cmp    eax, ecx;
 	__asm        jge    near ptr 0x004AAFAB;
+
 	__asm        push   0xC8;
 	__asm        push   0x59AB58;
 	__asm        push   0x59AB80;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAFB0;
+
 	__asm        jmp    near ptr 0x004AAFB0;
 // LINE 202:
 	__asm        movsx  eax, Height;
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x004AB055;
+
 	__asm        movsx  eax, Width;
 	__asm        test   eax, eax;
 	__asm        jle    near ptr 0x004AB055;
@@ -966,6 +1026,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 // Block start:
 	unsigned char * pBits;
 	__asm        jmp    near ptr 0x004AAFCD;
+
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    pBits, eax;
@@ -1193,9 +1254,11 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	__asm        jmp    near ptr 0x004AB1E8;
 // LINE 396:
 	__asm        jmp    near ptr 0x004AB1E8;
+
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        cmp    dword ptr [ebp-0x20], 3;
 	__asm        ja     near ptr 0x004AB1E8;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x4AB1D8];
 // Switch pointers
@@ -1321,6 +1384,7 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 470:
 	__asm        cmp    counter, 0;
 	__asm        je     near ptr 0x004AB329;
+
 	__asm        movsx  eax, Width;
 	__asm        movsx  ecx, PixelCount;
 	__asm        cmp    eax, ecx;
@@ -1379,6 +1443,7 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 501:
 	__asm        cmp    counter, 0;
 	__asm        je     near ptr 0x004AB3BA;
+
 	__asm        movsx  eax, Width;
 	__asm        movsx  ecx, PixelCount;
 	__asm        cmp    eax, ecx;
@@ -1477,6 +1542,7 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 // LINE 558:
 	__asm        cmp    counter, 0;
 	__asm        je     near ptr 0x004AB4CE;
+
 	__asm        movsx  eax, Width;
 	__asm        movsx  ecx, PixelCount;
 	__asm        cmp    eax, ecx;
@@ -1510,9 +1576,11 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 	__asm        jmp    near ptr 0x004AB504;
 // LINE 573:
 	__asm        jmp    near ptr 0x004AB504;
+
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        cmp    dword ptr [ebp-0x20], 3;
 	__asm        ja     near ptr 0x004AB504;
+
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x4AB4F4];
 // Switch pointers
