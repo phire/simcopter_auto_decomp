@@ -2582,19 +2582,7 @@ void $E75() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f8a
 void $E71() {
-	// Couldn't match prolog
-// LINE 115:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x544088;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00544088
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   0x0055C270;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -2642,11 +2630,6 @@ _L54996:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
@@ -2685,19 +2668,7 @@ void $E81() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054410e
 void $E77() {
-	// Couldn't match prolog
-// LINE 116:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x5441B0;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x005441b0
 	__asm        mov    ecx, 0x635590;
 	__asm        call   0x0055C270;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -2727,11 +2698,6 @@ _L55021:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // STATIC INITIALIZER:
@@ -2746,17 +2712,7 @@ void $E80() {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441e5
 void $E78() {
-	// Couldn't match prolog
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x54424A;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x0054424a
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A4];
 	__asm        test   al, 1;
@@ -2780,11 +2736,6 @@ _L55033:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00544262
@@ -7371,19 +7322,7 @@ void cYObject::MakePlebes() {
 
 // FUNCTION: COPTER_D 0x00548047
 void cYObject::InitObjects(char * globalBehaviorFileName) {
-	// Couldn't match prolog
-// LINE 964:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x549BC5;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x24;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00549bc5
 // LINE 965:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, ds:[0x5B8668];
@@ -8962,11 +8901,6 @@ _L55485:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00549bdd
@@ -16485,19 +16419,7 @@ class cAvatar* cAvatar::MakeAvatar() {
 	class cAvatar* avatar;
 	struct Point3d p;
 
-	// Couldn't match prolog
-// LINE 2817:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x5509B2;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x28;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x005509b2
 // LINE 2818:
 	__asm        mov    p.x, 0;
 	__asm        mov    p.y, 0;
@@ -16574,30 +16496,13 @@ _L56431:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005509cb
 short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* behavior) {
 	short id;
 
-	// Couldn't match prolog
-// LINE 2825:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x550B17;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00550b17
 // LINE 2826:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, ds:[0x5B8668];
@@ -16697,11 +16602,6 @@ _L56448:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00550b30
@@ -16872,20 +16772,7 @@ void cYObject::KillObject(short id) {
 void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d loc, short id) {
 	short cnt;
 
-	// Couldn't match prolog
-// LINE 2885:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x550EFD;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 8;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x00550efd
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC0;
 	__asm        push   eax;
@@ -17003,11 +16890,6 @@ _L56467:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0x18;
 }
 
 // FUNCTION: COPTER_D 0x00550f18
@@ -17649,20 +17531,7 @@ void cYObject::~cYObject() {
 	unsigned short found;
 	class cYObject** srch;
 
-	// Couldn't match prolog
-// LINE 3062:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x5519BE;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x10;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x005519be
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5935E0;
 	__asm        mov    eax, this;
@@ -17733,11 +17602,6 @@ _L56641:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x005519d6
@@ -18096,19 +17960,7 @@ void FrameInit() {
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
  ResFile::~ResFile() {
-	// Couldn't match prolog
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x551F87;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x00551f87
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        jmp    near ptr 0x00551F6D;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -18123,11 +17975,6 @@ _L55561:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

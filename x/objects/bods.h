@@ -3,19 +3,7 @@
 class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	class cCopterBody* thing;
 
-	// Couldn't match prolog
-// LINE 110:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x55FC56;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x124;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x0055fc56
 // LINE 111:
 	__asm        push   0x34;
 	__asm        call   0x0056A600;
@@ -245,11 +233,6 @@ _L45521:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // Function in module: Bodydefs.obj

@@ -1761,20 +1761,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	long xcnt;
 	unsigned char * dest;
 
-	// Couldn't match prolog
-// LINE 465:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x56885E;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x74;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x0056885e
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x74], eax;
@@ -1912,11 +1899,6 @@ _L27256:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00568879
@@ -2572,19 +2554,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 	struct _cArray::FileAndType ft;
 	struct _cArray::Header* header;
 
-	// Couldn't match prolog
-// LINE 705:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x569305;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x34;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00569305
 // LINE 706:
 	__asm        cmp    pFile, 0;
 	__asm        jne    near ptr 0x005690D9;
@@ -2775,11 +2745,6 @@ _L27271:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0056931d

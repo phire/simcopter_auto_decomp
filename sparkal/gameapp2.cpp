@@ -1048,20 +1048,7 @@ unsigned long  CGameApp::TickGame() {
 void  CGameApp::ComposeFrame() {
 	int32_t nCurrentMode;
 
-	// Couldn't match prolog
-// LINE 269:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x461EA1;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        sub    esp, 0x23C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00461ea1
 	__asm        mov    [ebp-0x10], esp;
 	__asm        mov    this, ecx;
 // LINE 270:
@@ -1442,11 +1429,6 @@ _L64110:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00461eb9

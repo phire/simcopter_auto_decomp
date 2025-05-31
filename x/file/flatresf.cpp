@@ -579,20 +579,7 @@ long FlatResFile::GetError() {
 
 // FUNCTION: COPTER_D 0x0055301b
 void FlatResFile::~FlatResFile() {
-	// Couldn't match prolog
-// LINE 277:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x553086;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x00553086
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593508;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -618,11 +605,6 @@ _L27083:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055309e
@@ -1288,20 +1270,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	class StringSet tempStrs;
 
-	// Couldn't match prolog
-// LINE 595:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x553A6A;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x18;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x00553a6a
 // LINE 596:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
@@ -1358,11 +1327,6 @@ _L27093:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    0xC;
 }
 
 // FUNCTION: COPTER_D 0x00553a84
@@ -1551,19 +1515,7 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 	void * __ptr32 newMap;
 	unsigned char * resPtr;
 
-	// Couldn't match prolog
-// LINE 753:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x553DB3;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x1C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
 	__asm        mov    eax, ds:[0x5BBEDC];
 	__asm        mov    srch, eax;
@@ -1673,11 +1625,6 @@ _L27101:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x00553dcc

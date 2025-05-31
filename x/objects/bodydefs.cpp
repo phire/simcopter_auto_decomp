@@ -621,19 +621,7 @@ void InitBodiesAndAnimations() {
 	char animpath[260];
 	unsigned char privname[256];
 
-	// Couldn't match prolog
-// LINE 175:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x55E286;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x25C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x0055e286
 // LINE 199:
 	__asm        lea    eax, animpath[0];
 	__asm        push   eax;
@@ -1055,11 +1043,6 @@ _L39413:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 // FUNCTION: COPTER_D 0x0055e29e

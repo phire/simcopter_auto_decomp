@@ -836,20 +836,7 @@ int  CGameApp::BackgroundVRAppInit() {
 void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	struct VRAppInitThreadStruct* tempVRAppInitThreadStruct;
 
-	// Couldn't match prolog
-// LINE 157:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x4BC440;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x004bc440
 	__asm        mov    [ebp-0x10], esp;
 // LINE 160:
 	__asm        mov    eax, pVRAppInitThreadStruct;
@@ -881,11 +868,6 @@ _L48859:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 
 

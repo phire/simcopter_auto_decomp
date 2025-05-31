@@ -96,20 +96,7 @@ public:
 void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	unsigned char tmp[16];
 
-	// Couldn't match prolog
-// LINE 37:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x5674BB;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 0x50;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x005674bb
 // LINE 38:
 	__asm        cmp    dword ptr ds:[0x5BF6D4], 0;
 	__asm        jne    near ptr 0x00567247;
@@ -286,11 +273,6 @@ _L31070:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 

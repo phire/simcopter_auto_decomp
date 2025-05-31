@@ -1,20 +1,7 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e660
 void FlatResFile::FlatResFile() {
-	// Couldn't match prolog
-// LINE 38:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x55E6D0;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
-	__asm        mov    this, ecx;
+	// Function registers exception cleanup function at 0x0055e6d0
 	__asm        mov    ecx, this;
 	__asm        call   0x0055C270;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -37,10 +24,5 @@ _L39765:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret;
 }
 

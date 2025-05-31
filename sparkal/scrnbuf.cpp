@@ -1350,20 +1350,7 @@ void ScreenBuffer::SetPalette() {
 int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 	long hResult;
 
-	// Couldn't match prolog
-// LINE 471:
-	__asm        push   ebp;
-	__asm        mov    ebp, esp;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x49F410;
-	__asm        mov    eax, fs:[0];
-	__asm        push   eax;
-	__asm        mov    fs:[0], esp;
-	__asm        sub    esp, 4;
-	__asm        sub    esp, 0x41C;
-	__asm        push   ebx;
-	__asm        push   esi;
-	__asm        push   edi;
+	// Function registers exception cleanup function at 0x0049f410
 	__asm        mov    [ebp-0x10], esp;
 	__asm        mov    this, ecx;
 // LINE 475:
@@ -1597,11 +1584,6 @@ _L40603:
 	__asm        jmp    near ptr 0x0056F590;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
-	__asm        pop    edi;
-	__asm        pop    esi;
-	__asm        pop    ebx;
-	__asm        leave;
-	__asm        ret    4;
 }
 
 // FUNCTION: COPTER_D 0x0049f42b
