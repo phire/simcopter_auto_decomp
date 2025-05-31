@@ -1737,33 +1737,8 @@ short S3TerrainInitMap() {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x515521];
 	__asm        jmp    dword ptr [ecx*4+0x515511];
-	__asm        loop   0x00515567;
-	__asm        push   ecx;
-	__asm        add    dl, ah;
-	__asm        push   esp;
-	__asm        push   ecx;
-	__asm        add    dl, ah;
-	__asm        push   esp;
-	__asm        push   ecx;
-	__asm        add    bh, ah;
-	__asm        push   esp;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        add    [ebx], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 562:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5310,10 +5285,7 @@ int32_t S3TerrMorphWater() {
 	__asm        ja     near ptr 0x0051855D;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x51854D];
-	__asm        fiadd  word ptr [ecx+edx*2+0x51850900];
-	__asm        add    dh, bl;
-	__asm        test   [ecx], dl;
-	__asm        (bad);
+// Switch pointers
 // LINE 1466:
 	__asm        inc    word ptr ds:[0x5B5CE4];
 // LINE 1467:

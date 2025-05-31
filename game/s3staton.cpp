@@ -877,18 +877,7 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        ja     near ptr 0x00539F45;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x539F35];
-	__asm        mov    al, 0x9E;
-	__asm        push   ebx;
-	__asm        add    bl, cl;
-	__asm        sahf;
-	__asm        push   ebx;
-	__asm        add    dh, ah;
-	__asm        sahf;
-	__asm        push   ebx;
-	__asm        add    [ecx], al;
-	__asm        lahf;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 97:
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;

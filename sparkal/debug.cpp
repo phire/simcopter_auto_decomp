@@ -2479,16 +2479,7 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	__asm        ja     near ptr 0x00423C31;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x423C19];
-	__asm        into;
-	__asm        cmp    eax, [edx];
-	__asm        salc;
-	__asm        cmp    eax, [edx];
-	__asm        fidivr word ptr [ebx];
-	__asm        inc    edx;
-	__asm        add    bh, ah;
-	__asm        cmp    eax, [edx];
-	__asm        (bad);
-	__asm        (bad);
+// Switch pointers
 // LINE 233:
 	__asm        cmp    curPos, 0;
 	__asm        jge    near ptr 0x00423C42;

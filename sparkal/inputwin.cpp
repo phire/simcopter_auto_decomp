@@ -9145,24 +9145,7 @@ int32_t UserInputWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID
 	__asm        ja     near ptr 0x00408134;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x40810B];
-	__asm        fistp  qword ptr [ebp+0x40];
-	__asm        add    [eax], bl;
-	__asm        jle    short 0x00408152;
-	__asm        add    [ecx+0x7E], dl;
-	__asm        inc    eax;
-	__asm        add    [ecx+eax*4], dh;
-	__asm        inc    eax;
-	__asm        add    [edi+0x7F], bh;
-	__asm        inc    eax;
-	__asm        add    [ecx-0x4CFFBF81], bl;
-	__asm        jg     short 0x00408166;
-	__asm        add    ch, cl;
-	__asm        jg     short 0x0040816A;
-	__asm        add    bh, ah;
-	__asm        jg     short 0x0040816E;
-	__asm        add    cl, ch;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
+// Switch pointers
 // LINE 1243:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0040813B;

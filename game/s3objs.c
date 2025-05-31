@@ -237,154 +237,8 @@ void S3ObjInit() {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5191E8];
 	__asm        jmp    dword ptr [ecx*4+0x5191B8];
-	__asm        aaa;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi], dh;
-	__asm        xchg   ecx, eax;
-	__asm        push   ecx;
-	__asm        add    [edx-0x6F], cl;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        or     eax, [edx];
-	__asm        add    al, [edx];
-	__asm        add    cl, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    ecx, [ebx];
-	__asm        or     eax, [esp+eax];
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     eax, ds:[0xB0B0B05];
-	__asm        or     eax, [esi];
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     eax, [edi];
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        or     [eax], cl;
-	__asm        or     [ebx], cl;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     ecx, [ebx];
-	__asm        or     ecx, [ebx];
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 530:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
@@ -461,182 +315,8 @@ void S3ObjInit() {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x519437];
 	__asm        jmp    dword ptr [ecx*4+0x5193EF];
-	__asm        xor    al, 0x93;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], ch;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [ebx+edx*4], bl;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], ch;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], ch;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [eax], dl;
-	__asm        xchg   ebx, eax;
-	__asm        push   ecx;
-	__asm        add    [edi-0x6D], al;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], eax;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        add    al, [edx];
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        add    edx, [ecx];
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        add    al, 4;
-	__asm        add    eax, 0x8070606;
-	__asm        or     [eax], cl;
-	__asm        or     [ecx], dl;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], edx;
-	__asm        adc    [edx], ecx;
-	__asm        or     cl, [edx];
-	__asm        or     cl, [edx];
-	__asm        or     dl, [ecx];
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        or     ecx, [ebx];
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        or     al, 0xC;
-	__asm        or     al, 0xC;
-	__asm        or     al, 0xC;
-	__asm        or     al, 0x11;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        or     eax, 0xD0D0D0D;
-	__asm        or     eax, 0xD0D0D0D;
-	__asm        or     eax, 0xD0D0D0D;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        push   cs;
-	__asm        (bad);
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        adc    [ecx], edx;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 667:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -1182,20 +862,7 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 	__asm        ja     near ptr 0x00519B3F;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x519B73];
-	__asm        fistp  dword ptr [edx-0x64C0FFAF];
-	__asm        push   ecx;
-	__asm        add    [edi], bh;
-	__asm        wait;
-	__asm        push   ecx;
-	__asm        add    bh, ch;
-	__asm        call   far ptr 0x0051:0x9B030051;
-	__asm        pop    ss;
-	__asm        wait;
-	__asm        push   ecx;
-	__asm        add    [ebx], ch;
-	__asm        wait;
-	__asm        push   ecx;
-	__asm        (bad);
+// Switch pointers
 // LINE 894:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
 	__asm        jne    near ptr 0x00519BBB;
@@ -1554,31 +1221,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        ja     near ptr 0x0051DA56;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x519EF2];
-	__asm        in     al, dx;
-	__asm        popfd;
-	__asm        push   ecx;
-	__asm        add    [edx-0x63], ah;
-	__asm        push   ecx;
-	__asm        add    [edx-0x63], ah;
-	__asm        push   ecx;
-	__asm        add    [edx+0x6200519E], bl;
-	__asm        sahf;
-	__asm        push   ecx;
-	__asm        add    [edx], ch;
-	__asm        sahf;
-	__asm        push   ecx;
-	__asm        add    [edx-0x62], ah;
-	__asm        push   ecx;
-	__asm        add    [edx-0x63], ah;
-	__asm        push   ecx;
-	__asm        add    [edx-0x62], ah;
-	__asm        push   ecx;
-	__asm        add    [edx-0x63], ah;
-	__asm        push   ecx;
-	__asm        add    [esi-0x59FFAE63], ah;
-	__asm        popfd;
-	__asm        push   ecx;
-	__asm        (bad);
+// Switch pointers
 // LINE 1060:
 	__asm        mov    eax, maxval;
 	__asm        sub    eax, minval;
@@ -5391,18 +5034,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        ja     near ptr 0x0051BF5C;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    dword ptr [eax*4+0x51BF34];
-	__asm        push   0x840051A1;
-	__asm        mov    eax, ds:[0xA1E30051];
-	__asm        push   ecx;
-	__asm        add    [edi-0x24FFAE5E], bl;
-	__asm        mov    ds:[0xA5BC0051], eax;
-	__asm        push   ecx;
-	__asm        add    [edx+0x6A0051A8], dh;
-	__asm        lodsb;
-	__asm        push   ecx;
-	__asm        add    [esi], dh;
-	__asm        mov    cl, 0x51;
-	__asm        (bad);
+// Switch pointers
 // LINE 2416:
 	__asm        jmp    near ptr 0x0051A0B3;
 // LINE 2419:
@@ -8376,20 +8008,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        ja     near ptr 0x0051DA51;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        jmp    dword ptr [eax*4+0x51DA29];
-	__asm        das;
-	__asm        rcl    byte ptr [ecx], 0x56;
-	__asm        rcl    byte ptr [ecx], 0xC2;
-	__asm        rcl    byte ptr [ecx], 0x8B;
-	__asm        rcl    dword ptr [ecx], 0xC9;
-	__asm        ret    0x51;
-	__asm        xchg   esp, eax;
-	__asm        les    edx, [ecx];
-	__asm        push   ds;
-	__asm        (bad);
-	__asm        add    *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&x) + 2), ah;
-	__asm        push   ecx;
-	__asm        add    [ebp-0x2CFFAE32], dh;
-	__asm        rcl    dword ptr [ecx], cl;
+// Switch pointers
 // LINE 3670:
 	__asm        jmp    near ptr 0x0051BF72;
 // LINE 3672:
@@ -8596,28 +8215,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DC7B];
 	__asm        jmp    dword ptr [ecx*4+0x51DC5B];
-	__asm        neg    bl;
-	__asm        push   ecx;
-	__asm        add    bl, bh;
-	__asm        fist   dword ptr [ecx];
-	__asm        add    ah, bl;
-	__asm        push   ecx;
-	__asm        add    ds:[0xA0051DC], al;
-	__asm        fcom   qword ptr [ecx];
-	__asm        sub    ebx, esp;
-	__asm        push   ecx;
-	__asm        add    [eax], dh;
-	__asm        fcom   qword ptr [ecx];
-	__asm        xor    eax, 0x51DC;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3765:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3768:
@@ -8661,29 +8260,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DD1E];
 	__asm        jmp    dword ptr [ecx*4+0x51DCFE];
-	__asm        cdq;
-	__asm        fcom   qword ptr [ecx];
-	__asm        sahf;
-	__asm        fcom   qword ptr [ecx];
-	__asm        mov    ds:[0xA80051DC], eax;
-	__asm        fcom   qword ptr [ecx];
-	__asm        lodsd;
-	__asm        fcom   qword ptr [ecx];
-	__asm        into;
-	__asm        fcom   qword ptr [ecx];
-	__asm        rcr    esp, cl;
-	__asm        push   ecx;
-	__asm        add    al, bl;
-	__asm        fcom   qword ptr [ecx];
-	__asm        add    [edi], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3788:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3791:
@@ -8727,32 +8305,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DDC1];
 	__asm        jmp    dword ptr [ecx*4+0x51DDA1];
-	__asm        cmp    al, 0xDD;
-	__asm        push   ecx;
-	__asm        add    [ecx-0x23], al;
-	__asm        push   ecx;
-	__asm        add    [esi-0x23], al;
-	__asm        push   ecx;
-	__asm        add    [ebx-0x23], cl;
-	__asm        push   ecx;
-	__asm        add    [eax-0x23], dl;
-	__asm        push   ecx;
-	__asm        add    [ecx-0x23], dh;
-	__asm        push   ecx;
-	__asm        add    [esi-0x23], dh;
-	__asm        push   ecx;
-	__asm        add    [ebx-0x23], bh;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3811:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3814:
@@ -8796,28 +8350,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DE64];
 	__asm        jmp    dword ptr [ecx*4+0x51DE44];
-	__asm        fstp   st(5);
-	__asm        push   ecx;
-	__asm        add    ah, ah;
-	__asm        fst    qword ptr [ecx];
-	__asm        jmp    near ptr 0xEE52302E;
-	__asm        fst    qword ptr [ecx];
-	__asm        fst    qword ptr [ecx];
-	__asm        adc    al, 0xDE;
-	__asm        push   ecx;
-	__asm        add    [ecx], bl;
-	__asm        ficom  word ptr [ecx];
-	__asm        push   ds;
-	__asm        ficom  word ptr [ecx];
-	__asm        add    [edi], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3834:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3837:
@@ -8871,28 +8405,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DF23];
 	__asm        jmp    dword ptr [ecx*4+0x51DF03];
-	__asm        sbb    dh, 0x51;
-	__asm        add    [ebx-0x57FFAE22], ah;
-	__asm        ficom  word ptr [ecx];
-	__asm        lodsd;
-	__asm        ficom  word ptr [ecx];
-	__asm        mov    dl, 0xDE;
-	__asm        push   ecx;
-	__asm        add    bl, dl;
-	__asm        ficom  word ptr [ecx];
-	__asm        fcomp  st(6);
-	__asm        push   ecx;
-	__asm        add    ch, bl;
-	__asm        ficom  word ptr [ecx];
-	__asm        add    [edi], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3859:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3862:
@@ -8936,30 +8450,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51DFC6];
 	__asm        jmp    dword ptr [ecx*4+0x51DFA6];
-	__asm        inc    ecx;
-	__asm        fist   word ptr [ecx];
-	__asm        inc    esi;
-	__asm        fist   word ptr [ecx];
-	__asm        dec    ebx;
-	__asm        fist   word ptr [ecx];
-	__asm        push   eax;
-	__asm        fist   word ptr [ecx];
-	__asm        push   ebp;
-	__asm        fist   word ptr [ecx];
-	__asm        jbe    short 0x0051DF9B;
-	__asm        push   ecx;
-	__asm        add    [ebx-0x21], bh;
-	__asm        push   ecx;
-	__asm        add    [eax+0x51DF], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3882:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3885:
@@ -9003,31 +8495,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E069];
 	__asm        jmp    dword ptr [ecx*4+0x51E049];
-	__asm        in     al, 0xDF;
-	__asm        push   ecx;
-	__asm        add    cl, ch;
-	__asm        fist   word ptr [ecx];
-	__asm        out    dx, al;
-	__asm        fist   word ptr [ecx];
-	__asm        fist   word ptr [ecx];
-	__asm        clc;
-	__asm        fist   word ptr [ecx];
-	__asm        sbb    eax, esp;
-	__asm        push   ecx;
-	__asm        add    [esi], bl;
-	__asm        loopne 0x0051E0B5;
-	__asm        add    [ebx], ah;
-	__asm        loopne 0x0051E0B9;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3905:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3908:
@@ -9071,26 +8540,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E10C];
 	__asm        jmp    dword ptr [ecx*4+0x51E0EC];
-	__asm        xchg   esp, eax;
-	__asm        push   ecx;
-	__asm        add    [eax-0x1F6EFFAF], cl;
-	__asm        push   ecx;
-	__asm        add    [esi-0x64FFAE20], dl;
-	__asm        loopne 0x0051E150;
-	__asm        add    [eax-0x1F3EFFAF], bh;
-	__asm        push   ecx;
-	__asm        add    dh, al;
-	__asm        loopne 0x0051E15C;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3928:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3931:
@@ -9134,31 +8585,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E1AF];
 	__asm        jmp    dword ptr [ecx*4+0x51E18F];
-	__asm        sub    ah, cl;
-	__asm        push   ecx;
-	__asm        add    [edi], ch;
-	__asm        loope  0x0051E1E7;
-	__asm        add    [ecx], dh;
-	__asm        push   ecx;
-	__asm        add    [ecx], bh;
-	__asm        loope  0x0051E1EF;
-	__asm        add    [esi], bh;
-	__asm        loope  0x0051E1F3;
-	__asm        add    [edi-0x1F], bl;
-	__asm        push   ecx;
-	__asm        add    [ecx+0x51], ah;
-	__asm        add    [ecx-0x1F], ch;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3951:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3954:
@@ -9202,32 +8630,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E252];
 	__asm        jmp    dword ptr [ecx*4+0x51E232];
-	__asm        int    0xE1;
-	__asm        push   ecx;
-	__asm        add    dl, dl;
-	__asm        loope  0x0051E28A;
-	__asm        add    bh, dl;
-	__asm        loope  0x0051E28E;
-	__asm        add    ah, bl;
-	__asm        loope  0x0051E292;
-	__asm        add    cl, ah;
-	__asm        loope  0x0051E296;
-	__asm        add    [edx], al;
-	__asm        loop   0x0051E29A;
-	__asm        add    [edi], al;
-	__asm        loop   0x0051E29E;
-	__asm        add    [edx], cl;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3974:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 3977:
@@ -9271,28 +8675,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E2F5];
 	__asm        jmp    dword ptr [ecx*4+0x51E2D5];
-	__asm        jo     short 0x0051E2B9;
-	__asm        push   ecx;
-	__asm        add    [ebp-0x1E], dh;
-	__asm        push   ecx;
-	__asm        add    [edx-0x1E], bh;
-	__asm        push   ecx;
-	__asm        add    [edi-0x1E], bh;
-	__asm        push   ecx;
-	__asm        add    [edx-0x1D5AFFAF], al;
-	__asm        push   ecx;
-	__asm        add    [edx-0x50FFAE1E], ch;
-	__asm        loop   0x0051E345;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 3997:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4000:
@@ -9336,30 +8720,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E398];
 	__asm        jmp    dword ptr [ecx*4+0x51E378];
-	__asm        adc    esp, ebx;
-	__asm        push   ecx;
-	__asm        add    [eax], bl;
-	__asm        jecxz  0x0051E3D0;
-	__asm        add    ds:[0x220051E3], bl;
-	__asm        jecxz  0x0051E3D8;
-	__asm        add    [edi], ah;
-	__asm        jecxz  0x0051E3DC;
-	__asm        add    [eax-0x1D], cl;
-	__asm        push   ecx;
-	__asm        add    [ebp-0x1D], cl;
-	__asm        push   ecx;
-	__asm        add    [edx-0x1D], dl;
-	__asm        push   ecx;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4020:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4023:
@@ -9403,30 +8765,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E43B];
 	__asm        jmp    dword ptr [ecx*4+0x51E41B];
-	__asm        mov    dh, 0xE3;
-	__asm        push   ecx;
-	__asm        add    [ebx-0x3FFFAE1D], bh;
-	__asm        jecxz  0x0051E477;
-	__asm        add    ch, al;
-	__asm        jecxz  0x0051E47B;
-	__asm        add    dl, cl;
-	__asm        jecxz  0x0051E47F;
-	__asm        add    bl, ch;
-	__asm        jecxz  0x0051E483;
-	__asm        add    al, dh;
-	__asm        jecxz  0x0051E487;
-	__asm        add    ch, dh;
-	__asm        jecxz  0x0051E48B;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4043:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4046:
@@ -9470,28 +8810,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E4DE];
 	__asm        jmp    dword ptr [ecx*4+0x51E4BE];
-	__asm        pop    ecx;
-	__asm        in     al, 0x51;
-	__asm        add    [esi-0x1C], bl;
-	__asm        push   ecx;
-	__asm        add    [ebx-0x1C], ah;
-	__asm        push   ecx;
-	__asm        add    [eax-0x1C], ch;
-	__asm        push   ecx;
-	__asm        add    [ebp-0x1C], ch;
-	__asm        push   ecx;
-	__asm        add    [esi-0x6CFFAE1C], cl;
-	__asm        in     al, 0x51;
-	__asm        add    [eax+0x51E4], bl;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4066:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4069:
@@ -9535,32 +8855,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E581];
 	__asm        jmp    dword ptr [ecx*4+0x51E561];
-	__asm        cld;
-	__asm        in     al, 0x51;
-	__asm        add    [ecx], al;
-	__asm        in     eax, 0x51;
-	__asm        add    [esi], al;
-	__asm        in     eax, 0x51;
-	__asm        add    [ebx], cl;
-	__asm        in     eax, 0x51;
-	__asm        add    [eax], dl;
-	__asm        in     eax, 0x51;
-	__asm        add    [ecx], dh;
-	__asm        in     eax, 0x51;
-	__asm        add    [esi], dh;
-	__asm        in     eax, 0x51;
-	__asm        add    [ebx], bh;
-	__asm        in     eax, 0x51;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4089:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4092:
@@ -9604,28 +8900,8 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x51E624];
 	__asm        jmp    dword ptr [ecx*4+0x51E604];
-	__asm        lahf;
-	__asm        in     eax, 0x51;
-	__asm        add    [ebp-0x1A56FFAF], ah;
-	__asm        push   ecx;
-	__asm        add    [esi-0x4CFFAE1B], ch;
-	__asm        in     eax, 0x51;
-	__asm        add    ah, dl;
-	__asm        in     eax, 0x51;
-	__asm        add    cl, bl;
-	__asm        in     eax, 0x51;
-	__asm        add    dh, bl;
-	__asm        in     eax, 0x51;
-	__asm        add    [eax], al;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        pop    es;
-	__asm        add    [edx], eax;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4112:
 	__asm        jmp    near ptr 0x0051E695;
 // LINE 4114:
@@ -9636,32 +8912,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        ja     near ptr 0x0051E695;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x51E655];
-	__asm        jmp    short 0x0051E632;
-	__asm        push   ecx;
-	__asm        add    [esi+0x310051DC], cl;
-	__asm        fst    qword ptr [ecx];
-	__asm        aam    0xDD;
-	__asm        push   ecx;
-	__asm        add    [edi-0x22], dh;
-	__asm        push   ecx;
-	__asm        add    [esi], dh;
-	__asm        fist   word ptr [ecx];
-	__asm        fstp   st(7);
-	__asm        push   ecx;
-	__asm        add    [eax+0x51], bh;
-	__asm        add    [edi], bl;
-	__asm        loope  0x0051E6C9;
-	__asm        add    dl, al;
-	__asm        loope  0x0051E6CD;
-	__asm        add    [ebp-0x1E], ah;
-	__asm        push   ecx;
-	__asm        add    [eax], cl;
-	__asm        jecxz  0x0051E6D5;
-	__asm        add    [ebx+0x4E0051E3], ch;
-	__asm        in     al, 0x51;
-	__asm        add    cl, dh;
-	__asm        in     al, 0x51;
-	__asm        (bad);
+// Switch pointers
 // LINE 4117:
 }
 

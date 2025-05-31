@@ -2261,11 +2261,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        ja     near ptr 0x005001A1;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x500191];
-	__asm        xchg   ebp, eax;
-	__asm        jmp    far ptr 0x004F:0xEE2F004F;
-	__asm        xchg   ebp, eax;
-	__asm        dec    edi;
-	__asm        (bad);
+// Switch pointers
 // LINE 949:
 	__asm        mov    eax, posy;
 	__asm        push   eax;

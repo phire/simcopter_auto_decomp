@@ -118,11 +118,7 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        ja     near ptr 0x00542ED8;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x542EC8];
-	__asm        test   [esi], ebp;
-	__asm        push   esp;
-	__asm        add    [eax-0x65FFABD2], dl;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax];

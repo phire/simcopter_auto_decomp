@@ -829,15 +829,7 @@ IntersectionKludge:
 	__asm        ja     near ptr 0x0053C645;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x53C668];
-	__asm        mov    cl, 0xC5;
-	__asm        push   ebx;
-	__asm        add    dh, dl;
-	__asm        lds    edx, [ebx];
-	__asm        sti;
-	__asm        lds    edx, [ebx];
-	__asm        and    dh, al;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 321:
 	__asm        jmp    near ptr 0x0053C684;
 // LINE 323:
@@ -963,11 +955,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        ja     near ptr 0x0053C7D8;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x53C7C8];
-	__asm        pop    edi;
-	__asm        push   ebx;
-	__asm        add    [edi-0x60FFAC39], dl;
-	__asm        (bad);
-	__asm        (bad);
+// Switch pointers
 // LINE 375:
 	__asm        call   0x0056EC50;
 	__asm        mov    ecx, pEdge;
@@ -1051,13 +1039,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        ja     near ptr 0x0053C8D0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    dword ptr [eax*4+0x53C8C0];
-	__asm        cmp    ecx, eax;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x38], bl;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x38], dh;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 391:
 	__asm        jmp    near ptr 0x0053C80F;
 // LINE 395:
@@ -1803,12 +1785,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        ja     near ptr 0x0053D0FA;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    dword ptr [eax*4+0x53D0EA];
-	__asm        movsd;
-	__asm        rcl    byte ptr [ebx], 1;
-	__asm        mov    al, 0xD0;
-	__asm        push   ebx;
-	__asm        add    [ebx-0x39FFAC30], bh;
-	__asm        rcl    byte ptr [ebx], 1;
+// Switch pointers
 // LINE 578:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
@@ -1991,13 +1968,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        ja     near ptr 0x0053D30D;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x53D2FD];
-	__asm        (bad);
-	__asm        int    3;
-	__asm        rcl    byte ptr [ebx], cl;
-	__asm        aam    0xD2;
-	__asm        push   ebx;
-	__asm        add    ah, bl;
-	__asm        rcl    byte ptr [ebx], cl;
+// Switch pointers
 // LINE 668:
 	__asm        xor    eax, eax;
 	__asm        mov    al, here.x;
@@ -2563,12 +2534,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        ja     near ptr 0x0053D9C6;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x53D9B6];
-	__asm        jge    short 0x0053D991;
-	__asm        push   ebx;
-	__asm        add    [ebp-0x72FFAC27], al;
-	__asm        fst    dword ptr [ebx];
-	__asm        xchg   ebp, eax;
-	__asm        fst    dword ptr [ebx];
+// Switch pointers
 // LINE 802:
 	__asm        jmp    near ptr 0x0053D911;
 // LINE 803:
@@ -2784,27 +2750,8 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53DD66];
 	__asm        jmp    dword ptr [ecx*4+0x53DD56];
-	__asm        cmc;
-	__asm        fist   dword ptr [ebx];
-	__asm        add    esp, ebx;
-	__asm        push   ebx;
-	__asm        add    ds:[0x310053DC], ah;
-	__asm        fcom   qword ptr [ebx];
-	__asm        add    [eax], al;
-	__asm        add    [ebx], al;
-	__asm        add    eax, [ebx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [edx];
-	__asm        add    cl, [ebx-0x36CC07BB];
-	__asm        mov    cx, [eax+2];
-	__asm        add    ecx, [ebp-0x28];
-	__asm        mov    eax, pEdge;
-	__asm        mov    [eax+2], cx;
+// Switch pointers
+// Switch table
 // LINE 839:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -2973,27 +2920,8 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53E04E];
 	__asm        jmp    dword ptr [ecx*4+0x53E03E];
-	__asm        fstp   st(6);
-	__asm        push   ebx;
-	__asm        add    cl, ch;
-	__asm        ficom  word ptr [ebx];
-	__asm        or     eax, 0x190053DF;
-	__asm        fist   word ptr [ebx];
-	__asm        add    [eax], al;
-	__asm        add    [ebx], al;
-	__asm        add    eax, [ebx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [edx];
-	__asm        add    cl, [ebx-0x36CC07BB];
-	__asm        mov    cx, [eax+2];
-	__asm        add    ecx, [ebp-0x2C];
-	__asm        mov    eax, pEdge;
-	__asm        mov    [eax+2], cx;
+// Switch pointers
+// Switch table
 // LINE 850:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -3337,15 +3265,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        ja     near ptr 0x0053E43A;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    dword ptr [eax*4+0x53E42A];
-	__asm        int1;
-	__asm        jecxz  0x0053E480;
-	__asm        add    cl, bh;
-	__asm        jecxz  0x0053E484;
-	__asm        add    [ecx], al;
-	__asm        in     al, 0x53;
-	__asm        add    [ecx], cl;
-	__asm        in     al, 0x53;
-	__asm        (bad);
+// Switch pointers
 // LINE 931:
 	__asm        jmp    near ptr 0x0053E37B;
 // LINE 936:
@@ -3382,15 +3302,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        ja     near ptr 0x0053E4A9;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x53E499];
-	__asm        pusha;
-	__asm        in     al, 0x53;
-	__asm        add    [eax-0x1C], ch;
-	__asm        push   ebx;
-	__asm        add    [eax-0x1C], dh;
-	__asm        push   ebx;
-	__asm        add    [eax-0x1C], bh;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 951:
 	__asm        xor    eax, eax;
 	__asm        mov    al, tempy;
@@ -3559,31 +3471,8 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53E75F];
 	__asm        jmp    dword ptr [ecx*4+0x53E74F];
-	__asm        out    dx, al;
-	__asm        in     eax, 0x53;
-	__asm        add    dl, bh;
-	__asm        in     eax, 0x53;
-	__asm        add    [esi], bl;
-	__asm        out    0x53, al;
-	__asm        add    [edx], ch;
-	__asm        out    0x53, al;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax+2];
-	__asm        add    ecx, [ebp-0x20];
-	__asm        mov    eax, pEdge;
-	__asm        mov    [eax+2], cx;
+// Switch pointers
+// Switch table
 // LINE 970:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -3657,14 +3546,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        ja     near ptr 0x0053E872;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x53E862];
-	__asm        sub    eax, ebp;
-	__asm        push   ebx;
-	__asm        add    [ecx], dh;
-	__asm        call   0xE88CE8BF;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x18], al;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 998:
 	__asm        jmp    near ptr 0x0053E51D;
 // LINE 1007:
@@ -4334,37 +4216,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F158];
 	__asm        jmp    dword ptr [ecx*4+0x53F148];
-	__asm        out    0xEF, eax;
-	__asm        push   ebx;
-	__asm        add    bl, dh;
-	__asm        out    dx, eax;
-	__asm        push   ebx;
-	__asm        add    [edi], dl;
-	__asm        (bad);
-	__asm        add    [ebx], ah;
-	__asm        (bad);
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x1A], ax;
+// Switch pointers
+// Switch table
 // LINE 1110:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1113:
@@ -4511,34 +4364,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F3FB];
 	__asm        jmp    dword ptr [ecx*4+0x53F3EB];
-	__asm        mov    dh, dl;
-	__asm        push   ebx;
-	__asm        add    [esi-0x45FFAC0E], dl;
-	__asm        push   ebx;
-	__asm        add    dh, al;
-	__asm        push   ebx;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+6], ax;
+// Switch pointers
+// Switch table
 // LINE 1121:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1124:
@@ -4684,36 +4511,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F69D];
 	__asm        jmp    dword ptr [ecx*4+0x53F68D];
-	__asm        sub    al, 0xF5;
-	__asm        push   ebx;
-	__asm        add    [eax], bh;
-	__asm        cmc;
-	__asm        push   ebx;
-	__asm        add    [ebp+esi*8+0x53], bl;
-	__asm        add    [eax-0xB], ch;
-	__asm        push   ebx;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4-4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x10], ax;
+// Switch pointers
+// Switch table
 // LINE 1132:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1135:
@@ -4859,36 +4658,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53F940];
 	__asm        jmp    dword ptr [ecx*4+0x53F930];
-	__asm        iretd;
-	__asm        not    dword ptr [ebx];
-	__asm        fcomi  st, st(7);
-	__asm        push   ebx;
-	__asm        add    bh, bh;
-	__asm        not    dword ptr [ebx];
-	__asm        or     edi, eax;
-	__asm        push   ebx;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4-8];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x10], ax;
+// Switch pointers
+// Switch table
 // LINE 1143:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1146:
@@ -5035,36 +4806,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53FBDE];
 	__asm        jmp    dword ptr [ecx*4+0x53FBCE];
-	__asm        insd;
-	__asm        cli;
-	__asm        push   ebx;
-	__asm        add    [ecx-6], bh;
-	__asm        push   ebx;
-	__asm        add    [ebp-0x56FFAC06], bl;
-	__asm        cli;
-	__asm        push   ebx;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+6], ax;
+// Switch pointers
+// Switch table
 // LINE 1154:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1157:
@@ -5211,38 +4954,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x53FE7B];
 	__asm        jmp    dword ptr [ecx*4+0x53FE6B];
-	__asm        or     bh, ch;
-	__asm        push   ebx;
-	__asm        add    [esi], dl;
-	__asm        std;
-	__asm        push   ebx;
-	__asm        add    [edx], bh;
-	__asm        std;
-	__asm        push   ebx;
-	__asm        add    [esi-3], al;
-	__asm        push   ebx;
-	__asm        add    [eax], al;
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x1A], ax;
+// Switch pointers
+// Switch table
 // LINE 1165:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1168:
@@ -5388,30 +5101,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x540119];
 	__asm        jmp    dword ptr [ecx*4+0x540109];
-	__asm        test   al, 0xFF;
-	__asm        push   ebx;
-	__asm        add    [edi+edi*8-0x27FFAD], dh;
-	__asm        push   ebx;
-	__asm        add    ah, ah;
-	__asm        call   dword ptr [ebx];
-	__asm        add    [eax], al;
-	__asm        add    [ebx], al;
-	__asm        add    eax, [ebx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ecx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [edx];
-	__asm        add    cl, [ebx+0x4D8BE045];
-	__asm        or     [ebx+0x4C8BD855], cl;
-	__asm        mov    al, [ebx+esi];
-	__asm        ror    byte ptr [edx-0x257403AB], cl;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x24], ax;
+// Switch pointers
+// Switch table
 // LINE 1176:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1179:
@@ -5557,32 +5248,8 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5403B8];
 	__asm        jmp    dword ptr [ecx*4+0x5403A8];
-	__asm        inc    edi;
-	__asm        add    dl, [eax+eax+0x53];
-	__asm        add    dl, [eax+eax+0x77];
-	__asm        add    dl, [eax+eax-0x7D];
-	__asm        add    dl, [eax+eax];
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4+4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+0x24], ax;
+// Switch pointers
+// Switch table
 // LINE 1187:
 	__asm        jmp    near ptr 0x00540481;
 // LINE 1190:
@@ -5603,22 +5270,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        ja     near ptr 0x005403F4;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x540445];
-	__asm        out    dx, al;
-	__asm        push   ebx;
-	__asm        add    [esi], dh;
-	__asm        hlt;
-	__asm        push   ebx;
-	__asm        add    [ecx+edi*8+0x53], bh;
-	__asm        add    [esi-0x7EFFAC02], dh;
-	__asm        jge    short 0x0054042C;
-	__asm        pop    esi;
-	__asm        add    byte ptr [eax], 0;
-	__asm        je     near ptr 0x0053F6D9;
-	__asm        cmp    dword ptr [ebp-0x2C], 0x805F;
-	__asm        je     near ptr 0x0053FC19;
-	__asm        cmp    dword ptr [ebp-0x2C], 0x8060;
-	__asm        je     near ptr 0x00540155;
-	__asm        jmp    near ptr 0x005403F4;
+// Switch pointers
 // LINE 1192:
 	__asm        jmp    near ptr 0x00540486;
 }
@@ -5996,21 +5648,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x0054092E;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x540957];
-	__asm        xchg   edx, eax;
-	__asm        or     [eax+eax-0x47], dl;
-	__asm        or     [eax+eax-0x20], dl;
-	__asm        or     [eax+eax+7], dl;
-	__asm        or     [eax+eax-0x75], edx;
-	__asm        inc    ebp;
-	__asm        int    3;
-	__asm        and    al, 3;
-	__asm        shl    al, 2;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    cl, [ecx];
-	__asm        and    cl, 0xF3;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
+// Switch pointers
 // LINE 1290:
 	__asm        jmp    near ptr 0x00541129;
 // LINE 1296:
@@ -6063,11 +5701,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x00540A20;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    dword ptr [eax*4+0x540A10];
-	__asm        xlatb;
-	__asm        or     [eax+eax-0x21], edx;
-	__asm        or     [eax+eax-0x19], edx;
-	__asm        or     [eax+eax-0x11], edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 1315:
 	__asm        jmp    near ptr 0x0054098D;
 // LINE 1319:
@@ -6235,22 +5869,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x00540C80;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        jmp    dword ptr [eax*4+0x540CA9];
-	__asm        in     al, 0xB;
-	__asm        push   esp;
-	__asm        add    [ebx], cl;
-	__asm        or     al, 0x54;
-	__asm        add    [edx], dh;
-	__asm        or     al, 0x54;
-	__asm        add    [ecx+0xC], bl;
-	__asm        push   esp;
-	__asm        add    [ebx+0x324C445], cl;
-	__asm        shl    al, 2;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    cl, [ecx];
-	__asm        and    cl, 0xF3;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
+// Switch pointers
 // LINE 1333:
 	__asm        mov    fStart, 1;
 // LINE 1336:
@@ -6323,12 +5942,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x00540DB7;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        jmp    dword ptr [eax*4+0x540DA7];
-	__asm        outsb;
-	__asm        or     eax, 0xD760054;
-	__asm        push   esp;
-	__asm        add    [esi+0xD], bh;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1359:
 	__asm        mov    eax, returnDir;
 	__asm        sub    eax, 2;
@@ -6521,18 +6135,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x0054105D;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        jmp    dword ptr [eax*4+0x541086];
-	__asm        ror    dword ptr [edi], 0x54;
-	__asm        add    al, ch;
-	__asm        andps  xmm0, [eax];
-	__asm        movups xmm2, [eax+eax+0x36];
-	__asm        adc    [eax+eax-0x75], dl;
-	__asm        inc    ebp;
-	__asm        mov    esp, 0xE0C00324;
-	__asm        add    cl, [ebx+0x98AF84D];
-	__asm        and    cl, 0xF3;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
+// Switch pointers
 // LINE 1396:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
@@ -6565,11 +6168,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        ja     near ptr 0x0054111F;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        jmp    dword ptr [eax*4+0x54110F];
-	__asm        salc;
-	__asm        adc    [eax+eax-0x22], dl;
-	__asm        adc    [eax+eax-0x1A], dl;
-	__asm        adc    [eax+eax-0x12], dl;
-	__asm        (bad);
+// Switch pointers
 // LINE 1404:
 	__asm        jmp    near ptr 0x00540CF5;
 // LINE 1406:
@@ -6650,10 +6249,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        ja     near ptr 0x00541208;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x5411F8];
-	__asm        (bad);
-	__asm        mov    ds:[0xB7005411], eax;
-	__asm        adc    [eax+eax-0x35], edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 1427:
 	__asm        mov    eax, goal;
 	__asm        push   eax;

@@ -908,17 +908,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        ja     near ptr 0x005615AB;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x5615E9];
-	__asm        lahf;
-	__asm        adc    al, 0x56;
-	__asm        add    [edi], ch;
-	__asm        adc    eax, 0x14360056;
-	__asm        push   esi;
-	__asm        add    dh, bh;
-	__asm        adc    edx, [esi];
-	__asm        xchg   dl, [esi+edx*2];
-	__asm        add    [edi-0x60FFA9EC], bl;
-	__asm        adc    al, 0x56;
-	__asm        (bad);
+// Switch pointers
 // LINE 2176:
 	__asm        jmp    near ptr 0x0056160A;
 }

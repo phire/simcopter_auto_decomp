@@ -957,16 +957,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        ja     near ptr 0x00535F7A;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x535FBC];
-	__asm        pop    esp;
-	__asm        push   ebx;
-	__asm        add    bl, dl;
-	__asm        pop    esp;
-	__asm        push   ebx;
-	__asm        add    [edx+0x5F], bh;
-	__asm        push   ebx;
-	__asm        add    [eax+0x5D], dl;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 404:
 	__asm        jmp    near ptr 0x00535FD5;
 }

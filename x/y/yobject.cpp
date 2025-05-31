@@ -4422,14 +4422,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 	__asm        ja     near ptr 0x00545972;
 	__asm        mov    eax, [ebp-0x19C];
 	__asm        jmp    dword ptr [eax*4+0x5459AD];
-	__asm        and    al, 0x51;
-	__asm        push   esp;
-	__asm        add    [ecx+edx*2], ah;
-	__asm        push   esp;
-	__asm        add    [edx+0x3A005454], ah;
-	__asm        push   edi;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 379:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
 	__asm        je     near ptr 0x00545CB3;
@@ -6777,31 +6770,8 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x547907];
 	__asm        jmp    dword ptr [ecx*4+0x5478F3];
-	__asm        out    dx, al;
-	__asm        je     short 0x0054794A;
-	__asm        add    [edi+0x75], dl;
-	__asm        push   esp;
-	__asm        add    ds:[0x91005476], al;
-	__asm        jne    short 0x00547956;
-	__asm        add    ds:[0x5479], ch;
-	__asm        add    [esp+eax], eax;
-	__asm        add    al, 4;
-	__asm        add    al, [esp+eax];
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 832:
 	__asm        jmp    near ptr 0x00547932;
 }
@@ -7489,22 +7459,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        ja     near ptr 0x005482FC;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    dword ptr [eax*4+0x54832B];
-	__asm        sub    eax, [edx-0x7DC1FFAC];
-	__asm        push   esp;
-	__asm        add    [eax], bl;
-	__asm        adc    byte ptr [eax+eax+0x51], 0x82;
-	__asm        push   esp;
-	__asm        add    [edi-0x7E], dh;
-	__asm        push   esp;
-	__asm        add    [edx+eax*4+0x54], ah;
-	__asm        add    dh, dl;
-	__asm        adc    byte ptr [eax+eax-0x17], 0x82;
-	__asm        push   esp;
-	__asm        add    [edx-0x62FFAB7E], cl;
-	__asm        adc    byte ptr [eax+eax-0x50], 0x82;
-	__asm        push   esp;
-	__asm        add    bl, al;
-	__asm        (bad);
+// Switch pointers
 // LINE 1036:
 	__asm        jmp    near ptr 0x005481FB;
 // LINE 1039:
@@ -7843,12 +7798,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        ja     near ptr 0x0054888A;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x54893F];
-	__asm        adc    [edi-0x789EFFAC], al;
-	__asm        push   esp;
-	__asm        add    al, ch;
-	__asm        xchg   edx, [eax+eax-0x76];
-	__asm        mov    [eax+eax+0x39], dl;
-	__asm        (bad);
+// Switch pointers
 // LINE 1117:
 	__asm        jmp    near ptr 0x005486F3;
 // LINE 1119:
@@ -9095,15 +9045,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	__asm        ja     near ptr 0x00549DF8;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    dword ptr [eax*4+0x549DE4];
-	__asm        jb     short 0x00549D83;
-	__asm        push   esp;
-	__asm        add    [edi-0x5DFFAB63], cl;
-	__asm        popfd;
-	__asm        push   esp;
-	__asm        add    [eax+0x7200549D], bh;
-	__asm        popfd;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1369:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
@@ -10883,25 +10825,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        ja     near ptr 0x0054B35E;
 	__asm        mov    eax, [ebp-0xEC];
 	__asm        jmp    dword ptr [eax*4+0x54B51F];
-	__asm        dec    esi;
-	__asm        stosd;
-	__asm        push   esp;
-	__asm        add    al, ah;
-	__asm        mov    cl, 0x54;
-	__asm        add    bh, cl;
-	__asm        mov    al, 0x54;
-	__asm        add    [ebx-0x57], dh;
-	__asm        push   esp;
-	__asm        add    bl, dl;
-	__asm        lodsd;
-	__asm        push   esp;
-	__asm        add    bl, bl;
-	__asm        lodsb;
-	__asm        push   esp;
-	__asm        add    bl, dl;
-	__asm        lodsd;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1793:
 	__asm        movsx  eax, ret;
 	__asm        test   eax, eax;
@@ -11963,18 +11887,8 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x54C54B];
 	__asm        jmp    dword ptr [ecx*4+0x54C53F];
-	__asm        or     eax, ebp;
-	__asm        push   esp;
-	__asm        add    bh, bh;
-	__asm        les    edx, [eax+eax+0x17];
-	__asm        lds    edx, [eax+eax];
-	__asm        add    [eax], al;
-	__asm        add    [edx], al;
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
-	__asm        add    al, [ecx];
-	__asm        add    [ecx], eax;
+// Switch pointers
+// Switch table
 // LINE 2003:
 	__asm        mov    loop, 1;
 // LINE 2004:
@@ -12001,27 +11915,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        ja     near ptr 0x0054C583;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x54C5BB];
-	__asm        adc    eax, esp;
-	__asm        push   esp;
-	__asm        add    [ebx+0x210054C5], al;
-	__asm        les    edx, [eax+eax+0x2D];
-	__asm        les    edx, [eax+eax+0x39];
-	__asm        les    edx, [eax+eax+0x45];
-	__asm        les    edx, [eax+eax+0x51];
-	__asm        les    edx, [eax+eax+0x5D];
-	__asm        les    edx, [eax+eax+0x69];
-	__asm        les    edx, [eax+eax+0x75];
-	__asm        les    edx, [eax+eax-0x7F];
-	__asm        les    edx, [eax+eax-0x73];
-	__asm        les    edx, [eax+eax-0x67];
-	__asm        les    edx, [eax+eax-0x5B];
-	__asm        les    edx, [eax+eax-0x4F];
-	__asm        les    edx, [eax+eax-0x13];
-	__asm        les    edx, [eax+eax-0x43];
-	__asm        les    edx, [eax+eax-0x37];
-	__asm        les    edx, [eax+eax-0x2B];
-	__asm        les    edx, [eax+eax-0x1F];
-	__asm        (bad);
+// Switch pointers
 // LINE 2009:
 	__asm        mov    flags, 2;
 // LINE 2010:
@@ -15131,18 +15025,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        ja     near ptr 0x0054F6D0;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x54F70C];
-	__asm        mov    eax, 0xDB0054F5;
-	__asm        cmc;
-	__asm        push   esp;
-	__asm        add    dh, bh;
-	__asm        cmc;
-	__asm        push   esp;
-	__asm        add    [ecx], ah;
-	__asm        not    byte ptr [eax+eax+0x44];
-	__asm        not    byte ptr [eax+eax+0x67];
-	__asm        not    byte ptr [eax+eax-0x76];
-	__asm        not    byte ptr [eax+eax-0x53];
-	__asm        (bad);
+// Switch pointers
 // LINE 2484:
 	__asm        jmp    near ptr 0x0054FAE2;
 // LINE 2486:
@@ -15339,25 +15222,7 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 	__asm        ja     near ptr 0x0054FA4D;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x54FAB2];
-	__asm        sub    bh, ah;
-	__asm        push   esp;
-	__asm        add    dh, bh;
-	__asm        jmp    short 0x0054FB0D;
-	__asm        add    [ebp+ebp*8-0x5B2FFAC], cl;
-	__asm        push   esp;
-	__asm        add    this-><cYObject+0x02>, cl;
-	__asm        push   esp;
-	__asm        add    [edx], bl;
-	__asm        out    dx, eax;
-	__asm        push   esp;
-	__asm        add    [ebp+ebp*8-0x1A6FFFAC], cl;
-	__asm        push   esp;
-	__asm        add    [eax], ch;
-	__asm        out    0x54, eax;
-	__asm        add    this-><cYObject+0x02>, cl;
-	__asm        push   esp;
-	__asm        add    [edi+0x310054F8], bh;
-	__asm        (bad);
+// Switch pointers
 // LINE 2498:
 	__asm        jmp    near ptr 0x0054FAE7;
 }
@@ -15693,19 +15558,8 @@ void cYObject::SetMissionType(enum MissionType type) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x54FF24];
 	__asm        jmp    dword ptr [ecx*4+0x54FF14];
-	__asm        int    0xFE;
-	__asm        push   esp;
-	__asm        add    dh, bl;
-	__asm        (bad);
-	__asm        add    ch, cl;
-	__asm        (bad);
-	__asm        add    [edi], ch;
-	__asm        call   dword ptr [eax+eax];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ebx], eax;
-	__asm        add    al, [edx];
-	__asm        add    al, [edx];
+// Switch pointers
+// Switch table
 // LINE 2596:
 	__asm        cmp    type, 0;
 	__asm        jne    near ptr 0x0054FF78;
@@ -16012,35 +15866,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        ja     near ptr 0x0055029F;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    dword ptr [eax*4+0x5502D4];
-	__asm        jbe    short 0x005502D6;
-	__asm        push   ebp;
-	__asm        add    [ebx-0x4DFFAB00], dl;
-	__asm        add    [ebp], dl;
-	__asm        iretd;
-	__asm        add    [ebp], dl;
-	__asm        in     al, dx;
-	__asm        add    [ebp], dl;
-	__asm        or     eax, 0x25005501;
-	__asm        add    [ebp], edx;
-	__asm        dec    eax;
-	__asm        add    [ebp], edx;
-	__asm        add    [ebp], dx;
-	__asm        test   [ecx], eax;
-	__asm        push   ebp;
-	__asm        add    [edx-0x3BFFAAFF], ah;
-	__asm        add    [ebp], edx;
-	__asm        add    dl, ds:[ebp];
-	__asm        pop    ds;
-	__asm        add    dl, [ebp];
-	__asm        add    [edx], al;
-	__asm        push   ebp;
-	__asm        add    cl, ah;
-	__asm        add    [ebp], edx;
-	__asm        pop    ebp;
-	__asm        add    dl, [ebp];
-	__asm        jle    short 0x0055031C;
-	__asm        push   ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 2725:
 	__asm        mov    ax, freqadj;
 	__asm        mov    ecx, this;

@@ -347,22 +347,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        ja     near ptr 0x004EF467;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x4EF4C2];
-	__asm        add    dl, dh;
-	__asm        dec    esi;
-	__asm        add    [edx-0xE], al;
-	__asm        dec    esi;
-	__asm        add    [edx+esi*8-0xD36FFB2], al;
-	__asm        dec    esi;
-	__asm        add    [esi], cl;
-	__asm        dec    esi;
-	__asm        add    [ebx-0xD], dl;
-	__asm        dec    esi;
-	__asm        add    [eax-0x22FFB10D], bl;
-	__asm        dec    esi;
-	__asm        add    [edx], ah;
-	__asm        hlt;
-	__asm        dec    esi;
-	__asm        (bad);
+// Switch pointers
 // LINE 560:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -11870,13 +11855,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        ja     near ptr 0x004F7DDA;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    dword ptr [eax*4+0x4F7DC6];
-	__asm        stosb;
-	__asm        jns    short 0x004F7E18;
-	__asm        add    al, cl;
-	__asm        jns    short 0x004F7E1C;
-	__asm        add    [ebx+0x3B004F7B], dl;
-	__asm        jl     short 0x004F7E24;
-	__asm        (bad);
+// Switch pointers
 // LINE 5115:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004F7DE1;
@@ -12120,11 +12099,7 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 	__asm        ja     near ptr 0x004F808B;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x4F8077];
-	__asm        add    eax, 0x22004F80;
-	__asm        or     byte ptr [edi], 0x35;
-	__asm        or     byte ptr [edi], 0x4B;
-	__asm        or     byte ptr [edi], 5;
-	__asm        (bad);
+// Switch pointers
 // LINE 5274:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
@@ -12806,31 +12781,7 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        ja     near ptr 0x004F8842;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x4F87FE];
-	__asm        test   [esi-0x7950FFB1], eax;
-	__asm        dec    edi;
-	__asm        add    [esi+eax*4-0x7946FFB1], dh;
-	__asm        dec    edi;
-	__asm        add    bl, ah;
-	__asm        xchg   cl, [edi];
-	__asm        call   0xED4FD79D;
-	__asm        xchg   cl, [edi];
-	__asm        pop    ss;
-	__asm        xchg   ecx, [edi];
-	__asm        cmp    al, 0x87;
-	__asm        dec    edi;
-	__asm        add    [ecx-0x79], al;
-	__asm        dec    edi;
-	__asm        add    [ebx-0x79], ch;
-	__asm        dec    edi;
-	__asm        add    [eax-0x79], dh;
-	__asm        dec    edi;
-	__asm        add    [ebp-0x79], dh;
-	__asm        dec    edi;
-	__asm        add    [edx-0x60FFB079], bl;
-	__asm        xchg   ecx, [edi];
-	__asm        mov    dh, 0x87;
-	__asm        dec    edi;
-	__asm        (bad);
+// Switch pointers
 // LINE 5676:
 }
 

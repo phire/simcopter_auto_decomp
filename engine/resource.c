@@ -462,15 +462,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        ja     near ptr 0x004D57E6;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x4D5809];
-	__asm        daa;
-	__asm        push   ebp;
-	__asm        dec    ebp;
-	__asm        add    [esi-0x58FFB2AA], bl;
-	__asm        push   esp;
-	__asm        dec    ebp;
-	__asm        add    [edx+0x53], ch;
-	__asm        dec    ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 256:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004D5820;

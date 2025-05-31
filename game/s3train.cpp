@@ -3242,12 +3242,7 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        ja     near ptr 0x0053008D;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x53007D];
-	__asm        adc    [eax], al;
-	__asm        push   ebx;
-	__asm        add    ds:[0x3A005300], ah;
-	__asm        add    [ebx], dl;
-	__asm        dec    edi;
-	__asm        add    [ebx], dl;
+// Switch pointers
 // LINE 2021:
 	__asm        jmp    near ptr 0x005303C3;
 // LINE 2026:
@@ -3470,83 +3465,8 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x530381];
 	__asm        jmp    dword ptr [ecx*4+0x530311];
-	__asm        test   eax, 0xE30052FB;
-	__asm        sti;
-	__asm        push   edx;
-	__asm        add    [ecx+0x570052FC], dl;
-	__asm        cld;
-	__asm        push   edx;
-	__asm        add    bl, cl;
-	__asm        cld;
-	__asm        push   edx;
-	__asm        add    ds:[0xC10052FC], bl;
-	__asm        cli;
-	__asm        push   edx;
-	__asm        add    bl, bh;
-	__asm        cli;
-	__asm        push   edx;
-	__asm        add    ds:[0x6F0052FB], dh;
-	__asm        sti;
-	__asm        push   edx;
-	__asm        add    ch, ch;
-	__asm        std;
-	__asm        push   edx;
-	__asm        add    [ecx-2], dh;
-	__asm        push   edx;
-	__asm        add    ch, dh;
-	__asm        (bad);
-	__asm        add    [ecx-1], bh;
-	__asm        push   edx;
-	__asm        add    ch, bh;
-	__asm        call   dword ptr [edx];
-	__asm        jns    short 0x0053034C;
-	__asm        push   edx;
-	__asm        add    [edi], bh;
-	__asm        std;
-	__asm        push   edx;
-	__asm        add    [ebx+0x50052FD], dh;
-	__asm        std;
-	__asm        push   edx;
-	__asm        add    [edi], dh;
-	__asm        add    [ebx], edx;
-	__asm        add    [ecx], al;
-	__asm        push   ebx;
-	__asm        add    [esi+1], ch;
-	__asm        push   ebx;
-	__asm        add    [ebp-0x36FFACFF], ah;
-	__asm        add    [ebx], dl;
-	__asm        xchg   edx, eax;
-	__asm        add    [ebx], dl;
-	__asm        fadd   qword ptr [ecx];
-	__asm        push   ebx;
-	__asm        add    [edx+2], cl;
-	__asm        push   ebx;
-	__asm        add    [eax+0x5302], bh;
-	__asm        add    [edx], eax;
-	__asm        add    eax, [eax*1+0x9080706];
-	__asm        or     cl, [ebx];
-	__asm        or     al, 0xD;
-	__asm        push   cs;
-	__asm        movups xmm2, [ecx];
-	__asm        adc    bl, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    edx, [ebx];
-	__asm        adc    al, 0x15;
-	__asm        push   ss;
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        pop    ss;
-	__asm        sbb    [ebx], bl;
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    [edx], ebx;
-	__asm        cmp    dword ptr [ebp-0x10], 0x805B;
-	__asm        je     near ptr 0x00530281;
-	__asm        jmp    near ptr 0x005302B8;
+// Switch pointers
+// Switch table
 // LINE 2179:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x55], 0;
@@ -4127,14 +4047,7 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        ja     near ptr 0x00530AC0;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    dword ptr [eax*4+0x530AB0];
-	__asm        inc    ebx;
-	__asm        or     dl, [ebx];
-	__asm        pop    eax;
-	__asm        or     dl, [ebx];
-	__asm        insd;
-	__asm        or     dl, [ebx];
-	__asm        or     byte ptr [edx], 0x53;
-	__asm        (bad);
+// Switch pointers
 // LINE 2479:
 	__asm        jmp    near ptr 0x00530DF6;
 // LINE 2484:
@@ -4357,77 +4270,8 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x530DB4];
 	__asm        jmp    dword ptr [ecx*4+0x530D44];
-	__asm        cli;
-	__asm        add    eax, 0x6310053;
-	__asm        push   ebx;
-	__asm        add    dh, dl;
-	__asm        push   es;
-	__asm        push   ebx;
-	__asm        add    [edi+0xD005306], bl;
-	__asm        pop    es;
-	__asm        push   ebx;
-	__asm        add    [eax+6], ch;
-	__asm        push   ebx;
-	__asm        add    [esi], bl;
-	__asm        add    eax, 0x5550053;
-	__asm        push   ebx;
-	__asm        add    [ebp+eax+0x5C30053], cl;
-	__asm        push   ebx;
-	__asm        add    [eax], ah;
-	__asm        or     [ebx], dl;
-	__asm        movsb;
-	__asm        or     [ebx], dl;
-	__asm        sub    [ecx], cl;
-	__asm        push   ebx;
-	__asm        add    [ecx+ecx+0xA300053], ch;
-	__asm        push   ebx;
-	__asm        add    [edx+0x7B005307], dh;
-	__asm        pop    es;
-	__asm        push   ebx;
-	__asm        add    cl, ch;
-	__asm        pop    es;
-	__asm        push   ebx;
-	__asm        add    [edi+eax+0x53], al;
-	__asm        add    al, bl;
-	__asm        or     edx, [ebx];
-	__asm        mov    eax, ds:[0x7D00530B];
-	__asm        or     al, 0x53;
-	__asm        add    [esp+ecx+0xC460053], dh;
-	__asm        push   ebx;
-	__asm        add    [edi], cl;
-	__asm        or     al, 0x53;
-	__asm        add    ch, al;
-	__asm        or     dl, [ebx];
-	__asm        xor    ecx, [ebx];
-	__asm        push   ebx;
-	__asm        add    bl, ch;
-	__asm        or     al, 0x53;
-	__asm        add    [eax], al;
-	__asm        add    [edx], eax;
-	__asm        add    eax, [eax*1+0x9080706];
-	__asm        or     cl, [ebx];
-	__asm        or     al, 0xD;
-	__asm        push   cs;
-	__asm        movups xmm2, [ecx];
-	__asm        adc    bl, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    edx, [ebx];
-	__asm        adc    al, 0x15;
-	__asm        push   ss;
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        pop    ss;
-	__asm        sbb    [ebx], bl;
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    ebx, [ebx];
-	__asm        sbb    [edx], ebx;
-	__asm        cmp    dword ptr [ebp-0x2C], 0x805B;
-	__asm        je     near ptr 0x00530B6A;
-	__asm        jmp    near ptr 0x00530CEB;
+// Switch pointers
+// Switch table
 // LINE 2638:
 	__asm        jmp    near ptr 0x00530DFB;
 }
@@ -5860,25 +5704,7 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        ja     near ptr 0x005320E3;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x53211D];
-	__asm        lahf;
-	__asm        pop    ds;
-	__asm        push   ebx;
-	__asm        add    [edi+ebx+0x1FB90053], ch;
-	__asm        push   ebx;
-	__asm        add    bl, dl;
-	__asm        pop    ds;
-	__asm        push   ebx;
-	__asm        add    dh, al;
-	__asm        pop    ds;
-	__asm        push   ebx;
-	__asm        add    [edi], ah;
-	__asm        and    [ebx], dl;
-	__asm        std;
-	__asm        pop    ds;
-	__asm        push   ebx;
-	__asm        add    [ecx+0x20], dl;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 3229:
 	__asm        jmp    near ptr 0x00532142;
 }
@@ -7016,19 +6842,7 @@ void TrainClass::AdjustNextPosition() {
 	__asm        ja     near ptr 0x00533015;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    dword ptr [eax*4+0x532FE6];
-	__asm        jb     short 0x00533017;
-	__asm        push   ebx;
-	__asm        add    [ecx+0x2F], bl;
-	__asm        push   ebx;
-	__asm        add    [ebx+0x4000532F], cl;
-	__asm        das;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x7FA54383], al;
-	__asm        add    [eax], al;
-	__asm        jl     near ptr 0x00533015;
-	__asm        cmp    dword ptr [ebp-0x44], 0x805B;
-	__asm        jle    near ptr 0x00532FA4;
-	__asm        jmp    near ptr 0x00533015;
+// Switch pointers
 // LINE 3624:
 	__asm        mov    eax, nextFineLocation.x;
 	__asm        mov    ecx, this;
@@ -7572,13 +7386,7 @@ void TrainClass::BeamToWithinCameraRange() {
 	__asm        ja     near ptr 0x0053364D;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    dword ptr [eax*4+0x533639];
-	__asm        (bad);
-	__asm        push   ebx;
-	__asm        add    ah, ah;
-	__asm        xor    eax, 0x35F70053;
-	__asm        push   ebx;
-	__asm        add    ds:[0xC7005336], cl;
-	__asm        (bad);
+// Switch pointers
 // LINE 3902:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
@@ -7941,12 +7749,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	__asm        ja     near ptr 0x00533B0A;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x533AF6];
-	__asm        test   [edx], bh;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x4BFFACC6], ah;
-	__asm        cmp    dl, [ebx];
-	__asm        retf   0x533A;
-	__asm        (bad);
+// Switch pointers
 // LINE 4066:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;

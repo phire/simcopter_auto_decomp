@@ -6979,27 +6979,7 @@ int32_t RenderSettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWin
 	__asm        ja     near ptr 0x00455BED;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x455BC5];
-	__asm        sbb    eax, 0x5600455A;
-	__asm        pop    edx;
-	__asm        inc    ebp;
-	__asm        add    ch, al;
-	__asm        pop    edx;
-	__asm        inc    ebp;
-	__asm        add    [ecx], cl;
-	__asm        pop    ebx;
-	__asm        inc    ebp;
-	__asm        add    [ebp+0x5B], cl;
-	__asm        inc    ebp;
-	__asm        add    [edi-0x12FFBAA6], cl;
-	__asm        pop    ebx;
-	__asm        inc    ebp;
-	__asm        add    ch, ch;
-	__asm        pop    ebx;
-	__asm        inc    ebp;
-	__asm        add    ch, ch;
-	__asm        pop    ebx;
-	__asm        inc    ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 935:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00455BF4;
@@ -18395,14 +18375,7 @@ int32_t CheckupWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        ja     near ptr 0x00460916;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x460902];
-	__asm        jle    short 0x0046090C;
-	__asm        inc    esi;
-	__asm        add    [edx+0x5F004608], bh;
-	__asm        or     [esi], al;
-	__asm        pop    edi;
-	__asm        or     [esi], al;
-	__asm        pop    edi;
-	__asm        or     [esi], al;
+// Switch pointers
 // LINE 2699:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046091D;

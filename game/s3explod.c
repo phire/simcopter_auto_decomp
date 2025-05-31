@@ -914,39 +914,7 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 	__asm        ja     near ptr 0x0052423E;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x524266];
-	__asm        in     al, 0x41;
-	__asm        push   edx;
-	__asm        add    bl, dh;
-	__asm        inc    ecx;
-	__asm        push   edx;
-	__asm        add    [ecx], dl;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    ch, dl;
-	__asm        inc    ecx;
-	__asm        push   edx;
-	__asm        add    [edx], al;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [eax], ah;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [esi], bh;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [esi], bh;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [esi], bh;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [esi], bh;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        add    [edi], ch;
-	__asm        inc    edx;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 388:
 	__asm        inc    dword ptr ds:[0x5B7384];
 // LINE 389:

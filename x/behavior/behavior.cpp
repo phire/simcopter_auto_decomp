@@ -659,13 +659,7 @@ short Behavior::GetBaseID(short treeclass) {
 	__asm        ja     near ptr 0x005607ED;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x5607DD];
-	__asm        cwde;
-	__asm        pop    es;
-	__asm        push   esi;
-	__asm        add    [ebx-0x51FFA9F9], ah;
-	__asm        pop    es;
-	__asm        push   esi;
-	__asm        (bad);
+// Switch pointers
 // LINE 205:
 	__asm        mov    ax, baseID;
 	__asm        jmp    near ptr 0x005607F6;
@@ -704,14 +698,7 @@ short Behavior::GetMaxID(short treeclass) {
 	__asm        ja     near ptr 0x0056086B;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x56085B];
-	__asm        push   ss;
-	__asm        or     [esi], dl;
-	__asm        and    [eax], ecx;
-	__asm        push   esi;
-	__asm        add    [eax+ecx], ch;
-	__asm        push   esi;
-	__asm        add    [edi], dh;
-	__asm        or     [esi], dl;
+// Switch pointers
 // LINE 224:
 	__asm        mov    ax, maxID;
 	__asm        jmp    near ptr 0x00560874;
@@ -800,15 +787,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        ja     near ptr 0x00560969;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x56098E];
-	__asm        cmp    [ecx], ecx;
-	__asm        push   esi;
-	__asm        add    *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&cl) + 1), al;
-	__asm        push   esi;
-	__asm        add    [ecx+9], dl;
-	__asm        push   esi;
-	__asm        add    *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&cl) + 1), bl;
-	__asm        push   esi;
-	__asm        (bad);
+// Switch pointers
 // LINE 258:
 	__asm        mov    eax, name;
 	__asm        push   eax;

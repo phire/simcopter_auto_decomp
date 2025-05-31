@@ -1337,18 +1337,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        ja     near ptr 0x005379C8;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    dword ptr [eax*4+0x537A0A];
-	__asm        fnsave [eax+0x53];
-	__asm        add    [edi+0x72], al;
-	__asm        push   ebx;
-	__asm        add    ah, al;
-	__asm        jb     short 0x00537A68;
-	__asm        add    al, dh;
-	__asm        jne    short 0x00537A6C;
-	__asm        add    dl, ah;
-	__asm        ja     short 0x00537A70;
-	__asm        add    [ecx+edi*2], cl;
-	__asm        push   ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 535:
 	__asm        jmp    near ptr 0x00537A27;
 }

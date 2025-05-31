@@ -5216,14 +5216,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 	__asm        ja     near ptr 0x00558217;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x55824C];
-	__asm        ret    0x557F;
-	__asm        add    cl, ch;
-	__asm        jg     short 0x005582A8;
-	__asm        add    [eax-0x80], dl;
-	__asm        push   ebp;
-	__asm        add    bh, dl;
-	__asm        adc    byte ptr [ebp], 0x7C;
-	__asm        (bad);
+// Switch pointers
 // LINE 1105:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558268;
@@ -5598,27 +5591,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 	__asm        ja     near ptr 0x00558681;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    dword ptr [eax*4+0x5586B6];
-	__asm        leave;
-	__asm        adc    byte ptr [ebp], 0x76;
-	__asm        adc    dword ptr [ebp], 0xFFFFFFBD;
-	__asm        adc    dword ptr [ebp], 0xFFFFFFAA;
-	__asm        adc    dword ptr [ebp], 0x3F;
-	__asm        adc    dword ptr [ebp], 0xFFFFFFCC;
-	__asm        test   [ebp], dl;
-	__asm        push   0xFFFFFF84;
-	__asm        push   ebp;
-	__asm        add    al, dl;
-	__asm        adc    dword ptr [ebp], 0xFFFFFFF1;
-	__asm        adc    dword ptr [ebp], 0x53;
-	__asm        test   [ebp], dl;
-	__asm        test   cs:[ebp], edx;
-	__asm        mov    esp, 0x3005585;
-	__asm        xchg   dl, [ebp];
-	__asm        jne    short 0x00558671;
-	__asm        push   ebp;
-	__asm        add    [edx-0x7A], cl;
-	__asm        push   ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1226:
 	__asm        cmp    result, 0;
 	__asm        je     near ptr 0x005587B9;
@@ -9273,12 +9246,7 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 	__asm        ja     near ptr 0x0055BA3B;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x55BA73];
-	__asm        sub    [edx-0x45D7FFAB], bh;
-	__asm        push   ebp;
-	__asm        add    [edx], al;
-	__asm        mov    edx, 0xBA150055;
-	__asm        push   ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1945:
 	__asm        jmp    near ptr 0x0055BB48;
 // LINE 1947:
@@ -9328,17 +9296,7 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates missup, long missioni
 	__asm        ja     near ptr 0x0055BAEB;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x55BB20];
-	__asm        fnstsw [ecx-0x460FFFAB];
-	__asm        push   ebp;
-	__asm        add    [eax-0x14FFAA46], cl;
-	__asm        mov    edx, 0xB9910055;
-	__asm        push   ebp;
-	__asm        add    [ecx+edi*4-0x454FFFAB], ah;
-	__asm        push   ebp;
-	__asm        add    [edi-0x35FFAA47], dh;
-	__asm        mov    ecx, 0xBAD80055;
-	__asm        push   ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1963:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -9661,19 +9619,7 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 	__asm        ja     near ptr 0x0055BED4;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x55BF09];
-	__asm        add    [ebp+edx*2+0x55BBD800], bh;
-	__asm        add    [eax], ch;
-	__asm        mov    esp, 0xBC8C0055;
-	__asm        push   ebp;
-	__asm        add    al, dl;
-	__asm        mov    esp, 0xBC500055;
-	__asm        push   ebp;
-	__asm        add    [edi*4-0x42A6FFAB], dl;
-	__asm        push   ebp;
-	__asm        add    [eax-0x61FFAA42], al;
-	__asm        mov    ebp, 0xBE0E0055;
-	__asm        push   ebp;
-	__asm        (bad);
+// Switch pointers
 // LINE 2080:
 	__asm        cmp    plhs, 0;
 	__asm        je     near ptr 0x0055BFA9;
@@ -9891,19 +9837,7 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 	__asm        ja     near ptr 0x0055C1D9;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x55C20E];
-	__asm        pop    esi;
-	__asm        rcl    byte ptr [ebp], 0xA0;
-	__asm        rcl    byte ptr [ebp], 0xD9;
-	__asm        rcl    dword ptr [ebp], 0xC1;
-	__asm        rcl    byte ptr [ebp], 9;
-	__asm        rcl    dword ptr [ebp], 0xD9;
-	__asm        rcl    dword ptr [ebp], 0xD9;
-	__asm        rcl    dword ptr [ebp], 0x2A;
-	__asm        rcl    dword ptr [ebp], 0x37;
-	__asm        rcl    dword ptr [ebp], 0x79;
-	__asm        rcl    dword ptr [ebp], 0x7F;
-	__asm        rcl    byte ptr [ebp], 0x58;
-	__asm        (bad);
+// Switch pointers
 // LINE 2158:
 	__asm        mov    ax, data;
 	__asm        jmp    near ptr 0x0055C25E;

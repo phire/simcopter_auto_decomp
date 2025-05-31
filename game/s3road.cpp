@@ -1376,26 +1376,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        ja     near ptr 0x00539890;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x539854];
-	__asm        int    3;
-	__asm        xchg   edi, eax;
-	__asm        push   ebx;
-	__asm        add    dl, ah;
-	__asm        xchg   edi, eax;
-	__asm        push   ebx;
-	__asm        add    al, bh;
-	__asm        xchg   edi, eax;
-	__asm        push   ebx;
-	__asm        add    [esi], cl;
-	__asm        cwde;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x7FA12B83], al;
-	__asm        add    [eax], al;
-	__asm        je     near ptr 0x005397ED;
-	__asm        cmp    dword ptr [ebp-0x2C], 0x805F;
-	__asm        je     near ptr 0x00539803;
-	__asm        cmp    dword ptr [ebp-0x2C], 0x8060;
-	__asm        je     near ptr 0x00539819;
-	__asm        jmp    near ptr 0x00539890;
+// Switch pointers
 // LINE 516:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    eax, 0xFFFF;
@@ -1451,23 +1432,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        ja     near ptr 0x005398F8;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    dword ptr [eax*4+0x539949];
-	__asm        mov    al, ds:[0xB6005398];
-	__asm        cwde;
-	__asm        push   ebx;
-	__asm        add    ah, cl;
-	__asm        cwde;
-	__asm        push   ebx;
-	__asm        add    dl, ah;
-	__asm        cwde;
-	__asm        push   ebx;
-	__asm        add    [ecx-0x7FA12F83], al;
-	__asm        add    [eax], al;
-	__asm        je     near ptr 0x005398C1;
-	__asm        cmp    dword ptr [ebp-0x30], 0x805F;
-	__asm        je     near ptr 0x005398D7;
-	__asm        cmp    dword ptr [ebp-0x30], 0x8060;
-	__asm        je     near ptr 0x005398ED;
-	__asm        jmp    near ptr 0x005398F8;
+// Switch pointers
 // LINE 529:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539BEE;
@@ -1528,14 +1493,8 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x539A7E];
 	__asm        jmp    dword ptr [ecx*4+0x539A6A];
-	__asm        fistp  dword ptr [ecx-0x660BFFAD];
-	__asm        push   ebx;
-	__asm        add    ds:[0x2600539A], cl;
-	__asm        call   far ptr 0x0053:0x9A3F0053;
-	__asm        add    [ecx], al;
-	__asm        add    al, 2;
-	__asm        add    al, 4;
-	__asm        add    al, 3;
+// Switch pointers
+// Switch table
 // LINE 547:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00539BEE;

@@ -1134,24 +1134,8 @@ void cYObject::Error(short errNum) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x5625E6];
 	__asm        jmp    dword ptr [ecx*4+0x5625D2];
-	__asm        sbb    ds:[0x25360056], ah;
-	__asm        push   esi;
-	__asm        add    [ebp+0x56], dl;
-	__asm        add    [edx+0x25], dh;
-	__asm        push   esi;
-	__asm        add    [eax+0x5625], dl;
-	__asm        add    al, 1;
-	__asm        add    al, [esp+eax];
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        add    al, 4;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 69:
 	__asm        jmp    near ptr 0x00562604;
 }

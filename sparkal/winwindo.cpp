@@ -1826,19 +1826,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 	__asm        ja     near ptr 0x00481AAF;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    dword ptr [eax*4+0x481A89];
-	__asm        prefetcht0 [eax];
-	__asm        retf;
-	__asm        sbb    [eax], cl;
-	__asm        scasd;
-	__asm        sbb    cl, [eax];
-	__asm        insd;
-	__asm        sbb    [eax], cl;
-	__asm        and    eax, 0x81004819;
-	__asm        jge    short 0x00481A30;
-	__asm        adc    [ebx], eax;
-	__asm        add    [eax], al;
-	__asm        je     near ptr 0x0048165B;
-	__asm        jmp    near ptr 0x00481AAF;
+// Switch pointers
 // LINE 705:
 	__asm        mov    eax, lParam;
 	__asm        push   eax;

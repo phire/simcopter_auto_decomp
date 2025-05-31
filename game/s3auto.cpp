@@ -768,15 +768,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        ja     near ptr 0x00501A4D;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    dword ptr [eax*4+0x501A6D];
-	__asm        xchg   ebp, eax;
-	__asm        pop    ss;
-	__asm        push   eax;
-	__asm        add    [ebx+0x18], al;
-	__asm        push   eax;
-	__asm        add    cl, dh;
-	__asm        sbb    [eax], dl;
-	__asm        lahf;
-	__asm        sbb    [eax], edx;
+// Switch pointers
 // LINE 240:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00501A84;
@@ -1800,19 +1792,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        ja     near ptr 0x00502806;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        jmp    dword ptr [eax*4+0x502837];
-	__asm        lds    esp, [ebx];
-	__asm        push   eax;
-	__asm        add    [esi], al;
-	__asm        sub    [eax], dl;
-	__asm        push   es;
-	__asm        sub    [eax], dl;
-	__asm        in     eax, dx;
-	__asm        push   eax;
-	__asm        add    dl, cl;
-	__asm        and    edx, [eax];
-	__asm        aam    0x25;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 949:
 	__asm        mov    ecx, this;
 	__asm        call   0x0050413E;
@@ -2143,15 +2123,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	__asm        ja     near ptr 0x00502C6D;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x502C5D];
-	__asm        adc    al, 0x2C;
-	__asm        push   eax;
-	__asm        add    [eax], bh;
-	__asm        sub    al, 0x50;
-	__asm        add    [eax], ah;
-	__asm        sub    al, 0x50;
-	__asm        add    [esp+ebp], ch;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 1107:
 	__asm        mov    eax, z;
 	__asm        push   eax;
@@ -2330,17 +2302,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        ja     near ptr 0x00502EA9;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x502EE6];
-	__asm        pusha;
-	__asm        sub    eax, 0x2D6C0050;
-	__asm        push   eax;
-	__asm        add    [eax+0x2D], bh;
-	__asm        push   eax;
-	__asm        add    [eax-0x53FFAFD3], ah;
-	__asm        sub    eax, 0x2DF90050;
-	__asm        push   eax;
-	__asm        add    [esi+0x2E], al;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 1193:
 	__asm        mov    eax, turn;
 	__asm        jmp    near ptr 0x00502F0A;
@@ -3016,12 +2978,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        ja     near ptr 0x005038D0;
 	__asm        mov    eax, [ebp-0x114];
 	__asm        jmp    dword ptr [eax*4+0x5038C0];
-	__asm        push   ecx;
-	__asm        cmp    [eax], dl;
-	__asm        cmp    gs:[eax], dl;
-	__asm        jns    short 0x00503902;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 1539:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLoc.x;
@@ -3305,13 +3262,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        ja     near ptr 0x00503D39;
 	__asm        mov    eax, [ebp-0x118];
 	__asm        jmp    dword ptr [eax*4+0x503D29];
-	__asm        mov    edx, 0xCE00503C;
-	__asm        cmp    al, 0x50;
-	__asm        add    dl, ah;
-	__asm        cmp    al, 0x50;
-	__asm        add    dh, dh;
-	__asm        cmp    al, 0x50;
-	__asm        (bad);
+// Switch pointers
 // LINE 1615:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLoc.x;
@@ -4457,19 +4408,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        ja     near ptr 0x00504C45;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x504C35];
-	__asm        int    3;
-	__asm        dec    ebx;
-	__asm        push   eax;
-	__asm        add    al, ah;
-	__asm        dec    ebx;
-	__asm        push   eax;
-	__asm        add    ah, dh;
-	__asm        dec    ebx;
-	__asm        push   eax;
-	__asm        add    [eax], cl;
-	__asm        dec    esp;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 2250:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4888,15 +4827,7 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 	__asm        ja     near ptr 0x0050522A;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    dword ptr [eax*4+0x50521A];
-	__asm        js     short 0x0050526C;
-	__asm        push   eax;
-	__asm        add    cl, bl;
-	__asm        push   eax;
-	__asm        push   eax;
-	__asm        add    [edx], bh;
-	__asm        push   ecx;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 2404:
 	__asm        jmp    near ptr 0x0050522F;
 }
@@ -5018,12 +4949,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        ja     near ptr 0x005053EF;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x5053DF];
-	__asm        and    [ebx+0x50], edx;
-	__asm        add    [ecx+0x53], cl;
-	__asm        push   eax;
-	__asm        add    [ecx+0x53], dh;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 2456:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];
@@ -6433,30 +6359,7 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 	__asm        ja     near ptr 0x00506540;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x506500];
-	__asm        sub    ah, [eax+edx*2];
-	__asm        das;
-	__asm        push   eax;
-	__asm        add    [eax+0x64], al;
-	__asm        push   eax;
-	__asm        add    [ecx+0x64], dl;
-	__asm        push   eax;
-	__asm        add    [edx+0x64], ah;
-	__asm        push   eax;
-	__asm        add    [ebx+0x64], dh;
-	__asm        push   eax;
-	__asm        add    [eax+0x64], bh;
-	__asm        push   eax;
-	__asm        add    [ebp+0x64], bh;
-	__asm        push   eax;
-	__asm        add    [esi-0x5CFFAF9C], bl;
-	__asm        push   eax;
-	__asm        add    [eax-0x52FFAF9C], ch;
-	__asm        push   eax;
-	__asm        add    [edx-0x48FFAF9C], dh;
-	__asm        push   eax;
-	__asm        add    [esp+0x64C10050], bh;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 3075:
 	__asm        jmp    near ptr 0x00506545;
 }
@@ -7691,33 +7594,8 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x507464];
 	__asm        jmp    dword ptr [ecx*4+0x507440];
-	__asm        in     al, 0x73;
-	__asm        push   eax;
-	__asm        add    [eax], al;
-	__asm        je     short 0x00507497;
-	__asm        add    dl, dh;
-	__asm        jae    short 0x0050749B;
-	__asm        add    [esi], cl;
-	__asm        je     short 0x0050749F;
-	__asm        add    ah, ah;
-	__asm        jae    short 0x005074A3;
-	__asm        add    [eax], al;
-	__asm        je     short 0x005074A7;
-	__asm        add    dl, dh;
-	__asm        jae    short 0x005074AB;
-	__asm        add    [esi], cl;
-	__asm        je     short 0x005074AF;
-	__asm        add    [esp+esi*2+0x50], bh;
-	__asm        add    [eax], al;
-	__asm        add    [eax], ecx;
-	__asm        add    cl, [eax];
-	__asm        or     [eax], cl;
-	__asm        add    ecx, [eax];
-	__asm        or     [eax], cl;
-	__asm        or     [eax], cl;
-	__asm        or     [eax], cl;
-	__asm        or     [eax*1+0x8080608], al;
-	__asm        or     [edi], al;
+// Switch pointers
+// Switch table
 // LINE 3706:
 	__asm        jmp    near ptr 0x00507481;
 }
@@ -8546,18 +8424,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        ja     near ptr 0x00508107;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        jmp    dword ptr [eax*4+0x5080D8];
-	__asm        pop    esi;
-	__asm        adc    byte ptr [eax], 0x42;
-	__asm        adc    byte ptr [eax], 0x7A;
-	__asm        adc    byte ptr [eax], 0x26;
-	__asm        adc    byte ptr [eax], 0x81;
-	__asm        jge    short 0x00508087;
-	__asm        push   0xFFFFFF80;
-	__asm        add    [eax], al;
-	__asm        jl     near ptr 0x00508107;
-	__asm        cmp    dword ptr [ebp-0x64], 0x806B;
-	__asm        jle    near ptr 0x00508096;
-	__asm        jmp    near ptr 0x00508107;
+// Switch pointers
 // LINE 3998:
 	__asm        add    nextFineLocation.y, 0x1F0000;
 // LINE 4002:
@@ -8865,20 +8732,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        ja     near ptr 0x005084E7;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    dword ptr [eax*4+0x5084C7];
-	__asm        lahf;
-	__asm        test   [eax], dl;
-	__asm        out    0x84, eax;
-	__asm        push   eax;
-	__asm        add    bh, ah;
-	__asm        test   [eax], dl;
-	__asm        out    0x84, eax;
-	__asm        push   eax;
-	__asm        add    [edi], ah;
-	__asm        test   [eax], dl;
-	__asm        arpl   [eax+edx*2+0x50848100], ax;
-	__asm        add    [ebp-0x7C], al;
-	__asm        push   eax;
-	__asm        (bad);
+// Switch pointers
 // LINE 4103:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -9458,27 +9312,8 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x508CA6];
 	__asm        jmp    dword ptr [ecx*4+0x508C7E];
-	__asm        jmp    short 0x00508C0A;
-	__asm        push   eax;
-	__asm        add    al, bh;
-	__asm        mov    dl, [eax];
-	__asm        add    eax, 0x1F00508B;
-	__asm        mov    edx, [eax];
-	__asm        adc    cl, [ebx-0x748CFFB0];
-	__asm        push   eax;
-	__asm        add    [ecx-0x75], cl;
-	__asm        push   eax;
-	__asm        add    [ebp+0x2F00508B], bl;
-	__asm        mov    [eax], ss;
-	__asm        cmp    al, 0x8C;
-	__asm        push   eax;
-	__asm        add    [eax], al;
-	__asm        add    [edx], eax;
-	__asm        add    eax, [eax*1+0x9090706];
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        or     [ecx], ecx;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4325:
 	__asm        jmp    near ptr 0x00508CBC;
 }
@@ -10928,196 +10763,8 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x509EE1];
 	__asm        jmp    dword ptr [ecx*4+0x509EC5];
-	__asm        ret;
-	__asm        popfd;
-	__asm        push   eax;
-	__asm        add    ds:[0x5100509E], cl;
-	__asm        sahf;
-	__asm        push   eax;
-	__asm        add    al, ch;
-	__asm        popfd;
-	__asm        push   eax;
-	__asm        add    [esi-0x62], dh;
-	__asm        push   eax;
-	__asm        add    [edi], ch;
-	__asm        sahf;
-	__asm        push   eax;
-	__asm        add    [eax+0x509E], bl;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        add    [edx], eax;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        push   es;
-	__asm        (bad);
+// Switch pointers
+// Switch table
 // LINE 4986:
 	__asm        mov    eax, face;
 	__asm        push   eax;

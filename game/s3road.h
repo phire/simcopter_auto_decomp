@@ -97,21 +97,8 @@ int32_t TimeOfTravelTable(unsigned short t) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x54150D];
 	__asm        jmp    dword ptr [ecx*4+0x5414FD];
-	__asm        stosd;
-	__asm        adc    edx, [eax+eax-0x4B];
-	__asm        adc    edx, [eax+eax-0x2D];
-	__asm        adc    edx, [eax+eax-0x23];
-	__asm        adc    edx, [eax+eax];
-	__asm        add    [eax], al;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ecx];
-	__asm        add    [ecx], eax;
-	__asm        add    [ebx], eax;
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    eax, [ebx];
-	__asm        add    al, [edx];
+// Switch pointers
+// Switch table
 // LINE 876:
 }
 

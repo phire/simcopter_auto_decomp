@@ -1375,23 +1375,7 @@ _L56471:
 	__asm        ja     near ptr 0x00461E25;
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        jmp    dword ptr [eax*4+0x461DF9];
-	__asm        cmpsb;
-	__asm        sbb    eax, 0x19300046;
-	__asm        inc    esi;
-	__asm        add    [ebp+0x1B], al;
-	__asm        inc    esi;
-	__asm        add    ch, ah;
-	__asm        sbb    eax, [esi];
-	__asm        test   al, 0x1B;
-	__asm        inc    esi;
-	__asm        add    [esi], bl;
-	__asm        sbb    al, 0x46;
-	__asm        add    al, dh;
-	__asm        sbb    eax, [esi];
-	__asm        (bad);
-	__asm        (bad);
-	__asm        and    eax, 0xF000461E;
-	__asm        sbb    eax, [esi];
+// Switch pointers
 // LINE 385:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C8], 0;
@@ -3405,16 +3389,7 @@ void  CGameApp::DestroyAllModes() {
 	__asm        ja     near ptr 0x00463D9E;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x463D7E];
-	__asm        in     eax, dx;
-	__asm        cmp    al, 0x46;
-	__asm        add    [esi+0x200463D], bl;
-	__asm        cmp    eax, 0x3D150046;
-	__asm        inc    esi;
-	__asm        add    [eax], ch;
-	__asm        cmp    eax, 0x3D3B0046;
-	__asm        inc    esi;
-	__asm        add    [esi+0x4E00463D], bl;
-	__asm        (bad);
+// Switch pointers
 // LINE 781:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x2C], eax;

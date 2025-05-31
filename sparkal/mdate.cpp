@@ -1892,15 +1892,7 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        ja     near ptr 0x004BD621;
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        jmp    dword ptr [eax*4+0x4BD60D];
-	__asm        int    3;
-	__asm        ror    dword ptr [ebx], cl;
-	__asm        inc    ebp;
-	__asm        aam    0x4B;
-	__asm        add    [ebp+0x1004BD4], cl;
-	__asm        aad    0x4B;
-	__asm        add    buf[37], dh;
-	__asm        dec    ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 658:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;

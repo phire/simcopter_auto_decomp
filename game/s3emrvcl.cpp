@@ -1449,12 +1449,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 	__asm        ja     near ptr 0x005422E4;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x5422D0];
-	__asm        push   ebx;
-	__asm        and    dl, [eax+eax+0x53];
-	__asm        and    dl, [eax+eax+0x58];
-	__asm        and    dl, [eax+eax+0x7D];
-	__asm        and    dl, [eax+eax-0x5E];
-	__asm        (bad);
+// Switch pointers
 // LINE 641:
 	__asm        jmp    near ptr 0x005422E9;
 }
@@ -1843,17 +1838,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        ja     near ptr 0x00542798;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x5427D7];
-	__asm        (bad);
-	__asm        push   esp;
-	__asm        add    [edi], ah;
-	__asm        push   esp;
-	__asm        add    [ecx+0x27], al;
-	__asm        push   esp;
-	__asm        add    [ebx+0x27], bh;
-	__asm        push   esp;
-	__asm        add    [esi+0x27], bl;
-	__asm        push   esp;
-	__asm        (bad);
+// Switch pointers
 // LINE 1396:
 	__asm        jmp    near ptr 0x005427F0;
 }

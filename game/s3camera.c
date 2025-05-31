@@ -1337,20 +1337,7 @@ void S3CameraChaseAdjust(int32_t camevent) {
 	__asm        ja     near ptr 0x004F9A49;
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    dword ptr [eax*4+0x4F9A31];
-	__asm        cdq;
-	__asm        dec    edi;
-	__asm        add    [esi-0x67], ch;
-	__asm        dec    edi;
-	__asm        add    [esi-0x61FFB067], al;
-	__asm        cdq;
-	__asm        dec    edi;
-	__asm        add    bh, dh;
-	__asm        cdq;
-	__asm        dec    edi;
-	__asm        add    bh, bl;
-	__asm        cdq;
-	__asm        dec    edi;
-	__asm        (bad);
+// Switch pointers
 // LINE 772:
 }
 

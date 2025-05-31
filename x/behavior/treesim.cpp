@@ -767,14 +767,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        ja     near ptr 0x0055D0F4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x55D137];
-	__asm        jmp    near ptr 0xA456270C;
-	__asm        rcl    byte ptr [ebp], 1;
-	__asm        outsd;
-	__asm        rcl    byte ptr [ebp], 1;
-	__asm        fcomp  st(0);
-	__asm        push   ebp;
-	__asm        add    cl, bl;
-	__asm        rcl    byte ptr [ebp], 1;
+// Switch pointers
 // LINE 173:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xC];

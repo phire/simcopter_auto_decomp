@@ -1826,24 +1826,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        ja     near ptr 0x0043F0FB;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        jmp    dword ptr [eax*4+0x43F17E];
-	__asm        sahf;
-	__asm        (bad);
-	__asm        add    [ecx], ah;
-	__asm        out    dx, al;
-	__asm        inc    ebx;
-	__asm        add    bl, bh;
-	__asm        (bad);
-	__asm        add    [ebx+0x780043EE], al;
-	__asm        out    dx, eax;
-	__asm        inc    ebx;
-	__asm        add    dl, bl;
-	__asm        out    dx, eax;
-	__asm        inc    ebx;
-	__asm        add    bl, bh;
-	__asm        (bad);
-	__asm        add    [eax+esi*8], bh;
-	__asm        inc    ebx;
-	__asm        (bad);
+// Switch pointers
 // LINE 264:
 	__asm        push   0xA4;
 	__asm        call   0x0056A600;

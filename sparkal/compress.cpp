@@ -1198,15 +1198,7 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	__asm        ja     near ptr 0x004AB1E8;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x4AB1D8];
-	__asm        cld;
-	__asm        mov    al, 0x4A;
-	__asm        add    [edx], ch;
-	__asm        mov    cl, 0x4A;
-	__asm        add    [edi-0x4F], bl;
-	__asm        dec    edx;
-	__asm        add    [ebp-0x4F], ch;
-	__asm        dec    edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 398:
 // Block end:
 	__asm        jmp    near ptr 0x004AB09A;
@@ -1523,13 +1515,7 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 	__asm        ja     near ptr 0x004AB504;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    dword ptr [eax*4+0x4AB4F4];
-	__asm        xchg   esp, eax;
-	__asm        mov    dl, 0x4A;
-	__asm        add    [esi], ch;
-	__asm        mov    bl, 0x4A;
-	__asm        add    [edi+0x25004AB3], bh;
-	__asm        mov    ah, 0x4A;
-	__asm        (bad);
+// Switch pointers
 // LINE 576:
 	__asm        movsx  eax, Width;
 	__asm        movsx  ecx, PixelCount;

@@ -3302,12 +3302,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        ja     near ptr 0x005269A2;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        jmp    dword ptr [eax*4+0x5269CA];
-	__asm        imul   byte ptr [eax+0x52];
-	__asm        add    [ecx], ah;
-	__asm        imul   edx, [edx], 0x52694C;
-	__asm        ja     short 0x00526A41;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 1333:
 	__asm        jmp    near ptr 0x005269EC;
 // LINE 1336:
@@ -3538,16 +3533,7 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 	__asm        ja     near ptr 0x00526C60;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    dword ptr [eax*4+0x526C4C];
-	__asm        fisubr dword ptr [ebx+0x52];
-	__asm        add    bh, dh;
-	__asm        imul   edx, [edx], 0xA;
-	__asm        insb;
-	__asm        push   edx;
-	__asm        add    [eax], ah;
-	__asm        insb;
-	__asm        push   edx;
-	__asm        add    dl, bl;
-	__asm        (bad);
+// Switch pointers
 // LINE 1445:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;

@@ -509,15 +509,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        ja     near ptr 0x0049A90A;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    dword ptr [eax*4+0x49A92A];
-	__asm        mov    [eax-0x575EFFB7], gs;
-	__asm        dec    ecx;
-	__asm        add    [esi-0x34FFB658], dh;
-	__asm        test   al, 0x49;
-	__asm        add    al, ah;
-	__asm        test   al, 0x49;
-	__asm        add    ch, dh;
-	__asm        test   al, 0x49;
-	__asm        (bad);
+// Switch pointers
 // LINE 263:
 	__asm        cmp    bUseCache, 0;
 	__asm        jne    near ptr 0x0049A98C;

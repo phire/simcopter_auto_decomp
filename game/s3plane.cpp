@@ -3096,12 +3096,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        ja     near ptr 0x0052D2ED;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    dword ptr [eax*4+0x52D2D9];
-	__asm        rcl    byte ptr [bp+si], cl;
-	__asm        test   dl, dl;
-	__asm        push   edx;
-	__asm        add    [edi-0x52FFAD2E], dl;
-	__asm        rcl    byte ptr [edx], cl;
-	__asm        rcl    byte ptr [bp+si], cl;
+// Switch pointers
 // LINE 2153:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
@@ -3615,38 +3610,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        ja     near ptr 0x0052D96B;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x52D92B];
-	__asm        xor    edx, edi;
-	__asm        push   edx;
-	__asm        add    [eax], bh;
-	__asm        xlatb;
-	__asm        push   edx;
-	__asm        add    ds:[0x420052D7], bh;
-	__asm        xlatb;
-	__asm        push   edx;
-	__asm        add    [eax+ebx*8], dh;
-	__asm        push   edx;
-	__asm        add    [ecx], bh;
-	__asm        fcom   dword ptr [edx];
-	__asm        fcom   dword ptr [edx];
-	__asm        inc    ebx;
-	__asm        fcom   dword ptr [edx];
-	__asm        in     eax, 0xD8;
-	__asm        push   edx;
-	__asm        add    dl, ch;
-	__asm        fcom   dword ptr [edx];
-	__asm        out    dx, eax;
-	__asm        fcom   dword ptr [edx];
-	__asm        hlt;
-	__asm        fcom   dword ptr [edx];
-	__asm        stc;
-	__asm        fcom   dword ptr [edx];
-	__asm        (bad);
-	__asm        push   edx;
-	__asm        add    [ebx], al;
-	__asm        fst    dword ptr [edx];
-	__asm        or     cl, bl;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 2698:
 	__asm        jmp    near ptr 0x0052D970;
 }

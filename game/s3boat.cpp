@@ -1598,14 +1598,8 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x528466];
 	__asm        jmp    dword ptr [ecx*4+0x528452];
-	__asm        add    al, [edx+edx*2+0x52840D00];
-	__asm        add    [eax], bl;
-	__asm        test   [edx], dl;
-	__asm        and    eax, [edx+edx*2+0x52846E00];
-	__asm        add    [eax], al;
-	__asm        add    [edx+eax], eax;
-	__asm        add    al, 4;
-	__asm        add    al, 3;
+// Switch pointers
+// Switch table
 // LINE 1196:
 	__asm        jmp    near ptr 0x00528473;
 }
@@ -2786,24 +2780,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 	__asm        ja     near ptr 0x0052938D;
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x5293C7];
-	__asm        dec    ecx;
-	__asm        xchg   edx, eax;
-	__asm        push   edx;
-	__asm        add    [esi-0x6E], dl;
-	__asm        push   edx;
-	__asm        add    [ebx-0x6E], ah;
-	__asm        push   edx;
-	__asm        add    [ebp-0x6E], bh;
-	__asm        push   edx;
-	__asm        add    [eax-0x6E], dh;
-	__asm        push   edx;
-	__asm        add    cl, dl;
-	__asm        xchg   edx, eax;
-	__asm        push   edx;
-	__asm        add    [edi-0x4FFAD6E], ah;
-	__asm        xchg   edx, eax;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 1765:
 	__asm        jmp    near ptr 0x005293EC;
 }
@@ -3548,14 +3525,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 	__asm        ja     near ptr 0x00529CB3;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    dword ptr [eax*4+0x529C9F];
-	__asm        sub    eax, 0x4A00529C;
-	__asm        pushfd;
-	__asm        push   edx;
-	__asm        add    [ebp-0x64], bl;
-	__asm        push   edx;
-	__asm        add    [ebx-0x64], dh;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 2284:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
@@ -3818,17 +3788,7 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 	__asm        ja     near ptr 0x0052A009;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        jmp    dword ptr [eax*4+0x529FF5];
-	__asm        jge    short 0x00529F96;
-	__asm        push   edx;
-	__asm        add    [edx-0x52FFAD61], bl;
-	__asm        lahf;
-	__asm        push   edx;
-	__asm        add    bl, al;
-	__asm        lahf;
-	__asm        push   edx;
-	__asm        add    [ebp-0x61], bh;
-	__asm        push   edx;
-	__asm        (bad);
+// Switch pointers
 // LINE 2442:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
