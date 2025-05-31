@@ -5063,16 +5063,16 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 // LINE 1064:
 	__asm        jmp    near ptr 0x00558260;
 // LINE 1067:
+// Block end:
 // Block start:
 	struct _DYOBJ_INST* obj;
 	int32_t y;
 	short delta_y;
-// Block end:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
-	__asm        mov    [ebp-0x20], eax;
+	__asm        mov    obj, eax;
 // LINE 1068:
-	__asm        cmp    dword ptr [ebp-0x20], 0;
+	__asm        cmp    obj, 0;
 	__asm        jne    near ptr 0x00558082;
 	__asm        push   0x8C085;
 	__asm        push   0x5BCCEC;
@@ -5081,26 +5081,26 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 	__asm        call   0x00554F30;
 	__asm        add    esp, 0x10;
 // LINE 1069:
-	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        call   0x00551BF7;
 	__asm        add    esp, 0xC;
-	__asm        mov    [ebp-0x1C], eax;
+	__asm        mov    y, eax;
 // LINE 1070:
-	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x1C];
-	__asm        sub    eax, [ebp-0x1C];
+	__asm        sub    eax, y;
 	__asm        sar    eax, 0x10;
-	__asm        mov    [ebp-0x18], ax;
+	__asm        mov    delta_y, ax;
 // LINE 1071:
-	__asm        movsx  eax, word ptr [ebp-0x18];
+	__asm        movsx  eax, delta_y;
 	__asm        cmp    eax, 5;
 	__asm        jge    near ptr 0x005580CB;
 // LINE 1072:
@@ -5430,21 +5430,21 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 // LINE 1169:
 	__asm        jmp    near ptr 0x005586F2;
 // LINE 1172:
+// Block end:
 // Block start:
 	class cYObject* obj;
-// Block end:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   6;
 	__asm        push   0xFFFFFFFE;
 	__asm        mov    ecx, this;
 	__asm        call   0x00556EC0;
-	__asm        mov    [ebp-0x2C], eax;
+	__asm        mov    obj, eax;
 // LINE 1173:
-	__asm        cmp    dword ptr [ebp-0x2C], 0;
+	__asm        cmp    obj, 0;
 	__asm        je     near ptr 0x005584F7;
 // LINE 1174:
-	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    eax, obj;
 	__asm        add    eax, 0x24;
 	__asm        mov    destobj, eax;
 // LINE 1175:

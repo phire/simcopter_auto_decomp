@@ -618,6 +618,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        mov    eax, name4;
 	__asm        jmp    near ptr 0x00566261;
 // LINE 232:
+// Block end:
 }
 
 // FUNCTION: COPTER_D 0x00566266

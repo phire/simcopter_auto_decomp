@@ -4049,13 +4049,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 345:
 	__asm        jmp    near ptr 0x005459BD;
 // LINE 348:
+// Block end:
 // Block start:
 	short count;
-// Block end:
-	__asm        mov    word ptr [ebp-0x20], 0;
+	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x005454B1;
-	__asm        inc    word ptr [ebp-0x20];
-	__asm        movsx  eax, word ptr [ebp-0x20];
+	__asm        inc    count;
+	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jge    near ptr 0x00545735;
 // LINE 349:
@@ -4240,13 +4240,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 // LINE 359:
 	__asm        jmp    near ptr 0x005459BD;
 // LINE 362:
+// Block end:
 // Block start:
 	short count;
-// Block end:
-	__asm        mov    word ptr [ebp-0x24], 0;
+	__asm        mov    count, 0;
 	__asm        jmp    near ptr 0x00545749;
-	__asm        inc    word ptr [ebp-0x24];
-	__asm        movsx  eax, word ptr [ebp-0x24];
+	__asm        inc    count;
+	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jge    near ptr 0x0054596D;
 // LINE 363:
@@ -9413,6 +9413,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0054A1CE;
 // LINE 1459:
+// Block end:
 }
 
 // FUNCTION: COPTER_D 0x0054a1d3
@@ -10550,10 +10551,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1734:
 	__asm        jmp    near ptr 0x0054B53B;
 // LINE 1737:
+// Block end:
 // Block start:
 	int32_t offsetz;
 	int32_t offsetx;
-// Block end:
 	__asm        mov    ret, 0;
 // LINE 1738:
 	__asm        movsx  eax, cellx;
@@ -10591,9 +10592,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        add    esp, 0x10;
 // LINE 1742:
 	__asm        push   2;
-	__asm        lea    eax, [ebp-0x60];
+	__asm        lea    eax, offsetz;
 	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x5C];
+	__asm        lea    eax, offsetx;
 	__asm        push   eax;
 	__asm        movsx  eax, cellx;
 	__asm        and    eax, 0xFF;
@@ -10608,9 +10609,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0054B1DB;
 // LINE 1743:
-	__asm        mov    eax, [ebp-0x60];
+	__asm        mov    eax, offsetz;
 	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x5C];
+	__asm        mov    eax, offsetx;
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
@@ -10632,11 +10633,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 // LINE 1747:
 	__asm        jmp    near ptr 0x0054B53B;
 // LINE 1750:
+// Block end:
 // Block start:
 	int32_t mycelly;
 	int32_t mycellx;
 	struct Point3d pos;
-// Block end:
 	__asm        mov    ret, 0;
 // LINE 1751:
 	__asm        cmp    loc, 0;
@@ -10654,19 +10655,19 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
-	__asm        mov    [ebp-0x70], eax;
+	__asm        mov    mycellx, eax;
 // LINE 1754:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, onTopOf;
 	__asm        sub    eax, [ecx+0x20];
 	__asm        sar    eax, 0x16;
-	__asm        mov    [ebp-0x74], eax;
+	__asm        mov    mycelly, eax;
 // LINE 1755:
 	__asm        movsx  eax, cellx;
-	__asm        cmp    eax, [ebp-0x70];
+	__asm        cmp    eax, mycellx;
 	__asm        jne    near ptr 0x0054B252;
 	__asm        movsx  eax, celly;
-	__asm        cmp    eax, [ebp-0x74];
+	__asm        cmp    eax, mycelly;
 	__asm        je     near ptr 0x0054B26E;
 	__asm        push   0x8C085;
 	__asm        push   0x5BABC8;
@@ -10675,7 +10676,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        call   0x00554F30;
 	__asm        add    esp, 0x10;
 // LINE 1758:
-	__asm        lea    eax, [ebp-0x6C];
+	__asm        lea    eax, pos.x;
 	__asm        push   eax;
 	__asm        mov    eax, onTopOf;
 	__asm        push   eax;
@@ -10707,7 +10708,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        mov    [ecx+0x89], al;
 	__asm        jmp    near ptr 0x0054B2E4;
 // LINE 1760:
-	__asm        lea    eax, [ebp-0x6C];
+	__asm        lea    eax, pos.x;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x3C;
 	__asm        mov    edx, [eax];

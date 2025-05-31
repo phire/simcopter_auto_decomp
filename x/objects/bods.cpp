@@ -846,9 +846,9 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // LINE 2158:
 	__asm        jmp    near ptr 0x00561605;
 // LINE 2162:
+// Block end:
 // Block start:
 	float smallPsi;
-// Block end:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x30];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -862,9 +862,9 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // LINE 2164:
 	__asm        fld    transinfo.info;
 	__asm        fadd   psiOff;
-	__asm        fstp   dword ptr [ebp-0x44];
+	__asm        fstp   smallPsi;
 // LINE 2165:
-	__asm        lea    eax, [ebp-0x44];
+	__asm        lea    eax, smallPsi;
 	__asm        push   eax;
 	__asm        call   0x00562BDB;
 	__asm        add    esp, 4;
@@ -874,7 +874,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        push   0x3FF00000;
 	__asm        push   0;
-	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    eax, smallPsi;
 	__asm        push   eax;
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x1C];

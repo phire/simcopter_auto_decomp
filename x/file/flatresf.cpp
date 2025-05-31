@@ -1875,17 +1875,17 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        add    esp, 4;
 	__asm        mov    oldHandState, al;
 // LINE 868:
+// Block end:
 // Block start:
 	unsigned char * block;
-// Block end:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
 	__asm        call   0x005549E0;
 	__asm        add    esp, 4;
-	__asm        mov    [ebp-0x18], eax;
+	__asm        mov    block, eax;
 // LINE 869:
-	__asm        cmp    dword ptr [ebp-0x18], 0;
+	__asm        cmp    block, 0;
 	__asm        jne    near ptr 0x00554101;
 	__asm        call   0x00554F06;
 	__asm        mov    err, eax;
@@ -1907,7 +1907,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 // LINE 872:
 	__asm        lea    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    eax, block;
 	__asm        push   eax;
 	__asm        mov    ecx, file;
 	__asm        call   0x0055C69C;

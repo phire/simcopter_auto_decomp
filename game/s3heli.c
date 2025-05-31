@@ -3154,6 +3154,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x0051EEE5;
 	__asm        add    esp, 0x20;
 // LINE 1425:
+// Block end:
 }
 
 // FUNCTION: COPTER_D 0x004f176d
