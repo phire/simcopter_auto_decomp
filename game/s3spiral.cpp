@@ -23,8 +23,7 @@ private:
 // Type: struct _GridCoordinates (forward reference);
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };

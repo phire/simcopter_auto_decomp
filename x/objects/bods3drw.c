@@ -13,8 +13,7 @@
 // Type: void;
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -31,8 +30,7 @@ public:
 // Type: float;
 
 // Type: struct BmpLineInfo;
-class BmpLineInfo{
-public:
+struct BmpLineInfo{
 	long width;
 	long index;
 	double xStride;
@@ -44,8 +42,7 @@ public:
 // Type: struct VRBmpHdr (forward reference);
 
 // Type: struct Point3D;
-class Point3D{
-public:
+struct Point3D{
 	double x;
 	double y;
 	double z;

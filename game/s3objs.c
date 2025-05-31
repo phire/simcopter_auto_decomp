@@ -9,8 +9,7 @@
 // Type: long;
 
 // Type: struct VRFaceInfo;
-class VRFaceInfo{
-public:
+struct VRFaceInfo{
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
@@ -24,8 +23,7 @@ public:
 // Type: struct VRBmpHdr (forward reference);
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;

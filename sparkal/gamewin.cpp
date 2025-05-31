@@ -43,8 +43,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -56,8 +55,7 @@ public:
 // Type: char *;
 
 // Type: struct tagWNDCLASSA;
-class tagWNDCLASSA{
-public:
+struct tagWNDCLASSA{
 	uint32_t style;
 	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
 	int32_t cbClsExtra;
@@ -73,8 +71,7 @@ public:
 // Type: void;
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -84,8 +81,7 @@ public:
 // Type: int32_t;
 
 // Type: struct GameWindow::MakePalette::__unnamed;
-class GameWindow::MakePalette::__unnamed{
-public:
+struct GameWindow::MakePalette::__unnamed{
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];
@@ -278,8 +274,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

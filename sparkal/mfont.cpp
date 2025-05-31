@@ -42,15 +42,13 @@ protected:
 // Type: long;
 
 // Type: struct tagSIZE;
-class tagSIZE{
-public:
+struct tagSIZE{
 	long cx;
 	long cy;
 };
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;

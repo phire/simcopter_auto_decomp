@@ -44,8 +44,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct joyinfo_tag;
-class joyinfo_tag{
-public:
+struct joyinfo_tag{
 	uint32_t wXpos;
 	uint32_t wYpos;
 	uint32_t wZpos;
@@ -59,8 +58,7 @@ public:
 // Type: int32_t *;
 
 // Type: struct joyinfoex_tag;
-class joyinfoex_tag{
-public:
+struct joyinfoex_tag{
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwXpos;

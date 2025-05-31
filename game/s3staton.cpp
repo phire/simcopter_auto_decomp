@@ -34,8 +34,7 @@ private:
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
@@ -61,8 +60,7 @@ private:
 };
 
 // Type: struct _StationHeapStruct;
-class _StationHeapStruct{
-public:
+struct _StationHeapStruct{
 	long cost;
 	int32_t stationID;
 };
@@ -127,16 +125,14 @@ public:
 };
 
 // Type: struct _VehicleHeapStruct;
-class _VehicleHeapStruct{
-public:
+struct _VehicleHeapStruct{
 	long cost;
 	class EmergencyVehicleClass* pVehicle;
 	struct _GridCoordinates loc;
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -153,8 +149,7 @@ public:
 // Type: enum EmergencyType;
 
 // Type: struct Goal;
-class Goal{
-public:
+struct Goal{
 	struct RGVertex* pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -169,8 +164,7 @@ public:
 };
 
 // Type: struct _RGIndex;
-class _RGIndex{
-public:
+struct _RGIndex{
 	unsigned char x;
 	unsigned char yindex;
 };

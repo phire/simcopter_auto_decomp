@@ -23,13 +23,11 @@ class _cArray{
 			kFileNameLength = 15,
 			kArrayNameLength = 15,
 		};
-	class _cArray::FileAndType{
-	public:
+	struct _cArray::FileAndType{
 		class ResFile* file;
 		unsigned long type;
 	};
-	class _cArray::Header{
-	public:
+	struct _cArray::Header{
 		short entrySize;
 		short xSize;
 		short ySize;
@@ -147,13 +145,11 @@ class _cArray{
 			kFileNameLength = 15,
 			kArrayNameLength = 15,
 		};
-	class _cArray::FileAndType{
-	public:
+	struct _cArray::FileAndType{
 		class ResFile* file;
 		unsigned long type;
 	};
-	class _cArray::Header{
-	public:
+	struct _cArray::Header{
 		short entrySize;
 		short xSize;
 		short ySize;
@@ -238,8 +234,7 @@ public:
 };
 
 // Type: struct _cArray::FileAndType;
-class _cArray::FileAndType{
-public:
+struct _cArray::FileAndType{
 	class ResFile* file;
 	unsigned long type;
 };

@@ -35,8 +35,7 @@ private:
 // Type: char *;
 
 // Type: struct debug_command (forward reference);
-class debug_command{
-public:
+struct debug_command{
 	class basic_string<char> command_string;
 	class basic_string<char> usage_string;
 	// vtable: 0
@@ -103,9 +102,8 @@ public:
 // Type: void;
 
 // Type: struct class_debugger<CDebugWindow,CDebugWindowhelp_text>;
-class class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
+struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
-public:
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
 	virtual void execute(char *);
@@ -146,8 +144,7 @@ public:
 // Type: unsigned short;
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -155,8 +152,7 @@ public:
 };
 
 // Type: struct tagPAINTSTRUCT;
-class tagPAINTSTRUCT{
-public:
+struct tagPAINTSTRUCT{
 	void * __ptr32 hdc;
 	int32_t fErase;
 	struct tagRECT rcPaint;
@@ -168,8 +164,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct tagTEXTMETRICA;
-class tagTEXTMETRICA{
-public:
+struct tagTEXTMETRICA{
 	long tmHeight;
 	long tmAscent;
 	long tmDescent;
@@ -359,9 +354,8 @@ public:
 };
 
 // Type: struct class_debugger<CDebugWindow,CDebugWindowhelp_text> (forward reference);
-class class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
+struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
-public:
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
 	virtual void execute(char *);
@@ -672,12 +666,11 @@ public:
 };
 
 // Type: struct random_access_iterator<basic_string<char>,int>;
-class random_access_iterator<basic_string<char>,int>{
+struct random_access_iterator<basic_string<char>,int>{
 };
 
 // Type: struct debug_command;
-class debug_command{
-public:
+struct debug_command{
 	class basic_string<char> command_string;
 	class basic_string<char> usage_string;
 	// vtable: 0

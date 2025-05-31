@@ -151,8 +151,7 @@ protected:
 // Type: struct Point3d (forward reference);
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;

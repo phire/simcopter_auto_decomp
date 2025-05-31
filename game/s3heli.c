@@ -13,8 +13,7 @@
 // Type: long;
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -31,8 +30,7 @@ public:
 // Type: struct _CELL_INFO (forward reference);
 
 // Type: struct VRview;
-class VRview{
-public:
+struct VRview{
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
@@ -41,8 +39,7 @@ public:
 // Type: int32_t[4][4];
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -53,8 +50,7 @@ public:
 // Type: struct Point3d (forward reference);
 
 // Type: struct VRFaceInfo;
-class VRFaceInfo{
-public:
+struct VRFaceInfo{
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;

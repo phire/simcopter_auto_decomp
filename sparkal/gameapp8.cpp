@@ -11,8 +11,7 @@
 // Type: char[260];
 
 // Type: struct tagUserCityInfo;
-class tagUserCityInfo{
-public:
+struct tagUserCityInfo{
 	struct tagCitySettings citySettings;
 	long bUserHasSavedGame;
 	struct tagUserPersonalInfo userPersonalInfo;
@@ -25,8 +24,7 @@ public:
 // Type: char[256];
 
 // Type: struct tagCitySettings;
-class tagCitySettings{
-public:
+struct tagCitySettings{
 	long lDifficulty;
 	long lMissionFrequencyFire;
 	long lMissionFrequencyCrime;
@@ -39,8 +37,7 @@ public:
 };
 
 // Type: struct tagCurrentCareerCityInfo;
-class tagCurrentCareerCityInfo{
-public:
+struct tagCurrentCareerCityInfo{
 	long lCurrentCities[3];
 	long lCurrentCityIndex;
 	long bUserHasSavedGame;
@@ -123,8 +120,7 @@ public:
 // Type: class list<DirectoryEntry> (forward reference);
 class list<DirectoryEntry>{
 	using void_pointer = void * __ptr32;
-	class list<DirectoryEntry>::list_node{
-	public:
+	struct list<DirectoryEntry>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class DirectoryEntry data;
@@ -143,8 +139,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<DirectoryEntry>::list_node_buffer{
-	public:
+	struct list<DirectoryEntry>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<DirectoryEntry>::list_node* buffer;
 	};

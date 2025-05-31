@@ -5,8 +5,7 @@
 // Type: void;
 
 // Type: struct GamePreferences (forward reference);
-class GamePreferences{
-public:
+struct GamePreferences{
 	long lQuadPixelType;
 	long bShowingPalette;
 	long bShowingDebugWindow;
@@ -19,8 +18,7 @@ public:
 };
 
 // Type: struct RenderPreferences (forward reference);
-class RenderPreferences{
-public:
+struct RenderPreferences{
 	long bShowObjectTexture;
 	long bShowGroundTexture;
 	long bShowSky;
@@ -144,8 +142,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -193,8 +190,7 @@ protected:
 };
 
 // Type: struct _MEMORYSTATUS;
-class _MEMORYSTATUS{
-public:
+struct _MEMORYSTATUS{
 	unsigned long dwLength;
 	unsigned long dwMemoryLoad;
 	unsigned long dwTotalPhys;
@@ -208,8 +204,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct Shortcut;
-class Shortcut{
-public:
+struct Shortcut{
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -225,8 +220,7 @@ public:
 // Type: class list<Shortcut> (forward reference);
 class list<Shortcut>{
 	using void_pointer = void * __ptr32;
-	class list<Shortcut>::list_node{
-	public:
+	struct list<Shortcut>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct Shortcut data;
@@ -245,8 +239,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<Shortcut>::list_node_buffer{
-	public:
+	struct list<Shortcut>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<Shortcut>::list_node* buffer;
 	};
@@ -387,8 +380,7 @@ public:
 // Type: class list<CopterGameMode> (forward reference);
 class list<CopterGameMode>{
 	using void_pointer = void * __ptr32;
-	class list<CopterGameMode>::list_node{
-	public:
+	struct list<CopterGameMode>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class CopterGameMode data;
@@ -407,8 +399,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<CopterGameMode>::list_node_buffer{
-	public:
+	struct list<CopterGameMode>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<CopterGameMode>::list_node* buffer;
 	};
@@ -529,11 +520,11 @@ public:
 };
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-class bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
-class bidirectional_iterator<CopterGameMode,int>{
+struct bidirectional_iterator<CopterGameMode,int>{
 };
 
 

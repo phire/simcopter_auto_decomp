@@ -528,8 +528,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

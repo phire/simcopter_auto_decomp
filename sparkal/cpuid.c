@@ -11,8 +11,7 @@
 // Type: unsigned long;
 
 // Type: struct TIME_STAMP;
-class TIME_STAMP{
-public:
+struct TIME_STAMP{
 	unsigned long High;
 	unsigned long Low;
 };

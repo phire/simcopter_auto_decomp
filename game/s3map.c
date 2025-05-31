@@ -29,8 +29,7 @@
 // Type: struct _GridCoordinates (forward reference);
 
 // Type: struct Point2d;
-class Point2d{
-public:
+struct Point2d{
 	int32_t x;
 	int32_t y;
 };

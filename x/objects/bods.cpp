@@ -49,8 +49,7 @@ public:
 // Type: float;
 
 // Type: struct TransformedInfo;
-class TransformedInfo{
-public:
+struct TransformedInfo{
 	struct Point startPoint;
 	struct Point endPoint;
 	short startDepth;
@@ -61,15 +60,13 @@ public:
 };
 
 // Type: struct Point;
-class Point{
-public:
+struct Point{
 	short v;
 	short h;
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -86,8 +83,7 @@ public:
 // Type: struct TransformedInfo (forward reference);
 
 // Type: struct DXZY;
-class DXZY{
-public:
+struct DXZY{
 	float x;
 	float z;
 	float y;
@@ -140,8 +136,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	class cBBase::BBaseHeader{
-	public:
+	struct cBBase::BBaseHeader{
 		unsigned long bodyType;
 		long _win8pad[15];
 	};

@@ -32,8 +32,7 @@ public:
 };
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -80,8 +79,7 @@ protected:
 // Type: struct tagPALETTEENTRY[256];
 
 // Type: struct SparkalColor;
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -106,8 +104,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct ClearWindowsSystemPalette::__unnamed;
-class ClearWindowsSystemPalette::__unnamed{
-public:
+struct ClearWindowsSystemPalette::__unnamed{
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];

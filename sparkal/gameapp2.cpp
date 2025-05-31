@@ -15,8 +15,7 @@
 // Type: char[260];
 
 // Type: struct SoundPreferences;
-class SoundPreferences{
-public:
+struct SoundPreferences{
 	long lMasterVolume;
 	long lDispatchVolume;
 	long lSoundEffectsVolume;
@@ -323,8 +322,7 @@ private:
 // Type: class list<CopterGameMode> (forward reference);
 class list<CopterGameMode>{
 	using void_pointer = void * __ptr32;
-	class list<CopterGameMode>::list_node{
-	public:
+	struct list<CopterGameMode>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class CopterGameMode data;
@@ -343,8 +341,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<CopterGameMode>::list_node_buffer{
-	public:
+	struct list<CopterGameMode>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<CopterGameMode>::list_node* buffer;
 	};
@@ -510,7 +507,7 @@ public:
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
-class bidirectional_iterator<CopterGameMode,int>{
+struct bidirectional_iterator<CopterGameMode,int>{
 };
 
 

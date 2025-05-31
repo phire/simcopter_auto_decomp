@@ -39,8 +39,7 @@
 // Type: struct Rect (forward reference);
 
 // Type: struct Point;
-class Point{
-public:
+struct Point{
 	short v;
 	short h;
 };

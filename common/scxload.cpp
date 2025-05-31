@@ -84,8 +84,7 @@ private:
 };
 
 // Type: struct ReadSCXFile::__unnamed;
-class ReadSCXFile::__unnamed{
-public:
+struct ReadSCXFile::__unnamed{
 	unsigned char type;
 	unsigned char owner;
 	unsigned char stat0;
@@ -160,8 +159,7 @@ public:
 };
 
 // Type: struct tSCXSaveFileHdr;
-class tSCXSaveFileHdr{
-public:
+struct tSCXSaveFileHdr{
 	char type[4];
 	char product[32];
 	long version;
@@ -289,8 +287,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct tGZXBitstreamNode (forward reference);
-class tGZXBitstreamNode{
-public:
+struct tGZXBitstreamNode{
 	unsigned char * data;
 	unsigned long size;
 	void tGZXBitstreamNode(unsigned char *, unsigned long);

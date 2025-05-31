@@ -47,8 +47,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;

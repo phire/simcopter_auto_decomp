@@ -5,8 +5,7 @@
 // Type: struct Point (forward reference);
 
 // Type: struct tagPOINT;
-class tagPOINT{
-public:
+struct tagPOINT{
 	long x;
 	long y;
 };
@@ -18,8 +17,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct tagSIZE;
-class tagSIZE{
-public:
+struct tagSIZE{
 	long cx;
 	long cy;
 };
@@ -31,8 +29,7 @@ public:
 // Type: struct Rect (forward reference);
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -44,8 +41,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct GrafPtr;
-class GrafPtr{
-public:
+struct GrafPtr{
 	void * __ptr32 window;
 	void * __ptr32 dc;
 };
@@ -57,8 +53,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct Point;
-class Point{
-public:
+struct Point{
 	short v;
 	short h;
 };

@@ -217,24 +217,21 @@ public:
 // Type: int32_t;
 
 // Type: struct VRview;
-class VRview{
-public:
+struct VRview{
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct _MISSION_PARMS;
-class _MISSION_PARMS{
-public:
+struct _MISSION_PARMS{
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -247,8 +244,7 @@ public:
 // Type: int32_t[4][4];
 
 // Type: struct Point2d;
-class Point2d{
-public:
+struct Point2d{
 	int32_t x;
 	int32_t y;
 };
@@ -268,8 +264,7 @@ public:
 // Type: enum DirectionTypes;
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;

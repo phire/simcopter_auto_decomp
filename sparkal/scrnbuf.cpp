@@ -42,8 +42,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -59,8 +58,7 @@ public:
 // Type: long;
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -74,14 +72,12 @@ public:
 // Type: enum tagModeType;
 
 // Type: struct _DDSCAPS;
-class _DDSCAPS{
-public:
+struct _DDSCAPS{
 	unsigned long dwCaps;
 };
 
 // Type: struct _DDBLTFX;
-class _DDBLTFX{
-public:
+struct _DDBLTFX{
 	unsigned long dwSize;
 	unsigned long dwDDFX;
 	unsigned long dwROP;
@@ -119,8 +115,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct SparkalRect (forward reference);
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -130,8 +125,7 @@ public:
 };
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;

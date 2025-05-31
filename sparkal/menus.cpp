@@ -474,8 +474,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -485,8 +484,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);

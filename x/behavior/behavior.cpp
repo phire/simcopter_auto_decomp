@@ -28,15 +28,13 @@ protected:
 			kSemiGlobalTrees = 3,
 			kMaxTreeClass = 3,
 		};
-	class Behavior::NodeParameter{
-	public:
+	struct Behavior::NodeParameter{
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	class Behavior::Node{
-	public:
+	struct Behavior::Node{
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -48,8 +46,7 @@ protected:
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
 		};
-	class Behavior::Tree{
-	public:
+	struct Behavior::Tree{
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};
@@ -123,8 +120,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct Behavior::Node;
-class Behavior::Node{
-public:
+struct Behavior::Node{
 	short treeID;
 	short primCode;
 	char trueTrans;

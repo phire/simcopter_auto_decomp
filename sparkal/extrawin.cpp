@@ -480,8 +480,7 @@ protected:
 // Type: char[64];
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -893,8 +892,7 @@ protected:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -904,8 +902,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -1033,7 +1030,7 @@ protected:
 };
 
 // Type: struct bidirectional_iterator<basic_string<char>,int>;
-class bidirectional_iterator<basic_string<char>,int>{
+struct bidirectional_iterator<basic_string<char>,int>{
 };
 
 // Type: class ListBoxWindow;

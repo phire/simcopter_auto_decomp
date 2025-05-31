@@ -77,8 +77,7 @@ public:
 // Type: char[260];
 
 // Type: struct VRAppInitThreadStruct;
-class VRAppInitThreadStruct{
-public:
+struct VRAppInitThreadStruct{
 	long nReturnValue;
 	long nCurrentPercentageComplete;
 };
@@ -213,8 +212,7 @@ public:
 // Type: void;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

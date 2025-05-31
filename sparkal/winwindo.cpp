@@ -64,8 +64,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -77,8 +76,7 @@ public:
 // Type: char *;
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -86,8 +84,7 @@ public:
 };
 
 // Type: struct tagWNDCLASSA;
-class tagWNDCLASSA{
-public:
+struct tagWNDCLASSA{
 	uint32_t style;
 	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
 	int32_t cbClsExtra;
@@ -101,8 +98,7 @@ public:
 };
 
 // Type: struct CSparkalWindow::__ctor::__unnamed;
-class CSparkalWindow::__ctor::__unnamed{
-public:
+struct CSparkalWindow::__ctor::__unnamed{
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];
@@ -119,8 +115,7 @@ public:
 // Type: long;
 
 // Type: struct tagSIZE;
-class tagSIZE{
-public:
+struct tagSIZE{
 	long cx;
 	long cy;
 };
@@ -132,15 +127,13 @@ public:
 // Type: unsigned char[256];
 
 // Type: struct CheckIdentityPalette::__unnamed;
-class CheckIdentityPalette::__unnamed{
-public:
+struct CheckIdentityPalette::__unnamed{
 	struct tagBITMAPINFOHEADER Header;
 	struct tagRGBQUAD Colors[256];
 };
 
 // Type: struct tagPAINTSTRUCT;
-class tagPAINTSTRUCT{
-public:
+struct tagPAINTSTRUCT{
 	void * __ptr32 hdc;
 	int32_t fErase;
 	struct tagRECT rcPaint;

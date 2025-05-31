@@ -170,8 +170,7 @@ public:
 // Type: class list<PreferenceItem> (forward reference);
 class list<PreferenceItem>{
 	using void_pointer = void * __ptr32;
-	class list<PreferenceItem>::list_node{
-	public:
+	struct list<PreferenceItem>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class PreferenceItem data;
@@ -190,8 +189,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<PreferenceItem>::list_node_buffer{
-	public:
+	struct list<PreferenceItem>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<PreferenceItem>::list_node* buffer;
 	};
@@ -336,11 +334,11 @@ public:
 };
 
 // Type: struct bidirectional_iterator<PreferenceItem,int>;
-class bidirectional_iterator<PreferenceItem,int>{
+struct bidirectional_iterator<PreferenceItem,int>{
 };
 
 // Type: struct bidirectional_iterator<NotificationItem,int>;
-class bidirectional_iterator<NotificationItem,int>{
+struct bidirectional_iterator<NotificationItem,int>{
 };
 
 

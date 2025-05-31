@@ -13,8 +13,7 @@
 // Type: void;
 
 // Type: struct Plane;
-class Plane{
-public:
+struct Plane{
 	int32_t A;
 	int32_t B;
 	int32_t C;
@@ -22,8 +21,7 @@ public:
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;

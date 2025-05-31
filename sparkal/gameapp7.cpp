@@ -43,8 +43,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct _MEMORYSTATUS;
-class _MEMORYSTATUS{
-public:
+struct _MEMORYSTATUS{
 	unsigned long dwLength;
 	unsigned long dwMemoryLoad;
 	unsigned long dwTotalPhys;
@@ -266,8 +265,7 @@ public:
 };
 
 // Type: struct SparkalColor;
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -411,8 +409,7 @@ protected:
 // Type: char[128];
 
 // Type: struct UserMenuWindowDescription;
-class UserMenuWindowDescription{
-public:
+struct UserMenuWindowDescription{
 	class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
 	class MRect rectPosition;
@@ -578,8 +575,7 @@ protected:
 };
 
 // Type: struct RadioPreferences;
-class RadioPreferences{
-public:
+struct RadioPreferences{
 	long lVolume;
 	int32_t bPreferToBeOn;
 	long lCurrentStation;
@@ -590,8 +586,7 @@ public:
 };
 
 // Type: struct SoundPreferences;
-class SoundPreferences{
-public:
+struct SoundPreferences{
 	long lMasterVolume;
 	long lDispatchVolume;
 	long lSoundEffectsVolume;

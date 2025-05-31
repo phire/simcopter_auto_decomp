@@ -42,8 +42,7 @@ private:
 // Type: char *;
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -64,16 +63,14 @@ public:
 // Type: unsigned short;
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };

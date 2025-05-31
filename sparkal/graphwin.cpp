@@ -5,8 +5,7 @@
 // Type: void;
 
 // Type: struct GraphicWindowColorConstants (forward reference);
-class GraphicWindowColorConstants{
-public:
+struct GraphicWindowColorConstants{
 	int32_t nPaletteIndexBlack;
 	int32_t nPaletteIndexDarkGray;
 	int32_t nPaletteIndexLightGray;
@@ -345,8 +344,7 @@ public:
 // Type: class CBackBuffer (forward reference);
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -374,8 +372,7 @@ protected:
 // Type: class list<GraphicWindow *> (forward reference);
 class list<GraphicWindow *>{
 	using void_pointer = void * __ptr32;
-	class list<GraphicWindow *>::list_node{
-	public:
+	struct list<GraphicWindow *>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class GraphicWindow* data;
@@ -394,8 +391,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<GraphicWindow *>::list_node_buffer{
-	public:
+	struct list<GraphicWindow *>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<GraphicWindow *>::list_node* buffer;
 	};
@@ -558,12 +554,11 @@ public:
 };
 
 // Type: struct bidirectional_iterator<GraphicWindow *,int>;
-class bidirectional_iterator<GraphicWindow *,int>{
+struct bidirectional_iterator<GraphicWindow *,int>{
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

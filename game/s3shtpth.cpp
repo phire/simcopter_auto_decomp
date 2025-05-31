@@ -18,8 +18,7 @@ private:
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
@@ -27,15 +26,13 @@ public:
 // Type: int32_t;
 
 // Type: struct _RGIndex;
-class _RGIndex{
-public:
+struct _RGIndex{
 	unsigned char x;
 	unsigned char yindex;
 };
 
 // Type: struct _FringeHeapNode;
-class _FringeHeapNode{
-public:
+struct _FringeHeapNode{
 	unsigned char xCurr;
 	unsigned char yindexCurr;
 	unsigned char edgeIndexPrev;

@@ -22,8 +22,7 @@ public:
 // Type: unsigned long *;
 
 // Type: struct tagPOINT;
-class tagPOINT{
-public:
+struct tagPOINT{
 	long x;
 	long y;
 };

@@ -15,8 +15,7 @@
 // Type: void * __ptr32;
 
 // Type: struct Chunk;
-class Chunk{
-public:
+struct Chunk{
 	int32_t Id;
 	int32_t Size;
 };

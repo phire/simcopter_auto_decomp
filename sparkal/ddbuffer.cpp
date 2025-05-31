@@ -88,8 +88,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct tagBITMAPINFOHEADER;
-class tagBITMAPINFOHEADER{
-public:
+struct tagBITMAPINFOHEADER{
 	unsigned long biSize;
 	long biWidth;
 	long biHeight;
@@ -106,8 +105,7 @@ public:
 // Type: long;
 
 // Type: struct tagBITMAPFILEHEADER;
-class tagBITMAPFILEHEADER{
-public:
+struct tagBITMAPFILEHEADER{
 	unsigned short bfType;
 	unsigned long bfSize;
 	unsigned short bfReserved1;
@@ -186,8 +184,7 @@ private:
 };
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -234,8 +231,7 @@ protected:
 };
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -243,9 +239,8 @@ public:
 };
 
 // Type: struct IDirectDrawSurface (forward reference);
-class IDirectDrawSurface : public IUnknown
+struct IDirectDrawSurface : public IUnknown
 {
-public:
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
 	// calltype: NearStd
@@ -426,8 +421,7 @@ public:
 };
 
 // Type: struct tagPOINT;
-class tagPOINT{
-public:
+struct tagPOINT{
 	long x;
 	long y;
 };
@@ -435,8 +429,7 @@ public:
 // Type: class CSparkalWindow (forward reference);
 
 // Type: struct _DDBLTFX;
-class _DDBLTFX{
-public:
+struct _DDBLTFX{
 	unsigned long dwSize;
 	unsigned long dwDDFX;
 	unsigned long dwROP;
@@ -572,8 +565,7 @@ public:
 };
 
 // Type: struct SparkalPoint (forward reference);
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -581,8 +573,7 @@ public:
 };
 
 // Type: struct SparkalRect (forward reference);
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -592,8 +583,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -603,8 +593,7 @@ public:
 };
 
 // Type: struct _DDCOLORKEY;
-class _DDCOLORKEY{
-public:
+struct _DDCOLORKEY{
 	unsigned long dwColorSpaceLowValue;
 	unsigned long dwColorSpaceHighValue;
 };
@@ -626,8 +615,7 @@ public:
 };
 
 // Type: struct IUnknown;
-class IUnknown{
-public:
+struct IUnknown{
 	// vtable: 0
 	// calltype: NearStd
 	intro long QueryInterface(const struct _GUID&, void * __ptr32*);

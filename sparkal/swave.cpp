@@ -13,15 +13,13 @@
 // Type: unsigned short;
 
 // Type: struct pcmwaveformat_tag;
-class pcmwaveformat_tag{
-public:
+struct pcmwaveformat_tag{
 	struct waveformat_tag wf;
 	unsigned short wBitsPerSample;
 };
 
 // Type: struct _MMCKINFO;
-class _MMCKINFO{
-public:
+struct _MMCKINFO{
 	unsigned long ckid;
 	unsigned long cksize;
 	unsigned long fccType;
@@ -38,8 +36,7 @@ public:
 // Type: uint32_t *;
 
 // Type: struct _MMIOINFO;
-class _MMIOINFO{
-public:
+struct _MMIOINFO{
 	unsigned long dwFlags;
 	unsigned long fccIOProc;
 	long (*pIOProc)(char *, uint32_t, long, long);

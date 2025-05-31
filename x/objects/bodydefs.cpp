@@ -11,8 +11,7 @@
 // Type: void;
 
 // Type: struct DXZY;
-class DXZY{
-public:
+struct DXZY{
 	float x;
 	float z;
 	float y;
@@ -20,8 +19,7 @@ public:
 };
 
 // Type: struct TinyXZY;
-class TinyXZY{
-public:
+struct TinyXZY{
 	char x;
 	char y;
 	char z;
@@ -124,8 +122,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	class cBBase::BBaseHeader{
-	public:
+	struct cBBase::BBaseHeader{
 		unsigned long bodyType;
 		long _win8pad[15];
 	};
@@ -148,8 +145,7 @@ class PtrList<cBBase>{
 		void Reset();
 		class cBBase* First();
 	};
-	class PtrList<cBBase>::PtrNode{
-	public:
+	struct PtrList<cBBase>::PtrNode{
 		class cBBase* data;
 		struct PtrList<cBBase>::PtrNode* next;
 	};
@@ -198,8 +194,7 @@ class PtrList<cCopterAnim>{
 		void Reset();
 		class cCopterAnim* First();
 	};
-	class PtrList<cCopterAnim>::PtrNode{
-	public:
+	struct PtrList<cCopterAnim>::PtrNode{
 		class cCopterAnim* data;
 		struct PtrList<cCopterAnim>::PtrNode* next;
 	};
@@ -271,8 +266,7 @@ class PtrList<cCopterBody>{
 		void Reset();
 		class cCopterBody* First();
 	};
-	class PtrList<cCopterBody>::PtrNode{
-	public:
+	struct PtrList<cCopterBody>::PtrNode{
 		class cCopterBody* data;
 		struct PtrList<cCopterBody>::PtrNode* next;
 	};
@@ -371,8 +365,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	class cBBase::BBaseHeader{
-	public:
+	struct cBBase::BBaseHeader{
 		unsigned long bodyType;
 		long _win8pad[15];
 	};
@@ -395,8 +388,7 @@ class PtrList<cCopterBody>{
 		void Reset();
 		class cCopterBody* First();
 	};
-	class PtrList<cCopterBody>::PtrNode{
-	public:
+	struct PtrList<cCopterBody>::PtrNode{
 		class cCopterBody* data;
 		struct PtrList<cCopterBody>::PtrNode* next;
 	};

@@ -78,8 +78,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	class cBBase::BBaseHeader{
-	public:
+	struct cBBase::BBaseHeader{
 		unsigned long bodyType;
 		long _win8pad[15];
 	};

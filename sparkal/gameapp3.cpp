@@ -95,8 +95,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -106,7 +105,7 @@ public:
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
-class bidirectional_iterator<CopterGameMode,int>{
+struct bidirectional_iterator<CopterGameMode,int>{
 };
 
 

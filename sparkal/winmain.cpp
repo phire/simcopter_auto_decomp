@@ -9,8 +9,7 @@
 // Type: int32_t;
 
 // Type: struct tagMSG;
-class tagMSG{
-public:
+struct tagMSG{
 	void * __ptr32 hwnd;
 	uint32_t message;
 	uint32_t wParam;

@@ -186,8 +186,7 @@ public:
 };
 
 // Type: struct SparkalColor;
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -197,8 +196,7 @@ public:
 };
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -439,12 +437,11 @@ public:
 };
 
 // Type: struct bidirectional_iterator<tagLogBase *,int>;
-class bidirectional_iterator<tagLogBase *,int>{
+struct bidirectional_iterator<tagLogBase *,int>{
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

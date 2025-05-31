@@ -7,8 +7,7 @@
 // Type: int32_t;
 
 // Type: struct BMPFileHdr;
-class BMPFileHdr{
-public:
+struct BMPFileHdr{
 	int32_t MaxBmpFileSize;
 	int32_t MinBmpFileSize;
 	int32_t BmpCount;

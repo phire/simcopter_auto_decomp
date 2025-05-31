@@ -83,8 +83,7 @@ private:
 // Type: long;
 
 // Type: struct _OFSTRUCT;
-class _OFSTRUCT{
-public:
+struct _OFSTRUCT{
 	unsigned char cBytes;
 	unsigned char fFixedDisk;
 	unsigned short nErrCode;

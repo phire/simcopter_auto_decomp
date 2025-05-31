@@ -301,8 +301,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct _MMCKINFO;
-class _MMCKINFO{
-public:
+struct _MMCKINFO{
 	unsigned long ckid;
 	unsigned long cksize;
 	unsigned long fccType;
@@ -311,8 +310,7 @@ public:
 };
 
 // Type: struct _DSBUFFERDESC;
-class _DSBUFFERDESC{
-public:
+struct _DSBUFFERDESC{
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
@@ -323,9 +321,8 @@ public:
 // Type: struct _DSBUFFERDESC (forward reference);
 
 // Type: struct IDirectSoundBuffer (forward reference);
-class IDirectSoundBuffer : public IUnknown
+struct IDirectSoundBuffer : public IUnknown
 {
-public:
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
 	// calltype: NearStd
@@ -389,8 +386,7 @@ public:
 };
 
 // Type: struct _OFSTRUCT;
-class _OFSTRUCT{
-public:
+struct _OFSTRUCT{
 	unsigned char cBytes;
 	unsigned char fFixedDisk;
 	unsigned short nErrCode;
@@ -402,8 +398,7 @@ public:
 // Type: void (long);
 
 // Type: struct IUnknown;
-class IUnknown{
-public:
+struct IUnknown{
 	// vtable: 0
 	// calltype: NearStd
 	intro long QueryInterface(const struct _GUID&, void * __ptr32*);

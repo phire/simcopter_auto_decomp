@@ -11,8 +11,7 @@
 // Type: float;
 
 // Type: struct tagCitySettings;
-class tagCitySettings{
-public:
+struct tagCitySettings{
 	long lDifficulty;
 	long lMissionFrequencyFire;
 	long lMissionFrequencyCrime;

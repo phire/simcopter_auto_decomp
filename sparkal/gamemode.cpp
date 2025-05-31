@@ -44,8 +44,7 @@ public:
 // Type: char[260];
 
 // Type: struct UserMenuWindowDescription;
-class UserMenuWindowDescription{
-public:
+struct UserMenuWindowDescription{
 	class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
 	class MRect rectPosition;
@@ -326,8 +325,7 @@ public:
 };
 
 // Type: struct Shortcut;
-class Shortcut{
-public:
+struct Shortcut{
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -407,7 +405,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-class bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: class GameModeCoreData;
@@ -425,8 +423,7 @@ public:
 // Type: class GraphicWindow (forward reference);
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

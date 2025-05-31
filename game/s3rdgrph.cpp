@@ -51,8 +51,7 @@ private:
 // Type: enum DirectionTypes;
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
@@ -60,8 +59,7 @@ public:
 // Type: unsigned short;
 
 // Type: struct Goal;
-class Goal{
-public:
+struct Goal{
 	struct RGVertex* pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;

@@ -33,8 +33,7 @@ protected:
 // Type: struct HotSpotResourceRecord (forward reference);
 
 // Type: struct SparkalRect (forward reference);
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -114,8 +113,7 @@ public:
 // Type: class list<HotSpot> (forward reference);
 class list<HotSpot>{
 	using void_pointer = void * __ptr32;
-	class list<HotSpot>::list_node{
-	public:
+	struct list<HotSpot>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class HotSpot data;
@@ -134,8 +132,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<HotSpot>::list_node_buffer{
-	public:
+	struct list<HotSpot>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<HotSpot>::list_node* buffer;
 	};
@@ -290,8 +287,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -301,8 +297,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);

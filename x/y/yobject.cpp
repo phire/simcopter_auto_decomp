@@ -19,8 +19,7 @@ class cYObject : public TreeSim, public YObjLang
 			kNumTemp = 8,
 			kNumPointers = 4,
 		};
-	class cYObject::ObjDefHeader{
-	public:
+	struct cYObject::ObjDefHeader{
 		long version;
 		short stackSize;
 		short baseGraphic;
@@ -153,8 +152,7 @@ public:
 			kSearchRoof = 2,
 			kSearchAnywhereAtAll = 3,
 		};
-	class cYObject::LocationInfo{
-	public:
+	struct cYObject::LocationInfo{
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
 	};
@@ -187,22 +185,19 @@ public:
 	void UpdateMission(enum cYObject::MissionUpdates, long);
 	void ResetTree();
 	void ResetTree(short);
-	class cYObject::MoveInfo{
-	public:
+	struct cYObject::MoveInfo{
 		enum cYObject::LocationType* locType;
 		char * roadDir;
 		struct _DYOBJ_INST* dyBlock;
 		struct _STOBJ_INST* stBlock;
 	};
-	class cYObject::_ControlInput{
-	public:
+	struct cYObject::_ControlInput{
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
-	class cYObject::_ControlInput{
-	public:
+	struct cYObject::_ControlInput{
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
@@ -678,8 +673,7 @@ public:
 // Type: struct Point3d (forward reference);
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -696,8 +690,7 @@ public:
 // Type: double;
 
 // Type: struct cYObject::MoveInfo;
-class cYObject::MoveInfo{
-public:
+struct cYObject::MoveInfo{
 	enum cYObject::LocationType* locType;
 	char * roadDir;
 	struct _DYOBJ_INST* dyBlock;
@@ -737,8 +730,7 @@ public:
 // Type: struct _LZ_INFO (forward reference);
 
 // Type: struct Rect;
-class Rect{
-public:
+struct Rect{
 	short top;
 	short left;
 	short bottom;
@@ -746,8 +738,7 @@ public:
 };
 
 // Type: struct _SYSTEMTIME;
-class _SYSTEMTIME{
-public:
+struct _SYSTEMTIME{
 	unsigned short wYear;
 	unsigned short wMonth;
 	unsigned short wDayOfWeek;
@@ -763,8 +754,7 @@ public:
 // Type: char *;
 
 // Type: struct _MISSION_PARMS;
-class _MISSION_PARMS{
-public:
+struct _MISSION_PARMS{
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -855,8 +845,7 @@ protected:
 };
 
 // Type: struct tagPassengerInfo;
-class tagPassengerInfo{
-public:
+struct tagPassengerInfo{
 	long lPassengerFace;
 	long lPassengerExpression;
 	long lPassengerHealth;
@@ -869,8 +858,7 @@ public:
 // Type: enum cYObject::MoveErrorCode;
 
 // Type: struct Point3D;
-class Point3D{
-public:
+struct Point3D{
 	double x;
 	double y;
 	double z;
@@ -904,15 +892,13 @@ protected:
 			kSemiGlobalTrees = 3,
 			kMaxTreeClass = 3,
 		};
-	class Behavior::NodeParameter{
-	public:
+	struct Behavior::NodeParameter{
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	class Behavior::Node{
-	public:
+	struct Behavior::Node{
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -924,8 +910,7 @@ protected:
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
 		};
-	class Behavior::Tree{
-	public:
+	struct Behavior::Tree{
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};
@@ -965,8 +950,7 @@ public:
 };
 
 // Type: struct VRFaceInfo;
-class VRFaceInfo{
-public:
+struct VRFaceInfo{
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
@@ -982,8 +966,7 @@ public:
 // Type: float;
 
 // Type: struct BodyDebugInfo;
-class BodyDebugInfo{
-public:
+struct BodyDebugInfo{
 	long screenx;
 	long screeny;
 	char text[20];
@@ -1116,8 +1099,7 @@ class PtrList<StdResLoader>{
 		void Reset();
 		class StdResLoader* First();
 	};
-	class PtrList<StdResLoader>::PtrNode{
-	public:
+	struct PtrList<StdResLoader>::PtrNode{
 		class StdResLoader* data;
 		struct PtrList<StdResLoader>::PtrNode* next;
 	};
@@ -1243,89 +1225,71 @@ public:
 			kTreeTableValue = 12,
 			kNumOwners = 13,
 		};
-	class YObjLang::OwnerDataParam{
-	public:
+	struct YObjLang::OwnerDataParam{
 		short owner1;
 		short data1;
 		short owner2;
 		short data2;
 	};
-	class YObjLang::TurnToFireParam{
-	public:
+	struct YObjLang::TurnToFireParam{
 		short xdistloc;
 		short ydistloc;
 	};
-	class YObjLang::GetOutOfRoadParam{
-	public:
+	struct YObjLang::GetOutOfRoadParam{
 		short decTemp;
 	};
-	class YObjLang::SetDirectionParam{
-	public:
+	struct YObjLang::SetDirectionParam{
 		short dirTemp;
 	};
-	class YObjLang::CheckForSpotParam{
-	public:
+	struct YObjLang::CheckForSpotParam{
 		short brightnessTemp;
 		short dirToHeliTemp;
 	};
-	class YObjLang::GetSurroundingRiotValParam{
-	public:
+	struct YObjLang::GetSurroundingRiotValParam{
 		short distTemp;
 		short dirToConcTemp;
 		short riotValTemp;
 		short numPeopleCountedTemp;
 	};
-	class YObjLang::IncrementRiotValParam{
-	public:
+	struct YObjLang::IncrementRiotValParam{
 		short riotValLiteral;
 	};
-	class YObjLang::IsThisScurkIDParam{
-	public:
+	struct YObjLang::IsThisScurkIDParam{
 		short scurkIDLiteral;
 	};
-	class YObjLang::IsThisLocTypeParam{
-	public:
+	struct YObjLang::IsThisLocTypeParam{
 		short locTypeLiteral;
 	};
-	class YObjLang::UpdateMyMissionParam{
-	public:
+	struct YObjLang::UpdateMyMissionParam{
 		short updateLiteral;
 	};
-	class YObjLang::CheckForTrueParam{
-	public:
+	struct YObjLang::CheckForTrueParam{
 		short whatLiteral;
 	};
-	class YObjLang::CompareMyLocWithParam{
-	public:
+	struct YObjLang::CompareMyLocWithParam{
 		short withWhatLiteral;
 		short distData;
 		short distOwner;
 	};
-	class YObjLang::WalkAndGrabParam{
-	public:
+	struct YObjLang::WalkAndGrabParam{
 		short decTemp;
 		short dynAnimBoolean;
 	};
-	class YObjLang::SearchForDynParam{
-	public:
+	struct YObjLang::SearchForDynParam{
 		short searchdynobjtypetemp;
 		short onlyonmasterboolean;
 		short numcellstospiral;
 	};
-	class YObjLang::IdleParam{
-	public:
+	struct YObjLang::IdleParam{
 		short decTemp;
 	};
-	class YObjLang::SetAnimParam{
-	public:
+	struct YObjLang::SetAnimParam{
 		unsigned long animname;
 	};
-	class YObjLang::SetBodyParam{
-	public:
+	struct YObjLang::SetBodyParam{
 		unsigned long bodyname;
 	};
-	class YObjLang::WalkRunParam{
-	public:
+	struct YObjLang::WalkRunParam{
 		char decTemp;
 		char onlyNeutralBoolean;
 		char moveFailTemp;
@@ -1334,34 +1298,29 @@ public:
 		char dynAnimBoolean;
 		char speedTemp;
 	};
-	class YObjLang::RandomParam{
-	public:
+	struct YObjLang::RandomParam{
 		short destTemp;
 		short rangeData;
 		short rangeOwner;
 	};
-	class YObjLang::RoadDirParam{
-	public:
+	struct YObjLang::RoadDirParam{
 		short dirTemp;
 		short distAheadData;
 		short distAheadOwner;
 	};
-	class YObjLang::DirDistFirstParam{
-	public:
+	struct YObjLang::DirDistFirstParam{
 		short dirToTemp;
 		short distToTemp;
 		short whatData;
 		short whatOwner;
 	};
-	class YObjLang::DirDistPersonParam{
-	public:
+	struct YObjLang::DirDistPersonParam{
 		short dirToTemp;
 		short distToTemp;
 		short whoData;
 		short whoOwner;
 	};
-	class YObjLang::AttrParam{
-	public:
+	struct YObjLang::AttrParam{
 		short lhsData;
 		short rhsData;
 		LfBitfield @ 0x5d5b4:
@@ -1407,8 +1366,7 @@ public:
 			kClearFlag = 10,
 			kNumOps = 11,
 		};
-	class YObjLang::MiscParam{
-	public:
+	struct YObjLang::MiscParam{
 		short m1;
 		short m2;
 		short m3;
@@ -1544,8 +1502,7 @@ public:
 };
 
 // Type: struct TreeSim::StackElem (forward reference);
-class TreeSim::StackElem{
-public:
+struct TreeSim::StackElem{
 	short treeID;
 	short nodeNum;
 	short objectID;
@@ -1566,8 +1523,7 @@ class TreeSim{
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
-	class TreeSim::StackElem{
-	public:
+	struct TreeSim::StackElem{
 		short treeID;
 		short nodeNum;
 		short objectID;
@@ -1719,89 +1675,71 @@ public:
 			kTreeTableValue = 12,
 			kNumOwners = 13,
 		};
-	class YObjLang::OwnerDataParam{
-	public:
+	struct YObjLang::OwnerDataParam{
 		short owner1;
 		short data1;
 		short owner2;
 		short data2;
 	};
-	class YObjLang::TurnToFireParam{
-	public:
+	struct YObjLang::TurnToFireParam{
 		short xdistloc;
 		short ydistloc;
 	};
-	class YObjLang::GetOutOfRoadParam{
-	public:
+	struct YObjLang::GetOutOfRoadParam{
 		short decTemp;
 	};
-	class YObjLang::SetDirectionParam{
-	public:
+	struct YObjLang::SetDirectionParam{
 		short dirTemp;
 	};
-	class YObjLang::CheckForSpotParam{
-	public:
+	struct YObjLang::CheckForSpotParam{
 		short brightnessTemp;
 		short dirToHeliTemp;
 	};
-	class YObjLang::GetSurroundingRiotValParam{
-	public:
+	struct YObjLang::GetSurroundingRiotValParam{
 		short distTemp;
 		short dirToConcTemp;
 		short riotValTemp;
 		short numPeopleCountedTemp;
 	};
-	class YObjLang::IncrementRiotValParam{
-	public:
+	struct YObjLang::IncrementRiotValParam{
 		short riotValLiteral;
 	};
-	class YObjLang::IsThisScurkIDParam{
-	public:
+	struct YObjLang::IsThisScurkIDParam{
 		short scurkIDLiteral;
 	};
-	class YObjLang::IsThisLocTypeParam{
-	public:
+	struct YObjLang::IsThisLocTypeParam{
 		short locTypeLiteral;
 	};
-	class YObjLang::UpdateMyMissionParam{
-	public:
+	struct YObjLang::UpdateMyMissionParam{
 		short updateLiteral;
 	};
-	class YObjLang::CheckForTrueParam{
-	public:
+	struct YObjLang::CheckForTrueParam{
 		short whatLiteral;
 	};
-	class YObjLang::CompareMyLocWithParam{
-	public:
+	struct YObjLang::CompareMyLocWithParam{
 		short withWhatLiteral;
 		short distData;
 		short distOwner;
 	};
-	class YObjLang::WalkAndGrabParam{
-	public:
+	struct YObjLang::WalkAndGrabParam{
 		short decTemp;
 		short dynAnimBoolean;
 	};
-	class YObjLang::SearchForDynParam{
-	public:
+	struct YObjLang::SearchForDynParam{
 		short searchdynobjtypetemp;
 		short onlyonmasterboolean;
 		short numcellstospiral;
 	};
-	class YObjLang::IdleParam{
-	public:
+	struct YObjLang::IdleParam{
 		short decTemp;
 	};
-	class YObjLang::SetAnimParam{
-	public:
+	struct YObjLang::SetAnimParam{
 		unsigned long animname;
 	};
-	class YObjLang::SetBodyParam{
-	public:
+	struct YObjLang::SetBodyParam{
 		unsigned long bodyname;
 	};
-	class YObjLang::WalkRunParam{
-	public:
+	struct YObjLang::WalkRunParam{
 		char decTemp;
 		char onlyNeutralBoolean;
 		char moveFailTemp;
@@ -1810,34 +1748,29 @@ public:
 		char dynAnimBoolean;
 		char speedTemp;
 	};
-	class YObjLang::RandomParam{
-	public:
+	struct YObjLang::RandomParam{
 		short destTemp;
 		short rangeData;
 		short rangeOwner;
 	};
-	class YObjLang::RoadDirParam{
-	public:
+	struct YObjLang::RoadDirParam{
 		short dirTemp;
 		short distAheadData;
 		short distAheadOwner;
 	};
-	class YObjLang::DirDistFirstParam{
-	public:
+	struct YObjLang::DirDistFirstParam{
 		short dirToTemp;
 		short distToTemp;
 		short whatData;
 		short whatOwner;
 	};
-	class YObjLang::DirDistPersonParam{
-	public:
+	struct YObjLang::DirDistPersonParam{
 		short dirToTemp;
 		short distToTemp;
 		short whoData;
 		short whoOwner;
 	};
-	class YObjLang::AttrParam{
-	public:
+	struct YObjLang::AttrParam{
 		short lhsData;
 		short rhsData;
 		LfBitfield @ 0x5d5b4:
@@ -1883,8 +1816,7 @@ public:
 			kClearFlag = 10,
 			kNumOps = 11,
 		};
-	class YObjLang::MiscParam{
-	public:
+	struct YObjLang::MiscParam{
 		short m1;
 		short m2;
 		short m3;
@@ -2013,8 +1945,7 @@ class cYObject : public TreeSim, public YObjLang
 			kNumTemp = 8,
 			kNumPointers = 4,
 		};
-	class cYObject::ObjDefHeader{
-	public:
+	struct cYObject::ObjDefHeader{
 		long version;
 		short stackSize;
 		short baseGraphic;
@@ -2135,8 +2066,7 @@ public:
 			kSearchAnywhereGround = 1,
 			kSearchRoof = 2,
 		};
-	class cYObject::LocationInfo{
-	public:
+	struct cYObject::LocationInfo{
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
 	};
@@ -2166,22 +2096,19 @@ public:
 	void UpdateMission(enum cYObject::MissionUpdates, long);
 	void ResetTree();
 	void ResetTree(short);
-	class cYObject::MoveInfo{
-	public:
+	struct cYObject::MoveInfo{
 		enum cYObject::LocationType* locType;
 		char * roadDir;
 		struct _DYOBJ_INST* dyBlock;
 		struct _STOBJ_INST* stBlock;
 	};
-	class cYObject::_ControlInput{
-	public:
+	struct cYObject::_ControlInput{
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
-	class cYObject::_ControlInput{
-	public:
+	struct cYObject::_ControlInput{
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;

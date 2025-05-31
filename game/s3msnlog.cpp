@@ -179,8 +179,7 @@ public:
 };
 
 // Type: struct tagLogBase;
-class tagLogBase{
-public:
+struct tagLogBase{
 	unsigned long nType;
 	unsigned long nTime;
 	unsigned long nMissionID;
@@ -324,8 +323,7 @@ public:
 // Type: class list<tagLogBase *> (forward reference);
 class list<tagLogBase *>{
 	using void_pointer = void * __ptr32;
-	class list<tagLogBase *>::list_node{
-	public:
+	struct list<tagLogBase *>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct tagLogBase* data;
@@ -344,8 +342,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<tagLogBase *>::list_node_buffer{
-	public:
+	struct list<tagLogBase *>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<tagLogBase *>::list_node* buffer;
 	};
@@ -642,7 +639,7 @@ private:
 // Type: class MTime (forward reference);
 
 // Type: struct bidirectional_iterator<tagLogBase *,int>;
-class bidirectional_iterator<tagLogBase *,int>{
+struct bidirectional_iterator<tagLogBase *,int>{
 };
 
 

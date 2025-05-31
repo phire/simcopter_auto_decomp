@@ -268,8 +268,7 @@ public:
 // Type: char[260];
 
 // Type: struct TypefaceTestStruct;
-class TypefaceTestStruct{
-public:
+struct TypefaceTestStruct{
 	char * szLanguageTypefaceName;
 	long bExists;
 };

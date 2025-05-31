@@ -5,8 +5,7 @@
 // Type: float;
 
 // Type: struct DXZY;
-class DXZY{
-public:
+struct DXZY{
 	float x;
 	float z;
 	float y;
@@ -30,8 +29,7 @@ public:
 // Type: struct Polar (forward reference);
 
 // Type: struct Polar;
-class Polar{
-public:
+struct Polar{
 	float phi;
 	float psi;
 	float tau;
@@ -49,15 +47,13 @@ public:
 // Type: struct Point (forward reference);
 
 // Type: struct Point;
-class Point{
-public:
+struct Point{
 	short v;
 	short h;
 };
 
 // Type: struct Rect;
-class Rect{
-public:
+struct Rect{
 	short top;
 	short left;
 	short bottom;

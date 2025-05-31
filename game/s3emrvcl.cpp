@@ -68,8 +68,7 @@ public:
 // Type: void;
 
 // Type: struct Goal;
-class Goal{
-public:
+struct Goal{
 	struct RGVertex* pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -84,8 +83,7 @@ public:
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
@@ -95,8 +93,7 @@ public:
 // Type: enum EmergencyLevel;
 
 // Type: struct _RGIndex;
-class _RGIndex{
-public:
+struct _RGIndex{
 	unsigned char x;
 	unsigned char yindex;
 };
@@ -106,8 +103,7 @@ public:
 // Type: unsigned char;
 
 // Type: struct VRview;
-class VRview{
-public:
+struct VRview{
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
@@ -124,8 +120,7 @@ public:
 // Type: struct RGVertex (forward reference);
 
 // Type: struct VRFaceInfo;
-class VRFaceInfo{
-public:
+struct VRFaceInfo{
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
@@ -137,8 +132,7 @@ public:
 };
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;

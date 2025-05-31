@@ -47,8 +47,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -58,8 +57,7 @@ public:
 };
 
 // Type: struct SparkalRect (forward reference);
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

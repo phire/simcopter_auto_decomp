@@ -64,8 +64,7 @@ private:
 // Type: void;
 
 // Type: struct _MISSION_PARMS;
-class _MISSION_PARMS{
-public:
+struct _MISSION_PARMS{
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -74,15 +73,13 @@ public:
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;

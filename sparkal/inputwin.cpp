@@ -452,8 +452,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct KeyboardWindowMessage;
-class KeyboardWindowMessage{
-public:
+struct KeyboardWindowMessage{
 	long lKey;
 	long lCursorButton;
 };
@@ -623,8 +622,7 @@ protected:
 // Type: enum UserInputWindow::KeyUsageType;
 
 // Type: struct Shortcut;
-class Shortcut{
-public:
+struct Shortcut{
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -672,8 +670,7 @@ public:
 // Type: long[16];
 
 // Type: struct KeyColors;
-class KeyColors{
-public:
+struct KeyColors{
 	long lKey;
 	long lColorIndex;
 };
@@ -714,8 +711,7 @@ public:
 // Type: class list<Shortcut> (forward reference);
 class list<Shortcut>{
 	using void_pointer = void * __ptr32;
-	class list<Shortcut>::list_node{
-	public:
+	struct list<Shortcut>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct Shortcut data;
@@ -734,8 +730,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<Shortcut>::list_node_buffer{
-	public:
+	struct list<Shortcut>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<Shortcut>::list_node* buffer;
 	};
@@ -1079,8 +1074,7 @@ public:
 // Type: class list<KeyColors> (forward reference);
 class list<KeyColors>{
 	using void_pointer = void * __ptr32;
-	class list<KeyColors>::list_node{
-	public:
+	struct list<KeyColors>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct KeyColors data;
@@ -1099,8 +1093,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<KeyColors>::list_node_buffer{
-	public:
+	struct list<KeyColors>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<KeyColors>::list_node* buffer;
 	};
@@ -1223,8 +1216,7 @@ public:
 // Type: class list<HotSpot> (forward reference);
 class list<HotSpot>{
 	using void_pointer = void * __ptr32;
-	class list<HotSpot>::list_node{
-	public:
+	struct list<HotSpot>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class HotSpot data;
@@ -1243,8 +1235,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<HotSpot>::list_node_buffer{
-	public:
+	struct list<HotSpot>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<HotSpot>::list_node* buffer;
 	};
@@ -1385,8 +1376,7 @@ public:
 // Type: class list<StringIDAssociation> (forward reference);
 class list<StringIDAssociation>{
 	using void_pointer = void * __ptr32;
-	class list<StringIDAssociation>::list_node{
-	public:
+	struct list<StringIDAssociation>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct StringIDAssociation data;
@@ -1405,8 +1395,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<StringIDAssociation>::list_node_buffer{
-	public:
+	struct list<StringIDAssociation>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<StringIDAssociation>::list_node* buffer;
 	};
@@ -1507,8 +1496,7 @@ public:
 };
 
 // Type: struct StringIDAssociation (forward reference);
-class StringIDAssociation{
-public:
+struct StringIDAssociation{
 	class basic_string<char> sName;
 	long lID;
 	void StringIDAssociation(class basic_string<char>&, long);
@@ -1546,8 +1534,7 @@ class rb_tree<long,long,ident<long,long>,less<long>>{
 			black = 1,
 		};
 	using void_pointer = void * __ptr32;
-	class rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node{
-	public:
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node{
 		enum rb_tree<long,long,ident<long,long>,less<long>>::color_type color_field;
 		void * __ptr32 parent_link;
 		void * __ptr32 left_link;
@@ -1568,8 +1555,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{
-	public:
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{
 		void * __ptr32 next_buffer;
 		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* buffer;
 	};
@@ -1755,12 +1741,11 @@ public:
 // Type: struct pair<rb_tree<long,long,ident<long,long>,less<long>>::iterator,int> (forward reference);
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-class bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -1770,8 +1755,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -1779,15 +1763,15 @@ public:
 };
 
 // Type: struct bidirectional_iterator<long,int>;
-class bidirectional_iterator<long,int>{
+struct bidirectional_iterator<long,int>{
 };
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
-class bidirectional_iterator<HotSpot,int>{
+struct bidirectional_iterator<HotSpot,int>{
 };
 
 // Type: struct bidirectional_iterator<StringIDAssociation,int>;
-class bidirectional_iterator<StringIDAssociation,int>{
+struct bidirectional_iterator<StringIDAssociation,int>{
 };
 
 // Type: class ios;
@@ -1924,7 +1908,7 @@ private:
 };
 
 // Type: struct bidirectional_iterator<KeyColors,int>;
-class bidirectional_iterator<KeyColors,int>{
+struct bidirectional_iterator<KeyColors,int>{
 };
 
 

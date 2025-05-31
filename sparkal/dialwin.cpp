@@ -270,8 +270,7 @@ protected:
 };
 
 // Type: struct CommandSystem (forward reference);
-class CommandSystem{
-public:
+struct CommandSystem{
 	struct Command keyboardCommands[100];
 	class CharList keyboardCommandList;
 	class list<Shortcut> commandShortcuts;
@@ -600,8 +599,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -611,8 +609,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);

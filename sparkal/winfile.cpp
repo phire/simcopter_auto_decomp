@@ -223,8 +223,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct tagOFNA;
-class tagOFNA{
-public:
+struct tagOFNA{
 	unsigned long lStructSize;
 	void * __ptr32 hwndOwner;
 	void * __ptr32 hInstance;

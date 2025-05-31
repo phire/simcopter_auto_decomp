@@ -13,8 +13,7 @@
 // Type: char *;
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -31,8 +30,7 @@ public:
 // Type: struct _CELL_INFO (forward reference);
 
 // Type: struct _MISSION_PARMS;
-class _MISSION_PARMS{
-public:
+struct _MISSION_PARMS{
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -43,8 +41,7 @@ public:
 // Type: struct _STOBJ_INST (forward reference);
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -59,8 +56,7 @@ public:
 // Type: struct _LZ_INFO (forward reference);
 
 // Type: struct Point2d;
-class Point2d{
-public:
+struct Point2d{
 	int32_t x;
 	int32_t y;
 };

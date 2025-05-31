@@ -212,8 +212,7 @@ public:
 };
 
 // Type: struct SparkalColor (forward reference);
-class SparkalColor{
-public:
+struct SparkalColor{
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -519,8 +518,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -530,8 +528,7 @@ public:
 };
 
 // Type: struct SparkalPoint;
-class SparkalPoint{
-public:
+struct SparkalPoint{
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -539,7 +536,7 @@ public:
 };
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
-class bidirectional_iterator<HotSpot,int>{
+struct bidirectional_iterator<HotSpot,int>{
 };
 
 

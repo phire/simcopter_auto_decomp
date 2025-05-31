@@ -11,8 +11,7 @@
 // Type: union _LARGE_INTEGER;
 
 // Type: struct FREQ_INFO;
-class FREQ_INFO{
-public:
+struct FREQ_INFO{
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
 	unsigned long raw_freq;

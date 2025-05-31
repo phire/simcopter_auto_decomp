@@ -62,8 +62,7 @@ protected:
 // Type: void * __ptr32;
 
 // Type: struct SparkalRect;
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;
@@ -73,8 +72,7 @@ public:
 };
 
 // Type: struct tagRECT;
-class tagRECT{
-public:
+struct tagRECT{
 	long left;
 	long top;
 	long right;
@@ -84,8 +82,7 @@ public:
 // Type: class CSparkalWindow (forward reference);
 
 // Type: struct SparkalRect (forward reference);
-class SparkalRect{
-public:
+struct SparkalRect{
 	long left;
 	long top;
 	long right;

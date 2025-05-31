@@ -19,8 +19,7 @@
 // Type: struct Point3d (forward reference);
 
 // Type: struct GameObjectHdrType;
-class GameObjectHdrType{
-public:
+struct GameObjectHdrType{
 	char Id[4];
 	long Size;
 	short NVerts;
@@ -40,8 +39,7 @@ public:
 // Type: short[128];
 
 // Type: struct FileBSPTreeHdrType;
-class FileBSPTreeHdrType{
-public:
+struct FileBSPTreeHdrType{
 	char Id[4];
 	long Size;
 	short NNodes;
@@ -50,8 +48,7 @@ public:
 // Type: struct _FaceHdr (forward reference);
 
 // Type: struct FileFaceHdrType;
-class FileFaceHdrType{
-public:
+struct FileFaceHdrType{
 	char Id[4];
 	long Size;
 	short NVerts;
@@ -66,8 +63,7 @@ public:
 // Type: int32_t[4][4];
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -80,8 +76,7 @@ public:
 // Type: struct TEXT_Resource (forward reference);
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -100,8 +95,7 @@ public:
 // Type: struct Project3d (forward reference);
 
 // Type: struct FPoint3d;
-class FPoint3d{
-public:
+struct FPoint3d{
 	double x;
 	double y;
 	double z;

@@ -325,8 +325,7 @@ public:
 // Type: class list<basic_string<char>>;
 class list<basic_string<char>>{
 	using void_pointer = void * __ptr32;
-	class list<basic_string<char>>::list_node{
-	public:
+	struct list<basic_string<char>>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class basic_string<char> data;
@@ -345,8 +344,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	class list<basic_string<char>>::list_node_buffer{
-	public:
+	struct list<basic_string<char>>::list_node_buffer{
 		void * __ptr32 next_buffer;
 		struct list<basic_string<char>>::list_node* buffer;
 	};
@@ -467,7 +465,7 @@ public:
 // Type: char[260];
 
 // Type: struct bidirectional_iterator<basic_string<char>,int>;
-class bidirectional_iterator<basic_string<char>,int>{
+struct bidirectional_iterator<basic_string<char>,int>{
 };
 
 

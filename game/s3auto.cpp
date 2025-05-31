@@ -250,8 +250,7 @@ public:
 };
 
 // Type: struct _GridCoordinates;
-class _GridCoordinates{
-public:
+struct _GridCoordinates{
 	unsigned char x;
 	unsigned char y;
 };
@@ -265,16 +264,14 @@ public:
 // Type: void;
 
 // Type: struct VRview;
-class VRview{
-public:
+struct VRview{
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
 };
 
 // Type: struct Point3d;
-class Point3d{
-public:
+struct Point3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -283,8 +280,7 @@ public:
 // Type: struct MISSION_DATA (forward reference);
 
 // Type: struct _MISSION_PARMS;
-class _MISSION_PARMS{
-public:
+struct _MISSION_PARMS{
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -303,8 +299,7 @@ public:
 // Type: unsigned short;
 
 // Type: struct Goal;
-class Goal{
-public:
+struct Goal{
 	struct RGVertex* pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -333,8 +328,7 @@ private:
 };
 
 // Type: struct VRObjInfo;
-class VRObjInfo{
-public:
+struct VRObjInfo{
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -359,15 +353,13 @@ public:
 // Type: struct Point2d (forward reference);
 
 // Type: struct Point2d;
-class Point2d{
-public:
+struct Point2d{
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct VRFaceInfo;
-class VRFaceInfo{
-public:
+struct VRFaceInfo{
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;

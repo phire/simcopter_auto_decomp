@@ -8,8 +8,7 @@ class TreeSim{
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
-	class TreeSim::StackElem{
-	public:
+	struct TreeSim::StackElem{
 		short treeID;
 		short nodeNum;
 		short objectID;
@@ -92,15 +91,13 @@ protected:
 			kSemiGlobalTrees = 3,
 			kMaxTreeClass = 3,
 		};
-	class Behavior::NodeParameter{
-	public:
+	struct Behavior::NodeParameter{
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	class Behavior::Node{
-	public:
+	struct Behavior::Node{
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -112,8 +109,7 @@ protected:
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
 		};
-	class Behavior::Tree{
-	public:
+	struct Behavior::Tree{
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};
@@ -157,8 +153,7 @@ public:
 // Type: void;
 
 // Type: struct TreeSim::StackElem (forward reference);
-class TreeSim::StackElem{
-public:
+struct TreeSim::StackElem{
 	short treeID;
 	short nodeNum;
 	short objectID;
@@ -199,8 +194,7 @@ class TreeSim{
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
-	class TreeSim::StackElem{
-	public:
+	struct TreeSim::StackElem{
 		short treeID;
 		short nodeNum;
 		short objectID;
