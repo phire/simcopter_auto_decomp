@@ -49,7 +49,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        cmp    dword ptr ds:[0x59D2D8], 0;
 	__asm        je     near ptr 0x004D6B78;
 // LINE 136:
-	__asm        call   0x004D71F0;
+	__asm        call   InitGridPool;
 // LINE 137:
 	__asm        cmp    dword ptr ds:[0x59D2D4], 0;
 	__asm        jge    near ptr 0x004D6B78;
@@ -110,7 +110,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    goff, eax;
 // LINE 200:
-	__asm        call   0x004D71D7;
+	__asm        call   VRFreeGridObj;
 // LINE 201:
 	__asm        push   0;
 	__asm        mov    eax, ds:[0x662814];
@@ -119,7 +119,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D2DC;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x662828], eax;
 // LINE 202:
@@ -134,7 +134,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D2E4;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x6662F0], eax;
 // LINE 204:
@@ -150,7 +150,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D2F0;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666368], eax;
 // LINE 207:
@@ -167,7 +167,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D2FC;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666364], eax;
 // LINE 209:
@@ -183,7 +183,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D308;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x662824], eax;
 // LINE 211:
@@ -199,7 +199,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D314;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666398], eax;
 // LINE 214:
@@ -214,7 +214,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D320;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666360], eax;
 // LINE 216:
@@ -231,7 +231,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D32C;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666384], eax;
 // LINE 219:
@@ -251,7 +251,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        push   0x59D338;
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB5AB;
+	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
 	__asm        mov    ds:[0x666374], eax;
 // LINE 221:
@@ -569,7 +569,7 @@ void VRFreeGridObj() {
 // LINE 364:
 	__asm        mov    eax, ds:[0x59D2D4];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 365:
 }
@@ -657,7 +657,7 @@ void InitGridPool() {
 // LINE 412:
 	__asm        mov    eax, GridPoolSize;
 	__asm        push   eax;
-	__asm        call   0x004CB401;
+	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59D2D4], eax;
 // LINE 413:

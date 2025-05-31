@@ -136,7 +136,7 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 // FUNCTION: COPTER_D 0x0049adc3
 void CDefaultCommander::CDefaultCommander() {
 	__asm        mov    ecx, this;
-	__asm        call   0x0049AD30;
+	__asm        call   ICommander::ICommander;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
@@ -151,7 +151,7 @@ void CDefaultCommander::~CDefaultCommander() {
 // LINE 49:
 	__asm        jmp    near ptr 0x0049AE07;
 	__asm        mov    ecx, this;
-	__asm        call   0x0049AD5C;
+	__asm        call   ICommander::~ICommander;
 }
 
 // FUNCTION: COPTER_D 0x0049ae14
@@ -203,7 +203,7 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 	__asm        push   0x51;
 	__asm        push   0x59A29C;
 	__asm        push   0x59A2C4;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049AECB;
 	__asm        jmp    near ptr 0x0049AECB;

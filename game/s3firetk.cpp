@@ -379,7 +379,7 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 // LINE 77:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
-	__asm        call   0x0053618B;
+	__asm        call   FireEngineClass::CreateInstance;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00536124;
@@ -393,7 +393,7 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 // FUNCTION: COPTER_D 0x00536130
 void FireEngineClass::FireEngineClass() {
 	__asm        mov    ecx, this;
-	__asm        call   0x005415D5;
+	__asm        call   EmergencyVehicleClass::EmergencyVehicleClass;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
 // LINE 83:
@@ -410,7 +410,7 @@ void FireEngineClass::~FireEngineClass() {
 	__asm        mov    dword ptr [eax], 0x5932A8;
 	__asm        jmp    near ptr 0x0053617E;
 	__asm        mov    ecx, this;
-	__asm        call   0x0054163A;
+	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
 
 // FUNCTION: COPTER_D 0x0053618b
@@ -421,13 +421,13 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 
 // LINE 117:
 	__asm        push   0x2C0;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x005361BE;
 	__asm        mov    ecx, [ebp-0x34];
-	__asm        call   0x00536130;
+	__asm        call   FireEngineClass::FireEngineClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    near ptr 0x005361C5;
 	__asm        mov    youveWonABrandNewCar, 0;
@@ -438,7 +438,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        call   0x00504554;
+	__asm        call   AutomobileClass::Initialize;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053634E;
 // LINE 127:
@@ -456,7 +456,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    objectMemory, eax;
 // LINE 130:
@@ -492,7 +492,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        push   0x91;
 	__asm        push   0x5B7DCC;
 	__asm        push   0x5B7DF0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536292;
 	__asm        jmp    near ptr 0x00536292;
@@ -507,7 +507,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        push   0x99;
 	__asm        push   0x5B7E18;
 	__asm        push   0x5B7E3C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005362C9;
 	__asm        jmp    near ptr 0x005362C9;
@@ -586,7 +586,7 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	__asm        mov    eax, mapx;
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3AA8];
-	__asm        call   0x0053AB93;
+	__asm        call   Station::DispatchNearestAvailableVehicle;
 	__asm        jmp    near ptr 0x005363AE;
 // LINE 212:
 }
@@ -679,24 +679,24 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3AA8];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 261:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 264:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 268:
 	__asm        mov    ecx, this;
-	__asm        call   0x005022B0;
+	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 269:
 	__asm        jmp    near ptr 0x0053676E;
 // LINE 273:
 	__asm        mov    ecx, this;
-	__asm        call   0x005422EE;
+	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 274:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -719,16 +719,16 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542461;
+	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 277:
 	__asm        mov    ecx, this;
-	__asm        call   0x005429D6;
+	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005368CD;
+	__asm        call   FireEngineClass::ScanForFire;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005365D7;
 // LINE 281:
@@ -736,12 +736,12 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    dword ptr [eax+0x294], 5;
 // LINE 282:
 	__asm        mov    ecx, this;
-	__asm        call   0x00536AE2;
+	__asm        call   FireEngineClass::PointStreamAtFire;
 // LINE 283:
 	__asm        push   9;
 	__asm        push   0xD;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050217C;
+	__asm        call   AutomobileClass::PlacePerson;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005365D2;
 // LINE 285:
@@ -760,19 +760,19 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    dword ptr [eax+0x11E], 0;
 // LINE 296:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 297:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 298:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3AA8];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 302:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 2;
@@ -787,7 +787,7 @@ void FireEngineClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x005366AC;
 // LINE 310:
 	__asm        mov    ecx, this;
-	__asm        call   0x005422EE;
+	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 313:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
@@ -806,7 +806,7 @@ void FireEngineClass::ItterateFSM() {
 // LINE 316:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 317:
@@ -818,15 +818,15 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    ds:[0x608F78], eax;
 // LINE 320:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050417D;
+	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 321:
 	__asm        mov    ecx, this;
-	__asm        call   0x005022B0;
+	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 322:
 	__asm        jmp    near ptr 0x0053676E;
 // LINE 326:
 	__asm        mov    ecx, this;
-	__asm        call   0x00536778;
+	__asm        call   FireEngineClass::AtScene;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0053671B;
 // LINE 328:
@@ -837,19 +837,19 @@ void FireEngineClass::ItterateFSM() {
 	__asm        mov    dword ptr [eax+0x11E], 0;
 // LINE 332:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 334:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 335:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3AA8];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 339:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 2;
@@ -864,7 +864,7 @@ void FireEngineClass::ItterateFSM() {
 	__asm        push   0x159;
 	__asm        push   0x5B7E4C;
 	__asm        push   0x5B7E70;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536741;
 	__asm        jmp    near ptr 0x00536741;
@@ -905,7 +905,7 @@ int32_t FireEngineClass::AtScene() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A4];
 	__asm        push   eax;
-	__asm        call   0x00526292;
+	__asm        call   S3FireTruckDouse;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005367F7;
@@ -914,12 +914,12 @@ int32_t FireEngineClass::AtScene() {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005368CD;
+	__asm        call   FireEngineClass::ScanForFire;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005367F0;
 // LINE 365:
 	__asm        mov    ecx, this;
-	__asm        call   0x00536AE2;
+	__asm        call   FireEngineClass::PointStreamAtFire;
 // LINE 367:
 	__asm        jmp    near ptr 0x005367F7;
 // LINE 370:
@@ -943,7 +943,7 @@ int32_t FireEngineClass::AtScene() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A8];
 	__asm        push   eax;
-	__asm        call   0x005263EC;
+	__asm        call   S3FireTruckDouseDyObj;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053686F;
@@ -952,12 +952,12 @@ int32_t FireEngineClass::AtScene() {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005368CD;
+	__asm        call   FireEngineClass::ScanForFire;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00536868;
 // LINE 381:
 	__asm        mov    ecx, this;
-	__asm        call   0x00536AE2;
+	__asm        call   FireEngineClass::PointStreamAtFire;
 // LINE 383:
 	__asm        jmp    near ptr 0x0053686F;
 // LINE 386:
@@ -981,7 +981,7 @@ int32_t FireEngineClass::AtScene() {
 // LINE 395:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 396:
@@ -1009,7 +1009,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 424:
 	__asm        push   5;
 	__asm        lea    ecx, spiral.currDist;
-	__asm        call   0x00542DC0;
+	__asm        call   SpiralScan::SpiralScan;
 // LINE 425:
 	__asm        mov    fires_found, 0;
 // LINE 426:
@@ -1025,7 +1025,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        lea    eax, fireloc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
-	__asm        call   0x00542E03;
+	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00536AA3;
 // LINE 432:
@@ -1048,7 +1048,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536979;
 	__asm        jmp    near ptr 0x00536979;
@@ -1087,7 +1087,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2A4], eax;
 // LINE 461:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x2A4];
 	__asm        mov    ecx, [ecx+0x98];
@@ -1226,7 +1226,7 @@ void FireEngineClass::PointStreamAtFire() {
 	__asm        push   0x212;
 	__asm        push   0x5B7E78;
 	__asm        push   0x5B7E9C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00536BBB;
 	__asm        jmp    near ptr 0x00536BBB;
@@ -1267,7 +1267,7 @@ void FireEngineClass::PointStreamAtFire() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x2B0;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2AC], eax;
@@ -1307,7 +1307,7 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542A75;
+	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 561:
 	__asm        jmp    near ptr 0x00536CB1;
 }
@@ -1324,7 +1324,7 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542B90;
+	__asm        call   EmergencyVehicleClass::LoadSaveData;
 // LINE 583:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -1335,7 +1335,7 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542570;
+	__asm        call   EmergencyVehicleClass::LinkIconToCell;
 // LINE 590:
 	__asm        jmp    near ptr 0x00536D2D;
 // LINE 593:
@@ -1378,12 +1378,12 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005368CD;
+	__asm        call   FireEngineClass::ScanForFire;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00536DA7;
 // LINE 603:
 	__asm        mov    ecx, this;
-	__asm        call   0x00536AE2;
+	__asm        call   FireEngineClass::PointStreamAtFire;
 // LINE 606:
 	__asm        jmp    near ptr 0x00536DAC;
 }

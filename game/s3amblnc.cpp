@@ -406,7 +406,7 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 // LINE 77:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
-	__asm        call   0x0053592B;
+	__asm        call   AmbulanceClass::CreateInstance;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005358C4;
@@ -420,7 +420,7 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 // FUNCTION: COPTER_D 0x005358d0
 void AmbulanceClass::AmbulanceClass() {
 	__asm        mov    ecx, this;
-	__asm        call   0x005415D5;
+	__asm        call   EmergencyVehicleClass::EmergencyVehicleClass;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593280;
 // LINE 84:
@@ -437,7 +437,7 @@ void AmbulanceClass::~AmbulanceClass() {
 	__asm        mov    dword ptr [eax], 0x593280;
 	__asm        jmp    near ptr 0x0053591E;
 	__asm        mov    ecx, this;
-	__asm        call   0x0054163A;
+	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
 
 // FUNCTION: COPTER_D 0x0053592b
@@ -448,13 +448,13 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 
 // LINE 113:
 	__asm        push   0x2A0;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x0053595E;
 	__asm        mov    ecx, [ebp-0x34];
-	__asm        call   0x005358D0;
+	__asm        call   AmbulanceClass::AmbulanceClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    near ptr 0x00535965;
 	__asm        mov    youveWonABrandNewCar, 0;
@@ -465,7 +465,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        call   0x00504337;
+	__asm        call   AutomobileClass::InitializeInstance;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00535AE1;
 // LINE 123:
@@ -483,7 +483,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    objectMemory, eax;
 // LINE 126:
@@ -519,7 +519,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        push   0x8D;
 	__asm        push   0x5B7D1C;
 	__asm        push   0x5B7D40;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00535A32;
 	__asm        jmp    near ptr 0x00535A32;
@@ -534,7 +534,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        push   0x95;
 	__asm        push   0x5B7D68;
 	__asm        push   0x5B7D8C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00535A69;
 	__asm        jmp    near ptr 0x00535A69;
@@ -610,7 +610,7 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        mov    eax, mapx;
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3820];
-	__asm        call   0x0053AB93;
+	__asm        call   Station::DispatchNearestAvailableVehicle;
 	__asm        jmp    near ptr 0x00535B41;
 // LINE 252:
 }
@@ -696,27 +696,27 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jg     near ptr 0x00535CCE;
 	__asm        mov    ecx, this;
-	__asm        call   0x005049FE;
+	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00535CCE;
 // LINE 301:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B0A;
+	__asm        call   AutomobileClass::PullOut;
 // LINE 305:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 306:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 307:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3820];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 311:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -729,7 +729,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        jmp    near ptr 0x00535FD0;
 // LINE 317:
 	__asm        mov    ecx, this;
-	__asm        call   0x005422EE;
+	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 319:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -752,26 +752,26 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3820];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 323:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 324:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 325:
 	__asm        jmp    near ptr 0x00535FD5;
 // LINE 328:
 	__asm        mov    ecx, this;
-	__asm        call   0x005022B0;
+	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 329:
 	__asm        jmp    near ptr 0x00535FD0;
 // LINE 333:
 	__asm        mov    ecx, this;
-	__asm        call   0x005422EE;
+	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 334:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -790,7 +790,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        cmp    ecx, edx;
 	__asm        jne    near ptr 0x00535E25;
 	__asm        mov    ecx, this;
-	__asm        call   0x005045B6;
+	__asm        call   AutomobileClass::CanIPullOver;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00535E25;
 // LINE 336:
@@ -801,18 +801,18 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        call   dword ptr [eax+4];
 // LINE 337:
 	__asm        mov    ecx, this;
-	__asm        call   0x005429D6;
+	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 338:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542461;
+	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 339:
 	__asm        push   5;
 	__asm        push   0xC;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050217C;
+	__asm        call   AutomobileClass::PlacePerson;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00535E06;
 // LINE 341:
@@ -852,7 +852,7 @@ void AmbulanceClass::ItterateFSM() {
 // LINE 358:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 359:
@@ -864,10 +864,10 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        mov    ds:[0x608F70], eax;
 // LINE 362:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050417D;
+	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 363:
 	__asm        mov    ecx, this;
-	__asm        call   0x005022B0;
+	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 365:
 	__asm        jmp    near ptr 0x00535FD0;
 // LINE 368:
@@ -876,7 +876,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        jne    near ptr 0x00535EA3;
 // LINE 371:
 	__asm        mov    ecx, this;
-	__asm        call   0x005022B0;
+	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 372:
 	__asm        jmp    near ptr 0x00535FD0;
 // LINE 375:
@@ -891,7 +891,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        sub    [ecx+0xFE], eax;
 // LINE 379:
 	__asm        mov    ecx, this;
-	__asm        call   0x00535FDA;
+	__asm        call   AmbulanceClass::AtScene;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00535EE6;
 	__asm        mov    eax, this;
@@ -901,27 +901,27 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jg     near ptr 0x00535F58;
 	__asm        mov    ecx, this;
-	__asm        call   0x005049FE;
+	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00535F58;
 // LINE 381:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B0A;
+	__asm        call   AutomobileClass::PullOut;
 // LINE 385:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 386:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500FC3;
+	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 387:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x5C3820];
-	__asm        call   0x0053AB2F;
+	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 391:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 2;
@@ -944,7 +944,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        push   0x191;
 	__asm        push   0x5B7D9C;
 	__asm        push   0x5B7DC0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00535F9B;
 	__asm        jmp    near ptr 0x00535F9B;
@@ -977,7 +977,7 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542A75;
+	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 425:
 	__asm        jmp    near ptr 0x00536016;
 }
@@ -994,7 +994,7 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542B90;
+	__asm        call   EmergencyVehicleClass::LoadSaveData;
 // LINE 447:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -1005,7 +1005,7 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542570;
+	__asm        call   EmergencyVehicleClass::LinkIconToCell;
 // LINE 454:
 	__asm        jmp    near ptr 0x00536092;
 // LINE 457:

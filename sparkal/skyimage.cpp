@@ -273,7 +273,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    eax, nNewBitmapWidth;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EA06;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    eax, nNewSkyType;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x13C], eax;
@@ -319,7 +319,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    [ecx+0x14C], eax;
 // LINE 51:
 	__asm        mov    ecx, this;
-	__asm        call   0x00495575;
+	__asm        call   SkyImage::LoadImageA;
 // LINE 52:
 	__asm        jmp    near ptr 0x004954C4;
 	__asm        mov    eax, this;
@@ -338,7 +338,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        mov    [ecx+0x13C], eax;
 // LINE 62:
 	__asm        mov    ecx, this;
-	__asm        call   0x00495575;
+	__asm        call   SkyImage::LoadImageA;
 // LINE 64:
 	__asm        jmp    near ptr 0x00495505;
 }
@@ -354,7 +354,7 @@ void SkyImage::SwitchToProperSkyType() {
 // LINE 72:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004954CE;
+	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 73:
 	__asm        jmp    near ptr 0x0049556B;
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
@@ -365,7 +365,7 @@ void SkyImage::SwitchToProperSkyType() {
 // LINE 74:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004954CE;
+	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 75:
 	__asm        jmp    near ptr 0x00495570;
 }
@@ -390,7 +390,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 104:
 	__asm        jmp    near ptr 0x004955D1;
@@ -401,14 +401,14 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 107:
 	__asm        push   0x59A13C;
 	__asm        push   3;
 	__asm        lea    eax, szFullSkyImagePath[0];
 	__asm        push   eax;
-	__asm        call   0x004D5356;
+	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
 	__asm        mov    vrResource, eax;
 // LINE 108:
@@ -421,7 +421,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   0;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 113:
@@ -461,7 +461,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 121:
 	__asm        jmp    near ptr 0x004956A8;
@@ -491,7 +491,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   2;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 137:
@@ -503,7 +503,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   1;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 142:
@@ -517,13 +517,13 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 149:
 	__asm        push   0x27;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 150:
@@ -535,7 +535,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   2;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 155:
@@ -549,13 +549,13 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 162:
 	__asm        push   0x28;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 163:
@@ -567,7 +567,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   3;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 168:
@@ -581,13 +581,13 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 176:
 	__asm        push   0x14;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 177:
@@ -598,7 +598,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   4;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 181:
@@ -612,13 +612,13 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 188:
 	__asm        push   0xD;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 189:
@@ -630,7 +630,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   5;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 194:
@@ -644,12 +644,12 @@ int32_t SkyImage::LoadImageA() {
 	__asm        push   eax;
 	__asm        mov    eax, pDestinationImage;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 203:
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
-	__asm        call   0x004D5872;
+	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 204:
 	__asm        mov    eax, 1;
@@ -850,7 +850,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046F948;
+	__asm        call   CBackBuffer::Compose;
 // LINE 292:
 	__asm        cmp    len2, 0;
 	__asm        je     near ptr 0x00495B21;
@@ -874,7 +874,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046F948;
+	__asm        call   CBackBuffer::Compose;
 // LINE 299:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00495B2B;

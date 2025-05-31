@@ -268,7 +268,7 @@ void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NR
 	__asm        push   eax;
 	__asm        push   0x42484156;
 	__asm        mov    ecx, globFile;
-	__asm        call   0x00499EF0;
+	__asm        call   NResFile::GetLoader;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 24:
@@ -277,7 +277,7 @@ void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NR
 	__asm        push   eax;
 	__asm        push   0x42484156;
 	__asm        mov    ecx, privFile;
-	__asm        call   0x00499EF0;
+	__asm        call   NResFile::GetLoader;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 30:
@@ -318,7 +318,7 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*par
 // LINE 49:
 	__asm        mov    eax, tree;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 50:
 	__asm        mov    count, 0;
@@ -336,7 +336,7 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*par
 	__asm        add    eax, tree;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 52:
 	__asm        movsx  eax, count;
@@ -449,7 +449,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        push   0x5BE510;
 	__asm        push   0x51;
 	__asm        push   0x5BE528;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 82:
 	__asm        mov    eax, tree;
@@ -461,7 +461,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        push   0x5BE554;
 	__asm        push   0x52;
 	__asm        push   0x5BE574;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 84:
 	__asm        movsx  eax, nodeNum;
@@ -505,7 +505,7 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        lea    eax, node.treeID;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005605AC;
+	__asm        call   Behavior::GetNodeText;
 // LINE 136:
 	__asm        jmp    near ptr 0x0056060F;
 }
@@ -567,7 +567,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        push   eax;
 	__asm        push   0x42484156;
 	__asm        mov    ecx, pFile;
-	__asm        call   0x0055320B;
+	__asm        call   FlatResFile::GetByID;
 	__asm        mov    tree, eax;
 // LINE 164:
 	__asm        cmp    tree, 0;
@@ -576,7 +576,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        push   0x5BE5A0;
 	__asm        push   0xA4;
 	__asm        push   0x5BE5CC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 168:
 // Block start:
@@ -586,7 +586,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        mov    eax, tree;
 	__asm        push   eax;
 	__asm        mov    ecx, pFile;
-	__asm        call   0x00553564;
+	__asm        call   FlatResFile::GetName;
 // LINE 169:
 	__asm        mov    eax, name;
 	__asm        mov    byte ptr [eax], 0;
@@ -596,7 +596,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        push   eax;
 	__asm        lea    eax, resName[0];
 	__asm        push   eax;
-	__asm        call   0x0056639C;
+	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 174:
 // Block end:
@@ -791,7 +791,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 // LINE 258:
 	__asm        mov    eax, name;
 	__asm        push   eax;
-	__asm        call   0x00565CA0;
+	__asm        call   EmptyPStr;
 	__asm        add    esp, 4;
 // LINE 259:
 	__asm        push   0x100;
@@ -799,7 +799,7 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, str;
 	__asm        push   eax;
-	__asm        call   0x00566425;
+	__asm        call   ConcatCPStr;
 	__asm        add    esp, 0xC;
 // LINE 260:
 	__asm        jmp    near ptr 0x005609C4;

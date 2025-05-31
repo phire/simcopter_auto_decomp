@@ -63,7 +63,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   0x59AFF0;
 	__asm        mov    eax, filepath;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    filNum, eax;
 	__asm        cmp    filNum, 0;
@@ -76,12 +76,12 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   0;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572470;
+	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 // LINE 120:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572630;
+	__asm        call   ftell;
 	__asm        add    esp, 4;
 	__asm        mov    lFileLength, eax;
 // LINE 121:
@@ -89,14 +89,14 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   0;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572470;
+	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 // LINE 123:
 	__asm        lea    eax, lCityDataChunkLength;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C55F2;
+	__asm        call   S2CityReadHeader;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -116,7 +116,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   4;
 	__asm        lea    eax, lChunkType;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C474A;
@@ -127,7 +127,7 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 136:
 	__asm        mov    eax, lChunkType;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    lChunkType, eax;
 // LINE 138:
@@ -137,7 +137,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   4;
 	__asm        lea    eax, lChunkDataSize;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C4781;
@@ -148,7 +148,7 @@ int32_t S2CityValidate(char * filepath) {
 // LINE 142:
 	__asm        mov    eax, lChunkDataSize;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    lChunkDataSize, eax;
 // LINE 143:
@@ -156,7 +156,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        jl     near ptr 0x004C47B4;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572630;
+	__asm        call   ftell;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, lChunkDataSize;
 	__asm        add    ecx, eax;
@@ -172,7 +172,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572470;
+	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C47E6;
@@ -196,7 +196,7 @@ int32_t S2CityValidate(char * filepath) {
 exit:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 159:
 	__asm        mov    eax, bOK;
@@ -221,7 +221,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   0x59AFF4;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    filNum, eax;
 	__asm        cmp    filNum, 0;
@@ -234,7 +234,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C55F2;
+	__asm        call   S2CityReadHeader;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -242,7 +242,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 191:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 192:
 	__asm        xor    ax, ax;
@@ -264,7 +264,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        lea    eax, dp;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C48C6;
@@ -273,7 +273,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 203:
 	__asm        mov    eax, dp;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    dp, eax;
 // LINE 206:
@@ -286,7 +286,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        lea    eax, size;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C48FF;
@@ -295,12 +295,12 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 210:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 212:
 	__asm        push   0x59AFF8;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4950;
@@ -311,7 +311,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   0x20;
 	__asm        mov    eax, cityName;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C4945;
@@ -327,7 +327,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572470;
+	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C496F;
@@ -348,7 +348,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 226:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 227:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
@@ -363,7 +363,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 // LINE 229:
 	__asm        mov    eax, cityName;
 	__asm        push   eax;
-	__asm        call   0x004C9227;
+	__asm        call   PStringToCString;
 	__asm        add    esp, 4;
 // LINE 230:
 	__asm        mov    ax, 1;
@@ -402,7 +402,7 @@ long stol(char * tag) {
 // LINE 256:
 	__asm        mov    eax, buildval;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004C4A26;
 // LINE 257:
@@ -417,14 +417,14 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        push   0x59B000;
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    fp, eax;
 // LINE 275:
 	__asm        push   0x59B004;
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 276:
 	__asm        cmp    fp, 0;
@@ -436,12 +436,12 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        push   1;
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 // LINE 278:
 	__asm        mov    eax, fp;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 279:
 	__asm        mov    buf[4], 0;
@@ -449,7 +449,7 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        push   0x59B008;
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
-	__asm        call   0x0056CE20;
+	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C4AAA;
@@ -477,26 +477,26 @@ short S2CityLoad(char * filePath) {
 // LINE 305:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x004C4A2B;
+	__asm        call   ValidateSCXSaveGameFile;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C4AE7;
 // LINE 306:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x004CC003;
+	__asm        call   ReadSCXFile;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004C536E;
 // LINE 308:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 310:
 	__asm        push   0x59B010;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    filNum, eax;
 	__asm        cmp    filNum, 0;
@@ -509,7 +509,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C55F2;
+	__asm        call   S2CityReadHeader;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -534,7 +534,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   4;
 	__asm        lea    eax, dp;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C4BA3;
@@ -543,7 +543,7 @@ short S2CityLoad(char * filePath) {
 // LINE 324:
 	__asm        mov    eax, dp;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    dp, eax;
 // LINE 327:
@@ -553,7 +553,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   4;
 	__asm        lea    eax, size;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C4BDC;
@@ -562,12 +562,12 @@ short S2CityLoad(char * filePath) {
 // LINE 329:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 331:
 	__asm        push   0x59B014;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4C2C;
@@ -576,7 +576,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C56E2;
+	__asm        call   S2CityMiscRead;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -586,7 +586,7 @@ short S2CityLoad(char * filePath) {
 // LINE 335:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B01C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4C85;
@@ -597,7 +597,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C65DF;
+	__asm        call   S2CityGameReadUncompressed;
 	__asm        add    esp, 0xC;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -609,12 +609,12 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x639510];
 	__asm        push   eax;
-	__asm        call   0x004C82B3;
+	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 340:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B024;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4CD1;
@@ -626,7 +626,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -636,7 +636,7 @@ short S2CityLoad(char * filePath) {
 // LINE 344:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B02C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4D1D;
@@ -648,7 +648,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -658,7 +658,7 @@ short S2CityLoad(char * filePath) {
 // LINE 348:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B034;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4D69;
@@ -670,7 +670,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -680,7 +680,7 @@ short S2CityLoad(char * filePath) {
 // LINE 352:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B03C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4DB5;
@@ -692,7 +692,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -702,7 +702,7 @@ short S2CityLoad(char * filePath) {
 // LINE 356:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B044;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4E01;
@@ -714,7 +714,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -724,7 +724,7 @@ short S2CityLoad(char * filePath) {
 // LINE 360:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B04C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4E56;
@@ -738,7 +738,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -748,7 +748,7 @@ short S2CityLoad(char * filePath) {
 // LINE 366:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B054;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4EB5;
@@ -760,7 +760,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -771,12 +771,12 @@ short S2CityLoad(char * filePath) {
 	__asm        push   0x4B0;
 	__asm        mov    eax, ds:[0x63A744];
 	__asm        push   eax;
-	__asm        call   0x004C822D;
+	__asm        call   swizzle_Micro;
 	__asm        add    esp, 8;
 // LINE 372:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B05C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4F01;
@@ -788,7 +788,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -798,7 +798,7 @@ short S2CityLoad(char * filePath) {
 // LINE 377:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B064;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4F4D;
@@ -810,7 +810,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -820,7 +820,7 @@ short S2CityLoad(char * filePath) {
 // LINE 382:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B06C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4F99;
@@ -832,7 +832,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -842,7 +842,7 @@ short S2CityLoad(char * filePath) {
 // LINE 386:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B074;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C4FE5;
@@ -854,7 +854,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -864,7 +864,7 @@ short S2CityLoad(char * filePath) {
 // LINE 390:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B07C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C5031;
@@ -876,7 +876,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -886,7 +886,7 @@ short S2CityLoad(char * filePath) {
 // LINE 394:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B084;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C507D;
@@ -898,7 +898,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -908,7 +908,7 @@ short S2CityLoad(char * filePath) {
 // LINE 398:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B08C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C50C9;
@@ -920,7 +920,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -930,7 +930,7 @@ short S2CityLoad(char * filePath) {
 // LINE 402:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B094;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C5115;
@@ -942,7 +942,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -952,7 +952,7 @@ short S2CityLoad(char * filePath) {
 // LINE 406:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B09C;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C5161;
@@ -964,7 +964,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -974,7 +974,7 @@ short S2CityLoad(char * filePath) {
 // LINE 410:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B0A4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C51AD;
@@ -986,7 +986,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -996,7 +996,7 @@ short S2CityLoad(char * filePath) {
 // LINE 414:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B0AC;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C520C;
@@ -1008,7 +1008,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -1019,12 +1019,12 @@ short S2CityLoad(char * filePath) {
 	__asm        push   0xD00;
 	__asm        mov    eax, ds:[0x639FE0];
 	__asm        push   eax;
-	__asm        call   0x004C81C9;
+	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
 // LINE 419:
 	__asm        jmp    near ptr 0x004C5280;
 	__asm        push   0x59B0B4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, dp;
 	__asm        jne    near ptr 0x004C525D;
@@ -1035,7 +1035,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C65DF;
+	__asm        call   S2CityGameReadUncompressed;
 	__asm        add    esp, 0xC;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -1050,7 +1050,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6619;
+	__asm        call   S2CityBucketGameRead;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -1081,7 +1081,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x004C555F;
+	__asm        call   S2CityMakeCityNameFromFilePath;
 	__asm        add    esp, 8;
 // LINE 437:
 	__asm        jmp    near ptr 0x004C5305;
@@ -1090,12 +1090,12 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x63A570];
 	__asm        push   eax;
-	__asm        call   0x004C92E5;
+	__asm        call   CopyPString;
 	__asm        add    esp, 8;
 // LINE 439:
 	__asm        mov    eax, ds:[0x63A570];
 	__asm        push   eax;
-	__asm        call   0x004C9227;
+	__asm        call   PStringToCString;
 	__asm        add    esp, 4;
 // LINE 442:
 	__asm        jmp    near ptr 0x004C531C;
@@ -1104,24 +1104,24 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x004C555F;
+	__asm        call   S2CityMakeCityNameFromFilePath;
 	__asm        add    esp, 8;
 // LINE 446:
-	__asm        call   0x004C547E;
+	__asm        call   graph_kludge;
 // LINE 447:
 	__asm        movsx  eax, got_label;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C533A;
 // LINE 448:
-	__asm        call   0x004C5373;
+	__asm        call   label_kludge;
 // LINE 449:
 	__asm        jmp    near ptr 0x004C533F;
 // LINE 450:
-	__asm        call   0x004C5412;
+	__asm        call   clear_label;
 // LINE 453:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 454:
 	__asm        mov    ax, 1;
@@ -1130,7 +1130,7 @@ short S2CityLoad(char * filePath) {
 badread:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 458:
 	__asm        xor    ax, ax;
@@ -1302,12 +1302,12 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x0056DDF0;
+	__asm        call   _splitpath;
 	__asm        add    esp, 0x14;
 // LINE 551:
 	__asm        lea    eax, szSplitPathFilename[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    stringLength, eax;
 // LINE 552:
@@ -1320,7 +1320,7 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	__asm        push   eax;
 	__asm        mov    eax, cityName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 555:
 }
@@ -1332,7 +1332,7 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 	__asm        push   eax;
 	__asm        mov    eax, fileName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 570:
 }
@@ -1348,7 +1348,7 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	__asm        push   4;
 	__asm        lea    eax, data;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C561F;
@@ -1358,12 +1358,12 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 // LINE 593:
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 596:
 	__asm        push   0x59B0BC;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, data;
 	__asm        je     near ptr 0x004C564C;
@@ -1377,7 +1377,7 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	__asm        push   4;
 	__asm        mov    eax, length;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C5670;
@@ -1388,7 +1388,7 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	__asm        mov    eax, length;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, length;
 	__asm        mov    [ecx], eax;
@@ -1399,7 +1399,7 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	__asm        push   4;
 	__asm        lea    eax, data;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C56A7;
@@ -1409,12 +1409,12 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 // LINE 609:
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 611:
 	__asm        push   0x59B0C4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, data;
 	__asm        je     near ptr 0x004C56D4;
@@ -1442,7 +1442,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C66A4;
+	__asm        call   S2CityGameReadCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -1455,7 +1455,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x63923C];
 	__asm        push   eax;
-	__asm        call   0x004C81C9;
+	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
 // LINE 639:
 	__asm        mov    ecx, ds:[0x63923C];
@@ -1792,7 +1792,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 713:
 	__asm        movsx  eax, i;
@@ -1811,7 +1811,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x004C83E4;
+	__asm        call   GetStringResource;
 	__asm        add    esp, 0xC;
 // LINE 717:
 	__asm        movsx  eax, i;
@@ -1819,7 +1819,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        movsx  ecx, i;
 	__asm        shl    ecx, 5;
@@ -2482,7 +2482,7 @@ unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C660B;
@@ -2506,7 +2506,7 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	__asm        push   0x59B0D4;
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    temp, eax;
 	__asm        cmp    temp, 0;
@@ -2525,14 +2525,14 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	__asm        push   eax;
 	__asm        mov    eax, temp;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6688;
 // LINE 892:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 893:
 	__asm        xor    ax, ax;
@@ -2540,7 +2540,7 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 // LINE 896:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 897:
 	__asm        mov    ax, 1;
@@ -2563,7 +2563,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        push   0x59B0E8;
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    temp, eax;
 	__asm        cmp    temp, 0;
@@ -2582,14 +2582,14 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        push   eax;
 	__asm        mov    eax, temp;
 	__asm        push   eax;
-	__asm        call   0x00572960;
+	__asm        call   fread;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6713;
 // LINE 925:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 926:
 	__asm        xor    ax, ax;
@@ -2667,7 +2667,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 // LINE 947:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 949:
 	__asm        mov    ecx, tp;
@@ -2691,7 +2691,7 @@ short S2CitySave(char * filePath) {
 	__asm        push   0x59B0FC;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    filNum, eax;
 	__asm        cmp    filNum, 0;
@@ -2703,7 +2703,7 @@ short S2CitySave(char * filePath) {
 	__asm        push   0;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6EDB;
+	__asm        call   S2CityWriteHeader;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2718,23 +2718,23 @@ short S2CitySave(char * filePath) {
 	__asm        push   eax;
 	__asm        lea    eax, tempCityNameString[0];
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 990:
 	__asm        lea    eax, tempCityNameString[0];
 	__asm        push   eax;
-	__asm        call   0x004C927B;
+	__asm        call   CStringToPString;
 	__asm        add    esp, 4;
 // LINE 991:
 	__asm        lea    eax, tempCityNameString[0];
 	__asm        push   eax;
 	__asm        push   0x59B100;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6CFE;
+	__asm        call   S2CityWriteName;
 	__asm        add    esp, 0xC;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2744,7 +2744,7 @@ short S2CitySave(char * filePath) {
 // LINE 993:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C732E;
+	__asm        call   S2CityMiscWrite;
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2756,12 +2756,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639510];
 	__asm        push   eax;
 	__asm        push   0x59B108;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6DD5;
+	__asm        call   S2CityGameWriteUncompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2773,12 +2773,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A270];
 	__asm        push   eax;
 	__asm        push   0x59B110;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2790,12 +2790,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639850];
 	__asm        push   eax;
 	__asm        push   0x59B118;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2807,12 +2807,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639DE0];
 	__asm        push   eax;
 	__asm        push   0x59B120;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2824,12 +2824,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A030];
 	__asm        push   eax;
 	__asm        push   0x59B128;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2841,12 +2841,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639AD0];
 	__asm        push   eax;
 	__asm        push   0x59B130;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2858,12 +2858,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639834];
 	__asm        push   eax;
 	__asm        push   0x59B138;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2875,12 +2875,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A744];
 	__asm        push   eax;
 	__asm        push   0x59B140;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2892,12 +2892,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639720];
 	__asm        push   eax;
 	__asm        push   0x59B148;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2909,12 +2909,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x638F70];
 	__asm        push   eax;
 	__asm        push   0x59B150;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2926,12 +2926,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639730];
 	__asm        push   eax;
 	__asm        push   0x59B158;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2943,12 +2943,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639CD0];
 	__asm        push   eax;
 	__asm        push   0x59B160;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2960,12 +2960,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A470];
 	__asm        push   eax;
 	__asm        push   0x59B168;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2977,12 +2977,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A750];
 	__asm        push   eax;
 	__asm        push   0x59B170;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -2994,12 +2994,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639170];
 	__asm        push   eax;
 	__asm        push   0x59B178;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -3011,12 +3011,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A5B0];
 	__asm        push   eax;
 	__asm        push   0x59B180;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -3028,12 +3028,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x638EE0];
 	__asm        push   eax;
 	__asm        push   0x59B188;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -3045,12 +3045,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x63A640];
 	__asm        push   eax;
 	__asm        push   0x59B190;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -3062,12 +3062,12 @@ short S2CitySave(char * filePath) {
 	__asm        mov    eax, ds:[0x639FE0];
 	__asm        push   eax;
 	__asm        push   0x59B198;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -3079,12 +3079,12 @@ short S2CitySave(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6EDB;
+	__asm        call   S2CityWriteHeader;
 	__asm        add    esp, 8;
 // LINE 1046:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 1048:
 	__asm        mov    ax, 1;
@@ -3093,7 +3093,7 @@ short S2CitySave(char * filePath) {
 badwrite:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 1052:
 	__asm        xor    ax, ax;
@@ -3111,7 +3111,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 // LINE 1076:
 	__asm        mov    eax, head;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    head, eax;
 // LINE 1077:
@@ -3122,7 +3122,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	__asm        push   eax;
 	__asm        lea    eax, head;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6D43;
@@ -3136,7 +3136,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 // LINE 1082:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 1083:
@@ -3147,7 +3147,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	__asm        push   eax;
 	__asm        lea    eax, size;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6D86;
@@ -3157,7 +3157,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 // LINE 1086:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 1089:
@@ -3168,7 +3168,7 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6DBB;
@@ -3195,7 +3195,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 // LINE 1115:
 	__asm        mov    eax, head;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    head, eax;
 // LINE 1116:
@@ -3206,7 +3206,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        lea    eax, head;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6E1A;
@@ -3221,7 +3221,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 // LINE 1121:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 1122:
@@ -3232,7 +3232,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        lea    eax, size;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6E5C;
@@ -3242,7 +3242,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 // LINE 1125:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 1126:
@@ -3250,7 +3250,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C82B3;
+	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 1129:
 	__asm        mov    eax, filNum;
@@ -3260,7 +3260,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6EB1;
@@ -3269,7 +3269,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C82B3;
+	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 1131:
 	__asm        xor    ax, ax;
@@ -3279,7 +3279,7 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C82B3;
+	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 1136:
 	__asm        mov    ecx, size;
@@ -3301,7 +3301,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        push   0;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x00572470;
+	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C6F04;
@@ -3312,13 +3312,13 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        mov    count, 4;
 // LINE 1163:
 	__asm        push   0x59B1A0;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 1164:
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 1166:
@@ -3329,7 +3329,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        push   eax;
 	__asm        lea    eax, data;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6F50;
@@ -3341,7 +3341,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 // LINE 1170:
 	__asm        mov    eax, length;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    length, eax;
 // LINE 1171:
@@ -3352,7 +3352,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        push   eax;
 	__asm        lea    eax, length;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6F8C;
@@ -3363,13 +3363,13 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        mov    count, 4;
 // LINE 1175:
 	__asm        push   0x59B1A8;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 1176:
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 1177:
@@ -3380,7 +3380,7 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	__asm        push   eax;
 	__asm        lea    eax, data;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C6FD8;
@@ -3411,7 +3411,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   0x59B1B0;
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    temp, eax;
 	__asm        cmp    temp, 0;
@@ -3421,12 +3421,12 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        jmp    near ptr 0x004C7329;
 // LINE 1205:
 	__asm        push   0x59B1BC;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        je     near ptr 0x004C7050;
 	__asm        push   0x59B1C4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        jne    near ptr 0x004C7065;
@@ -3435,12 +3435,12 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C81C9;
+	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
 // LINE 1209:
 	__asm        jmp    near ptr 0x004C708B;
 	__asm        push   0x59B1CC;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        jne    near ptr 0x004C708B;
@@ -3449,7 +3449,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C822D;
+	__asm        call   swizzle_Micro;
 	__asm        add    esp, 8;
 // LINE 1214:
 	__asm        mov    dp, 0;
@@ -3585,7 +3585,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        inc    tp;
 // LINE 1249:
 	__asm        push   0x59B1D4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        jne    near ptr 0x004C7226;
@@ -3594,12 +3594,12 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C822D;
+	__asm        call   swizzle_Micro;
 	__asm        add    esp, 8;
 // LINE 1252:
 	__asm        jmp    near ptr 0x004C724C;
 	__asm        push   0x59B1DC;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, head;
 	__asm        jne    near ptr 0x004C724C;
@@ -3608,7 +3608,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x004C81C9;
+	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
 // LINE 1257:
 	__asm        mov    eax, tp;
@@ -3619,7 +3619,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 // LINE 1260:
 	__asm        mov    eax, head;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    head, eax;
 // LINE 1262:
@@ -3630,7 +3630,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        lea    eax, head;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C7291;
@@ -3641,7 +3641,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 // LINE 1267:
 	__asm        mov    eax, tp;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    tp, eax;
 // LINE 1268:
@@ -3652,7 +3652,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        lea    eax, tp;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C72CA;
@@ -3661,7 +3661,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 // LINE 1272:
 	__asm        mov    eax, tp;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    tp, eax;
 // LINE 1274:
@@ -3672,7 +3672,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        push   eax;
 	__asm        mov    eax, temp;
 	__asm        push   eax;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C72FC;
@@ -3681,7 +3681,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 // LINE 1278:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 1279:
 	__asm        mov    ax, 1;
@@ -3690,7 +3690,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 BadCompWrite:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 1283:
 	__asm        xor    ax, ax;
@@ -4693,12 +4693,12 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	__asm        mov    eax, ds:[0x63923C];
 	__asm        push   eax;
 	__asm        push   0x59B1E4;
-	__asm        call   0x004C49D8;
+	__asm        call   stol;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
-	__asm        call   0x004C6FE6;
+	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x004C81C4;
 // LINE 1480:
@@ -4735,7 +4735,7 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1506:
 	__asm        mov    eax, lval;
 	__asm        push   eax;
-	__asm        call   0x004C838E;
+	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, i;
 	__asm        mov    edx, lptr;
@@ -4768,7 +4768,7 @@ void swizzle_Micro(char * data, long count) {
 	__asm        mov    eax, mptr;
 	__asm        mov    ax, [eax+2];
 	__asm        push   eax;
-	__asm        call   0x004C8317;
+	__asm        call   swizzle_short;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, mptr;
 	__asm        mov    [ecx+2], ax;
@@ -4776,7 +4776,7 @@ void swizzle_Micro(char * data, long count) {
 	__asm        mov    eax, mptr;
 	__asm        mov    ax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004C8317;
+	__asm        call   swizzle_short;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, mptr;
 	__asm        mov    [ecx+4], ax;
@@ -4784,7 +4784,7 @@ void swizzle_Micro(char * data, long count) {
 	__asm        mov    eax, mptr;
 	__asm        mov    ax, [eax+6];
 	__asm        push   eax;
-	__asm        call   0x004C8317;
+	__asm        call   swizzle_short;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, mptr;
 	__asm        mov    [ecx+6], ax;
@@ -4825,7 +4825,7 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1564:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(sval);
 	__asm        push   eax;
-	__asm        call   0x004C8317;
+	__asm        call   swizzle_short;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, i;
 	__asm        mov    edx, sptr;
@@ -5116,7 +5116,7 @@ short S2CityAlloc() {
 // LINE 1805:
 	__asm        mov    eax, poolsize;
 	__asm        push   eax;
-	__asm        call   0x004CB401;
+	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x647200], eax;
 // LINE 1811:
@@ -5124,7 +5124,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B1EC;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639FE0], eax;
 	__asm        cmp    dword ptr ds:[0x639FE0], 0;
@@ -5136,7 +5136,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B1F8;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A020], eax;
 	__asm        cmp    dword ptr ds:[0x63A020], 0;
@@ -5193,7 +5193,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B204;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639510], eax;
 	__asm        cmp    dword ptr ds:[0x639510], 0;
@@ -5218,7 +5218,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B20C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x6069C4], eax;
 	__asm        cmp    dword ptr ds:[0x6069C4], 0;
@@ -5243,7 +5243,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B214;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x6069CC], eax;
 	__asm        cmp    dword ptr ds:[0x6069CC], 0;
@@ -5268,7 +5268,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B21C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x6069C8], eax;
 	__asm        cmp    dword ptr ds:[0x6069C8], 0;
@@ -5293,7 +5293,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B224;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x6069D4], eax;
 	__asm        cmp    dword ptr ds:[0x6069D4], 0;
@@ -5318,7 +5318,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B22C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x6069D0], eax;
 	__asm        cmp    dword ptr ds:[0x6069D0], 0;
@@ -5343,7 +5343,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B234;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639834], eax;
 	__asm        cmp    dword ptr ds:[0x639834], 0;
@@ -5355,7 +5355,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B23C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A744], eax;
 	__asm        cmp    dword ptr ds:[0x63A744], 0;
@@ -5367,7 +5367,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B244;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639720], eax;
 	__asm        cmp    dword ptr ds:[0x639720], 0;
@@ -5435,7 +5435,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B24C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639310], eax;
 	__asm        cmp    dword ptr ds:[0x639310], 0;
@@ -5447,7 +5447,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B254;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x638F70], eax;
 	__asm        cmp    dword ptr ds:[0x638F70], 0;
@@ -5459,7 +5459,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B25C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639730], eax;
 	__asm        cmp    dword ptr ds:[0x639730], 0;
@@ -5471,7 +5471,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B268;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639CD0], eax;
 	__asm        cmp    dword ptr ds:[0x639CD0], 0;
@@ -5483,7 +5483,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B274;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A470], eax;
 	__asm        cmp    dword ptr ds:[0x63A470], 0;
@@ -5495,7 +5495,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B280;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A750], eax;
 	__asm        cmp    dword ptr ds:[0x63A750], 0;
@@ -5507,7 +5507,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B28C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639170], eax;
 	__asm        cmp    dword ptr ds:[0x639170], 0;
@@ -5519,7 +5519,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B298;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A5B0], eax;
 	__asm        cmp    dword ptr ds:[0x63A5B0], 0;
@@ -5531,7 +5531,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2A0;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x638EE0], eax;
 	__asm        cmp    dword ptr ds:[0x638EE0], 0;
@@ -5543,7 +5543,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2A8;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A640], eax;
 	__asm        cmp    dword ptr ds:[0x63A640], 0;
@@ -5639,7 +5639,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2B0;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639830], eax;
 	__asm        cmp    dword ptr ds:[0x639830], 0;
@@ -5651,7 +5651,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2BC;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A574], eax;
 	__asm        cmp    dword ptr ds:[0x63A574], 0;
@@ -5663,7 +5663,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2C4;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639240], eax;
 	__asm        cmp    dword ptr ds:[0x639240], 0;
@@ -5675,7 +5675,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2CC;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A578], eax;
 	__asm        cmp    dword ptr ds:[0x63A578], 0;
@@ -5687,7 +5687,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2DC;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A264], eax;
 	__asm        cmp    dword ptr ds:[0x63A264], 0;
@@ -5699,7 +5699,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2EC;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639710], eax;
 	__asm        cmp    dword ptr ds:[0x639710], 0;
@@ -5711,7 +5711,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B2F8;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63984C], eax;
 	__asm        cmp    dword ptr ds:[0x63984C], 0;
@@ -5723,7 +5723,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B308;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639244], eax;
 	__asm        cmp    dword ptr ds:[0x639244], 0;
@@ -5735,7 +5735,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B314;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639DDC], eax;
 	__asm        cmp    dword ptr ds:[0x639DDC], 0;
@@ -5747,7 +5747,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B324;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639844], eax;
 	__asm        cmp    dword ptr ds:[0x639844], 0;
@@ -5759,7 +5759,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B330;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639308], eax;
 	__asm        cmp    dword ptr ds:[0x639308], 0;
@@ -5771,7 +5771,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B33C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639A58], eax;
 	__asm        cmp    dword ptr ds:[0x639A58], 0;
@@ -5783,7 +5783,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B348;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639A54], eax;
 	__asm        cmp    dword ptr ds:[0x639A54], 0;
@@ -5795,7 +5795,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B354;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639AC8], eax;
 	__asm        cmp    dword ptr ds:[0x639AC8], 0;
@@ -5807,7 +5807,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B35C;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639AC4], eax;
 	__asm        cmp    dword ptr ds:[0x639AC4], 0;
@@ -5819,7 +5819,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B364;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639718], eax;
 	__asm        cmp    dword ptr ds:[0x639718], 0;
@@ -5831,7 +5831,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B370;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A570], eax;
 	__asm        cmp    dword ptr ds:[0x63A570], 0;
@@ -5843,7 +5843,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B378;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x639714], eax;
 	__asm        cmp    dword ptr ds:[0x639714], 0;
@@ -5855,7 +5855,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B380;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63A25C], eax;
 	__asm        cmp    dword ptr ds:[0x63A25C], 0;
@@ -5867,7 +5867,7 @@ short S2CityAlloc() {
 	__asm        push   0x59B388;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x63923C], eax;
 	__asm        cmp    dword ptr ds:[0x63923C], 0;
@@ -5881,7 +5881,7 @@ short S2CityAlloc() {
 alloc_failure:
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB6C3;
+	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 1952:
 	__asm        mov    ax, 1;
@@ -5894,7 +5894,7 @@ void S2CityFree() {
 // LINE 1969:
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB6C3;
+	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 1970:
 }
@@ -5938,7 +5938,7 @@ void CStringToPString(char * string) {
 // LINE 1994:
 	__asm        mov    eax, string;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    sizeCString, eax;
 // LINE 1997:
@@ -6010,7 +6010,7 @@ void check_backslash_terminate(char * path) {
 // LINE 2043:
 	__asm        mov    eax, path;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 2044:
@@ -6045,7 +6045,7 @@ short check_root(char * pathname) {
 // LINE 2071:
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 2072:
@@ -6060,12 +6060,12 @@ short check_root(char * pathname) {
 	__asm        push   eax;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x004C9495;
+	__asm        call   get_path_at_start;
 	__asm        add    esp, 8;
 // LINE 2078:
 	__asm        lea    eax, pathonly[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C93E5;
@@ -6145,7 +6145,7 @@ void get_path_at_start(char * ref, char * ret) {
 // LINE 2127:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 2128:
@@ -6195,7 +6195,7 @@ void get_path_at_start(char * ref, char * ret) {
 	__asm        push   eax;
 	__asm        mov    eax, ret;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2144:
 	__asm        movsx  eax, off;
@@ -6216,7 +6216,7 @@ void do_uppercase(char * ref, char * res) {
 // LINE 2167:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 	__asm        movsx  eax, len;
@@ -6229,7 +6229,7 @@ void do_uppercase(char * ref, char * res) {
 	__asm        push   eax;
 	__asm        mov    eax, res;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2171:
 	__asm        mov    eax, res;
@@ -6275,7 +6275,7 @@ void get_name_at_end(char * ref, char * ret) {
 // LINE 2199:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 2200:
@@ -6329,7 +6329,7 @@ void get_name_at_end(char * ref, char * ret) {
 	__asm        push   eax;
 	__asm        mov    eax, ret;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2218:
 }
@@ -6342,7 +6342,7 @@ void strip_extension(char * ref) {
 // LINE 2237:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 2238:
@@ -6390,12 +6390,12 @@ void check_extension(char * pathname, char * ext) {
 	__asm        push   eax;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x004C95E3;
+	__asm        call   get_name_at_end;
 	__asm        add    esp, 8;
 // LINE 2274:
 	__asm        lea    eax, nameonly[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 	__asm        movsx  eax, len;
@@ -6405,14 +6405,14 @@ void check_extension(char * pathname, char * ext) {
 	__asm        push   0x59B394;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2276:
 	__asm        mov    eax, ext;
 	__asm        push   eax;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2277:
 	__asm        jmp    near ptr 0x004C9830;
@@ -6450,7 +6450,7 @@ void check_extension(char * pathname, char * ext) {
 	__asm        push   eax;
 	__asm        mov    eax, s;
 	__asm        push   eax;
-	__asm        call   0x0056CE20;
+	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C97C2;
@@ -6459,7 +6459,7 @@ void check_extension(char * pathname, char * ext) {
 // LINE 2292:
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, pathname;
 	__asm        add    ecx, eax;
@@ -6481,7 +6481,7 @@ void check_extension(char * pathname, char * ext) {
 	__asm        push   eax;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2297:
 	__asm        jmp    near ptr 0x004C9830;
@@ -6491,14 +6491,14 @@ void check_extension(char * pathname, char * ext) {
 	__asm        push   0x59B3A0;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2301:
 	__asm        mov    eax, ext;
 	__asm        push   eax;
 	__asm        mov    eax, pathname;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2303:
 }
@@ -6511,7 +6511,7 @@ short check_file_exist(char * filename) {
 	__asm        push   0x59B3A4;
 	__asm        mov    eax, filename;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    fileNum, eax;
 // LINE 2322:
@@ -6523,7 +6523,7 @@ short check_file_exist(char * filename) {
 // LINE 2324:
 	__asm        mov    eax, fileNum;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 2325:
 	__asm        mov    ax, 1;
@@ -6541,7 +6541,7 @@ void remove_illegals(char * ref) {
 // LINE 2349:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 	__asm        movsx  eax, len;
@@ -6659,7 +6659,7 @@ void remove_illegals(char * ref) {
 	__asm        push   eax;
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2371:
 }
@@ -6674,7 +6674,7 @@ void compress_spaces(char * ref) {
 // LINE 2390:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 	__asm        movsx  eax, len;
@@ -6720,7 +6720,7 @@ void compress_spaces(char * ref) {
 	__asm        push   eax;
 	__asm        mov    eax, ref;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2405:
 }

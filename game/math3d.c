@@ -286,7 +286,7 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 // LINE 135:
 	__asm        lea    eax, d.x;
 	__asm        push   eax;
-	__asm        call   0x0054308E;
+	__asm        call   Normalize;
 	__asm        add    esp, 4;
 // LINE 136:
 	__asm        mov    eax, p;
@@ -295,7 +295,7 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	__asm        push   eax;
 	__asm        lea    eax, plane.A;
 	__asm        push   eax;
-	__asm        call   0x00543183;
+	__asm        call   CreatePlane;
 	__asm        add    esp, 0xC;
 // LINE 141:
 	__asm        mov    eax, q;
@@ -400,7 +400,7 @@ int32_t VectorBounds(struct Point3d* V, int32_t m) {
 // LINE 205:
 	__asm        mov    eax, V;
 	__asm        push   eax;
-	__asm        call   0x00542F80;
+	__asm        call   Magnitude;
 	__asm        add    esp, 4;
 	__asm        mov    r, eax;
 	__asm        mov    eax, r;
@@ -528,7 +528,7 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        add    eax, 8;
 	__asm        push   eax;
-	__asm        call   0x00542F80;
+	__asm        call   Magnitude;
 	__asm        add    esp, 4;
 	__asm        mov    v, eax;
 // LINE 267:

@@ -351,7 +351,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A33EE;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        inc    dword ptr ds:[0x5971CC];
@@ -369,25 +369,25 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        cmp    ds:[0x5971D0], eax;
 	__asm        jne    near ptr 0x004A8616;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
 	__asm        jne    near ptr 0x004A848A;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x88], eax;
 	__asm        mov    eax, [ebp-0x88];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8480;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A848F;
 	__asm        jmp    near ptr 0x004A8494;
@@ -416,7 +416,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x94], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    ecx, eax;
@@ -424,22 +424,22 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        cmp    dword ptr [ebp-0x8C], 0;
 	__asm        jne    near ptr 0x004A855B;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8551;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8560;
 	__asm        jmp    near ptr 0x004A8565;
@@ -514,7 +514,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    dword ptr [eax+0x80], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    dword ptr [ebp-0x18], 9;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xFE;
@@ -522,7 +522,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        js     near ptr 0x004A86CD;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x00411EE0;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x004A86B3;
 	__asm        jmp    near ptr 0x004A86D2;
@@ -533,21 +533,21 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        js     near ptr 0x004A8701;
 	__asm        mov    ecx, [ebp-0x24];
-	__asm        call   0x00411EE0;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x24], 8;
 	__asm        jmp    near ptr 0x004A86E7;
 	__asm        jmp    near ptr 0x004A8706;
 	__asm        mov    eax, ds:[0x59A988];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x004A87C4;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx+4], eax;
@@ -562,7 +562,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
@@ -578,7 +578,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A8793;
 	__asm        jmp    near ptr 0x004A87A1;
@@ -597,7 +597,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    dword ptr [eax+0x16E], 0;
 	__asm        jmp    near ptr 0x004A87E9;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
@@ -623,7 +623,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    dword ptr [eax+0x176], 0;
 	__asm        jmp    near ptr 0x004A8867;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -649,7 +649,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        mov    dword ptr [eax+0x17E], 0;
 	__asm        jmp    near ptr 0x004A88E5;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
@@ -682,7 +682,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18E;
-	__asm        call   0x0049F937;
+	__asm        call   MFont::MFont;
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -691,7 +691,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1AA;
-	__asm        call   0x0049F937;
+	__asm        call   MFont::MFont;
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -700,7 +700,7 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1C6;
-	__asm        call   0x0049F937;
+	__asm        call   MFont::MFont;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591888;
 	__asm        mov    eax, ds:[0x59A984];
@@ -709,34 +709,34 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        jmp    near ptr 0x004A89D9;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A89FD;
 // LINE 55:
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA640;
+	__asm        call   InventoryWindow::LoadHotSpots;
 // LINE 56:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A995F;
+	__asm        call   InventoryWindow::CreateImage;
 // LINE 57:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A6BCD;
+	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x004A7075;
+	__asm        call   GraphicWindow::MakeModal;
 	__asm        add    esp, 4;
 // LINE 59:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x004A7470;
+	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 60:
 	__asm        jmp    near ptr 0x004A8A43;
@@ -749,28 +749,28 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    dword ptr [eax], 0x591888;
 // LINE 67:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A9C85;
+	__asm        call   InventoryWindow::DestroyImage;
 // LINE 68:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x004A773B;
+	__asm        call   GraphicWindow::RemoveFocus;
 	__asm        add    esp, 4;
 // LINE 69:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x004A7340;
+	__asm        call   GraphicWindow::RemoveModal;
 	__asm        add    esp, 4;
 // LINE 70:
 	__asm        jmp    near ptr 0x004A8A8A;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1C6;
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1AA;
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18E;
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18A];
 	__asm        dec    dword ptr [eax+0xC];
@@ -786,11 +786,11 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004A8B12;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004A8AFC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8B0D;
 	__asm        jmp    near ptr 0x004A8B12;
@@ -805,7 +805,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8B4A;
 	__asm        mov    eax, this;
@@ -823,11 +823,11 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x004A8BA8;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004A8B92;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8BA3;
 	__asm        jmp    near ptr 0x004A8BA8;
@@ -842,7 +842,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8BE0;
 	__asm        mov    eax, this;
@@ -860,11 +860,11 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x004A8C3E;
 	__asm        mov    ecx, [ebp-0x2C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004A8C28;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8C39;
 	__asm        jmp    near ptr 0x004A8C3E;
@@ -879,7 +879,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8C76;
 	__asm        mov    eax, this;
@@ -898,7 +898,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        je     near ptr 0x004A8CC0;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x3C];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004A8CC0;
 	__asm        jmp    near ptr 0x004A8CC5;
 	__asm        mov    eax, this;
@@ -911,7 +911,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8CF8;
 	__asm        mov    dword ptr [ebp-0x44], 5;
@@ -925,7 +925,7 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        js     near ptr 0x004A8D2D;
 	__asm        sub    dword ptr [ebp-0x48], 8;
 	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004A8D13;
 	__asm        jmp    near ptr 0x004A8D32;
 	__asm        mov    dword ptr [ebp-0x4C], 9;
@@ -939,12 +939,12 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        js     near ptr 0x004A8D67;
 	__asm        sub    dword ptr [ebp-0x50], 8;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004A8D4D;
 	__asm        jmp    near ptr 0x004A8D6C;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x60], eax;
@@ -981,12 +981,12 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        lea    eax, [ebp-0x68];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x78];
-	__asm        call   0x0040DB10;
+	__asm        call   list<HotSpot>::iterator::operator++;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
-	__asm        call   0x0040DB50;
+	__asm        call   list<HotSpot>::erase;
 	__asm        jmp    near ptr 0x004A8DBA;
 	__asm        jmp    near ptr 0x004A8E1E;
 	__asm        mov    eax, this;
@@ -1002,10 +1002,10 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        jne    near ptr 0x004A8E55;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
-	__asm        call   0x0041BBD0;
+	__asm        call   list<HotSpot>::deallocate_buffers;
 	__asm        jmp    near ptr 0x004A8E5A;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4045;
+	__asm        call   GraphicWindow::~GraphicWindow;
 }
 
 // FUNCTION: COPTER_D 0x004a8e67
@@ -1016,7 +1016,7 @@ int32_t InventoryWindow::Initialize() {
 
 // LINE 81:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A44D4;
+	__asm        call   GraphicWindow::Initialize;
 	__asm        mov    nReturnValue, eax;
 // LINE 87:
 	__asm        mov    i, 0;
@@ -1029,7 +1029,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, i;
 	__asm        add    eax, 0x190;
 	__asm        push   eax;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 89:
@@ -1059,7 +1059,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        jmp    near ptr 0x004A8F19;
 	__asm        lea    eax, [ebp-0x100C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x100C];
@@ -1067,39 +1067,39 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0xFE];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A8F4A;
 	__asm        jmp    near ptr 0x004A8F4F;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0xFE];
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004A8F7C;
 	__asm        jmp    near ptr 0x004A911F;
 	__asm        jmp    near ptr 0x004A8F86;
 	__asm        lea    eax, [ebp-0x100C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1024], eax;
 	__asm        cmp    dword ptr [ebp-0x1024], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004A8FE0;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1020], eax;
 	__asm        mov    eax, [ebp-0x1020];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8FD1;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A8FE0;
 	__asm        jmp    near ptr 0x004A8FE5;
@@ -1118,7 +1118,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004A90AB;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1018], eax;
 	__asm        cmp    dword ptr [ebp-0x1018], 0;
@@ -1128,14 +1128,14 @@ int32_t InventoryWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x100C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1018];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1014], eax;
 	__asm        jmp    near ptr 0x004A907B;
 	__asm        mov    dword ptr [ebp-0x1014], 0;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0xFE];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x1014];
 	__asm        mov    ecx, i;
 	__asm        mov    edx, this;
@@ -1155,7 +1155,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x101C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A90F7;
 	__asm        mov    eax, [ebp-0x1024];
@@ -1171,7 +1171,7 @@ int32_t InventoryWindow::Initialize() {
 // LINE 92:
 	__asm        push   0;
 	__asm        push   0x1A4;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 93:
@@ -1201,45 +1201,45 @@ int32_t InventoryWindow::Initialize() {
 	__asm        jmp    near ptr 0x004A9195;
 	__asm        lea    eax, [ebp-0x2024];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2024];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x176;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A91C2;
 	__asm        jmp    near ptr 0x004A91C7;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x176;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004A91F0;
 	__asm        jmp    near ptr 0x004A937B;
 	__asm        jmp    near ptr 0x004A91FA;
 	__asm        lea    eax, [ebp-0x2024];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x203C], eax;
 	__asm        cmp    dword ptr [ebp-0x203C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004A9254;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x2038], eax;
 	__asm        mov    eax, [ebp-0x2038];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9245;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9254;
 	__asm        jmp    near ptr 0x004A9259;
@@ -1256,7 +1256,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004A930F;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2030], eax;
 	__asm        cmp    dword ptr [ebp-0x2030], 0;
@@ -1266,13 +1266,13 @@ int32_t InventoryWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x2024];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2030];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x202C], eax;
 	__asm        jmp    near ptr 0x004A92E7;
 	__asm        mov    dword ptr [ebp-0x202C], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x176;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x202C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x17A], eax;
@@ -1290,7 +1290,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2034];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A9357;
 	__asm        mov    eax, [ebp-0x203C];
@@ -1303,7 +1303,7 @@ int32_t InventoryWindow::Initialize() {
 // LINE 95:
 	__asm        push   0;
 	__asm        push   0x1A5;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 96:
@@ -1333,43 +1333,43 @@ int32_t InventoryWindow::Initialize() {
 	__asm        jmp    near ptr 0x004A93EC;
 	__asm        lea    eax, [ebp-0x303C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x303C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x17E;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A9419;
 	__asm        jmp    near ptr 0x004A941E;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x17E;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004A9447;
 	__asm        jmp    near ptr 0x004A9483;
 	__asm        jmp    near ptr 0x004A9451;
 	__asm        lea    eax, [ebp-0x303C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x303C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x17E;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A947E;
 	__asm        jmp    near ptr 0x004A9483;
 // LINE 98:
 	__asm        push   0;
 	__asm        push   0x1A6;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 99:
@@ -1399,45 +1399,45 @@ int32_t InventoryWindow::Initialize() {
 	__asm        jmp    near ptr 0x004A94F4;
 	__asm        lea    eax, [ebp-0x4040];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x4040];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x186;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A9521;
 	__asm        jmp    near ptr 0x004A9526;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x186;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004A954F;
 	__asm        jmp    near ptr 0x004A96DA;
 	__asm        jmp    near ptr 0x004A9559;
 	__asm        lea    eax, [ebp-0x4040];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4058], eax;
 	__asm        cmp    dword ptr [ebp-0x4058], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004A95B3;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x4054], eax;
 	__asm        mov    eax, [ebp-0x4054];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A95A4;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A95B3;
 	__asm        jmp    near ptr 0x004A95B8;
@@ -1454,7 +1454,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004A966E;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x404C], eax;
 	__asm        cmp    dword ptr [ebp-0x404C], 0;
@@ -1464,13 +1464,13 @@ int32_t InventoryWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x4040];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x404C];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x4048], eax;
 	__asm        jmp    near ptr 0x004A9646;
 	__asm        mov    dword ptr [ebp-0x4048], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x186;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x4048];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18A], eax;
@@ -1488,7 +1488,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x4050];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A96B6;
 	__asm        mov    eax, [ebp-0x4058];
@@ -1509,7 +1509,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, i;
 	__asm        add    eax, 0x19A;
 	__asm        push   eax;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 103:
@@ -1539,7 +1539,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        jmp    near ptr 0x004A9768;
 	__asm        lea    eax, [ebp-0x5058];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x5058];
@@ -1547,24 +1547,24 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0x146];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A9799;
 	__asm        jmp    near ptr 0x004A979E;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0x146];
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004A97CB;
 	__asm        jmp    near ptr 0x004A980B;
 	__asm        jmp    near ptr 0x004A97D5;
 	__asm        lea    eax, [ebp-0x5058];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x5058];
@@ -1572,7 +1572,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        lea    ecx, [ecx+eax*8+0x146];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004A9806;
 	__asm        jmp    near ptr 0x004A980B;
 // LINE 104:
@@ -1596,7 +1596,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9856;
 	__asm        mov    eax, this;
@@ -1604,7 +1604,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1640,7 +1640,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A98ED;
 	__asm        jmp    near ptr 0x004A98F2;
@@ -1666,7 +1666,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        call   0x004704DB;
+	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004A9951;
@@ -1693,11 +1693,11 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        push   0;
 	__asm        push   6;
 	__asm        mov    ecx, 0x604C00;
-	__asm        call   0x00494F82;
+	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x004A9999;
 // LINE 126:
 	__asm        push   0x134;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -1712,7 +1712,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A99E0;
 	__asm        mov    eax, this;
@@ -1720,7 +1720,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1756,7 +1756,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A9A77;
 	__asm        jmp    near ptr 0x004A9A7C;
@@ -1781,7 +1781,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046E6DF;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
 	__asm        jmp    near ptr 0x004A9ADA;
@@ -1801,11 +1801,11 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        push   0;
 	__asm        push   6;
 	__asm        mov    ecx, 0x604C00;
-	__asm        call   0x00494F82;
+	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x004A9B0D;
 // LINE 130:
 	__asm        push   0x134;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -1820,7 +1820,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9B54;
 	__asm        mov    eax, this;
@@ -1828,7 +1828,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1864,7 +1864,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A9BEB;
 	__asm        jmp    near ptr 0x004A9BF0;
@@ -1889,7 +1889,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x0046E6DF;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 	__asm        jmp    near ptr 0x004A9C54;
@@ -1927,10 +1927,10 @@ void InventoryWindow::DestroyImage() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004A9CD5;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9CD0;
 	__asm        jmp    near ptr 0x004A9CD5;
@@ -1950,10 +1950,10 @@ void InventoryWindow::DestroyImage() {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     near ptr 0x004A9D29;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A9D24;
 	__asm        jmp    near ptr 0x004A9D29;
@@ -2022,10 +2022,10 @@ int32_t InventoryWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x004A9DE9;
 // LINE 165:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A9E08;
+	__asm        call   InventoryWindow::DrawTitleText;
 // LINE 166:
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA1D1;
+	__asm        call   InventoryWindow::DrawInventory;
 // LINE 167:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004A9E03;
@@ -2045,7 +2045,7 @@ void InventoryWindow::DrawTitleText() {
 	__asm        dec    dword ptr [ebp-0x60];
 	__asm        js     near ptr 0x004A9E41;
 	__asm        mov    ecx, [ebp-0x64];
-	__asm        call   0x0040DC80;
+	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x64], 0x10;
 	__asm        jmp    near ptr 0x004A9E27;
 	__asm        jmp    near ptr 0x004A9E46;
@@ -2060,7 +2060,7 @@ void InventoryWindow::DrawTitleText() {
 	__asm        lea    eax, rectText[0].left;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA722;
+	__asm        call   InventoryWindow::GetTitleAndAddressRects;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    [ebp-0x68], eax;
@@ -2220,7 +2220,7 @@ void InventoryWindow::DrawTitleText() {
 	__asm        mov    eax, i;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA6D0;
+	__asm        call   InventoryWindow::GetEquipmentTextPosition;
 // LINE 195:
 	__asm        jmp    near ptr 0x004AA0C3;
 	__asm        jmp    near ptr 0x004AA0C8;
@@ -2314,7 +2314,7 @@ void InventoryWindow::DrawInventory() {
 	__asm        jmp    near ptr 0x004AA20A;
 	__asm        jmp    near ptr 0x004AA20F;
 // LINE 213:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    currentUserPersonalInfo, eax;
 // LINE 214:
 	__asm        mov    lCurrentHeliType, 0;
@@ -2333,7 +2333,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 217:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2342,7 +2342,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 218:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2352,7 +2352,7 @@ void InventoryWindow::DrawInventory() {
 	__asm        mov    eax, lCurrentRow;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA693;
+	__asm        call   InventoryWindow::GetRowStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x24];
 	__asm        add    ecx, eax;
@@ -2363,7 +2363,7 @@ void InventoryWindow::DrawInventory() {
 	__asm        inc    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA693;
+	__asm        call   InventoryWindow::GetRowStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x24];
 	__asm        add    ecx, eax;
@@ -2416,7 +2416,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 228:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2449,7 +2449,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 235:
 	__asm        push   2;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2478,7 +2478,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 240:
 	__asm        push   3;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2511,7 +2511,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 246:
 	__asm        push   4;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2544,7 +2544,7 @@ void InventoryWindow::DrawInventory() {
 // LINE 252:
 	__asm        push   5;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AA656;
+	__asm        call   InventoryWindow::GetColumnStartPixel;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
@@ -2656,7 +2656,7 @@ int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
 	__asm        push   eax;
 	__asm        mov    ecx, i.node;
 	__asm        add    ecx, 8;
-	__asm        call   0x004BB0D2;
+	__asm        call   HotSpot::GetBoundingRect;
 // LINE 307:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004AA639;

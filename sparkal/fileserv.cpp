@@ -476,8 +476,8 @@ class bidirectional_iterator<basic_string<char>,int>{
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00491180
 void $E32() {
-	__asm        call   0x0049119A;
-	__asm        call   0x00491548;
+	__asm        call   $E29;
+	__asm        call   $E31;
 	__asm        jmp    near ptr 0x00491195;
 }
 
@@ -485,7 +485,7 @@ void $E32() {
 // FUNCTION: COPTER_D 0x0049119a
 void $E29() {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
@@ -508,7 +508,7 @@ void $E29() {
 	__asm        mov    dword ptr ds:[0x604C04], 0;
 	__asm        jmp    near ptr 0x0049120E;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
@@ -537,110 +537,110 @@ void $E29() {
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        js     near ptr 0x004912A5;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x00411EE0;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x1C], 8;
 	__asm        jmp    near ptr 0x0049128B;
 	__asm        jmp    near ptr 0x004912AA;
 	__asm        mov    dword ptr ds:[0x604C00], 0;
 	__asm        jmp    near ptr 0x004912B9;
 	__asm        push   0x59A118;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A118;
 	__asm        lea    ecx, ds:[0x604C1C];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004912DC;
 	__asm        jmp    near ptr 0x004912E1;
 	__asm        push   0x59A110;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A110;
 	__asm        lea    ecx, ds:[0x604C24];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491304;
 	__asm        jmp    near ptr 0x00491309;
 	__asm        push   0x59A100;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A100;
 	__asm        lea    ecx, ds:[0x604C2C];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049132C;
 	__asm        jmp    near ptr 0x00491331;
 	__asm        push   0x59A0F8;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0F8;
 	__asm        lea    ecx, ds:[0x604C34];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491354;
 	__asm        jmp    near ptr 0x00491359;
 	__asm        push   0x59A0E8;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0E8;
 	__asm        lea    ecx, ds:[0x604C3C];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049137C;
 	__asm        jmp    near ptr 0x00491381;
 	__asm        push   0x59A0E0;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0E0;
 	__asm        lea    ecx, ds:[0x604C44];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913A4;
 	__asm        jmp    near ptr 0x004913A9;
 	__asm        push   0x59A0D8;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0D8;
 	__asm        lea    ecx, ds:[0x604C4C];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913CC;
 	__asm        jmp    near ptr 0x004913D1;
 	__asm        push   0x59A0D0;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0D0;
 	__asm        lea    ecx, ds:[0x604C54];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913F4;
 	__asm        jmp    near ptr 0x004913F9;
 	__asm        push   0x59A0CC;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0CC;
 	__asm        lea    ecx, ds:[0x604C64];
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049141C;
 	__asm        jmp    near ptr 0x00491421;
 	__asm        push   0x59A0C4;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0049146D;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049145E;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049146D;
 	__asm        jmp    near ptr 0x00491472;
@@ -655,7 +655,7 @@ void $E29() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004914F0;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -664,12 +664,12 @@ void $E29() {
 	__asm        push   eax;
 	__asm        push   0x59A0C4;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004914D8;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        lea    ecx, ds:[0x604C6C];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x604C70], eax;
 	__asm        jmp    near ptr 0x00491523;
@@ -684,7 +684,7 @@ void $E29() {
 	__asm        push   0x59A0C4;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00491523;
 	__asm        mov    eax, [ebp-0x14];
@@ -700,7 +700,7 @@ void $E29() {
 // FUNCTION: COPTER_D 0x00491548
 void $E31() {
 	__asm        push   0x491565;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491560;
 }
@@ -720,7 +720,7 @@ void $E30() {
 	__asm        js     near ptr 0x004915A8;
 	__asm        sub    dword ptr [ebp-0x38], 8;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x0049158E;
 	__asm        jmp    near ptr 0x004915AD;
 	__asm        mov    eax, ds:[0x604C10];
@@ -744,7 +744,7 @@ void $E30() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -754,7 +754,7 @@ void $E30() {
 	__asm        jmp    near ptr 0x00491620;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491631;
 	__asm        jmp    near ptr 0x00491636;
@@ -767,7 +767,7 @@ void $E30() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491667;
 	__asm        mov    eax, ds:[0x604C08];
@@ -791,7 +791,7 @@ void $E30() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -801,7 +801,7 @@ void $E30() {
 	__asm        jmp    near ptr 0x004916DA;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004916EB;
 	__asm        jmp    near ptr 0x004916F0;
@@ -814,7 +814,7 @@ void $E30() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491721;
 	__asm        jmp    near ptr 0x00491726;
@@ -832,7 +832,7 @@ int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * s
 	__asm        mov    eax, nType;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604C00;
-	__asm        call   0x00492E50;
+	__asm        call   FileServices::GetPathForFile;
 	__asm        jmp    near ptr 0x00491750;
 // LINE 27:
 }
@@ -847,7 +847,7 @@ int32_t FileServices::Initialize() {
 
 // LINE 42:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
@@ -871,7 +871,7 @@ int32_t FileServices::Initialize() {
 	__asm        jmp    near ptr 0x004917CE;
 // LINE 43:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
@@ -899,14 +899,14 @@ int32_t FileServices::Initialize() {
 	__asm        jmp    near ptr 0x0049183E;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 4;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491862;
 	__asm        jmp    near ptr 0x00491867;
 // LINE 46:
@@ -918,7 +918,7 @@ int32_t FileServices::Initialize() {
 	__asm        je     near ptr 0x0049192B;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xC;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00491894;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -933,7 +933,7 @@ int32_t FileServices::Initialize() {
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0049192B;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2078], eax;
 	__asm        cmp    dword ptr [ebp-0x2078], 0;
@@ -948,7 +948,7 @@ int32_t FileServices::Initialize() {
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2078];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    near ptr 0x0049192B;
@@ -957,7 +957,7 @@ int32_t FileServices::Initialize() {
 	__asm        jmp    near ptr 0x00491930;
 // LINE 47:
 	__asm        mov    ecx, this;
-	__asm        call   0x004923C6;
+	__asm        call   FileServices::ValidateRemotePath;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004919BC;
 // LINE 48:
@@ -966,7 +966,7 @@ int32_t FileServices::Initialize() {
 // LINE 49:
 	__asm        mov    dword ptr [ebp-0x20], 1;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sErrorTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00491980;
 	__asm        mov    eax, sErrorTitle.c_str_ptr;
@@ -975,11 +975,11 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491985;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sErrorText.c_str_ptr, 0;
 	__asm        je     near ptr 0x004919AF;
 	__asm        mov    eax, sErrorText.c_str_ptr;
@@ -988,7 +988,7 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004919B4;
 	__asm        mov    eax, [ebp-0x20];
@@ -998,13 +998,13 @@ int32_t FileServices::Initialize() {
 	__asm        mov    dword ptr [eax], 1;
 // LINE 54:
 	__asm        mov    ecx, this;
-	__asm        call   0x00491D1C;
+	__asm        call   FileServices::FindRemotePath;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00491C75;
 // LINE 56:
 	__asm        push   0;
 	__asm        push   0x24;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 57:
@@ -1034,40 +1034,40 @@ int32_t FileServices::Initialize() {
 	__asm        jmp    near ptr 0x00491A49;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491A6D;
 	__asm        jmp    near ptr 0x00491A72;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00491A92;
 	__asm        jmp    near ptr 0x00491AC5;
 	__asm        jmp    near ptr 0x00491A9C;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x106C];
 	__asm        push   eax;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491AC0;
 	__asm        jmp    near ptr 0x00491AC5;
 // LINE 58:
 	__asm        push   0;
 	__asm        push   4;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 59:
@@ -1097,43 +1097,43 @@ int32_t FileServices::Initialize() {
 	__asm        jmp    near ptr 0x00491B33;
 	__asm        lea    eax, [ebp-0x2070];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2070];
 	__asm        push   eax;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491B57;
 	__asm        jmp    near ptr 0x00491B5C;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00491B7C;
 	__asm        jmp    near ptr 0x00491BAF;
 	__asm        jmp    near ptr 0x00491B86;
 	__asm        lea    eax, [ebp-0x2070];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2070];
 	__asm        push   eax;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491BAA;
 	__asm        jmp    near ptr 0x00491BAF;
 // LINE 60:
 	__asm        push   0x11;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x00417AE0;
+	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x00417AE0;
+	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3870];
@@ -1147,11 +1147,11 @@ int32_t FileServices::Initialize() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xC;
-	__asm        call   0x00412670;
+	__asm        call   basic_string<char>::operator=;
 // LINE 63:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sErrorTitle.c_str_ptr, 0;
 	__asm        je     near ptr 0x00491C21;
 	__asm        mov    eax, sErrorTitle.c_str_ptr;
@@ -1160,11 +1160,11 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491C26;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sErrorText.c_str_ptr, 0;
 	__asm        je     near ptr 0x00491C50;
 	__asm        mov    eax, sErrorText.c_str_ptr;
@@ -1173,14 +1173,14 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491C55;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    near ptr 0x00491D17;
 // LINE 65:
 	__asm        mov    ecx, this;
-	__asm        call   0x00491D1C;
+	__asm        call   FileServices::FindRemotePath;
 	__asm        mov    bRemotePathFound, eax;
 // LINE 66:
 	__asm        cmp    bRemotePathFound, 0;
@@ -1200,7 +1200,7 @@ int32_t FileServices::Initialize() {
 	__asm        je     near ptr 0x00491CB4;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x60];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00491CB4;
 	__asm        jmp    near ptr 0x00491CB9;
 	__asm        cmp    sErrorTitle.c_str_ptr, 0;
@@ -1211,11 +1211,11 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491CE0;
 	__asm        lea    ecx, sErrorText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sErrorText.c_str_ptr, 0;
 	__asm        je     near ptr 0x00491D0A;
 	__asm        mov    eax, sErrorText.c_str_ptr;
@@ -1224,7 +1224,7 @@ int32_t FileServices::Initialize() {
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491D0F;
 	__asm        mov    eax, [ebp-0x28];
@@ -1258,7 +1258,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, lDriveStringLength;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    szDriveStrings, eax;
 // LINE 99:
@@ -1314,22 +1314,22 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, i;
 	__asm        add    eax, szDriveStrings;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00491E4D;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491E3E;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491E4D;
 	__asm        jmp    near ptr 0x00491E52;
@@ -1346,7 +1346,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00492019;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
@@ -1355,15 +1355,15 @@ int32_t FileServices::FindRemotePath() {
 	__asm        jne    near ptr 0x00491EDC;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491ECD;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491EDC;
 	__asm        mov    eax, [ebp-0x50];
@@ -1379,7 +1379,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
@@ -1396,7 +1396,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00491F3F;
 	__asm        jmp    near ptr 0x00491F4D;
@@ -1433,7 +1433,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1443,7 +1443,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        jmp    near ptr 0x00491FED;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00491FFE;
 	__asm        jmp    near ptr 0x00492003;
@@ -1466,7 +1466,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00492052;
 	__asm        mov    eax, [ebp-0x50];
@@ -1478,7 +1478,7 @@ int32_t FileServices::FindRemotePath() {
 // LINE 107:
 	__asm        jmp    near ptr 0x00492070;
 	__asm        push   0x59A0A4;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    near ptr 0x00492088;
@@ -1490,15 +1490,15 @@ int32_t FileServices::FindRemotePath() {
 	__asm        jb     near ptr 0x004920D7;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004920C8;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004920D7;
 	__asm        jmp    near ptr 0x004920DC;
@@ -1517,7 +1517,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        cmp    eax, [ebp-0x88];
 	__asm        jae    near ptr 0x004922E3;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
@@ -1558,7 +1558,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
@@ -1577,7 +1577,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049220E;
 	__asm        jmp    near ptr 0x0049221C;
@@ -1614,7 +1614,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1624,7 +1624,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        jmp    near ptr 0x004922BC;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004922CD;
 	__asm        jmp    near ptr 0x004922D2;
@@ -1648,7 +1648,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        push   0x59A0A4;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00492331;
 	__asm        mov    eax, [ebp-0x88];
@@ -1659,7 +1659,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        jmp    near ptr 0x0049234D;
 // LINE 108:
 	__asm        mov    ecx, this;
-	__asm        call   0x004923C6;
+	__asm        call   FileServices::ValidateRemotePath;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0049236C;
 // LINE 109:
@@ -1689,7 +1689,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 121:
 	__asm        mov    nReturnValue, 1;
@@ -1712,15 +1712,15 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        jae    near ptr 0x00492428;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x190], eax;
 	__asm        mov    eax, [ebp-0x190];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492419;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492428;
 	__asm        jmp    near ptr 0x0049242D;
@@ -1753,7 +1753,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x004924FC;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18C], eax;
 	__asm        cmp    dword ptr [ebp-0x18C], 0;
@@ -1765,7 +1765,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18C];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sTempValidationFilePath.reference, eax;
 	__asm        jmp    near ptr 0x004924FC;
 	__asm        mov    sTempValidationFilePath.reference, 0;
@@ -1774,12 +1774,12 @@ int32_t FileServices::ValidateRemotePath() {
 // LINE 140:
 	__asm        jmp    near ptr 0x0049250D;
 	__asm        push   0x59A0AC;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0AC;
 	__asm        lea    ecx, sTempValidationFilePath.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0049252D;
 // LINE 141:
 	__asm        cmp    sTempValidationFilePath.c_str_ptr, 0;
@@ -1790,14 +1790,14 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        mov    [ebp-0x16C], eax;
 	__asm        mov    eax, [ebp-0x16C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492560;
 	__asm        mov    eax, sTempValidationFilePath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    sTempValidationFilePath.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x00492578;
@@ -1827,7 +1827,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x180];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004925F7;
 	__asm        jmp    near ptr 0x004925FC;
@@ -1858,7 +1858,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        push   eax;
 	__asm        lea    eax, tempPFile.szFilePath[0];
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0049269C;
 	__asm        mov    tempPFile.szFilePath[0], 0;
@@ -1866,7 +1866,7 @@ int32_t FileServices::ValidateRemotePath() {
 // LINE 143:
 	__asm        push   0;
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00492795;
 // LINE 144:
@@ -1883,7 +1883,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x00492706;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049270B;
 	__asm        mov    eax, sTempValidationFilePath.reference;
@@ -1899,7 +1899,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x00492752;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x130];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00492752;
 	__asm        jmp    near ptr 0x00492757;
 	__asm        cmp    sTempValidationFilePath.c_str_ptr, 0;
@@ -1910,7 +1910,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049278A;
 	__asm        mov    eax, [ebp-0x11C];
@@ -1921,15 +1921,15 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 146:
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        cmp    eax, 0x4C4B40;
 	__asm        jge    near ptr 0x004928AB;
 // LINE 147:
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 148:
 	__asm        mov    dword ptr [ebp-0x120], 0;
 	__asm        mov    tempPFile.<vftable>, 0x590468;
@@ -1944,7 +1944,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x0049281C;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492821;
 	__asm        mov    eax, sTempValidationFilePath.reference;
@@ -1960,7 +1960,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x00492868;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x140];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00492868;
 	__asm        jmp    near ptr 0x0049286D;
 	__asm        cmp    sTempValidationFilePath.c_str_ptr, 0;
@@ -1971,14 +1971,14 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004928A0;
 	__asm        mov    eax, [ebp-0x120];
 	__asm        jmp    near ptr 0x00492995;
 // LINE 150:
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 151:
 	__asm        mov    dword ptr [ebp-0x124], 1;
 	__asm        mov    tempPFile.<vftable>, 0x590468;
@@ -1993,7 +1993,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x00492906;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049290B;
 	__asm        mov    eax, sTempValidationFilePath.reference;
@@ -2009,7 +2009,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        je     near ptr 0x00492952;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x150];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00492952;
 	__asm        jmp    near ptr 0x00492957;
 	__asm        cmp    sTempValidationFilePath.c_str_ptr, 0;
@@ -2020,7 +2020,7 @@ int32_t FileServices::ValidateRemotePath() {
 	__asm        mov    [ebp-0x14C], eax;
 	__asm        mov    eax, [ebp-0x14C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049298A;
 	__asm        mov    eax, [ebp-0x124];
@@ -2043,12 +2043,12 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    eax, sDirectoryBase;
 	__asm        push   eax;
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
-	__asm        call   0x004832A3;
+	__asm        call   Directory::Directory;
 // LINE 166:
 	__asm        mov    tempStringListDirectories.length, 0;
 	__asm        inc    dword ptr ds:[0x598560];
 	__asm        lea    ecx, tempStringListDirectories.node;
-	__asm        call   0x004399C0;
+	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    tempStringListDirectories.node, eax;
 	__asm        mov    eax, tempStringListDirectories.node;
 	__asm        mov    ecx, tempStringListDirectories.node;
@@ -2059,18 +2059,18 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        jmp    near ptr 0x004929EC;
 // LINE 167:
 	__asm        lea    ecx, tempStringListFiles.node;
-	__asm        call   0x0043A490;
+	__asm        call   list<basic_string<char>>::list<basic_string<char>>;
 // LINE 168:
 	__asm        jmp    near ptr 0x004929F9;
 // LINE 169:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        cmp    dword ptr [ebp-0xC8], 0;
 	__asm        je     near ptr 0x00492A29;
 	__asm        mov    ecx, [ebp-0xC8];
-	__asm        call   0x0041E2D0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sTempDirectory.reference, eax;
 	__asm        jmp    near ptr 0x00492A30;
 	__asm        mov    sTempDirectory.reference, 0;
@@ -2081,7 +2081,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        lea    eax, tempStringListFiles.node;
 	__asm        push   eax;
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
-	__asm        call   0x0048494D;
+	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00492A4F;
 	__asm        mov    dword ptr [ebp-0xC0], 0;
 // LINE 172:
@@ -2092,7 +2092,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        lea    eax, tempStringListDirectories.node;
 	__asm        push   eax;
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
-	__asm        call   0x0048494D;
+	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00492A7F;
 // LINE 173:
 	__asm        mov    eax, tempStringListDirectories.node;
@@ -2140,10 +2140,10 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryBase;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0xA0];
-	__asm        call   0x00411F60;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00492B48;
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
@@ -2157,7 +2157,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        mov    ecx, [ebp-0xB4];
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    eax, [eax];
@@ -2171,7 +2171,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00492BC6;
 	__asm        mov    eax, [ebp-0x9C];
@@ -2189,16 +2189,16 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        lea    eax, [ebp-0xA0];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x4C];
-	__asm        call   0x00411B80;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, [ebp-0xA0];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00492C16;
 	__asm        lea    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        lea    ecx, sTempDirectory.c_str_ptr;
-	__asm        call   0x00412670;
+	__asm        call   basic_string<char>::operator=;
 	__asm        lea    ecx, [ebp-0x4C];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     near ptr 0x00492C4C;
 	__asm        mov    eax, [ebp-0x4C];
@@ -2207,18 +2207,18 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492C51;
 // LINE 176:
 	__asm        jmp    near ptr 0x00492C56;
 	__asm        push   0x59A0BC;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0BC;
 	__asm        lea    ecx, sTempDirectory.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00492C76;
 // LINE 177:
 	__asm        lea    eax, sTempDirectory.c_str_ptr;
@@ -2239,7 +2239,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        jmp    near ptr 0x00492AA3;
 // LINE 180:
 	__asm        lea    ecx, sTempDirectory.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sTempDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x00492CD2;
 	__asm        mov    eax, sTempDirectory.c_str_ptr;
@@ -2248,7 +2248,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492CD7;
 	__asm        mov    eax, tempStringListFiles.node;
@@ -2269,7 +2269,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
 	__asm        lea    ecx, tempStringListFiles.node;
-	__asm        call   0x0043A940;
+	__asm        call   list<basic_string<char>>::erase;
 	__asm        mov    eax, tempStringListFiles.node;
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, ds:[0x59856C];
@@ -2281,7 +2281,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        dec    dword ptr ds:[0x598560];
 	__asm        jne    near ptr 0x00492D4C;
 	__asm        lea    ecx, tempStringListFiles.node;
-	__asm        call   0x0043A8B0;
+	__asm        call   list<basic_string<char>>::deallocate_buffers;
 	__asm        jmp    near ptr 0x00492D51;
 	__asm        mov    eax, tempStringListDirectories.node;
 	__asm        mov    [ebp-0x94], eax;
@@ -2301,7 +2301,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        push   eax;
 	__asm        lea    ecx, tempStringListDirectories.node;
-	__asm        call   0x0043A940;
+	__asm        call   list<basic_string<char>>::erase;
 	__asm        mov    eax, tempStringListDirectories.node;
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, ds:[0x59856C];
@@ -2313,11 +2313,11 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        dec    dword ptr ds:[0x598560];
 	__asm        jne    near ptr 0x00492DE1;
 	__asm        lea    ecx, tempStringListDirectories.node;
-	__asm        call   0x0043A8B0;
+	__asm        call   list<basic_string<char>>::deallocate_buffers;
 	__asm        jmp    near ptr 0x00492DE6;
 	__asm        jmp    near ptr 0x00492DEB;
 	__asm        lea    ecx, [ebp-0x2C];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x00492E15;
 	__asm        mov    eax, [ebp-0x2C];
@@ -2326,13 +2326,13 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00492E1A;
 	__asm        lea    ecx, [ebp-0x34];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
-	__asm        call   0x00428C70;
+	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        jmp    near ptr 0x00492E2F;
 }
 
@@ -2380,7 +2380,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 223:
 	__asm        jmp    near ptr 0x00492EE1;
@@ -2412,7 +2412,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 225:
 	__asm        jmp    near ptr 0x00492F56;
@@ -2427,7 +2427,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 227:
 	__asm        mov    dword ptr [ebp-0xDC], 0xFFFFFFFF;
@@ -2439,7 +2439,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1E4];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        mov    dword ptr [ebp-0x1E4], 0x590468;
 	__asm        cmp    dword ptr [ebp-0xDC], 0xFFFFFFFF;
@@ -2453,7 +2453,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00493013;
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00493018;
 	__asm        jmp    near ptr 0x0049301D;
@@ -2482,7 +2482,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 229:
 	__asm        jmp    near ptr 0x0049308D;
@@ -2514,7 +2514,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 231:
 	__asm        jmp    near ptr 0x00493102;
@@ -2529,7 +2529,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 234:
 	__asm        mov    eax, 1;
@@ -2561,7 +2561,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 238:
 	__asm        jmp    near ptr 0x004931A3;
@@ -2593,7 +2593,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 240:
 	__asm        jmp    near ptr 0x00493218;
@@ -2608,7 +2608,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 242:
 	__asm        mov    dword ptr [ebp-0x1F4], 0xFFFFFFFF;
@@ -2620,7 +2620,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x2FC];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x1EC], eax;
 	__asm        mov    dword ptr [ebp-0x2FC], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x1F4], 0xFFFFFFFF;
@@ -2634,7 +2634,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x004932D5;
 	__asm        mov    eax, [ebp-0x1F4];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004932DA;
 	__asm        jmp    near ptr 0x004932DF;
@@ -2663,7 +2663,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 244:
 	__asm        jmp    near ptr 0x0049334F;
@@ -2695,7 +2695,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 246:
 	__asm        jmp    near ptr 0x004933C4;
@@ -2710,7 +2710,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 249:
 	__asm        mov    eax, 1;
@@ -2742,7 +2742,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 253:
 	__asm        jmp    near ptr 0x00493465;
@@ -2774,7 +2774,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 255:
 	__asm        jmp    near ptr 0x004934DA;
@@ -2789,7 +2789,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 257:
 	__asm        mov    dword ptr [ebp-0x30C], 0xFFFFFFFF;
@@ -2801,7 +2801,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x414];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x304], eax;
 	__asm        mov    dword ptr [ebp-0x414], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x30C], 0xFFFFFFFF;
@@ -2815,7 +2815,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00493597;
 	__asm        mov    eax, [ebp-0x30C];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049359C;
 	__asm        jmp    near ptr 0x004935A1;
@@ -2844,7 +2844,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 259:
 	__asm        jmp    near ptr 0x00493611;
@@ -2876,7 +2876,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 261:
 	__asm        jmp    near ptr 0x00493686;
@@ -2891,7 +2891,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 264:
 	__asm        mov    eax, 1;
@@ -2923,7 +2923,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 268:
 	__asm        jmp    near ptr 0x00493727;
@@ -2955,7 +2955,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 270:
 	__asm        jmp    near ptr 0x0049379C;
@@ -2970,7 +2970,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 272:
 	__asm        mov    dword ptr [ebp-0x424], 0xFFFFFFFF;
@@ -2982,7 +2982,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x52C];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x41C], eax;
 	__asm        mov    dword ptr [ebp-0x52C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x424], 0xFFFFFFFF;
@@ -2996,7 +2996,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00493859;
 	__asm        mov    eax, [ebp-0x424];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049385E;
 	__asm        jmp    near ptr 0x00493863;
@@ -3025,7 +3025,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 274:
 	__asm        jmp    near ptr 0x004938D3;
@@ -3057,7 +3057,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 276:
 	__asm        jmp    near ptr 0x00493948;
@@ -3072,7 +3072,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 279:
 	__asm        mov    eax, 1;
@@ -3104,7 +3104,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 283:
 	__asm        jmp    near ptr 0x004939E9;
@@ -3136,7 +3136,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 285:
 	__asm        jmp    near ptr 0x00493A5E;
@@ -3151,7 +3151,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 287:
 	__asm        mov    dword ptr [ebp-0x53C], 0xFFFFFFFF;
@@ -3163,7 +3163,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x644];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x534], eax;
 	__asm        mov    dword ptr [ebp-0x644], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x53C], 0xFFFFFFFF;
@@ -3177,7 +3177,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00493B1B;
 	__asm        mov    eax, [ebp-0x53C];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00493B20;
 	__asm        jmp    near ptr 0x00493B25;
@@ -3206,7 +3206,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 289:
 	__asm        jmp    near ptr 0x00493B95;
@@ -3238,7 +3238,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 291:
 	__asm        jmp    near ptr 0x00493C0A;
@@ -3253,7 +3253,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 294:
 	__asm        mov    eax, 1;
@@ -3285,7 +3285,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 298:
 	__asm        jmp    near ptr 0x00493CAB;
@@ -3317,7 +3317,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 300:
 	__asm        jmp    near ptr 0x00493D20;
@@ -3332,7 +3332,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 302:
 	__asm        mov    dword ptr [ebp-0x654], 0xFFFFFFFF;
@@ -3344,7 +3344,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x75C];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x64C], eax;
 	__asm        mov    dword ptr [ebp-0x75C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x654], 0xFFFFFFFF;
@@ -3358,7 +3358,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00493DDD;
 	__asm        mov    eax, [ebp-0x654];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00493DE2;
 	__asm        jmp    near ptr 0x00493DE7;
@@ -3387,7 +3387,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 304:
 	__asm        jmp    near ptr 0x00493E57;
@@ -3419,7 +3419,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 306:
 	__asm        jmp    near ptr 0x00493ECC;
@@ -3434,7 +3434,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 309:
 	__asm        mov    eax, 1;
@@ -3466,7 +3466,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 313:
 	__asm        jmp    near ptr 0x00493F6D;
@@ -3498,7 +3498,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 315:
 	__asm        jmp    near ptr 0x00493FE2;
@@ -3513,7 +3513,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 317:
 	__asm        mov    dword ptr [ebp-0x76C], 0xFFFFFFFF;
@@ -3525,7 +3525,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x874];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x764], eax;
 	__asm        mov    dword ptr [ebp-0x874], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x76C], 0xFFFFFFFF;
@@ -3539,7 +3539,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x0049409F;
 	__asm        mov    eax, [ebp-0x76C];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004940A4;
 	__asm        jmp    near ptr 0x004940A9;
@@ -3568,7 +3568,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 319:
 	__asm        jmp    near ptr 0x00494119;
@@ -3600,7 +3600,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 321:
 	__asm        jmp    near ptr 0x0049418E;
@@ -3615,7 +3615,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 324:
 	__asm        mov    eax, 1;
@@ -3647,7 +3647,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 328:
 	__asm        jmp    near ptr 0x00494238;
@@ -3679,7 +3679,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 330:
 	__asm        jmp    near ptr 0x004942B6;
@@ -3694,7 +3694,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 332:
 	__asm        mov    dword ptr [ebp-0x884], 0xFFFFFFFF;
@@ -3706,7 +3706,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x98C];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x87C], eax;
 	__asm        mov    dword ptr [ebp-0x98C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x884], 0xFFFFFFFF;
@@ -3720,7 +3720,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00494373;
 	__asm        mov    eax, [ebp-0x884];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494378;
 	__asm        jmp    near ptr 0x0049437D;
@@ -3749,7 +3749,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 334:
 	__asm        jmp    near ptr 0x004943F6;
@@ -3781,7 +3781,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 336:
 	__asm        jmp    near ptr 0x00494474;
@@ -3796,7 +3796,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 339:
 	__asm        mov    eax, 1;
@@ -3828,7 +3828,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 343:
 	__asm        jmp    near ptr 0x0049451E;
@@ -3860,7 +3860,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 345:
 	__asm        jmp    near ptr 0x0049459C;
@@ -3875,7 +3875,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 347:
 	__asm        mov    dword ptr [ebp-0x99C], 0xFFFFFFFF;
@@ -3887,7 +3887,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0xAA4];
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        mov    [ebp-0x994], eax;
 	__asm        mov    dword ptr [ebp-0xAA4], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x99C], 0xFFFFFFFF;
@@ -3901,7 +3901,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        je     near ptr 0x00494659;
 	__asm        mov    eax, [ebp-0x99C];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049465E;
 	__asm        jmp    near ptr 0x00494663;
@@ -3930,7 +3930,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 349:
 	__asm        jmp    near ptr 0x004946DC;
@@ -3962,7 +3962,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 351:
 	__asm        jmp    near ptr 0x0049475A;
@@ -3977,7 +3977,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, lTotalStringLength;
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 354:
 	__asm        mov    eax, 1;
@@ -3996,15 +3996,15 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        jae    near ptr 0x004947E8;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xACC], eax;
 	__asm        mov    eax, [ebp-0xACC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004947D9;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004947E8;
 	__asm        jmp    near ptr 0x004947ED;
@@ -4037,7 +4037,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        add    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00494994;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xAC8], eax;
 	__asm        cmp    dword ptr [ebp-0xAC8], 0;
@@ -4055,7 +4055,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [ebp-0xAC8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0xAC8];
 	__asm        mov    [ecx], eax;
@@ -4084,7 +4084,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xAD8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049495C;
 	__asm        jmp    near ptr 0x0049496D;
@@ -4126,15 +4126,15 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        jb     near ptr 0x00494A4D;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494A3E;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494A4D;
 	__asm        jmp    near ptr 0x00494A52;
@@ -4150,7 +4150,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        cmp    eax, [ebp-0xD0];
 	__asm        jae    near ptr 0x00494AF6;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        cmp    dword ptr [ebp-0xC4], 0;
@@ -4165,15 +4165,15 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        lea    ecx, sTemp.c_str_ptr;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xC4];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    near ptr 0x00494AE5;
 	__asm        mov    dword ptr [ebp-0xC0], 0;
 	__asm        lea    ecx, sTemp.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    sTemp.reference, eax;
 	__asm        cmp    dword ptr [ebp-0xD0], 0;
@@ -4191,7 +4191,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00494B40;
 	__asm        mov    eax, [ebp-0xD0];
@@ -4202,17 +4202,17 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 // LINE 362:
 	__asm        jmp    near ptr 0x00494B5B;
 	__asm        push   0x59A0C0;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0C0;
 	__asm        lea    ecx, sTemp.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00494B7B;
 // LINE 363:
 	__asm        lea    eax, sTemp.c_str_ptr;
 	__asm        push   eax;
-	__asm        call   0x00485735;
+	__asm        call   Directory::DoesAnyEntryExistThatMatchesPattern;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00494C73;
@@ -4239,7 +4239,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 365:
 	__asm        jmp    near ptr 0x00494BFB;
@@ -4268,7 +4268,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 367:
 	__asm        jmp    near ptr 0x00494D52;
@@ -4295,7 +4295,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 369:
 	__asm        jmp    near ptr 0x00494CDF;
@@ -4324,7 +4324,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 371:
 	__asm        mov    dword ptr [ebp-0x10], 1;
@@ -4349,7 +4349,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    [ebp-0xAC0], eax;
 	__asm        mov    eax, [ebp-0xAC0];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0xAB4];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4359,7 +4359,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        jmp    near ptr 0x00494DEA;
 	__asm        mov    eax, [ebp-0xAB4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494DFE;
 	__asm        jmp    near ptr 0x00494E03;
@@ -4372,7 +4372,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    [ebp-0xAB0], eax;
 	__asm        mov    eax, [ebp-0xAB0];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494E3B;
 	__asm        mov    eax, [ebp-0x10];
@@ -4405,7 +4405,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 375:
 	__asm        jmp    near ptr 0x00494EBE;
@@ -4416,7 +4416,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 376:
 	__asm        mov    eax, 1;
@@ -4446,7 +4446,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        push   eax;
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 380:
 	__asm        jmp    near ptr 0x00494F55;
@@ -4457,7 +4457,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        mov    eax, [eax+4];
 	__asm        add    eax, szPath;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 381:
 	__asm        mov    eax, 1;
@@ -4482,7 +4482,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    [ebp-0x148], eax;
 	__asm        mov    eax, [ebp-0x148];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00494FCB;
 	__asm        mov    eax, sFile;
@@ -4490,7 +4490,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sFile;
 	__asm        mov    [ecx], eax;
@@ -4526,7 +4526,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00495075;
 	__asm        jmp    near ptr 0x0049507A;
@@ -4560,28 +4560,28 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    eax, nType;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00492E50;
+	__asm        call   FileServices::GetPathForFile;
 	__asm        mov    nReturnValue, eax;
 // LINE 398:
 	__asm        jmp    near ptr 0x004950FC;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        cmp    dword ptr [ebp-0x13C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00495156;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00495147;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00495156;
 	__asm        jmp    near ptr 0x0049515B;
@@ -4598,7 +4598,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00495385;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x114], eax;
 	__asm        cmp    dword ptr [ebp-0x114], 0;
@@ -4607,15 +4607,15 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        jne    near ptr 0x004951F4;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x138], eax;
 	__asm        mov    eax, [ebp-0x138];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004951E5;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004951F4;
 	__asm        mov    eax, [ebp-0x13C];
@@ -4631,7 +4631,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x114];
 	__asm        mov    [ecx], eax;
@@ -4647,7 +4647,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x134];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0049527E;
 	__asm        jmp    near ptr 0x0049528F;
@@ -4684,7 +4684,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4694,7 +4694,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        jmp    near ptr 0x00495356;
 	__asm        mov    eax, [ebp-0x120];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049536A;
 	__asm        jmp    near ptr 0x0049536F;
@@ -4716,7 +4716,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, cla
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x118];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004953C7;
 	__asm        mov    eax, [ebp-0x13C];

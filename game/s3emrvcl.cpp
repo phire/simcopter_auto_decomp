@@ -375,7 +375,7 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 	__asm        push   eax;
 	__asm        mov    eax, id;
 	__asm        mov    ecx, [eax*4+0x608F80];
-	__asm        call   0x00541553;
+	__asm        call   EmergencyVehicleClass::UpdateCar;
 	__asm        jmp    near ptr 0x0054154E;
 // LINE 72:
 }
@@ -423,7 +423,7 @@ struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t id) {
 // FUNCTION: COPTER_D 0x005415d5
 void EmergencyVehicleClass::EmergencyVehicleClass() {
 	__asm        mov    ecx, this;
-	__asm        call   0x00501B6C;
+	__asm        call   AutomobileClass::AutomobileClass;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x11E], 0;
 	__asm        mov    eax, this;
@@ -449,7 +449,7 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 	__asm        mov    dword ptr [eax], 0x5934C0;
 	__asm        jmp    near ptr 0x00541654;
 	__asm        mov    ecx, this;
-	__asm        call   0x00501D09;
+	__asm        call   AutomobileClass::~AutomobileClass;
 }
 
 // FUNCTION: COPTER_D 0x00541661
@@ -486,7 +486,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    al, startIndex.x;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startIndex.yindex, al;
 // LINE 273:
 	__asm        mov    eax, destGoal1.pRGV;
@@ -501,7 +501,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    al, destIndex.x;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 275:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destIndex.x);
@@ -509,7 +509,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    eax, reinterpret_cast<uint32_t>(startIndex.x);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005427F5;
+	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -534,7 +534,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 286:
 	__asm        mov    eax, startGoal2.pRGV;
@@ -602,7 +602,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    yindex, ecx;
@@ -653,7 +653,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        push   0x145;
 	__asm        push   0x5B8268;
 	__asm        push   0x5B828C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005418A4;
 	__asm        jmp    near ptr 0x005418A4;
@@ -686,7 +686,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        push   0x150;
 	__asm        push   0x5B82B0;
 	__asm        push   0x5B82D4;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541911;
 	__asm        jmp    near ptr 0x00541911;
@@ -729,7 +729,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 // LINE 350:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505234;
+	__asm        call   AutomobileClass::MoveAuto;
 // LINE 351:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 0;
@@ -774,7 +774,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    al, stationIndex.x;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    stationIndex.yindex, al;
 // LINE 381:
 	__asm        mov    eax, destGoal1.pRGV;
@@ -789,7 +789,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    al, destIndex.x;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 383:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destIndex.x);
@@ -797,7 +797,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    eax, reinterpret_cast<uint32_t>(stationIndex.x);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005427F5;
+	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 388:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
 	__asm        mov    ecx, this;
@@ -813,7 +813,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x189;
 	__asm        push   0x5B82DC;
 	__asm        push   0x5B8300;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541AAF;
 	__asm        jmp    near ptr 0x00541AAF;
@@ -824,7 +824,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x18A;
 	__asm        push   0x5B8318;
 	__asm        push   0x5B833C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541ADD;
 	__asm        jmp    near ptr 0x00541ADD;
@@ -834,7 +834,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x18B;
 	__asm        push   0x5B8358;
 	__asm        push   0x5B837C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541B08;
 	__asm        jmp    near ptr 0x00541B08;
@@ -844,7 +844,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x18C;
 	__asm        push   0x5B838C;
 	__asm        push   0x5B83B0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541B33;
 	__asm        jmp    near ptr 0x00541B33;
@@ -880,7 +880,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 410:
 	__asm        mov    eax, stationGoal2.pRGV;
@@ -948,7 +948,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    yindex, ecx;
@@ -999,7 +999,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x1C3;
 	__asm        push   0x5B83C4;
 	__asm        push   0x5B83E8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541CEE;
 	__asm        jmp    near ptr 0x00541CEE;
@@ -1054,7 +1054,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x1D7;
 	__asm        push   0x5B8410;
 	__asm        push   0x5B8434;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541D9D;
 	__asm        jmp    near ptr 0x00541D9D;
@@ -1066,7 +1066,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        lea    eax, stationLoc.x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 478:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xEA], 0;
@@ -1102,7 +1102,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 // LINE 483:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505234;
+	__asm        call   AutomobileClass::MoveAuto;
 // LINE 484:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 0;
@@ -1127,7 +1127,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0x1F4;
 	__asm        push   0x5B843C;
 	__asm        push   0x5B8460;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541E97;
 	__asm        jmp    near ptr 0x00541E97;
@@ -1153,7 +1153,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500F34;
+	__asm        call   S3MapAddCarInfo;
 	__asm        add    esp, 0x14;
 // LINE 508:
 	__asm        mov    eax, this;
@@ -1177,7 +1177,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00541F53;
 	__asm        jmp    near ptr 0x00541F53;
@@ -1220,10 +1220,10 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542570;
+	__asm        call   EmergencyVehicleClass::LinkIconToCell;
 // LINE 516:
 	__asm        mov    ecx, this;
-	__asm        call   0x0054293B;
+	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 518:
 	__asm        jmp    near ptr 0x00541FED;
 }
@@ -1253,7 +1253,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        lea    eax, [ebp-0x114];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053C998;
+	__asm        call   RoadGraph::FindIntersections;
 	__asm        lea    edi, result.pRGV;
 	__asm        mov    esi, eax;
 	__asm        mov    ecx, 0xA;
@@ -1276,7 +1276,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        lea    eax, [ebp-0x140];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053C998;
+	__asm        call   RoadGraph::FindIntersections;
 // LINE 544:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        mov    al, [eax];
@@ -1291,7 +1291,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 546:
 	__asm        mov    eax, destGoal1.pRGV;
@@ -1307,7 +1307,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destVertex.yindex, al;
 // LINE 549:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destVertex.x);
@@ -1315,7 +1315,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C37F8;
-	__asm        call   0x00543704;
+	__asm        call   ShortestPath::BreadthFirstSearch;
 	__asm        mov    pathFound, eax;
 // LINE 550:
 	__asm        cmp    pathFound, 0;
@@ -1323,7 +1323,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        push   0x226;
 	__asm        push   0x5B8468;
 	__asm        push   0x5B848C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0054212C;
 	__asm        jmp    near ptr 0x0054212C;
@@ -1366,7 +1366,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        rep movsd;
 	__asm        movsw;
 	__asm        mov    ecx, this;
-	__asm        call   0x00541661;
+	__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
 // LINE 554:
 	__asm        jmp    near ptr 0x005421B7;
 }
@@ -1407,7 +1407,7 @@ void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST* carInst) {
 void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 624:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050409A;
+	__asm        call   AutomobileClass::AdjustSpeed;
 // LINE 626:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -1462,7 +1462,7 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14A;
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1511,7 +1511,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502C92;
+	__asm        call   AutomobileClass::PickTurnDir;
 	__asm        jmp    near ptr 0x00542416;
 // LINE 680:
 	__asm        mov    eax, this;
@@ -1522,7 +1522,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        push   0x2A8;
 	__asm        push   0x5B8498;
 	__asm        push   0x5B84BC;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005423D8;
 	__asm        jmp    near ptr 0x005423D8;
@@ -1548,7 +1548,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 // FUNCTION: COPTER_D 0x0054241d
 void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 921:
-	__asm        call   0x0056F980;
+	__asm        call   clock;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x122], eax;
 // LINE 922:
@@ -1556,7 +1556,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542461;
+	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 923:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x11E], 0;
@@ -1581,7 +1581,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005424AF;
 	__asm        jmp    near ptr 0x005424AF;
@@ -1594,7 +1594,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        push   0x3B2;
 	__asm        push   0x5B84E0;
 	__asm        push   0x5B8504;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005424E5;
 	__asm        jmp    near ptr 0x005424E5;
@@ -1637,7 +1637,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        push   0x3C3;
 	__asm        push   0x5B8510;
 	__asm        push   0x5B8534;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00542564;
 	__asm        jmp    near ptr 0x00542564;
@@ -1663,7 +1663,7 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005425BE;
 	__asm        jmp    near ptr 0x005425BE;
@@ -1676,7 +1676,7 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 	__asm        push   0x3DB;
 	__asm        push   0x5B8540;
 	__asm        push   0x5B8564;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005425F4;
 	__asm        jmp    near ptr 0x005425F4;
@@ -1729,7 +1729,7 @@ void EmergencyVehicleClass::Reset() {
 	__asm        mov    dword ptr [eax+0x18A], 0;
 // LINE 1327:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504116;
+	__asm        call   AutomobileClass::Reset;
 // LINE 1330:
 	__asm        jmp    near ptr 0x005426A6;
 }
@@ -1764,7 +1764,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   0x553;
 	__asm        push   0x5B8570;
 	__asm        push   0x5B8594;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0054271F;
 	__asm        jmp    near ptr 0x0054271F;
@@ -1779,7 +1779,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   eax;
 	__asm        mov    eax, emergencyType;
 	__asm        push   eax;
-	__asm        call   0x00536381;
+	__asm        call   FireEngineClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1371:
 	__asm        jmp    near ptr 0x005427EB;
@@ -1792,7 +1792,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   eax;
 	__asm        mov    eax, emergencyType;
 	__asm        push   eax;
-	__asm        call   0x00535B14;
+	__asm        call   AmbulanceClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1376:
 	__asm        jmp    near ptr 0x005427EB;
@@ -1805,7 +1805,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   eax;
 	__asm        mov    eax, emergencyType;
 	__asm        push   eax;
-	__asm        call   0x00537081;
+	__asm        call   PoliceCarClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1382:
 	__asm        jmp    near ptr 0x005427EB;
@@ -1818,7 +1818,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   eax;
 	__asm        mov    eax, emergencyType;
 	__asm        push   eax;
-	__asm        call   0x00537081;
+	__asm        call   PoliceCarClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1387:
 	__asm        jmp    near ptr 0x005427EB;
@@ -1826,7 +1826,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        push   0x56F;
 	__asm        push   0x5B859C;
 	__asm        push   0x5B85C0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005427B9;
 	__asm        jmp    near ptr 0x005427B9;
@@ -1900,7 +1900,7 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	__asm        push   0x589;
 	__asm        push   0x5B85C8;
 	__asm        push   0x5B85EC;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005428AB;
 	__asm        jmp    near ptr 0x005428AB;
@@ -2150,7 +2150,7 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050917E;
+	__asm        call   AutomobileClass::SetSaveData;
 // LINE 1535:
 	__asm        jmp    near ptr 0x00542B89;
 }
@@ -2169,7 +2169,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00509489;
+	__asm        call   AutomobileClass::LoadSaveData;
 // LINE 1556:
 	__asm        mov    eax, sd;
 	__asm        mov    ax, [eax+0x11E];
@@ -2266,7 +2266,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        push   0x62F;
 	__asm        push   0x5B8618;
 	__asm        push   0x5B863C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00542D17;
 	__asm        jmp    near ptr 0x00542D17;
@@ -2292,7 +2292,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
 	__asm        push   eax;
-	__asm        call   0x00500F34;
+	__asm        call   S3MapAddCarInfo;
 	__asm        add    esp, 0x14;
 // LINE 1587:
 	__asm        jmp    near ptr 0x00542D73;

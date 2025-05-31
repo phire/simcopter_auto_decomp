@@ -6,7 +6,7 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	// Function registers exception cleanup function at 0x0055fc56
 // LINE 111:
 	__asm        push   0x34;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -29,7 +29,7 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	__asm        jmp    near ptr 0x0055F9A6;
 _L45526:
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x0055F2C0;
+	__asm        call   cBBase::~cBBase;
 	__asm        ret;
 	__asm        jmp    near ptr 0x0055F9B2;
 	__asm        mov    dword ptr [ebp-0x18], 0;
@@ -47,7 +47,7 @@ _L45526:
 	__asm        push   0x5BE320;
 	__asm        push   0xAA;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -59,7 +59,7 @@ _L45526:
 	__asm        push   0x5BE310;
 	__asm        push   0xAB;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -67,7 +67,7 @@ _L45526:
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x005674E0;
+	__asm        call   OpenFile;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x120], ax;
 	__asm        mov    eax, h;
@@ -76,7 +76,7 @@ _L45526:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x00554D05;
+	__asm        call   Memory::HGetSize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, thing;
 	__asm        mov    [ecx+8], eax;
@@ -99,14 +99,14 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x005536AE;
+	__asm        call   FlatResFile::GetResType;
 	__asm        cmp    ebx, eax;
 	__asm        je     near ptr 0x0055FABC;
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2FC;
 	__asm        push   0xB1;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0x20;
@@ -119,7 +119,7 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x0055360D;
+	__asm        call   FlatResFile::GetID;
 	__asm        mov    eax, thing;
 	__asm        mov    word ptr [eax+0x22], 0;
 	__asm        lea    eax, [ebp-0x11C];
@@ -132,7 +132,7 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00553564;
+	__asm        call   FlatResFile::GetName;
 	__asm        xor    eax, eax;
 	__asm        mov    al, [ebp-0x11C];
 	__asm        cmp    eax, 0x10;
@@ -144,12 +144,12 @@ _L45526:
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x11C];
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
-	__asm        call   0x005661F4;
+	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, thing;
 	__asm        mov    [ecx+0x1C], eax;
@@ -165,7 +165,7 @@ _L45526:
 	__asm        push   0x5BE2D4;
 	__asm        push   0xBC;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];
@@ -175,7 +175,7 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x0055383A;
+	__asm        call   FlatResFile::Detach;
 	__asm        test   dword ptr [ebp-0x120], 0xFFFF;
 	__asm        je     near ptr 0x0055FBE0;
 	__asm        mov    eax, thing;
@@ -193,7 +193,7 @@ _L45526:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x00554B04;
+	__asm        call   Memory::Stash;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, thing;
 	__asm        mov    [ecx+0x24], eax;
@@ -225,7 +225,7 @@ _L45526:
 _L45522:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 _L45521:

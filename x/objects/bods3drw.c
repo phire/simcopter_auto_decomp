@@ -101,7 +101,7 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        push   1;
 	__asm        mov    eax, ptr;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00563F30;
@@ -120,7 +120,7 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        push   1;
 	__asm        mov    eax, ptr;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00563F68;
@@ -138,7 +138,7 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        push   1;
 	__asm        mov    eax, ptr;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00563F99;
@@ -154,7 +154,7 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        push   1;
 	__asm        mov    eax, ptr;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00563FC4;
@@ -413,7 +413,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 245:
 	__asm        mov    eax, centerPt.y;
@@ -432,7 +432,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 247:
 	__asm        jmp    near ptr 0x005642DC;
@@ -451,7 +451,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        mov    eax, centerPt.x;
 	__asm        sub    eax, radius;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 252:
 	__asm        jmp    near ptr 0x0056476B;
@@ -557,7 +557,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 281:
 	__asm        inc    i;
@@ -607,7 +607,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 302:
 	__asm        inc    i;
@@ -655,7 +655,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 320:
 	__asm        mov    eax, centerPt.y;
@@ -672,7 +672,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 322:
 	__asm        jmp    near ptr 0x0056466C;
@@ -690,7 +690,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        mov    eax, centerPt.x;
 	__asm        sub    eax, radius;
 	__asm        push   eax;
-	__asm        call   0x00565898;
+	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 328:
 }
@@ -726,14 +726,14 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   0x5BEF68;
 	__asm        push   0x1A9;
 	__asm        push   0x5BEF90;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 431:
 	__asm        movsx  eax, facenum;
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 432:
@@ -743,7 +743,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   0x5BEFB8;
 	__asm        push   0x1B0;
 	__asm        push   0x5BEFDC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 434:
 	__asm        mov    eax, bhdr;
@@ -761,7 +761,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   eax;
 	__asm        mov    eax, bhdr;
 	__asm        push   eax;
-	__asm        call   0x00564C10;
+	__asm        call   FindFaceQuadrant2;
 	__asm        add    esp, 0xC;
 // LINE 444:
 	__asm        mov    faceCenter.y, 0xC;
@@ -859,7 +859,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x005649D3;
+	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 473:
 	__asm        mov    eax, centerPt.y;
@@ -892,7 +892,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x005649D3;
+	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 476:
 	__asm        jmp    near ptr 0x0056487A;
@@ -922,7 +922,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x005649D3;
+	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 482:
 }
@@ -988,7 +988,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        push   eax;
 	__asm        mov    eax, startX;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 546:
 	__asm        jmp    near ptr 0x00564BB3;
@@ -1041,7 +1041,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        push   eax;
 	__asm        mov    eax, begin;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 558:
 	__asm        mov    eax, pixLine;
@@ -1068,7 +1068,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        push   eax;
 	__asm        mov    eax, begin;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 563:
 	__asm        jmp    near ptr 0x00564BB3;
@@ -1108,7 +1108,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        push   eax;
 	__asm        mov    eax, begin;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 570:
 	__asm        mov    eax, pixLine;
@@ -1135,7 +1135,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        push   eax;
 	__asm        mov    eax, begin;
 	__asm        push   eax;
-	__asm        call   0x00565641;
+	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 576:
 }
@@ -1194,7 +1194,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        push   0x5BF004;
 	__asm        push   0x25D;
 	__asm        push   0x5BF014;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 610:
 	__asm        fld    psi;
@@ -1211,7 +1211,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        push   0x5BF03C;
 	__asm        push   0x262;
 	__asm        push   0x5BF050;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 611:
 	__asm        fld    psi;
@@ -1262,7 +1262,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        push   0x5BF078;
 	__asm        push   0x273;
 	__asm        push   0x5BF0A8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 628:
 	__asm        mov    eax, faceCenter;
@@ -1272,7 +1272,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        push   0x5BF0D0;
 	__asm        push   0x274;
 	__asm        push   0x5BF100;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 630:
 	__asm        jmp    near ptr 0x00564D88;
@@ -1350,7 +1350,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        push   0x5BF128;
 	__asm        push   0x2A8;
 	__asm        push   0x5BF174;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 681:
 	__asm        mov    eax, i;
@@ -1510,7 +1510,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        push   1;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0056501A;
@@ -1628,7 +1628,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        push   1;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00565153;
@@ -1657,7 +1657,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        push   4;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005651AC;
@@ -1767,7 +1767,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   0x5BF1C4;
 	__asm        push   0x35A;
 	__asm        push   0x5BF1E0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 859:
 	__asm        mov    eax, i;
@@ -1901,7 +1901,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   1;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0056544D;
@@ -1980,7 +1980,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   0x5BF208;
 	__asm        push   0x3A5;
 	__asm        push   0x5BF234;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 935:
 	__asm        cmp    fourByteWrites, 0;
@@ -1992,7 +1992,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   0x5BF25C;
 	__asm        push   0x3A9;
 	__asm        push   0x5BF288;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 940:
 	__asm        mov    eax, oneByteWrites;
@@ -2005,7 +2005,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   1;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0056557E;
@@ -2030,7 +2030,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        push   4;
 	__asm        mov    eax, writeBufferTmp;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005655C8;
@@ -2173,7 +2173,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        push   0x5BF2C8;
 	__asm        push   0x3FC;
 	__asm        push   0x5BF2FC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1022:
 	__asm        cmp    fourByteWrites, 0;
@@ -2185,7 +2185,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        push   0x5BF324;
 	__asm        push   0x400;
 	__asm        push   0x5BF35C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1027:
 	__asm        mov    eax, oneByteWrites;
@@ -2198,7 +2198,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        push   1;
 	__asm        mov    eax, writeBuffer;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005657A2;
@@ -2232,7 +2232,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        push   4;
 	__asm        mov    eax, writeBuffer;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00565802;
@@ -2375,7 +2375,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        push   0x5BF3A4;
 	__asm        push   0x44D;
 	__asm        push   0x5BF3D4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1103:
 	__asm        cmp    fourByteWrites, 0;
@@ -2387,7 +2387,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        push   0x5BF3FC;
 	__asm        push   0x451;
 	__asm        push   0x5BF430;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1108:
 	__asm        mov    eax, oneByteWrites;
@@ -2400,7 +2400,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        push   1;
 	__asm        mov    eax, writeBuffer;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005659DE;
@@ -2423,7 +2423,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        push   4;
 	__asm        mov    eax, writeBuffer;
 	__asm        push   eax;
-	__asm        call   0x00563EA0;
+	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00565A21;

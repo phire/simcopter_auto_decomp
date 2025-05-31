@@ -127,7 +127,7 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        mov    ax, [eax];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00542F05;
+	__asm        call   SpiralScan::InCityGridLimits;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00542E0F;
 // LINE 48:

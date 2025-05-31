@@ -477,7 +477,7 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // LINE 56:
 	__asm        mov    eax, param;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 57:
 	__asm        jmp    near ptr 0x00560AB4;
@@ -489,13 +489,13 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // LINE 60:
 	__asm        mov    eax, par;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 61:
 	__asm        mov    eax, par;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 62:
 	__asm        jmp    near ptr 0x00560AB4;
@@ -503,25 +503,25 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // Block end:
 	__asm        mov    eax, param;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 66:
 	__asm        mov    eax, param;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 67:
 	__asm        mov    eax, param;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 68:
 	__asm        mov    eax, param;
 	__asm        add    eax, 6;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 69:
 	__asm        jmp    near ptr 0x00560AB4;
@@ -551,7 +551,7 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	__asm        push   eax;
 	__asm        mov    eax, tree;
 	__asm        push   eax;
-	__asm        call   0x00560385;
+	__asm        call   Behavior::StdTreeSwizzle;
 	__asm        add    esp, 0xC;
 // LINE 79:
 	__asm        jmp    near ptr 0x00560AE7;

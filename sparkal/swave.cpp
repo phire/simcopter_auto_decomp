@@ -181,7 +181,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        push   eax;
 	__asm        mov    eax, pwfxInfo;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 111:
 	__asm        mov    ax, cbExtraAlloc;
@@ -441,7 +441,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        push   eax;
 	__asm        mov    eax, pszFileName;
 	__asm        push   eax;
-	__asm        call   0x0048EBB0;
+	__asm        call   WaveOpenFile;
 	__asm        add    esp, 0x10;
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
@@ -505,7 +505,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        push   eax;
 	__asm        mov    eax, hmmioIn;
 	__asm        push   eax;
-	__asm        call   0x0048EE25;
+	__asm        call   WaveReadFile;
 	__asm        add    esp, 0x14;
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;

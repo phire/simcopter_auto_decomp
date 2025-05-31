@@ -243,7 +243,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -265,7 +265,7 @@ void S3MissileInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 223:
@@ -320,7 +320,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -342,7 +342,7 @@ void S3MissileInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 249:
@@ -397,7 +397,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -419,7 +419,7 @@ void S3MissileInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 274:
@@ -481,7 +481,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -503,7 +503,7 @@ void S3MissileInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 302:
@@ -554,7 +554,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -578,7 +578,7 @@ void S3MissileInit() {
 // LINE 326:
 	__asm        push   0x17;
 	__asm        push   3;
-	__asm        call   0x004D4B80;
+	__asm        call   VRObjCreatePoint;
 	__asm        add    esp, 8;
 	__asm        mov    obj, eax;
 // LINE 327:
@@ -586,7 +586,7 @@ void S3MissileInit() {
 	__asm        jne    near ptr 0x0051ED5B;
 // LINE 328:
 	__asm        push   0x5B7344;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 333:
 	__asm        push   2;
@@ -670,7 +670,7 @@ void S3MissileInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x28], eax;
@@ -690,7 +690,7 @@ void S3MissileInit() {
 // LINE 371:
 	__asm        push   0x17;
 	__asm        push   1;
-	__asm        call   0x004D4B80;
+	__asm        call   VRObjCreatePoint;
 	__asm        add    esp, 8;
 	__asm        mov    obj, eax;
 // LINE 372:
@@ -698,7 +698,7 @@ void S3MissileInit() {
 	__asm        jne    near ptr 0x0051EEA1;
 // LINE 373:
 	__asm        push   0x5B7360;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 378:
 	__asm        push   2;
@@ -781,7 +781,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        push   6;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 438:
 	__asm        mov    smoke_size, 1;
@@ -818,7 +818,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        push   0x2A;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 460:
 	__asm        mov    smoke_size, 1;
@@ -852,7 +852,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        jmp    near ptr 0x0051FE85;
 // LINE 481:
 	__asm        push   5;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0051F091;
@@ -861,7 +861,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        push   5;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 486:
 	__asm        mov    smoke_size, 4;
@@ -965,7 +965,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        jmp    near ptr 0x0051FE85;
 // LINE 531:
 	__asm        push   0x25;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0051F200;
@@ -974,7 +974,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        push   0x25;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 536:
 	__asm        mov    smoke_size, 8;
@@ -1381,23 +1381,23 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        push   0x17;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 696:
 	__asm        mov    smoke_size, 4;
 // LINE 698:
 	__asm        inc    word ptr ds:[0x5B72D0];
 // LINE 699:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        dec    dword ptr [eax+0x54];
 // LINE 700:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jge    near ptr 0x0051F759;
 // LINE 701:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -1471,7 +1471,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 // LINE 734:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 736:
 	__asm        jmp    near ptr 0x0051F99B;
@@ -1652,7 +1652,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 812:
 	__asm        jmp    near ptr 0x0051FD5E;
@@ -1690,7 +1690,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 824:
 	__asm        mov    eax, md;
@@ -1706,7 +1706,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 829:
 	__asm        mov    eax, md;
@@ -1722,10 +1722,10 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 835:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1770,7 +1770,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 844:
 	__asm        mov    eax, md;
@@ -1786,7 +1786,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 849:
 	__asm        mov    eax, md;
@@ -1802,7 +1802,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 854:
 	__asm        mov    eax, md;
@@ -1822,7 +1822,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 860:
 	__asm        mov    eax, md;
@@ -1836,10 +1836,10 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 866:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1905,7 +1905,7 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 891:
 	__asm        mov    eax, md;
@@ -1996,13 +1996,13 @@ void S3MissileDriver() {
 	__asm        je     near ptr 0x0051FEE2;
 // LINE 933:
 	__asm        push   0x25;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x0051FEE2;
 // LINE 935:
 	__asm        push   0x25;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 939:
 	__asm        mov    eax, ds:[0x5B4968];
@@ -2010,13 +2010,13 @@ void S3MissileDriver() {
 	__asm        je     near ptr 0x0051FF11;
 // LINE 941:
 	__asm        push   5;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x0051FF11;
 // LINE 943:
 	__asm        push   5;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 948:
 	__asm        mov    i, 0;
@@ -2044,7 +2044,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x1C2;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2059,7 +2059,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x1C2;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2074,7 +2074,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x1C2;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2136,7 +2136,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005233FF;
+	__asm        call   S3MissileDebrisFire;
 	__asm        add    esp, 0xC;
 // LINE 982:
 	__asm        mov    eax, md;
@@ -2156,7 +2156,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x00526595;
+	__asm        call   S3FireCanCellBurn;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x0052020D;
@@ -2165,12 +2165,12 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        call   0x004FCABD;
+	__asm        call   S3MissionIsType;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0052017E;
 // LINE 992:
-	__asm        call   0x005251D6;
+	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        je     near ptr 0x00520179;
@@ -2179,7 +2179,7 @@ void S3MissileDriver() {
 	__asm        mov    ecx, cfd;
 	__asm        mov    [ecx], eax;
 // LINE 995:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2199,12 +2199,12 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cfd;
 	__asm        push   eax;
-	__asm        call   0x00525624;
+	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 // LINE 999:
 	__asm        jmp    near ptr 0x0052020D;
 // LINE 1002:
-	__asm        call   0x00526B81;
+	__asm        call   S3FireGetCount;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005201AE;
 // LINE 1004:
@@ -2215,12 +2215,12 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1006:
 	__asm        jmp    near ptr 0x0052020D;
 // LINE 1009:
-	__asm        call   0x005251D6;
+	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        je     near ptr 0x0052020D;
@@ -2229,7 +2229,7 @@ void S3MissileDriver() {
 	__asm        mov    ecx, cfd;
 	__asm        mov    [ecx], eax;
 // LINE 1012:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2249,7 +2249,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cfd;
 	__asm        push   eax;
-	__asm        call   0x00525624;
+	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 // LINE 1020:
 	__asm        mov    eax, cptr;
@@ -2298,7 +2298,7 @@ void S3MissileDriver() {
 // LINE 1041:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1044:
 	__asm        mov    eax, md;
@@ -2407,7 +2407,7 @@ void S3MissileDriver() {
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -2510,7 +2510,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1094:
 	__asm        push   5;
@@ -2518,7 +2518,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1096:
 	__asm        jmp    near ptr 0x005205A6;
@@ -2528,7 +2528,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1099:
 	__asm        push   5;
@@ -2536,7 +2536,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1101:
 	__asm        mov    eax, md;
@@ -2548,7 +2548,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00520638;
@@ -2578,7 +2578,7 @@ void S3MissileDriver() {
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0x16;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1119:
 	__asm        jmp    near ptr 0x005206C4;
@@ -2592,7 +2592,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x005206C4;
@@ -2622,7 +2622,7 @@ void S3MissileDriver() {
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0x16;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1137:
 	__asm        mov    eax, lcptr;
@@ -2673,7 +2673,7 @@ void S3MissileDriver() {
 	__asm        push   eax;
 	__asm        mov    eax, newloc.x;
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 1157:
@@ -2759,7 +2759,7 @@ debris_unlink_next:
 // LINE 1178:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1181:
 	__asm        mov    eax, lcptr;
@@ -2888,7 +2888,7 @@ debris_unlink_next:
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0x18;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1236:
 	__asm        xor    ebx, ebx;
@@ -2946,7 +2946,7 @@ debris_unlink_next:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -3046,7 +3046,7 @@ debris_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1264:
 	__asm        mov    eax, md;
@@ -3064,7 +3064,7 @@ debris_unlink_next:
 	__asm        mov    [ecx+8], eax;
 // LINE 1269:
 	__asm        mov    ebx, 0x14;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x28;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3074,7 +3074,7 @@ debris_unlink_next:
 	__asm        add    tmploc.x, ebx;
 // LINE 1270:
 	__asm        mov    ebx, 0x14;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x28;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3100,7 +3100,7 @@ debris_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, tmpcptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1274:
 	__asm        mov    eax, md;
@@ -3128,7 +3128,7 @@ debris_unlink_next:
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
 	__asm        push   5;
-	__asm        call   0x0051DA96;
+	__asm        call   S3ObjHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 1285:
 	__asm        mov    eax, dyobj;
@@ -3143,7 +3143,7 @@ debris_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00520D99;
@@ -3173,7 +3173,7 @@ debris_unlink_next:
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0x16;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1306:
 	__asm        jmp    near ptr 0x00520E25;
@@ -3187,7 +3187,7 @@ debris_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00520E25;
@@ -3217,7 +3217,7 @@ debris_unlink_next:
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0x16;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1324:
 	__asm        mov    eax, lcptr;
@@ -3268,7 +3268,7 @@ debris_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, newloc.x;
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 1343:
@@ -3525,7 +3525,7 @@ teargas_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1414:
 	__asm        mov    eax, md;
@@ -3537,7 +3537,7 @@ teargas_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1419:
 	__asm        mov    eax, md;
@@ -3556,7 +3556,7 @@ teargas_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1428:
 	__asm        mov    eax, md;
@@ -3846,7 +3846,7 @@ missile_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1518:
 	__asm        mov    eax, md;
@@ -3865,7 +3865,7 @@ missile_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1527:
 	__asm        mov    eax, md;
@@ -4132,7 +4132,7 @@ laser_unlink_next:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -4197,7 +4197,7 @@ laser_unlink_next:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -4306,7 +4306,7 @@ laser_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1657:
 	__asm        mov    eax, md;
@@ -4325,7 +4325,7 @@ laser_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 // LINE 1665:
 	__asm        mov    eax, md;
@@ -4550,7 +4550,7 @@ bullet_unlink_next:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -4646,7 +4646,7 @@ bullet_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00521FD4;
@@ -4674,7 +4674,7 @@ bullet_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x00522096;
+	__asm        call   S3MissileCollisionCheck;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x0052202D;
@@ -4696,7 +4696,7 @@ bullet_unlink_next:
 	__asm        push   eax;
 	__asm        mov    eax, newloc.x;
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 1770:
@@ -4941,7 +4941,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x00522EB3;
+	__asm        call   S3MissileSphereHit;
 	__asm        add    esp, 0x14;
 	__asm        mov    newdist, eax;
 // LINE 1916:
@@ -4962,7 +4962,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x00522EB3;
+	__asm        call   S3MissileSphereHit;
 	__asm        add    esp, 0x14;
 	__asm        mov    newdist, eax;
 // LINE 1926:
@@ -5048,14 +5048,14 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1942:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   7;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1944:
 	__asm        jmp    near ptr 0x0052246E;
@@ -5075,14 +5075,14 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1947:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   7;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1951:
 	__asm        push   0;
@@ -5096,7 +5096,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	__asm        push   eax;
 	__asm        mov    eax, hit_type;
 	__asm        push   eax;
-	__asm        call   0x0051DA96;
+	__asm        call   S3ObjHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 1972:
 	__asm        mov    eax, md;
@@ -5193,7 +5193,7 @@ skip_dynamic_objs:
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x00522EB3;
+	__asm        call   S3MissileSphereHit;
 	__asm        add    esp, 0x14;
 	__asm        mov    newdist, eax;
 // LINE 2015:
@@ -5216,7 +5216,7 @@ skip_dynamic_objs:
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x004D4F25;
+	__asm        call   VRStObjPolyHit;
 	__asm        add    esp, 0x18;
 	__asm        mov    newdist, eax;
 // LINE 2025:
@@ -5294,7 +5294,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        lea    eax, refmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x004CB0F3;
+	__asm        call   MTCreateReflection4x4;
 	__asm        add    esp, 8;
 // LINE 2041:
 	__asm        lea    eax, refmat[0][0];
@@ -5326,7 +5326,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, celloc.x;
 	__asm        push   eax;
-	__asm        call   0x00526595;
+	__asm        call   S3FireCanCellBurn;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00522909;
@@ -5339,7 +5339,7 @@ skip_dynamic_objs:
 	__asm        test   byte ptr [eax+1], 8;
 	__asm        je     near ptr 0x0052276D;
 // LINE 2051:
-	__asm        call   0x00526B81;
+	__asm        call   S3FireGetCount;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00522768;
 // LINE 2053:
@@ -5348,14 +5348,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, celloc.x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x40], eax;
 // LINE 2056:
 	__asm        jmp    near ptr 0x005227C5;
 // LINE 2059:
-	__asm        call   0x005251D6;
+	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        je     near ptr 0x005227C5;
@@ -5364,7 +5364,7 @@ skip_dynamic_objs:
 	__asm        mov    ecx, cfd;
 	__asm        mov    [ecx], eax;
 // LINE 2062:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -5384,7 +5384,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cfd;
 	__asm        push   eax;
-	__asm        call   0x00525624;
+	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 // LINE 2067:
 	__asm        mov    eax, md;
@@ -5399,14 +5399,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2069:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   7;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2071:
 	__asm        mov    eax, md;
@@ -5415,7 +5415,7 @@ skip_dynamic_objs:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx], eax;
 // LINE 2074:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, cptr;
 	__asm        movsx  ecx, word ptr [ecx+8];
 	__asm        movsx  eax, ax;
@@ -5438,7 +5438,7 @@ skip_dynamic_objs:
 // LINE 2078:
 	__asm        lea    eax, refmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xE10;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5451,7 +5451,7 @@ skip_dynamic_objs:
 // LINE 2079:
 	__asm        lea    eax, refmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x78;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5488,7 +5488,7 @@ skip_dynamic_objs:
 	__asm        lea    eax, celloc.x;
 	__asm        push   eax;
 	__asm        push   4;
-	__asm        call   0x0051EEE5;
+	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 2092:
 	__asm        jmp    near ptr 0x00522836;
@@ -5511,14 +5511,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2101:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   7;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2104:
 	__asm        jmp    near ptr 0x00522A02;
@@ -5535,7 +5535,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2108:
 	__asm        jmp    near ptr 0x0052299C;
@@ -5545,7 +5545,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2110:
 	__asm        mov    eax, md;
@@ -5555,14 +5555,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x0052522C;
+	__asm        call   S3FireDouse;
 	__asm        add    esp, 0xC;
 // LINE 2112:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   0xA;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2115:
 	__asm        jmp    near ptr 0x00522A02;
@@ -5579,14 +5579,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2119:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   9;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2122:
 	__asm        mov    eax, md;
@@ -5615,7 +5615,7 @@ skip_dynamic_objs:
 	__asm        mov    eax, [eax+0x28];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x00522DBC;
+	__asm        call   S3MissileGroundHit;
 	__asm        add    esp, 0x10;
 	__asm        mov    newdist, eax;
 // LINE 2158:
@@ -5711,7 +5711,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2176:
 	__asm        mov    eax, md;
@@ -5722,7 +5722,7 @@ skip_dynamic_objs:
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   0xF;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2179:
 	__asm        mov    eax, md;
@@ -5743,7 +5743,7 @@ skip_dynamic_objs:
 	__asm        push   0x59B508;
 	__asm        lea    eax, refmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x004CB0F3;
+	__asm        call   MTCreateReflection4x4;
 	__asm        add    esp, 8;
 // LINE 2189:
 	__asm        lea    eax, refmat[0][0];
@@ -5775,7 +5775,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, celloc.x;
 	__asm        push   eax;
-	__asm        call   0x00526595;
+	__asm        call   S3FireCanCellBurn;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00522C95;
@@ -5784,7 +5784,7 @@ skip_dynamic_objs:
 	__asm        test   al, 0x20;
 	__asm        jne    near ptr 0x00522C95;
 // LINE 2199:
-	__asm        call   0x00526B81;
+	__asm        call   S3FireGetCount;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00522C95;
 // LINE 2201:
@@ -5793,7 +5793,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, celloc.x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x40], eax;
@@ -5812,14 +5812,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2210:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   7;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2212:
 	__asm        mov    eax, md;
@@ -5842,7 +5842,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2218:
 	__asm        jmp    near ptr 0x00522D26;
@@ -5852,7 +5852,7 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2220:
 	__asm        mov    eax, md;
@@ -5862,14 +5862,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x0052522C;
+	__asm        call   S3FireDouse;
 	__asm        add    esp, 0xC;
 // LINE 2222:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   0xA;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2224:
 	__asm        mov    eax, md;
@@ -5892,14 +5892,14 @@ skip_dynamic_objs:
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2230:
 	__asm        push   0;
 	__asm        lea    eax, sloc.x;
 	__asm        push   eax;
 	__asm        push   9;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2232:
 	__asm        mov    eax, md;
@@ -5930,7 +5930,7 @@ int32_t S3MissileGroundHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 	__asm        mov    eax, sp;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 2263:
@@ -5993,7 +5993,7 @@ int32_t S3MissileGroundHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 	__asm        push   eax;
 	__asm        mov    eax, endp.x;
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt2, eax;
 // LINE 2283:
@@ -6427,7 +6427,7 @@ void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
 // LINE 2728:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 2730:
 	__asm        mov    eax, md;
@@ -6450,7 +6450,7 @@ void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        push   0xF;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2736:
 }
@@ -6488,7 +6488,7 @@ void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * se
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2758:
 }
@@ -6507,7 +6507,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB530;
+	__asm        call   ReadFirstMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2786:
@@ -6642,7 +6642,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB57C;
+	__asm        call   ReadNextMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2823:
@@ -6662,7 +6662,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB530;
+	__asm        call   ReadFirstMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2832:
@@ -6797,7 +6797,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB57C;
+	__asm        call   ReadNextMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2869:
@@ -6852,7 +6852,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
-	__asm        call   0x004AB5BD;
+	__asm        call   WriteMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2891:
@@ -6894,7 +6894,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
-	__asm        call   0x004AB5BD;
+	__asm        call   WriteMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2907:

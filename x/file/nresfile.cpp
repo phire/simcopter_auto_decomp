@@ -223,7 +223,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 // LINE 20:
 // Block end:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
@@ -241,7 +241,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [eax+8];
-	__asm        call   0x0055319A;
+	__asm        call   FlatResFile::Count;
 	__asm        movsx  eax, ax;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -253,7 +253,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -274,7 +274,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [eax+8];
-	__asm        call   0x00553452;
+	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, [ebp-0x10];
@@ -286,7 +286,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        je     near ptr 0x0049A0FD;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x00554B04;
+	__asm        call   Memory::Stash;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx+4];
@@ -299,7 +299,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [eax+8];
-	__asm        call   0x0055360D;
+	__asm        call   FlatResFile::GetID;
 	__asm        movsx  eax, word ptr [ebp-0x28];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx+4];
@@ -349,7 +349,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        je     near ptr 0x0049A1A7;
 	__asm        jmp    near ptr 0x0049A1E6;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, loader;
@@ -440,7 +440,7 @@ void NResFile::~NResFile() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [eax+8];
-	__asm        call   0x00553794;
+	__asm        call   FlatResFile::Release;
 	__asm        jmp    near ptr 0x0049A2D9;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
@@ -449,12 +449,12 @@ void NResFile::~NResFile() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049A327;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0049A338;
 	__asm        jmp    near ptr 0x0049A33D;
@@ -479,7 +479,7 @@ void NResFile::~NResFile() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, this;
 	__asm        dec    word ptr [eax+0x11E];
@@ -491,7 +491,7 @@ void NResFile::~NResFile() {
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0049A347;
 	__asm        mov    eax, this;
@@ -502,7 +502,7 @@ void NResFile::~NResFile() {
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0049A3FA;
 	__asm        mov    eax, this;
@@ -513,12 +513,12 @@ void NResFile::~NResFile() {
 	__asm        push   0x59A274;
 	__asm        push   0x17;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0049A42A;
 	__asm        jmp    near ptr 0x0049A42F;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055301B;
+	__asm        call   FlatResFile::~FlatResFile;
 }
 
 

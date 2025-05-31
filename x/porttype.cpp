@@ -188,7 +188,7 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        mov    eax, pstr;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 47:
 	__asm        movsx  eax, len;
@@ -205,7 +205,7 @@ void CtoPstr(char * cstr) {
 // LINE 53:
 	__asm        mov    eax, cstr;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, ax;
 // LINE 54:
@@ -221,7 +221,7 @@ void CtoPstr(char * cstr) {
 	__asm        push   eax;
 	__asm        mov    eax, cstr;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 56:
 	__asm        mov    al, reinterpret_cast<uint8_t>(len);
@@ -329,7 +329,7 @@ unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* res
 // FUNCTION: COPTER_D 0x00566ca8
 void SetPortDC(void * __ptr32 dc) {
 // LINE 104:
-	__asm        call   0x00566CCF;
+	__asm        call   CleanUpPort;
 // LINE 105:
 	__asm        mov    eax, dc;
 	__asm        mov    ds:[0x5BF63C], eax;
@@ -351,7 +351,7 @@ void CleanUpPort() {
 	__asm        push   0x5BF640;
 	__asm        push   0x57;
 	__asm        push   0x5BF664;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 88:
 	__asm        mov    eax, ds:[0x5BF63C];
@@ -370,7 +370,7 @@ void CleanUpPort() {
 // FUNCTION: COPTER_D 0x00566d38
 void SetPort(void * __ptr32 newHWND) {
 // LINE 112:
-	__asm        call   0x00566CCF;
+	__asm        call   CleanUpPort;
 // LINE 113:
 	__asm        mov    eax, newHWND;
 	__asm        mov    ds:[0x5BF638], eax;
@@ -386,13 +386,13 @@ void SetPort(void * __ptr32 newHWND) {
 // FUNCTION: COPTER_D 0x00566d66
 void SetPort(struct GrafPtr newPort) {
 // LINE 120:
-	__asm        call   0x00566CCF;
+	__asm        call   CleanUpPort;
 // LINE 121:
 	__asm        cmp    newPort.window, 0;
 	__asm        je     near ptr 0x00566D8C;
 	__asm        mov    eax, newPort.window;
 	__asm        push   eax;
-	__asm        call   0x00566D38;
+	__asm        call   SetPort;
 	__asm        add    esp, 4;
 // LINE 122:
 	__asm        jmp    near ptr 0x00566D9D;
@@ -430,7 +430,7 @@ void EraseRect(struct tagRECT* rect) {
 	__asm        push   0x5BF684;
 	__asm        push   0x88;
 	__asm        push   0x5BF68C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 138:
 	__asm        mov    eax, rect;
@@ -491,7 +491,7 @@ void EraseRect(struct Rect* r) {
 // LINE 149:
 	__asm        lea    eax, lRect.left;
 	__asm        push   eax;
-	__asm        call   0x00566DCA;
+	__asm        call   EraseRect;
 	__asm        add    esp, 4;
 // LINE 150:
 	__asm        jmp    near ptr 0x00566EA8;
@@ -510,7 +510,7 @@ void FrameRect(struct Rect* rect) {
 	__asm        push   0x5BF6AC;
 	__asm        push   0x9A;
 	__asm        push   0x5BF6B4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 156:
 	__asm        mov    eax, rect;

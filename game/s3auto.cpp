@@ -572,7 +572,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
 	__asm        push   eax;
-	__asm        call   0x005016C9;
+	__asm        call   Distance;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 160:
@@ -625,7 +625,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
 	__asm        push   eax;
-	__asm        call   0x005016C9;
+	__asm        call   Distance;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 181:
@@ -678,7 +678,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
 	__asm        push   eax;
-	__asm        call   0x005016C9;
+	__asm        call   Distance;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 202:
@@ -731,7 +731,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
 	__asm        push   eax;
-	__asm        call   0x005016C9;
+	__asm        call   Distance;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 223:
@@ -782,7 +782,7 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 	__asm        push   eax;
 	__asm        movsx  eax, vehicleID;
 	__asm        mov    ecx, [eax*4+0x608F80];
-	__asm        call   0x00501AAD;
+	__asm        call   AutomobileClass::AutoMessage;
 	__asm        jmp    near ptr 0x00501AA8;
 // LINE 247:
 }
@@ -840,7 +840,7 @@ int32_t CreateAutomobileInstance(int32_t instanceID) {
 // LINE 304:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
-	__asm        call   0x00501DB8;
+	__asm        call   AutomobileClass::CreateInstance;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00501B60;
@@ -870,7 +870,7 @@ void AutomobileClass::AutomobileClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x116], 0;
 // LINE 333:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -902,7 +902,7 @@ void AutomobileClass::AutomobileClass() {
 	__asm        je     near ptr 0x00501BF1;
 	__asm        jmp    near ptr 0x00501C2B;
 // LINE 349:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x6E;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -959,7 +959,7 @@ void AutomobileClass::AutomobileClass() {
 	__asm        push   0x18D;
 	__asm        push   0x5B52CC;
 	__asm        push   0x5B52F0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00501CF5;
 	__asm        jmp    near ptr 0x00501CF5;
@@ -988,7 +988,7 @@ void AutomobileClass::~AutomobileClass() {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 430:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
@@ -1005,7 +1005,7 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 	__asm        push   0x1C3;
 	__asm        push   0x5B52F8;
 	__asm        push   0x5B531C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00501D8E;
 	__asm        jmp    near ptr 0x00501D8E;
@@ -1029,13 +1029,13 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 
 // LINE 480:
 	__asm        push   0x11A;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00501DEB;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x00501B6C;
+	__asm        call   AutomobileClass::AutomobileClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    near ptr 0x00501DF2;
 	__asm        mov    youveWonABrandNewCar, 0;
@@ -1046,7 +1046,7 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        call   0x00504337;
+	__asm        call   AutomobileClass::InitializeInstance;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00501E1D;
 // LINE 488:
@@ -1071,7 +1071,7 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 	__asm        push   0x1EE;
 	__asm        push   0x5B5330;
 	__asm        push   0x5B5354;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00501E65;
 	__asm        jmp    near ptr 0x00501E65;
@@ -1094,7 +1094,7 @@ void AutomobileClass::ResetAll() {
 // LINE 545:
 	__asm        mov    eax, currentCarIndex;
 	__asm        mov    ecx, [eax*4+0x608F80];
-	__asm        call   0x00504116;
+	__asm        call   AutomobileClass::Reset;
 // LINE 546:
 	__asm        jmp    near ptr 0x00501E86;
 // LINE 547:
@@ -1114,7 +1114,7 @@ void AutomobileClass::ItterateAll() {
 // LINE 576:
 	__asm        mov    eax, currentCarIndex;
 	__asm        mov    ecx, [eax*4+0x608F80];
-	__asm        call   0x00501EF1;
+	__asm        call   AutomobileClass::Itterate;
 // LINE 577:
 	__asm        jmp    near ptr 0x00501EC6;
 // LINE 578:
@@ -1130,7 +1130,7 @@ void AutomobileClass::Itterate() {
 	__asm        push   0x259;
 	__asm        push   0x5B535C;
 	__asm        push   0x5B5380;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00501F2B;
 	__asm        jmp    near ptr 0x00501F2B;
@@ -1169,12 +1169,12 @@ void AutomobileClass::Itterate() {
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        jne    near ptr 0x00501FDD;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506333;
+	__asm        call   AutomobileClass::IsCarOutOfCameraRange;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00501FDD;
 // LINE 619:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 620:
 	__asm        jmp    near ptr 0x00502177;
 // LINE 623:
@@ -1194,7 +1194,7 @@ void AutomobileClass::Itterate() {
 // LINE 629:
 	__asm        jmp    near ptr 0x005020F1;
 	__asm        mov    ecx, this;
-	__asm        call   0x005049FE;
+	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005020C1;
 	__asm        mov    eax, this;
@@ -1225,7 +1225,7 @@ void AutomobileClass::Itterate() {
 	__asm        jne    near ptr 0x005020C1;
 // LINE 631:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B0A;
+	__asm        call   AutomobileClass::PullOut;
 // LINE 632:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1241,7 +1241,7 @@ void AutomobileClass::Itterate() {
 	__asm        jg     near ptr 0x005020F1;
 // LINE 636:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B0A;
+	__asm        call   AutomobileClass::PullOut;
 // LINE 637:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1373,7 +1373,7 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        push   eax;
 	__asm        mov    eax, personLoc.x;
 	__asm        push   eax;
-	__asm        call   0x00518E76;
+	__asm        call   S3ObjectPrecisionAlt;
 	__asm        add    esp, 8;
 	__asm        mov    personLoc.y, eax;
 // LINE 766:
@@ -1395,7 +1395,7 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        push   eax;
 	__asm        mov    eax, personType;
 	__asm        push   eax;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1426,7 +1426,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        je     near ptr 0x005022DB;
 // LINE 798:
 	__asm        mov    ecx, this;
-	__asm        call   0x00506971;
+	__asm        call   AutomobileClass::RunFireState;
 // LINE 799:
 	__asm        jmp    near ptr 0x00502A96;
 // LINE 801:
@@ -1436,7 +1436,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        je     near ptr 0x005022FA;
 // LINE 803:
 	__asm        mov    ecx, this;
-	__asm        call   0x00506BCF;
+	__asm        call   AutomobileClass::RunJamState;
 // LINE 804:
 	__asm        jmp    near ptr 0x00502A96;
 // LINE 806:
@@ -1449,7 +1449,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        test   byte ptr [eax+9], 0x20;
 	__asm        je     near ptr 0x0050235E;
 	__asm        mov    ecx, this;
-	__asm        call   0x005049FE;
+	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050235E;
 // LINE 813:
@@ -1465,14 +1465,14 @@ void AutomobileClass::ItterateFSM() {
 // LINE 818:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 820:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFCFFF;
 // LINE 821:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B0A;
+	__asm        call   AutomobileClass::PullOut;
 // LINE 826:
 // Block end:
 	__asm        mov    eax, this;
@@ -1480,7 +1480,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        jle    near ptr 0x00502379;
 // LINE 828:
 	__asm        mov    ecx, this;
-	__asm        call   0x005098B0;
+	__asm        call   AutomobileClass::HonkHorn;
 // LINE 831:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
@@ -1501,7 +1501,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, itterationDist;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050598C;
+	__asm        call   AutomobileClass::CollisionCheck;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    near ptr 0x00502823;
 // LINE 841:
@@ -1549,7 +1549,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, carblock;
 	__asm        mov    eax, [eax+0x10E];
 	__asm        push   eax;
-	__asm        call   0x004FC2DB;
+	__asm        call   S3MissionGetByID;
 	__asm        add    esp, 4;
 	__asm        mov    md, eax;
 // LINE 859:
@@ -1563,7 +1563,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x10E];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506859;
+	__asm        call   AutomobileClass::StartJam;
 // LINE 864:
 	__asm        jmp    near ptr 0x005025CA;
 // LINE 865:
@@ -1594,7 +1594,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    near ptr 0x005025CA;
 // LINE 870:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1605,7 +1605,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        jne    near ptr 0x005025AD;
 // LINE 872:
 	__asm        push   0x800;
-	__asm        call   0x004FCCD0;
+	__asm        call   S3MissionStartDirect;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10E], eax;
@@ -1618,16 +1618,16 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x10E];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506859;
+	__asm        call   AutomobileClass::StartJam;
 // LINE 878:
 	__asm        jmp    near ptr 0x005025CA;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505820;
+	__asm        call   AutomobileClass::CanIDoAUTurn;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005025CA;
 // LINE 880:
 	__asm        mov    ecx, this;
-	__asm        call   0x00505706;
+	__asm        call   AutomobileClass::DoAUTurn;
 // LINE 881:
 	__asm        jmp    near ptr 0x0050284F;
 // LINE 885:
@@ -1666,7 +1666,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        jne    near ptr 0x005026E3;
 // LINE 896:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1677,7 +1677,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        jne    near ptr 0x005026C6;
 // LINE 898:
 	__asm        push   0x800;
-	__asm        call   0x004FCCD0;
+	__asm        call   S3MissionStartDirect;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10E], eax;
@@ -1690,16 +1690,16 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x10E];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506859;
+	__asm        call   AutomobileClass::StartJam;
 // LINE 904:
 	__asm        jmp    near ptr 0x005026E3;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505820;
+	__asm        call   AutomobileClass::CanIDoAUTurn;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005026E3;
 // LINE 906:
 	__asm        mov    ecx, this;
-	__asm        call   0x00505706;
+	__asm        call   AutomobileClass::DoAUTurn;
 // LINE 907:
 	__asm        jmp    near ptr 0x0050284F;
 // LINE 911:
@@ -1738,7 +1738,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x005027FC;
 // LINE 923:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1749,7 +1749,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        jne    near ptr 0x005027DF;
 // LINE 925:
 	__asm        push   0x800;
-	__asm        call   0x004FCCD0;
+	__asm        call   S3MissionStartDirect;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10E], eax;
@@ -1762,16 +1762,16 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, [eax+0x10E];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506859;
+	__asm        call   AutomobileClass::StartJam;
 // LINE 931:
 	__asm        jmp    near ptr 0x005027FC;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505820;
+	__asm        call   AutomobileClass::CanIDoAUTurn;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005027FC;
 // LINE 933:
 	__asm        mov    ecx, this;
-	__asm        call   0x00505706;
+	__asm        call   AutomobileClass::DoAUTurn;
 // LINE 934:
 	__asm        jmp    near ptr 0x0050284F;
 // LINE 938:
@@ -1795,7 +1795,7 @@ void AutomobileClass::ItterateFSM() {
 // Switch pointers
 // LINE 949:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050413E;
+	__asm        call   AutomobileClass::AmIABadGuy;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050297E;
 // LINE 951:
@@ -1803,7 +1803,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0x9E], 0;
 	__asm        je     near ptr 0x00502969;
 	__asm        push   0x30;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00502969;
@@ -1842,7 +1842,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
 	__asm        push   0x30;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1865,7 +1865,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00502940;
 	__asm        jmp    near ptr 0x00502940;
@@ -1880,7 +1880,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 963:
 // Block end:
@@ -1889,7 +1889,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        je     near ptr 0x0050297E;
 // LINE 964:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050417D;
+	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 968:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x9E], 0;
@@ -1899,7 +1899,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        je     near ptr 0x00502A0D;
 // LINE 973:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508F54;
+	__asm        call   AutomobileClass::MoveForwardOnHiway;
 // LINE 976:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEA], 0;
@@ -1909,13 +1909,13 @@ void AutomobileClass::ItterateFSM() {
 	__asm        add    eax, 0xD2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 980:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 981:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0xD4];
@@ -1926,13 +1926,13 @@ void AutomobileClass::ItterateFSM() {
 	__asm        add    eax, 0xD2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00508180;
+	__asm        call   AutomobileClass::PickHiwayDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00508AD4;
+	__asm        call   AutomobileClass::MakeAHiwayTurn;
 // LINE 989:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050790C;
+	__asm        call   AutomobileClass::AdjustNextHiwayPosition;
 // LINE 991:
 	__asm        jmp    near ptr 0x00502A96;
 // LINE 1003:
@@ -1960,7 +1960,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    dword ptr [eax+0xEA], 0;
 // LINE 1014:
 	__asm        mov    ecx, this;
-	__asm        call   0x00504B48;
+	__asm        call   AutomobileClass::TransitionBetweenGoals;
 // LINE 1020:
 	__asm        jmp    near ptr 0x00502A26;
 // LINE 1032:
@@ -1969,7 +1969,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        add    eax, itterationDist;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505234;
+	__asm        call   AutomobileClass::MoveAuto;
 // LINE 1034:
 	__asm        mov    eax, itterationDist;
 	__asm        mov    ecx, this;
@@ -1998,7 +1998,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 	__asm        push   0x41F;
 	__asm        push   0x5B539C;
 	__asm        push   0x5B53C0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00502AEE;
 	__asm        jmp    near ptr 0x00502AEE;
@@ -2041,7 +2041,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 	__asm        push   0x431;
 	__asm        push   0x5B53C8;
 	__asm        push   0x5B53EC;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00502B68;
 	__asm        jmp    near ptr 0x00502B68;
@@ -2070,7 +2070,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	__asm        push   0x43F;
 	__asm        push   0x5B53F8;
 	__asm        push   0x5B541C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00502BC7;
 	__asm        jmp    near ptr 0x00502BC7;
@@ -2129,7 +2129,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00518E76;
+	__asm        call   S3ObjectPrecisionAlt;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC2], eax;
@@ -2161,7 +2161,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        test   possibleTurnDir, eax;
 	__asm        je     near ptr 0x00502CF2;
 // LINE 1159:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2211,7 +2211,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    turn, 1;
 	__asm        jmp    near ptr 0x00502F02;
 // LINE 1179:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00502D94;
@@ -2223,7 +2223,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    turn, 0;
 	__asm        jmp    near ptr 0x00502F02;
 // LINE 1183:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2243,7 +2243,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        jmp    near ptr 0x00502DD4;
 	__asm        jmp    near ptr 0x00502F02;
 // LINE 1185:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2263,7 +2263,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        jmp    near ptr 0x00502E21;
 	__asm        jmp    near ptr 0x00502F02;
 // LINE 1187:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2291,7 +2291,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        push   0x4A6;
 	__asm        push   0x5B5424;
 	__asm        push   0x5B5448;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00502ECA;
 	__asm        jmp    near ptr 0x00502ECA;
@@ -2328,7 +2328,7 @@ void AutomobileClass::BeamToWithinCameraRange() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xBE], 0;
 // LINE 1214:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2479,7 +2479,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1289:
 	__asm        push   9;
 	__asm        lea    ecx, scan.currDist;
-	__asm        call   0x00542DC0;
+	__asm        call   SpiralScan::SpiralScan;
 // LINE 1290:
 	__asm        mov    foundcell, 0;
 // LINE 1291:
@@ -2565,11 +2565,11 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        cmp    dword ptr [ebp-0xE0], 0;
 	__asm        je     near ptr 0x00503327;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506F0E;
+	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00503327;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050413E;
+	__asm        call   AutomobileClass::AmIABadGuy;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00503327;
 // LINE 1305:
@@ -2592,7 +2592,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005032E7;
 	__asm        jmp    near ptr 0x005032E7;
@@ -2690,7 +2690,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        lea    eax, [ebp-0xB4];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053C998;
+	__asm        call   RoadGraph::FindIntersections;
 // LINE 1325:
 	__asm        cmp    goal1.pRGV, 0;
 	__asm        jne    near ptr 0x0050348D;
@@ -2734,7 +2734,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00503529;
 	__asm        jmp    near ptr 0x00503529;
@@ -2750,7 +2750,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        lea    eax, scanLoc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, scan.currDist;
-	__asm        call   0x00542E03;
+	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00503568;
 	__asm        cmp    foundcell, 0;
@@ -2774,7 +2774,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        lea    eax, prevGridLoc.x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 1483:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 1;
@@ -2782,7 +2782,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0x5CB;
 	__asm        push   0x5B5450;
 	__asm        push   0x5B5474;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005035E6;
 	__asm        jmp    near ptr 0x005035E6;
@@ -2814,7 +2814,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        add    eax, 0xD2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 1505:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -2865,13 +2865,13 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        mov    eax, [ebp-0xFC];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506F6F;
+	__asm        call   AutomobileClass::SetHiwayDirection;
 // LINE 1506:
 	__asm        mov    ecx, this;
-	__asm        call   0x00507782;
+	__asm        call   AutomobileClass::AdjustCurrentHiwayPosition;
 // LINE 1507:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050790C;
+	__asm        call   AutomobileClass::AdjustNextHiwayPosition;
 // LINE 1508:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2911,12 +2911,12 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0x5EB;
 	__asm        push   0x5B5490;
 	__asm        push   0x5B54B4;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005037F4;
 	__asm        jmp    near ptr 0x005037F4;
 // LINE 1518:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3068,7 +3068,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x104];
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00503A43;
@@ -3103,7 +3103,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        cmp    dword ptr [eax+0x7E], 0xFFFFFFFE;
 	__asm        jne    near ptr 0x00503BDF;
 // LINE 1574:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3140,7 +3140,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0x62D;
 	__asm        push   0x5B54F0;
 	__asm        push   0x5B5514;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00503B44;
 	__asm        jmp    near ptr 0x00503B44;
@@ -3213,7 +3213,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0x63D;
 	__asm        push   0x5B5518;
 	__asm        push   0x5B553C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00503C9D;
 	__asm        jmp    near ptr 0x00503C9D;
@@ -3276,7 +3276,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00503D81;
 	__asm        jmp    near ptr 0x00503D81;
@@ -3302,14 +3302,14 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 1632:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x00505234;
+	__asm        call   AutomobileClass::MoveAuto;
 // LINE 1635:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050503F;
+	__asm        call   AutomobileClass::DoDiagonalRoadFixup;
 // LINE 1638:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3357,7 +3357,7 @@ void AutomobileClass::UnPlaceCar() {
 	__asm        add    eax, 0xD2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 1670:
 	__asm        jmp    near ptr 0x00503ECD;
 // LINE 1671:
@@ -3365,7 +3365,7 @@ void AutomobileClass::UnPlaceCar() {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 1672:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFD;
@@ -3389,7 +3389,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 	__asm        je     near ptr 0x00503F60;
 // LINE 1695:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 1697:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFEFF;
@@ -3412,7 +3412,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 // LINE 1705:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1707:
 	__asm        jmp    near ptr 0x00503FB1;
@@ -3438,7 +3438,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 // LINE 1717:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1722:
 	__asm        push   0;
@@ -3446,7 +3446,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST* dyhittee) {
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
 	__asm        push   0xF;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1725:
 	__asm        jmp    near ptr 0x00503FC9;
@@ -3464,7 +3464,7 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        jle    near ptr 0x00504025;
 	__asm        mov    ecx, this;
-	__asm        call   0x005045B6;
+	__asm        call   AutomobileClass::CanIPullOver;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00504025;
 	__asm        cmp    msg_id, 0;
@@ -3502,7 +3502,7 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 // LINE 1756:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1762:
 	__asm        push   0;
@@ -3510,7 +3510,7 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
 	__asm        push   8;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1764:
 	__asm        jmp    near ptr 0x00504093;
@@ -3552,7 +3552,7 @@ void AutomobileClass::AdjustSpeed() {
 void AutomobileClass::Reset() {
 // LINE 1791:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 1792:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 1;
@@ -3587,7 +3587,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 // LINE 1808:
 	__asm        push   1;
 	__asm        lea    ecx, spiral.currDist;
-	__asm        call   0x00542DC0;
+	__asm        call   SpiralScan::SpiralScan;
 // LINE 1810:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x7C];
@@ -3612,7 +3612,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005041F7;
 	__asm        jmp    near ptr 0x005041F7;
@@ -3647,7 +3647,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        test   al, 0x10;
 	__asm        je     near ptr 0x00504307;
 	__asm        mov    ecx, pCar;
-	__asm        call   0x005045B6;
+	__asm        call   AutomobileClass::CanIPullOver;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00504307;
 // LINE 1836:
@@ -3699,7 +3699,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        lea    eax, scanLoc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
-	__asm        call   0x00542E03;
+	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0050419E;
 // LINE 1844:
@@ -3728,7 +3728,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        push   0x75C;
 	__asm        push   0x5B5560;
 	__asm        push   0x5B5584;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050438A;
 	__asm        jmp    near ptr 0x0050438A;
@@ -3751,7 +3751,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    objectMemory, eax;
 // LINE 1905:
@@ -3760,7 +3760,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        push   0x771;
 	__asm        push   0x5B558C;
 	__asm        push   0x5B55B0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005043EB;
 	__asm        jmp    near ptr 0x005043EB;
@@ -3780,7 +3780,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        push   0x775;
 	__asm        push   0x5B55C0;
 	__asm        push   0x5B55E4;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050442F;
 	__asm        jmp    near ptr 0x0050442F;
@@ -3814,7 +3814,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 // LINE 1922:
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D3E9D;
+	__asm        call   VRObjGetHeight;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x20], eax;
@@ -3822,7 +3822,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 1926:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3835,7 +3835,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xB2], eax;
 // LINE 1927:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3859,7 +3859,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        jmp    near ptr 0x0050452F;
 // LINE 1940:
 	__asm        mov    ecx, this;
-	__asm        call   0x00509CF7;
+	__asm        call   AutomobileClass::ChangeAutoColor;
 // LINE 1941:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xBA], 0xA0000;
@@ -3889,7 +3889,7 @@ int32_t AutomobileClass::Initialize(int32_t instanceID) {
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00504337;
+	__asm        call   AutomobileClass::InitializeInstance;
 	__asm        jmp    near ptr 0x00504571;
 // LINE 1980:
 }
@@ -3905,7 +3905,7 @@ short GetMaximumNumberOfAutomobiles() {
 // FUNCTION: COPTER_D 0x0050458c
 void ItterateAllAutomobiles() {
 // LINE 2024:
-	__asm        call   0x00501EB1;
+	__asm        call   AutomobileClass::ItterateAll;
 // LINE 2025:
 	__asm        jmp    near ptr 0x0050459C;
 }
@@ -3913,7 +3913,7 @@ void ItterateAllAutomobiles() {
 // FUNCTION: COPTER_D 0x005045a1
 void ResetAllAutomobiles() {
 // LINE 2046:
-	__asm        call   0x00501E71;
+	__asm        call   AutomobileClass::ResetAll;
 // LINE 2047:
 	__asm        jmp    near ptr 0x005045B1;
 }
@@ -4106,7 +4106,7 @@ int32_t AutomobileClass::CanIPullOver() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00504849;
 	__asm        jmp    near ptr 0x00504849;
@@ -4221,7 +4221,7 @@ void AutomobileClass::PullOver(short __formal) {
 	__asm        push   7;
 	__asm        push   0xE;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050217C;
+	__asm        call   AutomobileClass::PlacePerson;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005049F2;
 // LINE 2169:
@@ -4259,7 +4259,7 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00504A69;
 	__asm        jmp    near ptr 0x00504A69;
@@ -4364,7 +4364,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502A9B;
+	__asm        call   AutomobileClass::UnlinkFromCell;
 // LINE 2241:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
@@ -4482,7 +4482,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        push   0x8D0;
 	__asm        push   0x5B55F8;
 	__asm        push   0x5B561C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00504D69;
 	__asm        jmp    near ptr 0x00504D69;
@@ -4502,7 +4502,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 2268:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xEE], 0xA;
@@ -4516,7 +4516,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        add    eax, 0x70;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053C331;
+	__asm        call   RoadGraph::GetNextGoal;
 // LINE 2283:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7E], 0xFFFFFFFE;
@@ -4614,7 +4614,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        jne    near ptr 0x00505022;
 // LINE 2323:
 	__asm        push   0x31;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00505022;
@@ -4653,7 +4653,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
 	__asm        push   0x31;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4676,7 +4676,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00504FF9;
 	__asm        jmp    near ptr 0x00504FF9;
@@ -4691,12 +4691,12 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
 	__asm        push   eax;
-	__asm        call   0x005240DC;
+	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2338:
 // Block end:
 	__asm        mov    ecx, this;
-	__asm        call   0x0050503F;
+	__asm        call   AutomobileClass::DoDiagonalRoadFixup;
 // LINE 2344:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -4862,7 +4862,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050529F;
 	__asm        jmp    near ptr 0x0050529F;
@@ -5157,7 +5157,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        mov    eax, dist;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050583B;
+	__asm        call   AutomobileClass::DoPullOverStuff;
 // LINE 2495:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -5236,7 +5236,7 @@ void AutomobileClass::DoAUTurn() {
 	__asm        add    eax, 0x70;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D02C;
+	__asm        call   RoadGraph::SamePlaceOtherDirection;
 // LINE 2539:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEE], 0xA;
@@ -5313,7 +5313,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 // LINE 2567:
 	__asm        lea    eax, pulloverVector.x;
 	__asm        push   eax;
-	__asm        call   0x0054308E;
+	__asm        call   Normalize;
 	__asm        add    esp, 4;
 // LINE 2569:
 	__asm        mov    eax, this;
@@ -5513,7 +5513,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00505AF4;
 	__asm        jmp    near ptr 0x00505AF4;
@@ -5586,7 +5586,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        and    dword ptr [eax+8], 0xFFFFFBFF;
 // LINE 2661:
 	__asm        mov    ecx, this;
-	__asm        call   0x00506F0E;
+	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00505C01;
 // LINE 2662:
@@ -5599,7 +5599,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        push   0xA6B;
 	__asm        push   0x5B5624;
 	__asm        push   0x5B5648;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00505C2C;
 	__asm        jmp    near ptr 0x00505C2C;
@@ -5688,7 +5688,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00505D64;
 	__asm        jmp    near ptr 0x00505D64;
@@ -5902,7 +5902,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        mov    eax, [eax+0xF2];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005062A7;
+	__asm        call   AutomobileClass::AreCarsHeadOn;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00505FE0;
 // LINE 2805:
@@ -5975,7 +5975,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005060C4;
 	__asm        jmp    near ptr 0x005060C4;
@@ -5989,7 +5989,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        push   0xB1A;
 	__asm        push   0x5B5650;
 	__asm        push   0x5B5674;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005060FA;
 	__asm        jmp    near ptr 0x005060FA;
@@ -6089,7 +6089,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        mov    eax, [eax+0xF2];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x005062A7;
+	__asm        call   AutomobileClass::AreCarsHeadOn;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00506222;
 // LINE 2896:
@@ -6285,28 +6285,28 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 	__asm        mov    eax, dyhitter;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00506C7D;
+	__asm        call   AutomobileClass::IveBeenSpotlighted;
 // LINE 3035:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3037:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00503FD0;
+	__asm        call   AutomobileClass::IveBeenMegaphoned;
 // LINE 3038:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3040:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050670B;
+	__asm        call   AutomobileClass::StartFire;
 // LINE 3041:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3043:
 	__asm        mov    eax, dyhitter;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00503EDE;
+	__asm        call   AutomobileClass::WaterDouse;
 // LINE 3044:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3046:
@@ -6315,14 +6315,14 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3050:
 	__asm        mov    ecx, this;
-	__asm        call   0x00506F0E;
+	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00506499;
 // LINE 3051:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050670B;
+	__asm        call   AutomobileClass::StartFire;
 // LINE 3052:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3054:
@@ -6341,14 +6341,14 @@ void AutomobileClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3068:
 	__asm        mov    ecx, this;
-	__asm        call   0x00506F0E;
+	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005064DD;
 // LINE 3069:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0050670B;
+	__asm        call   AutomobileClass::StartFire;
 // LINE 3070:
 	__asm        jmp    near ptr 0x00506540;
 // LINE 3072:
@@ -6378,7 +6378,7 @@ void AutoHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYO
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    ecx, [eax*4+0x608F80];
-	__asm        call   0x00506413;
+	__asm        call   AutomobileClass::HitDispatch;
 // LINE 3087:
 	__asm        jmp    near ptr 0x0050657A;
 }
@@ -6390,7 +6390,7 @@ int32_t AutoMissionStartFire(long mission_id, struct Point2d* celloc) {
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
-	__asm        call   0x005065BF;
+	__asm        call   AutomobileClass::MissionStartFire;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0050659A;
 // LINE 3099:
@@ -6403,7 +6403,7 @@ int32_t AutoMissionStartJam(long mission_id, struct Point2d* celloc) {
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
-	__asm        call   0x00506665;
+	__asm        call   AutomobileClass::MissionStartJam;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x005065BA;
 // LINE 3112:
@@ -6445,7 +6445,7 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, targcar;
-	__asm        call   0x0050670B;
+	__asm        call   AutomobileClass::StartFire;
 // LINE 3141:
 	__asm        mov    eax, targcar;
 	__asm        mov    eax, [eax+0x24];
@@ -6502,7 +6502,7 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, targcar;
-	__asm        call   0x00506859;
+	__asm        call   AutomobileClass::StartJam;
 // LINE 3174:
 	__asm        mov    eax, targcar;
 	__asm        mov    eax, [eax+0x24];
@@ -6622,7 +6622,7 @@ void AutomobileClass::StartFire(long mission_id) {
 // LINE 3229:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3233:
 	__asm        jmp    near ptr 0x00506852;
@@ -6708,7 +6708,7 @@ void AutomobileClass::StartJam(long mission_id) {
 // LINE 3277:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3281:
 	__asm        jmp    near ptr 0x0050696A;
@@ -6750,7 +6750,7 @@ void AutomobileClass::RunFireState() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
 	__asm        push   eax;
-	__asm        call   0x005233FF;
+	__asm        call   S3MissileDebrisFire;
 	__asm        add    esp, 0xC;
 // LINE 3309:
 	__asm        mov    eax, this;
@@ -6776,7 +6776,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3315:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xE10;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -6789,7 +6789,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3316:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xC8;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -6824,7 +6824,7 @@ void AutomobileClass::RunFireState() {
 	__asm        lea    eax, currpos.x;
 	__asm        push   eax;
 	__asm        push   4;
-	__asm        call   0x0051EEE5;
+	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 3334:
 	__asm        mov    eax, this;
@@ -6858,7 +6858,7 @@ void AutomobileClass::RunFireState() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
 	__asm        push   eax;
-	__asm        call   0x00523F50;
+	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 3336:
 	__asm        push   0;
@@ -6866,7 +6866,7 @@ void AutomobileClass::RunFireState() {
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
 	__asm        push   4;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 3339:
 	__asm        mov    eax, this;
@@ -6885,11 +6885,11 @@ void AutomobileClass::RunFireState() {
 // LINE 3345:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3348:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 3349:
 	__asm        jmp    near ptr 0x00506BCA;
 // LINE 3354:
@@ -6917,7 +6917,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3360:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3362:
 	__asm        jmp    near ptr 0x00506BCA;
@@ -6929,7 +6929,7 @@ void AutomobileClass::RunJamState() {
 
 // LINE 3375:
 	__asm        mov    ecx, this;
-	__asm        call   0x005098B0;
+	__asm        call   AutomobileClass::HonkHorn;
 // LINE 3378:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4760];
@@ -6965,7 +6965,7 @@ void AutomobileClass::RunJamState() {
 // LINE 3395:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
-	__asm        call   0x004FBD4A;
+	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3397:
 	__asm        jmp    near ptr 0x00506C5C;
@@ -6976,7 +6976,7 @@ void AutoMissionCancel(long mission_id) {
 // LINE 3409:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
-	__asm        call   0x00506CCD;
+	__asm        call   AutomobileClass::MissionCancel;
 	__asm        add    esp, 4;
 // LINE 3410:
 	__asm        jmp    near ptr 0x00506C78;
@@ -7053,7 +7053,7 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 // LINE 3494:
 	__asm        mov    eax, lights_on;
 	__asm        push   eax;
-	__asm        call   0x00506D6A;
+	__asm        call   AutomobileClass::SetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 3495:
 	__asm        jmp    near ptr 0x00506D65;
@@ -7083,12 +7083,12 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 	__asm        jne    near ptr 0x00506DBD;
 // LINE 3517:
 	__asm        mov    ecx, targcar;
-	__asm        call   0x00506DD4;
+	__asm        call   AutomobileClass::TurnOnHeadlight;
 // LINE 3518:
 	__asm        jmp    near ptr 0x00506DC5;
 // LINE 3519:
 	__asm        mov    ecx, targcar;
-	__asm        call   0x00506E6F;
+	__asm        call   AutomobileClass::TurnOffHeadlight;
 // LINE 3521:
 	__asm        jmp    near ptr 0x00506D7F;
 // LINE 3524:
@@ -7330,7 +7330,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005070D0;
 // LINE 3634:
@@ -7398,7 +7398,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005071C5;
 // LINE 3653:
@@ -7466,7 +7466,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005072B8;
 // LINE 3663:
@@ -7534,7 +7534,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005073AB;
 // LINE 3672:
@@ -7553,7 +7553,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3682:
 	__asm        jmp    near ptr 0x00507481;
 // LINE 3684:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   i;
@@ -7814,7 +7814,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005077F3;
 	__asm        jmp    near ptr 0x005077F3;
@@ -7827,7 +7827,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        push   0xEE7;
 	__asm        push   0x5B567C;
 	__asm        push   0x5B56A0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00507829;
 	__asm        jmp    near ptr 0x00507829;
@@ -7930,7 +7930,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050797D;
 	__asm        jmp    near ptr 0x0050797D;
@@ -8111,7 +8111,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        push   0xF2A;
 	__asm        push   0x5B56AC;
 	__asm        push   0x5B56D0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00507C5E;
 	__asm        jmp    near ptr 0x00507C5E;
@@ -8449,7 +8449,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA2;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xEA], eax;
@@ -8460,7 +8460,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x30;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 4011:
 	__asm        jmp    near ptr 0x0050817B;
@@ -9001,7 +9001,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508902;
 // LINE 4132:
@@ -9013,7 +9013,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508920;
 // LINE 4136:
@@ -9025,7 +9025,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050893E;
 // LINE 4140:
@@ -9042,7 +9042,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508971;
 // LINE 4148:
@@ -9054,7 +9054,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050898F;
 // LINE 4152:
@@ -9066,7 +9066,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005089AD;
 // LINE 4156:
@@ -9083,7 +9083,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005089E0;
 // LINE 4164:
@@ -9095,7 +9095,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005089FE;
 // LINE 4168:
@@ -9107,7 +9107,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508A1C;
 // LINE 4172:
@@ -9124,7 +9124,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508A4F;
 // LINE 4180:
@@ -9136,7 +9136,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508A6D;
 // LINE 4184:
@@ -9148,7 +9148,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00507488;
+	__asm        call   AutomobileClass::DoHiwayTilesConnect;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00508A8B;
 // LINE 4188:
@@ -9188,71 +9188,71 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        jmp    near ptr 0x00508C62;
 // LINE 4241:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 4242:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4246:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508CC3;
+	__asm        call   AutomobileClass::GoStraight;
 // LINE 4248:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4252:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508D9E;
+	__asm        call   AutomobileClass::TurnLeft;
 // LINE 4254:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4258:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508E79;
+	__asm        call   AutomobileClass::TurnRight;
 // LINE 4260:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4264:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00508B3C;
 // LINE 4266:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508D9E;
+	__asm        call   AutomobileClass::TurnLeft;
 // LINE 4268:
 	__asm        jmp    near ptr 0x00508B44;
 // LINE 4270:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508CC3;
+	__asm        call   AutomobileClass::GoStraight;
 // LINE 4273:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4277:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00508B66;
 // LINE 4279:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508D9E;
+	__asm        call   AutomobileClass::TurnLeft;
 // LINE 4281:
 	__asm        jmp    near ptr 0x00508B6E;
 // LINE 4283:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508E79;
+	__asm        call   AutomobileClass::TurnRight;
 // LINE 4286:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4290:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00508B90;
 // LINE 4292:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508E79;
+	__asm        call   AutomobileClass::TurnRight;
 // LINE 4294:
 	__asm        jmp    near ptr 0x00508B98;
 // LINE 4296:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508CC3;
+	__asm        call   AutomobileClass::GoStraight;
 // LINE 4299:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4303:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -9261,21 +9261,21 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        jmp    near ptr 0x00508C07;
 // LINE 4305:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508CC3;
+	__asm        call   AutomobileClass::GoStraight;
 	__asm        jmp    near ptr 0x00508C2A;
 // LINE 4306:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508D9E;
+	__asm        call   AutomobileClass::TurnLeft;
 	__asm        jmp    near ptr 0x00508C2A;
 // LINE 4307:
 	__asm        mov    ecx, this;
-	__asm        call   0x00508E79;
+	__asm        call   AutomobileClass::TurnRight;
 	__asm        jmp    near ptr 0x00508C2A;
 // LINE 4308:
 	__asm        push   0x10D4;
 	__asm        push   0x5B56DC;
 	__asm        push   0x5B5700;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00508BFD;
 	__asm        jmp    near ptr 0x00508BFD;
@@ -9293,14 +9293,14 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4315:
 	__asm        mov    ecx, this;
-	__asm        call   0x00503E6E;
+	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 4316:
 	__asm        jmp    near ptr 0x00508CB7;
 // LINE 4322:
 	__asm        push   0x10E2;
 	__asm        push   0x5B5708;
 	__asm        push   0x5B572C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00508C5D;
 	__asm        jmp    near ptr 0x00508C5D;
@@ -9365,7 +9365,7 @@ void AutomobileClass::GoStraight() {
 	__asm        push   0x1111;
 	__asm        push   0x5B5734;
 	__asm        push   0x5B5758;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00508D94;
 	__asm        jmp    near ptr 0x00508D94;
@@ -9420,7 +9420,7 @@ void AutomobileClass::TurnLeft() {
 	__asm        push   0x113F;
 	__asm        push   0x5B5760;
 	__asm        push   0x5B5784;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00508E6F;
 	__asm        jmp    near ptr 0x00508E6F;
@@ -9475,7 +9475,7 @@ void AutomobileClass::TurnRight() {
 	__asm        push   0x1172;
 	__asm        push   0x5B578C;
 	__asm        push   0x5B57B0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00508F4A;
 	__asm        jmp    near ptr 0x00508F4A;
@@ -9550,7 +9550,7 @@ int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
 // LINE 4518:
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x0050903F;
+	__asm        call   AutomobileClass::MIFFLoad;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0050901E;
 // LINE 4519:
@@ -9561,7 +9561,7 @@ int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 // LINE 4531:
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
-	__asm        call   0x005090FB;
+	__asm        call   AutomobileClass::MIFFSave;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0050903A;
 // LINE 4532:
@@ -9578,7 +9578,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   0x4155544F;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB530;
+	__asm        call   ReadFirstMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 4550:
@@ -9607,7 +9607,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   0x4155544F;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB57C;
+	__asm        call   ReadNextMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 4563:
@@ -9651,7 +9651,7 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   0x4155544F;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
-	__asm        call   0x004AB5BD;
+	__asm        call   WriteMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 4589:
@@ -10105,7 +10105,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    cl, [eax+0x92];
 	__asm        push   ecx;
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 4715:
 	__asm        mov    eax, sd;
@@ -10147,7 +10147,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005097FE;
 	__asm        jmp    near ptr 0x005097FE;
@@ -10160,7 +10160,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        add    eax, 0xD2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 4722:
 	__asm        jmp    near ptr 0x005098A4;
 // LINE 4723:
@@ -10185,7 +10185,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00509884;
 	__asm        jmp    near ptr 0x00509884;
@@ -10198,7 +10198,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        add    eax, 0x7C;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00502B74;
+	__asm        call   AutomobileClass::LinkToCell;
 // LINE 4727:
 	__asm        jmp    near ptr 0x005098A9;
 }
@@ -10210,7 +10210,7 @@ void AutomobileClass::HonkHorn() {
 	__asm        test   byte ptr [eax+9], 2;
 	__asm        je     near ptr 0x005098ED;
 // LINE 4743:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -10224,7 +10224,7 @@ void AutomobileClass::HonkHorn() {
 // LINE 4746:
 	__asm        jmp    near ptr 0x0050990C;
 // LINE 4749:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -10239,7 +10239,7 @@ void AutomobileClass::HonkHorn() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCA];
 	__asm        push   eax;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00509941;
@@ -10251,7 +10251,7 @@ void AutomobileClass::HonkHorn() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xCA];
 	__asm        push   eax;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4759:
 	__asm        jmp    near ptr 0x00509946;
@@ -10298,7 +10298,7 @@ void S3AutoSoundDriver() {
 	__asm        add    loc.z, eax;
 // LINE 4800:
 	__asm        push   0x12;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005099E4;
@@ -10307,7 +10307,7 @@ void S3AutoSoundDriver() {
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        push   0x12;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4805:
 	__asm        push   0xF0600000;
@@ -10325,19 +10325,19 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x12;
-	__asm        call   0x00446E82;
+	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 4809:
 	__asm        jmp    near ptr 0x00509A39;
 // LINE 4811:
 	__asm        push   0x12;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00509A39;
 // LINE 4813:
 	__asm        push   0x12;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 4818:
 	__asm        mov    eax, ds:[0x608F74];
@@ -10360,7 +10360,7 @@ void S3AutoSoundDriver() {
 	__asm        add    loc.z, eax;
 // LINE 4824:
 	__asm        push   0x13;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00509A91;
@@ -10369,7 +10369,7 @@ void S3AutoSoundDriver() {
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        push   0x13;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4829:
 	__asm        push   0xF0600000;
@@ -10387,19 +10387,19 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x13;
-	__asm        call   0x00446E82;
+	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 4833:
 	__asm        jmp    near ptr 0x00509AE6;
 // LINE 4835:
 	__asm        push   0x13;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00509AE6;
 // LINE 4837:
 	__asm        push   0x13;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 4842:
 	__asm        mov    eax, ds:[0x608F70];
@@ -10422,7 +10422,7 @@ void S3AutoSoundDriver() {
 	__asm        add    loc.z, eax;
 // LINE 4848:
 	__asm        push   0x11;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00509B3E;
@@ -10431,7 +10431,7 @@ void S3AutoSoundDriver() {
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        push   0x11;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4853:
 	__asm        push   0xF0600000;
@@ -10449,19 +10449,19 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x11;
-	__asm        call   0x00446E82;
+	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 4857:
 	__asm        jmp    near ptr 0x00509B93;
 // LINE 4859:
 	__asm        push   0x11;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00509B93;
 // LINE 4861:
 	__asm        push   0x11;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 4866:
 	__asm        mov    eax, ds:[0x608F6C];
@@ -10484,7 +10484,7 @@ void S3AutoSoundDriver() {
 	__asm        add    loc.z, eax;
 // LINE 4872:
 	__asm        push   0x14;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00509BEB;
@@ -10493,7 +10493,7 @@ void S3AutoSoundDriver() {
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        push   0x14;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4877:
 	__asm        push   0xF0600000;
@@ -10511,19 +10511,19 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x14;
-	__asm        call   0x00446E82;
+	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 4881:
 	__asm        jmp    near ptr 0x00509C40;
 // LINE 4883:
 	__asm        push   0x14;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00509C40;
 // LINE 4885:
 	__asm        push   0x14;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 4890:
 	__asm        mov    eax, ds:[0x608F6C];
@@ -10546,7 +10546,7 @@ void S3AutoSoundDriver() {
 	__asm        add    loc.z, eax;
 // LINE 4896:
 	__asm        push   0x14;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00509C98;
@@ -10555,7 +10555,7 @@ void S3AutoSoundDriver() {
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        push   0x14;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4901:
 	__asm        push   0xF0600000;
@@ -10573,19 +10573,19 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x14;
-	__asm        call   0x00446E82;
+	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 4905:
 	__asm        jmp    near ptr 0x00509CED;
 // LINE 4907:
 	__asm        push   0x14;
-	__asm        call   0x00446F02;
+	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x00509CED;
 // LINE 4909:
 	__asm        push   0x14;
-	__asm        call   0x00446E04;
+	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 4912:
 	__asm        jmp    near ptr 0x00509CF2;
@@ -10604,7 +10604,7 @@ void AutomobileClass::ChangeAutoColor() {
 	struct VRObjInfo oinfo;
 
 // LINE 4935:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xD;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -10617,7 +10617,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        cmp    newbase, 0x30;
 	__asm        jne    near ptr 0x00509D43;
 // LINE 4939:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -10683,7 +10683,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4960:
 	__asm        jmp    near ptr 0x00509F94;
@@ -10696,7 +10696,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4964:
 	__asm        jmp    near ptr 0x00509F94;
@@ -10709,7 +10709,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4968:
 	__asm        jmp    near ptr 0x00509F94;
@@ -10722,7 +10722,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4972:
 	__asm        jmp    near ptr 0x00509F94;
@@ -10735,7 +10735,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4976:
 	__asm        jmp    near ptr 0x00509F94;
@@ -10748,7 +10748,7 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        push   eax;
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D997F;
+	__asm        call   VRFaceSetColor;
 	__asm        add    esp, 8;
 // LINE 4980:
 	__asm        jmp    near ptr 0x00509F94;

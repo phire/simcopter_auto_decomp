@@ -154,7 +154,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        je     near ptr 0x005547B3;
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 // LINE 168:
 	__asm        cmp    mem, 0;
@@ -163,7 +163,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        push   0x5BC130;
 	__asm        push   0xA8;
 	__asm        push   0x5BC14C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 169:
 	__asm        cmp    mem, 0;
@@ -173,7 +173,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	unsigned char * p;
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    p, eax;
 // LINE 173:
@@ -185,12 +185,12 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        push   0;
 	__asm        mov    eax, p;
 	__asm        push   eax;
-	__asm        call   0x00554C10;
+	__asm        call   Memory::BlockFill;
 	__asm        add    esp, 0xC;
 // LINE 176:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 178:
 	__asm        jmp    near ptr 0x0055483B;
@@ -199,7 +199,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        push   0x5BC16C;
 	__asm        push   0xB4;
 	__asm        push   0x5BC184;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 183:
 // Block end:
@@ -244,7 +244,7 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 	__asm        push   0x5BC1A4;
 	__asm        push   0xD3;
 	__asm        push   0x5BC1C0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 212:
 	__asm        mov    eax, mem;
@@ -262,7 +262,7 @@ void Memory::HFree(void * __ptr32 mem) {
 // LINE 225:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    p, eax;
 // LINE 226:
@@ -271,18 +271,18 @@ void Memory::HFree(void * __ptr32 mem) {
 // LINE 228:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554D05;
+	__asm        call   Memory::HGetSize;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0xA3;
 	__asm        mov    eax, p;
 	__asm        push   eax;
-	__asm        call   0x00554C10;
+	__asm        call   Memory::BlockFill;
 	__asm        add    esp, 0xC;
 // LINE 229:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 231:
 	__asm        jmp    near ptr 0x00554938;
@@ -291,7 +291,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        push   0x5BC1E0;
 	__asm        push   0xE9;
 	__asm        push   0x5BC1F8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 240:
 	__asm        mov    eax, mem;
@@ -305,7 +305,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        push   0x5BC218;
 	__asm        push   0xF2;
 	__asm        push   0x5BC228;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 243:
 	__asm        jmp    near ptr 0x00554971;
@@ -319,13 +319,13 @@ void Memory::PFree(unsigned char * mem) {
 // LINE 251:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554D5A;
+	__asm        call   Memory::PGetSize;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0xA3;
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554C10;
+	__asm        call   Memory::BlockFill;
 	__asm        add    esp, 0xC;
 // LINE 257:
 	__asm        mov    eax, mem;
@@ -339,7 +339,7 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        push   0x5BC248;
 	__asm        push   0x103;
 	__asm        push   0x5BC258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 260:
 	__asm        jmp    near ptr 0x005549DB;
@@ -370,7 +370,7 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	__asm        push   0x5BC278;
 	__asm        push   0x117;
 	__asm        push   0x5BC290;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 289:
 	__asm        mov    eax, p;
@@ -400,7 +400,7 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        push   0x5BC2B0;
 	__asm        push   0x131;
 	__asm        push   0x5BC2C4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 307:
 	__asm        jmp    near ptr 0x00554A8F;
@@ -422,7 +422,7 @@ void Memory::HPurge(void * __ptr32 h) {
 	__asm        push   0x5BC2E4;
 	__asm        push   0x148;
 	__asm        push   0x5BC314;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 332:
 	__asm        jmp    near ptr 0x00554AD3;
@@ -435,7 +435,7 @@ void Memory::HNoPurge(void * __ptr32 h) {
 	__asm        push   0x5BC334;
 	__asm        push   0x154;
 	__asm        push   0x5BC364;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 344:
 	__asm        jmp    near ptr 0x00554AFF;
@@ -451,12 +451,12 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 // LINE 353:
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 354:
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x00554A94;
+	__asm        call   Memory::HMoveHi;
 	__asm        add    esp, 4;
 // LINE 360:
 	__asm        mov    eax, h;
@@ -470,12 +470,12 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        push   0x5BC384;
 	__asm        push   0x169;
 	__asm        push   0x5BC3A4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 363:
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00554B71;
 // LINE 364:
@@ -490,7 +490,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        push   0x5BC3C4;
 	__asm        push   0x173;
 	__asm        push   0x5BC3FC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 375:
 	__asm        mov    eax, size;
@@ -499,7 +499,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x00575320;
+	__asm        call   memmove;
 	__asm        add    esp, 0xC;
 // LINE 377:
 	__asm        jmp    near ptr 0x00554BBE;
@@ -514,7 +514,7 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        push   0x5BC41C;
 	__asm        push   0x17D;
 	__asm        push   0x5BC454;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 385:
 	__asm        mov    eax, size;
@@ -523,7 +523,7 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 387:
 	__asm        jmp    near ptr 0x00554C0B;
@@ -544,7 +544,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        push   eax;
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 397:
 	__asm        call   dword ptr ds:[0x6C3718];
@@ -557,7 +557,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        push   0x5BC474;
 	__asm        push   0x18E;
 	__asm        push   0x5BC484;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 399:
 	__asm        jmp    near ptr 0x00554C6E;
@@ -572,7 +572,7 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 	__asm        push   eax;
 	__asm        mov    eax, first;
 	__asm        push   eax;
-	__asm        call   0x0056AC90;
+	__asm        call   memcmp;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00554C9E;
@@ -590,7 +590,7 @@ long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
 	__asm        push   0x5BC4A4;
 	__asm        push   0x199;
 	__asm        push   0x5BC4BC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 410:
 	__asm        xor    eax, eax;
@@ -605,7 +605,7 @@ void Memory::PoolFree(long * pool) {
 	__asm        push   0x5BC4DC;
 	__asm        push   0x1A1;
 	__asm        push   0x5BC4F4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 418:
 	__asm        jmp    near ptr 0x00554D00;
@@ -631,7 +631,7 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	__asm        push   0x5BC514;
 	__asm        push   0x1AF;
 	__asm        push   0x5BC52C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 432:
 	__asm        mov    eax, size;
@@ -659,7 +659,7 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 	__asm        push   0x5BC54C;
 	__asm        push   0x1BE;
 	__asm        push   0x5BC564;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 447:
 	__asm        mov    eax, size;
@@ -674,7 +674,7 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 // LINE 455:
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x00554DE7;
+	__asm        call   Memory::HGetState;
 	__asm        add    esp, 4;
 	__asm        mov    state, eax;
 // LINE 456:
@@ -718,7 +718,7 @@ long Memory::HGetState(void * __ptr32 h) {
 	__asm        push   0x5BC584;
 	__asm        push   0x1D8;
 	__asm        push   0x5BC5A4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 474:
 	__asm        mov    eax, state;
@@ -733,13 +733,13 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	__asm        je     near ptr 0x00554E83;
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 // LINE 487:
 	__asm        jmp    near ptr 0x00554E8F;
 	__asm        mov    eax, h;
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 489:
 	__asm        jmp    near ptr 0x00554E94;
@@ -755,7 +755,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 // LINE 502:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
-	__asm        call   0x00554DAF;
+	__asm        call   Memory::HIsLocked;
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -764,7 +764,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	__asm        push   0x5BC5C4;
 	__asm        push   0x1F6;
 	__asm        push   0x5BC5DC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 503:
 	__asm        push   2;

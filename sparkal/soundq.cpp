@@ -311,7 +311,7 @@ public:
 // FUNCTION: COPTER_D 0x004205f0
 void SoundQueueItem::SoundQueueItem() {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -344,7 +344,7 @@ void SoundQueueItem::SoundQueueItem() {
 // FUNCTION: COPTER_D 0x00420675
 void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -392,7 +392,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBefor
 // FUNCTION: COPTER_D 0x00420720
 void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -441,7 +441,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID
 // FUNCTION: COPTER_D 0x004207ca
 void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string<char>& sNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -499,7 +499,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -509,7 +509,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        jmp    near ptr 0x004208CF;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004208E0;
 	__asm        jmp    near ptr 0x004208E5;
@@ -528,7 +528,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00420A0C;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -551,7 +551,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
@@ -580,7 +580,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004209D7;
 	__asm        jmp    near ptr 0x004209E5;
@@ -615,7 +615,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 // FUNCTION: COPTER_D 0x00420a3c
 void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
@@ -648,22 +648,22 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        jmp    near ptr 0x00420AC1;
 	__asm        mov    eax, szNewSoundFile;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00420B0C;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420AFD;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420B0C;
 	__asm        jmp    near ptr 0x00420B11;
@@ -680,7 +680,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00420CC3;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -689,15 +689,15 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        jne    near ptr 0x00420B95;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420B86;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420B95;
 	__asm        mov    eax, [ebp-0x30];
@@ -713,7 +713,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
@@ -729,7 +729,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00420BF5;
 	__asm        jmp    near ptr 0x00420C03;
@@ -766,7 +766,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -776,7 +776,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        jmp    near ptr 0x00420C9A;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420CAB;
 	__asm        jmp    near ptr 0x00420CB0;
@@ -798,7 +798,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00420CF6;
 	__asm        mov    eax, [ebp-0x30];
@@ -826,10 +826,10 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 // FUNCTION: COPTER_D 0x00420d37
 void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>& sNewDigitalSoundFile, long lNewTimeToWaitBeforePlaying) {
 	__asm        mov    ecx, this;
-	__asm        call   0x004205F0;
+	__asm        call   SoundQueueItem::SoundQueueItem;
 // LINE 90:
 	__asm        push   0x7A;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -838,7 +838,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 	__asm        mov    eax, sNewDigitalSoundFile;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0042F00F;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00420D83;
@@ -863,24 +863,24 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lNewTimeToWaitBeforePlaying) {
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004205F0;
+	__asm        call   SoundQueueItem::SoundQueueItem;
 // LINE 103:
 	__asm        push   0x7A;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00420EC3;
 	__asm        or     dword ptr [ebp-0x10], 1;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x00420E92;
 	__asm        mov    eax, szNewSoundFile;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx+4], eax;
@@ -895,7 +895,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
@@ -911,7 +911,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00420E6A;
 	__asm        jmp    near ptr 0x00420E78;
@@ -932,7 +932,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0042F00F;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00420ECC;
@@ -962,7 +962,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -972,7 +972,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        jmp    near ptr 0x00420F47;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420F58;
 	__asm        jmp    near ptr 0x00420F5D;
@@ -985,7 +985,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420F89;
 	__asm        jmp    near ptr 0x00420F8E;
@@ -1007,10 +1007,10 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 // FUNCTION: COPTER_D 0x00420fba
 void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceID, long lNewTimeToWaitBeforePlaying) {
 	__asm        mov    ecx, this;
-	__asm        call   0x004205F0;
+	__asm        call   SoundQueueItem::SoundQueueItem;
 // LINE 117:
 	__asm        push   0x7A;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -1018,7 +1018,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceI
 	__asm        mov    eax, lNewDigitalSoundResourceID;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0042F296;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x00421004;
@@ -1058,25 +1058,25 @@ void SoundQueue::SoundQueue() {
 	__asm        cmp    ds:[0x597358], eax;
 	__asm        jne    near ptr 0x00421240;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    near ptr 0x004210D7;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004210CD;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004210DC;
 	__asm        jmp    near ptr 0x004210E1;
@@ -1105,28 +1105,28 @@ void SoundQueue::SoundQueue() {
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    near ptr 0x0042118F;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421185;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421194;
 	__asm        jmp    near ptr 0x00421199;
@@ -1214,7 +1214,7 @@ void SoundQueue::~SoundQueue() {
 // LINE 156:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004214C9;
+	__asm        call   SoundQueue::DeInitialize;
 // LINE 157:
 	__asm        jmp    near ptr 0x004212DD;
 	__asm        mov    eax, this;
@@ -1306,13 +1306,13 @@ void SoundQueue::~SoundQueue() {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421437;
 	__asm        jmp    near ptr 0x0042143C;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042144D;
 	__asm        jmp    near ptr 0x00421452;
@@ -1513,7 +1513,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1523,7 +1523,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        jmp    near ptr 0x004216F0;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421701;
 	__asm        jmp    near ptr 0x00421706;
@@ -1538,12 +1538,12 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421738;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421749;
 	__asm        jmp    near ptr 0x0042174E;
@@ -1606,7 +1606,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        call   dword ptr [eax+0x24];
 // LINE 228:
 	__asm        push   0x18;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -1616,14 +1616,14 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        mov    eax, newSoundItem;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x00420675;
+	__asm        call   SoundQueueItem::SoundQueueItem;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x00421835;
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0042185B;
+	__asm        call   SoundQueue::operator+=;
 // LINE 229:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1671,25 +1671,25 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        cmp    ds:[0x597358], eax;
 	__asm        jne    near ptr 0x00421A97;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    near ptr 0x0042192E;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421924;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421933;
 	__asm        jmp    near ptr 0x00421938;
@@ -1718,28 +1718,28 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    near ptr 0x004219E6;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004219DC;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004219EB;
 	__asm        jmp    near ptr 0x004219F0;
@@ -2081,7 +2081,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -2091,7 +2091,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        jmp    near ptr 0x00421E2A;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421E3B;
 	__asm        jmp    near ptr 0x00421E40;
@@ -2106,12 +2106,12 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421E72;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421E83;
 	__asm        jmp    near ptr 0x00421E88;
@@ -2161,7 +2161,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 // LINE 356:
 	__asm        mov    eax, dwUser;
 	__asm        push   eax;
-	__asm        call   0x00421F41;
+	__asm        call   SoundQueue::StaticSoundQueueCompletionCallback;
 	__asm        add    esp, 4;
 // LINE 357:
 	__asm        jmp    near ptr 0x00421F1C;
@@ -2172,7 +2172,7 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint
 // LINE 368:
 	__asm        mov    eax, dwUser;
 	__asm        push   eax;
-	__asm        call   0x00421FFE;
+	__asm        call   SoundQueue::StaticSoundQueueWaitTimeCallback;
 	__asm        add    esp, 4;
 // LINE 369:
 	__asm        jmp    near ptr 0x00421F3A;

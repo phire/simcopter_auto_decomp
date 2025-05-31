@@ -226,7 +226,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        lea    eax, scratch.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543CDD;
+	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 81:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -237,7 +237,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        lea    eax, path.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543DCB;
+	__asm        call   ShortestPath::PriorityHeapRemove;
 // LINE 87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.xCurr;
@@ -355,7 +355,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	__asm        lea    eax, scratch.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543CDD;
+	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 126:
 // Block end:
 	__asm        jmp    near ptr 0x005438F9;
@@ -519,13 +519,13 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543690;
+	__asm        call   ShortestPath::FindDistanceFromDestination;
 	__asm        mov    scratch.cost, eax;
 // LINE 186:
 	__asm        lea    eax, scratch.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543CDD;
+	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 191:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -536,7 +536,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        lea    eax, path.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543DCB;
+	__asm        call   ShortestPath::PriorityHeapRemove;
 // LINE 197:
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.xCurr;
@@ -654,7 +654,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543690;
+	__asm        call   ShortestPath::FindDistanceFromDestination;
 	__asm        mov    scratch.cost, eax;
 // LINE 236:
 	__asm        mov    al, reinterpret_cast<uint8_t>(i);
@@ -669,7 +669,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	__asm        lea    eax, scratch.xCurr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00543CDD;
+	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 241:
 // Block end:
 	__asm        jmp    near ptr 0x00543BFF;

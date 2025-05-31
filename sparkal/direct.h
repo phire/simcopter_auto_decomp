@@ -11,7 +11,7 @@ int  Directory::ReadDirectoryDirectoryEntriesIntoStringList(class list<basic_str
 	__asm        mov    eax, sDirectoryEntries;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0048494D;
+	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x0043A7F9;
 // LINE 203:
 }

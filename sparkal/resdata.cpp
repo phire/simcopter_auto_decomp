@@ -85,7 +85,7 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        je     near ptr 0x00447871;
 // LINE 46:
 	__asm        mov    ecx, this;
-	__asm        call   0x00447AB2;
+	__asm        call   ResourceRCData::ReadResource;
 // LINE 47:
 	__asm        jmp    near ptr 0x00447876;
 	__asm        mov    eax, this;
@@ -117,12 +117,12 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // Block start:
 	uint32_t nAllocationSize;
 	__asm        mov    ecx, resData;
-	__asm        call   0x00447A74;
+	__asm        call   ResourceRCData::DataSize;
 	__asm        mov    nAllocationSize, eax;
 // LINE 61:
 	__asm        mov    eax, nAllocationSize;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -135,7 +135,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 63:
 	__asm        mov    eax, this;
@@ -152,7 +152,7 @@ void ResourceRCData::~ResourceRCData() {
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 73:
 	__asm        mov    ecx, this;
-	__asm        call   0x004479EA;
+	__asm        call   ResourceRCData::Reset;
 // LINE 74:
 	__asm        jmp    near ptr 0x0044793E;
 }
@@ -188,12 +188,12 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 // Block start:
 	uint32_t nAllocationSize;
 	__asm        mov    ecx, resData;
-	__asm        call   0x00447A74;
+	__asm        call   ResourceRCData::DataSize;
 	__asm        mov    nAllocationSize, eax;
 // LINE 91:
 	__asm        mov    eax, nAllocationSize;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -206,7 +206,7 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 93:
 	__asm        mov    eax, this;
@@ -253,7 +253,7 @@ void ResourceRCData::Reset() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 115:
 	__asm        mov    eax, this;

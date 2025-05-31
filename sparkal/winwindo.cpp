@@ -661,7 +661,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	__asm        push   eax;
 	__asm        mov    eax, hdc;
 	__asm        push   eax;
-	__asm        call   0x0048132B;
+	__asm        call   CheckIdentityPalette;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00480CDB;
@@ -762,7 +762,7 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 	__asm        push   0x115;
 	__asm        push   0x599AF0;
 	__asm        push   0x599B18;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00480E0B;
 	__asm        jmp    near ptr 0x00480E0B;
@@ -931,7 +931,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 	__asm        push   0x175;
 	__asm        push   0x599B2C;
 	__asm        push   0x599B54;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00480FEB;
 	__asm        jmp    near ptr 0x00480FEB;
@@ -1130,7 +1130,7 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 	__asm        push   0x1CF;
 	__asm        push   0x599B5C;
 	__asm        push   0x599B84;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004811F5;
 	__asm        jmp    near ptr 0x004811F5;

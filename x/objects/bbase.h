@@ -13,12 +13,12 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        push   0x5BE230;
 	__asm        push   0xE4;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 230:
 	__asm        mov    eax, val;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 231:
 	__asm        jmp    near ptr 0x0055E739;
@@ -31,7 +31,7 @@ unsigned long cBBase::GetBodyType() {
 	__asm        push   0x5BE330;
 	__asm        push   0x12;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F20C;
@@ -44,7 +44,7 @@ class cBList<cBBase>* cBBase::GetList() {
 	__asm        push   0x5BE358;
 	__asm        push   0x15;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F24C;
@@ -64,7 +64,7 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 	__asm        push   0x5BE37C;
 	__asm        push   0x1C;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F2AA;
 }
@@ -82,13 +82,13 @@ void cBBase::~cBBase() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 47:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x005548C3;
+	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 53:
 	__asm        jmp    near ptr 0x0055F305;
@@ -121,7 +121,7 @@ void cBBase::Destroy() {
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x005674E0;
+	__asm        call   OpenFile;
 	__asm        add    esp, 4;
 	__asm        mov    fileOpened, ax;
 // LINE 61:
@@ -140,7 +140,7 @@ void cBBase::Destroy() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x0055320B;
+	__asm        call   FlatResFile::GetByID;
 	__asm        mov    h, eax;
 // LINE 62:
 	__asm        cmp    h, 0;
@@ -149,7 +149,7 @@ void cBBase::Destroy() {
 	__asm        push   0x5BE3AC;
 	__asm        push   0x3E;
 	__asm        push   0x5BE258;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -207,7 +207,7 @@ void cBBase::Destroy() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        dec    word ptr [eax+4];
@@ -219,7 +219,7 @@ void cBBase::Destroy() {
 	__asm        push   0x59A24C;
 	__asm        push   0x32;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F4A2;
 	__asm        mov    eax, [ebp-0x24];

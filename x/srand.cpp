@@ -186,7 +186,7 @@ unsigned short GetNextRandomNumber() {
 	__asm        push   0x5BDFE0;
 	__asm        push   0x72;
 	__asm        push   0x5BDFEC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 115:
 	__asm        mov    ax, temp;
@@ -198,7 +198,7 @@ unsigned short GetNextRandomNumber() {
 unsigned short SRand(unsigned short lim) {
 	unsigned short next;
 
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        mov    next, ax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(next);
 	__asm        and    eax, 0xFFFF;
@@ -212,7 +212,7 @@ unsigned short SRand(unsigned short lim) {
 
 // FUNCTION: COPTER_D 0x0055d74a
 unsigned short SRand2() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 1;
 	__asm        jmp    near ptr 0x0055D760;
@@ -220,7 +220,7 @@ unsigned short SRand2() {
 
 // FUNCTION: COPTER_D 0x0055d765
 unsigned short SRand4() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 3;
 	__asm        jmp    near ptr 0x0055D77B;
@@ -228,7 +228,7 @@ unsigned short SRand4() {
 
 // FUNCTION: COPTER_D 0x0055d780
 unsigned short SRand8() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 7;
 	__asm        jmp    near ptr 0x0055D796;
@@ -236,7 +236,7 @@ unsigned short SRand8() {
 
 // FUNCTION: COPTER_D 0x0055d79b
 unsigned short SRand16() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xF;
 	__asm        jmp    near ptr 0x0055D7B1;
@@ -244,7 +244,7 @@ unsigned short SRand16() {
 
 // FUNCTION: COPTER_D 0x0055d7b6
 unsigned short SRand32() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x1F;
 	__asm        jmp    near ptr 0x0055D7CC;
@@ -252,7 +252,7 @@ unsigned short SRand32() {
 
 // FUNCTION: COPTER_D 0x0055d7d1
 unsigned short SRand64() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x3F;
 	__asm        jmp    near ptr 0x0055D7E7;
@@ -260,7 +260,7 @@ unsigned short SRand64() {
 
 // FUNCTION: COPTER_D 0x0055d7ec
 unsigned short SRand128() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x7F;
 	__asm        jmp    near ptr 0x0055D802;
@@ -268,7 +268,7 @@ unsigned short SRand128() {
 
 // FUNCTION: COPTER_D 0x0055d807
 unsigned short SRand256() {
-	__asm        call   0x0055D6A3;
+	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xFF;
 	__asm        jmp    near ptr 0x0055D81F;
@@ -282,13 +282,13 @@ unsigned short SGIRand(unsigned short limit) {
 // LINE 135:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    z, ax;
 // LINE 136:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    x, ax;
 // LINE 137:
@@ -317,13 +317,13 @@ unsigned short SGRand(unsigned short limit) {
 // LINE 150:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    z, ax;
 // LINE 151:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    x, ax;
 // LINE 152:
@@ -352,13 +352,13 @@ short SGSRand(unsigned short limit) {
 // LINE 165:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    z, ax;
 // LINE 166:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
 	__asm        push   eax;
-	__asm        call   0x0055D717;
+	__asm        call   SRand;
 	__asm        add    esp, 4;
 	__asm        mov    x, ax;
 // LINE 167:
@@ -370,7 +370,7 @@ short SGSRand(unsigned short limit) {
 	__asm        mov    ax, z;
 	__asm        mov    x, ax;
 // LINE 169:
-	__asm        call   0x0055D74A;
+	__asm        call   SRand2;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0055D93B;

@@ -388,8 +388,8 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715e0
 void $E65() {
-	__asm        call   0x004715FA;
-	__asm        call   0x00471614;
+	__asm        call   $E61;
+	__asm        call   $E64;
 	__asm        jmp    near ptr 0x004715F5;
 }
 
@@ -397,7 +397,7 @@ void $E65() {
 // FUNCTION: COPTER_D 0x004715fa
 void $E61() {
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        jmp    near ptr 0x0047160F;
 }
 
@@ -405,7 +405,7 @@ void $E61() {
 // FUNCTION: COPTER_D 0x00471614
 void $E64() {
 	__asm        push   0x471631;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047162C;
 }
@@ -422,15 +422,15 @@ void $E62() {
 	__asm        or     al, 1;
 	__asm        mov    ds:[0x604444], al;
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        jmp    near ptr 0x00471663;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471668
 void $E70() {
-	__asm        call   0x00471682;
-	__asm        call   0x0047169C;
+	__asm        call   $E67;
+	__asm        call   $E69;
 	__asm        jmp    near ptr 0x0047167D;
 }
 
@@ -438,7 +438,7 @@ void $E70() {
 // FUNCTION: COPTER_D 0x00471682
 void $E67() {
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        jmp    near ptr 0x00471697;
 }
 
@@ -446,7 +446,7 @@ void $E67() {
 // FUNCTION: COPTER_D 0x0047169c
 void $E69() {
 	__asm        push   0x4716B9;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004716B4;
 }
@@ -463,15 +463,15 @@ void $E68() {
 	__asm        or     al, 2;
 	__asm        mov    ds:[0x604444], al;
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        jmp    near ptr 0x004716EB;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716f0
 void $E75() {
-	__asm        call   0x0047170A;
-	__asm        call   0x00471724;
+	__asm        call   $E72;
+	__asm        call   $E74;
 	__asm        jmp    near ptr 0x00471705;
 }
 
@@ -479,7 +479,7 @@ void $E75() {
 // FUNCTION: COPTER_D 0x0047170a
 void $E72() {
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        jmp    near ptr 0x0047171F;
 }
 
@@ -487,7 +487,7 @@ void $E72() {
 // FUNCTION: COPTER_D 0x00471724
 void $E74() {
 	__asm        push   0x471741;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047173C;
 }
@@ -504,15 +504,15 @@ void $E73() {
 	__asm        or     al, 4;
 	__asm        mov    ds:[0x604444], al;
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        jmp    near ptr 0x00471773;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471778
 void $E80() {
-	__asm        call   0x00471792;
-	__asm        call   0x004717AC;
+	__asm        call   $E77;
+	__asm        call   $E79;
 	__asm        jmp    near ptr 0x0047178D;
 }
 
@@ -520,7 +520,7 @@ void $E80() {
 // FUNCTION: COPTER_D 0x00471792
 void $E77() {
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        jmp    near ptr 0x004717A7;
 }
 
@@ -528,7 +528,7 @@ void $E77() {
 // FUNCTION: COPTER_D 0x004717ac
 void $E79() {
 	__asm        push   0x4717C9;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004717C4;
 }
@@ -545,14 +545,14 @@ void $E78() {
 	__asm        or     al, 8;
 	__asm        mov    ds:[0x604444], al;
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        jmp    near ptr 0x004717FB;
 }
 
 // FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004ADE3D;
+	__asm        call   ButtonWindow::ButtonWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 30:
@@ -560,7 +560,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 	__asm        jne    near ptr 0x00471834;
 // LINE 31:
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 32:
 	__asm        inc    dword ptr ds:[0x5997B8];
 // LINE 33:
@@ -583,7 +583,7 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 	__asm        mov    eax, rectNewWindow;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AE05D;
+	__asm        call   ButtonWindow::ButtonWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 45:
@@ -591,7 +591,7 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 	__asm        jne    near ptr 0x00471893;
 // LINE 46:
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 47:
 	__asm        inc    dword ptr ds:[0x5997B8];
 // LINE 48:
@@ -609,12 +609,12 @@ void SoundButtonWindow::~SoundButtonWindow() {
 	__asm        jne    near ptr 0x004718D3;
 // LINE 58:
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042F549;
+	__asm        call   DigitalSound::Unload;
 // LINE 59:
 	__asm        jmp    near ptr 0x004718D8;
 	__asm        jmp    near ptr 0x004718DD;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4045;
+	__asm        call   GraphicWindow::~GraphicWindow;
 }
 
 // FUNCTION: COPTER_D 0x004718ea
@@ -630,17 +630,17 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        mov    eax, ds:[0x5C37F0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0042FE2E;
+	__asm        call   DigitalSound::SetVolume;
 // LINE 68:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    ecx, 0x6042C8;
-	__asm        call   0x0043005A;
+	__asm        call   DigitalSound::Play;
 // LINE 70:
 	__asm        mov    eax, nNewButtonState;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AEACE;
+	__asm        call   ButtonWindow::SetState;
 // LINE 71:
 	__asm        jmp    near ptr 0x0047193E;
 }
@@ -662,7 +662,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 	__asm        mov    eax, myNewRadioButtonGroup;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AF7F7;
+	__asm        call   RadioButtonWindow::RadioButtonWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 83:
@@ -670,7 +670,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 	__asm        jne    near ptr 0x00471995;
 // LINE 84:
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 85:
 	__asm        inc    dword ptr ds:[0x5997BC];
 // LINE 86:
@@ -688,11 +688,11 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 	__asm        jne    near ptr 0x004719D5;
 // LINE 94:
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0042F549;
+	__asm        call   DigitalSound::Unload;
 // LINE 95:
 	__asm        jmp    near ptr 0x004719DA;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AFCFE;
+	__asm        call   RadioButtonWindow::~RadioButtonWindow;
 }
 
 // FUNCTION: COPTER_D 0x004719e7
@@ -709,17 +709,17 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        mov    eax, ds:[0x5C37F0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0042FE2E;
+	__asm        call   DigitalSound::SetVolume;
 // LINE 104:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    ecx, 0x6043C8;
-	__asm        call   0x0043005A;
+	__asm        call   DigitalSound::Play;
 // LINE 106:
 	__asm        mov    eax, nNewButtonState;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AFEE3;
+	__asm        call   RadioButtonWindow::SetState;
 // LINE 107:
 	__asm        jmp    near ptr 0x00471A3E;
 }
@@ -727,7 +727,7 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 // FUNCTION: COPTER_D 0x00471a45
 void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004AEE29;
+	__asm        call   CheckBoxWindow::CheckBoxWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 113:
@@ -735,7 +735,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	__asm        jne    near ptr 0x00471A79;
 // LINE 114:
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 115:
 	__asm        inc    dword ptr ds:[0x5997C0];
 // LINE 116:
@@ -758,7 +758,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 	__asm        mov    eax, rectNewWindow;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AF0AB;
+	__asm        call   CheckBoxWindow::CheckBoxWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 127:
@@ -766,7 +766,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 	__asm        jne    near ptr 0x00471AD8;
 // LINE 128:
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 129:
 	__asm        inc    dword ptr ds:[0x5997C0];
 // LINE 130:
@@ -784,13 +784,13 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 	__asm        jne    near ptr 0x00471B18;
 // LINE 138:
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042F549;
+	__asm        call   DigitalSound::Unload;
 // LINE 139:
 	__asm        jmp    near ptr 0x00471B1D;
 	__asm        jmp    near ptr 0x00471B22;
 	__asm        jmp    near ptr 0x00471B27;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4045;
+	__asm        call   GraphicWindow::~GraphicWindow;
 }
 
 // FUNCTION: COPTER_D 0x00471b34
@@ -804,17 +804,17 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        mov    eax, ds:[0x5C37F0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0042FE2E;
+	__asm        call   DigitalSound::SetVolume;
 // LINE 148:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    ecx, 0x604348;
-	__asm        call   0x0043005A;
+	__asm        call   DigitalSound::Play;
 // LINE 150:
 	__asm        mov    eax, nNewButtonState;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004AF6AB;
+	__asm        call   CheckBoxWindow::SetState;
 // LINE 151:
 	__asm        jmp    near ptr 0x00471B7E;
 }
@@ -822,7 +822,7 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 // FUNCTION: COPTER_D 0x00471b85
 void SoundScrollBarWindow::SoundScrollBarWindow() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004B28F8;
+	__asm        call   ScrollBarWindow::ScrollBarWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 157:
@@ -830,7 +830,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 	__asm        jne    near ptr 0x00471BB9;
 // LINE 158:
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 159:
 	__asm        inc    dword ptr ds:[0x5997C4];
 // LINE 160:
@@ -855,7 +855,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 	__asm        mov    eax, rectNewWindow;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004B2C25;
+	__asm        call   ScrollBarWindow::ScrollBarWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 171:
@@ -863,7 +863,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 	__asm        jne    near ptr 0x00471C1C;
 // LINE 172:
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042F5FC;
+	__asm        call   DigitalSound::Load;
 // LINE 173:
 	__asm        inc    dword ptr ds:[0x5997C4];
 // LINE 174:
@@ -881,13 +881,13 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 	__asm        jne    near ptr 0x00471C5C;
 // LINE 182:
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042F549;
+	__asm        call   DigitalSound::Unload;
 // LINE 183:
 	__asm        jmp    near ptr 0x00471C61;
 	__asm        jmp    near ptr 0x00471C66;
 	__asm        jmp    near ptr 0x00471C6B;
 	__asm        mov    ecx, this;
-	__asm        call   0x004B19E0;
+	__asm        call   SliderWindow::~SliderWindow;
 }
 
 // FUNCTION: COPTER_D 0x00471c78
@@ -902,15 +902,15 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 	__asm        mov    eax, ds:[0x5C37F0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042FE2E;
+	__asm        call   DigitalSound::SetVolume;
 // LINE 193:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0043005A;
+	__asm        call   DigitalSound::Play;
 // LINE 195:
 	__asm        mov    ecx, this;
-	__asm        call   0x004B39D0;
+	__asm        call   ScrollBarWindow::MoveLinePrevious;
 // LINE 196:
 	__asm        jmp    near ptr 0x00471CC4;
 }
@@ -927,15 +927,15 @@ void SoundScrollBarWindow::MoveLineNext() {
 	__asm        mov    eax, ds:[0x5C37F0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0042FE2E;
+	__asm        call   DigitalSound::SetVolume;
 // LINE 207:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    ecx, 0x604248;
-	__asm        call   0x0043005A;
+	__asm        call   DigitalSound::Play;
 // LINE 209:
 	__asm        mov    ecx, this;
-	__asm        call   0x004B3A46;
+	__asm        call   ScrollBarWindow::MoveLineNext;
 // LINE 210:
 	__asm        jmp    near ptr 0x00471D15;
 }

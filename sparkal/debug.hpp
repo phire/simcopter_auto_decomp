@@ -10,7 +10,7 @@ void execute(char * data) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x14];
-	__asm        call   0x00422280;
+	__asm        call   CDebugWindow::HandleDebugCommand;
 // LINE 47:
 	__asm        jmp    near ptr 0x004256FD;
 }

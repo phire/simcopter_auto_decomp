@@ -160,7 +160,7 @@ short S3TerrainInitMap() {
 	__asm        push   0x5B5D68;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x67EB10], eax;
 // LINE 177:
@@ -168,7 +168,7 @@ short S3TerrainInitMap() {
 	__asm        jne    near ptr 0x00513EFD;
 // LINE 178:
 	__asm        push   0x5B5D70;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 181:
 	__asm        mov    edx, ds:[0x5B5CB8];
@@ -199,7 +199,7 @@ short S3TerrainInitMap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 195:
@@ -843,16 +843,16 @@ short S3TerrainInitMap() {
 // LINE 332:
 	__asm        jmp    near ptr 0x00514846;
 // LINE 343:
-	__asm        call   0x0056F980;
+	__asm        call   clock;
 	__asm        push   eax;
-	__asm        call   0x0056EC30;
+	__asm        call   srand;
 	__asm        add    esp, 4;
 // LINE 344:
 	__asm        mov    eax, ds:[0x5B5CB8];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        call   0x0051723C;
+	__asm        call   do_map_square;
 	__asm        add    esp, 0xC;
 // LINE 349:
 	__asm        cmp    dword ptr ds:[0x598E84], 1;
@@ -962,7 +962,7 @@ short S3TerrainInitMap() {
 // LINE 367:
 	__asm        jmp    near ptr 0x005148F7;
 // LINE 375:
-	__asm        call   0x0051865B;
+	__asm        call   AdjustTerrainMap;
 // LINE 383:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x00514A57;
@@ -1010,7 +1010,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    eax, 5;
 	__asm        jge    near ptr 0x00514B2E;
 // LINE 409:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -1744,7 +1744,7 @@ short S3TerrainInitMap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 563:
@@ -3674,7 +3674,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    edx, 0x10;
 	__asm        jne    near ptr 0x00517056;
 // LINE 936:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3684,7 +3684,7 @@ short S3TerrainInitMap() {
 	__asm        sub    eax, edx;
 	__asm        je     near ptr 0x00517051;
 // LINE 938:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3706,7 +3706,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    edx, 0x20;
 	__asm        jne    near ptr 0x005170BE;
 // LINE 943:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3716,7 +3716,7 @@ short S3TerrainInitMap() {
 	__asm        sub    eax, edx;
 	__asm        je     near ptr 0x005170B9;
 // LINE 945:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3738,7 +3738,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    edx, 0x30;
 	__asm        jne    near ptr 0x00517126;
 // LINE 950:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3748,7 +3748,7 @@ short S3TerrainInitMap() {
 	__asm        sub    eax, edx;
 	__asm        je     near ptr 0x00517121;
 // LINE 952:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3770,7 +3770,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    edx, 0x40;
 	__asm        jne    near ptr 0x0051718E;
 // LINE 957:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3780,7 +3780,7 @@ short S3TerrainInitMap() {
 	__asm        sub    eax, edx;
 	__asm        je     near ptr 0x00517189;
 // LINE 959:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3802,7 +3802,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    edx, 0x60;
 	__asm        jne    near ptr 0x005171F1;
 // LINE 964:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3812,7 +3812,7 @@ short S3TerrainInitMap() {
 	__asm        sub    eax, edx;
 	__asm        je     near ptr 0x005171F1;
 // LINE 966:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -3831,13 +3831,13 @@ short S3TerrainInitMap() {
 	__asm        jne    near ptr 0x00517217;
 // LINE 991:
 	__asm        push   0x11;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 992:
 	__asm        jmp    near ptr 0x00517221;
 // LINE 995:
 	__asm        push   0x19;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 998:
 	__asm        shl    dword ptr ds:[0x66EB00], 0x10;
@@ -3920,7 +3920,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -3991,7 +3991,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4058,7 +4058,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, x;
@@ -4129,7 +4129,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, msize;
 	__asm        movsx  ebx, y;
@@ -4201,7 +4201,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4274,7 +4274,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4343,7 +4343,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, x;
@@ -4416,7 +4416,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, msize;
 	__asm        movsx  ebx, y;
@@ -4517,7 +4517,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4561,7 +4561,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4602,7 +4602,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4644,7 +4644,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
 	__asm        push   eax;
-	__asm        call   0x00517DC6;
+	__asm        call   noise;
 	__asm        add    esp, 8;
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
@@ -4726,7 +4726,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 // LINE 1110:
 	__asm        mov    max_noise, 0x7FF;
 // LINE 1115:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        and    eax, max_noise;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        fild   dword ptr [ebp-0x10];
@@ -4742,7 +4742,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        call   0x0056EBE8;
 	__asm        mov    delta, eax;
 // LINE 1116:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        test   al, 1;
 	__asm        je     near ptr 0x00517E20;
 	__asm        jmp    near ptr 0x00517E28;
@@ -4811,7 +4811,7 @@ void S3TerrSetGridObj() {
 	__asm        push   0x482;
 	__asm        push   0x5B5D90;
 	__asm        push   0x5B5DB0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00517EFB;
 	__asm        jmp    near ptr 0x00517EFB;
@@ -4822,7 +4822,7 @@ void S3TerrSetGridObj() {
 	__asm        push   0x483;
 	__asm        push   0x5B5DD0;
 	__asm        push   0x5B5DF0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00517F2B;
 	__asm        jmp    near ptr 0x00517F2B;
@@ -5138,7 +5138,7 @@ void S3TerrainMorph() {
 	__asm        push   0x4ED;
 	__asm        push   0x5B5E14;
 	__asm        push   0x5B5E34;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0051839E;
 	__asm        jmp    near ptr 0x0051839E;
@@ -5149,7 +5149,7 @@ void S3TerrainMorph() {
 	__asm        push   0x4EE;
 	__asm        push   0x5B5E44;
 	__asm        push   0x5B5E64;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005183CD;
 	__asm        jmp    near ptr 0x005183CD;
@@ -6108,7 +6108,7 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D31E7;
+	__asm        call   VRGetObjAlt2;
 	__asm        add    esp, 0x24;
 	__asm        mov    objy, eax;
 // LINE 1852:
@@ -6133,7 +6133,7 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	__asm        push   eax;
 	__asm        mov    eax, cityx;
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 1862:

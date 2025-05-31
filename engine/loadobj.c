@@ -125,7 +125,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    res, eax;
 // LINE 153:
@@ -180,7 +180,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    eax, [eax+4];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
-	__asm        call   0x004CB401;
+	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+0x14], eax;
@@ -198,7 +198,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    group, eax;
 	__asm        cmp    group, 0;
@@ -229,7 +229,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D2409;
+	__asm        call   LoadObjtType;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D2316;
@@ -239,12 +239,12 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 // LINE 190:
 	__asm        mov    eax, ds:[0x6666C0];
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 191:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 192:
 	__asm        xor    eax, eax;
@@ -257,7 +257,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 // LINE 198:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 199:
 	__asm        mov    dword ptr ds:[0x662810], 0xA;
@@ -388,7 +388,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   0x7C;
 	__asm        lea    eax, fileobjhdr.Id[0];
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D2477;
@@ -428,7 +428,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    eax, ObjectPtr;
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D24EB;
@@ -443,7 +443,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D2516;
@@ -465,7 +465,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x6666C0], eax;
 	__asm        cmp    dword ptr ds:[0x6666C0], 0;
@@ -494,14 +494,14 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   0x15;
 	__asm        lea    eax, filefacehdr.Id[0];
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D25E3;
 // LINE 466:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 467:
 	__asm        xor    eax, eax;
@@ -511,7 +511,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   0x59C218;
 	__asm        lea    eax, filefacehdr.Id[0];
 	__asm        push   eax;
-	__asm        call   0x005752E0;
+	__asm        call   strncmp;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004D261D;
@@ -520,7 +520,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 507:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 508:
 	__asm        xor    eax, eax;
@@ -586,7 +586,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        lea    eax, w[0];
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D26EA;
@@ -625,14 +625,14 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D278E;
 // LINE 583:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 584:
 	__asm        xor    eax, eax;
@@ -647,7 +647,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        mov    eax, barrymempool;
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, faceptr;
 	__asm        mov    [ecx+0x28], eax;
@@ -661,7 +661,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 617:
 	__asm        mov    eax, dataptr;
@@ -701,7 +701,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   eax;
 	__asm        mov    eax, v0;
 	__asm        push   eax;
-	__asm        call   0x004D44DE;
+	__asm        call   FaceCalcNormal;
 	__asm        add    esp, 0x10;
 // LINE 627:
 	__asm        mov    eax, faceptr;
@@ -817,14 +817,14 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        push   0xA;
 	__asm        lea    eax, treehdr.Id[0];
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D2A0B;
 // LINE 664:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 665:
 	__asm        xor    eax, eax;
@@ -832,7 +832,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 687:
 	__asm        mov    word ptr ds:[0x606A68], 0;
 // LINE 688:
-	__asm        call   0x004D3FEA;
+	__asm        call   ReadTree;
 	__asm        mov    ecx, ObjectPtr;
 	__asm        mov    [ecx+0x34], eax;
 // LINE 689:
@@ -849,7 +849,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 693:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
-	__asm        call   0x004CB628;
+	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 694:
 	__asm        mov    dword ptr ds:[0x6666C0], 0;
@@ -873,7 +873,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        je     near ptr 0x004D2AA1;
 	__asm        mov    eax, ObjectPtr;
 	__asm        push   eax;
-	__asm        call   0x004D40E1;
+	__asm        call   NormalizeObj;
 	__asm        add    esp, 4;
 // LINE 706:
 	__asm        cmp    uses_gouraud, 1;
@@ -881,7 +881,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 707:
 	__asm        mov    eax, ObjectPtr;
 	__asm        push   eax;
-	__asm        call   0x004D46BC;
+	__asm        call   ObjCalcVnormsAndShade;
 	__asm        add    esp, 4;
 // LINE 709:
 	__asm        mov    eax, 1;
@@ -928,7 +928,7 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 	__asm        push   eax;
 	__asm        mov    eax, obj;
 	__asm        push   eax;
-	__asm        call   0x004D2B28;
+	__asm        call   VRGetObjAlt;
 	__asm        add    esp, 0x20;
 	__asm        jmp    near ptr 0x004D2B23;
 // LINE 744:
@@ -2878,7 +2878,7 @@ struct _BSPtree* ReadTree() {
 	__asm        push   2;
 	__asm        lea    eax, FaceIndex;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 // LINE 1810:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
@@ -2913,7 +2913,7 @@ struct _BSPtree* ReadTree() {
 	__asm        add    eax, ds:[0x606A64];
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 // LINE 1827:
 	__asm        call   0x004D3FEA;
@@ -3134,7 +3134,7 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        push   eax;
 	__asm        mov    eax, fh;
 	__asm        push   eax;
-	__asm        call   0x004D4337;
+	__asm        call   VRBCApplyTiledMap;
 	__asm        add    esp, 0xC;
 // LINE 1911:
 	__asm        jmp    near ptr 0x004D430F;
@@ -3244,7 +3244,7 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        add    eax, xf;
 	__asm        add    eax, 0xA0;
 	__asm        push   eax;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    mp, eax;
 	__asm        cmp    mp, 0;
@@ -3327,7 +3327,7 @@ void VRFreeMemPool(struct VRMemPool* mp) {
 // LINE 2011:
 	__asm        mov    eax, mp;
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 2012:
 }
@@ -3507,7 +3507,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    vnorms, eax;
 // LINE 2106:
@@ -3704,12 +3704,12 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        push   eax;
 	__asm        mov    eax, obj;
 	__asm        push   eax;
-	__asm        call   0x004D9712;
+	__asm        call   VRObjSetGouraudShade;
 	__asm        add    esp, 8;
 // LINE 2189:
 	__asm        mov    eax, vnorms;
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 2190:
 	__asm        xor    eax, eax;
@@ -3776,7 +3776,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x63A858];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    dataptr, eax;
 	__asm        cmp    dataptr, 0;
@@ -3804,7 +3804,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        push   0;
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 2256:
 	__asm        mov    eax, dataptr;
@@ -3982,7 +3982,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x63A858];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    dataptr, eax;
 	__asm        cmp    dataptr, 0;
@@ -4010,7 +4010,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        push   0;
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 2361:
 	__asm        mov    eax, dataptr;
@@ -4219,7 +4219,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2469:
 	__asm        add    to, 0x90;
@@ -4238,7 +4238,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2475:
 	__asm        mov    eax, oh;
@@ -4268,7 +4268,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2486:
 	__asm        mov    eax, to;
@@ -4285,7 +4285,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2491:
 	__asm        mov    eax, to;
@@ -4306,7 +4306,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        push   eax;
 	__asm        mov    eax, to;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2496:
 	__asm        mov    eax, to;

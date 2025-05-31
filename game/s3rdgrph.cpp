@@ -86,7 +86,7 @@ public:
 void S3RoadGraphInit() {
 // LINE 69:
 	__asm        mov    ecx, 0x5C3828;
-	__asm        call   0x0053BD6A;
+	__asm        call   RoadGraph::Init;
 // LINE 70:
 	__asm        jmp    near ptr 0x0053BD55;
 }
@@ -132,7 +132,7 @@ void RoadGraph::Init() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053BEFB;
@@ -221,7 +221,7 @@ void RoadGraph::Init() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
@@ -245,7 +245,7 @@ void RoadGraph::Init() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053C1DD;
@@ -429,7 +429,7 @@ void RoadGraph::Init() {
 	__asm        jmp    near ptr 0x0053BF64;
 // LINE 150:
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D400;
+	__asm        call   RoadGraph::FindDeadEnds;
 // LINE 156:
 	__asm        mov    x, 0;
 	__asm        jmp    near ptr 0x0053C1FE;
@@ -480,7 +480,7 @@ void RoadGraph::Init() {
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D9D2;
+	__asm        call   RoadGraph::FindEdges;
 // LINE 162:
 // Block end:
 	__asm        jmp    near ptr 0x0053C214;
@@ -536,7 +536,7 @@ void RoadGraph::Init() {
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0054048D;
+	__asm        call   RoadGraph::FindRoads;
 // LINE 173:
 // Block end:
 	__asm        jmp    near ptr 0x0053C2B0;
@@ -735,7 +735,7 @@ IntersectionKludge:
 	__asm        push   0x11C;
 	__asm        push   0x5B80F0;
 	__asm        push   0x5B8114;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C50E;
 	__asm        jmp    near ptr 0x0053C50E;
@@ -751,7 +751,7 @@ IntersectionKludge:
 	__asm        push   0x11D;
 	__asm        push   0x5B8130;
 	__asm        push   0x5B8154;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C547;
 	__asm        jmp    near ptr 0x0053C547;
@@ -858,7 +858,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 339:
 	__asm        mov    eax, x;
@@ -875,7 +875,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 // LINE 344:
 	__asm        mov    loopCounter, 0;
 // LINE 350:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -895,7 +895,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        push   0x162;
 	__asm        push   0x5B8170;
 	__asm        push   0x5B8194;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053C730;
 	__asm        jmp    near ptr 0x0053C730;
@@ -957,7 +957,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 	__asm        jmp    dword ptr [eax*4+0x53C7C8];
 // Switch pointers
 // LINE 375:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, pEdge;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [ecx+4];
@@ -1189,7 +1189,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CB39;
@@ -1203,7 +1203,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    al, startLoc.x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    eax, ecx;
@@ -1342,7 +1342,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CC54;
@@ -1361,7 +1361,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal1;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CC54;
 // LINE 474:
@@ -1425,7 +1425,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CD99;
@@ -1448,7 +1448,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CD5A;
 // LINE 485:
@@ -1474,7 +1474,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal1;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CD99;
 // LINE 490:
@@ -1538,7 +1538,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CEDE;
@@ -1561,7 +1561,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CE9F;
 // LINE 502:
@@ -1587,7 +1587,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal1;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CEDE;
 // LINE 507:
@@ -1647,7 +1647,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D00E;
@@ -1670,7 +1670,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053CFD1;
 // LINE 519:
@@ -1696,7 +1696,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 	__asm        mov    eax, goal1;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D21B;
+	__asm        call   RoadGraph::FindIntersection;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D00E;
 // LINE 524:
@@ -1734,7 +1734,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
 	__asm        push   ecx;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D08E;
@@ -1790,7 +1790,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053C331;
+	__asm        call   RoadGraph::GetNextGoal;
 // LINE 580:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
@@ -1872,7 +1872,7 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	__asm        push   0x25B;
 	__asm        push   0x5B819C;
 	__asm        push   0x5B81C0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053D20D;
 	__asm        jmp    near ptr 0x0053D20D;
@@ -1909,7 +1909,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D273;
@@ -1944,7 +1944,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    result, eax;
 // LINE 658:
 	__asm        mov    eax, returnDir;
@@ -2011,7 +2011,7 @@ KlugeFirstStepIsAnIntersection:
 	__asm        mov    al, here.x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    yindex, ecx;
@@ -2040,7 +2040,7 @@ KlugeFirstStepIsAnIntersection:
 	__asm        mov    eax, goal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00541130;
+	__asm        call   RoadGraph::FindPlaceOnRoad;
 // LINE 689:
 	__asm        jmp    near ptr 0x0053D3EC;
 // LINE 694:
@@ -2188,7 +2188,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D5FD;
@@ -2202,7 +2202,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D8D5;
+	__asm        call   RoadGraph::IsThisADeadEnd;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D5FD;
 // LINE 736:
@@ -2262,7 +2262,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D6EE;
@@ -2276,7 +2276,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   ecx;
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D8D5;
+	__asm        call   RoadGraph::IsThisADeadEnd;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D6EE;
 // LINE 742:
@@ -2336,7 +2336,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D7DF;
@@ -2350,7 +2350,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        push   2;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D8D5;
+	__asm        call   RoadGraph::IsThisADeadEnd;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D7DF;
 // LINE 748:
@@ -2407,7 +2407,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D8C1;
@@ -2421,7 +2421,7 @@ void RoadGraph::FindDeadEnds() {
 	__asm        push   ecx;
 	__asm        push   3;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D8D5;
+	__asm        call   RoadGraph::IsThisADeadEnd;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D8C1;
 // LINE 754:
@@ -2468,7 +2468,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053D911;
@@ -2485,7 +2485,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    returnStatus, eax;
 // LINE 778:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
@@ -2660,7 +2660,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053DDDE;
@@ -2786,7 +2786,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E305;
+	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 844:
 	__asm        mov    eax, 0x7F;
 	__asm        sub    eax, Offset;
@@ -2830,7 +2830,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053E0C6;
@@ -2956,7 +2956,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E305;
+	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 855:
 	__asm        mov    eax, 0x7F;
 	__asm        sub    eax, Offset;
@@ -3000,7 +3000,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053E1E7;
@@ -3011,7 +3011,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 860:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x00541360;
+	__asm        call   TimeOfTravelTable;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, pEdge;
 	__asm        xor    edx, edx;
@@ -3053,7 +3053,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E305;
+	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 866:
 	__asm        mov    eax, x;
 	__asm        cmp    Offset, eax;
@@ -3094,7 +3094,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053E2F9;
@@ -3105,7 +3105,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 // LINE 871:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
-	__asm        call   0x00541360;
+	__asm        call   TimeOfTravelTable;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, pEdge;
 	__asm        xor    edx, edx;
@@ -3147,7 +3147,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E305;
+	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 876:
 	__asm        jmp    near ptr 0x0053E2FE;
 }
@@ -3172,7 +3172,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053E36A;
@@ -3184,7 +3184,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    al, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 890:
@@ -3212,7 +3212,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    returnStatus, eax;
 // LINE 901:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
@@ -3311,7 +3311,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    al, tempx;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 952:
@@ -3338,7 +3338,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    cl, [eax];
 	__asm        push   ecx;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 962:
@@ -3482,7 +3482,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        push   0x3CA;
 	__asm        push   0x5B81D8;
 	__asm        push   0x5B81FC;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0053E7BD;
 	__asm        jmp    near ptr 0x0053E7BD;
@@ -3496,7 +3496,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    returnStatus, eax;
 // LINE 973:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
@@ -3764,7 +3764,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(LocalTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EB94;
@@ -3779,7 +3779,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EB8D;
@@ -3850,7 +3850,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(LocalTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053ECA8;
@@ -3865,7 +3865,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        add    eax, stepSize;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EC9E;
@@ -3932,7 +3932,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(LocalTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EDA9;
@@ -3947,7 +3947,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        mov    al, x;
 	__asm        dec    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053ED9F;
@@ -4018,7 +4018,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(LocalTile);
 	__asm        push   eax;
-	__asm        call   0x0053964A;
+	__asm        call   DoRoadTilesConnect;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EEBD;
@@ -4033,7 +4033,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053EEB3;
@@ -4083,7 +4083,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F18E;
@@ -4092,7 +4092,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F18E;
@@ -4103,7 +4103,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1106:
 	__asm        mov    eax, y;
@@ -4112,7 +4112,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        inc    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4];
@@ -4231,7 +4231,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F431;
@@ -4240,7 +4240,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        sub    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F431;
@@ -4251,7 +4251,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1117:
 	__asm        mov    eax, y;
@@ -4260,7 +4260,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        sub    eax, 2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4];
@@ -4379,7 +4379,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F6D4;
@@ -4388,7 +4388,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F6D4;
@@ -4399,7 +4399,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        dec    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1128:
 	__asm        mov    eax, y;
@@ -4408,7 +4408,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4-4];
@@ -4526,7 +4526,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        sub    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F977;
@@ -4535,7 +4535,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053F977;
@@ -4546,7 +4546,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        sub    eax, 2;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1139:
 	__asm        mov    eax, y;
@@ -4555,7 +4555,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4-8];
@@ -4673,7 +4673,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FC14;
@@ -4682,7 +4682,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        dec    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FC14;
@@ -4693,7 +4693,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1150:
 	__asm        mov    eax, y;
@@ -4702,7 +4702,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        dec    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4];
@@ -4821,7 +4821,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FEB1;
@@ -4830,7 +4830,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0053FEB1;
@@ -4841,7 +4841,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1161:
 	__asm        mov    eax, y;
@@ -4850,7 +4850,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        inc    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4];
@@ -4969,7 +4969,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00540150;
@@ -4978,7 +4978,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00540150;
@@ -4989,7 +4989,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        inc    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1172:
 	__asm        mov    eax, y;
@@ -4998,7 +4998,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4+4];
@@ -5116,7 +5116,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005403EF;
@@ -5125,7 +5125,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x005403EF;
@@ -5136,7 +5136,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        inc    eax;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    yindex, al;
 // LINE 1183:
 	__asm        mov    eax, y;
@@ -5145,7 +5145,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        mov    eax, x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053D167;
+	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    ecx, [edx+ecx*4+4];
@@ -5256,7 +5256,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) 
 	__asm        push   0x4A6;
 	__asm        push   0x5B8210;
 	__asm        push   0x5B8234;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00540415;
 	__asm        jmp    near ptr 0x00540415;
@@ -5345,7 +5345,7 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00540636;
+	__asm        call   RoadGraph::MakeRoad;
 // LINE 1219:
 	__asm        mov    eax, 0x7F;
 	__asm        sub    eax, Offset;
@@ -5369,7 +5369,7 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00540636;
+	__asm        call   RoadGraph::MakeRoad;
 // LINE 1225:
 	__asm        mov    eax, 0x7F;
 	__asm        sub    eax, Offset;
@@ -5393,7 +5393,7 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00540636;
+	__asm        call   RoadGraph::MakeRoad;
 // LINE 1231:
 	__asm        mov    eax, Offset;
 	__asm        cmp    x, eax;
@@ -5416,7 +5416,7 @@ void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
 	__asm        mov    eax, pRGV;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00540636;
+	__asm        call   RoadGraph::MakeRoad;
 // LINE 1236:
 	__asm        jmp    near ptr 0x0054062F;
 }
@@ -5458,7 +5458,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        push   eax;
-	__asm        call   0x00539260;
+	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00540694;
@@ -5484,7 +5484,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx+6], eax;
@@ -5664,7 +5664,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    returnStatus, eax;
 // LINE 1301:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
@@ -5892,7 +5892,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        mov    eax, currentDir;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053E8B0;
+	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
 	__asm        mov    returnStatus, eax;
 // LINE 1341:
 	__asm        cmp    deadEnd, 0;
@@ -6254,7 +6254,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        mov    eax, goal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0053C331;
+	__asm        call   RoadGraph::GetNextGoal;
 // LINE 1430:
 	__asm        mov    eax, goal;
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
@@ -6266,7 +6266,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	__asm        push   0x597;
 	__asm        push   0x5B823C;
 	__asm        push   0x5B8260;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0054124F;
 	__asm        jmp    near ptr 0x0054124F;

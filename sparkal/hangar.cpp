@@ -578,12 +578,12 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A33EE;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
-	__asm        call   0x0042EF87;
+	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xF2], 1;
 	__asm        mov    eax, this;
@@ -632,25 +632,25 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 	__asm        cmp    ds:[0x5971D0], eax;
 	__asm        jne    near ptr 0x004722B3;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    near ptr 0x00472142;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472138;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472147;
 	__asm        jmp    near ptr 0x0047214C;
@@ -679,7 +679,7 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x70], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    ecx, eax;
@@ -687,22 +687,22 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        jne    near ptr 0x004721FE;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004721F4;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472203;
 	__asm        jmp    near ptr 0x00472208;
@@ -793,18 +793,18 @@ void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewPa
 	__asm        mov    dword ptr [eax+0xF2], 0;
 // LINE 55:
 	__asm        mov    ecx, this;
-	__asm        call   0x0047474E;
+	__asm        call   HangarWindow::LoadHotSpots;
 // LINE 56:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x004730A3;
+	__asm        call   HangarWindow::CreateImage;
 // LINE 57:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A6BCD;
+	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x004A7470;
+	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 59:
 	__asm        jmp    near ptr 0x004723A5;
@@ -817,7 +817,7 @@ void HangarWindow::~HangarWindow() {
 	__asm        mov    dword ptr [eax], 0x590C20;
 // LINE 66:
 	__asm        mov    ecx, this;
-	__asm        call   0x00473229;
+	__asm        call   HangarWindow::DestroyImage;
 // LINE 67:
 	__asm        jmp    near ptr 0x004723D1;
 	__asm        mov    eax, this;
@@ -886,7 +886,7 @@ void HangarWindow::~HangarWindow() {
 	__asm        je     near ptr 0x004724D1;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x004747E0;
+	__asm        call   destroy;
 	__asm        add    esp, 4;
 	__asm        add    dword ptr [ebp-0x30], 8;
 	__asm        jmp    near ptr 0x004724B0;
@@ -896,7 +896,7 @@ void HangarWindow::~HangarWindow() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x004747C0;
+	__asm        call   deallocate;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004724F0;
 	__asm        jmp    near ptr 0x004724F5;
@@ -904,7 +904,7 @@ void HangarWindow::~HangarWindow() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        add    eax, 8;
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047250E;
 	__asm        jmp    near ptr 0x00472513;
@@ -942,13 +942,13 @@ void HangarWindow::~HangarWindow() {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004725AC;
 	__asm        jmp    near ptr 0x004725B1;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004725C2;
 	__asm        jmp    near ptr 0x004725C7;
@@ -961,9 +961,9 @@ void HangarWindow::~HangarWindow() {
 	__asm        jmp    near ptr 0x004725F9;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
-	__asm        call   0x0042F2E9;
+	__asm        call   DigitalSound::~DigitalSound;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4045;
+	__asm        call   GraphicWindow::~GraphicWindow;
 }
 
 // FUNCTION: COPTER_D 0x00472611
@@ -975,7 +975,7 @@ int32_t HangarWindow::Initialize() {
 
 // LINE 76:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
@@ -1009,10 +1009,10 @@ int32_t HangarWindow::Initialize() {
 	__asm        mov    szButtonFileName, eax;
 // LINE 80:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A44D4;
+	__asm        call   GraphicWindow::Initialize;
 // LINE 81:
 	__asm        push   0xA4;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
@@ -1033,7 +1033,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   0x004ACCE6;
+	__asm        call   TextWindow::TextWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    near ptr 0x00472755;
@@ -1077,7 +1077,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        mov    dword ptr [eax+0x12A], 0x152;
 // LINE 88:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -1099,14 +1099,14 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2C];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x00472846;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 89:
 	__asm        push   0;
 	__asm        push   0x7D;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 90:
@@ -1136,34 +1136,34 @@ int32_t HangarWindow::Initialize() {
 	__asm        jmp    near ptr 0x004728B4;
 	__asm        lea    eax, [ebp-0x1094];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1094];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004728D8;
 	__asm        jmp    near ptr 0x004728DD;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004728FD;
 	__asm        jmp    near ptr 0x00472930;
 	__asm        jmp    near ptr 0x00472907;
 	__asm        lea    eax, [ebp-0x1094];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1094];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0047292B;
 	__asm        jmp    near ptr 0x00472930;
 // LINE 91:
@@ -1180,7 +1180,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 94:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -1202,14 +1202,14 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x50];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x004729BB;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 95:
 	__asm        push   0;
 	__asm        push   0x7E;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 96:
@@ -1239,43 +1239,43 @@ int32_t HangarWindow::Initialize() {
 	__asm        jmp    near ptr 0x00472A29;
 	__asm        lea    eax, [ebp-0x2098];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2098];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00472A4D;
 	__asm        jmp    near ptr 0x00472A52;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00472A72;
 	__asm        jmp    near ptr 0x00472BC7;
 	__asm        jmp    near ptr 0x00472A7C;
 	__asm        lea    eax, [ebp-0x2098];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20B0], eax;
 	__asm        cmp    dword ptr [ebp-0x20B0], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00472AD6;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x20AC], eax;
 	__asm        mov    eax, [ebp-0x20AC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472AC7;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472AD6;
 	__asm        jmp    near ptr 0x00472ADB;
@@ -1290,7 +1290,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00472B6D;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20A4], eax;
 	__asm        cmp    dword ptr [ebp-0x20A4], 0;
@@ -1300,12 +1300,12 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x2098];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x20A4];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x20A0], eax;
 	__asm        jmp    near ptr 0x00472B57;
 	__asm        mov    dword ptr [ebp-0x20A0], 0;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x20A0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    near ptr 0x00472BAC;
@@ -1321,7 +1321,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20A8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00472BAC;
 	__asm        mov    eax, [ebp-0x20B0];
@@ -1344,7 +1344,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 100:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
@@ -1366,14 +1366,14 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x64];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x00472C52;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 101:
 	__asm        push   0;
 	__asm        push   0x7F;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 102:
@@ -1403,34 +1403,34 @@ int32_t HangarWindow::Initialize() {
 	__asm        jmp    near ptr 0x00472CC0;
 	__asm        lea    eax, [ebp-0x30B0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x30B0];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00472CE4;
 	__asm        jmp    near ptr 0x00472CE9;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00472D09;
 	__asm        jmp    near ptr 0x00472D3C;
 	__asm        jmp    near ptr 0x00472D13;
 	__asm        lea    eax, [ebp-0x30B0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x30B0];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00472D37;
 	__asm        jmp    near ptr 0x00472D3C;
 // LINE 103:
@@ -1447,7 +1447,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 106:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
@@ -1469,14 +1469,14 @@ int32_t HangarWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x78];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x68];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x00472DC7;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 107:
 	__asm        push   0;
 	__asm        push   0x80;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 108:
@@ -1506,34 +1506,34 @@ int32_t HangarWindow::Initialize() {
 	__asm        jmp    near ptr 0x00472E38;
 	__asm        lea    eax, [ebp-0x40B4];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x40B4];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00472E5C;
 	__asm        jmp    near ptr 0x00472E61;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00472E81;
 	__asm        jmp    near ptr 0x00472EB4;
 	__asm        jmp    near ptr 0x00472E8B;
 	__asm        lea    eax, [ebp-0x40B4];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x40B4];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00472EAF;
 	__asm        jmp    near ptr 0x00472EB4;
 // LINE 109:
@@ -1563,7 +1563,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        je     near ptr 0x00472F1C;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x90];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00472F1C;
 	__asm        jmp    near ptr 0x00472F21;
 	__asm        cmp    sText.c_str_ptr, 0;
@@ -1574,7 +1574,7 @@ int32_t HangarWindow::Initialize() {
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472F54;
 	__asm        mov    eax, [ebp-0x7C];
@@ -1595,7 +1595,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00472F9A;
 	__asm        mov    eax, this;
@@ -1603,7 +1603,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1639,7 +1639,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00473031;
 	__asm        jmp    near ptr 0x00473036;
@@ -1665,7 +1665,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        call   0x004704DB;
+	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00473095;
@@ -1689,7 +1689,7 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   dword ptr [eax+0xB4];
 // LINE 135:
 	__asm        push   0x134;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -1704,7 +1704,7 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00473114;
 	__asm        mov    eax, this;
@@ -1712,7 +1712,7 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1748,7 +1748,7 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004731AB;
 	__asm        jmp    near ptr 0x004731B0;
@@ -1773,7 +1773,7 @@ int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046E6DF;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x11E], eax;
 	__asm        jmp    near ptr 0x00473214;
@@ -1801,10 +1801,10 @@ void HangarWindow::DestroyImage() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0047327F;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047327A;
 	__asm        jmp    near ptr 0x0047327F;
@@ -1838,7 +1838,7 @@ int32_t HangarWindow::ComposeSelf() {
 	__asm        mov    eax, [eax+0x102];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473C6C;
+	__asm        call   HangarWindow::ScrollHangarView;
 // LINE 161:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10E];
@@ -1915,7 +1915,7 @@ int32_t HangarWindow::ComposeSelf() {
 	__asm        lea    eax, lHelpID;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473B5C;
+	__asm        call   HangarWindow::GetHotspotFromPosition;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0047343F;
 // LINE 163:
@@ -1925,7 +1925,7 @@ int32_t HangarWindow::ComposeSelf() {
 	__asm        mov    eax, lHelpID;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473F53;
+	__asm        call   HangarWindow::DisplayHelp;
 // LINE 164:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xFE], 1;
@@ -2085,7 +2085,7 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 217:
 	__asm        push   0xFFFFFFE8;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473C6C;
+	__asm        call   HangarWindow::ScrollHangarView;
 // LINE 218:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00473635;
@@ -2096,7 +2096,7 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 221:
 	__asm        push   0x18;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473C6C;
+	__asm        call   HangarWindow::ScrollHangarView;
 // LINE 222:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00473635;
@@ -2122,7 +2122,7 @@ long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        lea    eax, lHotspotID;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00473B5C;
+	__asm        call   HangarWindow::GetHotspotFromPosition;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00473697;
 // LINE 239:
@@ -2225,7 +2225,7 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        jmp    near ptr 0x004737F5;
 // LINE 269:
 	__asm        mov    ecx, this;
-	__asm        call   0x00474577;
+	__asm        call   HangarWindow::HideHelp;
 // LINE 270:
 	__asm        mov    eax, nCursorX;
 	__asm        mov    ecx, this;
@@ -2252,22 +2252,22 @@ void HangarWindow::GetImagePath() {
 	__asm        jmp    near ptr 0x0047384F;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0047389A;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047388B;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047389A;
 	__asm        jmp    near ptr 0x0047389F;
@@ -2284,7 +2284,7 @@ void HangarWindow::GetImagePath() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0047396E;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -2294,7 +2294,7 @@ void HangarWindow::GetImagePath() {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x00473906;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -2313,11 +2313,11 @@ void HangarWindow::GetImagePath() {
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     near ptr 0x0047395B;
 	__asm        mov    ecx, [ebp-0x14];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00473945;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00473956;
 	__asm        jmp    near ptr 0x0047395B;
@@ -2339,7 +2339,7 @@ void HangarWindow::GetImagePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004739A1;
 	__asm        mov    eax, [ebp-0x1C];
@@ -2356,22 +2356,22 @@ void HangarWindow::GetImagePath() {
 	__asm        jmp    near ptr 0x004739C9;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x00473A14;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00473A05;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00473A14;
 	__asm        jmp    near ptr 0x00473A19;
@@ -2388,7 +2388,7 @@ void HangarWindow::GetImagePath() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00473AE8;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
@@ -2398,7 +2398,7 @@ void HangarWindow::GetImagePath() {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x00473A80;
 	__asm        mov    dword ptr [ebp-0x24], 0;
@@ -2417,11 +2417,11 @@ void HangarWindow::GetImagePath() {
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     near ptr 0x00473AD5;
 	__asm        mov    ecx, [ebp-0x34];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00473ABF;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00473AD0;
 	__asm        jmp    near ptr 0x00473AD5;
@@ -2443,7 +2443,7 @@ void HangarWindow::GetImagePath() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00473B1B;
 	__asm        mov    eax, [ebp-0x3C];
@@ -2462,7 +2462,7 @@ void HangarWindow::GetImagePath() {
 	__asm        push   0;
 	__asm        push   6;
 	__asm        mov    ecx, 0x604C00;
-	__asm        call   0x00494F82;
+	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x00473B52;
 // LINE 285:
 	__asm        jmp    near ptr 0x00473B57;
@@ -2517,7 +2517,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 	__asm        push   eax;
 	__asm        mov    ecx, iterator.node;
 	__asm        add    ecx, 8;
-	__asm        call   0x004BAD05;
+	__asm        call   HotSpot::IsPointInHotspot;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00473C2F;
 // LINE 298:
@@ -2645,7 +2645,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 	__asm        jmp    near ptr 0x00473DCD;
 // LINE 324:
 	__asm        mov    ecx, this;
-	__asm        call   0x00474577;
+	__asm        call   HangarWindow::HideHelp;
 // LINE 325:
 	__asm        jmp    near ptr 0x00473DDA;
 }
@@ -2786,7 +2786,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 
 // LINE 440:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
@@ -2827,11 +2827,11 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x0047402C;
 	__asm        mov    ecx, [ebp-0x78];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00474016;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00474027;
 	__asm        jmp    near ptr 0x0047402C;
@@ -2844,7 +2844,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00474058;
 	__asm        jmp    near ptr 0x00474570;
@@ -2857,7 +2857,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    eax, nHelp;
 	__asm        add    eax, 0x64;
 	__asm        push   eax;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 448:
@@ -2887,34 +2887,34 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        jmp    near ptr 0x004740E3;
 	__asm        lea    eax, [ebp-0x108C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x108C];
 	__asm        push   eax;
 	__asm        lea    ecx, sHelp.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00474107;
 	__asm        jmp    near ptr 0x0047410C;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sHelp.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0047412C;
 	__asm        jmp    near ptr 0x0047415F;
 	__asm        jmp    near ptr 0x00474136;
 	__asm        lea    eax, [ebp-0x108C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x108C];
 	__asm        push   eax;
 	__asm        lea    ecx, sHelp.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0047415A;
 	__asm        jmp    near ptr 0x0047415F;
 // LINE 449:
@@ -2963,7 +2963,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        lea    eax, rectTempChildWindow.left;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4F5C;
+	__asm        call   GraphicWindow::FitRectToWindow;
 // LINE 458:
 	__asm        jmp    near ptr 0x004741F4;
 	__asm        mov    eax, this;
@@ -3009,7 +3009,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    eax, nHelp;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004745A5;
+	__asm        call   HangarWindow::GetSoundFileNameFromHelpID;
 // LINE 469:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -3025,14 +3025,14 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004742BE;
 	__asm        mov    eax, sHelp.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    sHelp.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x004742D6;
@@ -3062,7 +3062,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00474340;
 	__asm        jmp    near ptr 0x00474345;
@@ -3084,14 +3084,14 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    eax, sHelp.c_str_ptr;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        je     near ptr 0x00474441;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx+4], eax;
@@ -3106,7 +3106,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx], eax;
@@ -3122,7 +3122,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x88];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00474419;
 	__asm        jmp    near ptr 0x00474427;
@@ -3158,7 +3158,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        je     near ptr 0x004744A7;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x30];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004744A7;
 	__asm        jmp    near ptr 0x004744AC;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
@@ -3169,7 +3169,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004744D3;
 // LINE 471:
@@ -3202,7 +3202,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        je     near ptr 0x0047453F;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0047453F;
 	__asm        jmp    near ptr 0x00474544;
 	__asm        cmp    sHelp.c_str_ptr, 0;
@@ -3213,7 +3213,7 @@ void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047456B;
 	__asm        jmp    near ptr 0x00474570;
@@ -3236,13 +3236,13 @@ void HangarWindow::HideHelp() {
 int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_string<char>& sSoundFileName) {
 // LINE 496:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x00474660;
 	__asm        push   0x599810;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -3257,7 +3257,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
@@ -3272,7 +3272,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        push   0x599810;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00474638;
 	__asm        jmp    near ptr 0x00474646;
@@ -3294,7 +3294,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        push   0;
 	__asm        push   2;
 	__asm        mov    ecx, 0x604C00;
-	__asm        call   0x00494F82;
+	__asm        call   FileServices::GetPathForFileString;
 	__asm        jmp    near ptr 0x0047468E;
 	__asm        mov    eax, [ebp-4];
 	__asm        dec    dword ptr [eax+0xC];
@@ -3317,7 +3317,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -3327,7 +3327,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        jmp    near ptr 0x004746FB;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047470C;
 	__asm        jmp    near ptr 0x00474711;
@@ -3340,7 +3340,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_stri
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047473D;
 // LINE 497:
@@ -3356,7 +3356,7 @@ void HangarWindow::LoadHotSpots() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x116;
 	__asm        push   eax;
-	__asm        call   0x004BB49B;
+	__asm        call   LoadListFromResource;
 	__asm        add    esp, 8;
 // LINE 506:
 	__asm        jmp    near ptr 0x00474772;

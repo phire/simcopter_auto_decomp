@@ -104,7 +104,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BF6D8;
 	__asm        push   0x26;
 	__asm        push   0x5BF6E0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 39:
 	__asm        mov    eax, this;
@@ -114,7 +114,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BF704;
 	__asm        push   0x27;
 	__asm        push   0x5BF728;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 43:
 	__asm        push   0x10;
@@ -123,7 +123,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 44:
 	__asm        mov    tmp[4], 0x69;
@@ -135,13 +135,13 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 45:
 	__asm        lea    eax, tmp[0];
 	__asm        push   eax;
-	__asm        call   0x005661F4;
+	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x00568DB1;
+	__asm        call   _cArray::GetArray;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -160,7 +160,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB8C;
 	__asm        push   0x11E;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0056731A;
 	__asm        mov    eax, [ebp-0x2C];
@@ -173,7 +173,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB58;
 	__asm        push   0x131;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0056737E;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
@@ -182,7 +182,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB1C;
 	__asm        push   0x132;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    near ptr 0x0056746C;
@@ -191,10 +191,10 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEAF0;
 	__asm        push   0x134;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        push   0x50;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -213,7 +213,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    dword ptr [eax], 0x593738;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     near ptr 0x00567406;
-	__asm        call   0x00567B1B;
+	__asm        call   _cArray::MakeTable;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x3C];
@@ -226,7 +226,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   eax;
 	__asm        push   8;
 	__asm        mov    ecx, [ebp-0x4C];
-	__asm        call   0x00567900;
+	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x00567429;
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x4C];
@@ -238,7 +238,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        jmp    near ptr 0x00567453;
 _L31083:
 	__asm        mov    ecx, [ebp-0x4C];
-	__asm        call   0x005679EB;
+	__asm        call   _cArray::~_cArray;
 	__asm        ret;
 	__asm        jmp    near ptr 0x0056745F;
 	__asm        mov    dword ptr [ebp-0x28], 0;
@@ -251,7 +251,7 @@ _L31083:
 	__asm        push   0x5BEAD4;
 	__asm        push   0x137;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
@@ -263,7 +263,7 @@ _L31083:
 _L31071:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 47:

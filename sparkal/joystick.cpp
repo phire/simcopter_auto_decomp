@@ -92,7 +92,7 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a480
 void $E2() {
-	__asm        call   0x0049A495;
+	__asm        call   $E1;
 	__asm        jmp    near ptr 0x0049A490;
 }
 
@@ -100,7 +100,7 @@ void $E2() {
 // FUNCTION: COPTER_D 0x0049a495
 void $E1() {
 	__asm        mov    ecx, 0x604C78;
-	__asm        call   0x0049A4AF;
+	__asm        call   JoystickManager::JoystickManager;
 	__asm        jmp    near ptr 0x0049A4AA;
 }
 
@@ -255,7 +255,7 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	__asm        add    eax, this;
 	__asm        add    eax, 0x68;
 	__asm        push   eax;
-	__asm        call   0x0056CE20;
+	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0049A683;
@@ -299,7 +299,7 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 	__asm        push   eax;
 	__asm        mov    eax, szJoystickName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 113:
 	__asm        mov    eax, 1;
@@ -329,7 +329,7 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 	__asm        add    eax, this;
 	__asm        add    eax, 0x68;
 	__asm        push   eax;
-	__asm        call   0x0056CE20;
+	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0049A763;
@@ -383,7 +383,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	__asm        mov    eax, nJoystick;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0049A836;
+	__asm        call   JoystickManager::GetPositionQuantitative;
 	__asm        mov    nValue, eax;
 // LINE 192:
 	__asm        mov    eax, this;
@@ -541,7 +541,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0049A779;
+	__asm        call   JoystickManager::Normalize;
 	__asm        mov    nReturnValue, eax;
 // LINE 272:
 	__asm        mov    eax, this;

@@ -188,7 +188,7 @@ void SparkalPalette::~SparkalPalette() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 50:
 	__asm        jmp    near ptr 0x0049647E;
@@ -1158,7 +1158,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(colorStart.Blue);
 	__asm        push   eax;
-	__asm        call   0x0049731A;
+	__asm        call   SparkalPalette::FadeToPalette;
 	__asm        add    esp, 0x10;
 // LINE 362:
 	__asm        jmp    near ptr 0x00497313;
@@ -1208,7 +1208,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    eax, lSteps;
 	__asm        shl    eax, 0xA;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    paletteArray, eax;
 // LINE 392:
@@ -1582,7 +1582,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 456:
 	__asm        jmp    near ptr 0x0049783A;
@@ -1702,7 +1702,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 	__asm        jmp    near ptr 0x004979B3;
 	__asm        push   0x59A1C8;
 	__asm        lea    ecx, [ebp-0x40C];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 519:
 	__asm        jmp    near ptr 0x004979C8;
 }
@@ -1710,7 +1710,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
 // FUNCTION: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004963EF;
+	__asm        call   SparkalPalette::SparkalPalette;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 535:
@@ -1726,7 +1726,7 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors,
 	__asm        mov    eax, pNewColors;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004963B0;
+	__asm        call   SparkalPalette::SparkalPalette;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 544:

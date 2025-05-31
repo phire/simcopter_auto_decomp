@@ -1085,7 +1085,7 @@ void cYObject::Error(short errNum) {
 	__asm        push   0x5BEBAC;
 	__asm        push   0x10;
 	__asm        push   0x5BEBC4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 17:
 	__asm        jmp    near ptr 0x005625FF;
@@ -1094,7 +1094,7 @@ void cYObject::Error(short errNum) {
 	__asm        push   0x5BEBE8;
 	__asm        push   0x14;
 	__asm        push   0x5BEBFC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 21:
 	__asm        jmp    near ptr 0x005625FF;
@@ -1103,7 +1103,7 @@ void cYObject::Error(short errNum) {
 	__asm        push   0x5BEC20;
 	__asm        push   0x18;
 	__asm        push   0x5BEC34;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 25:
 	__asm        jmp    near ptr 0x005625FF;
@@ -1112,7 +1112,7 @@ void cYObject::Error(short errNum) {
 	__asm        push   0x5BEC58;
 	__asm        push   0x1C;
 	__asm        push   0x5BEC74;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 29:
 	__asm        jmp    near ptr 0x005625FF;
@@ -1121,7 +1121,7 @@ void cYObject::Error(short errNum) {
 	__asm        push   0x5BEC98;
 	__asm        push   0x20;
 	__asm        push   0x5BECB4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 33:
 	__asm        jmp    near ptr 0x005625FF;

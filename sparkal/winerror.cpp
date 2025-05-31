@@ -21,7 +21,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        push   0x16;
 	__asm        push   0x5990E4;
 	__asm        push   0x59910C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0044FF74;
 	__asm        jmp    near ptr 0x0044FF74;
@@ -83,7 +83,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        lea    eax, ErrorText[0];
 	__asm        push   eax;
 	__asm        push   0x599138;
-	__asm        call   0x00424B14;
+	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 42:
 	__asm        xor    eax, eax;
@@ -91,7 +91,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00450046;
 // LINE 43:
-	__asm        call   0x0056F350;
+	__asm        call   abort;
 // LINE 45:
 // Block end:
 	__asm        jmp    near ptr 0x0045004B;

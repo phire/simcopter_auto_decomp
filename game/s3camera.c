@@ -55,7 +55,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        jne    near ptr 0x004F8BEE;
 // LINE 129:
-	__asm        call   0x00546500;
+	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    u_dyobj, eax;
 // LINE 130:
 	__asm        mov    eax, u_dyobj;
@@ -85,7 +85,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
 	__asm        push   eax;
-	__asm        call   0x004F9AA5;
+	__asm        call   S3CameraGetBldAlt;
 	__asm        add    esp, 4;
 	__asm        mov    alt, eax;
 // LINE 137:
@@ -99,7 +99,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x6C1318];
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        add    eax, 0xA0000;
 	__asm        add    alt, eax;
@@ -164,7 +164,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        push   eax;
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 161:
 	__asm        lea    eax, mat[0][0];
@@ -210,7 +210,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x6C1318];
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        add    eax, 0x3200000;
 	__asm        mov    ds:[0x6C131C], eax;
@@ -312,13 +312,13 @@ void S3CameraMove(struct Point3d* P) {
 // LINE 243:
 	__asm        lea    eax, CameraVector.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    Velocity, eax;
 // LINE 244:
 	__asm        lea    eax, CameraVector.x;
 	__asm        push   eax;
-	__asm        call   0x004F4AD4;
+	__asm        call   NormalizeXZVector;
 	__asm        add    esp, 4;
 // LINE 246:
 	__asm        cmp    Velocity, 0x50000;
@@ -371,7 +371,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
 	__asm        push   eax;
-	__asm        call   0x004F9AA5;
+	__asm        call   S3CameraGetBldAlt;
 	__asm        add    esp, 4;
 	__asm        mov    alt, eax;
 // LINE 270:
@@ -380,7 +380,7 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x6C1318];
 	__asm        push   eax;
-	__asm        call   0x00518A8C;
+	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        add    eax, 0xA0000;
 	__asm        add    alt, eax;
@@ -458,10 +458,10 @@ void SetIdealCameraPos() {
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
 	__asm        jne    near ptr 0x004F9025;
 // LINE 320:
-	__asm        call   0x00546500;
+	__asm        call   GetAvatarDYOBJ;
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x004F8F69;
+	__asm        call   NormalizeGridPoint;
 	__asm        add    esp, 4;
 // LINE 321:
 	__asm        jmp    near ptr 0x004F923B;
@@ -470,7 +470,7 @@ void SetIdealCameraPos() {
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x004F8F69;
+	__asm        call   NormalizeGridPoint;
 	__asm        add    esp, 4;
 // LINE 328:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
@@ -669,7 +669,7 @@ void CalcCameraAngles(struct Point3d* Vector) {
 // LINE 438:
 	__asm        lea    eax, WorkVector.x;
 	__asm        push   eax;
-	__asm        call   0x004CA0C0;
+	__asm        call   MTMagnitude;
 	__asm        add    esp, 4;
 	__asm        mov    LengthXZ, eax;
 // LINE 439:
@@ -720,7 +720,7 @@ void CalcCameraAngles(struct Point3d* Vector) {
 // LINE 466:
 	__asm        lea    eax, WorkVector.x;
 	__asm        push   eax;
-	__asm        call   0x004CA0C0;
+	__asm        call   MTMagnitude;
 	__asm        add    esp, 4;
 	__asm        mov    LengthXYZ, eax;
 // LINE 468:
@@ -1128,7 +1128,7 @@ void S3CameraRotate() {
 // LINE 608:
 // Block start:
 	struct _DYOBJ_INST* dyobj;
-	__asm        call   0x00546500;
+	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    dyobj, eax;
 // LINE 613:
 	__asm        mov    eax, dyobj;
@@ -1148,7 +1148,7 @@ void S3CameraRotate() {
 // LINE 634:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
-	__asm        call   0x004F9263;
+	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 636:
 // Block end:
@@ -1182,7 +1182,7 @@ void S3CameraRotate() {
 // LINE 654:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
-	__asm        call   0x004F9263;
+	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 656:
 	__asm        jmp    near ptr 0x004F98D7;
@@ -1201,7 +1201,7 @@ void S3CameraRotate() {
 // LINE 671:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
-	__asm        call   0x004F9263;
+	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 673:
 	__asm        jmp    near ptr 0x004F98D7;
@@ -1241,7 +1241,7 @@ void S3CameraRotate() {
 // LINE 693:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
-	__asm        call   0x004F9263;
+	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 699:
 }
@@ -1261,7 +1261,7 @@ void S3CameraTweakInit() {
 	__asm        push   3;
 	__asm        lea    eax, pvals[0];
 	__asm        push   eax;
-	__asm        call   0x004C9AD0;
+	__asm        call   TWKEnQueue;
 	__asm        add    esp, 0xC;
 // LINE 732:
 }
@@ -1459,7 +1459,7 @@ int32_t S3CameraGetBldAlt(struct Point3d* loc) {
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D31E7;
+	__asm        call   VRGetObjAlt2;
 	__asm        add    esp, 0x24;
 	__asm        mov    objy, eax;
 // LINE 846:

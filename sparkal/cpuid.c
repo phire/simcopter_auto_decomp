@@ -66,28 +66,28 @@ unsigned short wincpuid() {
 	unsigned short cpuid;
 
 // LINE 110:
-	__asm        call   0x0047B640;
+	__asm        call   wincpuidsupport;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0047B6A1;
 // LINE 112:
-	__asm        call   0x0047BA8D;
+	__asm        call   check_IDProc;
 	__asm        mov    cpuid, ax;
 // LINE 114:
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 116:
-	__asm        call   0x0047B94A;
+	__asm        call   check_clone;
 	__asm        movzx  eax, ax;
 	__asm        mov    ds:[0x638ED4], eax;
 // LINE 118:
-	__asm        call   0x0047B999;
+	__asm        call   check_8086;
 	__asm        mov    cpuid, ax;
 // LINE 119:
 	__asm        test   reinterpret_cast<uint32_t>(cpuid), 0xFFFF;
 	__asm        jne    near ptr 0x0047B6C9;
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 121:
-	__asm        call   0x0047B9EB;
+	__asm        call   check_80286;
 	__asm        mov    cpuid, ax;
 // LINE 122:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
@@ -96,7 +96,7 @@ unsigned short wincpuid() {
 	__asm        jne    near ptr 0x0047B6E8;
 	__asm        jmp    near ptr 0x0047B70D;
 // LINE 124:
-	__asm        call   0x0047BA3A;
+	__asm        call   check_80386;
 	__asm        mov    cpuid, ax;
 // LINE 125:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
@@ -154,7 +154,7 @@ unsigned short wincpuidext() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 170:
-	__asm        call   0x0047B640;
+	__asm        call   wincpuidsupport;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0047B7FF;
@@ -205,7 +205,7 @@ end_cpuidext:
 // LINE 206:
 	__asm        jmp    near ptr 0x0047B817;
 // LINE 208:
-	__asm        call   0x0047B67A;
+	__asm        call   wincpuid;
 	__asm        mov    cpu_type, ax;
 // LINE 209:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpu_type);
@@ -248,7 +248,7 @@ unsigned long wincpufeatures() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 260:
-	__asm        call   0x0047B640;
+	__asm        call   wincpuidsupport;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0047B8DF;
@@ -308,7 +308,7 @@ struct TIME_STAMP winrdtsc() {
 	unsigned long features;
 
 // LINE 324:
-	__asm        call   0x0047B825;
+	__asm        call   wincpufeatures;
 	__asm        mov    features, eax;
 // LINE 326:
 	__asm        mov    timestamp.Low, 0;

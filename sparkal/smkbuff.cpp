@@ -486,7 +486,7 @@ void SmackerBuffer::SmackerBuffer(char * szNewFilePath, int32_t nNewDestWidth, i
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 79:
 	__asm        jmp    near ptr 0x00497D92;
@@ -504,7 +504,7 @@ void SmackerBuffer::~SmackerBuffer() {
 	__asm        mov    dword ptr [eax], 0x591138;
 // LINE 90:
 	__asm        mov    ecx, this;
-	__asm        call   0x00497F91;
+	__asm        call   SmackerBuffer::Close;
 // LINE 91:
 	__asm        jmp    near ptr 0x00497DC3;
 }
@@ -627,7 +627,7 @@ int32_t SmackerBuffer::CreateSurface() {
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0049805B;
+	__asm        call   SmackerBuffer::SetWindow;
 // LINE 149:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00497F1D;
@@ -645,7 +645,7 @@ int32_t SmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 162:
 	__asm        mov    eax, nExraBuffering;
@@ -769,7 +769,7 @@ void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
 	__asm        lea    eax, rectWindowSparkal.left;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004980DF;
+	__asm        call   SmackerBuffer::CenterBufferInRect;
 // LINE 243:
 	__asm        jmp    near ptr 0x004980AC;
 }
@@ -782,7 +782,7 @@ void SmackerBuffer::SetWindow(class CSparkalWindow* myNewWindow) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0049805B;
+	__asm        call   SmackerBuffer::SetWindow;
 // LINE 253:
 	__asm        jmp    near ptr 0x004980D8;
 }
@@ -1143,7 +1143,7 @@ void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMe
 
 // LINE 427:
 	__asm        push   0x164;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -1155,7 +1155,7 @@ void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMe
 	__asm        mov    eax, szSmackerFilePath;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x004985F4;
+	__asm        call   VRBmpSmackerBuffer::VRBmpSmackerBuffer;
 	__asm        mov    tempVRBmpSmackerBuffer, eax;
 	__asm        jmp    near ptr 0x004984CF;
 	__asm        mov    tempVRBmpSmackerBuffer, 0;
@@ -1205,7 +1205,7 @@ int32_t VRSmackerSetBitmap(void * __ptr32 pVRSmacker, char * szVRBitmap, int32_t
 int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 // LINE 446:
 	__asm        mov    ecx, pVRSmacker;
-	__asm        call   0x00498A93;
+	__asm        call   VRBmpSmackerBuffer::Compose;
 	__asm        jmp    near ptr 0x00498550;
 // LINE 447:
 }
@@ -1214,7 +1214,7 @@ int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 void VRSmackerReset(void * __ptr32 pVRSmacker) {
 // LINE 450:
 	__asm        mov    ecx, pVRSmacker;
-	__asm        call   0x00497FF3;
+	__asm        call   SmackerBuffer::Reset;
 // LINE 451:
 	__asm        jmp    near ptr 0x00498568;
 }
@@ -1249,14 +1249,14 @@ char * VRSmackerGetBitmapBits(void * __ptr32 pVRSmacker) {
 // FUNCTION: COPTER_D 0x004985b5
 void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 	__asm        mov    ecx, this;
-	__asm        call   0x00497C00;
+	__asm        call   SmackerBuffer::SmackerBuffer;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x160], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591158;
 // LINE 473:
 	__asm        mov    ecx, this;
-	__asm        call   0x004986BF;
+	__asm        call   VRBmpSmackerBuffer::InitializeVRBmpMembers;
 // LINE 474:
 	__asm        jmp    near ptr 0x004985EC;
 	__asm        mov    eax, this;
@@ -1271,7 +1271,7 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char * szNewFilePath, int32_t nNewDe
 	__asm        mov    eax, szNewFilePath;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00497CCF;
+	__asm        call   SmackerBuffer::SmackerBuffer;
 	__asm        mov    eax, bNewPreserveSmackerBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x160], eax;
@@ -1279,7 +1279,7 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char * szNewFilePath, int32_t nNewDe
 	__asm        mov    dword ptr [eax], 0x591158;
 // LINE 486:
 	__asm        mov    ecx, this;
-	__asm        call   0x004986BF;
+	__asm        call   VRBmpSmackerBuffer::InitializeVRBmpMembers;
 // LINE 487:
 	__asm        jmp    near ptr 0x00498636;
 	__asm        mov    eax, this;
@@ -1301,7 +1301,7 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 497:
 	__asm        mov    eax, this;
@@ -1311,15 +1311,15 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
 	__asm        push   eax;
-	__asm        call   0x004D5872;
+	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 499:
 	__asm        mov    ecx, this;
-	__asm        call   0x0049891F;
+	__asm        call   VRBmpSmackerBuffer::DeleteSurface;
 // LINE 500:
 	__asm        jmp    near ptr 0x004986B2;
 	__asm        mov    ecx, this;
-	__asm        call   0x00497DA1;
+	__asm        call   SmackerBuffer::~SmackerBuffer;
 }
 
 // FUNCTION: COPTER_D 0x004986bf
@@ -1406,7 +1406,7 @@ int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
 // LINE 549:
 	__asm        mov    eax, nSizeOfHeader;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x154], eax;
@@ -1515,7 +1515,7 @@ void VRBmpSmackerBuffer::DeleteSurface() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 583:
 	__asm        mov    eax, this;
@@ -1541,7 +1541,7 @@ int32_t VRBmpSmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, uns
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 599:
 	__asm        mov    eax, nExraBuffering;
@@ -1610,7 +1610,7 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+0x158];
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 626:
 	__asm        jmp    near ptr 0x00498A23;
@@ -1754,16 +1754,16 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 701:
 	__asm        mov    eax, szNewVRBmpName;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x140], eax;
@@ -1773,7 +1773,7 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewV
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x140];
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 703:
 	__asm        mov    eax, nNewVRBmpFlags;
@@ -1818,7 +1818,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x140];
 	__asm        push   eax;
-	__asm        call   0x004D5356;
+	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x148], eax;
@@ -1834,7 +1834,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14C], eax;
@@ -1904,7 +1904,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+0x158];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 762:
 	__asm        mov    eax, this;
@@ -1925,7 +1925,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        add    eax, [ecx+0x158];
 	__asm        add    eax, nWidthToCopy;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 765:
 	__asm        jmp    near ptr 0x00498DAC;
@@ -1950,7 +1950,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+0x158];
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00498E51;
 // LINE 774:
@@ -1964,7 +1964,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
 	__asm        push   eax;
-	__asm        call   0x004D5872;
+	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 776:
 	__asm        mov    eax, this;
@@ -1981,10 +1981,10 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 // FUNCTION: COPTER_D 0x00498ee8
 void SmackerBackBuffer::SmackerBackBuffer() {
 	__asm        mov    ecx, this;
-	__asm        call   0x00497C00;
+	__asm        call   SmackerBuffer::SmackerBuffer;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x140;
-	__asm        call   0x0046E690;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5911F0;
 	__asm        mov    eax, this;
@@ -2015,10 +2015,10 @@ void SmackerBackBuffer::SmackerBackBuffer(char * szNewFilePath, int32_t bNewUseS
 	__asm        mov    eax, szNewFilePath;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00497CCF;
+	__asm        call   SmackerBuffer::SmackerBuffer;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x140;
-	__asm        call   0x0046E690;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5911F0;
 	__asm        mov    eax, this;
@@ -2051,7 +2051,7 @@ void SmackerBackBuffer::~SmackerBackBuffer() {
 	__asm        mov    dword ptr [eax+0x140], 0x591188;
 // LINE 834:
 	__asm        mov    ecx, this;
-	__asm        call   0x00497F91;
+	__asm        call   SmackerBuffer::Close;
 // LINE 835:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x278], 0;
@@ -2072,9 +2072,9 @@ void SmackerBackBuffer::~SmackerBackBuffer() {
 	__asm        jmp    near ptr 0x0049905F;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    ecx, this;
-	__asm        call   0x00497DA1;
+	__asm        call   SmackerBuffer::~SmackerBuffer;
 }
 
 // FUNCTION: COPTER_D 0x00499074
@@ -2115,7 +2115,7 @@ void SmackerBackBuffer::SetBackBufferData(char * szNewFilePath, int32_t bNewUseS
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 886:
 	__asm        jmp    near ptr 0x00499107;
@@ -2157,7 +2157,7 @@ int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsi
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 904:
 	__asm        mov    eax, nExraBuffering;
@@ -2236,7 +2236,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x198;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 957:
 	__asm        mov    eax, this;
@@ -2299,7 +2299,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 	__asm        jmp    near ptr 0x00499331;
 	__asm        push   0x59A20C;
 	__asm        lea    ecx, [ebp-8];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 971:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00499391;
@@ -2401,7 +2401,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499D5C;
+	__asm        call   SmackerBackBuffer::BltAll;
 // LINE 1034:
 	__asm        jmp    near ptr 0x00499498;
 // LINE 1036:
@@ -2420,7 +2420,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046F948;
+	__asm        call   CBackBuffer::Compose;
 // LINE 1039:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00499766;
@@ -2509,7 +2509,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499B35;
+	__asm        call   SmackerBackBuffer::BltParts;
 // LINE 1060:
 	__asm        jmp    near ptr 0x004995ED;
 // LINE 1062:
@@ -2529,7 +2529,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499D5C;
+	__asm        call   SmackerBackBuffer::BltAll;
 // LINE 1064:
 	__asm        jmp    near ptr 0x004996F5;
 // LINE 1065:
@@ -2630,7 +2630,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046F948;
+	__asm        call   CBackBuffer::Compose;
 // LINE 1081:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
@@ -2735,7 +2735,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499D5C;
+	__asm        call   SmackerBackBuffer::BltAll;
 // LINE 1124:
 	__asm        jmp    near ptr 0x00499861;
 // LINE 1127:
@@ -2758,7 +2758,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046FE13;
+	__asm        call   CBackBuffer::StretchCompose;
 // LINE 1130:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00499B2E;
@@ -2847,7 +2847,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499B35;
+	__asm        call   SmackerBackBuffer::BltParts;
 // LINE 1151:
 	__asm        jmp    near ptr 0x004999B6;
 // LINE 1153:
@@ -2867,7 +2867,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x140;
-	__asm        call   0x00499D5C;
+	__asm        call   SmackerBackBuffer::BltAll;
 // LINE 1155:
 	__asm        jmp    near ptr 0x00499ABD;
 // LINE 1156:
@@ -2969,7 +2969,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046FE13;
+	__asm        call   CBackBuffer::StretchCompose;
 // LINE 1173:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
@@ -3201,7 +3201,7 @@ void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, lo
 	__asm        push   eax;
 	__asm        mov    eax, pDestImageBits;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 1294:
 	__asm        mov    eax, nDestImageStride;
@@ -3291,7 +3291,7 @@ void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long
 	__asm        push   eax;
 	__asm        mov    eax, pDestImageBits;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 1357:
 	__asm        mov    eax, nDestImageStride;

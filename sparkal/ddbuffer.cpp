@@ -693,7 +693,7 @@ protected:
 // FUNCTION: COPTER_D 0x0046e690
 void CBackBuffer::CBackBuffer() {
 	__asm        mov    ecx, this;
-	__asm        call   0x0048F120;
+	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
 	__asm        jmp    near ptr 0x0046E6B2;
@@ -704,7 +704,7 @@ void CBackBuffer::CBackBuffer() {
 	__asm        mov    dword ptr [eax], 0x590808;
 // LINE 45:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EB58;
+	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 46:
 	__asm        jmp    near ptr 0x0046E6D7;
 	__asm        mov    eax, this;
@@ -719,7 +719,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	class PFile* fileImage;
 
 	__asm        mov    ecx, this;
-	__asm        call   0x0048F120;
+	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
 	__asm        jmp    near ptr 0x0046E701;
@@ -730,7 +730,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    dword ptr [eax], 0x590808;
 // LINE 68:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EB58;
+	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2C], 0;
@@ -740,21 +740,21 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        push   0x46;
 	__asm        push   0x599498;
 	__asm        push   0x5994C0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E753;
 	__asm        jmp    near ptr 0x0046E753;
 // LINE 71:
 	__asm        mov    eax, imageFileName;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    nFileNameLength, eax;
 // LINE 72:
 	__asm        mov    eax, nFileNameLength;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
@@ -764,11 +764,11 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 77:
 	__asm        push   0x110;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
@@ -787,7 +787,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    eax, [ebp-0x48];
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0046E7F8;
 	__asm        mov    eax, [ebp-0x48];
@@ -803,7 +803,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 79:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -822,7 +822,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    [ecx+8], eax;
 // LINE 81:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 82:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x50], eax;
@@ -845,7 +845,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E8B2;
 // LINE 87:
@@ -855,7 +855,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E8CF;
 // LINE 88:
@@ -884,7 +884,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    [ecx+0x28], eax;
 // LINE 94:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 95:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x58], eax;
@@ -904,7 +904,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 100:
 	__asm        mov    eax, this;
@@ -951,7 +951,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        jmp    near ptr 0x0046E9CA;
 	__asm        push   0x5994D0;
 	__asm        lea    ecx, [ebp-0x5C];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 126:
 	__asm        jmp    near ptr 0x0046E9FC;
 // LINE 139:
@@ -962,7 +962,7 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        add    ds:[0x599DA0], eax;
 // LINE 142:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EDCA;
+	__asm        call   CBackBuffer::Load;
 // LINE 145:
 	__asm        jmp    near ptr 0x0046E9FC;
 	__asm        mov    eax, this;
@@ -973,7 +973,7 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 	long ddrval;
 
 	__asm        mov    ecx, this;
-	__asm        call   0x0048F120;
+	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
 	__asm        jmp    near ptr 0x0046EA28;
@@ -984,14 +984,14 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 	__asm        mov    dword ptr [eax], 0x590808;
 // LINE 161:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EB58;
+	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 165:
 	__asm        push   0x6C;
 	__asm        push   0;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 166:
 	__asm        mov    eax, this;
@@ -1060,7 +1060,7 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 	__asm        jmp    near ptr 0x0046EB14;
 	__asm        push   0x59950C;
 	__asm        lea    ecx, [ebp-8];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 186:
 	__asm        jmp    near ptr 0x0046EB4E;
 // LINE 191:
@@ -1071,10 +1071,10 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 	__asm        add    ds:[0x599DA0], eax;
 // LINE 204:
 	__asm        mov    ecx, this;
-	__asm        call   0x0047006F;
+	__asm        call   CBackBuffer::Lock;
 // LINE 205:
 	__asm        mov    ecx, this;
-	__asm        call   0x00470149;
+	__asm        call   CBackBuffer::Unlock;
 // LINE 208:
 	__asm        jmp    near ptr 0x0046EB4E;
 	__asm        mov    eax, this;
@@ -1152,7 +1152,7 @@ void CBackBuffer::InitializeMemberVariables() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 239:
 	__asm        push   0x64;
@@ -1160,7 +1160,7 @@ void CBackBuffer::InitializeMemberVariables() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC4;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 240:
 	__asm        mov    eax, this;
@@ -1189,10 +1189,10 @@ void CBackBuffer::~CBackBuffer() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0046ECD3;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046ECCE;
 	__asm        jmp    near ptr 0x0046ECD3;
@@ -1211,7 +1211,7 @@ void CBackBuffer::~CBackBuffer() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 261:
 	__asm        mov    eax, this;
@@ -1294,7 +1294,7 @@ unsigned long CBackBuffer::Load() {
 
 // LINE 316:
 	__asm        push   0x110;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x454], eax;
 	__asm        cmp    dword ptr [ebp-0x454], 0;
@@ -1316,7 +1316,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, [ebp-0x454];
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0046EE76;
 	__asm        mov    eax, [ebp-0x454];
@@ -1332,10 +1332,10 @@ unsigned long CBackBuffer::Load() {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 318:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 319:
 	__asm        mov    eax, fileImage;
@@ -1354,7 +1354,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 322:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 323:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x45C], eax;
@@ -1378,7 +1378,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
 	__asm        jmp    near ptr 0x0046EF5F;
@@ -1389,7 +1389,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
 	__asm        jmp    near ptr 0x0046EF82;
@@ -1398,12 +1398,12 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    nPosition, eax;
 // LINE 330:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 335:
 	__asm        cmp    biHeader.biClrUsed, 0;
@@ -1424,7 +1424,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
 	__asm        jmp    near ptr 0x0046EFFE;
@@ -1433,12 +1433,12 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    nPosition, eax;
 // LINE 340:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 344:
 	__asm        mov    eax, this;
@@ -1462,14 +1462,14 @@ unsigned long CBackBuffer::Load() {
 	__asm        add    biData, eax;
 // LINE 350:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 351:
 	__asm        jmp    near ptr 0x0046F075;
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    nPosition, eax;
 // LINE 352:
@@ -1490,20 +1490,20 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
 	__asm        jmp    near ptr 0x0046F0DA;
 // LINE 354:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 355:
 	__asm        jmp    near ptr 0x0046F0EA;
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    nPosition, eax;
 // LINE 356:
@@ -1524,7 +1524,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
 	__asm        jmp    near ptr 0x0046F145;
@@ -1533,12 +1533,12 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    nPosition, eax;
 // LINE 363:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 364:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x464], eax;
@@ -1636,7 +1636,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 	__asm        jmp    near ptr 0x0046F263;
 	__asm        push   0x599548;
 	__asm        lea    ecx, [ebp-0x28];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 407:
 	__asm        mov    eax, 0x65;
 	__asm        jmp    near ptr 0x0046F3FC;
@@ -1734,7 +1734,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 	__asm        push   eax;
 	__asm        mov    eax, pText;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, pText;
@@ -1826,7 +1826,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 	__asm        jmp    near ptr 0x0046F459;
 	__asm        push   0x599580;
 	__asm        lea    ecx, [ebp-0x18];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 475:
 	__asm        mov    eax, 0x65;
 	__asm        jmp    near ptr 0x0046F5BF;
@@ -2058,7 +2058,7 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 // LINE 564:
 	__asm        push   0x5995B8;
 	__asm        push   0x5995F0;
-	__asm        call   0x00424B14;
+	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 565:
 	__asm        mov    eax, 0x80000000;
@@ -2081,7 +2081,7 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 	__asm        jmp    near ptr 0x0046F734;
 	__asm        push   0x5995F4;
 	__asm        lea    ecx, [ebp-0x20];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 573:
 	__asm        mov    eax, 0x80000000;
 	__asm        jmp    near ptr 0x0046F7B4;
@@ -2164,7 +2164,7 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 	__asm        jmp    near ptr 0x0046F80C;
 	__asm        push   0x59962C;
 	__asm        lea    ecx, [ebp-8];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 609:
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046F821;
@@ -2453,7 +2453,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 	__asm        jmp    near ptr 0x0046FB8F;
 	__asm        push   0x599678;
 	__asm        lea    ecx, [ebp-0x9C];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 740:
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046FBAA;
@@ -2546,7 +2546,7 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long Dest
 	__asm        jmp    near ptr 0x0046FCC3;
 	__asm        push   0x5996B4;
 	__asm        lea    ecx, [ebp-0x98];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 823:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0046FCDD;
@@ -2809,7 +2809,7 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAll
 	__asm        jmp    near ptr 0x0046FFAA;
 	__asm        push   0x5996F0;
 	__asm        lea    ecx, [ebp-0x98];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 965:
 	__asm        mov    eax, ddrval;
 	__asm        jmp    near ptr 0x0046FFC5;
@@ -2932,7 +2932,7 @@ unsigned long CBackBuffer::Lock() {
 	__asm        jmp    near ptr 0x00470101;
 	__asm        push   0x59972C;
 	__asm        lea    ecx, [ebp-0xC];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 1053:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00470144;
@@ -3014,7 +3014,7 @@ unsigned long CBackBuffer::Unlock() {
 	__asm        jmp    near ptr 0x004701DA;
 	__asm        push   0x599758;
 	__asm        lea    ecx, [ebp-0xC];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 1107:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0047021C;
@@ -3214,7 +3214,7 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect
 	__asm        jmp    near ptr 0x00470425;
 	__asm        push   0x599788;
 	__asm        lea    ecx, [ebp-0x20];
-	__asm        call   0x0042D420;
+	__asm        call   DirectDrawError::DisplayError;
 // LINE 1211:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00470439;
@@ -3236,10 +3236,10 @@ unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x00470490;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0047048B;
 	__asm        jmp    near ptr 0x00470490;
@@ -3278,7 +3278,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 
 // LINE 1263:
 	__asm        push   0x110;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -3297,7 +3297,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        mov    eax, [ebp-0x40];
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x00470554;
 	__asm        mov    eax, [ebp-0x40];
@@ -3313,7 +3313,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 1265:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -3325,7 +3325,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        jne    near ptr 0x004705E0;
 // LINE 1266:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 1267:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x48], eax;
@@ -3349,7 +3349,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004705FD;
 // LINE 1272:
@@ -3359,7 +3359,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0047061A;
 // LINE 1278:
@@ -3377,7 +3377,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        ja     near ptr 0x00470681;
 // LINE 1281:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 1282:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x50], eax;
@@ -3405,12 +3405,12 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004706A9;
 // LINE 1286:
 	__asm        mov    ecx, fileImage;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 1287:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x58], eax;
@@ -3664,7 +3664,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1481:
 	__asm        mov    eax, this;
@@ -3715,7 +3715,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1497:
 	__asm        mov    eax, this;
@@ -3742,14 +3742,14 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        mov    eax, nEndX;
 	__asm        sub    eax, nStartX;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    deltax, eax;
 // LINE 1509:
 	__asm        mov    eax, nEndY;
 	__asm        sub    eax, nStartY;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    deltay, eax;
 // LINE 1511:
@@ -3930,7 +3930,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1590:
 	__asm        cmp    yinc2, 0xFFFFFFFF;
@@ -4243,7 +4243,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1654:
 	__asm        mov    eax, this;
@@ -4294,7 +4294,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1670:
 	__asm        mov    eax, this;
@@ -4321,14 +4321,14 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        mov    eax, nEndX;
 	__asm        sub    eax, nStartX;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    deltax, eax;
 // LINE 1682:
 	__asm        mov    eax, nEndY;
 	__asm        sub    eax, nStartY;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    deltay, eax;
 // LINE 1684:
@@ -4538,7 +4538,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1780:
 	__asm        cmp    yinc2, 0xFFFFFFFF;
@@ -4670,7 +4670,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1830:
 	__asm        jmp    near ptr 0x004714D8;
@@ -4693,7 +4693,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        push   eax;
 	__asm        mov    eax, address;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1837:
 // Block end:

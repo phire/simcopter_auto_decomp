@@ -70,7 +70,7 @@ void S3ObjInit() {
 	__asm        push   0x33;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 391:
@@ -86,7 +86,7 @@ void S3ObjInit() {
 	__asm        push   0x34;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 395:
@@ -102,7 +102,7 @@ void S3ObjInit() {
 	__asm        push   0x32;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 399:
@@ -118,7 +118,7 @@ void S3ObjInit() {
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 403:
@@ -134,7 +134,7 @@ void S3ObjInit() {
 	__asm        push   0x29;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 407:
@@ -149,19 +149,19 @@ void S3ObjInit() {
 // LINE 411:
 	__asm        mov    eax, ds:[0x5B4774];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        mov    objcount, eax;
 // LINE 412:
 	__asm        mov    eax, ds:[0x5B4778];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        add    objcount, eax;
 // LINE 413:
 	__asm        mov    eax, ds:[0x5B477C];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        add    objcount, eax;
 // LINE 418:
@@ -186,12 +186,12 @@ void S3ObjInit() {
 	__asm        push   0x5B72A4;
 	__asm        lea    eax, msg[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 424:
 	__asm        lea    eax, msg[0];
 	__asm        push   eax;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 428:
 	__asm        lea    eax, oinfo.Faces;
@@ -327,7 +327,7 @@ void S3ObjInit() {
 // LINE 670:
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D8FD7;
+	__asm        call   VRFaceSetTexColor;
 	__asm        add    esp, 4;
 // LINE 673:
 	__asm        mov    eax, face;
@@ -340,7 +340,7 @@ void S3ObjInit() {
 // LINE 677:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
-	__asm        call   0x004D918B;
+	__asm        call   VRObjSetShading;
 	__asm        add    esp, 4;
 // LINE 679:
 	__asm        jmp    near ptr 0x005190BC;
@@ -358,7 +358,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 709:
 	__asm        push   0x140;
@@ -369,7 +369,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 712:
 	__asm        push   0x46;
@@ -380,7 +380,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 713:
 	__asm        push   0x47;
@@ -391,7 +391,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 714:
 	__asm        push   0x48;
@@ -402,7 +402,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 715:
 	__asm        push   0x49;
@@ -413,7 +413,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 716:
 	__asm        push   0x4A;
@@ -424,7 +424,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 717:
 	__asm        push   0x4B;
@@ -435,7 +435,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 718:
 	__asm        push   0x4C;
@@ -446,7 +446,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 719:
 	__asm        push   0x4D;
@@ -457,7 +457,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 720:
 	__asm        push   0x4E;
@@ -468,7 +468,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 721:
 	__asm        push   0x4F;
@@ -479,7 +479,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 722:
 	__asm        push   0x50;
@@ -490,7 +490,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 723:
 	__asm        push   0x51;
@@ -501,7 +501,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 724:
 	__asm        push   0x52;
@@ -512,7 +512,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 725:
 	__asm        push   0x53;
@@ -523,7 +523,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 726:
 	__asm        push   0x54;
@@ -534,7 +534,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 730:
 	__asm        push   0x10D;
@@ -545,7 +545,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 731:
 	__asm        push   0x10D;
@@ -556,7 +556,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 732:
 	__asm        push   0x10D;
@@ -567,7 +567,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 733:
 	__asm        push   0x10E;
@@ -578,7 +578,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 734:
 	__asm        push   0x10E;
@@ -589,7 +589,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 735:
 	__asm        push   0x10F;
@@ -600,7 +600,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 736:
 	__asm        push   0x145;
@@ -611,7 +611,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 737:
 	__asm        push   0x146;
@@ -622,7 +622,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 740:
 	__asm        push   0x130;
@@ -633,7 +633,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 741:
 	__asm        push   0x131;
@@ -644,7 +644,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 742:
 	__asm        push   0x132;
@@ -655,7 +655,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 743:
 	__asm        push   0x133;
@@ -666,7 +666,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 744:
 	__asm        push   0x134;
@@ -677,7 +677,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 745:
 	__asm        push   0x135;
@@ -688,7 +688,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 746:
 	__asm        push   0x136;
@@ -699,7 +699,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 747:
 	__asm        push   0x137;
@@ -710,7 +710,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 748:
 	__asm        push   0x138;
@@ -721,7 +721,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 749:
 	__asm        push   0x139;
@@ -732,7 +732,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 750:
 	__asm        push   0x13A;
@@ -743,7 +743,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 751:
 	__asm        push   0x13B;
@@ -754,7 +754,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 752:
 	__asm        push   0x13C;
@@ -765,7 +765,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 753:
 	__asm        push   0x13D;
@@ -776,7 +776,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 754:
 	__asm        push   0x13E;
@@ -787,7 +787,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D494C;
+	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 827:
 	__asm        jmp    near ptr 0x00519A9F;
@@ -1321,7 +1321,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 // LINE 1223:
 	__asm        mov    tablerows, 7;
 // LINE 1226:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   tablerows;
@@ -1341,7 +1341,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        cmp    num3, eax;
 	__asm        jle    near ptr 0x0051BF61;
 // LINE 1234:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   num2;
@@ -1350,7 +1350,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        add    eax, edx;
 	__asm        mov    plotx, eax;
 // LINE 1235:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   num2;
@@ -1359,7 +1359,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        add    eax, edx;
 	__asm        mov    ploty, eax;
 // LINE 1238:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   numvals;
@@ -5047,7 +5047,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        cmp    num3, eax;
 	__asm        jle    near ptr 0x0051DA56;
 // LINE 2423:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   num2;
@@ -5056,7 +5056,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        add    eax, edx;
 	__asm        mov    plotx, eax;
 // LINE 2424:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   num2;
@@ -5065,7 +5065,7 @@ void S3DrawWaterPoint(struct VRBlit* blit) {
 	__asm        add    eax, edx;
 	__asm        mov    ploty, eax;
 // LINE 2427:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   numvals;
@@ -8075,7 +8075,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x004F8653;
+	__asm        call   S3HeliHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3714:
 	__asm        jmp    near ptr 0x0051E695;
@@ -8096,7 +8096,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x005550AC;
+	__asm        call   PersonHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3719:
 	__asm        jmp    near ptr 0x0051E695;
@@ -8117,7 +8117,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3724:
 	__asm        jmp    near ptr 0x0051E695;
@@ -8146,7 +8146,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0052D975;
+	__asm        call   PlaneHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3731:
 	__asm        jmp    near ptr 0x0051E695;
@@ -8197,7 +8197,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3757:
 	__asm        jmp    near ptr 0x0051DC89;
@@ -8242,7 +8242,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3780:
 	__asm        jmp    near ptr 0x0051DD2C;
@@ -8287,7 +8287,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3803:
 	__asm        jmp    near ptr 0x0051DDCF;
@@ -8332,7 +8332,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3826:
 	__asm        jmp    near ptr 0x0051DE72;
@@ -8366,7 +8366,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 // LINE 3841:
 	__asm        mov    eax, dyhittee;
 	__asm        push   eax;
-	__asm        call   0x005232D1;
+	__asm        call   S3MissileDebrisDouse;
 	__asm        add    esp, 4;
 // LINE 3842:
 	__asm        jmp    near ptr 0x0051DF31;
@@ -8387,7 +8387,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3851:
 	__asm        jmp    near ptr 0x0051DF31;
@@ -8432,7 +8432,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3874:
 	__asm        jmp    near ptr 0x0051DFD4;
@@ -8477,7 +8477,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3897:
 	__asm        jmp    near ptr 0x0051E077;
@@ -8522,7 +8522,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3920:
 	__asm        jmp    near ptr 0x0051E11A;
@@ -8567,7 +8567,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3943:
 	__asm        jmp    near ptr 0x0051E1BD;
@@ -8612,7 +8612,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3966:
 	__asm        jmp    near ptr 0x0051E260;
@@ -8657,7 +8657,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3989:
 	__asm        jmp    near ptr 0x0051E303;
@@ -8702,7 +8702,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 4012:
 	__asm        jmp    near ptr 0x0051E3A6;
@@ -8747,7 +8747,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 4035:
 	__asm        jmp    near ptr 0x0051E449;
@@ -8792,7 +8792,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 4058:
 	__asm        jmp    near ptr 0x0051E4EC;
@@ -8837,7 +8837,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 4081:
 	__asm        jmp    near ptr 0x0051E58F;
@@ -8882,7 +8882,7 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 	__asm        push   eax;
 	__asm        mov    eax, hitter_type;
 	__asm        push   eax;
-	__asm        call   0x0050654C;
+	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 4104:
 	__asm        jmp    near ptr 0x0051E632;
@@ -8930,7 +8930,7 @@ void S3ObjSetFlatShading() {
 	__asm        push   0x4CCC;
 	__asm        push   0x6666;
 	__asm        push   0x1999;
-	__asm        call   0x004D9160;
+	__asm        call   VRSetIntensities;
 	__asm        add    esp, 0x10;
 // LINE 4154:
 	__asm        jmp    near ptr 0x0051E6ED;
@@ -8939,24 +8939,24 @@ void S3ObjSetFlatShading() {
 	__asm        push   0x1999;
 	__asm        push   0x3333;
 	__asm        push   0x1999;
-	__asm        call   0x004D9160;
+	__asm        call   VRSetIntensities;
 	__asm        add    esp, 0x10;
 // LINE 4160:
 	__asm        mov    eax, ds:[0x5B4774];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        mov    objcount, eax;
 // LINE 4161:
 	__asm        mov    eax, ds:[0x5B4778];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        add    objcount, eax;
 // LINE 4162:
 	__asm        mov    eax, ds:[0x5B477C];
 	__asm        push   eax;
-	__asm        call   0x004D23C7;
+	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
 	__asm        add    objcount, eax;
 // LINE 4167:
@@ -8978,7 +8978,7 @@ void S3ObjSetFlatShading() {
 // LINE 4177:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
-	__asm        call   0x004D918B;
+	__asm        call   VRObjSetShading;
 	__asm        add    esp, 4;
 // LINE 4178:
 	__asm        jmp    near ptr 0x0051E72C;

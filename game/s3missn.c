@@ -272,14 +272,14 @@ void S3MissionGenerator() {
 	long adjustor;
 
 // LINE 243:
-	__asm        call   0x00429075;
+	__asm        call   GetCurrentCitySettings;
 	__asm        mov    currentCitySettings, eax;
 // LINE 244:
 	__asm        lea    eax, currentCitySettingPercentages.lDifficulty;
 	__asm        push   eax;
 	__asm        mov    eax, currentCitySettings;
 	__asm        push   eax;
-	__asm        call   0x004FA175;
+	__asm        call   ConvertCitySettingsToSteppedPercentages;
 	__asm        add    esp, 8;
 // LINE 248:
 	__asm        mov    eax, ds:[0x5B4E20];
@@ -315,13 +315,13 @@ void S3MissionGenerator() {
 	__asm        cmp    dword ptr ds:[0x5B4E34], 0;
 	__asm        jne    near ptr 0x004FA3DB;
 // LINE 267:
-	__asm        call   0x005015E0;
+	__asm        call   S3StartSpeederMission;
 	__asm        mov    ds:[0x5B4E34], eax;
 // LINE 270:
 	__asm        cmp    dword ptr ds:[0x5B4E2C], 0;
 	__asm        jge    near ptr 0x004FA713;
 // LINE 273:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -332,7 +332,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyFire, eax;
 	__asm        jle    near ptr 0x004FA49B;
 // LINE 281:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0x32;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -341,29 +341,29 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA473;
 // LINE 284:
 	__asm        push   0x100;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 285:
 	__asm        jmp    near ptr 0x004FA496;
 // LINE 291:
 	__asm        push   4;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 292:
 	__asm        jmp    near ptr 0x004FA496;
 // LINE 294:
-	__asm        call   0x00526B81;
+	__asm        call   S3FireGetCount;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FA45C;
 // LINE 295:
 	__asm        push   1;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 296:
 	__asm        jmp    near ptr 0x004FA469;
 // LINE 297:
 	__asm        push   0x408;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 298:
 	__asm        jmp    near ptr 0x004FA496;
@@ -382,7 +382,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyCrime, eax;
 	__asm        jle    near ptr 0x004FA538;
 // LINE 305:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -394,25 +394,25 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA510;
 // LINE 308:
 	__asm        push   0x4000;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 309:
 	__asm        jmp    near ptr 0x004FA533;
 // LINE 311:
 	__asm        push   0x2000;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 312:
 	__asm        jmp    near ptr 0x004FA533;
 // LINE 314:
 	__asm        push   0x20000;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 315:
 	__asm        jmp    near ptr 0x004FA533;
 // LINE 317:
 	__asm        push   0x200;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 318:
 	__asm        jmp    near ptr 0x004FA533;
@@ -431,7 +431,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyRescue, eax;
 	__asm        jle    near ptr 0x004FA599;
 // LINE 325:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -440,13 +440,13 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA585;
 // LINE 328:
 	__asm        push   0x90;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 329:
 	__asm        jmp    near ptr 0x004FA594;
 // LINE 331:
 	__asm        push   0x110;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 332:
 	__asm        jmp    near ptr 0x004FA594;
@@ -461,7 +461,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyRiot, eax;
 	__asm        jle    near ptr 0x004FA5FE;
 // LINE 339:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -473,13 +473,13 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA5EA;
 // LINE 342:
 	__asm        push   0x1000;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 343:
 	__asm        jmp    near ptr 0x004FA5F9;
 // LINE 345:
 	__asm        push   0x1000;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 346:
 	__asm        jmp    near ptr 0x004FA5F9;
@@ -494,7 +494,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyTraffic, eax;
 	__asm        jle    near ptr 0x004FA66D;
 // LINE 353:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -506,13 +506,13 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA64F;
 // LINE 363:
 	__asm        push   0x800;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 364:
 	__asm        jmp    near ptr 0x004FA668;
 // LINE 366:
 	__asm        push   0x408;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 367:
 	__asm        jmp    near ptr 0x004FA668;
@@ -529,7 +529,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyMedEvac, eax;
 	__asm        jle    near ptr 0x004FA6AF;
 // LINE 374:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -538,7 +538,7 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA6A5;
 // LINE 383:
 	__asm        push   0x20;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 384:
 	__asm        jmp    near ptr 0x004FA6AA;
@@ -551,7 +551,7 @@ void S3MissionGenerator() {
 	__asm        cmp    currentCitySettingPercentages.lMissionFrequencyTransport, eax;
 	__asm        jle    near ptr 0x004FA70E;
 // LINE 391:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -563,13 +563,13 @@ void S3MissionGenerator() {
 	__asm        jmp    near ptr 0x004FA6FA;
 // LINE 394:
 	__asm        push   0x40;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 395:
 	__asm        jmp    near ptr 0x004FA709;
 // LINE 397:
 	__asm        push   0x40;
-	__asm        call   0x004FC3B2;
+	__asm        call   S3MissionGenerate;
 	__asm        add    esp, 4;
 // LINE 398:
 	__asm        jmp    near ptr 0x004FA709;
@@ -583,7 +583,7 @@ void S3MissionGenerator() {
 // LINE 402:
 	__asm        jmp    near ptr 0x004FA718;
 // LINE 408:
-	__asm        call   0x004FA71D;
+	__asm        call   S3MissionDriver;
 // LINE 410:
 }
 
@@ -642,7 +642,7 @@ void S3MissionDriver() {
 // LINE 455:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004FCBEA;
+	__asm        call   S3MissionCancel;
 	__asm        add    esp, 4;
 // LINE 457:
 	__asm        jmp    near ptr 0x004FA732;
@@ -653,7 +653,7 @@ void S3MissionDriver() {
 // LINE 463:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004FCBEA;
+	__asm        call   S3MissionCancel;
 	__asm        add    esp, 4;
 // LINE 464:
 	__asm        jmp    near ptr 0x004FA732;
@@ -664,7 +664,7 @@ void S3MissionDriver() {
 // LINE 470:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004FC218;
+	__asm        call   S3MissionEnd;
 	__asm        add    esp, 4;
 // LINE 471:
 	__asm        jmp    near ptr 0x004FA732;
@@ -910,7 +910,7 @@ void S3MissionDriver() {
 // LINE 607:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x005566AF;
+	__asm        call   GetRiotCenter;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        add    ecx, 0x28;
@@ -972,7 +972,7 @@ void S3MissionDriver() {
 // LINE 638:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004FC218;
+	__asm        call   S3MissionEnd;
 	__asm        add    esp, 4;
 // LINE 640:
 	__asm        jmp    near ptr 0x004FA732;
@@ -1076,7 +1076,7 @@ long S3MissionStart(long x, long y, long type) {
 	int32_t count;
 	int32_t numstarted;
 	__asm        push   0x1000;
-	__asm        call   0x004FC323;
+	__asm        call   S3MissionGetByType;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, i;
 	__asm        je     near ptr 0x004FADA9;
@@ -1112,7 +1112,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   3;
 	__asm        push   0xFFFFFFFF;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1159,7 +1159,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x005566AF;
+	__asm        call   GetRiotCenter;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, md;
 	__asm        add    ecx, 0x28;
@@ -1186,7 +1186,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F20;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 729:
 	__asm        mov    eax, ds:[0x6072CC];
@@ -1202,7 +1202,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 734:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1233,7 +1233,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 747:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1261,7 +1261,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   2;
 	__asm        push   0xFFFFFFFF;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1282,7 +1282,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F28;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 764:
 	__asm        mov    eax, ds:[0x6072C8];
@@ -1298,7 +1298,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 770:
 	__asm        jmp    near ptr 0x004FB03E;
@@ -1320,7 +1320,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x0052AD37;
+	__asm        call   StartCapsizedBoat;
 	__asm        add    esp, 8;
 	__asm        mov    boat, eax;
 // LINE 780:
@@ -1348,7 +1348,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F3C;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 787:
 	__asm        mov    eax, ds:[0x6072C8];
@@ -1364,7 +1364,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 791:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1374,7 +1374,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x00534365;
+	__asm        call   S3TrainStartRescue;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB11B;
@@ -1400,7 +1400,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F4C;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 804:
 	__asm        mov    eax, ds:[0x6072C8];
@@ -1416,7 +1416,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 808:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1472,7 +1472,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   6;
 	__asm        push   6;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1495,7 +1495,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F5C;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 844:
 	__asm        mov    eax, ds:[0x6072C0];
@@ -1511,7 +1511,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 849:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1526,7 +1526,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x3C], eax;
 // LINE 858:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1554,7 +1554,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   4;
 	__asm        push   8;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1584,7 +1584,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F68;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 876:
 	__asm        mov    eax, ds:[0x6072DC];
@@ -1600,7 +1600,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 882:
 	__asm        jmp    near ptr 0x004FB3B0;
@@ -1621,7 +1621,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F78;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 889:
 	__asm        mov    eax, ds:[0x6072BC];
@@ -1629,7 +1629,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    [ecx+0x20], eax;
 	__asm        inc    dword ptr ds:[0x6072BC];
 // LINE 890:
-	__asm        call   0x005251D6;
+	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        jne    near ptr 0x004FB414;
@@ -1664,7 +1664,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        mov    eax, cfd;
 	__asm        push   eax;
-	__asm        call   0x00525624;
+	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB47E;
@@ -1688,7 +1688,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 904:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1698,7 +1698,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F80;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 907:
 	__asm        mov    eax, ds:[0x6072C4];
@@ -1709,7 +1709,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x0052D6D9;
+	__asm        call   S3PlaneCrashWhenReady;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB501;
@@ -1735,7 +1735,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4F90;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 917:
 	__asm        mov    eax, ds:[0x6072D8];
@@ -1746,7 +1746,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x00534349;
+	__asm        call   S3TrainCrashWhenReady;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB574;
@@ -1772,7 +1772,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FA0;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 927:
 	__asm        mov    eax, ds:[0x6072B8];
@@ -1788,7 +1788,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x005349F0;
+	__asm        call   S3CriminalMissionStart;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB5EB;
@@ -1813,7 +1813,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 932:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1851,7 +1851,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   0xB;
 	__asm        push   9;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1874,7 +1874,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FAC;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 954:
 	__asm        mov    eax, ds:[0x6072B8];
@@ -1890,7 +1890,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 958:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -1928,7 +1928,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   0xC;
 	__asm        push   9;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1951,7 +1951,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FB8;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 980:
 	__asm        mov    eax, ds:[0x6072B8];
@@ -1967,7 +1967,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 984:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -2005,7 +2005,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        push   0xA;
 	__asm        push   9;
-	__asm        call   0x0054A1D3;
+	__asm        call   StartPerson;
 	__asm        add    esp, 0x1C;
 	__asm        movsx  eax, ax;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -2028,7 +2028,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FC4;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1006:
 	__asm        mov    eax, ds:[0x6072B8];
@@ -2044,7 +2044,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1010:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -2055,7 +2055,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x0050657F;
+	__asm        call   AutoMissionStartFire;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB8EE;
@@ -2074,7 +2074,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FD0;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1018:
 	__asm        mov    eax, ds:[0x6072D4];
@@ -2090,7 +2090,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1023:
 	__asm        jmp    near ptr 0x004FBACD;
@@ -2100,7 +2100,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x0050659F;
+	__asm        call   AutoMissionStartJam;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004FB96F;
@@ -2119,7 +2119,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FE0;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1031:
 	__asm        mov    eax, ds:[0x6072D4];
@@ -2204,7 +2204,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        push   0x5B4FFC;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1047:
 	__asm        mov    eax, md;
@@ -2213,7 +2213,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 1048:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 1050:
 	__asm        cmp    dword ptr ds:[0x6072EC], 0;
@@ -2252,7 +2252,7 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 // LINE 1075:
 	__asm        mov    eax, key;
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    mission_id, eax;
 // LINE 1077:
@@ -2285,7 +2285,7 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 // LINE 1102:
 	__asm        mov    eax, key;
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    mission_id, eax;
 // LINE 1104:
@@ -2325,7 +2325,7 @@ struct Point2d* S3MissionGetPickupLoc(long key) {
 // LINE 1133:
 	__asm        mov    eax, key;
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    mission_id, eax;
 // LINE 1135:
@@ -2426,7 +2426,7 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        push   eax;
 	__asm        mov    eax, mp;
 	__asm        push   eax;
-	__asm        call   0x004FD0E6;
+	__asm        call   S3MissionScoreUpdate;
 	__asm        add    esp, 8;
 // LINE 1223:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
@@ -2729,7 +2729,7 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1351:
 	__asm        dec    dword ptr ds:[0x6072E4];
@@ -2786,7 +2786,7 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004FDDF5;
+	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1377:
 	__asm        dec    dword ptr ds:[0x6072E4];
@@ -2828,7 +2828,7 @@ void S3MissionEnd(long mission_id) {
 // LINE 1402:
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x004FD755;
+	__asm        call   S3MissionScoreEnd;
 	__asm        add    esp, 4;
 // LINE 1405:
 	__asm        mov    eax, md;
@@ -2883,7 +2883,7 @@ struct MISSION_DATA* S3MissionGetByID(long key) {
 // LINE 1436:
 	__asm        mov    eax, key;
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    mission_id, eax;
 // LINE 1438:
@@ -2923,7 +2923,7 @@ long S3MissionGetByType(long mission_type) {
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        mov    eax, [eax*4+0x607314];
 	__asm        push   eax;
-	__asm        call   0x004FCABD;
+	__asm        call   S3MissionIsType;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004FC389;
@@ -2970,7 +2970,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC442;
 // LINE 1489:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -2980,7 +2980,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1490:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3017,7 +3017,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1500:
 	__asm        jmp    near ptr 0x004FC896;
@@ -3028,7 +3028,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC508;
 // LINE 1511:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3038,7 +3038,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1512:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3068,7 +3068,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC503;
@@ -3083,7 +3083,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFFFFFFFF;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1528:
 	__asm        jmp    near ptr 0x004FC896;
@@ -3092,7 +3092,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFFFFFFFF;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1532:
 	__asm        jmp    near ptr 0x004FC896;
@@ -3103,7 +3103,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC5A4;
 // LINE 1537:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3113,7 +3113,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1538:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3129,7 +3129,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC59F;
@@ -3146,7 +3146,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC616;
 // LINE 1549:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3156,7 +3156,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1550:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3172,7 +3172,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC611;
@@ -3189,7 +3189,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC688;
 // LINE 1559:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3199,7 +3199,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1560:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3215,7 +3215,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC683;
@@ -3232,7 +3232,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC6FA;
 // LINE 1569:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3242,7 +3242,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1570:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3258,7 +3258,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC6F5;
@@ -3275,7 +3275,7 @@ void S3MissionGenerate(long type) {
 	__asm        cmp    i, 0x14;
 	__asm        jge    near ptr 0x004FC76C;
 // LINE 1579:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3285,7 +3285,7 @@ void S3MissionGenerate(long type) {
 	__asm        sub    eax, edx;
 	__asm        mov    x, eax;
 // LINE 1580:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -3301,7 +3301,7 @@ void S3MissionGenerate(long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FAC6D;
+	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
 	__asm        jl     near ptr 0x004FC767;
@@ -3549,7 +3549,7 @@ int32_t S3MissionIsType(long key, long mission_type) {
 // LINE 1674:
 	__asm        mov    eax, key;
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    mission_id, eax;
 // LINE 1676:
@@ -3628,7 +3628,7 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 	__asm        push   0x5B500C;
 	__asm        mov    eax, p;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x24;
 // LINE 1823:
 	__asm        jmp    near ptr 0x004FCBE5;
@@ -3638,7 +3638,7 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 	__asm        push   0x5B5050;
 	__asm        mov    eax, p;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1829:
 	__asm        jmp    near ptr 0x004FCBE5;
@@ -3680,7 +3680,7 @@ void S3MissionCancel(long mission_id) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x00506C61;
+	__asm        call   AutoMissionCancel;
 	__asm        add    esp, 4;
 // LINE 1855:
 	__asm        mov    eax, md;
@@ -3723,12 +3723,12 @@ void S3MissionCancel(long mission_id) {
 	__asm        push   0x5B5054;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1875:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 1877:
 }
@@ -3932,7 +3932,7 @@ long S3MissionStartDirect(long type) {
 	__asm        push   0x5B5064;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1958:
 	__asm        mov    eax, md;
@@ -4025,7 +4025,7 @@ long S3MissionStartDirect(long type) {
 	__asm        push   0x5B5080;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1981:
 	__asm        mov    eax, md;
@@ -4034,7 +4034,7 @@ long S3MissionStartDirect(long type) {
 // LINE 1982:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 1984:
 	__asm        mov    eax, md;
@@ -4066,7 +4066,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004FDC2D;
+	__asm        call   S3MissionGetIDByKey;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, mission_id;
 	__asm        mov    [ecx], eax;
@@ -4120,7 +4120,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        imul   eax, ds:[0x5B4ECC];
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2047:
 	__asm        mov    reason, 0x5B50A8;
@@ -4136,7 +4136,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4ED0];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2052:
 	__asm        mov    reason, 0x5B50B4;
@@ -4146,7 +4146,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2056:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4164,7 +4164,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        imul   eax, ds:[0x5B4ED4];
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2062:
 	__asm        mov    reason, 0x5B50C0;
@@ -4182,7 +4182,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4ED8];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2069:
 	__asm        mov    reason, 0x5B50D4;
@@ -4192,7 +4192,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2073:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4208,7 +4208,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        imul   eax, ds:[0x5B4EDC];
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2077:
 	__asm        mov    reason, 0x5B50E4;
@@ -4224,7 +4224,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EE0];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2082:
 	__asm        mov    reason, 0x5B50F4;
@@ -4234,7 +4234,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2086:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4260,7 +4260,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EE4];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2102:
 	__asm        mov    reason, 0x5B5104;
@@ -4270,7 +4270,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2106:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4284,7 +4284,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EE8];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2110:
 	__asm        mov    reason, 0x5B5114;
@@ -4294,7 +4294,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2114:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4308,7 +4308,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EEC];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2118:
 	__asm        mov    reason, 0x5B5128;
@@ -4318,7 +4318,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2122:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4332,7 +4332,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EF0];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2126:
 	__asm        mov    reason, 0x5B5138;
@@ -4342,7 +4342,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2130:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4368,7 +4368,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EF4];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2146:
 	__asm        mov    reason, 0x5B5148;
@@ -4378,7 +4378,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2150:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4392,7 +4392,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EF8];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2154:
 	__asm        mov    reason, 0x5B5154;
@@ -4402,7 +4402,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2158:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4418,7 +4418,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        imul   eax, ds:[0x5B4EFC];
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2162:
 	__asm        mov    reason, 0x5B5160;
@@ -4434,7 +4434,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4E90];
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2167:
 	__asm        mov    eax, mp;
@@ -4446,7 +4446,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4E8C];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2169:
 	__asm        mov    reason, 0x5B516C;
@@ -4456,7 +4456,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2173:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4470,7 +4470,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EB4];
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2177:
 	__asm        mov    eax, mp;
@@ -4482,7 +4482,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, ds:[0x5B4EB0];
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2179:
 	__asm        mov    reason, 0x5B517C;
@@ -4492,7 +4492,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x24;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2182:
 	__asm        push   0;
@@ -4500,7 +4500,7 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x27;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2184:
 	__asm        jmp    near ptr 0x004FD6D8;
@@ -4530,12 +4530,12 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        push   0x5B518C;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 2202:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 2204:
 	__asm        cmp    points, 0;
@@ -4550,12 +4550,12 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 	__asm        push   0x5B51AC;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 2212:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 2214:
 }
@@ -4913,7 +4913,7 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x27;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2377:
 	__asm        jmp    near ptr 0x004FDBBB;
@@ -4923,7 +4923,7 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
 	__asm        push   0x28;
-	__asm        call   0x00446CC2;
+	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2385:
 	__asm        cmp    total_money, 0;
@@ -4943,22 +4943,22 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	__asm        push   0x5B51CC;
 	__asm        mov    eax, ds:[0x5B4EC4];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 2396:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 2399:
 	__asm        mov    eax, total_pts;
 	__asm        push   eax;
-	__asm        call   0x00429051;
+	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2400:
 	__asm        mov    eax, total_money;
 	__asm        push   eax;
-	__asm        call   0x00428FF1;
+	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2403:
 }
@@ -5050,7 +5050,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
-	__asm        call   0x004AB530;
+	__asm        call   ReadFirstMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2495:
@@ -5107,7 +5107,7 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
-	__asm        call   0x004AB5BD;
+	__asm        call   WriteMIFFChunk;
 	__asm        add    esp, 0x10;
 	__asm        mov    ret, eax;
 // LINE 2524:
@@ -5137,7 +5137,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x004FE5FE;
+	__asm        call   S3MissionGetSoundQuadrant;
 	__asm        add    esp, 8;
 	__asm        mov    sid2, eax;
 // LINE 2560:
@@ -5145,7 +5145,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004FE458;
 // LINE 2563:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -5156,7 +5156,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        add    eax, 0x41;
 	__asm        mov    sid1, eax;
 // LINE 2564:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5174,7 +5174,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2571:
 	__asm        mov    sid1, 0x44;
 // LINE 2572:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5182,7 +5182,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x14], edx;
 	__asm        jmp    near ptr 0x004FDED1;
 // LINE 2575:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5211,7 +5211,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2586:
 	__asm        mov    sid1, 0x43;
 // LINE 2587:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5219,7 +5219,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x18], edx;
 	__asm        jmp    near ptr 0x004FDF4A;
 // LINE 2590:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5248,7 +5248,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2606:
 	__asm        mov    sid1, 0x33;
 // LINE 2607:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5256,7 +5256,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x1C], edx;
 	__asm        jmp    near ptr 0x004FDFC3;
 // LINE 2610:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5285,7 +5285,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2621:
 	__asm        mov    sid1, 0x3F;
 // LINE 2622:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5293,7 +5293,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x20], edx;
 	__asm        jmp    near ptr 0x004FE048;
 // LINE 2625:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5328,7 +5328,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2639:
 	__asm        mov    sid1, 0x38;
 // LINE 2640:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5336,7 +5336,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x24], edx;
 	__asm        jmp    near ptr 0x004FE0B3;
 // LINE 2643:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5353,7 +5353,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2648:
 	__asm        mov    sid1, 0x33;
 // LINE 2649:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5361,7 +5361,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x28], edx;
 	__asm        jmp    near ptr 0x004FE118;
 // LINE 2652:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5390,7 +5390,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2663:
 	__asm        mov    sid1, 0x39;
 // LINE 2664:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5398,7 +5398,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x2C], edx;
 	__asm        jmp    near ptr 0x004FE191;
 // LINE 2667:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5427,7 +5427,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2678:
 	__asm        mov    sid1, 0x3B;
 // LINE 2679:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5435,7 +5435,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x30], edx;
 	__asm        jmp    near ptr 0x004FE216;
 // LINE 2682:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5470,7 +5470,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2696:
 	__asm        mov    sid1, 0x3C;
 // LINE 2697:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5478,7 +5478,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x34], edx;
 	__asm        jmp    near ptr 0x004FE2A5;
 // LINE 2700:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5513,7 +5513,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2714:
 	__asm        mov    sid1, 0x39;
 // LINE 2715:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5521,7 +5521,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x38], edx;
 	__asm        jmp    near ptr 0x004FE334;
 // LINE 2718:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5556,7 +5556,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2732:
 	__asm        mov    sid1, 0x36;
 // LINE 2733:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5564,7 +5564,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x3C], edx;
 	__asm        jmp    near ptr 0x004FE3C3;
 // LINE 2736:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5599,7 +5599,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2750:
 	__asm        mov    sid1, 0x40;
 // LINE 2751:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5607,7 +5607,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    [ebp-0x40], edx;
 	__asm        jmp    near ptr 0x004FE43A;
 // LINE 2754:
-	__asm        call   0x0056EC50;
+	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -5690,7 +5690,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        push   0x96;
 	__asm        push   0x32;
 	__asm        push   0;
-	__asm        call   0x004470FA;
+	__asm        call   S3SoundAddToQueue;
 	__asm        add    esp, 0xC;
 // LINE 2767:
 	__asm        cmp    sid1, 0xFFFFFFFF;
@@ -5700,7 +5700,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    eax, sid1;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004470FA;
+	__asm        call   S3SoundAddToQueue;
 	__asm        add    esp, 0xC;
 // LINE 2769:
 	__asm        cmp    sid2, 0xFFFFFFFF;
@@ -5710,7 +5710,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    eax, sid2;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004470FA;
+	__asm        call   S3SoundAddToQueue;
 	__asm        add    esp, 0xC;
 // LINE 2771:
 	__asm        cmp    sid3, 0xFFFFFFFF;
@@ -5720,7 +5720,7 @@ void S3MissionDispatch(long x, long y, long type) {
 	__asm        mov    eax, sid3;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004470FA;
+	__asm        call   S3SoundAddToQueue;
 	__asm        add    esp, 0xC;
 // LINE 2774:
 }

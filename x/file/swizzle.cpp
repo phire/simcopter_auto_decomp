@@ -37,12 +37,12 @@ void Swizzle16(void * __ptr32 val) {
 // LINE 14:
 	__asm        lea    eax, loWord[0];
 	__asm        push   eax;
-	__asm        call   0x0056689D;
+	__asm        call   Swizzle8;
 	__asm        add    esp, 4;
 // LINE 15:
 	__asm        lea    eax, hiWord[0];
 	__asm        push   eax;
-	__asm        call   0x0056689D;
+	__asm        call   Swizzle8;
 	__asm        add    esp, 4;
 // LINE 16:
 	__asm        mov    al, hiWord[0];
@@ -72,12 +72,12 @@ void Swizzle8(void * __ptr32 val) {
 // LINE 26:
 	__asm        lea    eax, loWord;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 27:
 	__asm        lea    eax, hiWord;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 28:
 	__asm        mov    eax, hiWord;
@@ -96,7 +96,7 @@ void SwizzleFloat(void * __ptr32 val) {
 // LINE 35:
 	__asm        mov    eax, val;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 36:
 	__asm        jmp    near ptr 0x00566901;
@@ -118,12 +118,12 @@ void Swizzle4(void * __ptr32 val) {
 // LINE 43:
 	__asm        lea    eax, loWord;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 44:
 	__asm        lea    eax, hiWord;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 45:
 	__asm        mov    ax, hiWord;
@@ -175,7 +175,7 @@ void SwizzleRect(struct Rect* rect) {
 	__asm        add    pShort, 2;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 66:
 	__asm        mov    eax, pShort;
@@ -183,7 +183,7 @@ void SwizzleRect(struct Rect* rect) {
 	__asm        add    pShort, 2;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 67:
 	__asm        mov    eax, pShort;
@@ -191,7 +191,7 @@ void SwizzleRect(struct Rect* rect) {
 	__asm        add    pShort, 2;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 68:
 	__asm        mov    eax, pShort;
@@ -199,7 +199,7 @@ void SwizzleRect(struct Rect* rect) {
 	__asm        add    pShort, 2;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 70:
 	__asm        jmp    near ptr 0x005669FC;

@@ -152,7 +152,7 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 	__asm        push   eax;
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9CFA;
+	__asm        call   HeliPassengerCanAdd;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004F9D3E;
@@ -213,12 +213,12 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 // LINE 125:
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9F8A;
+	__asm        call   HeliPassengerFitToSeats;
 	__asm        add    esp, 4;
 // LINE 126:
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9BD5;
+	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 130:
 	__asm        mov    eax, 1;
@@ -269,7 +269,7 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 	__asm        push   eax;
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9E04;
+	__asm        call   HeliPassengerGetIndexInHeli;
 	__asm        add    esp, 8;
 	__asm        mov    i, eax;
 // LINE 162:
@@ -300,7 +300,7 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 	__asm        push   eax;
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9E04;
+	__asm        call   HeliPassengerGetIndexInHeli;
 	__asm        add    esp, 8;
 	__asm        mov    i, eax;
 // LINE 176:
@@ -345,12 +345,12 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 // LINE 186:
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9F8A;
+	__asm        call   HeliPassengerFitToSeats;
 	__asm        add    esp, 4;
 // LINE 187:
 	__asm        mov    eax, heliPassengerData;
 	__asm        push   eax;
-	__asm        call   0x004F9BD5;
+	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 188:
 	__asm        mov    eax, 1;
@@ -411,7 +411,7 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x004FA033;
+	__asm        call   FindFreeSeatForPassenger;
 	__asm        add    esp, 0x10;
 	__asm        mov    nSeat, eax;
 // LINE 226:

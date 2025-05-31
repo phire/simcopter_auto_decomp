@@ -376,7 +376,7 @@ int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 	__asm        jmp    near ptr 0x004CB943;
 // LINE 97:
 	__asm        push   0x110;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -405,7 +405,7 @@ int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 	__asm        jmp    near ptr 0x004CB9CB;
 // LINE 99:
 }
@@ -460,7 +460,7 @@ unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBy
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CBA95;
 // LINE 111:
@@ -496,7 +496,7 @@ unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nB
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CBB15;
 // LINE 118:
@@ -520,7 +520,7 @@ void cLZAPFileBitStream::Rewind() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CBB59;
 // LINE 125:
@@ -546,7 +546,7 @@ void cLZAPFileBitStream::RewindToMark() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CBBAB;
 // LINE 131:
@@ -567,7 +567,7 @@ void cLZAPFileBitStream::Mark() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -589,7 +589,7 @@ long cLZAPFileBitStream::Size() {
 // LINE 142:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        jmp    near ptr 0x004CBC3D;
 // LINE 143:
 	__asm        xor    eax, eax;
@@ -637,7 +637,7 @@ void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        push   eax;
 	__asm        mov    eax, AStream;
 	__asm        push   eax;
-	__asm        call   0x004CBC58;
+	__asm        call   SCXReadBudget;
 	__asm        add    esp, 8;
 // LINE 198:
 	__asm        push   0x108;
@@ -692,7 +692,7 @@ void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        push   eax;
 	__asm        mov    eax, AStream;
 	__asm        push   eax;
-	__asm        call   0x004CBC7B;
+	__asm        call   SCXReadGraphData;
 	__asm        add    esp, 8;
 // LINE 205:
 	__asm        jmp    near ptr 0x004CBD33;
@@ -854,7 +854,7 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 247:
 	__asm        mov    eax, loop;
@@ -873,7 +873,7 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x004C83E4;
+	__asm        call   GetStringResource;
 	__asm        add    esp, 0xC;
 // LINE 251:
 	__asm        mov    eax, loop;
@@ -881,7 +881,7 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        add    eax, 0x639250;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, loop;
 	__asm        shl    ecx, 5;
@@ -965,28 +965,28 @@ int32_t ReadSCXFile(char * filePath) {
 	struct tSCXSaveFileHdr header;
 
 // LINE 296:
-	__asm        call   0x004C920E;
+	__asm        call   S2CityFree;
 // LINE 297:
-	__asm        call   0x004C83F5;
+	__asm        call   S2CityAlloc;
 // LINE 299:
 	__asm        push   0xFFFF;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x606A58], eax;
 // LINE 301:
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CB880;
+	__asm        call   cLZAPFileBitStream::cLZAPFileBitStream;
 // LINE 302:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CB90D;
+	__asm        call   cLZAPFileBitStream::OpenRead;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004CC06D;
 // LINE 303:
 	__asm        mov    dword ptr [ebp-0x580], 0;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CB8C4;
+	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x580];
 	__asm        jmp    near ptr 0x004CD531;
 // LINE 306:
@@ -994,17 +994,17 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, header.type[0];
 	__asm        push   eax;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CBA1C;
+	__asm        call   cLZAPFileBitStream::Read;
 // LINE 308:
 	__asm        push   0xFFFF;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CD5A0;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>;
 // LINE 309:
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
 	__asm        lea    eax, fileStream.<cLZAPFileBitStream+0x00>;
 	__asm        push   eax;
-	__asm        call   0x004D0271;
+	__asm        call   LZAExpand;
 	__asm        add    esp, 8;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1013,12 +1013,12 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    dword ptr [ebp-0x584], 0;
 	__asm        mov    memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE000;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
 	__asm        jmp    near ptr 0x004CC0C7;
 	__asm        lea    ecx, memstrm.nodeList.start;
-	__asm        call   0x004CD540;
+	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CB8C4;
+	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x584];
 	__asm        jmp    near ptr 0x004CD531;
 // LINE 314:
@@ -1077,7 +1077,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   eax;
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
-	__asm        call   0x004CBC9E;
+	__asm        call   SCXReadPlayer;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004CC1BD;
 // LINE 322:
@@ -1085,21 +1085,21 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   eax;
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
-	__asm        call   0x004CBC58;
+	__asm        call   SCXReadBudget;
 	__asm        add    esp, 8;
 // LINE 325:
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        push   eax;
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
-	__asm        call   0x004CBD38;
+	__asm        call   SCXReadNeighbors;
 	__asm        add    esp, 8;
 // LINE 328:
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        push   eax;
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
-	__asm        call   0x004CBFC8;
+	__asm        call   SCXReadContracts;
 	__asm        add    esp, 8;
 	__asm        mov    eax, ds:[0x63A570];
 	__asm        mov    [ebp-0x59C], eax;
@@ -1853,103 +1853,103 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    eax, ds:[0x639170];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 384:
 	__asm        push   0x400;
 	__asm        mov    eax, ds:[0x63A5B0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 385:
 	__asm        push   0x400;
 	__asm        mov    eax, ds:[0x638EE0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 386:
 	__asm        push   0x400;
 	__asm        mov    eax, ds:[0x63A640];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 389:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x638F70];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 390:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x639850];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 391:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 392:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x639DE0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 393:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x63A270];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 394:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x63A030];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 395:
 	__asm        push   0x4000;
 	__asm        mov    eax, ds:[0x639AD0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 396:
 	__asm        push   0x8000;
 	__asm        mov    eax, ds:[0x639510];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 400:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 401:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 404:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 405:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 409:
 	__asm        push   0x400;
 	__asm        lea    eax, scxTileCount[0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 410:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x004CD0F3;
@@ -1968,7 +1968,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 415:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x638ED8], ax;
@@ -1977,7 +1977,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 419:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639AB8], ax;
@@ -1985,36 +1985,36 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   4;
 	__asm        push   0x638F60;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 425:
 	__asm        push   4;
 	__asm        push   0x63930C;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 428:
 	__asm        push   0x50;
 	__asm        mov    eax, ds:[0x639244];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 431:
 	__asm        push   0x50;
 	__asm        mov    eax, ds:[0x639DDC];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 434:
 	__asm        push   0x50;
 	__asm        mov    eax, ds:[0x639844];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 437:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 438:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639840], ax;
@@ -2032,7 +2032,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        add    eax, ds:[0x639834];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 	__asm        jmp    near ptr 0x004CD1CD;
 // LINE 452:
 	__asm        mov    loop, 0;
@@ -2045,7 +2045,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, SCXMicroRecord.type;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 455:
 	__asm        mov    al, SCXMicroRecord.type;
 	__asm        mov    ecx, loop;
@@ -2077,28 +2077,28 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   1;
 	__asm        push   0x639AB2;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 464:
 	__asm        push   1;
 	__asm        push   0x638EDA;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 465:
 	__asm        push   1;
 	__asm        push   0x63A6C0;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 466:
 	__asm        push   1;
 	__asm        push   0x63924A;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 470:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 471:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639ABC], ax;
@@ -2107,7 +2107,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 475:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639A60], ax;
@@ -2116,7 +2116,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 479:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639AB0], ax;
@@ -2125,7 +2125,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 483:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x59C01C], ax;
@@ -2134,7 +2134,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 485:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x59C020], ax;
@@ -2142,23 +2142,23 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   4;
 	__asm        push   0x639234;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 491:
 	__asm        push   4;
 	__asm        push   0x639DD8;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 494:
 	__asm        push   4;
 	__asm        push   0x639AA0;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 497:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 498:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639DD0], ax;
@@ -2167,7 +2167,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 502:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639A62], ax;
@@ -2176,7 +2176,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 506:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x63A632], ax;
@@ -2185,7 +2185,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 510:
 	__asm        mov    eax, tempLong;
 	__asm        mov    ds:[0x639AAC], ax;
@@ -2194,7 +2194,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, scxInd[0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 515:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x004CD41D;
@@ -2213,7 +2213,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    eax, scxInd[0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 520:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x004CD463;
@@ -2232,7 +2232,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    eax, ds:[0x63A020];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 525:
 	__asm        mov    loop, 0;
 	__asm        jmp    near ptr 0x004CD4A8;
@@ -2245,7 +2245,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    eax, [eax*4+0x639FE0];
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE100;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 	__asm        jmp    near ptr 0x004CD4A5;
 // LINE 528:
 	__asm        mov    eax, ds:[0x606A58];
@@ -2254,18 +2254,18 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ebp-0x590], eax;
 	__asm        mov    eax, [ebp-0x590];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 530:
 	__asm        mov    dword ptr [ebp-0x58C], 1;
 	__asm        mov    memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        call   0x004CE000;
+	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
 	__asm        jmp    near ptr 0x004CD513;
 	__asm        lea    ecx, memstrm.nodeList.start;
-	__asm        call   0x004CD540;
+	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
-	__asm        call   0x004CB8C4;
+	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x58C];
 	__asm        jmp    near ptr 0x004CD531;
 // LINE 531:

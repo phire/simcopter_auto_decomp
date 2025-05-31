@@ -25,7 +25,7 @@ void S3PrintScreen() {
 // LINE 56:
 	__asm        mov    eax, ds:[0x5B4770];
 	__asm        push   eax;
-	__asm        call   0x004D2157;
+	__asm        call   VRGetPalFromResource;
 	__asm        add    esp, 4;
 	__asm        mov    chPalette, eax;
 // LINE 57:
@@ -37,14 +37,14 @@ void S3PrintScreen() {
 	__asm        push   0x599434;
 	__asm        lea    eax, fname[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 58:
 	__asm        mov    eax, chPalette;
 	__asm        push   eax;
 	__asm        lea    eax, fname[0];
 	__asm        push   eax;
-	__asm        call   0x0046B8DB;
+	__asm        call   S3BufferPrint;
 	__asm        add    esp, 8;
 // LINE 59:
 }
@@ -112,7 +112,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        push   0x599444;
 	__asm        mov    eax, fname;
 	__asm        push   eax;
-	__asm        call   0x0056D910;
+	__asm        call   fopen;
 	__asm        add    esp, 8;
 	__asm        mov    hFileOut, eax;
 // LINE 100:
@@ -124,7 +124,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        push   1;
 	__asm        push   0x80;
 	__asm        push   0x603DC8;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 // LINE 103:
 	__asm        mov    eax, ds:[0x598EAC];
@@ -143,7 +143,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        push   eax;
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
-	__asm        call   0x0046BAC3;
+	__asm        call   S3WritePCXLine;
 	__asm        add    esp, 0xC;
 // LINE 107:
 	__asm        mov    eax, pitch;
@@ -154,7 +154,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
 	__asm        push   0xC;
-	__asm        call   0x0056F8B0;
+	__asm        call   fputc;
 	__asm        add    esp, 8;
 // LINE 111:
 	__asm        push   0;
@@ -201,12 +201,12 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        push   1;
 	__asm        push   0x300;
 	__asm        push   0x603AC0;
-	__asm        call   0x0056D590;
+	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 // LINE 124:
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
-	__asm        call   0x0056D120;
+	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 127:
 }
@@ -265,7 +265,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        and    eax, 0xFFFF;
 	__asm        or     eax, 0xC0;
 	__asm        push   eax;
-	__asm        call   0x0056F8B0;
+	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BB9A;
@@ -279,7 +279,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    ecx, p;
 	__asm        movsx  eax, byte ptr [eax+ecx];
 	__asm        push   eax;
-	__asm        call   0x0056F8B0;
+	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BBC9;
@@ -311,7 +311,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    eax, fp;
 	__asm        push   eax;
 	__asm        push   0xC1;
-	__asm        call   0x0056F8B0;
+	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BC31;
@@ -330,7 +330,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    ecx, p;
 	__asm        movsx  eax, byte ptr [eax+ecx];
 	__asm        push   eax;
-	__asm        call   0x0056F8B0;
+	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BC70;

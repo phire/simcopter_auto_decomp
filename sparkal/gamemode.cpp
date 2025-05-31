@@ -464,7 +464,7 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 	__asm        mov    eax, newGameMode;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD6DC;
+	__asm        call   CopterGameMode::operator=;
 // LINE 62:
 	__asm        jmp    near ptr 0x004BD6D2;
 	__asm        mov    eax, this;
@@ -531,7 +531,7 @@ void GameModeCoreData::~GameModeCoreData() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 142:
 	__asm        mov    eax, this;
@@ -543,7 +543,7 @@ void GameModeCoreData::~GameModeCoreData() {
 // FUNCTION: COPTER_D 0x004bd7c8
 void GameModeMainMenuData::GameModeMainMenuData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923C4;
 // LINE 157:
@@ -573,7 +573,7 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        jne    near ptr 0x004BD8BB;
 // LINE 173:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        cmp    dword ptr [ebp-0x108], 0;
@@ -584,7 +584,7 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-0x10C];
 	__asm        js     near ptr 0x004BD895;
 	__asm        mov    ecx, [ebp-0x110];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
 	__asm        jmp    near ptr 0x004BD872;
 	__asm        jmp    near ptr 0x004BD89A;
@@ -601,7 +601,7 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 176:
 	__asm        mov    eax, this;
@@ -609,7 +609,7 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        push   eax;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        call   0x004704DB;
+	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 // LINE 177:
 	__asm        jmp    near ptr 0x004BD8F2;
@@ -648,7 +648,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 
 // LINE 198:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        cmp    dword ptr [ebp-0xA4], 0;
@@ -685,13 +685,13 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        jmp    near ptr 0x004BDA14;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        push   eax;
 	__asm        lea    ecx, tempUMWD.sImageFileName.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004BDA38;
 // LINE 201:
 	__asm        mov    eax, ds:[0x606988];
@@ -765,7 +765,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        mov    tempUMWD.nSizeTitleFont, 0x24;
 // LINE 219:
 	__asm        push   0x162;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
@@ -789,7 +789,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        lea    eax, tempUMWD.sImageFileName.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x84];
-	__asm        call   0x0049CCBB;
+	__asm        call   CopterMainMenu::CopterMainMenu;
 	__asm        mov    myUserMenuWindow, eax;
 	__asm        jmp    near ptr 0x004BDBBB;
 	__asm        mov    myUserMenuWindow, 0;
@@ -800,7 +800,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        call   dword ptr [eax+4];
 // LINE 221:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD81A;
+	__asm        call   GameModeMainMenuData::CreatePalette;
 // LINE 222:
 	__asm        mov    dword ptr [ebp-0x88], 1;
 	__asm        jmp    near ptr 0x004BDBE0;
@@ -817,7 +817,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        je     near ptr 0x004BDC27;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x98];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004BDC27;
 	__asm        jmp    near ptr 0x004BDC2C;
 	__asm        cmp    tempUMWD.sImageFileName.c_str_ptr, 0;
@@ -828,7 +828,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        mov    [ebp-0x94], eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BDC5F;
 	__asm        mov    eax, [ebp-0x88];
@@ -868,7 +868,7 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 // FUNCTION: COPTER_D 0x004bdccb
 void GameModePickCareerCityData::GameModePickCareerCityData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        jmp    near ptr 0x004BDCE4;
 	__asm        jmp    near ptr 0x004BDCE9;
 	__asm        mov    eax, this;
@@ -915,7 +915,7 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        jne    near ptr 0x004BDDFC;
 // LINE 277:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        cmp    dword ptr [ebp-0x108], 0;
@@ -926,7 +926,7 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-0x10C];
 	__asm        js     near ptr 0x004BDDD6;
 	__asm        mov    ecx, [ebp-0x110];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
 	__asm        jmp    near ptr 0x004BDDB3;
 	__asm        jmp    near ptr 0x004BDDDB;
@@ -943,7 +943,7 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 280:
 	__asm        mov    eax, this;
@@ -951,7 +951,7 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        push   eax;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        call   0x004704DB;
+	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 // LINE 281:
 	__asm        jmp    near ptr 0x004BDE33;
@@ -1005,7 +1005,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        mov    lNewCitiesPointer, eax;
 // LINE 312:
 	__asm        push   0x840;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -1046,7 +1046,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x0047DEFE;
+	__asm        call   CareerWindow::CareerWindow;
 	__asm        mov    myCareerWindow, eax;
 	__asm        jmp    near ptr 0x004BDF75;
 	__asm        mov    myCareerWindow, 0;
@@ -1065,7 +1065,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        call   dword ptr [eax+0x40];
 // LINE 316:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BDD5B;
+	__asm        call   GameModePickCareerCityData::CreatePalette;
 // LINE 317:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BDFA4;
@@ -1104,10 +1104,10 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 // FUNCTION: COPTER_D 0x004be005
 void GameModePlayData::GameModePlayData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
-	__asm        call   0x0048B2B0;
+	__asm        call   CommandSystem::CommandSystem;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923CC;
 // LINE 343:
@@ -1200,10 +1200,10 @@ void GameModePlayData::GameModePlayData() {
 void GameModePlayData::Initialize() {
 // LINE 390:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C0326;
+	__asm        call   GameModePlayData::SetNonUserConfigurableCommandsToDefaults;
 // LINE 391:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C0176;
+	__asm        call   GameModePlayData::ReadUserConfigurableCommands;
 // LINE 392:
 	__asm        jmp    near ptr 0x004BE169;
 }
@@ -1220,7 +1220,7 @@ void GameModePlayData::CreatePalette() {
 	__asm        jne    near ptr 0x004BE20F;
 // LINE 412:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x110], eax;
 	__asm        cmp    dword ptr [ebp-0x110], 0;
@@ -1231,7 +1231,7 @@ void GameModePlayData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-0x114];
 	__asm        js     near ptr 0x004BE1E9;
 	__asm        mov    ecx, [ebp-0x118];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x118], 4;
 	__asm        jmp    near ptr 0x004BE1C6;
 	__asm        jmp    near ptr 0x004BE1EE;
@@ -1251,7 +1251,7 @@ void GameModePlayData::CreatePalette() {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   7;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 420:
 	__asm        mov    eax, ds:[0x59AEC8];
@@ -1259,13 +1259,13 @@ void GameModePlayData::CreatePalette() {
 	__asm        push   4;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        call   0x004D5356;
+	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x5B4770], eax;
 // LINE 421:
 	__asm        mov    eax, ds:[0x5B4770];
 	__asm        push   eax;
-	__asm        call   0x004D2157;
+	__asm        call   VRGetPalFromResource;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x598EFC], eax;
 // LINE 424:
@@ -1340,7 +1340,7 @@ void GameModePlayData::Sleep() {
 	__asm        inc    dword ptr [eax+4];
 // LINE 452:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF5CA;
+	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-4], eax;
@@ -1566,7 +1566,7 @@ void GameModePlayData::Awake() {
 	__asm        call   dword ptr [edx+0x70];
 // LINE 495:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF4FC;
+	__asm        call   GameModePlayData::CreateIndependentSurfaces;
 // LINE 496:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1618,7 +1618,7 @@ void GameModePlayData::Awake() {
 	__asm        call   dword ptr [edx+8];
 // LINE 504:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF018;
+	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
 // LINE 505:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x5C], 0;
@@ -1780,7 +1780,7 @@ void GameModePlayData::Awake() {
 	__asm        jmp    near ptr 0x004BE886;
 // LINE 534:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BE305;
+	__asm        call   GameModePlayData::UsePalette;
 // LINE 536:
 	__asm        jmp    near ptr 0x004BE893;
 }
@@ -1789,13 +1789,13 @@ void GameModePlayData::Awake() {
 int32_t GameModePlayData::CreateAllSurfaces() {
 // LINE 543:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF4FC;
+	__asm        call   GameModePlayData::CreateIndependentSurfaces;
 // LINE 544:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BE8CB;
+	__asm        call   GameModePlayData::CreatePanels;
 // LINE 545:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BE16E;
+	__asm        call   GameModePlayData::CreatePalette;
 // LINE 546:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BE8C6;
@@ -1898,7 +1898,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        jne    near ptr 0x004BEA66;
 // LINE 581:
 	__asm        push   0x74;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84], eax;
 	__asm        cmp    dword ptr [ebp-0x84], 0;
@@ -1915,7 +1915,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        mov    eax, ds:[0x59AED4];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x84];
-	__asm        call   0x004A393D;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    near ptr 0x004BEAC5;
@@ -1931,7 +1931,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 584:
 	__asm        push   0x74;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x88], eax;
 	__asm        cmp    dword ptr [ebp-0x88], 0;
@@ -1948,7 +1948,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        mov    eax, ds:[0x59AED8];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x88];
-	__asm        call   0x004A393D;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    near ptr 0x004BEB40;
@@ -1964,7 +1964,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 587:
 	__asm        push   0x74;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        cmp    dword ptr [ebp-0x8C], 0;
@@ -1981,7 +1981,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        mov    eax, ds:[0x59AEDC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8C];
-	__asm        call   0x004A393D;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x48], eax;
 	__asm        jmp    near ptr 0x004BEBBB;
@@ -1997,7 +1997,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 590:
 	__asm        push   0x74;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x90], eax;
 	__asm        cmp    dword ptr [ebp-0x90], 0;
@@ -2014,7 +2014,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        mov    eax, ds:[0x59AEE0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x90];
-	__asm        call   0x004A393D;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    near ptr 0x004BEC33;
@@ -2030,7 +2030,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 593:
 	__asm        push   0xB4;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x94], eax;
 	__asm        cmp    dword ptr [ebp-0x94], 0;
@@ -2045,7 +2045,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        lea    eax, rectPanel4.left;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x94];
-	__asm        call   0x00448270;
+	__asm        call   RadioCompassWindow::RadioCompassWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x50], eax;
 	__asm        jmp    near ptr 0x004BECAE;
@@ -2060,7 +2060,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+4];
 // LINE 596:
 	__asm        push   0x118;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x98], eax;
 	__asm        cmp    dword ptr [ebp-0x98], 0;
@@ -2074,7 +2074,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        lea    eax, rectPanel5.left;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x98];
-	__asm        call   0x0044D2C4;
+	__asm        call   MapWindow::MapWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x54], eax;
 	__asm        jmp    near ptr 0x004BED1F;
@@ -2089,7 +2089,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+4];
 // LINE 599:
 	__asm        push   0x1E8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        cmp    dword ptr [ebp-0x9C], 0;
@@ -2106,7 +2106,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        lea    eax, rectPanel6.left;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x9C];
-	__asm        call   0x004490D7;
+	__asm        call   DialWindow::DialWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 	__asm        jmp    near ptr 0x004BED9A;
@@ -2121,10 +2121,10 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        call   dword ptr [edx+4];
 // LINE 602:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF018;
+	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
 // LINE 604:
 	__asm        push   0xAC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        cmp    dword ptr [ebp-0xA0], 0;
@@ -2138,7 +2138,7 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        lea    eax, rectPassengerWindow.left;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xA0];
-	__asm        call   0x0044BE4A;
+	__asm        call   PassengerWindow::PassengerWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 	__asm        jmp    near ptr 0x004BEE16;
@@ -2282,7 +2282,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        jmp    near ptr 0x004BF047;
 	__asm        jmp    near ptr 0x004BF04C;
 // LINE 642:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    userPersonalInfo, eax;
 // LINE 644:
 	__asm        cmp    dword ptr ds:[0x598F00], 1;
@@ -2321,7 +2321,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        jne    near ptr 0x004BF19E;
 // LINE 653:
 	__asm        push   0xCC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
@@ -2339,7 +2339,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        mov    eax, ds:[0x59AEF0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   0x0044E44A;
+	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x5C], eax;
 	__asm        jmp    near ptr 0x004BF152;
@@ -2396,7 +2396,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        jne    near ptr 0x004BF2AB;
 // LINE 668:
 	__asm        push   0xCC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
@@ -2424,7 +2424,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        mov    eax, ds:[0x59AEF4];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x4C];
-	__asm        call   0x0044E44A;
+	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    near ptr 0x004BF25F;
@@ -2481,7 +2481,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        jne    near ptr 0x004BF3B8;
 // LINE 683:
 	__asm        push   0xCC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
@@ -2509,7 +2509,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        mov    eax, ds:[0x59AEF8];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x0044E44A;
+	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    near ptr 0x004BF36C;
@@ -2566,7 +2566,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        jne    near ptr 0x004BF4C5;
 // LINE 698:
 	__asm        push   0xCC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
@@ -2594,7 +2594,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        mov    eax, ds:[0x59AEFC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x0044E44A;
+	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
 	__asm        jmp    near ptr 0x004BF479;
@@ -2649,7 +2649,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 int32_t GameModePlayData::CreateIndependentSurfaces() {
 // LINE 721:
 	__asm        push   0x150;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -2659,7 +2659,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        mov    eax, ds:[0x598E90];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x00495400;
+	__asm        call   SkyImage::SkyImage;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    near ptr 0x004BF54F;
@@ -2674,10 +2674,10 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00495B40;
+	__asm        call   CGameApp::GetFullRenderingWindowSize;
 // LINE 725:
 	__asm        push   0x134;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -2696,7 +2696,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        sar    eax, 1;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x0046EA06;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    near ptr 0x004BF5BB;
@@ -2723,10 +2723,10 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x004BF61A;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BF615;
 	__asm        jmp    near ptr 0x004BF61A;
@@ -2747,10 +2747,10 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 	__asm        je     near ptr 0x004BF66D;
 	__asm        jmp    near ptr 0x004BF64F;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BF668;
 	__asm        jmp    near ptr 0x004BF66D;
@@ -2765,10 +2765,10 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 void GameModePlayData::DestroyAllSurfaces() {
 // LINE 753:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF5CA;
+	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
 // LINE 754:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF6A7;
+	__asm        call   GameModePlayData::DestroyPanels;
 // LINE 755:
 	__asm        jmp    near ptr 0x004BF6A2;
 }
@@ -3392,7 +3392,7 @@ void GameModePlayData::TogglePanelDisplay() {
 	__asm        mov    dword ptr [eax+0x28], 0;
 // LINE 975:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFAAB;
+	__asm        call   GameModePlayData::HidePanels;
 // LINE 977:
 	__asm        jmp    near ptr 0x004BFE78;
 // LINE 979:
@@ -3400,7 +3400,7 @@ void GameModePlayData::TogglePanelDisplay() {
 	__asm        mov    dword ptr [eax+0x28], 1;
 // LINE 980:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF8A2;
+	__asm        call   GameModePlayData::ShowPanels;
 // LINE 982:
 	__asm        jmp    near ptr 0x004BFE7D;
 }
@@ -3413,12 +3413,12 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 	__asm        je     near ptr 0x004BFEA8;
 // LINE 992:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFD75;
+	__asm        call   GameModePlayData::HideEquipment;
 // LINE 993:
 	__asm        jmp    near ptr 0x004BFEB0;
 // LINE 994:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFC9A;
+	__asm        call   GameModePlayData::ShowEquipment;
 // LINE 995:
 	__asm        jmp    near ptr 0x004BFEB5;
 }
@@ -3427,7 +3427,7 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 void GameModePlayData::Shutdown() {
 // LINE 1003:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF681;
+	__asm        call   GameModePlayData::DestroyAllSurfaces;
 // LINE 1004:
 	__asm        jmp    near ptr 0x004BFED3;
 }
@@ -3455,7 +3455,7 @@ long GameModePlayData::TestForUserInHelicopter() {
 	__asm        mov    dword ptr [eax+0x34], 1;
 // LINE 1021:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFF6B;
+	__asm        call   GameModePlayData::ProcessUserJustJumpedIntoHelicopter;
 	__asm        jmp    near ptr 0x004BFF66;
 // LINE 1024:
 	__asm        jmp    near ptr 0x004BFF5E;
@@ -3468,7 +3468,7 @@ long GameModePlayData::TestForUserInHelicopter() {
 	__asm        mov    dword ptr [eax+0x34], 0;
 // LINE 1031:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFFA3;
+	__asm        call   GameModePlayData::ProcessUserJustJumpedOutOfHelicopter;
 	__asm        jmp    near ptr 0x004BFF66;
 // LINE 1034:
 	__asm        mov    eax, lReturnValue;
@@ -3480,14 +3480,14 @@ long GameModePlayData::TestForUserInHelicopter() {
 long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 // LINE 1046:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF018;
+	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
 // LINE 1047:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     near ptr 0x004BFF94;
 // LINE 1048:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BF8A2;
+	__asm        call   GameModePlayData::ShowPanels;
 // LINE 1049:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004BFF9E;
@@ -3498,7 +3498,7 @@ long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 // LINE 1060:
 	__asm        mov    ecx, this;
-	__asm        call   0x004BFAAB;
+	__asm        call   GameModePlayData::HidePanels;
 // LINE 1065:
 	__asm        cmp    dword ptr ds:[0x5C33D0], 1;
 	__asm        jne    near ptr 0x004BFFCE;
@@ -3522,7 +3522,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00495B40;
+	__asm        call   CGameApp::GetFullRenderingWindowSize;
 // LINE 1085:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -3658,17 +3658,17 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x148;
 	__asm        push   eax;
-	__asm        call   0x0048C234;
+	__asm        call   ReadShortcutPrefsFile;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004C01A3;
 // LINE 1135:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C02FF;
+	__asm        call   GameModePlayData::SetUserConfigurableCommandsToDefaults;
 // LINE 1136:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
-	__asm        call   0x0048B6ED;
+	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1137:
 	__asm        jmp    near ptr 0x004C01B3;
 }
@@ -3716,7 +3716,7 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 // LINE 1149:
 	__asm        mov    eax, lCurrentCommand;
 	__asm        push   eax;
-	__asm        call   0x0048E696;
+	__asm        call   IsCommandConfigurable;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004C02D2;
@@ -3777,7 +3777,7 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x148;
 	__asm        push   eax;
-	__asm        call   0x0048C8BD;
+	__asm        call   MakeDefaultConfigurableShortcuts;
 	__asm        add    esp, 4;
 // LINE 1165:
 	__asm        jmp    near ptr 0x004C0321;
@@ -3815,7 +3815,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C03A3;
 // LINE 1187:
 	__asm        mov    tempShortcut.lCommand, 0x38;
@@ -3843,7 +3843,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0407;
 // LINE 1194:
 	__asm        mov    tempShortcut.lCommand, 0x22;
@@ -3871,7 +3871,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C046B;
 // LINE 1201:
 	__asm        mov    tempShortcut.lCommand, 0x23;
@@ -3899,7 +3899,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C04CF;
 // LINE 1208:
 	__asm        mov    tempShortcut.lCommand, 0x24;
@@ -3927,7 +3927,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0533;
 // LINE 1215:
 	__asm        mov    tempShortcut.lCommand, 0x25;
@@ -3955,7 +3955,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0597;
 // LINE 1222:
 	__asm        mov    tempShortcut.lCommand, 0x26;
@@ -3983,7 +3983,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C05FB;
 // LINE 1229:
 	__asm        mov    tempShortcut.lCommand, 0x27;
@@ -4011,7 +4011,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C065F;
 // LINE 1236:
 	__asm        mov    tempShortcut.lCommand, 0x28;
@@ -4039,7 +4039,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C06C9;
 // LINE 1243:
 	__asm        mov    tempShortcut.lCommand, 0x29;
@@ -4067,7 +4067,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C073C;
 // LINE 1250:
 	__asm        mov    tempShortcut.lCommand, 0x2A;
@@ -4095,7 +4095,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C07AF;
 // LINE 1257:
 	__asm        mov    tempShortcut.lCommand, 0x2D;
@@ -4123,7 +4123,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0822;
 // LINE 1264:
 	__asm        mov    tempShortcut.lCommand, 0x2E;
@@ -4147,7 +4147,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    near ptr 0x004C0895;
 	__asm        mov    eax, [ebp-0xB8];
@@ -4209,7 +4209,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C09AB;
 // LINE 1278:
 	__asm        mov    tempShortcut.lCommand, 0x34;
@@ -4233,7 +4233,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0xE4], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        jmp    near ptr 0x004C0A1E;
 	__asm        mov    eax, [ebp-0xDC];
@@ -4291,7 +4291,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0xFC], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0xF4], eax;
 	__asm        jmp    near ptr 0x004C0B34;
 	__asm        mov    eax, [ebp-0xF4];
@@ -4353,7 +4353,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0C4A;
 // LINE 1299:
 	__asm        mov    tempShortcut.lCommand, 0x2F;
@@ -4377,7 +4377,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0x120], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    near ptr 0x004C0CBD;
 	__asm        mov    eax, [ebp-0x118];
@@ -4435,7 +4435,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0x138], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x130], eax;
 	__asm        jmp    near ptr 0x004C0DD3;
 	__asm        mov    eax, [ebp-0x130];
@@ -4497,7 +4497,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0EE9;
 // LINE 1320:
 	__asm        mov    tempShortcut.lCommand, 0x31;
@@ -4521,7 +4521,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x154], eax;
 	__asm        jmp    near ptr 0x004C0F5C;
 	__asm        mov    eax, [ebp-0x154];
@@ -4579,7 +4579,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0x174], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x16C], eax;
 	__asm        jmp    near ptr 0x004C1072;
 	__asm        mov    eax, [ebp-0x16C];
@@ -4641,7 +4641,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C1188;
 // LINE 1341:
 	__asm        mov    tempShortcut.lCommand, 0x3A;
@@ -4665,7 +4665,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    [ebp-0x198], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x148;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x190], eax;
 	__asm        jmp    near ptr 0x004C11FB;
 	__asm        mov    eax, [ebp-0x190];
@@ -4708,10 +4708,10 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 // FUNCTION: COPTER_D 0x004c12a8
 void GameModeHangarData::GameModeHangarData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B2B0;
+	__asm        call   CommandSystem::CommandSystem;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D0;
 // LINE 1427:
@@ -4731,7 +4731,7 @@ void GameModeHangarData::GameModeHangarData() {
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 1432:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C15B3;
+	__asm        call   GameModeHangarData::SetCommandsToDefaults;
 // LINE 1433:
 	__asm        jmp    near ptr 0x004C130F;
 	__asm        mov    eax, this;
@@ -4741,7 +4741,7 @@ void GameModeHangarData::GameModeHangarData() {
 int32_t GameModeHangarData::CreateAllSurfaces() {
 // LINE 1443:
 	__asm        push   0x12E;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -4763,7 +4763,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        push   eax;
 	__asm        push   0x835;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x00471F70;
+	__asm        call   HangarWindow::HangarWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x004C1391;
@@ -4778,7 +4778,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        call   dword ptr [edx+4];
 // LINE 1445:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C14AF;
+	__asm        call   GameModeHangarData::CreatePalette;
 // LINE 1446:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C13B4;
@@ -4856,7 +4856,7 @@ void GameModeHangarData::Awake() {
 	__asm        call   dword ptr [edx+0x70];
 // LINE 1478:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C1542;
+	__asm        call   GameModeHangarData::UsePalette;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-4], eax;
@@ -4876,7 +4876,7 @@ void GameModeHangarData::CreatePalette() {
 	__asm        jne    near ptr 0x004C1526;
 // LINE 1489:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -4887,7 +4887,7 @@ void GameModeHangarData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     near ptr 0x004C1509;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x004C14EF;
 	__asm        jmp    near ptr 0x004C150E;
@@ -4903,7 +4903,7 @@ void GameModeHangarData::CreatePalette() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x14];
-	__asm        call   0x00472F61;
+	__asm        call   HangarWindow::ReadPalette;
 // LINE 1492:
 	__asm        jmp    near ptr 0x004C153D;
 }
@@ -4938,7 +4938,7 @@ void GameModeHangarData::UsePalette() {
 void GameModeHangarData::Shutdown() {
 // LINE 1510:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C13B9;
+	__asm        call   GameModeHangarData::DestroyAllSurfaces;
 // LINE 1511:
 	__asm        jmp    near ptr 0x004C15AE;
 }
@@ -4993,7 +4993,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0040E3C0;
+	__asm        call   list<Shortcut>::erase;
 	__asm        jmp    near ptr 0x004C1617;
 	__asm        jmp    near ptr 0x004C16B3;
 // LINE 1524:
@@ -5020,7 +5020,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004C171B;
 	__asm        mov    eax, [ebp-0x38];
@@ -5082,7 +5082,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C17F8;
 // LINE 1540:
 	__asm        mov    tempShortcut.lCommand, 1;
@@ -5106,7 +5106,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004C1859;
 	__asm        mov    eax, [ebp-0x5C];
@@ -5164,7 +5164,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x004C1933;
 	__asm        mov    eax, [ebp-0x74];
@@ -5226,7 +5226,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048E910;
+	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C1A19;
 // LINE 1561:
 	__asm        mov    tempShortcut.lCommand, 4;
@@ -5250,7 +5250,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
-	__asm        call   0x0048ACD0;
+	__asm        call   list<Shortcut>::get_node;
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    near ptr 0x004C1A8C;
 	__asm        mov    eax, [ebp-0x98];
@@ -5289,7 +5289,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 // LINE 1568:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B6ED;
+	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1569:
 	__asm        jmp    near ptr 0x004C1B41;
 }
@@ -5297,10 +5297,10 @@ void GameModeHangarData::SetCommandsToDefaults() {
 // FUNCTION: COPTER_D 0x004c1b46
 void GameModeCatalogData::GameModeCatalogData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B2B0;
+	__asm        call   CommandSystem::CommandSystem;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D4;
 // LINE 1586:
@@ -5308,7 +5308,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1587:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C1E29;
+	__asm        call   GameModeCatalogData::SetCommandsToDefaults;
 // LINE 1588:
 	__asm        jmp    near ptr 0x004C1B85;
 	__asm        mov    eax, this;
@@ -5318,7 +5318,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 int32_t GameModeCatalogData::CreateAllSurfaces() {
 // LINE 1597:
 	__asm        push   0x2B6;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -5340,7 +5340,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        push   eax;
 	__asm        push   0x836;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x00474960;
+	__asm        call   CatalogWindow::CatalogWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x004C1C07;
@@ -5355,7 +5355,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        call   dword ptr [edx+4];
 // LINE 1599:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C1D25;
+	__asm        call   GameModeCatalogData::CreatePalette;
 // LINE 1600:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C1C2A;
@@ -5433,7 +5433,7 @@ void GameModeCatalogData::Awake() {
 	__asm        call   dword ptr [edx+0x70];
 // LINE 1632:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C1DB8;
+	__asm        call   GameModeCatalogData::UsePalette;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-4], eax;
@@ -5453,7 +5453,7 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        jne    near ptr 0x004C1D9C;
 // LINE 1643:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -5464,7 +5464,7 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     near ptr 0x004C1D7F;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x004C1D65;
 	__asm        jmp    near ptr 0x004C1D84;
@@ -5480,7 +5480,7 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x14];
-	__asm        call   0x0047A9B3;
+	__asm        call   CatalogWindow::ReadPalette;
 // LINE 1646:
 	__asm        jmp    near ptr 0x004C1DB3;
 }
@@ -5515,7 +5515,7 @@ void GameModeCatalogData::UsePalette() {
 void GameModeCatalogData::Shutdown() {
 // LINE 1664:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C1C2F;
+	__asm        call   GameModeCatalogData::DestroyAllSurfaces;
 // LINE 1665:
 	__asm        jmp    near ptr 0x004C1E24;
 }
@@ -5629,7 +5629,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C200D;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    dword ptr [ebp-0x50], 0x80;
@@ -5658,7 +5658,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
@@ -5779,7 +5779,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C2262;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        mov    dword ptr [ebp-0xA8], 0x80;
@@ -5808,7 +5808,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
@@ -5896,7 +5896,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 // LINE 1694:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B6ED;
+	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1695:
 	__asm        jmp    near ptr 0x004C24C9;
 }
@@ -5904,10 +5904,10 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 // FUNCTION: COPTER_D 0x004c24ce
 void GameModeMissionLogData::GameModeMissionLogData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B2B0;
+	__asm        call   CommandSystem::CommandSystem;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D8;
 // LINE 1711:
@@ -5915,7 +5915,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1712:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C27B1;
+	__asm        call   GameModeMissionLogData::SetCommandsToDefaults;
 // LINE 1713:
 	__asm        jmp    near ptr 0x004C250D;
 	__asm        mov    eax, this;
@@ -5925,7 +5925,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 int32_t GameModeMissionLogData::CreateAllSurfaces() {
 // LINE 1722:
 	__asm        push   0x80;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -5947,7 +5947,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        push   eax;
 	__asm        push   0x838;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046BCA0;
+	__asm        call   MissionLogWindow::MissionLogWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x004C258F;
@@ -5962,7 +5962,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        call   dword ptr [edx+4];
 // LINE 1724:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C26AD;
+	__asm        call   GameModeMissionLogData::CreatePalette;
 // LINE 1725:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C25B2;
@@ -6040,7 +6040,7 @@ void GameModeMissionLogData::Awake() {
 	__asm        call   dword ptr [edx+0x70];
 // LINE 1757:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C2740;
+	__asm        call   GameModeMissionLogData::UsePalette;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-4], eax;
@@ -6060,7 +6060,7 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        jne    near ptr 0x004C2724;
 // LINE 1768:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -6071,7 +6071,7 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     near ptr 0x004C2707;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x004C26ED;
 	__asm        jmp    near ptr 0x004C270C;
@@ -6087,7 +6087,7 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x14];
-	__asm        call   0x0046C90A;
+	__asm        call   MissionLogWindow::ReadPalette;
 // LINE 1771:
 	__asm        jmp    near ptr 0x004C273B;
 }
@@ -6122,7 +6122,7 @@ void GameModeMissionLogData::UsePalette() {
 void GameModeMissionLogData::Shutdown() {
 // LINE 1789:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C25B7;
+	__asm        call   GameModeMissionLogData::DestroyAllSurfaces;
 // LINE 1790:
 	__asm        jmp    near ptr 0x004C27AC;
 }
@@ -6236,7 +6236,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C2995;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    dword ptr [ebp-0x50], 0x80;
@@ -6265,7 +6265,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
@@ -6386,7 +6386,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C2BEA;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        mov    dword ptr [ebp-0xA8], 0x80;
@@ -6415,7 +6415,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
@@ -6503,7 +6503,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 // LINE 1819:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B6ED;
+	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1820:
 	__asm        jmp    near ptr 0x004C2E51;
 }
@@ -6511,10 +6511,10 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 // FUNCTION: COPTER_D 0x004c2e56
 void GameModeInventoryData::GameModeInventoryData() {
 	__asm        mov    ecx, this;
-	__asm        call   0x004BD72D;
+	__asm        call   GameModeCoreData::GameModeCoreData;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B2B0;
+	__asm        call   CommandSystem::CommandSystem;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923DC;
 // LINE 1833:
@@ -6522,7 +6522,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1834:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C3139;
+	__asm        call   GameModeInventoryData::SetCommandsToDefaults;
 // LINE 1835:
 	__asm        jmp    near ptr 0x004C2E95;
 	__asm        mov    eax, this;
@@ -6532,7 +6532,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 int32_t GameModeInventoryData::CreateAllSurfaces() {
 // LINE 1844:
 	__asm        push   0x1E2;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -6554,7 +6554,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        push   eax;
 	__asm        push   0x837;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x004A8360;
+	__asm        call   InventoryWindow::InventoryWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    near ptr 0x004C2F17;
@@ -6569,7 +6569,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        call   dword ptr [edx+4];
 // LINE 1846:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C3035;
+	__asm        call   GameModeInventoryData::CreatePalette;
 // LINE 1847:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004C2F3A;
@@ -6647,7 +6647,7 @@ void GameModeInventoryData::Awake() {
 	__asm        call   dword ptr [edx+0x70];
 // LINE 1879:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C30C8;
+	__asm        call   GameModeInventoryData::UsePalette;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-4], eax;
@@ -6667,7 +6667,7 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        jne    near ptr 0x004C30AC;
 // LINE 1890:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -6678,7 +6678,7 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     near ptr 0x004C308F;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    near ptr 0x004C3075;
 	__asm        jmp    near ptr 0x004C3094;
@@ -6694,7 +6694,7 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x14];
-	__asm        call   0x004A981D;
+	__asm        call   InventoryWindow::ReadPalette;
 // LINE 1893:
 	__asm        jmp    near ptr 0x004C30C3;
 }
@@ -6729,7 +6729,7 @@ void GameModeInventoryData::UsePalette() {
 void GameModeInventoryData::Shutdown() {
 // LINE 1911:
 	__asm        mov    ecx, this;
-	__asm        call   0x004C2F3F;
+	__asm        call   GameModeInventoryData::DestroyAllSurfaces;
 // LINE 1912:
 	__asm        jmp    near ptr 0x004C3134;
 }
@@ -6843,7 +6843,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C331D;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    dword ptr [ebp-0x50], 0x80;
@@ -6872,7 +6872,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
@@ -6993,7 +6993,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 	__asm        jmp    near ptr 0x004C3572;
 	__asm        push   0;
 	__asm        push   1;
-	__asm        call   0x0041B820;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        mov    dword ptr [ebp-0xA8], 0x80;
@@ -7022,7 +7022,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        push   eax;
-	__asm        call   0x0041B890;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
@@ -7110,7 +7110,7 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 // LINE 1940:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18;
-	__asm        call   0x0048B6ED;
+	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1941:
 	__asm        jmp    near ptr 0x004C37D9;
 }

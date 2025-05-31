@@ -206,7 +206,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        mov    miscSize, 0x1C;
 // LINE 107:
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C7DD;
+	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00552B58;
@@ -214,12 +214,12 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0x5BBEE0;
 	__asm        push   0x6B;
 	__asm        push   0x5BBEEC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 108:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C711;
+	__asm        call   FlatFile::SetPos;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552B79;
@@ -229,7 +229,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        lea    eax, res1Off;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C87A;
+	__asm        call   FlatFile::Read4;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552B9C;
@@ -242,13 +242,13 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0x5BBF14;
 	__asm        push   0x6F;
 	__asm        push   0x5BBF30;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 113:
 	__asm        lea    eax, mapLoc;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C87A;
+	__asm        call   FlatFile::Read4;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552BE5;
@@ -264,13 +264,13 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0x5BBF58;
 	__asm        push   0x72;
 	__asm        push   0x5BBF68;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 116:
 	__asm        lea    eax, mapLocLess;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C87A;
+	__asm        call   FlatFile::Read4;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552C3A;
@@ -286,13 +286,13 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0x5BBF90;
 	__asm        push   0x75;
 	__asm        push   0x5BBFAC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 119:
 	__asm        lea    eax, mapSize;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C87A;
+	__asm        call   FlatFile::Read4;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552C89;
@@ -307,13 +307,13 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0x5BBFD4;
 	__asm        push   0x78;
 	__asm        push   0x5BBFE8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 122:
 	__asm        mov    eax, mapLoc;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C711;
+	__asm        call   FlatFile::SetPos;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552CDC;
@@ -325,7 +325,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        lea    eax, miscBytes[0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C69C;
+	__asm        call   FlatFile::ReadBlock;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552D03;
@@ -341,7 +341,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        mov    eax, numTypes;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C8C5;
+	__asm        call   FlatFile::Read2;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552D32;
@@ -356,12 +356,12 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        push   0;
 	__asm        mov    eax, mapSize;
 	__asm        push   eax;
-	__asm        call   0x00554759;
+	__asm        call   Memory::HAlloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, newMap;
 	__asm        mov    [ecx], eax;
 // LINE 135:
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552D6B;
@@ -371,11 +371,11 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        mov    eax, newMap;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    resMapPtr, eax;
 // LINE 137:
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552D98;
@@ -387,7 +387,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        mov    eax, resMapPtr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C69C;
+	__asm        call   FlatFile::ReadBlock;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00552DBF;
@@ -397,7 +397,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 	__asm        mov    eax, newMap;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 143:
 // Block end:
@@ -414,7 +414,7 @@ error:
 	__asm        mov    eax, newMap;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x005548C3;
+	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 150:
 	__asm        mov    eax, newMap;
@@ -444,7 +444,7 @@ long FlatResFile::Open(char * name) {
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C36A;
+	__asm        call   FlatFile::Open;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 160:
@@ -462,7 +462,7 @@ long FlatResFile::Open(char * name) {
 // LINE 167:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x00553C5B;
+	__asm        call   ResMap::Get;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x114], eax;
@@ -479,7 +479,7 @@ long FlatResFile::Open(unsigned char * name) {
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C3C7;
+	__asm        call   FlatFile::Open;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 181:
@@ -497,7 +497,7 @@ long FlatResFile::Open(unsigned char * name) {
 // LINE 188:
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        call   0x00553C5B;
+	__asm        call   ResMap::Get;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x114], eax;
@@ -514,7 +514,7 @@ long ResFile::OpenFromOtherFile(class ResFile* otherFile) {
 	__asm        mov    eax, otherFile;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C586;
+	__asm        call   FlatFile::OpenFromOtherFile;
 // LINE 199:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00552F58;
@@ -525,7 +525,7 @@ long ResFile::OpenFromOtherFile(class ResFile* otherFile) {
 long FlatResFile::Close() {
 // LINE 207:
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C5CB;
+	__asm        call   FlatFile::Close;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 208:
@@ -538,7 +538,7 @@ long FlatResFile::Close() {
 	__asm        je     near ptr 0x00552FAA;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00553DCC;
+	__asm        call   ResMap::Release;
 // LINE 211:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x110], 0;
@@ -554,10 +554,10 @@ short FlatResFile::CheckForLeaks() {
 	short total;
 
 // LINE 260:
-	__asm        call   0x00553E96;
+	__asm        call   ResMap::CheckForLeaks;
 	__asm        mov    total, ax;
 // LINE 261:
-	__asm        call   0x0055CA7F;
+	__asm        call   FlatFile::CheckForLeaks;
 	__asm        movsx  eax, ax;
 	__asm        movsx  ecx, total;
 	__asm        add    eax, ecx;
@@ -585,12 +585,12 @@ void FlatResFile::~FlatResFile() {
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 278:
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C7DD;
+	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00553067;
 	__asm        mov    ecx, this;
-	__asm        call   0x00552F5F;
+	__asm        call   FlatResFile::Close;
 // LINE 279:
 	__asm        jmp    near ptr 0x0055306C;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -598,7 +598,7 @@ void FlatResFile::~FlatResFile() {
 	__asm        jmp    near ptr 0x00553090;
 _L27084:
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C2BB;
+	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
 _L27083:
 	__asm        mov    eax, 0x595F30;
@@ -655,7 +655,7 @@ unsigned long FlatResFile::GetIndType(short index) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x005541A4;
+	__asm        call   ResMap::GetIndType;
 	__asm        mov    type, eax;
 // LINE 316:
 	__asm        cmp    type, 0;
@@ -689,7 +689,7 @@ short FlatResFile::Count(unsigned long type) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x005541FE;
+	__asm        call   ResMap::Count;
 	__asm        jmp    near ptr 0x00553204;
 // LINE 329:
 }
@@ -719,7 +719,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055437A;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 341:
 	__asm        cmp    entry, 0;
@@ -740,7 +740,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00553EDB;
+	__asm        call   ResMap::LoadEntry;
 // LINE 347:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -753,14 +753,14 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 350:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554D05;
+	__asm        call   Memory::HGetSize;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, data;
@@ -771,7 +771,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 355:
 // Block end:
@@ -816,7 +816,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055443D;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 370:
 	__asm        cmp    entry, 0;
@@ -837,7 +837,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00553EDB;
+	__asm        call   ResMap::LoadEntry;
 // LINE 376:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -850,14 +850,14 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 379:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554D05;
+	__asm        call   Memory::HGetSize;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, data;
@@ -868,7 +868,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 384:
 // Block end:
@@ -903,7 +903,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00554536;
+	__asm        call   ResMap::FindIndEntry;
 	__asm        mov    entry, eax;
 // LINE 397:
 	__asm        cmp    entry, 0;
@@ -924,7 +924,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00553EDB;
+	__asm        call   ResMap::LoadEntry;
 // LINE 403:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -937,14 +937,14 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    data, eax;
 // LINE 406:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554D05;
+	__asm        call   Memory::HGetSize;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, data;
@@ -955,7 +955,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 411:
 // Block end:
@@ -990,7 +990,7 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 426:
 	__asm        cmp    entry, 0;
@@ -1005,7 +1005,7 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x005545F1;
+	__asm        call   ResMap::GetName;
 // LINE 429:
 	__asm        jmp    near ptr 0x00553606;
 }
@@ -1035,7 +1035,7 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 443:
 	__asm        cmp    entry, 0;
@@ -1076,7 +1076,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 454:
 	__asm        cmp    entry, 0;
@@ -1090,7 +1090,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00554272;
+	__asm        call   ResMap::FindType;
 	__asm        mov    returnType, eax;
 // LINE 457:
 	__asm        cmp    returnType, 0;
@@ -1099,7 +1099,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        push   0x5BC010;
 	__asm        push   0x1C9;
 	__asm        push   0x5BC028;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 458:
 	__asm        cmp    returnType, 0;
@@ -1134,7 +1134,7 @@ void FlatResFile::Release(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 473:
 	__asm        cmp    entry, 0;
@@ -1147,7 +1147,7 @@ void FlatResFile::Release(void * __ptr32 res) {
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005548C3;
+	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 476:
 	__asm        mov    eax, entry;
@@ -1178,7 +1178,7 @@ void FlatResFile::Detach(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 501:
 	__asm        cmp    entry, 0;
@@ -1217,7 +1217,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x0055430B;
+	__asm        call   ResMap::FindEntry;
 	__asm        mov    entry, eax;
 // LINE 527:
 	__asm        cmp    entry, 0;
@@ -1229,14 +1229,14 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554DE7;
+	__asm        call   Memory::HGetState;
 	__asm        add    esp, 4;
 	__asm        mov    oldState, al;
 // LINE 530:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    ptr, eax;
 // LINE 531:
@@ -1249,7 +1249,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554E62;
+	__asm        call   Memory::HSetState;
 	__asm        add    esp, 8;
 // LINE 534:
 	__asm        jmp    near ptr 0x005539B7;
@@ -1261,7 +1261,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x110];
-	__asm        call   0x00553EDB;
+	__asm        call   ResMap::LoadEntry;
 // LINE 538:
 	__asm        jmp    near ptr 0x005539B7;
 }
@@ -1277,7 +1277,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        lea    ecx, tempStrs.fResFile;
-	__asm        call   0x00565A40;
+	__asm        call   StringSet::StringSet;
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 598:
 	__asm        mov    eax, str;
@@ -1297,7 +1297,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
 	__asm        push   eax;
 	__asm        lea    ecx, tempStrs.fResFile;
-	__asm        call   0x00565BFF;
+	__asm        call   StringSet::GetString;
 	__asm        mov    foundStr, eax;
 // LINE 602:
 	__asm        cmp    foundStr, 0;
@@ -1311,7 +1311,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        push   eax;
 	__asm        mov    eax, foundStr;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 604:
 // Block end:
@@ -1320,7 +1320,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        jmp    near ptr 0x00553A74;
 _L27094:
 	__asm        lea    ecx, tempStrs.fResFile;
-	__asm        call   0x00565BBC;
+	__asm        call   StringSet::~StringSet;
 	__asm        ret;
 _L27093:
 	__asm        mov    eax, 0x595F58;
@@ -1382,7 +1382,7 @@ _L27093:
 // LINE 693:
 	__asm        mov    eax, typeList;
 	__asm        push   eax;
-	__asm        call   0x00554651;
+	__asm        call   ResMap::SwapTypeHead;
 	__asm        add    esp, 4;
 // LINE 694:
 	__asm        mov    eax, typeList;
@@ -1416,7 +1416,7 @@ _L27093:
 // LINE 703:
 	__asm        mov    eax, resList;
 	__asm        push   eax;
-	__asm        call   0x0055468B;
+	__asm        call   ResMap::SwapResEntry;
 	__asm        add    esp, 4;
 // LINE 704:
 	__asm        mov    eax, resList;
@@ -1464,7 +1464,7 @@ _L27093:
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554DE7;
+	__asm        call   Memory::HGetState;
 	__asm        add    esp, 4;
 	__asm        mov    hState, al;
 // LINE 737:
@@ -1476,13 +1476,13 @@ _L27093:
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 739:
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005548C3;
+	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 740:
 	__asm        mov    eax, srch;
@@ -1495,13 +1495,13 @@ _L27093:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 746:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005548C3;
+	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 747:
 	__asm        jmp    near ptr 0x00553C56;
@@ -1552,29 +1552,29 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 	__asm        lea    eax, newMap;
 	__asm        push   eax;
 	__asm        mov    ecx, fromFile;
-	__asm        call   0x00552B10;
+	__asm        call   FlatResFile::LoadResMap;
 // LINE 769:
 	__asm        mov    ecx, fromFile;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00553D02;
 	__asm        mov    ecx, fromFile;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        jmp    near ptr 0x00553DBD;
 // LINE 771:
 	__asm        mov    eax, newMap;
 	__asm        push   eax;
-	__asm        call   0x00554B04;
+	__asm        call   Memory::Stash;
 	__asm        add    esp, 4;
 	__asm        mov    resPtr, eax;
 // LINE 772:
 	__asm        cmp    resPtr, 0;
 	__asm        jne    near ptr 0x00553D25;
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        jmp    near ptr 0x00553DBD;
 // LINE 774:
 	__asm        push   0x20;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -1592,7 +1592,7 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x24];
-	__asm        call   0x00553A84;
+	__asm        call   ResMap::ResMap;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    near ptr 0x00553D74;
 	__asm        mov    dword ptr [ebp-0x28], 0;
@@ -1617,7 +1617,7 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 _L27102:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 _L27101:
@@ -1637,7 +1637,7 @@ void  ResMap::Release() {
 	__asm        push   0x5BC050;
 	__asm        push   0x312;
 	__asm        push   0x5BC06C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 787:
 	__asm        mov    eax, this;
@@ -1677,10 +1677,10 @@ void  ResMap::Release() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     near ptr 0x00553E8C;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x00553BA0;
+	__asm        call   ResMap::~ResMap;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00553E87;
 	__asm        jmp    near ptr 0x00553E8C;
@@ -1730,7 +1730,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554DE7;
+	__asm        call   Memory::HGetState;
 	__asm        add    esp, 4;
 	__asm        mov    oldHandState, al;
 // LINE 823:
@@ -1744,10 +1744,10 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, pos;
 	__asm        push   eax;
 	__asm        mov    ecx, file;
-	__asm        call   0x0055C711;
+	__asm        call   FlatFile::SetPos;
 // LINE 825:
 	__asm        mov    ecx, file;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00553F4A;
@@ -1759,7 +1759,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        lea    eax, size;
 	__asm        push   eax;
 	__asm        mov    ecx, file;
-	__asm        call   0x0055C87A;
+	__asm        call   FlatFile::Read4;
 // LINE 828:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jl     near ptr 0x00553F83;
@@ -1767,11 +1767,11 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        push   0x5BC094;
 	__asm        push   0x33C;
 	__asm        push   0x5BC0C8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 829:
 	__asm        mov    ecx, file;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00553FA2;
@@ -1784,7 +1784,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        push   0x5BC0F0;
 	__asm        push   0x341;
 	__asm        push   0x5BC108;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 835:
 	__asm        mov    eax, entry;
@@ -1798,7 +1798,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00554014;
@@ -1813,7 +1813,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 847:
 	__asm        mov    eax, size;
@@ -1821,10 +1821,10 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554848;
+	__asm        call   Memory::HUnpurge;
 	__asm        add    esp, 8;
 // LINE 848:
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x00554052;
@@ -1856,12 +1856,12 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        push   0;
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x00554759;
+	__asm        call   Memory::HAlloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, entry;
 	__asm        mov    [ecx+8], eax;
 // LINE 862:
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x005540C1;
@@ -1871,7 +1871,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554DE7;
+	__asm        call   Memory::HGetState;
 	__asm        add    esp, 4;
 	__asm        mov    oldHandState, al;
 // LINE 868:
@@ -1881,13 +1881,13 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x005549E0;
+	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 	__asm        mov    block, eax;
 // LINE 869:
 	__asm        cmp    block, 0;
 	__asm        jne    near ptr 0x00554101;
-	__asm        call   0x00554F06;
+	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
 	__asm        jmp    near ptr 0x0055417F;
 	__asm        jmp    near ptr 0x00554147;
@@ -1895,10 +1895,10 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, pos;
 	__asm        push   eax;
 	__asm        mov    ecx, file;
-	__asm        call   0x0055C711;
+	__asm        call   FlatFile::SetPos;
 // LINE 871:
 	__asm        mov    ecx, file;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        mov    err, eax;
 	__asm        cmp    err, 0;
 	__asm        je     near ptr 0x0055412C;
@@ -1910,10 +1910,10 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 	__asm        mov    eax, block;
 	__asm        push   eax;
 	__asm        mov    ecx, file;
-	__asm        call   0x0055C69C;
+	__asm        call   FlatFile::ReadBlock;
 // LINE 873:
 	__asm        mov    ecx, file;
-	__asm        call   0x00552FFC;
+	__asm        call   FlatResFile::GetError;
 	__asm        mov    err, eax;
 // LINE 876:
 done:
@@ -1927,7 +1927,7 @@ done:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554E62;
+	__asm        call   Memory::HSetState;
 	__asm        add    esp, 8;
 // LINE 877:
 	__asm        mov    eax, err;
@@ -2272,7 +2272,7 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        add    eax, namePtr;
 	__asm        push   eax;
-	__asm        call   0x005665B7;
+	__asm        call   PStrCompare;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055451A;
@@ -2395,7 +2395,7 @@ void  ResMap::GetName(struct ResMap::Entry* entry, unsigned char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, namePtr;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 1042:
 	__asm        jmp    near ptr 0x0055464A;
@@ -2406,19 +2406,19 @@ void  ResMap::SwapTypeHead(struct ResMap::TypeHead* typeHead) {
 // LINE 1058:
 	__asm        mov    eax, typeHead;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 1059:
 	__asm        mov    eax, typeHead;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1060:
 	__asm        mov    eax, typeHead;
 	__asm        add    eax, 6;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1062:
 	__asm        jmp    near ptr 0x00554686;
@@ -2435,13 +2435,13 @@ void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
 // LINE 1081:
 	__asm        mov    eax, resEntry;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1082:
 	__asm        mov    eax, resEntry;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1085:
 	__asm        mov    eax, resEntry;

@@ -390,7 +390,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B9171;
 	__asm        jmp    near ptr 0x004B9176;
@@ -406,7 +406,7 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -778,7 +778,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x004B972D;
@@ -895,7 +895,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B98F9;
 	__asm        jmp    near ptr 0x004B98FE;
@@ -1103,7 +1103,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x004B9C26;
@@ -1220,7 +1220,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004B9DFB;
 	__asm        jmp    near ptr 0x004B9E00;
@@ -1407,7 +1407,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004BA0F6;
@@ -1524,7 +1524,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA2DA;
 	__asm        jmp    near ptr 0x004BA2DF;
@@ -1690,7 +1690,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004BA5D5;
@@ -1701,7 +1701,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004BB9C0;
+	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004BA5FA;
 	__asm        mov    eax, [ebp-0xE4];
@@ -1744,7 +1744,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        push   eax;
-	__asm        call   0x004BB9C0;
+	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004BA6A7;
 	__asm        jmp    near ptr 0x004BA6AC;
@@ -1765,7 +1765,7 @@ void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA70E;
 	__asm        jmp    near ptr 0x004BA713;
@@ -1857,7 +1857,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BA862;
 	__asm        jmp    near ptr 0x004BA867;
@@ -1873,7 +1873,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x004BB950;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -2241,7 +2241,7 @@ int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 	__asm        mov    eax, lXPosition;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004BADF8;
+	__asm        call   HotSpot::PointInCircle;
 	__asm        jmp    near ptr 0x004BADF1;
 // LINE 137:
 	__asm        mov    eax, this;
@@ -2253,7 +2253,7 @@ int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 	__asm        mov    eax, lXPosition;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004BAF2A;
+	__asm        call   HotSpot::PointInPolygon;
 	__asm        jmp    near ptr 0x004BADF1;
 // LINE 139:
 	__asm        xor    eax, eax;
@@ -2796,14 +2796,14 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, nResourceID;
 	__asm        push   eax;
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x0044780E;
+	__asm        call   ResourceRCData::ResourceRCData;
 // LINE 278:
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x00447B3A;
+	__asm        call   ResourceRCData::DataReference;
 	__asm        mov    fileImage, eax;
 // LINE 279:
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x00447B3A;
+	__asm        call   ResourceRCData::DataReference;
 	__asm        mov    chFileImage, eax;
 // LINE 280:
 	__asm        cmp    fileImage, 0;
@@ -2811,7 +2811,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 // LINE 281:
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x0044791C;
+	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    near ptr 0x004BB942;
 // LINE 282:
@@ -2821,7 +2821,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 // LINE 283:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x0044791C;
+	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    near ptr 0x004BB942;
 // LINE 284:
@@ -2831,7 +2831,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 // LINE 285:
 	__asm        mov    dword ptr [ebp-0x40], 0;
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x0044791C;
+	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    near ptr 0x004BB942;
 // LINE 286:
@@ -2854,7 +2854,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, currentHotspotRecord;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x54];
-	__asm        call   0x004B9973;
+	__asm        call   HotSpot::HotSpot;
 	__asm        mov    [ebp-0xCC], eax;
 // LINE 290:
 	__asm        mov    eax, hotSpotList;
@@ -2880,25 +2880,25 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        cmp    ds:[0x5971D4], eax;
 	__asm        jne    near ptr 0x004BB81D;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        cmp    dword ptr [ebp-0xB0], 0;
 	__asm        jne    near ptr 0x004BB637;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB62D;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB63C;
 	__asm        jmp    near ptr 0x004BB641;
@@ -2927,7 +2927,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    ecx, eax;
@@ -2935,22 +2935,22 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        cmp    dword ptr [ebp-0xB8], 0;
 	__asm        jne    near ptr 0x004BB732;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xBC], eax;
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB728;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB737;
 	__asm        jmp    near ptr 0x004BB73C;
@@ -3017,7 +3017,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x74];
-	__asm        call   0x004B908F;
+	__asm        call   HotSpot::HotSpot;
 	__asm        jmp    near ptr 0x004BB874;
 	__asm        jmp    near ptr 0x004BB879;
 	__asm        mov    eax, [ebp-0xC8];
@@ -3055,7 +3055,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BB90A;
 	__asm        jmp    near ptr 0x004BB90F;
@@ -3072,7 +3072,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 // LINE 293:
 	__asm        mov    dword ptr [ebp-0x58], 1;
 	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
-	__asm        call   0x0044791C;
+	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        jmp    near ptr 0x004BB942;
 // LINE 294:

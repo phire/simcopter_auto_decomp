@@ -304,7 +304,7 @@ int32_t LanguageManager::Uninitialize() {
 // LINE 53:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        push   eax;
-	__asm        call   0x0042CF8E;
+	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
 	__asm        add    esp, 4;
 // LINE 54:
 	__asm        mov    eax, 1;
@@ -318,7 +318,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 
 // LINE 65:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
@@ -372,7 +372,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -382,7 +382,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        jmp    near ptr 0x0042A62B;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A63C;
 	__asm        jmp    near ptr 0x0042A641;
@@ -395,7 +395,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A66D;
 	__asm        mov    eax, [ebp-0xC];
@@ -403,14 +403,14 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 // LINE 72:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B1AF;
+	__asm        call   LanguageManager::CanWeSwitchToGivenLanguage;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0042A869;
 // LINE 73:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        push   eax;
-	__asm        call   0x0042CF8E;
+	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
 	__asm        add    esp, 4;
 // LINE 74:
 	__asm        mov    eax, nLanguage;
@@ -418,14 +418,14 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 // LINE 75:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042CEDA;
+	__asm        call   LanguageManager::LoadLanguageSystemFonts;
 	__asm        add    esp, 4;
 // LINE 76:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
 	__asm        lea    eax, sLocale.c_str_ptr;
 	__asm        push   eax;
-	__asm        call   0x0042C776;
+	__asm        call   LanguageManager::GetLanguageRuntimeLibraryName;
 	__asm        add    esp, 8;
 // LINE 77:
 	__asm        cmp    sLocale.c_str_ptr, 0;
@@ -436,14 +436,14 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A6E2;
 	__asm        mov    eax, sLocale.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    sLocale.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0042A6FA;
@@ -473,7 +473,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042A764;
 	__asm        jmp    near ptr 0x0042A769;
@@ -495,7 +495,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    eax, sLocale.c_str_ptr;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x0056E040;
+	__asm        call   setlocale;
 	__asm        add    esp, 8;
 // LINE 78:
 	__asm        mov    dword ptr [ebp-0x10], 1;
@@ -520,7 +520,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -530,7 +530,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        jmp    near ptr 0x0042A81F;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A830;
 	__asm        jmp    near ptr 0x0042A835;
@@ -543,7 +543,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A861;
 	__asm        mov    eax, [ebp-0x10];
@@ -571,7 +571,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -581,7 +581,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        jmp    near ptr 0x0042A8DD;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A8EE;
 	__asm        jmp    near ptr 0x0042A8F3;
@@ -594,7 +594,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042A91F;
 	__asm        mov    eax, [ebp-0x14];
@@ -609,7 +609,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 
 // LINE 96:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
@@ -650,11 +650,11 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0042AA06;
 	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042A9F0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AA01;
 	__asm        jmp    near ptr 0x0042AA06;
@@ -667,7 +667,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AA32;
 	__asm        mov    eax, [ebp-0x10];
@@ -713,22 +713,22 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        jmp    near ptr 0x0042AAC5;
 	__asm        lea    eax, [ebp-0x104C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x104C];
 	__asm        push   eax;
 	__asm        lea    ecx, stringLanguage.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0042AAE9;
 	__asm        jmp    near ptr 0x0042AAEE;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, stringLanguage.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0042AB0E;
 	__asm        mov    eax, [ebp-0x1050];
 	__asm        mov    nStringFound, eax;
@@ -736,13 +736,13 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        jmp    near ptr 0x0042AB21;
 	__asm        lea    eax, [ebp-0x104C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x104C];
 	__asm        push   eax;
 	__asm        lea    ecx, stringLanguage.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0042AB45;
 	__asm        mov    eax, [ebp-0x1050];
 	__asm        mov    nStringFound, eax;
@@ -759,14 +759,14 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        mov    eax, [ebp-0x105C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AB90;
 	__asm        mov    eax, stringLanguage.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    stringLanguage.c_str_ptr, eax;
 	__asm        jmp    near ptr 0x0042ABA8;
@@ -796,7 +796,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042AC27;
 	__asm        jmp    near ptr 0x0042AC2C;
@@ -819,7 +819,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        push   eax;
 	__asm        mov    eax, szLanguageName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 108:
 	__asm        mov    dword ptr [ebp-0x14], 1;
@@ -835,11 +835,11 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x0042ACD5;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042ACBF;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042ACD0;
 	__asm        jmp    near ptr 0x0042ACD5;
@@ -852,7 +852,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AD01;
 	__asm        mov    eax, [ebp-0x14];
@@ -871,11 +871,11 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     near ptr 0x0042AD5C;
 	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042AD46;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AD57;
 	__asm        jmp    near ptr 0x0042AD5C;
@@ -888,7 +888,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageNam
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AD88;
 	__asm        mov    eax, [ebp-0x18];
@@ -905,7 +905,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 
 // LINE 129:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
@@ -929,14 +929,14 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        jmp    near ptr 0x0042AE01;
 // LINE 130:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     near ptr 0x0042AEAE;
 	__asm        mov    eax, szLanguageName;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        mov    [ecx+4], eax;
@@ -951,7 +951,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        mov    [ecx], eax;
@@ -967,7 +967,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042AE86;
 	__asm        jmp    near ptr 0x0042AE94;
@@ -997,7 +997,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        push   eax;
 	__asm        lea    eax, stringLanguageCompare.c_str_ptr;
 	__asm        push   eax;
-	__asm        call   0x0040F710;
+	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 	__asm        mov    nStringFound, eax;
 // LINE 138:
@@ -1036,7 +1036,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        lea    ecx, stringLanguageName.c_str_ptr;
-	__asm        call   0x00410C40;
+	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0042B07E;
 // LINE 140:
@@ -1057,11 +1057,11 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     near ptr 0x0042AFE6;
 	__asm        mov    ecx, [ebp-0x30];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042AFD0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042AFE1;
 	__asm        jmp    near ptr 0x0042AFE6;
@@ -1074,7 +1074,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B012;
 	__asm        mov    eax, stringLanguageCompare.reference;
@@ -1090,7 +1090,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        je     near ptr 0x0042B04A;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042B04A;
 	__asm        jmp    near ptr 0x0042B04F;
 	__asm        cmp    stringLanguageCompare.c_str_ptr, 0;
@@ -1101,7 +1101,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B076;
 	__asm        mov    eax, [ebp-0x1C];
@@ -1123,7 +1123,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        je     near ptr 0x0042B0C2;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042B0C2;
 	__asm        jmp    near ptr 0x0042B0C7;
 	__asm        cmp    stringLanguageName.c_str_ptr, 0;
@@ -1134,7 +1134,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B0EE;
 	__asm        mov    eax, stringLanguageCompare.reference;
@@ -1150,7 +1150,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        je     near ptr 0x0042B126;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x60];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042B126;
 	__asm        jmp    near ptr 0x0042B12B;
 	__asm        cmp    stringLanguageCompare.c_str_ptr, 0;
@@ -1161,7 +1161,7 @@ int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLangu
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B152;
 	__asm        mov    eax, [ebp-0x20];
@@ -1203,7 +1203,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 
 // LINE 178:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -1229,7 +1229,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        mov    eax, nLanguageToSwitchTo;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 181:
@@ -1259,22 +1259,22 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        jmp    near ptr 0x0042B292;
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        cmp    dword ptr [ebp-0x1044], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0042B2EC;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1040], eax;
 	__asm        mov    eax, [ebp-0x1040];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B2DD;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B2EC;
 	__asm        jmp    near ptr 0x0042B2F1;
@@ -1289,7 +1289,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0042B383;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1038], eax;
 	__asm        cmp    dword ptr [ebp-0x1038], 0;
@@ -1299,12 +1299,12 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1038];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    near ptr 0x0042B36D;
 	__asm        mov    dword ptr [ebp-0x1034], 0;
 	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x1034];
 	__asm        mov    sMessage.reference, eax;
 	__asm        jmp    near ptr 0x0042B3C2;
@@ -1320,7 +1320,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x103C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042B3C2;
 	__asm        mov    eax, [ebp-0x1044];
@@ -1330,7 +1330,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        jmp    near ptr 0x0042B3D8;
 	__asm        jmp    near ptr 0x0042B3DD;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1058], eax;
 	__asm        jmp    near ptr 0x0042B3F5;
@@ -1341,15 +1341,15 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        jb     near ptr 0x0042B444;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1054], eax;
 	__asm        mov    eax, [ebp-0x1054];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B435;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B444;
 	__asm        jmp    near ptr 0x0042B449;
@@ -1365,7 +1365,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        cmp    eax, [ebp-0x1058];
 	__asm        jae    near ptr 0x0042B4ED;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        cmp    dword ptr [ebp-0x104C], 0;
@@ -1380,15 +1380,15 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x104C];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    near ptr 0x0042B4DC;
 	__asm        mov    dword ptr [ebp-0x1048], 0;
 	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    sMessage.reference, eax;
 	__asm        cmp    dword ptr [ebp-0x1058], 0;
@@ -1405,7 +1405,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        push   0x597200;
 	__asm        mov    eax, [ebp-0x1050];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042B535;
 	__asm        mov    eax, [ebp-0x1058];
@@ -1417,22 +1417,22 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        jmp    near ptr 0x0042B555;
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1074], eax;
 	__asm        cmp    dword ptr [ebp-0x1074], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0042B5AF;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1068], eax;
 	__asm        mov    eax, [ebp-0x1068];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B5A0;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B5AF;
 	__asm        jmp    near ptr 0x0042B5B4;
@@ -1447,7 +1447,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0042B68A;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1060], eax;
 	__asm        cmp    dword ptr [ebp-0x1060], 0;
@@ -1457,7 +1457,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        lea    eax, [ebp-0x102C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1060];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    near ptr 0x0042B630;
 	__asm        mov    dword ptr [ebp-0x105C], 0;
@@ -1474,7 +1474,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        je     near ptr 0x0042B677;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x106C];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042B677;
 	__asm        jmp    near ptr 0x0042B67C;
 	__asm        mov    eax, [ebp-0x105C];
@@ -1492,7 +1492,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1064];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042B6C9;
 	__asm        mov    eax, [ebp-0x1074];
@@ -1527,7 +1527,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1537,7 +1537,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        jmp    near ptr 0x0042B75F;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B770;
 	__asm        jmp    near ptr 0x0042B775;
@@ -1550,7 +1550,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo)
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042B7A1;
 	__asm        mov    eax, [ebp-0x10];
@@ -1583,7 +1583,7 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 // LINE 202:
 	__asm        mov    eax, nCurrentLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B1AF;
+	__asm        call   LanguageManager::CanWeSwitchToGivenLanguage;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0042B80C;
@@ -1739,7 +1739,7 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLan
 	__asm        push   eax;
 	__asm        mov    eax, sLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042BA46;
+	__asm        call   LanguageManager::GetLanguageEnglishName;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0042BA41;
 // LINE 315:
@@ -1759,7 +1759,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 332:
@@ -1789,17 +1789,17 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        jmp    near ptr 0x0042BAD8;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0042BAFC;
 	__asm        jmp    near ptr 0x0042BB01;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        jmp    near ptr 0x0042BB19;
@@ -1811,15 +1811,15 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        jb     near ptr 0x0042BB6B;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BB5C;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BB6B;
 	__asm        jmp    near ptr 0x0042BB70;
@@ -1838,7 +1838,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        cmp    eax, [ebp-0x104C];
 	__asm        jae    near ptr 0x0042BC26;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1040], eax;
 	__asm        cmp    dword ptr [ebp-0x1040], 0;
@@ -1855,15 +1855,15 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1040];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    near ptr 0x0042BC12;
 	__asm        mov    dword ptr [ebp-0x103C], 0;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x103C];
 	__asm        mov    ecx, sLanguage;
 	__asm        mov    [ecx+4], eax;
@@ -1883,7 +1883,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        push   0x597200;
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042BC74;
 	__asm        mov    eax, [ebp-0x104C];
@@ -1898,22 +1898,22 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        jmp    near ptr 0x0042BCA4;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1068], eax;
 	__asm        cmp    dword ptr [ebp-0x1068], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0042BCFE;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        mov    eax, [ebp-0x105C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BCEF;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BCFE;
 	__asm        jmp    near ptr 0x0042BD03;
@@ -1930,7 +1930,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0042BDEB;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1054], eax;
 	__asm        cmp    dword ptr [ebp-0x1054], 0;
@@ -1940,7 +1940,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1054];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    near ptr 0x0042BD85;
 	__asm        mov    dword ptr [ebp-0x1050], 0;
@@ -1960,7 +1960,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        je     near ptr 0x0042BDD5;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x1060];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042BDD5;
 	__asm        jmp    near ptr 0x0042BDDA;
 	__asm        mov    eax, [ebp-0x1050];
@@ -1980,7 +1980,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1058];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042BE2D;
 	__asm        mov    eax, [ebp-0x1068];
@@ -1997,7 +1997,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 // LINE 333:
 	__asm        jmp    near ptr 0x0042BE6A;
 	__asm        push   0x597668;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0042BE7F;
@@ -2009,15 +2009,15 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        jb     near ptr 0x0042BEC8;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BEB9;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042BEC8;
 	__asm        jmp    near ptr 0x0042BECD;
@@ -2036,7 +2036,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        cmp    eax, [ebp-0x34];
 	__asm        jae    near ptr 0x0042C070;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -2077,7 +2077,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
@@ -2096,7 +2096,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042BFDE;
 	__asm        jmp    near ptr 0x0042BFEC;
@@ -2124,11 +2124,11 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0042C062;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042C04C;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C05D;
 	__asm        jmp    near ptr 0x0042C062;
@@ -2152,7 +2152,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        push   0x597668;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C0B2;
 	__asm        mov    eax, [ebp-0x34];
@@ -2184,7 +2184,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 354:
@@ -2214,17 +2214,17 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        jmp    near ptr 0x0042C170;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0042C194;
 	__asm        jmp    near ptr 0x0042C199;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        jmp    near ptr 0x0042C1B1;
@@ -2236,15 +2236,15 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        jb     near ptr 0x0042C203;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C1F4;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C203;
 	__asm        jmp    near ptr 0x0042C208;
@@ -2263,7 +2263,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        cmp    eax, [ebp-0x104C];
 	__asm        jae    near ptr 0x0042C2BE;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1040], eax;
 	__asm        cmp    dword ptr [ebp-0x1040], 0;
@@ -2280,15 +2280,15 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1040];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    near ptr 0x0042C2AA;
 	__asm        mov    dword ptr [ebp-0x103C], 0;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x103C];
 	__asm        mov    ecx, sLanguage;
 	__asm        mov    [ecx+4], eax;
@@ -2308,7 +2308,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        push   0x597200;
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C30C;
 	__asm        mov    eax, [ebp-0x104C];
@@ -2323,22 +2323,22 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        jmp    near ptr 0x0042C33C;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1068], eax;
 	__asm        cmp    dword ptr [ebp-0x1068], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0042C396;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        mov    eax, [ebp-0x105C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C387;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C396;
 	__asm        jmp    near ptr 0x0042C39B;
@@ -2355,7 +2355,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0042C483;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1054], eax;
 	__asm        cmp    dword ptr [ebp-0x1054], 0;
@@ -2365,7 +2365,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1054];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    near ptr 0x0042C41D;
 	__asm        mov    dword ptr [ebp-0x1050], 0;
@@ -2385,7 +2385,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        je     near ptr 0x0042C46D;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x1060];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042C46D;
 	__asm        jmp    near ptr 0x0042C472;
 	__asm        mov    eax, [ebp-0x1050];
@@ -2405,7 +2405,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1058];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C4C5;
 	__asm        mov    eax, [ebp-0x1068];
@@ -2422,7 +2422,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 // LINE 355:
 	__asm        jmp    near ptr 0x0042C502;
 	__asm        push   0x59766C;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0042C517;
@@ -2434,15 +2434,15 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        jb     near ptr 0x0042C560;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C551;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C560;
 	__asm        jmp    near ptr 0x0042C565;
@@ -2461,7 +2461,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        cmp    eax, [ebp-0x34];
 	__asm        jae    near ptr 0x0042C708;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -2502,7 +2502,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
@@ -2521,7 +2521,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C676;
 	__asm        jmp    near ptr 0x0042C684;
@@ -2549,11 +2549,11 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0042C6FA;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042C6E4;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C6F5;
 	__asm        jmp    near ptr 0x0042C6FA;
@@ -2577,7 +2577,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        push   0x59766C;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C74A;
 	__asm        mov    eax, [ebp-0x34];
@@ -2609,7 +2609,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
 	__asm        push   2;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 376:
@@ -2639,17 +2639,17 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        jmp    near ptr 0x0042C808;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0042C82C;
 	__asm        jmp    near ptr 0x0042C831;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x104C], eax;
 	__asm        jmp    near ptr 0x0042C849;
@@ -2661,15 +2661,15 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        jb     near ptr 0x0042C89B;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C88C;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042C89B;
 	__asm        jmp    near ptr 0x0042C8A0;
@@ -2688,7 +2688,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        cmp    eax, [ebp-0x104C];
 	__asm        jae    near ptr 0x0042C956;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1040], eax;
 	__asm        cmp    dword ptr [ebp-0x1040], 0;
@@ -2705,15 +2705,15 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1040];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    near ptr 0x0042C942;
 	__asm        mov    dword ptr [ebp-0x103C], 0;
 	__asm        mov    ecx, sLanguage;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x103C];
 	__asm        mov    ecx, sLanguage;
 	__asm        mov    [ecx+4], eax;
@@ -2733,7 +2733,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        push   0x597200;
 	__asm        mov    eax, [ebp-0x1044];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042C9A4;
 	__asm        mov    eax, [ebp-0x104C];
@@ -2748,22 +2748,22 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        jmp    near ptr 0x0042C9D4;
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1068], eax;
 	__asm        cmp    dword ptr [ebp-0x1068], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0042CA2E;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        mov    eax, [ebp-0x105C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042CA1F;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042CA2E;
 	__asm        jmp    near ptr 0x0042CA33;
@@ -2780,7 +2780,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0042CB1B;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1054], eax;
 	__asm        cmp    dword ptr [ebp-0x1054], 0;
@@ -2790,7 +2790,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        lea    eax, [ebp-0x1034];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1054];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    near ptr 0x0042CAB5;
 	__asm        mov    dword ptr [ebp-0x1050], 0;
@@ -2810,7 +2810,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        je     near ptr 0x0042CB05;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x1060];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0042CB05;
 	__asm        jmp    near ptr 0x0042CB0A;
 	__asm        mov    eax, [ebp-0x1050];
@@ -2830,7 +2830,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1058];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042CB5D;
 	__asm        mov    eax, [ebp-0x1068];
@@ -2847,7 +2847,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 // LINE 377:
 	__asm        jmp    near ptr 0x0042CB9A;
 	__asm        push   0x597670;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0042CBAF;
@@ -2859,15 +2859,15 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        jb     near ptr 0x0042CBF8;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042CBE9;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042CBF8;
 	__asm        jmp    near ptr 0x0042CBFD;
@@ -2886,7 +2886,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        cmp    eax, [ebp-0x34];
 	__asm        jae    near ptr 0x0042CDA0;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -2927,7 +2927,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
@@ -2946,7 +2946,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042CD0E;
 	__asm        jmp    near ptr 0x0042CD1C;
@@ -2974,11 +2974,11 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     near ptr 0x0042CD92;
 	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0042CD7C;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0042CD8D;
 	__asm        jmp    near ptr 0x0042CD92;
@@ -3002,7 +3002,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        push   0x597670;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0042CDE2;
 	__asm        mov    eax, [ebp-0x34];
@@ -3031,7 +3031,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 // LINE 399:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B91A;
+	__asm        call   LanguageManager::DoesLanguageUseLatinCharacters;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0042CE5A;
@@ -3039,7 +3039,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 	__asm        push   0x597674;
 	__asm        mov    eax, szFaceName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 401:
 	__asm        mov    eax, 1;
@@ -3057,7 +3057,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 	__asm        push   0x59767C;
 	__asm        mov    eax, szFaceName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 408:
 	__asm        mov    eax, 1;
@@ -3079,7 +3079,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 	__asm        push   0x59768C;
 	__asm        push   0;
 	__asm        push   8;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 429:
 	__asm        mov    eax, 1;
@@ -3098,7 +3098,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 459:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B91A;
+	__asm        call   LanguageManager::DoesLanguageUseLatinCharacters;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0042CF04;
@@ -3108,7 +3108,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 462:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B819;
+	__asm        call   LanguageManager::GetLanguageIDAlias;
 	__asm        add    esp, 4;
 	__asm        mov    nLanguage, eax;
 // LINE 464:
@@ -3116,7 +3116,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        jne    near ptr 0x0042CF82;
 // LINE 465:
 	__asm        push   0x597698;
-	__asm        call   0x0042D023;
+	__asm        call   LanguageManager::IsTypefaceLoaded;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0042CF78;
@@ -3125,7 +3125,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0x10;
-	__asm        call   0x0042CE9F;
+	__asm        call   LanguageManager::GetFontFilePathForLanguage;
 	__asm        add    esp, 0xC;
 // LINE 468:
 	__asm        lea    eax, szFontPath[0];
@@ -3161,7 +3161,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 492:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B91A;
+	__asm        call   LanguageManager::DoesLanguageUseLatinCharacters;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0042CFB8;
@@ -3171,7 +3171,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 495:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
-	__asm        call   0x0042B819;
+	__asm        call   LanguageManager::GetLanguageIDAlias;
 	__asm        add    esp, 4;
 	__asm        mov    nLanguage, eax;
 // LINE 497:
@@ -3182,7 +3182,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0x10;
-	__asm        call   0x0042CE9F;
+	__asm        call   LanguageManager::GetFontFilePathForLanguage;
 	__asm        add    esp, 0xC;
 // LINE 500:
 	__asm        lea    eax, szFontPath[0];
@@ -3426,7 +3426,7 @@ int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXT
 	__asm        push   eax;
 	__asm        mov    eax, szEnumeratedFaceName;
 	__asm        push   eax;
-	__asm        call   0x0056CE20;
+	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0042D40C;

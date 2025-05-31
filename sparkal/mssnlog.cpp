@@ -489,7 +489,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A33EE;
+	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 	__asm        mov    eax, this;
@@ -504,22 +504,22 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        jmp    near ptr 0x0046BD48;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046BD93;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046BD84;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046BD93;
 	__asm        jmp    near ptr 0x0046BD98;
@@ -536,7 +536,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046BF4A;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
@@ -545,15 +545,15 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        jne    near ptr 0x0046BE1C;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046BE0D;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046BE1C;
 	__asm        mov    eax, [ebp-0x40];
@@ -569,7 +569,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], eax;
@@ -585,7 +585,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046BE7C;
 	__asm        jmp    near ptr 0x0046BE8A;
@@ -622,7 +622,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -632,7 +632,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        jmp    near ptr 0x0046BF21;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046BF32;
 	__asm        jmp    near ptr 0x0046BF37;
@@ -654,7 +654,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046BF7D;
 	__asm        mov    eax, [ebp-0x40];
@@ -666,10 +666,10 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 // LINE 50:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CA4C;
+	__asm        call   MissionLogWindow::CreateImage;
 // LINE 51:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A6BCD;
+	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 52:
 	__asm        jmp    near ptr 0x0046BFAA;
 	__asm        mov    eax, this;
@@ -681,11 +681,11 @@ void MissionLogWindow::~MissionLogWindow() {
 	__asm        mov    dword ptr [eax], 0x590708;
 // LINE 59:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CAF6;
+	__asm        call   MissionLogWindow::DestroyImage;
 // LINE 60:
 	__asm        jmp    near ptr 0x0046BFD6;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4045;
+	__asm        call   GraphicWindow::~GraphicWindow;
 }
 
 // FUNCTION: COPTER_D 0x0046bfe3
@@ -697,7 +697,7 @@ int32_t MissionLogWindow::Initialize() {
 
 // LINE 68:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
@@ -721,10 +721,10 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        jmp    near ptr 0x0046C05C;
 // LINE 71:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A44D4;
+	__asm        call   GraphicWindow::Initialize;
 // LINE 75:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
@@ -746,14 +746,14 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x0046C0DA;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 76:
 	__asm        push   0;
 	__asm        push   0x212;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 77:
@@ -783,43 +783,43 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        jmp    near ptr 0x0046C14B;
 	__asm        lea    eax, [ebp-0x107C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x107C];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0046C16F;
 	__asm        jmp    near ptr 0x0046C174;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0046C194;
 	__asm        jmp    near ptr 0x0046C2E9;
 	__asm        jmp    near ptr 0x0046C19E;
 	__asm        lea    eax, [ebp-0x107C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1094], eax;
 	__asm        cmp    dword ptr [ebp-0x1094], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046C1F8;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x1090], eax;
 	__asm        mov    eax, [ebp-0x1090];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C1E9;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C1F8;
 	__asm        jmp    near ptr 0x0046C1FD;
@@ -834,7 +834,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046C28F;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1088], eax;
 	__asm        cmp    dword ptr [ebp-0x1088], 0;
@@ -844,12 +844,12 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x107C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x1088];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1084], eax;
 	__asm        jmp    near ptr 0x0046C279;
 	__asm        mov    dword ptr [ebp-0x1084], 0;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x1084];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    near ptr 0x0046C2CE;
@@ -865,7 +865,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x108C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046C2CE;
 	__asm        mov    eax, [ebp-0x1094];
@@ -888,7 +888,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 83:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -910,14 +910,14 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2C];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x0046C376;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 84:
 	__asm        push   0;
 	__asm        push   0x213;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 85:
@@ -947,34 +947,34 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        jmp    near ptr 0x0046C3E7;
 	__asm        lea    eax, [ebp-0x2094];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2094];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0046C40B;
 	__asm        jmp    near ptr 0x0046C410;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0046C430;
 	__asm        jmp    near ptr 0x0046C463;
 	__asm        jmp    near ptr 0x0046C43A;
 	__asm        lea    eax, [ebp-0x2094];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x2094];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0046C45E;
 	__asm        jmp    near ptr 0x0046C463;
 // LINE 86:
@@ -991,7 +991,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 91:
 	__asm        push   0x94;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -1013,14 +1013,14 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x50];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x00471847;
+	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    near ptr 0x0046C4F0;
 	__asm        mov    tempButtonWindow, 0;
 // LINE 92:
 	__asm        push   0;
 	__asm        push   0x214;
-	__asm        call   0x0042B15F;
+	__asm        call   LanguageManager::GetFullStringID;
 	__asm        add    esp, 8;
 	__asm        mov    nFullStringID, eax;
 // LINE 93:
@@ -1050,43 +1050,43 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        jmp    near ptr 0x0046C561;
 	__asm        lea    eax, [ebp-0x3098];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x3098];
 	__asm        push   eax;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0046C585;
 	__asm        jmp    near ptr 0x0046C58A;
 	__asm        push   0x597200;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x597200;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00410130;
+	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0046C5AA;
 	__asm        jmp    near ptr 0x0046C6FF;
 	__asm        jmp    near ptr 0x0046C5B4;
 	__asm        lea    eax, [ebp-0x3098];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30B0], eax;
 	__asm        cmp    dword ptr [ebp-0x30B0], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046C60E;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x30AC], eax;
 	__asm        mov    eax, [ebp-0x30AC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C5FF;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C60E;
 	__asm        jmp    near ptr 0x0046C613;
@@ -1101,7 +1101,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046C6A5;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30A4], eax;
 	__asm        cmp    dword ptr [ebp-0x30A4], 0;
@@ -1111,12 +1111,12 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x3098];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x30A4];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x30A0], eax;
 	__asm        jmp    near ptr 0x0046C68F;
 	__asm        mov    dword ptr [ebp-0x30A0], 0;
 	__asm        lea    ecx, sText.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x30A0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    near ptr 0x0046C6E4;
@@ -1132,7 +1132,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x30A8];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046C6E4;
 	__asm        mov    eax, [ebp-0x30B0];
@@ -1155,7 +1155,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        call   dword ptr [eax+4];
 // LINE 97:
 	__asm        push   0xCC;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
@@ -1175,7 +1175,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        lea    eax, [ebp-0x64];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x004B4462;
+	__asm        call   ListBoxWindow::ListBoxWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    near ptr 0x0046C792;
@@ -1253,7 +1253,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 108:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CD45;
+	__asm        call   MissionLogWindow::SortByTimeDate;
 // LINE 110:
 	__asm        mov    dword ptr [ebp-0x68], 1;
 	__asm        mov    eax, sText.reference;
@@ -1268,11 +1268,11 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x0046C8D1;
 	__asm        mov    ecx, [ebp-0x78];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0046C8BB;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C8CC;
 	__asm        jmp    near ptr 0x0046C8D1;
@@ -1285,7 +1285,7 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C8FD;
 	__asm        mov    eax, [ebp-0x68];
@@ -1306,7 +1306,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046C943;
 	__asm        mov    eax, this;
@@ -1314,7 +1314,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
@@ -1350,7 +1350,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046C9DA;
 	__asm        jmp    near ptr 0x0046C9DF;
@@ -1376,7 +1376,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        call   0x004704DB;
+	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0046CA3E;
@@ -1394,7 +1394,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 // LINE 129:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4AA0;
+	__asm        call   GraphicWindow::CreateImage;
 // LINE 131:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -1406,11 +1406,11 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 133:
 	__asm        push   0x134;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        cmp    dword ptr [ebp-0x108], 0;
@@ -1418,7 +1418,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        lea    eax, szBackgroundBufferPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x108];
-	__asm        call   0x0046E6DF;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    near ptr 0x0046CAE1;
@@ -1446,10 +1446,10 @@ void MissionLogWindow::DestroyImage() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0046CB46;
 	__asm        mov    ecx, [ebp-4];
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046CB41;
 	__asm        jmp    near ptr 0x0046CB46;
@@ -1458,7 +1458,7 @@ void MissionLogWindow::DestroyImage() {
 	__asm        mov    dword ptr [eax+0x78], 0;
 // LINE 147:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A4CAB;
+	__asm        call   GraphicWindow::DestroyImage;
 // LINE 148:
 	__asm        jmp    near ptr 0x0046CB5D;
 }
@@ -1499,7 +1499,7 @@ int32_t MissionLogWindow::ComposeSelf() {
 	__asm        je     near ptr 0x0046CBD2;
 // LINE 168:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CC44;
+	__asm        call   MissionLogWindow::DrawBackground;
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1596,7 +1596,7 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 	__asm        je     near ptr 0x0046CCE0;
 // LINE 208:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CD45;
+	__asm        call   MissionLogWindow::SortByTimeDate;
 // LINE 210:
 	__asm        jmp    near ptr 0x0046CD34;
 	__asm        cmp    lWindowID, 2;
@@ -1607,7 +1607,7 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 	__asm        je     near ptr 0x0046CD04;
 // LINE 212:
 	__asm        mov    ecx, this;
-	__asm        call   0x0046CF77;
+	__asm        call   MissionLogWindow::SortByType;
 // LINE 214:
 	__asm        jmp    near ptr 0x0046CD34;
 	__asm        cmp    lWindowID, 3;
@@ -1642,7 +1642,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        jmp    near ptr 0x0046CD56;
 // LINE 226:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
@@ -1666,7 +1666,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        jmp    near ptr 0x0046CDB9;
 // LINE 228:
 	__asm        mov    ecx, 0x606E78;
-	__asm        call   0x004ECCD1;
+	__asm        call   LogManager::SortLogEntriesByDate;
 // LINE 229:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1719,7 +1719,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004EDB4E;
+	__asm        call   LogManager::MakeStringFromLogData;
 	__asm        add    esp, 0xC;
 // LINE 233:
 	__asm        push   0xFFFFFFFF;
@@ -1768,7 +1768,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1778,7 +1778,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        jmp    near ptr 0x0046CF2B;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046CF3C;
 	__asm        jmp    near ptr 0x0046CF41;
@@ -1791,7 +1791,7 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046CF6D;
 	__asm        jmp    near ptr 0x0046CF72;
@@ -1807,7 +1807,7 @@ void MissionLogWindow::SortByType() {
 	__asm        jmp    near ptr 0x0046CF8E;
 // LINE 246:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -1831,7 +1831,7 @@ void MissionLogWindow::SortByType() {
 	__asm        jmp    near ptr 0x0046CFF1;
 // LINE 249:
 	__asm        mov    ecx, 0x606E78;
-	__asm        call   0x004ED1FD;
+	__asm        call   LogManager::SortLogEntriesByType;
 // LINE 250:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1891,13 +1891,13 @@ void MissionLogWindow::SortByType() {
 	__asm        je     near ptr 0x0046D265;
 // LINE 255:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        cmp    dword ptr [ebp-0x78], 0;
 	__asm        je     near ptr 0x0046D172;
 	__asm        push   0x599494;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        mov    [ecx+4], eax;
@@ -1912,7 +1912,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        mov    [ecx], eax;
@@ -1927,7 +1927,7 @@ void MissionLogWindow::SortByType() {
 	__asm        push   0x599494;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046D14A;
 	__asm        jmp    near ptr 0x0046D158;
@@ -1972,7 +1972,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1982,7 +1982,7 @@ void MissionLogWindow::SortByType() {
 	__asm        jmp    near ptr 0x0046D212;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D223;
 	__asm        jmp    near ptr 0x0046D228;
@@ -1995,7 +1995,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D254;
 // LINE 256:
@@ -2012,7 +2012,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004EDB4E;
+	__asm        call   LogManager::MakeStringFromLogData;
 	__asm        add    esp, 0xC;
 // LINE 259:
 	__asm        push   0xFFFFFFFF;
@@ -2061,7 +2061,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -2071,7 +2071,7 @@ void MissionLogWindow::SortByType() {
 	__asm        jmp    near ptr 0x0046D33C;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D34D;
 	__asm        jmp    near ptr 0x0046D352;
@@ -2084,7 +2084,7 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D37E;
 	__asm        jmp    near ptr 0x0046D383;
@@ -2125,7 +2125,7 @@ void MessageDisplayManager::MessageDisplayManager() {
 	__asm        jmp    near ptr 0x0046D41E;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
-	__asm        call   0x0049F780;
+	__asm        call   MFont::MFont;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0x14;
 	__asm        mov    eax, this;
@@ -2147,7 +2147,7 @@ void MessageDisplayManager::MessageDisplayManager() {
 	__asm        push   0x14;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
-	__asm        call   0x004A015D;
+	__asm        call   MFont::SetFontCharacteristics;
 // LINE 293:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2187,13 +2187,13 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        js     near ptr 0x0046D503;
 	__asm        sub    dword ptr [ebp-0x28], 8;
 	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x0046D4E9;
 	__asm        jmp    near ptr 0x0046D508;
 	__asm        mov    eax, [ebp-4];
 	__asm        sub    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D5E4;
 	__asm        mov    eax, [ebp-4];
@@ -2220,7 +2220,7 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -2230,7 +2230,7 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        jmp    near ptr 0x0046D592;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D5A3;
 	__asm        jmp    near ptr 0x0046D5A8;
@@ -2245,12 +2245,12 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D5D8;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D5E9;
 	__asm        jmp    near ptr 0x0046D5EE;
@@ -2261,7 +2261,7 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        jmp    near ptr 0x0046D5FD;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
-	__asm        call   0x0049FC4E;
+	__asm        call   MFont::~MFont;
 	__asm        jmp    near ptr 0x0046D60D;
 }
 
@@ -2297,13 +2297,13 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        js     near ptr 0x0046D683;
 	__asm        sub    dword ptr [ebp-0x38], 8;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x0046D669;
 	__asm        jmp    near ptr 0x0046D688;
 	__asm        mov    eax, [ebp-8];
 	__asm        sub    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D764;
 	__asm        mov    eax, [ebp-8];
@@ -2330,7 +2330,7 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -2340,7 +2340,7 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        jmp    near ptr 0x0046D712;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D723;
 	__asm        jmp    near ptr 0x0046D728;
@@ -2355,12 +2355,12 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D758;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D769;
 	__asm        jmp    near ptr 0x0046D76E;
@@ -2372,7 +2372,7 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        shl    eax, 3;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
@@ -2389,7 +2389,7 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        dec    dword ptr [ebp-0x14];
 	__asm        js     near ptr 0x0046D7C9;
 	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   0x00411EE0;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x18], 8;
 	__asm        jmp    near ptr 0x0046D7AF;
 	__asm        jmp    near ptr 0x0046D7CE;
@@ -2538,7 +2538,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -2548,7 +2548,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        jmp    near ptr 0x0046D9E8;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046D9F9;
 	__asm        jmp    near ptr 0x0046D9FE;
@@ -2567,7 +2567,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0046DB25;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
@@ -2590,7 +2590,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
@@ -2619,7 +2619,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046DAF0;
 	__asm        jmp    near ptr 0x0046DAFE;
@@ -2814,7 +2814,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        je     near ptr 0x0046DDB2;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x78];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0046DDB2;
 	__asm        jmp    near ptr 0x0046DDB7;
 	__asm        jmp    near ptr 0x0046DDBC;
@@ -2831,7 +2831,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0046DE3B;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        cmp    dword ptr [ebp-0x74], 0;
@@ -2845,7 +2845,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x74];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0046DE3B;
@@ -2862,22 +2862,22 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        jmp    near ptr 0x0046DE5C;
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046DEA7;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046DE98;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046DEA7;
 	__asm        jmp    near ptr 0x0046DEAC;
@@ -2894,7 +2894,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046DF29;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
@@ -2904,12 +2904,12 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    near ptr 0x0046DF13;
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx+4], eax;
@@ -2927,7 +2927,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046DF5C;
 	__asm        mov    eax, [ebp-0x34];
@@ -2989,22 +2989,22 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        jmp    near ptr 0x0046E057;
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046E0A2;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046E093;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046E0A2;
 	__asm        jmp    near ptr 0x0046E0A7;
@@ -3021,7 +3021,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046E124;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -3031,12 +3031,12 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0046E10E;
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx+4], eax;
@@ -3054,7 +3054,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E157;
 	__asm        mov    eax, [ebp-0x4C];
@@ -3123,22 +3123,22 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        jmp    near ptr 0x0046E26A;
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        cmp    dword ptr [ebp-0x6C], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x0046E2B5;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046E2A6;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046E2B5;
 	__asm        jmp    near ptr 0x0046E2BA;
@@ -3155,7 +3155,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x0046E375;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
@@ -3165,7 +3165,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        mov    eax, szNewMessage;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x58];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    near ptr 0x0046E321;
 	__asm        mov    dword ptr [ebp-0x54], 0;
@@ -3185,7 +3185,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        je     near ptr 0x0046E362;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x64];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0046E362;
 	__asm        jmp    near ptr 0x0046E367;
 	__asm        mov    eax, [ebp-0x54];
@@ -3205,7 +3205,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E3A8;
 	__asm        mov    eax, [ebp-0x6C];
@@ -3231,7 +3231,7 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0046E401;
 	__asm        mov    eax, sNewMessage;
@@ -3239,7 +3239,7 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sNewMessage;
 	__asm        mov    [ecx], eax;
@@ -3275,7 +3275,7 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage)
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0046E496;
 	__asm        jmp    near ptr 0x0046E49B;

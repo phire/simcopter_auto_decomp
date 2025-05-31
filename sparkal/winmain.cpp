@@ -39,7 +39,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    eax, CommandLine;
 	__asm        push   eax;
 	__asm        push   0x5C2848;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 43:
 	__asm        lea    eax, TimerFrequency<_LARGE_INTEGER+0x00:None>;
@@ -60,13 +60,13 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        jmp    near ptr 0x0041F8D4;
 // LINE 49:
 	__asm        push   0x4348;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x0041F900;
 	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   0x00487BB7;
+	__asm        call   CGameApp::CGameApp;
 	__asm        mov    ds:[0x598580], eax;
 	__asm        jmp    near ptr 0x0041F90A;
 	__asm        mov    dword ptr ds:[0x598580], 0;
@@ -110,7 +110,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        or     dword ptr [eax+0xC], 2;
 	__asm        jmp    near ptr 0x0041F984;
 // LINE 63:
-	__asm        call   0x00497A32;
+	__asm        call   ClearWindowsSystemPalette;
 // LINE 64:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax];

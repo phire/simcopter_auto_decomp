@@ -44,8 +44,8 @@ public:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c50
 void $E4() {
-	__asm        call   0x00431C6A;
-	__asm        call   0x00431C84;
+	__asm        call   $E1;
+	__asm        call   $E3;
 	__asm        jmp    near ptr 0x00431C65;
 }
 
@@ -53,7 +53,7 @@ void $E4() {
 // FUNCTION: COPTER_D 0x00431c6a
 void $E1() {
 	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   0x00431CE4;
+	__asm        call   Keyboard::Keyboard;
 	__asm        jmp    near ptr 0x00431C7F;
 }
 
@@ -61,7 +61,7 @@ void $E1() {
 // FUNCTION: COPTER_D 0x00431c84
 void $E3() {
 	__asm        push   0x431CA1;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00431C9C;
 }
@@ -71,7 +71,7 @@ void $E3() {
 void $E2() {
 	__asm        jmp    near ptr 0x00431CAC;
 	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   0x0043D476;
+	__asm        call   CharList::~CharList;
 	__asm        jmp    near ptr 0x00431CBB;
 }
 
@@ -79,7 +79,7 @@ void $E2() {
 int32_t IsModifierSet(unsigned char chModifiers) {
 // LINE 17:
 	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   0x00431EB1;
+	__asm        call   Keyboard::GetCurrentModifierState;
 	__asm        movsx  eax, al;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, chModifiers;
@@ -91,10 +91,10 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 // FUNCTION: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D432;
+	__asm        call   CharList::CharList;
 // LINE 32:
 	__asm        mov    ecx, this;
-	__asm        call   0x00431E19;
+	__asm        call   Keyboard::ClearSettings;
 // LINE 33:
 	__asm        jmp    near ptr 0x00431D05;
 	__asm        mov    eax, this;
@@ -119,7 +119,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00431D0D;
+	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00431D59;
 // LINE 53:
@@ -127,7 +127,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        jmp    near ptr 0x00431D86;
 // LINE 57:
 	__asm        mov    ecx, this;
-	__asm        call   0x00431EB1;
+	__asm        call   Keyboard::GetCurrentModifierState;
 	__asm        mov    chCurrentModifiers, al;
 // LINE 58:
 	__asm        movsx  eax, chCurrentModifiers;
@@ -160,7 +160,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D4EB;
+	__asm        call   CharList::AddItem;
 // LINE 74:
 	__asm        jmp    near ptr 0x00431DCC;
 }
@@ -183,7 +183,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D67F;
+	__asm        call   CharList::DeleteItem;
 // LINE 87:
 	__asm        jmp    near ptr 0x00431E12;
 }
@@ -205,7 +205,7 @@ void Keyboard::ClearSettings() {
 	__asm        jmp    near ptr 0x00431E31;
 // LINE 100:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D703;
+	__asm        call   CharList::DeleteAllItems;
 // LINE 101:
 	__asm        jmp    near ptr 0x00431E5E;
 }
@@ -243,7 +243,7 @@ char Keyboard::GetCurrentModifierState() {
 // LINE 128:
 	__asm        push   0x10;
 	__asm        mov    ecx, this;
-	__asm        call   0x00431D0D;
+	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00431EDC;
 // LINE 129:
@@ -253,7 +253,7 @@ char Keyboard::GetCurrentModifierState() {
 // LINE 130:
 	__asm        push   0x11;
 	__asm        mov    ecx, this;
-	__asm        call   0x00431D0D;
+	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00431EF7;
 // LINE 131:
@@ -263,7 +263,7 @@ char Keyboard::GetCurrentModifierState() {
 // LINE 132:
 	__asm        push   0x12;
 	__asm        mov    ecx, this;
-	__asm        call   0x00431D0D;
+	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x00431F12;
 // LINE 133:
@@ -297,7 +297,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        and    eax, 1;
 	__asm        mov    [ebp-8], eax;
 	__asm        push   0x14;
-	__asm        call   0x00432226;
+	__asm        call   Keyboard::IsToggleKeySet;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -341,7 +341,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        and    eax, 1;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        push   0x14;
-	__asm        call   0x00432226;
+	__asm        call   Keyboard::IsToggleKeySet;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -469,7 +469,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        and    eax, 1;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        push   0x14;
-	__asm        call   0x00432226;
+	__asm        call   Keyboard::IsToggleKeySet;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;

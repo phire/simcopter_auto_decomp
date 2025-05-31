@@ -279,7 +279,7 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        push   0x5BF570;
 	__asm        push   0x7A;
 	__asm        push   0x5BF584;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 124:
 	__asm        mov    eax, power;
@@ -490,7 +490,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        push   0x5BF5A4;
 	__asm        push   0xBE;
 	__asm        push   0x5BF5B4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 191:
 	__asm        mov    eax, power;
@@ -603,7 +603,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        push   0x5BF5D4;
 	__asm        push   0xE3;
 	__asm        push   0x5BF614;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 228:
 	__asm        mov    eax, name;
@@ -612,7 +612,7 @@ unsigned long PStr2Long(unsigned char * name) {
 // LINE 229:
 	__asm        lea    eax, name4;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 230:
 	__asm        mov    eax, name4;
@@ -628,7 +628,7 @@ void CToPString(char * cstr, unsigned char * pstr) {
 // LINE 260:
 	__asm        mov    eax, cstr;
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, pstr;
 	__asm        mov    [ecx], al;
@@ -771,7 +771,7 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 	__asm        mov    eax, str1;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 451:
 	__asm        mov    eax, str2;
@@ -796,12 +796,12 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        push   eax;
 	__asm        mov    eax, src;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 457:
 	__asm        lea    eax, buff[0];
 	__asm        push   eax;
-	__asm        call   0x00566B52;
+	__asm        call   CtoPstr;
 	__asm        add    esp, 4;
 // LINE 459:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destSize);
@@ -810,7 +810,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        push   eax;
 	__asm        lea    eax, buff[0];
 	__asm        push   eax;
-	__asm        call   0x0056639C;
+	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 460:
 	__asm        jmp    near ptr 0x00566474;
@@ -825,7 +825,7 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        push   eax;
 	__asm        mov    eax, number;
 	__asm        push   eax;
-	__asm        call   0x00565E80;
+	__asm        call   Num2Str;
 	__asm        add    esp, 8;
 // LINE 468:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destSize);
@@ -834,7 +834,7 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        push   eax;
 	__asm        lea    eax, numStr[0];
 	__asm        push   eax;
-	__asm        call   0x0056639C;
+	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 469:
 	__asm        jmp    near ptr 0x005664B4;
@@ -1094,7 +1094,7 @@ void ExtractFileName(unsigned char * path, unsigned char * name) {
 	__asm        add    eax, path;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 935:
 	__asm        jmp    near ptr 0x00566778;

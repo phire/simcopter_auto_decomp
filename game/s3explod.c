@@ -115,7 +115,7 @@ void S3ExplosionInit() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D4D73;
+	__asm        call   VRGetObjDupMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 103:
@@ -152,14 +152,14 @@ void S3ExplosionInit() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D4D73;
+	__asm        call   VRGetObjDupMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 117:
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, ed;
 	__asm        mov    [ecx+0x20], eax;
@@ -172,7 +172,7 @@ void S3ExplosionInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 121:
@@ -182,7 +182,7 @@ void S3ExplosionInit() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D4DBF;
+	__asm        call   VRCreateObjDuplicate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, ed;
 	__asm        mov    ecx, [ecx+0x20];
@@ -224,7 +224,7 @@ void S3ExplosionInit() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D4D73;
+	__asm        call   VRGetObjDupMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 140:
@@ -245,7 +245,7 @@ void S3ExplosionInit() {
 	__asm        push   0x64;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx+4], eax;
@@ -262,7 +262,7 @@ void S3ExplosionInit() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B5E78];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    mem, eax;
 // LINE 153:
@@ -272,7 +272,7 @@ void S3ExplosionInit() {
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D4DBF;
+	__asm        call   VRCreateObjDuplicate;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sd;
 	__asm        mov    ecx, [ecx+4];
@@ -301,63 +301,63 @@ void S3ExplosionInit() {
 	__asm        push   0xF;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA30], eax;
 // LINE 163:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA34], eax;
 // LINE 164:
 	__asm        push   0x11;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA38], eax;
 // LINE 165:
 	__asm        push   0x12;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA3C], eax;
 // LINE 166:
 	__asm        push   0x19;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA40], eax;
 // LINE 167:
 	__asm        push   0x1A;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA44], eax;
 // LINE 168:
 	__asm        push   0x1B;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA48], eax;
 // LINE 169:
 	__asm        push   0x1C;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA4C], eax;
 // LINE 170:
 	__asm        push   0x1D;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x62AA50], eax;
 // LINE 173:
@@ -706,7 +706,7 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 	__asm        mov    eax, [eax+0x20];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D3D55;
+	__asm        call   VRObjResize2dFace;
 	__asm        add    esp, 0xC;
 // LINE 283:
 	__asm        mov    eax, cptr;
@@ -993,7 +993,7 @@ void S3ExplosionDriver() {
 	__asm        lea    eax, celloc.x;
 	__asm        push   eax;
 	__asm        push   9;
-	__asm        call   0x0051EEE5;
+	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 436:
 	__asm        jmp    near ptr 0x00524341;

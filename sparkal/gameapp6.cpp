@@ -12,7 +12,7 @@ void  CGameApp::EnableSoundTrack() {
 // LINE 27:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
-	__asm        call   0x00437EE7;
+	__asm        call   Radio::SetOn;
 // LINE 28:
 	__asm        jmp    near ptr 0x00471E5D;
 }
@@ -22,7 +22,7 @@ void  CGameApp::DisableSoundTrack() {
 // LINE 39:
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
-	__asm        call   0x00437EE7;
+	__asm        call   Radio::SetOn;
 // LINE 40:
 	__asm        jmp    near ptr 0x00471E7F;
 }
@@ -64,7 +64,7 @@ void  CGameApp::ToggleMusicSoundTrack() {
 // LINE 52:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
-	__asm        call   0x00437EE7;
+	__asm        call   Radio::SetOn;
 // LINE 54:
 	__asm        jmp    near ptr 0x00471F3C;
 }
@@ -73,7 +73,7 @@ void  CGameApp::ToggleMusicSoundTrack() {
 void  CGameApp::PlayNextSoundTrackIfNeeded() {
 // LINE 62:
 	__asm        mov    ecx, 0x604480;
-	__asm        call   0x00438457;
+	__asm        call   Radio::DoState;
 // LINE 63:
 	__asm        jmp    near ptr 0x00471F5C;
 }

@@ -300,7 +300,7 @@ int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 // LINE 149:
 	__asm        lea    eax, d.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 150:
 	__asm        mov    eax, p;
@@ -309,7 +309,7 @@ int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 	__asm        push   eax;
 	__asm        lea    eax, plane.A;
 	__asm        push   eax;
-	__asm        call   0x004CA2E1;
+	__asm        call   MTCreatePlane;
 	__asm        add    esp, 0xC;
 // LINE 155:
 	__asm        mov    eax, q;
@@ -414,7 +414,7 @@ int32_t MTVectorBounds(struct Point3d* V, int32_t m) {
 // LINE 222:
 	__asm        mov    eax, V;
 	__asm        push   eax;
-	__asm        call   0x004CA0C0;
+	__asm        call   MTMagnitude;
 	__asm        add    esp, 4;
 	__asm        mov    r, eax;
 	__asm        mov    eax, r;
@@ -542,7 +542,7 @@ void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        add    eax, 8;
 	__asm        push   eax;
-	__asm        call   0x004CA0C0;
+	__asm        call   MTMagnitude;
 	__asm        add    esp, 4;
 	__asm        mov    v, eax;
 // LINE 287:
@@ -654,7 +654,7 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 // LINE 336:
 	__asm        mov    eax, nv;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, Vmax;
 	__asm        jle    near ptr 0x004CA714;
@@ -687,7 +687,7 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 // LINE 362:
 	__asm        mov    eax, V;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    absV, eax;
 // LINE 363:
@@ -1482,7 +1482,7 @@ void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
 // LINE 582:
 	__asm        lea    eax, xv.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 589:
 	__asm        lea    eax, yv.x;
@@ -1491,12 +1491,12 @@ void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
 	__asm        push   eax;
 	__asm        lea    eax, xv.x;
 	__asm        push   eax;
-	__asm        call   0x004CAE53;
+	__asm        call   MTXProduct;
 	__asm        add    esp, 0xC;
 // LINE 590:
 	__asm        lea    eax, yv.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 596:
 	__asm        mov    eax, xv.x;
@@ -1585,7 +1585,7 @@ void MTCreateDOF4x4Y(int32_t[4]* mat, struct Point3d* dv) {
 // LINE 642:
 	__asm        lea    eax, xv.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 649:
 	__asm        lea    eax, zv.x;
@@ -1594,12 +1594,12 @@ void MTCreateDOF4x4Y(int32_t[4]* mat, struct Point3d* dv) {
 	__asm        push   eax;
 	__asm        mov    eax, dv;
 	__asm        push   eax;
-	__asm        call   0x004CAE53;
+	__asm        call   MTXProduct;
 	__asm        add    esp, 0xC;
 // LINE 650:
 	__asm        lea    eax, zv.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 656:
 	__asm        mov    eax, xv.x;
@@ -1805,7 +1805,7 @@ int32_t MTCheapDist2D(struct Point2d* p1, struct Point2d* p2) {
 	__asm        mov    ecx, p2;
 	__asm        sub    eax, [ecx];
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    xdiff, eax;
 // LINE 722:
@@ -1814,7 +1814,7 @@ int32_t MTCheapDist2D(struct Point2d* p1, struct Point2d* p2) {
 	__asm        mov    ecx, p2;
 	__asm        sub    eax, [ecx+4];
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        mov    ydiff, eax;
 // LINE 723:

@@ -621,7 +621,7 @@ class bidirectional_iterator<basic_string<char>,int>{
 // FUNCTION: COPTER_D 0x00481b20
 void DirectoryEntry::DirectoryEntry() {
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -666,15 +666,15 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 	__asm        jae    near ptr 0x00481C09;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00481BFA;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00481C09;
 	__asm        jmp    near ptr 0x00481C0E;
@@ -709,7 +709,7 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00481D63;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -727,7 +727,7 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
@@ -756,7 +756,7 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00481D2E;
 	__asm        jmp    near ptr 0x00481D3C;
@@ -886,15 +886,15 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        jae    near ptr 0x00481F58;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00481F49;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00481F58;
 	__asm        jmp    near ptr 0x00481F5D;
@@ -942,11 +942,11 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     near ptr 0x00482019;
 	__asm        mov    ecx, [ebp-0x2C];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00482003;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482014;
 	__asm        jmp    near ptr 0x00482019;
@@ -976,15 +976,15 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        jne    near ptr 0x004820AB;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048209C;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004820AB;
 	__asm        jmp    near ptr 0x004820B0;
@@ -1001,7 +1001,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x00482131;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
@@ -1013,12 +1013,12 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        add    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x0041E090;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x0048211B;
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        mov    ecx, sEntryExtension;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, sEntryExtension;
 	__asm        mov    [ecx+4], eax;
@@ -1038,7 +1038,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482168;
 	__asm        mov    eax, [ebp-0x20];
@@ -1061,15 +1061,15 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        jae    near ptr 0x004821D8;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004821C9;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004821D8;
 	__asm        jmp    near ptr 0x004821DD;
@@ -1090,7 +1090,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x004822D9;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
@@ -1102,10 +1102,10 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    ecx, sEntryExtension;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x4C];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x00482267;
 	__asm        mov    dword ptr [ebp-0x48], 0;
@@ -1116,7 +1116,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        sub    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    ecx, sEntryExtension;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        add    ecx, eax;
 	__asm        mov    [ebp-0x60], ecx;
@@ -1129,7 +1129,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004822AC;
 	__asm        jmp    near ptr 0x004822B1;
@@ -1140,7 +1140,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    ecx, sEntryExtension;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, sEntryExtension;
 	__asm        mov    [ecx+4], eax;
@@ -1165,7 +1165,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        sub    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    ecx, sEntryExtension;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        add    ecx, eax;
 	__asm        mov    [ebp-0x54], ecx;
@@ -1179,7 +1179,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482359;
 	__asm        xor    eax, eax;
@@ -1297,15 +1297,15 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        jae    near ptr 0x00482547;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482538;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482547;
 	__asm        jmp    near ptr 0x0048254C;
@@ -1348,11 +1348,11 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     near ptr 0x004825FB;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x004825E5;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004825F6;
 	__asm        jmp    near ptr 0x004825FB;
@@ -1383,7 +1383,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        mov    ecx, sEntryMinusExtension;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00482666;
 // LINE 87:
 	__asm        jmp    near ptr 0x0048266B;
@@ -1420,7 +1420,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1430,7 +1430,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        jmp    near ptr 0x004826FE;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048270F;
 	__asm        jmp    near ptr 0x00482714;
@@ -1449,7 +1449,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        add    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00482814;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -1472,7 +1472,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
@@ -1481,7 +1481,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 4;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
@@ -1492,7 +1492,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004827DF;
 	__asm        jmp    near ptr 0x004827ED;
@@ -1555,7 +1555,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1565,7 +1565,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        jmp    near ptr 0x004828D8;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004828E9;
 	__asm        jmp    near ptr 0x004828EE;
@@ -1584,7 +1584,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        add    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0048296C;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
@@ -1598,7 +1598,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x20];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, sFullPath;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0048296C;
@@ -1615,15 +1615,15 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        jae    near ptr 0x004829BD;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004829AE;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004829BD;
 	__asm        jmp    near ptr 0x004829C2;
@@ -1644,7 +1644,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x00482ABE;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
@@ -1656,10 +1656,10 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    ecx, sFullPath;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x00482A4C;
 	__asm        mov    dword ptr [ebp-0x3C], 0;
@@ -1670,7 +1670,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        sub    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    ecx, sFullPath;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        add    ecx, eax;
 	__asm        mov    [ebp-0x54], ecx;
@@ -1683,7 +1683,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482A91;
 	__asm        jmp    near ptr 0x00482A96;
@@ -1694,7 +1694,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    ecx, sFullPath;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, sFullPath;
 	__asm        mov    [ecx+4], eax;
@@ -1742,7 +1742,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482B67;
 	__asm        xor    eax, eax;
@@ -1780,15 +1780,15 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        jb     near ptr 0x00482C11;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482C02;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482C11;
 	__asm        jmp    near ptr 0x00482C16;
@@ -1807,7 +1807,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        cmp    eax, [ebp-0x1C];
 	__asm        jae    near ptr 0x00482CE5;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -1839,12 +1839,12 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   0x0041E160;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    near ptr 0x00482CD4;
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        mov    ecx, sFullPath;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, sFullPath;
 	__asm        mov    [ecx+4], eax;
@@ -1865,7 +1865,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482D26;
 	__asm        mov    eax, [ebp-0x1C];
@@ -1940,10 +1940,10 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x94];
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x80];
-	__asm        call   0x00411F60;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00482E30;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1958,7 +1958,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    [ebp-0x88], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 4;
-	__asm        call   0x00417C00;
+	__asm        call   basic_string<char>::data;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    eax, [eax];
@@ -1972,7 +1972,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00482EB1;
 	__asm        mov    eax, [ebp-0x7C];
@@ -1990,13 +1990,13 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        lea    eax, [ebp-0x80];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x10];
-	__asm        call   0x00411B80;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, [ebp-0x80];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x00482EF8;
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x10];
-	__asm        call   0x00417AE0;
+	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35FC];
 	__asm        mov    [ebp-8], eax;
@@ -2012,11 +2012,11 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     near ptr 0x00482F58;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00482F42;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482F53;
 	__asm        jmp    near ptr 0x00482F58;
@@ -2029,7 +2029,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00482F84;
 	__asm        mov    eax, [ebp-8];
@@ -2072,7 +2072,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x30];
-	__asm        call   0x00411F60;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        jmp    near ptr 0x00483017;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -2110,7 +2110,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004830AE;
 	__asm        mov    eax, [ebp-0x2C];
@@ -2128,9 +2128,9 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x18];
-	__asm        call   0x00411B80;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, [ebp-0x30];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    near ptr 0x004830EF;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     near ptr 0x00483111;
@@ -2140,14 +2140,14 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483116;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x0048312E;
@@ -2177,7 +2177,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00483198;
 	__asm        jmp    near ptr 0x0048319D;
@@ -2218,11 +2218,11 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x0048323C;
 	__asm        mov    ecx, [ebp-0x24];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00483226;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483237;
 	__asm        jmp    near ptr 0x0048323C;
@@ -2235,7 +2235,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483268;
 // LINE 170:
@@ -2278,25 +2278,25 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        cmp    ds:[0x5974B0], eax;
 	__asm        jne    near ptr 0x004834B3;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        push   8;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        jne    near ptr 0x0048334A;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483340;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048334F;
 	__asm        jmp    near ptr 0x00483354;
@@ -2325,28 +2325,28 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        push   0;
-	__asm        call   0x0056A620;
+	__asm        call   set_new_handler;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    near ptr 0x00483402;
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004833F8;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483407;
 	__asm        jmp    near ptr 0x0048340C;
@@ -2420,15 +2420,15 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        jae    near ptr 0x0048353A;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048352B;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048353A;
 	__asm        jmp    near ptr 0x0048353F;
@@ -2463,7 +2463,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00483694;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
@@ -2481,7 +2481,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        mov    [ecx], eax;
@@ -2510,7 +2510,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0048365F;
 	__asm        jmp    near ptr 0x0048366D;
@@ -2531,14 +2531,14 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, ds:[0x599B8C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0048375B;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+4], eax;
@@ -2553,7 +2553,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
@@ -2569,7 +2569,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00483730;
 	__asm        jmp    near ptr 0x0048373E;
@@ -2595,13 +2595,13 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 199:
 	__asm        mov    ecx, this;
-	__asm        call   0x0048631C;
+	__asm        call   Directory::MakeSurePathEndsWithSeparator;
 // LINE 200:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     near ptr 0x004837A0;
 // LINE 201:
 	__asm        mov    ecx, this;
-	__asm        call   0x004837C7;
+	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 202:
 	__asm        jmp    near ptr 0x004837A5;
 	__asm        mov    eax, this;
@@ -2636,13 +2636,13 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x180];
 	__asm        push   eax;
-	__asm        call   0x0043BDF0;
+	__asm        call   operator+;
 	__asm        add    esp, 0xC;
 	__asm        push   eax;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00411B80;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, [ebp-0x180];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x180], 0;
 	__asm        je     near ptr 0x0048384B;
 	__asm        mov    eax, [ebp-0x180];
@@ -2651,12 +2651,12 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x348], eax;
 	__asm        mov    eax, [ebp-0x348];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483850;
 // LINE 225:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   0x00481B20;
+	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 227:
 	__asm        mov    bParentDirectoryEnumerated, 0;
 // LINE 228:
@@ -2698,18 +2698,18 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x330];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x340];
-	__asm        call   0x00486DD0;
+	__asm        call   list<DirectoryEntry>::iterator::operator++;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004872B0;
+	__asm        call   list<DirectoryEntry>::erase;
 	__asm        jmp    near ptr 0x004838D1;
 	__asm        jmp    near ptr 0x00483947;
 // LINE 233:
 	__asm        lea    eax, findData.dwFileAttributes;
 	__asm        push   eax;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00417AE0;
+	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F0];
 	__asm        mov    hFind, eax;
@@ -2720,9 +2720,9 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x18C], 0;
 	__asm        jmp    near ptr 0x00483982;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sPathWithFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x004839CC;
 	__asm        mov    eax, sPathWithFilter.c_str_ptr;
@@ -2731,7 +2731,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x350], eax;
 	__asm        mov    eax, [ebp-0x350];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004839D1;
 	__asm        mov    eax, [ebp-0x18C];
@@ -2743,13 +2743,13 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        jmp    near ptr 0x004839ED;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00483A14;
 // LINE 241:
 	__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
@@ -2760,7 +2760,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x00483B95;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x320], eax;
 	__asm        cmp    dword ptr [ebp-0x320], 0;
@@ -2768,7 +2768,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x320];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    near ptr 0x00483A7C;
 	__asm        mov    dword ptr [ebp-0x194], 0;
@@ -2780,7 +2780,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x324];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x198];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00483AC1;
 	__asm        mov    dword ptr [ebp-0x190], 1;
@@ -2788,7 +2788,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x190], 0;
 	__asm        jmp    near ptr 0x00483AD0;
 	__asm        lea    ecx, [ebp-0x198];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x198], 0;
 	__asm        je     near ptr 0x00483B0F;
 	__asm        mov    eax, [ebp-0x198];
@@ -2797,7 +2797,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x31C], eax;
 	__asm        mov    eax, [ebp-0x31C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483B14;
 	__asm        mov    eax, [ebp-0x190];
@@ -2825,14 +2825,14 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x310];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00483B90;
 // LINE 248:
 	__asm        jmp    near ptr 0x00483D48;
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x00483CFF;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x304], eax;
 	__asm        cmp    dword ptr [ebp-0x304], 0;
@@ -2840,7 +2840,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x304];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1A0], eax;
 	__asm        jmp    near ptr 0x00483BE6;
 	__asm        mov    dword ptr [ebp-0x1A0], 0;
@@ -2852,7 +2852,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x308];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1A4];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00483C2B;
 	__asm        mov    dword ptr [ebp-0x19C], 1;
@@ -2860,7 +2860,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 	__asm        jmp    near ptr 0x00483C3A;
 	__asm        lea    ecx, [ebp-0x1A4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1A4], 0;
 	__asm        je     near ptr 0x00483C79;
 	__asm        mov    eax, [ebp-0x1A4];
@@ -2869,7 +2869,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x300], eax;
 	__asm        mov    eax, [ebp-0x300];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483C7E;
 	__asm        mov    eax, [ebp-0x19C];
@@ -2897,7 +2897,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x2DC];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00483CFA;
 // LINE 253:
 	__asm        jmp    near ptr 0x00483D48;
@@ -2916,7 +2916,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x2E8];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00483D48;
 // LINE 256:
 	__asm        jmp    near ptr 0x00483DA0;
@@ -2937,7 +2937,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x2F4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00483DA0;
 // LINE 262:
 	__asm        lea    eax, findData.dwFileAttributes;
@@ -2959,13 +2959,13 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        jmp    near ptr 0x00483DDE;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00483E05;
 // LINE 268:
 	__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
@@ -2976,7 +2976,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x00483F86;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2D0], eax;
 	__asm        cmp    dword ptr [ebp-0x2D0], 0;
@@ -2984,7 +2984,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2D0];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1AC], eax;
 	__asm        jmp    near ptr 0x00483E6D;
 	__asm        mov    dword ptr [ebp-0x1AC], 0;
@@ -2996,7 +2996,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x2D4];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1B0];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00483EB2;
 	__asm        mov    dword ptr [ebp-0x1A8], 1;
@@ -3004,7 +3004,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x1A8], 0;
 	__asm        jmp    near ptr 0x00483EC1;
 	__asm        lea    ecx, [ebp-0x1B0];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1B0], 0;
 	__asm        je     near ptr 0x00483F00;
 	__asm        mov    eax, [ebp-0x1B0];
@@ -3013,7 +3013,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x2CC], eax;
 	__asm        mov    eax, [ebp-0x2CC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00483F05;
 	__asm        mov    eax, [ebp-0x1A8];
@@ -3041,14 +3041,14 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x2C0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00483F81;
 // LINE 275:
 	__asm        jmp    near ptr 0x00484139;
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x004840F0;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2B4], eax;
 	__asm        cmp    dword ptr [ebp-0x2B4], 0;
@@ -3056,7 +3056,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2B4];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1B8], eax;
 	__asm        jmp    near ptr 0x00483FD7;
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
@@ -3068,7 +3068,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x2B8];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1BC];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0048401C;
 	__asm        mov    dword ptr [ebp-0x1B4], 1;
@@ -3076,7 +3076,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x1B4], 0;
 	__asm        jmp    near ptr 0x0048402B;
 	__asm        lea    ecx, [ebp-0x1BC];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1BC], 0;
 	__asm        je     near ptr 0x0048406A;
 	__asm        mov    eax, [ebp-0x1BC];
@@ -3085,7 +3085,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x2B0], eax;
 	__asm        mov    eax, [ebp-0x2B0];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048406F;
 	__asm        mov    eax, [ebp-0x1B4];
@@ -3113,7 +3113,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x28C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x004840EB;
 // LINE 280:
 	__asm        jmp    near ptr 0x00484139;
@@ -3132,7 +3132,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x298];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00484139;
 // LINE 283:
 	__asm        jmp    near ptr 0x00484191;
@@ -3153,11 +3153,11 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x2A4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00484191;
 // LINE 287:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x280], eax;
 	__asm        cmp    dword ptr [ebp-0x280], 0;
@@ -3165,7 +3165,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x280];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1C4], eax;
 	__asm        jmp    near ptr 0x004841D5;
 	__asm        mov    dword ptr [ebp-0x1C4], 0;
@@ -3177,7 +3177,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x284];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1C8];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0048421A;
 	__asm        mov    dword ptr [ebp-0x1C0], 1;
@@ -3185,7 +3185,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x1C0], 0;
 	__asm        jmp    near ptr 0x00484229;
 	__asm        lea    ecx, [ebp-0x1C8];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C8], 0;
 	__asm        je     near ptr 0x00484268;
 	__asm        mov    eax, [ebp-0x1C8];
@@ -3194,7 +3194,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x27C], eax;
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048426D;
 	__asm        mov    eax, [ebp-0x1C0];
@@ -3222,12 +3222,12 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x270];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x004842E9;
 // LINE 292:
 	__asm        jmp    near ptr 0x00484494;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x264], eax;
 	__asm        cmp    dword ptr [ebp-0x264], 0;
@@ -3235,7 +3235,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x264];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1D0], eax;
 	__asm        jmp    near ptr 0x00484332;
 	__asm        mov    dword ptr [ebp-0x1D0], 0;
@@ -3247,7 +3247,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x268];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1D4];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00484377;
 	__asm        mov    dword ptr [ebp-0x1CC], 1;
@@ -3255,7 +3255,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x1CC], 0;
 	__asm        jmp    near ptr 0x00484386;
 	__asm        lea    ecx, [ebp-0x1D4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1D4], 0;
 	__asm        je     near ptr 0x004843C5;
 	__asm        mov    eax, [ebp-0x1D4];
@@ -3264,7 +3264,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x240], eax;
 	__asm        mov    eax, [ebp-0x240];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004843CA;
 	__asm        mov    eax, [ebp-0x1CC];
@@ -3292,7 +3292,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x218];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00484446;
 // LINE 297:
 	__asm        jmp    near ptr 0x00484494;
@@ -3311,7 +3311,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x224];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00484494;
 // LINE 299:
 	__asm        jmp    near ptr 0x00483DA0;
@@ -3328,7 +3328,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004844E5;
 	__asm        jmp    near ptr 0x004844EA;
@@ -3343,7 +3343,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x358], eax;
 // LINE 307:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x354], eax;
 	__asm        cmp    dword ptr [ebp-0x354], 0;
@@ -3351,7 +3351,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x358];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x354];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sParentDirectory.reference, eax;
 	__asm        jmp    near ptr 0x0048454B;
 	__asm        mov    sParentDirectory.reference, 0;
@@ -3361,7 +3361,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, sParentDirectory.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004859C2;
+	__asm        call   Directory::DoesDirectoryListContainEntry;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00484659;
 // LINE 309:
@@ -3370,7 +3370,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        cmp    eax, ecx;
 	__asm        je     near ptr 0x00484617;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        jmp    near ptr 0x00484598;
 	__asm        mov    eax, sParentDirectory.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -3381,7 +3381,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00484617;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x36C], eax;
 	__asm        cmp    dword ptr [ebp-0x36C], 0;
@@ -3394,7 +3394,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, sParentDirectory.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x36C];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    directoryEntryCurrent.sName.reference, eax;
 	__asm        jmp    near ptr 0x00484617;
 	__asm        mov    directoryEntryCurrent.sName.reference, 0;
@@ -3407,17 +3407,17 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x22C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E10;
+	__asm        call   list<DirectoryEntry>::begin;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x230];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x00484659;
 // LINE 313:
 	__asm        lea    ecx, sParentDirectory.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sParentDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x00484698;
 	__asm        mov    eax, sParentDirectory.c_str_ptr;
@@ -3426,7 +3426,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x248], eax;
 	__asm        mov    eax, [ebp-0x248];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048469D;
 // LINE 316:
@@ -3443,7 +3443,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004846E9;
 	__asm        jmp    near ptr 0x004846EE;
@@ -3458,7 +3458,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x360], eax;
 // LINE 318:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x35C], eax;
 	__asm        cmp    dword ptr [ebp-0x35C], 0;
@@ -3466,7 +3466,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x360];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x35C];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    sCurrentDirectory.reference, eax;
 	__asm        jmp    near ptr 0x0048474F;
 	__asm        mov    sCurrentDirectory.reference, 0;
@@ -3476,7 +3476,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x368], eax;
 // LINE 319:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x364], eax;
 	__asm        cmp    dword ptr [ebp-0x364], 0;
@@ -3484,7 +3484,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    eax, [ebp-0x368];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x364];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1DC], eax;
 	__asm        jmp    near ptr 0x004847AD;
 	__asm        mov    dword ptr [ebp-0x1DC], 0;
@@ -3493,14 +3493,14 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x1E0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004859C2;
+	__asm        call   Directory::DoesDirectoryListContainEntry;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004847E5;
 	__asm        mov    dword ptr [ebp-0x1D8], 1;
 	__asm        jmp    near ptr 0x004847EF;
 	__asm        mov    dword ptr [ebp-0x1D8], 0;
 	__asm        lea    ecx, [ebp-0x1E0];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1E0], 0;
 	__asm        je     near ptr 0x0048482E;
 	__asm        mov    eax, [ebp-0x1E0];
@@ -3509,7 +3509,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x250], eax;
 	__asm        mov    eax, [ebp-0x250];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00484833;
 	__asm        mov    eax, [ebp-0x1D8];
@@ -3520,7 +3520,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, sCurrentDirectory.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412670;
+	__asm        call   basic_string<char>::operator=;
 // LINE 321:
 	__asm        mov    directoryEntryCurrent.lType, 4;
 // LINE 322:
@@ -3529,17 +3529,17 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        lea    eax, [ebp-0x234];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E10;
+	__asm        call   list<DirectoryEntry>::begin;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x238];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00486E50;
+	__asm        call   list<DirectoryEntry>::insert;
 	__asm        jmp    near ptr 0x0048489B;
 // LINE 324:
 	__asm        lea    ecx, sCurrentDirectory.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sCurrentDirectory.c_str_ptr, 0;
 	__asm        je     near ptr 0x004848DA;
 	__asm        mov    eax, sCurrentDirectory.c_str_ptr;
@@ -3548,7 +3548,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x258], eax;
 	__asm        mov    eax, [ebp-0x258];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004848DF;
 // LINE 327:
@@ -3556,9 +3556,9 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    dword ptr [ebp-0x1E4], 1;
 	__asm        jmp    near ptr 0x004848EE;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sPathWithFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00484938;
 	__asm        mov    eax, sPathWithFilter.c_str_ptr;
@@ -3567,7 +3567,7 @@ int  Directory::ReadDirectoryEntries() {
 	__asm        mov    [ebp-0x260], eax;
 	__asm        mov    eax, [ebp-0x260];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048493D;
 	__asm        mov    eax, [ebp-0x1E4];
@@ -3596,16 +3596,16 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x170];
 	__asm        push   eax;
-	__asm        call   0x0043BDF0;
+	__asm        call   operator+;
 	__asm        add    esp, 0xC;
 	__asm        push   eax;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00411B80;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, [ebp-0x170];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 352:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   0x00481B20;
+	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 354:
 	__asm        mov    bParentDirectoryEnumerated, 0;
 // LINE 355:
@@ -3614,7 +3614,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.dwFileAttributes;
 	__asm        push   eax;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00417AE0;
+	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F0];
 	__asm        mov    hFind, eax;
@@ -3625,9 +3625,9 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    dword ptr [ebp-0x174], 0;
 	__asm        jmp    near ptr 0x004849F7;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x174];
 	__asm        jmp    near ptr 0x0048572E;
 // LINE 361:
@@ -3644,13 +3644,13 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x180];
-	__asm        call   0x00411990;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        mov    [ebp-0x334], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x330];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x334];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00484A8A;
 	__asm        mov    dword ptr [ebp-0x178], 1;
@@ -3658,7 +3658,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    dword ptr [ebp-0x178], 0;
 	__asm        jmp    near ptr 0x00484A99;
 	__asm        lea    ecx, [ebp-0x180];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x178];
 	__asm        mov    [ebp-0x1F8], eax;
 	__asm        cmp    dword ptr [ebp-0x1F8], 0;
@@ -3672,7 +3672,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x188];
-	__asm        call   0x00411990;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        mov    [ebp-0x32C], eax;
 	__asm        mov    eax, sDirectoryEntries;
 	__asm        mov    eax, [eax];
@@ -3688,10 +3688,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x324];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00484B2C;
 	__asm        lea    ecx, [ebp-0x188];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 368:
 	__asm        jmp    near ptr 0x00484D97;
 	__asm        cmp    bParentDirectoryEnumerated, 0;
@@ -3701,13 +3701,13 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x194];
-	__asm        call   0x00411990;
+	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        mov    [ebp-0x31C], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x318];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x31C];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00484B97;
 	__asm        mov    dword ptr [ebp-0x18C], 1;
@@ -3715,7 +3715,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    dword ptr [ebp-0x18C], 0;
 	__asm        jmp    near ptr 0x00484BA6;
 	__asm        lea    ecx, [ebp-0x194];
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x18C];
 	__asm        mov    [ebp-0x1FC], eax;
 	__asm        cmp    dword ptr [ebp-0x1FC], 0;
@@ -3727,7 +3727,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        je     near ptr 0x00484CB8;
 // LINE 371:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x308], eax;
 	__asm        cmp    dword ptr [ebp-0x308], 0;
@@ -3735,7 +3735,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x308];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x198], eax;
 	__asm        jmp    near ptr 0x00484C22;
 	__asm        mov    dword ptr [ebp-0x198], 0;
@@ -3755,10 +3755,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x310];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00484C74;
 	__asm        lea    ecx, [ebp-0x19C];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x19C], 0;
 	__asm        je     near ptr 0x00484CB3;
 	__asm        mov    eax, [ebp-0x19C];
@@ -3767,14 +3767,14 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x304], eax;
 	__asm        mov    eax, [ebp-0x304];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00484CB8;
 // LINE 373:
 	__asm        jmp    near ptr 0x00484D97;
 // LINE 374:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2F0], eax;
 	__asm        cmp    dword ptr [ebp-0x2F0], 0;
@@ -3782,7 +3782,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2F0];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1A0], eax;
 	__asm        jmp    near ptr 0x00484D01;
 	__asm        mov    dword ptr [ebp-0x1A0], 0;
@@ -3802,10 +3802,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x2F8];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00484D53;
 	__asm        lea    ecx, [ebp-0x1A4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1A4], 0;
 	__asm        je     near ptr 0x00484D92;
 	__asm        mov    eax, [ebp-0x1A4];
@@ -3814,7 +3814,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x2EC], eax;
 	__asm        mov    eax, [ebp-0x2EC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00484D97;
 // LINE 377:
@@ -3824,7 +3824,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        je     near ptr 0x00484E80;
 // LINE 379:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2D8], eax;
 	__asm        cmp    dword ptr [ebp-0x2D8], 0;
@@ -3832,7 +3832,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2D8];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1A8], eax;
 	__asm        jmp    near ptr 0x00484DEA;
 	__asm        mov    dword ptr [ebp-0x1A8], 0;
@@ -3852,10 +3852,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x2E0];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00484E3C;
 	__asm        lea    ecx, [ebp-0x1AC];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1AC], 0;
 	__asm        je     near ptr 0x00484E7B;
 	__asm        mov    eax, [ebp-0x1AC];
@@ -3864,7 +3864,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x2D4], eax;
 	__asm        mov    eax, [ebp-0x2D4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00484E80;
 // LINE 383:
@@ -3893,7 +3893,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x004850C5;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2C8], eax;
 	__asm        cmp    dword ptr [ebp-0x2C8], 0;
@@ -3901,7 +3901,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2C8];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1B4], eax;
 	__asm        jmp    near ptr 0x00484F21;
 	__asm        mov    dword ptr [ebp-0x1B4], 0;
@@ -3913,7 +3913,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    eax, [ebp-0x2CC];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1B8];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00484F66;
 	__asm        mov    dword ptr [ebp-0x1B0], 1;
@@ -3921,7 +3921,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
 	__asm        jmp    near ptr 0x00484F75;
 	__asm        lea    ecx, [ebp-0x1B8];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1B8], 0;
 	__asm        je     near ptr 0x00484FB4;
 	__asm        mov    eax, [ebp-0x1B8];
@@ -3930,7 +3930,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x2C4], eax;
 	__asm        mov    eax, [ebp-0x2C4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00484FB9;
 	__asm        mov    eax, [ebp-0x1B0];
@@ -3944,7 +3944,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        je     near ptr 0x004850C0;
 // LINE 393:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2B0], eax;
 	__asm        cmp    dword ptr [ebp-0x2B0], 0;
@@ -3952,7 +3952,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2B0];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1BC], eax;
 	__asm        jmp    near ptr 0x0048502A;
 	__asm        mov    dword ptr [ebp-0x1BC], 0;
@@ -3972,10 +3972,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x2B8];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x0048507C;
 	__asm        lea    ecx, [ebp-0x1C0];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C0], 0;
 	__asm        je     near ptr 0x004850BB;
 	__asm        mov    eax, [ebp-0x1C0];
@@ -3984,7 +3984,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x2AC], eax;
 	__asm        mov    eax, [ebp-0x2AC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004850C0;
 // LINE 395:
@@ -3992,7 +3992,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        jne    near ptr 0x004852BA;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x2A0], eax;
 	__asm        cmp    dword ptr [ebp-0x2A0], 0;
@@ -4000,7 +4000,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x2A0];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1C8], eax;
 	__asm        jmp    near ptr 0x00485116;
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
@@ -4012,7 +4012,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    eax, [ebp-0x2A4];
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1CC];
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0048515B;
 	__asm        mov    dword ptr [ebp-0x1C4], 1;
@@ -4020,7 +4020,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    dword ptr [ebp-0x1C4], 0;
 	__asm        jmp    near ptr 0x0048516A;
 	__asm        lea    ecx, [ebp-0x1CC];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1CC], 0;
 	__asm        je     near ptr 0x004851A9;
 	__asm        mov    eax, [ebp-0x1CC];
@@ -4029,7 +4029,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x29C], eax;
 	__asm        mov    eax, [ebp-0x29C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004851AE;
 	__asm        mov    eax, [ebp-0x1C4];
@@ -4043,7 +4043,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        je     near ptr 0x004852B5;
 // LINE 398:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x288], eax;
 	__asm        cmp    dword ptr [ebp-0x288], 0;
@@ -4051,7 +4051,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x288];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1D0], eax;
 	__asm        jmp    near ptr 0x0048521F;
 	__asm        mov    dword ptr [ebp-0x1D0], 0;
@@ -4071,10 +4071,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x290];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00485271;
 	__asm        lea    ecx, [ebp-0x1D4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1D4], 0;
 	__asm        je     near ptr 0x004852B0;
 	__asm        mov    eax, [ebp-0x1D4];
@@ -4083,14 +4083,14 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x284], eax;
 	__asm        mov    eax, [ebp-0x284];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004852B5;
 // LINE 400:
 	__asm        jmp    near ptr 0x00485394;
 // LINE 401:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x270], eax;
 	__asm        cmp    dword ptr [ebp-0x270], 0;
@@ -4098,7 +4098,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x270];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1D8], eax;
 	__asm        jmp    near ptr 0x004852FE;
 	__asm        mov    dword ptr [ebp-0x1D8], 0;
@@ -4118,10 +4118,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x278];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00485350;
 	__asm        lea    ecx, [ebp-0x1DC];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1DC], 0;
 	__asm        je     near ptr 0x0048538F;
 	__asm        mov    eax, [ebp-0x1DC];
@@ -4130,7 +4130,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x26C], eax;
 	__asm        mov    eax, [ebp-0x26C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485394;
 // LINE 404:
@@ -4140,7 +4140,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        je     near ptr 0x0048547D;
 // LINE 406:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x258], eax;
 	__asm        cmp    dword ptr [ebp-0x258], 0;
@@ -4148,7 +4148,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x258];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    near ptr 0x004853E7;
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
@@ -4168,10 +4168,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x260];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00485439;
 	__asm        lea    ecx, [ebp-0x1E4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1E4], 0;
 	__asm        je     near ptr 0x00485478;
 	__asm        mov    eax, [ebp-0x1E4];
@@ -4180,7 +4180,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x254], eax;
 	__asm        mov    eax, [ebp-0x254];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048547D;
 // LINE 408:
@@ -4197,7 +4197,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004854C8;
 	__asm        jmp    near ptr 0x004854CD;
@@ -4210,7 +4210,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x23C], eax;
 // LINE 414:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x238], eax;
 	__asm        cmp    dword ptr [ebp-0x238], 0;
@@ -4218,7 +4218,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    eax, [ebp-0x23C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x238];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1E8], eax;
 	__asm        jmp    near ptr 0x0048552E;
 	__asm        mov    dword ptr [ebp-0x1E8], 0;
@@ -4229,16 +4229,16 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x248];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x0043A080;
+	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x24C];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x0048556A;
 	__asm        lea    ecx, [ebp-0x1EC];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1EC], 0;
 	__asm        je     near ptr 0x004855A9;
 	__asm        mov    eax, [ebp-0x1EC];
@@ -4247,7 +4247,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x234], eax;
 	__asm        mov    eax, [ebp-0x234];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004855AE;
 // LINE 418:
@@ -4262,7 +4262,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
-	__asm        call   0x0041B250;
+	__asm        call   basic_string<char>::compare;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004855F4;
 	__asm        jmp    near ptr 0x004855F9;
@@ -4275,7 +4275,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x21C], eax;
 // LINE 420:
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x218], eax;
 	__asm        cmp    dword ptr [ebp-0x218], 0;
@@ -4283,7 +4283,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    eax, [ebp-0x21C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x218];
-	__asm        call   0x0041DFE0;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1F0], eax;
 	__asm        jmp    near ptr 0x0048565A;
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
@@ -4294,16 +4294,16 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    eax, [ebp-0x228];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x0043A080;
+	__asm        call   list<basic_string<char>>::begin;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x22C];
 	__asm        push   eax;
 	__asm        mov    ecx, sDirectoryEntries;
-	__asm        call   0x004873F0;
+	__asm        call   list<basic_string<char>>::insert;
 	__asm        jmp    near ptr 0x00485696;
 	__asm        lea    ecx, [ebp-0x1F4];
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1F4], 0;
 	__asm        je     near ptr 0x004856D5;
 	__asm        mov    eax, [ebp-0x1F4];
@@ -4312,15 +4312,15 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x20C], eax;
 	__asm        mov    eax, [ebp-0x20C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004856DA;
 // LINE 423:
 	__asm        jmp    near ptr 0x004856DF;
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   0x00412130;
+	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    sPathWithFilter.c_str_ptr, 0;
 	__asm        je     near ptr 0x00485729;
 	__asm        mov    eax, sPathWithFilter.c_str_ptr;
@@ -4329,7 +4329,7 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        mov    [ebp-0x214], eax;
 	__asm        mov    eax, [ebp-0x214];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048572E;
 }
@@ -4342,7 +4342,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 
 // LINE 435:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   0x00481B20;
+	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 437:
 	__asm        mov    eax, sPathPattern;
 	__asm        cmp    dword ptr [eax], 0;
@@ -4354,7 +4354,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        mov    eax, [ebp-0x17C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485783;
 	__asm        mov    eax, sPathPattern;
@@ -4362,7 +4362,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        mov    eax, [eax+4];
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sPathPattern;
 	__asm        mov    [ecx], eax;
@@ -4398,7 +4398,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x190];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0048582D;
 	__asm        jmp    near ptr 0x00485832;
@@ -4454,7 +4454,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        mov    [ebp-0x170], eax;
 	__asm        mov    eax, [ebp-0x170];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x164];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4464,7 +4464,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        jmp    near ptr 0x0048595B;
 	__asm        mov    eax, [ebp-0x164];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048596F;
 	__asm        jmp    near ptr 0x00485974;
@@ -4477,7 +4477,7 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 	__asm        mov    [ebp-0x160], eax;
 	__asm        mov    eax, [ebp-0x160];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004859B2;
 	__asm        mov    eax, [ebp-0x158];
@@ -4561,7 +4561,7 @@ int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sE
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   0x00410C40;
+	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00485AE7;
 	__asm        jmp    near ptr 0x00485AEC;
@@ -4621,7 +4621,7 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4631,7 +4631,7 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        jmp    near ptr 0x00485BC7;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485BD8;
 	__asm        jmp    near ptr 0x00485BDD;
@@ -4650,7 +4650,7 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00485D04;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
@@ -4673,7 +4673,7 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
@@ -4702,7 +4702,7 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00485CCF;
 	__asm        jmp    near ptr 0x00485CDD;
@@ -4720,13 +4720,13 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 	__asm        jmp    near ptr 0x00485D09;
 // LINE 475:
 	__asm        mov    ecx, this;
-	__asm        call   0x0048631C;
+	__asm        call   Directory::MakeSurePathEndsWithSeparator;
 // LINE 476:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     near ptr 0x00485D23;
 // LINE 477:
 	__asm        mov    ecx, this;
-	__asm        call   0x004837C7;
+	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 478:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00485D2D;
@@ -4745,10 +4745,10 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        lea    ecx, tempDirectoryEntry.directoryParent;
-	__asm        call   0x00481BAE;
+	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 488:
 	__asm        lea    ecx, tempDirectoryEntry.directoryParent;
-	__asm        call   0x00482DC0;
+	__asm        call   DirectoryEntry::CreatePhysicalEntry;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x00485D64;
 	__asm        mov    eax, tempDirectoryEntry.sName.reference;
@@ -4772,7 +4772,7 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4782,7 +4782,7 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	__asm        jmp    near ptr 0x00485DD1;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485DE2;
 	__asm        jmp    near ptr 0x00485DE7;
@@ -4795,7 +4795,7 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485E13;
 	__asm        mov    eax, [ebp-0x14];
@@ -4886,7 +4886,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4896,7 +4896,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        jmp    near ptr 0x00485F4F;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00485F60;
 	__asm        jmp    near ptr 0x00485F65;
@@ -4915,7 +4915,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0048608C;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
@@ -4938,7 +4938,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], eax;
@@ -4967,7 +4967,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00486057;
 	__asm        jmp    near ptr 0x00486065;
@@ -4995,22 +4995,22 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        jmp    near ptr 0x004860B3;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
 	__asm        jne    near ptr 0x004860FE;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004860EF;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004860FE;
 	__asm        jmp    near ptr 0x00486103;
@@ -5027,7 +5027,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    near ptr 0x004862B5;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -5036,15 +5036,15 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        jne    near ptr 0x00486187;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486178;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486187;
 	__asm        mov    eax, [ebp-0x30];
@@ -5060,7 +5060,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx], eax;
@@ -5076,7 +5076,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004861E7;
 	__asm        jmp    near ptr 0x004861F5;
@@ -5113,7 +5113,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -5123,7 +5123,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        jmp    near ptr 0x0048628C;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048629D;
 	__asm        jmp    near ptr 0x004862A2;
@@ -5145,7 +5145,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004862E8;
 	__asm        mov    eax, [ebp-0x30];
@@ -5159,7 +5159,7 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 	__asm        je     near ptr 0x00486310;
 // LINE 516:
 	__asm        mov    ecx, this;
-	__asm        call   0x004837C7;
+	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 517:
 	__asm        jmp    near ptr 0x00486315;
 }
@@ -5190,15 +5190,15 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        ja     near ptr 0x00486392;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486383;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486392;
 	__asm        jmp    near ptr 0x00486397;
@@ -5207,7 +5207,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jbe    near ptr 0x00486549;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
@@ -5247,7 +5247,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -5266,7 +5266,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00486480;
 	__asm        jmp    near ptr 0x0048648E;
@@ -5303,7 +5303,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+8], 0;
@@ -5313,7 +5313,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        jmp    near ptr 0x00486525;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486536;
 	__asm        jmp    near ptr 0x0048653B;
@@ -5345,15 +5345,15 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        jb     near ptr 0x004865CA;
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004865BB;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004865CA;
 	__asm        jmp    near ptr 0x004865CF;
@@ -5372,7 +5372,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        cmp    eax, [ecx+8];
 	__asm        jbe    near ptr 0x0048676E;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
@@ -5413,7 +5413,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
@@ -5432,7 +5432,7 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004866DC;
 	__asm        jmp    near ptr 0x004866EA;
@@ -5460,11 +5460,11 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     near ptr 0x00486760;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x0048674A;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048675B;
 	__asm        jmp    near ptr 0x00486760;
@@ -5528,7 +5528,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jmp    near ptr 0x0048681C;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x10];
@@ -5536,7 +5536,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        mov    ecx, sPath;
-	__asm        call   0x00410F90;
+	__asm        call   basic_string<char>::rfind_str;
 	__asm        mov    nPosition, eax;
 	__asm        jmp    near ptr 0x00486841;
 // LINE 554:
@@ -5556,15 +5556,15 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jae    near ptr 0x004868A9;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0048689A;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004868A9;
 	__asm        jmp    near ptr 0x004868AE;
@@ -5610,7 +5610,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        je     near ptr 0x0048694B;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0048694B;
 	__asm        jmp    near ptr 0x00486950;
 	__asm        mov    eax, sPath;
@@ -5639,7 +5639,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        mov    ecx, sFirstPart;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004869B5;
 // LINE 556:
 	__asm        jmp    near ptr 0x004869BA;
@@ -5651,15 +5651,15 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jae    near ptr 0x004869FF;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004869F0;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004869FF;
 	__asm        jmp    near ptr 0x00486A04;
@@ -5708,7 +5708,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        je     near ptr 0x00486AAC;
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x4C];
-	__asm        call   0x0041DD70;
+	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x00486AAC;
 	__asm        jmp    near ptr 0x00486AB1;
 	__asm        mov    eax, sPath;
@@ -5739,7 +5739,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        add    eax, [ebp-0x44];
 	__asm        push   eax;
 	__asm        mov    ecx, sLastPart;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00486B1A;
 // LINE 557:
 	__asm        jmp    near ptr 0x00486DC6;
@@ -5755,7 +5755,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jmp    near ptr 0x00486B40;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x18];
@@ -5763,7 +5763,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        mov    ecx, sPath;
-	__asm        call   0x00410F90;
+	__asm        call   basic_string<char>::rfind_str;
 	__asm        mov    nPosition, eax;
 	__asm        jmp    near ptr 0x00486B65;
 // LINE 562:
@@ -5783,15 +5783,15 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jae    near ptr 0x00486BCD;
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
-	__asm        call   0x004011B0;
+	__asm        call   endl;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486BBE;
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486BCD;
 	__asm        jmp    near ptr 0x00486BD2;
@@ -5822,7 +5822,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     near ptr 0x00486C50;
 	__asm        mov    ecx, sFirstPart;
-	__asm        call   0x00412080;
+	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, sPath;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, sFirstPart;
@@ -5849,7 +5849,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
 	__asm        mov    ecx, sFirstPart;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00486C9B;
 // LINE 564:
 	__asm        push   0xFFFFFFFF;
@@ -5859,7 +5859,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, sPath;
 	__asm        push   eax;
 	__asm        mov    ecx, sLastPart;
-	__asm        call   0x00414310;
+	__asm        call   basic_string<char>::assign;
 // LINE 565:
 	__asm        jmp    near ptr 0x00486DC6;
 // LINE 570:
@@ -5868,13 +5868,13 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        jmp    near ptr 0x00486CC0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056ABE0;
+	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        mov    ecx, sFirstPart;
-	__asm        call   0x0040FEE0;
+	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00486CDE;
 // LINE 571:
 	__asm        mov    eax, sPath;
@@ -5895,11 +5895,11 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     near ptr 0x00486D3F;
 	__asm        mov    ecx, [ebp-0x24];
-	__asm        call   0x0041F4B0;
+	__asm        call   basic_string_ref<char>::delete_ptr;
 	__asm        jmp    near ptr 0x00486D29;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00486D3A;
 	__asm        jmp    near ptr 0x00486D3F;
@@ -5918,7 +5918,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x00486DBC;
 	__asm        push   0x10;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
@@ -5932,7 +5932,7 @@ void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class
 	__asm        mov    eax, sPath;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x20];
-	__asm        call   0x0041E200;
+	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ecx, sLastPart;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00486DBC;

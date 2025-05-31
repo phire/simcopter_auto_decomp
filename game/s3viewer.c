@@ -29,7 +29,7 @@ void S3ViewerInit() {
 // LINE 109:
 	__asm        lea    eax, IdealCameraLoc.x;
 	__asm        push   eax;
-	__asm        call   0x004F9240;
+	__asm        call   GetIdealCameraPos;
 	__asm        add    esp, 4;
 // LINE 110:
 	__asm        lea    eax, IdealCameraLoc.x;
@@ -83,7 +83,7 @@ void S3ViewerInit() {
 	__asm        push   0xCE40000;
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x004CA810;
+	__asm        call   MTArbRotMat;
 	__asm        add    esp, 0xC;
 // LINE 137:
 	__asm        lea    eax, rotmat[0][0];
@@ -101,7 +101,7 @@ void S3ViewerInit() {
 	__asm        push   0x12C0000;
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
-	__asm        call   0x004CA810;
+	__asm        call   MTArbRotMat;
 	__asm        add    esp, 0xC;
 // LINE 139:
 	__asm        lea    eax, rotmat[0][0];
@@ -143,7 +143,7 @@ void S3ViewerInit() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 155:
-	__asm        call   0x004F9735;
+	__asm        call   S3CameraRotate;
 // LINE 157:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x5C;
@@ -193,7 +193,7 @@ void S3ViewerControl() {
 	__asm        mov    rotx, eax;
 // LINE 186:
 	__asm        push   0x26;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EE956;
@@ -204,7 +204,7 @@ void S3ViewerControl() {
 // LINE 188:
 	__asm        jmp    near ptr 0x004EE9D8;
 	__asm        push   0x27;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EE981;
@@ -217,7 +217,7 @@ void S3ViewerControl() {
 // LINE 191:
 	__asm        push   0x27;
 	__asm        push   0x26;
-	__asm        call   0x00431BFB;
+	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EE9AE;
@@ -238,7 +238,7 @@ void S3ViewerControl() {
 	__asm        mov    rotx, 0xFFD80000;
 // LINE 199:
 	__asm        push   0x28;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EEA03;
@@ -249,7 +249,7 @@ void S3ViewerControl() {
 // LINE 201:
 	__asm        jmp    near ptr 0x004EEA85;
 	__asm        push   0x29;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EEA2E;
@@ -262,7 +262,7 @@ void S3ViewerControl() {
 // LINE 204:
 	__asm        push   0x29;
 	__asm        push   0x28;
-	__asm        call   0x00431BFB;
+	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EEA5B;
@@ -291,20 +291,20 @@ void S3ViewerControl() {
 	__asm        push   eax;
 	__asm        mov    eax, rotx;
 	__asm        push   eax;
-	__asm        call   0x004F6477;
+	__asm        call   S3HeliRotateSpotLite;
 	__asm        add    esp, 8;
 // LINE 223:
 	__asm        lea    eax, IdealCameraPos.x;
 	__asm        push   eax;
-	__asm        call   0x004F9240;
+	__asm        call   GetIdealCameraPos;
 	__asm        add    esp, 4;
 // LINE 225:
 	__asm        lea    eax, IdealCameraPos.x;
 	__asm        push   eax;
-	__asm        call   0x004F8AF0;
+	__asm        call   S3CameraMove;
 	__asm        add    esp, 4;
 // LINE 227:
-	__asm        call   0x004F9735;
+	__asm        call   S3CameraRotate;
 // LINE 230:
 	__asm        push   0x6C1370;
 	__asm        mov    eax, 0x6C12A0;
@@ -380,14 +380,14 @@ void S3ViewerControl() {
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 248:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
 	__asm        push   eax;
 	__asm        push   0x6C1330;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 251:
 	__asm        mov    eax, ds:[0x6C126C];
@@ -404,7 +404,7 @@ void S3ViewerControl() {
 // LINE 254:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x606E8C], eax;
 // LINE 257:
@@ -447,10 +447,10 @@ void S3ViewerControl() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 265:
-	__asm        call   0x004EEF7F;
+	__asm        call   S3ViewerSetView;
 // LINE 267:
 	__asm        push   0x2C;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EECE5;
@@ -461,7 +461,7 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 270:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -471,7 +471,7 @@ void S3ViewerControl() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 272:
 	__asm        mov    eax, viewSize;
@@ -485,7 +485,7 @@ void S3ViewerControl() {
 // LINE 277:
 	__asm        jmp    near ptr 0x004EEE0D;
 	__asm        push   0x2B;
-	__asm        call   0x00431B60;
+	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004EED4B;
@@ -496,7 +496,7 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 280:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -506,7 +506,7 @@ void S3ViewerControl() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 281:
 	__asm        mov    eax, viewSize;
@@ -521,7 +521,7 @@ void S3ViewerControl() {
 	__asm        jmp    near ptr 0x004EEE0D;
 	__asm        push   0x2B;
 	__asm        push   0x2C;
-	__asm        call   0x00431BFB;
+	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickValue, eax;
 	__asm        cmp    lJoystickValue, 0;
@@ -535,7 +535,7 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 290:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -545,7 +545,7 @@ void S3ViewerControl() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 292:
 	__asm        mov    eax, viewSize;
@@ -565,7 +565,7 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 300:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -575,7 +575,7 @@ void S3ViewerControl() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 301:
 	__asm        mov    eax, viewSize;
@@ -610,13 +610,13 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 // LINE 329:
 	__asm        mov    eax, lValue;
 	__asm        push   eax;
-	__asm        call   0x004EEECC;
+	__asm        call   ConvertGUIBackPlaneValueToRender;
 	__asm        add    esp, 4;
 	__asm        mov    nConvertedValue, eax;
 // LINE 332:
 	__asm        mov    eax, nConvertedValue;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 333:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -626,7 +626,7 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 335:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -779,7 +779,7 @@ void S3ViewerCommand(int32_t nCommand) {
 // LINE 447:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
-	__asm        call   0x004F9912;
+	__asm        call   S3CameraChaseAdjust;
 	__asm        add    esp, 4;
 // LINE 449:
 	__asm        jmp    near ptr 0x004EF146;
@@ -801,13 +801,13 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        jne    near ptr 0x004EF04C;
 // LINE 456:
-	__asm        call   0x004F9A4E;
+	__asm        call   S3CameraCycleChase;
 // LINE 458:
 	__asm        jmp    near ptr 0x004EF146;
 	__asm        cmp    nCommand, 4;
 	__asm        jne    near ptr 0x004EF065;
 // LINE 459:
-	__asm        call   0x004FC89B;
+	__asm        call   S3MissionSetCurrNext;
 // LINE 460:
 	__asm        jmp    near ptr 0x004EF146;
 	__asm        cmp    nCommand, 0x2F;
@@ -817,7 +817,7 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        sbb    eax, eax;
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x004EF14B;
+	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 462:
 	__asm        jmp    near ptr 0x004EF146;
@@ -881,19 +881,19 @@ void S3SetDayNight(int32_t nDayOrNight) {
 	__asm        cmp    dword ptr ds:[0x5B4794], 0;
 	__asm        je     near ptr 0x004EF1B0;
 // LINE 492:
-	__asm        call   0x0051E69A;
+	__asm        call   S3ObjSetFlatShading;
 // LINE 493:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
 	__asm        jne    near ptr 0x004EF187;
 // LINE 494:
 	__asm        push   1;
-	__asm        call   0x00506D4E;
+	__asm        call   AutoSetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 495:
 	__asm        jmp    near ptr 0x004EF191;
 // LINE 496:
 	__asm        push   0;
-	__asm        call   0x00506D4E;
+	__asm        call   AutoSetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 497:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -903,10 +903,10 @@ void S3SetDayNight(int32_t nDayOrNight) {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 498:
-	__asm        call   0x00461180;
+	__asm        call   S3SwitchToProperSkyType;
 // LINE 500:
 }
 

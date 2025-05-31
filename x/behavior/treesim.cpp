@@ -277,7 +277,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 	__asm        push   0x5BDE9C;
 	__asm        push   0xD;
 	__asm        push   0x5BDEA8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 14:
 	__asm        mov    eax, this;
@@ -285,7 +285,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -298,7 +298,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 	__asm        mov    eax, startBehavior;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055CC58;
+	__asm        call   TreeSim::Reset;
 // LINE 17:
 	__asm        jmp    near ptr 0x0055CB9B;
 	__asm        mov    eax, this;
@@ -323,7 +323,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        push   0x5BDED0;
 	__asm        push   0x1A;
 	__asm        push   0x5BDEDC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 27:
 	__asm        mov    eax, this;
@@ -331,7 +331,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -351,7 +351,7 @@ void TreeSim::~TreeSim() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 37:
 	__asm        jmp    near ptr 0x0055CC53;
@@ -373,7 +373,7 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 	__asm        push   0x5BDF04;
 	__asm        push   0x2C;
 	__asm        push   0x5BDF10;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 45:
 	__asm        mov    eax, this;
@@ -683,7 +683,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055CE37;
+	__asm        call   TreeSim::Gosub;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0055D04A;
@@ -708,7 +708,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 146:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055D1C3;
+	__asm        call   TreeSim::NodeComplete;
 	__asm        movsx  eax, al;
 	__asm        cmp    eax, 0xFFFFFFFD;
 	__asm        jne    near ptr 0x0055D09F;
@@ -725,7 +725,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 152:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055D1C3;
+	__asm        call   TreeSim::NodeComplete;
 	__asm        movsx  eax, al;
 	__asm        cmp    eax, 0xFFFFFFFD;
 	__asm        jne    near ptr 0x0055D0D4;
@@ -756,7 +756,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        push   0x5BDF38;
 	__asm        push   0xA8;
 	__asm        push   0x5BDF48;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 169:
 	__asm        jmp    near ptr 0x0055D14B;
@@ -922,7 +922,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        push   0x5BDF70;
 	__asm        push   0xF0;
 	__asm        push   0x5BDF7C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 241:
 	__asm        mov    eax, this;
@@ -935,7 +935,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        push   0x5BDFA4;
 	__asm        push   0xF1;
 	__asm        push   0x5BDFB4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 243:
 	__asm        mov    eax, this;
@@ -1037,7 +1037,7 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    eax, ticks;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0055CF37;
+	__asm        call   TreeSim::Simulate;
 	__asm        mov    ret, ax;
 // LINE 282:
 	__asm        mov    eax, savestack;

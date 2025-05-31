@@ -117,7 +117,7 @@ void CharList::~CharList() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 42:
 	__asm        jmp    near ptr 0x0043D49F;
@@ -131,7 +131,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 
 // LINE 52:
 	__asm        push   9;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -139,7 +139,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chNewValue);
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-8];
-	__asm        call   0x0043D40F;
+	__asm        call   CharData::CharData;
 	__asm        mov    tempCharData, eax;
 	__asm        jmp    near ptr 0x0043D529;
 	__asm        mov    tempCharData, 0;
@@ -147,7 +147,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        mov    eax, tempCharData;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D541;
+	__asm        call   CharList::AddItem;
 // LINE 54:
 	__asm        jmp    near ptr 0x0043D53A;
 }
@@ -261,7 +261,7 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 96:
 	__asm        jmp    near ptr 0x0043D678;
@@ -275,7 +275,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chValue);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D7CE;
+	__asm        call   CharList::FindCharDataByValue;
 	__asm        mov    charDataToDelete, eax;
 // LINE 104:
 	__asm        cmp    charDataToDelete, 0;
@@ -286,7 +286,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	__asm        mov    eax, charDataToDelete;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D5C9;
+	__asm        call   CharList::DeleteItem;
 // LINE 107:
 	__asm        jmp    near ptr 0x0043D6BA;
 }
@@ -299,7 +299,7 @@ void CharList::DeleteItem(int32_t nIndex) {
 	__asm        mov    eax, nIndex;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D74D;
+	__asm        call   CharList::FindCharDataByIndex;
 	__asm        mov    charDataToDelete, eax;
 // LINE 114:
 	__asm        cmp    charDataToDelete, 0;
@@ -310,7 +310,7 @@ void CharList::DeleteItem(int32_t nIndex) {
 	__asm        mov    eax, charDataToDelete;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D5C9;
+	__asm        call   CharList::DeleteItem;
 // LINE 117:
 	__asm        jmp    near ptr 0x0043D6FC;
 }
@@ -335,7 +335,7 @@ void CharList::DeleteAllItems() {
 	__asm        mov    eax, i;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043D6C1;
+	__asm        call   CharList::DeleteItem;
 	__asm        jmp    near ptr 0x0043D723;
 // LINE 125:
 	__asm        jmp    near ptr 0x0043D748;

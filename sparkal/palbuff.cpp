@@ -226,12 +226,12 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        push   0x1B8;
 	__asm        push   0x258;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EA06;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5E0;
 // LINE 37:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
@@ -242,7 +242,7 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        js     near ptr 0x004472AA;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    near ptr 0x00447290;
 	__asm        jmp    near ptr 0x004472AF;
@@ -254,17 +254,17 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        mov    dword ptr [eax+0x134], 0;
 // LINE 38:
 	__asm        mov    ecx, this;
-	__asm        call   0x00447501;
+	__asm        call   PaletteBuffer::SetPalette;
 // LINE 39:
 	__asm        lea    eax, szTypeFaceName[0];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        call   0x0042CE0E;
+	__asm        call   LanguageManager::GetTypefaceForLanguage;
 	__asm        add    esp, 0xC;
 // LINE 40:
 	__asm        push   0x1C;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
@@ -276,17 +276,17 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        lea    eax, szTypeFaceName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   0x0049F937;
+	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x0044731F;
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00470440;
+	__asm        call   CBackBuffer::SetFont;
 // LINE 41:
 	__asm        mov    ecx, this;
-	__asm        call   0x004475E2;
+	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 42:
 	__asm        jmp    near ptr 0x00447338;
 	__asm        mov    eax, this;
@@ -300,12 +300,12 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        push   0x1B8;
 	__asm        push   0x258;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EA06;
+	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F5E0;
 // LINE 55:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
@@ -316,7 +316,7 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        js     near ptr 0x004473AA;
 	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   0x00447790;
+	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    near ptr 0x00447390;
 	__asm        jmp    near ptr 0x004473AF;
@@ -334,17 +334,17 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        mov    eax, newSparkalColors;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004474AB;
+	__asm        call   PaletteBuffer::SetPalette;
 // LINE 58:
 	__asm        lea    eax, szTypeFaceName[0];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        call   0x0042CE0E;
+	__asm        call   LanguageManager::GetTypefaceForLanguage;
 	__asm        add    esp, 0xC;
 // LINE 59:
 	__asm        push   0x1C;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
@@ -356,17 +356,17 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        lea    eax, szTypeFaceName[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   0x0049F937;
+	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x00447433;
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00470440;
+	__asm        call   CBackBuffer::SetFont;
 // LINE 60:
 	__asm        mov    ecx, this;
-	__asm        call   0x004475E2;
+	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 61:
 	__asm        jmp    near ptr 0x0044744C;
 	__asm        mov    eax, this;
@@ -388,12 +388,12 @@ void PaletteBuffer::~PaletteBuffer() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 72:
 	__asm        jmp    near ptr 0x0044749E;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046EC7A;
+	__asm        call   CBackBuffer::~CBackBuffer;
 }
 
 // FUNCTION: COPTER_D 0x004474ab
@@ -430,7 +430,7 @@ int32_t PaletteBuffer::SetPalette() {
 
 // LINE 100:
 	__asm        push   0x400;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    paletteEntries, eax;
 // LINE 101:
@@ -490,7 +490,7 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 110:
 	__asm        mov    eax, 1;
@@ -596,7 +596,7 @@ void PaletteBuffer::DrawPalette() {
 	__asm        push   0x598F14;
 	__asm        lea    eax, szDescriptionString[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x18;
 // LINE 150:
 	__asm        push   0;
@@ -639,7 +639,7 @@ unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft
 	__asm        mov    eax, pDestImage;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0046F948;
+	__asm        call   CBackBuffer::Compose;
 	__asm        jmp    near ptr 0x00447782;
 // LINE 163:
 }

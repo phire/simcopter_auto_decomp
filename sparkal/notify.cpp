@@ -46,7 +46,7 @@ void NotificationItem::NotificationItem(const class NotificationItem& newNotific
 	__asm        mov    eax, newNotificationSink;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0043E1DF;
+	__asm        call   NotificationItem::operator=;
 // LINE 14:
 	__asm        jmp    near ptr 0x0043E1A9;
 	__asm        mov    eax, this;

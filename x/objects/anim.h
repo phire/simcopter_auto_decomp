@@ -6,7 +6,7 @@ void cCopterAnim::Destroy() {
 	__asm        push   0x5BE3FC;
 	__asm        push   0xE0;
 	__asm        push   0x5BE3D8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 225:
 	__asm        jmp    near ptr 0x0055F5DD;
@@ -35,7 +35,7 @@ unsigned short cCopterAnim::IsDirty() {
 	__asm        push   0x5BE44C;
 	__asm        push   0xE7;
 	__asm        push   0x5BE3D8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x0055F650;
@@ -48,7 +48,7 @@ unsigned long cCopterAnim::GetBodyType() {
 	__asm        push   0x5BE470;
 	__asm        push   0xE9;
 	__asm        push   0x5BE3D8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0055F68F;
@@ -77,7 +77,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
@@ -97,7 +97,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F75F;
 	__asm        movsx  eax, framenum;
@@ -125,7 +125,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
@@ -142,7 +142,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055F815;
 	__asm        movsx  eax, framenum;

@@ -135,7 +135,7 @@ void StringSet::StringSet(class ResFile* file, short resID) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00565ACC;
+	__asm        call   StringSet::LoadStrings;
 // LINE 16:
 	__asm        jmp    near ptr 0x00565A65;
 	__asm        mov    eax, this;
@@ -151,7 +151,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00565ACC;
+	__asm        call   StringSet::LoadStrings;
 // LINE 25:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -164,7 +164,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 	__asm        push   0x5BF478;
 	__asm        push   0x1A;
 	__asm        push   0x5BF498;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 28:
 	__asm        jmp    near ptr 0x00565AC2;
@@ -176,7 +176,7 @@ void StringSet::LoadStrings(short resID) {
 // LINE 33:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
-	__asm        call   0x0055C7DD;
+	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00565B06;
@@ -184,7 +184,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        push   0x5BF4BC;
 	__asm        push   0x21;
 	__asm        push   0x5BF4CC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 34:
 	__asm        push   0x565BA0;
@@ -193,7 +193,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        push   0x53545223;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
-	__asm        call   0x0055320B;
+	__asm        call   FlatResFile::GetByID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 // LINE 36:
@@ -204,7 +204,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554B04;
+	__asm        call   Memory::Stash;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -216,7 +216,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        push   0x5BF4F0;
 	__asm        push   0x27;
 	__asm        push   0x5BF510;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 42:
 	__asm        mov    eax, this;
@@ -241,7 +241,7 @@ void StringSet::Swizzle(void * __ptr32 data, long size) {
 // LINE 53:
 	__asm        mov    eax, data;
 	__asm        push   eax;
-	__asm        call   0x0056695B;
+	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 54:
 	__asm        jmp    near ptr 0x00565BB7;
@@ -257,7 +257,7 @@ void StringSet::~StringSet() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00554A3D;
+	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 60:
 	__asm        mov    eax, this;
@@ -265,7 +265,7 @@ void StringSet::~StringSet() {
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
-	__asm        call   0x00553794;
+	__asm        call   FlatResFile::Release;
 // LINE 62:
 	__asm        jmp    near ptr 0x00565BFA;
 }
@@ -288,7 +288,7 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        push   0x5BF534;
 	__asm        push   0x43;
 	__asm        push   0x5BF54C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 68:
 	__asm        xor    eax, eax;

@@ -564,14 +564,14 @@ private:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c710
 void $E14() {
-	__asm        call   0x0043C725;
+	__asm        call   $E13;
 	__asm        jmp    near ptr 0x0043C720;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c725
 void $E13() {
-	__asm        call   0x0057D0B0;
+	__asm        call   _tzset;
 	__asm        jmp    near ptr 0x0043C735;
 	__asm        jmp    near ptr 0x0043C73A;
 }
@@ -590,7 +590,7 @@ void MDate::MDate(const class MTime& t) {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     near ptr 0x0043C79A;
 	__asm        mov    ecx, t;
-	__asm        call   0x0043C8CE;
+	__asm        call   MTime::LocalSecs;
 	__asm        mov    ecx, 0x15180;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
@@ -608,7 +608,7 @@ void MDate::MDate(const class MTime& t) {
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7b3
 void $E17() {
-	__asm        call   0x0043C7C8;
+	__asm        call   $E16;
 	__asm        jmp    near ptr 0x0043C7C3;
 }
 
@@ -618,14 +618,14 @@ void $E16() {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, 0x5C3608;
-	__asm        call   0x004BC4D1;
+	__asm        call   MDate::MDate;
 	__asm        jmp    near ptr 0x0043C7E1;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7e6
 void $E20() {
-	__asm        call   0x0043C7FB;
+	__asm        call   $E19;
 	__asm        jmp    near ptr 0x0043C7F6;
 }
 
@@ -635,7 +635,7 @@ void $E19() {
 	__asm        push   0;
 	__asm        push   0xC22D;
 	__asm        mov    ecx, 0x5C3618;
-	__asm        call   0x004BC4D1;
+	__asm        call   MDate::MDate;
 	__asm        jmp    near ptr 0x0043C817;
 }
 
@@ -705,7 +705,7 @@ unsigned long  MTime::LocalSecs() {
 	__asm        jmp    near ptr 0x0043C8FA;
 // LINE 103:
 	__asm        lea    ecx, local_time.<MTime+0x00:None>;
-	__asm        call   0x0043CD53;
+	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0043C911;
 // LINE 104:
@@ -731,12 +731,12 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   3;
 	__asm        push   0x1F;
 	__asm        lea    ecx, endMarch.<vftable>;
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 	__asm        push   7;
 	__asm        lea    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        lea    ecx, endMarch.<vftable>;
-	__asm        call   0x004BCD02;
+	__asm        call   MDate::Previous;
 	__asm        mov    [ebp-0x5C], eax;
 // LINE 122:
 	__asm        mov    eax, [ebp-0x5C];
@@ -753,7 +753,7 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        push   eax;
-	__asm        call   0x0043C867;
+	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA31;
@@ -767,11 +767,11 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   1;
 	__asm        push   6;
 	__asm        lea    ecx, [ebp-0x3C];
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 	__asm        push   eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        push   eax;
-	__asm        call   0x0043C867;
+	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA31;
@@ -784,11 +784,11 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   2;
 	__asm        push   0x17;
 	__asm        lea    ecx, [ebp-0x48];
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 	__asm        push   eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        push   eax;
-	__asm        call   0x0043C867;
+	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA31;
@@ -798,18 +798,18 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   4;
 	__asm        push   0x1E;
 	__asm        lea    ecx, endApril.<vftable>;
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 // LINE 132:
 	__asm        push   2;
 	__asm        push   7;
 	__asm        lea    eax, [ebp-0x54];
 	__asm        push   eax;
 	__asm        lea    ecx, endApril.<vftable>;
-	__asm        call   0x004BCD02;
+	__asm        call   MDate::Previous;
 	__asm        push   eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        push   eax;
-	__asm        call   0x0043C867;
+	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA31;
@@ -826,18 +826,18 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        push   0xA;
 	__asm        push   0x1F;
 	__asm        lea    ecx, endOctober.<vftable>;
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 // LINE 149:
 	__asm        push   1;
 	__asm        push   7;
 	__asm        lea    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        lea    ecx, endOctober.<vftable>;
-	__asm        call   0x004BCD02;
+	__asm        call   MDate::Previous;
 	__asm        push   eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        push   eax;
-	__asm        call   0x0043C867;
+	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    near ptr 0x0043CA74;
@@ -855,12 +855,12 @@ class MTime  MTime::EndDST(uint32_t year) {
 // LINE 165:
 	__asm        lea    eax, ltime;
 	__asm        push   eax;
-	__asm        call   0x0056EF00;
+	__asm        call   time;
 	__asm        add    esp, 4;
 // LINE 166:
 	__asm        lea    eax, ltime;
 	__asm        push   eax;
-	__asm        call   0x0056ECA0;
+	__asm        call   localtime;
 	__asm        add    esp, 4;
 	__asm        mov    t, eax;
 // LINE 172:
@@ -875,7 +875,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        lea    ecx, today.<vftable>;
-	__asm        call   0x004BC589;
+	__asm        call   MDate::MDate;
 // LINE 177:
 	__asm        mov    eax, t;
 	__asm        mov    eax, [eax];
@@ -889,7 +889,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        lea    eax, today.<vftable>;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x1C];
-	__asm        call   0x0043CB4B;
+	__asm        call   MTime::MTime;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    edx, this;
@@ -912,10 +912,10 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x14];
-	__asm        call   0x004BC460;
+	__asm        call   MDate::MDate;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-8];
-	__asm        call   0x0043CB4B;
+	__asm        call   MTime::MTime;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -971,7 +971,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        add    [ecx], eax;
 // LINE 220:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043CD53;
+	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0043CC1C;
 // LINE 221:
@@ -979,7 +979,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        add    dword ptr [eax], 0xE10;
 // LINE 222:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043CD53;
+	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0043CC17;
 // LINE 223:
@@ -992,7 +992,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        add    dword ptr [eax], 0xE10;
 // LINE 227:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043CD53;
+	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0043CC3E;
 // LINE 228:
@@ -1063,7 +1063,7 @@ unsigned int  MTime::Hash() {
 unsigned int  MTime::Hour() {
 // LINE 278:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043C8CE;
+	__asm        call   MTime::LocalSecs;
 	__asm        mov    ecx, 0x15180;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
@@ -1114,15 +1114,15 @@ int  MTime::IsDST() {
 	__asm        mov    eax, daycount;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0x14];
-	__asm        call   0x004BC4D1;
+	__asm        call   MDate::MDate;
 	__asm        mov    ecx, eax;
-	__asm        call   0x004BCDB1;
+	__asm        call   MDate::Year;
 	__asm        mov    year, eax;
 	__asm        mov    eax, year;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
-	__asm        call   0x0043C91E;
+	__asm        call   MTime::BeginDST;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x28], eax;
 // LINE 313:
@@ -1140,7 +1140,7 @@ int  MTime::IsDST() {
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0043CA36;
+	__asm        call   MTime::EndDST;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, this;
@@ -1236,7 +1236,7 @@ class MTime  MTime::MinTime(const class MTime& t) {
 unsigned int  MTime::Minute() {
 // LINE 358:
 	__asm        mov    ecx, this;
-	__asm        call   0x0043C8CE;
+	__asm        call   MTime::LocalSecs;
 	__asm        mov    ecx, 0x15180;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
@@ -1304,18 +1304,18 @@ char *  MTime::PrintString(char * szTime) {
 	__asm        mov    eax, szTime;
 	__asm        push   eax;
 	__asm        lea    ecx, strtemp.ios;
-	__asm        call   0x0056C780;
+	__asm        call   ostrstream::ostrstream;
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        lea    eax, strtemp.ios;
 	__asm        push   eax;
-	__asm        call   0x0043D02B;
+	__asm        call   operator<<;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x60], eax;
 // LINE 398:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
-	__asm        call   0x004205D0;
+	__asm        call   ends;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043D001;
 // LINE 399:
@@ -1323,9 +1323,9 @@ char *  MTime::PrintString(char * szTime) {
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x0043D00C;
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
-	__asm        call   0x0056C8D0;
+	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
-	__asm        call   0x0056B140;
+	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    near ptr 0x0043D024;
 // LINE 400:
@@ -1344,7 +1344,7 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        lea    ecx, out.ios;
-	__asm        call   0x0056C780;
+	__asm        call   ostrstream::ostrstream;
 // LINE 417:
 	__asm        mov    eax, t;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1354,17 +1354,17 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        mov    eax, t;
 	__asm        push   eax;
 	__asm        lea    ecx, [ebp-0xB8];
-	__asm        call   0x0043C73F;
+	__asm        call   MDate::MDate;
 	__asm        push   eax;
 	__asm        lea    eax, out.ios;
 	__asm        push   eax;
-	__asm        call   0x004BD39A;
+	__asm        call   operator<<;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, eax;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 // LINE 420:
 	__asm        mov    ecx, t;
-	__asm        call   0x0043CCF2;
+	__asm        call   MTime::Hour;
 	__asm        mov    hh, eax;
 // LINE 423:
 	__asm        cmp    hh, 0xC;
@@ -1378,7 +1378,7 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        push   eax;
 	__asm        lea    ecx, out.ios;
-	__asm        call   0x0056F090;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xE4], eax;
 	__asm        jmp    near ptr 0x0043D0DC;
 	__asm        mov    dword ptr [ebp-0xD8], 0x43D390;
@@ -1391,7 +1391,7 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        jmp    near ptr 0x0043D118;
 	__asm        push   0x3A;
 	__asm        mov    ecx, [ebp-0xE4];
-	__asm        call   0x0056A670;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        cmp    dword ptr [ebp-0xF0], 0;
 	__asm        jne    near ptr 0x0043D147;
@@ -1426,10 +1426,10 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0043D1C9;
 	__asm        mov    ecx, t;
-	__asm        call   0x0043CF0C;
+	__asm        call   MTime::Minute;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xF0];
-	__asm        call   0x0056F090;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xF8], eax;
 	__asm        jmp    near ptr 0x0043D1E8;
 	__asm        mov    dword ptr [ebp-0xC8], 0x43D3C0;
@@ -1438,7 +1438,7 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        jmp    near ptr 0x0043D206;
 	__asm        push   0x3A;
 	__asm        mov    ecx, [ebp-0xF8];
-	__asm        call   0x0056A670;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x100], eax;
 	__asm        cmp    dword ptr [ebp-0x100], 0;
 	__asm        jne    near ptr 0x0043D235;
@@ -1457,10 +1457,10 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x0043D268;
 	__asm        mov    ecx, t;
-	__asm        call   0x0043CF83;
+	__asm        call   MTime::Second;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x100];
-	__asm        call   0x0056F090;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x104], eax;
 	__asm        jmp    near ptr 0x0043D287;
 	__asm        mov    dword ptr [ebp-0xC0], 0x43D390;
@@ -1469,7 +1469,7 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        jmp    near ptr 0x0043D2A5;
 	__asm        push   0x20;
 	__asm        mov    ecx, [ebp-0x104];
-	__asm        call   0x0056A670;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
 	__asm        jne    near ptr 0x0043D2D4;
@@ -1498,27 +1498,27 @@ class ostream& operator<<(class ostream& s, const class MTime& t) {
 	__asm        add    edx, eax;
 	__asm        push   edx;
 	__asm        lea    ecx, out.ios;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xE8], eax;
 // LINE 424:
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        push   eax;
-	__asm        call   0x004205D0;
+	__asm        call   ends;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0043D34A;
 // LINE 429:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        mov    ecx, s;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 // LINE 430:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        jmp    near ptr 0x0043D364;
 	__asm        lea    ecx, out.<ostrstream+0x08>;
-	__asm        call   0x0056C8D0;
+	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out.<ostrstream+0x08>;
-	__asm        call   0x0056B140;
+	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        jmp    near ptr 0x0043D385;
 // LINE 431:

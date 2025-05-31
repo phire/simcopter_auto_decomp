@@ -97,7 +97,7 @@ void Version::Version() {
 // LINE 39:
 	__asm        mov    eax, dwVersionInfoSize;
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
@@ -135,7 +135,7 @@ void Version::Version() {
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 45:
 	__asm        mov    eax, this;
@@ -161,7 +161,7 @@ void Version::~Version() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 62:
 	__asm        jmp    near ptr 0x0043DC52;
@@ -536,7 +536,7 @@ long Version::GetCPUVersion() {
 	long lReturnValue;
 
 // LINE 339:
-	__asm        call   0x0047B67A;
+	__asm        call   wincpuid;
 	__asm        movzx  eax, ax;
 	__asm        mov    lReturnValue, eax;
 // LINE 340:
@@ -558,7 +558,7 @@ long Version::GetCPUSpeed() {
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x00447B77;
+	__asm        call   cpuspeed;
 	__asm        add    esp, 8;
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        mov    edx, [eax];

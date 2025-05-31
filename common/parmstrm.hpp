@@ -212,7 +212,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
-	__asm        call   0x004CEFB0;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    near ptr 0x004CD934;
@@ -286,7 +286,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x98];
 	__asm        push   eax;
-	__asm        call   0x004CF020;
+	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CDA69;
 	__asm        jmp    near ptr 0x004CDA6E;
@@ -307,7 +307,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004CDAC1;
 	__asm        jmp    near ptr 0x004CDAC6;
@@ -464,7 +464,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        push   eax;
-	__asm        call   0x004CEFB0;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xA4], eax;
 	__asm        jmp    near ptr 0x004CDDA7;
@@ -475,7 +475,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x16];
 	__asm        push   eax;
-	__asm        call   0x004CF020;
+	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CDDCC;
 	__asm        mov    eax, [ebp-0xE4];
@@ -518,7 +518,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        push   eax;
-	__asm        call   0x004CF020;
+	__asm        call   uninitialized_copy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CDE79;
 	__asm        jmp    near ptr 0x004CDE7E;
@@ -539,7 +539,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004CDEE0;
 	__asm        jmp    near ptr 0x004CDEE5;
@@ -643,7 +643,7 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004CE07E;
 // LINE 369:
@@ -805,7 +805,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        jmp    near ptr 0x004CE2A6;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], eax;
@@ -968,7 +968,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
-	__asm        call   0x004CEFB0;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004CE53F;
@@ -1085,7 +1085,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004CE747;
 	__asm        jmp    near ptr 0x004CE74C;
@@ -1173,7 +1173,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        jmp    near ptr 0x004CE8A1;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx], eax;
@@ -1336,7 +1336,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        push   eax;
-	__asm        call   0x004CEFB0;
+	__asm        call   allocate;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        jmp    near ptr 0x004CEBA6;
@@ -1453,7 +1453,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	__asm        mov    [ebp-0xBC], eax;
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004CEDE1;
 	__asm        jmp    near ptr 0x004CEDE6;

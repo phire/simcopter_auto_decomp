@@ -71,7 +71,7 @@ short S3CityInit() {
 	__asm        cmp    dword ptr ds:[0x5B59E0], 0;
 	__asm        jne    near ptr 0x0050A038;
 // LINE 212:
-	__asm        call   0x004C83F5;
+	__asm        call   S2CityAlloc;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050A032;
@@ -81,9 +81,9 @@ short S3CityInit() {
 // LINE 214:
 	__asm        inc    dword ptr ds:[0x5B59E0];
 // LINE 219:
-	__asm        call   0x004290D3;
+	__asm        call   GetCurrentCityPath;
 	__asm        push   eax;
-	__asm        call   0x004C4AB6;
+	__asm        call   S2CityLoad;
 	__asm        add    esp, 4;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -92,7 +92,7 @@ short S3CityInit() {
 	__asm        push   0xDC;
 	__asm        push   0x5B59F8;
 	__asm        push   0x5B5A18;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0050A072;
 	__asm        jmp    near ptr 0x0050A072;
@@ -102,12 +102,12 @@ short S3CityInit() {
 	__asm        push   0x5B5A1C;
 	__asm        push   0;
 	__asm        push   4;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 222:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        call   0x004C4AB6;
+	__asm        call   S2CityLoad;
 	__asm        add    esp, 4;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -116,7 +116,7 @@ short S3CityInit() {
 	__asm        mov    ax, 1;
 	__asm        jmp    near ptr 0x0050A401;
 // LINE 227:
-	__asm        call   0x00513E81;
+	__asm        call   S3TerrainInitMap;
 // LINE 229:
 	__asm        mov    dword ptr ds:[0x5B491C], 0;
 // LINE 230:
@@ -124,7 +124,7 @@ short S3CityInit() {
 // LINE 231:
 	__asm        mov    dword ptr ds:[0x5B4924], 0;
 // LINE 234:
-	__asm        call   0x0050A5DF;
+	__asm        call   S3CityInitOmap;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050A0E9;
@@ -282,7 +282,7 @@ short S3CityInit() {
 // LINE 296:
 	__asm        mov    dword ptr ds:[0x666308], 0;
 // LINE 297:
-	__asm        call   0x00517E5D;
+	__asm        call   S3TerrSetGridObj;
 // LINE 300:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cdq;
@@ -291,19 +291,19 @@ short S3CityInit() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 307:
 	__asm        push   0x59B508;
 	__asm        push   0xC4E0000;
 	__asm        push   0x62A458;
-	__asm        call   0x004CA810;
+	__asm        call   MTArbRotMat;
 	__asm        add    esp, 0xC;
 // LINE 308:
 	__asm        push   0x59B508;
 	__asm        push   0x1C20000;
 	__asm        push   0x609C00;
-	__asm        call   0x004CA810;
+	__asm        call   MTArbRotMat;
 	__asm        add    esp, 0xC;
 // LINE 312:
 	__asm        mov    tempLogCityEnterExit.nType, 2;
@@ -320,7 +320,7 @@ short S3CityInit() {
 	__asm        push   eax;
 	__asm        lea    eax, tempLogCityEnterExit.szCity[0];
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 317:
 	__asm        jmp    near ptr 0x0050A3E8;
@@ -331,7 +331,7 @@ short S3CityInit() {
 	__asm        push   0;
 	__asm        lea    eax, tempLogCityEnterExit.nType;
 	__asm        push   eax;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 321:
 	__asm        xor    ax, ax;
@@ -358,7 +358,7 @@ void S3CityDeInit() {
 	__asm        push   eax;
 	__asm        lea    eax, tempLogCityEnterExit.szCity[0];
 	__asm        push   eax;
-	__asm        call   0x0056AD40;
+	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 343:
 	__asm        jmp    near ptr 0x0050A452;
@@ -369,7 +369,7 @@ void S3CityDeInit() {
 	__asm        push   0;
 	__asm        lea    eax, tempLogCityEnterExit.nType;
 	__asm        push   eax;
-	__asm        call   0x004EBC2B;
+	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 348:
 	__asm        cmp    dword ptr ds:[0x5B59E0], 0;
@@ -389,7 +389,7 @@ void VRSetBackPlane(int32_t farZ) {
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 370:
@@ -424,7 +424,7 @@ void VRSetBackPlane(int32_t farZ) {
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 378:
@@ -446,7 +446,7 @@ void VRSetBackPlane(int32_t farZ) {
 	__asm        push   0x29;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 385:
@@ -560,7 +560,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512E3A;
+	__asm        call   S3CityCreateHeliBase;
 	__asm        add    esp, 8;
 // LINE 480:
 	__asm        cmp    dword ptr ds:[0x5B491C], 1;
@@ -585,7 +585,7 @@ short S3CityInitOmap() {
 // LINE 498:
 	__asm        mov    eax, tile;
 	__asm        push   eax;
-	__asm        call   0x0058E370;
+	__asm        call   S2TileSize;
 	__asm        add    esp, 4;
 	__asm        mov    size, ax;
 // LINE 501:
@@ -593,7 +593,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 503:
@@ -649,7 +649,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 527:
@@ -668,7 +668,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 532:
@@ -687,7 +687,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 537:
@@ -706,7 +706,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 542:
@@ -725,7 +725,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 547:
@@ -744,7 +744,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 552:
@@ -763,7 +763,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 557:
@@ -782,7 +782,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512A46;
+	__asm        call   S3CityLowestTerrAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, ax;
 // LINE 562:
@@ -986,7 +986,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050ABE9;
@@ -1013,7 +1013,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AC32;
@@ -1076,7 +1076,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050ACDF;
@@ -1103,7 +1103,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AD28;
@@ -1130,7 +1130,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AD71;
@@ -1157,7 +1157,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050ADBA;
@@ -1184,7 +1184,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AE03;
@@ -1211,7 +1211,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AE4C;
@@ -1238,7 +1238,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AE95;
@@ -1265,7 +1265,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AEDE;
@@ -1292,7 +1292,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050AF27;
@@ -1452,7 +1452,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050B0E3;
@@ -1481,7 +1481,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050B139;
@@ -1512,7 +1512,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050B193;
@@ -1544,7 +1544,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512AF5;
+	__asm        call   S3CityIsCellFlat;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x0050B1E9;
@@ -1971,7 +1971,7 @@ short S3CityInitOmap() {
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 1058:
@@ -2012,7 +2012,7 @@ short S3CityInitOmap() {
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 1068:
@@ -2143,14 +2143,14 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 1123:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 1124:
@@ -2228,14 +2228,14 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 1145:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 1146:
@@ -2313,14 +2313,14 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 1167:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 1168:
@@ -2398,14 +2398,14 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 1189:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 1190:
@@ -2506,7 +2506,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1227:
@@ -2536,7 +2536,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1237:
@@ -2555,7 +2555,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1242:
@@ -2574,7 +2574,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1247:
@@ -2593,7 +2593,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1252:
@@ -2612,7 +2612,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1257:
@@ -2631,7 +2631,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1262:
@@ -2650,7 +2650,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1267:
@@ -2669,7 +2669,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1272:
@@ -2688,7 +2688,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1277:
@@ -2707,7 +2707,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1282:
@@ -2726,7 +2726,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1287:
@@ -2745,7 +2745,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1292:
@@ -2764,7 +2764,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1297:
@@ -2783,7 +2783,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1302:
@@ -2802,7 +2802,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1307:
@@ -2821,7 +2821,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1312:
@@ -2842,7 +2842,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1318:
@@ -2861,7 +2861,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1323:
@@ -2880,7 +2880,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1328:
@@ -2901,7 +2901,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1334:
@@ -2920,7 +2920,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1339:
@@ -2939,7 +2939,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1344:
@@ -2958,7 +2958,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1349:
@@ -2977,7 +2977,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1354:
@@ -2996,7 +2996,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1359:
@@ -3015,7 +3015,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1364:
@@ -3034,7 +3034,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1369:
@@ -3053,7 +3053,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1374:
@@ -3072,7 +3072,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1379:
@@ -3091,7 +3091,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1384:
@@ -3110,7 +3110,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1389:
@@ -3129,7 +3129,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1394:
@@ -3148,7 +3148,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1399:
@@ -3167,7 +3167,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1404:
@@ -3186,7 +3186,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1409:
@@ -3205,7 +3205,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1414:
@@ -3224,7 +3224,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1419:
@@ -3243,7 +3243,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1424:
@@ -3262,7 +3262,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1429:
@@ -3283,7 +3283,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1435:
@@ -3304,7 +3304,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1441:
@@ -3323,7 +3323,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1446:
@@ -3364,7 +3364,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1461:
@@ -3385,7 +3385,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1467:
@@ -3404,7 +3404,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1472:
@@ -3423,7 +3423,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1477:
@@ -3442,7 +3442,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1482:
@@ -3461,7 +3461,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1487:
@@ -3482,7 +3482,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1493:
@@ -3501,7 +3501,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1498:
@@ -3520,7 +3520,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1503:
@@ -3539,7 +3539,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1508:
@@ -3558,7 +3558,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1513:
@@ -3577,7 +3577,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1518:
@@ -3596,7 +3596,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1523:
@@ -3615,7 +3615,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1528:
@@ -3634,7 +3634,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1533:
@@ -3653,7 +3653,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1538:
@@ -3672,7 +3672,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1543:
@@ -3691,7 +3691,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1548:
@@ -3710,7 +3710,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1553:
@@ -3729,7 +3729,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1558:
@@ -3748,7 +3748,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1563:
@@ -3767,7 +3767,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1568:
@@ -3788,7 +3788,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1574:
@@ -3809,7 +3809,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1580:
@@ -3903,7 +3903,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1609:
@@ -3924,7 +3924,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1615:
@@ -3943,7 +3943,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1620:
@@ -3962,7 +3962,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1625:
@@ -3981,7 +3981,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1630:
@@ -4000,7 +4000,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1635:
@@ -4019,7 +4019,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1640:
@@ -4036,7 +4036,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj, eax;
 // LINE 1648:
@@ -4063,7 +4063,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1658:
@@ -4082,7 +4082,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1663:
@@ -4101,7 +4101,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1668:
@@ -4120,7 +4120,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1673:
@@ -4139,7 +4139,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1678:
@@ -4160,7 +4160,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1685:
@@ -4181,7 +4181,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1691:
@@ -4202,7 +4202,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1697:
@@ -4223,7 +4223,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1703:
@@ -4244,7 +4244,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1709:
@@ -4263,7 +4263,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1714:
@@ -4282,7 +4282,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1719:
@@ -4301,7 +4301,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1724:
@@ -4320,7 +4320,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1729:
@@ -4339,7 +4339,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1734:
@@ -4358,7 +4358,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1739:
@@ -4377,7 +4377,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1744:
@@ -4396,7 +4396,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1749:
@@ -4415,7 +4415,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1754:
@@ -4434,7 +4434,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1759:
@@ -4453,7 +4453,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1764:
@@ -4472,7 +4472,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1769:
@@ -4491,7 +4491,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1774:
@@ -4510,7 +4510,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1779:
@@ -4529,7 +4529,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1784:
@@ -4548,7 +4548,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1789:
@@ -4567,7 +4567,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1794:
@@ -4586,7 +4586,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1799:
@@ -4605,7 +4605,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1804:
@@ -4624,7 +4624,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1809:
@@ -4643,7 +4643,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1814:
@@ -4662,7 +4662,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1819:
@@ -4692,7 +4692,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1830:
@@ -4711,7 +4711,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1835:
@@ -4730,7 +4730,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1840:
@@ -4749,7 +4749,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1845:
@@ -4768,7 +4768,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1850:
@@ -4787,7 +4787,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1855:
@@ -4806,7 +4806,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1860:
@@ -4825,7 +4825,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1865:
@@ -4844,7 +4844,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1870:
@@ -4863,7 +4863,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1875:
@@ -4882,7 +4882,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1880:
@@ -4901,7 +4901,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1885:
@@ -4920,7 +4920,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1890:
@@ -4939,7 +4939,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1895:
@@ -4972,7 +4972,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1905:
@@ -4991,7 +4991,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1910:
@@ -5019,7 +5019,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1919:
@@ -5038,7 +5038,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1924:
@@ -5057,7 +5057,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1929:
@@ -5078,7 +5078,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1935:
@@ -5097,7 +5097,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1940:
@@ -5116,7 +5116,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1945:
@@ -5135,7 +5135,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1950:
@@ -5154,7 +5154,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1955:
@@ -5173,7 +5173,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1960:
@@ -5192,7 +5192,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1965:
@@ -5211,7 +5211,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1970:
@@ -5230,7 +5230,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1975:
@@ -5249,7 +5249,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512C2B;
+	__asm        call   S3CityGetBase;
 	__asm        add    esp, 0xC;
 	__asm        mov    obj2, eax;
 // LINE 1980:
@@ -5268,14 +5268,14 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 2018:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 2021:
@@ -5714,7 +5714,7 @@ short S3CityInitOmap() {
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx], eax;
@@ -5852,7 +5852,7 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 2167:
@@ -6244,7 +6244,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00513D50;
+	__asm        call   GetAltitude;
 	__asm        add    esp, 8;
 	__asm        mov    alt, ax;
 // LINE 2236:
@@ -6318,7 +6318,7 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 2269:
@@ -6326,7 +6326,7 @@ short S3CityInitOmap() {
 	__asm        jne    near ptr 0x0050EC14;
 // LINE 2270:
 	__asm        push   0x5B5A34;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 2272:
 	__asm        mov    i, 0;
@@ -6431,7 +6431,7 @@ short S3CityInitOmap() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00512E3A;
+	__asm        call   S3CityCreateHeliBase;
 	__asm        add    esp, 8;
 // LINE 2302:
 	__asm        jmp    near ptr 0x0050ED4B;
@@ -6439,7 +6439,7 @@ short S3CityInitOmap() {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 2306:
@@ -6447,7 +6447,7 @@ short S3CityInitOmap() {
 	__asm        jne    near ptr 0x0050EDC2;
 // LINE 2307:
 	__asm        push   0x5B5A50;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 2309:
 	__asm        mov    i, 0;
@@ -6550,7 +6550,7 @@ short S3CityInitOmap() {
 	__asm        jne    near ptr 0x0050EF37;
 // LINE 2424:
 	__asm        push   0x5B5A6C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 2425:
 	__asm        jmp    near ptr 0x0050EEF8;
@@ -6593,7 +6593,7 @@ void S3CityGrid() {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 2458:
-	__asm        call   0x0051221E;
+	__asm        call   S3CityCheckGridPos;
 // LINE 2461:
 	__asm        mov    dword ptr ds:[0x6090A4], 0;
 // LINE 2462:
@@ -6615,7 +6615,7 @@ void S3CityGrid() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x6BED30];
 	__asm        push   eax;
-	__asm        call   0x005124FE;
+	__asm        call   S3CitySpiralScan;
 	__asm        add    esp, 0xC;
 // LINE 2469:
 	__asm        jmp    near ptr 0x0050F679;
@@ -6730,7 +6730,7 @@ void S3CityGrid() {
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x2C;
 	__asm        push   eax;
-	__asm        call   0x0050F67E;
+	__asm        call   S3CityGetCells;
 	__asm        add    esp, 0x14;
 // LINE 2725:
 	__asm        push   0x62A498;
@@ -6740,7 +6740,7 @@ void S3CityGrid() {
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x44;
 	__asm        push   eax;
-	__asm        call   0x0050F67E;
+	__asm        call   S3CityGetCells;
 	__asm        add    esp, 0x14;
 // LINE 2733:
 	__asm        mov    eax, ds:[0x6C126C];
@@ -6759,7 +6759,7 @@ void S3CityGrid() {
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    near ptr 0x0050F205;
 // LINE 2737:
-	__asm        call   0x0050FE32;
+	__asm        call   city_fovscan_horizedge;
 // LINE 2739:
 	__asm        jmp    near ptr 0x0050F667;
 	__asm        mov    eax, ds:[0x609104];
@@ -6768,7 +6768,7 @@ void S3CityGrid() {
 	__asm        cmp    [eax], ecx;
 	__asm        jne    near ptr 0x0050F224;
 // LINE 2741:
-	__asm        call   0x005102D4;
+	__asm        call   city_fovscan_vertedge;
 // LINE 2743:
 	__asm        jmp    near ptr 0x0050F667;
 	__asm        mov    eax, ds:[0x609104];
@@ -6820,7 +6820,7 @@ void S3CityGrid() {
 // LINE 2761:
 	__asm        jmp    near ptr 0x0050F28C;
 // LINE 2762:
-	__asm        call   0x005102D4;
+	__asm        call   city_fovscan_vertedge;
 // LINE 2764:
 	__asm        jmp    near ptr 0x0050F331;
 // LINE 2767:
@@ -6853,7 +6853,7 @@ void S3CityGrid() {
 // LINE 2775:
 	__asm        jmp    near ptr 0x0050F2EC;
 // LINE 2776:
-	__asm        call   0x0050FE32;
+	__asm        call   city_fovscan_horizedge;
 // LINE 2780:
 	__asm        jmp    near ptr 0x0050F667;
 	__asm        mov    eax, ds:[0x609104];
@@ -6905,7 +6905,7 @@ void S3CityGrid() {
 // LINE 2798:
 	__asm        jmp    near ptr 0x0050F39E;
 // LINE 2799:
-	__asm        call   0x005102D4;
+	__asm        call   city_fovscan_vertedge;
 // LINE 2801:
 	__asm        jmp    near ptr 0x0050F443;
 // LINE 2804:
@@ -6938,7 +6938,7 @@ void S3CityGrid() {
 // LINE 2812:
 	__asm        jmp    near ptr 0x0050F3FE;
 // LINE 2813:
-	__asm        call   0x0050FE32;
+	__asm        call   city_fovscan_horizedge;
 // LINE 2817:
 	__asm        jmp    near ptr 0x0050F667;
 	__asm        mov    eax, ds:[0x609104];
@@ -6990,7 +6990,7 @@ void S3CityGrid() {
 // LINE 2835:
 	__asm        jmp    near ptr 0x0050F4B0;
 // LINE 2836:
-	__asm        call   0x005102D4;
+	__asm        call   city_fovscan_vertedge;
 // LINE 2838:
 	__asm        jmp    near ptr 0x0050F555;
 // LINE 2841:
@@ -7023,7 +7023,7 @@ void S3CityGrid() {
 // LINE 2849:
 	__asm        jmp    near ptr 0x0050F510;
 // LINE 2850:
-	__asm        call   0x0050FE32;
+	__asm        call   city_fovscan_horizedge;
 // LINE 2854:
 	__asm        jmp    near ptr 0x0050F667;
 	__asm        mov    eax, ds:[0x609104];
@@ -7075,7 +7075,7 @@ void S3CityGrid() {
 // LINE 2872:
 	__asm        jmp    near ptr 0x0050F5C2;
 // LINE 2873:
-	__asm        call   0x005102D4;
+	__asm        call   city_fovscan_vertedge;
 // LINE 2875:
 	__asm        jmp    near ptr 0x0050F667;
 // LINE 2878:
@@ -7108,7 +7108,7 @@ void S3CityGrid() {
 // LINE 2886:
 	__asm        jmp    near ptr 0x0050F622;
 // LINE 2887:
-	__asm        call   0x0050FE32;
+	__asm        call   city_fovscan_horizedge;
 // LINE 2893:
 	__asm        cmp    dword ptr ds:[0x609BE8], 0;
 	__asm        jne    near ptr 0x0050F679;
@@ -7923,7 +7923,7 @@ void city_fovscan_horizedge() {
 	__asm        push   1;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00510776;
+	__asm        call   city_subscan_horiz;
 	__asm        add    esp, 0x18;
 // LINE 3271:
 	__asm        jmp    near ptr 0x0050FFF6;
@@ -7950,7 +7950,7 @@ void city_fovscan_horizedge() {
 	__asm        jl     near ptr 0x00510035;
 // LINE 3280:
 	__asm        push   0x5B5A7C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3281:
 	__asm        mov    eax, x_last;
@@ -7977,7 +7977,7 @@ void city_fovscan_horizedge() {
 	__asm        jl     near ptr 0x0051007F;
 // LINE 3289:
 	__asm        push   0x5B5A8C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3291:
 	__asm        jmp    near ptr 0x0050FEFB;
@@ -8059,7 +8059,7 @@ void city_fovscan_horizedge() {
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00510776;
+	__asm        call   city_subscan_horiz;
 	__asm        add    esp, 0x18;
 // LINE 3314:
 	__asm        jmp    near ptr 0x0051018C;
@@ -8086,7 +8086,7 @@ void city_fovscan_horizedge() {
 	__asm        jl     near ptr 0x005101CB;
 // LINE 3323:
 	__asm        push   0x5B5A9C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3324:
 	__asm        mov    eax, x_last;
@@ -8113,7 +8113,7 @@ void city_fovscan_horizedge() {
 	__asm        jl     near ptr 0x00510215;
 // LINE 3332:
 	__asm        push   0x5B5AAC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3334:
 	__asm        jmp    near ptr 0x00510091;
@@ -8146,7 +8146,7 @@ void city_fovscan_horizedge() {
 	__asm        jl     near ptr 0x00510277;
 // LINE 3342:
 	__asm        push   0x5B5ABC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3346:
 	__asm        mov    eax, lcell;
@@ -8329,7 +8329,7 @@ void city_fovscan_vertedge() {
 	__asm        push   eax;
 	__asm        mov    eax, y;
 	__asm        push   eax;
-	__asm        call   0x00510BEB;
+	__asm        call   city_subscan_vert;
 	__asm        add    esp, 0x18;
 // LINE 3421:
 	__asm        jmp    near ptr 0x00510498;
@@ -8355,7 +8355,7 @@ void city_fovscan_vertedge() {
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005104D7;
 	__asm        push   0x5B5ACC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3430:
 	__asm        mov    eax, y_last;
@@ -8381,7 +8381,7 @@ void city_fovscan_vertedge() {
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510521;
 	__asm        push   0x5B5ADC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3439:
 	__asm        jmp    near ptr 0x0051039C;
@@ -8462,7 +8462,7 @@ void city_fovscan_vertedge() {
 	__asm        push   eax;
 	__asm        mov    eax, y;
 	__asm        push   eax;
-	__asm        call   0x00510BEB;
+	__asm        call   city_subscan_vert;
 	__asm        add    esp, 0x18;
 // LINE 3461:
 	__asm        jmp    near ptr 0x00510630;
@@ -8488,7 +8488,7 @@ void city_fovscan_vertedge() {
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0051066F;
 	__asm        push   0x5B5AEC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3470:
 	__asm        mov    eax, y_last;
@@ -8514,7 +8514,7 @@ void city_fovscan_vertedge() {
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x005106B9;
 	__asm        push   0x5B5AFC;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3479:
 	__asm        jmp    near ptr 0x00510534;
@@ -8546,7 +8546,7 @@ void city_fovscan_vertedge() {
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x0051071B;
 	__asm        push   0x5B5B0C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3490:
 	__asm        mov    eax, tcell;
@@ -8708,7 +8708,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510902;
 	__asm        push   0x5B5B1C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3565:
 	__asm        mov    eax, y;
@@ -8744,7 +8744,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510975;
 	__asm        push   0x5B5B2C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3575:
 	__asm        jmp    near ptr 0x00510820;
@@ -8833,7 +8833,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510A86;
 	__asm        push   0x5B5B3C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3600:
 	__asm        mov    eax, y;
@@ -8869,7 +8869,7 @@ void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* ed
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510AF9;
 	__asm        push   0x5B5B4C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3610:
 	__asm        jmp    near ptr 0x005109A4;
@@ -9072,7 +9072,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510D56;
 	__asm        push   0x5B5B5C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3672:
 	__asm        mov    eax, x;
@@ -9108,7 +9108,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510DC9;
 	__asm        push   0x5B5B6C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3682:
 	__asm        jmp    near ptr 0x00510C74;
@@ -9197,7 +9197,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510EDD;
 	__asm        push   0x5B5B7C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3707:
 	__asm        mov    eax, x;
@@ -9233,7 +9233,7 @@ void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edg
 	__asm        cmp    eax, ecx;
 	__asm        jl     near ptr 0x00510F50;
 	__asm        push   0x5B5B8C;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 3717:
 	__asm        jmp    near ptr 0x00510DFB;
@@ -9397,7 +9397,7 @@ void S3CityDrawGrid() {
 	__asm        mov    eax, cptrptr;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x00512670;
+	__asm        call   S3CityCellViewReject;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x0051114C;
@@ -9436,7 +9436,7 @@ void S3CityDrawGrid() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    texid, eax;
 // LINE 3808:
@@ -9446,7 +9446,7 @@ void S3CityDrawGrid() {
 // LINE 3812:
 	__asm        mov    eax, texid;
 	__asm        push   eax;
-	__asm        call   0x004D9093;
+	__asm        call   VRGetTexColor;
 	__asm        add    esp, 4;
 	__asm        mov    texid, eax;
 // LINE 3813:
@@ -9675,7 +9675,7 @@ void S3CityDrawGrid() {
 	__asm        push   eax;
 	__asm        mov    eax, cptrptr;
 	__asm        push   eax;
-	__asm        call   0x0051147C;
+	__asm        call   S3CityDyObjFixup;
 	__asm        add    esp, 8;
 // LINE 3911:
 	__asm        call   0x004E2090;
@@ -9778,7 +9778,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   0xFD0;
 	__asm        push   0x5B5B9C;
 	__asm        push   0x5B5BBC;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00511595;
 	__asm        jmp    near ptr 0x00511595;
@@ -9964,7 +9964,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   eax;
 	__asm        mov    eax, caddr2;
 	__asm        push   eax;
-	__asm        call   0x0051215E;
+	__asm        call   S3CityCellInFront;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005117C5;
@@ -9980,7 +9980,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   0x1008;
 	__asm        push   0x5B5BD4;
 	__asm        push   0x5B5BF4;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005117F5;
 	__asm        jmp    near ptr 0x005117F5;
@@ -10026,7 +10026,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   eax;
 	__asm        mov    eax, caddr2;
 	__asm        push   eax;
-	__asm        call   0x0051215E;
+	__asm        call   S3CityCellInFront;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x00511881;
@@ -10042,7 +10042,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   0x101C;
 	__asm        push   0x5B5C0C;
 	__asm        push   0x5B5C2C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005118B1;
 	__asm        jmp    near ptr 0x005118B1;
@@ -10088,7 +10088,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   eax;
 	__asm        mov    eax, caddr2;
 	__asm        push   eax;
-	__asm        call   0x0051215E;
+	__asm        call   S3CityCellInFront;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x0051193D;
@@ -10104,7 +10104,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   0x1030;
 	__asm        push   0x5B5C44;
 	__asm        push   0x5B5C64;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0051196D;
 	__asm        jmp    near ptr 0x0051196D;
@@ -10150,7 +10150,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   eax;
 	__asm        mov    eax, caddr2;
 	__asm        push   eax;
-	__asm        call   0x0051215E;
+	__asm        call   S3CityCellInFront;
 	__asm        add    esp, 0x10;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x005119F9;
@@ -10166,7 +10166,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        push   0x1044;
 	__asm        push   0x5B5C7C;
 	__asm        push   0x5B5C9C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00511A29;
 	__asm        jmp    near ptr 0x00511A29;
@@ -11079,7 +11079,7 @@ void S3CityCheckGridPos() {
 	__asm        cmp    dword ptr ds:[0x598E5C], 1;
 	__asm        jne    near ptr 0x005123B3;
 // LINE 4413:
-	__asm        call   0x00518499;
+	__asm        call   S3TerrMorphWater;
 	__asm        mov    ds:[0x5B59E8], eax;
 // LINE 4415:
 	__asm        mov    eax, ds:[0x5B59D4];
@@ -11096,7 +11096,7 @@ void S3CityCheckGridPos() {
 // LINE 4419:
 	__asm        mov    eax, gsize;
 	__asm        push   eax;
-	__asm        call   0x004D6B40;
+	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 4420:
 	__asm        mov    eax, ds:[0x6663A0];
@@ -11106,7 +11106,7 @@ void S3CityCheckGridPos() {
 	__asm        sub    eax, 3;
 	__asm        shl    eax, 0x16;
 	__asm        push   eax;
-	__asm        call   0x0050A478;
+	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 4421:
 	__asm        mov    eax, ds:[0x6BED30];
@@ -11123,7 +11123,7 @@ void S3CityCheckGridPos() {
 	__asm        movsx  eax, ax;
 	__asm        mov    ds:[0x67ED2C], eax;
 // LINE 4423:
-	__asm        call   0x00517E5D;
+	__asm        call   S3TerrSetGridObj;
 // LINE 4424:
 	__asm        mov    eax, ds:[0x6BED30];
 	__asm        mov    ecx, ds:[0x6BED34];
@@ -11163,7 +11163,7 @@ void S3CityCheckGridPos() {
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(ydiff);
 	__asm        add    ds:[0x67ED2C], eax;
 // LINE 4435:
-	__asm        call   0x00517E5D;
+	__asm        call   S3TerrSetGridObj;
 // LINE 4437:
 	__asm        mov    eax, xdiff;
 	__asm        shl    eax, 0x16;
@@ -11517,7 +11517,7 @@ int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 // LINE 4848:
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
-	__asm        call   0x004F5A0C;
+	__asm        call   S3HeliHighestBuildAlt;
 	__asm        add    esp, 4;
 	__asm        mov    sradius, eax;
 // LINE 4849:
@@ -11585,7 +11585,7 @@ void S3CityDrawOverHeadGrid() {
 // LINE 4892:
 	__asm        mov    dword ptr ds:[0x5B59E4], 1;
 // LINE 4895:
-	__asm        call   0x005007DC;
+	__asm        call   S3MapSet3dRender;
 // LINE 4900:
 	__asm        lea    eax, mat1[0][0];
 	__asm        push   eax;
@@ -11626,7 +11626,7 @@ void S3CityDrawOverHeadGrid() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4911:
-	__asm        call   0x004EEF7F;
+	__asm        call   S3ViewerSetView;
 // LINE 4913:
 	__asm        mov    eax, ds:[0x6C1318];
 	__asm        add    eax, 0x20000000;
@@ -11643,12 +11643,12 @@ void S3CityDrawOverHeadGrid() {
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x005124FE;
+	__asm        call   S3CitySpiralScan;
 	__asm        add    esp, 0xC;
 // LINE 4920:
-	__asm        call   0x0051103E;
+	__asm        call   S3CityDrawGrid;
 // LINE 4923:
-	__asm        call   0x00500880;
+	__asm        call   S3MapRestore3dRender;
 // LINE 4925:
 	__asm        mov    dword ptr ds:[0x5B59E4], 0;
 // LINE 4926:
@@ -12011,7 +12011,7 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5082:
 	__asm        movsx  eax, i;
 	__asm        push   eax;
-	__asm        call   0x0058E370;
+	__asm        call   S2TileSize;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 2;
 	__asm        jne    near ptr 0x00512F7B;
@@ -12056,7 +12056,7 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5094:
 	__asm        movsx  eax, i;
 	__asm        push   eax;
-	__asm        call   0x0058E370;
+	__asm        call   S2TileSize;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 2;
 	__asm        jne    near ptr 0x00513018;
@@ -12107,14 +12107,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5112:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5113:
@@ -12241,7 +12241,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx], eax;
@@ -12279,14 +12279,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5159:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5160:
@@ -12378,14 +12378,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5189:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5190:
@@ -12472,14 +12472,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5219:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5220:
@@ -12564,14 +12564,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5247:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5248:
@@ -12657,14 +12657,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5275:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5276:
@@ -12750,14 +12750,14 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5303:
 	__asm        push   0x10;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    sptr, eax;
 // LINE 5304:
@@ -12866,7 +12866,7 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        push   0x18;
 	__asm        mov    eax, ds:[0x647200];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    cptr, eax;
 // LINE 5339:

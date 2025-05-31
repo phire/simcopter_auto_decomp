@@ -28,19 +28,19 @@ protected:
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490f90
 void $E2() {
-	__asm        call   0x00490FA5;
+	__asm        call   $E1;
 	__asm        jmp    near ptr 0x00490FA0;
 }
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490fa5
 void $E1() {
-	__asm        call   0x0056F980;
+	__asm        call   clock;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604B18;
-	__asm        call   0x00490FF1;
+	__asm        call   Random::seed;
 	__asm        jmp    near ptr 0x00490FC9;
 	__asm        jmp    near ptr 0x00490FCE;
 }
@@ -51,7 +51,7 @@ unsigned long __long_random(unsigned long limit) {
 	__asm        mov    eax, limit;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604B18;
-	__asm        call   0x004910EA;
+	__asm        call   Random::operator();
 	__asm        jmp    near ptr 0x00490FEC;
 // LINE 28:
 }

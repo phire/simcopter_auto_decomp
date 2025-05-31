@@ -204,7 +204,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 46:
 	__asm        jmp    near ptr 0x004A041D;
@@ -224,7 +224,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004A047D;
 // LINE 54:
@@ -238,7 +238,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A05F3;
+	__asm        call   PFile::FileCreate;
 // LINE 56:
 	__asm        jmp    near ptr 0x004A0478;
 // LINE 57:
@@ -264,7 +264,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x00586690;
+	__asm        call   _sopen;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x108], eax;
@@ -296,7 +296,7 @@ int32_t PFile::Close() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004A0556;
@@ -331,19 +331,19 @@ long PFile::Length() {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004A05D7;
 // LINE 96:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E450;
+	__asm        call   _filelength;
 	__asm        add    esp, 4;
 	__asm        mov    lFileLength, eax;
 // LINE 97:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 98:
 	__asm        mov    eax, lFileLength;
 	__asm        jmp    near ptr 0x004A05EE;
@@ -351,7 +351,7 @@ long PFile::Length() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E450;
+	__asm        call   _filelength;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A05EE;
 // LINE 102:
@@ -385,7 +385,7 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 120:
 	__asm        jmp    near ptr 0x004A0666;
@@ -405,7 +405,7 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004A069A;
 // LINE 126:
@@ -417,7 +417,7 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0058E540;
+	__asm        call   _creat;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x108], eax;
@@ -487,7 +487,7 @@ long PFile::SetPath(char * szPath) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 165:
 	__asm        mov    eax, 1;
@@ -522,7 +522,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        push   eax;
 	__asm        lea    eax, tempPFile.szFilePath[0];
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004A081E;
 	__asm        mov    tempPFile.szFilePath[0], 0;
@@ -533,16 +533,16 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004A0993;
 // LINE 184:
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    lFileLength, eax;
 // LINE 186:
 	__asm        push   0x7D00;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    chBuffer, eax;
 // LINE 187:
@@ -577,7 +577,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    lUsedBlockSize, eax;
 // LINE 199:
@@ -603,7 +603,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 204:
 	__asm        jmp    near ptr 0x004A0988;
@@ -622,7 +622,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004A0978;
 // LINE 208:
@@ -633,7 +633,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        jmp    near ptr 0x004A0949;
 // LINE 211:
 	__asm        lea    ecx, tempPFile.<vftable>;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 213:
 	__asm        mov    eax, lCurrentValue;
 	__asm        mov    [ebp-0x138], eax;
@@ -649,7 +649,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        je     near ptr 0x004A09E2;
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004A09E7;
 	__asm        mov    eax, [ebp-0x138];

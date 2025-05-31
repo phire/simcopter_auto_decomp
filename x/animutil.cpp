@@ -114,7 +114,7 @@ void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* child
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
-	__asm        call   0x005628EB;
+	__asm        call   XYIncrementCartesian;
 	__asm        add    esp, 0x24;
 	__asm        jmp    near ptr 0x00562693;
 // LINE 48:
@@ -138,7 +138,7 @@ void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin,
 	__asm        push   eax;
 	__asm        mov    eax, XY2Par;
 	__asm        push   eax;
-	__asm        call   0x00562610;
+	__asm        call   GetAxis;
 	__asm        add    esp, 0x1C;
 // LINE 53:
 	__asm        mov    eax, min;
@@ -155,7 +155,7 @@ void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin,
 	__asm        push   eax;
 	__asm        mov    eax, XY2Par;
 	__asm        push   eax;
-	__asm        call   0x00562610;
+	__asm        call   GetAxis;
 	__asm        add    esp, 0x1C;
 // LINE 54:
 	__asm        jmp    near ptr 0x005626F0;
@@ -225,7 +225,7 @@ unsigned short PutInPerspective(struct XZY* xzy, short cH) {
 	__asm        push   eax;
 	__asm        lea    eax, dxzy.x;
 	__asm        push   eax;
-	__asm        call   0x005626F5;
+	__asm        call   PutInPerspective;
 	__asm        add    esp, 8;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -265,7 +265,7 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        push   0x5BECD8;
 	__asm        push   0x4D;
 	__asm        push   0x5BECF4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 79:
 	__asm        mov    x, 0;
@@ -319,7 +319,7 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
-	__asm        call   0x005628EB;
+	__asm        call   XYIncrementCartesian;
 	__asm        add    esp, 0x24;
 // LINE 82:
 	__asm        mov    eax, xres;
@@ -484,7 +484,7 @@ void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* 
 	__asm        push   eax;
 	__asm        mov    eax, xAxis;
 	__asm        push   eax;
-	__asm        call   0x00562950;
+	__asm        call   TransformToAxes;
 	__asm        add    esp, 0x20;
 // LINE 122:
 	__asm        cmp    centeroffset, 0;
@@ -508,7 +508,7 @@ void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* 
 	__asm        push   0;
 	__asm        lea    eax, tf.x;
 	__asm        push   eax;
-	__asm        call   0x005626F5;
+	__asm        call   PutInPerspective;
 	__asm        add    esp, 8;
 // LINE 128:
 	__asm        lea    eax, tf.x;
@@ -548,7 +548,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	__asm        push   eax;
 	__asm        mov    eax, sinXangle;
 	__asm        push   eax;
-	__asm        call   0x005628EB;
+	__asm        call   XYIncrementCartesian;
 	__asm        add    esp, 0x24;
 // LINE 136:
 	__asm        fld    transformed.x;
@@ -569,7 +569,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	__asm        push   0;
 	__asm        lea    eax, transformed.x;
 	__asm        push   eax;
-	__asm        call   0x005626F5;
+	__asm        call   PutInPerspective;
 	__asm        add    esp, 8;
 // LINE 143:
 	__asm        cmp    ptH, 0;
@@ -603,7 +603,7 @@ void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
 	__asm        push   0x5BED14;
 	__asm        push   0x98;
 	__asm        push   0x5BED3C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 153:
 	__asm        mov    eax, partPolar;
@@ -622,7 +622,7 @@ void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
 // LINE 155:
 	__asm        mov    eax, partPolar;
 	__asm        push   eax;
-	__asm        call   0x00562C41;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 156:
 	__asm        jmp    near ptr 0x00562BD6;
@@ -667,19 +667,19 @@ void Keep0to2pi(struct Polar* polar) {
 // LINE 168:
 	__asm        mov    eax, polar;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 169:
 	__asm        mov    eax, polar;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 170:
 	__asm        mov    eax, polar;
 	__asm        add    eax, 8;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 171:
 	__asm        jmp    near ptr 0x00562C76;
@@ -690,7 +690,7 @@ float Keep0to2pi(float radians) {
 // LINE 175:
 	__asm        lea    eax, radians;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 176:
 	__asm        fld    radians;
@@ -721,7 +721,7 @@ void IncrementFloat(struct Polar inc, struct Polar* partPolar) {
 // LINE 184:
 	__asm        mov    eax, partPolar;
 	__asm        push   eax;
-	__asm        call   0x00562C41;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 185:
 	__asm        jmp    near ptr 0x00562CDC;
@@ -770,7 +770,7 @@ float my_acos(float x, float rad) {
 	__asm        push   0x5BED5C;
 	__asm        push   0xC1;
 	__asm        push   0x5BED78;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 195:
 	__asm        mov    res, 0;
@@ -869,7 +869,7 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(latint);
 	__asm        push   eax;
-	__asm        call   0x005639D2;
+	__asm        call   PolarIncs2Double;
 	__asm        add    esp, 0x24;
 // LINE 227:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(length);
@@ -884,7 +884,7 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 	__asm        push   eax;
 	__asm        mov    eax, rect;
 	__asm        push   eax;
-	__asm        call   0x00562EAB;
+	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 228:
 	__asm        jmp    near ptr 0x00562EA6;
@@ -901,12 +901,12 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 // LINE 236:
 	__asm        lea    eax, phi;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 237:
 	__asm        lea    eax, psi;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 239:
 	__asm        cmp    ctr, 0;
@@ -919,7 +919,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   0x5BED98;
 	__asm        push   0xF0;
 	__asm        push   0x5BEDBC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 241:
 	__asm        cmp    rect, 0;
@@ -928,7 +928,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   0x5BEDDC;
 	__asm        push   0xF1;
 	__asm        push   0x5BEDFC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 242:
 	__asm        movsx  eax, length;
@@ -951,7 +951,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        mov    eax, rad;
 	__asm        push   eax;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 245:
 	__asm        jmp    near ptr 0x00562F84;
@@ -968,7 +968,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        mov    eax, rad;
 	__asm        push   eax;
-	__asm        call   0x00562802;
+	__asm        call   XY2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 247:
 	__asm        mov    eax, ctr;
@@ -1007,7 +1007,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 // LINE 254:
 	__asm        lea    eax, myRect.top;
 	__asm        push   eax;
-	__asm        call   0x00566E67;
+	__asm        call   EraseRect;
 	__asm        add    esp, 4;
 // LINE 255:
 	__asm        mov    ecx, 6;
@@ -1022,7 +1022,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        lea    eax, myRect.top;
 	__asm        push   eax;
-	__asm        call   0x005670A9;
+	__asm        call   InsetRect;
 	__asm        add    esp, 0xC;
 // LINE 256:
 	__asm        movsx  eax, myRect.right;
@@ -1034,7 +1034,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 // LINE 257:
 	__asm        lea    eax, myRect.top;
 	__asm        push   eax;
-	__asm        call   0x005667FE;
+	__asm        call   center;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
@@ -1064,7 +1064,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        mov    eax, rad;
 	__asm        push   eax;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 261:
 	__asm        jmp    near ptr 0x005630A1;
@@ -1081,7 +1081,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        mov    eax, rad;
 	__asm        push   eax;
-	__asm        call   0x00562802;
+	__asm        call   XY2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 264:
 // Block end:
@@ -1099,7 +1099,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(centerPt.v);
 	__asm        push   eax;
-	__asm        call   0x005631D0;
+	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 265:
 	__asm        jmp    near ptr 0x005630CB;
@@ -1125,7 +1125,7 @@ void DrawDirectionDisk(struct Point centerPt, struct DXZY unitvector, float rad)
 	__asm        fstp   dword ptr [esp];
 	__asm        mov    eax, reinterpret_cast<uint32_t>(centerPt.v);
 	__asm        push   eax;
-	__asm        call   0x005631D0;
+	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 270:
 	__asm        jmp    near ptr 0x00563111;
@@ -1196,7 +1196,7 @@ void DrawDirectionDisk(struct DXZY start, struct DXZY end) {
 	__asm        fstp   dword ptr [esp];
 	__asm        mov    eax, reinterpret_cast<uint32_t>(startpt.v);
 	__asm        push   eax;
-	__asm        call   0x005631D0;
+	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 279:
 	__asm        jmp    near ptr 0x005631CB;
@@ -1260,7 +1260,7 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	__asm        push   eax;
 	__asm        mov    eax, passedInc;
 	__asm        push   eax;
-	__asm        call   0x005634FC;
+	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 516:
 	__asm        fld    resPolar.phi;
@@ -1285,7 +1285,7 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	__asm        mov    eax, passedInc;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00563D33;
+	__asm        call   IncrementTorque;
 	__asm        add    esp, 0xC;
 // LINE 522:
 	__asm        fld    resPolar.phi;
@@ -1349,7 +1349,7 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 	__asm        push   eax;
 	__asm        lea    eax, tmpinc.phi;
 	__asm        push   eax;
-	__asm        call   0x005634FC;
+	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 544:
 	__asm        mov    eax, partPol.psi;
@@ -1478,7 +1478,7 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x005634FC;
+	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 577:
 	__asm        jmp    near ptr 0x005634E2;
@@ -1487,7 +1487,7 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x00562B82;
+	__asm        call   IncrementXY;
 	__asm        add    esp, 8;
 // LINE 579:
 	__asm        mov    eax, phi;
@@ -1517,7 +1517,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   0x5BEE1C;
 	__asm        push   0x248;
 	__asm        push   0x5BEE44;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 585:
 	__asm        mov    eax, inc;
@@ -1534,7 +1534,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   0x5BEE64;
 	__asm        push   0x249;
 	__asm        push   0x5BEE8C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 586:
 	__asm        mov    eax, inc;
@@ -1551,7 +1551,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   0x5BEEAC;
 	__asm        push   0x24A;
 	__asm        push   0x5BEED4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 588:
 	__asm        cmp    parentPolar, 0;
@@ -1603,7 +1603,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        mov    eax, tmpPolar.phi;
 	__asm        push   eax;
 	__asm        push   0x41200000;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 603:
 	__asm        lea    eax, tmprad;
@@ -1618,7 +1618,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00563C20;
+	__asm        call   Cartesian2Polar;
 	__asm        add    esp, 0x18;
 // LINE 605:
 	__asm        fld    tmpPolar2.psi;
@@ -1638,7 +1638,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   eax;
 	__asm        mov    eax, tmprad;
 	__asm        push   eax;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 610:
 	__asm        lea    eax, tmprad2;
@@ -1653,7 +1653,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 	__asm        push   eax;
 	__asm        mov    eax, x2;
 	__asm        push   eax;
-	__asm        call   0x00563C20;
+	__asm        call   Cartesian2Polar;
 	__asm        add    esp, 0x18;
 // LINE 612:
 	__asm        fld    resPolar.psi;
@@ -1678,7 +1678,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 // LINE 618:
 	__asm        mov    eax, partPolar;
 	__asm        push   eax;
-	__asm        call   0x00562C41;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 619:
 	__asm        jmp    near ptr 0x005636D0;
@@ -1720,12 +1720,12 @@ void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        mov    eax, polar;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x00563859;
+	__asm        call   PolarDouble2Incs;
 	__asm        add    esp, 0x24;
 // LINE 627:
 	__asm        mov    eax, polar;
 	__asm        push   eax;
-	__asm        call   0x00562C41;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 628:
 	__asm        jmp    near ptr 0x00563747;
@@ -1770,12 +1770,12 @@ void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqi
 	__asm        mov    eax, polar;
 	__asm        mov    ax, [eax+0x12];
 	__asm        push   eax;
-	__asm        call   0x005639D2;
+	__asm        call   PolarIncs2Double;
 	__asm        add    esp, 0x24;
 // LINE 635:
 	__asm        mov    eax, polar;
 	__asm        push   eax;
-	__asm        call   0x00562C41;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 636:
 	__asm        jmp    near ptr 0x005637CE;
@@ -1803,7 +1803,7 @@ void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs
 	__asm        push   eax;
 	__asm        mov    eax, polar;
 	__asm        push   eax;
-	__asm        call   0x005636D5;
+	__asm        call   FillLatLngTrq;
 	__asm        add    esp, 0x10;
 // LINE 642:
 	__asm        mov    eax, polar;
@@ -1825,7 +1825,7 @@ void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs
 	__asm        push   eax;
 	__asm        mov    eax, polar;
 	__asm        push   eax;
-	__asm        call   0x0056374C;
+	__asm        call   FillPhiPsiTau;
 	__asm        add    esp, 0x10;
 // LINE 644:
 	__asm        jmp    near ptr 0x00563854;
@@ -1861,17 +1861,17 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 // LINE 655:
 	__asm        lea    eax, phi;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 656:
 	__asm        lea    eax, psi;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 657:
 	__asm        lea    eax, tau;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 658:
 	__asm        fld    phi;
@@ -1888,21 +1888,21 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 // LINE 662:
 	__asm        mov    eax, dlat;
 	__asm        push   eax;
-	__asm        call   0x005662C1;
+	__asm        call   Round;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, lat;
 	__asm        mov    [ecx], ax;
 // LINE 663:
 	__asm        mov    eax, dlng;
 	__asm        push   eax;
-	__asm        call   0x005662C1;
+	__asm        call   Round;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, lng;
 	__asm        mov    [ecx], ax;
 // LINE 664:
 	__asm        mov    eax, dtrq;
 	__asm        push   eax;
-	__asm        call   0x005662C1;
+	__asm        call   Round;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, trq;
 	__asm        mov    [ecx], ax;
@@ -2090,7 +2090,7 @@ void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
 	__asm        push   eax;
 	__asm        mov    eax, radius;
 	__asm        push   eax;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 698:
 	__asm        jmp    near ptr 0x00563B22;
@@ -2127,7 +2127,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	__asm        push   eax;
 	__asm        mov    eax, dpt.x;
 	__asm        push   eax;
-	__asm        call   0x00563C20;
+	__asm        call   Cartesian2Polar;
 	__asm        add    esp, 0x18;
 // LINE 706:
 	__asm        push   1;
@@ -2141,7 +2141,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	__asm        push   eax;
 	__asm        mov    eax, phiOff;
 	__asm        push   eax;
-	__asm        call   0x00563420;
+	__asm        call   IncrementAngles;
 	__asm        add    esp, 0x1C;
 // LINE 707:
 	__asm        fld    scale;
@@ -2160,7 +2160,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	__asm        push   eax;
 	__asm        mov    eax, radius;
 	__asm        push   eax;
-	__asm        call   0x00563A42;
+	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 709:
 	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
@@ -2169,7 +2169,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY
 	__asm        push   0;
 	__asm        lea    eax, dpt.x;
 	__asm        push   eax;
-	__asm        call   0x005626F5;
+	__asm        call   PutInPerspective;
 	__asm        add    esp, 8;
 // LINE 711:
 	__asm        cmp    ptH, 0;
@@ -2211,7 +2211,7 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        push   eax;
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00562E02;
+	__asm        call   GetLength;
 	__asm        add    esp, 0xC;
 	__asm        fstp   rad;
 // LINE 745:
@@ -2251,7 +2251,7 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        fstp   dword ptr [esp];
 	__asm        mov    eax, x;
 	__asm        push   eax;
-	__asm        call   0x00562CE1;
+	__asm        call   my_acos;
 	__asm        add    esp, 8;
 	__asm        mov    eax, psi;
 	__asm        fstp   dword ptr [eax];
@@ -2273,7 +2273,7 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        push   eax;
 	__asm        mov    eax, z;
 	__asm        push   eax;
-	__asm        call   0x00562CE1;
+	__asm        call   my_acos;
 	__asm        add    esp, 8;
 	__asm        mov    eax, phi;
 	__asm        fstp   dword ptr [eax];
@@ -2297,7 +2297,7 @@ void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
 	__asm        push   eax;
 	__asm        mov    eax, dxzy.x;
 	__asm        push   eax;
-	__asm        call   0x00563C20;
+	__asm        call   Cartesian2Polar;
 	__asm        add    esp, 0x18;
 // LINE 765:
 	__asm        mov    eax, polar;
@@ -2339,7 +2339,7 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x005634FC;
+	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 945:
 	__asm        fld    parPolar.phi;
@@ -2361,7 +2361,7 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x005634FC;
+	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 951:
 	__asm        fld    parPolar.phi;
@@ -2406,7 +2406,7 @@ void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* chil
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x00562B82;
+	__asm        call   IncrementXY;
 	__asm        add    esp, 8;
 // LINE 960:
 	__asm        mov    eax, childPolar;
@@ -2424,7 +2424,7 @@ void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* chil
 	__asm        push   eax;
 	__asm        lea    eax, inc.phi;
 	__asm        push   eax;
-	__asm        call   0x00562B82;
+	__asm        call   IncrementXY;
 	__asm        add    esp, 8;
 // LINE 963:
 	__asm        jmp    near ptr 0x00563E62;
@@ -2437,7 +2437,7 @@ unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 	__asm        push   0x5BEEF4;
 	__asm        push   0x718;
 	__asm        push   0x5BEF04;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1819:
 	__asm        xor    ax, ax;

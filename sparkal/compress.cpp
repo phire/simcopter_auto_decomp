@@ -438,11 +438,11 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        lea    eax, FileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, NameOut.ios;
-	__asm        call   0x0056C780;
+	__asm        call   ostrstream::ostrstream;
 // LINE 52:
 	__asm        push   0x59A9D8;
 	__asm        lea    ecx, NameOut.ios;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    eax, NameOut.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [ebp+eax-0x58];
@@ -480,15 +480,15 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, ResourceID;
 	__asm        push   eax;
 	__asm        lea    ecx, NameOut.ios;
-	__asm        call   0x00570E80;
+	__asm        call   ostream::operator<<;
 	__asm        mov    ecx, eax;
-	__asm        call   0x00569960;
+	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xD8], eax;
 // LINE 56:
 	__asm        jmp    near ptr 0x004AA90A;
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0xD8];
-	__asm        call   0x0056A670;
+	__asm        call   ostream::operator<<;
 // LINE 58:
 	__asm        mov    InputMode, 0x81;
 // LINE 60:
@@ -502,7 +502,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        lea    eax, FileName[0];
 	__asm        push   eax;
 	__asm        lea    ecx, InputFile.ios;
-	__asm        call   0x0056FC90;
+	__asm        call   ifstream::ifstream;
 // LINE 66:
 	__asm        jmp    near ptr 0x004AA94B;
 	__asm        jmp    near ptr 0x004AA950;
@@ -523,7 +523,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        lea    eax, ImageByteCount;
 	__asm        push   eax;
 	__asm        lea    ecx, InputFile.ios;
-	__asm        call   0x00570490;
+	__asm        call   istream::read;
 // LINE 71:
 	__asm        jmp    near ptr 0x004AA99F;
 	__asm        mov    eax, ImageByteCount;
@@ -537,7 +537,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        push   0x12A;
 	__asm        push   0x597444;
 	__asm        push   0x59A090;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AA9EF;
 	__asm        jmp    near ptr 0x004AA9EF;
@@ -571,7 +571,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAA86;
 	__asm        jmp    near ptr 0x004AAA86;
@@ -592,7 +592,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    eax, pCompressedImage;
 	__asm        push   eax;
 	__asm        lea    ecx, InputFile.ios;
-	__asm        call   0x00570490;
+	__asm        call   istream::read;
 // LINE 84:
 	__asm        jmp    near ptr 0x004AAADF;
 	__asm        mov    eax, ImageByteCount;
@@ -601,14 +601,14 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        push   0x54;
 	__asm        push   0x59A9E4;
 	__asm        push   0x59AA0C;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAB0F;
 	__asm        jmp    near ptr 0x004AAB0F;
 // LINE 86:
 	__asm        mov    eax, pCompressedImage;
 	__asm        push   eax;
-	__asm        call   0x004AB063;
+	__asm        call   ConvertCompressedByteOrdering;
 	__asm        add    esp, 4;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -620,7 +620,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAB63;
 	__asm        jmp    near ptr 0x004AAB63;
@@ -633,14 +633,14 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 // Block end:
 	__asm        jmp    near ptr 0x004AAB7A;
 	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
-	__asm        call   0x00570050;
+	__asm        call   ifstream::~ifstream;
 	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
-	__asm        call   0x0056B140;
+	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AAB95;
 	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
-	__asm        call   0x0056C8D0;
+	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
-	__asm        call   0x0056B140;
+	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AABAA;
 	__asm        mov    eax, this;
 }
@@ -665,7 +665,7 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        push   0x6F;
 	__asm        push   0x59AA38;
 	__asm        push   0x59AA60;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAC1C;
 	__asm        jmp    near ptr 0x004AAC1C;
@@ -683,7 +683,7 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        push   0x134;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAC61;
 	__asm        jmp    near ptr 0x004AAC61;
@@ -718,7 +718,7 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AACE4;
 	__asm        jmp    near ptr 0x004AACE4;
@@ -760,7 +760,7 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        push   0x88;
 	__asm        push   0x59AA70;
 	__asm        push   0x59AA98;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAD74;
 	__asm        jmp    near ptr 0x004AAD74;
@@ -782,7 +782,7 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AADC6;
 	__asm        jmp    near ptr 0x004AADC6;
@@ -817,7 +817,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   0x9D;
 	__asm        push   0x59AAA8;
 	__asm        push   0x59AAD0;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAE3C;
 	__asm        jmp    near ptr 0x004AAE3C;
@@ -827,7 +827,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   0x9E;
 	__asm        push   0x59AAE0;
 	__asm        push   0x59AB08;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAE67;
 	__asm        jmp    near ptr 0x004AAE67;
@@ -937,7 +937,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   0xC7;
 	__asm        push   0x59AB10;
 	__asm        push   0x59AB38;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAF7A;
 	__asm        jmp    near ptr 0x004AAF7A;
@@ -951,7 +951,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   0xC8;
 	__asm        push   0x59AB58;
 	__asm        push   0x59AB80;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AAFB0;
 	__asm        jmp    near ptr 0x004AAFB0;
@@ -1002,7 +1002,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   eax;
 	__asm        mov    eax, pBits;
 	__asm        push   eax;
-	__asm        call   0x004AB073;
+	__asm        call   RLEDecompressUnclippedX;
 	__asm        add    esp, 0x14;
 // LINE 214:
 	__asm        jmp    near ptr 0x004AB055;
@@ -1021,7 +1021,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        push   eax;
 	__asm        mov    eax, pBits;
 	__asm        push   eax;
-	__asm        call   0x004AB1F7;
+	__asm        call   RLEDecompressClippedX;
 	__asm        add    esp, 0x1C;
 // LINE 223:
 // Block end:
@@ -1115,7 +1115,7 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	__asm        push   eax;
 	__asm        mov    eax, pDest;
 	__asm        push   eax;
-	__asm        call   0x0056A800;
+	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 362:
 	__asm        mov    eax, counter;
@@ -1143,7 +1143,7 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 	__asm        push   eax;
 	__asm        mov    eax, pDest;
 	__asm        push   eax;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 372:
 	__asm        mov    eax, counter;

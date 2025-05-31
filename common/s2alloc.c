@@ -31,7 +31,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    old, eax;
 // LINE 270:
 	__asm        push   8;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, index;
 	__asm        mov    [ecx*4+0x6069D8], eax;
@@ -45,7 +45,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 // LINE 274:
 	__asm        mov    eax, poolsize;
 	__asm        push   eax;
-	__asm        call   0x004CB34D;
+	__asm        call   S2AllocHdr;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, index;
 	__asm        mov    ecx, [ecx*4+0x6069D8];
@@ -76,12 +76,12 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 // LINE 238:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    block, eax;
 // LINE 239:
 	__asm        push   0x10;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    hdr, eax;
 // LINE 241:
@@ -94,11 +94,11 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        mov    eax, 0x5C0BF8;
 	__asm        add    eax, 0x40;
 	__asm        push   eax;
-	__asm        call   0x00574DD0;
+	__asm        call   fprintf;
 	__asm        add    esp, 8;
 // LINE 244:
 	__asm        push   1;
-	__asm        call   0x00569430;
+	__asm        call   exit;
 	__asm        add    esp, 4;
 // LINE 246:
 	__asm        mov    eax, block;
@@ -167,7 +167,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	__asm        push   eax;
 	__asm        mov    eax, index;
 	__asm        push   eax;
-	__asm        call   0x004CB2B0;
+	__asm        call   S2AllocInit;
 	__asm        add    esp, 8;
 	__asm        mov    lastPool, eax;
 // LINE 310:
@@ -240,7 +240,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 // LINE 361:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        call   0x004CB34D;
+	__asm        call   S2AllocHdr;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx], eax;
@@ -248,7 +248,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        jmp    near ptr 0x004CB55D;
 // LINE 363:
 	__asm        push   0x2000;
-	__asm        call   0x004CB34D;
+	__asm        call   S2AllocHdr;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx], eax;
@@ -288,7 +288,7 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 	__asm        push   eax;
 	__asm        mov    eax, index;
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004CB5CA;
 // LINE 400:
@@ -303,7 +303,7 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	__asm        push   eax;
 	__asm        mov    eax, index;
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ptr, eax;
 // LINE 423:
@@ -428,12 +428,12 @@ void S2AllocFreePool(int32_t index) {
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 506:
 	__asm        mov    eax, hdr;
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 507:
 	__asm        mov    eax, next_hdr;
@@ -444,7 +444,7 @@ void S2AllocFreePool(int32_t index) {
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        push   eax;
-	__asm        call   0x005737A0;
+	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 510:
 	__asm        sub    dword ptr ds:[0x59B524], 8;
@@ -456,16 +456,16 @@ void S2AllocFreePool(int32_t index) {
 // LINE 513:
 	__asm        dec    dword ptr ds:[0x59B534];
 // LINE 516:
-	__asm        call   0x00575270;
+	__asm        call   _heapmin;
 // LINE 517:
-	__asm        call   0x00575030;
+	__asm        call   _heapchk;
 // LINE 523:
 }
 
 // FUNCTION: COPTER_D 0x004cb7a5
 void * __ptr32 S2AllocAligned() {
 // LINE 591:
-	__asm        call   0x004CB7BA;
+	__asm        call   DOSAllocAlignedHack;
 	__asm        jmp    near ptr 0x004CB7B5;
 // LINE 592:
 }
@@ -476,7 +476,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 
 // LINE 753:
 	__asm        push   0x20000;
-	__asm        call   0x00572C10;
+	__asm        call   malloc;
 	__asm        add    esp, 4;
 	__asm        mov    retaddr, eax;
 // LINE 754:

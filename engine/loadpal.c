@@ -19,7 +19,7 @@ struct VRResource* LoadPalette() {
 	__asm        push   0x310;
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    res, eax;
 // LINE 57:
@@ -35,7 +35,7 @@ struct VRResource* LoadPalette() {
 	__asm        mov    eax, res;
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D5F1E;
+	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004D212D;

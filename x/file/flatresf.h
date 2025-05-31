@@ -3,7 +3,7 @@
 void FlatResFile::FlatResFile() {
 	// Function registers exception cleanup function at 0x0055e6d0
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C270;
+	__asm        call   FlatFile::FlatFile;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593508;
@@ -17,7 +17,7 @@ void FlatResFile::FlatResFile() {
 	__asm        jmp    near ptr 0x0055E6DA;
 _L39766:
 	__asm        mov    ecx, this;
-	__asm        call   0x0055C2BB;
+	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
 _L39765:
 	__asm        mov    eax, 0x596008;

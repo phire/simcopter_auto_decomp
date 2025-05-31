@@ -183,7 +183,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -199,7 +199,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00560CA2;
 	__asm        mov    eax, [ebp-0x10];
@@ -230,7 +230,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        push   0x5BBD7C;
 	__asm        push   0x6D;
 	__asm        push   0x5BE1EC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     near ptr 0x00560D1F;
@@ -311,7 +311,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        push   0x5BE638;
 	__asm        push   0x79B;
 	__asm        push   0x5BE658;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1948:
 	__asm        mov    eax, privanim;
@@ -337,7 +337,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        push   0x5BE67C;
 	__asm        push   0x80E;
 	__asm        push   0x5BE6CC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2063:
 	__asm        mov    count, 0;
@@ -364,7 +364,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -380,7 +380,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00560F50;
 	__asm        mov    eax, [ebp-0xC];
@@ -396,7 +396,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        push   0x5BE6F0;
 	__asm        push   0x811;
 	__asm        push   0x5BE71C;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2066:
 	__asm        test   reinterpret_cast<uint32_t>(activated), 0xFFFF;
@@ -410,7 +410,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00561190;
+	__asm        call   cCopterBody::GetPartByName;
 	__asm        mov    ecx, part;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 2071:
@@ -446,7 +446,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 	__asm        mov    eax, name;
 	__asm        push   eax;
-	__asm        call   0x005661F4;
+	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, ds:[0x5BE630];
@@ -461,7 +461,7 @@ class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 	__asm        push   0x5BBD7C;
 	__asm        push   0x6D;
 	__asm        push   0x5BE1EC;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     near ptr 0x00561071;
@@ -566,7 +566,7 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -582,7 +582,7 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00561242;
 	__asm        mov    eax, [ebp-0xC];
@@ -624,7 +624,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   0x5BE740;
 	__asm        push   0x837;
 	__asm        push   0x5BE774;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2104:
 	__asm        mov    eax, part;
@@ -647,7 +647,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   0x5BE798;
 	__asm        push   0x839;
 	__asm        push   0x5BE7B8;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2106:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(transinfo.startPoint.v);
@@ -722,7 +722,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   0x5BE7DC;
 	__asm        push   0x852;
 	__asm        push   0x5BE7F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2131:
 	__asm        mov    eax, part;
@@ -749,7 +749,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        mov    eax, sPt.x;
 	__asm        push   eax;
-	__asm        call   0x00565225;
+	__asm        call   DrawLine;
 	__asm        add    esp, 0x20;
 // LINE 2134:
 	__asm        jmp    near ptr 0x00561605;
@@ -783,7 +783,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        mov    eax, sPt.x;
 	__asm        push   eax;
-	__asm        call   0x00564D8D;
+	__asm        call   DrawTaperedLine;
 	__asm        add    esp, 0x24;
 // LINE 2139:
 	__asm        jmp    near ptr 0x00561605;
@@ -795,7 +795,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        mov    eax, sPt.x;
 	__asm        push   eax;
-	__asm        call   0x00563EB5;
+	__asm        call   MyPixel;
 	__asm        add    esp, 0xC;
 // LINE 2143:
 	__asm        jmp    near ptr 0x00561605;
@@ -841,7 +841,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        mov    eax, sPt.x;
 	__asm        push   eax;
-	__asm        call   0x00563FD1;
+	__asm        call   DrawSphere;
 	__asm        add    esp, 0x18;
 // LINE 2158:
 	__asm        jmp    near ptr 0x00561605;
@@ -857,7 +857,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   0x5BE814;
 	__asm        push   0x872;
 	__asm        push   0x5BE834;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2164:
 	__asm        fld    transinfo.info;
@@ -866,7 +866,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 // LINE 2165:
 	__asm        lea    eax, smallPsi;
 	__asm        push   eax;
-	__asm        call   0x00562BDB;
+	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 2166:
 	__asm        mov    eax, this;
@@ -887,7 +887,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   eax;
 	__asm        mov    eax, sPt.x;
 	__asm        push   eax;
-	__asm        call   0x00564770;
+	__asm        call   DrawFaceTwo;
 	__asm        add    esp, 0x20;
 // LINE 2170:
 	__asm        jmp    near ptr 0x00561605;
@@ -897,7 +897,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 	__asm        push   0x5BE858;
 	__asm        push   0x87D;
 	__asm        push   0x5BE884;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2174:
 	__asm        jmp    near ptr 0x00561605;
@@ -1027,7 +1027,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   0x5BE4B8;
 	__asm        push   0x1A4;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1043,7 +1043,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x005617DA;
 	__asm        mov    eax, [ebp-0xA0];
@@ -1083,7 +1083,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   0x5BE8A8;
 	__asm        push   0x8AA;
 	__asm        push   0x5BE8B0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2219:
 	__asm        movsx  eax, count;
@@ -1096,7 +1096,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x8C];
 	__asm        push   eax;
-	__asm        call   0x0055D9CF;
+	__asm        call   TinyXZY_2_DXZY;
 	__asm        add    esp, 8;
 	__asm        lea    ecx, [ebp-0x6C];
 	__asm        mov    edx, [eax];
@@ -1123,7 +1123,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x9C];
 	__asm        push   eax;
-	__asm        call   0x0055D9CF;
+	__asm        call   TinyXZY_2_DXZY;
 	__asm        add    esp, 8;
 	__asm        lea    ecx, [ebp-0x7C];
 	__asm        mov    edx, [eax];
@@ -1218,7 +1218,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   eax;
 	__asm        mov    eax, sinX;
 	__asm        push   eax;
-	__asm        call   0x00562AC5;
+	__asm        call   XYTransformToScreen;
 	__asm        add    esp, 0x34;
 // LINE 2241:
 	__asm        mov    eax, transinfo;
@@ -1232,7 +1232,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        mov    eax, partinfo;
 	__asm        mov    al, [eax+3];
 	__asm        push   eax;
-	__asm        call   0x0055DA2E;
+	__asm        call   Byte_2_Float;
 	__asm        add    esp, 4;
 	__asm        mov    eax, transinfo;
 	__asm        fstp   dword ptr [eax+0x10];
@@ -1281,7 +1281,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   eax;
 	__asm        mov    eax, sinX;
 	__asm        push   eax;
-	__asm        call   0x00562AC5;
+	__asm        call   XYTransformToScreen;
 	__asm        add    esp, 0x34;
 // LINE 2259:
 	__asm        mov    eax, transinfo;
@@ -1324,7 +1324,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        mov    eax, drawordercount;
 	__asm        push   eax;
 	__asm        push   0x638670;
-	__asm        call   0x00575470;
+	__asm        call   qsort;
 	__asm        add    esp, 0x10;
 // LINE 2276:
 	__asm        mov    orderID, 0;
@@ -1344,7 +1344,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        push   0x5BE8D4;
 	__asm        push   0x8E6;
 	__asm        push   0x5BE8F4;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2279:
 	__asm        mov    eax, part;
@@ -1368,7 +1368,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 	__asm        mov    eax, xOff;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00561281;
+	__asm        call   cCopterBody::DrawSwitch;
 // LINE 2281:
 	__asm        jmp    near ptr 0x00561AE4;
 // LINE 2282:
@@ -1388,7 +1388,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BE918;
 	__asm        push   0x8EE;
 	__asm        push   0x5BE920;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2290:
 	__asm        push   0x10;
@@ -1397,7 +1397,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
-	__asm        call   0x00554B76;
+	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 2291:
 	__asm        mov    tmp[4], 0x63;
@@ -1409,13 +1409,13 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 2292:
 	__asm        lea    eax, tmp[0];
 	__asm        push   eax;
-	__asm        call   0x005661F4;
+	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
-	__asm        call   0x00568DB1;
+	__asm        call   _cArray::GetArray;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
@@ -1434,7 +1434,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB8C;
 	__asm        push   0x11E;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00561C74;
 	__asm        mov    eax, [ebp-0x30];
@@ -1447,7 +1447,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB58;
 	__asm        push   0x131;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00561CD8;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
@@ -1456,7 +1456,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEB1C;
 	__asm        push   0x132;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    near ptr 0x00561DC6;
@@ -1465,10 +1465,10 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BEAF0;
 	__asm        push   0x134;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        push   0x50;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -1487,7 +1487,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    dword ptr [eax], 0x593738;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     near ptr 0x00561D60;
-	__asm        call   0x00567B1B;
+	__asm        call   _cArray::MakeTable;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x40];
@@ -1500,7 +1500,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   eax;
 	__asm        push   0x28;
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x00567900;
+	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x00561D83;
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x50];
@@ -1512,7 +1512,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        jmp    near ptr 0x00561DAD;
 _L31451:
 	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   0x005679EB;
+	__asm        call   _cArray::~_cArray;
 	__asm        ret;
 	__asm        jmp    near ptr 0x00561DB9;
 	__asm        mov    dword ptr [ebp-0x2C], 0;
@@ -1525,7 +1525,7 @@ _L31451:
 	__asm        push   0x5BEAD4;
 	__asm        push   0x137;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
@@ -1537,7 +1537,7 @@ _L31451:
 _L31439:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 2293:
@@ -1552,13 +1552,13 @@ _L31439:
 // LINE 2295:
 	__asm        lea    eax, tmp[0];
 	__asm        push   eax;
-	__asm        call   0x005661F4;
+	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        push   eax;
-	__asm        call   0x00568DB1;
+	__asm        call   _cArray::GetArray;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
@@ -1577,7 +1577,7 @@ _L31439:
 	__asm        push   0x5BEB8C;
 	__asm        push   0x11E;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00561EBA;
 	__asm        mov    eax, [ebp-0x6C];
@@ -1590,7 +1590,7 @@ _L31439:
 	__asm        push   0x5BEB58;
 	__asm        push   0x131;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00561F21;
 	__asm        cmp    dword ptr [ebp-0x60], 0;
@@ -1599,7 +1599,7 @@ _L31439:
 	__asm        push   0x5BEB1C;
 	__asm        push   0x132;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    near ptr 0x00562030;
@@ -1608,10 +1608,10 @@ _L31439:
 	__asm        push   0x5BEAF0;
 	__asm        push   0x134;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        push   0x50;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    dword ptr [ebp-4], 2;
@@ -1630,7 +1630,7 @@ _L31439:
 	__asm        mov    dword ptr [eax], 0x593738;
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        je     near ptr 0x00561FB8;
-	__asm        call   0x00567B1B;
+	__asm        call   _cArray::MakeTable;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x7C];
@@ -1643,7 +1643,7 @@ _L31439:
 	__asm        push   eax;
 	__asm        push   8;
 	__asm        mov    ecx, [ebp-0x8C];
-	__asm        call   0x00567900;
+	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x00561FE4;
 	__asm        mov    byte ptr [ebp-4], 3;
 	__asm        mov    eax, [ebp-0x8C];
@@ -1655,7 +1655,7 @@ _L31439:
 	__asm        jmp    near ptr 0x00562017;
 _L31498:
 	__asm        mov    ecx, [ebp-0x8C];
-	__asm        call   0x005679EB;
+	__asm        call   _cArray::~_cArray;
 	__asm        ret;
 	__asm        jmp    near ptr 0x00562023;
 	__asm        mov    dword ptr [ebp-0x68], 0;
@@ -1668,7 +1668,7 @@ _L31498:
 	__asm        push   0x5BEAD4;
 	__asm        push   0x137;
 	__asm        push   0x5BE4F0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, this;
@@ -1680,13 +1680,13 @@ _L31498:
 _L31486:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 2296:
 	__asm        push   1;
 	__asm        mov    ecx, this;
-	__asm        call   0x00560E78;
+	__asm        call   cCopterBody::ActivateAllPartPointers;
 // LINE 2297:
 	__asm        jmp    near ptr 0x0056209F;
 _L31438:
@@ -1723,7 +1723,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00553452;
+	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
 	__asm        cmp    h, 0;
 	__asm        je     near ptr 0x00562148;
@@ -1740,7 +1740,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x5BE944;
 	__asm        push   0x902;
 	__asm        push   0x5BE970;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2307:
 	__asm        jmp    near ptr 0x005620E0;
@@ -1752,7 +1752,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x41524350;
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00553452;
+	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
 	__asm        cmp    h, 0;
 	__asm        je     near ptr 0x005621B2;
@@ -1769,7 +1769,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x5BE994;
 	__asm        push   0x907;
 	__asm        push   0x5BE9C0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2312:
 	__asm        jmp    near ptr 0x0056214E;
@@ -1781,7 +1781,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x41524C55;
 	__asm        mov    eax, ds:[0x5BE630];
 	__asm        mov    ecx, [eax+0xC];
-	__asm        call   0x00553452;
+	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
 	__asm        cmp    h, 0;
 	__asm        je     near ptr 0x0056221C;
@@ -1798,7 +1798,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x5BE9E4;
 	__asm        push   0x90C;
 	__asm        push   0x5BEA10;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2317:
 	__asm        jmp    near ptr 0x005621B8;
@@ -1873,7 +1873,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        dec    word ptr [eax+4];
@@ -1885,7 +1885,7 @@ void  cCopterBody::DestroyAll() {
 	__asm        push   0x59A24C;
 	__asm        push   0x32;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00562376;
 	__asm        mov    eax, [ebp-0x3C];
@@ -1956,7 +1956,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 	__asm        push   0x5BEA34;
 	__asm        push   0x91F;
 	__asm        push   0x5BEA60;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2336:
 	__asm        mov    eax, val;
@@ -1965,31 +1965,31 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 	__asm        mov    eax, part;
 	__asm        add    eax, 8;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 2338:
 	__asm        mov    eax, part;
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 2339:
 	__asm        mov    eax, part;
 	__asm        add    eax, 0x1C;
 	__asm        push   eax;
-	__asm        call   0x005668EA;
+	__asm        call   SwizzleFloat;
 	__asm        add    esp, 4;
 // LINE 2340:
 	__asm        mov    eax, part;
 	__asm        add    eax, 0x20;
 	__asm        push   eax;
-	__asm        call   0x005668EA;
+	__asm        call   SwizzleFloat;
 	__asm        add    esp, 4;
 // LINE 2341:
 	__asm        mov    eax, part;
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x005668EA;
+	__asm        call   SwizzleFloat;
 	__asm        add    esp, 4;
 // LINE 2343:
 	__asm        jmp    near ptr 0x00562496;
@@ -2006,7 +2006,7 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 	__asm        push   0x5BEA84;
 	__asm        push   0x92C;
 	__asm        push   0x5BEAB0;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2349:
 	__asm        mov    eax, val;
@@ -2014,13 +2014,13 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 // LINE 2350:
 	__asm        mov    eax, al;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 2351:
 	__asm        mov    eax, al;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x00566906;
+	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 2353:
 	__asm        jmp    near ptr 0x005624F0;

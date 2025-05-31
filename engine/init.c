@@ -18,7 +18,7 @@ void VREngineInit() {
 	__asm        call   0x004D6610;
 	__asm        add    esp, 4;
 // LINE 50:
-	__asm        call   0x004D52C0;
+	__asm        call   InitResource;
 // LINE 51:
 	__asm        push   1;
 	__asm        call   0x004D681E;

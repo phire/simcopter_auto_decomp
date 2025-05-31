@@ -435,7 +435,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	__asm        jge    near ptr 0x0041F83B;
 // LINE 164:
 	__asm        push   0x59726C;
-	__asm        call   0x00424B14;
+	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
 // LINE 166:
 	__asm        mov    i, 0;

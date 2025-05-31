@@ -311,7 +311,7 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004AB757;
 	__asm        mov    eax, this;
@@ -360,7 +360,7 @@ void MIFF::~MIFF() {
 	__asm        je     near ptr 0x004AB815;
 // LINE 99:
 	__asm        mov    ecx, this;
-	__asm        call   0x004ABB47;
+	__asm        call   MIFF::Close;
 // LINE 101:
 	__asm        jmp    near ptr 0x004AB81A;
 	__asm        mov    eax, this;
@@ -379,7 +379,7 @@ void MIFF::~MIFF() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004AB873;
 }
@@ -389,7 +389,7 @@ long MIFF::OpenForReading() {
 // LINE 114:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        je     near ptr 0x004AB92B;
 	__asm        mov    eax, this;
@@ -406,7 +406,7 @@ long MIFF::OpenForReading() {
 	__asm        push   0x8020;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 116:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -443,7 +443,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 // LINE 139:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004AB97D;
 // LINE 140:
@@ -452,7 +452,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        push   0x180;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A05F3;
+	__asm        call   PFile::FileCreate;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004AB97D;
 // LINE 142:
@@ -473,7 +473,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        push   0x8002;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 147:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -516,7 +516,7 @@ long MIFF::OpenForAppending() {
 // LINE 169:
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A06E6;
+	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004ABA72;
 // LINE 170:
@@ -525,7 +525,7 @@ long MIFF::OpenForAppending() {
 	__asm        push   0x180;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A05F3;
+	__asm        call   PFile::FileCreate;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004ABA72;
 // LINE 172:
@@ -546,7 +546,7 @@ long MIFF::OpenForAppending() {
 	__asm        push   0x8002;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 // LINE 177:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -582,7 +582,7 @@ long MIFF::OpenForAppending() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABB31;
 // LINE 183:
@@ -610,7 +610,7 @@ long MIFF::Close() {
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 196:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A04F0;
+	__asm        call   PFile::Close;
 // LINE 197:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004ABB90;
@@ -647,7 +647,7 @@ long MIFF::VerifyFile() {
 	__asm        jmp    near ptr 0x004ABC2D;
 // LINE 211:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x140];
 	__asm        jne    near ptr 0x004ABC26;
@@ -677,7 +677,7 @@ long MIFF::ReadMIFFHeader() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABC82;
 // LINE 225:
@@ -688,7 +688,7 @@ long MIFF::ReadMIFFHeader() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABCA4;
 // LINE 226:
@@ -750,7 +750,7 @@ long MIFF::ReadFileCreator() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABD61;
 // LINE 250:
@@ -809,7 +809,7 @@ long MIFF::ReadFileType() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABE15;
 // LINE 272:
@@ -868,7 +868,7 @@ long MIFF::ReadFileVersion() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABEC9;
 // LINE 293:
@@ -889,7 +889,7 @@ long MIFF::ReadRecordHeader() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABF04;
 // LINE 315:
@@ -901,7 +901,7 @@ long MIFF::ReadRecordHeader() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    lBytesRead, eax;
 // LINE 316:
@@ -924,7 +924,7 @@ long MIFF::ReadRecordHeader() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004ABF76;
 // LINE 322:
@@ -935,7 +935,7 @@ long MIFF::ReadRecordHeader() {
 	__asm        jmp    near ptr 0x004ABFC7;
 // LINE 324:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x118];
 	__asm        mov    edx, this;
@@ -978,7 +978,7 @@ long MIFF::CountRecords() {
 	__asm        push   0x8020;
 	__asm        push   0;
 	__asm        mov    ecx, this;
-	__asm        call   0x004A03A0;
+	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
 	__asm        jne    near ptr 0x004AC034;
 // LINE 357:
@@ -1056,7 +1056,7 @@ long MIFF::GoToFirstRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC11B;
 // LINE 394:
@@ -1117,7 +1117,7 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC1F3;
 // LINE 427:
@@ -1133,7 +1133,7 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        mov    lResult, eax;
 	__asm        jmp    near ptr 0x004AC226;
@@ -1150,7 +1150,7 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC259;
 // LINE 437:
@@ -1172,7 +1172,7 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC29B;
 // LINE 443:
@@ -1192,7 +1192,7 @@ long MIFF::GoToNextRecord() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC2D2;
 // LINE 448:
@@ -1380,7 +1380,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    lReturnValue, eax;
 	__asm        mov    eax, this;
@@ -1393,7 +1393,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC522;
 // LINE 579:
@@ -1442,7 +1442,7 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC5C4;
 // LINE 609:
@@ -1454,7 +1454,7 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    lReturnValue, eax;
 	__asm        mov    eax, this;
@@ -1467,7 +1467,7 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC60F;
 // LINE 616:
@@ -1536,7 +1536,7 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC707;
 // LINE 658:
@@ -1548,7 +1548,7 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        mov    lReturnValue, eax;
 // LINE 659:
@@ -1605,7 +1605,7 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        mov    lReturnValue, eax;
 // LINE 690:
@@ -1656,7 +1656,7 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC890;
 // LINE 712:
@@ -1666,7 +1666,7 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC8AD;
 // LINE 715:
@@ -1678,7 +1678,7 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        mov    lReturnValue, eax;
 // LINE 721:
@@ -1704,7 +1704,7 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058E430;
+	__asm        call   _tell;
 	__asm        add    esp, 4;
 	__asm        mov    lPresentPosition, eax;
 	__asm        jmp    near ptr 0x004AC921;
@@ -1714,12 +1714,12 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x0058C880;
+	__asm        call   _chsize;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004AC93C;
 // LINE 742:
 	__asm        mov    ecx, this;
-	__asm        call   0x004A0562;
+	__asm        call   PFile::Length;
 	__asm        mov    lFileLength, eax;
 // LINE 743:
 	__asm        push   0;
@@ -1727,7 +1727,7 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC962;
 // LINE 744:
@@ -1737,7 +1737,7 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x00579170;
+	__asm        call   _write;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC97F;
 // LINE 745:
@@ -1749,7 +1749,7 @@ long MIFF::WriteEnd() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x005810C0;
+	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC9A7;
 // LINE 747:

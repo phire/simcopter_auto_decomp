@@ -26,8 +26,8 @@
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00428e80
 void $E48() {
-	__asm        call   0x00428E9A;
-	__asm        call   0x00428F13;
+	__asm        call   $E45;
+	__asm        call   $E47;
 	__asm        jmp    near ptr 0x00428E95;
 }
 
@@ -58,7 +58,7 @@ void $E45() {
 // FUNCTION: COPTER_D 0x00428f13
 void $E47() {
 	__asm        push   0x428F30;
-	__asm        call   0x0056D090;
+	__asm        call   atexit;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00428F2B;
 }
@@ -107,7 +107,7 @@ void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo)
 // FUNCTION: COPTER_D 0x00428fb5
 long GetUserMoney() {
 // LINE 102:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x40];
 	__asm        jmp    near ptr 0x00428FC8;
 // LINE 103:
@@ -116,7 +116,7 @@ long GetUserMoney() {
 // FUNCTION: COPTER_D 0x00428fcd
 void SetUserMoney(long lNewMoney) {
 // LINE 109:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, lNewMoney;
 	__asm        mov    ecx, [ebp-4];
@@ -128,7 +128,7 @@ void SetUserMoney(long lNewMoney) {
 // FUNCTION: COPTER_D 0x00428ff1
 void ChangeUserMoney(long lNewMoneyDelta) {
 // LINE 116:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, lNewMoneyDelta;
 	__asm        mov    ecx, [ebp-4];
@@ -140,7 +140,7 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 // FUNCTION: COPTER_D 0x00429015
 long GetUserPoints() {
 // LINE 125:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x50];
 	__asm        jmp    near ptr 0x00429028;
 // LINE 126:
@@ -149,7 +149,7 @@ long GetUserPoints() {
 // FUNCTION: COPTER_D 0x0042902d
 void SetUserPoints(long lNewPoints) {
 // LINE 132:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, lNewPoints;
 	__asm        mov    ecx, [ebp-4];
@@ -161,7 +161,7 @@ void SetUserPoints(long lNewPoints) {
 // FUNCTION: COPTER_D 0x00429051
 void ChangeUserPoints(long lNewPointsDelta) {
 // LINE 139:
-	__asm        call   0x00428F4A;
+	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, lNewPointsDelta;
 	__asm        mov    ecx, [ebp-4];
@@ -191,7 +191,7 @@ void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 	struct tagCitySettings* tempCitySettings;
 
 // LINE 157:
-	__asm        call   0x00429075;
+	__asm        call   GetCurrentCitySettings;
 	__asm        mov    tempCitySettings, eax;
 // LINE 158:
 	__asm        mov    edi, tempCitySettings;
@@ -216,7 +216,7 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 	__asm        mov    eax, szNewCurrentCityPath;
 	__asm        push   eax;
 	__asm        push   0x5C2918;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 179:
 	__asm        jmp    near ptr 0x00429104;
@@ -260,7 +260,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 217:
 	__asm        cmp    nCityFileType, 1;
@@ -270,7 +270,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 219:
 	__asm        jmp    near ptr 0x004291E4;
@@ -281,7 +281,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 221:
 	__asm        jmp    near ptr 0x004291E4;
@@ -292,7 +292,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 223:
 	__asm        jmp    near ptr 0x004291E9;
@@ -418,7 +418,7 @@ void CareerCityTweakInit() {
 	__asm        push   9;
 	__asm        lea    eax, pvals[0];
 	__asm        push   eax;
-	__asm        call   0x004C9AD0;
+	__asm        call   TWKEnQueue;
 	__asm        add    esp, 0xC;
 // LINE 285:
 	__asm        jmp    near ptr 0x00429308;
@@ -445,7 +445,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x00429170;
+	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 308:
 	__asm        push   0x5C2918;
@@ -453,7 +453,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   5;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 310:
 	__asm        mov    dword ptr ds:[0x5C2AA8], 0;
@@ -487,7 +487,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        shl    eax, 3;
 	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
 	__asm        push   eax;
-	__asm        call   0x004EF14B;
+	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 324:
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
@@ -545,7 +545,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    eax, szUserCityPath;
 	__asm        push   eax;
 	__asm        push   0x5C2918;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 349:
 	__asm        mov    edi, 0x5C2A20;
@@ -597,12 +597,12 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 368:
-	__asm        call   0x004611BF;
+	__asm        call   IsActualTimeDaytime;
 	__asm        cmp    eax, 1;
 	__asm        sbb    eax, eax;
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x004EF14B;
+	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 369:
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
@@ -668,7 +668,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x00429170;
+	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 399:
 	__asm        push   0x5C2918;
@@ -676,7 +676,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   5;
-	__asm        call   0x0049172B;
+	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 401:
 	__asm        mov    eax, lOriginalIndex;
@@ -701,7 +701,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        shl    eax, 3;
 	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
 	__asm        push   eax;
-	__asm        call   0x004EF14B;
+	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 406:
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
@@ -741,7 +741,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        jmp    near ptr 0x004298C3;
 // LINE 407:
 	__asm        push   0;
-	__asm        call   0x0042902D;
+	__asm        call   SetUserPoints;
 	__asm        add    esp, 4;
 // LINE 408:
 	__asm        jmp    near ptr 0x004298D2;

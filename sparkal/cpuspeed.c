@@ -64,10 +64,10 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	unsigned long stamp1;
 
 // LINE 96:
-	__asm        call   0x0047B67A;
+	__asm        call   wincpuid;
 	__asm        mov    processor, ax;
 // LINE 98:
-	__asm        call   0x0047B825;
+	__asm        call   wincpufeatures;
 	__asm        mov    features, eax;
 // LINE 108:
 	__asm        mov    freq, 0;
@@ -290,7 +290,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
 	__asm        jg     near ptr 0x00447CCE;
@@ -298,7 +298,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
 	__asm        jg     near ptr 0x00447CCE;
@@ -306,7 +306,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
 	__asm        push   eax;
-	__asm        call   0x0056F300;
+	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
 	__asm        jg     near ptr 0x00447CCE;
@@ -454,7 +454,7 @@ loop1:
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        push   eax;
-	__asm        call   0x00447FCE;
+	__asm        call   NormFreq;
 	__asm        add    esp, 8;
 	__asm        mov    cpu_speed.norm_freq, eax;
 // LINE 407:

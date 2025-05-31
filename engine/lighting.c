@@ -80,7 +80,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx+0x14], eax;
@@ -106,7 +106,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        push   eax;
 	__asm        mov    eax, res;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 146:
@@ -126,7 +126,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    ecx, i;
 	__asm        lea    eax, [eax+ecx*4];
 	__asm        push   eax;
-	__asm        call   0x004D8E58;
+	__asm        call   CreateTiledTexColors;
 	__asm        add    esp, 0x10;
 // LINE 149:
 	__asm        jmp    near ptr 0x004D8D2D;
@@ -143,7 +143,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        push   0x400;
 	__asm        push   0;
 	__asm        push   0x606A78;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 156:
 	__asm        mov    j, 0;
@@ -232,7 +232,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    bmpcolors, eax;
 // LINE 208:
@@ -270,7 +270,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        push   0x400;
 	__asm        push   0;
 	__asm        push   0x606A78;
-	__asm        call   0x0056EB90;
+	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 231:
 	__asm        mov    j, 0;
@@ -552,7 +552,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D90FA;
+	__asm        call   VRGetColorShade;
 	__asm        add    esp, 4;
 	__asm        mov    cptr, eax;
 // LINE 412:
@@ -771,7 +771,7 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D90FA;
+	__asm        call   VRGetColorShade;
 	__asm        add    esp, 4;
 	__asm        mov    cptr, eax;
 // LINE 506:
@@ -1007,7 +1007,7 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 // LINE 598:
 	__asm        mov    eax, face;
 	__asm        push   eax;
-	__asm        call   0x004D8FD7;
+	__asm        call   VRFaceSetTexColor;
 	__asm        add    esp, 4;
 // LINE 599:
 	__asm        mov    eax, fh;
@@ -1015,7 +1015,7 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 	__asm        push   eax;
 	__asm        mov    eax, res;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
@@ -1057,7 +1057,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D90FA;
+	__asm        call   VRGetColorShade;
 	__asm        add    esp, 4;
 	__asm        mov    cptr, eax;
 // LINE 626:
@@ -1230,7 +1230,7 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 	__asm        push   eax;
 	__asm        mov    eax, res;
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 708:

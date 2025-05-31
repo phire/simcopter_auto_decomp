@@ -39,12 +39,12 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	__asm        lea    eax, szFullErrorDescription[0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0042D468;
+	__asm        call   DirectDrawError::MakeErrorString;
 // LINE 18:
 	__asm        lea    eax, szFullErrorDescription[0];
 	__asm        push   eax;
 	__asm        push   0x5976A8;
-	__asm        call   0x00424B14;
+	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 22:
 	__asm        jmp    near ptr 0x0042D461;
@@ -61,7 +61,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5976AC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 32:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -69,7 +69,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5976D0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 35:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -77,7 +77,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5976F4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 38:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -85,7 +85,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x59770C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 41:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -93,7 +93,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597728;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 44:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -101,7 +101,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597744;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 47:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -109,7 +109,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597764;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 50:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -117,7 +117,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597780;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 53:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -125,7 +125,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5977A0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 56:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -133,7 +133,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5977C4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 59:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -141,7 +141,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5977E0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 62:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -149,7 +149,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5977F8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 65:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -157,7 +157,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597814;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 68:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -165,7 +165,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597830;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 71:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -173,7 +173,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597850;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 74:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -181,7 +181,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597870;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 77:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -189,7 +189,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x59788C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 80:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -197,7 +197,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5978A4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 83:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -205,7 +205,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5978C0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 86:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -213,7 +213,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5978DC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 89:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -221,7 +221,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5978F8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 92:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -229,7 +229,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597918;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 95:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -237,7 +237,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597934;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 98:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -245,7 +245,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597954;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 101:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -253,7 +253,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597978;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 104:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -261,7 +261,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597998;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 107:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -269,7 +269,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5979B4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 110:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -277,7 +277,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5979D0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 113:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -285,7 +285,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x5979EC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 116:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -293,7 +293,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597A08;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 119:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -301,7 +301,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597A24;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 122:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -309,7 +309,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597A48;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 125:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -317,7 +317,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597A68;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 128:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -325,7 +325,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597A84;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 131:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -333,7 +333,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597AAC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 134:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -341,7 +341,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597AD4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 137:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -349,7 +349,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597AF0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 140:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -357,7 +357,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597B14;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 143:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -365,7 +365,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597B30;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 146:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -373,7 +373,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597B54;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 149:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -381,7 +381,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597B74;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 152:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -389,7 +389,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597B90;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 155:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -397,7 +397,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597BAC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 158:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -405,7 +405,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597BC8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 161:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -413,7 +413,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597BEC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 164:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -421,7 +421,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597C0C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 167:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -429,7 +429,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597C34;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 170:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -437,7 +437,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597C54;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 173:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -445,7 +445,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597C6C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 176:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -453,7 +453,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   0x597C7C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 179:
 	__asm        jmp    near ptr 0x0042DC43;
@@ -610,7 +610,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        push   eax;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 183:
 	__asm        jmp    near ptr 0x0042DC62;
@@ -626,12 +626,12 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	__asm        lea    eax, szFullErrorDescription[0];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x0042DCB1;
+	__asm        call   DirectSoundError::MakeErrorString;
 // LINE 198:
 	__asm        lea    eax, szFullErrorDescription[0];
 	__asm        push   eax;
 	__asm        push   0x597C90;
-	__asm        call   0x00424B14;
+	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 202:
 	__asm        jmp    near ptr 0x0042DCAA;
@@ -648,7 +648,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597C94;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 213:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -656,7 +656,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597CB0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 216:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -664,7 +664,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597CD0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 219:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -672,7 +672,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597CF0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 222:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -680,7 +680,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D0C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 225:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -688,7 +688,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D24;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 228:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -696,7 +696,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D44;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 231:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -704,7 +704,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D60;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 234:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -712,7 +712,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D7C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 237:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -720,7 +720,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597D98;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 240:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -728,7 +728,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597DB4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 243:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -736,7 +736,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597DD8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 246:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -744,7 +744,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597DF8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 249:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -752,7 +752,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597E14;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 252:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -760,7 +760,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597E34;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 255:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -768,7 +768,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   0x597E44;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEB0;
+	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 258:
 	__asm        jmp    near ptr 0x0042DF36;
@@ -825,7 +825,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        push   eax;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
-	__asm        call   0x0056CEC0;
+	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 262:
 	__asm        jmp    near ptr 0x0042DF55;

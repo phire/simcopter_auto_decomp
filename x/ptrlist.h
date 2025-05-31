@@ -34,7 +34,7 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 49:
 	__asm        mov    eax, this;
@@ -48,7 +48,7 @@ void PtrList<cBBase>::Remove(class cBBase* data) {
 	__asm        push   0x59A24C;
 	__asm        push   0x32;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 51:
 	__asm        jmp    near ptr 0x0055E7E4;
@@ -101,7 +101,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, this;
 	__asm        dec    word ptr [eax+4];
@@ -113,7 +113,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055E8DC;
 	__asm        mov    eax, this;
@@ -124,7 +124,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055E976;
 // LINE 23:
@@ -136,7 +136,7 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 	__asm        push   0x59A274;
 	__asm        push   0x17;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x0055E9A3;
@@ -163,7 +163,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, this;
 	__asm        dec    word ptr [eax+4];
@@ -175,7 +175,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055FCBC;
 	__asm        mov    eax, this;
@@ -186,7 +186,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x0055FD56;
 // LINE 23:
@@ -198,7 +198,7 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 	__asm        push   0x59A274;
 	__asm        push   0x17;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x0055FD83;
@@ -242,7 +242,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        mov    eax, this;
 	__asm        dec    word ptr [eax+4];
@@ -254,7 +254,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x26;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00551DEC;
 	__asm        mov    eax, this;
@@ -265,7 +265,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        push   0x59A24C;
 	__asm        push   0x28;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        jmp    near ptr 0x00551E86;
 // LINE 23:
@@ -277,7 +277,7 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 	__asm        push   0x59A274;
 	__asm        push   0x17;
 	__asm        push   0x59A254;
-	__asm        call   0x00554F30;
+	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 24:
 	__asm        jmp    near ptr 0x00551EB3;

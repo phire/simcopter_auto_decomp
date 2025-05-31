@@ -65,7 +65,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        mov    dword ptr [eax], 0;
 // LINE 655:
 	__asm        push   0x53C0;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    model, eax;
 // LINE 656:
@@ -78,7 +78,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 660:
 	__asm        push   0xD44F;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    forest, eax;
 // LINE 661:
@@ -91,7 +91,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        jmp    near ptr 0x004CF279;
 // LINE 665:
 	__asm        push   0x20;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    state, eax;
 // LINE 666:
@@ -174,7 +174,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004CF2ED;
+	__asm        call   Encode;
 	__asm        add    esp, 0xC;
 	__asm        mov    retVal, ax;
 // LINE 695:
@@ -227,7 +227,7 @@ CompressDone:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 716:
 	__asm        mov    eax, forest;
@@ -236,7 +236,7 @@ CompressDone:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 717:
 	__asm        mov    eax, state;
@@ -245,7 +245,7 @@ CompressDone:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 719:
 	__asm        mov    ax, retVal;
@@ -281,12 +281,12 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 // LINE 534:
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004CFB73;
+	__asm        call   StartModel;
 	__asm        add    esp, 4;
 // LINE 535:
 	__asm        mov    eax, forest;
 	__asm        push   eax;
-	__asm        call   0x004CF607;
+	__asm        call   InitTree;
 	__asm        add    esp, 4;
 // LINE 536:
 	__asm        mov    s, 0;
@@ -347,7 +347,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, r;
 	__asm        sub    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004CF67E;
+	__asm        call   InsertNode;
 	__asm        add    esp, 8;
 	__asm        jmp    near ptr 0x004CF3C5;
 // LINE 544:
@@ -355,7 +355,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, r;
 	__asm        push   eax;
-	__asm        call   0x004CF67E;
+	__asm        call   InsertNode;
 	__asm        add    esp, 8;
 // LINE 546:
 	__asm        mov    eax, forest;
@@ -382,7 +382,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        push   edx;
-	__asm        call   0x004CFC72;
+	__asm        call   EncodeChar;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -401,7 +401,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, [eax+0x103F];
 	__asm        add    eax, 0xFD;
 	__asm        push   eax;
-	__asm        call   0x004CFC72;
+	__asm        call   EncodeChar;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -418,7 +418,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, [eax+0x103B];
 	__asm        dec    eax;
 	__asm        push   eax;
-	__asm        call   0x004D0041;
+	__asm        call   EncodePosition;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -457,7 +457,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, s;
 	__asm        push   eax;
-	__asm        call   0x004CF96A;
+	__asm        call   DeleteNode;
 	__asm        add    esp, 8;
 // LINE 564:
 	__asm        mov    al, reinterpret_cast<uint8_t>(c);
@@ -486,7 +486,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, r;
 	__asm        push   eax;
-	__asm        call   0x004CF67E;
+	__asm        call   InsertNode;
 	__asm        add    esp, 8;
 // LINE 569:
 	__asm        jmp    near ptr 0x004CF4E4;
@@ -506,7 +506,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, s;
 	__asm        push   eax;
-	__asm        call   0x004CF96A;
+	__asm        call   DeleteNode;
 	__asm        add    esp, 8;
 // LINE 573:
 	__asm        mov    eax, s;
@@ -525,7 +525,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, r;
 	__asm        push   eax;
-	__asm        call   0x004CF67E;
+	__asm        call   InsertNode;
 	__asm        add    esp, 8;
 // LINE 576:
 	__asm        jmp    near ptr 0x004CF585;
@@ -537,7 +537,7 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004D0194;
+	__asm        call   EncodeEnd;
 	__asm        add    esp, 8;
 // LINE 588:
 	__asm        xor    ax, ax;
@@ -1045,7 +1045,7 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1063,7 +1063,7 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1113,7 +1113,7 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 	__asm        push   eax;
 	__asm        mov    eax, sym;
 	__asm        push   eax;
-	__asm        call   0x004CFDE2;
+	__asm        call   UpdateModel;
 	__asm        add    esp, 8;
 // LINE 382:
 	__asm        xor    ax, ax;
@@ -1234,7 +1234,7 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 	__asm        push   eax;
 	__asm        mov    eax, bit;
 	__asm        push   eax;
-	__asm        call   0x004CFFB8;
+	__asm        call   PutBit;
 	__asm        add    esp, 8;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1255,7 +1255,7 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 	__asm        sbb    eax, eax;
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x004CFFB8;
+	__asm        call   PutBit;
 	__asm        add    esp, 8;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1364,7 +1364,7 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1382,7 +1382,7 @@ short EncodePosition(long position, struct tACompModel* model, struct tCompressS
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1448,7 +1448,7 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1463,7 +1463,7 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 	__asm        mov    eax, model;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        call   0x004CFF3B;
+	__asm        call   Output;
 	__asm        add    esp, 0xC;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
@@ -1473,7 +1473,7 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 // LINE 419:
 	__asm        mov    eax, dest;
 	__asm        push   eax;
-	__asm        call   0x004D0216;
+	__asm        call   FlushBitBuffer;
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004D0211;
 // LINE 420:
@@ -1494,7 +1494,7 @@ short FlushBitBuffer(struct tCompressState* dest) {
 	__asm        mov    eax, dest;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004CFFB8;
+	__asm        call   PutBit;
 	__asm        add    esp, 8;
 	__asm        mov    retVal, ax;
 // LINE 151:
@@ -1521,7 +1521,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 
 // LINE 737:
 	__asm        push   0x53C0;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    model, eax;
 // LINE 738:
@@ -1534,7 +1534,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        jmp    near ptr 0x004D0381;
 // LINE 742:
 	__asm        push   0xD44F;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    forest, eax;
 // LINE 743:
@@ -1547,7 +1547,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        jmp    near ptr 0x004D0381;
 // LINE 747:
 	__asm        push   0x20;
-	__asm        call   0x0056A600;
+	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    state, eax;
 // LINE 748:
@@ -1603,7 +1603,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004D03E6;
+	__asm        call   Decode;
 	__asm        add    esp, 0xC;
 	__asm        mov    retVal, ax;
 // LINE 770:
@@ -1614,7 +1614,7 @@ ExpandDone:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 771:
 	__asm        mov    eax, forest;
@@ -1623,7 +1623,7 @@ ExpandDone:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 772:
 	__asm        mov    eax, state;
@@ -1632,7 +1632,7 @@ ExpandDone:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        call   0x0056A740;
+	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 774:
 	__asm        mov    ax, retVal;
@@ -1680,12 +1680,12 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004D05B8;
+	__asm        call   StartDecode;
 	__asm        add    esp, 8;
 // LINE 602:
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004CFB73;
+	__asm        call   StartModel;
 	__asm        add    esp, 4;
 // LINE 603:
 	__asm        mov    i, 0;
@@ -1710,7 +1710,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004D06A5;
+	__asm        call   DecodeChar;
 	__asm        add    esp, 8;
 	__asm        mov    c, eax;
 // LINE 607:
@@ -1752,7 +1752,7 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        push   eax;
 	__asm        mov    eax, model;
 	__asm        push   eax;
-	__asm        call   0x004D0888;
+	__asm        call   DecodePosition;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        dec    ebx;
@@ -1828,7 +1828,7 @@ void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 // LINE 459:
 	__asm        mov    eax, src;
 	__asm        push   eax;
-	__asm        call   0x004D0604;
+	__asm        call   GetBit;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, model;
 	__asm        mov    ecx, [ecx+8];
@@ -1924,7 +1924,7 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    edx, edx;
 	__asm        div    range;
 	__asm        push   eax;
-	__asm        call   0x004D081C;
+	__asm        call   BinarySearchSym;
 	__asm        add    esp, 8;
 	__asm        mov    sym, eax;
 // LINE 471:
@@ -1999,7 +1999,7 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 // LINE 486:
 	__asm        mov    eax, src;
 	__asm        push   eax;
-	__asm        call   0x004D0604;
+	__asm        call   GetBit;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, model;
 	__asm        mov    ecx, [ecx+8];
@@ -2018,7 +2018,7 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 	__asm        push   eax;
 	__asm        mov    eax, sym;
 	__asm        push   eax;
-	__asm        call   0x004CFDE2;
+	__asm        call   UpdateModel;
 	__asm        add    esp, 8;
 // LINE 490:
 	__asm        mov    eax, ch;
@@ -2092,7 +2092,7 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 	__asm        sub    edx, edx;
 	__asm        div    range;
 	__asm        push   eax;
-	__asm        call   0x004D09DF;
+	__asm        call   BinarySearchPos;
 	__asm        add    esp, 8;
 	__asm        mov    position, eax;
 // LINE 502:
@@ -2167,7 +2167,7 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 // LINE 517:
 	__asm        mov    eax, src;
 	__asm        push   eax;
-	__asm        call   0x004D0604;
+	__asm        call   GetBit;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, model;
 	__asm        mov    ecx, [ecx+8];

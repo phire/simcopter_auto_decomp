@@ -135,12 +135,12 @@ void S3RoadDataInit() {
 	__asm        mov    dword ptr ds:[0x62BB04], 0;
 // LINE 88:
 	__asm        push   0x62BB00;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 89:
 	__asm        push   0x62BB00;
 	__asm        push   0x62BA00;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 91:
 	__asm        mov    dword ptr ds:[0x62BB0C], 0xFFFFFFFF;
@@ -152,7 +152,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0xC;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 95:
 	__asm        mov    eax, 0x62BB00;
@@ -161,7 +161,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BA00;
 	__asm        add    eax, 0x40;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 97:
 	__asm        mov    dword ptr ds:[0x62BB18], 0xFFFFFFFF;
@@ -173,7 +173,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 101:
 	__asm        mov    eax, 0x62BB00;
@@ -182,7 +182,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BA00;
 	__asm        add    eax, 0x80;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 103:
 	__asm        mov    dword ptr ds:[0x62BB24], 1;
@@ -194,7 +194,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 // LINE 107:
 	__asm        mov    eax, 0x62BB00;
@@ -203,7 +203,7 @@ void S3RoadDataInit() {
 	__asm        mov    eax, 0x62BA00;
 	__asm        add    eax, 0xC0;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 111:
 	__asm        fld    qword ptr ds:[0x593408];
@@ -905,7 +905,7 @@ void S3RoadDataInit() {
 	__asm        add    eax, ecx;
 	__asm        add    eax, 0x62BD10;
 	__asm        push   eax;
-	__asm        call   0x004CA1E3;
+	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, leg;
 	__asm        lea    ecx, [ecx+ecx*2];
@@ -954,7 +954,7 @@ void S3RoadDataInit() {
 	__asm        add    eax, ecx;
 	__asm        add    eax, 0x62D910;
 	__asm        push   eax;
-	__asm        call   0x004CAEFB;
+	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 271:
 	__asm        jmp    near ptr 0x00539017;
@@ -1418,7 +1418,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	__asm        push   0x20E;
 	__asm        push   0x5B804C;
 	__asm        push   0x5B8070;
-	__asm        call   0x0056DA30;
+	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00539919;
 	__asm        jmp    near ptr 0x00539919;

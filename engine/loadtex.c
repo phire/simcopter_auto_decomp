@@ -44,7 +44,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   0x8000;
 	__asm        mov    eax, name;
 	__asm        push   eax;
-	__asm        call   0x00586640;
+	__asm        call   _open;
 	__asm        add    esp, 8;
 	__asm        mov    file, eax;
 	__asm        cmp    file, 0xFFFFFFFF;
@@ -60,7 +60,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    r, eax;
 	__asm        cmp    r, 0x10;
@@ -68,7 +68,7 @@ struct VRResource* LoadImages(char * name) {
 // LINE 87:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 89:
 	__asm        mov    dword ptr ds:[0x662810], 2;
@@ -83,7 +83,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    res, eax;
 // LINE 144:
@@ -97,7 +97,7 @@ struct VRResource* LoadImages(char * name) {
 // LINE 169:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x0058E450;
+	__asm        call   _filelength;
 	__asm        add    esp, 4;
 	__asm        mov    s, eax;
 // LINE 176:
@@ -105,7 +105,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
-	__asm        call   0x004CB4AC;
+	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
 	__asm        mov    group, eax;
 	__asm        cmp    group, 0;
@@ -115,7 +115,7 @@ struct VRResource* LoadImages(char * name) {
 // LINE 179:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 180:
 	__asm        xor    eax, eax;
@@ -132,7 +132,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        add    r, eax;
 // LINE 185:
@@ -143,12 +143,12 @@ struct VRResource* LoadImages(char * name) {
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 186:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 188:
 	__asm        mov    i, 0;
@@ -420,7 +420,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	int32_t r;
 
 // LINE 391:
-	__asm        call   0x004CB7A5;
+	__asm        call   S2AllocAligned;
 	__asm        mov    alignptr, eax;
 // LINE 392:
 	__asm        cmp    alignptr, 0;
@@ -432,7 +432,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   0x8000;
 	__asm        mov    eax, name;
 	__asm        push   eax;
-	__asm        call   0x00586640;
+	__asm        call   _open;
 	__asm        add    esp, 8;
 	__asm        mov    file, eax;
 	__asm        cmp    file, 0xFFFFFFFF;
@@ -448,7 +448,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    r, eax;
 	__asm        cmp    r, 0x10;
@@ -456,7 +456,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 407:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 408:
 	__asm        mov    dword ptr ds:[0x662810], 2;
@@ -469,7 +469,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 450:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 451:
 	__asm        mov    dword ptr ds:[0x662810], 2;
@@ -485,7 +485,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 459:
 	__asm        push   0xC;
@@ -493,7 +493,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 462:
 	__asm        mov    eax, alignptr;
@@ -508,7 +508,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 473:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 474:
 	__asm        mov    dword ptr ds:[0x662810], 2;
@@ -521,7 +521,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 482:
 	__asm        push   0x10000;
@@ -529,7 +529,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00580B50;
+	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    r, eax;
 // LINE 483:
@@ -538,7 +538,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 485:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 486:
 	__asm        mov    dword ptr ds:[0x662810], 2;
@@ -548,7 +548,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 490:
 	__asm        mov    eax, file;
 	__asm        push   eax;
-	__asm        call   0x00578E50;
+	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 493:
 	__asm        mov    eax, alignptr;
@@ -559,7 +559,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        push   eax;
 	__asm        mov    eax, res;
 	__asm        push   eax;
-	__asm        call   0x004D62C4;
+	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
 // LINE 495:
 	__asm        mov    eax, 1;

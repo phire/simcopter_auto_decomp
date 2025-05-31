@@ -221,7 +221,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 99:
-	__asm        call   0x004D66C0;
+	__asm        call   VRFrustSetNormals;
 // LINE 100:
 	__asm        mov    dword ptr ds:[0x598EBC], 0x20;
 // LINE 101:
@@ -239,10 +239,10 @@ int  CGameApp::S3PreRender() {
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
 	__asm        jne    near ptr 0x00495CC4;
 // LINE 107:
-	__asm        call   0x004EEF6A;
+	__asm        call   S3ViewerPosDelta;
 	__asm        cmp    eax, 0x30000;
 	__asm        jge    near ptr 0x00495CBF;
-	__asm        call   0x004EEF4F;
+	__asm        call   S3ViewerRotDelta;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    near ptr 0x00495CBF;
 // LINE 108:
@@ -250,7 +250,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 109:
-	__asm        call   0x004D66C0;
+	__asm        call   VRFrustSetNormals;
 // LINE 110:
 	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
 // LINE 111:
@@ -262,10 +262,10 @@ int  CGameApp::S3PreRender() {
 // LINE 115:
 	__asm        jmp    near ptr 0x00495D16;
 // LINE 116:
-	__asm        call   0x004EEF6A;
+	__asm        call   S3ViewerPosDelta;
 	__asm        cmp    eax, 0x30000;
 	__asm        jge    near ptr 0x00495CE2;
-	__asm        call   0x004EEF4F;
+	__asm        call   S3ViewerRotDelta;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     near ptr 0x00495D16;
 // LINE 117:
@@ -273,7 +273,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 118:
-	__asm        call   0x004D66C0;
+	__asm        call   VRFrustSetNormals;
 // LINE 119:
 	__asm        mov    dword ptr ds:[0x598EBC], 0x20;
 // LINE 120:
@@ -289,7 +289,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 128:
-	__asm        call   0x004D66C0;
+	__asm        call   VRFrustSetNormals;
 // LINE 129:
 	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
 // LINE 130:
@@ -305,7 +305,7 @@ int  CGameApp::S3PreRender() {
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 136:
-	__asm        call   0x004D66C0;
+	__asm        call   VRFrustSetNormals;
 // LINE 137:
 	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
 // LINE 138:
@@ -449,7 +449,7 @@ void  CGameApp::S3PostRender() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        push   eax;
-	__asm        call   0x0055181A;
+	__asm        call   BodyDrawDebugInfo;
 	__asm        add    esp, 4;
 // LINE 206:
 	__asm        mov    eax, ds:[0x598ECC];
@@ -478,7 +478,7 @@ void  CGameApp::S3PostRender() {
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00495FC4;
+	__asm        call   CGameApp::DrawCrosshairs;
 // LINE 209:
 	__asm        jmp    near ptr 0x00495FBA;
 // LINE 210:
@@ -486,7 +486,7 @@ void  CGameApp::S3PostRender() {
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
-	__asm        call   0x00495FC4;
+	__asm        call   CGameApp::DrawCrosshairs;
 // LINE 211:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -498,7 +498,7 @@ void  CGameApp::S3PostRender() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x0055181A;
+	__asm        call   BodyDrawDebugInfo;
 	__asm        add    esp, 4;
 // LINE 216:
 	__asm        jmp    near ptr 0x00495FBF;
@@ -651,7 +651,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        push   0x59A140;
 	__asm        lea    eax, szBuffer1[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 285:
 	__asm        push   0;
@@ -701,7 +701,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        push   0x59A14C;
 	__asm        lea    eax, szBuffer1[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x34;
 // LINE 306:
 	__asm        push   0;
@@ -724,7 +724,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        mov    eax, ds:[0x599DA0];
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
-	__asm        call   0x0042EF72;
+	__asm        call   Sound::GetTotalMemoryUsage;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59B52C];
@@ -739,7 +739,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        push   0x59A19C;
 	__asm        lea    eax, szBuffer1[0];
 	__asm        push   eax;
-	__asm        call   0x0056CD30;
+	__asm        call   sprintf;
 	__asm        add    esp, 0x1C;
 // LINE 315:
 	__asm        add    nTextTop, 0xC;
@@ -763,7 +763,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 319:
-	__asm        call   0x004FC39D;
+	__asm        call   S3MissionGetCurr;
 	__asm        mov    md, eax;
 // LINE 320:
 	__asm        cmp    md, 0;
@@ -773,7 +773,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        push   eax;
 	__asm        mov    eax, md;
 	__asm        push   eax;
-	__asm        call   0x004FCB3A;
+	__asm        call   S3MissionDebugString;
 	__asm        add    esp, 8;
 // LINE 322:
 	__asm        add    nTextTop, 0xC;

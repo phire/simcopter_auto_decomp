@@ -98,7 +98,7 @@ void S3MapInit() {
 	__asm        push   0x5B529C;
 	__asm        mov    eax, ds:[0x63A858];
 	__asm        push   eax;
-	__asm        call   0x004CB5CF;
+	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
 	__asm        mov    ds:[0x5B5274], eax;
 // LINE 216:
@@ -106,7 +106,7 @@ void S3MapInit() {
 	__asm        jne    near ptr 0x004FE889;
 // LINE 217:
 	__asm        push   0x5B52A4;
-	__asm        call   0x0058E320;
+	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 219:
 	__asm        mov    eax, ds:[0x5B5268];
@@ -142,7 +142,7 @@ void S3MapInit() {
 	__asm        push   3;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 229:
@@ -181,7 +181,7 @@ void S3MapInit() {
 	__asm        push   0xC;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
-	__asm        call   0x004D6246;
+	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 246:
@@ -2267,17 +2267,17 @@ void S3MapRender(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, posx;
 	__asm        push   eax;
-	__asm        call   0x005001CB;
+	__asm        call   S3MapDrawPosLines;
 	__asm        add    esp, 8;
 // LINE 950:
 	__asm        mov    eax, posy;
 	__asm        push   eax;
 	__asm        mov    eax, posx;
 	__asm        push   eax;
-	__asm        call   0x00500DE3;
+	__asm        call   S3MapDrawMissionIcons;
 	__asm        add    esp, 8;
 // LINE 951:
-	__asm        call   0x00501018;
+	__asm        call   S3MapDrawCarIcons;
 // LINE 952:
 }
 
@@ -2308,7 +2308,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 975:
 	__asm        and    posx, 0xFF;
 // LINE 987:
-	__asm        call   0x004FBCC6;
+	__asm        call   S3MissionGetCurrDestMapLoc;
 	__asm        mov    maploc, eax;
 // LINE 988:
 	__asm        cmp    maploc, 0;
@@ -2328,7 +2328,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, posx;
 	__asm        push   eax;
-	__asm        call   0x005014C6;
+	__asm        call   S3MapGetDxDy;
 	__asm        add    esp, 0x18;
 // LINE 993:
 	__asm        mov    eax, dfx;
@@ -2378,12 +2378,12 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, dfx;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1001:
 	__asm        jmp    near ptr 0x00500365;
 // LINE 1003:
-	__asm        call   0x004FBC9A;
+	__asm        call   S3MissionGetCurrMapLoc;
 	__asm        mov    maploc, eax;
 // LINE 1004:
 	__asm        cmp    maploc, 0;
@@ -2403,7 +2403,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, posx;
 	__asm        push   eax;
-	__asm        call   0x005014C6;
+	__asm        call   S3MapGetDxDy;
 	__asm        add    esp, 0x18;
 // LINE 1009:
 	__asm        mov    eax, dfx;
@@ -2453,10 +2453,10 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, dfx;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1019:
-	__asm        call   0x004FBD08;
+	__asm        call   S3MissionGetCurrPickupLoc;
 	__asm        mov    maploc, eax;
 // LINE 1020:
 	__asm        cmp    maploc, 0;
@@ -2476,7 +2476,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, posx;
 	__asm        push   eax;
-	__asm        call   0x005014C6;
+	__asm        call   S3MapGetDxDy;
 	__asm        add    esp, 0x18;
 // LINE 1025:
 	__asm        mov    eax, dfx;
@@ -2526,7 +2526,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        push   eax;
 	__asm        mov    eax, dfx;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1037:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
@@ -2543,11 +2543,11 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1042:
 	__asm        jmp    near ptr 0x00500460;
 // LINE 1044:
-	__asm        call   0x00546541;
+	__asm        call   GetAvatarVector;
 	__asm        mov    eax, [eax];
 	__asm        mov    fx, eax;
 // LINE 1045:
-	__asm        call   0x00546541;
+	__asm        call   GetAvatarVector;
 	__asm        mov    eax, [eax+8];
 	__asm        neg    eax;
 	__asm        mov    fy, eax;
@@ -2765,7 +2765,7 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        push   eax;
 	__asm        mov    eax, icon_id;
 	__asm        push   eax;
-	__asm        call   0x00500A12;
+	__asm        call   S3MapBlitIcon;
 	__asm        add    esp, 0xC;
 // LINE 1148:
 }
@@ -3045,14 +3045,14 @@ void S3MapCommandZoomOut() {
 // FUNCTION: COPTER_D 0x005009dc
 void S3MapCommandPreviousMission() {
 // LINE 1342:
-	__asm        call   0x004FC9AC;
+	__asm        call   S3MissionSetCurrPrev;
 // LINE 1343:
 }
 
 // FUNCTION: COPTER_D 0x005009ec
 void S3MapCommandNextMission() {
 // LINE 1351:
-	__asm        call   0x004FC89B;
+	__asm        call   S3MissionSetCurrNext;
 // LINE 1352:
 }
 
@@ -3344,7 +3344,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	long pickicon;
 
 // LINE 1508:
-	__asm        call   0x004FC39D;
+	__asm        call   S3MissionGetCurr;
 	__asm        mov    currmd, eax;
 // LINE 1510:
 	__asm        mov    i, 0;
@@ -3355,7 +3355,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 // LINE 1512:
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004FDCBB;
+	__asm        call   S3MissionGetDataByIndex;
 	__asm        add    esp, 4;
 	__asm        mov    md, eax;
 // LINE 1516:
@@ -3380,7 +3380,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x50];
 	__asm        push   eax;
-	__asm        call   0x00500B65;
+	__asm        call   S3MapGetMissionIcons;
 	__asm        add    esp, 0xC;
 // LINE 1523:
 	__asm        mov    eax, md;
@@ -3402,7 +3402,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    cl, ds:[0x5B5298];
 	__asm        shl    eax, cl;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1530:
 	__asm        jmp    near ptr 0x00500EEB;
@@ -3426,7 +3426,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    cl, ds:[0x5B5298];
 	__asm        shl    eax, cl;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1541:
 	__asm        mov    eax, md;
@@ -3448,7 +3448,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    cl, ds:[0x5B5298];
 	__asm        shl    eax, cl;
 	__asm        push   eax;
-	__asm        call   0x005004CF;
+	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1548:
 	__asm        jmp    near ptr 0x00500E00;
@@ -3698,7 +3698,7 @@ void S3MapDrawCarIcons() {
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        call   0x005012F5;
+	__asm        call   S3MapDrawDispatchLine;
 	__asm        add    esp, 0x14;
 // LINE 1682:
 	__asm        mov    eax, ci;
@@ -3710,7 +3710,7 @@ void S3MapDrawCarIcons() {
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x00501220;
+	__asm        call   S3MapBlitDIcon;
 	__asm        add    esp, 0xC;
 // LINE 1683:
 	__asm        jmp    near ptr 0x0050102D;
@@ -4001,7 +4001,7 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        push   eax;
 	__asm        lea    eax, from.x;
 	__asm        push   eax;
-	__asm        call   0x004CB23C;
+	__asm        call   MTCheapDist2D;
 	__asm        add    esp, 8;
 	__asm        mov    dist1, eax;
 // LINE 1850:
@@ -4017,7 +4017,7 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        push   eax;
 	__asm        lea    eax, from.x;
 	__asm        push   eax;
-	__asm        call   0x004CB23C;
+	__asm        call   MTCheapDist2D;
 	__asm        add    esp, 8;
 	__asm        mov    dist2, eax;
 // LINE 1857:
