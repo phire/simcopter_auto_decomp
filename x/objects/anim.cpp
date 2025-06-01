@@ -98,7 +98,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	// Function registers exception cleanup function at 0x005674bb
 // LINE 38:
 	__asm        cmp    dword ptr ds:[0x5BF6D4], 0;
-	__asm        jne    near ptr 0x00567247;
+	__asm        jne    _T47;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF6D8;
@@ -107,9 +107,10 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 39:
+_T47:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        jne    near ptr 0x0056726D;
+	__asm        jne    _T6d;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF704;
@@ -118,6 +119,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 43:
+_T6d:
 	__asm        push   0x10;
 	__asm        lea    eax, tmp[0];
 	__asm        push   eax;
@@ -146,21 +148,25 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x005672E8;
+	__asm        je     _Te8;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    dword ptr [eax+0x18], 8;
-	__asm        jne    near ptr 0x005672DC;
+	__asm        jne    _Tdc;
 
 	__asm        mov    dword ptr [ebp-0x30], 1;
-	__asm        jmp    near ptr 0x005672E3;
+	__asm        jmp    _Te3;
 
+_Tdc:
 	__asm        mov    dword ptr [ebp-0x30], 0;
-	__asm        jmp    near ptr 0x005672EF;
+_Te3:
+	__asm        jmp    _Tef;
 
+_Te8:
 	__asm        mov    dword ptr [ebp-0x30], 1;
+_Tef:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        jne    near ptr 0x00567315;
+	__asm        jne    _T115;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEB8C;
@@ -168,15 +174,16 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T115:
 	__asm        jmp    near ptr 0x0056731A;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        test   dword ptr [ebp-0x50], 0xFFFF;
-	__asm        je     near ptr 0x00567358;
+	__asm        je     _T158;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x00567353;
+	__asm        jne    _T153;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEB58;
@@ -184,10 +191,12 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x0056737E;
+_T153:
+	__asm        jmp    _T17e;
 
+_T158:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x0056737E;
+	__asm        je     _T17e;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEB1C;
@@ -195,10 +204,11 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T17e:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x0056746C;
+	__asm        jne    _T26c;
 
-	__asm        jmp    near ptr 0x005673A9;
+	__asm        jmp    _T1a9;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEAF0;
@@ -206,13 +216,14 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T1a9:
 	__asm        push   0x50;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x00567458;
+	__asm        je     _T258;
 
 	__asm        mov    dword ptr [ebp-0x38], 0x41525050;
 	__asm        mov    eax, [ebp-0x54];
@@ -226,9 +237,10 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    dword ptr [eax], 0x593738;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x00567406;
+	__asm        je     _T206;
 
 	__asm        call   _cArray::MakeTable;
+_T206:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x3C];
@@ -252,19 +264,23 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x00567453;
+	__asm        jmp    _T253;
 _L31083:
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
-	__asm        jmp    near ptr 0x0056745F;
+_T253:
+	__asm        jmp    _T25f;
 
+_T258:
 	__asm        mov    dword ptr [ebp-0x28], 0;
+_T25f:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x20], eax;
+_T26c:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x00567492;
+	__asm        jne    _T292;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEAD4;
@@ -272,10 +288,11 @@ _L31083:
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T292:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x28], eax;
-	__asm        jmp    near ptr 0x005674B6;
+	__asm        jmp    _T2b6;
 
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, this;
@@ -287,11 +304,13 @@ _L31071:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 47:
-	__asm        jmp    near ptr 0x005674C5;
+_T2b6:
+	__asm        jmp    _T2c5;
 _L31070:
 	__asm        mov    eax, 0x5961B0;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T2c5:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

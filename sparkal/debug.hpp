@@ -4,7 +4,7 @@ void execute(char * data) {
 // LINE 45:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x004256F8;
+	__asm        je     _T28;
 // LINE 46:
 	__asm        mov    eax, data;
 	__asm        push   eax;
@@ -12,6 +12,7 @@ void execute(char * data) {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   CDebugWindow::HandleDebugCommand;
 // LINE 47:
+_T28:
 	__asm        jmp    near ptr 0x004256FD;
 }
 

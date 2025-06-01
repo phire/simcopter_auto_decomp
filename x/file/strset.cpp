@@ -159,7 +159,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 	__asm        movsx  eax, word ptr [eax];
 	__asm        movsx  ecx, numStrings;
 	__asm        cmp    eax, ecx;
-	__asm        je     near ptr 0x00565ABD;
+	__asm        je     _T4e;
 // LINE 26:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF478;
@@ -168,6 +168,7 @@ void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 28:
+_T4e:
 	__asm        jmp    near ptr 0x00565AC2;
 
 	__asm        mov    eax, this;
@@ -181,7 +182,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00565B06;
+	__asm        jne    _T3a;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF4BC;
@@ -190,6 +191,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 34:
+_T3a:
 	__asm        push   0x565BA0;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
@@ -202,7 +204,7 @@ void StringSet::LoadStrings(short resID) {
 // LINE 36:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00565B80;
+	__asm        je     _Tb4;
 // LINE 37:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -214,7 +216,7 @@ void StringSet::LoadStrings(short resID) {
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00565B6C;
+	__asm        jne    _Ta0;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF4F0;
@@ -223,20 +225,23 @@ void StringSet::LoadStrings(short resID) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 42:
+_Ta0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 44:
-	__asm        jmp    near ptr 0x00565B94;
+	__asm        jmp    _Tc8;
 // LINE 45:
+_Tb4:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 46:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 48:
+_Tc8:
 	__asm        jmp    near ptr 0x00565B99;
 }
 
@@ -256,7 +261,7 @@ void StringSet::~StringSet() {
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00565BF5;
+	__asm        je     _T39;
 // LINE 59:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -271,6 +276,7 @@ void StringSet::~StringSet() {
 	__asm        mov    ecx, [eax];
 	__asm        call   FlatResFile::Release;
 // LINE 62:
+_T39:
 	__asm        jmp    near ptr 0x00565BFA;
 }
 
@@ -283,12 +289,13 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jl     near ptr 0x00565C28;
+	__asm        jl     _T29;
 
 	__asm        movsx  eax, which;
 	__asm        cmp    eax, 1;
-	__asm        jge    near ptr 0x00565C48;
+	__asm        jge    _T49;
 // LINE 67:
+_T29:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF534;
 	__asm        push   0x43;
@@ -297,30 +304,34 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        add    esp, 0x10;
 // LINE 68:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00565C8A;
+	__asm        jmp    _T8b;
 // LINE 74:
+_T49:
 	__asm        mov    ax, which;
 	__asm        mov    cnt, ax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        add    eax, 2;
 	__asm        mov    str, eax;
-	__asm        jmp    near ptr 0x00565C65;
+	__asm        jmp    _T66;
 
+_T62:
 	__asm        dec    cnt;
+_T66:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 1;
-	__asm        jle    near ptr 0x00565C82;
+	__asm        jle    _T83;
 // LINE 75:
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        inc    ecx;
 	__asm        add    str, ecx;
-	__asm        jmp    near ptr 0x00565C61;
+	__asm        jmp    _T62;
 // LINE 76:
+_T83:
 	__asm        mov    eax, str;
-	__asm        jmp    near ptr 0x00565C8A;
+	__asm        jmp    _T8b;
 // LINE 77:
 }
 

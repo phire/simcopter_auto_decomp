@@ -29,24 +29,28 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 
 // LINE 43:
 	__asm        cmp    dword ptr ds:[0x59B3A8], 0xC8;
-	__asm        jle    near ptr 0x004C9AF3;
+	__asm        jle    _T23;
 // LINE 44:
 	__asm        mov    eax, 0xFFFFFF9B;
-	__asm        jmp    near ptr 0x004C9B96;
+	__asm        jmp    _Tc6;
 // LINE 46:
+_T23:
 	__asm        cmp    nNumValues, 0x32;
-	__asm        jle    near ptr 0x004C9B07;
+	__asm        jle    _T37;
 // LINE 47:
 	__asm        mov    eax, 0xFFFFFF99;
-	__asm        jmp    near ptr 0x004C9B96;
+	__asm        jmp    _Tc6;
 // LINE 49:
+_T37:
 	__asm        mov    nCt, 0;
-	__asm        jmp    near ptr 0x004C9B16;
+	__asm        jmp    _T46;
 
+_T43:
 	__asm        inc    nCt;
+_T46:
 	__asm        mov    eax, nCt;
 	__asm        cmp    nNumValues, eax;
-	__asm        jle    near ptr 0x004C9B49;
+	__asm        jle    _T79;
 // LINE 50:
 	__asm        mov    eax, nCt;
 	__asm        mov    ecx, pValues;
@@ -58,8 +62,9 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	__asm        sub    edx, ebx;
 	__asm        sub    edx, ebx;
 	__asm        mov    [edx+ecx*4+0x63A860], eax;
-	__asm        jmp    near ptr 0x004C9B13;
+	__asm        jmp    _T43;
 // LINE 52:
+_T79:
 	__asm        mov    eax, pszSection;
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59B3A8];
@@ -84,7 +89,7 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	__asm        inc    dword ptr ds:[0x59B3A8];
 // LINE 56:
 	__asm        mov    eax, ds:[0x59B3A8];
-	__asm        jmp    near ptr 0x004C9B96;
+	__asm        jmp    _Tc6;
 // LINE 57:
 }
 
@@ -118,7 +123,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 81:
 	__asm        cmp    bIsOnMessageRead, 0;
-	__asm        je     near ptr 0x004C9D13;
+	__asm        je     _T178;
 
 	__asm        push   0x59B3D8;
 	__asm        lea    eax, szTemp[0];
@@ -126,7 +131,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004C9D13;
+	__asm        je     _T178;
 // LINE 83:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -144,18 +149,21 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004C9C61;
+	__asm        jne    _Tc6;
 // LINE 86:
 	__asm        mov    eax, 0xFFFFFF9A;
-	__asm        jmp    near ptr 0x004C9D29;
+	__asm        jmp    _T18e;
 // LINE 88:
+_Tc6:
 	__asm        mov    nCt, 0;
-	__asm        jmp    near ptr 0x004C9C76;
+	__asm        jmp    _Tdb;
 
+_Td5:
 	__asm        inc    nCt;
+_Tdb:
 	__asm        mov    eax, nCt;
 	__asm        cmp    ds:[0x59B3A8], eax;
-	__asm        jle    near ptr 0x004C9CC3;
+	__asm        jle    _T128;
 // LINE 89:
 	__asm        lea    eax, szSection[0];
 	__asm        push   eax;
@@ -170,15 +178,17 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004C9CBE;
+	__asm        jne    _T123;
 // LINE 90:
-	__asm        jmp    near ptr 0x004C9CC3;
+	__asm        jmp    _T128;
 // LINE 92:
-	__asm        jmp    near ptr 0x004C9C70;
+_T123:
+	__asm        jmp    _Td5;
 
+_T128:
 	__asm        mov    eax, nCt;
 	__asm        cmp    ds:[0x59B3A8], eax;
-	__asm        je     near ptr 0x004C9D0E;
+	__asm        je     _T173;
 // LINE 93:
 	__asm        mov    eax, nCt;
 	__asm        push   eax;
@@ -196,15 +206,18 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        push   0x59B438;
 	__asm        call   dword ptr ds:[0x6C3794];
 // LINE 98:
-	__asm        jmp    near ptr 0x004C9D1F;
+_T173:
+	__asm        jmp    _T184;
 // LINE 99:
+_T178:
 	__asm        mov    eax, pszTWKFile;
 	__asm        push   eax;
 	__asm        call   TWKReadAllFiles;
 	__asm        add    esp, 4;
 // LINE 104:
+_T184:
 	__asm        mov    eax, ds:[0x59B3AC];
-	__asm        jmp    near ptr 0x004C9D29;
+	__asm        jmp    _T18e;
 // LINE 105:
 }
 
@@ -245,12 +258,14 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	__asm        add    esp, 0x10;
 // LINE 171:
 	__asm        mov    nCt, 0;
-	__asm        jmp    near ptr 0x004C9DA0;
+	__asm        jmp    _T38;
 
+_T32:
 	__asm        inc    nCt;
+_T38:
 	__asm        mov    eax, nCt;
 	__asm        cmp    ds:[0x59B3A8], eax;
-	__asm        jle    near ptr 0x004C9E4A;
+	__asm        jle    _Te2;
 // LINE 172:
 	__asm        mov    eax, nCt;
 	__asm        mov    ecx, eax;
@@ -278,16 +293,18 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004C9E25;
+	__asm        je     _Tbd;
 // LINE 177:
 	__asm        lea    eax, szTemp[0];
 	__asm        mov    pszFile, eax;
 // LINE 178:
-	__asm        jmp    near ptr 0x004C9E2B;
+	__asm        jmp    _Tc3;
 // LINE 179:
+_Tbd:
 	__asm        mov    eax, pszTWKFile;
 	__asm        mov    pszFile, eax;
 // LINE 184:
+_Tc3:
 	__asm        mov    eax, nCt;
 	__asm        push   eax;
 	__asm        mov    eax, pszSection;
@@ -297,7 +314,7 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	__asm        call   TWKReadSection;
 	__asm        add    esp, 0xC;
 // LINE 185:
-	__asm        jmp    near ptr 0x004C9D9A;
+	__asm        jmp    _T32;
 // LINE 191:
 }
 
@@ -338,15 +355,17 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        mov    nNumCtrl, eax;
 // LINE 214:
 	__asm        cmp    nNumCtrl, 0xFFFFFF9A;
-	__asm        je     near ptr 0x004CA03E;
+	__asm        je     _T1ef;
 // LINE 216:
 	__asm        mov    nCt2, 0;
-	__asm        jmp    near ptr 0x004C9ECD;
+	__asm        jmp    _T7e;
 
+_T78:
 	__asm        inc    nCt2;
+_T7e:
 	__asm        mov    eax, nCt2;
 	__asm        cmp    nNumCtrl, eax;
-	__asm        jle    near ptr 0x004CA039;
+	__asm        jle    _T1ea;
 // LINE 217:
 	__asm        push   0x59B490;
 	__asm        mov    eax, nCt2;
@@ -398,7 +417,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004C9FC5;
+	__asm        jne    _T176;
 // LINE 226:
 	__asm        lea    eax, szValue[0];
 	__asm        push   eax;
@@ -415,15 +434,16 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        mov    ecx, [edx+ecx*4+0x63A860];
 	__asm        mov    [ecx], eax;
 // LINE 227:
-	__asm        jmp    near ptr 0x004CA034;
+	__asm        jmp    _T1e5;
 // LINE 228:
+_T176:
 	__asm        push   0x59B4F0;
 	__asm        lea    eax, szDataType[0];
 	__asm        push   eax;
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004CA00D;
+	__asm        jne    _T1be;
 // LINE 229:
 	__asm        lea    eax, szValue[0];
 	__asm        push   eax;
@@ -438,8 +458,9 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        mov    eax, [ecx+eax*4+0x63A860];
 	__asm        fstp   qword ptr [eax];
 // LINE 230:
-	__asm        jmp    near ptr 0x004CA034;
+	__asm        jmp    _T1e5;
 // LINE 231:
+_T1be:
 	__asm        lea    eax, szValue[0];
 	__asm        push   eax;
 	__asm        call   atoi;
@@ -453,10 +474,13 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        mov    ecx, [edx+ecx*4+0x63A860];
 	__asm        mov    [ecx], eax;
 // LINE 232:
-	__asm        jmp    near ptr 0x004C9EC7;
+_T1e5:
+	__asm        jmp    _T78;
 // LINE 234:
-	__asm        jmp    near ptr 0x004CA054;
+_T1ea:
+	__asm        jmp    _T205;
 // LINE 245:
+_T1ef:
 	__asm        mov    eax, nTweakQueueSlotIdx;
 	__asm        mov    ecx, ds:[0x59B3AC];
 	__asm        mov    [ecx*4+0x646EE0], eax;
@@ -480,10 +504,11 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 // LINE 362:
 	__asm        mov    nCt, 0;
 // LINE 363:
+_T10:
 	__asm        mov    eax, pSource;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0xD;
-	__asm        je     near ptr 0x004CA0A6;
+	__asm        je     _T38;
 // LINE 364:
 	__asm        mov    eax, pSource;
 	__asm        mov    al, [eax];
@@ -495,8 +520,9 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 // LINE 366:
 	__asm        inc    nCt;
 // LINE 367:
-	__asm        jmp    near ptr 0x004CA07E;
+	__asm        jmp    _T10;
 // LINE 368:
+_T38:
 	__asm        mov    eax, nCt;
 	__asm        mov    ecx, pDest;
 	__asm        mov    byte ptr [eax+ecx], 0;

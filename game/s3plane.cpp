@@ -269,7 +269,7 @@ void $E5() {
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B7B0];
 	__asm        test   al, 1;
-	__asm        jne    near ptr 0x0052B143;
+	__asm        jne    _T2d;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B7B0];
@@ -277,6 +277,7 @@ void $E5() {
 	__asm        mov    ds:[0x62B7B0], al;
 	__asm        mov    ecx, 0x62B6E8;
 	__asm        call   PlaneClass::~PlaneClass;
+_T2d:
 	__asm        jmp    near ptr 0x0052B148;
 }
 
@@ -289,18 +290,21 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 	__asm        mov    dword ptr [eax], 0x593220;
 // LINE 177:
 	__asm        mov    currentFlag, 0;
-	__asm        jmp    near ptr 0x0052B171;
+	__asm        jmp    _T24;
 
+_T21:
 	__asm        inc    currentFlag;
+_T24:
 	__asm        cmp    currentFlag, 4;
-	__asm        jge    near ptr 0x0052B18B;
+	__asm        jge    _T3e;
 // LINE 179:
 	__asm        mov    eax, currentFlag;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 180:
-	__asm        jmp    near ptr 0x0052B16E;
+	__asm        jmp    _T21;
 // LINE 182:
+_T3e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
 // LINE 183:
@@ -330,18 +334,20 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 196:
 	__asm        cmp    dword ptr ds:[0x5B7698], 0;
-	__asm        jne    near ptr 0x0052B1FD;
+	__asm        jne    _Tb0;
 // LINE 198:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0x12E;
 // LINE 199:
 	__asm        mov    dword ptr ds:[0x5B7698], 1;
 // LINE 201:
-	__asm        jmp    near ptr 0x0052B207;
+	__asm        jmp    _Tba;
 // LINE 203:
+_Tb0:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0x17C;
 // LINE 205:
+_Tba:
 	__asm        jmp    near ptr 0x0052B20C;
 
 	__asm        mov    eax, this;
@@ -358,14 +364,14 @@ void PlaneClass::~PlaneClass() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B262;
+	__asm        je     _T4c;
 // LINE 231:
 	__asm        jmp    near ptr 0x0052B244;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B262;
+	__asm        je     _T4c;
 // LINE 233:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
@@ -373,6 +379,7 @@ void PlaneClass::~PlaneClass() {
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnlinkFromCell;
 // LINE 245:
+_T4c:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+4], 0;
 // LINE 246:
@@ -383,14 +390,15 @@ void PlaneClass::~PlaneClass() {
 class PlaneClass* PlaneClass::GetPlanePointer(long index) {
 // LINE 266:
 	__asm        cmp    index, 2;
-	__asm        jl     near ptr 0x0052B28A;
+	__asm        jl     _T17;
 // LINE 267:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052B299;
+	__asm        jmp    _T26;
 // LINE 269:
+_T17:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x62B7A8];
-	__asm        jmp    near ptr 0x0052B299;
+	__asm        jmp    _T26;
 // LINE 270:
 }
 
@@ -417,7 +425,7 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0052B2F9;
+	__asm        je     _T3b;
 
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
@@ -426,41 +434,45 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   PlaneClass::PlaneClass;
 	__asm        mov    newplane, eax;
-	__asm        jmp    near ptr 0x0052B300;
+	__asm        jmp    _T42;
 
+_T3b:
 	__asm        mov    newplane, 0;
 // LINE 357:
+_T42:
 	__asm        cmp    newplane, 0;
-	__asm        je     near ptr 0x0052B352;
+	__asm        je     _T94;
 // LINE 361:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, newplane;
 	__asm        call   PlaneClass::Initialize;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B32B;
+	__asm        je     _T6d;
 // LINE 363:
 	__asm        mov    eax, newplane;
-	__asm        jmp    near ptr 0x0052B359;
+	__asm        jmp    _T9b;
 // LINE 365:
-	__asm        jmp    near ptr 0x0052B352;
+	__asm        jmp    _T94;
 // LINE 369:
+_T6d:
 	__asm        mov    eax, newplane;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0052B352;
+	__asm        je     _T94;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0052B352;
+	__asm        jmp    _T94;
 // LINE 376:
+_T94:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052B359;
+	__asm        jmp    _T9b;
 // LINE 377:
 }
 
@@ -487,18 +499,21 @@ void PlaneClass::ResetAll() {
 
 // LINE 498:
 	__asm        mov    currentPlaneIndex, 0;
-	__asm        jmp    near ptr 0x0052B3A8;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    currentPlaneIndex;
+_T18:
 	__asm        cmp    currentPlaneIndex, 2;
-	__asm        jge    near ptr 0x0052B3C6;
+	__asm        jge    _T36;
 // LINE 500:
 	__asm        mov    eax, currentPlaneIndex;
 	__asm        mov    ecx, [eax*4+0x62B7A8];
 	__asm        call   PlaneClass::Reset;
 // LINE 501:
-	__asm        jmp    near ptr 0x0052B3A5;
+	__asm        jmp    _T15;
 // LINE 503:
+_T36:
 	__asm        jmp    near ptr 0x0052B3CB;
 }
 
@@ -508,18 +523,21 @@ void PlaneClass::ItterateAll() {
 
 // LINE 548:
 	__asm        mov    currentPlaneIndex, 0;
-	__asm        jmp    near ptr 0x0052B3E8;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    currentPlaneIndex;
+_T18:
 	__asm        cmp    currentPlaneIndex, 2;
-	__asm        jge    near ptr 0x0052B406;
+	__asm        jge    _T36;
 // LINE 550:
 	__asm        mov    eax, currentPlaneIndex;
 	__asm        mov    ecx, [eax*4+0x62B7A8];
 	__asm        call   PlaneClass::Itterate;
 // LINE 551:
-	__asm        jmp    near ptr 0x0052B3E5;
+	__asm        jmp    _T15;
 // LINE 553:
+_T36:
 	__asm        jmp    near ptr 0x0052B40B;
 }
 
@@ -529,11 +547,13 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 
 // LINE 580:
 	__asm        mov    currentPlaneIndex, 0;
-	__asm        jmp    near ptr 0x0052B428;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    currentPlaneIndex;
+_T18:
 	__asm        cmp    currentPlaneIndex, 2;
-	__asm        jge    near ptr 0x0052B4C9;
+	__asm        jge    _Tb9;
 // LINE 584:
 	__asm        jmp    near ptr 0x0052B437;
 
@@ -541,7 +561,7 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        movsx  eax, byte ptr [eax+6];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B4C4;
+	__asm        jne    _Tb4;
 
 	__asm        jmp    near ptr 0x0052B452;
 
@@ -549,22 +569,24 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B4C4;
+	__asm        jne    _Tb4;
 
 	__asm        mov    eax, currentPlaneIndex;
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052B484;
+	__asm        jne    _T74;
 
-	__asm        jmp    near ptr 0x0052B498;
+	__asm        jmp    _T88;
 
-	__asm        jmp    near ptr 0x0052B4C4;
+_T74:
+	__asm        jmp    _Tb4;
 
-	__asm        jmp    near ptr 0x0052B498;
+	__asm        jmp    _T88;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0052B4C4;
+	__asm        jne    _Tb4;
 // LINE 585:
+_T88:
 	__asm        mov    eax, currentPlaneIndex;
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        mov    [ebp-0xC], eax;
@@ -577,12 +599,14 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	__asm        jmp    near ptr 0x0052B4BA;
 // LINE 587:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052B4D0;
+	__asm        jmp    _Tc0;
 // LINE 589:
-	__asm        jmp    near ptr 0x0052B425;
+_Tb4:
+	__asm        jmp    _T15;
 // LINE 591:
+_Tb9:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052B4D0;
+	__asm        jmp    _Tc0;
 // LINE 592:
 }
 
@@ -594,37 +618,41 @@ void PlaneClass::Itterate() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B60B;
+	__asm        je     _T136;
 // LINE 617:
 	__asm        jmp    near ptr 0x0052B4FA;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B58D;
+	__asm        jne    _Tb8;
 // LINE 621:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052B523;
+	__asm        jne    _T4e;
 
-	__asm        jmp    near ptr 0x0052B551;
+	__asm        jmp    _T7c;
 
-	__asm        jmp    near ptr 0x0052B532;
+	__asm        jmp    _T5d;
 
-	__asm        jmp    near ptr 0x0052B532;
+_T4e:
+	__asm        jmp    _T5d;
 
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
-	__asm        je     near ptr 0x0052B551;
+	__asm        je     _T7c;
 // LINE 623:
+_T5d:
 	__asm        cmp    dword ptr ds:[0x5B4924], 0;
-	__asm        je     near ptr 0x0052B54C;
+	__asm        je     _T77;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x50], 0xA;
-	__asm        jl     near ptr 0x0052B551;
+	__asm        jl     _T7c;
 // LINE 624:
-	__asm        jmp    near ptr 0x0052B645;
+_T77:
+	__asm        jmp    _T170;
 // LINE 627:
+_T7c:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x34], eax;
@@ -634,25 +662,26 @@ void PlaneClass::Itterate() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B58D;
+	__asm        jne    _Tb8;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x34];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        jge    near ptr 0x0052B58D;
+	__asm        jge    _Tb8;
 // LINE 631:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 635:
+_Tb8:
 	__asm        jmp    near ptr 0x0052B592;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B5FE;
+	__asm        je     _T129;
 // LINE 641:
 // Block start:
 	struct VRview position;
@@ -666,7 +695,7 @@ void PlaneClass::Itterate() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B5FE;
+	__asm        je     _T129;
 // LINE 648:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x70;
@@ -694,28 +723,32 @@ void PlaneClass::Itterate() {
 	__asm        add    esp, 0xC;
 // LINE 661:
 // Block end:
+_T129:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::PlaneSoundDriver;
 // LINE 663:
-	__asm        jmp    near ptr 0x0052B640;
+	__asm        jmp    _T16b;
 // LINE 667:
+_T136:
 	__asm        jmp    near ptr 0x0052B610;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B63B;
+	__asm        jne    _T166;
 
 	__asm        push   0x29B;
 	__asm        push   0x5B76A0;
 	__asm        push   0x5B76C4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052B640;
+	__asm        jmp    _T16b;
 
-	__asm        jmp    near ptr 0x0052B640;
+_T166:
+	__asm        jmp    _T16b;
 // LINE 669:
-	__asm        jmp    near ptr 0x0052B645;
+_T16b:
+	__asm        jmp    _T170;
 }
 
 // FUNCTION: COPTER_D 0x0052b64a
@@ -769,46 +802,51 @@ void PlaneClass::PlaneSoundDriver() {
 // LINE 750:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052B6F1;
+	__asm        jne    _T21;
 
-	__asm        jmp    near ptr 0x0052B705;
+	__asm        jmp    _T35;
 
-	__asm        jmp    near ptr 0x0052B8A3;
+_T21:
+	__asm        jmp    _T1d3;
 
-	__asm        jmp    near ptr 0x0052B705;
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        jne    near ptr 0x0052B8A3;
+	__asm        jne    _T1d3;
 // LINE 753:
+_T35:
 	__asm        jmp    near ptr 0x0052B70A;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B758;
+	__asm        jne    _T88;
 // LINE 755:
 	__asm        push   0x1C;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B736;
+	__asm        jne    _T66;
 // LINE 757:
 	__asm        push   0x1C;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 759:
+_T66:
 	__asm        push   0x1B;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B753;
+	__asm        jne    _T83;
 // LINE 761:
 	__asm        push   0x1B;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 763:
-	__asm        jmp    near ptr 0x0052B99E;
+_T83:
+	__asm        jmp    _T2ce;
 // LINE 767:
+_T88:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x70];
@@ -831,13 +869,13 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        mov    dist, eax;
 // LINE 772:
 	__asm        cmp    dist, 0x7800000;
-	__asm        jge    near ptr 0x0052B864;
+	__asm        jge    _T194;
 // LINE 774:
 	__asm        push   0x1C;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B7C3;
+	__asm        jne    _Tf3;
 // LINE 776:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -847,6 +885,7 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 780:
+_Tf3:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
@@ -870,13 +909,13 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B842;
+	__asm        je     _T172;
 // LINE 787:
 	__asm        push   0x1B;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B82F;
+	__asm        jne    _T15f;
 // LINE 789:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -886,67 +925,76 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 791:
+_T15f:
 	__asm        mov    eax, vol_adj;
 	__asm        push   eax;
 	__asm        push   0x1B;
 	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 793:
-	__asm        jmp    near ptr 0x0052B85F;
+	__asm        jmp    _T18f;
 // LINE 795:
+_T172:
 	__asm        push   0x1B;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B85F;
+	__asm        jne    _T18f;
 // LINE 797:
 	__asm        push   0x1B;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 801:
-	__asm        jmp    near ptr 0x0052B89E;
+_T18f:
+	__asm        jmp    _T1ce;
 // LINE 803:
+_T194:
 	__asm        push   0x1C;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B881;
+	__asm        jne    _T1b1;
 // LINE 805:
 	__asm        push   0x1C;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 807:
+_T1b1:
 	__asm        push   0x1B;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B89E;
+	__asm        jne    _T1ce;
 // LINE 809:
 	__asm        push   0x1B;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 813:
-	__asm        jmp    near ptr 0x0052B999;
+_T1ce:
+	__asm        jmp    _T2c9;
 // LINE 816:
+_T1d3:
 	__asm        jmp    near ptr 0x0052B8A8;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B8D9;
+	__asm        jne    _T209;
 // LINE 818:
 	__asm        push   0x29;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B8D4;
+	__asm        jne    _T204;
 // LINE 820:
 	__asm        push   0x29;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 822:
-	__asm        jmp    near ptr 0x0052B99E;
+_T204:
+	__asm        jmp    _T2ce;
 // LINE 826:
+_T209:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x70];
@@ -969,13 +1017,13 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        mov    dist, eax;
 // LINE 831:
 	__asm        cmp    dist, 0x7800000;
-	__asm        jge    near ptr 0x0052B97C;
+	__asm        jge    _T2ac;
 // LINE 833:
 	__asm        push   0x29;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B944;
+	__asm        jne    _T274;
 // LINE 835:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -985,6 +1033,7 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 839:
+_T274:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
@@ -1003,19 +1052,21 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 844:
-	__asm        jmp    near ptr 0x0052B999;
+	__asm        jmp    _T2c9;
 // LINE 846:
+_T2ac:
 	__asm        push   0x29;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052B999;
+	__asm        jne    _T2c9;
 // LINE 848:
 	__asm        push   0x29;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 852:
-	__asm        jmp    near ptr 0x0052B99E;
+_T2c9:
+	__asm        jmp    _T2ce;
 }
 
 // FUNCTION: COPTER_D 0x0052b9a3
@@ -1024,72 +1075,79 @@ void PlaneClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::IsPlaneOutOfCameraRange;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052B9E0;
+	__asm        je     _T3d;
 
 	__asm        jmp    near ptr 0x0052B9C4;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052B9E0;
+	__asm        jne    _T3d;
 // LINE 875:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnPlacePlane;
 // LINE 876:
-	__asm        jmp    near ptr 0x0052BAF0;
+	__asm        jmp    _T14d;
 // LINE 880:
+_T3d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052B9FA;
+	__asm        jne    _T57;
 
-	__asm        jmp    near ptr 0x0052BA11;
+	__asm        jmp    _T6e;
 
-	__asm        jmp    near ptr 0x0052BA09;
+	__asm        jmp    _T66;
 
-	__asm        jmp    near ptr 0x0052BA09;
+_T57:
+	__asm        jmp    _T66;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0052BA11;
+	__asm        je     _T6e;
 // LINE 882:
+_T66:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::HandleUFOStuff;
 // LINE 885:
+_T6e:
 	__asm        jmp    near ptr 0x0052BA16;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+6];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052BA2D;
+	__asm        je     _T8a;
 // LINE 887:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::SetCrashWhenReady;
 // LINE 892:
+_T8a:
 	__asm        jmp    near ptr 0x0052BA32;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052BA4E;
+	__asm        je     _Tab;
 // LINE 894:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::MoveForward;
 // LINE 895:
-	__asm        jmp    near ptr 0x0052BAF0;
+	__asm        jmp    _T14d;
 // LINE 898:
+_Tab:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x0052BADC;
+	__asm        jmp    _T139;
 // LINE 904:
+_Tbe:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::MoveForward;
 // LINE 907:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::HaveIReachedNextLoc;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052BAC7;
+	__asm        je     _T124;
 // LINE 910:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
@@ -1120,21 +1178,25 @@ void PlaneClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::AdjustNextAltitude;
 // LINE 920:
+_T124:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 922:
-	__asm        jmp    near ptr 0x0052BAEB;
+	__asm        jmp    _T148;
 // LINE 931:
-	__asm        jmp    near ptr 0x0052BAEB;
+_T134:
+	__asm        jmp    _T148;
 
+_T139:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0052BA61;
+	__asm        je     _Tbe;
 
-	__asm        jmp    near ptr 0x0052BAD7;
+	__asm        jmp    _T134;
 // LINE 932:
-	__asm        jmp    near ptr 0x0052BAF0;
+_T148:
+	__asm        jmp    _T14d;
 }
 
 // FUNCTION: COPTER_D 0x0052baf5
@@ -1148,11 +1210,12 @@ void PlaneClass::AdjustSpeed() {
 	__asm        mov    [ecx+0x18], eax;
 // LINE 956:
 	__asm        cmp    dword ptr ds:[0x5B769C], 0;
-	__asm        jne    near ptr 0x0052BB24;
+	__asm        jne    _T2f;
 // LINE 958:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 1;
 // LINE 960:
+_T2f:
 	__asm        jmp    near ptr 0x0052BB29;
 }
 
@@ -1185,17 +1248,19 @@ void PlaneClass::SetCrashWhenReady() {
 // LINE 1186:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052BB86;
+	__asm        jne    _T26;
 
-	__asm        jmp    near ptr 0x0052BBBD;
+	__asm        jmp    _T5d;
 
-	__asm        jmp    near ptr 0x0052BB95;
+	__asm        jmp    _T35;
 
-	__asm        jmp    near ptr 0x0052BB95;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x0052BBBD;
+	__asm        je     _T5d;
 // LINE 1188:
+_T35:
 	__asm        mov    mp.id, 0xFFFFFFFF;
 // LINE 1189:
 	__asm        mov    mp.op, 0x27;
@@ -1209,9 +1274,10 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1196:
+_T5d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x50], 0;
-	__asm        jne    near ptr 0x0052BC26;
+	__asm        jne    _Tc6;
 // LINE 1198:
 	__asm        mov    eax, ds:[0x6BF188];
 	__asm        mov    ecx, this;
@@ -1231,25 +1297,28 @@ void PlaneClass::SetCrashWhenReady() {
 // LINE 1200:
 	__asm        mov    eax, deltaX;
 	__asm        cmp    deltaY, eax;
-	__asm        jge    near ptr 0x0052BC0C;
+	__asm        jge    _Tac;
 // LINE 1201:
 	__asm        mov    eax, deltaX;
 	__asm        add    eax, eax;
 	__asm        add    eax, deltaY;
 	__asm        mov    dist, eax;
 // LINE 1202:
-	__asm        jmp    near ptr 0x0052BC17;
+	__asm        jmp    _Tb7;
 // LINE 1203:
+_Tac:
 	__asm        mov    eax, deltaY;
 	__asm        add    eax, eax;
 	__asm        add    eax, deltaX;
 	__asm        mov    dist, eax;
 // LINE 1206:
+_Tb7:
 	__asm        cmp    dist, 0x14;
-	__asm        jle    near ptr 0x0052BC26;
+	__asm        jle    _Tc6;
 // LINE 1207:
-	__asm        jmp    near ptr 0x0052BDA8;
+	__asm        jmp    _T248;
 // LINE 1211:
+_Tc6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        shl    eax, 8;
@@ -1288,17 +1357,19 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        jne    near ptr 0x0052BCBC;
+	__asm        jne    _T15c;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052BCC1;
+	__asm        jmp    _T161;
 
-	__asm        jmp    near ptr 0x0052BCC1;
+_T15c:
+	__asm        jmp    _T161;
 
+_T161:
 	__asm        jmp    near ptr 0x0052BCC6;
 
 	__asm        mov    eax, [ebp-0x3C];
@@ -1339,7 +1410,7 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x64];
 	__asm        test   al, 1;
-	__asm        je     near ptr 0x0052BD48;
+	__asm        je     _T1e8;
 // LINE 1238:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -1350,6 +1421,7 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 1241:
+_T1e8:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+6], 0;
 // LINE 1242:
@@ -1361,17 +1433,19 @@ void PlaneClass::SetCrashWhenReady() {
 // LINE 1247:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052BD75;
+	__asm        jne    _T215;
 
-	__asm        jmp    near ptr 0x0052BD89;
+	__asm        jmp    _T229;
 
-	__asm        jmp    near ptr 0x0052BDA3;
+_T215:
+	__asm        jmp    _T243;
 
-	__asm        jmp    near ptr 0x0052BD89;
+	__asm        jmp    _T229;
 
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        jne    near ptr 0x0052BDA3;
+	__asm        jne    _T243;
 // LINE 1249:
+_T229:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x5C;
@@ -1380,9 +1454,10 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1251:
-	__asm        jmp    near ptr 0x0052BDA3;
+	__asm        jmp    _T243;
 // LINE 1258:
-	__asm        jmp    near ptr 0x0052BDA8;
+_T243:
+	__asm        jmp    _T248;
 }
 
 // FUNCTION: COPTER_D 0x0052bdad
@@ -1401,67 +1476,76 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    deltaY, eax;
 // LINE 1287:
+_T28:
 	__asm        cmp    deltaX, 0x80;
-	__asm        jle    near ptr 0x0052BDEE;
+	__asm        jle    _T41;
 // LINE 1289:
 	__asm        sub    deltaX, 0x100;
 // LINE 1290:
-	__asm        jmp    near ptr 0x0052BDD5;
+	__asm        jmp    _T28;
 // LINE 1291:
+_T41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
-	__asm        jge    near ptr 0x0052BE04;
+	__asm        jge    _T57;
 // LINE 1293:
 	__asm        add    deltaX, 0x100;
 // LINE 1294:
-	__asm        jmp    near ptr 0x0052BDEE;
+	__asm        jmp    _T41;
 // LINE 1296:
+_T57:
 	__asm        cmp    deltaY, 0x80;
-	__asm        jle    near ptr 0x0052BE1D;
+	__asm        jle    _T70;
 // LINE 1298:
 	__asm        sub    deltaY, 0x100;
 // LINE 1299:
-	__asm        jmp    near ptr 0x0052BE04;
+	__asm        jmp    _T57;
 // LINE 1300:
+_T70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
-	__asm        jge    near ptr 0x0052BE33;
+	__asm        jge    _T86;
 // LINE 1302:
 	__asm        add    deltaY, 0x100;
 // LINE 1303:
-	__asm        jmp    near ptr 0x0052BE1D;
+	__asm        jmp    _T70;
 // LINE 1305:
+_T86:
 	__asm        cmp    deltaX, 0;
-	__asm        jge    near ptr 0x0052BE45;
+	__asm        jge    _T98;
 // LINE 1307:
 	__asm        mov    eax, deltaX;
 	__asm        neg    eax;
 	__asm        mov    deltaX, eax;
 // LINE 1309:
+_T98:
 	__asm        cmp    deltaY, 0;
-	__asm        jge    near ptr 0x0052BE57;
+	__asm        jge    _Taa;
 // LINE 1311:
 	__asm        mov    eax, deltaY;
 	__asm        neg    eax;
 	__asm        mov    deltaY, eax;
 // LINE 1315:
+_Taa:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaX;
-	__asm        jl     near ptr 0x0052BE7F;
+	__asm        jl     _Td2;
 
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaY;
-	__asm        jge    near ptr 0x0052BE8E;
+	__asm        jge    _Te1;
 // LINE 1317:
+_Td2:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052BE95;
+	__asm        jmp    _Te8;
 // LINE 1319:
-	__asm        jmp    near ptr 0x0052BE95;
+	__asm        jmp    _Te8;
 // LINE 1321:
+_Te1:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052BE95;
+	__asm        jmp    _Te8;
 // LINE 1323:
 }
 
@@ -1506,17 +1590,18 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052BF7A;
+	__asm        jne    _Ta0;
 // LINE 1396:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dist;
 	__asm        cmp    [eax+0x14], ecx;
-	__asm        jge    near ptr 0x0052BF2A;
+	__asm        jge    _T50;
 // LINE 1397:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    dist, eax;
 // LINE 1398:
+_T50:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dist;
 	__asm        neg    eax;
@@ -1548,8 +1633,9 @@ void PlaneClass::MoveForward() {
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x74], eax;
 // LINE 1408:
-	__asm        jmp    near ptr 0x0052C199;
+	__asm        jmp    _T2bf;
 // LINE 1413:
+_Ta0:
 	__asm        mov    eax, dist;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1606,17 +1692,19 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        jne    near ptr 0x0052C03A;
+	__asm        jne    _T160;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052C03F;
+	__asm        jmp    _T165;
 
-	__asm        jmp    near ptr 0x0052C03F;
+_T160:
+	__asm        jmp    _T165;
 
+_T165:
 	__asm        jmp    near ptr 0x0052C044;
 
 	__asm        mov    eax, [ebp-0x24];
@@ -1630,17 +1718,19 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        jne    near ptr 0x0052C08E;
+	__asm        jne    _T1b4;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052C093;
+	__asm        jmp    _T1b9;
 
-	__asm        jmp    near ptr 0x0052C093;
+_T1b4:
+	__asm        jmp    _T1b9;
 
+_T1b9:
 	__asm        jmp    near ptr 0x0052C098;
 
 	__asm        mov    eax, [ebp-0x28];
@@ -1654,7 +1744,7 @@ void PlaneClass::MoveForward() {
 // LINE 1427:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jge    near ptr 0x0052C0D7;
+	__asm        jge    _T1fd;
 // LINE 1429:
 	__asm        push   1;
 	__asm        lea    eax, newloc.x;
@@ -1667,6 +1757,7 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x48], 0x3333;
 // LINE 1434:
+_T1fd:
 	__asm        mov    eax, lcptr;
 	__asm        push   eax;
 	__asm        mov    eax, dist;
@@ -1679,13 +1770,14 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052C100;
+	__asm        jne    _T226;
 // LINE 1437:
-	__asm        jmp    near ptr 0x0052C19E;
+	__asm        jmp    _T2c4;
 // LINE 1441:
+_T226:
 	__asm        mov    eax, lcptr;
 	__asm        cmp    cptr, eax;
-	__asm        je     near ptr 0x0052C135;
+	__asm        je     _T25b;
 // LINE 1443:
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
@@ -1699,13 +1791,14 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052C135;
+	__asm        jne    _T25b;
 // LINE 1445:
-	__asm        jmp    near ptr 0x0052C19E;
+	__asm        jmp    _T2c4;
 // LINE 1456:
+_T25b:
 	__asm        mov    eax, lcptr;
 	__asm        cmp    cptr, eax;
-	__asm        je     near ptr 0x0052C180;
+	__asm        je     _T2a6;
 // LINE 1458:
 	__asm        jmp    near ptr 0x0052C146;
 
@@ -1731,6 +1824,7 @@ void PlaneClass::MoveForward() {
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 1463:
+_T2a6:
 	__asm        lea    eax, newloc.x;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
@@ -1741,7 +1835,8 @@ void PlaneClass::MoveForward() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1465:
-	__asm        jmp    near ptr 0x0052C19E;
+_T2bf:
+	__asm        jmp    _T2c4;
 }
 
 // FUNCTION: COPTER_D 0x0052c1a3
@@ -1794,8 +1889,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 1498:
+_T64:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x0052C786;
+	__asm        je     _T5e3;
 // LINE 1502:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -1848,7 +1944,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    newdist, eax;
 // LINE 1518:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x0052C2EA;
+	__asm        jle    _T147;
 // LINE 1525:
 	__asm        lea    eax, norm;
 	__asm        push   eax;
@@ -1869,8 +1965,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        add    esp, 0x18;
 	__asm        mov    newdist, eax;
 // LINE 1528:
+_T147:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x0052C779;
+	__asm        jle    _T5d6;
 // LINE 1532:
 	__asm        mov    eax, newdist;
 	__asm        push   eax;
@@ -1969,16 +2066,16 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        call   S3FireCanCellBurn;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0052C487;
+	__asm        jne    _T2e4;
 
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        jne    near ptr 0x0052C487;
+	__asm        jne    _T2e4;
 // LINE 1554:
 	__asm        call   S3FireGetCount;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052C46E;
+	__asm        jne    _T2cb;
 // LINE 1556:
 	__asm        push   1;
 	__asm        mov    eax, celloc.y;
@@ -1989,8 +2086,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        add    esp, 0xC;
 	__asm        mov    new_mission_id, eax;
 // LINE 1558:
-	__asm        jmp    near ptr 0x0052C487;
+	__asm        jmp    _T2e4;
 // LINE 1560:
+_T2cb:
 	__asm        lea    eax, celloc.x;
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
@@ -1999,8 +2097,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        add    esp, 8;
 	__asm        mov    new_mission_id, eax;
 // LINE 1564:
+_T2e4:
 	__asm        cmp    new_mission_id, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0052C5EC;
+	__asm        je     _T449;
 // LINE 1568:
 	__asm        mov    mp.op, 0x1D;
 // LINE 1569:
@@ -2029,12 +2128,14 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    num_debris, eax;
 // LINE 1575:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x0052C505;
+	__asm        jmp    _T362;
 
+_T35c:
 	__asm        inc    j;
+_T362:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x0052C5E7;
+	__asm        jge    _T444;
 // LINE 1577:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x1E;
@@ -2104,10 +2205,12 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 1593:
-	__asm        jmp    near ptr 0x0052C4FF;
+	__asm        jmp    _T35c;
 // LINE 1595:
-	__asm        jmp    near ptr 0x0052C76F;
+_T444:
+	__asm        jmp    _T5cc;
 // LINE 1598:
+_T449:
 	__asm        call   rand;
 	__asm        mov    ecx, cptr;
 	__asm        movsx  ecx, word ptr [ecx+8];
@@ -2118,12 +2221,14 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    num_debris, eax;
 // LINE 1599:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x0052C61C;
+	__asm        jmp    _T479;
 
+_T473:
 	__asm        inc    j;
+_T479:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x0052C6FE;
+	__asm        jge    _T55b;
 // LINE 1601:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x1E;
@@ -2193,8 +2298,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 1617:
-	__asm        jmp    near ptr 0x0052C616;
+	__asm        jmp    _T473;
 // LINE 1621:
+_T55b:
 	__asm        mov    mp.op, 0x1D;
 // LINE 1622:
 	__asm        mov    mp.i2num, 0;
@@ -2225,15 +2331,18 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1635:
+_T5cc:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052CA22;
+	__asm        jmp    _T87f;
 // LINE 1640:
+_T5d6:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 1641:
-	__asm        jmp    near ptr 0x0052C207;
+	__asm        jmp    _T64;
 // LINE 1647:
+_T5e3:
 	__asm        lea    eax, cloc.x;
 	__asm        push   eax;
 	__asm        mov    eax, dist;
@@ -2249,7 +2358,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    newdist, eax;
 // LINE 1648:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x0052CA1B;
+	__asm        jle    _T878;
 // LINE 1652:
 	__asm        mov    eax, newdist;
 	__asm        push   eax;
@@ -2349,12 +2458,14 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        mov    num_debris, eax;
 // LINE 1711:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x0052C8FD;
+	__asm        jmp    _T75a;
 
+_T754:
 	__asm        inc    j;
+_T75a:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x0052C9DF;
+	__asm        jge    _T83c;
 // LINE 1713:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x1E;
@@ -2424,8 +2535,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 1729:
-	__asm        jmp    near ptr 0x0052C8F7;
+	__asm        jmp    _T754;
 // LINE 1733:
+_T83c:
 	__asm        mov    mp.op, 0x1D;
 // LINE 1734:
 	__asm        mov    mp.i2num, 0;
@@ -2440,10 +2552,11 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	__asm        add    esp, 4;
 // LINE 1740:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052CA22;
+	__asm        jmp    _T87f;
 // LINE 1743:
+_T878:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052CA22;
+	__asm        jmp    _T87f;
 // LINE 1744:
 }
 
@@ -2452,15 +2565,16 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 // LINE 1765:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        jg     near ptr 0x0052CA51;
+	__asm        jg     _T28;
 // LINE 1767:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052CA58;
+	__asm        jmp    _T2f;
 // LINE 1769:
-	__asm        jmp    near ptr 0x0052CA58;
+	__asm        jmp    _T2f;
 // LINE 1771:
+_T28:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052CA58;
+	__asm        jmp    _T2f;
 // LINE 1773:
 }
 
@@ -2485,19 +2599,21 @@ int32_t PlaneClass::AmIInANewCell() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        cmp    [eax+0x28], ecx;
-	__asm        jne    near ptr 0x0052CAB5;
+	__asm        jne    _T58;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x24];
 	__asm        cmp    [eax+0x2C], ecx;
-	__asm        je     near ptr 0x0052CABF;
+	__asm        je     _T62;
 // LINE 1804:
+_T58:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052CAC6;
+	__asm        jmp    _T69;
 // LINE 1807:
+_T62:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052CAC6;
+	__asm        jmp    _T69;
 // LINE 1808:
 }
 
@@ -2516,36 +2632,40 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jne    near ptr 0x0052CB20;
+	__asm        jne    _T55;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CB25;
+	__asm        jmp    _T5a;
 
-	__asm        jmp    near ptr 0x0052CB25;
+_T55:
+	__asm        jmp    _T5a;
 
+_T5a:
 	__asm        jmp    near ptr 0x0052CB2A;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 1832:
 	__asm        cmp    cellPointer, 0;
-	__asm        jne    near ptr 0x0052CB56;
+	__asm        jne    _T8b;
 
 	__asm        push   0x728;
 	__asm        push   0x5B76DC;
 	__asm        push   0x5B7700;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CB5B;
+	__asm        jmp    _T90;
 
-	__asm        jmp    near ptr 0x0052CB5B;
+_T8b:
+	__asm        jmp    _T90;
 // LINE 1834:
+_T90:
 	__asm        cmp    cellPointer, 0;
-	__asm        je     near ptr 0x0052CBD5;
+	__asm        je     _T10a;
 // LINE 1836:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
@@ -2553,44 +2673,49 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
 // LINE 1838:
+_Ta3:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0052CBA8;
+	__asm        je     _Tdd;
 // LINE 1842:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        mov    ecx, dyptrptr;
 	__asm        cmp    eax, [ecx];
-	__asm        jne    near ptr 0x0052CB9B;
+	__asm        jne    _Td0;
 // LINE 1846:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 1848:
-	__asm        jmp    near ptr 0x0052CBDA;
+	__asm        jmp    _T10f;
 // LINE 1851:
+_Td0:
 	__asm        mov    eax, dyptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptrptr, eax;
 // LINE 1852:
-	__asm        jmp    near ptr 0x0052CB6E;
+	__asm        jmp    _Ta3;
 // LINE 1854:
+_Tdd:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x0052CBD0;
+	__asm        jne    _T105;
 
 	__asm        push   0x73E;
 	__asm        push   0x5B770C;
 	__asm        push   0x5B7730;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CBD5;
+	__asm        jmp    _T10a;
 
-	__asm        jmp    near ptr 0x0052CBD5;
+_T105:
+	__asm        jmp    _T10a;
 // LINE 1856:
 // Block end:
-	__asm        jmp    near ptr 0x0052CBDA;
+_T10a:
+	__asm        jmp    _T10f;
 }
 
 // FUNCTION: COPTER_D 0x0052cbe1
@@ -2608,17 +2733,19 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0052CC36;
+	__asm        jne    _T55;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CC3B;
+	__asm        jmp    _T5a;
 
-	__asm        jmp    near ptr 0x0052CC3B;
+_T55:
+	__asm        jmp    _T5a;
 
+_T5a:
 	__asm        jmp    near ptr 0x0052CC40;
 
 	__asm        mov    eax, [ebp-8];
@@ -2628,17 +2755,19 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jne    near ptr 0x0052CC74;
+	__asm        jne    _T93;
 
 	__asm        push   0x758;
 	__asm        push   0x5B773C;
 	__asm        push   0x5B7760;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CC79;
+	__asm        jmp    _T98;
 
-	__asm        jmp    near ptr 0x0052CC79;
+_T93:
+	__asm        jmp    _T98;
 // LINE 1882:
+_T98:
 	__asm        mov    eax, cellPointer;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    ecx, this;
@@ -2668,34 +2797,38 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jne    near ptr 0x0052CCF3;
+	__asm        jne    _T56;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CCF8;
+	__asm        jmp    _T5b;
 
-	__asm        jmp    near ptr 0x0052CCF8;
+_T56:
+	__asm        jmp    _T5b;
 
+_T5b:
 	__asm        jmp    near ptr 0x0052CCFD;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 1907:
 	__asm        cmp    cellPointer, 0;
-	__asm        jne    near ptr 0x0052CD29;
+	__asm        jne    _T8c;
 
 	__asm        push   0x773;
 	__asm        push   0x5B7780;
 	__asm        push   0x5B77A4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CD2E;
+	__asm        jmp    _T91;
 
-	__asm        jmp    near ptr 0x0052CD2E;
+_T8c:
+	__asm        jmp    _T91;
 // LINE 1911:
+_T91:
 	__asm        mov    eax, cellPointer;
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        shl    eax, 0x10;
@@ -2721,18 +2854,20 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        mov    alt, eax;
 // LINE 1917:
 	__asm        cmp    alt, 0x15E0000;
-	__asm        jge    near ptr 0x0052CD89;
+	__asm        jge    _Tec;
 // LINE 1918:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x74], 0x17C0000;
 // LINE 1919:
-	__asm        jmp    near ptr 0x0052CD97;
+	__asm        jmp    _Tfa;
 // LINE 1920:
+_Tec:
 	__asm        mov    eax, alt;
 	__asm        add    eax, 0x1E0000;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x74], eax;
 // LINE 1923:
+_Tfa:
 	__asm        jmp    near ptr 0x0052CD9C;
 }
 
@@ -2751,34 +2886,38 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
-	__asm        jne    near ptr 0x0052CDF6;
+	__asm        jne    _T55;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CDFB;
+	__asm        jmp    _T5a;
 
-	__asm        jmp    near ptr 0x0052CDFB;
+_T55:
+	__asm        jmp    _T5a;
 
+_T5a:
 	__asm        jmp    near ptr 0x0052CE00;
 
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    cellPointer, eax;
 // LINE 1948:
 	__asm        cmp    cellPointer, 0;
-	__asm        jne    near ptr 0x0052CE2C;
+	__asm        jne    _T8b;
 
 	__asm        push   0x79C;
 	__asm        push   0x5B77B0;
 	__asm        push   0x5B77D4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052CE31;
+	__asm        jmp    _T90;
 
-	__asm        jmp    near ptr 0x0052CE31;
+_T8b:
+	__asm        jmp    _T90;
 // LINE 1951:
+_T90:
 	__asm        mov    eax, cellPointer;
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        shl    eax, 0x10;
@@ -2833,7 +2972,7 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x64];
 	__asm        test   al, 1;
-	__asm        je     near ptr 0x0052CEDB;
+	__asm        je     _T13a;
 // LINE 1965:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -2844,6 +2983,7 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 1967:
+_T13a:
 	__asm        jmp    near ptr 0x0052CEE0;
 }
 
@@ -2859,17 +2999,19 @@ void PlaneClass::AdjustNextAltitude() {
 // LINE 1995:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052CF0B;
+	__asm        jne    _T26;
 
-	__asm        jmp    near ptr 0x0052CF97;
+	__asm        jmp    _Tb2;
 
-	__asm        jmp    near ptr 0x0052CF1A;
+	__asm        jmp    _T35;
 
-	__asm        jmp    near ptr 0x0052CF1A;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0x64], 0;
-	__asm        je     near ptr 0x0052CF97;
+	__asm        je     _Tb2;
 // LINE 1997:
+_T35:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2878,7 +3020,7 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        and    eax, 7;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    near ptr 0x0052CF97;
+	__asm        jne    _Tb2;
 // LINE 1999:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -2919,6 +3061,7 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2008:
+_Tb2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x70];
 	__asm        mov    ecx, this;
@@ -2952,17 +3095,19 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        jne    near ptr 0x0052D01D;
+	__asm        jne    _T138;
 
 	__asm        push   0xD0;
 	__asm        push   0x5B780C;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052D022;
+	__asm        jmp    _T13d;
 
-	__asm        jmp    near ptr 0x0052D022;
+_T138:
+	__asm        jmp    _T13d;
 
+_T13d:
 	__asm        jmp    near ptr 0x0052D027;
 
 	__asm        mov    eax, [ebp-0x68];
@@ -2975,10 +3120,11 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        mov    alt, eax;
 // LINE 2017:
 	__asm        cmp    alt, 0x15E0000;
-	__asm        jge    near ptr 0x0052D050;
+	__asm        jge    _T16b;
 // LINE 2018:
 	__asm        mov    alt, 0x15E0000;
 // LINE 2023:
+_T16b:
 	__asm        mov    eax, cellPointer;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        shl    eax, 0x10;
@@ -3048,8 +3194,9 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x0052D1D8;
+	__asm        jmp    _T14d;
 // LINE 2079:
+_T70:
 	__asm        mov    eax, vec.z;
 	__asm        mov    vec.y, eax;
 // LINE 2080:
@@ -3072,8 +3219,9 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
 // LINE 2085:
-	__asm        jmp    near ptr 0x0052D1FB;
+	__asm        jmp    _T170;
 // LINE 2088:
+_Tad:
 	__asm        mov    eax, vec.z;
 	__asm        neg    eax;
 	__asm        mov    vec.y, eax;
@@ -3096,8 +3244,9 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
 // LINE 2094:
-	__asm        jmp    near ptr 0x0052D1FB;
+	__asm        jmp    _T170;
 // LINE 2097:
+_Tea:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
 	__asm        mov    vec.x, eax;
@@ -3118,8 +3267,9 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
 // LINE 2102:
-	__asm        jmp    near ptr 0x0052D1FB;
+	__asm        jmp    _T170;
 // LINE 2106:
+_T123:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
@@ -3132,21 +3282,23 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        imul   eax, vec.z;
 	__asm        mov    vec.z, eax;
 // LINE 2108:
-	__asm        jmp    near ptr 0x0052D1FB;
+	__asm        jmp    _T170;
 // LINE 2109:
-	__asm        jmp    near ptr 0x0052D1FB;
+	__asm        jmp    _T170;
 
+_T14d:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
-	__asm        je     near ptr 0x0052D0FB;
+	__asm        je     _T70;
 
 	__asm        cmp    dword ptr [ebp-0x4C], 1;
-	__asm        je     near ptr 0x0052D138;
+	__asm        je     _Tad;
 
 	__asm        cmp    dword ptr [ebp-0x4C], 2;
-	__asm        je     near ptr 0x0052D175;
+	__asm        je     _Tea;
 
-	__asm        jmp    near ptr 0x0052D1AE;
+	__asm        jmp    _T123;
 // LINE 2111:
+_T170:
 	__asm        shl    vec.x, 6;
 // LINE 2112:
 	__asm        shl    vec.z, 6;
@@ -3165,24 +3317,26 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        mov    y, eax;
 // LINE 2118:
 	__asm        cmp    x, 3;
-	__asm        jl     near ptr 0x0052D254;
+	__asm        jl     _T1c9;
 
 	__asm        cmp    x, 0x7D;
-	__asm        jg     near ptr 0x0052D254;
+	__asm        jg     _T1c9;
 
 	__asm        cmp    y, 3;
-	__asm        jl     near ptr 0x0052D254;
+	__asm        jl     _T1c9;
 
 	__asm        cmp    y, 0x7D;
-	__asm        jle    near ptr 0x0052D259;
+	__asm        jle    _T1ce;
 // LINE 2119:
-	__asm        jmp    near ptr 0x0052D40C;
+_T1c9:
+	__asm        jmp    _T381;
 // LINE 2126:
+_T1ce:
 	__asm        inc    curr_dir;
 // LINE 2127:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x0052D2C5;
+	__asm        jmp    _T23a;
 // LINE 2131:
 	__asm        mov    curr_dir, 0;
 // LINE 2132:
@@ -3192,13 +3346,13 @@ void PlaneClass::BeamToWithinCameraRange() {
 // LINE 2134:
 	__asm        mov    ydir, 0xFFFFFFFF;
 // LINE 2135:
-	__asm        jmp    near ptr 0x0052D2ED;
+	__asm        jmp    _T262;
 // LINE 2137:
 	__asm        mov    xdir, 1;
 // LINE 2138:
 	__asm        mov    ydir, 0;
 // LINE 2139:
-	__asm        jmp    near ptr 0x0052D2ED;
+	__asm        jmp    _T262;
 // LINE 2141:
 	__asm        inc    curr_dist;
 // LINE 2142:
@@ -3206,38 +3360,43 @@ void PlaneClass::BeamToWithinCameraRange() {
 // LINE 2143:
 	__asm        mov    ydir, 1;
 // LINE 2144:
-	__asm        jmp    near ptr 0x0052D2ED;
+	__asm        jmp    _T262;
 // LINE 2146:
 	__asm        mov    xdir, 0xFFFFFFFF;
 // LINE 2147:
 	__asm        mov    ydir, 0;
 // LINE 2148:
-	__asm        jmp    near ptr 0x0052D2ED;
+	__asm        jmp    _T262;
 // LINE 2149:
-	__asm        jmp    near ptr 0x0052D2ED;
+	__asm        jmp    _T262;
 
+_T23a:
 	__asm        cmp    dword ptr [ebp-0x50], 4;
-	__asm        ja     near ptr 0x0052D2ED;
+	__asm        ja     _T262;
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    dword ptr [eax*4+0x52D2D9];
 // Switch pointers
 // LINE 2153:
+_T262:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
-	__asm        jne    near ptr 0x0052D303;
+	__asm        jne    _T278;
 // LINE 2155:
 	__asm        dec    curr_dist;
 // LINE 2156:
 	__asm        mov    stop_now, 1;
 // LINE 2160:
+_T278:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0052D312;
+	__asm        jmp    _T287;
 
+_T284:
 	__asm        inc    i;
+_T287:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
-	__asm        jle    near ptr 0x0052D339;
+	__asm        jle    _T2ae;
 // LINE 2162:
 	__asm        mov    eax, x;
 	__asm        mov    beampoint.x, eax;
@@ -3245,35 +3404,42 @@ void PlaneClass::BeamToWithinCameraRange() {
 	__asm        mov    eax, y;
 	__asm        mov    beampoint.y, eax;
 // LINE 2164:
-	__asm        jmp    near ptr 0x0052D407;
+	__asm        jmp    _T37c;
 
-	__asm        jmp    near ptr 0x0052D352;
+	__asm        jmp    _T2c7;
 // LINE 2167:
-	__asm        jmp    near ptr 0x0052D30F;
+	__asm        jmp    _T284;
 // LINE 2169:
+_T2ae:
 	__asm        cmp    stop_now, 1;
-	__asm        jne    near ptr 0x0052D348;
+	__asm        jne    _T2bd;
 // LINE 2171:
-	__asm        jmp    near ptr 0x0052D34D;
+	__asm        jmp    _T2c2;
 // LINE 2173:
-	__asm        jmp    near ptr 0x0052D259;
+_T2bd:
+	__asm        jmp    _T1ce;
 // LINE 2176:
-	__asm        jmp    near ptr 0x0052D40C;
+_T2c2:
+	__asm        jmp    _T381;
 // LINE 2182:
 foundCell:
+_T2c7:
 	__asm        mov    currentFlag, 3;
-	__asm        jmp    near ptr 0x0052D361;
+	__asm        jmp    _T2d6;
 
+_T2d3:
 	__asm        inc    currentFlag;
+_T2d6:
 	__asm        cmp    currentFlag, 4;
-	__asm        jge    near ptr 0x0052D37B;
+	__asm        jge    _T2f0;
 // LINE 2184:
 	__asm        mov    eax, currentFlag;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 2185:
-	__asm        jmp    near ptr 0x0052D35E;
+	__asm        jmp    _T2d3;
 // LINE 2187:
+_T2f0:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 2190:
@@ -3307,23 +3473,27 @@ foundCell:
 // LINE 2208:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052D3E4;
+	__asm        jne    _T359;
 
-	__asm        jmp    near ptr 0x0052D3F8;
+	__asm        jmp    _T36d;
 
-	__asm        jmp    near ptr 0x0052D402;
+_T359:
+	__asm        jmp    _T377;
 
-	__asm        jmp    near ptr 0x0052D3F8;
+	__asm        jmp    _T36d;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        jne    near ptr 0x0052D402;
+	__asm        jne    _T377;
 // LINE 2210:
+_T36d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x50], 0;
 // LINE 2213:
-	__asm        jmp    near ptr 0x0052D40C;
+_T377:
+	__asm        jmp    _T381;
 
-	__asm        jmp    near ptr 0x0052D352;
+_T37c:
+	__asm        jmp    _T2c7;
 }
 
 // FUNCTION: COPTER_D 0x0052d411
@@ -3334,7 +3504,7 @@ void PlaneClass::UnPlacePlane() {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052D44C;
+	__asm        je     _T3b;
 // LINE 2238:
 	__asm        jmp    near ptr 0x0052D436;
 
@@ -3347,6 +3517,7 @@ void PlaneClass::UnPlacePlane() {
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+5], 0;
 // LINE 2241:
+_T3b:
 	__asm        jmp    near ptr 0x0052D451;
 }
 
@@ -3367,20 +3538,22 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    object, eax;
 // LINE 2296:
 	__asm        cmp    object, 0;
-	__asm        jne    near ptr 0x0052D4B0;
+	__asm        jne    _T5a;
 // LINE 2300:
 	__asm        push   0x8FC;
 	__asm        push   0x5B77E0;
 	__asm        push   0x5B7804;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0052D4A9;
+	__asm        jmp    _T53;
 
-	__asm        jmp    near ptr 0x0052D4A9;
+	__asm        jmp    _T53;
 // LINE 2302:
+_T53:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052D611;
+	__asm        jmp    _T1bb;
 // LINE 2305:
+_T5a:
 	__asm        mov    eax, object;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
@@ -3443,33 +3616,37 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x54];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x0052D57B;
+	__asm        jmp    _T125;
 // LINE 2404:
+_T102:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x30], 0x3C0000;
 // LINE 2405:
-	__asm        jmp    near ptr 0x0052D59A;
+	__asm        jmp    _T144;
 // LINE 2408:
+_T111:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x30], 0x3C0000;
 // LINE 2409:
-	__asm        jmp    near ptr 0x0052D59A;
+	__asm        jmp    _T144;
 // LINE 2410:
-	__asm        jmp    near ptr 0x0052D59A;
+	__asm        jmp    _T144;
 
+_T125:
 	__asm        cmp    dword ptr [ebp-0x30], 0x12E;
-	__asm        je     near ptr 0x0052D558;
+	__asm        je     _T102;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0x17C;
-	__asm        je     near ptr 0x0052D567;
+	__asm        je     _T111;
 
-	__asm        jmp    near ptr 0x0052D59A;
+	__asm        jmp    _T144;
 // LINE 2415:
+_T144:
 	__asm        cmp    mapx, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0052D5EC;
+	__asm        je     _T196;
 
 	__asm        cmp    mapy, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0052D5EC;
+	__asm        je     _T196;
 // LINE 2419:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
@@ -3494,11 +3671,13 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+5], 1;
 // LINE 2435:
-	__asm        jmp    near ptr 0x0052D5F3;
+	__asm        jmp    _T19d;
 // LINE 2439:
+_T196:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+5], 0;
 // LINE 2448:
+_T19d:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, instanceID;
 	__asm        mov    [ecx*4+0x62B7A8], eax;
@@ -3507,7 +3686,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    byte ptr [eax+4], 1;
 // LINE 2453:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052D611;
+	__asm        jmp    _T1bb;
 // LINE 2454:
 }
 
@@ -3518,18 +3697,19 @@ void PlaneClass::HandleUFOStuff() {
 // LINE 2477:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
-	__asm        je     near ptr 0x0052D64C;
+	__asm        je     _T34;
 // LINE 2479:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x4C];
 // LINE 2480:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
-	__asm        jne    near ptr 0x0052D64C;
+	__asm        jne    _T34;
 // LINE 2482:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::TurnOffShields;
 // LINE 2487:
+_T34:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4760];
 	__asm        neg    eax;
@@ -3538,7 +3718,7 @@ void PlaneClass::HandleUFOStuff() {
 // LINE 2488:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jge    near ptr 0x0052D6B3;
+	__asm        jge    _T9b;
 // LINE 2491:
 	__asm        mov    vec.z, 0;
 	__asm        mov    eax, vec.z;
@@ -3567,6 +3747,7 @@ void PlaneClass::HandleUFOStuff() {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 2506:
+_T9b:
 	__asm        jmp    near ptr 0x0052D6B8;
 }
 
@@ -3613,29 +3794,31 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 // LINE 2635:
 	__asm        mov    eax, hitter_type;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0052D917;
+	__asm        jmp    _T1f8;
 // LINE 2638:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2640:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2642:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2644:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052D767;
+	__asm        jne    _T48;
 
-	__asm        jmp    near ptr 0x0052D7F3;
+	__asm        jmp    _Td4;
 
-	__asm        jmp    near ptr 0x0052D776;
+	__asm        jmp    _T57;
 
-	__asm        jmp    near ptr 0x0052D776;
+_T48:
+	__asm        jmp    _T57;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0052D7F3;
+	__asm        je     _Td4;
 // LINE 2646:
+_T57:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
@@ -3655,7 +3838,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        cmp    dword ptr [eax+0x50], 0xA;
-	__asm        jl     near ptr 0x0052D7EE;
+	__asm        jl     _Tcf;
 // LINE 2650:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
@@ -3665,10 +3848,12 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        mov    byte ptr [eax+6], 1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0052D7EE;
+	__asm        jmp    _Tcf;
 // LINE 2652:
-	__asm        jmp    near ptr 0x0052D82F;
+_Tcf:
+	__asm        jmp    _T110;
 // LINE 2655:
+_Td4:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
@@ -3682,31 +3867,34 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        mov    byte ptr [eax+6], 1;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0052D82F;
+	__asm        jmp    _T110;
 // LINE 2658:
-	__asm        jmp    near ptr 0x0052D96B;
+_T110:
+	__asm        jmp    _T24c;
 // LINE 2660:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2662:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2664:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2666:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
-	__asm        jne    near ptr 0x0052D868;
+	__asm        jne    _T149;
 
-	__asm        jmp    near ptr 0x0052D8A4;
+	__asm        jmp    _T185;
 
-	__asm        jmp    near ptr 0x0052D877;
+	__asm        jmp    _T158;
 
-	__asm        jmp    near ptr 0x0052D877;
+_T149:
+	__asm        jmp    _T158;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0052D8A4;
+	__asm        je     _T185;
 // LINE 2668:
+_T158:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
@@ -3717,8 +3905,9 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        mov    ecx, [eax*4+0x62B7A8];
 	__asm        call   PlaneClass::TurnOnShields;
 // LINE 2671:
-	__asm        jmp    near ptr 0x0052D8E0;
+	__asm        jmp    _T1c1;
 // LINE 2674:
+_T185:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x62B7A8];
@@ -3732,37 +3921,40 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        mov    byte ptr [eax+6], 1;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0052D8E0;
+	__asm        jmp    _T1c1;
 // LINE 2677:
-	__asm        jmp    near ptr 0x0052D96B;
+_T1c1:
+	__asm        jmp    _T24c;
 // LINE 2679:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2681:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2683:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2685:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2687:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2689:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2691:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2693:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2695:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 // LINE 2696:
-	__asm        jmp    near ptr 0x0052D96B;
+	__asm        jmp    _T24c;
 
+_T1f8:
 	__asm        cmp    dword ptr [ebp-0x18], 0xF;
-	__asm        ja     near ptr 0x0052D96B;
+	__asm        ja     _T24c;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    dword ptr [eax*4+0x52D92B];
 // Switch pointers
 // LINE 2698:
+_T24c:
 	__asm        jmp    near ptr 0x0052D970;
 }
 
@@ -3809,12 +4001,14 @@ void PlaneClass::TurnOnShields() {
 	__asm        mov    face, eax;
 // LINE 2730:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x0052D9E1;
+	__asm        jmp    _T40;
 
+_T3d:
 	__asm        inc    count;
+_T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x0052DA32;
+	__asm        jle    _T91;
 // LINE 2732:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -3824,7 +4018,7 @@ void PlaneClass::TurnOnShields() {
 	__asm        add    esp, 8;
 // LINE 2733:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x0052DA1E;
+	__asm        jne    _T7d;
 // LINE 2735:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 2736:
@@ -3835,14 +4029,16 @@ void PlaneClass::TurnOnShields() {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2738:
+_T7d:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2739:
-	__asm        jmp    near ptr 0x0052D9DE;
+	__asm        jmp    _T3d;
 // LINE 2740:
+_T91:
 	__asm        jmp    near ptr 0x0052DA37;
 }
 
@@ -3870,12 +4066,14 @@ void PlaneClass::TurnOffShields() {
 	__asm        mov    face, eax;
 // LINE 2752:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x0052DA7C;
+	__asm        jmp    _T40;
 
+_T3d:
 	__asm        inc    count;
+_T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x0052DAD1;
+	__asm        jle    _T95;
 // LINE 2754:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -3885,7 +4083,7 @@ void PlaneClass::TurnOffShields() {
 	__asm        add    esp, 8;
 // LINE 2755:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x0052DABD;
+	__asm        jne    _T81;
 // LINE 2757:
 	__asm        mov    eax, finfo.Attribute;
 	__asm        or     eax, 0x80000000;
@@ -3898,14 +4096,16 @@ void PlaneClass::TurnOffShields() {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2760:
+_T81:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2761:
-	__asm        jmp    near ptr 0x0052DA79;
+	__asm        jmp    _T3d;
 // LINE 2762:
+_T95:
 	__asm        jmp    near ptr 0x0052DAD6;
 }
 
@@ -3948,17 +4148,20 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 2806:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x0052DB4B;
+	__asm        jne    _T38;
 // LINE 2807:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052DCED;
+	__asm        jmp    _T1da;
 // LINE 2809:
+_T38:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0052DB5A;
+	__asm        jmp    _T47;
 
+_T44:
 	__asm        inc    i;
+_T47:
 	__asm        cmp    i, 2;
-	__asm        jge    near ptr 0x0052DCE3;
+	__asm        jge    _T1d0;
 // LINE 2812:
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x62B7A8];
@@ -4068,7 +4271,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    eax, p;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0052DCA5;
+	__asm        je     _T192;
 // LINE 2833:
 	__asm        mov    eax, p;
 	__asm        add    eax, 0x20;
@@ -4076,6 +4279,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ecx, p;
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 2840:
+_T192:
 	__asm        push   0xBC;
 	__asm        push   0x62B6E8;
 	__asm        push   0x504C414E;
@@ -4086,18 +4290,20 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 2842:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x0052DCDE;
+	__asm        jne    _T1cb;
 
 	__asm        cmp    i, 1;
-	__asm        je     near ptr 0x0052DCDE;
+	__asm        je     _T1cb;
 // LINE 2843:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052DCED;
+	__asm        jmp    _T1da;
 // LINE 2844:
-	__asm        jmp    near ptr 0x0052DB57;
+_T1cb:
+	__asm        jmp    _T44;
 // LINE 2845:
+_T1d0:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052DCED;
+	__asm        jmp    _T1da;
 // LINE 2846:
 }
 
@@ -4108,11 +4314,13 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 
 // LINE 2859:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0052DD0A;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 2;
-	__asm        jge    near ptr 0x0052DD4E;
+	__asm        jge    _T5c;
 // LINE 2864:
 	__asm        push   0xBC;
 	__asm        mov    eax, i;
@@ -4126,15 +4334,17 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    ret, eax;
 // LINE 2865:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x0052DD49;
+	__asm        jne    _T57;
 // LINE 2866:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052DD58;
+	__asm        jmp    _T66;
 // LINE 2867:
-	__asm        jmp    near ptr 0x0052DD07;
+_T57:
+	__asm        jmp    _T15;
 // LINE 2868:
+_T5c:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052DD58;
+	__asm        jmp    _T66;
 // LINE 2869:
 }
 

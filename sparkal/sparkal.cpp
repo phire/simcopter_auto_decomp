@@ -52,7 +52,7 @@ float GetMillisecondTime() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0043D8A3;
+	__asm        je     _T53;
 // LINE 36:
 	__asm        mov    eax, Counter<_LARGE_INTEGER+0x04:4>;
 	__asm        mov    [ebp-0x10], eax;
@@ -69,14 +69,16 @@ float GetMillisecondTime() {
 	__asm        fdiv   dword ptr ds:[0x5C28CC];
 	__asm        fstp   Time;
 // LINE 39:
-	__asm        jmp    near ptr 0x0043D8B9;
+	__asm        jmp    _T69;
 // LINE 40:
+_T53:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        fild   qword ptr [ebp-0x20];
 	__asm        fstp   Time;
 // LINE 46:
+_T69:
 	__asm        fld    Time;
 	__asm        jmp    near ptr 0x0043D8C1;
 // LINE 47:
@@ -130,7 +132,7 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    tempTimer.lTotalElapsedTime, 0;
 	__asm        mov    tempTimer.lFrequency, 0;
 	__asm        cmp    tempTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x0043D969;
+	__asm        jne    _T4a;
 
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -139,28 +141,31 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    tempTimer.lFrequency, eax;
-	__asm        jmp    near ptr 0x0043D969;
+	__asm        jmp    _T4a;
 
+_T4a:
 	__asm        jmp    near ptr 0x0043D96E;
 // LINE 104:
 	__asm        jmp    near ptr 0x0043D973;
 
 	__asm        cmp    tempTimer.lStartTime, 0;
-	__asm        je     near ptr 0x0043D982;
+	__asm        je     _T63;
 
-	__asm        jmp    near ptr 0x0043D9E5;
+	__asm        jmp    _Tc6;
 
+_T63:
 	__asm        cmp    tempTimer.nTimerResolution, 1;
-	__asm        jne    near ptr 0x0043D99F;
+	__asm        jne    _T80;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    tempTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    _Tc1;
 
-	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    _Tc1;
 
+_T80:
 	__asm        cmp    tempTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x0043D9C9;
+	__asm        jne    _Taa;
 
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
@@ -169,37 +174,41 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    tempTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    _Tc1;
 
-	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    _Tc1;
 
+_Taa:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    tempTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0043D9E0;
+	__asm        jmp    _Tc1;
 
-	__asm        jmp    near ptr 0x0043D9E5;
+_Tc1:
+	__asm        jmp    _Tc6;
 // LINE 105:
+_Tc6:
 	__asm        mov    eax, tempTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0043D9F0;
 
 	__asm        cmp    tempTimer.lStartTime, 0;
-	__asm        je     near ptr 0x0043DA67;
+	__asm        je     _T148;
 
 	__asm        cmp    tempTimer.nTimerResolution, 1;
-	__asm        jne    near ptr 0x0043DA17;
+	__asm        jne    _Tf8;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    _T139;
 
-	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    _T139;
 
+_Tf8:
 	__asm        cmp    tempTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x0043DA41;
+	__asm        jne    _T122;
 
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
@@ -208,27 +217,30 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    _T139;
 
-	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    _T139;
 
+_T122:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0043DA58;
+	__asm        jmp    _T139;
 
+_T139:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        sub    eax, tempTimer.lStartTime;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        add    [ebp-0x30], eax;
+_T148:
 	__asm        cmp    tempTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x0043DAA2;
+	__asm        jne    _T183;
 
 	__asm        cmp    tempTimer.lFrequency, 0;
-	__asm        je     near ptr 0x0043DAA2;
+	__asm        je     _T183;
 
 	__asm        mov    eax, tempTimer.lFrequency;
 	__asm        push   eax;
@@ -239,22 +251,25 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x30], eax;
-	__asm        jae    near ptr 0x0043DAC4;
+	__asm        jae    _T1a5;
 
-	__asm        jmp    near ptr 0x0043DABF;
+	__asm        jmp    _T1a0;
 
+_T183:
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x30], eax;
-	__asm        jae    near ptr 0x0043DAC4;
+	__asm        jae    _T1a5;
 
-	__asm        jmp    near ptr 0x0043DABF;
+	__asm        jmp    _T1a0;
 
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x44], eax;
-	__asm        jae    near ptr 0x0043DAC4;
+	__asm        jae    _T1a5;
 // LINE 106:
-	__asm        jmp    near ptr 0x0043D9E5;
+_T1a0:
+	__asm        jmp    _Tc6;
 // LINE 107:
+_T1a5:
 	__asm        jmp    near ptr 0x0043DAC9;
 
 	__asm        jmp    near ptr 0x0043DACE;

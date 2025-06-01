@@ -99,11 +99,13 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 	__asm        mov    [eax+0xC], ecx;
 // LINE 76:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F9C96;
+	__asm        jmp    _T99;
 
+_T96:
 	__asm        inc    i;
+_T99:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004F9CF5;
+	__asm        jge    _Tf8;
 // LINE 77:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -129,7 +131,7 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 	__asm        mov    ecx, heliPassengerData;
 	__asm        mov    dword ptr [eax+ecx+0x28], 0xFFFFFFFF;
 // LINE 81:
-	__asm        jmp    near ptr 0x004F9C93;
+	__asm        jmp    _T96;
 // LINE 82:
 }
 
@@ -156,24 +158,27 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 	__asm        call   HeliPassengerCanAdd;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F9D3E;
+	__asm        jne    _T28;
 // LINE 112:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F9DFF;
+	__asm        jmp    _Te9;
 // LINE 114:
+_T28:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F9D4D;
+	__asm        jmp    _T37;
 
+_T34:
 	__asm        inc    i;
+_T37:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004F9DF8;
+	__asm        jge    _Te2;
 // LINE 116:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004F9DF3;
+	__asm        jne    _Tdd;
 // LINE 117:
 	__asm        mov    eax, passenger;
 	__asm        mov    eax, [eax];
@@ -224,12 +229,14 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 	__asm        add    esp, 4;
 // LINE 130:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F9DFF;
+	__asm        jmp    _Te9;
 // LINE 132:
-	__asm        jmp    near ptr 0x004F9D4A;
+_Tdd:
+	__asm        jmp    _T34;
 // LINE 135:
+_Te2:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F9DFF;
+	__asm        jmp    _Te9;
 // LINE 136:
 }
 
@@ -239,11 +246,13 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 
 // LINE 147:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F9E1C;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004F9E4C;
+	__asm        jge    _T48;
 // LINE 148:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -251,15 +260,17 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 	__asm        mov    ecx, heliPassengerData;
 	__asm        mov    edx, id;
 	__asm        cmp    [eax+ecx+0x28], edx;
-	__asm        jne    near ptr 0x004F9E47;
+	__asm        jne    _T43;
 // LINE 149:
 	__asm        mov    eax, i;
-	__asm        jmp    near ptr 0x004F9E56;
+	__asm        jmp    _T52;
 // LINE 151:
-	__asm        jmp    near ptr 0x004F9E19;
+_T43:
+	__asm        jmp    _T15;
 // LINE 152:
+_T48:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004F9E56;
+	__asm        jmp    _T52;
 // LINE 153:
 }
 
@@ -277,7 +288,7 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 	__asm        mov    i, eax;
 // LINE 162:
 	__asm        cmp    i, 0xFFFFFFFF;
-	__asm        je     near ptr 0x004F9E9E;
+	__asm        je     _T43;
 // LINE 163:
 	__asm        mov    eax, expression;
 	__asm        mov    ecx, i;
@@ -287,10 +298,11 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 	__asm        mov    [ecx+edx+0x20], eax;
 // LINE 164:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F9EA5;
+	__asm        jmp    _T4a;
 // LINE 166:
+_T43:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F9EA5;
+	__asm        jmp    _T4a;
 // LINE 167:
 }
 
@@ -308,7 +320,7 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 	__asm        mov    i, eax;
 // LINE 176:
 	__asm        cmp    i, 0xFFFFFFFF;
-	__asm        je     near ptr 0x004F9F62;
+	__asm        je     _Tb8;
 // LINE 177:
 	__asm        mov    eax, heliPassengerData;
 	__asm        dec    dword ptr [eax+8];
@@ -357,10 +369,11 @@ int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long
 	__asm        add    esp, 4;
 // LINE 188:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F9F69;
+	__asm        jmp    _Tbf;
 // LINE 192:
+_Tb8:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F9F69;
+	__asm        jmp    _Tbf;
 // LINE 193:
 }
 
@@ -383,29 +396,34 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 
 // LINE 220:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F9FA2;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004F9FBC;
+	__asm        jge    _T32;
 // LINE 221:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jmp    near ptr 0x004F9F9F;
+	__asm        jmp    _T15;
 // LINE 223:
+_T32:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F9FCB;
+	__asm        jmp    _T41;
 
+_T3e:
 	__asm        inc    i;
+_T41:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004FA02E;
+	__asm        jge    _Ta4;
 // LINE 224:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        je     near ptr 0x004FA029;
+	__asm        je     _T9f;
 // LINE 225:
 	__asm        lea    eax, bSeats[0];
 	__asm        push   eax;
@@ -430,7 +448,8 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 	__asm        mov    edx, heliPassengerData;
 	__asm        mov    [ecx+edx+0x2C], eax;
 // LINE 229:
-	__asm        jmp    near ptr 0x004F9FC8;
+_T9f:
+	__asm        jmp    _T3e;
 // LINE 230:
 }
 
@@ -440,25 +459,29 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 
 // LINE 245:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004FA04B;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    j;
+_T18:
 	__asm        mov    eax, nSeatsTotal;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x004FA074;
+	__asm        jge    _T41;
 // LINE 246:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, bSeats;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
-	__asm        jne    near ptr 0x004FA06F;
+	__asm        jne    _T3c;
 // LINE 247:
 	__asm        mov    eax, j;
-	__asm        jmp    near ptr 0x004FA07E;
+	__asm        jmp    _T4b;
 // LINE 248:
-	__asm        jmp    near ptr 0x004FA048;
+_T3c:
+	__asm        jmp    _T15;
 // LINE 249:
+_T41:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004FA07E;
+	__asm        jmp    _T4b;
 // LINE 250:
 }
 

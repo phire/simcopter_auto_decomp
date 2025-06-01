@@ -53,79 +53,86 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	__asm        mov    nAndValue, 0x80000000;
 // LINE 47:
 	__asm        cmp    nCursor, 1;
-	__asm        jne    near ptr 0x00474845;
+	__asm        jne    _T26;
 // LINE 48:
 	__asm        mov    nCursor, 1;
 // LINE 49:
-	__asm        jmp    near ptr 0x0047486C;
+	__asm        jmp    _T4d;
 
+_T26:
 	__asm        cmp    nCursor, 2;
-	__asm        jne    near ptr 0x0047485B;
+	__asm        jne    _T3c;
 // LINE 50:
 	__asm        mov    nCursor, 2;
 // LINE 51:
-	__asm        jmp    near ptr 0x0047486C;
+	__asm        jmp    _T4d;
 
+_T3c:
 	__asm        cmp    nCursor, 4;
-	__asm        jne    near ptr 0x0047486C;
+	__asm        jne    _T4d;
 // LINE 52:
 	__asm        mov    nCursor, 4;
 // LINE 54:
+_T4d:
 	__asm        mov    eax, nCursor;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3898];
 	__asm        movsx  eax, ax;
 	__asm        mov    nKeyState, eax;
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
-	__asm        jne    near ptr 0x0047488D;
+	__asm        jne    _T6e;
 // LINE 55:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0047491C;
+	__asm        jmp    _Tfd;
 // LINE 59:
+_T6e:
 	__asm        cmp    nModifiers, 0;
-	__asm        je     near ptr 0x00474912;
+	__asm        je     _Tf3;
 // LINE 60:
 	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 1;
-	__asm        je     near ptr 0x004748C0;
+	__asm        je     _Ta1;
 // LINE 61:
 	__asm        push   0x10;
 	__asm        call   dword ptr ds:[0x6C3898];
 	__asm        movsx  eax, ax;
 	__asm        mov    nKeyState, eax;
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
-	__asm        jne    near ptr 0x004748C0;
+	__asm        jne    _Ta1;
 // LINE 62:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0047491C;
+	__asm        jmp    _Tfd;
 // LINE 64:
+_Ta1:
 	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 2;
-	__asm        je     near ptr 0x004748E9;
+	__asm        je     _Tca;
 // LINE 65:
 	__asm        push   0x11;
 	__asm        call   dword ptr ds:[0x6C3898];
 	__asm        movsx  eax, ax;
 	__asm        mov    nKeyState, eax;
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
-	__asm        jne    near ptr 0x004748E9;
+	__asm        jne    _Tca;
 // LINE 66:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0047491C;
+	__asm        jmp    _Tfd;
 // LINE 68:
+_Tca:
 	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 4;
-	__asm        je     near ptr 0x00474912;
+	__asm        je     _Tf3;
 // LINE 69:
 	__asm        push   0x12;
 	__asm        call   dword ptr ds:[0x6C3898];
 	__asm        movsx  eax, ax;
 	__asm        mov    nKeyState, eax;
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
-	__asm        jne    near ptr 0x00474912;
+	__asm        jne    _Tf3;
 // LINE 70:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0047491C;
+	__asm        jmp    _Tfd;
 // LINE 75:
+_Tf3:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0047491C;
+	__asm        jmp    _Tfd;
 // LINE 77:
 }
 

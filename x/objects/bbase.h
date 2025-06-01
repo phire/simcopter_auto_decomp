@@ -8,7 +8,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 // LINE 228:
 	__asm        movsx  eax, size1;
 	__asm        cmp    eax, size;
-	__asm        jle    near ptr 0x0055E728;
+	__asm        jle    _T38;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE230;
@@ -17,6 +17,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 230:
+_T38:
 	__asm        mov    eax, val;
 	__asm        push   eax;
 	__asm        call   Swizzle4;
@@ -83,7 +84,7 @@ void cBBase::~cBBase() {
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0055F300;
+	__asm        je     _T40;
 // LINE 46:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -97,6 +98,7 @@ void cBBase::~cBBase() {
 	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 53:
+_T40:
 	__asm        jmp    near ptr 0x0055F305;
 }
 
@@ -110,14 +112,15 @@ void cBBase::Destroy() {
 	__asm        call   dword ptr [eax+8];
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0055F337;
+	__asm        jne    _T27;
 
-	__asm        jmp    near ptr 0x0055F4D4;
+	__asm        jmp    _T1c4;
 // LINE 59:
+_T27:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x20];
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0055F3F9;
+	__asm        je     _Te9;
 // LINE 60:
 // Block start:
 	unsigned short fileOpened;
@@ -151,7 +154,7 @@ void cBBase::Destroy() {
 	__asm        mov    h, eax;
 // LINE 62:
 	__asm        cmp    h, 0;
-	__asm        jne    near ptr 0x0055F3B4;
+	__asm        jne    _Ta4;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE3AC;
@@ -159,6 +162,7 @@ void cBBase::Destroy() {
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_Ta4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -169,7 +173,7 @@ void cBBase::Destroy() {
 	__asm        jmp    near ptr 0x0055F3CA;
 // LINE 64:
 	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
-	__asm        je     near ptr 0x0055F3F9;
+	__asm        je     _Te9;
 // LINE 65:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -185,6 +189,7 @@ void cBBase::Destroy() {
 	__asm        call   dword ptr [eax+0xC];
 // LINE 67:
 // Block end:
+_Te9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -193,15 +198,16 @@ void cBBase::Destroy() {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x24], eax;
+_T100:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0055F49D;
+	__asm        je     _T18d;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x0055F48D;
+	__asm        jne    _T17d;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -224,7 +230,7 @@ void cBBase::Destroy() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jge    near ptr 0x0055F488;
+	__asm        jge    _T178;
 
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
@@ -232,33 +238,38 @@ void cBBase::Destroy() {
 	__asm        push   0x59A254;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x0055F4A2;
+_T178:
+	__asm        jmp    _T192;
 
+_T17d:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x0055F410;
+	__asm        jmp    _T100;
 
-	__asm        jmp    near ptr 0x0055F4A2;
+_T18d:
+	__asm        jmp    _T192;
 
+_T192:
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0055F4CA;
+	__asm        je     _T1ba;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    near ptr 0x0055F4CA;
+	__asm        jmp    _T1ba;
 
+_T1ba:
 	__asm        jmp    near ptr 0x0055F4CF;
 // LINE 68:
-	__asm        jmp    near ptr 0x0055F4D4;
+	__asm        jmp    _T1c4;
 }
 
 // Function in module: Bodydefs.obj

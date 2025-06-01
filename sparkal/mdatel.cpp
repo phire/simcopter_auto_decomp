@@ -542,12 +542,13 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 	__asm        mov    nTempOriginalLanguage, eax;
 // LINE 29:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x0041FAF8;
+	__asm        jne    _T28;
 // LINE 30:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 31:
+_T28:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -643,17 +644,19 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 58:
 	__asm        mov    eax, t;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0041FC6A;
+	__asm        je     _T100;
 // LINE 59:
 	__asm        cmp    t, 0;
-	__asm        je     near ptr 0x0041FC18;
+	__asm        je     _Tae;
 
 	__asm        mov    eax, t;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x11C], eax;
-	__asm        jmp    near ptr 0x0041FC22;
+	__asm        jmp    _Tb8;
 
+_Tae:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
+_Tb8:
 	__asm        push   0x5972A0;
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        push   eax;
@@ -671,27 +674,31 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0041FC6A;
+	__asm        jmp    _T100;
 // LINE 61:
+_T100:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x0041FC82;
+	__asm        jne    _T118;
 // LINE 62:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 64:
+_T118:
 	__asm        cmp    nLanguageToUse, 1;
-	__asm        jne    near ptr 0x0041FCFE;
+	__asm        jne    _T194;
 // LINE 65:
 	__asm        cmp    hh, 0xC;
-	__asm        jbe    near ptr 0x0041FCB0;
+	__asm        jbe    _T146;
 
 	__asm        mov    eax, hh;
 	__asm        sub    eax, 0xC;
 	__asm        mov    [ebp-0x120], eax;
-	__asm        jmp    near ptr 0x0041FCBC;
+	__asm        jmp    _T152;
 
+_T146:
 	__asm        mov    eax, hh;
 	__asm        mov    [ebp-0x120], eax;
+_T152:
 	__asm        mov    eax, 0x5972A8;
 	__asm        mov    ecx, 0x5972A4;
 	__asm        xor    edx, edx;
@@ -712,11 +719,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 67:
-	__asm        jmp    near ptr 0x0041FE09;
+	__asm        jmp    _T29f;
 // LINE 68:
+_T194:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        mov    [ebp-0x128], eax;
-	__asm        jmp    near ptr 0x0041FD7B;
+	__asm        jmp    _T211;
 // LINE 85:
 	__asm        mov    eax, mm;
 	__asm        push   eax;
@@ -728,7 +736,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 86:
-	__asm        jmp    near ptr 0x0041FE09;
+	__asm        jmp    _T29f;
 // LINE 96:
 	__asm        mov    eax, mm;
 	__asm        push   eax;
@@ -740,8 +748,9 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 97:
-	__asm        jmp    near ptr 0x0041FE09;
+	__asm        jmp    _T29f;
 // LINE 100:
+_T1ed:
 	__asm        mov    eax, mm;
 	__asm        push   eax;
 	__asm        mov    eax, hh;
@@ -752,11 +761,12 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 101:
-	__asm        jmp    near ptr 0x0041FE09;
+	__asm        jmp    _T29f;
 
+_T211:
 	__asm        sub    dword ptr [ebp-0x128], 2;
 	__asm        cmp    dword ptr [ebp-0x128], 0x24;
-	__asm        ja     near ptr 0x0041FD57;
+	__asm        ja     _T1ed;
 
 	__asm        mov    eax, [ebp-0x128];
 	__asm        xor    ecx, ecx;
@@ -765,6 +775,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // Switch pointers
 // Switch table
 // LINE 104:
+_T29f:
 	__asm        lea    eax, buf1[0];
 	__asm        push   eax;
 	__asm        lea    eax, buf[0];
@@ -920,18 +931,20 @@ void MDateLocalized::MDateLocalized(const class MTime& time) {
 char * MDateLocalized::NameOfDayLocalized(char * szDayName, int32_t nLanguageToUse) {
 // LINE 171:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x00420013;
+	__asm        jne    _T1f;
 // LINE 172:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 173:
+_T1f:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x00420025;
+	__asm        jne    _T31;
 // LINE 174:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 176:
+_T31:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        push   eax;
 	__asm        mov    eax, szDayName;
@@ -949,18 +962,20 @@ char * MDateLocalized::NameOfDayLocalized(char * szDayName, int32_t nLanguageToU
 char * MDateLocalized::NameOfMonthLocalized(char * szMonthName, int32_t nLanguageToUse) {
 // LINE 184:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x00420069;
+	__asm        jne    _T1f;
 // LINE 185:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 186:
+_T1f:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x0042007B;
+	__asm        jne    _T31;
 // LINE 187:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 189:
+_T31:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        push   eax;
 	__asm        mov    eax, szMonthName;
@@ -985,18 +1000,20 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 	__asm        mov    nTempOriginalLanguage, eax;
 // LINE 201:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x004200C8;
+	__asm        jne    _T28;
 // LINE 202:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 203:
+_T28:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x004200DA;
+	__asm        jne    _T3a;
 // LINE 204:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 205:
+_T3a:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -1045,18 +1062,20 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 
 // LINE 222:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x0042016B;
+	__asm        jne    _T1f;
 // LINE 223:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 224:
+_T1f:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x0042017D;
+	__asm        jne    _T31;
 // LINE 225:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 227:
+_T31:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        push   eax;
 	__asm        mov    eax, dayName;
@@ -1066,7 +1085,7 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 	__asm        mov    day, eax;
 // LINE 228:
 	__asm        cmp    day, 0;
-	__asm        je     near ptr 0x004201B2;
+	__asm        je     _T66;
 // LINE 229:
 	__asm        mov    eax, day;
 	__asm        push   eax;
@@ -1075,12 +1094,13 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Previous;
 	__asm        mov    eax, __$ReturnUdt;
-	__asm        jmp    near ptr 0x004201C2;
+	__asm        jmp    _T76;
 // LINE 230:
+_T66:
 	__asm        mov    ecx, __$ReturnUdt;
 	__asm        call   MDate::MDate;
 	__asm        mov    eax, __$ReturnUdt;
-	__asm        jmp    near ptr 0x004201C2;
+	__asm        jmp    _T76;
 // LINE 231:
 }
 
@@ -1091,11 +1111,13 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 
 // LINE 246:
 	__asm        mov    i, 1;
-	__asm        jmp    near ptr 0x004201E8;
+	__asm        jmp    _T1f;
 
+_T1c:
 	__asm        inc    i;
+_T1f:
 	__asm        cmp    i, 7;
-	__asm        jg     near ptr 0x0042022B;
+	__asm        jg     _T62;
 // LINE 247:
 	__asm        mov    eax, dayName;
 	__asm        push   eax;
@@ -1111,15 +1133,17 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00420226;
+	__asm        jne    _T5d;
 // LINE 248:
 	__asm        mov    eax, i;
-	__asm        jmp    near ptr 0x00420232;
+	__asm        jmp    _T69;
 // LINE 249:
-	__asm        jmp    near ptr 0x004201E5;
+_T5d:
+	__asm        jmp    _T1c;
 // LINE 250:
+_T62:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00420232;
+	__asm        jmp    _T69;
 // LINE 251:
 }
 
@@ -1130,11 +1154,13 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 
 // LINE 267:
 	__asm        mov    i, 1;
-	__asm        jmp    near ptr 0x00420256;
+	__asm        jmp    _T1f;
 
+_T1c:
 	__asm        inc    i;
+_T1f:
 	__asm        cmp    i, 0x1F;
-	__asm        jg     near ptr 0x00420299;
+	__asm        jg     _T62;
 // LINE 268:
 	__asm        mov    eax, monthName;
 	__asm        push   eax;
@@ -1150,15 +1176,17 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00420294;
+	__asm        jne    _T5d;
 // LINE 269:
 	__asm        mov    eax, i;
-	__asm        jmp    near ptr 0x004202A0;
+	__asm        jmp    _T69;
 // LINE 270:
-	__asm        jmp    near ptr 0x00420253;
+_T5d:
+	__asm        jmp    _T1c;
 // LINE 271:
+_T62:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004202A0;
+	__asm        jmp    _T69;
 // LINE 272:
 }
 
@@ -1188,7 +1216,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0042032A;
+	__asm        jne    _T85;
 
 	__asm        push   0xFFF;
 	__asm        mov    eax, szDayName;
@@ -1207,10 +1235,12 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        push   eax;
 	__asm        call   strcat;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0042032F;
+	__asm        jmp    _T8a;
 
-	__asm        jmp    near ptr 0x0042032F;
+_T85:
+	__asm        jmp    _T8a;
 // LINE 292:
+_T8a:
 	__asm        mov    eax, szDayName;
 	__asm        jmp    near ptr 0x00420337;
 // LINE 293:
@@ -1242,7 +1272,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x004203C1;
+	__asm        jne    _T85;
 
 	__asm        push   0xFFF;
 	__asm        mov    eax, szMonthName;
@@ -1261,10 +1291,12 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        push   eax;
 	__asm        call   strcat;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x004203C6;
+	__asm        jmp    _T8a;
 
-	__asm        jmp    near ptr 0x004203C6;
+_T85:
+	__asm        jmp    _T8a;
 // LINE 312:
+_T8a:
 	__asm        mov    eax, szMonthName;
 	__asm        jmp    near ptr 0x004203CE;
 // LINE 313:
@@ -1282,14 +1314,15 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        mov    nLanguageToUse, eax;
 // LINE 329:
 	__asm        cmp    nLanguageToUse, 0;
-	__asm        jne    near ptr 0x004203F7;
+	__asm        jne    _T24;
 // LINE 330:
 	__asm        mov    eax, ds:[0x597664];
 	__asm        mov    nLanguageToUse, eax;
 // LINE 332:
+_T24:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        mov    [ebp-0x58], eax;
-	__asm        jmp    near ptr 0x00420528;
+	__asm        jmp    _T155;
 // LINE 340:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
@@ -1306,7 +1339,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 341:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 // LINE 356:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
@@ -1323,7 +1356,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 357:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 // LINE 366:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
@@ -1340,7 +1373,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 367:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 // LINE 382:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
@@ -1357,7 +1390,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 383:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 // LINE 393:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::DayOfMonth;
@@ -1374,8 +1407,9 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 394:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 // LINE 401:
+_T124:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
 	__asm        push   eax;
@@ -1391,11 +1425,12 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
 // LINE 402:
-	__asm        jmp    near ptr 0x004205B3;
+	__asm        jmp    _T1e0;
 
+_T155:
 	__asm        inc    dword ptr [ebp-0x58];
 	__asm        cmp    dword ptr [ebp-0x58], 0x27;
-	__asm        ja     near ptr 0x004204F7;
+	__asm        ja     _T124;
 
 	__asm        mov    eax, [ebp-0x58];
 	__asm        xor    ecx, ecx;
@@ -1404,6 +1439,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 // Switch pointers
 // Switch table
 // LINE 403:
+_T1e0:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        mov    ecx, s;

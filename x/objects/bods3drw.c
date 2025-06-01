@@ -73,25 +73,29 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 
 // LINE 148:
 	__asm        cmp    x, 0;
-	__asm        jl     near ptr 0x00563ED2;
+	__asm        jl     _T1d;
 
 	__asm        cmp    y, 0;
-	__asm        jge    near ptr 0x00563ED7;
+	__asm        jge    _T22;
 
-	__asm        jmp    near ptr 0x00563FCC;
+_T1d:
+	__asm        jmp    _T117;
 // LINE 149:
+_T22:
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        dec    eax;
 	__asm        cmp    eax, x;
-	__asm        jl     near ptr 0x00563EF5;
+	__asm        jl     _T40;
 
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        dec    eax;
 	__asm        cmp    eax, y;
-	__asm        jge    near ptr 0x00563EFA;
+	__asm        jge    _T45;
 
-	__asm        jmp    near ptr 0x00563FCC;
+_T40:
+	__asm        jmp    _T117;
 // LINE 151:
+_T45:
 	__asm        mov    eax, y;
 	__asm        imul   eax, ds:[0x5BEF28];
 	__asm        add    eax, x;
@@ -105,16 +109,17 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00563F30;
+	__asm        jne    _T7b;
 
-	__asm        jmp    near ptr 0x00563FCC;
+	__asm        jmp    _T117;
 // LINE 153:
+_T7b:
 	__asm        mov    al, color;
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 155:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
-	__asm        jne    near ptr 0x00563FCC;
+	__asm        jne    _T117;
 // LINE 157:
 	__asm        inc    ptr;
 // LINE 158:
@@ -125,10 +130,11 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00563F68;
+	__asm        jne    _Tb3;
 
-	__asm        jmp    near ptr 0x00563FCC;
+	__asm        jmp    _T117;
 // LINE 159:
+_Tb3:
 	__asm        mov    al, color;
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
@@ -144,10 +150,11 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00563F99;
+	__asm        jne    _Te4;
 
-	__asm        jmp    near ptr 0x00563FCC;
+	__asm        jmp    _T117;
 // LINE 162:
+_Te4:
 	__asm        mov    al, color;
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
@@ -161,10 +168,11 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00563FC4;
+	__asm        jne    _T10f;
 
-	__asm        jmp    near ptr 0x00563FCC;
+	__asm        jmp    _T117;
 // LINE 165:
+_T10f:
 	__asm        mov    al, color;
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
@@ -192,22 +200,25 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        mov    shftCt, 0;
 // LINE 191:
 	__asm        cmp    diameter, 0;
-	__asm        jne    near ptr 0x00563FF0;
+	__asm        jne    _T1f;
 // LINE 192:
-	__asm        jmp    near ptr 0x0056476B;
+	__asm        jmp    _T79a;
 // LINE 194:
+_T1f:
 	__asm        cmp    diameter, 0x33;
-	__asm        jle    near ptr 0x00563FFF;
+	__asm        jle    _T2e;
 // LINE 195:
-	__asm        jmp    near ptr 0x0056476B;
+	__asm        jmp    _T79a;
 // LINE 198:
+_T2e:
 	__asm        cmp    diameter, 3;
-	__asm        jge    near ptr 0x00564010;
+	__asm        jge    _T3f;
 // LINE 199:
 	__asm        mov    shadeFlag, 0;
 // LINE 201:
+_T3f:
 	__asm        cmp    shadeFlag, 2;
-	__asm        jne    near ptr 0x0056404D;
+	__asm        jne    _T7c;
 
 	__asm        fld    qword ptr ds:[0x5939B0];
 	__asm        fdiv   qword ptr ds:[0x5BEF40];
@@ -217,10 +228,11 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        call   0x0056EBE8;
 	__asm        sub    eax, 2;
 	__asm        cmp    eax, 1;
-	__asm        jge    near ptr 0x0056404D;
+	__asm        jge    _T7c;
 // LINE 202:
 	__asm        mov    shadeFlag, 1;
 // LINE 204:
+_T7c:
 	__asm        mov    eax, diameter;
 	__asm        cdq;
 	__asm        sub    eax, edx;
@@ -232,15 +244,17 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        mov    radiusSquared, eax;
 // LINE 207:
 	__asm        cmp    shadeFlag, 1;
-	__asm        jne    near ptr 0x005640FB;
+	__asm        jne    _T12a;
 // LINE 209:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0056408E;
+	__asm        jmp    _Tbd;
 
+_Tb7:
 	__asm        inc    i;
+_Tbd:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x005640E3;
+	__asm        jge    _T112;
 // LINE 210:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x10C], eax;
@@ -256,24 +270,28 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    near ptr 0x00564088;
+	__asm        jmp    _Tb7;
 // LINE 212:
+_T112:
 	__asm        mov    eax, radius;
 	__asm        mov    al, [ebp+eax-0xF8];
 	__asm        mov    hiColor, al;
 // LINE 214:
-	__asm        jmp    near ptr 0x005642C3;
+	__asm        jmp    _T2f2;
 
+_T12a:
 	__asm        cmp    shadeFlag, 2;
-	__asm        jne    near ptr 0x005642C3;
+	__asm        jne    _T2f2;
 // LINE 216:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0056411A;
+	__asm        jmp    _T149;
 
+_T143:
 	__asm        inc    i;
+_T149:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x0056416F;
+	__asm        jge    _T19e;
 // LINE 217:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x114], eax;
@@ -289,19 +307,22 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    near ptr 0x00564114;
+	__asm        jmp    _T143;
 // LINE 219:
+_T19e:
 	__asm        mov    eax, radius;
 	__asm        mov    al, [ebp+eax-0xF8];
 	__asm        mov    hiColor, al;
 // LINE 223:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x00564198;
+	__asm        jmp    _T1c7;
 
+_T1c0:
 	__asm        add    j, 6;
+_T1c7:
 	__asm        mov    eax, diameter;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x005642C3;
+	__asm        jge    _T2f2;
 // LINE 225:
 	__asm        mov    al, color;
 	__asm        mov    ecx, j;
@@ -378,18 +399,21 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        mov    ecx, j;
 	__asm        mov    [ebp+ecx-0x39], al;
 // LINE 228:
-	__asm        jmp    near ptr 0x00564191;
+	__asm        jmp    _T1c0;
 // LINE 231:
+_T2f2:
 	__asm        cmp    shadeFlag, 1;
-	__asm        jne    near ptr 0x00564401;
+	__asm        jne    _T430;
 // LINE 233:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x005642E2;
+	__asm        jmp    _T311;
 
+_T30b:
 	__asm        inc    i;
+_T311:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x005643C4;
+	__asm        jge    _T3f3;
 // LINE 236:
 	__asm        mov    eax, radiusSquared;
 	__asm        mov    ecx, radius;
@@ -446,10 +470,11 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 247:
-	__asm        jmp    near ptr 0x005642DC;
+	__asm        jmp    _T30b;
 // LINE 249:
+_T3f3:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
-	__asm        je     near ptr 0x005643FC;
+	__asm        je     _T42b;
 // LINE 250:
 	__asm        mov    eax, radius;
 	__asm        mov    eax, [ebp+eax-0xF8];
@@ -465,10 +490,12 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 252:
-	__asm        jmp    near ptr 0x0056476B;
+_T42b:
+	__asm        jmp    _T79a;
 
+_T430:
 	__asm        cmp    shadeFlag, 2;
-	__asm        jne    near ptr 0x0056465D;
+	__asm        jne    _T68c;
 // LINE 254:
 	__asm        fld    qword ptr ds:[0x5939B0];
 	__asm        fdiv   qword ptr ds:[0x5BEF40];
@@ -480,30 +507,34 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        fstp   bandSize;
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        je     near ptr 0x00564451;
+	__asm        je     _T480;
 // LINE 256:
 	__asm        mov    reinterpret_cast<uint32_t>(bandSize), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&bandSize) + 4), 0x3FF00000;
 // LINE 258:
+_T480:
 	__asm        fld    bandSize;
 	__asm        fcomp  qword ptr ds:[0x5939B8];
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        je     near ptr 0x00564481;
+	__asm        je     _T4b0;
 // LINE 259:
 	__asm        fld    bandSize;
 	__asm        call   0x0056EBE8;
 	__asm        sub    eax, 2;
 	__asm        mov    ditherLimit, eax;
 // LINE 260:
-	__asm        jmp    near ptr 0x0056448B;
+	__asm        jmp    _T4ba;
 // LINE 261:
+_T4b0:
 	__asm        mov    ditherLimit, 2;
 // LINE 263:
+_T4ba:
 	__asm        mov    i, 0;
+_T4c4:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x00564658;
+	__asm        jge    _T687;
 // LINE 265:
 	__asm        fld    bandSize;
 	__asm        call   0x0056EBE8;
@@ -516,15 +547,17 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        idiv   ecx;
 	__asm        sub    ebx, edx;
 	__asm        cmp    ebx, ditherLimit;
-	__asm        jne    near ptr 0x005645C6;
+	__asm        jne    _T5f5;
 // LINE 267:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x005644EA;
+	__asm        jmp    _T519;
 
+_T513:
 	__asm        inc    j;
+_T519:
 	__asm        mov    eax, j;
 	__asm        cmp    ditherLimit, eax;
-	__asm        jl     near ptr 0x005645BE;
+	__asm        jl     _T5ed;
 // LINE 270:
 	__asm        mov    eax, radiusSquared;
 	__asm        mov    ecx, radius;
@@ -551,7 +584,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 // LINE 278:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x005645B4;
+	__asm        jge    _T5e3;
 // LINE 280:
 	__asm        push   0x3FF00000;
 	__asm        push   0;
@@ -575,16 +608,20 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 // LINE 281:
 	__asm        inc    i;
 // LINE 283:
-	__asm        jmp    near ptr 0x005645B9;
+	__asm        jmp    _T5e8;
 // LINE 285:
-	__asm        jmp    near ptr 0x0056476B;
+_T5e3:
+	__asm        jmp    _T79a;
 // LINE 287:
-	__asm        jmp    near ptr 0x005644E4;
+_T5e8:
+	__asm        jmp    _T513;
 // LINE 288:
+_T5ed:
 	__asm        inc    shftCt;
 // LINE 290:
-	__asm        jmp    near ptr 0x00564653;
+	__asm        jmp    _T682;
 // LINE 293:
+_T5f5:
 	__asm        mov    eax, radiusSquared;
 	__asm        mov    ecx, radius;
 	__asm        sub    ecx, i;
@@ -625,17 +662,22 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 // LINE 302:
 	__asm        inc    i;
 // LINE 304:
-	__asm        jmp    near ptr 0x00564495;
+_T682:
+	__asm        jmp    _T4c4;
 // LINE 306:
-	__asm        jmp    near ptr 0x0056476B;
+_T687:
+	__asm        jmp    _T79a;
 // LINE 308:
+_T68c:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00564672;
+	__asm        jmp    _T6a1;
 
+_T69b:
 	__asm        inc    i;
+_T6a1:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x0056473D;
+	__asm        jge    _T76c;
 // LINE 311:
 	__asm        mov    eax, radiusSquared;
 	__asm        mov    ecx, radius;
@@ -689,10 +731,11 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 322:
-	__asm        jmp    near ptr 0x0056466C;
+	__asm        jmp    _T69b;
 // LINE 324:
+_T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
-	__asm        je     near ptr 0x0056476B;
+	__asm        je     _T79a;
 // LINE 325:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
@@ -729,13 +772,14 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        mov    bhdr, 0;
 // LINE 422:
 	__asm        cmp    vertRad, 0;
-	__asm        jne    near ptr 0x0056478F;
+	__asm        jne    _T1f;
 // LINE 423:
-	__asm        jmp    near ptr 0x005649BC;
+	__asm        jmp    _T24c;
 // LINE 425:
+_T1f:
 	__asm        movsx  eax, facenum;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x005647B8;
+	__asm        jne    _T48;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEF68;
@@ -744,6 +788,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 431:
+_T48:
 	__asm        movsx  eax, facenum;
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x5B476C];
@@ -753,7 +798,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        mov    bhdr, eax;
 // LINE 432:
 	__asm        cmp    bhdr, 0;
-	__asm        jne    near ptr 0x005647F4;
+	__asm        jne    _T84;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BEFB8;
@@ -762,6 +807,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 434:
+_T84:
 	__asm        mov    eax, bhdr;
 	__asm        mov    pixPtr, eax;
 // LINE 435:
@@ -806,12 +852,14 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        fstp   yStride;
 // LINE 455:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0056487D;
+	__asm        jmp    _T10d;
 
+_T10a:
 	__asm        inc    i;
+_T10d:
 	__asm        mov    eax, i;
 	__asm        cmp    vertRad, eax;
-	__asm        jle    near ptr 0x0056497F;
+	__asm        jle    _T20f;
 // LINE 459:
 	__asm        mov    eax, vertRad;
 	__asm        sub    eax, i;
@@ -912,8 +960,9 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 476:
-	__asm        jmp    near ptr 0x0056487A;
+	__asm        jmp    _T10a;
 // LINE 478:
+_T20f:
 	__asm        mov    eax, faceCenter.y;
 	__asm        imul   eax, pixLine.width;
 	__asm        add    eax, pixPtr;
@@ -979,12 +1028,12 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        mov    hiBitmapLimit, eax;
 // LINE 541:
 	__asm        cmp    loBitmapLimit, 0;
-	__asm        jl     near ptr 0x00564A56;
+	__asm        jl     _T83;
 
 	__asm        mov    eax, pixLine;
 	__asm        mov    ecx, hiBitmapLimit;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x00564A56;
+	__asm        jle    _T83;
 // LINE 543:
 	__asm        mov    eax, faceCenter.x;
 	__asm        sub    eax, scaledOffset.x;
@@ -1009,22 +1058,24 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 546:
-	__asm        jmp    near ptr 0x00564BB3;
+	__asm        jmp    _T1e0;
 
+_T83:
 	__asm        cmp    loBitmapLimit, 0;
-	__asm        jge    near ptr 0x00564A78;
+	__asm        jge    _Ta5;
 
 	__asm        mov    eax, pixLine;
 	__asm        mov    ecx, hiBitmapLimit;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x00564A78;
+	__asm        jge    _Ta5;
 // LINE 548:
-	__asm        jmp    near ptr 0x00564BB3;
+	__asm        jmp    _T1e0;
 // LINE 550:
-	__asm        jmp    near ptr 0x00564BB3;
+	__asm        jmp    _T1e0;
 
+_Ta5:
 	__asm        cmp    loBitmapLimit, 0;
-	__asm        jge    near ptr 0x00564B1E;
+	__asm        jge    _T14b;
 // LINE 552:
 	__asm        mov    eax, faceCenter.x;
 	__asm        sub    eax, scaledOffset.x;
@@ -1092,8 +1143,9 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 563:
-	__asm        jmp    near ptr 0x00564BB3;
+	__asm        jmp    _T1e0;
 // LINE 565:
+_T14b:
 	__asm        mov    eax, faceCenter.x;
 	__asm        sub    eax, scaledOffset.x;
 	__asm        mov    ecx, pixLine;
@@ -1176,10 +1228,11 @@ void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, s
 	__asm        sub    dir, 6;
 // LINE 589:
 	__asm        cmp    dir, 0xFFFFFFFD;
-	__asm        jge    near ptr 0x00564BE7;
+	__asm        jge    _T2f;
 // LINE 590:
 	__asm        add    dir, 8;
 // LINE 592:
+_T2f:
 	__asm        mov    eax, dir;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        fild   dword ptr [ebp-0x10];
@@ -1210,7 +1263,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        fstp   widthOverTwo;
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
-	__asm        jne    near ptr 0x00564C5A;
+	__asm        jne    _T4a;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF004;
@@ -1219,18 +1272,20 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 610:
+_T4a:
 	__asm        fld    psi;
 	__asm        fcomp  dword ptr ds:[0x5939D8];
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        jne    near ptr 0x00564C82;
+	__asm        jne    _T72;
 
 	__asm        fld    psi;
 	__asm        fcomp  qword ptr ds:[0x5939E0];
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        jne    near ptr 0x00564C9E;
+	__asm        jne    _T8e;
 
+_T72:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF03C;
 	__asm        push   0x262;
@@ -1238,6 +1293,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 611:
+_T8e:
 	__asm        fld    psi;
 	__asm        fmul   dword ptr ds:[0x5939E8];
 	__asm        fdiv   qword ptr ds:[0x5939E0];
@@ -1249,30 +1305,33 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        fstp   mydir;
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        je     near ptr 0x00564CD6;
+	__asm        je     _Tc6;
 // LINE 614:
 	__asm        fld    mydir;
 	__asm        fadd   qword ptr ds:[0x593A00];
 	__asm        fstp   mydir;
 // LINE 615:
+_Tc6:
 	__asm        fld    mydir;
 	__asm        fcomp  qword ptr ds:[0x5939F8];
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        je     near ptr 0x00564CF8;
+	__asm        je     _Te8;
 
 	__asm        mov    reinterpret_cast<uint32_t>(mydir), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4), 0xC0080000;
 // LINE 616:
+_Te8:
 	__asm        fld    mydir;
 	__asm        fcomp  qword ptr ds:[0x5939B8];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x41;
-	__asm        jne    near ptr 0x00564D1A;
+	__asm        jne    _T10a;
 
 	__asm        mov    reinterpret_cast<uint32_t>(mydir), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4), 0x40100000;
 // LINE 626:
+_T10a:
 	__asm        fld    mydir;
 	__asm        fmul   widthOverTwo;
 	__asm        fdiv   qword ptr ds:[0x5939B8];
@@ -1283,7 +1342,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 // LINE 627:
 	__asm        mov    eax, faceCenter;
 	__asm        cmp    dword ptr [eax], 0x34;
-	__asm        jl     near ptr 0x00564D5B;
+	__asm        jl     _T14b;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF078;
@@ -1292,9 +1351,10 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 628:
+_T14b:
 	__asm        mov    eax, faceCenter;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jge    near ptr 0x00564D83;
+	__asm        jge    _T173;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF0D0;
@@ -1303,6 +1363,7 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 630:
+_T173:
 	__asm        jmp    near ptr 0x00564D88;
 // LINE 631:
 }
@@ -1339,33 +1400,39 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
 // LINE 659:
 	__asm        cmp    width, 0x19;
-	__asm        jle    near ptr 0x00564DBF;
+	__asm        jle    _T32;
 // LINE 660:
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 662:
+_T32:
 	__asm        cmp    width, 0;
-	__asm        jne    near ptr 0x00564DCE;
+	__asm        jne    _T41;
 // LINE 663:
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 666:
+_T41:
 	__asm        cmp    taper, 0;
-	__asm        jne    near ptr 0x00564DDF;
+	__asm        jne    _T52;
 // LINE 667:
 	__asm        mov    taper, 1;
 // LINE 669:
+_T52:
 	__asm        mov    eax, taper;
 	__asm        cmp    width, eax;
-	__asm        jne    near ptr 0x00564DEE;
+	__asm        jne    _T61;
 // LINE 670:
 	__asm        inc    width;
 // LINE 677:
+_T61:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00564DFD;
+	__asm        jmp    _T70;
 
+_T6d:
 	__asm        inc    i;
+_T70:
 	__asm        mov    eax, i;
 	__asm        cmp    width, eax;
-	__asm        jle    near ptr 0x00564E6C;
+	__asm        jle    _Tdf;
 // LINE 679:
 	__asm        fld    colorLimit;
 	__asm        mov    eax, width;
@@ -1374,7 +1441,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        fstp   step;
 // LINE 680:
 	__asm        cmp    i, 0x1A;
-	__asm        jl     near ptr 0x00564E3E;
+	__asm        jl     _Tb1;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF128;
@@ -1383,6 +1450,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 681:
+_Tb1:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        fild   dword ptr [ebp-0x80];
@@ -1395,56 +1463,65 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0x1C], al;
 // LINE 682:
-	__asm        jmp    near ptr 0x00564DFA;
+	__asm        jmp    _T6d;
 // LINE 685:
+_Tdf:
 	__asm        cmp    startPt.x, 0;
-	__asm        jl     near ptr 0x00564E80;
+	__asm        jl     _Tf3;
 
 	__asm        cmp    endPt.x, 0;
-	__asm        jge    near ptr 0x00564E85;
+	__asm        jge    _Tf8;
 // LINE 686:
-	__asm        jmp    near ptr 0x00565220;
+_Tf3:
+	__asm        jmp    _T493;
 // LINE 687:
+_Tf8:
 	__asm        cmp    startPt.y, 0;
-	__asm        jl     near ptr 0x00564E99;
+	__asm        jl     _T10c;
 
 	__asm        cmp    endPt.y, 0;
-	__asm        jge    near ptr 0x00564E9E;
+	__asm        jge    _T111;
 // LINE 688:
-	__asm        jmp    near ptr 0x00565220;
+_T10c:
+	__asm        jmp    _T493;
 // LINE 689:
+_T111:
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.x;
-	__asm        jl     near ptr 0x00564EC6;
+	__asm        jl     _T139;
 
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, endPt.x;
-	__asm        jge    near ptr 0x00564ECB;
+	__asm        jge    _T13e;
 // LINE 690:
-	__asm        jmp    near ptr 0x00565220;
+_T139:
+	__asm        jmp    _T493;
 // LINE 691:
+_T13e:
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.y;
-	__asm        jl     near ptr 0x00564EF3;
+	__asm        jl     _T166;
 
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, endPt.y;
-	__asm        jge    near ptr 0x00564EF8;
+	__asm        jge    _T16b;
 // LINE 692:
-	__asm        jmp    near ptr 0x00565220;
+_T166:
+	__asm        jmp    _T493;
 // LINE 695:
+_T16b:
 	__asm        mov    eax, endPt.x;
 	__asm        sub    eax, startPt.x;
 	__asm        mov    dx, eax;
@@ -1454,26 +1531,29 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    dy, eax;
 // LINE 699:
 	__asm        cmp    dx, 0;
-	__asm        jl     near ptr 0x00564F20;
+	__asm        jl     _T193;
 // LINE 700:
 	__asm        mov    xInc, 1;
 // LINE 701:
-	__asm        jmp    near ptr 0x00564F2F;
+	__asm        jmp    _T1a2;
 // LINE 703:
+_T193:
 	__asm        mov    xInc, 0xFFFFFFFF;
 // LINE 704:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
 	__asm        mov    dx, eax;
 // LINE 707:
+_T1a2:
 	__asm        cmp    dy, 0;
-	__asm        jl     near ptr 0x00564F46;
+	__asm        jl     _T1b9;
 // LINE 708:
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        mov    yInc, eax;
 // LINE 709:
-	__asm        jmp    near ptr 0x00564F58;
+	__asm        jmp    _T1cb;
 // LINE 711:
+_T1b9:
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        neg    eax;
 	__asm        mov    yInc, eax;
@@ -1482,9 +1562,10 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        neg    eax;
 	__asm        mov    dy, eax;
 // LINE 717:
+_T1cb:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    near ptr 0x00565065;
+	__asm        jge    _T2d8;
 // LINE 720:
 	__asm        mov    ecx, startPt.y;
 	__asm        mov    eax, width;
@@ -1506,17 +1587,20 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    segLen, eax;
 // LINE 723:
 	__asm        cmp    segLen, 1;
-	__asm        jge    near ptr 0x00564FA2;
+	__asm        jge    _T215;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 725:
+_T215:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00564FB1;
+	__asm        jmp    _T224;
 
+_T221:
 	__asm        inc    i;
+_T224:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x00565060;
+	__asm        jge    _T2d3;
 // LINE 727:
 	__asm        mov    eax, writeBuffer;
 	__asm        mov    writeBufferTmp, eax;
@@ -1536,12 +1620,14 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 738:
 	__asm        mov    eax, startWidth;
 	__asm        mov    j, eax;
-	__asm        jmp    near ptr 0x00564FF1;
+	__asm        jmp    _T264;
 
+_T261:
 	__asm        inc    j;
+_T264:
 	__asm        mov    eax, j;
 	__asm        cmp    endWidth, eax;
-	__asm        jle    near ptr 0x00565033;
+	__asm        jle    _T2a6;
 // LINE 740:
 	__asm        push   0;
 	__asm        push   1;
@@ -1550,10 +1636,11 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0056501A;
+	__asm        jne    _T28d;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 741:
+_T28d:
 	__asm        mov    eax, j;
 	__asm        mov    al, [ebp+eax-0x1C];
 	__asm        mov    ecx, writeBufferTmp;
@@ -1562,14 +1649,15 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        add    writeBufferTmp, eax;
 // LINE 743:
-	__asm        jmp    near ptr 0x00564FEE;
+	__asm        jmp    _T261;
 // LINE 745:
+_T2a6:
 	__asm        mov    eax, dy;
 	__asm        add    error, eax;
 // LINE 746:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x00565055;
+	__asm        jle    _T2c8;
 // LINE 748:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dx;
@@ -1579,13 +1667,16 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    eax, yInc;
 	__asm        add    writeBuffer, eax;
 // LINE 751:
+_T2c8:
 	__asm        mov    eax, xInc;
 	__asm        add    writeBuffer, eax;
 // LINE 752:
-	__asm        jmp    near ptr 0x00564FAE;
+	__asm        jmp    _T221;
 // LINE 754:
-	__asm        jmp    near ptr 0x00565220;
+_T2d3:
+	__asm        jmp    _T493;
 // LINE 756:
+_T2d8:
 	__asm        mov    ecx, startPt.x;
 	__asm        mov    eax, width;
 	__asm        cdq;
@@ -1607,22 +1698,26 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    segLen, eax;
 // LINE 759:
 	__asm        cmp    segLen, 1;
-	__asm        jge    near ptr 0x005650A5;
+	__asm        jge    _T318;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 761:
+_T318:
 	__asm        cmp    segLen, 0;
-	__asm        jne    near ptr 0x005650B6;
+	__asm        jne    _T329;
 // LINE 762:
 	__asm        mov    segLen, 1;
 // LINE 764:
+_T329:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x005650C5;
+	__asm        jmp    _T338;
 
+_T335:
 	__asm        inc    i;
+_T338:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x00565220;
+	__asm        jge    _T493;
 // LINE 766:
 	__asm        mov    eax, writeBuffer;
 	__asm        mov    writeBufferTmp, eax;
@@ -1655,15 +1750,16 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    fourByteWrites, eax;
 // LINE 790:
 	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    near ptr 0x00565120;
+	__asm        jge    _T393;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 791:
+_T393:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x74], 0;
-	__asm        je     near ptr 0x0056516A;
+	__asm        je     _T3dd;
 // LINE 794:
 	__asm        push   0x5BF19C;
 	__asm        push   1;
@@ -1672,10 +1768,11 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00565153;
+	__asm        jne    _T3c6;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 795:
+_T3c6:
 	__asm        mov    eax, cInc;
 	__asm        mov    al, [ebp+eax-0x1C];
 	__asm        mov    ecx, writeBufferTmp;
@@ -1683,18 +1780,20 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        inc    cInc;
 	__asm        inc    writeBufferTmp;
 // LINE 796:
-	__asm        jmp    near ptr 0x00565120;
+	__asm        jmp    _T393;
 // LINE 798:
+_T3dd:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    near ptr 0x00565179;
+	__asm        jge    _T3ec;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 800:
+_T3ec:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x78], 0;
-	__asm        je     near ptr 0x005651F3;
+	__asm        je     _T466;
 // LINE 802:
 	__asm        push   0x5BF1B0;
 	__asm        push   4;
@@ -1703,10 +1802,11 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x005651AC;
+	__asm        jne    _T41f;
 
-	__asm        jmp    near ptr 0x00565220;
+	__asm        jmp    _T493;
 // LINE 803:
+_T41f:
 	__asm        mov    eax, cInc;
 	__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
 	__asm        shl    eax, 0x10;
@@ -1731,14 +1831,15 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 806:
 	__asm        add    cInc, 4;
 // LINE 807:
-	__asm        jmp    near ptr 0x00565179;
+	__asm        jmp    _T3ec;
 // LINE 809:
+_T466:
 	__asm        mov    eax, dx;
 	__asm        add    error, eax;
 // LINE 810:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x00565215;
+	__asm        jle    _T488;
 // LINE 812:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dy;
@@ -1748,10 +1849,11 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	__asm        mov    eax, xInc;
 	__asm        add    writeBuffer, eax;
 // LINE 815:
+_T488:
 	__asm        mov    eax, yInc;
 	__asm        add    writeBuffer, eax;
 // LINE 816:
-	__asm        jmp    near ptr 0x005650C2;
+	__asm        jmp    _T335;
 // LINE 818:
 }
 
@@ -1783,22 +1885,26 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
 // LINE 848:
 	__asm        cmp    width, 0x19;
-	__asm        jle    near ptr 0x00565254;
+	__asm        jle    _T2f;
 // LINE 849:
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 851:
+_T2f:
 	__asm        cmp    width, 0;
-	__asm        jne    near ptr 0x00565263;
+	__asm        jne    _T3e;
 // LINE 852:
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 855:
+_T3e:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00565272;
+	__asm        jmp    _T4d;
 
+_T4a:
 	__asm        inc    i;
+_T4d:
 	__asm        mov    eax, width;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x005652DB;
+	__asm        jge    _Tb6;
 // LINE 857:
 	__asm        fld    colorLimit;
 	__asm        mov    eax, width;
@@ -1807,7 +1913,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        fstp   step;
 // LINE 858:
 	__asm        cmp    i, 0x1A;
-	__asm        jl     near ptr 0x005652B3;
+	__asm        jl     _T8e;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF1C4;
@@ -1816,6 +1922,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 859:
+_T8e:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        fild   dword ptr [ebp-0x70];
@@ -1828,56 +1935,65 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0x1C], al;
 // LINE 860:
-	__asm        jmp    near ptr 0x0056526F;
+	__asm        jmp    _T4a;
 // LINE 862:
+_Tb6:
 	__asm        cmp    startPt.x, 0;
-	__asm        jl     near ptr 0x005652EF;
+	__asm        jl     _Tca;
 
 	__asm        cmp    endPt.x, 0;
-	__asm        jge    near ptr 0x005652F4;
+	__asm        jge    _Tcf;
 // LINE 863:
-	__asm        jmp    near ptr 0x0056563C;
+_Tca:
+	__asm        jmp    _T417;
 // LINE 864:
+_Tcf:
 	__asm        cmp    startPt.y, 0;
-	__asm        jl     near ptr 0x00565308;
+	__asm        jl     _Te3;
 
 	__asm        cmp    endPt.y, 0;
-	__asm        jge    near ptr 0x0056530D;
+	__asm        jge    _Te8;
 // LINE 865:
-	__asm        jmp    near ptr 0x0056563C;
+_Te3:
+	__asm        jmp    _T417;
 // LINE 866:
+_Te8:
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.x;
-	__asm        jl     near ptr 0x00565335;
+	__asm        jl     _T110;
 
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, endPt.x;
-	__asm        jge    near ptr 0x0056533A;
+	__asm        jge    _T115;
 // LINE 867:
-	__asm        jmp    near ptr 0x0056563C;
+_T110:
+	__asm        jmp    _T417;
 // LINE 868:
+_T115:
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.y;
-	__asm        jl     near ptr 0x00565362;
+	__asm        jl     _T13d;
 
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, endPt.y;
-	__asm        jge    near ptr 0x00565367;
+	__asm        jge    _T142;
 // LINE 869:
-	__asm        jmp    near ptr 0x0056563C;
+_T13d:
+	__asm        jmp    _T417;
 // LINE 871:
+_T142:
 	__asm        mov    eax, endPt.x;
 	__asm        sub    eax, startPt.x;
 	__asm        mov    dx, eax;
@@ -1887,26 +2003,29 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    dy, eax;
 // LINE 875:
 	__asm        cmp    dx, 0;
-	__asm        jl     near ptr 0x0056538F;
+	__asm        jl     _T16a;
 // LINE 876:
 	__asm        mov    xInc, 1;
 // LINE 877:
-	__asm        jmp    near ptr 0x0056539E;
+	__asm        jmp    _T179;
 // LINE 879:
+_T16a:
 	__asm        mov    xInc, 0xFFFFFFFF;
 // LINE 880:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
 	__asm        mov    dx, eax;
 // LINE 883:
+_T179:
 	__asm        cmp    dy, 0;
-	__asm        jl     near ptr 0x005653B5;
+	__asm        jl     _T190;
 // LINE 884:
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        mov    yInc, eax;
 // LINE 885:
-	__asm        jmp    near ptr 0x005653C7;
+	__asm        jmp    _T1a2;
 // LINE 887:
+_T190:
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        neg    eax;
 	__asm        mov    yInc, eax;
@@ -1915,9 +2034,10 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        neg    eax;
 	__asm        mov    dy, eax;
 // LINE 892:
+_T1a2:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    near ptr 0x00565498;
+	__asm        jge    _T273;
 // LINE 894:
 	__asm        mov    ecx, startPt.y;
 	__asm        mov    eax, width;
@@ -1931,23 +2051,27 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    writeBuffer, ecx;
 // LINE 896:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00565403;
+	__asm        jmp    _T1de;
 
+_T1db:
 	__asm        inc    i;
+_T1de:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x00565493;
+	__asm        jge    _T26e;
 // LINE 898:
 	__asm        mov    eax, writeBuffer;
 	__asm        mov    writeBufferTmp, eax;
 // LINE 900:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x00565424;
+	__asm        jmp    _T1ff;
 
+_T1fc:
 	__asm        inc    j;
+_T1ff:
 	__asm        mov    eax, width;
 	__asm        cmp    j, eax;
-	__asm        jge    near ptr 0x00565466;
+	__asm        jge    _T241;
 // LINE 902:
 	__asm        push   0;
 	__asm        push   1;
@@ -1956,10 +2080,11 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0056544D;
+	__asm        jne    _T228;
 
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 903:
+_T228:
 	__asm        mov    eax, j;
 	__asm        mov    al, [ebp+eax-0x1C];
 	__asm        mov    ecx, writeBufferTmp;
@@ -1968,14 +2093,15 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    eax, ds:[0x5BEF28];
 	__asm        add    writeBufferTmp, eax;
 // LINE 905:
-	__asm        jmp    near ptr 0x00565421;
+	__asm        jmp    _T1fc;
 // LINE 907:
+_T241:
 	__asm        mov    eax, dy;
 	__asm        add    error, eax;
 // LINE 908:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x00565488;
+	__asm        jle    _T263;
 // LINE 910:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dx;
@@ -1985,13 +2111,16 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    eax, yInc;
 	__asm        add    writeBuffer, eax;
 // LINE 913:
+_T263:
 	__asm        mov    eax, xInc;
 	__asm        add    writeBuffer, eax;
 // LINE 914:
-	__asm        jmp    near ptr 0x00565400;
+	__asm        jmp    _T1db;
 // LINE 916:
-	__asm        jmp    near ptr 0x0056563C;
+_T26e:
+	__asm        jmp    _T417;
 // LINE 918:
+_T273:
 	__asm        mov    ecx, startPt.x;
 	__asm        mov    eax, width;
 	__asm        cdq;
@@ -2005,12 +2134,14 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    writeBuffer, ecx;
 // LINE 920:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x005654CA;
+	__asm        jmp    _T2a5;
 
+_T2a2:
 	__asm        inc    i;
+_T2a5:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x0056563C;
+	__asm        jge    _T417;
 // LINE 922:
 	__asm        mov    eax, writeBuffer;
 	__asm        mov    writeBufferTmp, eax;
@@ -2026,9 +2157,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    fourByteWrites, eax;
 // LINE 931:
 	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    near ptr 0x00565520;
+	__asm        jge    _T2fb;
 // LINE 932:
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 933:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF208;
@@ -2037,10 +2168,11 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 935:
+_T2fb:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    near ptr 0x0056554B;
+	__asm        jge    _T326;
 // LINE 936:
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 937:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF25C;
@@ -2049,11 +2181,12 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 940:
+_T326:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
-	__asm        je     near ptr 0x00565595;
+	__asm        je     _T370;
 // LINE 943:
 	__asm        push   0x5BF2B0;
 	__asm        push   1;
@@ -2062,10 +2195,11 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0056557E;
+	__asm        jne    _T359;
 
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 944:
+_T359:
 	__asm        mov    eax, cInc;
 	__asm        mov    al, [ebp+eax-0x1C];
 	__asm        mov    ecx, writeBufferTmp;
@@ -2073,13 +2207,14 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        inc    cInc;
 	__asm        inc    writeBufferTmp;
 // LINE 945:
-	__asm        jmp    near ptr 0x0056554B;
+	__asm        jmp    _T326;
 // LINE 947:
+_T370:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        je     near ptr 0x0056560F;
+	__asm        je     _T3ea;
 // LINE 949:
 	__asm        push   0x5BF2BC;
 	__asm        push   4;
@@ -2088,10 +2223,11 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x005655C8;
+	__asm        jne    _T3a3;
 
-	__asm        jmp    near ptr 0x0056563C;
+	__asm        jmp    _T417;
 // LINE 950:
+_T3a3:
 	__asm        mov    eax, cInc;
 	__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
 	__asm        shl    eax, 0x10;
@@ -2116,14 +2252,15 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 953:
 	__asm        add    cInc, 4;
 // LINE 954:
-	__asm        jmp    near ptr 0x00565595;
+	__asm        jmp    _T370;
 // LINE 956:
+_T3ea:
 	__asm        mov    eax, dx;
 	__asm        add    error, eax;
 // LINE 957:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x00565631;
+	__asm        jle    _T40c;
 // LINE 959:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dy;
@@ -2133,10 +2270,11 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	__asm        mov    eax, xInc;
 	__asm        add    writeBuffer, eax;
 // LINE 962:
+_T40c:
 	__asm        mov    eax, yInc;
 	__asm        add    writeBuffer, eax;
 // LINE 963:
-	__asm        jmp    near ptr 0x005654C7;
+	__asm        jmp    _T2a2;
 // LINE 966:
 }
 
@@ -2175,34 +2313,40 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        fstp   stride4;
 // LINE 997:
 	__asm        cmp    startX, 0;
-	__asm        jl     near ptr 0x0056569C;
+	__asm        jl     _T5b;
 
 	__asm        cmp    endX, 0;
-	__asm        jge    near ptr 0x005656A1;
+	__asm        jge    _T60;
 // LINE 998:
-	__asm        jmp    near ptr 0x00565893;
+_T5b:
+	__asm        jmp    _T252;
 // LINE 999:
+_T60:
 	__asm        cmp    yPos, 0;
-	__asm        jge    near ptr 0x005656B0;
+	__asm        jge    _T6f;
 // LINE 1000:
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1001:
+_T6f:
 	__asm        mov    eax, startX;
 	__asm        cmp    ds:[0x5BEF2C], eax;
-	__asm        jl     near ptr 0x005656CE;
+	__asm        jl     _T8d;
 
 	__asm        mov    eax, endX;
 	__asm        cmp    ds:[0x5BEF2C], eax;
-	__asm        jge    near ptr 0x005656D3;
+	__asm        jge    _T92;
 // LINE 1002:
-	__asm        jmp    near ptr 0x00565893;
+_T8d:
+	__asm        jmp    _T252;
 // LINE 1003:
+_T92:
 	__asm        mov    eax, yPos;
 	__asm        cmp    ds:[0x5BEF30], eax;
-	__asm        jge    near ptr 0x005656E7;
+	__asm        jge    _Ta6;
 // LINE 1004:
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1006:
+_Ta6:
 	__asm        mov    eax, yPos;
 	__asm        imul   eax, ds:[0x5BEF28];
 	__asm        add    eax, startX;
@@ -2223,9 +2367,9 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        mov    fourByteWrites, eax;
 // LINE 1018:
 	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    near ptr 0x00565744;
+	__asm        jge    _T103;
 // LINE 1019:
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1020:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF2C8;
@@ -2234,10 +2378,11 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1022:
+_T103:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    near ptr 0x0056576F;
+	__asm        jge    _T12e;
 // LINE 1023:
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1024:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF324;
@@ -2246,11 +2391,12 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1027:
+_T12e:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x005657CF;
+	__asm        je     _T18e;
 // LINE 1030:
 	__asm        push   0x5BF384;
 	__asm        push   1;
@@ -2259,10 +2405,11 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x005657A2;
+	__asm        jne    _T161;
 
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1031:
+_T161:
 	__asm        fld    curPatOffset;
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, pixPtr;
@@ -2279,13 +2426,14 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        fadd   curPatOffset;
 	__asm        fstp   curPatOffset;
 // LINE 1033:
-	__asm        jmp    near ptr 0x0056576F;
+	__asm        jmp    _T12e;
 // LINE 1036:
+_T18e:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x00565893;
+	__asm        je     _T252;
 // LINE 1038:
 	__asm        push   0x5BF394;
 	__asm        push   4;
@@ -2294,10 +2442,11 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00565802;
+	__asm        jne    _T1c1;
 
-	__asm        jmp    near ptr 0x00565893;
+	__asm        jmp    _T252;
 // LINE 1042:
+_T1c1:
 	__asm        fld    stride2;
 	__asm        fadd   curPatOffset;
 	__asm        call   0x0056EBE8;
@@ -2351,7 +2500,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        fadd   curPatOffset;
 	__asm        fstp   curPatOffset;
 // LINE 1047:
-	__asm        jmp    near ptr 0x005657CF;
+	__asm        jmp    _T18e;
 // LINE 1050:
 }
 
@@ -2365,34 +2514,40 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 
 // LINE 1075:
 	__asm        cmp    startX, 0;
-	__asm        jl     near ptr 0x005658B5;
+	__asm        jl     _T1d;
 
 	__asm        cmp    endX, 0;
-	__asm        jge    near ptr 0x005658BA;
+	__asm        jge    _T22;
 // LINE 1076:
-	__asm        jmp    near ptr 0x00565A32;
+_T1d:
+	__asm        jmp    _T19a;
 // LINE 1077:
+_T22:
 	__asm        cmp    yPos, 0;
-	__asm        jge    near ptr 0x005658C9;
+	__asm        jge    _T31;
 // LINE 1078:
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1079:
+_T31:
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        cmp    startX, eax;
-	__asm        jg     near ptr 0x005658E5;
+	__asm        jg     _T4d;
 
 	__asm        mov    eax, ds:[0x5BEF2C];
 	__asm        cmp    endX, eax;
-	__asm        jle    near ptr 0x005658EA;
+	__asm        jle    _T52;
 // LINE 1080:
-	__asm        jmp    near ptr 0x00565A32;
+_T4d:
+	__asm        jmp    _T19a;
 // LINE 1081:
+_T52:
 	__asm        mov    eax, ds:[0x5BEF30];
 	__asm        cmp    yPos, eax;
-	__asm        jle    near ptr 0x005658FD;
+	__asm        jle    _T65;
 // LINE 1082:
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1084:
+_T65:
 	__asm        mov    eax, yPos;
 	__asm        imul   eax, ds:[0x5BEF28];
 	__asm        add    eax, startX;
@@ -2429,9 +2584,9 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        mov    fourByteWrites, eax;
 // LINE 1099:
 	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    near ptr 0x00565980;
+	__asm        jge    _Te8;
 // LINE 1100:
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1101:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3A4;
@@ -2440,10 +2595,11 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1103:
+_Te8:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    near ptr 0x005659AB;
+	__asm        jge    _T113;
 // LINE 1104:
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1105:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3FC;
@@ -2452,11 +2608,12 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1108:
+_T113:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x005659EE;
+	__asm        je     _T156;
 // LINE 1111:
 	__asm        push   0x5BF458;
 	__asm        push   1;
@@ -2465,22 +2622,24 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x005659DE;
+	__asm        jne    _T146;
 
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1112:
+_T146:
 	__asm        mov    al, color;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], al;
 	__asm        inc    writeBuffer;
 // LINE 1113:
-	__asm        jmp    near ptr 0x005659AB;
+	__asm        jmp    _T113;
 // LINE 1115:
+_T156:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x00565A32;
+	__asm        je     _T19a;
 // LINE 1117:
 	__asm        push   0x5BF468;
 	__asm        push   4;
@@ -2489,17 +2648,18 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        call   Check_Pointer;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00565A21;
+	__asm        jne    _T189;
 
-	__asm        jmp    near ptr 0x00565A32;
+	__asm        jmp    _T19a;
 // LINE 1118:
+_T189:
 	__asm        mov    eax, fourByteColor;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], eax;
 // LINE 1119:
 	__asm        add    writeBuffer, 4;
 // LINE 1120:
-	__asm        jmp    near ptr 0x005659EE;
+	__asm        jmp    _T156;
 // LINE 1123:
 }
 

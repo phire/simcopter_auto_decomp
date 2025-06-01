@@ -169,7 +169,7 @@ unsigned short GetNextRandomNumber() {
 	__asm        mov    temp, ax;
 // LINE 109:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&temp) + 1), 0x80;
-	__asm        je     near ptr 0x0055D6D7;
+	__asm        je     _T34;
 // LINE 110:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(temp);
 	__asm        and    eax, 0xFFFF;
@@ -177,15 +177,17 @@ unsigned short GetNextRandomNumber() {
 	__asm        xor    eax, 0x1BF5;
 	__asm        mov    temp, ax;
 // LINE 111:
-	__asm        jmp    near ptr 0x0055D6DC;
+	__asm        jmp    _T39;
 
+_T34:
 	__asm        shl    temp, 1;
 // LINE 113:
+_T39:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(temp);
 	__asm        and    eax, 0xFFFF;
 	__asm        xor    ds:[0x6376A8], eax;
 // LINE 114:
-	__asm        jne    near ptr 0x0055D709;
+	__asm        jne    _T66;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BDFE0;
@@ -194,6 +196,7 @@ unsigned short GetNextRandomNumber() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 115:
+_T66:
 	__asm        mov    ax, temp;
 	__asm        jmp    near ptr 0x0055D712;
 // LINE 116:
@@ -311,15 +314,16 @@ unsigned short SGIRand(unsigned short limit) {
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(x);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
-	__asm        jle    near ptr 0x0055D874;
+	__asm        jle    _T50;
 // LINE 138:
 	__asm        mov    ax, z;
-	__asm        jmp    near ptr 0x0055D87D;
+	__asm        jmp    _T59;
 // LINE 139:
-	__asm        jmp    near ptr 0x0055D87D;
+	__asm        jmp    _T59;
 // LINE 140:
+_T50:
 	__asm        mov    ax, x;
-	__asm        jmp    near ptr 0x0055D87D;
+	__asm        jmp    _T59;
 // LINE 141:
 }
 
@@ -346,15 +350,16 @@ unsigned short SGRand(unsigned short limit) {
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(x);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x0055D8D2;
+	__asm        jge    _T50;
 // LINE 153:
 	__asm        mov    ax, z;
-	__asm        jmp    near ptr 0x0055D8DB;
+	__asm        jmp    _T59;
 // LINE 154:
-	__asm        jmp    near ptr 0x0055D8DB;
+	__asm        jmp    _T59;
 // LINE 155:
+_T50:
 	__asm        mov    ax, x;
-	__asm        jmp    near ptr 0x0055D8DB;
+	__asm        jmp    _T59;
 // LINE 156:
 }
 
@@ -379,20 +384,22 @@ short SGSRand(unsigned short limit) {
 	__asm        movsx  eax, z;
 	__asm        movsx  ecx, x;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x0055D921;
+	__asm        jge    _T41;
 // LINE 168:
 	__asm        mov    ax, z;
 	__asm        mov    x, ax;
 // LINE 169:
+_T41:
 	__asm        call   SRand2;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0055D93B;
+	__asm        je     _T5b;
 // LINE 170:
 	__asm        movsx  eax, x;
 	__asm        neg    eax;
 	__asm        mov    x, ax;
 // LINE 171:
+_T5b:
 	__asm        mov    ax, x;
 	__asm        jmp    near ptr 0x0055D944;
 // LINE 172:

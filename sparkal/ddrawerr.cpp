@@ -56,649 +56,723 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0042D8D2;
+	__asm        jmp    _T46a;
 // LINE 31:
+_T19:
 	__asm        push   0x5976AC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 32:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 34:
+_T2f:
 	__asm        push   0x5976D0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 35:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 37:
+_T45:
 	__asm        push   0x5976F4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 38:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 40:
+_T5b:
 	__asm        push   0x59770C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 41:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 43:
+_T71:
 	__asm        push   0x597728;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 44:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 46:
+_T87:
 	__asm        push   0x597744;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 47:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 49:
+_T9d:
 	__asm        push   0x597764;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 50:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 52:
+_Tb3:
 	__asm        push   0x597780;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 53:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 55:
+_Tc9:
 	__asm        push   0x5977A0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 56:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 58:
+_Tdf:
 	__asm        push   0x5977C4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 59:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 61:
+_Tf5:
 	__asm        push   0x5977E0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 62:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 64:
+_T10b:
 	__asm        push   0x5977F8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 65:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 67:
+_T121:
 	__asm        push   0x597814;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 68:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 70:
+_T137:
 	__asm        push   0x597830;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 71:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 73:
+_T14d:
 	__asm        push   0x597850;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 74:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 76:
+_T163:
 	__asm        push   0x597870;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 77:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 79:
+_T179:
 	__asm        push   0x59788C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 80:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 82:
+_T18f:
 	__asm        push   0x5978A4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 83:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 85:
+_T1a5:
 	__asm        push   0x5978C0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 86:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 88:
+_T1bb:
 	__asm        push   0x5978DC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 89:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 91:
+_T1d1:
 	__asm        push   0x5978F8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 92:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 94:
+_T1e7:
 	__asm        push   0x597918;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 95:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 97:
+_T1fd:
 	__asm        push   0x597934;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 98:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 100:
+_T213:
 	__asm        push   0x597954;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 101:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 103:
+_T229:
 	__asm        push   0x597978;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 104:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 106:
+_T23f:
 	__asm        push   0x597998;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 107:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 109:
+_T255:
 	__asm        push   0x5979B4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 110:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 112:
+_T26b:
 	__asm        push   0x5979D0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 113:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 115:
+_T281:
 	__asm        push   0x5979EC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 116:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 118:
+_T297:
 	__asm        push   0x597A08;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 119:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 121:
+_T2ad:
 	__asm        push   0x597A24;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 122:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 124:
+_T2c3:
 	__asm        push   0x597A48;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 125:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 127:
+_T2d9:
 	__asm        push   0x597A68;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 128:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 130:
+_T2ef:
 	__asm        push   0x597A84;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 131:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 133:
+_T305:
 	__asm        push   0x597AAC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 134:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 136:
+_T31b:
 	__asm        push   0x597AD4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 137:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 139:
+_T331:
 	__asm        push   0x597AF0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 140:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 142:
+_T347:
 	__asm        push   0x597B14;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 143:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 145:
+_T35d:
 	__asm        push   0x597B30;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 146:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 148:
+_T373:
 	__asm        push   0x597B54;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 149:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 151:
+_T389:
 	__asm        push   0x597B74;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 152:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 154:
+_T39f:
 	__asm        push   0x597B90;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 155:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 157:
+_T3b5:
 	__asm        push   0x597BAC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 158:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 160:
+_T3cb:
 	__asm        push   0x597BC8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 161:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 163:
+_T3e1:
 	__asm        push   0x597BEC;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 164:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 166:
+_T3f7:
 	__asm        push   0x597C0C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 167:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 169:
+_T40d:
 	__asm        push   0x597C34;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 170:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 172:
+_T423:
 	__asm        push   0x597C54;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 173:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 175:
+_T439:
 	__asm        push   0x597C6C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 176:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 178:
+_T44f:
 	__asm        push   0x597C7C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 179:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 // LINE 180:
-	__asm        jmp    near ptr 0x0042DC43;
+	__asm        jmp    _T7db;
 
+_T46a:
 	__asm        cmp    dword ptr [ebp-8], 0x80004005;
-	__asm        jg     near ptr 0x0042D8F7;
+	__asm        jg     _T48f;
 
-	__asm        je     near ptr 0x0042D4AD;
+	__asm        je     _T45;
 
 	__asm        cmp    dword ptr [ebp-8], 0x80004001;
-	__asm        je     near ptr 0x0042D81D;
+	__asm        je     _T3b5;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T48f:
 	__asm        cmp    dword ptr [ebp-8], 0x80070057;
-	__asm        jg     near ptr 0x0042D91C;
+	__asm        jg     _T4b4;
 
-	__asm        je     near ptr 0x0042D51B;
+	__asm        je     _Tb3;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
-	__asm        je     near ptr 0x0042D6FF;
+	__asm        je     _T297;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T4b4:
 	__asm        cmp    dword ptr [ebp-8], 0x88760028;
-	__asm        jg     near ptr 0x0042D941;
+	__asm        jg     _T4d9;
 
-	__asm        je     near ptr 0x0042D497;
+	__asm        je     _T2f;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876000A;
-	__asm        je     near ptr 0x0042D481;
+	__asm        je     _T19;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T4d9:
 	__asm        cmp    dword ptr [ebp-8], 0x88760064;
-	__asm        jg     near ptr 0x0042D966;
+	__asm        jg     _T4fe;
 
-	__asm        je     near ptr 0x0042D4D9;
+	__asm        je     _T71;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876005A;
-	__asm        je     near ptr 0x0042D4C3;
+	__asm        je     _T5b;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T4fe:
 	__asm        cmp    dword ptr [ebp-8], 0x88760078;
-	__asm        jg     near ptr 0x0042D98B;
+	__asm        jg     _T523;
 
-	__asm        je     near ptr 0x0042D505;
+	__asm        je     _T9d;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876006E;
-	__asm        je     near ptr 0x0042D4EF;
+	__asm        je     _T87;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T523:
 	__asm        cmp    dword ptr [ebp-8], 0x88760096;
-	__asm        jg     near ptr 0x0042D9B0;
+	__asm        jg     _T548;
 
-	__asm        je     near ptr 0x0042D547;
+	__asm        je     _Tdf;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760091;
-	__asm        je     near ptr 0x0042D531;
+	__asm        je     _Tc9;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T548:
 	__asm        cmp    dword ptr [ebp-8], 0x887600B4;
-	__asm        jg     near ptr 0x0042D9D5;
+	__asm        jg     _T56d;
 
-	__asm        je     near ptr 0x0042D573;
+	__asm        je     _T10b;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887600AA;
-	__asm        je     near ptr 0x0042D55D;
+	__asm        je     _Tf5;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T56d:
 	__asm        cmp    dword ptr [ebp-8], 0x887600D2;
-	__asm        jg     near ptr 0x0042D9FA;
+	__asm        jg     _T592;
 
-	__asm        je     near ptr 0x0042D59F;
+	__asm        je     _T137;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887600CD;
-	__asm        je     near ptr 0x0042D589;
+	__asm        je     _T121;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T592:
 	__asm        cmp    dword ptr [ebp-8], 0x887600E6;
-	__asm        jg     near ptr 0x0042DA1F;
+	__asm        jg     _T5b7;
 
-	__asm        je     near ptr 0x0042D5CB;
+	__asm        je     _T163;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887600E1;
-	__asm        je     near ptr 0x0042D5B5;
+	__asm        je     _T14d;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T5b7:
 	__asm        cmp    dword ptr [ebp-8], 0x887600FA;
-	__asm        jg     near ptr 0x0042DA44;
+	__asm        jg     _T5dc;
 
-	__asm        je     near ptr 0x0042D5F7;
+	__asm        je     _T18f;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887600F0;
-	__asm        je     near ptr 0x0042D5E1;
+	__asm        je     _T179;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T5dc:
 	__asm        cmp    dword ptr [ebp-8], 0x88760104;
-	__asm        jg     near ptr 0x0042DA69;
+	__asm        jg     _T601;
 
-	__asm        je     near ptr 0x0042D623;
+	__asm        je     _T1bb;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887600FF;
-	__asm        je     near ptr 0x0042D60D;
+	__asm        je     _T1a5;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T601:
 	__asm        cmp    dword ptr [ebp-8], 0x88760136;
-	__asm        jg     near ptr 0x0042DA8E;
+	__asm        jg     _T626;
 
-	__asm        je     near ptr 0x0042D64F;
+	__asm        je     _T1e7;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760118;
-	__asm        je     near ptr 0x0042D639;
+	__asm        je     _T1d1;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T626:
 	__asm        cmp    dword ptr [ebp-8], 0x8876014A;
-	__asm        jg     near ptr 0x0042DACD;
+	__asm        jg     _T665;
 
-	__asm        je     near ptr 0x0042D6A7;
+	__asm        je     _T23f;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876013C;
-	__asm        je     near ptr 0x0042D665;
+	__asm        je     _T1fd;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876013D;
-	__asm        je     near ptr 0x0042D67B;
+	__asm        je     _T213;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760140;
-	__asm        je     near ptr 0x0042D691;
+	__asm        je     _T229;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T665:
 	__asm        cmp    dword ptr [ebp-8], 0x88760154;
-	__asm        jg     near ptr 0x0042DAF2;
+	__asm        jg     _T68a;
 
-	__asm        je     near ptr 0x0042D6D3;
+	__asm        je     _T26b;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876014F;
-	__asm        je     near ptr 0x0042D6BD;
+	__asm        je     _T255;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T68a:
 	__asm        cmp    dword ptr [ebp-8], 0x8876017C;
-	__asm        jg     near ptr 0x0042DB17;
+	__asm        jg     _T6af;
 
-	__asm        je     near ptr 0x0042D715;
+	__asm        je     _T2ad;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760168;
-	__asm        je     near ptr 0x0042D6E9;
+	__asm        je     _T281;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T6af:
 	__asm        cmp    dword ptr [ebp-8], 0x88760183;
-	__asm        jg     near ptr 0x0042DB3C;
+	__asm        jg     _T6d4;
 
-	__asm        je     near ptr 0x0042D741;
+	__asm        je     _T2d9;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876017E;
-	__asm        je     near ptr 0x0042D72B;
+	__asm        je     _T2c3;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T6d4:
 	__asm        cmp    dword ptr [ebp-8], 0x887601A4;
-	__asm        jg     near ptr 0x0042DB61;
+	__asm        jg     _T6f9;
 
-	__asm        je     near ptr 0x0042D76D;
+	__asm        je     _T305;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8876019A;
-	__asm        je     near ptr 0x0042D757;
+	__asm        je     _T2ef;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T6f9:
 	__asm        cmp    dword ptr [ebp-8], 0x887601B8;
-	__asm        jg     near ptr 0x0042DB86;
+	__asm        jg     _T71e;
 
-	__asm        je     near ptr 0x0042D799;
+	__asm        je     _T331;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887601AE;
-	__asm        je     near ptr 0x0042D783;
+	__asm        je     _T31b;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T71e:
 	__asm        cmp    dword ptr [ebp-8], 0x887601CC;
-	__asm        jg     near ptr 0x0042DBAB;
+	__asm        jg     _T743;
 
-	__asm        je     near ptr 0x0042D7C5;
+	__asm        je     _T35d;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887601C2;
-	__asm        je     near ptr 0x0042D7AF;
+	__asm        je     _T347;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T743:
 	__asm        cmp    dword ptr [ebp-8], 0x887601E0;
-	__asm        jg     near ptr 0x0042DBD0;
+	__asm        jg     _T768;
 
-	__asm        je     near ptr 0x0042D7F1;
+	__asm        je     _T389;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887601D6;
-	__asm        je     near ptr 0x0042D7DB;
+	__asm        je     _T373;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T768:
 	__asm        cmp    dword ptr [ebp-8], 0x887601FE;
-	__asm        jg     near ptr 0x0042DBF5;
+	__asm        jg     _T78d;
 
-	__asm        je     near ptr 0x0042D833;
+	__asm        je     _T3cb;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887601EA;
-	__asm        je     near ptr 0x0042D807;
+	__asm        je     _T39f;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T78d:
 	__asm        cmp    dword ptr [ebp-8], 0x88760219;
-	__asm        jg     near ptr 0x0042DC1A;
+	__asm        jg     _T7b2;
 
-	__asm        je     near ptr 0x0042D85F;
+	__asm        je     _T3f7;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760208;
-	__asm        je     near ptr 0x0042D849;
+	__asm        je     _T3e1;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 
+_T7b2:
 	__asm        cmp    dword ptr [ebp-8], 0x8876021C;
-	__asm        je     near ptr 0x0042D875;
+	__asm        je     _T40d;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88760230;
-	__asm        je     near ptr 0x0042D88B;
+	__asm        je     _T423;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0042D8A1;
+	__asm        je     _T439;
 
-	__asm        jmp    near ptr 0x0042D8B7;
+	__asm        jmp    _T44f;
 // LINE 181:
+_T7db:
 	__asm        cmp    szErrorDescription, 0;
-	__asm        je     near ptr 0x0042DC5D;
+	__asm        je     _T7f5;
 // LINE 182:
 	__asm        mov    eax, szErrorDescription;
 	__asm        push   eax;
@@ -707,6 +781,7 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 183:
+_T7f5:
 	__asm        jmp    near ptr 0x0042DC62;
 }
 
@@ -737,211 +812,235 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0042DE2F;
+	__asm        jmp    _T17e;
 // LINE 212:
+_T19:
 	__asm        push   0x597C94;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 213:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 215:
+_T2f:
 	__asm        push   0x597CB0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 216:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 218:
+_T45:
 	__asm        push   0x597CD0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 219:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 221:
+_T5b:
 	__asm        push   0x597CF0;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 222:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 224:
+_T71:
 	__asm        push   0x597D0C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 225:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 227:
+_T87:
 	__asm        push   0x597D24;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 228:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 230:
+_T9d:
 	__asm        push   0x597D44;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 231:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 233:
+_Tb3:
 	__asm        push   0x597D60;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 234:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 236:
+_Tc9:
 	__asm        push   0x597D7C;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 237:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 239:
+_Tdf:
 	__asm        push   0x597D98;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 240:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 242:
+_Tf5:
 	__asm        push   0x597DB4;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 243:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 245:
+_T10b:
 	__asm        push   0x597DD8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 246:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 248:
+_T121:
 	__asm        push   0x597DF8;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 249:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 251:
+_T137:
 	__asm        push   0x597E14;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 252:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 254:
+_T14d:
 	__asm        push   0x597E34;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 255:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 257:
+_T163:
 	__asm        push   0x597E44;
 	__asm        mov    eax, szFullErrorDescription;
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 258:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 // LINE 259:
-	__asm        jmp    near ptr 0x0042DF36;
+	__asm        jmp    _T285;
 
+_T17e:
 	__asm        cmp    dword ptr [ebp-8], 0x80004005;
-	__asm        jg     near ptr 0x0042DE54;
+	__asm        jg     _T1a3;
 
-	__asm        je     near ptr 0x0042DD22;
+	__asm        je     _T71;
 
 	__asm        cmp    dword ptr [ebp-8], 0x80004001;
-	__asm        je     near ptr 0x0042DD7A;
+	__asm        je     _Tc9;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T1a3:
 	__asm        cmp    dword ptr [ebp-8], 0x8007000E;
-	__asm        jg     near ptr 0x0042DE79;
+	__asm        jg     _T1c8;
 
-	__asm        je     near ptr 0x0042DD4E;
+	__asm        je     _T9d;
 
 	__asm        cmp    dword ptr [ebp-8], 0x80040110;
-	__asm        je     near ptr 0x0042DDBC;
+	__asm        je     _T10b;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T1c8:
 	__asm        cmp    dword ptr [ebp-8], 0x8878000A;
-	__asm        jg     near ptr 0x0042DE9E;
+	__asm        jg     _T1ed;
 
-	__asm        je     near ptr 0x0042DCCA;
+	__asm        je     _T19;
 
 	__asm        cmp    dword ptr [ebp-8], 0x80070057;
-	__asm        je     near ptr 0x0042DCF6;
+	__asm        je     _T45;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T1ed:
 	__asm        cmp    dword ptr [ebp-8], 0x88780032;
-	__asm        jg     near ptr 0x0042DEC3;
+	__asm        jg     _T212;
 
-	__asm        je     near ptr 0x0042DD0C;
+	__asm        je     _T5b;
 
 	__asm        cmp    dword ptr [ebp-8], 0x8878001E;
-	__asm        je     near ptr 0x0042DCE0;
+	__asm        je     _T2f;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T212:
 	__asm        cmp    dword ptr [ebp-8], 0x88780064;
-	__asm        jg     near ptr 0x0042DEE8;
+	__asm        jg     _T237;
 
-	__asm        je     near ptr 0x0042DD64;
+	__asm        je     _Tb3;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88780046;
-	__asm        je     near ptr 0x0042DD38;
+	__asm        je     _T87;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T237:
 	__asm        cmp    dword ptr [ebp-8], 0x88780082;
-	__asm        jg     near ptr 0x0042DF0D;
+	__asm        jg     _T25c;
 
-	__asm        je     near ptr 0x0042DDA6;
+	__asm        je     _Tf5;
 
 	__asm        cmp    dword ptr [ebp-8], 0x88780078;
-	__asm        je     near ptr 0x0042DD90;
+	__asm        je     _Tdf;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 
+_T25c:
 	__asm        cmp    dword ptr [ebp-8], 0x88780096;
-	__asm        je     near ptr 0x0042DDD2;
+	__asm        je     _T121;
 
 	__asm        cmp    dword ptr [ebp-8], 0x887800A0;
-	__asm        je     near ptr 0x0042DDE8;
+	__asm        je     _T137;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0042DDFE;
+	__asm        je     _T14d;
 
-	__asm        jmp    near ptr 0x0042DE14;
+	__asm        jmp    _T163;
 // LINE 260:
+_T285:
 	__asm        cmp    szErrorDescription, 0;
-	__asm        je     near ptr 0x0042DF50;
+	__asm        je     _T29f;
 // LINE 261:
 	__asm        mov    eax, szErrorDescription;
 	__asm        push   eax;
@@ -950,6 +1049,7 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 262:
+_T29f:
 	__asm        jmp    near ptr 0x0042DF55;
 }
 

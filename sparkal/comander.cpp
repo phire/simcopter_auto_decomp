@@ -121,16 +121,18 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, pWindow;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jne    near ptr 0x0049ADAB;
+	__asm        jne    _T30;
 // LINE 32:
 	__asm        mov    ReturnWindow, 0;
 // LINE 33:
-	__asm        jmp    near ptr 0x0049ADB4;
+	__asm        jmp    _T39;
 // LINE 34:
+_T30:
 	__asm        mov    eax, pWindow;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 36:
+_T39:
 	__asm        mov    eax, ReturnWindow;
 	__asm        jmp    near ptr 0x0049ADBC;
 // LINE 37:
@@ -206,17 +208,19 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 // LINE 81:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0049AEC6;
+	__asm        jne    _T32;
 
 	__asm        push   0x51;
 	__asm        push   0x59A29C;
 	__asm        push   0x59A2C4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0049AECB;
+	__asm        jmp    _T37;
 
-	__asm        jmp    near ptr 0x0049AECB;
+_T32:
+	__asm        jmp    _T37;
 // LINE 82:
+_T37:
 	__asm        push   0;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

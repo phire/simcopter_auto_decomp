@@ -95,18 +95,20 @@ int32_t operator==(const class NotificationItem& P1, const class NotificationIte
 	__asm        mov    ecx, P2;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x0043E242;
+	__asm        jne    _T32;
 
 	__asm        mov    eax, P1;
 	__asm        mov    ecx, P2;
 	__asm        mov    ecx, [ecx+4];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jne    near ptr 0x0043E242;
+	__asm        jne    _T32;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0043E244;
+	__asm        jmp    _T34;
 
+_T32:
 	__asm        xor    eax, eax;
+_T34:
 	__asm        jmp    near ptr 0x0043E249;
 // LINE 32:
 }

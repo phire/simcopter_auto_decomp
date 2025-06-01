@@ -449,17 +449,19 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 // LINE 53:
 	__asm        movsx  eax, id;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00560A91;
+	__asm        jmp    _T8f;
 // LINE 56:
+_T15:
 	__asm        mov    eax, param;
 	__asm        push   eax;
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 57:
-	__asm        jmp    near ptr 0x00560AB4;
+	__asm        jmp    _Tb2;
 // LINE 59:
 // Block start:
 	struct YObjLang::AttrParam* par;
+_T26:
 	__asm        mov    eax, param;
 	__asm        mov    par, eax;
 // LINE 60:
@@ -474,9 +476,10 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 62:
-	__asm        jmp    near ptr 0x00560AB4;
+	__asm        jmp    _Tb2;
 // LINE 65:
 // Block end:
+_T4c:
 	__asm        mov    eax, param;
 	__asm        push   eax;
 	__asm        call   Swizzle2;
@@ -500,21 +503,23 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 69:
-	__asm        jmp    near ptr 0x00560AB4;
+	__asm        jmp    _Tb2;
 // LINE 71:
-	__asm        jmp    near ptr 0x00560AB4;
+	__asm        jmp    _Tb2;
 
+_T8f:
 	__asm        cmp    dword ptr [ebp-8], 1;
-	__asm        je     near ptr 0x00560A17;
+	__asm        je     _T15;
 
 	__asm        cmp    dword ptr [ebp-8], 2;
-	__asm        je     near ptr 0x00560A28;
+	__asm        je     _T26;
 
 	__asm        cmp    dword ptr [ebp-8], 6;
-	__asm        je     near ptr 0x00560A17;
+	__asm        je     _T15;
 
-	__asm        jmp    near ptr 0x00560A4E;
+	__asm        jmp    _T4c;
 // LINE 72:
+_Tb2:
 	__asm        jmp    near ptr 0x00560AB9;
 }
 

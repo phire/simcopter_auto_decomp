@@ -11,7 +11,7 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055F9AB;
+	__asm        je     _T8b;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x1C], eax;
@@ -29,14 +29,17 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0055F9A6;
+	__asm        jmp    _T86;
 _L45526:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   cBBase::~cBBase;
 	__asm        ret;
-	__asm        jmp    near ptr 0x0055F9B2;
+_T86:
+	__asm        jmp    _T92;
 
+_T8b:
 	__asm        mov    dword ptr [ebp-0x18], 0;
+_T92:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    thing, eax;
@@ -46,7 +49,7 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0055F9EE;
+	__asm        jne    _Tce;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE320;
@@ -54,12 +57,13 @@ _L45526:
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_Tce:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0055FA1F;
+	__asm        jne    _Tff;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE310;
@@ -67,6 +71,7 @@ _L45526:
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_Tff:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, thing;
@@ -91,7 +96,7 @@ _L45526:
 	__asm        mov    ecx, thing;
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0055FAA0;
+	__asm        je     _T180;
 
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -108,14 +113,16 @@ _L45526:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::GetResType;
 	__asm        cmp    ebx, eax;
-	__asm        je     near ptr 0x0055FABC;
+	__asm        je     _T19c;
 
+_T180:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2FC;
 	__asm        push   0xB1;
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T19c:
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0x20;
 	__asm        push   eax;
@@ -144,9 +151,10 @@ _L45526:
 	__asm        xor    eax, eax;
 	__asm        mov    al, [ebp-0x11C];
 	__asm        cmp    eax, 0x10;
-	__asm        jbe    near ptr 0x0055FB1F;
+	__asm        jbe    _T1ff;
 
 	__asm        mov    byte ptr [ebp-0x11C], 0x10;
+_T1ff:
 	__asm        push   0x10;
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0xC;
@@ -164,20 +172,22 @@ _L45526:
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        mov    eax, thing;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        je     near ptr 0x0055FB69;
+	__asm        je     _T249;
 
 	__asm        mov    eax, thing;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
 	__asm        test   ecx, ecx;
-	__asm        jne    near ptr 0x0055FB85;
+	__asm        jne    _T265;
 
+_T249:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2D4;
 	__asm        push   0xBC;
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T265:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -188,7 +198,7 @@ _L45526:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::Detach;
 	__asm        test   dword ptr [ebp-0x120], 0xFFFF;
-	__asm        je     near ptr 0x0055FBE0;
+	__asm        je     _T2c0;
 
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -202,6 +212,7 @@ _L45526:
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    ecx, [ebp-0x124];
 	__asm        call   dword ptr [eax+0xC];
+_T2c0:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -232,7 +243,7 @@ _L45526:
 	__asm        jmp    near ptr 0x0055FC41;
 // LINE 113:
 	__asm        mov    eax, thing;
-	__asm        jmp    near ptr 0x0055FC60;
+	__asm        jmp    _T340;
 // LINE 114:
 _L45522:
 	__asm        mov    eax, [ebp-0x14];
@@ -244,6 +255,7 @@ _L45521:
 	__asm        mov    eax, 0x5960E0;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T340:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }

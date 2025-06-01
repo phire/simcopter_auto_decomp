@@ -180,27 +180,31 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A03C8;
+	__asm        jle    _T28;
 
-	__asm        jmp    near ptr 0x004A03CD;
+	__asm        jmp    _T2d;
 
-	__asm        jmp    near ptr 0x004A03E6;
+_T28:
+	__asm        jmp    _T46;
 
-	__asm        jmp    near ptr 0x004A03DC;
+_T2d:
+	__asm        jmp    _T3c;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x004A03E6;
+	__asm        je     _T46;
 // LINE 40:
+_T3c:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A04E9;
+	__asm        jmp    _T149;
 // LINE 43:
+_T46:
 	__asm        cmp    name, 0;
-	__asm        je     near ptr 0x004A041D;
+	__asm        je     _T7d;
 // LINE 44:
 	__asm        mov    eax, name;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004A0416;
+	__asm        je     _T76;
 // LINE 45:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -210,29 +214,32 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 46:
-	__asm        jmp    near ptr 0x004A041D;
+	__asm        jmp    _T7d;
 // LINE 47:
+_T76:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A04E9;
+	__asm        jmp    _T149;
 // LINE 49:
+_T7d:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004A0433;
+	__asm        jne    _T93;
 // LINE 50:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A04E9;
+	__asm        jmp    _T149;
 // LINE 53:
+_T93:
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004A047D;
+	__asm        jne    _Tdd;
 // LINE 54:
 	__asm        cmp    bCreateIfNotFound, 0;
-	__asm        je     near ptr 0x004A0471;
+	__asm        je     _Td1;
 // LINE 55:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
 	__asm        and    eax, 0xFFFF;
@@ -243,21 +250,25 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        mov    ecx, this;
 	__asm        call   PFile::FileCreate;
 // LINE 56:
-	__asm        jmp    near ptr 0x004A0478;
+	__asm        jmp    _Td8;
 // LINE 57:
+_Td1:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A04E9;
+	__asm        jmp    _T149;
 // LINE 59:
-	__asm        jmp    near ptr 0x004A04C0;
+_Td8:
+	__asm        jmp    _T120;
 // LINE 60:
+_Tdd:
 	__asm        test   reinterpret_cast<uint8_t>(access), 0xF0;
-	__asm        jne    near ptr 0x004A0496;
+	__asm        jne    _Tf6;
 // LINE 61:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
 	__asm        and    eax, 0xFFFF;
 	__asm        or     eax, 0x40;
 	__asm        mov    access, ax;
 // LINE 64:
+_Tf6:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
 	__asm        and    eax, 0xF0;
 	__asm        push   eax;
@@ -272,18 +283,22 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x108], eax;
 // LINE 66:
+_T120:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A04DA;
+	__asm        jle    _T13a;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A04DC;
+	__asm        jmp    _T13c;
 
+_T13a:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A04E4;
+_T13c:
+	__asm        jmp    _T144;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    near ptr 0x004A04E9;
+_T144:
+	__asm        jmp    _T149;
 // LINE 67:
 }
 
@@ -292,33 +307,37 @@ int32_t PFile::Close() {
 // LINE 76:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A0511;
+	__asm        jle    _T21;
 
-	__asm        jmp    near ptr 0x004A0516;
+	__asm        jmp    _T26;
 
-	__asm        jmp    near ptr 0x004A0556;
+_T21:
+	__asm        jmp    _T66;
 
-	__asm        jmp    near ptr 0x004A0525;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004A0556;
+	__asm        je     _T66;
 // LINE 77:
+_T35:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004A0556;
+	__asm        jne    _T66;
 // LINE 78:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
 // LINE 79:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A055D;
+	__asm        jmp    _T6d;
 // LINE 82:
+_T66:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A055D;
+	__asm        jmp    _T6d;
 // LINE 83:
 }
 
@@ -329,17 +348,19 @@ long PFile::Length() {
 // LINE 94:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A0588;
+	__asm        jle    _T26;
 
-	__asm        jmp    near ptr 0x004A05D7;
+	__asm        jmp    _T75;
 
-	__asm        jmp    near ptr 0x004A0588;
+	__asm        jmp    _T26;
 
-	__asm        jmp    near ptr 0x004A0597;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x004A05D7;
+	__asm        jne    _T75;
 // LINE 95:
+_T35:
 	__asm        push   0;
 	__asm        push   0x180;
 	__asm        push   0;
@@ -347,7 +368,7 @@ long PFile::Length() {
 	__asm        mov    ecx, this;
 	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004A05D7;
+	__asm        je     _T75;
 // LINE 96:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
@@ -360,14 +381,15 @@ long PFile::Length() {
 	__asm        call   PFile::Close;
 // LINE 98:
 	__asm        mov    eax, lFileLength;
-	__asm        jmp    near ptr 0x004A05EE;
+	__asm        jmp    _T8c;
 // LINE 101:
+_T75:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
 	__asm        call   _filelength;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A05EE;
+	__asm        jmp    _T8c;
 // LINE 102:
 }
 
@@ -376,27 +398,31 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A0614;
+	__asm        jle    _T21;
 
-	__asm        jmp    near ptr 0x004A0619;
+	__asm        jmp    _T26;
 
-	__asm        jmp    near ptr 0x004A062F;
+_T21:
+	__asm        jmp    _T3c;
 
-	__asm        jmp    near ptr 0x004A0628;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004A062F;
+	__asm        je     _T3c;
 // LINE 114:
+_T35:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A06DF;
+	__asm        jmp    _Tec;
 // LINE 117:
+_T3c:
 	__asm        cmp    name, 0;
-	__asm        je     near ptr 0x004A0666;
+	__asm        je     _T73;
 // LINE 118:
 	__asm        mov    eax, name;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004A065F;
+	__asm        je     _T6c;
 // LINE 119:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -406,30 +432,34 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 120:
-	__asm        jmp    near ptr 0x004A0666;
+	__asm        jmp    _T73;
 // LINE 121:
+_T6c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A06DF;
+	__asm        jmp    _Tec;
 // LINE 123:
+_T73:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004A067C;
+	__asm        jne    _T89;
 // LINE 124:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A06DF;
+	__asm        jmp    _Tec;
 // LINE 125:
+_T89:
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004A069A;
+	__asm        je     _Ta7;
 // LINE 126:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A06DF;
+	__asm        jmp    _Tec;
 // LINE 127:
+_Ta7:
 	__asm        mov    eax, nAccessMode;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -442,16 +472,19 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A06D0;
+	__asm        jle    _Tdd;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A06D2;
+	__asm        jmp    _Tdf;
 
+_Tdd:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A06DA;
+_Tdf:
+	__asm        jmp    _Te7;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    near ptr 0x004A06DF;
+_Te7:
+	__asm        jmp    _Tec;
 // LINE 130:
 }
 
@@ -462,17 +495,19 @@ long PFile::FileExists(char * name) {
 
 // LINE 142:
 	__asm        cmp    name, 0;
-	__asm        je     near ptr 0x004A0710;
+	__asm        je     _T2a;
 // LINE 143:
 	__asm        mov    eax, name;
 	__asm        mov    szFilePathToUse, eax;
 // LINE 144:
-	__asm        jmp    near ptr 0x004A071F;
+	__asm        jmp    _T39;
 // LINE 145:
+_T2a:
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        mov    szFilePathToUse, eax;
 // LINE 148:
+_T39:
 	__asm        push   0x4000;
 	__asm        lea    eax, ofStruct.cBytes;
 	__asm        push   eax;
@@ -480,12 +515,14 @@ long PFile::FileExists(char * name) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3638];
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     near ptr 0x004A074B;
+	__asm        je     _T65;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A074D;
+	__asm        jmp    _T67;
 
+_T65:
 	__asm        xor    eax, eax;
+_T67:
 	__asm        jmp    near ptr 0x004A0752;
 // LINE 152:
 }
@@ -495,20 +532,24 @@ long PFile::SetPath(char * szPath) {
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A077A;
+	__asm        jle    _T21;
 
-	__asm        jmp    near ptr 0x004A077F;
+	__asm        jmp    _T26;
 
-	__asm        jmp    near ptr 0x004A0795;
+_T21:
+	__asm        jmp    _T3c;
 
-	__asm        jmp    near ptr 0x004A078E;
+_T26:
+	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004A0795;
+	__asm        je     _T3c;
 // LINE 163:
+_T35:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A07B2;
+	__asm        jmp    _T59;
 // LINE 164:
+_T3c:
 	__asm        mov    eax, szPath;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -518,7 +559,7 @@ long PFile::SetPath(char * szPath) {
 	__asm        add    esp, 8;
 // LINE 165:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A07B2;
+	__asm        jmp    _T59;
 // LINE 166:
 }
 
@@ -544,7 +585,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    tempPFile.<vftable>, 0x590468;
 	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
 	__asm        cmp    name, 0;
-	__asm        je     near ptr 0x004A0817;
+	__asm        je     _T5e;
 
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -552,9 +593,11 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x004A081E;
+	__asm        jmp    _T65;
 
+_T5e:
 	__asm        mov    tempPFile.szFilePath[0], 0;
+_T65:
 	__asm        jmp    near ptr 0x004A0823;
 // LINE 183:
 	__asm        push   0;
@@ -564,7 +607,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        lea    ecx, tempPFile.<vftable>;
 	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004A0993;
+	__asm        je     _T1da;
 // LINE 184:
 	__asm        lea    ecx, tempPFile.<vftable>;
 	__asm        call   PFile::Length;
@@ -576,30 +619,33 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    chBuffer, eax;
 // LINE 187:
 	__asm        cmp    chBuffer, 0;
-	__asm        je     near ptr 0x004A0934;
+	__asm        je     _T17b;
 // LINE 189:
 	__asm        mov    lCurrentValue, 0;
 // LINE 191:
 	__asm        mov    lCurrentBlockStartPosition, 0;
 // LINE 193:
-	__asm        jmp    near ptr 0x004A0883;
+	__asm        jmp    _Tca;
 
+_Tc3:
 	__asm        add    lCurrentBlockStartPosition, 0x7D00;
+_Tca:
 	__asm        mov    eax, lFileLength;
 	__asm        cmp    lCurrentBlockStartPosition, eax;
-	__asm        jge    near ptr 0x004A090B;
+	__asm        jge    _T152;
 // LINE 195:
 	__asm        mov    lUsedBlockSize, 0x7D00;
 // LINE 196:
 	__asm        mov    eax, lCurrentBlockStartPosition;
 	__asm        add    eax, 0x7D00;
 	__asm        cmp    eax, lFileLength;
-	__asm        jle    near ptr 0x004A08B0;
+	__asm        jle    _Tf7;
 // LINE 197:
 	__asm        mov    eax, lFileLength;
 	__asm        sub    eax, lCurrentBlockStartPosition;
 	__asm        mov    lUsedBlockSize, eax;
 // LINE 198:
+_Tf7:
 	__asm        jmp    near ptr 0x004A08B5;
 
 	__asm        mov    eax, lUsedBlockSize;
@@ -613,22 +659,26 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    lUsedBlockSize, eax;
 // LINE 199:
 	__asm        mov    lIndex, 0;
-	__asm        jmp    near ptr 0x004A08E1;
+	__asm        jmp    _T128;
 
+_T122:
 	__asm        inc    lIndex;
+_T128:
 	__asm        mov    eax, lIndex;
 	__asm        cmp    lUsedBlockSize, eax;
-	__asm        jle    near ptr 0x004A0906;
+	__asm        jle    _T14d;
 // LINE 200:
 	__asm        mov    eax, chBuffer;
 	__asm        mov    ecx, lIndex;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        add    lCurrentValue, edx;
-	__asm        jmp    near ptr 0x004A08DB;
+	__asm        jmp    _T122;
 // LINE 201:
-	__asm        jmp    near ptr 0x004A087C;
+_T14d:
+	__asm        jmp    _Tc3;
 // LINE 202:
+_T152:
 	__asm        mov    eax, chBuffer;
 	__asm        mov    [ebp-0x134], eax;
 	__asm        mov    eax, [ebp-0x134];
@@ -638,17 +688,20 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 204:
-	__asm        jmp    near ptr 0x004A0988;
+	__asm        jmp    _T1cf;
 // LINE 206:
+_T17b:
 	__asm        mov    lCurrentValue, 0;
 	__asm        mov    eax, lCurrentValue;
 	__asm        mov    lIndex, eax;
-	__asm        jmp    near ptr 0x004A094F;
+	__asm        jmp    _T196;
 
+_T190:
 	__asm        inc    lIndex;
+_T196:
 	__asm        mov    eax, lIndex;
 	__asm        cmp    lFileLength, eax;
-	__asm        jle    near ptr 0x004A0988;
+	__asm        jle    _T1cf;
 // LINE 207:
 	__asm        push   1;
 	__asm        lea    eax, chValue;
@@ -663,33 +716,39 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    al, chValue;
 	__asm        add    lCurrentValue, eax;
 // LINE 209:
-	__asm        jmp    near ptr 0x004A0949;
+	__asm        jmp    _T190;
 // LINE 211:
+_T1cf:
 	__asm        lea    ecx, tempPFile.<vftable>;
 	__asm        call   PFile::Close;
 // LINE 213:
+_T1da:
 	__asm        mov    eax, lCurrentValue;
 	__asm        mov    [ebp-0x138], eax;
 	__asm        mov    tempPFile.<vftable>, 0x590468;
 	__asm        cmp    tempPFile.Handle, 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004A09B5;
+	__asm        jle    _T1fc;
 
-	__asm        jmp    near ptr 0x004A09BA;
+	__asm        jmp    _T201;
 
-	__asm        jmp    near ptr 0x004A09E2;
+_T1fc:
+	__asm        jmp    _T229;
 
-	__asm        jmp    near ptr 0x004A09CC;
+_T201:
+	__asm        jmp    _T213;
 
 	__asm        cmp    dword ptr [ebp-0x140], 0;
-	__asm        je     near ptr 0x004A09E2;
+	__asm        je     _T229;
 
+_T213:
 	__asm        cmp    tempPFile.ShouldClose, 0;
-	__asm        je     near ptr 0x004A09E2;
+	__asm        je     _T229;
 
 	__asm        mov    eax, tempPFile.Handle;
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
+_T229:
 	__asm        jmp    near ptr 0x004A09E7;
 
 	__asm        mov    eax, [ebp-0x138];

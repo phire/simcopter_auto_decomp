@@ -13,32 +13,37 @@ long S2TileSize(long tile) {
 
 // LINE 46:
 	__asm        cmp    tile, 0x61;
-	__asm        jl     near ptr 0x0058E38D;
+	__asm        jl     _T1d;
 
 	__asm        cmp    tile, 0x6C;
-	__asm        jl     near ptr 0x0058E3A1;
+	__asm        jl     _T31;
 
+_T1d:
 	__asm        cmp    tile, 0x49;
-	__asm        jl     near ptr 0x0058E3AD;
+	__asm        jl     _T3d;
 
 	__asm        cmp    tile, 0x51;
-	__asm        jge    near ptr 0x0058E3AD;
+	__asm        jge    _T3d;
 // LINE 47:
+_T31:
 	__asm        mov    size, 2;
 // LINE 49:
-	__asm        jmp    near ptr 0x0058E3D1;
+	__asm        jmp    _T61;
 
+_T3d:
 	__asm        cmp    tile, 0x70;
-	__asm        jge    near ptr 0x0058E3C3;
+	__asm        jge    _T53;
 // LINE 50:
 	__asm        mov    size, 1;
 // LINE 52:
-	__asm        jmp    near ptr 0x0058E3D1;
+	__asm        jmp    _T61;
 // LINE 53:
+_T53:
 	__asm        mov    eax, tile;
 	__asm        movsx  eax, word ptr [eax*2+0x59BF68];
 	__asm        mov    size, eax;
 // LINE 55:
+_T61:
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x0058E3D9;
 // LINE 56:

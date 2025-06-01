@@ -23,7 +23,7 @@ cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
-	__asm        jmp    near ptr 0x0055E8B7;
+	__asm        jmp    _T87;
 _L44596:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 4;
@@ -33,6 +33,7 @@ _L44595:
 	__asm        mov    eax, 0x596030;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T87:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -50,21 +51,24 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055E9FF;
+	__asm        jmp    _T4f;
 
+_T46:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
+_T4f:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055EA11;
+	__asm        je     _T61;
 
 	__asm        inc    dword ptr [ebp-0x18];
-	__asm        jmp    near ptr 0x0055E9F6;
+	__asm        jmp    _T46;
 
+_T61:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, [ebp-0x18];
-	__asm        je     near ptr 0x0055EA3A;
+	__asm        je     _T8a;
 
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
@@ -72,12 +76,13 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 	__asm        push   0x59A254;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T8a:
 	__asm        jmp    near ptr 0x0055EA3F;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0055EA67;
+	__asm        je     _Tb7;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE27C;
@@ -86,21 +91,24 @@ cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 46:
+_Tb7:
 	__asm        jmp    near ptr 0x0055EA6C;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   0x0055EA7D;
-	__asm        jmp    near ptr 0x0055EAAF;
+	__asm        jmp    _Tff;
 _L44659:
 	__asm        cmp    this, 0;
-	__asm        je     near ptr 0x0055EA95;
+	__asm        je     _Te5;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x0055EA9C;
+	__asm        jmp    _Tec;
 
+_Te5:
 	__asm        mov    dword ptr [ebp-0x10], 0;
+_Tec:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   PtrList<cCopterAnim>::~PtrList<cCopterAnim>;
 	__asm        ret;
@@ -108,6 +116,7 @@ _L44658:
 	__asm        mov    eax, 0x596058;
 	__asm        jmp    near ptr 0x0056F590;
 
+_Tff:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -123,82 +132,96 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        jl     near ptr 0x0055EAF5;
+	__asm        jl     _T35;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0x20;
-	__asm        jb     near ptr 0x0055EB0E;
+	__asm        jb     _T4e;
 
+_T35:
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD7C;
 	__asm        push   0x6D;
 	__asm        push   0x5BE1EC;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T4e:
 	__asm        cmp    this, 0;
-	__asm        je     near ptr 0x0055EB26;
+	__asm        je     _T66;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x0055EB2D;
+	__asm        jmp    _T6d;
 
+_T66:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
+_T6d:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0055EB4A;
+	__asm        je     _T8a;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055EB51;
+	__asm        jmp    _T91;
 
+_T8a:
 	__asm        mov    dword ptr [ebp-0x14], 0;
+_T91:
 	__asm        jmp    near ptr 0x0055EB56;
 
 	__asm        jmp    near ptr 0x0055EB5B;
 
-	__asm        jmp    near ptr 0x0055EB78;
+	__asm        jmp    _Tb8;
 
+_Ta0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055EB73;
+	__asm        je     _Tb3;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055EB78;
+_Tb3:
+	__asm        jmp    _Tb8;
 
+_Tb8:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055EB98;
+	__asm        je     _Td8;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0055EC2C;
+	__asm        je     _T16c;
 
-	__asm        jmp    near ptr 0x0055EBAC;
+	__asm        jmp    _Tec;
 
-	__asm        jmp    near ptr 0x0055EBA2;
+	__asm        jmp    _Te2;
 
-	__asm        jmp    near ptr 0x0055EC2C;
+_Td8:
+	__asm        jmp    _T16c;
 
-	__asm        jmp    near ptr 0x0055EBAC;
+	__asm        jmp    _Tec;
 
+_Te2:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x0055EC2C;
+	__asm        je     _T16c;
 
+_Tec:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055EBC8;
+	__asm        je     _T108;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        jmp    _T114;
 
-	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        jmp    _T114;
 
+_T108:
 	__asm        mov    dword ptr [ebp-0x20], 0;
-	__asm        jmp    near ptr 0x0055EBD4;
+	__asm        jmp    _T114;
 
+_T114:
 	__asm        jmp    near ptr 0x0055EBD9;
 
 	__asm        mov    eax, [ebp-0x20];
@@ -209,32 +232,38 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 	__asm        mov    cl, [ebp-0x10];
 	__asm        shr    edx, cl;
 	__asm        cmp    eax, edx;
-	__asm        jne    near ptr 0x0055EC27;
+	__asm        jne    _T167;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055EC10;
+	__asm        je     _T150;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x0055EC22;
+	__asm        jmp    _T162;
 
-	__asm        jmp    near ptr 0x0055EC1C;
+	__asm        jmp    _T15c;
 
+_T150:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    near ptr 0x0055EC22;
+	__asm        jmp    _T162;
 
+_T15c:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x0055EC38;
+_T162:
+	__asm        jmp    _T178;
 
-	__asm        jmp    near ptr 0x0055EB60;
+_T167:
+	__asm        jmp    _Ta0;
 
+_T16c:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    near ptr 0x0055EC38;
+	__asm        jmp    _T178;
 
+_T178:
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0055EC5B;
+	__asm        je     _T19b;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2A0;
@@ -243,38 +272,45 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 120:
+_T19b:
 	__asm        cmp    thing, 0;
-	__asm        je     near ptr 0x0055ECB5;
+	__asm        je     _T1f5;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0055EC7C;
+	__asm        jmp    _T1bc;
 
+_T1b3:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
+_T1bc:
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0055EC9E;
+	__asm        je     _T1de;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, thing;
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x0055EC99;
+	__asm        jne    _T1d9;
 
-	__asm        jmp    near ptr 0x0055ECB5;
+	__asm        jmp    _T1f5;
 
-	__asm        jmp    near ptr 0x0055EC73;
+_T1d9:
+	__asm        jmp    _T1b3;
 
-	__asm        jmp    near ptr 0x0055ECBA;
+_T1de:
+	__asm        jmp    _T1fa;
 
-	__asm        jmp    near ptr 0x0055ECB5;
+	__asm        jmp    _T1f5;
 
 	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
-	__asm        je     near ptr 0x0055ECBA;
+	__asm        je     _T1fa;
 
-	__asm        jmp    near ptr 0x0055ECF0;
+_T1f5:
+	__asm        jmp    _T230;
 
+_T1fa:
 	__asm        push   8;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -291,8 +327,9 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    eax, this;
 	__asm        inc    word ptr [eax+8];
-	__asm        jmp    near ptr 0x0055ECF0;
+	__asm        jmp    _T230;
 // LINE 121:
+_T230:
 	__asm        jmp    near ptr 0x0055ECF5;
 }
 
@@ -308,7 +345,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 // LINE 181:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0055ED53;
+	__asm        jne    _T53;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE188;
@@ -317,6 +354,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 182:
+_T53:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -329,7 +367,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0055ED9E;
+	__asm        jne    _T9e;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE1A8;
@@ -338,9 +376,10 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 184:
+_T9e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x0055EDCA;
+	__asm        jne    _Tca;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE168;
@@ -348,6 +387,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        push   0x5BE1EC;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_Tca:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x20], eax;
@@ -372,13 +412,15 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        mov    numThings, ax;
 // LINE 190:
 	__asm        mov    count, 1;
-	__asm        jmp    near ptr 0x0055EE23;
+	__asm        jmp    _T123;
 
+_T11f:
 	__asm        inc    count;
+_T123:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, numThings;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x0055F197;
+	__asm        jg     _T497;
 // LINE 192:
 	__asm        push   0x55E6F0;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(count);
@@ -392,7 +434,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        mov    h, eax;
 // LINE 193:
 	__asm        cmp    h, 0;
-	__asm        jne    near ptr 0x0055EE7D;
+	__asm        jne    _T17d;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE148;
@@ -400,6 +442,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        push   0x5BE1EC;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T17d:
 	__asm        mov    eax, h;
 	__asm        mov    [ebp-0x148], eax;
 // LINE 195:
@@ -409,7 +452,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        je     near ptr 0x0055EEE7;
+	__asm        je     _T1e7;
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -425,14 +468,17 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x0055EEE2;
+	__asm        jmp    _T1e2;
 _L45278:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   cBBase::~cBBase;
 	__asm        ret;
-	__asm        jmp    near ptr 0x0055EEEE;
+_T1e2:
+	__asm        jmp    _T1ee;
 
+_T1e7:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
+_T1ee:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x24], eax;
@@ -441,7 +487,7 @@ _L45278:
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   dword ptr [eax+4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0055EF2A;
+	__asm        jne    _T22a;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE320;
@@ -449,12 +495,13 @@ _L45278:
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T22a:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0055EF5B;
+	__asm        jne    _T25b;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE310;
@@ -462,6 +509,7 @@ _L45278:
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T25b:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x24];
@@ -486,7 +534,7 @@ _L45278:
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   dword ptr [eax+4];
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0055EFDF;
+	__asm        je     _T2df;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -503,14 +551,16 @@ _L45278:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::GetResType;
 	__asm        cmp    ebx, eax;
-	__asm        je     near ptr 0x0055EFFB;
+	__asm        je     _T2fb;
 
+_T2df:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2FC;
 	__asm        push   0xB1;
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T2fb:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 0x20;
 	__asm        push   eax;
@@ -539,9 +589,10 @@ _L45278:
 	__asm        xor    eax, eax;
 	__asm        mov    al, [ebp-0x130];
 	__asm        cmp    eax, 0x10;
-	__asm        jbe    near ptr 0x0055F05E;
+	__asm        jbe    _T35e;
 
 	__asm        mov    byte ptr [ebp-0x130], 0x10;
+_T35e:
 	__asm        push   0x10;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 0xC;
@@ -559,20 +610,22 @@ _L45278:
 	__asm        mov    [ecx+0x1C], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        je     near ptr 0x0055F0A8;
+	__asm        je     _T3a8;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
 	__asm        test   ecx, ecx;
-	__asm        jne    near ptr 0x0055F0C4;
+	__asm        jne    _T3c4;
 
+_T3a8:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2D4;
 	__asm        push   0xBC;
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T3c4:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -583,7 +636,7 @@ _L45278:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::Detach;
 	__asm        test   dword ptr [ebp-0x134], 0xFFFF;
-	__asm        je     near ptr 0x0055F11F;
+	__asm        je     _T41f;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -597,6 +650,7 @@ _L45278:
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    ecx, [ebp-0x138];
 	__asm        call   dword ptr [eax+0xC];
+_T41f:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -626,7 +680,7 @@ _L45278:
 	__asm        call   dword ptr [eax];
 	__asm        jmp    near ptr 0x0055F180;
 
-	__asm        jmp    near ptr 0x0055F192;
+	__asm        jmp    _T492;
 _L45274:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -634,10 +688,12 @@ _L45274:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 196:
-	__asm        jmp    near ptr 0x0055EE1F;
+_T492:
+	__asm        jmp    _T11f;
 // LINE 197:
+_T497:
 	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
-	__asm        je     near ptr 0x0055F1BB;
+	__asm        je     _T4bb;
 // LINE 198:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -646,11 +702,13 @@ _L45274:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 199:
-	__asm        jmp    near ptr 0x0055F1CA;
+_T4bb:
+	__asm        jmp    _T4ca;
 _L45273:
 	__asm        mov    eax, 0x596080;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T4ca:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -668,21 +726,24 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055FE1F;
+	__asm        jmp    _T4f;
 
+_T46:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
+_T4f:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055FE31;
+	__asm        je     _T61;
 
 	__asm        inc    dword ptr [ebp-0x18];
-	__asm        jmp    near ptr 0x0055FE16;
+	__asm        jmp    _T46;
 
+_T61:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, [ebp-0x18];
-	__asm        je     near ptr 0x0055FE5A;
+	__asm        je     _T8a;
 
 	__asm        push   0x8C085;
 	__asm        push   0x59A24C;
@@ -690,12 +751,13 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 	__asm        push   0x59A254;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T8a:
 	__asm        jmp    near ptr 0x0055FE5F;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0055FE87;
+	__asm        je     _Tb7;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE27C;
@@ -704,21 +766,24 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 46:
+_Tb7:
 	__asm        jmp    near ptr 0x0055FE8C;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   0x0055FE9D;
-	__asm        jmp    near ptr 0x0055FECF;
+	__asm        jmp    _Tff;
 _L45612:
 	__asm        cmp    this, 0;
-	__asm        je     near ptr 0x0055FEB5;
+	__asm        je     _Te5;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x0055FEBC;
+	__asm        jmp    _Tec;
 
+_Te5:
 	__asm        mov    dword ptr [ebp-0x10], 0;
+_Tec:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   PtrList<cCopterBody>::~PtrList<cCopterBody>;
 	__asm        ret;
@@ -726,6 +791,7 @@ _L45611:
 	__asm        mov    eax, 0x596110;
 	__asm        jmp    near ptr 0x0056F590;
 
+_Tff:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -741,82 +807,96 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    dword ptr [ebp-0x10], 8;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        jl     near ptr 0x0055FF15;
+	__asm        jl     _T35;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0x20;
-	__asm        jb     near ptr 0x0055FF2E;
+	__asm        jb     _T4e;
 
+_T35:
 	__asm        push   0x8C085;
 	__asm        push   0x5BBD7C;
 	__asm        push   0x6D;
 	__asm        push   0x5BE1EC;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T4e:
 	__asm        cmp    this, 0;
-	__asm        je     near ptr 0x0055FF46;
+	__asm        je     _T66;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x0055FF4D;
+	__asm        jmp    _T6d;
 
+_T66:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
+_T6d:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0055FF6A;
+	__asm        je     _T8a;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055FF71;
+	__asm        jmp    _T91;
 
+_T8a:
 	__asm        mov    dword ptr [ebp-0x14], 0;
+_T91:
 	__asm        jmp    near ptr 0x0055FF76;
 
 	__asm        jmp    near ptr 0x0055FF7B;
 
-	__asm        jmp    near ptr 0x0055FF98;
+	__asm        jmp    _Tb8;
 
+_Ta0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055FF93;
+	__asm        je     _Tb3;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055FF98;
+_Tb3:
+	__asm        jmp    _Tb8;
 
+_Tb8:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055FFB8;
+	__asm        je     _Td8;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0056004C;
+	__asm        je     _T16c;
 
-	__asm        jmp    near ptr 0x0055FFCC;
+	__asm        jmp    _Tec;
 
-	__asm        jmp    near ptr 0x0055FFC2;
+	__asm        jmp    _Te2;
 
-	__asm        jmp    near ptr 0x0056004C;
+_Td8:
+	__asm        jmp    _T16c;
 
-	__asm        jmp    near ptr 0x0055FFCC;
+	__asm        jmp    _Tec;
 
+_Te2:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x0056004C;
+	__asm        je     _T16c;
 
+_Tec:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0055FFE8;
+	__asm        je     _T108;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        jmp    _T114;
 
-	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        jmp    _T114;
 
+_T108:
 	__asm        mov    dword ptr [ebp-0x20], 0;
-	__asm        jmp    near ptr 0x0055FFF4;
+	__asm        jmp    _T114;
 
+_T114:
 	__asm        jmp    near ptr 0x0055FFF9;
 
 	__asm        mov    eax, [ebp-0x20];
@@ -827,32 +907,38 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 	__asm        mov    cl, [ebp-0x10];
 	__asm        shr    edx, cl;
 	__asm        cmp    eax, edx;
-	__asm        jne    near ptr 0x00560047;
+	__asm        jne    _T167;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x00560030;
+	__asm        je     _T150;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00560042;
+	__asm        jmp    _T162;
 
-	__asm        jmp    near ptr 0x0056003C;
+	__asm        jmp    _T15c;
 
+_T150:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    near ptr 0x00560042;
+	__asm        jmp    _T162;
 
+_T15c:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00560058;
+_T162:
+	__asm        jmp    _T178;
 
-	__asm        jmp    near ptr 0x0055FF80;
+_T167:
+	__asm        jmp    _Ta0;
 
+_T16c:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    near ptr 0x00560058;
+	__asm        jmp    _T178;
 
+_T178:
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0056007B;
+	__asm        je     _T19b;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2A0;
@@ -861,38 +947,45 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 120:
+_T19b:
 	__asm        cmp    thing, 0;
-	__asm        je     near ptr 0x005600D5;
+	__asm        je     _T1f5;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0056009C;
+	__asm        jmp    _T1bc;
 
+_T1b3:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
+_T1bc:
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x005600BE;
+	__asm        je     _T1de;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, thing;
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x005600B9;
+	__asm        jne    _T1d9;
 
-	__asm        jmp    near ptr 0x005600D5;
+	__asm        jmp    _T1f5;
 
-	__asm        jmp    near ptr 0x00560093;
+_T1d9:
+	__asm        jmp    _T1b3;
 
-	__asm        jmp    near ptr 0x005600DA;
+_T1de:
+	__asm        jmp    _T1fa;
 
-	__asm        jmp    near ptr 0x005600D5;
+	__asm        jmp    _T1f5;
 
 	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
-	__asm        je     near ptr 0x005600DA;
+	__asm        je     _T1fa;
 
-	__asm        jmp    near ptr 0x00560110;
+_T1f5:
+	__asm        jmp    _T230;
 
+_T1fa:
 	__asm        push   8;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -909,8 +1002,9 @@ void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    eax, this;
 	__asm        inc    word ptr [eax+8];
-	__asm        jmp    near ptr 0x00560110;
+	__asm        jmp    _T230;
 // LINE 121:
+_T230:
 	__asm        jmp    near ptr 0x00560115;
 }
 

@@ -24,13 +24,14 @@ struct VRResource* LoadPalette() {
 	__asm        mov    res, eax;
 // LINE 57:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D210A;
+	__asm        jne    _T3a;
 // LINE 58:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 59:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2152;
+	__asm        jmp    _T82;
 // LINE 62:
+_T3a:
 	__asm        push   0x300;
 	__asm        mov    eax, res;
 	__asm        add    eax, 0x10;
@@ -38,11 +39,12 @@ struct VRResource* LoadPalette() {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D212D;
+	__asm        jne    _T5d;
 // LINE 63:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2152;
+	__asm        jmp    _T82;
 // LINE 94:
+_T5d:
 	__asm        mov    eax, res;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 95:
@@ -53,7 +55,7 @@ struct VRResource* LoadPalette() {
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 97:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D2152;
+	__asm        jmp    _T82;
 // LINE 99:
 }
 

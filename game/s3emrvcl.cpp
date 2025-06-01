@@ -379,7 +379,7 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 // LINE 77:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
-	__asm        je     near ptr 0x0054158F;
+	__asm        je     _T3c;
 // LINE 79:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xF6], 1;
@@ -389,10 +389,11 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 	__asm        mov    [ecx+0xFA], eax;
 // LINE 81:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00541596;
+	__asm        jmp    _T43;
 // LINE 84:
+_T3c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00541596;
+	__asm        jmp    _T43;
 // LINE 85:
 }
 
@@ -402,15 +403,16 @@ struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t id) {
 	__asm        mov    eax, id;
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        test   byte ptr [eax+8], 2;
-	__asm        je     near ptr 0x005415C9;
+	__asm        je     _T2c;
 // LINE 92:
 	__asm        mov    eax, id;
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        add    eax, 0xC;
-	__asm        jmp    near ptr 0x005415D0;
+	__asm        jmp    _T33;
 // LINE 95:
+_T2c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x005415D0;
+	__asm        jmp    _T33;
 // LINE 96:
 }
 
@@ -457,18 +459,19 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 
 // LINE 261:
 	__asm        cmp    responceType, 0xFFFFFFFF;
-	__asm        je     near ptr 0x00541689;
+	__asm        je     _T28;
 // LINE 262:
 	__asm        mov    eax, responceType;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x11E], eax;
 // LINE 264:
+_T28:
 	__asm        mov    eax, eState;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x294], eax;
 // LINE 266:
 	__asm        cmp    result.pRGV, 0;
-	__asm        jne    near ptr 0x0054186F;
+	__asm        jne    _T20e;
 // LINE 271:
 // Block start:
 	struct Edge* pEdge;
@@ -519,7 +522,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    pEdge, eax;
 // LINE 283:
 	__asm        cmp    startGoal2.pRGV, 0;
-	__asm        je     near ptr 0x005417AB;
+	__asm        je     _T14a;
 // LINE 285:
 // Block start:
 	unsigned char yindex;
@@ -542,7 +545,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+1];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x0054178A;
+	__asm        jne    _T129;
 
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -550,7 +553,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        xor    eax, eax;
 	__asm        mov    al, yindex;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x0054178A;
+	__asm        jne    _T129;
 // LINE 288:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 1;
@@ -562,8 +565,9 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 291:
-	__asm        jmp    near ptr 0x005417A6;
+	__asm        jmp    _T145;
 // LINE 293:
+_T129:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 0;
 // LINE 294:
@@ -575,8 +579,10 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        movsw;
 // LINE 297:
 // Block end:
-	__asm        jmp    near ptr 0x005417C7;
+_T145:
+	__asm        jmp    _T166;
 // LINE 299:
+_T14a:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 1;
 // LINE 300:
@@ -587,8 +593,9 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 305:
+_T166:
 	__asm        cmp    destGoal2.pRGV, 0;
-	__asm        je     near ptr 0x00541852;
+	__asm        je     _T1f1;
 // LINE 307:
 // Block start:
 	int32_t yindex;
@@ -613,19 +620,20 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x00541835;
+	__asm        jne    _T1d4;
 
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x2C];
 	__asm        cmp    ecx, yindex;
-	__asm        jne    near ptr 0x00541835;
+	__asm        jne    _T1d4;
 // LINE 310:
 	__asm        mov    eax, this;
 	__asm        dec    byte ptr [eax+0x293];
 // LINE 312:
-	__asm        jmp    near ptr 0x0054184D;
+	__asm        jmp    _T1ec;
 // LINE 314:
+_T1d4:
 	__asm        mov    al, reinterpret_cast<uint8_t>(destGoal1.edgeIndex);
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -634,8 +642,10 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    [edx+ecx+0x191], al;
 // LINE 317:
 // Block end:
-	__asm        jmp    near ptr 0x0054186A;
+_T1ec:
+	__asm        jmp    _T209;
 // LINE 319:
+_T1f1:
 	__asm        mov    al, reinterpret_cast<uint8_t>(destGoal1.edgeIndex);
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -644,26 +654,30 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        mov    [edx+ecx+0x191], al;
 // LINE 322:
 // Block end:
-	__asm        jmp    near ptr 0x00541911;
+_T209:
+	__asm        jmp    _T2b0;
 // LINE 325:
+_T20e:
 	__asm        cmp    startGoal1.pRGV, 0;
-	__asm        jne    near ptr 0x0054189F;
+	__asm        jne    _T23e;
 
 	__asm        cmp    startGoal2.pRGV, 0;
-	__asm        jne    near ptr 0x0054189F;
+	__asm        jne    _T23e;
 
 	__asm        push   0x145;
 	__asm        push   0x5B8268;
 	__asm        push   0x5B828C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005418A4;
+	__asm        jmp    _T243;
 
-	__asm        jmp    near ptr 0x005418A4;
+_T23e:
+	__asm        jmp    _T243;
 // LINE 326:
+_T243:
 	__asm        mov    eax, result.pRGV;
 	__asm        cmp    startGoal1.pRGV, eax;
-	__asm        jne    near ptr 0x005418CA;
+	__asm        jne    _T269;
 // LINE 328:
 	__asm        lea    esi, startGoal2.pRGV;
 	__asm        mov    edi, this;
@@ -672,11 +686,12 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 330:
-	__asm        jmp    near ptr 0x00541911;
+	__asm        jmp    _T2b0;
 
+_T269:
 	__asm        mov    eax, result.pRGV;
 	__asm        cmp    startGoal2.pRGV, eax;
-	__asm        jne    near ptr 0x005418F0;
+	__asm        jne    _T28f;
 // LINE 332:
 	__asm        lea    esi, startGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -685,17 +700,19 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 334:
-	__asm        jmp    near ptr 0x00541911;
+	__asm        jmp    _T2b0;
 // LINE 336:
+_T28f:
 	__asm        push   0x150;
 	__asm        push   0x5B82B0;
 	__asm        push   0x5B82D4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541911;
+	__asm        jmp    _T2b0;
 
-	__asm        jmp    near ptr 0x00541911;
+	__asm        jmp    _T2b0;
 // LINE 343:
+_T2b0:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x11C], ax;
@@ -754,18 +771,19 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    [ecx+0x298], eax;
 // LINE 368:
 	__asm        cmp    responceType, 0xFFFFFFFF;
-	__asm        je     near ptr 0x005419EE;
+	__asm        je     _T34;
 // LINE 369:
 	__asm        mov    eax, responceType;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x11E], eax;
 // LINE 371:
+_T34:
 	__asm        mov    eax, eState;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x294], eax;
 // LINE 374:
 	__asm        cmp    result.pRGV, 0;
-	__asm        jne    near ptr 0x00541A62;
+	__asm        jne    _Ta8;
 // LINE 379:
 	__asm        mov    eax, stationGoal1.pRGV;
 	__asm        mov    al, [eax];
@@ -804,6 +822,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 388:
+_Ta8:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x11C], ax;
@@ -814,59 +833,67 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
-	__asm        je     near ptr 0x00541AAA;
+	__asm        je     _Tf0;
 
 	__asm        push   0x189;
 	__asm        push   0x5B82DC;
 	__asm        push   0x5B8300;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541AAF;
+	__asm        jmp    _Tf5;
 
-	__asm        jmp    near ptr 0x00541AAF;
+_Tf0:
+	__asm        jmp    _Tf5;
 // LINE 394:
+_Tf5:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x00541AD8;
+	__asm        jne    _T11e;
 
 	__asm        push   0x18A;
 	__asm        push   0x5B8318;
 	__asm        push   0x5B833C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541ADD;
+	__asm        jmp    _T123;
 
-	__asm        jmp    near ptr 0x00541ADD;
+_T11e:
+	__asm        jmp    _T123;
 // LINE 395:
+_T123:
 	__asm        cmp    destGoal1.pRGV, 0;
-	__asm        jne    near ptr 0x00541B03;
+	__asm        jne    _T149;
 
 	__asm        push   0x18B;
 	__asm        push   0x5B8358;
 	__asm        push   0x5B837C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541B08;
+	__asm        jmp    _T14e;
 
-	__asm        jmp    near ptr 0x00541B08;
+_T149:
+	__asm        jmp    _T14e;
 // LINE 396:
+_T14e:
 	__asm        cmp    stationGoal1.pRGV, 0;
-	__asm        jne    near ptr 0x00541B2E;
+	__asm        jne    _T174;
 
 	__asm        push   0x18C;
 	__asm        push   0x5B838C;
 	__asm        push   0x5B83B0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541B33;
+	__asm        jmp    _T179;
 
-	__asm        jmp    near ptr 0x00541B33;
+_T174:
+	__asm        jmp    _T179;
 // LINE 397:
+_T179:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 2;
 // LINE 399:
 	__asm        cmp    result.pRGV, 0;
-	__asm        jne    near ptr 0x00541CB9;
+	__asm        jne    _T2ff;
 // LINE 406:
 // Block start:
 	struct Edge* pEdge;
@@ -880,7 +907,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    pEdge, eax;
 // LINE 407:
 	__asm        cmp    stationGoal2.pRGV, 0;
-	__asm        je     near ptr 0x00541BF5;
+	__asm        je     _T23b;
 // LINE 409:
 // Block start:
 	unsigned char yindex;
@@ -903,7 +930,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+1];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x00541BD4;
+	__asm        jne    _T21a;
 
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -911,7 +938,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        xor    eax, eax;
 	__asm        mov    al, yindex;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x00541BD4;
+	__asm        jne    _T21a;
 // LINE 412:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 1;
@@ -923,8 +950,9 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 415:
-	__asm        jmp    near ptr 0x00541BF0;
+	__asm        jmp    _T236;
 // LINE 417:
+_T21a:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 0;
 // LINE 418:
@@ -936,8 +964,10 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        movsw;
 // LINE 421:
 // Block end:
-	__asm        jmp    near ptr 0x00541C11;
+_T236:
+	__asm        jmp    _T257;
 // LINE 423:
+_T23b:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 1;
 // LINE 424:
@@ -948,8 +978,9 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 429:
+_T257:
 	__asm        cmp    destGoal2.pRGV, 0;
-	__asm        je     near ptr 0x00541C9C;
+	__asm        je     _T2e2;
 // LINE 431:
 // Block start:
 	int32_t yindex;
@@ -974,19 +1005,20 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x00541C7F;
+	__asm        jne    _T2c5;
 
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x2C];
 	__asm        cmp    ecx, yindex;
-	__asm        jne    near ptr 0x00541C7F;
+	__asm        jne    _T2c5;
 // LINE 434:
 	__asm        mov    eax, this;
 	__asm        dec    byte ptr [eax+0x293];
 // LINE 436:
-	__asm        jmp    near ptr 0x00541C97;
+	__asm        jmp    _T2dd;
 // LINE 438:
+_T2c5:
 	__asm        mov    al, reinterpret_cast<uint8_t>(destGoal1.edgeIndex);
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -995,8 +1027,10 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    [edx+ecx+0x191], al;
 // LINE 441:
 // Block end:
-	__asm        jmp    near ptr 0x00541CB4;
+_T2dd:
+	__asm        jmp    _T2fa;
 // LINE 443:
+_T2e2:
 	__asm        mov    al, reinterpret_cast<uint8_t>(destGoal1.edgeIndex);
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -1005,25 +1039,29 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    [edx+ecx+0x191], al;
 // LINE 446:
 // Block end:
-	__asm        jmp    near ptr 0x00541D9D;
+_T2fa:
+	__asm        jmp    _T3e3;
 // LINE 451:
+_T2ff:
 	__asm        cmp    stationGoal1.pRGV, 0;
-	__asm        jne    near ptr 0x00541CE9;
+	__asm        jne    _T32f;
 
 	__asm        cmp    stationGoal2.pRGV, 0;
-	__asm        jne    near ptr 0x00541CE9;
+	__asm        jne    _T32f;
 
 	__asm        push   0x1C3;
 	__asm        push   0x5B83C4;
 	__asm        push   0x5B83E8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541CEE;
+	__asm        jmp    _T334;
 
-	__asm        jmp    near ptr 0x00541CEE;
+_T32f:
+	__asm        jmp    _T334;
 // LINE 452:
+_T334:
 	__asm        cmp    stationGoal1.pRGV, 0;
-	__asm        jne    near ptr 0x00541D0F;
+	__asm        jne    _T355;
 // LINE 454:
 	__asm        lea    esi, stationGoal2.pRGV;
 	__asm        mov    edi, this;
@@ -1032,10 +1070,11 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 456:
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 
+_T355:
 	__asm        cmp    stationGoal2.pRGV, 0;
-	__asm        jne    near ptr 0x00541D30;
+	__asm        jne    _T376;
 // LINE 458:
 	__asm        lea    esi, stationGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -1044,11 +1083,12 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 461:
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 
+_T376:
 	__asm        mov    eax, result.pRGV;
 	__asm        cmp    stationGoal1.pRGV, eax;
-	__asm        jne    near ptr 0x00541D56;
+	__asm        jne    _T39c;
 // LINE 463:
 	__asm        lea    esi, stationGoal2.pRGV;
 	__asm        mov    edi, this;
@@ -1057,11 +1097,12 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 465:
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 
+_T39c:
 	__asm        mov    eax, result.pRGV;
 	__asm        cmp    stationGoal2.pRGV, eax;
-	__asm        jne    near ptr 0x00541D7C;
+	__asm        jne    _T3c2;
 // LINE 467:
 	__asm        lea    esi, stationGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -1070,17 +1111,19 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 469:
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 // LINE 471:
+_T3c2:
 	__asm        push   0x1D7;
 	__asm        push   0x5B8410;
 	__asm        push   0x5B8434;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 
-	__asm        jmp    near ptr 0x00541D9D;
+	__asm        jmp    _T3e3;
 // LINE 475:
+_T3e3:
 	__asm        mov    eax, startDir;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE2], eax;
@@ -1132,42 +1175,49 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00541E9C;
+	__asm        jmp    _T4e2;
 // LINE 492:
+_T498:
 	__asm        mov    car_type, 0;
 // LINE 493:
-	__asm        jmp    near ptr 0x00541EC8;
+	__asm        jmp    _T50e;
 // LINE 495:
+_T4a4:
 	__asm        mov    car_type, 1;
 // LINE 496:
-	__asm        jmp    near ptr 0x00541EC8;
+	__asm        jmp    _T50e;
 // LINE 498:
+_T4b0:
 	__asm        mov    car_type, 2;
 // LINE 499:
-	__asm        jmp    near ptr 0x00541EC8;
+	__asm        jmp    _T50e;
 // LINE 500:
+_T4bc:
 	__asm        push   0x1F4;
 	__asm        push   0x5B843C;
 	__asm        push   0x5B8460;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541E97;
+	__asm        jmp    _T4dd;
 
-	__asm        jmp    near ptr 0x00541E97;
+	__asm        jmp    _T4dd;
 // LINE 501:
-	__asm        jmp    near ptr 0x00541EC8;
+_T4dd:
+	__asm        jmp    _T50e;
 
+_T4e2:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x11C;
-	__asm        je     near ptr 0x00541E52;
+	__asm        je     _T498;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0x11D;
-	__asm        je     near ptr 0x00541E5E;
+	__asm        je     _T4a4;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0x11F;
-	__asm        je     near ptr 0x00541E6A;
+	__asm        je     _T4b0;
 
-	__asm        jmp    near ptr 0x00541E76;
+	__asm        jmp    _T4bc;
 // LINE 503:
+_T50e:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x11C;
 	__asm        push   eax;
@@ -1200,17 +1250,19 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        jne    near ptr 0x00541F4E;
+	__asm        jne    _T594;
 
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00541F53;
+	__asm        jmp    _T599;
 
-	__asm        jmp    near ptr 0x00541F53;
+_T594:
+	__asm        jmp    _T599;
 
+_T599:
 	__asm        jmp    near ptr 0x00541F58;
 
 	__asm        mov    eax, [ebp-0x1C];
@@ -1292,7 +1344,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        movsw;
 // LINE 538:
 	__asm        cmp    result.pRGV, 0;
-	__asm        jne    near ptr 0x0054212C;
+	__asm        jne    _T138;
 // LINE 540:
 	__asm        lea    eax, destGoal2.pRGV;
 	__asm        push   eax;
@@ -1350,17 +1402,19 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    pathFound, eax;
 // LINE 550:
 	__asm        cmp    pathFound, 0;
-	__asm        jne    near ptr 0x00542127;
+	__asm        jne    _T133;
 
 	__asm        push   0x226;
 	__asm        push   0x5B8468;
 	__asm        push   0x5B848C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0054212C;
+	__asm        jmp    _T138;
 
-	__asm        jmp    near ptr 0x0054212C;
+_T133:
+	__asm        jmp    _T138;
 // LINE 553:
+_T138:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
 	__asm        push   eax;
@@ -1445,9 +1499,9 @@ void EmergencyVehicleClass::AdjustSpeed() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x005422B9;
+	__asm        jmp    _T8b;
 // LINE 630:
-	__asm        jmp    near ptr 0x005422E4;
+	__asm        jmp    _Tb6;
 // LINE 632:
 	__asm        push   0x1CCCC;
 	__asm        mov    eax, this;
@@ -1458,7 +1512,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 633:
-	__asm        jmp    near ptr 0x005422E4;
+	__asm        jmp    _Tb6;
 // LINE 635:
 	__asm        push   0x14000;
 	__asm        mov    eax, this;
@@ -1469,23 +1523,25 @@ void EmergencyVehicleClass::AdjustSpeed() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 636:
-	__asm        jmp    near ptr 0x005422E4;
+	__asm        jmp    _Tb6;
 // LINE 638:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xDE], 0;
 // LINE 639:
-	__asm        jmp    near ptr 0x005422E4;
+	__asm        jmp    _Tb6;
 // LINE 640:
-	__asm        jmp    near ptr 0x005422E4;
+	__asm        jmp    _Tb6;
 
+_T8b:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        cmp    dword ptr [ebp-8], 4;
-	__asm        ja     near ptr 0x005422E4;
+	__asm        ja     _Tb6;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x5422D0];
 // Switch pointers
 // LINE 641:
+_Tb6:
 	__asm        jmp    near ptr 0x005422E9;
 }
 
@@ -1541,29 +1597,32 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 676:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x294], 1;
-	__asm        jne    near ptr 0x005423A0;
+	__asm        jne    _T2d;
 // LINE 677:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    near ptr 0x00542416;
+	__asm        jmp    _Ta3;
 // LINE 680:
+_T2d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x292];
 	__asm        cmp    ecx, 0x100;
-	__asm        jl     near ptr 0x005423D3;
+	__asm        jl     _T60;
 
 	__asm        push   0x2A8;
 	__asm        push   0x5B8498;
 	__asm        push   0x5B84BC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005423D8;
+	__asm        jmp    _T65;
 
-	__asm        jmp    near ptr 0x005423D8;
+_T60:
+	__asm        jmp    _T65;
 // LINE 683:
+_T65:
 	__asm        mov    eax, this;
 	__asm        mov    al, [eax+0x292];
 	__asm        mov    [ebp-4], al;
@@ -1578,7 +1637,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
 	__asm        mov    eax, [eax+edx*4+0x593480];
-	__asm        jmp    near ptr 0x00542416;
+	__asm        jmp    _Ta3;
 // LINE 684:
 }
 
@@ -1614,36 +1673,40 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        mov    eax, [eax+ecx*4+0x67ED30];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jne    near ptr 0x005424AA;
+	__asm        jne    _T49;
 
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005424AF;
+	__asm        jmp    _T4e;
 
-	__asm        jmp    near ptr 0x005424AF;
+_T49:
+	__asm        jmp    _T4e;
 
+_T4e:
 	__asm        jmp    near ptr 0x005424B4;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 946:
 	__asm        cmp    cellPointer, 0;
-	__asm        jne    near ptr 0x005424E0;
+	__asm        jne    _T7f;
 
 	__asm        push   0x3B2;
 	__asm        push   0x5B84E0;
 	__asm        push   0x5B8504;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005424E5;
+	__asm        jmp    _T84;
 
-	__asm        jmp    near ptr 0x005424E5;
+_T7f:
+	__asm        jmp    _T84;
 // LINE 948:
+_T84:
 	__asm        cmp    cellPointer, 0;
-	__asm        je     near ptr 0x00542564;
+	__asm        je     _T103;
 // LINE 950:
 // Block start:
 	struct _DYOBJ_INST** dyptrptr;
@@ -1651,44 +1714,49 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
 // LINE 952:
+_T97:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00542537;
+	__asm        je     _Td6;
 // LINE 955:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x126;
 	__asm        mov    ecx, dyptrptr;
 	__asm        cmp    eax, [ecx];
-	__asm        jne    near ptr 0x0054252A;
+	__asm        jne    _Tc9;
 // LINE 958:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x126];
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 959:
-	__asm        jmp    near ptr 0x00542569;
+	__asm        jmp    _T108;
 // LINE 961:
+_Tc9:
 	__asm        mov    eax, dyptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptrptr, eax;
 // LINE 962:
-	__asm        jmp    near ptr 0x005424F8;
+	__asm        jmp    _T97;
 // LINE 963:
+_Td6:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x0054255F;
+	__asm        jne    _Tfe;
 
 	__asm        push   0x3C3;
 	__asm        push   0x5B8510;
 	__asm        push   0x5B8534;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00542564;
+	__asm        jmp    _T103;
 
-	__asm        jmp    near ptr 0x00542564;
+_Tfe:
+	__asm        jmp    _T103;
 // LINE 965:
 // Block end:
-	__asm        jmp    near ptr 0x00542569;
+_T103:
+	__asm        jmp    _T108;
 }
 
 // FUNCTION: COPTER_D 0x00542570
@@ -1704,36 +1772,40 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x005425B9;
+	__asm        jne    _T49;
 
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005425BE;
+	__asm        jmp    _T4e;
 
-	__asm        jmp    near ptr 0x005425BE;
+_T49:
+	__asm        jmp    _T4e;
 
+_T4e:
 	__asm        jmp    near ptr 0x005425C3;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    cellPointer, eax;
 // LINE 987:
 	__asm        cmp    cellPointer, 0;
-	__asm        jne    near ptr 0x005425EF;
+	__asm        jne    _T7f;
 
 	__asm        push   0x3DB;
 	__asm        push   0x5B8540;
 	__asm        push   0x5B8564;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005425F4;
+	__asm        jmp    _T84;
 
-	__asm        jmp    near ptr 0x005425F4;
+_T7f:
+	__asm        jmp    _T84;
 // LINE 989:
+_T84:
 	__asm        cmp    cellPointer, 0;
-	__asm        je     near ptr 0x00542620;
+	__asm        je     _Tb0;
 // LINE 991:
 	__asm        mov    eax, cellPointer;
 	__asm        mov    eax, [eax+0x10];
@@ -1745,11 +1817,13 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 	__asm        mov    ecx, cellPointer;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 994:
-	__asm        jmp    near ptr 0x00542625;
+	__asm        jmp    _Tb5;
 // LINE 996:
-	__asm        jmp    near ptr 0x0054262A;
+_Tb0:
+	__asm        jmp    _Tba;
 // LINE 998:
-	__asm        jmp    near ptr 0x0054262A;
+_Tb5:
+	__asm        jmp    _Tba;
 }
 
 // FUNCTION: COPTER_D 0x00542631
@@ -1792,19 +1866,21 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 
 // LINE 1353:
 	__asm        cmp    mapx, 0x80;
-	__asm        jge    near ptr 0x005426E2;
+	__asm        jge    _T37;
 
 	__asm        cmp    mapx, 0;
-	__asm        jl     near ptr 0x005426E2;
+	__asm        jl     _T37;
 
 	__asm        cmp    mapy, 0x80;
-	__asm        jge    near ptr 0x005426E2;
+	__asm        jge    _T37;
 
 	__asm        cmp    mapy, 0;
-	__asm        jge    near ptr 0x005426E7;
+	__asm        jge    _T3c;
 // LINE 1354:
-	__asm        jmp    near ptr 0x005427F0;
+_T37:
+	__asm        jmp    _T145;
 // LINE 1356:
+_T3c:
 	__asm        mov    eax, responseType;
 	__asm        mov    emergencyType, eax;
 // LINE 1357:
@@ -1813,18 +1889,19 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 // LINE 1359:
 	__asm        mov    eax, responseType;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x005427C3;
+	__asm        jmp    _T118;
 // LINE 1363:
 	__asm        push   0x553;
 	__asm        push   0x5B8570;
 	__asm        push   0x5B8594;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0054271F;
+	__asm        jmp    _T74;
 
-	__asm        jmp    near ptr 0x0054271F;
+	__asm        jmp    _T74;
 // LINE 1365:
-	__asm        jmp    near ptr 0x005427EB;
+_T74:
+	__asm        jmp    _T140;
 // LINE 1370:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
@@ -1837,7 +1914,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        call   FireEngineClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1371:
-	__asm        jmp    near ptr 0x005427EB;
+	__asm        jmp    _T140;
 // LINE 1375:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
@@ -1850,7 +1927,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        call   AmbulanceClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1376:
-	__asm        jmp    near ptr 0x005427EB;
+	__asm        jmp    _T140;
 // LINE 1381:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
@@ -1863,7 +1940,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        call   PoliceCarClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1382:
-	__asm        jmp    near ptr 0x005427EB;
+	__asm        jmp    _T140;
 // LINE 1386:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
@@ -1876,29 +1953,33 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        call   PoliceCarClass::Dispatch;
 	__asm        add    esp, 0x10;
 // LINE 1387:
-	__asm        jmp    near ptr 0x005427EB;
+	__asm        jmp    _T140;
 // LINE 1391:
+_Ted:
 	__asm        push   0x56F;
 	__asm        push   0x5B859C;
 	__asm        push   0x5B85C0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005427B9;
+	__asm        jmp    _T10e;
 
-	__asm        jmp    near ptr 0x005427B9;
+	__asm        jmp    _T10e;
 // LINE 1393:
-	__asm        jmp    near ptr 0x005427EB;
+_T10e:
+	__asm        jmp    _T140;
 // LINE 1395:
-	__asm        jmp    near ptr 0x005427EB;
+	__asm        jmp    _T140;
 
+_T118:
 	__asm        cmp    dword ptr [ebp-0xC], 4;
-	__asm        ja     near ptr 0x00542798;
+	__asm        ja     _Ted;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x5427D7];
 // Switch pointers
 // LINE 1396:
-	__asm        jmp    near ptr 0x005427F0;
+_T140:
+	__asm        jmp    _T145;
 }
 
 // FUNCTION: COPTER_D 0x005427f5
@@ -1914,20 +1995,22 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
 	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1412:
+_T1e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startVertex.x;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x00542837;
+	__asm        jne    _T42;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.yindex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startVertex.yindex;
 	__asm        cmp    eax, ecx;
-	__asm        je     near ptr 0x005428B9;
+	__asm        je     _Tc4;
 // LINE 1414:
+_T42:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
 	__asm        mov    eax, [eax*4+0x5C3828];
@@ -1951,27 +2034,31 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
 	__asm        cmp    eax, 0xFF;
-	__asm        je     near ptr 0x0054288A;
+	__asm        je     _T95;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.yindex;
 	__asm        cmp    eax, 0xFF;
-	__asm        jne    near ptr 0x005428A6;
+	__asm        jne    _Tb1;
 
+_T95:
 	__asm        push   0x589;
 	__asm        push   0x5B85C8;
 	__asm        push   0x5B85EC;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005428AB;
+	__asm        jmp    _Tb6;
 
-	__asm        jmp    near ptr 0x005428AB;
+_Tb1:
+	__asm        jmp    _Tb6;
 // LINE 1418:
+_Tb6:
 	__asm        mov    eax, this;
 	__asm        inc    byte ptr [eax+0x293];
 // LINE 1424:
-	__asm        jmp    near ptr 0x00542813;
+	__asm        jmp    _T1e;
 // LINE 1432:
+_Tc4:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
 	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1433:
@@ -1980,11 +2067,13 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	__asm        mov    cl, [eax+0x293];
 	__asm        sub    ecx, 2;
 	__asm        mov    i, ecx;
-	__asm        jmp    near ptr 0x005428DA;
+	__asm        jmp    _Te5;
 
+_Te2:
 	__asm        dec    i;
+_Te5:
 	__asm        cmp    i, 0;
-	__asm        jl     near ptr 0x0054292F;
+	__asm        jl     _T13a;
 // LINE 1436:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
@@ -2012,8 +2101,9 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	__asm        mov    edx, this;
 	__asm        mov    [ecx+edx+0x192], al;
 // LINE 1440:
-	__asm        jmp    near ptr 0x005428D7;
+	__asm        jmp    _Te2;
 // LINE 1441:
+_T13a:
 	__asm        jmp    near ptr 0x00542934;
 }
 
@@ -2041,12 +2131,14 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        mov    face, eax;
 // LINE 1463:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x0054297B;
+	__asm        jmp    _T40;
 
+_T3d:
 	__asm        inc    count;
+_T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x005429CC;
+	__asm        jle    _T91;
 // LINE 1465:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -2056,7 +2148,7 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        add    esp, 8;
 // LINE 1466:
 	__asm        cmp    finfo.Plotter, 0x19;
-	__asm        jne    near ptr 0x005429B8;
+	__asm        jne    _T7d;
 // LINE 1468:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 1469:
@@ -2067,14 +2159,16 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 1471:
+_T7d:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1472:
-	__asm        jmp    near ptr 0x00542978;
+	__asm        jmp    _T3d;
 // LINE 1473:
+_T91:
 	__asm        jmp    near ptr 0x005429D1;
 }
 
@@ -2102,12 +2196,14 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        mov    face, eax;
 // LINE 1486:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x00542A16;
+	__asm        jmp    _T40;
 
+_T3d:
 	__asm        inc    count;
+_T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x00542A6B;
+	__asm        jle    _T95;
 // LINE 1488:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -2117,7 +2213,7 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        add    esp, 8;
 // LINE 1489:
 	__asm        cmp    finfo.Plotter, 0x19;
-	__asm        jne    near ptr 0x00542A57;
+	__asm        jne    _T81;
 // LINE 1491:
 	__asm        mov    eax, finfo.Attribute;
 	__asm        or     eax, 0x80000000;
@@ -2130,14 +2226,16 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 1494:
+_T81:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1495:
-	__asm        jmp    near ptr 0x00542A13;
+	__asm        jmp    _T3d;
 // LINE 1496:
+_T95:
 	__asm        jmp    near ptr 0x00542A70;
 }
 
@@ -2227,10 +2325,11 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 1548:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
-	__asm        jne    near ptr 0x00542BAD;
+	__asm        jne    _T1d;
 // LINE 1550:
-	__asm        jmp    near ptr 0x00542D73;
+	__asm        jmp    _T1e3;
 // LINE 1554:
+_T1d:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2314,42 +2413,49 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00542D1C;
+	__asm        jmp    _T18c;
 // LINE 1575:
+_T142:
 	__asm        mov    car_type, 0;
 // LINE 1576:
-	__asm        jmp    near ptr 0x00542D48;
+	__asm        jmp    _T1b8;
 // LINE 1578:
+_T14e:
 	__asm        mov    car_type, 1;
 // LINE 1579:
-	__asm        jmp    near ptr 0x00542D48;
+	__asm        jmp    _T1b8;
 // LINE 1581:
+_T15a:
 	__asm        mov    car_type, 2;
 // LINE 1582:
-	__asm        jmp    near ptr 0x00542D48;
+	__asm        jmp    _T1b8;
 // LINE 1583:
+_T166:
 	__asm        push   0x62F;
 	__asm        push   0x5B8618;
 	__asm        push   0x5B863C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00542D17;
+	__asm        jmp    _T187;
 
-	__asm        jmp    near ptr 0x00542D17;
+	__asm        jmp    _T187;
 // LINE 1584:
-	__asm        jmp    near ptr 0x00542D48;
+_T187:
+	__asm        jmp    _T1b8;
 
+_T18c:
 	__asm        cmp    dword ptr [ebp-0xC], 0x11C;
-	__asm        je     near ptr 0x00542CD2;
+	__asm        je     _T142;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0x11D;
-	__asm        je     near ptr 0x00542CDE;
+	__asm        je     _T14e;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0x11F;
-	__asm        je     near ptr 0x00542CEA;
+	__asm        je     _T15a;
 
-	__asm        jmp    near ptr 0x00542CF6;
+	__asm        jmp    _T166;
 // LINE 1586:
+_T1b8:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x11C;
 	__asm        push   eax;
@@ -2365,7 +2471,7 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        call   S3MapAddCarInfo;
 	__asm        add    esp, 0x14;
 // LINE 1587:
-	__asm        jmp    near ptr 0x00542D73;
+	__asm        jmp    _T1e3;
 }
 
 

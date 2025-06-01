@@ -348,15 +348,16 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004CB903;
+	__asm        je     _T3f;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CB903;
+	__asm        jmp    _T3f;
 // LINE 92:
+_T3f:
 	__asm        jmp    near ptr 0x004CB908;
 }
 
@@ -369,21 +370,22 @@ int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004CB943;
+	__asm        je     _T36;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CB943;
+	__asm        jmp    _T36;
 // LINE 97:
+_T36:
 	__asm        push   0x110;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x004CB9A4;
+	__asm        je     _T97;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -399,11 +401,13 @@ int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004CB9AE;
+	__asm        jmp    _Ta1;
 
+_T97:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 98:
+_Ta1:
 	__asm        push   0;
 	__asm        push   0x180;
 	__asm        push   0;
@@ -425,15 +429,16 @@ void cLZAPFileBitStream::Close() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004CBA08;
+	__asm        je     _T36;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBA08;
+	__asm        jmp    _T36;
 // LINE 104:
+_T36:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 105:
@@ -445,22 +450,25 @@ unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBy
 // LINE 109:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBA8E;
+	__asm        je     _T72;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004CBA4D;
+	__asm        jle    _T31;
 
-	__asm        jmp    near ptr 0x004CBA52;
+	__asm        jmp    _T36;
 
-	__asm        jmp    near ptr 0x004CBA8E;
+_T31:
+	__asm        jmp    _T72;
 
-	__asm        jmp    near ptr 0x004CBA61;
+_T36:
+	__asm        jmp    _T45;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004CBA8E;
+	__asm        je     _T72;
 // LINE 110:
+_T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
@@ -475,10 +483,11 @@ unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBy
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004CBA95;
+	__asm        jmp    _T79;
 // LINE 111:
+_T72:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004CBA95;
+	__asm        jmp    _T79;
 // LINE 112:
 }
 
@@ -487,22 +496,25 @@ unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nB
 // LINE 116:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBB0E;
+	__asm        je     _T72;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004CBACD;
+	__asm        jle    _T31;
 
-	__asm        jmp    near ptr 0x004CBAD2;
+	__asm        jmp    _T36;
 
-	__asm        jmp    near ptr 0x004CBB0E;
+_T31:
+	__asm        jmp    _T72;
 
-	__asm        jmp    near ptr 0x004CBAE1;
+_T36:
+	__asm        jmp    _T45;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004CBB0E;
+	__asm        je     _T72;
 // LINE 117:
+_T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
@@ -517,10 +529,11 @@ unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nB
 	__asm        push   eax;
 	__asm        call   _write;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004CBB15;
+	__asm        jmp    _T79;
 // LINE 118:
+_T72:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004CBB15;
+	__asm        jmp    _T79;
 // LINE 119:
 }
 
@@ -529,7 +542,7 @@ void cLZAPFileBitStream::Rewind() {
 // LINE 123:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBB59;
+	__asm        je     _T3d;
 // LINE 124:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -541,8 +554,9 @@ void cLZAPFileBitStream::Rewind() {
 	__asm        push   eax;
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004CBB59;
+	__asm        jmp    _T3d;
 // LINE 125:
+_T3d:
 	__asm        jmp    near ptr 0x004CBB5E;
 }
 
@@ -551,7 +565,7 @@ void cLZAPFileBitStream::RewindToMark() {
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBBAB;
+	__asm        je     _T48;
 // LINE 130:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -567,8 +581,9 @@ void cLZAPFileBitStream::RewindToMark() {
 	__asm        push   eax;
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004CBBAB;
+	__asm        jmp    _T48;
 // LINE 131:
+_T48:
 	__asm        jmp    near ptr 0x004CBBB0;
 }
 
@@ -577,7 +592,7 @@ void cLZAPFileBitStream::Mark() {
 // LINE 134:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBBF9;
+	__asm        je     _T44;
 // LINE 135:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -592,11 +607,13 @@ void cLZAPFileBitStream::Mark() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 // LINE 136:
-	__asm        jmp    near ptr 0x004CBC03;
+	__asm        jmp    _T4e;
 // LINE 137:
+_T44:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 138:
+_T4e:
 	__asm        jmp    near ptr 0x004CBC08;
 }
 
@@ -605,15 +622,16 @@ long cLZAPFileBitStream::Size() {
 // LINE 141:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004CBC36;
+	__asm        je     _T29;
 // LINE 142:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
 	__asm        call   PFile::Length;
-	__asm        jmp    near ptr 0x004CBC3D;
+	__asm        jmp    _T30;
 // LINE 143:
+_T29:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004CBC3D;
+	__asm        jmp    _T30;
 // LINE 144:
 }
 
@@ -738,12 +756,14 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        call   dword ptr [eax];
 // LINE 230:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBD66;
+	__asm        jmp    _T2e;
 
+_T2b:
 	__asm        inc    loop;
+_T2e:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CBD94;
+	__asm        jge    _T5c;
 // LINE 231:
 	__asm        push   0x20;
 	__asm        mov    eax, loop;
@@ -757,15 +777,18 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBD63;
+	__asm        jmp    _T2b;
 // LINE 232:
+_T5c:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBDA3;
+	__asm        jmp    _T6b;
 
+_T68:
 	__asm        inc    loop;
+_T6b:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CBDD4;
+	__asm        jge    _T9c;
 // LINE 233:
 	__asm        push   2;
 	__asm        mov    eax, loop;
@@ -780,15 +803,18 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBDA0;
+	__asm        jmp    _T68;
 // LINE 234:
+_T9c:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBDE3;
+	__asm        jmp    _Tab;
 
+_Ta8:
 	__asm        inc    loop;
+_Tab:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CBE14;
+	__asm        jge    _Tdc;
 // LINE 235:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -803,15 +829,18 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBDE0;
+	__asm        jmp    _Ta8;
 // LINE 236:
+_Tdc:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBE23;
+	__asm        jmp    _Teb;
 
+_Te8:
 	__asm        inc    loop;
+_Teb:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CBE54;
+	__asm        jge    _T11c;
 // LINE 237:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -826,15 +855,18 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBE20;
+	__asm        jmp    _Te8;
 // LINE 238:
+_T11c:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBE63;
+	__asm        jmp    _T12b;
 
+_T128:
 	__asm        inc    loop;
+_T12b:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CBE94;
+	__asm        jge    _T15c;
 // LINE 239:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -849,14 +881,17 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004CBE60;
+	__asm        jmp    _T128;
 // LINE 242:
+_T15c:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CBEA3;
+	__asm        jmp    _T16b;
 
+_T168:
 	__asm        inc    loop;
+_T16b:
 	__asm        cmp    loop, 4;
-	__asm        jge    near ptr 0x004CBFBE;
+	__asm        jge    _T286;
 // LINE 244:
 	__asm        mov    eax, loop;
 	__asm        mov    ecx, eax;
@@ -873,7 +908,7 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    ecx, ds:[0x63A578];
 	__asm        movsx  eax, word ptr [ecx+eax*2];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004CBF10;
+	__asm        jne    _T1d8;
 // LINE 246:
 	__asm        push   0x59C168;
 	__asm        mov    eax, loop;
@@ -888,8 +923,9 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        shl    eax, 5;
 	__asm        mov    byte ptr [eax+0x639250], 5;
 // LINE 249:
-	__asm        jmp    near ptr 0x004CBF59;
+	__asm        jmp    _T221;
 // LINE 250:
+_T1d8:
 	__asm        mov    eax, loop;
 	__asm        mov    ecx, ds:[0x63A578];
 	__asm        mov    ax, [ecx+eax*2];
@@ -914,6 +950,7 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        shl    ecx, 5;
 	__asm        mov    [ecx+0x639250], al;
 // LINE 254:
+_T221:
 	__asm        mov    eax, loop;
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
@@ -947,8 +984,9 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 	__asm        mov    edx, ds:[0x63984C];
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 257:
-	__asm        jmp    near ptr 0x004CBEA0;
+	__asm        jmp    _T168;
 // LINE 258:
+_T286:
 	__asm        jmp    near ptr 0x004CBFC3;
 }
 
@@ -1009,14 +1047,15 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::OpenRead;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004CC06D;
+	__asm        jne    _T6a;
 // LINE 303:
 	__asm        mov    dword ptr [ebp-0x580], 0;
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x580];
-	__asm        jmp    near ptr 0x004CD531;
+	__asm        jmp    _T152e;
 // LINE 306:
+_T6a:
 	__asm        push   0x2C;
 	__asm        lea    eax, header.type[0];
 	__asm        push   eax;
@@ -1035,7 +1074,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        add    esp, 8;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004CC0E5;
+	__asm        je     _Te2;
 // LINE 310:
 	__asm        mov    dword ptr [ebp-0x584], 0;
 	__asm        mov    memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
@@ -1048,15 +1087,17 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x584];
-	__asm        jmp    near ptr 0x004CD531;
+	__asm        jmp    _T152e;
 // LINE 314:
+_Te2:
 	__asm        mov    memstrm.curPos, 0;
 	__asm        mov    memstrm.nodeNo, 0;
 	__asm        jmp    near ptr 0x004CC0F7;
 // LINE 317:
 	__asm        mov    dword ptr [ebp-0x594], 0;
+_Tfe:
 	__asm        cmp    dword ptr [ebp-0x594], 4;
-	__asm        jae    near ptr 0x004CC1AC;
+	__asm        jae    _T1a9;
 
 	__asm        jmp    near ptr 0x004CC113;
 
@@ -1065,10 +1106,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC12E;
+	__asm        jne    _T12b;
 
-	__asm        jmp    near ptr 0x004CC1B1;
+	__asm        jmp    _T1ae;
 
+_T12b:
 	__asm        jmp    near ptr 0x004CC133;
 
 	__asm        jmp    near ptr 0x004CC138;
@@ -1077,7 +1119,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC177;
+	__asm        ja     _T174;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC155;
@@ -1087,11 +1129,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC170;
+	__asm        jne    _T16d;
 
-	__asm        jmp    near ptr 0x004CC1B1;
+	__asm        jmp    _T1ae;
 
+_T16d:
 	__asm        mov    memstrm.curPos, 0;
+_T174:
 	__asm        jmp    near ptr 0x004CC17C;
 
 	__asm        jmp    near ptr 0x004CC181;
@@ -1105,17 +1149,21 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ebp+ecx-0x138], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x594];
-	__asm        jmp    near ptr 0x004CC101;
+	__asm        jmp    _Tfe;
 
-	__asm        jmp    near ptr 0x004CC1B1;
+_T1a9:
+	__asm        jmp    _T1ae;
 // LINE 318:
+_T1ae:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CC1C0;
+	__asm        jmp    _T1bd;
 
+_T1ba:
 	__asm        inc    loop;
+_T1bd:
 	__asm        mov    eax, tempLong;
 	__asm        cmp    loop, eax;
-	__asm        jge    near ptr 0x004CC1E6;
+	__asm        jge    _T1e3;
 // LINE 319:
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        push   eax;
@@ -1123,8 +1171,9 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   eax;
 	__asm        call   SCXReadPlayer;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x004CC1BD;
+	__asm        jmp    _T1ba;
 // LINE 322:
+_T1e3:
 	__asm        mov    eax, ds:[0x639830];
 	__asm        push   eax;
 	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
@@ -1149,8 +1198,9 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ebp-0x59C], eax;
 // LINE 331:
 	__asm        mov    dword ptr [ebp-0x598], 0;
+_T22e:
 	__asm        cmp    dword ptr [ebp-0x598], 0x20;
-	__asm        jae    near ptr 0x004CC2DE;
+	__asm        jae    _T2db;
 
 	__asm        jmp    near ptr 0x004CC243;
 
@@ -1159,10 +1209,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC25E;
+	__asm        jne    _T25b;
 
-	__asm        jmp    near ptr 0x004CC2E3;
+	__asm        jmp    _T2e0;
 
+_T25b:
 	__asm        jmp    near ptr 0x004CC263;
 
 	__asm        jmp    near ptr 0x004CC268;
@@ -1171,7 +1222,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC2A7;
+	__asm        ja     _T2a4;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC285;
@@ -1181,11 +1232,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC2A0;
+	__asm        jne    _T29d;
 
-	__asm        jmp    near ptr 0x004CC2E3;
+	__asm        jmp    _T2e0;
 
+_T29d:
 	__asm        mov    memstrm.curPos, 0;
+_T2a4:
 	__asm        jmp    near ptr 0x004CC2AC;
 
 	__asm        jmp    near ptr 0x004CC2B1;
@@ -1200,13 +1253,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x598];
-	__asm        jmp    near ptr 0x004CC231;
+	__asm        jmp    _T22e;
 
-	__asm        jmp    near ptr 0x004CC2E3;
+_T2db:
+	__asm        jmp    _T2e0;
 // LINE 334:
+_T2e0:
 	__asm        mov    dword ptr [ebp-0x5A0], 0;
+_T2ea:
 	__asm        cmp    dword ptr [ebp-0x5A0], 4;
-	__asm        jae    near ptr 0x004CC398;
+	__asm        jae    _T395;
 
 	__asm        jmp    near ptr 0x004CC2FF;
 
@@ -1215,10 +1271,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC31A;
+	__asm        jne    _T317;
 
-	__asm        jmp    near ptr 0x004CC39D;
+	__asm        jmp    _T39a;
 
+_T317:
 	__asm        jmp    near ptr 0x004CC31F;
 
 	__asm        jmp    near ptr 0x004CC324;
@@ -1227,7 +1284,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC363;
+	__asm        ja     _T360;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC341;
@@ -1237,11 +1294,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC35C;
+	__asm        jne    _T359;
 
-	__asm        jmp    near ptr 0x004CC39D;
+	__asm        jmp    _T39a;
 
+_T359:
 	__asm        mov    memstrm.curPos, 0;
+_T360:
 	__asm        jmp    near ptr 0x004CC368;
 
 	__asm        jmp    near ptr 0x004CC36D;
@@ -1255,13 +1314,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ebp+ecx-0x138], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A0];
-	__asm        jmp    near ptr 0x004CC2ED;
+	__asm        jmp    _T2ea;
 
-	__asm        jmp    near ptr 0x004CC39D;
+_T395:
+	__asm        jmp    _T39a;
 // LINE 337:
+_T39a:
 	__asm        mov    dword ptr [ebp-0x5A4], 0;
+_T3a4:
 	__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
-	__asm        jae    near ptr 0x004CC451;
+	__asm        jae    _T44e;
 
 	__asm        jmp    near ptr 0x004CC3B9;
 
@@ -1270,10 +1332,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC3D4;
+	__asm        jne    _T3d1;
 
-	__asm        jmp    near ptr 0x004CC456;
+	__asm        jmp    _T453;
 
+_T3d1:
 	__asm        jmp    near ptr 0x004CC3D9;
 
 	__asm        jmp    near ptr 0x004CC3DE;
@@ -1282,7 +1345,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC41D;
+	__asm        ja     _T41a;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC3FB;
@@ -1292,11 +1355,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC416;
+	__asm        jne    _T413;
 
-	__asm        jmp    near ptr 0x004CC456;
+	__asm        jmp    _T453;
 
+_T413:
 	__asm        mov    memstrm.curPos, 0;
+_T41a:
 	__asm        jmp    near ptr 0x004CC422;
 
 	__asm        jmp    near ptr 0x004CC427;
@@ -1310,13 +1375,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x639A90], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A4];
-	__asm        jmp    near ptr 0x004CC3A7;
+	__asm        jmp    _T3a4;
 
-	__asm        jmp    near ptr 0x004CC456;
+_T44e:
+	__asm        jmp    _T453;
 // LINE 340:
+_T453:
 	__asm        mov    dword ptr [ebp-0x5A8], 0;
+_T45d:
 	__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
-	__asm        jae    near ptr 0x004CC50A;
+	__asm        jae    _T507;
 
 	__asm        jmp    near ptr 0x004CC472;
 
@@ -1325,10 +1393,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC48D;
+	__asm        jne    _T48a;
 
-	__asm        jmp    near ptr 0x004CC50F;
+	__asm        jmp    _T50c;
 
+_T48a:
 	__asm        jmp    near ptr 0x004CC492;
 
 	__asm        jmp    near ptr 0x004CC497;
@@ -1337,7 +1406,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC4D6;
+	__asm        ja     _T4d3;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC4B4;
@@ -1347,11 +1416,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC4CF;
+	__asm        jne    _T4cc;
 
-	__asm        jmp    near ptr 0x004CC50F;
+	__asm        jmp    _T50c;
 
+_T4cc:
 	__asm        mov    memstrm.curPos, 0;
+_T4d3:
 	__asm        jmp    near ptr 0x004CC4DB;
 
 	__asm        jmp    near ptr 0x004CC4E0;
@@ -1365,13 +1436,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x63A580], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A8];
-	__asm        jmp    near ptr 0x004CC460;
+	__asm        jmp    _T45d;
 
-	__asm        jmp    near ptr 0x004CC50F;
+_T507:
+	__asm        jmp    _T50c;
 // LINE 343:
+_T50c:
 	__asm        mov    dword ptr [ebp-0x5AC], 0;
+_T516:
 	__asm        cmp    dword ptr [ebp-0x5AC], 4;
-	__asm        jae    near ptr 0x004CC5C3;
+	__asm        jae    _T5c0;
 
 	__asm        jmp    near ptr 0x004CC52B;
 
@@ -1380,10 +1454,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC546;
+	__asm        jne    _T543;
 
-	__asm        jmp    near ptr 0x004CC5C8;
+	__asm        jmp    _T5c5;
 
+_T543:
 	__asm        jmp    near ptr 0x004CC54B;
 
 	__asm        jmp    near ptr 0x004CC550;
@@ -1392,7 +1467,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC58F;
+	__asm        ja     _T58c;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC56D;
@@ -1402,11 +1477,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC588;
+	__asm        jne    _T585;
 
-	__asm        jmp    near ptr 0x004CC5C8;
+	__asm        jmp    _T5c5;
 
+_T585:
 	__asm        mov    memstrm.curPos, 0;
+_T58c:
 	__asm        jmp    near ptr 0x004CC594;
 
 	__asm        jmp    near ptr 0x004CC599;
@@ -1420,13 +1497,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x63A850], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5AC];
-	__asm        jmp    near ptr 0x004CC519;
+	__asm        jmp    _T516;
 
-	__asm        jmp    near ptr 0x004CC5C8;
+_T5c0:
+	__asm        jmp    _T5c5;
 // LINE 346:
+_T5c5:
 	__asm        mov    dword ptr [ebp-0x5B0], 0;
+_T5cf:
 	__asm        cmp    dword ptr [ebp-0x5B0], 4;
-	__asm        jae    near ptr 0x004CC67C;
+	__asm        jae    _T679;
 
 	__asm        jmp    near ptr 0x004CC5E4;
 
@@ -1435,10 +1515,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC5FF;
+	__asm        jne    _T5fc;
 
-	__asm        jmp    near ptr 0x004CC681;
+	__asm        jmp    _T67e;
 
+_T5fc:
 	__asm        jmp    near ptr 0x004CC604;
 
 	__asm        jmp    near ptr 0x004CC609;
@@ -1447,7 +1528,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC648;
+	__asm        ja     _T645;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC626;
@@ -1457,11 +1538,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC641;
+	__asm        jne    _T63e;
 
-	__asm        jmp    near ptr 0x004CC681;
+	__asm        jmp    _T67e;
 
+_T63e:
 	__asm        mov    memstrm.curPos, 0;
+_T645:
 	__asm        jmp    near ptr 0x004CC64D;
 
 	__asm        jmp    near ptr 0x004CC652;
@@ -1475,13 +1558,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x639AB4], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B0];
-	__asm        jmp    near ptr 0x004CC5D2;
+	__asm        jmp    _T5cf;
 
-	__asm        jmp    near ptr 0x004CC681;
+_T679:
+	__asm        jmp    _T67e;
 // LINE 349:
+_T67e:
 	__asm        mov    dword ptr [ebp-0x5B4], 0;
+_T688:
 	__asm        cmp    dword ptr [ebp-0x5B4], 4;
-	__asm        jae    near ptr 0x004CC735;
+	__asm        jae    _T732;
 
 	__asm        jmp    near ptr 0x004CC69D;
 
@@ -1490,10 +1576,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC6B8;
+	__asm        jne    _T6b5;
 
-	__asm        jmp    near ptr 0x004CC73A;
+	__asm        jmp    _T737;
 
+_T6b5:
 	__asm        jmp    near ptr 0x004CC6BD;
 
 	__asm        jmp    near ptr 0x004CC6C2;
@@ -1502,7 +1589,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC701;
+	__asm        ja     _T6fe;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC6DF;
@@ -1512,11 +1599,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC6FA;
+	__asm        jne    _T6f7;
 
-	__asm        jmp    near ptr 0x004CC73A;
+	__asm        jmp    _T737;
 
+_T6f7:
 	__asm        mov    memstrm.curPos, 0;
+_T6fe:
 	__asm        jmp    near ptr 0x004CC706;
 
 	__asm        jmp    near ptr 0x004CC70B;
@@ -1530,13 +1619,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x63A740], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B4];
-	__asm        jmp    near ptr 0x004CC68B;
+	__asm        jmp    _T688;
 
-	__asm        jmp    near ptr 0x004CC73A;
+_T732:
+	__asm        jmp    _T737;
 // LINE 354:
+_T737:
 	__asm        mov    dword ptr [ebp-0x5B8], 0;
+_T741:
 	__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
-	__asm        jae    near ptr 0x004CC7F2;
+	__asm        jae    _T7ef;
 
 	__asm        jmp    near ptr 0x004CC759;
 
@@ -1545,10 +1637,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC774;
+	__asm        jne    _T771;
 
-	__asm        jmp    near ptr 0x004CC7F7;
+	__asm        jmp    _T7f4;
 
+_T771:
 	__asm        jmp    near ptr 0x004CC779;
 
 	__asm        jmp    near ptr 0x004CC77E;
@@ -1557,7 +1650,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC7BD;
+	__asm        ja     _T7ba;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC79B;
@@ -1567,11 +1660,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC7B6;
+	__asm        jne    _T7b3;
 
-	__asm        jmp    near ptr 0x004CC7F7;
+	__asm        jmp    _T7f4;
 
+_T7b3:
 	__asm        mov    memstrm.curPos, 0;
+_T7ba:
 	__asm        jmp    near ptr 0x004CC7C2;
 
 	__asm        jmp    near ptr 0x004CC7C7;
@@ -1585,26 +1680,32 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ebp+ecx-0x134], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B8];
-	__asm        jmp    near ptr 0x004CC744;
+	__asm        jmp    _T741;
 
-	__asm        jmp    near ptr 0x004CC7F7;
+_T7ef:
+	__asm        jmp    _T7f4;
 // LINE 355:
+_T7f4:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CC806;
+	__asm        jmp    _T803;
 
+_T800:
 	__asm        inc    loop;
+_T803:
 	__asm        cmp    loop, 0x32;
-	__asm        jge    near ptr 0x004CC82A;
+	__asm        jge    _T827;
 // LINE 356:
 	__asm        mov    eax, loop;
 	__asm        mov    eax, [ebp+eax*4-0x134];
 	__asm        mov    ecx, loop;
 	__asm        mov    [ecx*2+0x63A6D0], ax;
-	__asm        jmp    near ptr 0x004CC803;
+	__asm        jmp    _T800;
 // LINE 359:
+_T827:
 	__asm        mov    dword ptr [ebp-0x5BC], 0;
+_T831:
 	__asm        cmp    dword ptr [ebp-0x5BC], 4;
-	__asm        jae    near ptr 0x004CC8DE;
+	__asm        jae    _T8db;
 
 	__asm        jmp    near ptr 0x004CC846;
 
@@ -1613,10 +1714,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC861;
+	__asm        jne    _T85e;
 
-	__asm        jmp    near ptr 0x004CC8E3;
+	__asm        jmp    _T8e0;
 
+_T85e:
 	__asm        jmp    near ptr 0x004CC866;
 
 	__asm        jmp    near ptr 0x004CC86B;
@@ -1625,7 +1727,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC8AA;
+	__asm        ja     _T8a7;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC888;
@@ -1635,11 +1737,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC8A3;
+	__asm        jne    _T8a0;
 
-	__asm        jmp    near ptr 0x004CC8E3;
+	__asm        jmp    _T8e0;
 
+_T8a0:
 	__asm        mov    memstrm.curPos, 0;
+_T8a7:
 	__asm        jmp    near ptr 0x004CC8AF;
 
 	__asm        jmp    near ptr 0x004CC8B4;
@@ -1653,13 +1757,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x63A5A4], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5BC];
-	__asm        jmp    near ptr 0x004CC834;
+	__asm        jmp    _T831;
 
-	__asm        jmp    near ptr 0x004CC8E3;
+_T8db:
+	__asm        jmp    _T8e0;
 // LINE 362:
+_T8e0:
 	__asm        mov    dword ptr [ebp-0x5C0], 0;
+_T8ea:
 	__asm        cmp    dword ptr [ebp-0x5C0], 2;
-	__asm        jae    near ptr 0x004CC997;
+	__asm        jae    _T994;
 
 	__asm        jmp    near ptr 0x004CC8FF;
 
@@ -1668,10 +1775,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC91A;
+	__asm        jne    _T917;
 
-	__asm        jmp    near ptr 0x004CC99C;
+	__asm        jmp    _T999;
 
+_T917:
 	__asm        jmp    near ptr 0x004CC91F;
 
 	__asm        jmp    near ptr 0x004CC924;
@@ -1680,7 +1788,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CC963;
+	__asm        ja     _T960;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC941;
@@ -1690,11 +1798,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC95C;
+	__asm        jne    _T959;
 
-	__asm        jmp    near ptr 0x004CC99C;
+	__asm        jmp    _T999;
 
+_T959:
 	__asm        mov    memstrm.curPos, 0;
+_T960:
 	__asm        jmp    near ptr 0x004CC968;
 
 	__asm        jmp    near ptr 0x004CC96D;
@@ -1708,13 +1818,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x59B584], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C0];
-	__asm        jmp    near ptr 0x004CC8ED;
+	__asm        jmp    _T8ea;
 
-	__asm        jmp    near ptr 0x004CC99C;
+_T994:
+	__asm        jmp    _T999;
 // LINE 365:
+_T999:
 	__asm        mov    dword ptr [ebp-0x5C4], 0;
+_T9a3:
 	__asm        cmp    dword ptr [ebp-0x5C4], 2;
-	__asm        jae    near ptr 0x004CCA50;
+	__asm        jae    _Ta4d;
 
 	__asm        jmp    near ptr 0x004CC9B8;
 
@@ -1723,10 +1836,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CC9D3;
+	__asm        jne    _T9d0;
 
-	__asm        jmp    near ptr 0x004CCA55;
+	__asm        jmp    _Ta52;
 
+_T9d0:
 	__asm        jmp    near ptr 0x004CC9D8;
 
 	__asm        jmp    near ptr 0x004CC9DD;
@@ -1735,7 +1849,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCA1C;
+	__asm        ja     _Ta19;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CC9FA;
@@ -1745,11 +1859,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCA15;
+	__asm        jne    _Ta12;
 
-	__asm        jmp    near ptr 0x004CCA55;
+	__asm        jmp    _Ta52;
 
+_Ta12:
 	__asm        mov    memstrm.curPos, 0;
+_Ta19:
 	__asm        jmp    near ptr 0x004CCA21;
 
 	__asm        jmp    near ptr 0x004CCA26;
@@ -1763,13 +1879,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x639AAE], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C4];
-	__asm        jmp    near ptr 0x004CC9A6;
+	__asm        jmp    _T9a3;
 
-	__asm        jmp    near ptr 0x004CCA55;
+_Ta4d:
+	__asm        jmp    _Ta52;
 // LINE 368:
+_Ta52:
 	__asm        mov    dword ptr [ebp-0x5C8], 0;
+_Ta5c:
 	__asm        cmp    dword ptr [ebp-0x5C8], 2;
-	__asm        jae    near ptr 0x004CCB09;
+	__asm        jae    _Tb06;
 
 	__asm        jmp    near ptr 0x004CCA71;
 
@@ -1778,10 +1897,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCA8C;
+	__asm        jne    _Ta89;
 
-	__asm        jmp    near ptr 0x004CCB0E;
+	__asm        jmp    _Tb0b;
 
+_Ta89:
 	__asm        jmp    near ptr 0x004CCA91;
 
 	__asm        jmp    near ptr 0x004CCA96;
@@ -1790,7 +1910,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCAD5;
+	__asm        ja     _Tad2;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCAB3;
@@ -1800,11 +1920,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCACE;
+	__asm        jne    _Tacb;
 
-	__asm        jmp    near ptr 0x004CCB0E;
+	__asm        jmp    _Tb0b;
 
+_Tacb:
 	__asm        mov    memstrm.curPos, 0;
+_Tad2:
 	__asm        jmp    near ptr 0x004CCADA;
 
 	__asm        jmp    near ptr 0x004CCADF;
@@ -1818,13 +1940,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x6391F0], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C8];
-	__asm        jmp    near ptr 0x004CCA5F;
+	__asm        jmp    _Ta5c;
 
-	__asm        jmp    near ptr 0x004CCB0E;
+_Tb06:
+	__asm        jmp    _Tb0b;
 // LINE 371:
+_Tb0b:
 	__asm        mov    dword ptr [ebp-0x5CC], 0;
+_Tb15:
 	__asm        cmp    dword ptr [ebp-0x5CC], 2;
-	__asm        jae    near ptr 0x004CCBC2;
+	__asm        jae    _Tbbf;
 
 	__asm        jmp    near ptr 0x004CCB2A;
 
@@ -1833,10 +1958,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCB45;
+	__asm        jne    _Tb42;
 
-	__asm        jmp    near ptr 0x004CCBC7;
+	__asm        jmp    _Tbc4;
 
+_Tb42:
 	__asm        jmp    near ptr 0x004CCB4A;
 
 	__asm        jmp    near ptr 0x004CCB4F;
@@ -1845,7 +1971,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCB8E;
+	__asm        ja     _Tb8b;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCB6C;
@@ -1855,11 +1981,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCB87;
+	__asm        jne    _Tb84;
 
-	__asm        jmp    near ptr 0x004CCBC7;
+	__asm        jmp    _Tbc4;
 
+_Tb84:
 	__asm        mov    memstrm.curPos, 0;
+_Tb8b:
 	__asm        jmp    near ptr 0x004CCB93;
 
 	__asm        jmp    near ptr 0x004CCB98;
@@ -1873,13 +2001,16 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x63A250], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5CC];
-	__asm        jmp    near ptr 0x004CCB18;
+	__asm        jmp    _Tb15;
 
-	__asm        jmp    near ptr 0x004CCBC7;
+_Tbbf:
+	__asm        jmp    _Tbc4;
 // LINE 374:
+_Tbc4:
 	__asm        mov    dword ptr [ebp-0x5D0], 0;
+_Tbce:
 	__asm        cmp    dword ptr [ebp-0x5D0], 2;
-	__asm        jae    near ptr 0x004CCC7B;
+	__asm        jae    _Tc78;
 
 	__asm        jmp    near ptr 0x004CCBE3;
 
@@ -1888,10 +2019,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCBFE;
+	__asm        jne    _Tbfb;
 
-	__asm        jmp    near ptr 0x004CCC80;
+	__asm        jmp    _Tc7d;
 
+_Tbfb:
 	__asm        jmp    near ptr 0x004CCC03;
 
 	__asm        jmp    near ptr 0x004CCC08;
@@ -1900,7 +2032,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCC47;
+	__asm        ja     _Tc44;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCC25;
@@ -1910,11 +2042,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCC40;
+	__asm        jne    _Tc3d;
 
-	__asm        jmp    near ptr 0x004CCC80;
+	__asm        jmp    _Tc7d;
 
+_Tc3d:
 	__asm        mov    memstrm.curPos, 0;
+_Tc44:
 	__asm        jmp    near ptr 0x004CCC4C;
 
 	__asm        jmp    near ptr 0x004CCC51;
@@ -1928,16 +2062,19 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+0x639238], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D0];
-	__asm        jmp    near ptr 0x004CCBD1;
+	__asm        jmp    _Tbce;
 
-	__asm        jmp    near ptr 0x004CCC80;
+_Tc78:
+	__asm        jmp    _Tc7d;
 
+_Tc7d:
 	__asm        mov    eax, ds:[0x639730];
 	__asm        mov    [ebp-0x5D8], eax;
 // LINE 377:
 	__asm        mov    dword ptr [ebp-0x5D4], 0;
+_Tc92:
 	__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
-	__asm        jae    near ptr 0x004CCD45;
+	__asm        jae    _Td42;
 
 	__asm        jmp    near ptr 0x004CCCAA;
 
@@ -1946,10 +2083,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCCC5;
+	__asm        jne    _Tcc2;
 
-	__asm        jmp    near ptr 0x004CCD4A;
+	__asm        jmp    _Td47;
 
+_Tcc2:
 	__asm        jmp    near ptr 0x004CCCCA;
 
 	__asm        jmp    near ptr 0x004CCCCF;
@@ -1958,7 +2096,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCD0E;
+	__asm        ja     _Td0b;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCCEC;
@@ -1968,11 +2106,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCD07;
+	__asm        jne    _Td04;
 
-	__asm        jmp    near ptr 0x004CCD4A;
+	__asm        jmp    _Td47;
 
+_Td04:
 	__asm        mov    memstrm.curPos, 0;
+_Td0b:
 	__asm        jmp    near ptr 0x004CCD13;
 
 	__asm        jmp    near ptr 0x004CCD18;
@@ -1987,16 +2127,19 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D4];
-	__asm        jmp    near ptr 0x004CCC95;
+	__asm        jmp    _Tc92;
 
-	__asm        jmp    near ptr 0x004CCD4A;
+_Td42:
+	__asm        jmp    _Td47;
 
+_Td47:
 	__asm        mov    eax, ds:[0x639CD0];
 	__asm        mov    [ebp-0x5E0], eax;
 // LINE 378:
 	__asm        mov    dword ptr [ebp-0x5DC], 0;
+_Td5c:
 	__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
-	__asm        jae    near ptr 0x004CCE0F;
+	__asm        jae    _Te0c;
 
 	__asm        jmp    near ptr 0x004CCD74;
 
@@ -2005,10 +2148,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCD8F;
+	__asm        jne    _Td8c;
 
-	__asm        jmp    near ptr 0x004CCE14;
+	__asm        jmp    _Te11;
 
+_Td8c:
 	__asm        jmp    near ptr 0x004CCD94;
 
 	__asm        jmp    near ptr 0x004CCD99;
@@ -2017,7 +2161,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCDD8;
+	__asm        ja     _Tdd5;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCDB6;
@@ -2027,11 +2171,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCDD1;
+	__asm        jne    _Tdce;
 
-	__asm        jmp    near ptr 0x004CCE14;
+	__asm        jmp    _Te11;
 
+_Tdce:
 	__asm        mov    memstrm.curPos, 0;
+_Tdd5:
 	__asm        jmp    near ptr 0x004CCDDD;
 
 	__asm        jmp    near ptr 0x004CCDE2;
@@ -2046,16 +2192,19 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5DC];
-	__asm        jmp    near ptr 0x004CCD5F;
+	__asm        jmp    _Td5c;
 
-	__asm        jmp    near ptr 0x004CCE14;
+_Te0c:
+	__asm        jmp    _Te11;
 
+_Te11:
 	__asm        mov    eax, ds:[0x63A470];
 	__asm        mov    [ebp-0x5E8], eax;
 // LINE 379:
 	__asm        mov    dword ptr [ebp-0x5E4], 0;
+_Te26:
 	__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
-	__asm        jae    near ptr 0x004CCED9;
+	__asm        jae    _Ted6;
 
 	__asm        jmp    near ptr 0x004CCE3E;
 
@@ -2064,10 +2213,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCE59;
+	__asm        jne    _Te56;
 
-	__asm        jmp    near ptr 0x004CCEDE;
+	__asm        jmp    _Tedb;
 
+_Te56:
 	__asm        jmp    near ptr 0x004CCE5E;
 
 	__asm        jmp    near ptr 0x004CCE63;
@@ -2076,7 +2226,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCEA2;
+	__asm        ja     _Te9f;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCE80;
@@ -2086,11 +2236,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCE9B;
+	__asm        jne    _Te98;
 
-	__asm        jmp    near ptr 0x004CCEDE;
+	__asm        jmp    _Tedb;
 
+_Te98:
 	__asm        mov    memstrm.curPos, 0;
+_Te9f:
 	__asm        jmp    near ptr 0x004CCEA7;
 
 	__asm        jmp    near ptr 0x004CCEAC;
@@ -2105,16 +2257,19 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5E4];
-	__asm        jmp    near ptr 0x004CCE29;
+	__asm        jmp    _Te26;
 
-	__asm        jmp    near ptr 0x004CCEDE;
+_Ted6:
+	__asm        jmp    _Tedb;
 
+_Tedb:
 	__asm        mov    eax, ds:[0x63A750];
 	__asm        mov    [ebp-0x5F0], eax;
 // LINE 380:
 	__asm        mov    dword ptr [ebp-0x5EC], 0;
+_Tef0:
 	__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
-	__asm        jae    near ptr 0x004CCFA3;
+	__asm        jae    _Tfa0;
 
 	__asm        jmp    near ptr 0x004CCF08;
 
@@ -2123,10 +2278,11 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCF23;
+	__asm        jne    _Tf20;
 
-	__asm        jmp    near ptr 0x004CCFA8;
+	__asm        jmp    _Tfa5;
 
+_Tf20:
 	__asm        jmp    near ptr 0x004CCF28;
 
 	__asm        jmp    near ptr 0x004CCF2D;
@@ -2135,7 +2291,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
 	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     near ptr 0x004CCF6C;
+	__asm        ja     _Tf69;
 
 	__asm        inc    memstrm.nodeNo;
 	__asm        jmp    near ptr 0x004CCF4A;
@@ -2145,11 +2301,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    near ptr 0x004CCF65;
+	__asm        jne    _Tf62;
 
-	__asm        jmp    near ptr 0x004CCFA8;
+	__asm        jmp    _Tfa5;
 
+_Tf62:
 	__asm        mov    memstrm.curPos, 0;
+_Tf69:
 	__asm        jmp    near ptr 0x004CCF71;
 
 	__asm        jmp    near ptr 0x004CCF76;
@@ -2164,10 +2322,12 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5EC];
-	__asm        jmp    near ptr 0x004CCEF3;
+	__asm        jmp    _Tef0;
 
-	__asm        jmp    near ptr 0x004CCFA8;
+_Tfa0:
+	__asm        jmp    _Tfa5;
 // LINE 383:
+_Tfa5:
 	__asm        push   0x400;
 	__asm        mov    eax, ds:[0x639170];
 	__asm        push   eax;
@@ -2271,19 +2431,22 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 410:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD0F3;
+	__asm        jmp    _T10f0;
 
+_T10ed:
 	__asm        inc    loop;
+_T10f0:
 	__asm        cmp    loop, 0x100;
-	__asm        jge    near ptr 0x004CD11C;
+	__asm        jge    _T1119;
 // LINE 411:
 	__asm        mov    eax, loop;
 	__asm        mov    eax, [ebp+eax*4-0x550];
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, ds:[0x639AC8];
 	__asm        mov    [edx+ecx*2], ax;
-	__asm        jmp    near ptr 0x004CD0F0;
+	__asm        jmp    _T10ed;
 // LINE 414:
+_T1119:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
@@ -2340,11 +2503,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    ds:[0x639840], ax;
 // LINE 441:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD1D0;
+	__asm        jmp    _T11cd;
 
+_T11ca:
 	__asm        inc    loop;
+_T11cd:
 	__asm        cmp    loop, 0x32;
-	__asm        jge    near ptr 0x004CD1F9;
+	__asm        jge    _T11f6;
 // LINE 442:
 	__asm        push   0x19;
 	__asm        mov    eax, loop;
@@ -2354,14 +2519,17 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-	__asm        jmp    near ptr 0x004CD1CD;
+	__asm        jmp    _T11ca;
 // LINE 452:
+_T11f6:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD208;
+	__asm        jmp    _T1205;
 
+_T1202:
 	__asm        inc    loop;
+_T1205:
 	__asm        cmp    loop, 0x96;
-	__asm        jge    near ptr 0x004CD28F;
+	__asm        jge    _T128c;
 // LINE 454:
 	__asm        push   9;
 	__asm        lea    eax, SCXMicroRecord.type;
@@ -2394,8 +2562,9 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        mov    edx, ds:[0x63A744];
 	__asm        mov    [edx+ecx*8+6], ax;
 // LINE 460:
-	__asm        jmp    near ptr 0x004CD205;
+	__asm        jmp    _T1202;
 // LINE 463:
+_T128c:
 	__asm        push   1;
 	__asm        push   0x639AB2;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
@@ -2519,19 +2688,22 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 515:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD41D;
+	__asm        jmp    _T141a;
 
+_T1417:
 	__asm        inc    loop;
+_T141a:
 	__asm        cmp    loop, 0xB;
-	__asm        jge    near ptr 0x004CD443;
+	__asm        jge    _T1440;
 // LINE 516:
 	__asm        mov    eax, loop;
 	__asm        mov    eax, [ebp+eax*4-0x57C];
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, ds:[0x639308];
 	__asm        mov    [edx+ecx*2], ax;
-	__asm        jmp    near ptr 0x004CD41A;
+	__asm        jmp    _T1417;
 // LINE 519:
+_T1440:
 	__asm        push   0x2C;
 	__asm        lea    eax, scxInd[0];
 	__asm        push   eax;
@@ -2539,19 +2711,22 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 520:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD463;
+	__asm        jmp    _T1460;
 
+_T145d:
 	__asm        inc    loop;
+_T1460:
 	__asm        cmp    loop, 0xB;
-	__asm        jge    near ptr 0x004CD489;
+	__asm        jge    _T1486;
 // LINE 521:
 	__asm        mov    eax, loop;
 	__asm        movsx  eax, word ptr [ebp+eax*4-0x57C];
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, ds:[0x639A54];
 	__asm        mov    [edx+ecx*4], eax;
-	__asm        jmp    near ptr 0x004CD460;
+	__asm        jmp    _T145d;
 // LINE 524:
+_T1486:
 	__asm        push   0x40;
 	__asm        mov    eax, ds:[0x63A020];
 	__asm        push   eax;
@@ -2559,11 +2734,13 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 525:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x004CD4A8;
+	__asm        jmp    _T14a5;
 
+_T14a2:
 	__asm        inc    loop;
+_T14a5:
 	__asm        cmp    loop, 0x10;
-	__asm        jge    near ptr 0x004CD4CF;
+	__asm        jge    _T14cc;
 // LINE 526:
 	__asm        push   0xD0;
 	__asm        mov    eax, loop;
@@ -2571,8 +2748,9 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-	__asm        jmp    near ptr 0x004CD4A5;
+	__asm        jmp    _T14a2;
 // LINE 528:
+_T14cc:
 	__asm        mov    eax, ds:[0x606A58];
 	__asm        mov    [ebp-0x588], eax;
 	__asm        mov    eax, [ebp-0x588];
@@ -2593,7 +2771,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x58C];
-	__asm        jmp    near ptr 0x004CD531;
+	__asm        jmp    _T152e;
 // LINE 531:
 }
 

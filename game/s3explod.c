@@ -70,31 +70,36 @@ void S3ExplosionReset() {
 // LINE 63:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
-	__asm        jmp    near ptr 0x00523947;
+	__asm        jmp    _T37;
 
+_T30:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
+_T37:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x0052395F;
+	__asm        jge    _T4f;
 // LINE 66:
 	__asm        mov    eax, ed;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 67:
-	__asm        jmp    near ptr 0x00523940;
+	__asm        jmp    _T30;
 // LINE 70:
+_T4f:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
-	__asm        jmp    near ptr 0x00523979;
+	__asm        jmp    _T69;
 
+_T62:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
+_T69:
 	__asm        cmp    i, 0x64;
-	__asm        jge    near ptr 0x00523991;
+	__asm        jge    _T81;
 // LINE 73:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 75:
-	__asm        jmp    near ptr 0x00523972;
+	__asm        jmp    _T62;
 // LINE 77:
 }
 
@@ -119,12 +124,14 @@ void S3ExplosionInit() {
 // LINE 103:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
-	__asm        jmp    near ptr 0x005239CF;
+	__asm        jmp    _T39;
 
+_T32:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
+_T39:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x00523AE0;
+	__asm        jge    _T14a;
 // LINE 106:
 	__asm        mov    eax, ed;
 	__asm        mov    dword ptr [eax], 0;
@@ -217,8 +224,9 @@ void S3ExplosionInit() {
 	__asm        mov    eax, [eax+0x20];
 	__asm        mov    dword ptr [eax], 0;
 // LINE 130:
-	__asm        jmp    near ptr 0x005239C8;
+	__asm        jmp    _T32;
 // LINE 133:
+_T14a:
 	__asm        push   0x148;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -229,12 +237,14 @@ void S3ExplosionInit() {
 // LINE 140:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
-	__asm        jmp    near ptr 0x00523B13;
+	__asm        jmp    _T17d;
 
+_T176:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
+_T17d:
 	__asm        cmp    i, 0x64;
-	__asm        jge    near ptr 0x00523BCC;
+	__asm        jge    _T236;
 // LINE 143:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax], 0;
@@ -296,8 +306,9 @@ void S3ExplosionInit() {
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 159:
-	__asm        jmp    near ptr 0x00523B0C;
+	__asm        jmp    _T176;
 // LINE 162:
+_T236:
 	__asm        push   0xF;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
@@ -632,31 +643,37 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 // LINE 240:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
-	__asm        jmp    near ptr 0x00523F73;
+	__asm        jmp    _T23;
 
+_T1c:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
+_T23:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x00523F93;
+	__asm        jge    _T43;
 // LINE 242:
 	__asm        mov    eax, ed;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x00523F8E;
+	__asm        jne    _T3e;
 // LINE 243:
-	__asm        jmp    near ptr 0x00523F93;
+	__asm        jmp    _T43;
 // LINE 244:
-	__asm        jmp    near ptr 0x00523F6C;
+_T3e:
+	__asm        jmp    _T1c;
 // LINE 248:
+_T43:
 	__asm        cmp    i, 0x14;
-	__asm        jne    near ptr 0x00523FA2;
+	__asm        jne    _T52;
 // LINE 249:
-	__asm        jmp    near ptr 0x005240D7;
+	__asm        jmp    _T187;
 // LINE 254:
+_T52:
 	__asm        cmp    cptr, 0;
-	__asm        jne    near ptr 0x00523FB1;
+	__asm        jne    _T61;
 // LINE 255:
-	__asm        jmp    near ptr 0x005240D7;
+	__asm        jmp    _T187;
 // LINE 258:
+_T61:
 	__asm        mov    eax, 4;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(scale);
 	__asm        shl    eax, cl;
@@ -784,31 +801,37 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 // LINE 319:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
-	__asm        jmp    near ptr 0x005240FF;
+	__asm        jmp    _T23;
 
+_T1c:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
+_T23:
 	__asm        cmp    i, 0x64;
-	__asm        jge    near ptr 0x0052411F;
+	__asm        jge    _T43;
 // LINE 321:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x0052411A;
+	__asm        jne    _T3e;
 // LINE 322:
-	__asm        jmp    near ptr 0x0052411F;
+	__asm        jmp    _T43;
 // LINE 323:
-	__asm        jmp    near ptr 0x005240F8;
+_T3e:
+	__asm        jmp    _T1c;
 // LINE 327:
+_T43:
 	__asm        cmp    i, 0x64;
-	__asm        jne    near ptr 0x0052412E;
+	__asm        jne    _T52;
 // LINE 328:
-	__asm        jmp    near ptr 0x00524298;
+	__asm        jmp    _T1bc;
 // LINE 333:
+_T52:
 	__asm        cmp    cptr, 0;
-	__asm        jne    near ptr 0x0052413D;
+	__asm        jne    _T61;
 // LINE 334:
-	__asm        jmp    near ptr 0x00524298;
+	__asm        jmp    _T1bc;
 // LINE 337:
+_T61:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
 	__asm        mov    eax, sd;
@@ -869,57 +892,60 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 // LINE 356:
 	__asm        mov    eax, smoke_size;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00524252;
+	__asm        jmp    _T176;
 // LINE 359:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0xD0000;
 // LINE 360:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 362:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0xA0000;
 // LINE 363:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 365:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0x190000;
 // LINE 366:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 368:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0x1E0000;
 // LINE 369:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 371:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0x110000;
 // LINE 372:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 374:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0x190000;
 // LINE 375:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 377:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0x140000;
 // LINE 378:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 384:
+_T162:
 	__asm        mov    eax, sd;
 	__asm        mov    dword ptr [eax+0x14], 0xF0000;
 // LINE 385:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 // LINE 386:
-	__asm        jmp    near ptr 0x00524292;
+	__asm        jmp    _T1b6;
 
+_T176:
 	__asm        cmp    dword ptr [ebp-0x2C], 0xA;
-	__asm        ja     near ptr 0x0052423E;
+	__asm        ja     _T162;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x524266];
 // Switch pointers
 // LINE 388:
+_T1b6:
 	__asm        inc    dword ptr ds:[0x5B7384];
 // LINE 389:
 }
@@ -938,28 +964,31 @@ void S3ExplosionDriver() {
 // LINE 410:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
-	__asm        jmp    near ptr 0x005242C9;
+	__asm        jmp    _T2c;
 
+_T22:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
+_T2c:
 	__asm        cmp    dword ptr ds:[0x5B7380], 0;
-	__asm        jle    near ptr 0x005244B5;
+	__asm        jle    _T218;
 
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x005244B5;
+	__asm        jge    _T218;
 // LINE 412:
 	__asm        mov    eax, ed;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x005242F4;
+	__asm        jne    _T57;
 // LINE 413:
-	__asm        jmp    near ptr 0x005242BF;
+	__asm        jmp    _T22;
 // LINE 416:
+_T57:
 	__asm        mov    eax, ed;
 	__asm        inc    dword ptr [eax+0x18];
 // LINE 420:
 	__asm        mov    eax, ed;
 	__asm        cmp    dword ptr [eax+0x18], 1;
-	__asm        jne    near ptr 0x0052439C;
+	__asm        jne    _Tff;
 // LINE 422:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0xC];
@@ -974,11 +1003,13 @@ void S3ExplosionDriver() {
 	__asm        mov    celloc.y, eax;
 // LINE 424:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x00524344;
+	__asm        jmp    _Ta7;
 
+_Ta4:
 	__asm        inc    j;
+_Ta7:
 	__asm        cmp    j, 0xE;
-	__asm        jge    near ptr 0x0052439C;
+	__asm        jge    _Tff;
 // LINE 435:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x30];
@@ -1003,26 +1034,28 @@ void S3ExplosionDriver() {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 436:
-	__asm        jmp    near ptr 0x00524341;
+	__asm        jmp    _Ta4;
 // LINE 440:
+_Tff:
 	__asm        mov    eax, ed;
 	__asm        cmp    dword ptr [eax+0x18], 9;
-	__asm        jl     near ptr 0x0052441B;
+	__asm        jl     _T17e;
 // LINE 443:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
 // LINE 444:
+_T11e:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x005243FD;
+	__asm        je     _T160;
 // LINE 446:
 	__asm        mov    eax, ed;
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+0x20], ecx;
-	__asm        jne    near ptr 0x005243F0;
+	__asm        jne    _T153;
 // LINE 448:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x20];
@@ -1030,14 +1063,16 @@ void S3ExplosionDriver() {
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 449:
-	__asm        jmp    near ptr 0x005243FD;
+	__asm        jmp    _T160;
 // LINE 451:
+_T153:
 	__asm        mov    eax, dyptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptrptr, eax;
 // LINE 452:
-	__asm        jmp    near ptr 0x005243BB;
+	__asm        jmp    _T11e;
 // LINE 454:
+_T160:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax];
 	__asm        and    eax, 0xFFFFFFFE;
@@ -1046,8 +1081,9 @@ void S3ExplosionDriver() {
 // LINE 455:
 	__asm        dec    dword ptr ds:[0x5B7380];
 // LINE 456:
-	__asm        jmp    near ptr 0x005242BF;
+	__asm        jmp    _T22;
 // LINE 460:
+_T17e:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
 	__asm        mov    eax, ed;
@@ -1097,26 +1133,30 @@ void S3ExplosionDriver() {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 469:
-	__asm        jmp    near ptr 0x005242BF;
+	__asm        jmp    _T22;
 // LINE 472:
+_T218:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
-	__asm        jmp    near ptr 0x005244CF;
+	__asm        jmp    _T232;
 
+_T22b:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
+_T232:
 	__asm        cmp    dword ptr ds:[0x5B7384], 0;
-	__asm        jle    near ptr 0x005245E4;
+	__asm        jle    _T347;
 
 	__asm        cmp    i, 0x64;
-	__asm        jge    near ptr 0x005245E4;
+	__asm        jge    _T347;
 // LINE 474:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x005244F7;
+	__asm        jne    _T25a;
 // LINE 475:
-	__asm        jmp    near ptr 0x005244C8;
+	__asm        jmp    _T22b;
 // LINE 478:
+_T25a:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4768];
 	__asm        neg    eax;
@@ -1125,22 +1165,23 @@ void S3ExplosionDriver() {
 // LINE 481:
 	__asm        mov    eax, sd;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jg     near ptr 0x00524574;
+	__asm        jg     _T2d7;
 // LINE 484:
 	__asm        mov    eax, sd;
 	__asm        mov    eax, [eax+0xC];
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
 // LINE 485:
+_T283:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0052455C;
+	__asm        je     _T2bf;
 // LINE 487:
 	__asm        mov    eax, sd;
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jne    near ptr 0x0052454F;
+	__asm        jne    _T2b2;
 // LINE 489:
 	__asm        mov    eax, sd;
 	__asm        mov    eax, [eax+4];
@@ -1148,14 +1189,16 @@ void S3ExplosionDriver() {
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 490:
-	__asm        jmp    near ptr 0x0052455C;
+	__asm        jmp    _T2bf;
 // LINE 492:
+_T2b2:
 	__asm        mov    eax, dyptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptrptr, eax;
 // LINE 493:
-	__asm        jmp    near ptr 0x00524520;
+	__asm        jmp    _T283;
 // LINE 495:
+_T2bf:
 	__asm        mov    eax, sd;
 	__asm        mov    eax, [eax];
 	__asm        and    eax, 0xFFFFFFFE;
@@ -1164,8 +1207,9 @@ void S3ExplosionDriver() {
 // LINE 496:
 	__asm        dec    dword ptr ds:[0x5B7384];
 // LINE 497:
-	__asm        jmp    near ptr 0x005244C8;
+	__asm        jmp    _T22b;
 // LINE 501:
+_T2d7:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        push   eax;
 	__asm        mov    eax, sd;
@@ -1205,8 +1249,9 @@ void S3ExplosionDriver() {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 508:
-	__asm        jmp    near ptr 0x005244C8;
+	__asm        jmp    _T22b;
 // LINE 510:
+_T347:
 	__asm        jmp    near ptr 0x005245E9;
 // LINE 511:
 }

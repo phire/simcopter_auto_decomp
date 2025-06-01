@@ -267,7 +267,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        test   eax, eax;
-	__asm        jg     near ptr 0x0055CB61;
+	__asm        jg     _T51;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BDE9C;
@@ -276,6 +276,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* sta
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 14:
+_T51:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        shl    eax, 2;
@@ -316,7 +317,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        test   eax, eax;
-	__asm        jg     near ptr 0x0055CBF6;
+	__asm        jg     _T51;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BDED0;
@@ -325,6 +326,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 27:
+_T51:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        shl    eax, 2;
@@ -365,13 +367,14 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0055CC80;
+	__asm        je     _T28;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        test   eax, eax;
-	__asm        jg     near ptr 0x0055CC99;
+	__asm        jg     _T41;
 
+_T28:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDF04;
 	__asm        push   0x2C;
@@ -379,6 +382,7 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 45:
+_T41:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+8], 1;
 // LINE 47:
@@ -433,29 +437,32 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	__asm        mov    eax, [eax+ecx+0x10];
 	__asm        mov    curBeh, eax;
 // LINE 65:
+_T42:
 	__asm        movsx  eax, stackSize;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0055CE04;
+	__asm        jl     _T115;
 // LINE 66:
 	__asm        movsx  eax, stackSize;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0055CD5C;
+	__asm        jl     _T6d;
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        movsx  ecx, stackSize;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x0055CD76;
+	__asm        jg     _T87;
 
+_T6d:
 	__asm        mov    eax, 0x10;
 	__asm        mov    ecx, curBeh;
 	__asm        cmp    [eax], ecx;
-	__asm        je     near ptr 0x0055CDFB;
+	__asm        je     _T10c;
 
-	__asm        jmp    near ptr 0x0055CDA7;
+	__asm        jmp    _Tb8;
 
-	__asm        jmp    near ptr 0x0055CD98;
+	__asm        jmp    _Ta9;
 
+_T87:
 	__asm        movsx  eax, stackSize;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
@@ -463,20 +470,22 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    edx, curBeh;
 	__asm        cmp    [eax+ecx+0x10], edx;
-	__asm        je     near ptr 0x0055CDFB;
+	__asm        je     _T10c;
 
-	__asm        jmp    near ptr 0x0055CDA7;
+	__asm        jmp    _Tb8;
 
+_Ta9:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, curBeh;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        je     near ptr 0x0055CDFB;
+	__asm        je     _T10c;
 // LINE 67:
+_Tb8:
 	__asm        movsx  eax, stackSize;
 	__asm        inc    eax;
 	__asm        movsx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0055CDCE;
+	__asm        jl     _Tdf;
 
 	__asm        movsx  eax, stackSize;
 	__asm        inc    eax;
@@ -484,13 +493,15 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	__asm        mov    ecx, this;
 	__asm        movsx  ecx, word ptr [ecx+8];
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x0055CDDA;
+	__asm        jl     _Teb;
 
+_Tdf:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055CDF6;
+	__asm        jmp    _T107;
 
-	__asm        jmp    near ptr 0x0055CDF3;
+	__asm        jmp    _T104;
 
+_Teb:
 	__asm        movsx  eax, stackSize;
 	__asm        inc    eax;
 	__asm        movsx  eax, ax;
@@ -498,31 +509,38 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+4];
-	__asm        jmp    near ptr 0x0055CDF6;
+	__asm        jmp    _T107;
 
+_T104:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    near ptr 0x0055CE32;
+_T107:
+	__asm        jmp    _T143;
 // LINE 68:
+_T10c:
 	__asm        dec    stackSize;
 // LINE 69:
-	__asm        jmp    near ptr 0x0055CD31;
+	__asm        jmp    _T42;
 // LINE 70:
+_T115:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
-	__asm        jg     near ptr 0x0055CE1F;
+	__asm        jg     _T130;
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055CE2D;
+	__asm        jmp    _T13e;
 
-	__asm        jmp    near ptr 0x0055CE2A;
+	__asm        jmp    _T13b;
 
+_T130:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x0055CE2D;
+	__asm        jmp    _T13e;
 
+_T13b:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    near ptr 0x0055CE32;
+_T13e:
+	__asm        jmp    _T143;
 // LINE 71:
 }
 
@@ -534,7 +552,7 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        mov    ecx, this;
 	__asm        movsx  ecx, word ptr [ecx+0xA];
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x0055CF18;
+	__asm        jge    _Te1;
 // LINE 86:
 // Block start:
 	struct TreeSim::StackElem* fill;
@@ -564,14 +582,15 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        mov    [ecx+4], ax;
 // LINE 90:
 	__asm        cmp    pTransfer, 0;
-	__asm        je     near ptr 0x0055CEBD;
+	__asm        je     _T86;
 // LINE 91:
 	__asm        mov    eax, pTransfer;
 	__asm        mov    ecx, fill;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 92:
-	__asm        jmp    near ptr 0x0055CEDE;
+	__asm        jmp    _Ta7;
 // LINE 93:
+_T86:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -582,13 +601,15 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        mov    ecx, fill;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 95:
+_Ta7:
 	__asm        cmp    stack, 0;
-	__asm        jne    near ptr 0x0055CEF1;
+	__asm        jne    _Tba;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    stack, eax;
 // LINE 97:
+_Tba:
 	__asm        mov    eax, stack;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, fill;
@@ -603,9 +624,10 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        inc    word ptr [eax+8];
 // LINE 101:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x0055CF30;
+	__asm        jmp    _Tf9;
 // LINE 104:
 // Block end:
+_Te1:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -613,7 +635,7 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        call   dword ptr [eax+4];
 // LINE 105:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x0055CF30;
+	__asm        jmp    _Tf9;
 // LINE 106:
 }
 
@@ -633,6 +655,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ax, bOnceOnly;
 	__asm        mov    done, ax;
 // LINE 127:
+_T23:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -658,7 +681,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    eax, node;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        cmp    eax, 0x100;
-	__asm        jl     near ptr 0x0055D04F;
+	__asm        jl     _T118;
 // LINE 130:
 // Block start:
 	short treeID;
@@ -668,17 +691,18 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ecx, this;
 	__asm        movsx  ecx, word ptr [ecx+0xA];
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x0055CFD7;
+	__asm        jl     _Ta0;
 
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055D1B7;
+	__asm        jmp    _T280;
 
-	__asm        jmp    near ptr 0x0055D19F;
+	__asm        jmp    _T268;
 // LINE 133:
+_Ta0:
 	__asm        mov    stackPass, 0;
 // LINE 134:
 	__asm        mov    eax, node;
@@ -687,25 +711,28 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 135:
 	__asm        mov    eax, node;
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0055D00C;
+	__asm        jne    _Td5;
 
 	__asm        mov    eax, node;
 	__asm        cmp    dword ptr [eax+8], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0055D00C;
+	__asm        jne    _Td5;
 
-	__asm        jmp    near ptr 0x0055D027;
+	__asm        jmp    _Tf0;
 
-	__asm        jmp    near ptr 0x0055D00C;
+	__asm        jmp    _Td5;
 
-	__asm        jmp    near ptr 0x0055D01E;
+_Td5:
+	__asm        jmp    _Te7;
 
 	__asm        test   dword ptr [ebp-0x1C], 0xFFFF;
-	__asm        jne    near ptr 0x0055D027;
+	__asm        jne    _Tf0;
 // LINE 136:
+_Te7:
 	__asm        mov    eax, node;
 	__asm        add    eax, 4;
 	__asm        mov    stackPass, eax;
 // LINE 138:
+_Tf0:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);
 	__asm        push   eax;
 	__asm        mov    eax, stackPass;
@@ -715,13 +742,15 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        call   TreeSim::Gosub;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0055D04A;
+	__asm        jne    _T113;
 // LINE 140:
 	__asm        mov    done, 1;
 // LINE 142:
 // Block end:
-	__asm        jmp    near ptr 0x0055D14B;
+_T113:
+	__asm        jmp    _T214;
 // LINE 144:
+_T118:
 	__asm        mov    eax, node;
 	__asm        push   eax;
 	__asm        mov    eax, elem;
@@ -733,54 +762,57 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    result, eax;
 	__asm        mov    eax, result;
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x0055D120;
+	__asm        jmp    _T1e9;
 // LINE 146:
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::NodeComplete;
 	__asm        movsx  eax, al;
 	__asm        cmp    eax, 0xFFFFFFFD;
-	__asm        jne    near ptr 0x0055D09F;
+	__asm        jne    _T168;
 // LINE 148:
 	__asm        push   0x3E9;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055D1B2;
+	__asm        jmp    _T27b;
 
-	__asm        jmp    near ptr 0x0055D19F;
+	__asm        jmp    _T268;
 // LINE 150:
-	__asm        jmp    near ptr 0x0055D14B;
+_T168:
+	__asm        jmp    _T214;
 // LINE 152:
 	__asm        push   0;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::NodeComplete;
 	__asm        movsx  eax, al;
 	__asm        cmp    eax, 0xFFFFFFFD;
-	__asm        jne    near ptr 0x0055D0D4;
+	__asm        jne    _T19d;
 // LINE 154:
 	__asm        push   0x3E9;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055D1AD;
+	__asm        jmp    _T276;
 
-	__asm        jmp    near ptr 0x0055D19F;
+	__asm        jmp    _T268;
 // LINE 156:
-	__asm        jmp    near ptr 0x0055D14B;
+_T19d:
+	__asm        jmp    _T214;
 // LINE 159:
-	__asm        jmp    near ptr 0x0055D14B;
+	__asm        jmp    _T214;
 // LINE 161:
 	__asm        mov    done, 1;
 // LINE 162:
-	__asm        jmp    near ptr 0x0055D14B;
+	__asm        jmp    _T214;
 // LINE 164:
 	__asm        mov    done, 1;
 // LINE 165:
-	__asm        jmp    near ptr 0x0055D14B;
+	__asm        jmp    _T214;
 // LINE 167:
+_T1bd:
 	__asm        mov    done, 1;
 // LINE 168:
 	__asm        push   0x8C085;
@@ -790,55 +822,65 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 169:
-	__asm        jmp    near ptr 0x0055D14B;
+	__asm        jmp    _T214;
 // LINE 170:
-	__asm        jmp    near ptr 0x0055D14B;
+	__asm        jmp    _T214;
 
+_T1e9:
 	__asm        inc    dword ptr [ebp-0x24];
 	__asm        cmp    dword ptr [ebp-0x24], 4;
-	__asm        ja     near ptr 0x0055D0F4;
+	__asm        ja     _T1bd;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    dword ptr [eax*4+0x55D137];
 // Switch pointers
 // LINE 173:
+_T214:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        cmp    eax, 0x80;
-	__asm        jle    near ptr 0x0055D177;
+	__asm        jle    _T240;
 // LINE 175:
 	__asm        push   0x3EA;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055D1A8;
+	__asm        jmp    _T271;
 
-	__asm        jmp    near ptr 0x0055D19F;
+	__asm        jmp    _T268;
 // LINE 177:
+_T240:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
-	__asm        je     near ptr 0x0055CF5A;
+	__asm        je     _T23;
 // LINE 179:
 	__asm        cmp    result, 2;
-	__asm        jne    near ptr 0x0055D197;
+	__asm        jne    _T260;
 
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x0055D19A;
+	__asm        jmp    _T263;
 
+_T260:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x0055D1BC;
+_T263:
+	__asm        jmp    _T285;
 // LINE 188:
 tree_error:
+_T268:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x0055D1BC;
+	__asm        jmp    _T285;
 // LINE 190:
-	__asm        jmp    near ptr 0x0055D19F;
+_T271:
+	__asm        jmp    _T268;
 
-	__asm        jmp    near ptr 0x0055D19F;
+_T276:
+	__asm        jmp    _T268;
 
-	__asm        jmp    near ptr 0x0055D19F;
+_T27b:
+	__asm        jmp    _T268;
 
-	__asm        jmp    near ptr 0x0055D19F;
+_T280:
+	__asm        jmp    _T268;
 }
 
 // FUNCTION: COPTER_D 0x0055d1c3
@@ -851,23 +893,25 @@ char TreeSim::NodeComplete(unsigned short success) {
 // LINE 202:
 	__asm        mov    done, 0;
 // LINE 204:
+_T12:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
-	__asm        jne    near ptr 0x0055D2E2;
+	__asm        jne    _T11f;
 // LINE 205:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
-	__asm        jge    near ptr 0x0055D20C;
+	__asm        jge    _T49;
 // LINE 207:
 	__asm        push   0x3EB;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055D2F1;
+	__asm        jmp    _T12e;
 
-	__asm        jmp    near ptr 0x0055D2EA;
+	__asm        jmp    _T127;
 // LINE 209:
+_T49:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -891,21 +935,23 @@ char TreeSim::NodeComplete(unsigned short success) {
 	__asm        mov    node, eax;
 // LINE 211:
 	__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
-	__asm        je     near ptr 0x0055D263;
+	__asm        je     _Ta0;
 
 	__asm        mov    eax, node;
 	__asm        mov    al, [eax+2];
 	__asm        mov    trans, al;
 // LINE 212:
-	__asm        jmp    near ptr 0x0055D26C;
+	__asm        jmp    _Ta9;
 
+_Ta0:
 	__asm        mov    eax, node;
 	__asm        mov    al, [eax+3];
 	__asm        mov    trans, al;
 // LINE 214:
+_Ta9:
 	__asm        movsx  eax, trans;
 	__asm        cmp    eax, 0xFFFFFFFE;
-	__asm        jne    near ptr 0x0055D291;
+	__asm        jne    _Tce;
 // LINE 215:
 	__asm        mov    done, 0;
 // LINE 216:
@@ -914,11 +960,12 @@ char TreeSim::NodeComplete(unsigned short success) {
 // LINE 217:
 	__asm        mov    success, 1;
 // LINE 218:
-	__asm        jmp    near ptr 0x0055D2DD;
+	__asm        jmp    _T11a;
 
+_Tce:
 	__asm        movsx  eax, trans;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0055D2B6;
+	__asm        jne    _Tf3;
 // LINE 219:
 	__asm        mov    done, 0;
 // LINE 220:
@@ -927,8 +974,9 @@ char TreeSim::NodeComplete(unsigned short success) {
 // LINE 221:
 	__asm        mov    success, 0;
 // LINE 222:
-	__asm        jmp    near ptr 0x0055D2DD;
+	__asm        jmp    _T11a;
 // LINE 223:
+_Tf3:
 	__asm        mov    done, 1;
 // LINE 224:
 	__asm        movsx  ax, trans;
@@ -940,16 +988,20 @@ char TreeSim::NodeComplete(unsigned short success) {
 	__asm        mov    edx, [edx+4];
 	__asm        mov    [ecx+edx+2], ax;
 // LINE 226:
-	__asm        jmp    near ptr 0x0055D1D5;
+_T11a:
+	__asm        jmp    _T12;
 // LINE 227:
+_T11f:
 	__asm        mov    al, trans;
-	__asm        jmp    near ptr 0x0055D2F6;
+	__asm        jmp    _T133;
 // LINE 231:
 tree_error:
+_T127:
 	__asm        mov    al, 0xFD;
-	__asm        jmp    near ptr 0x0055D2F6;
+	__asm        jmp    _T133;
 // LINE 233:
-	__asm        jmp    near ptr 0x0055D2EA;
+_T12e:
+	__asm        jmp    _T127;
 }
 
 // FUNCTION: COPTER_D 0x0055d2fd
@@ -960,7 +1012,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
-	__asm        jg     near ptr 0x0055D334;
+	__asm        jg     _T37;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BDF70;
@@ -969,12 +1021,13 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 241:
+_T37:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        mov    ecx, this;
 	__asm        movsx  ecx, word ptr [ecx+0xA];
 	__asm        cmp    eax, ecx;
-	__asm        jle    near ptr 0x0055D366;
+	__asm        jle    _T69;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BDFA4;
@@ -983,6 +1036,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 243:
+_T69:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];

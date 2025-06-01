@@ -53,16 +53,18 @@ void VRResFreeBarrys(struct VRResource* res) {
 // LINE 115:
 	__asm        mov    eax, res;
 	__asm        cmp    dword ptr [eax+8], 1;
-	__asm        je     near ptr 0x004D5330;
+	__asm        je     _T21;
 // LINE 116:
-	__asm        jmp    near ptr 0x004D5351;
+	__asm        jmp    _T42;
 // LINE 118:
+_T21:
 	__asm        mov    eax, geo;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        jge    near ptr 0x004D5342;
+	__asm        jge    _T33;
 // LINE 119:
-	__asm        jmp    near ptr 0x004D5351;
+	__asm        jmp    _T42;
 // LINE 121:
+_T33:
 	__asm        mov    eax, geo;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
@@ -79,25 +81,28 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 // LINE 142:
 	__asm        mov    eax, Flags;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004D57F2;
+	__asm        jmp    _T49c;
 // LINE 146:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_CMAP;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5385;
+	__asm        jne    _T2f;
 // LINE 147:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 148:
+_T2f:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D5394;
+	__asm        jmp    _T3e;
 
+_T3b:
 	__asm        inc    i;
+_T3e:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666A4], eax;
-	__asm        jle    near ptr 0x004D5491;
+	__asm        jle    _T13b;
 // LINE 149:
 	__asm        mov    eax, misc;
 	__asm        push   eax;
@@ -110,7 +115,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   _stricmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D548C;
+	__asm        jne    _T136;
 // LINE 151:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 153:
@@ -127,32 +132,35 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5413;
+	__asm        jne    _Tbd;
 // LINE 154:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 155:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 157:
+_Tbd:
 	__asm        push   0x3E8;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59C22C], eax;
 	__asm        cmp    dword ptr ds:[0x59C22C], 0;
-	__asm        jge    near ptr 0x004D5439;
+	__asm        jge    _Te3;
 // LINE 158:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 159:
+_Te3:
 	__asm        call   LoadPalette;
 	__asm        mov    res, eax;
 // LINE 160:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D5452;
+	__asm        jne    _Tfc;
 // LINE 161:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 162:
+_Tfc:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+4], eax;
@@ -162,7 +170,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   RegisterResource;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5484;
+	__asm        jne    _T12e;
 // LINE 164:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -170,30 +178,34 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        add    esp, 4;
 // LINE 165:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 167:
+_T12e:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 169:
-	__asm        jmp    near ptr 0x004D5391;
+_T136:
+	__asm        jmp    _T3b;
 // LINE 170:
+_T13b:
 	__asm        mov    dword ptr ds:[0x662810], 7;
 // LINE 171:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 172:
-	__asm        jmp    near ptr 0x004D5819;
+	__asm        jmp    _T4c3;
 // LINE 176:
 	__asm        push   0x10000;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59C22C], eax;
 	__asm        cmp    dword ptr ds:[0x59C22C], 0;
-	__asm        jge    near ptr 0x004D54CD;
+	__asm        jge    _T177;
 // LINE 177:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 178:
+_T177:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   LoadImages;
@@ -201,11 +213,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        mov    res, eax;
 // LINE 179:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D54ED;
+	__asm        jne    _T197;
 // LINE 180:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 181:
+_T197:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+4], eax;
@@ -215,7 +228,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   RegisterResource;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D551F;
+	__asm        jne    _T1c9;
 // LINE 183:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -223,28 +236,32 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        add    esp, 4;
 // LINE 184:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 186:
+_T1c9:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 190:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_GEOM;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5542;
+	__asm        jne    _T1ec;
 // LINE 191:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 193:
+_T1ec:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D5551;
+	__asm        jmp    _T1fb;
 
+_T1f8:
 	__asm        inc    i;
+_T1fb:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666B0], eax;
-	__asm        jle    near ptr 0x004D5688;
+	__asm        jle    _T332;
 // LINE 194:
 	__asm        mov    eax, misc;
 	__asm        push   eax;
@@ -258,7 +275,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   _stricmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5683;
+	__asm        jne    _T32d;
 // LINE 196:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 198:
@@ -276,23 +293,25 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D55D6;
+	__asm        jne    _T280;
 // LINE 199:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 200:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 202:
+_T280:
 	__asm        push   0x10000;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59C22C], eax;
 	__asm        cmp    dword ptr ds:[0x59C22C], 0;
-	__asm        jge    near ptr 0x004D55FC;
+	__asm        jge    _T2a6;
 // LINE 203:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 204:
+_T2a6:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
@@ -314,11 +333,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        mov    res, eax;
 // LINE 205:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D5649;
+	__asm        jne    _T2f3;
 // LINE 206:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 207:
+_T2f3:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+4], eax;
@@ -328,7 +348,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   RegisterResource;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D567B;
+	__asm        jne    _T325;
 // LINE 209:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -336,37 +356,43 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        add    esp, 4;
 // LINE 210:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 212:
+_T325:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 214:
-	__asm        jmp    near ptr 0x004D554E;
+_T32d:
+	__asm        jmp    _T1f8;
 // LINE 215:
+_T332:
 	__asm        mov    dword ptr ds:[0x662810], 7;
 // LINE 216:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 217:
-	__asm        jmp    near ptr 0x004D5819;
+	__asm        jmp    _T4c3;
 // LINE 221:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_GEOM;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D56B9;
+	__asm        jne    _T363;
 // LINE 222:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 224:
+_T363:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D56C8;
+	__asm        jmp    _T372;
 
+_T36f:
 	__asm        inc    i;
+_T372:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x6666B4], eax;
-	__asm        jle    near ptr 0x004D57D0;
+	__asm        jle    _T47a;
 // LINE 225:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -374,7 +400,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        mov    ecx, ds:[0x66669C];
 	__asm        mov    edx, misc;
 	__asm        cmp    [eax+ecx], edx;
-	__asm        jne    near ptr 0x004D57CB;
+	__asm        jne    _T475;
 // LINE 227:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 229:
@@ -390,23 +416,25 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D573A;
+	__asm        jne    _T3e4;
 // LINE 230:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 231:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 233:
+_T3e4:
 	__asm        push   0x10000;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59C22C], eax;
 	__asm        cmp    dword ptr ds:[0x59C22C], 0;
-	__asm        jge    near ptr 0x004D5760;
+	__asm        jge    _T40a;
 // LINE 234:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 235:
+_T40a:
 	__asm        push   1;
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -419,11 +447,12 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        mov    res, eax;
 // LINE 236:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D5791;
+	__asm        jne    _T43b;
 // LINE 237:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 238:
+_T43b:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+4], eax;
@@ -433,7 +462,7 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        call   RegisterResource;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D57C3;
+	__asm        jne    _T46d;
 // LINE 240:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -441,35 +470,41 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 	__asm        add    esp, 4;
 // LINE 241:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 243:
+_T46d:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 245:
-	__asm        jmp    near ptr 0x004D56C5;
+_T475:
+	__asm        jmp    _T36f;
 // LINE 246:
+_T47a:
 	__asm        mov    dword ptr ds:[0x662810], 8;
 // LINE 247:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 248:
-	__asm        jmp    near ptr 0x004D5819;
+	__asm        jmp    _T4c3;
 // LINE 253:
+_T490:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 255:
-	__asm        jmp    near ptr 0x004D5819;
+	__asm        jmp    _T4c3;
 
+_T49c:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        cmp    dword ptr [ebp-0xC], 3;
-	__asm        ja     near ptr 0x004D57E6;
+	__asm        ja     _T490;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x4D5809];
 // Switch pointers
 // LINE 256:
+_T4c3:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5820;
+	__asm        jmp    _T4ca;
 // LINE 257:
 }
 
@@ -478,8 +513,9 @@ int32_t VRUnLoadAllResources() {
 	struct VRResource* res;
 
 // LINE 278:
+_T09:
 	__asm        cmp    dword ptr ds:[0x59C224], 0;
-	__asm        je     near ptr 0x004D5863;
+	__asm        je     _T3e;
 // LINE 279:
 	__asm        mov    eax, ds:[0x666500];
 	__asm        mov    res, eax;
@@ -489,15 +525,17 @@ int32_t VRUnLoadAllResources() {
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D585E;
+	__asm        jne    _T39;
 // LINE 281:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D586D;
+	__asm        jmp    _T48;
 // LINE 282:
-	__asm        jmp    near ptr 0x004D582E;
+_T39:
+	__asm        jmp    _T09;
 // LINE 283:
+_T3e:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D586D;
+	__asm        jmp    _T48;
 // LINE 284:
 }
 
@@ -509,8 +547,9 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004D58D8;
+	__asm        jmp    _T66;
 // LINE 308:
+_T17:
 	__asm        mov    eax, res;
 	__asm        mov    geo, eax;
 // LINE 309:
@@ -519,43 +558,48 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 	__asm        call   UnRegisterResource;
 	__asm        add    esp, 4;
 // LINE 317:
-	__asm        jmp    near ptr 0x004D58FB;
+	__asm        jmp    _T89;
 // LINE 320:
+_T2e:
 	__asm        mov    eax, res;
 	__asm        push   eax;
 	__asm        call   UnRegisterResource;
 	__asm        add    esp, 4;
 // LINE 321:
-	__asm        jmp    near ptr 0x004D58FB;
+	__asm        jmp    _T89;
 // LINE 324:
+_T3f:
 	__asm        mov    eax, res;
 	__asm        push   eax;
 	__asm        call   UnRegisterResource;
 	__asm        add    esp, 4;
 // LINE 325:
-	__asm        jmp    near ptr 0x004D58FB;
+	__asm        jmp    _T89;
 // LINE 328:
+_T50:
 	__asm        mov    dword ptr ds:[0x662810], 0xB;
 // LINE 329:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5921;
+	__asm        jmp    _Taf;
 // LINE 331:
-	__asm        jmp    near ptr 0x004D58FB;
+	__asm        jmp    _T89;
 
+_T66:
 	__asm        cmp    dword ptr [ebp-8], 1;
-	__asm        je     near ptr 0x004D5889;
+	__asm        je     _T17;
 
 	__asm        cmp    dword ptr [ebp-8], 3;
-	__asm        je     near ptr 0x004D58A0;
+	__asm        je     _T2e;
 
 	__asm        cmp    dword ptr [ebp-8], 4;
-	__asm        je     near ptr 0x004D58B1;
+	__asm        je     _T3f;
 
-	__asm        jmp    near ptr 0x004D58C2;
+	__asm        jmp    _T50;
 // LINE 334:
+_T89:
 	__asm        mov    eax, res;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jl     near ptr 0x004D5917;
+	__asm        jl     _Ta5;
 // LINE 335:
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+4];
@@ -563,8 +607,9 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 337:
+_Ta5:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5921;
+	__asm        jmp    _Taf;
 // LINE 338:
 }
 
@@ -579,32 +624,36 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   GetResourceDir;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D594A;
+	__asm        jne    _T24;
 // LINE 365:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 369:
+_T24:
 	__asm        cmp    dword ptr ds:[0x666698], 0;
-	__asm        je     near ptr 0x004D596E;
+	__asm        je     _T48;
 
 	__asm        cmp    dword ptr ds:[0x66669C], 0;
-	__asm        je     near ptr 0x004D596E;
+	__asm        je     _T48;
 // LINE 370:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 375:
+_T48:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D597D;
+	__asm        jmp    _T57;
 
+_T54:
 	__asm        inc    i;
+_T57:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x666694], eax;
-	__asm        jle    near ptr 0x004D5B99;
+	__asm        jle    _T273;
 // LINE 377:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, ds:[0x6663EC];
 	__asm        cmp    dword ptr [ecx+eax*8], 0x4D4F4547;
-	__asm        jne    near ptr 0x004D5B94;
+	__asm        jne    _T26e;
 // LINE 379:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 381:
@@ -618,42 +667,46 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D59E4;
+	__asm        jne    _Tbe;
 // LINE 382:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 383:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 386:
+_Tbe:
 	__asm        push   8;
 	__asm        lea    eax, chunk.Id;
 	__asm        push   eax;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5A01;
+	__asm        jne    _Tdb;
 // LINE 387:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 403:
+_Tdb:
 	__asm        cmp    chunk.Id, 0x4D4F4547;
-	__asm        je     near ptr 0x004D5A1F;
+	__asm        je     _Tf9;
 // LINE 404:
 	__asm        mov    dword ptr ds:[0x662810], 6;
 // LINE 405:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 408:
+_Tf9:
 	__asm        push   0x10;
 	__asm        push   0x6666B0;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5A3D;
+	__asm        jne    _T117;
 // LINE 409:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 438:
+_T117:
 	__asm        mov    eax, ds:[0x6666B0];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
@@ -677,10 +730,10 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        mov    ds:[0x66669C], eax;
 // LINE 441:
 	__asm        cmp    dword ptr ds:[0x666698], 0;
-	__asm        jne    near ptr 0x004D5ABF;
+	__asm        jne    _T199;
 
 	__asm        cmp    dword ptr ds:[0x66669C], 0;
-	__asm        jne    near ptr 0x004D5ABF;
+	__asm        jne    _T199;
 // LINE 442:
 	__asm        mov    dword ptr ds:[0x66669C], 0;
 // LINE 443:
@@ -689,8 +742,9 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 445:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 449:
+_T199:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 451:
 	__asm        push   0;
@@ -701,13 +755,14 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5AF9;
+	__asm        jne    _T1d3;
 // LINE 452:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 453:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 456:
+_T1d3:
 	__asm        mov    eax, ds:[0x6666B0];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
@@ -719,11 +774,12 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5B27;
+	__asm        jne    _T201;
 // LINE 457:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 533:
+_T201:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 535:
 	__asm        push   0;
@@ -734,13 +790,14 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5B61;
+	__asm        jne    _T23b;
 // LINE 536:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 537:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 540:
+_T23b:
 	__asm        mov    eax, ds:[0x6666B4];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*8];
@@ -750,20 +807,23 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5B8A;
+	__asm        jne    _T264;
 // LINE 541:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 609:
+_T264:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 611:
-	__asm        jmp    near ptr 0x004D597A;
+_T26e:
+	__asm        jmp    _T54;
 // LINE 612:
+_T273:
 	__asm        mov    dword ptr ds:[0x662810], 5;
 // LINE 613:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5BAA;
+	__asm        jmp    _T284;
 // LINE 615:
 }
 
@@ -778,29 +838,33 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        call   GetResourceDir;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5BD3;
+	__asm        jne    _T24;
 // LINE 641:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 645:
+_T24:
 	__asm        cmp    dword ptr ds:[0x666690], 0;
-	__asm        je     near ptr 0x004D5BEA;
+	__asm        je     _T3b;
 // LINE 646:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 651:
+_T3b:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D5BF9;
+	__asm        jmp    _T4a;
 
+_T47:
 	__asm        inc    i;
+_T4a:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x666694], eax;
-	__asm        jle    near ptr 0x004D5D32;
+	__asm        jle    _T183;
 // LINE 653:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, ds:[0x6663EC];
 	__asm        cmp    dword ptr [ecx+eax*8], 0x50414D43;
-	__asm        jne    near ptr 0x004D5D2D;
+	__asm        jne    _T17e;
 // LINE 655:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 657:
@@ -814,42 +878,46 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5C60;
+	__asm        jne    _Tb1;
 // LINE 658:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 659:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 662:
+_Tb1:
 	__asm        push   8;
 	__asm        lea    eax, chunk.Id;
 	__asm        push   eax;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5C7D;
+	__asm        jne    _Tce;
 // LINE 663:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 678:
+_Tce:
 	__asm        cmp    chunk.Id, 0x50414D43;
-	__asm        je     near ptr 0x004D5C9B;
+	__asm        je     _Tec;
 // LINE 679:
 	__asm        mov    dword ptr ds:[0x662810], 6;
 // LINE 680:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 683:
+_Tec:
 	__asm        push   4;
 	__asm        push   0x6666A4;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5CB9;
+	__asm        jne    _T10a;
 // LINE 684:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 694:
+_T10a:
 	__asm        mov    eax, ds:[0x6666A4];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
@@ -862,13 +930,14 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        mov    ds:[0x666690], eax;
 // LINE 695:
 	__asm        cmp    dword ptr ds:[0x666690], 0;
-	__asm        jne    near ptr 0x004D5CF8;
+	__asm        jne    _T149;
 // LINE 696:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 697:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 700:
+_T149:
 	__asm        mov    eax, ds:[0x6666A4];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
@@ -879,20 +948,23 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5D23;
+	__asm        jne    _T174;
 // LINE 701:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 726:
+_T174:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 728:
-	__asm        jmp    near ptr 0x004D5BF6;
+_T17e:
+	__asm        jmp    _T47;
 // LINE 729:
+_T183:
 	__asm        mov    dword ptr ds:[0x662810], 5;
 // LINE 730:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5D43;
+	__asm        jmp    _T194;
 // LINE 732:
 }
 
@@ -907,14 +979,15 @@ int32_t GetResourceDir(char * name) {
 	__asm        call   _stricmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5DBC;
+	__asm        jne    _T74;
 // LINE 759:
 	__asm        cmp    dword ptr ds:[0x6663EC], 0;
-	__asm        je     near ptr 0x004D5D81;
+	__asm        je     _T39;
 // LINE 760:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 766:
+_T39:
 	__asm        mov    dword ptr ds:[0x59C220], 1;
 // LINE 768:
 	__asm        push   0;
@@ -924,46 +997,51 @@ int32_t GetResourceDir(char * name) {
 	__asm        call   _lseek;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5DB7;
+	__asm        jne    _T6f;
 // LINE 769:
 	__asm        mov    dword ptr ds:[0x662810], 3;
 // LINE 770:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 773:
-	__asm        jmp    near ptr 0x004D5DD7;
+_T6f:
+	__asm        jmp    _T8f;
 // LINE 774:
+_T74:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   OpenResourceFile;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5DD7;
+	__asm        jne    _T8f;
 // LINE 775:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 783:
+_T8f:
 	__asm        push   8;
 	__asm        lea    eax, chunk.Id;
 	__asm        push   eax;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5DF4;
+	__asm        jne    _Tac;
 // LINE 784:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 801:
+_Tac:
 	__asm        push   4;
 	__asm        push   0x666694;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5E12;
+	__asm        jne    _Tca;
 // LINE 802:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 815:
+_Tca:
 	__asm        mov    eax, ds:[0x666694];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
@@ -974,13 +1052,14 @@ int32_t GetResourceDir(char * name) {
 	__asm        mov    ds:[0x6663EC], eax;
 // LINE 816:
 	__asm        cmp    dword ptr ds:[0x6663EC], 0;
-	__asm        jne    near ptr 0x004D5E4C;
+	__asm        jne    _T104;
 // LINE 817:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 818:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 821:
+_T104:
 	__asm        mov    eax, ds:[0x666694];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
@@ -989,13 +1068,14 @@ int32_t GetResourceDir(char * name) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D5E72;
+	__asm        jne    _T12a;
 // LINE 822:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 848:
+_T12a:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5E7C;
+	__asm        jmp    _T134;
 // LINE 849:
 }
 
@@ -1011,19 +1091,20 @@ int32_t OpenResourceFile(char * name) {
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x6666A0], eax;
 	__asm        cmp    dword ptr ds:[0x6666A0], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D5EC0;
+	__asm        jne    _T3f;
 // LINE 874:
 	__asm        mov    dword ptr ds:[0x662810], 1;
 // LINE 875:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5F19;
+	__asm        jmp    _T98;
 // LINE 878:
+_T3f:
 	__asm        push   0x7D0;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x59C228], eax;
 	__asm        cmp    dword ptr ds:[0x59C228], 0;
-	__asm        jge    near ptr 0x004D5EFE;
+	__asm        jge    _T7d;
 // LINE 880:
 	__asm        mov    eax, ds:[0x6666A0];
 	__asm        push   eax;
@@ -1033,8 +1114,9 @@ int32_t OpenResourceFile(char * name) {
 	__asm        mov    dword ptr ds:[0x662810], 1;
 // LINE 882:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5F19;
+	__asm        jmp    _T98;
 // LINE 884:
+_T7d:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        push   0x6663F0;
@@ -1042,7 +1124,7 @@ int32_t OpenResourceFile(char * name) {
 	__asm        add    esp, 8;
 // LINE 885:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5F19;
+	__asm        jmp    _T98;
 // LINE 887:
 }
 
@@ -1058,15 +1140,16 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        cmp    eax, s;
-	__asm        je     near ptr 0x004D5F54;
+	__asm        je     _T36;
 // LINE 1059:
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 1060:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5F5E;
+	__asm        jmp    _T40;
 // LINE 1062:
+_T36:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5F5E;
+	__asm        jmp    _T40;
 // LINE 1064:
 }
 
@@ -1074,21 +1157,23 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 void VRCloseResourceFile() {
 // LINE 1092:
 	__asm        cmp    dword ptr ds:[0x6666A0], 0;
-	__asm        je     near ptr 0x004D5F84;
+	__asm        je     _T21;
 // LINE 1093:
 	__asm        mov    eax, ds:[0x6666A0];
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 1094:
+_T21:
 	__asm        cmp    dword ptr ds:[0x59C228], 0;
-	__asm        jl     near ptr 0x004D5F9F;
+	__asm        jl     _T3c;
 // LINE 1096:
 	__asm        mov    eax, ds:[0x59C228];
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 1099:
+_T3c:
 	__asm        call   InitResource;
 // LINE 1100:
 }
@@ -1097,13 +1182,14 @@ void VRCloseResourceFile() {
 int32_t RegisterResource(struct VRResource* res) {
 // LINE 1119:
 	__asm        cmp    dword ptr ds:[0x59C224], 0x64;
-	__asm        jl     near ptr 0x004D5FCD;
+	__asm        jl     _T24;
 // LINE 1120:
 	__asm        mov    dword ptr ds:[0x662810], 0xC;
 // LINE 1121:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D5FF8;
+	__asm        jmp    _T4f;
 // LINE 1123:
+_T24:
 	__asm        mov    eax, ds:[0x59C224];
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx+0xC], eax;
@@ -1114,7 +1200,7 @@ int32_t RegisterResource(struct VRResource* res) {
 	__asm        inc    dword ptr ds:[0x59C224];
 // LINE 1125:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D5FF8;
+	__asm        jmp    _T4f;
 // LINE 1127:
 }
 
@@ -1131,10 +1217,11 @@ void UnRegisterResource(struct VRResource* res) {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, res;
 	__asm        cmp    [eax*4+0x666500], ecx;
-	__asm        je     near ptr 0x004D6027;
+	__asm        je     _T2a;
 // LINE 1148:
-	__asm        jmp    near ptr 0x004D6059;
+	__asm        jmp    _T5c;
 // LINE 1149:
+_T2a:
 	__asm        dec    dword ptr ds:[0x59C224];
 // LINE 1150:
 	__asm        mov    eax, ds:[0x59C224];

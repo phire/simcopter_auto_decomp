@@ -102,12 +102,13 @@ void S3MapInit() {
 	__asm        mov    ds:[0x5B5274], eax;
 // LINE 216:
 	__asm        cmp    dword ptr ds:[0x5B5274], 0;
-	__asm        jne    near ptr 0x004FE889;
+	__asm        jne    _Tf9;
 // LINE 217:
 	__asm        push   0x5B52A4;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 219:
+_Tf9:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ds:[0x5B5274];
@@ -163,11 +164,13 @@ void S3MapInit() {
 	__asm        mov    ds:[0x608C10], eax;
 // LINE 238:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004FE940;
+	__asm        jmp    _T1b0;
 
+_T1ad:
 	__asm        inc    i;
+_T1b0:
 	__asm        cmp    i, 8;
-	__asm        jge    near ptr 0x004FE964;
+	__asm        jge    _T1d4;
 // LINE 240:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, i;
@@ -176,8 +179,9 @@ void S3MapInit() {
 	__asm        mov    eax, ds:[0x608BF0];
 	__asm        add    ptr, eax;
 // LINE 242:
-	__asm        jmp    near ptr 0x004FE93D;
+	__asm        jmp    _T1ad;
 // LINE 245:
+_T1d4:
 	__asm        push   0xC;
 	__asm        mov    eax, ds:[0x5B476C];
 	__asm        push   eax;
@@ -203,11 +207,13 @@ void S3MapInit() {
 	__asm        mov    ds:[0x608C00], eax;
 // LINE 255:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004FE9B0;
+	__asm        jmp    _T220;
 
+_T21d:
 	__asm        inc    i;
+_T220:
 	__asm        cmp    i, 3;
-	__asm        jge    near ptr 0x004FE9D4;
+	__asm        jge    _T244;
 // LINE 257:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, i;
@@ -216,20 +222,23 @@ void S3MapInit() {
 	__asm        mov    eax, ds:[0x608BC8];
 	__asm        add    ptr, eax;
 // LINE 259:
-	__asm        jmp    near ptr 0x004FE9AD;
+	__asm        jmp    _T21d;
 // LINE 262:
+_T244:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004FE9E3;
+	__asm        jmp    _T253;
 
+_T250:
 	__asm        inc    i;
+_T253:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x004FEA03;
+	__asm        jge    _T273;
 // LINE 264:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    dword ptr [eax*8+0x6BED40], 0;
 // LINE 265:
-	__asm        jmp    near ptr 0x004FE9E0;
+	__asm        jmp    _T250;
 // LINE 267:
 }
 
@@ -256,13 +265,14 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    ptr, eax;
 // LINE 305:
 	__asm        cmp    dword ptr ds:[0x5B5200], 0;
-	__asm        je     near ptr 0x004FEA43;
+	__asm        je     _T30;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004FEA43;
+	__asm        je     _T30;
 // LINE 306:
-	__asm        jmp    near ptr 0x005001C6;
+	__asm        jmp    _T17b3;
 // LINE 308:
+_T30:
 	__asm        and    posy, 0xFF;
 // LINE 309:
 	__asm        and    posx, 0xFF;
@@ -286,7 +296,7 @@ void S3MapRender(long posx, long posy) {
 // LINE 318:
 	__asm        mov    eax, ds:[0x5B5298];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x0050017D;
+	__asm        jmp    _T176a;
 // LINE 322:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, ds:[0x5B527C];
@@ -313,39 +323,45 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C0C];
 	__asm        mov    y, eax;
 	__asm        mov    county, 0;
-	__asm        jmp    near ptr 0x004FEAF7;
+	__asm        jmp    _Te4;
 
+_Tde:
 	__asm        inc    county;
 	__asm        inc    y;
+_Te4:
 	__asm        mov    eax, county;
 	__asm        cmp    ds:[0x5B5280], eax;
-	__asm        jle    near ptr 0x004FEE2A;
+	__asm        jle    _T417;
 // LINE 330:
 	__asm        and    y, 0xFF;
 // LINE 332:
 	__asm        mov    eax, ds:[0x608C08];
 	__asm        mov    x, eax;
 	__asm        mov    countx, 0;
-	__asm        jmp    near ptr 0x004FEB27;
+	__asm        jmp    _T114;
 
+_T10e:
 	__asm        inc    countx;
 	__asm        inc    x;
+_T114:
 	__asm        mov    eax, countx;
 	__asm        cmp    ds:[0x5B527C], eax;
-	__asm        jle    near ptr 0x004FEE21;
+	__asm        jle    _T40e;
 // LINE 335:
 	__asm        and    x, 0xFF;
 // LINE 338:
 	__asm        cmp    x, 0x7F;
-	__asm        jg     near ptr 0x004FEB51;
+	__asm        jg     _T13e;
 
 	__asm        cmp    y, 0x7F;
-	__asm        jle    near ptr 0x004FEB5D;
+	__asm        jle    _T14a;
 // LINE 340:
+_T13e:
 	__asm        mov    tile, 0;
 // LINE 342:
-	__asm        jmp    near ptr 0x004FEB72;
+	__asm        jmp    _T15f;
 // LINE 345:
+_T14a:
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, y;
@@ -353,6 +369,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    tile, edx;
 // LINE 351:
+_T15f:
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 0xA;
@@ -364,7 +381,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004FEBB5;
+	__asm        je     _T1a2;
 // LINE 354:
 	__asm        movsx  eax, byte ptr ds:[0x5B5284];
 	__asm        add    eax, 0x10;
@@ -372,92 +389,101 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 355:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 358:
+_T1a2:
 	__asm        cmp    tile, 0xD1;
-	__asm        jne    near ptr 0x004FEBD0;
+	__asm        jne    _T1bd;
 // LINE 360:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xEA;
 	__asm        inc    ptr;
 // LINE 361:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 363:
+_T1bd:
 	__asm        cmp    tile, 0xD2;
-	__asm        jne    near ptr 0x004FEBEB;
+	__asm        jne    _T1d8;
 // LINE 365:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x9A;
 	__asm        inc    ptr;
 // LINE 366:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 368:
+_T1d8:
 	__asm        cmp    tile, 0xD3;
-	__asm        jne    near ptr 0x004FEC06;
+	__asm        jne    _T1f3;
 // LINE 370:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x1A;
 	__asm        inc    ptr;
 // LINE 371:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 374:
+_T1f3:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6C1190], eax;
-	__asm        jg     near ptr 0x004FEC54;
+	__asm        jg     _T241;
 
 	__asm        mov    eax, ds:[0x6C1190];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x004FEC54;
+	__asm        jle    _T241;
 
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6C1194], eax;
-	__asm        jg     near ptr 0x004FEC54;
+	__asm        jg     _T241;
 
 	__asm        mov    eax, ds:[0x6C1194];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, y;
-	__asm        jle    near ptr 0x004FEC54;
+	__asm        jle    _T241;
 // LINE 376:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xCA;
 	__asm        inc    ptr;
 // LINE 377:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 381:
+_T241:
 	__asm        cmp    tile, 0xD;
-	__asm        je     near ptr 0x004FEC6B;
+	__asm        je     _T258;
 
 	__asm        cmp    tile, 0xD5;
-	__asm        jne    near ptr 0x004FEC79;
+	__asm        jne    _T266;
 // LINE 383:
+_T258:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x5A;
 	__asm        inc    ptr;
 // LINE 384:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 388:
+_T266:
 	__asm        cmp    tile, 0x1D;
-	__asm        jl     near ptr 0x004FEC9B;
+	__asm        jl     _T288;
 
 	__asm        cmp    tile, 0x70;
-	__asm        jge    near ptr 0x004FEC9B;
+	__asm        jge    _T288;
 // LINE 390:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x33;
 	__asm        inc    ptr;
 // LINE 391:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 395:
+_T288:
 	__asm        cmp    tile, 0x70;
-	__asm        jl     near ptr 0x004FECB3;
+	__asm        jl     _T2a0;
 // LINE 397:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x3A;
 	__asm        inc    ptr;
 // LINE 398:
-	__asm        jmp    near ptr 0x004FEB21;
+	__asm        jmp    _T10e;
 // LINE 402:
+_T2a0:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -466,11 +492,11 @@ void S3MapRender(long posx, long posy) {
 // LINE 403:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jl     near ptr 0x004FED36;
+	__asm        jl     _T323;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x40;
-	__asm        jge    near ptr 0x004FED36;
+	__asm        jge    _T323;
 // LINE 405:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -496,29 +522,31 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 409:
-	__asm        jmp    near ptr 0x004FEE1C;
+	__asm        jmp    _T409;
 
+_T323:
 	__asm        movsx  eax, texid;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x004FED5D;
+	__asm        jl     _T34a;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0xA;
-	__asm        jge    near ptr 0x004FED5D;
+	__asm        jge    _T34a;
 // LINE 411:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x90;
 	__asm        inc    ptr;
 // LINE 413:
-	__asm        jmp    near ptr 0x004FEE1C;
+	__asm        jmp    _T409;
 
+_T34a:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x20;
-	__asm        jl     near ptr 0x004FEDCB;
+	__asm        jl     _T3b8;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jge    near ptr 0x004FEDCB;
+	__asm        jge    _T3b8;
 // LINE 415:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -544,8 +572,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 419:
-	__asm        jmp    near ptr 0x004FEE1C;
+	__asm        jmp    _T409;
 // LINE 421:
+_T3b8:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
 	__asm        mov    cl, ds:[0x5B5CC0];
@@ -570,13 +599,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 425:
-	__asm        jmp    near ptr 0x004FEB21;
+_T409:
+	__asm        jmp    _T10e;
 // LINE 426:
+_T40e:
 	__asm        add    ptr, 0x14;
 // LINE 427:
-	__asm        jmp    near ptr 0x004FEAF1;
+	__asm        jmp    _Tde;
 // LINE 428:
-	__asm        jmp    near ptr 0x005001A1;
+_T417:
+	__asm        jmp    _T178e;
 // LINE 432:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, ds:[0x5B527C];
@@ -607,14 +639,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C0C];
 	__asm        mov    y, eax;
 	__asm        mov    county, 0;
-	__asm        jmp    near ptr 0x004FEE9B;
+	__asm        jmp    _T488;
 
+_T482:
 	__asm        inc    county;
 	__asm        inc    y;
+_T488:
 	__asm        mov    eax, ds:[0x5B5280];
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, county;
-	__asm        jle    near ptr 0x004FF290;
+	__asm        jle    _T87d;
 // LINE 439:
 	__asm        and    y, 0xFF;
 // LINE 441:
@@ -624,27 +658,31 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C08];
 	__asm        mov    x, eax;
 	__asm        mov    countx, 0;
-	__asm        jmp    near ptr 0x004FEED3;
+	__asm        jmp    _T4c0;
 
+_T4ba:
 	__asm        inc    countx;
 	__asm        inc    x;
+_T4c0:
 	__asm        mov    eax, ds:[0x5B527C];
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, countx;
-	__asm        jle    near ptr 0x004FF266;
+	__asm        jle    _T853;
 // LINE 445:
 	__asm        and    x, 0xFF;
 // LINE 448:
 	__asm        cmp    x, 0x7F;
-	__asm        jg     near ptr 0x004FEEFF;
+	__asm        jg     _T4ec;
 
 	__asm        cmp    y, 0x7F;
-	__asm        jle    near ptr 0x004FEF0B;
+	__asm        jle    _T4f8;
 // LINE 450:
+_T4ec:
 	__asm        mov    tile, 0;
 // LINE 452:
-	__asm        jmp    near ptr 0x004FEF20;
+	__asm        jmp    _T50d;
 // LINE 455:
+_T4f8:
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, y;
@@ -652,6 +690,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    tile, edx;
 // LINE 461:
+_T50d:
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 0xA;
@@ -663,7 +702,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004FEF75;
+	__asm        je     _T562;
 // LINE 464:
 	__asm        movsx  eax, byte ptr ds:[0x5B5284];
 	__asm        add    eax, 0x10;
@@ -677,10 +716,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 466:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 469:
+_T562:
 	__asm        cmp    tile, 0xD1;
-	__asm        jne    near ptr 0x004FEF99;
+	__asm        jne    _T586;
 // LINE 471:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xEA;
@@ -690,10 +730,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xEA;
 	__asm        inc    ptr;
 // LINE 473:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 475:
+_T586:
 	__asm        cmp    tile, 0xD2;
-	__asm        jne    near ptr 0x004FEFBD;
+	__asm        jne    _T5aa;
 // LINE 477:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x9A;
@@ -703,10 +744,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x9A;
 	__asm        inc    ptr;
 // LINE 479:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 481:
+_T5aa:
 	__asm        cmp    tile, 0xD3;
-	__asm        jne    near ptr 0x004FEFE1;
+	__asm        jne    _T5ce;
 // LINE 483:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x1A;
@@ -716,25 +758,26 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x1A;
 	__asm        inc    ptr;
 // LINE 485:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 488:
+_T5ce:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6C1190], eax;
-	__asm        jg     near ptr 0x004FF038;
+	__asm        jg     _T625;
 
 	__asm        mov    eax, ds:[0x6C1190];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x004FF038;
+	__asm        jle    _T625;
 
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6C1194], eax;
-	__asm        jg     near ptr 0x004FF038;
+	__asm        jg     _T625;
 
 	__asm        mov    eax, ds:[0x6C1194];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, y;
-	__asm        jle    near ptr 0x004FF038;
+	__asm        jle    _T625;
 // LINE 490:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xCA;
@@ -744,14 +787,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xCA;
 	__asm        inc    ptr;
 // LINE 492:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 495:
+_T625:
 	__asm        cmp    tile, 0xD;
-	__asm        je     near ptr 0x004FF04F;
+	__asm        je     _T63c;
 
 	__asm        cmp    tile, 0xD5;
-	__asm        jne    near ptr 0x004FF066;
+	__asm        jne    _T653;
 // LINE 497:
+_T63c:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x5A;
 	__asm        inc    ptr;
@@ -760,13 +805,14 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x5A;
 	__asm        inc    ptr;
 // LINE 499:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 503:
+_T653:
 	__asm        cmp    tile, 0x1D;
-	__asm        jl     near ptr 0x004FF091;
+	__asm        jl     _T67e;
 
 	__asm        cmp    tile, 0x70;
-	__asm        jge    near ptr 0x004FF091;
+	__asm        jge    _T67e;
 // LINE 505:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x33;
@@ -776,10 +822,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x33;
 	__asm        inc    ptr;
 // LINE 507:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 511:
+_T67e:
 	__asm        cmp    tile, 0x70;
-	__asm        jl     near ptr 0x004FF0B2;
+	__asm        jl     _T69f;
 // LINE 513:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x3A;
@@ -789,8 +836,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x3A;
 	__asm        inc    ptr;
 // LINE 515:
-	__asm        jmp    near ptr 0x004FEECD;
+	__asm        jmp    _T4ba;
 // LINE 519:
+_T69f:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -799,11 +847,11 @@ void S3MapRender(long posx, long posy) {
 // LINE 520:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jl     near ptr 0x004FF14A;
+	__asm        jl     _T737;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x40;
-	__asm        jge    near ptr 0x004FF14A;
+	__asm        jge    _T737;
 // LINE 522:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -836,15 +884,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 527:
-	__asm        jmp    near ptr 0x004FF261;
+	__asm        jmp    _T84e;
 
+_T737:
 	__asm        movsx  eax, texid;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x004FF17A;
+	__asm        jl     _T767;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0xA;
-	__asm        jge    near ptr 0x004FF17A;
+	__asm        jge    _T767;
 // LINE 529:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x90;
@@ -854,15 +903,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x90;
 	__asm        inc    ptr;
 // LINE 532:
-	__asm        jmp    near ptr 0x004FF261;
+	__asm        jmp    _T84e;
 
+_T767:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x20;
-	__asm        jl     near ptr 0x004FF1FB;
+	__asm        jl     _T7e8;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jge    near ptr 0x004FF1FB;
+	__asm        jge    _T7e8;
 // LINE 534:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -895,8 +945,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 539:
-	__asm        jmp    near ptr 0x004FF261;
+	__asm        jmp    _T84e;
 // LINE 541:
+_T7e8:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
 	__asm        mov    cl, ds:[0x5B5CC0];
@@ -928,8 +979,10 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 546:
-	__asm        jmp    near ptr 0x004FEECD;
+_T84e:
+	__asm        jmp    _T4ba;
 // LINE 547:
+_T853:
 	__asm        add    ptr, 0x14;
 // LINE 548:
 	__asm        mov    eax, ds:[0x5B527C];
@@ -945,9 +998,10 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        add    ptr, eax;
 // LINE 550:
-	__asm        jmp    near ptr 0x004FEE95;
+	__asm        jmp    _T482;
 // LINE 551:
-	__asm        jmp    near ptr 0x005001A1;
+_T87d:
+	__asm        jmp    _T178e;
 // LINE 555:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, ds:[0x5B527C];
@@ -977,14 +1031,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C0C];
 	__asm        mov    y, eax;
 	__asm        mov    county, 0;
-	__asm        jmp    near ptr 0x004FF2FF;
+	__asm        jmp    _T8ec;
 
+_T8e6:
 	__asm        inc    county;
 	__asm        inc    y;
+_T8ec:
 	__asm        mov    eax, ds:[0x5B5280];
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, county;
-	__asm        jle    near ptr 0x004FF87D;
+	__asm        jle    _Te6a;
 // LINE 562:
 	__asm        and    y, 0xFF;
 // LINE 564:
@@ -994,24 +1050,26 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C08];
 	__asm        mov    x, eax;
 	__asm        mov    countx, 0;
-	__asm        jmp    near ptr 0x004FF337;
+	__asm        jmp    _T924;
 
+_T91e:
 	__asm        inc    countx;
 	__asm        inc    x;
+_T924:
 	__asm        mov    eax, ds:[0x5B527C];
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, countx;
-	__asm        jle    near ptr 0x004FF80E;
+	__asm        jle    _Tdfb;
 // LINE 568:
 	__asm        and    x, 0xFF;
 // LINE 570:
 	__asm        mov    eax, posx;
 	__asm        cmp    x, eax;
-	__asm        jne    near ptr 0x004FF390;
+	__asm        jne    _T97d;
 
 	__asm        mov    eax, posy;
 	__asm        cmp    y, eax;
-	__asm        jne    near ptr 0x004FF390;
+	__asm        jne    _T97d;
 // LINE 572:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1029,18 +1087,21 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x70;
 	__asm        inc    ptr;
 // LINE 576:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 580:
+_T97d:
 	__asm        cmp    x, 0x7F;
-	__asm        jg     near ptr 0x004FF3A4;
+	__asm        jg     _T991;
 
 	__asm        cmp    y, 0x7F;
-	__asm        jle    near ptr 0x004FF3B0;
+	__asm        jle    _T99d;
 // LINE 582:
+_T991:
 	__asm        mov    tile, 0;
 // LINE 584:
-	__asm        jmp    near ptr 0x004FF3C5;
+	__asm        jmp    _T9b2;
 // LINE 587:
+_T99d:
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, y;
@@ -1048,6 +1109,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    tile, edx;
 // LINE 593:
+_T9b2:
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 0xA;
@@ -1059,7 +1121,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004FF435;
+	__asm        je     _Ta22;
 // LINE 596:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1083,10 +1145,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 600:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 603:
+_Ta22:
 	__asm        cmp    tile, 0xD1;
-	__asm        jne    near ptr 0x004FF46B;
+	__asm        jne    _Ta58;
 // LINE 605:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1104,10 +1167,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xEA;
 	__asm        inc    ptr;
 // LINE 609:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 611:
+_Ta58:
 	__asm        cmp    tile, 0xD2;
-	__asm        jne    near ptr 0x004FF4A1;
+	__asm        jne    _Ta8e;
 // LINE 613:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1125,10 +1189,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x9A;
 	__asm        inc    ptr;
 // LINE 617:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 619:
+_Ta8e:
 	__asm        cmp    tile, 0xD3;
-	__asm        jne    near ptr 0x004FF4D7;
+	__asm        jne    _Tac4;
 // LINE 621:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1146,25 +1211,26 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x1A;
 	__asm        inc    ptr;
 // LINE 625:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 628:
+_Tac4:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6C1190], eax;
-	__asm        jg     near ptr 0x004FF540;
+	__asm        jg     _Tb2d;
 
 	__asm        mov    eax, ds:[0x6C1190];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x004FF540;
+	__asm        jle    _Tb2d;
 
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6C1194], eax;
-	__asm        jg     near ptr 0x004FF540;
+	__asm        jg     _Tb2d;
 
 	__asm        mov    eax, ds:[0x6C1194];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, y;
-	__asm        jle    near ptr 0x004FF540;
+	__asm        jle    _Tb2d;
 // LINE 630:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1182,14 +1248,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xCA;
 	__asm        inc    ptr;
 // LINE 634:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 637:
+_Tb2d:
 	__asm        cmp    tile, 0xD;
-	__asm        je     near ptr 0x004FF557;
+	__asm        je     _Tb44;
 
 	__asm        cmp    tile, 0xD5;
-	__asm        jne    near ptr 0x004FF580;
+	__asm        jne    _Tb6d;
 // LINE 639:
+_Tb44:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
 	__asm        inc    ptr;
@@ -1206,13 +1274,14 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x5A;
 	__asm        inc    ptr;
 // LINE 643:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 647:
+_Tb6d:
 	__asm        cmp    tile, 0x1D;
-	__asm        jl     near ptr 0x004FF5BD;
+	__asm        jl     _Tbaa;
 
 	__asm        cmp    tile, 0x70;
-	__asm        jge    near ptr 0x004FF5BD;
+	__asm        jge    _Tbaa;
 // LINE 649:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1230,10 +1299,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x33;
 	__asm        inc    ptr;
 // LINE 653:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 657:
+_Tbaa:
 	__asm        cmp    tile, 0x70;
-	__asm        jl     near ptr 0x004FF5F0;
+	__asm        jl     _Tbdd;
 // LINE 659:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1251,8 +1321,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x3A;
 	__asm        inc    ptr;
 // LINE 663:
-	__asm        jmp    near ptr 0x004FF331;
+	__asm        jmp    _T91e;
 // LINE 667:
+_Tbdd:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -1261,11 +1332,11 @@ void S3MapRender(long posx, long posy) {
 // LINE 668:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jl     near ptr 0x004FF6A6;
+	__asm        jl     _Tc93;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x40;
-	__asm        jge    near ptr 0x004FF6A6;
+	__asm        jge    _Tc93;
 // LINE 670:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -1309,15 +1380,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 677:
-	__asm        jmp    near ptr 0x004FF809;
+	__asm        jmp    _Tdf6;
 
+_Tc93:
 	__asm        movsx  eax, texid;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x004FF6E8;
+	__asm        jl     _Tcd5;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0xA;
-	__asm        jge    near ptr 0x004FF6E8;
+	__asm        jge    _Tcd5;
 // LINE 679:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1335,15 +1407,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x90;
 	__asm        inc    ptr;
 // LINE 684:
-	__asm        jmp    near ptr 0x004FF809;
+	__asm        jmp    _Tdf6;
 
+_Tcd5:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x20;
-	__asm        jl     near ptr 0x004FF785;
+	__asm        jl     _Td72;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jge    near ptr 0x004FF785;
+	__asm        jge    _Td72;
 // LINE 686:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -1387,8 +1460,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 693:
-	__asm        jmp    near ptr 0x004FF809;
+	__asm        jmp    _Tdf6;
 // LINE 695:
+_Td72:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
 	__asm        mov    cl, ds:[0x5B5CC0];
@@ -1431,8 +1505,10 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 702:
-	__asm        jmp    near ptr 0x004FF331;
+_Tdf6:
+	__asm        jmp    _T91e;
 // LINE 703:
+_Tdfb:
 	__asm        add    ptr, 0x14;
 // LINE 704:
 	__asm        mov    edx, ds:[0x5B527C];
@@ -1474,9 +1550,10 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        add    ptr, eax;
 // LINE 710:
-	__asm        jmp    near ptr 0x004FF2F9;
+	__asm        jmp    _T8e6;
 // LINE 711:
-	__asm        jmp    near ptr 0x005001A1;
+_Te6a:
+	__asm        jmp    _T178e;
 // LINE 715:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, ds:[0x5B527C];
@@ -1506,14 +1583,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C0C];
 	__asm        mov    y, eax;
 	__asm        mov    county, 0;
-	__asm        jmp    near ptr 0x004FF8EC;
+	__asm        jmp    _Ted9;
 
+_Ted3:
 	__asm        inc    county;
 	__asm        inc    y;
+_Ted9:
 	__asm        mov    eax, ds:[0x5B5280];
 	__asm        sar    eax, 3;
 	__asm        cmp    eax, county;
-	__asm        jle    near ptr 0x0050016E;
+	__asm        jle    _T175b;
 // LINE 722:
 	__asm        and    y, 0xFF;
 // LINE 724:
@@ -1523,24 +1602,26 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x608C08];
 	__asm        mov    x, eax;
 	__asm        mov    countx, 0;
-	__asm        jmp    near ptr 0x004FF924;
+	__asm        jmp    _Tf11;
 
+_Tf0b:
 	__asm        inc    countx;
 	__asm        inc    x;
+_Tf11:
 	__asm        mov    eax, ds:[0x5B527C];
 	__asm        sar    eax, 3;
 	__asm        cmp    eax, countx;
-	__asm        jle    near ptr 0x0050007B;
+	__asm        jle    _T1668;
 // LINE 728:
 	__asm        and    x, 0xFF;
 // LINE 730:
 	__asm        mov    eax, posx;
 	__asm        cmp    x, eax;
-	__asm        jne    near ptr 0x004FF9A1;
+	__asm        jne    _Tf8e;
 
 	__asm        mov    eax, posy;
 	__asm        cmp    y, eax;
-	__asm        jne    near ptr 0x004FF9A1;
+	__asm        jne    _Tf8e;
 // LINE 732:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1574,18 +1655,21 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x70;
 	__asm        inc    ptr;
 // LINE 740:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 745:
+_Tf8e:
 	__asm        cmp    x, 0x7F;
-	__asm        jg     near ptr 0x004FF9B5;
+	__asm        jg     _Tfa2;
 
 	__asm        cmp    y, 0x7F;
-	__asm        jle    near ptr 0x004FF9C1;
+	__asm        jle    _Tfae;
 // LINE 747:
+_Tfa2:
 	__asm        mov    tile, 0;
 // LINE 749:
-	__asm        jmp    near ptr 0x004FF9D6;
+	__asm        jmp    _Tfc3;
 // LINE 752:
+_Tfae:
 	__asm        mov    eax, x;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, y;
@@ -1593,6 +1677,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    tile, edx;
 // LINE 758:
+_Tfc3:
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;
 	__asm        shl    eax, 0xA;
@@ -1604,7 +1689,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004FFA8E;
+	__asm        je     _T107b;
 // LINE 761:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1652,10 +1737,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 769:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 772:
+_T107b:
 	__asm        cmp    tile, 0xD1;
-	__asm        jne    near ptr 0x004FFAE8;
+	__asm        jne    _T10d5;
 // LINE 774:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1689,10 +1775,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xEA;
 	__asm        inc    ptr;
 // LINE 782:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 784:
+_T10d5:
 	__asm        cmp    tile, 0xD2;
-	__asm        jne    near ptr 0x004FFB42;
+	__asm        jne    _T112f;
 // LINE 786:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1726,10 +1813,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x9A;
 	__asm        inc    ptr;
 // LINE 794:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 796:
+_T112f:
 	__asm        cmp    tile, 0xD3;
-	__asm        jne    near ptr 0x004FFB9C;
+	__asm        jne    _T1189;
 // LINE 798:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1763,25 +1851,26 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x1A;
 	__asm        inc    ptr;
 // LINE 806:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 809:
+_T1189:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6C1190], eax;
-	__asm        jg     near ptr 0x004FFC29;
+	__asm        jg     _T1216;
 
 	__asm        mov    eax, ds:[0x6C1190];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x004FFC29;
+	__asm        jle    _T1216;
 
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6C1194], eax;
-	__asm        jg     near ptr 0x004FFC29;
+	__asm        jg     _T1216;
 
 	__asm        mov    eax, ds:[0x6C1194];
 	__asm        add    eax, 4;
 	__asm        cmp    eax, y;
-	__asm        jle    near ptr 0x004FFC29;
+	__asm        jle    _T1216;
 // LINE 811:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1815,14 +1904,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0xCA;
 	__asm        inc    ptr;
 // LINE 819:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 823:
+_T1216:
 	__asm        cmp    tile, 0xD;
-	__asm        je     near ptr 0x004FFC40;
+	__asm        je     _T122d;
 
 	__asm        cmp    tile, 0xD5;
-	__asm        jne    near ptr 0x004FFC8D;
+	__asm        jne    _T127a;
 // LINE 825:
+_T122d:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
 	__asm        inc    ptr;
@@ -1855,13 +1946,14 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x5A;
 	__asm        inc    ptr;
 // LINE 833:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 837:
+_T127a:
 	__asm        cmp    tile, 0x1D;
-	__asm        jl     near ptr 0x004FFCEE;
+	__asm        jl     _T12db;
 
 	__asm        cmp    tile, 0x70;
-	__asm        jge    near ptr 0x004FFCEE;
+	__asm        jge    _T12db;
 // LINE 839:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1895,10 +1987,11 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x33;
 	__asm        inc    ptr;
 // LINE 847:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 851:
+_T12db:
 	__asm        cmp    tile, 0x70;
-	__asm        jl     near ptr 0x004FFD45;
+	__asm        jl     _T1332;
 // LINE 853:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -1932,8 +2025,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x3A;
 	__asm        inc    ptr;
 // LINE 861:
-	__asm        jmp    near ptr 0x004FF91E;
+	__asm        jmp    _Tf0b;
 // LINE 865:
+_T1332:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -1942,11 +2036,11 @@ void S3MapRender(long posx, long posy) {
 // LINE 866:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jl     near ptr 0x004FFE4F;
+	__asm        jl     _T143c;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x40;
-	__asm        jge    near ptr 0x004FFE4F;
+	__asm        jge    _T143c;
 // LINE 868:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -2018,15 +2112,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 879:
-	__asm        jmp    near ptr 0x00500076;
+	__asm        jmp    _T1663;
 
+_T143c:
 	__asm        movsx  eax, texid;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x004FFEB5;
+	__asm        jl     _T14a2;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0xA;
-	__asm        jge    near ptr 0x004FFEB5;
+	__asm        jge    _T14a2;
 // LINE 881:
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0xE8;
@@ -2060,15 +2155,16 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    byte ptr [eax], 0x90;
 	__asm        inc    ptr;
 // LINE 890:
-	__asm        jmp    near ptr 0x00500076;
+	__asm        jmp    _T1663;
 
+_T14a2:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x20;
-	__asm        jl     near ptr 0x004FFF9E;
+	__asm        jl     _T158b;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0x30;
-	__asm        jge    near ptr 0x004FFF9E;
+	__asm        jge    _T158b;
 // LINE 892:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
@@ -2140,8 +2236,9 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 903:
-	__asm        jmp    near ptr 0x00500076;
+	__asm        jmp    _T1663;
 // LINE 905:
+_T158b:
 	__asm        mov    eax, y;
 	__asm        and    eax, ds:[0x5B5CBC];
 	__asm        mov    cl, ds:[0x5B5CC0];
@@ -2212,8 +2309,10 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 916:
-	__asm        jmp    near ptr 0x004FF91E;
+_T1663:
+	__asm        jmp    _Tf0b;
 // LINE 924:
+_T1668:
 	__asm        add    ptr, 0x14;
 // LINE 926:
 	__asm        mov    eax, ds:[0x5B527C];
@@ -2307,21 +2406,24 @@ void S3MapRender(long posx, long posy) {
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        add    ptr, eax;
 // LINE 940:
-	__asm        jmp    near ptr 0x004FF8E6;
+	__asm        jmp    _Ted3;
 // LINE 941:
-	__asm        jmp    near ptr 0x005001A1;
+_T175b:
+	__asm        jmp    _T178e;
 // LINE 944:
-	__asm        jmp    near ptr 0x005001A1;
+	__asm        jmp    _T178e;
 // LINE 946:
-	__asm        jmp    near ptr 0x005001A1;
+	__asm        jmp    _T178e;
 
+_T176a:
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
-	__asm        ja     near ptr 0x005001A1;
+	__asm        ja     _T178e;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    dword ptr [eax*4+0x500191];
 // Switch pointers
 // LINE 949:
+_T178e:
 	__asm        mov    eax, posy;
 	__asm        push   eax;
 	__asm        mov    eax, posx;
@@ -2371,7 +2473,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        mov    maploc, eax;
 // LINE 988:
 	__asm        cmp    maploc, 0;
-	__asm        je     near ptr 0x005002B1;
+	__asm        je     _Te6;
 // LINE 990:
 	__asm        lea    eax, dfy;
 	__asm        push   eax;
@@ -2408,20 +2510,22 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 995:
 	__asm        mov    eax, fx;
 	__asm        cmp    fy, eax;
-	__asm        jge    near ptr 0x00500271;
+	__asm        jge    _Ta6;
 
 	__asm        mov    eax, fx;
 	__asm        add    eax, eax;
 	__asm        add    eax, fy;
 	__asm        mov    dist, eax;
 // LINE 996:
-	__asm        jmp    near ptr 0x0050027C;
+	__asm        jmp    _Tb1;
 
+_Ta6:
 	__asm        mov    eax, fy;
 	__asm        add    eax, eax;
 	__asm        add    eax, fx;
 	__asm        mov    dist, eax;
 // LINE 997:
+_Tb1:
 	__asm        mov    ecx, 0x3F;
 	__asm        mov    eax, dist;
 	__asm        shl    eax, 4;
@@ -2442,13 +2546,14 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1001:
-	__asm        jmp    near ptr 0x00500365;
+	__asm        jmp    _T19a;
 // LINE 1003:
+_Te6:
 	__asm        call   S3MissionGetCurrMapLoc;
 	__asm        mov    maploc, eax;
 // LINE 1004:
 	__asm        cmp    maploc, 0;
-	__asm        je     near ptr 0x00500365;
+	__asm        je     _T19a;
 // LINE 1006:
 	__asm        lea    eax, dfy;
 	__asm        push   eax;
@@ -2485,20 +2590,22 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1011:
 	__asm        mov    eax, fx;
 	__asm        cmp    fy, eax;
-	__asm        jge    near ptr 0x0050032A;
+	__asm        jge    _T15f;
 
 	__asm        mov    eax, fx;
 	__asm        add    eax, eax;
 	__asm        add    eax, fy;
 	__asm        mov    dist, eax;
 // LINE 1012:
-	__asm        jmp    near ptr 0x00500335;
+	__asm        jmp    _T16a;
 
+_T15f:
 	__asm        mov    eax, fy;
 	__asm        add    eax, eax;
 	__asm        add    eax, fx;
 	__asm        mov    dist, eax;
 // LINE 1013:
+_T16a:
 	__asm        mov    ecx, 0x3F;
 	__asm        mov    eax, dist;
 	__asm        shl    eax, 4;
@@ -2519,11 +2626,12 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1019:
+_T19a:
 	__asm        call   S3MissionGetCurrPickupLoc;
 	__asm        mov    maploc, eax;
 // LINE 1020:
 	__asm        cmp    maploc, 0;
-	__asm        je     near ptr 0x00500419;
+	__asm        je     _T24e;
 // LINE 1022:
 	__asm        lea    eax, dfy;
 	__asm        push   eax;
@@ -2560,20 +2668,22 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 1027:
 	__asm        mov    eax, fx;
 	__asm        cmp    fy, eax;
-	__asm        jge    near ptr 0x005003DE;
+	__asm        jge    _T213;
 
 	__asm        mov    eax, fx;
 	__asm        add    eax, eax;
 	__asm        add    eax, fy;
 	__asm        mov    dist, eax;
 // LINE 1028:
-	__asm        jmp    near ptr 0x005003E9;
+	__asm        jmp    _T21e;
 
+_T213:
 	__asm        mov    eax, fy;
 	__asm        add    eax, eax;
 	__asm        add    eax, fx;
 	__asm        mov    dist, eax;
 // LINE 1029:
+_T21e:
 	__asm        mov    ecx, 0x6F;
 	__asm        mov    eax, dist;
 	__asm        shl    eax, 4;
@@ -2594,8 +2704,9 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1037:
+_T24e:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x00500449;
+	__asm        je     _T27e;
 // LINE 1039:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0x100];
@@ -2606,8 +2717,9 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        neg    eax;
 	__asm        mov    fy, eax;
 // LINE 1042:
-	__asm        jmp    near ptr 0x00500460;
+	__asm        jmp    _T295;
 // LINE 1044:
+_T27e:
 	__asm        call   GetAvatarVector;
 	__asm        mov    eax, [eax];
 	__asm        mov    fx, eax;
@@ -2617,17 +2729,20 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        neg    eax;
 	__asm        mov    fy, eax;
 // LINE 1048:
+_T295:
 	__asm        mov    dfy, 0;
 	__asm        mov    eax, dfy;
 	__asm        mov    dfx, eax;
 // LINE 1049:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0050047C;
+	__asm        jmp    _T2b1;
 
+_T2ae:
 	__asm        inc    i;
+_T2b1:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x5B5288], eax;
-	__asm        jle    near ptr 0x005004CA;
+	__asm        jle    _T2ff;
 // LINE 1052:
 	__asm        mov    eax, dfx;
 	__asm        sar    eax, 0x10;
@@ -2652,7 +2767,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        mov    eax, ptr;
 	__asm        mov    byte ptr [eax], 0x70;
 // LINE 1058:
-	__asm        jmp    near ptr 0x00500479;
+	__asm        jmp    _T2ae;
 // LINE 1059:
 }
 
@@ -2682,28 +2797,31 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        mov    writeBuffer, eax;
 // LINE 1086:
 	__asm        cmp    dx, 0;
-	__asm        jl     near ptr 0x00500513;
+	__asm        jl     _T44;
 // LINE 1088:
 	__asm        mov    Xinc, 1;
 // LINE 1090:
-	__asm        jmp    near ptr 0x00500522;
+	__asm        jmp    _T53;
 // LINE 1092:
+_T44:
 	__asm        mov    Xinc, 0xFFFFFFFF;
 // LINE 1093:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
 	__asm        mov    dx, eax;
 // LINE 1096:
+_T53:
 	__asm        cmp    dy, 0;
-	__asm        jl     near ptr 0x00500540;
+	__asm        jl     _T71;
 // LINE 1098:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        mov    Yinc, eax;
 // LINE 1099:
 	__asm        mov    Yunit, 1;
 // LINE 1101:
-	__asm        jmp    near ptr 0x00500559;
+	__asm        jmp    _T8a;
 // LINE 1103:
+_T71:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        neg    eax;
 	__asm        mov    Yinc, eax;
@@ -2714,32 +2832,36 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 // LINE 1105:
 	__asm        mov    Yunit, 0xFFFFFFFF;
 // LINE 1108:
+_T8a:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    near ptr 0x00500607;
+	__asm        jge    _T138;
 // LINE 1110:
 	__asm        mov    index, 0;
-	__asm        jmp    near ptr 0x00500574;
+	__asm        jmp    _Ta5;
 
+_Ta2:
 	__asm        inc    index;
+_Ta5:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
-	__asm        jg     near ptr 0x00500602;
+	__asm        jg     _T133;
 // LINE 1112:
 	__asm        movsx  eax, col;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00500594;
+	__asm        je     _Tc5;
 
 	__asm        mov    al, col;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], al;
 // LINE 1113:
+_Tc5:
 	__asm        mov    eax, dy;
 	__asm        add    error, eax;
 // LINE 1114:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x005005BC;
+	__asm        jle    _Ted;
 // LINE 1116:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dx;
@@ -2752,6 +2874,7 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        mov    eax, Yunit;
 	__asm        add    ypos, eax;
 // LINE 1120:
+_Ted:
 	__asm        mov    eax, Xinc;
 	__asm        add    writeBuffer, eax;
 // LINE 1121:
@@ -2759,47 +2882,54 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        add    xpos, eax;
 // LINE 1123:
 	__asm        cmp    ypos, 0;
-	__asm        jl     near ptr 0x005005F8;
+	__asm        jl     _T129;
 
 	__asm        cmp    xpos, 0;
-	__asm        jl     near ptr 0x005005F8;
+	__asm        jl     _T129;
 
 	__asm        mov    eax, ds:[0x5B526C];
 	__asm        cmp    ypos, eax;
-	__asm        jge    near ptr 0x005005F8;
+	__asm        jge    _T129;
 
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        cmp    xpos, eax;
-	__asm        jl     near ptr 0x005005FD;
+	__asm        jl     _T12e;
 // LINE 1124:
-	__asm        jmp    near ptr 0x00500602;
+_T129:
+	__asm        jmp    _T133;
 // LINE 1125:
-	__asm        jmp    near ptr 0x00500571;
+_T12e:
+	__asm        jmp    _Ta2;
 // LINE 1127:
-	__asm        jmp    near ptr 0x005006A0;
+_T133:
+	__asm        jmp    _T1d1;
 // LINE 1129:
+_T138:
 	__asm        mov    index, 0;
-	__asm        jmp    near ptr 0x00500616;
+	__asm        jmp    _T147;
 
+_T144:
 	__asm        inc    index;
+_T147:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
-	__asm        jg     near ptr 0x005006A0;
+	__asm        jg     _T1d1;
 // LINE 1131:
 	__asm        movsx  eax, col;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00500636;
+	__asm        je     _T167;
 
 	__asm        mov    al, col;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], al;
 // LINE 1132:
+_T167:
 	__asm        mov    eax, dx;
 	__asm        add    error, eax;
 // LINE 1133:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x0050065E;
+	__asm        jle    _T18f;
 // LINE 1135:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dy;
@@ -2812,29 +2942,33 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 	__asm        mov    eax, Xinc;
 	__asm        add    xpos, eax;
 // LINE 1139:
+_T18f:
 	__asm        mov    eax, Yinc;
 	__asm        add    writeBuffer, eax;
 // LINE 1140:
 	__asm        mov    eax, Yunit;
 	__asm        add    ypos, eax;
 // LINE 1141:
-	__asm        js     near ptr 0x00500696;
+	__asm        js     _T1c7;
 
 	__asm        cmp    xpos, 0;
-	__asm        jl     near ptr 0x00500696;
+	__asm        jl     _T1c7;
 
 	__asm        mov    eax, ds:[0x5B526C];
 	__asm        cmp    ypos, eax;
-	__asm        jge    near ptr 0x00500696;
+	__asm        jge    _T1c7;
 
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        cmp    xpos, eax;
-	__asm        jl     near ptr 0x0050069B;
+	__asm        jl     _T1cc;
 // LINE 1142:
-	__asm        jmp    near ptr 0x005006A0;
+_T1c7:
+	__asm        jmp    _T1d1;
 // LINE 1143:
-	__asm        jmp    near ptr 0x00500613;
+_T1cc:
+	__asm        jmp    _T144;
 // LINE 1146:
+_T1d1:
 	__asm        mov    eax, ypos;
 	__asm        push   eax;
 	__asm        mov    eax, xpos;
@@ -2867,24 +3001,28 @@ void S3MapBlit(char * destbuf, long destpitch) {
 	__asm        mov    mptr, eax;
 // LINE 1172:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x005006F1;
+	__asm        jmp    _T38;
 
+_T35:
 	__asm        inc    y;
+_T38:
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x5B526C], eax;
-	__asm        jle    near ptr 0x00500748;
+	__asm        jle    _T8f;
 // LINE 1173:
 	__asm        mov    eax, cptr;
 	__asm        mov    ptr, eax;
 // LINE 1174:
 	__asm        mov    x, 0;
-	__asm        jmp    near ptr 0x00500715;
+	__asm        jmp    _T5c;
 
+_T59:
 	__asm        inc    x;
+_T5c:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x0050073D;
+	__asm        jle    _T84;
 // LINE 1175:
 	__asm        mov    eax, mptr;
 	__asm        mov    eax, [eax];
@@ -2893,12 +3031,13 @@ void S3MapBlit(char * destbuf, long destpitch) {
 	__asm        add    mptr, 4;
 	__asm        add    ptr, 4;
 // LINE 1176:
-	__asm        jmp    near ptr 0x00500712;
+	__asm        jmp    _T59;
 // LINE 1177:
+_T84:
 	__asm        mov    eax, destpitch;
 	__asm        add    cptr, eax;
 // LINE 1178:
-	__asm        jmp    near ptr 0x005006EE;
+	__asm        jmp    _T35;
 // LINE 1179:
 }
 
@@ -2923,24 +3062,28 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 	__asm        mov    mptr, eax;
 // LINE 1196:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x00500780;
+	__asm        jmp    _T33;
 
+_T30:
 	__asm        inc    y;
+_T33:
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x5B526C], eax;
-	__asm        jle    near ptr 0x005007D7;
+	__asm        jle    _T8a;
 // LINE 1197:
 	__asm        mov    eax, cptr;
 	__asm        mov    ptr, eax;
 // LINE 1198:
 	__asm        mov    x, 0;
-	__asm        jmp    near ptr 0x005007A4;
+	__asm        jmp    _T57;
 
+_T54:
 	__asm        inc    x;
+_T57:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x005007CC;
+	__asm        jle    _T7f;
 // LINE 1199:
 	__asm        mov    eax, mptr;
 	__asm        mov    eax, [eax];
@@ -2948,12 +3091,13 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 	__asm        mov    [ecx], eax;
 	__asm        add    mptr, 4;
 	__asm        add    ptr, 4;
-	__asm        jmp    near ptr 0x005007A1;
+	__asm        jmp    _T54;
 // LINE 1200:
+_T7f:
 	__asm        mov    eax, destpitch;
 	__asm        add    cptr, eax;
 // LINE 1201:
-	__asm        jmp    near ptr 0x0050077D;
+	__asm        jmp    _T30;
 // LINE 1202:
 }
 
@@ -2961,7 +3105,7 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 void S3MapSet3dRender() {
 // LINE 1220:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
-	__asm        jne    near ptr 0x00500816;
+	__asm        jne    _T3a;
 // LINE 1222:
 	__asm        mov    esi, 0x598EC0;
 	__asm        mov    edi, 0x5B5228;
@@ -2973,8 +3117,9 @@ void S3MapSet3dRender() {
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 // LINE 1225:
-	__asm        jmp    near ptr 0x00500838;
+	__asm        jmp    _T5c;
 // LINE 1227:
+_T3a:
 	__asm        mov    esi, 0x598EE0;
 	__asm        mov    edi, 0x5B5228;
 	__asm        mov    ecx, 7;
@@ -2985,6 +3130,7 @@ void S3MapSet3dRender() {
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 // LINE 1231:
+_T5c:
 	__asm        mov    eax, ds:[0x59C24C];
 	__asm        mov    ds:[0x5B5290], eax;
 // LINE 1232:
@@ -3011,20 +3157,22 @@ void S3MapSet3dRender() {
 void S3MapRestore3dRender() {
 // LINE 1258:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
-	__asm        jne    near ptr 0x005008A9;
+	__asm        jne    _T29;
 // LINE 1259:
 	__asm        mov    esi, 0x5B5228;
 	__asm        mov    edi, 0x598EC0;
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 // LINE 1260:
-	__asm        jmp    near ptr 0x005008BA;
+	__asm        jmp    _T3a;
 // LINE 1261:
+_T29:
 	__asm        mov    esi, 0x5B5228;
 	__asm        mov    edi, 0x598EE0;
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 // LINE 1263:
+_T3a:
 	__asm        push   0x5B5228;
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
@@ -3050,11 +3198,13 @@ int32_t S3MapCursorDown(long posx, long posy) {
 	__asm        mov    car_id, 0xFFFFFFFF;
 // LINE 1290:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00500909;
+	__asm        jmp    _T1f;
 
+_T1c:
 	__asm        inc    i;
+_T1f:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x0050097E;
+	__asm        jge    _T94;
 // LINE 1292:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -3063,36 +3213,39 @@ int32_t S3MapCursorDown(long posx, long posy) {
 // LINE 1293:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 3;
-	__asm        jne    near ptr 0x00500934;
+	__asm        jne    _T4a;
 // LINE 1294:
-	__asm        jmp    near ptr 0x00500906;
+	__asm        jmp    _T1c;
 // LINE 1297:
+_T4a:
 	__asm        mov    eax, ci;
 	__asm        mov    ecx, posx;
 	__asm        cmp    [eax+0x20], ecx;
-	__asm        jg     near ptr 0x00500979;
+	__asm        jg     _T8f;
 
 	__asm        mov    eax, ci;
 	__asm        mov    ecx, posx;
 	__asm        cmp    [eax+0x24], ecx;
-	__asm        jl     near ptr 0x00500979;
+	__asm        jl     _T8f;
 
 	__asm        mov    eax, ci;
 	__asm        mov    ecx, posy;
 	__asm        cmp    [eax+0x18], ecx;
-	__asm        jg     near ptr 0x00500979;
+	__asm        jg     _T8f;
 
 	__asm        mov    eax, ci;
 	__asm        mov    ecx, posy;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jl     near ptr 0x00500979;
+	__asm        jl     _T8f;
 // LINE 1299:
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    car_id, eax;
 // LINE 1303:
-	__asm        jmp    near ptr 0x00500906;
+_T8f:
+	__asm        jmp    _T1c;
 // LINE 1305:
+_T94:
 	__asm        mov    eax, car_id;
 	__asm        jmp    near ptr 0x00500986;
 // LINE 1306:
@@ -3110,7 +3263,7 @@ int32_t S3MapCursorUp(long posx, long posy) {
 void S3MapCommandZoomIn() {
 // LINE 1323:
 	__asm        cmp    dword ptr ds:[0x5B5298], 3;
-	__asm        jge    near ptr 0x005009B9;
+	__asm        jge    _T19;
 // LINE 1324:
 	__asm        inc    dword ptr ds:[0x5B5298];
 // LINE 1325:
@@ -3120,7 +3273,7 @@ void S3MapCommandZoomIn() {
 void S3MapCommandZoomOut() {
 // LINE 1333:
 	__asm        cmp    dword ptr ds:[0x5B5298], 0;
-	__asm        jle    near ptr 0x005009D7;
+	__asm        jle    _T19;
 // LINE 1334:
 	__asm        dec    dword ptr ds:[0x5B5298];
 // LINE 1335:
@@ -3159,10 +3312,11 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 
 // LINE 1389:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00500A2A;
+	__asm        jne    _T18;
 // LINE 1390:
-	__asm        jmp    near ptr 0x00500B60;
+	__asm        jmp    _T14e;
 // LINE 1393:
+_T18:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, ds:[0x608BF0];
 	__asm        sar    ecx, 1;
@@ -3176,33 +3330,37 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        mov    mapy, eax;
 // LINE 1395:
 	__asm        cmp    mapx, 0;
-	__asm        jge    near ptr 0x00500A5D;
+	__asm        jge    _T4b;
 
 	__asm        mov    mapx, 0;
 // LINE 1396:
+_T4b:
 	__asm        cmp    mapy, 0;
-	__asm        jge    near ptr 0x00500A6E;
+	__asm        jge    _T5c;
 
 	__asm        mov    mapy, 0;
 // LINE 1397:
+_T5c:
 	__asm        mov    eax, mapx;
 	__asm        add    eax, ds:[0x608BF0];
 	__asm        cmp    eax, ds:[0x5B5268];
-	__asm        jle    near ptr 0x00500A91;
+	__asm        jle    _T7f;
 
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        sub    eax, ds:[0x608BF0];
 	__asm        mov    mapx, eax;
 // LINE 1398:
+_T7f:
 	__asm        mov    eax, mapy;
 	__asm        add    eax, ds:[0x608BF0];
 	__asm        cmp    eax, ds:[0x5B526C];
-	__asm        jle    near ptr 0x00500AB4;
+	__asm        jle    _Ta2;
 
 	__asm        mov    eax, ds:[0x5B526C];
 	__asm        sub    eax, ds:[0x608BF0];
 	__asm        mov    mapy, eax;
 // LINE 1400:
+_Ta2:
 	__asm        mov    eax, mapy;
 	__asm        imul   eax, ds:[0x5B5268];
 	__asm        add    eax, mapx;
@@ -3214,25 +3372,29 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        mov    iptr, eax;
 // LINE 1403:
 	__asm        mov    mapy, 0;
-	__asm        jmp    near ptr 0x00500AE6;
+	__asm        jmp    _Td4;
 
+_Td1:
 	__asm        inc    mapy;
+_Td4:
 	__asm        mov    eax, ds:[0x608BF0];
 	__asm        cmp    mapy, eax;
-	__asm        jge    near ptr 0x00500B60;
+	__asm        jge    _T14e;
 // LINE 1405:
 	__asm        mov    mapx, 0;
-	__asm        jmp    near ptr 0x00500B03;
+	__asm        jmp    _Tf1;
 
+_Tee:
 	__asm        inc    mapx;
+_Tf1:
 	__asm        mov    eax, ds:[0x608BF0];
 	__asm        cmp    mapx, eax;
-	__asm        jge    near ptr 0x00500B3F;
+	__asm        jge    _T12d;
 // LINE 1407:
 	__asm        mov    eax, iptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00500B34;
+	__asm        je     _T122;
 // LINE 1409:
 	__asm        mov    eax, iptr;
 	__asm        mov    al, [eax];
@@ -3241,14 +3403,17 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        inc    iptr;
 	__asm        inc    bufptr;
 // LINE 1411:
-	__asm        jmp    near ptr 0x00500B3A;
+	__asm        jmp    _T128;
 // LINE 1413:
+_T122:
 	__asm        inc    bufptr;
 // LINE 1414:
 	__asm        inc    iptr;
 // LINE 1416:
-	__asm        jmp    near ptr 0x00500B00;
+_T128:
+	__asm        jmp    _Tee;
 // LINE 1417:
+_T12d:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        sub    eax, ds:[0x608BF0];
 	__asm        add    bufptr, eax;
@@ -3257,7 +3422,7 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        sub    eax, ds:[0x608BF0];
 	__asm        add    iptr, eax;
 // LINE 1419:
-	__asm        jmp    near ptr 0x00500AE3;
+	__asm        jmp    _Td1;
 // LINE 1421:
 }
 
@@ -3266,199 +3431,220 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 // LINE 1432:
 	__asm        mov    eax, mission_type;
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00500C92;
+	__asm        jmp    _T12d;
 // LINE 1435:
+_T14:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 6;
 // LINE 1436:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1437:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1442:
+_T2b:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 4;
 // LINE 1443:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1444:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1446:
+_T42:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1447:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 4;
 // LINE 1448:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1450:
+_T59:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 3;
 // LINE 1451:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 5;
 // LINE 1452:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1455:
+_T70:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 7;
 // LINE 1456:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1457:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1459:
+_T87:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 3;
 // LINE 1460:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1461:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1463:
+_T9e:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 7;
 // LINE 1464:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1465:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1467:
+_Tb5:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 7;
 // LINE 1468:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1469:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1476:
+_Tcc:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 2;
 // LINE 1477:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1478:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1480:
+_Te3:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 7;
 // LINE 1481:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1482:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1484:
+_Tfa:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 5;
 // LINE 1485:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 5;
 // LINE 1486:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1488:
+_T111:
 	__asm        mov    eax, desticon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1489:
 	__asm        mov    eax, pickicon;
 	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
 // LINE 1490:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 // LINE 1491:
-	__asm        jmp    near ptr 0x00500DDE;
+	__asm        jmp    _T279;
 
+_T12d:
 	__asm        cmp    dword ptr [ebp-4], 9;
-	__asm        jg     near ptr 0x00500CBB;
+	__asm        jg     _T156;
 
-	__asm        je     near ptr 0x00500BD5;
+	__asm        je     _T70;
 
 	__asm        cmp    dword ptr [ebp-4], 1;
-	__asm        je     near ptr 0x00500BD5;
+	__asm        je     _T70;
 
 	__asm        cmp    dword ptr [ebp-4], 2;
-	__asm        je     near ptr 0x00500BEC;
+	__asm        je     _T87;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T156:
 	__asm        cmp    dword ptr [ebp-4], 0x10;
-	__asm        jg     near ptr 0x00500CDA;
+	__asm        jg     _T175;
 
-	__asm        je     near ptr 0x00500B90;
+	__asm        je     _T2b;
 
 	__asm        cmp    dword ptr [ebp-4], 0xC;
-	__asm        je     near ptr 0x00500C03;
+	__asm        je     _T9e;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T175:
 	__asm        cmp    dword ptr [ebp-4], 0x40;
-	__asm        jg     near ptr 0x00500CF9;
+	__asm        jg     _T194;
 
-	__asm        je     near ptr 0x00500BBE;
+	__asm        je     _T59;
 
 	__asm        cmp    dword ptr [ebp-4], 0x20;
-	__asm        je     near ptr 0x00500BA7;
+	__asm        je     _T42;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T194:
 	__asm        cmp    dword ptr [ebp-4], 0x100;
-	__asm        jg     near ptr 0x00500D1E;
+	__asm        jg     _T1b9;
 
-	__asm        je     near ptr 0x00500C1A;
+	__asm        je     _Tb5;
 
 	__asm        cmp    dword ptr [ebp-4], 0x90;
-	__asm        je     near ptr 0x00500B90;
+	__asm        je     _T2b;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T1b9:
 	__asm        cmp    dword ptr [ebp-4], 0x200;
-	__asm        jg     near ptr 0x00500D43;
+	__asm        jg     _T1de;
 
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
 	__asm        cmp    dword ptr [ebp-4], 0x110;
-	__asm        je     near ptr 0x00500B90;
+	__asm        je     _T2b;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T1de:
 	__asm        cmp    dword ptr [ebp-4], 0x800;
-	__asm        jg     near ptr 0x00500D68;
+	__asm        jg     _T203;
 
-	__asm        je     near ptr 0x00500C5F;
+	__asm        je     _Tfa;
 
 	__asm        cmp    dword ptr [ebp-4], 0x408;
-	__asm        je     near ptr 0x00500C48;
+	__asm        je     _Te3;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T203:
 	__asm        cmp    dword ptr [ebp-4], 0x2000;
-	__asm        jg     near ptr 0x00500D8D;
+	__asm        jg     _T228;
 
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
 	__asm        cmp    dword ptr [ebp-4], 0x1000;
-	__asm        je     near ptr 0x00500B79;
+	__asm        je     _T14;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T228:
 	__asm        cmp    dword ptr [ebp-4], 0x10000;
-	__asm        jg     near ptr 0x00500DB2;
+	__asm        jg     _T24d;
 
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
 	__asm        cmp    dword ptr [ebp-4], 0x4000;
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 
+_T24d:
 	__asm        cmp    dword ptr [ebp-4], 0x20000;
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
 	__asm        cmp    dword ptr [ebp-4], 0x40000;
-	__asm        je     near ptr 0x00500C31;
+	__asm        je     _Tcc;
 
 	__asm        cmp    dword ptr [ebp-4], 0x80010;
-	__asm        je     near ptr 0x00500B90;
+	__asm        je     _T2b;
 
-	__asm        jmp    near ptr 0x00500C76;
+	__asm        jmp    _T111;
 // LINE 1492:
 }
 
@@ -3475,11 +3661,13 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    currmd, eax;
 // LINE 1510:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00500E03;
+	__asm        jmp    _T20;
 
+_T1d:
 	__asm        inc    i;
+_T20:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    near ptr 0x00500F2F;
+	__asm        jge    _T14c;
 // LINE 1512:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -3488,22 +3676,24 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    md, eax;
 // LINE 1516:
 	__asm        cmp    md, 0;
-	__asm        je     near ptr 0x00500E4C;
+	__asm        je     _T69;
 
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
-	__asm        je     near ptr 0x00500E4C;
+	__asm        je     _T69;
 
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
-	__asm        je     near ptr 0x00500E4C;
+	__asm        je     _T69;
 
 	__asm        mov    eax, md;
 	__asm        cmp    currmd, eax;
-	__asm        jne    near ptr 0x00500E51;
+	__asm        jne    _T6e;
 // LINE 1518:
-	__asm        jmp    near ptr 0x00500E00;
+_T69:
+	__asm        jmp    _T1d;
 // LINE 1521:
+_T6e:
 	__asm        lea    eax, pickicon;
 	__asm        push   eax;
 	__asm        lea    eax, desticon;
@@ -3516,7 +3706,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 // LINE 1523:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
-	__asm        je     near ptr 0x00500EAC;
+	__asm        je     _Tc9;
 // LINE 1528:
 	__asm        mov    eax, desticon;
 	__asm        push   eax;
@@ -3536,11 +3726,12 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1530:
-	__asm        jmp    near ptr 0x00500EEB;
+	__asm        jmp    _T108;
 // LINE 1532:
+_Tc9:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x28], 0xFFFFFFFF;
-	__asm        je     near ptr 0x00500EEB;
+	__asm        je     _T108;
 // LINE 1537:
 	__asm        mov    eax, desticon;
 	__asm        push   eax;
@@ -3560,9 +3751,10 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1541:
+_T108:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x38], 0xFFFFFFFF;
-	__asm        je     near ptr 0x00500F2A;
+	__asm        je     _T147;
 // LINE 1546:
 	__asm        mov    eax, pickicon;
 	__asm        push   eax;
@@ -3582,7 +3774,8 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        call   S3MapDrawLine;
 	__asm        add    esp, 0x10;
 // LINE 1548:
-	__asm        jmp    near ptr 0x00500E00;
+_T147:
+	__asm        jmp    _T1d;
 // LINE 1549:
 }
 
@@ -3593,11 +3786,13 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 
 // LINE 1567:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00500F4C;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x00500F7C;
+	__asm        jge    _T48;
 // LINE 1569:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -3606,17 +3801,20 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCo
 // LINE 1570:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x00500F77;
+	__asm        jne    _T43;
 // LINE 1571:
-	__asm        jmp    near ptr 0x00500F7C;
+	__asm        jmp    _T48;
 // LINE 1572:
-	__asm        jmp    near ptr 0x00500F49;
+_T43:
+	__asm        jmp    _T15;
 // LINE 1575:
+_T48:
 	__asm        cmp    i, 0x14;
-	__asm        jne    near ptr 0x00500F8B;
+	__asm        jne    _T57;
 // LINE 1576:
-	__asm        jmp    near ptr 0x00500FBE;
+	__asm        jmp    _T8a;
 // LINE 1579:
+_T57:
 	__asm        mov    eax, car_id;
 	__asm        mov    ecx, ci;
 	__asm        mov    [ecx+4], eax;
@@ -3648,25 +3846,28 @@ void S3MapRemoveCarInfo(long car_id) {
 
 // LINE 1601:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00500FDB;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x00501013;
+	__asm        jge    _T50;
 // LINE 1603:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, car_id;
 	__asm        cmp    [eax*8+0x6BED44], ecx;
-	__asm        jne    near ptr 0x0050100E;
+	__asm        jne    _T4b;
 // LINE 1605:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        and    dword ptr [eax*8+0x6BED40], 0xFFFFFFFE;
 // LINE 1606:
-	__asm        jmp    near ptr 0x00501013;
+	__asm        jmp    _T50;
 // LINE 1608:
-	__asm        jmp    near ptr 0x00500FD8;
+_T4b:
+	__asm        jmp    _T15;
 // LINE 1610:
 }
 
@@ -3680,11 +3881,13 @@ void S3MapDrawCarIcons() {
 
 // LINE 1631:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00501030;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x14;
-	__asm        jge    near ptr 0x0050121B;
+	__asm        jge    _T203;
 // LINE 1633:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -3693,43 +3896,46 @@ void S3MapDrawCarIcons() {
 // LINE 1634:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x0050105B;
+	__asm        jne    _T43;
 // LINE 1635:
-	__asm        jmp    near ptr 0x0050102D;
+	__asm        jmp    _T15;
 // LINE 1641:
+_T43:
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, ds:[0x608C08];
-	__asm        jl     near ptr 0x005010B5;
+	__asm        jl     _T9d;
 
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, ds:[0x608C0C];
-	__asm        jl     near ptr 0x005010B5;
+	__asm        jl     _T9d;
 
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, ds:[0x608BF8];
-	__asm        jg     near ptr 0x005010B5;
+	__asm        jg     _T9d;
 
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+0x10];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, ds:[0x608BFC];
-	__asm        jle    near ptr 0x005010C0;
+	__asm        jle    _Ta8;
 // LINE 1643:
+_T9d:
 	__asm        mov    eax, ci;
 	__asm        and    dword ptr [eax], 0xFFFFFFFD;
 // LINE 1644:
-	__asm        jmp    near ptr 0x0050102D;
+	__asm        jmp    _T15;
 // LINE 1648:
+_Ta8:
 	__asm        mov    eax, ci;
 	__asm        or     dword ptr [eax], 2;
 // LINE 1651:
@@ -3796,37 +4002,43 @@ void S3MapDrawCarIcons() {
 	__asm        mov    eax, ci;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x005011B4;
+	__asm        jmp    _T19c;
 // LINE 1663:
+_T167:
 	__asm        mov    color, 0x1A;
 // LINE 1664:
-	__asm        jmp    near ptr 0x005011D7;
+	__asm        jmp    _T1bf;
 // LINE 1666:
+_T173:
 	__asm        mov    color, 0xFFFFFF9A;
 // LINE 1667:
-	__asm        jmp    near ptr 0x005011D7;
+	__asm        jmp    _T1bf;
 // LINE 1669:
+_T17f:
 	__asm        mov    color, 0xFFFFFFEA;
 // LINE 1670:
-	__asm        jmp    near ptr 0x005011D7;
+	__asm        jmp    _T1bf;
 // LINE 1672:
+_T18b:
 	__asm        mov    color, 0x70;
 // LINE 1673:
-	__asm        jmp    near ptr 0x005011D7;
+	__asm        jmp    _T1bf;
 // LINE 1674:
-	__asm        jmp    near ptr 0x005011D7;
+	__asm        jmp    _T1bf;
 
+_T19c:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0050117F;
+	__asm        je     _T167;
 
 	__asm        cmp    dword ptr [ebp-0x18], 1;
-	__asm        je     near ptr 0x0050118B;
+	__asm        je     _T173;
 
 	__asm        cmp    dword ptr [ebp-0x18], 2;
-	__asm        je     near ptr 0x00501197;
+	__asm        je     _T17f;
 
-	__asm        jmp    near ptr 0x005011A3;
+	__asm        jmp    _T18b;
 // LINE 1680:
+_T1bf:
 	__asm        mov    eax, color;
 	__asm        push   eax;
 	__asm        mov    eax, dy;
@@ -3854,7 +4066,7 @@ void S3MapDrawCarIcons() {
 	__asm        call   S3MapBlitDIcon;
 	__asm        add    esp, 0xC;
 // LINE 1683:
-	__asm        jmp    near ptr 0x0050102D;
+	__asm        jmp    _T15;
 // LINE 1684:
 }
 
@@ -3867,10 +4079,11 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 
 // LINE 1701:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00501238;
+	__asm        jne    _T18;
 // LINE 1702:
-	__asm        jmp    near ptr 0x005012F0;
+	__asm        jmp    _Td0;
 // LINE 1707:
+_T18:
 	__asm        mov    eax, x;
 	__asm        mov    mapx, eax;
 // LINE 1708:
@@ -3888,25 +4101,29 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        mov    iptr, eax;
 // LINE 1713:
 	__asm        mov    mapy, 0;
-	__asm        jmp    near ptr 0x00501276;
+	__asm        jmp    _T56;
 
+_T53:
 	__asm        inc    mapy;
+_T56:
 	__asm        mov    eax, ds:[0x608BC8];
 	__asm        cmp    mapy, eax;
-	__asm        jge    near ptr 0x005012F0;
+	__asm        jge    _Td0;
 // LINE 1715:
 	__asm        mov    mapx, 0;
-	__asm        jmp    near ptr 0x00501293;
+	__asm        jmp    _T73;
 
+_T70:
 	__asm        inc    mapx;
+_T73:
 	__asm        mov    eax, ds:[0x608BC8];
 	__asm        cmp    mapx, eax;
-	__asm        jge    near ptr 0x005012CF;
+	__asm        jge    _Taf;
 // LINE 1717:
 	__asm        mov    eax, iptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005012C4;
+	__asm        je     _Ta4;
 // LINE 1719:
 	__asm        mov    eax, iptr;
 	__asm        mov    al, [eax];
@@ -3915,14 +4132,17 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        inc    iptr;
 	__asm        inc    bufptr;
 // LINE 1721:
-	__asm        jmp    near ptr 0x005012CA;
+	__asm        jmp    _Taa;
 // LINE 1723:
+_Ta4:
 	__asm        inc    bufptr;
 // LINE 1724:
 	__asm        inc    iptr;
 // LINE 1726:
-	__asm        jmp    near ptr 0x00501290;
+_Taa:
+	__asm        jmp    _T70;
 // LINE 1727:
+_Taf:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        sub    eax, ds:[0x608BC8];
 	__asm        add    bufptr, eax;
@@ -3931,7 +4151,7 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        sub    eax, ds:[0x608BC8];
 	__asm        add    iptr, eax;
 // LINE 1729:
-	__asm        jmp    near ptr 0x00501273;
+	__asm        jmp    _T53;
 // LINE 1731:
 }
 
@@ -3954,28 +4174,31 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	__asm        mov    writeBuffer, eax;
 // LINE 1751:
 	__asm        cmp    dx, 0;
-	__asm        jl     near ptr 0x00501330;
+	__asm        jl     _T3b;
 // LINE 1753:
 	__asm        mov    Xinc, 1;
 // LINE 1755:
-	__asm        jmp    near ptr 0x0050133F;
+	__asm        jmp    _T4a;
 // LINE 1757:
+_T3b:
 	__asm        mov    Xinc, 0xFFFFFFFF;
 // LINE 1758:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
 	__asm        mov    dx, eax;
 // LINE 1761:
+_T4a:
 	__asm        cmp    dy, 0;
-	__asm        jl     near ptr 0x0050135D;
+	__asm        jl     _T68;
 // LINE 1763:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        mov    Yinc, eax;
 // LINE 1764:
 	__asm        mov    Yunit, 1;
 // LINE 1766:
-	__asm        jmp    near ptr 0x00501376;
+	__asm        jmp    _T81;
 // LINE 1768:
+_T68:
 	__asm        mov    eax, ds:[0x5B5268];
 	__asm        neg    eax;
 	__asm        mov    Yinc, eax;
@@ -3986,32 +4209,36 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 // LINE 1770:
 	__asm        mov    Yunit, 0xFFFFFFFF;
 // LINE 1773:
+_T81:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    near ptr 0x00501426;
+	__asm        jge    _T131;
 // LINE 1775:
 	__asm        mov    index, 0;
-	__asm        jmp    near ptr 0x00501391;
+	__asm        jmp    _T9c;
 
+_T99:
 	__asm        inc    index;
+_T9c:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
-	__asm        jg     near ptr 0x00501421;
+	__asm        jg     _T12c;
 // LINE 1777:
 	__asm        movsx  eax, col;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005013B1;
+	__asm        je     _Tbc;
 
 	__asm        mov    al, col;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], al;
 // LINE 1778:
+_Tbc:
 	__asm        mov    eax, dy;
 	__asm        add    error, eax;
 // LINE 1779:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x005013D9;
+	__asm        jle    _Te4;
 // LINE 1781:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dx;
@@ -4024,6 +4251,7 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	__asm        mov    eax, Yunit;
 	__asm        add    ypos, eax;
 // LINE 1785:
+_Te4:
 	__asm        mov    eax, Xinc;
 	__asm        add    writeBuffer, eax;
 // LINE 1786:
@@ -4031,47 +4259,54 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	__asm        add    xpos, eax;
 // LINE 1788:
 	__asm        cmp    ypos, 0;
-	__asm        jl     near ptr 0x00501417;
+	__asm        jl     _T122;
 
 	__asm        cmp    xpos, 0;
-	__asm        jl     near ptr 0x00501417;
+	__asm        jl     _T122;
 
 	__asm        mov    eax, ypos;
 	__asm        cmp    ds:[0x5B526C], eax;
-	__asm        jle    near ptr 0x00501417;
+	__asm        jle    _T122;
 
 	__asm        mov    eax, xpos;
 	__asm        cmp    ds:[0x5B5268], eax;
-	__asm        jg     near ptr 0x0050141C;
+	__asm        jg     _T127;
 // LINE 1789:
-	__asm        jmp    near ptr 0x00501421;
+_T122:
+	__asm        jmp    _T12c;
 // LINE 1790:
-	__asm        jmp    near ptr 0x0050138E;
+_T127:
+	__asm        jmp    _T99;
 // LINE 1792:
-	__asm        jmp    near ptr 0x005014C1;
+_T12c:
+	__asm        jmp    _T1cc;
 // LINE 1794:
+_T131:
 	__asm        mov    index, 0;
-	__asm        jmp    near ptr 0x00501435;
+	__asm        jmp    _T140;
 
+_T13d:
 	__asm        inc    index;
+_T140:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
-	__asm        jg     near ptr 0x005014C1;
+	__asm        jg     _T1cc;
 // LINE 1796:
 	__asm        movsx  eax, col;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00501455;
+	__asm        je     _T160;
 
 	__asm        mov    al, col;
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], al;
 // LINE 1797:
+_T160:
 	__asm        mov    eax, dx;
 	__asm        add    error, eax;
 // LINE 1798:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
-	__asm        jle    near ptr 0x0050147D;
+	__asm        jle    _T188;
 // LINE 1800:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dy;
@@ -4084,28 +4319,31 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 	__asm        mov    eax, Xinc;
 	__asm        add    xpos, eax;
 // LINE 1804:
+_T188:
 	__asm        mov    eax, Yinc;
 	__asm        add    writeBuffer, eax;
 // LINE 1805:
 	__asm        mov    eax, Yunit;
 	__asm        add    ypos, eax;
 // LINE 1806:
-	__asm        js     near ptr 0x005014B7;
+	__asm        js     _T1c2;
 
 	__asm        cmp    xpos, 0;
-	__asm        jl     near ptr 0x005014B7;
+	__asm        jl     _T1c2;
 
 	__asm        mov    eax, ypos;
 	__asm        cmp    ds:[0x5B526C], eax;
-	__asm        jle    near ptr 0x005014B7;
+	__asm        jle    _T1c2;
 
 	__asm        mov    eax, xpos;
 	__asm        cmp    ds:[0x5B5268], eax;
-	__asm        jg     near ptr 0x005014BC;
+	__asm        jg     _T1c7;
 // LINE 1807:
-	__asm        jmp    near ptr 0x005014C1;
+_T1c2:
+	__asm        jmp    _T1cc;
 // LINE 1808:
-	__asm        jmp    near ptr 0x00501432;
+_T1c7:
+	__asm        jmp    _T13d;
 // LINE 1811:
 }
 
@@ -4118,10 +4356,10 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 
 // LINE 1832:
 	__asm        cmp    x1, 0x80;
-	__asm        jge    near ptr 0x00501514;
+	__asm        jge    _T4e;
 
 	__asm        cmp    y1, 0x80;
-	__asm        jge    near ptr 0x00501514;
+	__asm        jge    _T4e;
 // LINE 1834:
 	__asm        mov    eax, x2;
 	__asm        sub    eax, x1;
@@ -4137,8 +4375,9 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1836:
-	__asm        jmp    near ptr 0x005015D1;
+	__asm        jmp    _T10b;
 // LINE 1840:
+_T4e:
 	__asm        mov    eax, x1;
 	__asm        mov    from.x, eax;
 // LINE 1841:
@@ -4160,15 +4399,17 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        mov    dist1, eax;
 // LINE 1850:
 	__asm        cmp    x1, 0x7F;
-	__asm        jle    near ptr 0x00501550;
+	__asm        jle    _T8a;
 
 	__asm        sub    from.x, 0x100;
 // LINE 1851:
+_T8a:
 	__asm        cmp    y1, 0x7F;
-	__asm        jle    near ptr 0x00501561;
+	__asm        jle    _T9b;
 
 	__asm        sub    from.y, 0x100;
 // LINE 1854:
+_T9b:
 	__asm        lea    eax, to.x;
 	__asm        push   eax;
 	__asm        lea    eax, from.x;
@@ -4179,7 +4420,7 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 // LINE 1857:
 	__asm        mov    eax, dist1;
 	__asm        cmp    dist2, eax;
-	__asm        jge    near ptr 0x005015AB;
+	__asm        jge    _Te5;
 // LINE 1859:
 	__asm        mov    eax, x2;
 	__asm        sub    eax, from.x;
@@ -4195,8 +4436,9 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1862:
-	__asm        jmp    near ptr 0x005015D1;
+	__asm        jmp    _T10b;
 // LINE 1864:
+_Te5:
 	__asm        mov    eax, x2;
 	__asm        sub    eax, x1;
 	__asm        mov    cl, ds:[0x5B5298];

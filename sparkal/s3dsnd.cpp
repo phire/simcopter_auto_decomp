@@ -261,7 +261,7 @@ void $E57() {
 int32_t SoundChangeNotificationSink::Initialize() {
 // LINE 57:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
-	__asm        je     near ptr 0x00441ED9;
+	__asm        je     _T37;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -270,10 +270,11 @@ int32_t SoundChangeNotificationSink::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x38];
-	__asm        jmp    near ptr 0x00441EE0;
+	__asm        jmp    _T3e;
 // LINE 60:
+_T37:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00441EE0;
+	__asm        jmp    _T3e;
 // LINE 61:
 }
 
@@ -286,7 +287,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 
 // LINE 84:
 	__asm        cmp    lPreferenceType, 0x4FFFFFF;
-	__asm        jne    near ptr 0x00441FA9;
+	__asm        jne    _Tc4;
 // LINE 85:
 	__asm        push   0x4FFFFFF;
 	__asm        mov    eax, thePreferenceManager;
@@ -296,7 +297,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	__asm        mov    chPrefsData, eax;
 // LINE 86:
 	__asm        cmp    chPrefsData, 0;
-	__asm        je     near ptr 0x00441FA9;
+	__asm        je     _Tc4;
 // LINE 87:
 	__asm        mov    eax, chPrefsData;
 	__asm        mov    currentSoundPreferences, eax;
@@ -306,15 +307,17 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	__asm        mov    ds:[0x5C37F0], eax;
 // LINE 89:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00441F3A;
+	__asm        jmp    _T55;
 
+_T52:
 	__asm        inc    i;
+_T55:
 	__asm        cmp    i, 0x71;
-	__asm        jge    near ptr 0x00441FA9;
+	__asm        jge    _Tc4;
 // LINE 90:
 	__asm        mov    eax, i;
 	__asm        cmp    dword ptr [eax*4+0x604604], 0;
-	__asm        je     near ptr 0x00441FA4;
+	__asm        je     _Tbf;
 
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x5C3628];
@@ -341,8 +344,10 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	__asm        mov    ecx, [eax*4+0x604604];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 94:
-	__asm        jmp    near ptr 0x00441F37;
+_Tbf:
+	__asm        jmp    _T52;
 // LINE 97:
+_Tc4:
 	__asm        jmp    near ptr 0x00441FAE;
 }
 
@@ -352,17 +357,20 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 
 // LINE 131:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00441FCD;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x71;
-	__asm        jge    near ptr 0x00441FEA;
+	__asm        jge    _T35;
 // LINE 132:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*4+0x5C3628], 0x2710;
 // LINE 133:
-	__asm        jmp    near ptr 0x00441FCA;
+	__asm        jmp    _T15;
 // LINE 134:
+_T35:
 	__asm        mov    eax, hWnd;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604588;
@@ -390,16 +398,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x73C], eax;
 	__asm        cmp    dword ptr [ebp-0x73C], 0;
-	__asm        je     near ptr 0x00442060;
+	__asm        je     _T5e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x73C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x10C], eax;
-	__asm        jmp    near ptr 0x0044206A;
+	__asm        jmp    _T68;
 
+_T5e:
 	__asm        mov    dword ptr [ebp-0x10C], 0;
+_T68:
 	__asm        mov    dword ptr [ebp-0x110], 0;
 	__asm        jmp    near ptr 0x00442079;
 
@@ -412,7 +422,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x110];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x110], 0;
-	__asm        je     near ptr 0x004420CD;
+	__asm        je     _Tcb;
 
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x424], eax;
@@ -422,6 +432,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tcb:
 	__asm        jmp    near ptr 0x004420D2;
 // LINE 156:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -437,16 +448,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x740], eax;
 	__asm        cmp    dword ptr [ebp-0x740], 0;
-	__asm        je     near ptr 0x00442124;
+	__asm        je     _T122;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x740];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x114], eax;
-	__asm        jmp    near ptr 0x0044212E;
+	__asm        jmp    _T12c;
 
+_T122:
 	__asm        mov    dword ptr [ebp-0x114], 0;
+_T12c:
 	__asm        mov    dword ptr [ebp-0x118], 0;
 	__asm        jmp    near ptr 0x0044213D;
 
@@ -459,7 +472,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x118];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x118], 0;
-	__asm        je     near ptr 0x00442191;
+	__asm        je     _T18f;
 
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    [ebp-0x42C], eax;
@@ -469,6 +482,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T18f:
 	__asm        jmp    near ptr 0x00442196;
 // LINE 159:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -484,16 +498,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x744], eax;
 	__asm        cmp    dword ptr [ebp-0x744], 0;
-	__asm        je     near ptr 0x004421E8;
+	__asm        je     _T1e6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x744];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x11C], eax;
-	__asm        jmp    near ptr 0x004421F2;
+	__asm        jmp    _T1f0;
 
+_T1e6:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
+_T1f0:
 	__asm        mov    dword ptr [ebp-0x120], 0;
 	__asm        jmp    near ptr 0x00442201;
 
@@ -506,7 +522,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x120];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x120], 0;
-	__asm        je     near ptr 0x00442255;
+	__asm        je     _T253;
 
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    [ebp-0x434], eax;
@@ -516,6 +532,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T253:
 	__asm        jmp    near ptr 0x0044225A;
 // LINE 162:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -531,16 +548,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x748], eax;
 	__asm        cmp    dword ptr [ebp-0x748], 0;
-	__asm        je     near ptr 0x004422AC;
+	__asm        je     _T2aa;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x748];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x124], eax;
-	__asm        jmp    near ptr 0x004422B6;
+	__asm        jmp    _T2b4;
 
+_T2aa:
 	__asm        mov    dword ptr [ebp-0x124], 0;
+_T2b4:
 	__asm        mov    dword ptr [ebp-0x128], 0;
 	__asm        jmp    near ptr 0x004422C5;
 
@@ -553,7 +572,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x128];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x128], 0;
-	__asm        je     near ptr 0x00442319;
+	__asm        je     _T317;
 
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    [ebp-0x43C], eax;
@@ -563,6 +582,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T317:
 	__asm        jmp    near ptr 0x0044231E;
 // LINE 165:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -578,16 +598,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x74C], eax;
 	__asm        cmp    dword ptr [ebp-0x74C], 0;
-	__asm        je     near ptr 0x00442370;
+	__asm        je     _T36e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x74C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x12C], eax;
-	__asm        jmp    near ptr 0x0044237A;
+	__asm        jmp    _T378;
 
+_T36e:
 	__asm        mov    dword ptr [ebp-0x12C], 0;
+_T378:
 	__asm        mov    dword ptr [ebp-0x130], 0;
 	__asm        jmp    near ptr 0x00442389;
 
@@ -600,7 +622,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x130];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x130], 0;
-	__asm        je     near ptr 0x004423DD;
+	__asm        je     _T3db;
 
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    [ebp-0x444], eax;
@@ -610,6 +632,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3db:
 	__asm        jmp    near ptr 0x004423E2;
 // LINE 168:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -625,16 +648,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x750], eax;
 	__asm        cmp    dword ptr [ebp-0x750], 0;
-	__asm        je     near ptr 0x00442434;
+	__asm        je     _T432;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x750];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x134], eax;
-	__asm        jmp    near ptr 0x0044243E;
+	__asm        jmp    _T43c;
 
+_T432:
 	__asm        mov    dword ptr [ebp-0x134], 0;
+_T43c:
 	__asm        mov    dword ptr [ebp-0x138], 0;
 	__asm        jmp    near ptr 0x0044244D;
 
@@ -647,7 +672,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x138];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x138], 0;
-	__asm        je     near ptr 0x004424A1;
+	__asm        je     _T49f;
 
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    [ebp-0x44C], eax;
@@ -657,6 +682,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T49f:
 	__asm        jmp    near ptr 0x004424A6;
 // LINE 171:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -672,16 +698,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x754], eax;
 	__asm        cmp    dword ptr [ebp-0x754], 0;
-	__asm        je     near ptr 0x004424F8;
+	__asm        je     _T4f6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x754];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x13C], eax;
-	__asm        jmp    near ptr 0x00442502;
+	__asm        jmp    _T500;
 
+_T4f6:
 	__asm        mov    dword ptr [ebp-0x13C], 0;
+_T500:
 	__asm        mov    dword ptr [ebp-0x140], 0;
 	__asm        jmp    near ptr 0x00442511;
 
@@ -694,7 +722,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x140];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x140], 0;
-	__asm        je     near ptr 0x00442565;
+	__asm        je     _T563;
 
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    [ebp-0x454], eax;
@@ -704,6 +732,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T563:
 	__asm        jmp    near ptr 0x0044256A;
 // LINE 174:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -719,16 +748,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x758], eax;
 	__asm        cmp    dword ptr [ebp-0x758], 0;
-	__asm        je     near ptr 0x004425BC;
+	__asm        je     _T5ba;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x758];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x144], eax;
-	__asm        jmp    near ptr 0x004425C6;
+	__asm        jmp    _T5c4;
 
+_T5ba:
 	__asm        mov    dword ptr [ebp-0x144], 0;
+_T5c4:
 	__asm        mov    dword ptr [ebp-0x148], 0;
 	__asm        jmp    near ptr 0x004425D5;
 
@@ -741,7 +772,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x148];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x148], 0;
-	__asm        je     near ptr 0x00442629;
+	__asm        je     _T627;
 
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    [ebp-0x45C], eax;
@@ -751,6 +782,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T627:
 	__asm        jmp    near ptr 0x0044262E;
 // LINE 177:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -766,16 +798,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x75C], eax;
 	__asm        cmp    dword ptr [ebp-0x75C], 0;
-	__asm        je     near ptr 0x00442680;
+	__asm        je     _T67e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x75C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x14C], eax;
-	__asm        jmp    near ptr 0x0044268A;
+	__asm        jmp    _T688;
 
+_T67e:
 	__asm        mov    dword ptr [ebp-0x14C], 0;
+_T688:
 	__asm        mov    dword ptr [ebp-0x150], 0;
 	__asm        jmp    near ptr 0x00442699;
 
@@ -788,7 +822,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x150];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x150], 0;
-	__asm        je     near ptr 0x004426ED;
+	__asm        je     _T6eb;
 
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    [ebp-0x464], eax;
@@ -798,6 +832,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T6eb:
 	__asm        jmp    near ptr 0x004426F2;
 // LINE 180:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -813,16 +848,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x760], eax;
 	__asm        cmp    dword ptr [ebp-0x760], 0;
-	__asm        je     near ptr 0x00442744;
+	__asm        je     _T742;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x760];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x154], eax;
-	__asm        jmp    near ptr 0x0044274E;
+	__asm        jmp    _T74c;
 
+_T742:
 	__asm        mov    dword ptr [ebp-0x154], 0;
+_T74c:
 	__asm        mov    dword ptr [ebp-0x158], 0;
 	__asm        jmp    near ptr 0x0044275D;
 
@@ -835,7 +872,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x158];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x158], 0;
-	__asm        je     near ptr 0x004427B1;
+	__asm        je     _T7af;
 
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    [ebp-0x46C], eax;
@@ -845,6 +882,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T7af:
 	__asm        jmp    near ptr 0x004427B6;
 // LINE 183:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -860,16 +898,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x764], eax;
 	__asm        cmp    dword ptr [ebp-0x764], 0;
-	__asm        je     near ptr 0x00442808;
+	__asm        je     _T806;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x764];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x15C], eax;
-	__asm        jmp    near ptr 0x00442812;
+	__asm        jmp    _T810;
 
+_T806:
 	__asm        mov    dword ptr [ebp-0x15C], 0;
+_T810:
 	__asm        mov    dword ptr [ebp-0x160], 0;
 	__asm        jmp    near ptr 0x00442821;
 
@@ -882,7 +922,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x160];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x160], 0;
-	__asm        je     near ptr 0x00442875;
+	__asm        je     _T873;
 
 	__asm        mov    eax, [ebp-0x160];
 	__asm        mov    [ebp-0x474], eax;
@@ -892,6 +932,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T873:
 	__asm        jmp    near ptr 0x0044287A;
 // LINE 186:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -907,16 +948,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x768], eax;
 	__asm        cmp    dword ptr [ebp-0x768], 0;
-	__asm        je     near ptr 0x004428CC;
+	__asm        je     _T8ca;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x768];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x164], eax;
-	__asm        jmp    near ptr 0x004428D6;
+	__asm        jmp    _T8d4;
 
+_T8ca:
 	__asm        mov    dword ptr [ebp-0x164], 0;
+_T8d4:
 	__asm        mov    dword ptr [ebp-0x168], 0;
 	__asm        jmp    near ptr 0x004428E5;
 
@@ -929,7 +972,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x168];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x168], 0;
-	__asm        je     near ptr 0x00442939;
+	__asm        je     _T937;
 
 	__asm        mov    eax, [ebp-0x168];
 	__asm        mov    [ebp-0x47C], eax;
@@ -939,6 +982,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T937:
 	__asm        jmp    near ptr 0x0044293E;
 // LINE 189:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -954,16 +998,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x76C], eax;
 	__asm        cmp    dword ptr [ebp-0x76C], 0;
-	__asm        je     near ptr 0x00442990;
+	__asm        je     _T98e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x76C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x16C], eax;
-	__asm        jmp    near ptr 0x0044299A;
+	__asm        jmp    _T998;
 
+_T98e:
 	__asm        mov    dword ptr [ebp-0x16C], 0;
+_T998:
 	__asm        mov    dword ptr [ebp-0x170], 0;
 	__asm        jmp    near ptr 0x004429A9;
 
@@ -976,7 +1022,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x170];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x170], 0;
-	__asm        je     near ptr 0x004429FD;
+	__asm        je     _T9fb;
 
 	__asm        mov    eax, [ebp-0x170];
 	__asm        mov    [ebp-0x484], eax;
@@ -986,6 +1032,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T9fb:
 	__asm        jmp    near ptr 0x00442A02;
 // LINE 192:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1001,16 +1048,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x770], eax;
 	__asm        cmp    dword ptr [ebp-0x770], 0;
-	__asm        je     near ptr 0x00442A54;
+	__asm        je     _Ta52;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x770];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x174], eax;
-	__asm        jmp    near ptr 0x00442A5E;
+	__asm        jmp    _Ta5c;
 
+_Ta52:
 	__asm        mov    dword ptr [ebp-0x174], 0;
+_Ta5c:
 	__asm        mov    dword ptr [ebp-0x178], 0;
 	__asm        jmp    near ptr 0x00442A6D;
 
@@ -1023,7 +1072,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x178];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x178], 0;
-	__asm        je     near ptr 0x00442AC1;
+	__asm        je     _Tabf;
 
 	__asm        mov    eax, [ebp-0x178];
 	__asm        mov    [ebp-0x48C], eax;
@@ -1033,6 +1082,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tabf:
 	__asm        jmp    near ptr 0x00442AC6;
 // LINE 195:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1048,16 +1098,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x774], eax;
 	__asm        cmp    dword ptr [ebp-0x774], 0;
-	__asm        je     near ptr 0x00442B18;
+	__asm        je     _Tb16;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x774];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x17C], eax;
-	__asm        jmp    near ptr 0x00442B22;
+	__asm        jmp    _Tb20;
 
+_Tb16:
 	__asm        mov    dword ptr [ebp-0x17C], 0;
+_Tb20:
 	__asm        mov    dword ptr [ebp-0x180], 0;
 	__asm        jmp    near ptr 0x00442B31;
 
@@ -1070,7 +1122,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x180];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x180], 0;
-	__asm        je     near ptr 0x00442B85;
+	__asm        je     _Tb83;
 
 	__asm        mov    eax, [ebp-0x180];
 	__asm        mov    [ebp-0x494], eax;
@@ -1080,6 +1132,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tb83:
 	__asm        jmp    near ptr 0x00442B8A;
 // LINE 198:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1095,16 +1148,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x778], eax;
 	__asm        cmp    dword ptr [ebp-0x778], 0;
-	__asm        je     near ptr 0x00442BDC;
+	__asm        je     _Tbda;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x778];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x184], eax;
-	__asm        jmp    near ptr 0x00442BE6;
+	__asm        jmp    _Tbe4;
 
+_Tbda:
 	__asm        mov    dword ptr [ebp-0x184], 0;
+_Tbe4:
 	__asm        mov    dword ptr [ebp-0x188], 0;
 	__asm        jmp    near ptr 0x00442BF5;
 
@@ -1117,7 +1172,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x188];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x188], 0;
-	__asm        je     near ptr 0x00442C49;
+	__asm        je     _Tc47;
 
 	__asm        mov    eax, [ebp-0x188];
 	__asm        mov    [ebp-0x49C], eax;
@@ -1127,6 +1182,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tc47:
 	__asm        jmp    near ptr 0x00442C4E;
 // LINE 201:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1142,16 +1198,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x77C], eax;
 	__asm        cmp    dword ptr [ebp-0x77C], 0;
-	__asm        je     near ptr 0x00442CA0;
+	__asm        je     _Tc9e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x77C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x18C], eax;
-	__asm        jmp    near ptr 0x00442CAA;
+	__asm        jmp    _Tca8;
 
+_Tc9e:
 	__asm        mov    dword ptr [ebp-0x18C], 0;
+_Tca8:
 	__asm        mov    dword ptr [ebp-0x190], 0;
 	__asm        jmp    near ptr 0x00442CB9;
 
@@ -1164,7 +1222,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x190];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x190], 0;
-	__asm        je     near ptr 0x00442D0D;
+	__asm        je     _Td0b;
 
 	__asm        mov    eax, [ebp-0x190];
 	__asm        mov    [ebp-0x4A4], eax;
@@ -1174,6 +1232,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Td0b:
 	__asm        jmp    near ptr 0x00442D12;
 // LINE 204:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1189,16 +1248,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x780], eax;
 	__asm        cmp    dword ptr [ebp-0x780], 0;
-	__asm        je     near ptr 0x00442D64;
+	__asm        je     _Td62;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x780];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x194], eax;
-	__asm        jmp    near ptr 0x00442D6E;
+	__asm        jmp    _Td6c;
 
+_Td62:
 	__asm        mov    dword ptr [ebp-0x194], 0;
+_Td6c:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00442D7D;
 
@@ -1211,7 +1272,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x198];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x198], 0;
-	__asm        je     near ptr 0x00442DD1;
+	__asm        je     _Tdcf;
 
 	__asm        mov    eax, [ebp-0x198];
 	__asm        mov    [ebp-0x4AC], eax;
@@ -1221,6 +1282,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tdcf:
 	__asm        jmp    near ptr 0x00442DD6;
 // LINE 207:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1236,16 +1298,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x784], eax;
 	__asm        cmp    dword ptr [ebp-0x784], 0;
-	__asm        je     near ptr 0x00442E28;
+	__asm        je     _Te26;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x784];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x19C], eax;
-	__asm        jmp    near ptr 0x00442E32;
+	__asm        jmp    _Te30;
 
+_Te26:
 	__asm        mov    dword ptr [ebp-0x19C], 0;
+_Te30:
 	__asm        mov    dword ptr [ebp-0x1A0], 0;
 	__asm        jmp    near ptr 0x00442E41;
 
@@ -1258,7 +1322,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1A0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1A0], 0;
-	__asm        je     near ptr 0x00442E95;
+	__asm        je     _Te93;
 
 	__asm        mov    eax, [ebp-0x1A0];
 	__asm        mov    [ebp-0x4B4], eax;
@@ -1268,6 +1332,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Te93:
 	__asm        jmp    near ptr 0x00442E9A;
 // LINE 210:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1283,16 +1348,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x788], eax;
 	__asm        cmp    dword ptr [ebp-0x788], 0;
-	__asm        je     near ptr 0x00442EEC;
+	__asm        je     _Teea;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x788];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1A4], eax;
-	__asm        jmp    near ptr 0x00442EF6;
+	__asm        jmp    _Tef4;
 
+_Teea:
 	__asm        mov    dword ptr [ebp-0x1A4], 0;
+_Tef4:
 	__asm        mov    dword ptr [ebp-0x1A8], 0;
 	__asm        jmp    near ptr 0x00442F05;
 
@@ -1305,7 +1372,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1A8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1A8], 0;
-	__asm        je     near ptr 0x00442F59;
+	__asm        je     _Tf57;
 
 	__asm        mov    eax, [ebp-0x1A8];
 	__asm        mov    [ebp-0x4BC], eax;
@@ -1315,6 +1382,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tf57:
 	__asm        jmp    near ptr 0x00442F5E;
 // LINE 213:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1330,16 +1398,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x78C], eax;
 	__asm        cmp    dword ptr [ebp-0x78C], 0;
-	__asm        je     near ptr 0x00442FB0;
+	__asm        je     _Tfae;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x78C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1AC], eax;
-	__asm        jmp    near ptr 0x00442FBA;
+	__asm        jmp    _Tfb8;
 
+_Tfae:
 	__asm        mov    dword ptr [ebp-0x1AC], 0;
+_Tfb8:
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
 	__asm        jmp    near ptr 0x00442FC9;
 
@@ -1352,7 +1422,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1B0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1B0], 0;
-	__asm        je     near ptr 0x0044301D;
+	__asm        je     _T101b;
 
 	__asm        mov    eax, [ebp-0x1B0];
 	__asm        mov    [ebp-0x4C4], eax;
@@ -1362,6 +1432,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T101b:
 	__asm        jmp    near ptr 0x00443022;
 // LINE 216:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1377,16 +1448,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x790], eax;
 	__asm        cmp    dword ptr [ebp-0x790], 0;
-	__asm        je     near ptr 0x00443074;
+	__asm        je     _T1072;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x790];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1B4], eax;
-	__asm        jmp    near ptr 0x0044307E;
+	__asm        jmp    _T107c;
 
+_T1072:
 	__asm        mov    dword ptr [ebp-0x1B4], 0;
+_T107c:
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
 	__asm        jmp    near ptr 0x0044308D;
 
@@ -1399,7 +1472,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1B8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1B8], 0;
-	__asm        je     near ptr 0x004430E1;
+	__asm        je     _T10df;
 
 	__asm        mov    eax, [ebp-0x1B8];
 	__asm        mov    [ebp-0x4CC], eax;
@@ -1409,6 +1482,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T10df:
 	__asm        jmp    near ptr 0x004430E6;
 // LINE 219:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1424,16 +1498,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x794], eax;
 	__asm        cmp    dword ptr [ebp-0x794], 0;
-	__asm        je     near ptr 0x00443138;
+	__asm        je     _T1136;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x794];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1BC], eax;
-	__asm        jmp    near ptr 0x00443142;
+	__asm        jmp    _T1140;
 
+_T1136:
 	__asm        mov    dword ptr [ebp-0x1BC], 0;
+_T1140:
 	__asm        mov    dword ptr [ebp-0x1C0], 0;
 	__asm        jmp    near ptr 0x00443151;
 
@@ -1446,7 +1522,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1C0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C0], 0;
-	__asm        je     near ptr 0x004431A5;
+	__asm        je     _T11a3;
 
 	__asm        mov    eax, [ebp-0x1C0];
 	__asm        mov    [ebp-0x4D4], eax;
@@ -1456,6 +1532,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T11a3:
 	__asm        jmp    near ptr 0x004431AA;
 // LINE 222:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1471,16 +1548,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x798], eax;
 	__asm        cmp    dword ptr [ebp-0x798], 0;
-	__asm        je     near ptr 0x004431FC;
+	__asm        je     _T11fa;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x798];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1C4], eax;
-	__asm        jmp    near ptr 0x00443206;
+	__asm        jmp    _T1204;
 
+_T11fa:
 	__asm        mov    dword ptr [ebp-0x1C4], 0;
+_T1204:
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
 	__asm        jmp    near ptr 0x00443215;
 
@@ -1493,7 +1572,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1C8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1C8], 0;
-	__asm        je     near ptr 0x00443269;
+	__asm        je     _T1267;
 
 	__asm        mov    eax, [ebp-0x1C8];
 	__asm        mov    [ebp-0x4DC], eax;
@@ -1503,6 +1582,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1267:
 	__asm        jmp    near ptr 0x0044326E;
 // LINE 225:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1518,16 +1598,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x79C], eax;
 	__asm        cmp    dword ptr [ebp-0x79C], 0;
-	__asm        je     near ptr 0x004432C0;
+	__asm        je     _T12be;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x79C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1CC], eax;
-	__asm        jmp    near ptr 0x004432CA;
+	__asm        jmp    _T12c8;
 
+_T12be:
 	__asm        mov    dword ptr [ebp-0x1CC], 0;
+_T12c8:
 	__asm        mov    dword ptr [ebp-0x1D0], 0;
 	__asm        jmp    near ptr 0x004432D9;
 
@@ -1540,7 +1622,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1D0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1D0], 0;
-	__asm        je     near ptr 0x0044332D;
+	__asm        je     _T132b;
 
 	__asm        mov    eax, [ebp-0x1D0];
 	__asm        mov    [ebp-0x4E4], eax;
@@ -1550,6 +1632,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T132b:
 	__asm        jmp    near ptr 0x00443332;
 // LINE 228:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1565,16 +1648,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7A0], eax;
 	__asm        cmp    dword ptr [ebp-0x7A0], 0;
-	__asm        je     near ptr 0x00443384;
+	__asm        je     _T1382;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7A0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1D4], eax;
-	__asm        jmp    near ptr 0x0044338E;
+	__asm        jmp    _T138c;
 
+_T1382:
 	__asm        mov    dword ptr [ebp-0x1D4], 0;
+_T138c:
 	__asm        mov    dword ptr [ebp-0x1D8], 0;
 	__asm        jmp    near ptr 0x0044339D;
 
@@ -1587,7 +1672,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1D8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1D8], 0;
-	__asm        je     near ptr 0x004433F1;
+	__asm        je     _T13ef;
 
 	__asm        mov    eax, [ebp-0x1D8];
 	__asm        mov    [ebp-0x4EC], eax;
@@ -1597,6 +1682,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T13ef:
 	__asm        jmp    near ptr 0x004433F6;
 // LINE 231:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1612,16 +1698,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7A4], eax;
 	__asm        cmp    dword ptr [ebp-0x7A4], 0;
-	__asm        je     near ptr 0x00443448;
+	__asm        je     _T1446;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7A4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1DC], eax;
-	__asm        jmp    near ptr 0x00443452;
+	__asm        jmp    _T1450;
 
+_T1446:
 	__asm        mov    dword ptr [ebp-0x1DC], 0;
+_T1450:
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
 	__asm        jmp    near ptr 0x00443461;
 
@@ -1634,7 +1722,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1E0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1E0], 0;
-	__asm        je     near ptr 0x004434B5;
+	__asm        je     _T14b3;
 
 	__asm        mov    eax, [ebp-0x1E0];
 	__asm        mov    [ebp-0x4F4], eax;
@@ -1644,6 +1732,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T14b3:
 	__asm        jmp    near ptr 0x004434BA;
 // LINE 234:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1659,16 +1748,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7A8], eax;
 	__asm        cmp    dword ptr [ebp-0x7A8], 0;
-	__asm        je     near ptr 0x0044350C;
+	__asm        je     _T150a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7A8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1E4], eax;
-	__asm        jmp    near ptr 0x00443516;
+	__asm        jmp    _T1514;
 
+_T150a:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
+_T1514:
 	__asm        mov    dword ptr [ebp-0x1E8], 0;
 	__asm        jmp    near ptr 0x00443525;
 
@@ -1681,7 +1772,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1E8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1E8], 0;
-	__asm        je     near ptr 0x00443579;
+	__asm        je     _T1577;
 
 	__asm        mov    eax, [ebp-0x1E8];
 	__asm        mov    [ebp-0x4FC], eax;
@@ -1691,6 +1782,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1577:
 	__asm        jmp    near ptr 0x0044357E;
 // LINE 237:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1706,16 +1798,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7AC], eax;
 	__asm        cmp    dword ptr [ebp-0x7AC], 0;
-	__asm        je     near ptr 0x004435D0;
+	__asm        je     _T15ce;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7AC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1EC], eax;
-	__asm        jmp    near ptr 0x004435DA;
+	__asm        jmp    _T15d8;
 
+_T15ce:
 	__asm        mov    dword ptr [ebp-0x1EC], 0;
+_T15d8:
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
 	__asm        jmp    near ptr 0x004435E9;
 
@@ -1728,7 +1822,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1F0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1F0], 0;
-	__asm        je     near ptr 0x0044363D;
+	__asm        je     _T163b;
 
 	__asm        mov    eax, [ebp-0x1F0];
 	__asm        mov    [ebp-0x504], eax;
@@ -1738,6 +1832,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T163b:
 	__asm        jmp    near ptr 0x00443642;
 // LINE 240:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1753,16 +1848,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7B0], eax;
 	__asm        cmp    dword ptr [ebp-0x7B0], 0;
-	__asm        je     near ptr 0x00443694;
+	__asm        je     _T1692;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7B0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1F4], eax;
-	__asm        jmp    near ptr 0x0044369E;
+	__asm        jmp    _T169c;
 
+_T1692:
 	__asm        mov    dword ptr [ebp-0x1F4], 0;
+_T169c:
 	__asm        mov    dword ptr [ebp-0x1F8], 0;
 	__asm        jmp    near ptr 0x004436AD;
 
@@ -1775,7 +1872,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x1F8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x1F8], 0;
-	__asm        je     near ptr 0x00443701;
+	__asm        je     _T16ff;
 
 	__asm        mov    eax, [ebp-0x1F8];
 	__asm        mov    [ebp-0x50C], eax;
@@ -1785,6 +1882,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T16ff:
 	__asm        jmp    near ptr 0x00443706;
 // LINE 243:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1800,16 +1898,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7B4], eax;
 	__asm        cmp    dword ptr [ebp-0x7B4], 0;
-	__asm        je     near ptr 0x00443758;
+	__asm        je     _T1756;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7B4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1FC], eax;
-	__asm        jmp    near ptr 0x00443762;
+	__asm        jmp    _T1760;
 
+_T1756:
 	__asm        mov    dword ptr [ebp-0x1FC], 0;
+_T1760:
 	__asm        mov    dword ptr [ebp-0x200], 0;
 	__asm        jmp    near ptr 0x00443771;
 
@@ -1822,7 +1922,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x200];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x200], 0;
-	__asm        je     near ptr 0x004437C5;
+	__asm        je     _T17c3;
 
 	__asm        mov    eax, [ebp-0x200];
 	__asm        mov    [ebp-0x514], eax;
@@ -1832,6 +1932,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T17c3:
 	__asm        jmp    near ptr 0x004437CA;
 // LINE 246:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1847,16 +1948,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7B8], eax;
 	__asm        cmp    dword ptr [ebp-0x7B8], 0;
-	__asm        je     near ptr 0x0044381C;
+	__asm        je     _T181a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7B8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x204], eax;
-	__asm        jmp    near ptr 0x00443826;
+	__asm        jmp    _T1824;
 
+_T181a:
 	__asm        mov    dword ptr [ebp-0x204], 0;
+_T1824:
 	__asm        mov    dword ptr [ebp-0x208], 0;
 	__asm        jmp    near ptr 0x00443835;
 
@@ -1869,7 +1972,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x208];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x208], 0;
-	__asm        je     near ptr 0x00443889;
+	__asm        je     _T1887;
 
 	__asm        mov    eax, [ebp-0x208];
 	__asm        mov    [ebp-0x51C], eax;
@@ -1879,6 +1982,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1887:
 	__asm        jmp    near ptr 0x0044388E;
 // LINE 249:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1894,16 +1998,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7BC], eax;
 	__asm        cmp    dword ptr [ebp-0x7BC], 0;
-	__asm        je     near ptr 0x004438E0;
+	__asm        je     _T18de;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7BC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x20C], eax;
-	__asm        jmp    near ptr 0x004438EA;
+	__asm        jmp    _T18e8;
 
+_T18de:
 	__asm        mov    dword ptr [ebp-0x20C], 0;
+_T18e8:
 	__asm        mov    dword ptr [ebp-0x210], 0;
 	__asm        jmp    near ptr 0x004438F9;
 
@@ -1916,7 +2022,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x210];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x210], 0;
-	__asm        je     near ptr 0x0044394D;
+	__asm        je     _T194b;
 
 	__asm        mov    eax, [ebp-0x210];
 	__asm        mov    [ebp-0x524], eax;
@@ -1926,6 +2032,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T194b:
 	__asm        jmp    near ptr 0x00443952;
 // LINE 252:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1941,16 +2048,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7C0], eax;
 	__asm        cmp    dword ptr [ebp-0x7C0], 0;
-	__asm        je     near ptr 0x004439A4;
+	__asm        je     _T19a2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7C0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x214], eax;
-	__asm        jmp    near ptr 0x004439AE;
+	__asm        jmp    _T19ac;
 
+_T19a2:
 	__asm        mov    dword ptr [ebp-0x214], 0;
+_T19ac:
 	__asm        mov    dword ptr [ebp-0x218], 0;
 	__asm        jmp    near ptr 0x004439BD;
 
@@ -1963,7 +2072,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x218];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x218], 0;
-	__asm        je     near ptr 0x00443A11;
+	__asm        je     _T1a0f;
 
 	__asm        mov    eax, [ebp-0x218];
 	__asm        mov    [ebp-0x52C], eax;
@@ -1973,6 +2082,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1a0f:
 	__asm        jmp    near ptr 0x00443A16;
 // LINE 255:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -1988,16 +2098,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7C4], eax;
 	__asm        cmp    dword ptr [ebp-0x7C4], 0;
-	__asm        je     near ptr 0x00443A68;
+	__asm        je     _T1a66;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7C4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x21C], eax;
-	__asm        jmp    near ptr 0x00443A72;
+	__asm        jmp    _T1a70;
 
+_T1a66:
 	__asm        mov    dword ptr [ebp-0x21C], 0;
+_T1a70:
 	__asm        mov    dword ptr [ebp-0x220], 0;
 	__asm        jmp    near ptr 0x00443A81;
 
@@ -2010,7 +2122,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x220];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x220], 0;
-	__asm        je     near ptr 0x00443AD5;
+	__asm        je     _T1ad3;
 
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    [ebp-0x534], eax;
@@ -2020,6 +2132,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1ad3:
 	__asm        jmp    near ptr 0x00443ADA;
 // LINE 258:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2035,16 +2148,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7C8], eax;
 	__asm        cmp    dword ptr [ebp-0x7C8], 0;
-	__asm        je     near ptr 0x00443B2C;
+	__asm        je     _T1b2a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7C8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x224], eax;
-	__asm        jmp    near ptr 0x00443B36;
+	__asm        jmp    _T1b34;
 
+_T1b2a:
 	__asm        mov    dword ptr [ebp-0x224], 0;
+_T1b34:
 	__asm        mov    dword ptr [ebp-0x228], 0;
 	__asm        jmp    near ptr 0x00443B45;
 
@@ -2057,7 +2172,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x228];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x228], 0;
-	__asm        je     near ptr 0x00443B99;
+	__asm        je     _T1b97;
 
 	__asm        mov    eax, [ebp-0x228];
 	__asm        mov    [ebp-0x53C], eax;
@@ -2067,6 +2182,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1b97:
 	__asm        jmp    near ptr 0x00443B9E;
 // LINE 261:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2082,16 +2198,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7CC], eax;
 	__asm        cmp    dword ptr [ebp-0x7CC], 0;
-	__asm        je     near ptr 0x00443BF0;
+	__asm        je     _T1bee;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7CC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x22C], eax;
-	__asm        jmp    near ptr 0x00443BFA;
+	__asm        jmp    _T1bf8;
 
+_T1bee:
 	__asm        mov    dword ptr [ebp-0x22C], 0;
+_T1bf8:
 	__asm        mov    dword ptr [ebp-0x230], 0;
 	__asm        jmp    near ptr 0x00443C09;
 
@@ -2104,7 +2222,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x230];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x230], 0;
-	__asm        je     near ptr 0x00443C5D;
+	__asm        je     _T1c5b;
 
 	__asm        mov    eax, [ebp-0x230];
 	__asm        mov    [ebp-0x544], eax;
@@ -2114,6 +2232,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1c5b:
 	__asm        jmp    near ptr 0x00443C62;
 // LINE 264:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2129,16 +2248,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7D0], eax;
 	__asm        cmp    dword ptr [ebp-0x7D0], 0;
-	__asm        je     near ptr 0x00443CB4;
+	__asm        je     _T1cb2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7D0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x234], eax;
-	__asm        jmp    near ptr 0x00443CBE;
+	__asm        jmp    _T1cbc;
 
+_T1cb2:
 	__asm        mov    dword ptr [ebp-0x234], 0;
+_T1cbc:
 	__asm        mov    dword ptr [ebp-0x238], 0;
 	__asm        jmp    near ptr 0x00443CCD;
 
@@ -2151,7 +2272,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x238];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x238], 0;
-	__asm        je     near ptr 0x00443D21;
+	__asm        je     _T1d1f;
 
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    [ebp-0x54C], eax;
@@ -2161,6 +2282,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1d1f:
 	__asm        jmp    near ptr 0x00443D26;
 // LINE 267:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2176,16 +2298,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7D4], eax;
 	__asm        cmp    dword ptr [ebp-0x7D4], 0;
-	__asm        je     near ptr 0x00443D78;
+	__asm        je     _T1d76;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7D4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x23C], eax;
-	__asm        jmp    near ptr 0x00443D82;
+	__asm        jmp    _T1d80;
 
+_T1d76:
 	__asm        mov    dword ptr [ebp-0x23C], 0;
+_T1d80:
 	__asm        mov    dword ptr [ebp-0x240], 0;
 	__asm        jmp    near ptr 0x00443D91;
 
@@ -2198,7 +2322,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x240];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x240], 0;
-	__asm        je     near ptr 0x00443DE5;
+	__asm        je     _T1de3;
 
 	__asm        mov    eax, [ebp-0x240];
 	__asm        mov    [ebp-0x554], eax;
@@ -2208,6 +2332,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1de3:
 	__asm        jmp    near ptr 0x00443DEA;
 // LINE 270:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2223,16 +2348,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7D8], eax;
 	__asm        cmp    dword ptr [ebp-0x7D8], 0;
-	__asm        je     near ptr 0x00443E3C;
+	__asm        je     _T1e3a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7D8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x244], eax;
-	__asm        jmp    near ptr 0x00443E46;
+	__asm        jmp    _T1e44;
 
+_T1e3a:
 	__asm        mov    dword ptr [ebp-0x244], 0;
+_T1e44:
 	__asm        mov    dword ptr [ebp-0x248], 0;
 	__asm        jmp    near ptr 0x00443E55;
 
@@ -2245,7 +2372,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x248];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x248], 0;
-	__asm        je     near ptr 0x00443EA9;
+	__asm        je     _T1ea7;
 
 	__asm        mov    eax, [ebp-0x248];
 	__asm        mov    [ebp-0x55C], eax;
@@ -2255,6 +2382,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1ea7:
 	__asm        jmp    near ptr 0x00443EAE;
 // LINE 273:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2270,16 +2398,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7DC], eax;
 	__asm        cmp    dword ptr [ebp-0x7DC], 0;
-	__asm        je     near ptr 0x00443F00;
+	__asm        je     _T1efe;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7DC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x24C], eax;
-	__asm        jmp    near ptr 0x00443F0A;
+	__asm        jmp    _T1f08;
 
+_T1efe:
 	__asm        mov    dword ptr [ebp-0x24C], 0;
+_T1f08:
 	__asm        mov    dword ptr [ebp-0x250], 0;
 	__asm        jmp    near ptr 0x00443F19;
 
@@ -2292,7 +2422,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x250];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x250], 0;
-	__asm        je     near ptr 0x00443F6D;
+	__asm        je     _T1f6b;
 
 	__asm        mov    eax, [ebp-0x250];
 	__asm        mov    [ebp-0x564], eax;
@@ -2302,6 +2432,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1f6b:
 	__asm        jmp    near ptr 0x00443F72;
 // LINE 276:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2317,16 +2448,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7E0], eax;
 	__asm        cmp    dword ptr [ebp-0x7E0], 0;
-	__asm        je     near ptr 0x00443FC4;
+	__asm        je     _T1fc2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7E0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x254], eax;
-	__asm        jmp    near ptr 0x00443FCE;
+	__asm        jmp    _T1fcc;
 
+_T1fc2:
 	__asm        mov    dword ptr [ebp-0x254], 0;
+_T1fcc:
 	__asm        mov    dword ptr [ebp-0x258], 0;
 	__asm        jmp    near ptr 0x00443FDD;
 
@@ -2339,7 +2472,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x258];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x258], 0;
-	__asm        je     near ptr 0x00444031;
+	__asm        je     _T202f;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        mov    [ebp-0x56C], eax;
@@ -2349,6 +2482,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T202f:
 	__asm        jmp    near ptr 0x00444036;
 // LINE 279:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2364,16 +2498,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7E4], eax;
 	__asm        cmp    dword ptr [ebp-0x7E4], 0;
-	__asm        je     near ptr 0x00444088;
+	__asm        je     _T2086;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7E4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x25C], eax;
-	__asm        jmp    near ptr 0x00444092;
+	__asm        jmp    _T2090;
 
+_T2086:
 	__asm        mov    dword ptr [ebp-0x25C], 0;
+_T2090:
 	__asm        mov    dword ptr [ebp-0x260], 0;
 	__asm        jmp    near ptr 0x004440A1;
 
@@ -2386,7 +2522,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x260];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x260], 0;
-	__asm        je     near ptr 0x004440F5;
+	__asm        je     _T20f3;
 
 	__asm        mov    eax, [ebp-0x260];
 	__asm        mov    [ebp-0x574], eax;
@@ -2396,6 +2532,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T20f3:
 	__asm        jmp    near ptr 0x004440FA;
 // LINE 282:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2411,16 +2548,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7E8], eax;
 	__asm        cmp    dword ptr [ebp-0x7E8], 0;
-	__asm        je     near ptr 0x0044414C;
+	__asm        je     _T214a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7E8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x264], eax;
-	__asm        jmp    near ptr 0x00444156;
+	__asm        jmp    _T2154;
 
+_T214a:
 	__asm        mov    dword ptr [ebp-0x264], 0;
+_T2154:
 	__asm        mov    dword ptr [ebp-0x268], 0;
 	__asm        jmp    near ptr 0x00444165;
 
@@ -2433,7 +2572,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x268];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x268], 0;
-	__asm        je     near ptr 0x004441B9;
+	__asm        je     _T21b7;
 
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    [ebp-0x57C], eax;
@@ -2443,6 +2582,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T21b7:
 	__asm        jmp    near ptr 0x004441BE;
 // LINE 285:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2458,16 +2598,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7EC], eax;
 	__asm        cmp    dword ptr [ebp-0x7EC], 0;
-	__asm        je     near ptr 0x00444210;
+	__asm        je     _T220e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7EC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x26C], eax;
-	__asm        jmp    near ptr 0x0044421A;
+	__asm        jmp    _T2218;
 
+_T220e:
 	__asm        mov    dword ptr [ebp-0x26C], 0;
+_T2218:
 	__asm        mov    dword ptr [ebp-0x270], 0;
 	__asm        jmp    near ptr 0x00444229;
 
@@ -2480,7 +2622,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x270];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x270], 0;
-	__asm        je     near ptr 0x0044427D;
+	__asm        je     _T227b;
 
 	__asm        mov    eax, [ebp-0x270];
 	__asm        mov    [ebp-0x584], eax;
@@ -2490,6 +2632,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T227b:
 	__asm        jmp    near ptr 0x00444282;
 // LINE 288:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2505,16 +2648,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7F0], eax;
 	__asm        cmp    dword ptr [ebp-0x7F0], 0;
-	__asm        je     near ptr 0x004442D4;
+	__asm        je     _T22d2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7F0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x274], eax;
-	__asm        jmp    near ptr 0x004442DE;
+	__asm        jmp    _T22dc;
 
+_T22d2:
 	__asm        mov    dword ptr [ebp-0x274], 0;
+_T22dc:
 	__asm        mov    dword ptr [ebp-0x278], 0;
 	__asm        jmp    near ptr 0x004442ED;
 
@@ -2527,7 +2672,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x278];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x278], 0;
-	__asm        je     near ptr 0x00444341;
+	__asm        je     _T233f;
 
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    [ebp-0x58C], eax;
@@ -2537,6 +2682,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T233f:
 	__asm        jmp    near ptr 0x00444346;
 // LINE 291:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2552,16 +2698,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7F4], eax;
 	__asm        cmp    dword ptr [ebp-0x7F4], 0;
-	__asm        je     near ptr 0x00444398;
+	__asm        je     _T2396;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7F4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x27C], eax;
-	__asm        jmp    near ptr 0x004443A2;
+	__asm        jmp    _T23a0;
 
+_T2396:
 	__asm        mov    dword ptr [ebp-0x27C], 0;
+_T23a0:
 	__asm        mov    dword ptr [ebp-0x280], 0;
 	__asm        jmp    near ptr 0x004443B1;
 
@@ -2574,7 +2722,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x280];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x280], 0;
-	__asm        je     near ptr 0x00444405;
+	__asm        je     _T2403;
 
 	__asm        mov    eax, [ebp-0x280];
 	__asm        mov    [ebp-0x594], eax;
@@ -2584,6 +2732,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2403:
 	__asm        jmp    near ptr 0x0044440A;
 // LINE 294:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2599,16 +2748,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7F8], eax;
 	__asm        cmp    dword ptr [ebp-0x7F8], 0;
-	__asm        je     near ptr 0x0044445C;
+	__asm        je     _T245a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7F8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x284], eax;
-	__asm        jmp    near ptr 0x00444466;
+	__asm        jmp    _T2464;
 
+_T245a:
 	__asm        mov    dword ptr [ebp-0x284], 0;
+_T2464:
 	__asm        mov    dword ptr [ebp-0x288], 0;
 	__asm        jmp    near ptr 0x00444475;
 
@@ -2621,7 +2772,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x288];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x288], 0;
-	__asm        je     near ptr 0x004444C9;
+	__asm        je     _T24c7;
 
 	__asm        mov    eax, [ebp-0x288];
 	__asm        mov    [ebp-0x59C], eax;
@@ -2631,6 +2782,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T24c7:
 	__asm        jmp    near ptr 0x004444CE;
 // LINE 297:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2646,16 +2798,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x7FC], eax;
 	__asm        cmp    dword ptr [ebp-0x7FC], 0;
-	__asm        je     near ptr 0x00444520;
+	__asm        je     _T251e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7FC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x28C], eax;
-	__asm        jmp    near ptr 0x0044452A;
+	__asm        jmp    _T2528;
 
+_T251e:
 	__asm        mov    dword ptr [ebp-0x28C], 0;
+_T2528:
 	__asm        mov    dword ptr [ebp-0x290], 0;
 	__asm        jmp    near ptr 0x00444539;
 
@@ -2668,7 +2822,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x290];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x290], 0;
-	__asm        je     near ptr 0x0044458D;
+	__asm        je     _T258b;
 
 	__asm        mov    eax, [ebp-0x290];
 	__asm        mov    [ebp-0x5A4], eax;
@@ -2678,6 +2832,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T258b:
 	__asm        jmp    near ptr 0x00444592;
 // LINE 300:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2693,16 +2848,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x800], eax;
 	__asm        cmp    dword ptr [ebp-0x800], 0;
-	__asm        je     near ptr 0x004445E4;
+	__asm        je     _T25e2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x800];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x294], eax;
-	__asm        jmp    near ptr 0x004445EE;
+	__asm        jmp    _T25ec;
 
+_T25e2:
 	__asm        mov    dword ptr [ebp-0x294], 0;
+_T25ec:
 	__asm        mov    dword ptr [ebp-0x298], 0;
 	__asm        jmp    near ptr 0x004445FD;
 
@@ -2715,7 +2872,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x298];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x298], 0;
-	__asm        je     near ptr 0x00444651;
+	__asm        je     _T264f;
 
 	__asm        mov    eax, [ebp-0x298];
 	__asm        mov    [ebp-0x5AC], eax;
@@ -2725,6 +2882,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T264f:
 	__asm        jmp    near ptr 0x00444656;
 // LINE 305:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2740,16 +2898,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x804], eax;
 	__asm        cmp    dword ptr [ebp-0x804], 0;
-	__asm        je     near ptr 0x004446A8;
+	__asm        je     _T26a6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x804];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x29C], eax;
-	__asm        jmp    near ptr 0x004446B2;
+	__asm        jmp    _T26b0;
 
+_T26a6:
 	__asm        mov    dword ptr [ebp-0x29C], 0;
+_T26b0:
 	__asm        mov    dword ptr [ebp-0x2A0], 0;
 	__asm        jmp    near ptr 0x004446C1;
 
@@ -2762,7 +2922,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2A0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2A0], 0;
-	__asm        je     near ptr 0x00444715;
+	__asm        je     _T2713;
 
 	__asm        mov    eax, [ebp-0x2A0];
 	__asm        mov    [ebp-0x5B4], eax;
@@ -2772,6 +2932,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2713:
 	__asm        jmp    near ptr 0x0044471A;
 // LINE 308:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2787,16 +2948,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x808], eax;
 	__asm        cmp    dword ptr [ebp-0x808], 0;
-	__asm        je     near ptr 0x0044476C;
+	__asm        je     _T276a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x808];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2A4], eax;
-	__asm        jmp    near ptr 0x00444776;
+	__asm        jmp    _T2774;
 
+_T276a:
 	__asm        mov    dword ptr [ebp-0x2A4], 0;
+_T2774:
 	__asm        mov    dword ptr [ebp-0x2A8], 0;
 	__asm        jmp    near ptr 0x00444785;
 
@@ -2809,7 +2972,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2A8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2A8], 0;
-	__asm        je     near ptr 0x004447D9;
+	__asm        je     _T27d7;
 
 	__asm        mov    eax, [ebp-0x2A8];
 	__asm        mov    [ebp-0x5BC], eax;
@@ -2819,6 +2982,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T27d7:
 	__asm        jmp    near ptr 0x004447DE;
 // LINE 311:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2834,16 +2998,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x80C], eax;
 	__asm        cmp    dword ptr [ebp-0x80C], 0;
-	__asm        je     near ptr 0x00444830;
+	__asm        je     _T282e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x80C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2AC], eax;
-	__asm        jmp    near ptr 0x0044483A;
+	__asm        jmp    _T2838;
 
+_T282e:
 	__asm        mov    dword ptr [ebp-0x2AC], 0;
+_T2838:
 	__asm        mov    dword ptr [ebp-0x2B0], 0;
 	__asm        jmp    near ptr 0x00444849;
 
@@ -2856,7 +3022,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2B0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2B0], 0;
-	__asm        je     near ptr 0x0044489D;
+	__asm        je     _T289b;
 
 	__asm        mov    eax, [ebp-0x2B0];
 	__asm        mov    [ebp-0x5C4], eax;
@@ -2866,6 +3032,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T289b:
 	__asm        jmp    near ptr 0x004448A2;
 // LINE 314:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2881,16 +3048,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x810], eax;
 	__asm        cmp    dword ptr [ebp-0x810], 0;
-	__asm        je     near ptr 0x004448F4;
+	__asm        je     _T28f2;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x810];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2B4], eax;
-	__asm        jmp    near ptr 0x004448FE;
+	__asm        jmp    _T28fc;
 
+_T28f2:
 	__asm        mov    dword ptr [ebp-0x2B4], 0;
+_T28fc:
 	__asm        mov    dword ptr [ebp-0x2B8], 0;
 	__asm        jmp    near ptr 0x0044490D;
 
@@ -2903,7 +3072,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2B8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2B8], 0;
-	__asm        je     near ptr 0x00444961;
+	__asm        je     _T295f;
 
 	__asm        mov    eax, [ebp-0x2B8];
 	__asm        mov    [ebp-0x5CC], eax;
@@ -2913,6 +3082,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T295f:
 	__asm        jmp    near ptr 0x00444966;
 // LINE 317:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2928,16 +3098,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x814], eax;
 	__asm        cmp    dword ptr [ebp-0x814], 0;
-	__asm        je     near ptr 0x004449B8;
+	__asm        je     _T29b6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x814];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2BC], eax;
-	__asm        jmp    near ptr 0x004449C2;
+	__asm        jmp    _T29c0;
 
+_T29b6:
 	__asm        mov    dword ptr [ebp-0x2BC], 0;
+_T29c0:
 	__asm        mov    dword ptr [ebp-0x2C0], 0;
 	__asm        jmp    near ptr 0x004449D1;
 
@@ -2950,7 +3122,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2C0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2C0], 0;
-	__asm        je     near ptr 0x00444A25;
+	__asm        je     _T2a23;
 
 	__asm        mov    eax, [ebp-0x2C0];
 	__asm        mov    [ebp-0x5D4], eax;
@@ -2960,6 +3132,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2a23:
 	__asm        jmp    near ptr 0x00444A2A;
 // LINE 320:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -2975,16 +3148,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x818], eax;
 	__asm        cmp    dword ptr [ebp-0x818], 0;
-	__asm        je     near ptr 0x00444A7C;
+	__asm        je     _T2a7a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x818];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2C4], eax;
-	__asm        jmp    near ptr 0x00444A86;
+	__asm        jmp    _T2a84;
 
+_T2a7a:
 	__asm        mov    dword ptr [ebp-0x2C4], 0;
+_T2a84:
 	__asm        mov    dword ptr [ebp-0x2C8], 0;
 	__asm        jmp    near ptr 0x00444A95;
 
@@ -2997,7 +3172,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2C8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2C8], 0;
-	__asm        je     near ptr 0x00444AE9;
+	__asm        je     _T2ae7;
 
 	__asm        mov    eax, [ebp-0x2C8];
 	__asm        mov    [ebp-0x5DC], eax;
@@ -3007,6 +3182,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2ae7:
 	__asm        jmp    near ptr 0x00444AEE;
 // LINE 323:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3022,16 +3198,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x81C], eax;
 	__asm        cmp    dword ptr [ebp-0x81C], 0;
-	__asm        je     near ptr 0x00444B40;
+	__asm        je     _T2b3e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x81C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2CC], eax;
-	__asm        jmp    near ptr 0x00444B4A;
+	__asm        jmp    _T2b48;
 
+_T2b3e:
 	__asm        mov    dword ptr [ebp-0x2CC], 0;
+_T2b48:
 	__asm        mov    dword ptr [ebp-0x2D0], 0;
 	__asm        jmp    near ptr 0x00444B59;
 
@@ -3044,7 +3222,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2D0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2D0], 0;
-	__asm        je     near ptr 0x00444BAD;
+	__asm        je     _T2bab;
 
 	__asm        mov    eax, [ebp-0x2D0];
 	__asm        mov    [ebp-0x5E4], eax;
@@ -3054,6 +3232,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2bab:
 	__asm        jmp    near ptr 0x00444BB2;
 // LINE 326:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3069,16 +3248,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x820], eax;
 	__asm        cmp    dword ptr [ebp-0x820], 0;
-	__asm        je     near ptr 0x00444C04;
+	__asm        je     _T2c02;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x820];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2D4], eax;
-	__asm        jmp    near ptr 0x00444C0E;
+	__asm        jmp    _T2c0c;
 
+_T2c02:
 	__asm        mov    dword ptr [ebp-0x2D4], 0;
+_T2c0c:
 	__asm        mov    dword ptr [ebp-0x2D8], 0;
 	__asm        jmp    near ptr 0x00444C1D;
 
@@ -3091,7 +3272,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2D8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2D8], 0;
-	__asm        je     near ptr 0x00444C71;
+	__asm        je     _T2c6f;
 
 	__asm        mov    eax, [ebp-0x2D8];
 	__asm        mov    [ebp-0x5EC], eax;
@@ -3101,6 +3282,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2c6f:
 	__asm        jmp    near ptr 0x00444C76;
 // LINE 329:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3116,16 +3298,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x824], eax;
 	__asm        cmp    dword ptr [ebp-0x824], 0;
-	__asm        je     near ptr 0x00444CC8;
+	__asm        je     _T2cc6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x824];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2DC], eax;
-	__asm        jmp    near ptr 0x00444CD2;
+	__asm        jmp    _T2cd0;
 
+_T2cc6:
 	__asm        mov    dword ptr [ebp-0x2DC], 0;
+_T2cd0:
 	__asm        mov    dword ptr [ebp-0x2E0], 0;
 	__asm        jmp    near ptr 0x00444CE1;
 
@@ -3138,7 +3322,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2E0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2E0], 0;
-	__asm        je     near ptr 0x00444D35;
+	__asm        je     _T2d33;
 
 	__asm        mov    eax, [ebp-0x2E0];
 	__asm        mov    [ebp-0x5F4], eax;
@@ -3148,6 +3332,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2d33:
 	__asm        jmp    near ptr 0x00444D3A;
 // LINE 332:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3163,16 +3348,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x828], eax;
 	__asm        cmp    dword ptr [ebp-0x828], 0;
-	__asm        je     near ptr 0x00444D8C;
+	__asm        je     _T2d8a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x828];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2E4], eax;
-	__asm        jmp    near ptr 0x00444D96;
+	__asm        jmp    _T2d94;
 
+_T2d8a:
 	__asm        mov    dword ptr [ebp-0x2E4], 0;
+_T2d94:
 	__asm        mov    dword ptr [ebp-0x2E8], 0;
 	__asm        jmp    near ptr 0x00444DA5;
 
@@ -3185,7 +3372,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2E8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2E8], 0;
-	__asm        je     near ptr 0x00444DF9;
+	__asm        je     _T2df7;
 
 	__asm        mov    eax, [ebp-0x2E8];
 	__asm        mov    [ebp-0x5FC], eax;
@@ -3195,6 +3382,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2df7:
 	__asm        jmp    near ptr 0x00444DFE;
 // LINE 335:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3210,16 +3398,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x82C], eax;
 	__asm        cmp    dword ptr [ebp-0x82C], 0;
-	__asm        je     near ptr 0x00444E50;
+	__asm        je     _T2e4e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x82C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2EC], eax;
-	__asm        jmp    near ptr 0x00444E5A;
+	__asm        jmp    _T2e58;
 
+_T2e4e:
 	__asm        mov    dword ptr [ebp-0x2EC], 0;
+_T2e58:
 	__asm        mov    dword ptr [ebp-0x2F0], 0;
 	__asm        jmp    near ptr 0x00444E69;
 
@@ -3232,7 +3422,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2F0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2F0], 0;
-	__asm        je     near ptr 0x00444EBD;
+	__asm        je     _T2ebb;
 
 	__asm        mov    eax, [ebp-0x2F0];
 	__asm        mov    [ebp-0x604], eax;
@@ -3242,6 +3432,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2ebb:
 	__asm        jmp    near ptr 0x00444EC2;
 // LINE 338:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3257,16 +3448,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x830], eax;
 	__asm        cmp    dword ptr [ebp-0x830], 0;
-	__asm        je     near ptr 0x00444F14;
+	__asm        je     _T2f12;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x830];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2F4], eax;
-	__asm        jmp    near ptr 0x00444F1E;
+	__asm        jmp    _T2f1c;
 
+_T2f12:
 	__asm        mov    dword ptr [ebp-0x2F4], 0;
+_T2f1c:
 	__asm        mov    dword ptr [ebp-0x2F8], 0;
 	__asm        jmp    near ptr 0x00444F2D;
 
@@ -3279,7 +3472,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x2F8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x2F8], 0;
-	__asm        je     near ptr 0x00444F81;
+	__asm        je     _T2f7f;
 
 	__asm        mov    eax, [ebp-0x2F8];
 	__asm        mov    [ebp-0x60C], eax;
@@ -3289,6 +3482,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2f7f:
 	__asm        jmp    near ptr 0x00444F86;
 // LINE 341:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3304,16 +3498,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x834], eax;
 	__asm        cmp    dword ptr [ebp-0x834], 0;
-	__asm        je     near ptr 0x00444FD8;
+	__asm        je     _T2fd6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x834];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x2FC], eax;
-	__asm        jmp    near ptr 0x00444FE2;
+	__asm        jmp    _T2fe0;
 
+_T2fd6:
 	__asm        mov    dword ptr [ebp-0x2FC], 0;
+_T2fe0:
 	__asm        mov    dword ptr [ebp-0x300], 0;
 	__asm        jmp    near ptr 0x00444FF1;
 
@@ -3326,7 +3522,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x300];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x300], 0;
-	__asm        je     near ptr 0x00445045;
+	__asm        je     _T3043;
 
 	__asm        mov    eax, [ebp-0x300];
 	__asm        mov    [ebp-0x614], eax;
@@ -3336,6 +3532,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3043:
 	__asm        jmp    near ptr 0x0044504A;
 // LINE 344:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3351,16 +3548,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x838], eax;
 	__asm        cmp    dword ptr [ebp-0x838], 0;
-	__asm        je     near ptr 0x0044509C;
+	__asm        je     _T309a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x838];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x304], eax;
-	__asm        jmp    near ptr 0x004450A6;
+	__asm        jmp    _T30a4;
 
+_T309a:
 	__asm        mov    dword ptr [ebp-0x304], 0;
+_T30a4:
 	__asm        mov    dword ptr [ebp-0x308], 0;
 	__asm        jmp    near ptr 0x004450B5;
 
@@ -3373,7 +3572,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x308];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x308], 0;
-	__asm        je     near ptr 0x00445109;
+	__asm        je     _T3107;
 
 	__asm        mov    eax, [ebp-0x308];
 	__asm        mov    [ebp-0x61C], eax;
@@ -3383,6 +3582,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3107:
 	__asm        jmp    near ptr 0x0044510E;
 // LINE 347:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3398,16 +3598,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x83C], eax;
 	__asm        cmp    dword ptr [ebp-0x83C], 0;
-	__asm        je     near ptr 0x00445160;
+	__asm        je     _T315e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x83C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x30C], eax;
-	__asm        jmp    near ptr 0x0044516A;
+	__asm        jmp    _T3168;
 
+_T315e:
 	__asm        mov    dword ptr [ebp-0x30C], 0;
+_T3168:
 	__asm        mov    dword ptr [ebp-0x310], 0;
 	__asm        jmp    near ptr 0x00445179;
 
@@ -3420,7 +3622,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x310];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x310], 0;
-	__asm        je     near ptr 0x004451CD;
+	__asm        je     _T31cb;
 
 	__asm        mov    eax, [ebp-0x310];
 	__asm        mov    [ebp-0x624], eax;
@@ -3430,6 +3632,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T31cb:
 	__asm        jmp    near ptr 0x004451D2;
 // LINE 350:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3445,16 +3648,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x840], eax;
 	__asm        cmp    dword ptr [ebp-0x840], 0;
-	__asm        je     near ptr 0x00445224;
+	__asm        je     _T3222;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x840];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x314], eax;
-	__asm        jmp    near ptr 0x0044522E;
+	__asm        jmp    _T322c;
 
+_T3222:
 	__asm        mov    dword ptr [ebp-0x314], 0;
+_T322c:
 	__asm        mov    dword ptr [ebp-0x318], 0;
 	__asm        jmp    near ptr 0x0044523D;
 
@@ -3467,7 +3672,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x318];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x318], 0;
-	__asm        je     near ptr 0x00445291;
+	__asm        je     _T328f;
 
 	__asm        mov    eax, [ebp-0x318];
 	__asm        mov    [ebp-0x62C], eax;
@@ -3477,6 +3682,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T328f:
 	__asm        jmp    near ptr 0x00445296;
 // LINE 353:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3492,16 +3698,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x844], eax;
 	__asm        cmp    dword ptr [ebp-0x844], 0;
-	__asm        je     near ptr 0x004452E8;
+	__asm        je     _T32e6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x844];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x31C], eax;
-	__asm        jmp    near ptr 0x004452F2;
+	__asm        jmp    _T32f0;
 
+_T32e6:
 	__asm        mov    dword ptr [ebp-0x31C], 0;
+_T32f0:
 	__asm        mov    dword ptr [ebp-0x320], 0;
 	__asm        jmp    near ptr 0x00445301;
 
@@ -3514,7 +3722,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x320];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x320], 0;
-	__asm        je     near ptr 0x00445355;
+	__asm        je     _T3353;
 
 	__asm        mov    eax, [ebp-0x320];
 	__asm        mov    [ebp-0x634], eax;
@@ -3524,6 +3732,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3353:
 	__asm        jmp    near ptr 0x0044535A;
 // LINE 356:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3539,16 +3748,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x848], eax;
 	__asm        cmp    dword ptr [ebp-0x848], 0;
-	__asm        je     near ptr 0x004453AC;
+	__asm        je     _T33aa;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x848];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x324], eax;
-	__asm        jmp    near ptr 0x004453B6;
+	__asm        jmp    _T33b4;
 
+_T33aa:
 	__asm        mov    dword ptr [ebp-0x324], 0;
+_T33b4:
 	__asm        mov    dword ptr [ebp-0x328], 0;
 	__asm        jmp    near ptr 0x004453C5;
 
@@ -3561,7 +3772,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x328];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x328], 0;
-	__asm        je     near ptr 0x00445419;
+	__asm        je     _T3417;
 
 	__asm        mov    eax, [ebp-0x328];
 	__asm        mov    [ebp-0x63C], eax;
@@ -3571,6 +3782,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3417:
 	__asm        jmp    near ptr 0x0044541E;
 // LINE 359:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3586,16 +3798,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x84C], eax;
 	__asm        cmp    dword ptr [ebp-0x84C], 0;
-	__asm        je     near ptr 0x00445470;
+	__asm        je     _T346e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x84C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x32C], eax;
-	__asm        jmp    near ptr 0x0044547A;
+	__asm        jmp    _T3478;
 
+_T346e:
 	__asm        mov    dword ptr [ebp-0x32C], 0;
+_T3478:
 	__asm        mov    dword ptr [ebp-0x330], 0;
 	__asm        jmp    near ptr 0x00445489;
 
@@ -3608,7 +3822,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x330];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x330], 0;
-	__asm        je     near ptr 0x004454DD;
+	__asm        je     _T34db;
 
 	__asm        mov    eax, [ebp-0x330];
 	__asm        mov    [ebp-0x644], eax;
@@ -3618,6 +3832,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T34db:
 	__asm        jmp    near ptr 0x004454E2;
 // LINE 362:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3633,16 +3848,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x850], eax;
 	__asm        cmp    dword ptr [ebp-0x850], 0;
-	__asm        je     near ptr 0x00445534;
+	__asm        je     _T3532;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x850];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x334], eax;
-	__asm        jmp    near ptr 0x0044553E;
+	__asm        jmp    _T353c;
 
+_T3532:
 	__asm        mov    dword ptr [ebp-0x334], 0;
+_T353c:
 	__asm        mov    dword ptr [ebp-0x338], 0;
 	__asm        jmp    near ptr 0x0044554D;
 
@@ -3655,7 +3872,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x338];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x338], 0;
-	__asm        je     near ptr 0x004455A1;
+	__asm        je     _T359f;
 
 	__asm        mov    eax, [ebp-0x338];
 	__asm        mov    [ebp-0x64C], eax;
@@ -3665,6 +3882,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T359f:
 	__asm        jmp    near ptr 0x004455A6;
 // LINE 365:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3680,16 +3898,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x854], eax;
 	__asm        cmp    dword ptr [ebp-0x854], 0;
-	__asm        je     near ptr 0x004455F8;
+	__asm        je     _T35f6;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x854];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x33C], eax;
-	__asm        jmp    near ptr 0x00445602;
+	__asm        jmp    _T3600;
 
+_T35f6:
 	__asm        mov    dword ptr [ebp-0x33C], 0;
+_T3600:
 	__asm        mov    dword ptr [ebp-0x340], 0;
 	__asm        jmp    near ptr 0x00445611;
 
@@ -3702,7 +3922,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x340];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x340], 0;
-	__asm        je     near ptr 0x00445665;
+	__asm        je     _T3663;
 
 	__asm        mov    eax, [ebp-0x340];
 	__asm        mov    [ebp-0x654], eax;
@@ -3712,6 +3932,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3663:
 	__asm        jmp    near ptr 0x0044566A;
 // LINE 368:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3727,16 +3948,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x858], eax;
 	__asm        cmp    dword ptr [ebp-0x858], 0;
-	__asm        je     near ptr 0x004456BC;
+	__asm        je     _T36ba;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x858];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x344], eax;
-	__asm        jmp    near ptr 0x004456C6;
+	__asm        jmp    _T36c4;
 
+_T36ba:
 	__asm        mov    dword ptr [ebp-0x344], 0;
+_T36c4:
 	__asm        mov    dword ptr [ebp-0x348], 0;
 	__asm        jmp    near ptr 0x004456D5;
 
@@ -3749,7 +3972,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x348];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x348], 0;
-	__asm        je     near ptr 0x00445729;
+	__asm        je     _T3727;
 
 	__asm        mov    eax, [ebp-0x348];
 	__asm        mov    [ebp-0x65C], eax;
@@ -3759,6 +3982,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3727:
 	__asm        jmp    near ptr 0x0044572E;
 // LINE 371:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3774,16 +3998,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x85C], eax;
 	__asm        cmp    dword ptr [ebp-0x85C], 0;
-	__asm        je     near ptr 0x00445780;
+	__asm        je     _T377e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x85C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x34C], eax;
-	__asm        jmp    near ptr 0x0044578A;
+	__asm        jmp    _T3788;
 
+_T377e:
 	__asm        mov    dword ptr [ebp-0x34C], 0;
+_T3788:
 	__asm        mov    dword ptr [ebp-0x350], 0;
 	__asm        jmp    near ptr 0x00445799;
 
@@ -3796,7 +4022,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x350];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x350], 0;
-	__asm        je     near ptr 0x004457ED;
+	__asm        je     _T37eb;
 
 	__asm        mov    eax, [ebp-0x350];
 	__asm        mov    [ebp-0x664], eax;
@@ -3806,6 +4032,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T37eb:
 	__asm        jmp    near ptr 0x004457F2;
 // LINE 374:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3821,16 +4048,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x860], eax;
 	__asm        cmp    dword ptr [ebp-0x860], 0;
-	__asm        je     near ptr 0x00445844;
+	__asm        je     _T3842;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x860];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x354], eax;
-	__asm        jmp    near ptr 0x0044584E;
+	__asm        jmp    _T384c;
 
+_T3842:
 	__asm        mov    dword ptr [ebp-0x354], 0;
+_T384c:
 	__asm        mov    dword ptr [ebp-0x358], 0;
 	__asm        jmp    near ptr 0x0044585D;
 
@@ -3843,7 +4072,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x358];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x358], 0;
-	__asm        je     near ptr 0x004458B1;
+	__asm        je     _T38af;
 
 	__asm        mov    eax, [ebp-0x358];
 	__asm        mov    [ebp-0x66C], eax;
@@ -3853,6 +4082,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T38af:
 	__asm        jmp    near ptr 0x004458B6;
 // LINE 377:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3868,16 +4098,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x864], eax;
 	__asm        cmp    dword ptr [ebp-0x864], 0;
-	__asm        je     near ptr 0x00445908;
+	__asm        je     _T3906;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x864];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x35C], eax;
-	__asm        jmp    near ptr 0x00445912;
+	__asm        jmp    _T3910;
 
+_T3906:
 	__asm        mov    dword ptr [ebp-0x35C], 0;
+_T3910:
 	__asm        mov    dword ptr [ebp-0x360], 0;
 	__asm        jmp    near ptr 0x00445921;
 
@@ -3890,7 +4122,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x360];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x360], 0;
-	__asm        je     near ptr 0x00445975;
+	__asm        je     _T3973;
 
 	__asm        mov    eax, [ebp-0x360];
 	__asm        mov    [ebp-0x674], eax;
@@ -3900,6 +4132,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3973:
 	__asm        jmp    near ptr 0x0044597A;
 // LINE 380:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3915,16 +4148,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x868], eax;
 	__asm        cmp    dword ptr [ebp-0x868], 0;
-	__asm        je     near ptr 0x004459CC;
+	__asm        je     _T39ca;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x868];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x364], eax;
-	__asm        jmp    near ptr 0x004459D6;
+	__asm        jmp    _T39d4;
 
+_T39ca:
 	__asm        mov    dword ptr [ebp-0x364], 0;
+_T39d4:
 	__asm        mov    dword ptr [ebp-0x368], 0;
 	__asm        jmp    near ptr 0x004459E5;
 
@@ -3937,7 +4172,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x368];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x368], 0;
-	__asm        je     near ptr 0x00445A39;
+	__asm        je     _T3a37;
 
 	__asm        mov    eax, [ebp-0x368];
 	__asm        mov    [ebp-0x67C], eax;
@@ -3947,6 +4182,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3a37:
 	__asm        jmp    near ptr 0x00445A3E;
 // LINE 383:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -3962,16 +4198,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x86C], eax;
 	__asm        cmp    dword ptr [ebp-0x86C], 0;
-	__asm        je     near ptr 0x00445A90;
+	__asm        je     _T3a8e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x86C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x36C], eax;
-	__asm        jmp    near ptr 0x00445A9A;
+	__asm        jmp    _T3a98;
 
+_T3a8e:
 	__asm        mov    dword ptr [ebp-0x36C], 0;
+_T3a98:
 	__asm        mov    dword ptr [ebp-0x370], 0;
 	__asm        jmp    near ptr 0x00445AA9;
 
@@ -3984,7 +4222,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x370];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x370], 0;
-	__asm        je     near ptr 0x00445AFD;
+	__asm        je     _T3afb;
 
 	__asm        mov    eax, [ebp-0x370];
 	__asm        mov    [ebp-0x684], eax;
@@ -3994,6 +4232,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3afb:
 	__asm        jmp    near ptr 0x00445B02;
 // LINE 386:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4009,16 +4248,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x870], eax;
 	__asm        cmp    dword ptr [ebp-0x870], 0;
-	__asm        je     near ptr 0x00445B54;
+	__asm        je     _T3b52;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x870];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x374], eax;
-	__asm        jmp    near ptr 0x00445B5E;
+	__asm        jmp    _T3b5c;
 
+_T3b52:
 	__asm        mov    dword ptr [ebp-0x374], 0;
+_T3b5c:
 	__asm        mov    dword ptr [ebp-0x378], 0;
 	__asm        jmp    near ptr 0x00445B6D;
 
@@ -4031,7 +4272,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x378];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x378], 0;
-	__asm        je     near ptr 0x00445BC1;
+	__asm        je     _T3bbf;
 
 	__asm        mov    eax, [ebp-0x378];
 	__asm        mov    [ebp-0x68C], eax;
@@ -4041,6 +4282,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3bbf:
 	__asm        jmp    near ptr 0x00445BC6;
 // LINE 389:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4056,16 +4298,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x874], eax;
 	__asm        cmp    dword ptr [ebp-0x874], 0;
-	__asm        je     near ptr 0x00445C18;
+	__asm        je     _T3c16;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x874];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x37C], eax;
-	__asm        jmp    near ptr 0x00445C22;
+	__asm        jmp    _T3c20;
 
+_T3c16:
 	__asm        mov    dword ptr [ebp-0x37C], 0;
+_T3c20:
 	__asm        mov    dword ptr [ebp-0x380], 0;
 	__asm        jmp    near ptr 0x00445C31;
 
@@ -4078,7 +4322,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x380];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x380], 0;
-	__asm        je     near ptr 0x00445C85;
+	__asm        je     _T3c83;
 
 	__asm        mov    eax, [ebp-0x380];
 	__asm        mov    [ebp-0x694], eax;
@@ -4088,6 +4332,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3c83:
 	__asm        jmp    near ptr 0x00445C8A;
 // LINE 392:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4103,16 +4348,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x878], eax;
 	__asm        cmp    dword ptr [ebp-0x878], 0;
-	__asm        je     near ptr 0x00445CDC;
+	__asm        je     _T3cda;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x878];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x384], eax;
-	__asm        jmp    near ptr 0x00445CE6;
+	__asm        jmp    _T3ce4;
 
+_T3cda:
 	__asm        mov    dword ptr [ebp-0x384], 0;
+_T3ce4:
 	__asm        mov    dword ptr [ebp-0x388], 0;
 	__asm        jmp    near ptr 0x00445CF5;
 
@@ -4125,7 +4372,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x388];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x388], 0;
-	__asm        je     near ptr 0x00445D49;
+	__asm        je     _T3d47;
 
 	__asm        mov    eax, [ebp-0x388];
 	__asm        mov    [ebp-0x69C], eax;
@@ -4135,6 +4382,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3d47:
 	__asm        jmp    near ptr 0x00445D4E;
 // LINE 395:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4150,16 +4398,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x87C], eax;
 	__asm        cmp    dword ptr [ebp-0x87C], 0;
-	__asm        je     near ptr 0x00445DA0;
+	__asm        je     _T3d9e;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x87C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x38C], eax;
-	__asm        jmp    near ptr 0x00445DAA;
+	__asm        jmp    _T3da8;
 
+_T3d9e:
 	__asm        mov    dword ptr [ebp-0x38C], 0;
+_T3da8:
 	__asm        mov    dword ptr [ebp-0x390], 0;
 	__asm        jmp    near ptr 0x00445DB9;
 
@@ -4172,7 +4422,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x390];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x390], 0;
-	__asm        je     near ptr 0x00445E0D;
+	__asm        je     _T3e0b;
 
 	__asm        mov    eax, [ebp-0x390];
 	__asm        mov    [ebp-0x6A4], eax;
@@ -4182,6 +4432,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3e0b:
 	__asm        jmp    near ptr 0x00445E12;
 // LINE 398:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4197,16 +4448,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x880], eax;
 	__asm        cmp    dword ptr [ebp-0x880], 0;
-	__asm        je     near ptr 0x00445E64;
+	__asm        je     _T3e62;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x880];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x394], eax;
-	__asm        jmp    near ptr 0x00445E6E;
+	__asm        jmp    _T3e6c;
 
+_T3e62:
 	__asm        mov    dword ptr [ebp-0x394], 0;
+_T3e6c:
 	__asm        mov    dword ptr [ebp-0x398], 0;
 	__asm        jmp    near ptr 0x00445E7D;
 
@@ -4219,7 +4472,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x398];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x398], 0;
-	__asm        je     near ptr 0x00445ED1;
+	__asm        je     _T3ecf;
 
 	__asm        mov    eax, [ebp-0x398];
 	__asm        mov    [ebp-0x6AC], eax;
@@ -4229,6 +4482,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3ecf:
 	__asm        jmp    near ptr 0x00445ED6;
 // LINE 401:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4244,16 +4498,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x884], eax;
 	__asm        cmp    dword ptr [ebp-0x884], 0;
-	__asm        je     near ptr 0x00445F28;
+	__asm        je     _T3f26;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x884];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x39C], eax;
-	__asm        jmp    near ptr 0x00445F32;
+	__asm        jmp    _T3f30;
 
+_T3f26:
 	__asm        mov    dword ptr [ebp-0x39C], 0;
+_T3f30:
 	__asm        mov    dword ptr [ebp-0x3A0], 0;
 	__asm        jmp    near ptr 0x00445F41;
 
@@ -4266,7 +4522,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3A0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3A0], 0;
-	__asm        je     near ptr 0x00445F95;
+	__asm        je     _T3f93;
 
 	__asm        mov    eax, [ebp-0x3A0];
 	__asm        mov    [ebp-0x6B4], eax;
@@ -4276,6 +4532,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3f93:
 	__asm        jmp    near ptr 0x00445F9A;
 // LINE 404:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4291,16 +4548,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x888], eax;
 	__asm        cmp    dword ptr [ebp-0x888], 0;
-	__asm        je     near ptr 0x00445FEC;
+	__asm        je     _T3fea;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x888];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3A4], eax;
-	__asm        jmp    near ptr 0x00445FF6;
+	__asm        jmp    _T3ff4;
 
+_T3fea:
 	__asm        mov    dword ptr [ebp-0x3A4], 0;
+_T3ff4:
 	__asm        mov    dword ptr [ebp-0x3A8], 0;
 	__asm        jmp    near ptr 0x00446005;
 
@@ -4313,7 +4572,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3A8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3A8], 0;
-	__asm        je     near ptr 0x00446059;
+	__asm        je     _T4057;
 
 	__asm        mov    eax, [ebp-0x3A8];
 	__asm        mov    [ebp-0x6BC], eax;
@@ -4323,6 +4582,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T4057:
 	__asm        jmp    near ptr 0x0044605E;
 // LINE 407:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4338,16 +4598,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x88C], eax;
 	__asm        cmp    dword ptr [ebp-0x88C], 0;
-	__asm        je     near ptr 0x004460B0;
+	__asm        je     _T40ae;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x88C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3AC], eax;
-	__asm        jmp    near ptr 0x004460BA;
+	__asm        jmp    _T40b8;
 
+_T40ae:
 	__asm        mov    dword ptr [ebp-0x3AC], 0;
+_T40b8:
 	__asm        mov    dword ptr [ebp-0x3B0], 0;
 	__asm        jmp    near ptr 0x004460C9;
 
@@ -4360,7 +4622,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3B0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3B0], 0;
-	__asm        je     near ptr 0x0044611D;
+	__asm        je     _T411b;
 
 	__asm        mov    eax, [ebp-0x3B0];
 	__asm        mov    [ebp-0x6C4], eax;
@@ -4370,6 +4632,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T411b:
 	__asm        jmp    near ptr 0x00446122;
 // LINE 410:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4385,16 +4648,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x890], eax;
 	__asm        cmp    dword ptr [ebp-0x890], 0;
-	__asm        je     near ptr 0x00446174;
+	__asm        je     _T4172;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x890];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3B4], eax;
-	__asm        jmp    near ptr 0x0044617E;
+	__asm        jmp    _T417c;
 
+_T4172:
 	__asm        mov    dword ptr [ebp-0x3B4], 0;
+_T417c:
 	__asm        mov    dword ptr [ebp-0x3B8], 0;
 	__asm        jmp    near ptr 0x0044618D;
 
@@ -4407,7 +4672,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3B8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3B8], 0;
-	__asm        je     near ptr 0x004461E1;
+	__asm        je     _T41df;
 
 	__asm        mov    eax, [ebp-0x3B8];
 	__asm        mov    [ebp-0x6CC], eax;
@@ -4417,6 +4682,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T41df:
 	__asm        jmp    near ptr 0x004461E6;
 // LINE 413:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4432,16 +4698,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x894], eax;
 	__asm        cmp    dword ptr [ebp-0x894], 0;
-	__asm        je     near ptr 0x00446238;
+	__asm        je     _T4236;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x894];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3BC], eax;
-	__asm        jmp    near ptr 0x00446242;
+	__asm        jmp    _T4240;
 
+_T4236:
 	__asm        mov    dword ptr [ebp-0x3BC], 0;
+_T4240:
 	__asm        mov    dword ptr [ebp-0x3C0], 0;
 	__asm        jmp    near ptr 0x00446251;
 
@@ -4454,7 +4722,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3C0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3C0], 0;
-	__asm        je     near ptr 0x004462A5;
+	__asm        je     _T42a3;
 
 	__asm        mov    eax, [ebp-0x3C0];
 	__asm        mov    [ebp-0x6D4], eax;
@@ -4464,6 +4732,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T42a3:
 	__asm        jmp    near ptr 0x004462AA;
 // LINE 416:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4479,16 +4748,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x898], eax;
 	__asm        cmp    dword ptr [ebp-0x898], 0;
-	__asm        je     near ptr 0x004462FC;
+	__asm        je     _T42fa;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x898];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3C4], eax;
-	__asm        jmp    near ptr 0x00446306;
+	__asm        jmp    _T4304;
 
+_T42fa:
 	__asm        mov    dword ptr [ebp-0x3C4], 0;
+_T4304:
 	__asm        mov    dword ptr [ebp-0x3C8], 0;
 	__asm        jmp    near ptr 0x00446315;
 
@@ -4501,7 +4772,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3C8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3C8], 0;
-	__asm        je     near ptr 0x00446369;
+	__asm        je     _T4367;
 
 	__asm        mov    eax, [ebp-0x3C8];
 	__asm        mov    [ebp-0x6DC], eax;
@@ -4511,6 +4782,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T4367:
 	__asm        jmp    near ptr 0x0044636E;
 // LINE 419:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4526,16 +4798,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x89C], eax;
 	__asm        cmp    dword ptr [ebp-0x89C], 0;
-	__asm        je     near ptr 0x004463C0;
+	__asm        je     _T43be;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x89C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3CC], eax;
-	__asm        jmp    near ptr 0x004463CA;
+	__asm        jmp    _T43c8;
 
+_T43be:
 	__asm        mov    dword ptr [ebp-0x3CC], 0;
+_T43c8:
 	__asm        mov    dword ptr [ebp-0x3D0], 0;
 	__asm        jmp    near ptr 0x004463D9;
 
@@ -4548,7 +4822,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3D0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3D0], 0;
-	__asm        je     near ptr 0x0044642D;
+	__asm        je     _T442b;
 
 	__asm        mov    eax, [ebp-0x3D0];
 	__asm        mov    [ebp-0x6E4], eax;
@@ -4558,6 +4832,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T442b:
 	__asm        jmp    near ptr 0x00446432;
 // LINE 422:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4573,16 +4848,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8A0], eax;
 	__asm        cmp    dword ptr [ebp-0x8A0], 0;
-	__asm        je     near ptr 0x00446484;
+	__asm        je     _T4482;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8A0];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3D4], eax;
-	__asm        jmp    near ptr 0x0044648E;
+	__asm        jmp    _T448c;
 
+_T4482:
 	__asm        mov    dword ptr [ebp-0x3D4], 0;
+_T448c:
 	__asm        mov    dword ptr [ebp-0x3D8], 0;
 	__asm        jmp    near ptr 0x0044649D;
 
@@ -4595,7 +4872,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3D8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3D8], 0;
-	__asm        je     near ptr 0x004464F1;
+	__asm        je     _T44ef;
 
 	__asm        mov    eax, [ebp-0x3D8];
 	__asm        mov    [ebp-0x6EC], eax;
@@ -4605,6 +4882,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T44ef:
 	__asm        jmp    near ptr 0x004464F6;
 // LINE 425:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4620,16 +4898,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8A4], eax;
 	__asm        cmp    dword ptr [ebp-0x8A4], 0;
-	__asm        je     near ptr 0x00446548;
+	__asm        je     _T4546;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8A4];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3DC], eax;
-	__asm        jmp    near ptr 0x00446552;
+	__asm        jmp    _T4550;
 
+_T4546:
 	__asm        mov    dword ptr [ebp-0x3DC], 0;
+_T4550:
 	__asm        mov    dword ptr [ebp-0x3E0], 0;
 	__asm        jmp    near ptr 0x00446561;
 
@@ -4642,7 +4922,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3E0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3E0], 0;
-	__asm        je     near ptr 0x004465B5;
+	__asm        je     _T45b3;
 
 	__asm        mov    eax, [ebp-0x3E0];
 	__asm        mov    [ebp-0x6F4], eax;
@@ -4652,6 +4932,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T45b3:
 	__asm        jmp    near ptr 0x004465BA;
 // LINE 428:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4667,16 +4948,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8A8], eax;
 	__asm        cmp    dword ptr [ebp-0x8A8], 0;
-	__asm        je     near ptr 0x0044660C;
+	__asm        je     _T460a;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8A8];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3E4], eax;
-	__asm        jmp    near ptr 0x00446616;
+	__asm        jmp    _T4614;
 
+_T460a:
 	__asm        mov    dword ptr [ebp-0x3E4], 0;
+_T4614:
 	__asm        mov    dword ptr [ebp-0x3E8], 0;
 	__asm        jmp    near ptr 0x00446625;
 
@@ -4689,7 +4972,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3E8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3E8], 0;
-	__asm        je     near ptr 0x00446679;
+	__asm        je     _T4677;
 
 	__asm        mov    eax, [ebp-0x3E8];
 	__asm        mov    [ebp-0x6FC], eax;
@@ -4699,6 +4982,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T4677:
 	__asm        jmp    near ptr 0x0044667E;
 // LINE 431:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4714,16 +4998,18 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x8AC], eax;
 	__asm        cmp    dword ptr [ebp-0x8AC], 0;
-	__asm        je     near ptr 0x004466D0;
+	__asm        je     _T46ce;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8AC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3EC], eax;
-	__asm        jmp    near ptr 0x004466DA;
+	__asm        jmp    _T46d8;
 
+_T46ce:
 	__asm        mov    dword ptr [ebp-0x3EC], 0;
+_T46d8:
 	__asm        mov    dword ptr [ebp-0x3F0], 0;
 	__asm        jmp    near ptr 0x004466E9;
 
@@ -4736,7 +5022,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3F0];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3F0], 0;
-	__asm        je     near ptr 0x0044673D;
+	__asm        je     _T473b;
 
 	__asm        mov    eax, [ebp-0x3F0];
 	__asm        mov    [ebp-0x704], eax;
@@ -4746,6 +5032,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T473b:
 	__asm        jmp    near ptr 0x00446742;
 // LINE 434:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4768,7 +5055,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x3F8];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x3F8], 0;
-	__asm        je     near ptr 0x004467BA;
+	__asm        je     _T47b8;
 
 	__asm        mov    eax, [ebp-0x3F8];
 	__asm        mov    [ebp-0x70C], eax;
@@ -4778,6 +5065,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T47b8:
 	__asm        jmp    near ptr 0x004467BF;
 // LINE 437:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4800,7 +5088,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x400];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x400], 0;
-	__asm        je     near ptr 0x00446837;
+	__asm        je     _T4835;
 
 	__asm        mov    eax, [ebp-0x400];
 	__asm        mov    [ebp-0x714], eax;
@@ -4810,6 +5098,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T4835:
 	__asm        jmp    near ptr 0x0044683C;
 // LINE 440:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4832,7 +5121,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x408];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x408], 0;
-	__asm        je     near ptr 0x004468B4;
+	__asm        je     _T48b2;
 
 	__asm        mov    eax, [ebp-0x408];
 	__asm        mov    [ebp-0x71C], eax;
@@ -4842,6 +5131,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T48b2:
 	__asm        jmp    near ptr 0x004468B9;
 // LINE 443:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4864,7 +5154,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x410];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x410], 0;
-	__asm        je     near ptr 0x00446931;
+	__asm        je     _T492f;
 
 	__asm        mov    eax, [ebp-0x410];
 	__asm        mov    [ebp-0x724], eax;
@@ -4874,6 +5164,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T492f:
 	__asm        jmp    near ptr 0x00446936;
 // LINE 446:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4896,7 +5187,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x418];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x418], 0;
-	__asm        je     near ptr 0x004469AE;
+	__asm        je     _T49ac;
 
 	__asm        mov    eax, [ebp-0x418];
 	__asm        mov    [ebp-0x72C], eax;
@@ -4906,6 +5197,7 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T49ac:
 	__asm        jmp    near ptr 0x004469B3;
 // LINE 449:
 	__asm        lea    eax, szFullSoundPath[0];
@@ -4917,11 +5209,13 @@ int32_t S3LoadSounds() {
 	__asm        add    esp, 0x10;
 // LINE 450:
 	__asm        mov    count, 0x62;
-	__asm        jmp    near ptr 0x004469E0;
+	__asm        jmp    _T49de;
 
+_T49d8:
 	__asm        inc    count;
+_T49de:
 	__asm        cmp    count, 0x71;
-	__asm        jge    near ptr 0x00446A5C;
+	__asm        jge    _T4a5a;
 // LINE 451:
 	__asm        push   0;
 	__asm        mov    eax, count;
@@ -4936,7 +5230,7 @@ int32_t S3LoadSounds() {
 	__asm        lea    ecx, [ebp-0x420];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x420], 0;
-	__asm        je     near ptr 0x00446A52;
+	__asm        je     _T4a50;
 
 	__asm        mov    eax, [ebp-0x420];
 	__asm        mov    [ebp-0x734], eax;
@@ -4946,10 +5240,12 @@ int32_t S3LoadSounds() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T4a50:
 	__asm        jmp    near ptr 0x00446A57;
 // LINE 452:
-	__asm        jmp    near ptr 0x004469DA;
+	__asm        jmp    _T49d8;
 // LINE 453:
+_T4a5a:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00446A66;
 // LINE 454:
@@ -4966,7 +5262,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        mov    theSound, eax;
 // LINE 473:
 	__asm        cmp    theSound, 0;
-	__asm        je     near ptr 0x00446CB8;
+	__asm        je     _T24d;
 // LINE 474:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
@@ -4982,7 +5278,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        cmp    dword ptr [ebp-0x12C], 0;
-	__asm        je     near ptr 0x00446B94;
+	__asm        je     _T129;
 
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
@@ -4998,7 +5294,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00446B65;
+	__asm        je     _Tfa;
 
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    eax, [eax+8];
@@ -5023,19 +5319,23 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00446B60;
 
-	__asm        jmp    near ptr 0x00446B71;
+	__asm        jmp    _T106;
 
+_Tfa:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    dword ptr [eax], 0;
+_T106:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00446B83;
 
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    [ebp-0x10C], eax;
-	__asm        jmp    near ptr 0x00446B9E;
+	__asm        jmp    _T133;
 
+_T129:
 	__asm        mov    dword ptr [ebp-0x10C], 0;
+_T133:
 	__asm        mov    dword ptr [ebp-0x110], 0;
 	__asm        jmp    near ptr 0x00446BAD;
 
@@ -5050,18 +5350,18 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00446C7A;
+	__asm        jne    _T20f;
 
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    [ebp-0x120], eax;
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        cmp    dword ptr [ebp-0x11C], 0;
-	__asm        je     near ptr 0x00446C7A;
+	__asm        je     _T20f;
 
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00446C57;
+	__asm        je     _T1ec;
 
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    eax, [eax];
@@ -5076,6 +5376,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    dword ptr [eax], 0;
+_T1ec:
 	__asm        jmp    near ptr 0x00446C5C;
 
 	__asm        jmp    near ptr 0x00446C61;
@@ -5086,12 +5387,13 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00446C75;
 
-	__asm        jmp    near ptr 0x00446C7A;
+	__asm        jmp    _T20f;
 
+_T20f:
 	__asm        jmp    near ptr 0x00446C7F;
 
 	__asm        cmp    dword ptr [ebp-0x110], 0;
-	__asm        je     near ptr 0x00446CB3;
+	__asm        je     _T248;
 
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x114], eax;
@@ -5101,8 +5403,10 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00446CB8;
+_T248:
+	__asm        jmp    _T24d;
 // LINE 477:
+_T24d:
 	__asm        jmp    near ptr 0x00446CBD;
 }
 
@@ -5143,11 +5447,12 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	__asm        mov    fpDistance, eax;
 // LINE 508:
 	__asm        cmp    fpDistance, 0x7800000;
-	__asm        jl     near ptr 0x00446D27;
+	__asm        jl     _T65;
 // LINE 509:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00446DFF;
+	__asm        jmp    _T13d;
 // LINE 510:
+_T65:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
 	__asm        mov    eax, fpDistance;
@@ -5181,7 +5486,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	__asm        jmp    near ptr 0x00446D8B;
 // LINE 516:
 	__asm        cmp    theSound, 0;
-	__asm        je     near ptr 0x00446DA4;
+	__asm        je     _Te2;
 // LINE 517:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
@@ -5190,24 +5495,29 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	__asm        mov    ecx, theSound;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 521:
+_Te2:
 	__asm        test   reinterpret_cast<uint8_t>(nFlags), 1;
-	__asm        je     near ptr 0x00446DBA;
+	__asm        je     _Tf8;
 // LINE 522:
 	__asm        mov    midparam, 1;
 // LINE 523:
-	__asm        jmp    near ptr 0x00446DC1;
+	__asm        jmp    _Tff;
 // LINE 524:
+_Tf8:
 	__asm        mov    midparam, 0;
 // LINE 525:
+_Tff:
 	__asm        test   reinterpret_cast<uint8_t>(nFlags), 2;
-	__asm        je     near ptr 0x00446DD7;
+	__asm        je     _T115;
 // LINE 526:
 	__asm        mov    lastparam, 1;
 // LINE 527:
-	__asm        jmp    near ptr 0x00446DDE;
+	__asm        jmp    _T11c;
 // LINE 528:
+_T115:
 	__asm        mov    lastparam, 2;
 // LINE 530:
+_T11c:
 	__asm        mov    eax, lastparam;
 	__asm        push   eax;
 	__asm        mov    eax, midparam;
@@ -5219,7 +5529,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 	__asm        mov    nReturnValue, eax;
 // LINE 532:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x00446DFF;
+	__asm        jmp    _T13d;
 // LINE 533:
 }
 
@@ -5253,7 +5563,7 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	__asm        mov    theSound, eax;
 // LINE 591:
 	__asm        cmp    theSound, 0;
-	__asm        je     near ptr 0x00446E78;
+	__asm        je     _T3c;
 // LINE 592:
 	__asm        mov    eax, theSound;
 	__asm        mov    eax, [eax];
@@ -5267,6 +5577,7 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	__asm        mov    ecx, theSound;
 	__asm        call   dword ptr [eax+0x64];
 // LINE 593:
+_T3c:
 	__asm        jmp    near ptr 0x00446E7D;
 }
 
@@ -5295,7 +5606,7 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 // LINE 617:
 	__asm        mov    eax, nSoundIndex;
 	__asm        cmp    dword ptr [eax*4+0x604604], 0;
-	__asm        je     near ptr 0x00446EF8;
+	__asm        je     _T76;
 // LINE 618:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
@@ -5306,6 +5617,7 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 	__asm        mov    ecx, [eax*4+0x604604];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 619:
+_T76:
 	__asm        jmp    near ptr 0x00446EFD;
 }
 
@@ -5314,7 +5626,7 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 // LINE 638:
 	__asm        mov    eax, nSoundIndex;
 	__asm        cmp    dword ptr [eax*4+0x604604], 0;
-	__asm        je     near ptr 0x00446F37;
+	__asm        je     _T35;
 // LINE 639:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    ecx, nSoundIndex;
@@ -5322,10 +5634,11 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax*4+0x604604];
 	__asm        call   dword ptr [edx+0x10];
-	__asm        jmp    near ptr 0x00446F3E;
+	__asm        jmp    _T3c;
 // LINE 640:
+_T35:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00446F3E;
+	__asm        jmp    _T3c;
 // LINE 641:
 }
 
@@ -5344,10 +5657,11 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	__asm        mov    theSound, eax;
 // LINE 686:
 	__asm        cmp    theSound, 0;
-	__asm        jne    near ptr 0x00446F68;
+	__asm        jne    _T25;
 // LINE 687:
-	__asm        jmp    near ptr 0x004470F5;
+	__asm        jmp    _T1b2;
 // LINE 691:
+_T25:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax];
 	__asm        sub    eax, ds:[0x6C1318];
@@ -5395,7 +5709,7 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	__asm        fstp   qword ptr [ebp-0x34];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
-	__asm        jne    near ptr 0x0044702B;
+	__asm        jne    _Te8;
 
 	__asm        fld    qword ptr [ebp-0x3C];
 	__asm        fdiv   qword ptr [ebp-0x34];
@@ -5407,11 +5721,13 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	__asm        fmul   qword ptr ds:[0x58F5D0];
 	__asm        call   0x0056EBE8;
 	__asm        mov    positionRelative.z, eax;
-	__asm        jmp    near ptr 0x00447038;
+	__asm        jmp    _Tf5;
 
+_Te8:
 	__asm        mov    positionRelative.z, 0;
 	__asm        mov    eax, positionRelative.z;
 	__asm        mov    positionRelative.x, eax;
+_Tf5:
 	__asm        fld    qword ptr [ebp-0x34];
 	__asm        fmul   qword ptr ds:[0x58F5D0];
 	__asm        call   0x0056EBE8;
@@ -5476,7 +5792,7 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 	__asm        mov    ecx, theSound;
 	__asm        call   dword ptr [eax+0x54];
 // LINE 730:
-	__asm        jmp    near ptr 0x004470F5;
+	__asm        jmp    _T1b2;
 }
 
 // FUNCTION: COPTER_D 0x004470fa
@@ -5503,7 +5819,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        jmp    near ptr 0x0044713C;
 // LINE 740:
 	__asm        cmp    theSound, 0;
-	__asm        je     near ptr 0x004471A3;
+	__asm        je     _Ta9;
 // LINE 741:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
@@ -5517,7 +5833,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00447186;
+	__asm        je     _T8c;
 
 	__asm        push   0;
 	__asm        mov    eax, nDelayBeforePlay;
@@ -5527,9 +5843,11 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   SoundQueueItem::SoundQueueItem;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x0044718D;
+	__asm        jmp    _T93;
 
+_T8c:
 	__asm        mov    dword ptr [ebp-0x10], 0;
+_T93:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        mov    eax, nQueue;
@@ -5537,6 +5855,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        lea    ecx, [eax*8+0x604450];
 	__asm        call   SoundQueue::operator+=;
 // LINE 744:
+_Ta9:
 	__asm        jmp    near ptr 0x004471A8;
 }
 

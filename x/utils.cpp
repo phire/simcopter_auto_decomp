@@ -69,13 +69,14 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 // LINE 65:
 	__asm        mov    count, 1;
 // LINE 66:
+_T13:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x20;
-	__asm        jne    near ptr 0x00565CFB;
+	__asm        jne    _T45;
 
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
@@ -83,18 +84,19 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x00565CFB;
+	__asm        jl     _T45;
 // LINE 67:
 	__asm        inc    count;
-	__asm        jmp    near ptr 0x00565CC9;
+	__asm        jmp    _T13;
 // LINE 68:
+_T45:
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x00565D4C;
+	__asm        jl     _T96;
 // LINE 70:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
@@ -102,34 +104,37 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x2D;
-	__asm        jne    near ptr 0x00565D33;
+	__asm        jne    _T7d;
 // LINE 72:
 	__asm        mov    neg, 1;
 // LINE 73:
 	__asm        inc    count;
 // LINE 75:
-	__asm        jmp    near ptr 0x00565D4C;
+	__asm        jmp    _T96;
 
+_T7d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x2B;
-	__asm        jne    near ptr 0x00565D4C;
+	__asm        jne    _T96;
 // LINE 77:
 	__asm        inc    count;
 // LINE 80:
+_T96:
 	__asm        mov    al, count;
 	__asm        mov    digit, al;
 // LINE 81:
+_T9c:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x30;
-	__asm        jl     near ptr 0x00565D9A;
+	__asm        jl     _Te4;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
@@ -137,7 +142,7 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x39;
-	__asm        jg     near ptr 0x00565D9A;
+	__asm        jg     _Te4;
 
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
@@ -145,18 +150,19 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x00565D9A;
+	__asm        jl     _Te4;
 // LINE 82:
 	__asm        inc    count;
-	__asm        jmp    near ptr 0x00565D52;
+	__asm        jmp    _T9c;
 // LINE 83:
+_Te4:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x20;
-	__asm        jne    near ptr 0x00565DCC;
+	__asm        jne    _T116;
 
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
@@ -164,32 +170,35 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x00565DCC;
+	__asm        jl     _T116;
 // LINE 84:
 	__asm        inc    count;
-	__asm        jmp    near ptr 0x00565D9A;
+	__asm        jmp    _Te4;
 // LINE 86:
+_T116:
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
 	__asm        cmp    ecx, eax;
-	__asm        jle    near ptr 0x00565DE8;
+	__asm        jle    _T132;
 
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x00565E7B;
+	__asm        jmp    _T1c5;
 // LINE 88:
+_T132:
 	__asm        mov    eax, num;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 89:
+_T13b:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x30;
-	__asm        jl     near ptr 0x00565E59;
+	__asm        jl     _T1a3;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -197,7 +206,7 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x39;
-	__asm        jg     near ptr 0x00565E59;
+	__asm        jg     _T1a3;
 
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
@@ -205,7 +214,7 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x00565E59;
+	__asm        jl     _T1a3;
 // LINE 91:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -222,10 +231,11 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 // LINE 92:
 	__asm        inc    digit;
 // LINE 93:
-	__asm        jmp    near ptr 0x00565DF1;
+	__asm        jmp    _T13b;
 // LINE 94:
+_T1a3:
 	__asm        test   reinterpret_cast<uint32_t>(neg), 0xFFFF;
-	__asm        je     near ptr 0x00565E72;
+	__asm        je     _T1bc;
 
 	__asm        mov    eax, num;
 	__asm        mov    eax, [eax];
@@ -233,8 +243,9 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	__asm        mov    ecx, num;
 	__asm        mov    [ecx], eax;
 // LINE 95:
+_T1bc:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x00565E7B;
+	__asm        jmp    _T1c5;
 // LINE 96:
 }
 
@@ -250,7 +261,7 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        mov    tenPower, 1;
 // LINE 104:
 	__asm        cmp    num, 0;
-	__asm        jge    near ptr 0x00565EB4;
+	__asm        jge    _T34;
 // LINE 106:
 	__asm        mov    neg, 1;
 // LINE 107:
@@ -258,12 +269,14 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        neg    eax;
 	__asm        mov    num, eax;
 // LINE 109:
-	__asm        jmp    near ptr 0x00565EBA;
+	__asm        jmp    _T3a;
 // LINE 110:
+_T34:
 	__asm        mov    neg, 0;
 // LINE 112:
+_T3a:
 	__asm        cmp    num, 0;
-	__asm        jne    near ptr 0x00565ED6;
+	__asm        jne    _T56;
 // LINE 114:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax], 1;
@@ -271,18 +284,19 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax+1], 0x30;
 // LINE 116:
-	__asm        jmp    near ptr 0x00565FB8;
+	__asm        jmp    _T138;
 // LINE 119:
+_T56:
 	__asm        mov    eax, num;
 	__asm        sub    edx, edx;
 	__asm        div    tenPower;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00565F26;
+	__asm        je     _Ta6;
 // LINE 121:
 	__asm        inc    power;
 // LINE 122:
 	__asm        cmp    power, 0xA;
-	__asm        jle    near ptr 0x00565F0C;
+	__asm        jle    _T8c;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF570;
@@ -291,6 +305,7 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 124:
+_T8c:
 	__asm        mov    eax, power;
 	__asm        mov    ecx, str;
 	__asm        mov    byte ptr [eax+ecx], 0x30;
@@ -300,10 +315,11 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        add    eax, eax;
 	__asm        mov    tenPower, eax;
 // LINE 126:
-	__asm        jmp    near ptr 0x00565ED6;
+	__asm        jmp    _T56;
 // LINE 129:
+_Ta6:
 	__asm        test   reinterpret_cast<uint32_t>(neg), 0xFFFF;
-	__asm        je     near ptr 0x00565F5A;
+	__asm        je     _Tda;
 // LINE 131:
 	__asm        mov    eax, power;
 	__asm        mov    ecx, str;
@@ -319,16 +335,18 @@ void Num2Str(long num, unsigned char * str) {
 // LINE 134:
 	__asm        mov    power, 2;
 // LINE 136:
-	__asm        jmp    near ptr 0x00565F69;
+	__asm        jmp    _Te9;
 // LINE 138:
+_Tda:
 	__asm        mov    al, reinterpret_cast<uint8_t>(power);
 	__asm        mov    ecx, str;
 	__asm        mov    [ecx], al;
 // LINE 139:
 	__asm        mov    power, 1;
 // LINE 142:
+_Te9:
 	__asm        cmp    num, 0;
-	__asm        je     near ptr 0x00565FB3;
+	__asm        je     _T133;
 // LINE 144:
 // Block start:
 	long digit;
@@ -358,9 +376,10 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        inc    power;
 // LINE 149:
 // Block end:
-	__asm        jmp    near ptr 0x00565F69;
+	__asm        jmp    _Te9;
 // LINE 150:
-	__asm        jmp    near ptr 0x00565FB8;
+_T133:
+	__asm        jmp    _T138;
 }
 
 // FUNCTION: COPTER_D 0x00565fbd
@@ -374,13 +393,14 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 157:
 	__asm        mov    result, 0;
 // LINE 158:
+_T14:
 	__asm        mov    eax, str;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x005660A8;
+	__asm        jl     _Teb;
 // LINE 160:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -388,17 +408,18 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x20;
-	__asm        jne    near ptr 0x00566000;
+	__asm        jne    _T43;
 // LINE 161:
-	__asm        jmp    near ptr 0x00565FD1;
+	__asm        jmp    _T14;
 // LINE 162:
+_T43:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x30;
-	__asm        jl     near ptr 0x00566044;
+	__asm        jl     _T87;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -406,7 +427,7 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x39;
-	__asm        jg     near ptr 0x00566044;
+	__asm        jg     _T87;
 // LINE 163:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -416,15 +437,16 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        sub    edx, 0x30;
 	__asm        mov    digitval, dl;
 // LINE 164:
-	__asm        jmp    near ptr 0x00566090;
+	__asm        jmp    _Td3;
 
+_T87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
 	__asm        mov    ecx, str;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x41;
-	__asm        jl     near ptr 0x00566088;
+	__asm        jl     _Tcb;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -432,7 +454,7 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x46;
-	__asm        jg     near ptr 0x00566088;
+	__asm        jg     _Tcb;
 // LINE 165:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -442,11 +464,13 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	__asm        sub    edx, 0x37;
 	__asm        mov    digitval, dl;
 // LINE 166:
-	__asm        jmp    near ptr 0x00566090;
+	__asm        jmp    _Td3;
 // LINE 167:
+_Tcb:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x005660B9;
+	__asm        jmp    _Tfc;
 // LINE 168:
+_Td3:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digitval;
 	__asm        mov    ecx, result;
@@ -456,14 +480,15 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 169:
 	__asm        inc    digit;
 // LINE 170:
-	__asm        jmp    near ptr 0x00565FD1;
+	__asm        jmp    _T14;
 // LINE 171:
+_Teb:
 	__asm        mov    eax, result;
 	__asm        mov    ecx, num;
 	__asm        mov    [ecx], eax;
 // LINE 172:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x005660B9;
+	__asm        jmp    _Tfc;
 // LINE 173:
 }
 
@@ -478,7 +503,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        mov    sixteenPower, 1;
 // LINE 180:
 	__asm        cmp    num, 0;
-	__asm        jne    near ptr 0x005660F1;
+	__asm        jne    _T33;
 // LINE 182:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax], 1;
@@ -486,18 +511,19 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax+1], 0x30;
 // LINE 184:
-	__asm        jmp    near ptr 0x005661AF;
+	__asm        jmp    _Tf1;
 // LINE 187:
+_T33:
 	__asm        mov    eax, num;
 	__asm        sub    edx, edx;
 	__asm        div    sixteenPower;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0056613D;
+	__asm        je     _T7f;
 // LINE 189:
 	__asm        inc    power;
 // LINE 190:
 	__asm        cmp    power, 7;
-	__asm        jle    near ptr 0x0056612A;
+	__asm        jle    _T6c;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF5A4;
@@ -506,22 +532,25 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 191:
+_T6c:
 	__asm        mov    eax, power;
 	__asm        mov    ecx, str;
 	__asm        mov    byte ptr [eax+ecx], 0x30;
 // LINE 192:
 	__asm        shl    sixteenPower, 4;
 // LINE 193:
-	__asm        jmp    near ptr 0x005660F1;
+	__asm        jmp    _T33;
 // LINE 195:
+_T7f:
 	__asm        mov    al, reinterpret_cast<uint8_t>(power);
 	__asm        mov    ecx, str;
 	__asm        mov    [ecx], al;
 // LINE 196:
 	__asm        mov    power, 1;
 // LINE 197:
+_T8e:
 	__asm        cmp    num, 0;
-	__asm        je     near ptr 0x005661AA;
+	__asm        je     _Tec;
 // LINE 199:
 // Block start:
 	long digit;
@@ -533,7 +562,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        shr    sixteenPower, 4;
 // LINE 201:
 	__asm        cmp    digit, 9;
-	__asm        jle    near ptr 0x00566183;
+	__asm        jle    _Tc5;
 // LINE 202:
 	__asm        mov    eax, digit;
 	__asm        add    eax, 0x37;
@@ -541,14 +570,16 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        mov    edx, str;
 	__asm        mov    [ecx+edx], al;
 // LINE 203:
-	__asm        jmp    near ptr 0x00566192;
+	__asm        jmp    _Td4;
 // LINE 204:
+_Tc5:
 	__asm        mov    eax, digit;
 	__asm        add    eax, 0x30;
 	__asm        mov    ecx, power;
 	__asm        mov    edx, str;
 	__asm        mov    [ecx+edx], al;
 // LINE 205:
+_Td4:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, digit;
 	__asm        imul   ecx, sixteenPower;
@@ -559,9 +590,10 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        inc    power;
 // LINE 207:
 // Block end:
-	__asm        jmp    near ptr 0x0056614C;
+	__asm        jmp    _T8e;
 // LINE 208:
-	__asm        jmp    near ptr 0x005661AF;
+_Tec:
+	__asm        jmp    _Tf1;
 }
 
 // FUNCTION: COPTER_D 0x005661b4
@@ -598,20 +630,21 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        test   ecx, ecx;
-	__asm        jne    near ptr 0x00566218;
+	__asm        jne    _T24;
 // LINE 225:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00566261;
+	__asm        jmp    _T6d;
 // LINE 226:
-	__asm        jmp    near ptr 0x00566261;
+	__asm        jmp    _T6d;
 // LINE 227:
 // Block start:
 	unsigned long name4;
+_T24:
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, 4;
-	__asm        jge    near ptr 0x00566244;
+	__asm        jge    _T50;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BF5D4;
@@ -620,6 +653,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 228:
+_T50:
 	__asm        mov    eax, name;
 	__asm        mov    eax, [eax+1];
 	__asm        mov    name4, eax;
@@ -630,7 +664,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        add    esp, 4;
 // LINE 230:
 	__asm        mov    eax, name4;
-	__asm        jmp    near ptr 0x00566261;
+	__asm        jmp    _T6d;
 // LINE 232:
 // Block end:
 }
@@ -648,14 +682,16 @@ void CToPString(char * cstr, unsigned char * pstr) {
 	__asm        mov    [ecx], al;
 // LINE 261:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x0056628F;
+	__asm        jmp    _T29;
 
+_T26:
 	__asm        inc    count;
+_T29:
 	__asm        mov    eax, pstr;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        cmp    ecx, count;
-	__asm        jl     near ptr 0x005662B7;
+	__asm        jl     _T51;
 // LINE 262:
 	__asm        mov    eax, count;
 	__asm        mov    ecx, cstr;
@@ -663,8 +699,9 @@ void CToPString(char * cstr, unsigned char * pstr) {
 	__asm        mov    ecx, count;
 	__asm        mov    edx, pstr;
 	__asm        mov    [ecx+edx+1], al;
-	__asm        jmp    near ptr 0x0056628C;
+	__asm        jmp    _T26;
 // LINE 263:
+_T51:
 	__asm        jmp    near ptr 0x005662BC;
 }
 
@@ -687,24 +724,26 @@ short Round(float val) {
 	__asm        fstp   frac;
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x41;
-	__asm        jne    near ptr 0x00566304;
+	__asm        jne    _T43;
 
 	__asm        fld    dint;
 	__asm        fadd   qword ptr ds:[0x593A20];
 	__asm        fstp   dint;
 // LINE 272:
-	__asm        jmp    near ptr 0x00566324;
+	__asm        jmp    _T63;
 
+_T43:
 	__asm        fld    frac;
 	__asm        fcomp  qword ptr ds:[0x593A28];
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
-	__asm        je     near ptr 0x00566324;
+	__asm        je     _T63;
 // LINE 276:
 	__asm        fld    dint;
 	__asm        fsub   qword ptr ds:[0x593A20];
 	__asm        fstp   dint;
 // LINE 278:
+_T63:
 	__asm        fld    dint;
 	__asm        call   0x0056EBE8;
 	__asm        mov    intval, ax;
@@ -720,10 +759,11 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 	__asm        mov    eax, pstr;
 	__asm        mov    byte ptr [eax], 0;
 // LINE 367:
+_T0f:
 	__asm        mov    eax, cstr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00566392;
+	__asm        je     _T54;
 
 	__asm        mov    eax, pstr;
 	__asm        mov    al, [eax];
@@ -733,7 +773,7 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, [ebp-4];
 	__asm        cmp    eax, 0xFF;
-	__asm        je     near ptr 0x00566392;
+	__asm        je     _T54;
 
 	__asm        mov    eax, cstr;
 	__asm        mov    al, [eax];
@@ -743,8 +783,9 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 	__asm        mov    ecx, pstr;
 	__asm        mov    [edx+ecx], al;
 	__asm        inc    cstr;
-	__asm        jmp    near ptr 0x0056634D;
+	__asm        jmp    _T0f;
 // LINE 368:
+_T54:
 	__asm        jmp    near ptr 0x00566397;
 }
 
@@ -762,7 +803,7 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 	__asm        add    ecx, edx;
 	__asm        movsx  eax, destSize;
 	__asm        cmp    ecx, eax;
-	__asm        jl     near ptr 0x005663D8;
+	__asm        jl     _T3c;
 // LINE 446:
 	__asm        movsx  eax, destSize;
 	__asm        mov    ecx, str2;
@@ -772,12 +813,14 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 	__asm        dec    eax;
 	__asm        mov    copyBytes, ax;
 // LINE 447:
-	__asm        jmp    near ptr 0x005663E3;
+	__asm        jmp    _T47;
 // LINE 448:
+_T3c:
 	__asm        mov    eax, str1;
 	__asm        movzx  ax, byte ptr [eax];
 	__asm        mov    copyBytes, ax;
 // LINE 450:
+_T47:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(copyBytes);
 	__asm        and    eax, 0xFFFF;
 	__asm        push   eax;
@@ -873,9 +916,10 @@ void HexToString(unsigned long num, unsigned char * str) {
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax+1], 0x78;
 // LINE 506:
+_T1c:
 	__asm        movsx  eax, position;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0056650A;
+	__asm        jl     _T51;
 
 	__asm        mov    ebx, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(position);
@@ -884,16 +928,17 @@ void HexToString(unsigned long num, unsigned char * str) {
 	__asm        sub    edx, edx;
 	__asm        div    ebx;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0056650A;
+	__asm        jne    _T51;
 // LINE 507:
 	__asm        movsx  eax, position;
 	__asm        sub    eax, 4;
 	__asm        mov    position, ax;
-	__asm        jmp    near ptr 0x005664D5;
+	__asm        jmp    _T1c;
 // LINE 509:
+_T51:
 	__asm        movsx  eax, position;
 	__asm        test   eax, eax;
-	__asm        jge    near ptr 0x0056652E;
+	__asm        jge    _T75;
 // LINE 511:
 	__asm        mov    eax, str;
 	__asm        inc    byte ptr [eax];
@@ -903,16 +948,19 @@ void HexToString(unsigned long num, unsigned char * str) {
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [ecx+eax], 0x30;
 // LINE 512:
-	__asm        jmp    near ptr 0x005665B2;
+	__asm        jmp    _Tf9;
 // LINE 515:
-	__asm        jmp    near ptr 0x0056653E;
+_T75:
+	__asm        jmp    _T85;
 
+_T7a:
 	__asm        movsx  eax, position;
 	__asm        sub    eax, 4;
 	__asm        mov    position, ax;
+_T85:
 	__asm        movsx  eax, position;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x005665AD;
+	__asm        jl     _Tf4;
 // LINE 517:
 	__asm        mov    ebx, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(position);
@@ -930,18 +978,20 @@ void HexToString(unsigned long num, unsigned char * str) {
 // LINE 519:
 	__asm        movsx  eax, letter;
 	__asm        cmp    eax, 9;
-	__asm        jle    near ptr 0x00566589;
+	__asm        jle    _Td0;
 
 	__asm        movsx  eax, letter;
 	__asm        add    eax, 0x37;
 	__asm        mov    letter, al;
 // LINE 520:
-	__asm        jmp    near ptr 0x00566593;
+	__asm        jmp    _Tda;
 
+_Td0:
 	__asm        movsx  eax, letter;
 	__asm        add    eax, 0x30;
 	__asm        mov    letter, al;
 // LINE 521:
+_Tda:
 	__asm        mov    eax, str;
 	__asm        inc    byte ptr [eax];
 	__asm        mov    al, letter;
@@ -951,9 +1001,10 @@ void HexToString(unsigned long num, unsigned char * str) {
 	__asm        mov    ecx, str;
 	__asm        mov    [edx+ecx], al;
 // LINE 522:
-	__asm        jmp    near ptr 0x00566533;
+	__asm        jmp    _T7a;
 // LINE 523:
-	__asm        jmp    near ptr 0x005665B2;
+_Tf4:
+	__asm        jmp    _Tf9;
 }
 
 // FUNCTION: COPTER_D 0x005665b7
@@ -980,20 +1031,23 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        mov    cl, [eax];
 	__asm        movsx  eax, numChars;
 	__asm        cmp    ecx, eax;
-	__asm        jge    near ptr 0x005665F5;
+	__asm        jge    _T3e;
 
 	__asm        mov    eax, second;
 	__asm        movzx  ax, byte ptr [eax];
 	__asm        mov    numChars, ax;
 // LINE 913:
+_T3e:
 	__asm        mov    count, 1;
-	__asm        jmp    near ptr 0x00566604;
+	__asm        jmp    _T4d;
 
+_T49:
 	__asm        inc    count;
+_T4d:
 	__asm        movsx  eax, numChars;
 	__asm        movsx  ecx, count;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x005666B9;
+	__asm        jl     _T102;
 // LINE 915:
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, first;
@@ -1008,55 +1062,60 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, char1;
 	__asm        cmp    eax, 0x61;
-	__asm        jl     near ptr 0x00566655;
+	__asm        jl     _T9e;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, char1;
 	__asm        cmp    eax, 0x7A;
-	__asm        jg     near ptr 0x00566655;
+	__asm        jg     _T9e;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, char1;
 	__asm        sub    eax, 0x20;
 	__asm        mov    char1, al;
 // LINE 918:
+_T9e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, char2;
 	__asm        cmp    eax, 0x61;
-	__asm        jl     near ptr 0x0056667C;
+	__asm        jl     _Tc5;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, char2;
 	__asm        cmp    eax, 0x7A;
-	__asm        jg     near ptr 0x0056667C;
+	__asm        jg     _Tc5;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, char2;
 	__asm        sub    eax, 0x20;
 	__asm        mov    char2, al;
 // LINE 919:
+_Tc5:
 	__asm        xor    eax, eax;
 	__asm        mov    al, char2;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, char1;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x00566698;
+	__asm        jge    _Te1;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00566700;
+	__asm        jmp    _T149;
 // LINE 920:
+_Te1:
 	__asm        xor    eax, eax;
 	__asm        mov    al, char2;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, char1;
 	__asm        cmp    eax, ecx;
-	__asm        jle    near ptr 0x005666B4;
+	__asm        jle    _Tfd;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x00566700;
+	__asm        jmp    _T149;
 // LINE 921:
-	__asm        jmp    near ptr 0x00566600;
+_Tfd:
+	__asm        jmp    _T49;
 // LINE 922:
+_T102:
 	__asm        mov    eax, second;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -1064,11 +1123,12 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        cmp    ecx, edx;
-	__asm        jge    near ptr 0x005666D9;
+	__asm        jge    _T122;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00566700;
+	__asm        jmp    _T149;
 // LINE 923:
+_T122:
 	__asm        mov    eax, second;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -1076,13 +1136,14 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        cmp    ecx, edx;
-	__asm        jle    near ptr 0x005666F9;
+	__asm        jle    _T142;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x00566700;
+	__asm        jmp    _T149;
 // LINE 924:
+_T142:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00566700;
+	__asm        jmp    _T149;
 // LINE 925:
 }
 
@@ -1095,20 +1156,22 @@ void ExtractFileName(unsigned char * path, unsigned char * name) {
 	__asm        movzx  ax, byte ptr [eax];
 	__asm        mov    place, ax;
 // LINE 930:
+_T14:
 	__asm        movsx  eax, place;
 	__asm        mov    ecx, path;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        cmp    edx, 0x3A;
-	__asm        je     near ptr 0x00566743;
+	__asm        je     _T3e;
 
 	__asm        movsx  eax, place;
 	__asm        test   eax, eax;
-	__asm        jle    near ptr 0x00566743;
+	__asm        jle    _T3e;
 // LINE 931:
 	__asm        dec    place;
-	__asm        jmp    near ptr 0x00566719;
+	__asm        jmp    _T14;
 // LINE 933:
+_T3e:
 	__asm        mov    eax, path;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -1139,31 +1202,34 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 // LINE 1076:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x005667A3;
+	__asm        jne    _T26;
 // LINE 1077:
 	__asm        push   6;
 	__asm        mov    eax, ds:[0x5BF63C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1078:
-	__asm        jmp    near ptr 0x005667D1;
+	__asm        jmp    _T54;
 
+_T26:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 0xFFFFFFFE;
-	__asm        jne    near ptr 0x005667C3;
+	__asm        jne    _T46;
 // LINE 1079:
 	__asm        push   0;
 	__asm        mov    eax, ds:[0x5BF63C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1080:
-	__asm        jmp    near ptr 0x005667D1;
+	__asm        jmp    _T54;
 // LINE 1081:
+_T46:
 	__asm        push   2;
 	__asm        mov    eax, ds:[0x5BF63C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1082:
+_T54:
 	__asm        mov    eax, strLen;
 	__asm        push   eax;
 	__asm        mov    eax, cString;

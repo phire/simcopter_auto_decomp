@@ -76,7 +76,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        add    eax, 8;
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    eax, [ecx+4];
-	__asm        je     near ptr 0x0055F706;
+	__asm        je     _T46;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE4B8;
@@ -84,30 +84,33 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum)
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T46:
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
 	__asm        cmp    [eax+0x14], ecx;
-	__asm        jle    near ptr 0x0055F73E;
+	__asm        jle    _T7e;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, partnum;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x0055F73E;
+	__asm        jle    _T7e;
 
 	__asm        movsx  eax, framenum;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0055F73E;
+	__asm        jl     _T7e;
 
 	__asm        movsx  eax, partnum;
 	__asm        test   eax, eax;
-	__asm        jge    near ptr 0x0055F75A;
+	__asm        jge    _T9a;
 
+_T7e:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T9a:
 	__asm        jmp    near ptr 0x0055F75F;
 
 	__asm        movsx  eax, framenum;
@@ -131,7 +134,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        add    eax, 8;
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    eax, [ecx+4];
-	__asm        je     near ptr 0x0055F7C6;
+	__asm        je     _T46;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE4B8;
@@ -139,27 +142,30 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T46:
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
 	__asm        cmp    [eax+0x14], ecx;
-	__asm        jle    near ptr 0x0055F7F4;
+	__asm        jle    _T74;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jle    near ptr 0x0055F7F4;
+	__asm        jle    _T74;
 
 	__asm        movsx  eax, framenum;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x0055F7F4;
+	__asm        jl     _T74;
 
-	__asm        jmp    near ptr 0x0055F810;
+	__asm        jmp    _T90;
 
+_T74:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;
 	__asm        push   0x1A6;
 	__asm        push   0x5BE4F0;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_T90:
 	__asm        jmp    near ptr 0x0055F815;
 
 	__asm        movsx  eax, framenum;

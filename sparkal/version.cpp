@@ -93,7 +93,7 @@ void Version::Version() {
 	__asm        mov    dwVersionInfoSize, eax;
 // LINE 38:
 	__asm        cmp    dwVersionInfoSize, 0;
-	__asm        je     near ptr 0x0043DC00;
+	__asm        je     _T120;
 // LINE 39:
 	__asm        mov    eax, dwVersionInfoSize;
 	__asm        push   eax;
@@ -113,7 +113,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        call   0x004C4684;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0043DC00;
+	__asm        je     _T120;
 // LINE 42:
 	__asm        lea    eax, nValueSize;
 	__asm        push   eax;
@@ -126,7 +126,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        call   0x004C467E;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0043DC00;
+	__asm        jne    _T120;
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -141,6 +141,7 @@ void Version::Version() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 50:
+_T120:
 	__asm        jmp    near ptr 0x0043DC05;
 
 	__asm        mov    eax, this;
@@ -154,7 +155,7 @@ void Version::~Version() {
 // LINE 59:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0043DC4D;
+	__asm        je     _T3d;
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -166,6 +167,7 @@ void Version::~Version() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 62:
+_T3d:
 	__asm        jmp    near ptr 0x0043DC52;
 }
 
@@ -178,11 +180,12 @@ int32_t Version::GetApplicationName(char *& szName) {
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x0043DC80;
+	__asm        jne    _T29;
 // LINE 81:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0043DCE2;
+	__asm        jmp    _T8b;
 // LINE 94:
+_T29:
 	__asm        push   0x5985A0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -213,7 +216,7 @@ int32_t Version::GetApplicationName(char *& szName) {
 	__asm        mov    nReturnValue, eax;
 // LINE 96:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x0043DCE2;
+	__asm        jmp    _T8b;
 // LINE 98:
 }
 
@@ -226,11 +229,12 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 // LINE 115:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x0043DD12;
+	__asm        jne    _T29;
 // LINE 116:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0043DD74;
+	__asm        jmp    _T8b;
 // LINE 117:
+_T29:
 	__asm        push   0x5985CC;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -261,7 +265,7 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 	__asm        mov    nReturnValue, eax;
 // LINE 119:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x0043DD74;
+	__asm        jmp    _T8b;
 // LINE 121:
 }
 
@@ -274,11 +278,12 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 // LINE 139:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x0043DDA4;
+	__asm        jne    _T29;
 // LINE 140:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0043DE06;
+	__asm        jmp    _T8b;
 // LINE 141:
+_T29:
 	__asm        push   0x5985F8;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -309,7 +314,7 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 	__asm        mov    nReturnValue, eax;
 // LINE 143:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x0043DE06;
+	__asm        jmp    _T8b;
 // LINE 145:
 }
 
@@ -322,11 +327,12 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x0043DE36;
+	__asm        jne    _T29;
 // LINE 163:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0043DE98;
+	__asm        jmp    _T8b;
 // LINE 164:
+_T29:
 	__asm        push   0x598628;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -357,7 +363,7 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 	__asm        mov    nReturnValue, eax;
 // LINE 166:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x0043DE98;
+	__asm        jmp    _T8b;
 // LINE 168:
 }
 
@@ -370,11 +376,12 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 // LINE 193:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x0043DEBF;
+	__asm        jne    _T20;
 // LINE 194:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 195:
+_T20:
 	__asm        lea    eax, vSize;
 	__asm        push   eax;
 	__asm        lea    eax, vsFixedFileInfo;
@@ -387,57 +394,62 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        mov    nReturnValue, eax;
 // LINE 196:
 	__asm        cmp    nReturnValue, 0;
-	__asm        jne    near ptr 0x0043DEEF;
+	__asm        jne    _T50;
 // LINE 197:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 198:
+_T50:
 	__asm        cmp    nVersionComponent, 0;
-	__asm        jne    near ptr 0x0043DF14;
+	__asm        jne    _T75;
 // LINE 199:
 	__asm        mov    eax, vsFixedFileInfo;
 	__asm        mov    eax, [eax+8];
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
 	__asm        movzx  eax, ax;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 200:
-	__asm        jmp    near ptr 0x0043DF72;
+	__asm        jmp    _Td3;
 
+_T75:
 	__asm        cmp    nVersionComponent, 1;
-	__asm        jne    near ptr 0x0043DF33;
+	__asm        jne    _T94;
 // LINE 201:
 	__asm        mov    eax, vsFixedFileInfo;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+8];
 	__asm        mov    eax, ecx;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 202:
-	__asm        jmp    near ptr 0x0043DF72;
+	__asm        jmp    _Td3;
 
+_T94:
 	__asm        cmp    nVersionComponent, 2;
-	__asm        jne    near ptr 0x0043DF58;
+	__asm        jne    _Tb9;
 // LINE 203:
 	__asm        mov    eax, vsFixedFileInfo;
 	__asm        mov    eax, [eax+0xC];
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
 	__asm        movzx  eax, ax;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 204:
-	__asm        jmp    near ptr 0x0043DF72;
+	__asm        jmp    _Td3;
 
+_Tb9:
 	__asm        cmp    nVersionComponent, 3;
-	__asm        jne    near ptr 0x0043DF72;
+	__asm        jne    _Td3;
 // LINE 205:
 	__asm        mov    eax, vsFixedFileInfo;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0xC];
 	__asm        mov    eax, ecx;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 206:
+_Td3:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0043DF7C;
+	__asm        jmp    _Tdd;
 // LINE 208:
 }
 
@@ -450,7 +462,7 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 	__asm        mov    dwVersion, eax;
 // LINE 234:
 	__asm        cmp    dwVersion, 0x80000000;
-	__asm        jae    near ptr 0x0043DFC5;
+	__asm        jae    _T42;
 // LINE 238:
 	__asm        xor    eax, eax;
 	__asm        mov    al, *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1);
@@ -464,8 +476,9 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x10;
 // LINE 240:
-	__asm        jmp    near ptr 0x0043DFE3;
+	__asm        jmp    _T60;
 // LINE 244:
+_T42:
 	__asm        xor    eax, eax;
 	__asm        mov    al, *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1);
 	__asm        push   eax;
@@ -478,6 +491,7 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x10;
 // LINE 255:
+_T60:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0043DFED;
 // LINE 256:
@@ -495,14 +509,16 @@ int32_t Version::GetSystemType() {
 	__asm        mov    dwVersion, eax;
 // LINE 273:
 	__asm        cmp    dwVersion, 0x80000000;
-	__asm        jae    near ptr 0x0043E024;
+	__asm        jae    _T32;
 // LINE 274:
 	__asm        mov    nSystemType, 4;
 // LINE 275:
-	__asm        jmp    near ptr 0x0043E02B;
+	__asm        jmp    _T39;
 // LINE 276:
+_T32:
 	__asm        mov    nSystemType, 3;
 // LINE 285:
+_T39:
 	__asm        mov    eax, nSystemType;
 	__asm        jmp    near ptr 0x0043E033;
 // LINE 286:
@@ -517,23 +533,25 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 	__asm        mov    dwVersion, eax;
 // LINE 309:
 	__asm        cmp    nVersionComponent, 0;
-	__asm        jne    near ptr 0x0043E063;
+	__asm        jne    _T2b;
 // LINE 310:
 	__asm        xor    eax, eax;
 	__asm        mov    al, reinterpret_cast<uint8_t>(dwVersion);
-	__asm        jmp    near ptr 0x0043E081;
+	__asm        jmp    _T49;
 // LINE 311:
-	__asm        jmp    near ptr 0x0043E077;
+	__asm        jmp    _T3f;
 
+_T2b:
 	__asm        cmp    nVersionComponent, 1;
-	__asm        jne    near ptr 0x0043E077;
+	__asm        jne    _T3f;
 // LINE 312:
 	__asm        xor    eax, eax;
 	__asm        mov    al, *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1);
-	__asm        jmp    near ptr 0x0043E081;
+	__asm        jmp    _T49;
 // LINE 313:
+_T3f:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0043E081;
+	__asm        jmp    _T49;
 // LINE 316:
 }
 
@@ -547,10 +565,11 @@ long Version::GetCPUVersion() {
 	__asm        mov    lReturnValue, eax;
 // LINE 340:
 	__asm        cmp    lReturnValue, 0xA;
-	__asm        jle    near ptr 0x0043E0AB;
+	__asm        jle    _T25;
 // LINE 341:
 	__asm        mov    lReturnValue, 0xA;
 // LINE 342:
+_T25:
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    near ptr 0x0043E0B3;
 // LINE 344:

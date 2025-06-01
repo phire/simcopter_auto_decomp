@@ -39,11 +39,12 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        add    dword ptr ds:[0x59B524], 8;
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
-	__asm        jae    near ptr 0x004CB2FC;
+	__asm        jae    _T4c;
 
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 274:
+_T4c:
 	__asm        mov    eax, poolsize;
 	__asm        push   eax;
 	__asm        call   S2AllocHdr;
@@ -55,7 +56,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x004CB340;
+	__asm        je     _T90;
 // LINE 277:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
@@ -64,6 +65,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    ecx, [ecx*4+0x6069D8];
 	__asm        mov    [ecx+4], eax;
 // LINE 279:
+_T90:
 	__asm        mov    eax, old;
 	__asm        jmp    near ptr 0x004CB348;
 // LINE 280:
@@ -87,11 +89,12 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        mov    hdr, eax;
 // LINE 241:
 	__asm        cmp    hdr, 0;
-	__asm        je     near ptr 0x004CB386;
+	__asm        je     _T39;
 
 	__asm        cmp    block, 0;
-	__asm        jne    near ptr 0x004CB3A6;
+	__asm        jne    _T59;
 // LINE 243:
+_T39:
 	__asm        push   0x59B53C;
 	__asm        mov    eax, 0x5C0BF8;
 	__asm        add    eax, 0x40;
@@ -103,6 +106,7 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        call   exit;
 	__asm        add    esp, 4;
 // LINE 246:
+_T59:
 	__asm        mov    eax, block;
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx+4], eax;
@@ -124,11 +128,12 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        add    ds:[0x59B524], eax;
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
-	__asm        jae    near ptr 0x004CB3F4;
+	__asm        jae    _Ta7;
 
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 253:
+_Ta7:
 	__asm        mov    eax, hdr;
 	__asm        jmp    near ptr 0x004CB3FC;
 // LINE 254:
@@ -141,32 +146,38 @@ int32_t S2AllocPool(unsigned long poolsize) {
 
 // LINE 295:
 	__asm        cmp    dword ptr ds:[0x59B534], 0x20;
-	__asm        jne    near ptr 0x004CB421;
+	__asm        jne    _T20;
 // LINE 296:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004CB4A7;
+	__asm        jmp    _Ta6;
 // LINE 299:
+_T20:
 	__asm        mov    index, 0;
-	__asm        jmp    near ptr 0x004CB430;
+	__asm        jmp    _T2f;
 
+_T2c:
 	__asm        inc    index;
+_T2f:
 	__asm        cmp    index, 0x20;
-	__asm        jge    near ptr 0x004CB455;
+	__asm        jge    _T54;
 // LINE 301:
 	__asm        mov    eax, index;
 	__asm        cmp    dword ptr [eax*4+0x6069D8], 0;
-	__asm        jne    near ptr 0x004CB450;
+	__asm        jne    _T4f;
 // LINE 302:
-	__asm        jmp    near ptr 0x004CB455;
+	__asm        jmp    _T54;
 // LINE 303:
-	__asm        jmp    near ptr 0x004CB42D;
+_T4f:
+	__asm        jmp    _T2c;
 // LINE 305:
+_T54:
 	__asm        cmp    index, 0x20;
-	__asm        jne    near ptr 0x004CB469;
+	__asm        jne    _T68;
 // LINE 306:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004CB4A7;
+	__asm        jmp    _Ta6;
 // LINE 308:
+_T68:
 	__asm        mov    eax, poolsize;
 	__asm        push   eax;
 	__asm        mov    eax, index;
@@ -178,15 +189,16 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x004CB499;
+	__asm        jne    _T98;
 // LINE 311:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004CB4A7;
+	__asm        jmp    _Ta6;
 // LINE 313:
+_T98:
 	__asm        inc    dword ptr ds:[0x59B534];
 // LINE 314:
 	__asm        mov    eax, index;
-	__asm        jmp    near ptr 0x004CB4A7;
+	__asm        jmp    _Ta6;
 // LINE 315:
 }
 
@@ -218,11 +230,11 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    ecx, hdr;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jb     near ptr 0x004CB595;
+	__asm        jb     _Te9;
 // LINE 351:
 	__asm        mov    eax, hdr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x004CB528;
+	__asm        je     _T7c;
 // LINE 354:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax];
@@ -237,10 +249,11 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    ecx, [ecx*4+0x6069D8];
 	__asm        mov    [ecx+4], eax;
 // LINE 357:
-	__asm        jmp    near ptr 0x004CB56F;
+	__asm        jmp    _Tc3;
 // LINE 360:
+_T7c:
 	__asm        cmp    size, 0x2000;
-	__asm        jle    near ptr 0x004CB54B;
+	__asm        jle    _T9f;
 // LINE 361:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -249,20 +262,23 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx], eax;
 // LINE 362:
-	__asm        jmp    near ptr 0x004CB55D;
+	__asm        jmp    _Tb1;
 // LINE 363:
+_T9f:
 	__asm        push   0x2000;
 	__asm        call   S2AllocHdr;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx], eax;
 // LINE 364:
+_Tb1:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, index;
 	__asm        mov    ecx, [ecx*4+0x6069D8];
 	__asm        mov    [ecx+4], eax;
 // LINE 368:
+_Tc3:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        mov    eax, [eax+4];
@@ -275,6 +291,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    ecx, [ecx+4];
 	__asm        add    [ecx+8], eax;
 // LINE 372:
+_Te9:
 	__asm        mov    eax, size;
 	__asm        add    ds:[0x59B530], eax;
 // LINE 383:
@@ -341,17 +358,19 @@ void S2AllocReset(int32_t index) {
 // LINE 459:
 	__asm        mov    eax, index;
 	__asm        cmp    dword ptr [eax*4+0x6069D8], 0;
-	__asm        jne    near ptr 0x004CB647;
+	__asm        jne    _T1f;
 // LINE 460:
-	__asm        jmp    near ptr 0x004CB6BE;
+	__asm        jmp    _T96;
 // LINE 462:
+_T1f:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        mov    eax, [eax];
 	__asm        mov    hdr, eax;
 // LINE 463:
+_T2e:
 	__asm        cmp    hdr, 0;
-	__asm        je     near ptr 0x004CB685;
+	__asm        je     _T5d;
 // LINE 465:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hdr;
@@ -366,8 +385,9 @@ void S2AllocReset(int32_t index) {
 	__asm        mov    eax, [eax];
 	__asm        mov    hdr, eax;
 // LINE 467:
-	__asm        jmp    near ptr 0x004CB656;
+	__asm        jmp    _T2e;
 // LINE 469:
+_T5d:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        mov    eax, [eax];
@@ -394,17 +414,19 @@ void S2AllocFreePool(int32_t index) {
 // LINE 493:
 	__asm        mov    eax, index;
 	__asm        cmp    dword ptr [eax*4+0x6069D8], 0;
-	__asm        jne    near ptr 0x004CB6E2;
+	__asm        jne    _T1f;
 // LINE 494:
-	__asm        jmp    near ptr 0x004CB7A0;
+	__asm        jmp    _Tdd;
 // LINE 496:
+_T1f:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        mov    eax, [eax];
 	__asm        mov    hdr, eax;
 // LINE 498:
+_T2e:
 	__asm        cmp    hdr, 0;
-	__asm        je     near ptr 0x004CB761;
+	__asm        je     _T9e;
 // LINE 500:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax];
@@ -443,8 +465,9 @@ void S2AllocFreePool(int32_t index) {
 	__asm        mov    eax, next_hdr;
 	__asm        mov    hdr, eax;
 // LINE 508:
-	__asm        jmp    near ptr 0x004CB6F1;
+	__asm        jmp    _T2e;
 // LINE 509:
+_T9e:
 	__asm        mov    eax, index;
 	__asm        mov    eax, [eax*4+0x6069D8];
 	__asm        push   eax;
@@ -485,13 +508,14 @@ void * __ptr32 DOSAllocAlignedHack() {
 	__asm        mov    retaddr, eax;
 // LINE 754:
 	__asm        cmp    retaddr, 0;
-	__asm        jne    near ptr 0x004CB7E4;
+	__asm        jne    _T2a;
 // LINE 755:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004CB83A;
+	__asm        jmp    _T80;
 // LINE 759:
+_T2a:
 	__asm        test   retaddr, 0xFFFF;
-	__asm        je     near ptr 0x004CB803;
+	__asm        je     _T49;
 // LINE 763:
 	__asm        mov    eax, retaddr;
 	__asm        and    eax, 0xFFFF0000;
@@ -499,18 +523,20 @@ void * __ptr32 DOSAllocAlignedHack() {
 // LINE 764:
 	__asm        add    retaddr, 0x10000;
 // LINE 767:
+_T49:
 	__asm        add    dword ptr ds:[0x59B524], 0x10000;
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
-	__asm        jae    near ptr 0x004CB828;
+	__asm        jae    _T6e;
 
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 768:
+_T6e:
 	__asm        add    dword ptr ds:[0x59B530], 0x10000;
 // LINE 770:
 	__asm        mov    eax, retaddr;
-	__asm        jmp    near ptr 0x004CB83A;
+	__asm        jmp    _T80;
 // LINE 771:
 }
 

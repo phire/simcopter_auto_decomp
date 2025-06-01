@@ -17,7 +17,7 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 62:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x00439C2C;
+	__asm        jne    _T5c;
 // LINE 63:
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -27,8 +27,9 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00439C2C;
+	__asm        jmp    _T5c;
 // LINE 65:
+_T5c:
 	__asm        jmp    near ptr 0x00439C31;
 
 	__asm        mov    eax, this;
@@ -41,7 +42,7 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewTimerResolution;
 	__asm        cmp    [eax], ecx;
-	__asm        je     near ptr 0x00439CB2;
+	__asm        je     _T72;
 // LINE 89:
 	__asm        mov    eax, nNewTimerResolution;
 	__asm        mov    ecx, this;
@@ -49,11 +50,11 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 91:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x00439C99;
+	__asm        jne    _T59;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00439C99;
+	__asm        jne    _T59;
 // LINE 92:
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -63,14 +64,16 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00439C99;
+	__asm        jmp    _T59;
 // LINE 94:
+_T59:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
-	__asm        jmp    near ptr 0x00439CB2;
+	__asm        jmp    _T72;
 // LINE 96:
+_T72:
 	__asm        jmp    near ptr 0x00439CB7;
 }
 

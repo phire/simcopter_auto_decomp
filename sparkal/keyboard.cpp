@@ -128,11 +128,12 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00431D59;
+	__asm        jne    _T27;
 // LINE 53:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00431D86;
+	__asm        jmp    _T54;
 // LINE 57:
+_T27:
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::GetCurrentModifierState;
 	__asm        mov    chCurrentModifiers, al;
@@ -141,13 +142,15 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, chModifiers;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x00431D7F;
+	__asm        jne    _T4d;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00431D81;
+	__asm        jmp    _T4f;
 
+_T4d:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00431D86;
+_T4f:
+	__asm        jmp    _T54;
 // LINE 59:
 }
 
@@ -159,7 +162,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00431DC7;
+	__asm        jne    _T3a;
 // LINE 71:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -171,6 +174,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        call   CharList::AddItem;
 // LINE 74:
+_T3a:
 	__asm        jmp    near ptr 0x00431DCC;
 }
 
@@ -182,7 +186,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00431E0D;
+	__asm        je     _T3a;
 // LINE 84:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -194,6 +198,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteItem;
 // LINE 87:
+_T3a:
 	__asm        jmp    near ptr 0x00431E12;
 }
 
@@ -203,17 +208,20 @@ void Keyboard::ClearSettings() {
 
 // LINE 98:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00431E34;
+	__asm        jmp    _T1b;
 
+_T18:
 	__asm        inc    i;
+_T1b:
 	__asm        cmp    i, 0x100;
-	__asm        jge    near ptr 0x00431E51;
+	__asm        jge    _T38;
 // LINE 99:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x10], 0;
-	__asm        jmp    near ptr 0x00431E31;
+	__asm        jmp    _T18;
 // LINE 100:
+_T38:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 101:
@@ -226,23 +234,25 @@ int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x10;
-	__asm        je     near ptr 0x00431E99;
+	__asm        je     _T36;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x11;
-	__asm        je     near ptr 0x00431E99;
+	__asm        je     _T36;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x12;
-	__asm        jne    near ptr 0x00431EA3;
+	__asm        jne    _T40;
 // LINE 112:
+_T36:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00431EAA;
+	__asm        jmp    _T47;
 // LINE 115:
+_T40:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00431EAA;
+	__asm        jmp    _T47;
 // LINE 116:
 }
 
@@ -257,32 +267,35 @@ char Keyboard::GetCurrentModifierState() {
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00431EDC;
+	__asm        je     _T2b;
 // LINE 129:
 	__asm        movsx  eax, chReturnValue;
 	__asm        or     al, 1;
 	__asm        mov    chReturnValue, al;
 // LINE 130:
+_T2b:
 	__asm        push   0x11;
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00431EF7;
+	__asm        je     _T46;
 // LINE 131:
 	__asm        movsx  eax, chReturnValue;
 	__asm        or     al, 2;
 	__asm        mov    chReturnValue, al;
 // LINE 132:
+_T46:
 	__asm        push   0x12;
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::IsKeyDown;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00431F12;
+	__asm        je     _T61;
 // LINE 133:
 	__asm        movsx  eax, chReturnValue;
 	__asm        or     al, 4;
 	__asm        mov    chReturnValue, al;
 // LINE 136:
+_T61:
 	__asm        mov    al, chReturnValue;
 	__asm        jmp    near ptr 0x00431F1A;
 // LINE 137:
@@ -298,12 +311,12 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x41;
-	__asm        jl     near ptr 0x00431FCC;
+	__asm        jl     _Tad;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x5A;
-	__asm        jg     near ptr 0x00431FCC;
+	__asm        jg     _Tad;
 // LINE 172:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chModifiers;
@@ -314,48 +327,53 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x00431F7C;
+	__asm        je     _T5d;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jne    near ptr 0x00431F7C;
+	__asm        jne    _T5d;
 
 	__asm        mov    dword ptr [ebp-0x10], 1;
-	__asm        jmp    near ptr 0x00431FA8;
+	__asm        jmp    _T89;
 
+_T5d:
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x00431F9C;
+	__asm        jne    _T7d;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00431F9C;
+	__asm        je     _T7d;
 
 	__asm        mov    dword ptr [ebp-0x10], 1;
-	__asm        jmp    near ptr 0x00431FA8;
+	__asm        jmp    _T89;
 
+_T7d:
 	__asm        mov    dword ptr [ebp-0x10], 0;
-	__asm        jmp    near ptr 0x00431FA8;
+	__asm        jmp    _T89;
 
+_T89:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x00431FBF;
+	__asm        je     _Ta0;
 // LINE 173:
 	__asm        mov    al, chKey;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 174:
-	__asm        jmp    near ptr 0x00431FCC;
+	__asm        jmp    _Tad;
 // LINE 175:
+_Ta0:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        add    eax, 0x20;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 180:
+_Tad:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x30;
-	__asm        jl     near ptr 0x00432073;
+	__asm        jl     _T154;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x39;
-	__asm        jg     near ptr 0x00432073;
+	__asm        jg     _T154;
 // LINE 181:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chModifiers;
@@ -366,141 +384,157 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x00432020;
+	__asm        je     _T101;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        jne    near ptr 0x00432020;
+	__asm        jne    _T101;
 
 	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        jmp    near ptr 0x0043204C;
+	__asm        jmp    _T12d;
 
+_T101:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        jne    near ptr 0x00432040;
+	__asm        jne    _T121;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x00432040;
+	__asm        je     _T121;
 
 	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        jmp    near ptr 0x0043204C;
+	__asm        jmp    _T12d;
 
+_T121:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    near ptr 0x0043204C;
+	__asm        jmp    _T12d;
 
+_T12d:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x0043206B;
+	__asm        je     _T14c;
 // LINE 182:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        mov    al, [eax+0x598320];
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 183:
-	__asm        jmp    near ptr 0x00432073;
+	__asm        jmp    _T154;
 // LINE 184:
+_T14c:
 	__asm        mov    al, chKey;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 189:
+_T154:
 	__asm        mov    chIndex, 0xFF;
 // LINE 190:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x60;
-	__asm        jne    near ptr 0x0043208E;
+	__asm        jne    _T16f;
 // LINE 191:
 	__asm        mov    chIndex, 0;
 // LINE 192:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T16f:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x2D;
-	__asm        jne    near ptr 0x004320A5;
+	__asm        jne    _T186;
 // LINE 193:
 	__asm        mov    chIndex, 1;
 // LINE 194:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T186:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x3D;
-	__asm        jne    near ptr 0x004320BC;
+	__asm        jne    _T19d;
 // LINE 195:
 	__asm        mov    chIndex, 2;
 // LINE 196:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T19d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x5B;
-	__asm        jne    near ptr 0x004320D3;
+	__asm        jne    _T1b4;
 // LINE 197:
 	__asm        mov    chIndex, 3;
 // LINE 198:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T1b4:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x5D;
-	__asm        jne    near ptr 0x004320EA;
+	__asm        jne    _T1cb;
 // LINE 199:
 	__asm        mov    chIndex, 4;
 // LINE 200:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T1cb:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x5C;
-	__asm        jne    near ptr 0x00432101;
+	__asm        jne    _T1e2;
 // LINE 201:
 	__asm        mov    chIndex, 5;
 // LINE 202:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T1e2:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x3B;
-	__asm        jne    near ptr 0x00432118;
+	__asm        jne    _T1f9;
 // LINE 203:
 	__asm        mov    chIndex, 6;
 // LINE 204:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T1f9:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x27;
-	__asm        jne    near ptr 0x0043212F;
+	__asm        jne    _T210;
 // LINE 205:
 	__asm        mov    chIndex, 7;
 // LINE 206:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T210:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x2C;
-	__asm        jne    near ptr 0x00432146;
+	__asm        jne    _T227;
 // LINE 207:
 	__asm        mov    chIndex, 8;
 // LINE 208:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T227:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x2E;
-	__asm        jne    near ptr 0x0043215D;
+	__asm        jne    _T23e;
 // LINE 209:
 	__asm        mov    chIndex, 9;
 // LINE 210:
-	__asm        jmp    near ptr 0x0043216F;
+	__asm        jmp    _T250;
 
+_T23e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x2F;
-	__asm        jne    near ptr 0x0043216F;
+	__asm        jne    _T250;
 // LINE 211:
 	__asm        mov    chIndex, 0xA;
 // LINE 213:
+_T250:
 	__asm        movsx  eax, chIndex;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x00432205;
+	__asm        jl     _T2e6;
 // LINE 214:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chModifiers;
@@ -511,48 +545,54 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x004321B3;
+	__asm        je     _T294;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        jne    near ptr 0x004321B3;
+	__asm        jne    _T294;
 
 	__asm        mov    dword ptr [ebp-0x28], 1;
-	__asm        jmp    near ptr 0x004321DF;
+	__asm        jmp    _T2c0;
 
+_T294:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x004321D3;
+	__asm        jne    _T2b4;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x004321D3;
+	__asm        je     _T2b4;
 
 	__asm        mov    dword ptr [ebp-0x28], 1;
-	__asm        jmp    near ptr 0x004321DF;
+	__asm        jmp    _T2c0;
 
+_T2b4:
 	__asm        mov    dword ptr [ebp-0x28], 0;
-	__asm        jmp    near ptr 0x004321DF;
+	__asm        jmp    _T2c0;
 
+_T2c0:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        je     near ptr 0x004321FD;
+	__asm        je     _T2de;
 // LINE 215:
 	__asm        movsx  eax, chIndex;
 	__asm        mov    al, [eax+0x598360];
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 216:
-	__asm        jmp    near ptr 0x00432205;
+	__asm        jmp    _T2e6;
 // LINE 217:
+_T2de:
 	__asm        mov    al, chKey;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 220:
+_T2e6:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x20;
-	__asm        jne    near ptr 0x0043221A;
+	__asm        jne    _T2fb;
 // LINE 221:
 	__asm        mov    al, 0x20;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 225:
+_T2fb:
 	__asm        xor    al, al;
-	__asm        jmp    near ptr 0x00432221;
+	__asm        jmp    _T302;
 // LINE 226:
 }
 
@@ -565,13 +605,14 @@ int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 	__asm        call   dword ptr ds:[0x6C386C];
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
-	__asm        je     near ptr 0x0043224D;
+	__asm        je     _T27;
 // LINE 244:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00432254;
+	__asm        jmp    _T2e;
 // LINE 245:
+_T27:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00432254;
+	__asm        jmp    _T2e;
 // LINE 249:
 }
 

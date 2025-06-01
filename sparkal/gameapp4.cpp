@@ -237,7 +237,7 @@ unsigned long  CGameApp::FinishGame() {
 // LINE 53:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
-	__asm        jne    near ptr 0x004BBAAD;
+	__asm        jne    _T7d;
 // LINE 54:
 // Block start:
 	long hResult;
@@ -261,7 +261,7 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        mov    hResult, eax;
 // LINE 58:
 	__asm        cmp    hResult, 0;
-	__asm        je     near ptr 0x004BBAAD;
+	__asm        je     _T7d;
 // LINE 59:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
@@ -272,21 +272,23 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 63:
 // Block end:
+_T7d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x004BBAD7;
+	__asm        je     _Ta7;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x004BBAD7;
+	__asm        jmp    _Ta7;
 // LINE 64:
+_Ta7:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x50], 0;
 // LINE 66:
@@ -354,7 +356,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4D0], eax;
 	__asm        cmp    dword ptr [ebp-0x4D0], 0;
-	__asm        je     near ptr 0x004BBBE3;
+	__asm        je     _Tcc;
 
 	__asm        mov    eax, [ebp-0x4D0];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -370,9 +372,11 @@ int  CGameApp::BackgroundVRAppInit() {
 
 	__asm        mov    eax, [ebp-0x4D0];
 	__asm        mov    sCurrentInitializer.reference, eax;
-	__asm        jmp    near ptr 0x004BBBED;
+	__asm        jmp    _Td6;
 
+_Tcc:
 	__asm        mov    sCurrentInitializer.reference, 0;
+_Td6:
 	__asm        mov    sCurrentInitializer.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004BBBFC;
 // LINE 107:
@@ -508,10 +512,11 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    eax, [ebp-0x4B8];
 	__asm        mov    ecx, [ebp-0x4C8];
 	__asm        mov    [ecx+0x38], eax;
-	__asm        jmp    near ptr 0x004BBDDC;
+	__asm        jmp    _T2c5;
 // LINE 128:
+_T2c5:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
-	__asm        jne    near ptr 0x004BC19C;
+	__asm        jne    _T685;
 // LINE 129:
 	__asm        mov    eax, nHeight;
 	__asm        push   eax;
@@ -531,10 +536,10 @@ int  CGameApp::BackgroundVRAppInit() {
 // LINE 130:
 	__asm        mov    eax, ds:[0x5B4790];
 	__asm        test   lCurrentInitializationFlag, eax;
-	__asm        je     near ptr 0x004BC178;
+	__asm        je     _T661;
 
 	__asm        cmp    lCurrentInitializationFlag, 0x8000;
-	__asm        jae    near ptr 0x004BC178;
+	__asm        jae    _T661;
 // LINE 131:
 	__asm        inc    lCurrentInitializationIndex;
 // LINE 132:
@@ -558,7 +563,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1514], eax;
 	__asm        cmp    dword ptr [ebp-0x1514], 0;
-	__asm        jne    near ptr 0x004BBF21;
+	__asm        jne    _T40a;
 
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1510];
@@ -596,8 +601,9 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004BBF1C;
 
-	__asm        jmp    near ptr 0x004BC0E4;
+	__asm        jmp    _T5cd;
 
+_T40a:
 	__asm        jmp    near ptr 0x004BBF26;
 
 	__asm        lea    eax, [ebp-0x1510];
@@ -606,7 +612,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1530], eax;
 	__asm        cmp    dword ptr [ebp-0x1530], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004BBF80;
+	__asm        jne    _T469;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -621,30 +627,32 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BBF80;
+	__asm        jmp    _T469;
 
+_T469:
 	__asm        jmp    near ptr 0x004BBF85;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        ja     near ptr 0x004BBFBC;
+	__asm        ja     _T4a5;
 
 	__asm        cmp    dword ptr [ebp-0x1530], 0;
-	__asm        je     near ptr 0x004BC084;
+	__asm        je     _T56d;
 
 	__asm        jmp    near ptr 0x004BBFA7;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    ecx, [ebp-0x1530];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jae    near ptr 0x004BC084;
+	__asm        jae    _T56d;
 
+_T4a5:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x151C], eax;
 	__asm        cmp    dword ptr [ebp-0x151C], 0;
-	__asm        je     near ptr 0x004BBFFD;
+	__asm        je     _T4e6;
 
 	__asm        mov    eax, [ebp-0x1530];
 	__asm        push   eax;
@@ -653,21 +661,23 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    ecx, [ebp-0x151C];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1518], eax;
-	__asm        jmp    near ptr 0x004BC007;
+	__asm        jmp    _T4f0;
 
+_T4e6:
 	__asm        mov    dword ptr [ebp-0x1518], 0;
+_T4f0:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004BC06E;
+	__asm        jne    _T557;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    [ebp-0x152C], eax;
 	__asm        mov    eax, [ebp-0x152C];
 	__asm        mov    [ebp-0x1528], eax;
 	__asm        cmp    dword ptr [ebp-0x1528], 0;
-	__asm        je     near ptr 0x004BC06E;
+	__asm        je     _T557;
 
 	__asm        mov    ecx, [ebp-0x1528];
 	__asm        call   basic_string_ref<char>::delete_ptr;
@@ -679,16 +689,18 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BC069;
 
-	__asm        jmp    near ptr 0x004BC06E;
+	__asm        jmp    _T557;
 
+_T557:
 	__asm        jmp    near ptr 0x004BC073;
 
 	__asm        mov    eax, [ebp-0x1518];
 	__asm        mov    sCurrentInitializer.reference, eax;
-	__asm        jmp    near ptr 0x004BC0C6;
+	__asm        jmp    _T5af;
 
+_T56d:
 	__asm        cmp    dword ptr [ebp-0x1530], 0;
-	__asm        je     near ptr 0x004BC0C6;
+	__asm        je     _T5af;
 
 	__asm        jmp    near ptr 0x004BC096;
 
@@ -703,8 +715,9 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004BC0C6;
+	__asm        jmp    _T5af;
 
+_T5af:
 	__asm        mov    eax, [ebp-0x1530];
 	__asm        mov    ecx, sCurrentInitializer.reference;
 	__asm        mov    [ecx+4], eax;
@@ -712,8 +725,9 @@ int  CGameApp::BackgroundVRAppInit() {
 
 	__asm        jmp    near ptr 0x004BC0DF;
 
-	__asm        jmp    near ptr 0x004BC0E4;
+	__asm        jmp    _T5cd;
 // LINE 135:
+_T5cd:
 	__asm        lea    eax, rectText.left;
 	__asm        push   eax;
 	__asm        push   0x2E;
@@ -730,18 +744,20 @@ int  CGameApp::BackgroundVRAppInit() {
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004BC136;
+	__asm        je     _T61f;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C4], eax;
-	__asm        jmp    near ptr 0x004BC145;
+	__asm        jmp    _T62e;
 
-	__asm        jmp    near ptr 0x004BC145;
+	__asm        jmp    _T62e;
 
+_T61f:
 	__asm        mov    dword ptr [ebp-0x4C4], 0;
-	__asm        jmp    near ptr 0x004BC145;
+	__asm        jmp    _T62e;
 
+_T62e:
 	__asm        push   0;
 	__asm        lea    eax, rectText.left;
 	__asm        push   eax;
@@ -758,6 +774,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 139:
+_T661:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x50];
@@ -768,31 +785,32 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   0x1E;
 	__asm        call   dword ptr ds:[0x6C35D8];
 // LINE 141:
-	__asm        jmp    near ptr 0x004BBDDC;
+	__asm        jmp    _T2c5;
 // LINE 142:
+_T685:
 	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBuffer::Close;
 // LINE 144:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
-	__asm        jge    near ptr 0x004BC2C5;
+	__asm        jge    _T7ae;
 // LINE 145:
 	__asm        mov    dword ptr [ebp-0x4BC], 0;
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004BC271;
+	__asm        jne    _T75a;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    [ebp-0x4E0], eax;
 	__asm        mov    eax, [ebp-0x4E0];
 	__asm        mov    [ebp-0x4DC], eax;
 	__asm        cmp    dword ptr [ebp-0x4DC], 0;
-	__asm        je     near ptr 0x004BC271;
+	__asm        je     _T75a;
 
 	__asm        mov    eax, [ebp-0x4DC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004BC24E;
+	__asm        je     _T737;
 
 	__asm        mov    eax, [ebp-0x4DC];
 	__asm        mov    eax, [eax];
@@ -807,6 +825,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x4DC];
 	__asm        mov    dword ptr [eax], 0;
+_T737:
 	__asm        jmp    near ptr 0x004BC253;
 
 	__asm        jmp    near ptr 0x004BC258;
@@ -817,12 +836,13 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BC26C;
 
-	__asm        jmp    near ptr 0x004BC271;
+	__asm        jmp    _T75a;
 
+_T75a:
 	__asm        jmp    near ptr 0x004BC276;
 
 	__asm        cmp    sCurrentInitializer.c_str_ptr, 0;
-	__asm        je     near ptr 0x004BC2AA;
+	__asm        je     _T793;
 
 	__asm        mov    eax, sCurrentInitializer.c_str_ptr;
 	__asm        mov    [ebp-0x4D4], eax;
@@ -832,30 +852,32 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T793:
 	__asm        jmp    near ptr 0x004BC2AF;
 
 	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4BC];
-	__asm        jmp    near ptr 0x004BC3D6;
+	__asm        jmp    _T8bf;
 // LINE 146:
+_T7ae:
 	__asm        mov    dword ptr [ebp-0x4C0], 1;
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004BC382;
+	__asm        jne    _T86b;
 
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    [ebp-0x4F8], eax;
 	__asm        mov    eax, [ebp-0x4F8];
 	__asm        mov    [ebp-0x4F4], eax;
 	__asm        cmp    dword ptr [ebp-0x4F4], 0;
-	__asm        je     near ptr 0x004BC382;
+	__asm        je     _T86b;
 
 	__asm        mov    eax, [ebp-0x4F4];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004BC35F;
+	__asm        je     _T848;
 
 	__asm        mov    eax, [ebp-0x4F4];
 	__asm        mov    eax, [eax];
@@ -870,6 +892,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x4F4];
 	__asm        mov    dword ptr [eax], 0;
+_T848:
 	__asm        jmp    near ptr 0x004BC364;
 
 	__asm        jmp    near ptr 0x004BC369;
@@ -880,12 +903,13 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004BC37D;
 
-	__asm        jmp    near ptr 0x004BC382;
+	__asm        jmp    _T86b;
 
+_T86b:
 	__asm        jmp    near ptr 0x004BC387;
 
 	__asm        cmp    sCurrentInitializer.c_str_ptr, 0;
-	__asm        je     near ptr 0x004BC3BB;
+	__asm        je     _T8a4;
 
 	__asm        mov    eax, sCurrentInitializer.c_str_ptr;
 	__asm        mov    [ebp-0x4EC], eax;
@@ -895,12 +919,13 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T8a4:
 	__asm        jmp    near ptr 0x004BC3C0;
 
 	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4C0];
-	__asm        jmp    near ptr 0x004BC3D6;
+	__asm        jmp    _T8bf;
 // LINE 150:
 }
 
@@ -920,7 +945,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	__asm        call   VRAppInit;
 	__asm        mov    ecx, tempVRAppInitThreadStruct;
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x004BC42A;
+	__asm        jmp    _T4f;
 // LINE 171:
 _L48858:
 	__asm        mov    eax, tempVRAppInitThreadStruct;
@@ -931,15 +956,17 @@ _L48858:
 // LINE 174:
 _L44245:
 _L44245:
+_T4f:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, tempVRAppInitThreadStruct;
 	__asm        mov    dword ptr [eax+4], 0x64;
 // LINE 178:
-	__asm        jmp    near ptr 0x004BC44A;
+	__asm        jmp    _T6f;
 _L48859:
 	__asm        mov    eax, 0x595CE0;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T6f:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

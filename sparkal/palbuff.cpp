@@ -234,29 +234,33 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x004472C0;
+	__asm        je     _T80;
 
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
+_T50:
 	__asm        dec    dword ptr [ebp-0x50];
-	__asm        js     near ptr 0x004472AA;
+	__asm        js     _T6a;
 
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    near ptr 0x00447290;
+	__asm        jmp    _T50;
 
+_T6a:
 	__asm        jmp    near ptr 0x004472AF;
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
-	__asm        jmp    near ptr 0x004472CD;
+	__asm        jmp    _T8d;
 
+_T80:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x134], 0;
 // LINE 38:
+_T8d:
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::SetPalette;
 // LINE 39:
@@ -272,7 +276,7 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
-	__asm        je     near ptr 0x00447318;
+	__asm        je     _Td8;
 
 	__asm        push   1;
 	__asm        push   0;
@@ -283,9 +287,11 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x0044731F;
+	__asm        jmp    _Tdf;
 
+_Td8:
 	__asm        mov    dword ptr [ebp-0x4C], 0;
+_Tdf:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -317,38 +323,43 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x004473C0;
+	__asm        je     _T80;
 
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
+_T50:
 	__asm        dec    dword ptr [ebp-0x50];
-	__asm        js     near ptr 0x004473AA;
+	__asm        js     _T6a;
 
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    near ptr 0x00447390;
+	__asm        jmp    _T50;
 
+_T6a:
 	__asm        jmp    near ptr 0x004473AF;
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
-	__asm        jmp    near ptr 0x004473CD;
+	__asm        jmp    _T8d;
 
+_T80:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x134], 0;
 // LINE 56:
+_T8d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x134], 0;
-	__asm        je     near ptr 0x004473E9;
+	__asm        je     _Ta9;
 // LINE 57:
 	__asm        mov    eax, newSparkalColors;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::SetPalette;
 // LINE 58:
+_Ta9:
 	__asm        lea    eax, szTypeFaceName[0];
 	__asm        push   eax;
 	__asm        push   0;
@@ -361,7 +372,7 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
-	__asm        je     near ptr 0x0044742C;
+	__asm        je     _Tec;
 
 	__asm        push   1;
 	__asm        push   0;
@@ -372,9 +383,11 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x00447433;
+	__asm        jmp    _Tf3;
 
+_Tec:
 	__asm        mov    dword ptr [ebp-0x4C], 0;
+_Tf3:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -396,7 +409,7 @@ void PaletteBuffer::~PaletteBuffer() {
 // LINE 70:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x134], 0;
-	__asm        je     near ptr 0x00447499;
+	__asm        je     _T43;
 // LINE 71:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];
@@ -408,6 +421,7 @@ void PaletteBuffer::~PaletteBuffer() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 72:
+_T43:
 	__asm        jmp    near ptr 0x0044749E;
 
 	__asm        mov    ecx, this;
@@ -420,11 +434,13 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 
 // LINE 81:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004474C6;
+	__asm        jmp    _T1b;
 
+_T18:
 	__asm        inc    i;
+_T1b:
 	__asm        cmp    i, 0x100;
-	__asm        jge    near ptr 0x004474F0;
+	__asm        jge    _T45;
 // LINE 82:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, pColors;
@@ -434,8 +450,9 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 	__asm        mov    edx, i;
 	__asm        mov    [ecx+edx*4], eax;
 // LINE 83:
-	__asm        jmp    near ptr 0x004474C3;
+	__asm        jmp    _T18;
 // LINE 84:
+_T45:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004474FA;
 // LINE 85:
@@ -454,11 +471,12 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        mov    paletteEntries, eax;
 // LINE 101:
 	__asm        cmp    paletteEntries, 0;
-	__asm        jne    near ptr 0x0044752E;
+	__asm        jne    _T2d;
 // LINE 102:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004475DD;
+	__asm        jmp    _Tdc;
 // LINE 103:
+_T2d:
 	__asm        mov    eax, paletteEntries;
 	__asm        push   eax;
 	__asm        push   0x100;
@@ -472,11 +490,13 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        mov    hResult, eax;
 // LINE 104:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044755D;
+	__asm        jmp    _T5c;
 
+_T59:
 	__asm        inc    i;
+_T5c:
 	__asm        cmp    i, 0x100;
-	__asm        jge    near ptr 0x004475BB;
+	__asm        jge    _Tba;
 // LINE 105:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, paletteEntries;
@@ -502,8 +522,9 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        mov    edx, [edx+0x134];
 	__asm        mov    [edx+ecx*4], al;
 // LINE 108:
-	__asm        jmp    near ptr 0x0044755A;
+	__asm        jmp    _T59;
 // LINE 109:
+_Tba:
 	__asm        mov    eax, paletteEntries;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
@@ -514,7 +535,7 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        add    esp, 4;
 // LINE 110:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004475DD;
+	__asm        jmp    _Tdc;
 // LINE 114:
 }
 
@@ -548,11 +569,13 @@ void PaletteBuffer::DrawPalette() {
 	__asm        call   dword ptr [eax+0x44];
 // LINE 138:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00447648;
+	__asm        jmp    _T66;
 
+_T63:
 	__asm        inc    i;
+_T66:
 	__asm        cmp    i, 0x100;
-	__asm        jge    near ptr 0x00447741;
+	__asm        jge    _T15f;
 // LINE 139:
 	__asm        mov    ecx, 0x2C;
 	__asm        mov    eax, i;
@@ -637,8 +660,9 @@ void PaletteBuffer::DrawPalette() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 151:
-	__asm        jmp    near ptr 0x00447645;
+	__asm        jmp    _T63;
 // LINE 152:
+_T15f:
 	__asm        jmp    near ptr 0x00447746;
 }
 

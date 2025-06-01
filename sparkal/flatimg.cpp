@@ -161,17 +161,19 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 
 // LINE 39:
 	__asm        cmp    pDest, 0;
-	__asm        jne    near ptr 0x0048F1A3;
+	__asm        jne    _T2f;
 
 	__asm        push   0x27;
 	__asm        push   0x599DA8;
 	__asm        push   0x599DD0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F1A8;
+	__asm        jmp    _T34;
 
-	__asm        jmp    near ptr 0x0048F1A8;
+_T2f:
+	__asm        jmp    _T34;
 // LINE 42:
+_T34:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -184,30 +186,34 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 // LINE 46:
 	__asm        mov    eax, SourceHeight;
 	__asm        cmp    DestHeight, eax;
-	__asm        jge    near ptr 0x0048F1E1;
+	__asm        jge    _T6d;
 
 	__asm        push   0x2E;
 	__asm        push   0x599DD8;
 	__asm        push   0x599E00;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F1E6;
+	__asm        jmp    _T72;
 
-	__asm        jmp    near ptr 0x0048F1E6;
+_T6d:
+	__asm        jmp    _T72;
 // LINE 47:
+_T72:
 	__asm        mov    eax, SourceWidth;
 	__asm        cmp    DestWidth, eax;
-	__asm        jge    near ptr 0x0048F20B;
+	__asm        jge    _T97;
 
 	__asm        push   0x2F;
 	__asm        push   0x599E1C;
 	__asm        push   0x599E44;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F210;
+	__asm        jmp    _T9c;
 
-	__asm        jmp    near ptr 0x0048F210;
+_T97:
+	__asm        jmp    _T9c;
 // LINE 49:
+_T9c:
 	__asm        mov    ReturnCode, 0;
 // LINE 51:
 	__asm        jmp    near ptr 0x0048F21C;
@@ -250,9 +256,10 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 // LINE 62:
 	__asm        mov    YCount, 0;
 // LINE 63:
+_T10a:
 	__asm        mov    eax, SourceHeight;
 	__asm        cmp    YCount, eax;
-	__asm        jge    near ptr 0x0048F309;
+	__asm        jge    _T195;
 // LINE 66:
 // Block start:
 	long XError;
@@ -269,9 +276,10 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 // LINE 70:
 	__asm        mov    XCount, 0;
 // LINE 71:
+_T131:
 	__asm        mov    eax, SourceWidth;
 	__asm        cmp    XCount, eax;
-	__asm        jge    near ptr 0x0048F2DF;
+	__asm        jge    _T16b;
 // LINE 74:
 	__asm        mov    eax, pSourceBits;
 	__asm        mov    al, [eax];
@@ -282,7 +290,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 	__asm        mov    eax, SourceWidth;
 	__asm        add    XError, eax;
 // LINE 78:
-	__asm        js     near ptr 0x0048F2DA;
+	__asm        js     _T166;
 // LINE 80:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, DestWidth;
@@ -293,15 +301,17 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 // LINE 82:
 	__asm        inc    XCount;
 // LINE 84:
-	__asm        jmp    near ptr 0x0048F2A5;
+_T166:
+	__asm        jmp    _T131;
 // LINE 87:
+_T16b:
 	__asm        mov    eax, DestStride;
 	__asm        add    pDestLeft, eax;
 // LINE 90:
 	__asm        mov    eax, SourceHeight;
 	__asm        add    YError, eax;
 // LINE 91:
-	__asm        js     near ptr 0x0048F304;
+	__asm        js     _T190;
 // LINE 93:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, DestHeight;
@@ -314,8 +324,10 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 	__asm        inc    YCount;
 // LINE 97:
 // Block end:
-	__asm        jmp    near ptr 0x0048F27E;
+_T190:
+	__asm        jmp    _T10a;
 // LINE 99:
+_T195:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, pDest;
@@ -408,17 +420,19 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 
 // LINE 134:
 	__asm        cmp    pDest, 0;
-	__asm        jne    near ptr 0x0048F3E3;
+	__asm        jne    _T32;
 
 	__asm        push   0x86;
 	__asm        push   0x599E60;
 	__asm        push   0x599E88;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F3E8;
+	__asm        jmp    _T37;
 
-	__asm        jmp    near ptr 0x0048F3E8;
+_T32:
+	__asm        jmp    _T37;
 // LINE 137:
+_T37:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -445,7 +459,7 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 // LINE 148:
 	__asm        mov    eax, DestTop;
 	__asm        cmp    ClipTop, eax;
-	__asm        jle    near ptr 0x0048F451;
+	__asm        jle    _Ta0;
 // LINE 150:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -464,9 +478,10 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	__asm        mov    eax, ClipTop;
 	__asm        mov    DestTop, eax;
 // LINE 155:
+_Ta0:
 	__asm        mov    eax, DestLeft;
 	__asm        cmp    ClipLeft, eax;
-	__asm        jle    near ptr 0x0048F47B;
+	__asm        jle    _Tca;
 // LINE 157:
 	__asm        mov    eax, ClipLeft;
 	__asm        sub    eax, DestLeft;
@@ -482,26 +497,29 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	__asm        mov    eax, ClipLeft;
 	__asm        mov    DestLeft, eax;
 // LINE 164:
+_Tca:
 	__asm        mov    eax, Width;
 	__asm        add    eax, DestLeft;
 	__asm        cmp    eax, ClipRight;
-	__asm        jl     near ptr 0x0048F494;
+	__asm        jl     _Te3;
 // LINE 165:
 	__asm        mov    eax, ClipRight;
 	__asm        sub    eax, DestLeft;
 	__asm        dec    eax;
 	__asm        mov    Width, eax;
 // LINE 167:
+_Te3:
 	__asm        mov    eax, Height;
 	__asm        add    eax, DestTop;
 	__asm        cmp    eax, ClipBottom;
-	__asm        jl     near ptr 0x0048F4AD;
+	__asm        jl     _Tfc;
 // LINE 168:
 	__asm        mov    eax, ClipBottom;
 	__asm        sub    eax, DestTop;
 	__asm        dec    eax;
 	__asm        mov    Height, eax;
 // LINE 170:
+_Tfc:
 	__asm        jmp    near ptr 0x0048F4B2;
 
 	__asm        mov    eax, pDest;
@@ -514,31 +532,32 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	__asm        jmp    near ptr 0x0048F4C9;
 // LINE 173:
 	__asm        cmp    Width, 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 
 	__asm        cmp    pSource, 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 
 	__asm        cmp    pDest, 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 
 	__asm        cmp    DestStride, 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 // LINE 175:
 	__asm        mov    eax, DestStride;
 	__asm        imul   eax, DestTop;
 	__asm        add    eax, DestLeft;
 	__asm        add    pDestBits, eax;
 // LINE 176:
+_T15a:
 	__asm        mov    eax, Height;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    Height;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x0048F546;
+	__asm        je     _T195;
 // LINE 179:
 	__asm        mov    eax, Width;
 	__asm        push   eax;
@@ -556,8 +575,9 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 	__asm        mov    eax, [eax+0x14];
 	__asm        add    pSource, eax;
 // LINE 182:
-	__asm        jmp    near ptr 0x0048F50B;
+	__asm        jmp    _T15a;
 // LINE 185:
+_T195:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, pDest;
@@ -585,7 +605,7 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 
 // LINE 206:
 	__asm        cmp    rectFill, 0;
-	__asm        je     near ptr 0x0048F5FB;
+	__asm        je     _T90;
 // LINE 207:
 	__asm        mov    eax, rectFill;
 	__asm        mov    eax, [eax];
@@ -604,35 +624,40 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	__asm        mov    Bottom, eax;
 // LINE 213:
 	__asm        cmp    Left, 0;
-	__asm        jge    near ptr 0x0048F5B5;
+	__asm        jge    _T4a;
 // LINE 214:
 	__asm        mov    Left, 0;
 // LINE 215:
+_T4a:
 	__asm        cmp    Top, 0;
-	__asm        jge    near ptr 0x0048F5C6;
+	__asm        jge    _T5b;
 // LINE 216:
 	__asm        mov    Top, 0;
 // LINE 217:
+_T5b:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, Right;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x0048F5DE;
+	__asm        jge    _T73;
 // LINE 218:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    Right, eax;
 // LINE 219:
+_T73:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, Bottom;
 	__asm        cmp    [eax+0xC], ecx;
-	__asm        jge    near ptr 0x0048F5F6;
+	__asm        jge    _T8b;
 // LINE 220:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    Bottom, eax;
 // LINE 222:
-	__asm        jmp    near ptr 0x0048F614;
+_T8b:
+	__asm        jmp    _Ta9;
 // LINE 223:
+_T90:
 	__asm        mov    Bottom, 0;
 	__asm        mov    eax, Bottom;
 	__asm        mov    Right, eax;
@@ -641,6 +666,7 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	__asm        mov    eax, Top;
 	__asm        mov    Left, eax;
 // LINE 225:
+_Ta9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -663,13 +689,14 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	__asm        mov    Width, eax;
 // LINE 230:
 	__asm        cmp    Width, 0;
-	__asm        je     near ptr 0x0048F685;
+	__asm        je     _T11a;
 // LINE 231:
+_Te5:
 	__asm        mov    eax, Height;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        dec    Height;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x0048F685;
+	__asm        je     _T11a;
 // LINE 232:
 	__asm        mov    eax, Width;
 	__asm        push   eax;
@@ -684,8 +711,9 @@ unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectF
 	__asm        mov    eax, [eax+0x14];
 	__asm        add    pBits, eax;
 // LINE 234:
-	__asm        jmp    near ptr 0x0048F650;
+	__asm        jmp    _Te5;
 // LINE 236:
+_T11a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -730,20 +758,23 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        mov    word ptr [ebp-0x14], 0;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x18;
-	__asm        je     near ptr 0x0048F715;
+	__asm        je     _T77;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        jne    near ptr 0x0048F731;
+	__asm        jne    _T93;
 
+_T77:
 	__asm        push   0x12A;
 	__asm        push   0x597444;
 	__asm        push   0x59A090;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F736;
+	__asm        jmp    _T98;
 
-	__asm        jmp    near ptr 0x0048F736;
+_T93:
+	__asm        jmp    _T98;
 
+_T98:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        push   0x42;
@@ -752,14 +783,15 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        mov    [ecx+0x18], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        jne    near ptr 0x0048F75B;
+	__asm        jne    _Tbd;
 
 	__asm        mov    word ptr [ebp-0x14], 0xFFFF;
+_Tbd:
 	__asm        jmp    near ptr 0x0048F760;
 // LINE 261:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x0048F85E;
+	__asm        je     _T1c0;
 // LINE 262:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -767,21 +799,24 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 // LINE 263:
 	__asm        mov    word ptr [ebp-0xC], 0;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x0048F792;
+	__asm        je     _Tf4;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
-	__asm        jne    near ptr 0x0048F7AE;
+	__asm        jne    _T110;
 
+_Tf4:
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F7B3;
+	__asm        jmp    _T115;
 
-	__asm        jmp    near ptr 0x0048F7B3;
+_T110:
+	__asm        jmp    _T115;
 
+_T115:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E4];
@@ -789,14 +824,15 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        mov    [ecx+0x10], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x0048F7D6;
+	__asm        jne    _T138;
 
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
+_T138:
 	__asm        jmp    near ptr 0x0048F7DB;
 // LINE 264:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0048F85E;
+	__asm        je     _T1c0;
 // LINE 266:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -817,17 +853,19 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 // LINE 267:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0048F840;
+	__asm        jne    _T1a2;
 
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F845;
+	__asm        jmp    _T1a7;
 
-	__asm        jmp    near ptr 0x0048F845;
+_T1a2:
+	__asm        jmp    _T1a7;
 
+_T1a7:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
@@ -836,6 +874,7 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 271:
+_T1c0:
 	__asm        jmp    near ptr 0x0048F863;
 
 	__asm        mov    eax, this;
@@ -850,43 +889,49 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    dword ptr [eax], 0x591070;
 // LINE 279:
 	__asm        cmp    pImage, 0;
-	__asm        jne    near ptr 0x0048F8B0;
+	__asm        jne    _T43;
 
 	__asm        push   0x117;
 	__asm        push   0x599E90;
 	__asm        push   0x599EB8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F8B5;
+	__asm        jmp    _T48;
 
-	__asm        jmp    near ptr 0x0048F8B5;
+_T43:
+	__asm        jmp    _T48;
 // LINE 280:
+_T48:
 	__asm        mov    eax, SrcLeft;
 	__asm        cmp    SrcRight, eax;
-	__asm        jg     near ptr 0x0048F8DD;
+	__asm        jg     _T70;
 
 	__asm        push   0x118;
 	__asm        push   0x599EC0;
 	__asm        push   0x599EE8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F8E2;
+	__asm        jmp    _T75;
 
-	__asm        jmp    near ptr 0x0048F8E2;
+_T70:
+	__asm        jmp    _T75;
 // LINE 281:
+_T75:
 	__asm        mov    eax, SrcTop;
 	__asm        cmp    SrcBottom, eax;
-	__asm        jg     near ptr 0x0048F90A;
+	__asm        jg     _T9d;
 
 	__asm        push   0x119;
 	__asm        push   0x599EFC;
 	__asm        push   0x599F24;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F90F;
+	__asm        jmp    _Ta2;
 
-	__asm        jmp    near ptr 0x0048F90F;
+_T9d:
+	__asm        jmp    _Ta2;
 // LINE 283:
+_Ta2:
 	__asm        mov    eax, SrcRight;
 	__asm        sub    eax, SrcLeft;
 	__asm        mov    ecx, this;
@@ -903,34 +948,38 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    ecx, pImage;
 	__asm        mov    ecx, [ecx+8];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x0048F95A;
+	__asm        jle    _Ted;
 
 	__asm        push   0x11D;
 	__asm        push   0x599F38;
 	__asm        push   0x599F60;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F95F;
+	__asm        jmp    _Tf2;
 
-	__asm        jmp    near ptr 0x0048F95F;
+_Ted:
+	__asm        jmp    _Tf2;
 // LINE 286:
+_Tf2:
 	__asm        jmp    near ptr 0x0048F964;
 
 	__asm        mov    eax, pImage;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+0xC], ecx;
-	__asm        jge    near ptr 0x0048F992;
+	__asm        jge    _T125;
 
 	__asm        push   0x11E;
 	__asm        push   0x599F80;
 	__asm        push   0x599FA8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F997;
+	__asm        jmp    _T12a;
 
-	__asm        jmp    near ptr 0x0048F997;
+_T125:
+	__asm        jmp    _T12a;
 // LINE 289:
+_T12a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        add    eax, 3;
@@ -946,20 +995,23 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    word ptr [ebp-0x30], 0;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x18;
-	__asm        je     near ptr 0x0048F9D5;
+	__asm        je     _T168;
 
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        jne    near ptr 0x0048F9F1;
+	__asm        jne    _T184;
 
+_T168:
 	__asm        push   0x12A;
 	__asm        push   0x597444;
 	__asm        push   0x59A090;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048F9F6;
+	__asm        jmp    _T189;
 
-	__asm        jmp    near ptr 0x0048F9F6;
+_T184:
+	__asm        jmp    _T189;
 
+_T189:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        push   0x42;
@@ -968,14 +1020,15 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    [ecx+0x18], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        jne    near ptr 0x0048FA1B;
+	__asm        jne    _T1ae;
 
 	__asm        mov    word ptr [ebp-0x30], 0xFFFF;
+_T1ae:
 	__asm        jmp    near ptr 0x0048FA20;
 // LINE 291:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x0048FBDD;
+	__asm        je     _T370;
 // LINE 292:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -983,21 +1036,24 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 // LINE 293:
 	__asm        mov    word ptr [ebp-0x28], 0;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0048FA52;
+	__asm        je     _T1e5;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
-	__asm        jne    near ptr 0x0048FA6E;
+	__asm        jne    _T201;
 
+_T1e5:
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FA73;
+	__asm        jmp    _T206;
 
-	__asm        jmp    near ptr 0x0048FA73;
+_T201:
+	__asm        jmp    _T206;
 
+_T206:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E4];
@@ -1005,14 +1061,15 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    [ecx+0x10], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x0048FA96;
+	__asm        jne    _T229;
 
 	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
+_T229:
 	__asm        jmp    near ptr 0x0048FA9B;
 // LINE 294:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0048FB8A;
+	__asm        je     _T31d;
 // LINE 296:
 // Block start:
 	unsigned char * pSource;
@@ -1036,13 +1093,13 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        jmp    near ptr 0x0048FAD2;
 // LINE 301:
 	__asm        cmp    pBits, 0;
-	__asm        je     near ptr 0x0048FB3C;
+	__asm        je     _T2cf;
 
 	__asm        cmp    pSource, 0;
-	__asm        je     near ptr 0x0048FB3C;
+	__asm        je     _T2cf;
 
 	__asm        cmp    SrcStride, 0;
-	__asm        je     near ptr 0x0048FB3C;
+	__asm        je     _T2cf;
 // LINE 303:
 // Block start:
 	int32_t Count;
@@ -1050,11 +1107,12 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    Count, eax;
 // LINE 304:
+_T28c:
 	__asm        mov    eax, Count;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        dec    Count;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0048FB37;
+	__asm        je     _T2ca;
 // LINE 306:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1073,53 +1131,60 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    eax, SrcStride;
 	__asm        add    pSource, eax;
 // LINE 309:
-	__asm        jmp    near ptr 0x0048FAF9;
+	__asm        jmp    _T28c;
 // LINE 311:
 // Block end:
-	__asm        jmp    near ptr 0x0048FB3C;
+_T2ca:
+	__asm        jmp    _T2cf;
 // LINE 314:
+_T2cf:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x1C], eax;
 // LINE 316:
 	__asm        mov    word ptr [ebp-0x18], 0;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        jne    near ptr 0x0048FB71;
+	__asm        jne    _T304;
 
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FB76;
+	__asm        jmp    _T309;
 
-	__asm        jmp    near ptr 0x0048FB76;
+_T304:
+	__asm        jmp    _T309;
 
+_T309:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
 	__asm        jmp    near ptr 0x0048FB85;
 // LINE 318:
 // Block end:
-	__asm        jmp    near ptr 0x0048FBDD;
+	__asm        jmp    _T370;
 // LINE 319:
+_T31d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x24], eax;
 // LINE 320:
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        jne    near ptr 0x0048FBBF;
+	__asm        jne    _T352;
 
 	__asm        push   0x134;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FBC4;
+	__asm        jmp    _T357;
 
-	__asm        jmp    near ptr 0x0048FBC4;
+_T352:
+	__asm        jmp    _T357;
 
+_T357:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3650];
@@ -1128,9 +1193,10 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 325:
+_T370:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        jne    near ptr 0x0048FC00;
+	__asm        jne    _T393;
 // LINE 326:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
@@ -1139,6 +1205,7 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 // LINE 328:
+_T393:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 329:
@@ -1158,42 +1225,47 @@ void CFlatImage::~CFlatImage() {
 // LINE 337:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0048FC61;
+	__asm        je     _T3e;
 
 	__asm        push   0x151;
 	__asm        push   0x599FC8;
 	__asm        push   0x599FF0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FC66;
+	__asm        jmp    _T43;
 
-	__asm        jmp    near ptr 0x0048FC66;
+_T3e:
+	__asm        jmp    _T43;
 // LINE 338:
+_T43:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x0048FCBC;
+	__asm        je     _T99;
 // LINE 339:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0048FCA8;
+	__asm        jne    _T85;
 
 	__asm        push   0x134;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FCAD;
+	__asm        jmp    _T8a;
 
-	__asm        jmp    near ptr 0x0048FCAD;
+_T85:
+	__asm        jmp    _T8a;
 
+_T8a:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3650];
-	__asm        jmp    near ptr 0x0048FCBC;
+	__asm        jmp    _T99;
 // LINE 340:
+_T99:
 	__asm        jmp    near ptr 0x0048FCC1;
 }
 
@@ -1202,7 +1274,7 @@ unsigned long CFlatImage::Lock() {
 // LINE 349:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0048FD5F;
+	__asm        jne    _T99;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1210,21 +1282,24 @@ unsigned long CFlatImage::Lock() {
 // LINE 350:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0048FD04;
+	__asm        je     _T3e;
 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
-	__asm        jne    near ptr 0x0048FD20;
+	__asm        jne    _T5a;
 
+_T3e:
 	__asm        push   0x147;
 	__asm        push   0x597444;
 	__asm        push   0x59A068;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FD25;
+	__asm        jmp    _T5f;
 
-	__asm        jmp    near ptr 0x0048FD25;
+_T5a:
+	__asm        jmp    _T5f;
 
+_T5f:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E4];
@@ -1232,9 +1307,10 @@ unsigned long CFlatImage::Lock() {
 	__asm        mov    [ecx+0x10], eax;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x0048FD48;
+	__asm        jne    _T82;
 
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
+_T82:
 	__asm        jmp    near ptr 0x0048FD4D;
 // LINE 351:
 	__asm        mov    eax, this;
@@ -1244,15 +1320,17 @@ unsigned long CFlatImage::Lock() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 354:
+_T99:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0048FD78;
+	__asm        je     _Tb2;
 // LINE 355:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 // LINE 357:
 	__asm        inc    dword ptr ds:[0x599DA4];
 // LINE 360:
+_Tb2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0048FD83;
@@ -1264,33 +1342,37 @@ unsigned long CFlatImage::Unlock() {
 // LINE 364:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        ja     near ptr 0x0048FDBD;
+	__asm        ja     _T35;
 
 	__asm        push   0x16C;
 	__asm        push   0x59A000;
 	__asm        push   0x59A028;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FDC2;
+	__asm        jmp    _T3a;
 
-	__asm        jmp    near ptr 0x0048FDC2;
+_T35:
+	__asm        jmp    _T3a;
 // LINE 365:
+_T3a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x0048FDEB;
+	__asm        jne    _T63;
 
 	__asm        push   0x16D;
 	__asm        push   0x59A038;
 	__asm        push   0x59A060;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FDF0;
+	__asm        jmp    _T68;
 
-	__asm        jmp    near ptr 0x0048FDF0;
+_T63:
+	__asm        jmp    _T68;
 // LINE 367:
+_T68:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x0048FE73;
+	__asm        je     _Teb;
 // LINE 368:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
@@ -1299,7 +1381,7 @@ unsigned long CFlatImage::Unlock() {
 // LINE 373:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0048FE73;
+	__asm        jne    _Teb;
 // LINE 374:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -1312,22 +1394,25 @@ unsigned long CFlatImage::Unlock() {
 // LINE 376:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        jne    near ptr 0x0048FE5F;
+	__asm        jne    _Td7;
 
 	__asm        push   0x151;
 	__asm        push   0x597444;
 	__asm        push   0x59A080;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0048FE64;
+	__asm        jmp    _Tdc;
 
-	__asm        jmp    near ptr 0x0048FE64;
+_Td7:
+	__asm        jmp    _Tdc;
 
+_Tdc:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
-	__asm        jmp    near ptr 0x0048FE73;
+	__asm        jmp    _Teb;
 // LINE 380:
+_Teb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    near ptr 0x0048FE7E;

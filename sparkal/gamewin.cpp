@@ -323,7 +323,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        mov    [ecx+0xC], eax;
 // LINE 44:
 	__asm        cmp    Caption, 0;
-	__asm        je     near ptr 0x00467017;
+	__asm        je     _Ta7;
 // LINE 45:
 	__asm        mov    eax, Caption;
 	__asm        push   eax;
@@ -344,8 +344,9 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 48:
-	__asm        jmp    near ptr 0x00467041;
+	__asm        jmp    _Td1;
 // LINE 49:
+_Ta7:
 	__asm        push   4;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -359,6 +360,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 53:
+_Td1:
 	__asm        lea    eax, ClassInfo.style;
 	__asm        push   eax;
 	__asm        push   0x599AB8;
@@ -366,7 +368,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3878];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004670BC;
+	__asm        jne    _T14c;
 // LINE 54:
 	__asm        mov    ClassInfo.hCursor, 0;
 // LINE 55:
@@ -398,6 +400,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3814];
 // LINE 67:
+_T14c:
 	__asm        mov    ecx, this;
 	__asm        call   GameWindow::CreateSparkalWindow;
 // LINE 68:
@@ -419,11 +422,12 @@ unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00467102;
+	__asm        je     _T23;
 // LINE 84:
 	__asm        mov    eax, 0x80000000;
-	__asm        jmp    near ptr 0x004672C6;
+	__asm        jmp    _T1e7;
 // LINE 86:
+_T23:
 	__asm        mov    rectWindowForAdjust.top, 0;
 // LINE 87:
 	__asm        mov    rectWindowForAdjust.left, 0;
@@ -440,40 +444,46 @@ unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 92:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 1;
-	__asm        je     near ptr 0x00467142;
+	__asm        je     _T63;
 // LINE 93:
 	__asm        or     dwWindowStyle, 0x40000;
 // LINE 94:
-	__asm        jmp    near ptr 0x00467162;
+	__asm        jmp    _T83;
 
+_T63:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 4;
-	__asm        je     near ptr 0x0046715B;
+	__asm        je     _T7c;
 // LINE 95:
 	__asm        or     dwWindowStyle, 0x800000;
 // LINE 96:
-	__asm        jmp    near ptr 0x00467162;
+	__asm        jmp    _T83;
 // LINE 97:
+_T7c:
 	__asm        or     dwWindowStyle, 0x80000000;
 // LINE 98:
+_T83:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 2;
-	__asm        je     near ptr 0x00467176;
+	__asm        je     _T97;
 // LINE 99:
 	__asm        or     dwWindowStyle, 0xC00000;
 // LINE 100:
+_T97:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 8;
-	__asm        je     near ptr 0x0046718A;
+	__asm        je     _Tab;
 // LINE 101:
 	__asm        or     dwWindowStyle, 0xC80000;
 // LINE 102:
+_Tab:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 0x10;
-	__asm        je     near ptr 0x0046719E;
+	__asm        je     _Tbf;
 // LINE 103:
 	__asm        or     dwWindowStyle, 0xB0000;
 // LINE 107:
+_Tbf:
 	__asm        push   0x40000;
 	__asm        push   0;
 	__asm        mov    eax, dwWindowStyle;
@@ -557,7 +567,7 @@ unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 132:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x004672BC;
+	__asm        je     _T1dd;
 // LINE 134:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -579,10 +589,11 @@ unsigned long GameWindow::CreateSparkalWindow() {
 	__asm        call   dword ptr ds:[0x6C3864];
 // LINE 137:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004672C6;
+	__asm        jmp    _T1e7;
 // LINE 139:
+_T1dd:
 	__asm        mov    eax, 0x80000000;
-	__asm        jmp    near ptr 0x004672C6;
+	__asm        jmp    _T1e7;
 // LINE 141:
 }
 
@@ -626,8 +637,9 @@ unsigned long GameWindow::Draw() {
 // LINE 172:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00467384;
+	__asm        je     _T4e;
 // LINE 173:
+_T19:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14];
@@ -635,10 +647,11 @@ unsigned long GameWindow::Draw() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0046736D;
+	__asm        je     _T37;
 
-	__asm        jmp    near ptr 0x0046734F;
+	__asm        jmp    _T19;
 // LINE 174:
+_T37:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0;
@@ -649,6 +662,7 @@ unsigned long GameWindow::Draw() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x1C];
 // LINE 176:
+_T4e:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046738B;
 // LINE 177:
@@ -659,8 +673,9 @@ unsigned long GameWindow::SwapBuffer() {
 // LINE 185:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x004673DE;
+	__asm        je     _T4e;
 // LINE 186:
+_T19:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14];
@@ -668,10 +683,11 @@ unsigned long GameWindow::SwapBuffer() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004673C7;
+	__asm        je     _T37;
 
-	__asm        jmp    near ptr 0x004673A9;
+	__asm        jmp    _T19;
 // LINE 187:
+_T37:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0;
@@ -682,6 +698,7 @@ unsigned long GameWindow::SwapBuffer() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x1C];
 // LINE 189:
+_T4e:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004673E5;
 // LINE 190:
@@ -699,13 +716,14 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 
 // LINE 199:
 	__asm        cmp    pColors, 0;
-	__asm        jne    near ptr 0x00467410;
+	__asm        jne    _T26;
 // LINE 200:
 	__asm        mov    eax, 0x80000000;
-	__asm        jmp    near ptr 0x0046769A;
+	__asm        jmp    _T2b0;
 // LINE 201:
+_T26:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046769A;
+	__asm        jmp    _T2b0;
 // LINE 208:
 	__asm        mov    LogPalette.Version, 0x300;
 	__asm        mov    LogPalette.NumberOfEntries, 0x100;
@@ -723,7 +741,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        mov    hdc, eax;
 // LINE 216:
 	__asm        cmp    hdc, 0;
-	__asm        je     near ptr 0x0046749B;
+	__asm        je     _Tb1;
 // LINE 217:
 	__asm        mov    eax, hdc;
 	__asm        push   eax;
@@ -749,6 +767,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 224:
+_Tb1:
 	__asm        mov    eax, StaticCount;
 	__asm        cdq;
 	__asm        sub    eax, edx;
@@ -764,33 +783,39 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        mov    End, ecx;
 // LINE 228:
 	__asm        cmp    PaletteUse, 2;
-	__asm        jne    near ptr 0x004674D2;
+	__asm        jne    _Te8;
 // LINE 229:
 	__asm        mov    Start, 1;
 // LINE 230:
 	__asm        mov    End, 0xFF;
 // LINE 234:
+_Te8:
 	__asm        mov    Counter, 0;
-	__asm        jmp    near ptr 0x004674E1;
+	__asm        jmp    _Tf7;
 
+_Tf4:
 	__asm        inc    Counter;
+_Tf7:
 	__asm        mov    eax, Counter;
 	__asm        cmp    Start, eax;
-	__asm        jle    near ptr 0x004674FD;
+	__asm        jle    _T113;
 // LINE 235:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-	__asm        jmp    near ptr 0x004674DE;
+	__asm        jmp    _Tf4;
 // LINE 238:
+_T113:
 	__asm        cmp    pColors, 0;
-	__asm        je     near ptr 0x0046756B;
+	__asm        je     _T181;
 // LINE 239:
-	__asm        jmp    near ptr 0x0046750F;
+	__asm        jmp    _T125;
 
+_T122:
 	__asm        inc    Counter;
+_T125:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
-	__asm        jge    near ptr 0x00467566;
+	__asm        jge    _T17c;
 // LINE 240:
 	__asm        mov    eax, Counter;
 	__asm        mov    ecx, pColors;
@@ -813,16 +838,20 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 244:
-	__asm        jmp    near ptr 0x0046750C;
+	__asm        jmp    _T122;
 // LINE 246:
-	__asm        jmp    near ptr 0x004675B6;
+_T17c:
+	__asm        jmp    _T1cc;
 // LINE 247:
-	__asm        jmp    near ptr 0x00467573;
+_T181:
+	__asm        jmp    _T189;
 
+_T186:
 	__asm        inc    Counter;
+_T189:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
-	__asm        jge    near ptr 0x004675B6;
+	__asm        jge    _T1cc;
 // LINE 248:
 	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
 	__asm        mov    ecx, Counter;
@@ -839,18 +868,22 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 252:
-	__asm        jmp    near ptr 0x00467570;
+	__asm        jmp    _T186;
 // LINE 256:
-	__asm        jmp    near ptr 0x004675BE;
+_T1cc:
+	__asm        jmp    _T1d4;
 
+_T1d1:
 	__asm        inc    Counter;
+_T1d4:
 	__asm        cmp    Counter, 0x100;
-	__asm        jge    near ptr 0x004675DB;
+	__asm        jge    _T1f1;
 // LINE 257:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-	__asm        jmp    near ptr 0x004675BB;
+	__asm        jmp    _T1d1;
 // LINE 260:
+_T1f1:
 	__asm        lea    eax, LogPalette.Version;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C357C];
@@ -864,7 +897,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        mov    hdc, eax;
 // LINE 264:
 	__asm        cmp    hdc, 0;
-	__asm        je     near ptr 0x00467693;
+	__asm        je     _T2a9;
 // LINE 265:
 	__asm        push   1;
 	__asm        mov    eax, hdc;
@@ -898,7 +931,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        call   CheckIdentityPalette;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0046767F;
+	__asm        jne    _T295;
 // LINE 271:
 	__asm        push   0;
 	__asm        push   0x59931C;
@@ -906,6 +939,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 273:
+_T295:
 	__asm        mov    eax, hdc;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -913,8 +947,9 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 276:
+_T2a9:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046769A;
+	__asm        jmp    _T2b0;
 // LINE 277:
 }
 
@@ -1001,7 +1036,7 @@ void GameWindow::ProcessWindowMove() {
 // LINE 323:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x004677A4;
+	__asm        je     _Td4;
 // LINE 324:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x88;
@@ -1013,6 +1048,7 @@ void GameWindow::ProcessWindowMove() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x80];
 // LINE 326:
+_Td4:
 	__asm        jmp    near ptr 0x004677A9;
 }
 
@@ -1405,7 +1441,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 // LINE 496:
 	__asm        mov    eax, Message;
 	__asm        cmp    ds:[0x646ED0], eax;
-	__asm        jne    near ptr 0x00467BCD;
+	__asm        jne    _T31;
 // LINE 497:
 	__asm        push   0x599348;
 	__asm        call   TWKReadAllFiles;
@@ -1414,12 +1450,14 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   TWKUpdate;
 // LINE 499:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 502:
+_T31:
 	__asm        mov    eax, Message;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00467EE1;
+	__asm        jmp    _T345;
 // LINE 504:
+_T3c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
@@ -1428,12 +1466,12 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 505:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 508:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 509:
-	__asm        jmp    near ptr 0x00467FF5;
+	__asm        jmp    _T459;
 // LINE 513:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1441,7 +1479,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [eax+0x40];
 // LINE 514:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 517:
 	__asm        mov    eax, lParam;
 	__asm        mov    lpMinMaxInfo, eax;
@@ -1491,13 +1529,13 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    [ecx+0x14], eax;
 // LINE 529:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 530:
-	__asm        jmp    near ptr 0x00467FF5;
+	__asm        jmp    _T459;
 // LINE 533:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00467CB7;
+	__asm        je     _T11b;
 // LINE 534:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1506,10 +1544,11 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 535:
+_T11b:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 536:
-	__asm        jmp    near ptr 0x00467FF5;
+	__asm        jmp    _T459;
 // LINE 539:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
@@ -1521,7 +1560,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x38];
 // LINE 540:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 543:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
@@ -1533,7 +1572,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 544:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 547:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
@@ -1545,10 +1584,10 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x34];
 // LINE 548:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 559:
 	__asm        cmp    wParam, 0x73;
-	__asm        jne    near ptr 0x00467D37;
+	__asm        jne    _T19b;
 // LINE 560:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1557,8 +1596,9 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 561:
-	__asm        jmp    near ptr 0x00467D4C;
+	__asm        jmp    _T1b0;
 // LINE 562:
+_T19b:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1568,11 +1608,12 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 563:
+_T1b0:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 566:
 	__asm        cmp    wParam, 0x73;
-	__asm        je     near ptr 0x00467D72;
+	__asm        je     _T1d6;
 // LINE 567:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
@@ -1583,8 +1624,9 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x34];
 // LINE 568:
+_T1d6:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 571:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
@@ -1606,7 +1648,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x3C];
 // LINE 573:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 576:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
@@ -1628,14 +1670,15 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x44];
 // LINE 578:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 581:
 	__asm        call   dword ptr ds:[0x6C38A4];
 	__asm        cmp    eax, Window;
-	__asm        jne    near ptr 0x00467E02;
+	__asm        jne    _T266;
 // LINE 582:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 583:
+_T266:
 	__asm        mov    eax, lParam;
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
@@ -1652,14 +1695,15 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x40];
 // LINE 584:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 587:
 	__asm        call   dword ptr ds:[0x6C38A4];
 	__asm        cmp    eax, Window;
-	__asm        jne    near ptr 0x00467E47;
+	__asm        jne    _T2ab;
 // LINE 588:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 589:
+_T2ab:
 	__asm        mov    eax, lParam;
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
@@ -1676,12 +1720,12 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [edx+0x48];
 // LINE 590:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 593:
 	__asm        mov    eax, lParam;
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x00467E9F;
+	__asm        jne    _T303;
 // LINE 594:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1690,20 +1734,22 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        call   dword ptr [eax+0xC];
 // LINE 595:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 597:
-	__asm        jmp    near ptr 0x00467FF5;
+_T303:
+	__asm        jmp    _T459;
 // LINE 601:
 	__asm        mov    eax, Window;
 	__asm        cmp    wParam, eax;
-	__asm        jne    near ptr 0x00467EB7;
+	__asm        jne    _T31b;
 // LINE 602:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 606:
+_T31b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00467ED5;
+	__asm        je     _T339;
 // LINE 607:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1712,24 +1758,27 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x7C];
 // LINE 608:
+_T339:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 609:
-	__asm        jmp    near ptr 0x00467FF5;
+	__asm        jmp    _T459;
 
+_T345:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
-	__asm        ja     near ptr 0x00467F21;
+	__asm        ja     _T385;
 
-	__asm        je     near ptr 0x00467BD8;
+	__asm        je     _T3c;
 
 	__asm        sub    dword ptr [ebp-8], 2;
 	__asm        cmp    dword ptr [ebp-8], 5;
-	__asm        ja     near ptr 0x00467FF5;
+	__asm        ja     _T459;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x467F09];
 // Switch pointers
 // LINE 610:
+_T459:
 	__asm        mov    eax, lParam;
 	__asm        push   eax;
 	__asm        mov    eax, wParam;
@@ -1741,7 +1790,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        call   CSparkalWindow::MySparkalWindowProc;
-	__asm        jmp    near ptr 0x00468013;
+	__asm        jmp    _T477;
 // LINE 611:
 }
 

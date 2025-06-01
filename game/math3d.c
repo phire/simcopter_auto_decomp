@@ -171,7 +171,7 @@ int32_t Normalize(struct Point3d* V) {
 	__asm        fstp   r;
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x40;
-	__asm        jne    near ptr 0x0054314A;
+	__asm        jne    _Tbc;
 // LINE 80:
 	__asm        fld    i;
 	__asm        fdiv   r;
@@ -194,8 +194,9 @@ int32_t Normalize(struct Point3d* V) {
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 84:
-	__asm        jmp    near ptr 0x0054316B;
+	__asm        jmp    _Tdd;
 // LINE 85:
+_Tbc:
 	__asm        mov    eax, V;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, V;
@@ -207,6 +208,7 @@ int32_t Normalize(struct Point3d* V) {
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
 // LINE 87:
+_Tdd:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
@@ -403,7 +405,7 @@ int32_t VectorBounds(struct Point3d* V, int32_t m) {
 	__asm        mov    r, eax;
 	__asm        mov    eax, r;
 	__asm        cmp    m, eax;
-	__asm        jge    near ptr 0x005433B2;
+	__asm        jge    _T8a;
 // LINE 206:
 	__asm        mov    eax, r;
 	__asm        push   eax;
@@ -444,10 +446,11 @@ int32_t VectorBounds(struct Point3d* V, int32_t m) {
 	__asm        mov    [ecx+8], eax;
 // LINE 210:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x005433B9;
+	__asm        jmp    _T91;
 // LINE 213:
+_T8a:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x005433B9;
+	__asm        jmp    _T91;
 // LINE 214:
 }
 
@@ -531,7 +534,7 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    v, eax;
 // LINE 267:
 	__asm        cmp    v, 0;
-	__asm        jle    near ptr 0x00543530;
+	__asm        jle    _Tdb;
 // LINE 268:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -560,7 +563,7 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    j, eax;
 // LINE 271:
 	__asm        cmp    j, 0;
-	__asm        jle    near ptr 0x00543512;
+	__asm        jle    _Tbd;
 // LINE 272:
 	__asm        mov    eax, j;
 	__asm        push   eax;
@@ -592,8 +595,9 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 276:
-	__asm        jmp    near ptr 0x00543530;
+	__asm        jmp    _Tdb;
 // LINE 277:
+_Tbd:
 	__asm        mov    eax, p;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 278:
@@ -634,19 +638,21 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, Vmax;
-	__asm        jle    near ptr 0x00543597;
+	__asm        jle    _T62;
 
 	__asm        cmp    nv, 0;
-	__asm        jle    near ptr 0x0054358F;
+	__asm        jle    _T5a;
 
 	__asm        mov    eax, Vmax;
 	__asm        mov    nv, eax;
-	__asm        jmp    near ptr 0x00543597;
+	__asm        jmp    _T62;
 
+_T5a:
 	__asm        mov    eax, Vmax;
 	__asm        neg    eax;
 	__asm        mov    nv, eax;
 // LINE 313:
+_T62:
 	__asm        mov    eax, nv;
 	__asm        jmp    near ptr 0x0054359F;
 // LINE 314:
@@ -661,7 +667,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 
 // LINE 336:
 	__asm        cmp    V, 0;
-	__asm        je     near ptr 0x0054361D;
+	__asm        je     _T79;
 // LINE 337:
 	__asm        mov    eax, V;
 	__asm        cdq;
@@ -695,7 +701,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        mov    j, eax;
 // LINE 341:
 	__asm        cmp    j, 0;
-	__asm        jle    near ptr 0x0054361D;
+	__asm        jle    _T79;
 
 	__asm        mov    eax, j;
 	__asm        push   eax;
@@ -703,36 +709,42 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x00543624;
+	__asm        jmp    _T80;
 // LINE 343:
+_T79:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00543624;
+	__asm        jmp    _T80;
 // LINE 344:
 }
 
 // FUNCTION: COPTER_D 0x00543629
 int32_t AngleBounds(int32_t a) {
 // LINE 359:
+_T06:
 	__asm        cmp    a, 0;
-	__asm        jge    near ptr 0x00543645;
+	__asm        jge    _T1c;
 
 	__asm        add    a, 0xE100000;
-	__asm        jmp    near ptr 0x0054362F;
+	__asm        jmp    _T06;
 // LINE 360:
+_T1c:
 	__asm        cmp    a, 0xE100000;
-	__asm        jle    near ptr 0x0054365E;
+	__asm        jle    _T35;
 
 	__asm        sub    a, 0xE100000;
-	__asm        jmp    near ptr 0x00543645;
+	__asm        jmp    _T1c;
 // LINE 361:
+_T35:
 	__asm        cmp    a, 0x7080000;
-	__asm        jl     near ptr 0x00543678;
+	__asm        jl     _T4f;
 
 	__asm        mov    eax, a;
 	__asm        sub    eax, 0xE100000;
-	__asm        jmp    near ptr 0x0054367B;
+	__asm        jmp    _T52;
 
+_T4f:
 	__asm        mov    eax, a;
+_T52:
 	__asm        jmp    near ptr 0x00543680;
 // LINE 362:
 }

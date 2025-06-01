@@ -17,19 +17,21 @@
 void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 22:
 	__asm        cmp    Error, 0;
-	__asm        jne    near ptr 0x0044FF6F;
+	__asm        jne    _T2f;
 
 	__asm        push   0x16;
 	__asm        push   0x5990E4;
 	__asm        push   0x59910C;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0044FF74;
+	__asm        jmp    _T34;
 
-	__asm        jmp    near ptr 0x0044FF74;
+_T2f:
+	__asm        jmp    _T34;
 // LINE 24:
+_T34:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Error) + 3), 0x80;
-	__asm        je     near ptr 0x00450046;
+	__asm        je     _T106;
 // LINE 27:
 // Block start:
 	char ErrorTitle[255];
@@ -45,7 +47,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0044FFC2;
+	__asm        jne    _T82;
 // LINE 33:
 	__asm        mov    eax, Error;
 	__asm        push   eax;
@@ -55,6 +57,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0xC;
 // LINE 35:
+_T82:
 	__asm        push   0xFF;
 	__asm        lea    eax, ErrorTitle[0];
 	__asm        push   eax;
@@ -63,7 +66,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00450005;
+	__asm        jne    _Tc5;
 // LINE 36:
 	__asm        push   0x2030;
 	__asm        push   0x599130;
@@ -72,8 +75,9 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 37:
-	__asm        jmp    near ptr 0x00450020;
+	__asm        jmp    _Te0;
 // LINE 38:
+_Tc5:
 	__asm        push   0x2030;
 	__asm        lea    eax, ErrorTitle[0];
 	__asm        push   eax;
@@ -82,6 +86,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 40:
+_Te0:
 	__asm        lea    eax, ErrorText[0];
 	__asm        push   eax;
 	__asm        push   0x599138;
@@ -91,11 +96,12 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, Terminate;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00450046;
+	__asm        je     _T106;
 // LINE 43:
 	__asm        call   abort;
 // LINE 45:
 // Block end:
+_T106:
 	__asm        jmp    near ptr 0x0045004B;
 }
 

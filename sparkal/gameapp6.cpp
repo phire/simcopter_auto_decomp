@@ -33,48 +33,54 @@ void  CGameApp::ToggleMusicSoundTrack() {
 	__asm        jmp    near ptr 0x00471E95;
 
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
-	__asm        je     near ptr 0x00471EE9;
+	__asm        je     _T65;
 // LINE 49:
 	__asm        mov    dword ptr ds:[0x604498], 0;
 	__asm        cmp    dword ptr ds:[0x604498], 0;
-	__asm        je     near ptr 0x00471EBE;
+	__asm        je     _T3a;
 
-	__asm        jmp    near ptr 0x00471EDF;
+	__asm        jmp    _T5b;
 
+_T3a:
 	__asm        jmp    near ptr 0x00471EC3;
 
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
-	__asm        je     near ptr 0x00471EDF;
+	__asm        je     _T5b;
 
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        mov    eax, ds:[0x604480];
 	__asm        call   dword ptr [eax+0x1C];
+_T5b:
 	__asm        jmp    near ptr 0x00471EE4;
 // LINE 50:
-	__asm        jmp    near ptr 0x00471F37;
+	__asm        jmp    _Tb3;
 // LINE 51:
+_T65:
 	__asm        mov    dword ptr ds:[0x604498], 1;
 	__asm        cmp    dword ptr ds:[0x604498], 0;
-	__asm        je     near ptr 0x00471F05;
+	__asm        je     _T81;
 
-	__asm        jmp    near ptr 0x00471F26;
+	__asm        jmp    _Ta2;
 
+_T81:
 	__asm        jmp    near ptr 0x00471F0A;
 
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
-	__asm        je     near ptr 0x00471F26;
+	__asm        je     _Ta2;
 
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        mov    eax, ds:[0x604480];
 	__asm        call   dword ptr [eax+0x1C];
+_Ta2:
 	__asm        jmp    near ptr 0x00471F2B;
 // LINE 52:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 54:
+_Tb3:
 	__asm        jmp    near ptr 0x00471F3C;
 }
 

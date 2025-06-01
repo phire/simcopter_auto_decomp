@@ -517,16 +517,17 @@ struct bidirectional_iterator<CopterGameMode,int>{
 void S3SwitchToProperSkyType() {
 // LINE 91:
 	__asm        cmp    dword ptr ds:[0x5B4794], 0;
-	__asm        je     near ptr 0x004611B5;
+	__asm        je     _T35;
 
 	__asm        mov    eax, ds:[0x599BBC];
 	__asm        cmp    dword ptr [eax+0xDC], 0;
-	__asm        je     near ptr 0x004611B5;
+	__asm        je     _T35;
 // LINE 92:
 	__asm        mov    eax, ds:[0x599BBC];
 	__asm        mov    ecx, [eax+0xDC];
 	__asm        call   SkyImage::SwitchToProperSkyType;
 // LINE 93:
+_T35:
 	__asm        jmp    near ptr 0x004611BA;
 }
 
@@ -541,18 +542,20 @@ int32_t IsActualTimeDaytime() {
 	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
 	__asm        call   MTime::Hour;
 	__asm        cmp    eax, 6;
-	__asm        jb     near ptr 0x004611F2;
+	__asm        jb     _T33;
 
 	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
 	__asm        call   MTime::Hour;
 	__asm        cmp    eax, 0x12;
-	__asm        jbe    near ptr 0x004611F9;
+	__asm        jbe    _T3a;
 // LINE 102:
+_T33:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00461203;
+	__asm        jmp    _T44;
 // LINE 103:
+_T3a:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00461203;
+	__asm        jmp    _T44;
 // LINE 104:
 }
 
@@ -567,7 +570,7 @@ void  CGameApp::GetPreferences() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
-	__asm        je     near ptr 0x0046125D;
+	__asm        je     _T55;
 
 	__asm        push   0;
 	__asm        push   0x10000;
@@ -576,12 +579,14 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    ecx, [ebp-0x10C];
 	__asm        call   NotificationPreferenceManager::NotificationPreferenceManager;
 	__asm        mov    ds:[0x599BC4], eax;
-	__asm        jmp    near ptr 0x00461267;
+	__asm        jmp    _T5f;
 
+_T55:
 	__asm        mov    dword ptr ds:[0x599BC4], 0;
 // LINE 116:
+_T5f:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
-	__asm        je     near ptr 0x004613C1;
+	__asm        je     _T1b9;
 // LINE 117:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -605,7 +610,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    chPrefData, eax;
 // LINE 120:
 	__asm        cmp    chPrefData, 0;
-	__asm        je     near ptr 0x004612FE;
+	__asm        je     _Tf6;
 // LINE 122:
 	__asm        push   0x2FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -613,7 +618,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x20;
-	__asm        jne    near ptr 0x004612FE;
+	__asm        jne    _Tf6;
 // LINE 123:
 	__asm        mov    edi, this;
 	__asm        add    edi, 0x4308;
@@ -621,6 +626,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    ecx, 8;
 	__asm        rep movsd;
 // LINE 125:
+_Tf6:
 	__asm        push   0x3FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
 	__asm        mov    eax, [eax];
@@ -629,7 +635,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    chPrefData, eax;
 // LINE 126:
 	__asm        cmp    chPrefData, 0;
-	__asm        je     near ptr 0x0046136C;
+	__asm        je     _T164;
 // LINE 127:
 	__asm        push   0x3FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -637,7 +643,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x10;
-	__asm        jne    near ptr 0x0046136C;
+	__asm        jne    _T164;
 // LINE 128:
 	__asm        mov    eax, chPrefData;
 	__asm        mov    ecx, this;
@@ -651,6 +657,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 130:
+_T164:
 	__asm        push   0x5FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
 	__asm        mov    eax, [eax];
@@ -659,7 +666,7 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    chPrefData, eax;
 // LINE 131:
 	__asm        cmp    chPrefData, 0;
-	__asm        je     near ptr 0x004613C1;
+	__asm        je     _T1b9;
 // LINE 132:
 	__asm        push   0x5FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -667,13 +674,14 @@ void  CGameApp::GetPreferences() {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x24;
-	__asm        jne    near ptr 0x004613C1;
+	__asm        jne    _T1b9;
 // LINE 133:
 	__asm        mov    eax, chPrefData;
 	__asm        push   eax;
 	__asm        call   S3CameraSetChaseInfo;
 	__asm        add    esp, 4;
 // LINE 136:
+_T1b9:
 	__asm        jmp    near ptr 0x004613C6;
 }
 
@@ -691,7 +699,7 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        mov    chPrefData, eax;
 // LINE 148:
 	__asm        cmp    chPrefData, 0;
-	__asm        je     near ptr 0x00461447;
+	__asm        je     _T7c;
 // LINE 150:
 	__asm        push   0x4FFFFFF;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -699,7 +707,7 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x10;
-	__asm        jne    near ptr 0x00461447;
+	__asm        jne    _T7c;
 // LINE 151:
 	__asm        mov    eax, chPrefData;
 	__asm        lea    ecx, tempSoundPreferences.lMasterVolume;
@@ -719,8 +727,9 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 153:
-	__asm        jmp    near ptr 0x0046148F;
+	__asm        jmp    _Tc4;
 // LINE 161:
+_T7c:
 	__asm        mov    tempSoundPreferences.lVehicleVolume, 0x2710;
 	__asm        mov    eax, tempSoundPreferences.lVehicleVolume;
 	__asm        mov    tempSoundPreferences.lSoundEffectsVolume, eax;
@@ -745,7 +754,7 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 165:
-	__asm        jmp    near ptr 0x0046148F;
+	__asm        jmp    _Tc4;
 }
 
 // FUNCTION: COPTER_D 0x00461494
@@ -756,7 +765,7 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 	__asm        mov    ds:[0x5C37F0], eax;
 // LINE 175:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
-	__asm        je     near ptr 0x004614D2;
+	__asm        je     _T3e;
 // LINE 177:
 	__asm        push   0x10;
 	__asm        mov    eax, newSoundPreferences;
@@ -767,6 +776,7 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 179:
+_T3e:
 	__asm        jmp    near ptr 0x004614D7;
 }
 
@@ -783,7 +793,7 @@ void  CGameApp::SavePreferences() {
 	__asm        mov    lCurrentJoystickCount, eax;
 // LINE 192:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
-	__asm        je     near ptr 0x0046161F;
+	__asm        je     _T141;
 // LINE 194:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
@@ -829,12 +839,14 @@ void  CGameApp::SavePreferences() {
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 201:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0046159A;
+	__asm        jmp    _Tbc;
 
+_Tb9:
 	__asm        inc    i;
+_Tbc:
 	__asm        mov    eax, lCurrentJoystickCount;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x004615EC;
+	__asm        jge    _T10e;
 // LINE 202:
 	__asm        mov    szJoystickName[0], 0;
 // LINE 203:
@@ -861,24 +873,27 @@ void  CGameApp::SavePreferences() {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 205:
-	__asm        jmp    near ptr 0x00461597;
+	__asm        jmp    _Tb9;
 // LINE 206:
+_T10e:
 	__asm        mov    eax, ds:[0x599BC4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
-	__asm        je     near ptr 0x00461615;
+	__asm        je     _T137;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x00461615;
+	__asm        jmp    _T137;
 // LINE 207:
+_T137:
 	__asm        mov    dword ptr ds:[0x599BC4], 0;
 // LINE 209:
+_T141:
 	__asm        jmp    near ptr 0x00461624;
 }
 
@@ -897,21 +912,22 @@ unsigned long  CGameApp::TickGame() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4168], 0;
-	__asm        je     near ptr 0x004616DB;
+	__asm        je     _Tb2;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4164], 1;
-	__asm        jne    near ptr 0x0046167F;
+	__asm        jne    _T56;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004616C6;
+	__asm        jmp    _T9d;
 
-	__asm        jmp    near ptr 0x004616C6;
+	__asm        jmp    _T9d;
 
+_T56:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4164], 0;
-	__asm        jne    near ptr 0x004616AF;
+	__asm        jne    _T86;
 
 	__asm        lea    eax, [ebp-0x24];
 	__asm        push   eax;
@@ -920,30 +936,33 @@ unsigned long  CGameApp::TickGame() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004616C6;
+	__asm        jmp    _T9d;
 
-	__asm        jmp    near ptr 0x004616C6;
+	__asm        jmp    _T9d;
 
+_T86:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004616C6;
+	__asm        jmp    _T9d;
 
+_T9d:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x4168];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        add    [ebp-0x18], eax;
+_Tb2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4164], 0;
-	__asm        jne    near ptr 0x00461722;
+	__asm        jne    _Tf9;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4170], 0;
-	__asm        je     near ptr 0x00461722;
+	__asm        je     _Tf9;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4170];
@@ -955,17 +974,19 @@ unsigned long  CGameApp::TickGame() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    lElapsedMilliSeconds, eax;
-	__asm        jmp    near ptr 0x00461733;
+	__asm        jmp    _T10a;
 
+_Tf9:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    lElapsedMilliSeconds, eax;
-	__asm        jmp    near ptr 0x00461733;
+	__asm        jmp    _T10a;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    lElapsedMilliSeconds, eax;
 // LINE 224:
+_T10a:
 	__asm        cmp    lElapsedMilliSeconds, 0x3E8;
-	__asm        jl     near ptr 0x0046182C;
+	__asm        jl     _T203;
 // LINE 226:
 	__asm        mov    eax, ds:[0x599294];
 	__asm        mov    [ebp-0x34], eax;
@@ -989,24 +1010,26 @@ unsigned long  CGameApp::TickGame() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4168], 0;
-	__asm        je     near ptr 0x004617A6;
+	__asm        je     _T17d;
 
-	__asm        jmp    near ptr 0x00461827;
+	__asm        jmp    _T1fe;
 
+_T17d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4164], 1;
-	__asm        jne    near ptr 0x004617CF;
+	__asm        jne    _T1a6;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4168], eax;
-	__asm        jmp    near ptr 0x00461822;
+	__asm        jmp    _T1f9;
 
-	__asm        jmp    near ptr 0x00461822;
+	__asm        jmp    _T1f9;
 
+_T1a6:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4164], 0;
-	__asm        jne    near ptr 0x00461805;
+	__asm        jne    _T1dc;
 
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
@@ -1016,25 +1039,29 @@ unsigned long  CGameApp::TickGame() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4168], eax;
-	__asm        jmp    near ptr 0x00461822;
+	__asm        jmp    _T1f9;
 
-	__asm        jmp    near ptr 0x00461822;
+	__asm        jmp    _T1f9;
 
+_T1dc:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4168], eax;
-	__asm        jmp    near ptr 0x00461822;
+	__asm        jmp    _T1f9;
 
-	__asm        jmp    near ptr 0x00461827;
+_T1f9:
+	__asm        jmp    _T1fe;
 
-	__asm        jmp    near ptr 0x0046182C;
+_T1fe:
+	__asm        jmp    _T203;
 // LINE 232:
+_T203:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C4], 0;
-	__asm        je     near ptr 0x00461877;
+	__asm        je     _T24e;
 // LINE 233:
 	__asm        mov    eax, lElapsedMilliSeconds;
 	__asm        push   eax;
@@ -1050,7 +1077,7 @@ unsigned long  CGameApp::TickGame() {
 // LINE 235:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4340], 0;
-	__asm        je     near ptr 0x00461877;
+	__asm        je     _T24e;
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1059,8 +1086,9 @@ unsigned long  CGameApp::TickGame() {
 	__asm        mov    ecx, [eax+0x50];
 	__asm        call   dword ptr [edx+8];
 // LINE 251:
+_T24e:
 	__asm        cmp    dword ptr ds:[0x599DA4], 0;
-	__asm        je     near ptr 0x00461897;
+	__asm        je     _T26e;
 // LINE 253:
 	__asm        mov    eax, ds:[0x599DA4];
 	__asm        push   eax;
@@ -1068,6 +1096,7 @@ unsigned long  CGameApp::TickGame() {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 256:
+_T26e:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0046189E;
 // LINE 257:
@@ -1106,7 +1135,7 @@ void  CGameApp::ComposeFrame() {
 // LINE 272:
 	__asm        mov    eax, nCurrentMode;
 	__asm        mov    [ebp-0x24C], eax;
-	__asm        jmp    near ptr 0x00461DD9;
+	__asm        jmp    _T536;
 // LINE 277:
 // Block start:
 	char szPath[260];
@@ -1129,59 +1158,67 @@ void  CGameApp::ComposeFrame() {
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x00461993;
+	__asm        jmp    _Tf0;
 
 	__asm        mov    byte ptr [ebp-0x228], 0;
+_Tf0:
 	__asm        jmp    near ptr 0x00461998;
 
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x22C];
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004619BC;
+	__asm        jne    _T119;
 
 	__asm        mov    dword ptr [ebp-0x11C], 1;
-	__asm        jmp    near ptr 0x004619C6;
+	__asm        jmp    _T123;
 
+_T119:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
+_T123:
 	__asm        mov    dword ptr [ebp-0x22C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x124], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004619E2;
+	__asm        jle    _T13f;
 
-	__asm        jmp    near ptr 0x004619E7;
+	__asm        jmp    _T144;
 
-	__asm        jmp    near ptr 0x00461A15;
+_T13f:
+	__asm        jmp    _T172;
 
-	__asm        jmp    near ptr 0x004619F9;
+_T144:
+	__asm        jmp    _T156;
 
 	__asm        cmp    dword ptr [ebp-0x244], 0;
-	__asm        je     near ptr 0x00461A15;
+	__asm        je     _T172;
 
+_T156:
 	__asm        cmp    dword ptr [ebp-0x120], 0;
-	__asm        je     near ptr 0x00461A15;
+	__asm        je     _T172;
 
 	__asm        mov    eax, [ebp-0x124];
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
+_T172:
 	__asm        jmp    near ptr 0x00461A1A;
 
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    [ebp-0x234], eax;
 	__asm        cmp    dword ptr [ebp-0x234], 0;
-	__asm        je     near ptr 0x00461A48;
+	__asm        je     _T1a5;
 // LINE 279:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42C0], 0;
 // LINE 280:
-	__asm        jmp    near ptr 0x00461B1F;
+	__asm        jmp    _T27c;
 // LINE 281:
+_T1a5:
 	__asm        push   0x140;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x230], eax;
 	__asm        cmp    dword ptr [ebp-0x230], 0;
-	__asm        je     near ptr 0x00461A95;
+	__asm        je     _T1f2;
 
 	__asm        push   0x116;
 	__asm        push   0x280;
@@ -1191,10 +1228,12 @@ void  CGameApp::ComposeFrame() {
 	__asm        call   SmackerBuffer::SmackerBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x42C0], eax;
-	__asm        jmp    near ptr 0x00461AA5;
+	__asm        jmp    _T202;
 
+_T1f2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42C0], 0;
+_T202:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x42C0];
 	__asm        mov    [ebp-0x238], eax;
@@ -1225,6 +1264,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    ecx, [eax+0x42C0];
 	__asm        call   dword ptr [edx+0x10];
 // LINE 289:
+_T27c:
 	__asm        push   2;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1239,7 +1279,7 @@ void  CGameApp::ComposeFrame() {
 // LINE 297:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C0], 0;
-	__asm        je     near ptr 0x00461B7D;
+	__asm        je     _T2da;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1248,8 +1288,9 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    ecx, [eax+0x42C0];
 	__asm        call   dword ptr [edx+0x18];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00461BA3;
+	__asm        je     _T300;
 // LINE 298:
+_T2da:
 	__asm        push   3;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1262,24 +1303,27 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 302:
-	__asm        jmp    near ptr 0x00461E25;
+_T300:
+	__asm        jmp    _T582;
 // LINE 305:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 1;
-	__asm        jne    near ptr 0x00461BCB;
+	__asm        jne    _T328;
 // LINE 306:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ComposeCareerCityVideoFrame;
 // LINE 307:
-	__asm        jmp    near ptr 0x00461BE0;
+	__asm        jmp    _T33d;
 // LINE 308:
+_T328:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 309:
-	__asm        jmp    near ptr 0x00461E25;
+_T33d:
+	__asm        jmp    _T582;
 // LINE 312:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ComposeMainMenuVideoFrame;
@@ -1298,11 +1342,11 @@ void  CGameApp::ComposeFrame() {
 	__asm        call   SparkalDelay;
 	__asm        add    esp, 4;
 // LINE 324:
-	__asm        jmp    near ptr 0x00461E25;
+	__asm        jmp    _T582;
 // LINE 327:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
-	__asm        jne    near ptr 0x00461D5F;
+	__asm        jne    _T4bc;
 // LINE 331:
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 339:
@@ -1316,7 +1360,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    eax, [eax+0x3C];
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
-	__asm        jmp    near ptr 0x00461D53;
+	__asm        jmp    _T4b0;
 // LINE 345:
 _L64109:
 	__asm        mov    eax, this;
@@ -1330,7 +1374,7 @@ _L64109:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00461CB8;
+	__asm        je     _T415;
 // LINE 350:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1339,12 +1383,13 @@ _L64109:
 	__asm        mov    ecx, [eax+0xD8];
 	__asm        call   dword ptr [edx+4];
 // LINE 351:
+_T415:
 	__asm        jmp    near ptr 0x00461CBD;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00461CE7;
+	__asm        je     _T444;
 // LINE 352:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1353,12 +1398,13 @@ _L64109:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+4];
 // LINE 353:
+_T444:
 	__asm        jmp    near ptr 0x00461CEC;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00461D1F;
+	__asm        je     _T47c;
 // LINE 354:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1367,6 +1413,7 @@ _L64109:
 	__asm        mov    ecx, [eax+0xDC];
 	__asm        call   dword ptr [edx+4];
 // LINE 359:
+_T47c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x38];
@@ -1385,13 +1432,15 @@ _L64109:
 // LINE 363:
 _L56471:
 _L56471:
+_T4b0:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 // LINE 364:
-	__asm        jmp    near ptr 0x00461DA1;
+	__asm        jmp    _T4fe;
 
+_T4bc:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
-	__asm        jne    near ptr 0x00461D8C;
+	__asm        jne    _T4e9;
 // LINE 365:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -1399,15 +1448,17 @@ _L56471:
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 367:
-	__asm        jmp    near ptr 0x00461DA1;
+	__asm        jmp    _T4fe;
 // LINE 368:
+_T4e9:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 370:
-	__asm        jmp    near ptr 0x00461E25;
+_T4fe:
+	__asm        jmp    _T582;
 // LINE 375:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x36B8], 1;
@@ -1420,33 +1471,36 @@ _L56471:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3874];
 // LINE 382:
-	__asm        jmp    near ptr 0x00461E25;
+	__asm        jmp    _T582;
 // LINE 383:
 // Block end:
-	__asm        jmp    near ptr 0x00461E25;
+	__asm        jmp    _T582;
 
+_T536:
 	__asm        dec    dword ptr [ebp-0x24C];
 	__asm        cmp    dword ptr [ebp-0x24C], 0xA;
-	__asm        ja     near ptr 0x00461E25;
+	__asm        ja     _T582;
 
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        jmp    dword ptr [eax*4+0x461DF9];
 // Switch pointers
 // LINE 385:
+_T582:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C8], 0;
-	__asm        je     near ptr 0x00461E43;
+	__asm        je     _T5a0;
 // LINE 386:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::S3ShowInfo;
 // LINE 389:
+_T5a0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x430C], 0;
-	__asm        je     near ptr 0x00461E9C;
+	__asm        je     _T5f9;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
-	__asm        je     near ptr 0x00461E9C;
+	__asm        je     _T5f9;
 // LINE 390:
 	__asm        push   0;
 	__asm        push   0;
@@ -1464,11 +1518,13 @@ _L56471:
 	__asm        mov    ecx, [eax+0x42BC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 391:
-	__asm        jmp    near ptr 0x00461EAB;
+_T5f9:
+	__asm        jmp    _T608;
 _L64110:
 	__asm        mov    eax, 0x595C00;
 	__asm        jmp    near ptr 0x0056F590;
 
+_T608:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -1485,7 +1541,7 @@ void  CGameApp::ComposePlayFrame() {
 // LINE 408:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        jne    near ptr 0x00462400;
+	__asm        jne    _T547;
 // LINE 409:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x110;
@@ -1507,15 +1563,17 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    ds:[0x5B4760], eax;
 // LINE 414:
 	__asm        cmp    dword ptr ds:[0x5B4760], 0x64;
-	__asm        jge    near ptr 0x00461F34;
+	__asm        jge    _T7b;
 // LINE 415:
 	__asm        mov    dword ptr ds:[0x5B4760], 0x64;
 // LINE 416:
+_T7b:
 	__asm        cmp    dword ptr ds:[0x5B4760], 0x8000;
-	__asm        jle    near ptr 0x00461F4E;
+	__asm        jle    _T95;
 // LINE 417:
 	__asm        mov    dword ptr ds:[0x5B4760], 0x8000;
 // LINE 418:
+_T95:
 	__asm        call   VRAppNextFrame;
 // LINE 419:
 	__asm        mov    eax, ds:[0x59929C];
@@ -1524,31 +1582,34 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    eax, ds:[0x5992A0];
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
-	__asm        jne    near ptr 0x004623FB;
+	__asm        jne    _T542;
 // LINE 421:
 	__asm        mov    eax, ds:[0x5992A0];
 	__asm        and    al, 0x3F;
 	__asm        cmp    al, 0x3F;
-	__asm        jne    near ptr 0x004622AF;
+	__asm        jne    _T3f6;
 // LINE 423:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
-	__asm        jne    near ptr 0x00461F9D;
+	__asm        jne    _Te4;
 
 	__asm        call   GetUserPoints;
 	__asm        cmp    eax, 0x3E8;
-	__asm        jl     near ptr 0x00461F9D;
+	__asm        jl     _Te4;
 
-	__asm        jmp    near ptr 0x00461FA2;
+	__asm        jmp    _Te9;
 
-	__asm        jmp    near ptr 0x00462084;
+_Te4:
+	__asm        jmp    _T1cb;
 
-	__asm        jmp    near ptr 0x00461FB1;
+_Te9:
+	__asm        jmp    _Tf8;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00462084;
+	__asm        je     _T1cb;
 
+_Tf8:
 	__asm        cmp    dword ptr ds:[0x5C33D0], 0;
-	__asm        jne    near ptr 0x00462084;
+	__asm        jne    _T1cb;
 // LINE 425:
 	__asm        mov    dword ptr ds:[0x5C33D0], 1;
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
@@ -1558,21 +1619,23 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        jmp    near ptr 0x00461FE6;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00461FF8;
+	__asm        je     _T13f;
 
-	__asm        jmp    near ptr 0x00462067;
+	__asm        jmp    _T1ae;
 
+_T13f:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x0046201A;
+	__asm        jne    _T161;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00462062;
+	__asm        jmp    _T1a9;
 
-	__asm        jmp    near ptr 0x00462062;
+	__asm        jmp    _T1a9;
 
+_T161:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00462049;
+	__asm        jne    _T190;
 
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
@@ -1581,19 +1644,22 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00462062;
+	__asm        jmp    _T1a9;
 
-	__asm        jmp    near ptr 0x00462062;
+	__asm        jmp    _T1a9;
 
+_T190:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00462062;
+	__asm        jmp    _T1a9;
 
-	__asm        jmp    near ptr 0x00462067;
+_T1a9:
+	__asm        jmp    _T1ae;
 
+_T1ae:
 	__asm        jmp    near ptr 0x0046206C;
 
 	__asm        jmp    near ptr 0x00462071;
@@ -1603,29 +1669,31 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x94];
 // LINE 429:
-	__asm        jmp    near ptr 0x004622AA;
+	__asm        jmp    _T3f1;
 
+_T1cb:
 	__asm        cmp    dword ptr ds:[0x5C33D0], 1;
-	__asm        jne    near ptr 0x00462197;
+	__asm        jne    _T2de;
 // LINE 430:
 	__asm        mov    eax, ds:[0x5C33DC];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0046209E;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00462121;
+	__asm        je     _T268;
 
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x004620CB;
+	__asm        jne    _T212;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0046210F;
+	__asm        jmp    _T256;
 
-	__asm        jmp    near ptr 0x0046210F;
+	__asm        jmp    _T256;
 
+_T212:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x004620F8;
+	__asm        jne    _T23f;
 
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        push   eax;
@@ -1634,27 +1702,30 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0046210F;
+	__asm        jmp    _T256;
 
-	__asm        jmp    near ptr 0x0046210F;
+	__asm        jmp    _T256;
 
+_T23f:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x0046210F;
+	__asm        jmp    _T256;
 
+_T256:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        sub    eax, ds:[0x5C33D8];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        add    [ebp-0x30], eax;
+_T268:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00462165;
+	__asm        jne    _T2ac;
 
 	__asm        cmp    dword ptr ds:[0x5C33E0], 0;
-	__asm        je     near ptr 0x00462165;
+	__asm        je     _T2ac;
 
 	__asm        mov    eax, ds:[0x5C33E0];
 	__asm        push   eax;
@@ -1664,46 +1735,51 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        call   dword ptr ds:[0x6C372C];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0x493E0;
-	__asm        jbe    near ptr 0x00462192;
+	__asm        jbe    _T2d9;
 
-	__asm        jmp    near ptr 0x00462184;
+	__asm        jmp    _T2cb;
 
+_T2ac:
 	__asm        cmp    dword ptr [ebp-0x30], 0x493E0;
-	__asm        jbe    near ptr 0x00462192;
+	__asm        jbe    _T2d9;
 
-	__asm        jmp    near ptr 0x00462184;
+	__asm        jmp    _T2cb;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0x493E0;
-	__asm        jbe    near ptr 0x00462192;
+	__asm        jbe    _T2d9;
 // LINE 431:
+_T2cb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x94];
 // LINE 433:
-	__asm        jmp    near ptr 0x004622AA;
+_T2d9:
+	__asm        jmp    _T3f1;
 // LINE 434:
+_T2de:
 	__asm        cmp    dword ptr ds:[0x5C33D0], 2;
-	__asm        jne    near ptr 0x004622AA;
+	__asm        jne    _T3f1;
 
 	__asm        mov    eax, ds:[0x5C33DC];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004621B1;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00462234;
+	__asm        je     _T37b;
 
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x004621DE;
+	__asm        jne    _T325;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x00462222;
+	__asm        jmp    _T369;
 
-	__asm        jmp    near ptr 0x00462222;
+	__asm        jmp    _T369;
 
+_T325:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x0046220B;
+	__asm        jne    _T352;
 
 	__asm        lea    eax, [ebp-0x58];
 	__asm        push   eax;
@@ -1712,27 +1788,30 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x00462222;
+	__asm        jmp    _T369;
 
-	__asm        jmp    near ptr 0x00462222;
+	__asm        jmp    _T369;
 
+_T352:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x00462222;
+	__asm        jmp    _T369;
 
+_T369:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        sub    eax, ds:[0x5C33D8];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        add    [ebp-0x4C], eax;
+_T37b:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00462278;
+	__asm        jne    _T3bf;
 
 	__asm        cmp    dword ptr ds:[0x5C33E0], 0;
-	__asm        je     near ptr 0x00462278;
+	__asm        je     _T3bf;
 
 	__asm        mov    eax, ds:[0x5C33E0];
 	__asm        push   eax;
@@ -1742,46 +1821,52 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        call   dword ptr ds:[0x6C372C];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x2710;
-	__asm        jbe    near ptr 0x004622AA;
+	__asm        jbe    _T3f1;
 
-	__asm        jmp    near ptr 0x00462297;
+	__asm        jmp    _T3de;
 
+_T3bf:
 	__asm        cmp    dword ptr [ebp-0x4C], 0x2710;
-	__asm        jbe    near ptr 0x004622AA;
+	__asm        jbe    _T3f1;
 
-	__asm        jmp    near ptr 0x00462297;
+	__asm        jmp    _T3de;
 
 	__asm        cmp    dword ptr [ebp-0x60], 0x2710;
-	__asm        jbe    near ptr 0x004622AA;
+	__asm        jbe    _T3f1;
 // LINE 436:
+_T3de:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x8C];
 // LINE 437:
-	__asm        jmp    near ptr 0x004624D9;
+	__asm        jmp    _T620;
 // LINE 440:
-	__asm        jmp    near ptr 0x004623FB;
+_T3f1:
+	__asm        jmp    _T542;
 
+_T3f6:
 	__asm        cmp    dword ptr ds:[0x598EB8], 0xFFFFFFFF;
-	__asm        je     near ptr 0x004622D3;
+	__asm        je     _T41a;
 
 	__asm        mov    eax, ds:[0x598EB8];
 	__asm        mov    lBuildingID, eax;
 	__asm        cmp    lBuildingID, 0;
-	__asm        je     near ptr 0x00462309;
+	__asm        je     _T450;
 
-	__asm        jmp    near ptr 0x004622E7;
+	__asm        jmp    _T42e;
 
-	__asm        jmp    near ptr 0x00462309;
+_T41a:
+	__asm        jmp    _T450;
 
-	__asm        jmp    near ptr 0x004622E7;
+	__asm        jmp    _T42e;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x00462309;
+	__asm        je     _T450;
 // LINE 441:
+_T42e:
 	__asm        cmp    lBuildingID, 0xF6;
-	__asm        jne    near ptr 0x00462304;
+	__asm        jne    _T44b;
 // LINE 442:
 	__asm        push   0x2A;
 	__asm        mov    eax, this;
@@ -1789,29 +1874,33 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 444:
-	__asm        jmp    near ptr 0x004623FB;
+_T44b:
+	__asm        jmp    _T542;
 // LINE 445:
 // Block start:
 	long lEventValue;
+_T450:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::TestForUserInHelicopter;
 	__asm        mov    lEventValue, eax;
 // LINE 446:
 	__asm        cmp    lEventValue, 1;
-	__asm        jne    near ptr 0x0046233E;
+	__asm        jne    _T485;
 // LINE 447:
 	__asm        call   CheckupWindow::ShouldWeDisplayCheckupWindow;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00462339;
+	__asm        je     _T480;
 // LINE 448:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateCheckupWindow;
 // LINE 450:
-	__asm        jmp    near ptr 0x004623FB;
+_T480:
+	__asm        jmp    _T542;
 
+_T485:
 	__asm        cmp    lEventValue, 3;
-	__asm        jne    near ptr 0x004623FB;
+	__asm        jne    _T542;
 // LINE 451:
 	__asm        mov    dword ptr ds:[0x5C33D0], 2;
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
@@ -1821,21 +1910,23 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        jmp    near ptr 0x00462370;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00462382;
+	__asm        je     _T4c9;
 
-	__asm        jmp    near ptr 0x004623F1;
+	__asm        jmp    _T538;
 
+_T4c9:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x004623A4;
+	__asm        jne    _T4eb;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004623EC;
+	__asm        jmp    _T533;
 
-	__asm        jmp    near ptr 0x004623EC;
+	__asm        jmp    _T533;
 
+_T4eb:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x004623D3;
+	__asm        jne    _T51a;
 
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -1844,39 +1935,46 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004623EC;
+	__asm        jmp    _T533;
 
-	__asm        jmp    near ptr 0x004623EC;
+	__asm        jmp    _T533;
 
+_T51a:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004623EC;
+	__asm        jmp    _T533;
 
-	__asm        jmp    near ptr 0x004623F1;
+_T533:
+	__asm        jmp    _T538;
 
+_T538:
 	__asm        jmp    near ptr 0x004623F6;
 
-	__asm        jmp    near ptr 0x004623FB;
+	__asm        jmp    _T542;
 // LINE 455:
 // Block end:
-	__asm        jmp    near ptr 0x0046240A;
+_T542:
+	__asm        jmp    _T551;
 // LINE 457:
+_T547:
 	__asm        push   0x14;
 	__asm        call   SparkalDelay;
 	__asm        add    esp, 4;
 // LINE 461:
+_T551:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        je     near ptr 0x00462429;
+	__asm        je     _T570;
 
 	__asm        mov    eax, ds:[0x5992A0];
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
-	__asm        jne    near ptr 0x004624BA;
+	__asm        jne    _T601;
 // LINE 462:
+_T570:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::S3PreRender;
 // LINE 463:
@@ -1886,10 +1984,10 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        call   CGameApp::S3PostRender;
 // LINE 465:
 	__asm        cmp    dword ptr ds:[0x5C381C], 0;
-	__asm        je     near ptr 0x004624A9;
+	__asm        je     _T5f0;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        jne    near ptr 0x004624A9;
+	__asm        jne    _T5f0;
 // LINE 466:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1922,21 +2020,24 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+4];
 // LINE 470:
+_T5f0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::DisplayCurrentMessages;
 // LINE 473:
+_T601:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        je     near ptr 0x004624D4;
+	__asm        je     _T61b;
 // LINE 475:
 	__asm        push   0x14;
 	__asm        call   SparkalDelay;
 	__asm        add    esp, 4;
 // LINE 478:
-	__asm        jmp    near ptr 0x004624D9;
+_T61b:
+	__asm        jmp    _T620;
 }
 
 // FUNCTION: COPTER_D 0x004624de
@@ -1945,11 +2046,12 @@ void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 
 // LINE 487:
 	__asm        cmp    lMilliSecondsSinceLastCall, 0x2EE;
-	__asm        jle    near ptr 0x004624FF;
+	__asm        jle    _T21;
 // LINE 488:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PlayNextSoundTrackIfNeeded;
 // LINE 490:
+_T21:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0xC], eax;
@@ -1970,24 +2072,27 @@ void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jne    near ptr 0x00462576;
+	__asm        jne    _T98;
 // LINE 491:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0046254F;
+	__asm        jmp    _T71;
 
+_T6e:
 	__asm        inc    i;
+_T71:
 	__asm        jmp    near ptr 0x00462554;
 
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x604C78], eax;
-	__asm        jle    near ptr 0x00462576;
+	__asm        jle    _T98;
 // LINE 492:
 	__asm        mov    eax, i;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::GetCompleteState;
-	__asm        jmp    near ptr 0x0046254C;
+	__asm        jmp    _T6e;
 // LINE 494:
+_T98:
 	__asm        jmp    near ptr 0x0046257B;
 }
 
@@ -1995,7 +2100,7 @@ void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 int  CGameApp::EnterMode(int32_t nMode) {
 // LINE 503:
 	__asm        cmp    nMode, 0;
-	__asm        jne    near ptr 0x00462680;
+	__asm        jne    _Tfe;
 // LINE 504:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 0;
@@ -2027,14 +2132,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462607;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x00462622;
+	__asm        je     _Ta0;
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462622;
+	__asm        jmp    _Ta0;
 
+_Ta0:
 	__asm        jmp    near ptr 0x00462627;
 
 	__asm        mov    eax, [ebp-0x48];
@@ -2062,12 +2168,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462671;
 // LINE 506:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 508:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_Tfe:
 	__asm        cmp    nMode, 1;
-	__asm        jne    near ptr 0x00462772;
+	__asm        jne    _T1f0;
 // LINE 509:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2099,14 +2206,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004626F3;
 
 	__asm        cmp    dword ptr [ebp-0x60], 0;
-	__asm        je     near ptr 0x0046270E;
+	__asm        je     _T18c;
 
 	__asm        mov    eax, [ebp-0x68];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x0046270E;
+	__asm        jmp    _T18c;
 
+_T18c:
 	__asm        jmp    near ptr 0x00462713;
 
 	__asm        mov    eax, [ebp-0x64];
@@ -2136,10 +2244,11 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x36B8], 0;
 // LINE 513:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_T1f0:
 	__asm        cmp    nMode, 2;
-	__asm        jne    near ptr 0x00462864;
+	__asm        jne    _T2e2;
 // LINE 514:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 0;
@@ -2171,14 +2280,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004627E8;
 
 	__asm        cmp    dword ptr [ebp-0x7C], 0;
-	__asm        je     near ptr 0x00462806;
+	__asm        je     _T284;
 
 	__asm        mov    eax, [ebp-0x84];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x7C];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462806;
+	__asm        jmp    _T284;
 
+_T284:
 	__asm        jmp    near ptr 0x0046280B;
 
 	__asm        mov    eax, [ebp-0x80];
@@ -2206,12 +2316,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462855;
 // LINE 516:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 518:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_T2e2:
 	__asm        cmp    nMode, 3;
-	__asm        jne    near ptr 0x00462992;
+	__asm        jne    _T410;
 // LINE 519:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 0;
@@ -2243,14 +2354,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004628F2;
 
 	__asm        cmp    dword ptr [ebp-0x98], 0;
-	__asm        je     near ptr 0x00462916;
+	__asm        je     _T394;
 
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462916;
+	__asm        jmp    _T394;
 
+_T394:
 	__asm        jmp    near ptr 0x0046291B;
 
 	__asm        mov    eax, [ebp-0x9C];
@@ -2278,12 +2390,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462983;
 // LINE 521:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 523:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_T410:
 	__asm        cmp    nMode, 4;
-	__asm        jne    near ptr 0x00462B14;
+	__asm        jne    _T592;
 // LINE 524:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2315,14 +2428,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462A20;
 
 	__asm        cmp    dword ptr [ebp-0xB4], 0;
-	__asm        je     near ptr 0x00462A44;
+	__asm        je     _T4c2;
 
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462A44;
+	__asm        jmp    _T4c2;
 
+_T4c2:
 	__asm        jmp    near ptr 0x00462A49;
 
 	__asm        mov    eax, [ebp-0xB8];
@@ -2373,12 +2487,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    dword ptr [eax+0x1C], 1;
 // LINE 532:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 534:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_T592:
 	__asm        cmp    nMode, 5;
-	__asm        jne    near ptr 0x00462CB5;
+	__asm        jne    _T733;
 // LINE 535:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2418,14 +2533,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462BBB;
 
 	__asm        cmp    dword ptr [ebp-0xD0], 0;
-	__asm        je     near ptr 0x00462BDF;
+	__asm        je     _T65d;
 
 	__asm        mov    eax, [ebp-0xD8];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xD0];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462BDF;
+	__asm        jmp    _T65d;
 
+_T65d:
 	__asm        jmp    near ptr 0x00462BE4;
 
 	__asm        mov    eax, [ebp-0xD4];
@@ -2477,12 +2593,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    dword ptr [eax+0x1C], 1;
 // LINE 544:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 547:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_T733:
 	__asm        cmp    nMode, 6;
-	__asm        jne    near ptr 0x00462FFE;
+	__asm        jne    _Ta7c;
 // LINE 549:
 // Block start:
 	static const int32_t bDoneJoystickChangeCheckAlready = { /* <data@0x005992a4> */ };
@@ -2498,12 +2615,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462CE8;
 
 	__asm        cmp    dword ptr ds:[0x604498], 0;
-	__asm        je     near ptr 0x00462D01;
+	__asm        je     _T77f;
 // LINE 554:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 555:
+_T77f:
 	__asm        push   0x2E;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -2539,14 +2657,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00462D8E;
 
 	__asm        cmp    dword ptr [ebp-0xEC], 0;
-	__asm        je     near ptr 0x00462DB2;
+	__asm        je     _T830;
 
 	__asm        mov    eax, [ebp-0xF4];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xEC];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00462DB2;
+	__asm        jmp    _T830;
 
+_T830:
 	__asm        jmp    near ptr 0x00462DB7;
 
 	__asm        mov    eax, [ebp-0xF0];
@@ -2595,14 +2714,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   GameModePlayData::SetUpRenderWindowSizes;
 // LINE 565:
 	__asm        cmp    dword ptr ds:[0x5B4794], 0;
-	__asm        je     near ptr 0x00462E94;
+	__asm        je     _T912;
 // LINE 566:
 	__asm        push   1;
 	__asm        call   VRAppCityInit;
 	__asm        add    esp, 4;
 // LINE 567:
-	__asm        jmp    near ptr 0x00462EFD;
+	__asm        jmp    _T97b;
 // LINE 568:
+_T912:
 	__asm        mov    bCheckForCommandLineCheatCodes, 1;
 // LINE 569:
 	__asm        mov    dword ptr ds:[0x5B4794], 1;
@@ -2610,7 +2730,7 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::BackgroundVRAppInit;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00462EFD;
+	__asm        jne    _T97b;
 // LINE 572:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 1;
@@ -2629,11 +2749,12 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 578:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 585:
+_T97b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        je     near ptr 0x00462F64;
+	__asm        je     _T9e2;
 // LINE 586:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
@@ -2656,8 +2777,9 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 591:
-	__asm        jmp    near ptr 0x00462F89;
+	__asm        jmp    _Ta07;
 // LINE 592:
+_T9e2:
 	__asm        push   0;
 	__asm        call   VRAppGameInit;
 	__asm        add    esp, 4;
@@ -2668,8 +2790,9 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 599:
+_Ta07:
 	__asm        cmp    dword ptr ds:[0x5992A4], 0;
-	__asm        jne    near ptr 0x00462FCD;
+	__asm        jne    _Ta4b;
 // LINE 600:
 	__asm        mov    dword ptr ds:[0x5992A4], 1;
 // LINE 601:
@@ -2678,7 +2801,7 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00462FCD;
+	__asm        je     _Ta4b;
 // LINE 602:
 	__asm        push   1;
 	__asm        push   0x1E;
@@ -2686,23 +2809,26 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 604:
+_Ta4b:
 	__asm        cmp    bCheckForCommandLineCheatCodes, 0;
-	__asm        je     near ptr 0x00462FE2;
+	__asm        je     _Ta60;
 // LINE 605:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CheckCommandLineForCheatCodes;
 // LINE 606:
+_Ta60:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 1;
 // LINE 607:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 609:
 // Block end:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_Ta7c:
 	__asm        cmp    nMode, 7;
-	__asm        jne    near ptr 0x0046319A;
+	__asm        jne    _Tc18;
 // LINE 610:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2742,14 +2868,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004630A5;
 
 	__asm        cmp    dword ptr [ebp-0x108], 0;
-	__asm        je     near ptr 0x004630C9;
+	__asm        je     _Tb47;
 
 	__asm        mov    eax, [ebp-0x110];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x108];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x004630C9;
+	__asm        jmp    _Tb47;
 
+_Tb47:
 	__asm        jmp    near ptr 0x004630CE;
 
 	__asm        mov    eax, [ebp-0x10C];
@@ -2797,12 +2924,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    dword ptr [eax+0x1C], 1;
 // LINE 618:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 621:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_Tc18:
 	__asm        cmp    nMode, 8;
-	__asm        jne    near ptr 0x00463329;
+	__asm        jne    _Tda7;
 // LINE 622:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2842,14 +2970,15 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00463241;
 
 	__asm        cmp    dword ptr [ebp-0x124], 0;
-	__asm        je     near ptr 0x00463265;
+	__asm        je     _Tce3;
 
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x124];
 	__asm        call   CopterGameMode::CopterGameMode;
-	__asm        jmp    near ptr 0x00463265;
+	__asm        jmp    _Tce3;
 
+_Tce3:
 	__asm        jmp    near ptr 0x0046326A;
 
 	__asm        mov    eax, [ebp-0x128];
@@ -2894,12 +3023,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   GameModeCatalogData::UsePalette;
 // LINE 629:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 631:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_Tda7:
 	__asm        cmp    nMode, 9;
-	__asm        jne    near ptr 0x00463494;
+	__asm        jne    _Tf12;
 // LINE 632:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -2982,12 +3112,13 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   GameModeMissionLogData::UsePalette;
 // LINE 639:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 641:
-	__asm        jmp    near ptr 0x004635FA;
+	__asm        jmp    _T1078;
 
+_Tf12:
 	__asm        cmp    nMode, 0xB;
-	__asm        jne    near ptr 0x004635FA;
+	__asm        jne    _T1078;
 // LINE 642:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4340], 1;
@@ -3070,10 +3201,11 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   GameModeInventoryData::UsePalette;
 // LINE 649:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 651:
+_T1078:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00463601;
+	__asm        jmp    _T107f;
 // LINE 652:
 }
 
@@ -3081,7 +3213,7 @@ int  CGameApp::EnterMode(int32_t nMode) {
 int  CGameApp::ExitMode(int32_t nMode) {
 // LINE 661:
 	__asm        cmp    nMode, 0;
-	__asm        jne    near ptr 0x0046366E;
+	__asm        jne    _T66;
 // LINE 662:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3105,12 +3237,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x0046365F;
 // LINE 663:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 665:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T66:
 	__asm        cmp    nMode, 2;
-	__asm        jne    near ptr 0x00463706;
+	__asm        jne    _Tfe;
 // LINE 666:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3156,16 +3289,17 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004636F7;
 // LINE 667:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 669:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_Tfe:
 	__asm        cmp    nMode, 3;
-	__asm        jne    near ptr 0x004637BD;
+	__asm        jne    _T1b5;
 // LINE 672:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C0], 0;
-	__asm        je     near ptr 0x0046375A;
+	__asm        je     _T152;
 // LINE 673:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x42C0];
@@ -3173,18 +3307,20 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0046374D;
+	__asm        je     _T145;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0046374D;
+	__asm        jmp    _T145;
 // LINE 674:
+_T145:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42C0], 0;
 // LINE 678:
+_T152:
 	__asm        push   0;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -3215,12 +3351,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004637AE;
 // LINE 681:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 683:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T1b5:
 	__asm        cmp    nMode, 4;
-	__asm        jne    near ptr 0x0046387B;
+	__asm        jne    _T273;
 // LINE 689:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3281,12 +3418,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x0046386C;
 // LINE 693:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 695:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T273:
 	__asm        cmp    nMode, 5;
-	__asm        jne    near ptr 0x004638F3;
+	__asm        jne    _T2eb;
 // LINE 697:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3322,24 +3460,26 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004638E4;
 // LINE 700:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 702:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T2eb:
 	__asm        cmp    nMode, 6;
-	__asm        jne    near ptr 0x004639D4;
+	__asm        jne    _T3cc;
 // LINE 706:
 	__asm        call   S3CityDeInit;
 // LINE 707:
 	__asm        jmp    near ptr 0x00463907;
 
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
-	__asm        je     near ptr 0x00463920;
+	__asm        je     _T318;
 // LINE 708:
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 709:
+_T318:
 	__asm        call   S3DSStopAllSounds;
 // LINE 710:
 	__asm        push   0;
@@ -3398,12 +3538,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x004639C5;
 // LINE 713:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 715:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T3cc:
 	__asm        cmp    nMode, 7;
-	__asm        jne    near ptr 0x00463A3C;
+	__asm        jne    _T434;
 // LINE 717:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
@@ -3431,12 +3572,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00463A2D;
 // LINE 719:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 721:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T434:
 	__asm        cmp    nMode, 8;
-	__asm        jne    near ptr 0x00463AE2;
+	__asm        jne    _T4da;
 // LINE 723:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1678;
@@ -3486,12 +3628,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00463AD3;
 // LINE 725:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 727:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T4da:
 	__asm        cmp    nMode, 9;
-	__asm        jne    near ptr 0x00463B4A;
+	__asm        jne    _T542;
 // LINE 729:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2138;
@@ -3519,12 +3662,13 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00463B3B;
 // LINE 731:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 733:
-	__asm        jmp    near ptr 0x00463BEB;
+	__asm        jmp    _T5e3;
 
+_T542:
 	__asm        cmp    nMode, 0xB;
-	__asm        jne    near ptr 0x00463BEB;
+	__asm        jne    _T5e3;
 // LINE 735:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2BF8;
@@ -3574,10 +3718,11 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        jmp    near ptr 0x00463BE1;
 // LINE 737:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 739:
+_T5e3:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00463BF2;
+	__asm        jmp    _T5ea;
 // LINE 740:
 }
 
@@ -3589,7 +3734,7 @@ void  CGameApp::DestroyAllModes() {
 // LINE 753:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
-	__asm        je     near ptr 0x00463C5C;
+	__asm        je     _T63;
 // LINE 754:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x42BC];
@@ -3597,7 +3742,7 @@ void  CGameApp::DestroyAllModes() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00463C4F;
+	__asm        je     _T56;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   PaletteBuffer::~PaletteBuffer;
@@ -3607,11 +3752,13 @@ void  CGameApp::DestroyAllModes() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00463C4A;
 
-	__asm        jmp    near ptr 0x00463C4F;
+	__asm        jmp    _T56;
 // LINE 755:
+_T56:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42BC], 0;
 // LINE 758:
+_T63:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    eax, [eax];
@@ -3620,8 +3767,9 @@ void  CGameApp::DestroyAllModes() {
 	__asm        mov    i.node, eax;
 	__asm        jmp    near ptr 0x00463C75;
 
-	__asm        jmp    near ptr 0x00463C7A;
+	__asm        jmp    _T81;
 // LINE 759:
+_T81:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x1C], eax;
@@ -3633,26 +3781,31 @@ void  CGameApp::DestroyAllModes() {
 
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0x14], eax;
-	__asm        jne    near ptr 0x00463CAC;
+	__asm        jne    _Tb3;
 
-	__asm        jmp    near ptr 0x00463CC0;
+	__asm        jmp    _Tc7;
 
-	__asm        jmp    near ptr 0x00463CAC;
+	__asm        jmp    _Tb3;
 
-	__asm        jmp    near ptr 0x00463CBB;
+_Tb3:
+	__asm        jmp    _Tc2;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x00463CC0;
+	__asm        jne    _Tc7;
 
-	__asm        jmp    near ptr 0x00463CC5;
+_Tc2:
+	__asm        jmp    _Tcc;
 
-	__asm        jmp    near ptr 0x00463DC1;
+_Tc7:
+	__asm        jmp    _T1c8;
 
-	__asm        jmp    near ptr 0x00463CD4;
+_Tcc:
+	__asm        jmp    _Tdb;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x00463DC1;
+	__asm        je     _T1c8;
 // LINE 760:
+_Tdb:
 	__asm        jmp    near ptr 0x00463CD9;
 
 	__asm        mov    eax, i.node;
@@ -3661,55 +3814,57 @@ void  CGameApp::DestroyAllModes() {
 // LINE 761:
 	__asm        mov    eax, nCurrentMode;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x00463D66;
+	__asm        jmp    _T16d;
 // LINE 763:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        call   GameModeMainMenuData::DestroyAllSurfaces;
 	__asm        jmp    near ptr 0x00463CFD;
 // LINE 764:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 766:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::Shutdown;
 // LINE 767:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 769:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
 	__asm        call   GameModeHangarData::Shutdown;
 // LINE 770:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 772:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1678;
 	__asm        call   GameModeCatalogData::Shutdown;
 // LINE 773:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 775:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2138;
 	__asm        call   GameModeMissionLogData::Shutdown;
 // LINE 776:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 778:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2BF8;
 	__asm        call   GameModeInventoryData::Shutdown;
 // LINE 779:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 // LINE 780:
-	__asm        jmp    near ptr 0x00463D9E;
+	__asm        jmp    _T1a5;
 
+_T16d:
 	__asm        sub    dword ptr [ebp-0x34], 4;
 	__asm        cmp    dword ptr [ebp-0x34], 7;
-	__asm        ja     near ptr 0x00463D9E;
+	__asm        ja     _T1a5;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x463D7E];
 // Switch pointers
 // LINE 781:
+_T1a5:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, i.node;
@@ -3721,8 +3876,9 @@ void  CGameApp::DestroyAllModes() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00463DBC;
 // LINE 782:
-	__asm        jmp    near ptr 0x00463C7A;
+	__asm        jmp    _T81;
 // LINE 783:
+_T1c8:
 	__asm        jmp    near ptr 0x00463DC6;
 }
 
@@ -3730,57 +3886,63 @@ void  CGameApp::DestroyAllModes() {
 void  CGameApp::ProcessCommand(int32_t nCommand) {
 // LINE 791:
 	__asm        cmp    nCommand, 0x37;
-	__asm        jne    near ptr 0x00463DF6;
+	__asm        jne    _T2b;
 // LINE 792:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x5C];
 // LINE 793:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 795:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 
+_T2b:
 	__asm        cmp    nCommand, 0xC9;
-	__asm        jne    near ptr 0x00463E15;
+	__asm        jne    _T4a;
 // LINE 796:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::TogglePaletteBufferDisplay;
 // LINE 797:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 799:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 
+_T4a:
 	__asm        cmp    nCommand, 0xCA;
-	__asm        jne    near ptr 0x00463E34;
+	__asm        jne    _T69;
 // LINE 800:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ToggleDebugWindowDisplay;
 // LINE 801:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 803:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 
+_T69:
 	__asm        cmp    nCommand, 0xCB;
-	__asm        jne    near ptr 0x00463E7A;
+	__asm        jne    _Taf;
 // LINE 804:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C8], 0;
-	__asm        jne    near ptr 0x00463E63;
+	__asm        jne    _T98;
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42C8], 1;
-	__asm        jmp    near ptr 0x00463E70;
+	__asm        jmp    _Ta5;
 
+_T98:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x42C8], 0;
 // LINE 805:
-	__asm        jmp    near ptr 0x00464446;
+_Ta5:
+	__asm        jmp    _T67b;
 // LINE 807:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 
+_Taf:
 	__asm        cmp    nCommand, 0xCC;
-	__asm        jne    near ptr 0x00463EDA;
+	__asm        jne    _T10f;
 // LINE 808:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3802,32 +3964,36 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 4;
-	__asm        jl     near ptr 0x00463ED0;
+	__asm        jl     _T105;
 // LINE 809:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ShowVersion;
 // LINE 810:
-	__asm        jmp    near ptr 0x00464446;
+_T105:
+	__asm        jmp    _T67b;
 // LINE 812:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 
+_T10f:
 	__asm        cmp    nCommand, 0x36;
-	__asm        jne    near ptr 0x00463F0D;
+	__asm        jne    _T142;
 // LINE 813:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4320], 0;
-	__asm        jne    near ptr 0x00463F03;
+	__asm        jne    _T138;
 // LINE 814:
 	__asm        push   0xA;
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::SetSystemPriorityLevel;
 // LINE 815:
-	__asm        jmp    near ptr 0x00463F0D;
+	__asm        jmp    _T142;
 // LINE 816:
+_T138:
 	__asm        push   0;
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::SetSystemPriorityLevel;
 // LINE 818:
+_T142:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x14], eax;
@@ -3848,10 +4014,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 7;
-	__asm        jne    near ptr 0x00464005;
+	__asm        jne    _T23a;
 // LINE 819:
 	__asm        cmp    nCommand, 1;
-	__asm        jne    near ptr 0x00463F7D;
+	__asm        jne    _T1b2;
 // LINE 821:
 	__asm        push   7;
 	__asm        mov    eax, this;
@@ -3865,10 +4031,11 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 // LINE 823:
 	__asm        call   RemoveAvatarFromBuilding;
 // LINE 825:
-	__asm        jmp    near ptr 0x00464005;
+	__asm        jmp    _T23a;
 
+_T1b2:
 	__asm        cmp    nCommand, 2;
-	__asm        jne    near ptr 0x00463FAC;
+	__asm        jne    _T1e1;
 // LINE 828:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
@@ -3880,12 +4047,13 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 830:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 832:
-	__asm        jmp    near ptr 0x00464005;
+	__asm        jmp    _T23a;
 
+_T1e1:
 	__asm        cmp    nCommand, 3;
-	__asm        jne    near ptr 0x00463FDB;
+	__asm        jne    _T210;
 // LINE 833:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
@@ -3897,12 +4065,13 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 835:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 837:
-	__asm        jmp    near ptr 0x00464005;
+	__asm        jmp    _T23a;
 
+_T210:
 	__asm        cmp    nCommand, 4;
-	__asm        jne    near ptr 0x00464005;
+	__asm        jne    _T23a;
 // LINE 838:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
@@ -3914,8 +4083,9 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 840:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 844:
+_T23a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x1C], eax;
@@ -3936,10 +4106,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+8], 8;
-	__asm        jne    near ptr 0x0046406B;
+	__asm        jne    _T2a0;
 // LINE 845:
 	__asm        cmp    nCommand, 1;
-	__asm        jne    near ptr 0x0046406B;
+	__asm        jne    _T2a0;
 // LINE 846:
 	__asm        push   8;
 	__asm        mov    eax, this;
@@ -3951,6 +4121,7 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        add    ecx, 0xBB8;
 	__asm        call   GameModeHangarData::Awake;
 // LINE 851:
+_T2a0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x24], eax;
@@ -3971,10 +4142,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 9;
-	__asm        jne    near ptr 0x004640D1;
+	__asm        jne    _T306;
 // LINE 852:
 	__asm        cmp    nCommand, 1;
-	__asm        jne    near ptr 0x004640D1;
+	__asm        jne    _T306;
 // LINE 853:
 	__asm        push   9;
 	__asm        mov    eax, this;
@@ -3986,6 +4157,7 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        add    ecx, 0xBB8;
 	__asm        call   GameModeHangarData::Awake;
 // LINE 858:
+_T306:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x2C], eax;
@@ -4006,10 +4178,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+8], 0xB;
-	__asm        jne    near ptr 0x0046413C;
+	__asm        jne    _T371;
 // LINE 859:
 	__asm        cmp    nCommand, 1;
-	__asm        jne    near ptr 0x00464137;
+	__asm        jne    _T36c;
 // LINE 860:
 	__asm        push   0xB;
 	__asm        mov    eax, this;
@@ -4021,8 +4193,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        add    ecx, 0xBB8;
 	__asm        call   GameModeHangarData::Awake;
 // LINE 865:
-	__asm        jmp    near ptr 0x00464441;
+_T36c:
+	__asm        jmp    _T676;
 
+_T371:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x34], eax;
@@ -4043,104 +4217,112 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jne    near ptr 0x00464441;
+	__asm        jne    _T676;
 // LINE 866:
 	__asm        cmp    nCommand, 0x30;
-	__asm        jne    near ptr 0x00464199;
+	__asm        jne    _T3ce;
 // LINE 867:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ToggleMusicSoundTrack;
 // LINE 868:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 870:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T3ce:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        jne    near ptr 0x00464441;
+	__asm        jne    _T676;
 // LINE 874:
 	__asm        cmp    nCommand, 3;
-	__asm        je     near ptr 0x004641C7;
+	__asm        je     _T3fc;
 
 	__asm        cmp    nCommand, 0x15;
-	__asm        jl     near ptr 0x004641EA;
+	__asm        jl     _T41f;
 
 	__asm        cmp    nCommand, 0x19;
-	__asm        jg     near ptr 0x004641EA;
+	__asm        jg     _T41f;
 // LINE 876:
+_T3fc:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004641E0;
+	__asm        je     _T415;
 // LINE 877:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
 	__asm        call   S3HeliCommand;
 	__asm        add    esp, 4;
 // LINE 878:
-	__asm        jmp    near ptr 0x00464446;
+_T415:
+	__asm        jmp    _T67b;
 // LINE 882:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 // LINE 889:
+_T41f:
 	__asm        cmp    nCommand, 0x2D;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 0x2E;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 5;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 4;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 0x2F;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 0x14;
-	__asm        je     near ptr 0x0046423A;
+	__asm        je     _T46f;
 
 	__asm        cmp    nCommand, 0x1B;
-	__asm        jl     near ptr 0x00464285;
+	__asm        jl     _T4ba;
 
 	__asm        cmp    nCommand, 0x20;
-	__asm        jg     near ptr 0x00464285;
+	__asm        jg     _T4ba;
 // LINE 891:
+_T46f:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
 	__asm        call   S3ViewerCommand;
 	__asm        add    esp, 4;
 // LINE 894:
 	__asm        cmp    nCommand, 0x2D;
-	__asm        jne    near ptr 0x00464263;
+	__asm        jne    _T498;
 // LINE 895:
 	__asm        mov    eax, ds:[0x598E88];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4328], eax;
 // LINE 896:
-	__asm        jmp    near ptr 0x0046427B;
+	__asm        jmp    _T4b0;
 
+_T498:
 	__asm        cmp    nCommand, 0x2E;
-	__asm        jne    near ptr 0x0046427B;
+	__asm        jne    _T4b0;
 // LINE 897:
 	__asm        mov    eax, ds:[0x598E8C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x432C], eax;
 // LINE 898:
-	__asm        jmp    near ptr 0x00464446;
+_T4b0:
+	__asm        jmp    _T67b;
 // LINE 900:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 // LINE 901:
+_T4ba:
 	__asm        cmp    nCommand, 0x22;
-	__asm        jl     near ptr 0x004642CE;
+	__asm        jl     _T503;
 
 	__asm        cmp    nCommand, 0x25;
-	__asm        jg     near ptr 0x004642CE;
+	__asm        jg     _T503;
 // LINE 903:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004642C4;
+	__asm        je     _T4f9;
 
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 2;
-	__asm        je     near ptr 0x004642C4;
+	__asm        je     _T4f9;
 // LINE 904:
 	__asm        mov    eax, nCommand;
 	__asm        sub    eax, 0x22;
@@ -4148,92 +4330,105 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        call   S3PlayMegaphoneMessage;
 	__asm        add    esp, 4;
 // LINE 905:
-	__asm        jmp    near ptr 0x00464446;
+_T4f9:
+	__asm        jmp    _T67b;
 // LINE 908:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T503:
 	__asm        cmp    nCommand, 0x35;
-	__asm        jne    near ptr 0x004642EA;
+	__asm        jne    _T51f;
 // LINE 909:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateControlDisplayWindow;
 // LINE 910:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 913:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T51f:
 	__asm        cmp    nCommand, 0x31;
-	__asm        jne    near ptr 0x00464329;
+	__asm        jne    _T55e;
 // LINE 914:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0x4308];
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4308], 2;
-	__asm        jle    near ptr 0x0046431A;
+	__asm        jle    _T54f;
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4308], 0;
+_T54f:
 	__asm        jmp    near ptr 0x0046431F;
 // LINE 915:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 917:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T55e:
 	__asm        cmp    nCommand, 0x32;
-	__asm        jne    near ptr 0x0046434B;
+	__asm        jne    _T580;
 // LINE 918:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::TogglePanelDisplay;
 // LINE 919:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 921:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T580:
 	__asm        cmp    nCommand, 0x34;
-	__asm        jne    near ptr 0x0046436D;
+	__asm        jne    _T5a2;
 // LINE 922:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::ToggleEquipmentDisplay;
 // LINE 923:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 925:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T5a2:
 	__asm        cmp    nCommand, 0x33;
-	__asm        jne    near ptr 0x004643B0;
+	__asm        jne    _T5e5;
 // LINE 926:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4330], 0;
-	__asm        jne    near ptr 0x00464399;
+	__asm        jne    _T5ce;
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4330], 1;
-	__asm        jmp    near ptr 0x004643A6;
+	__asm        jmp    _T5db;
 
+_T5ce:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4330], 0;
 // LINE 927:
-	__asm        jmp    near ptr 0x00464446;
+_T5db:
+	__asm        jmp    _T67b;
 // LINE 929:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T5e5:
 	__asm        cmp    nCommand, 0x2A;
-	__asm        jne    near ptr 0x00464405;
+	__asm        jne    _T63a;
 // LINE 930:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        jne    near ptr 0x004643CC;
+	__asm        jne    _T601;
 
-	__asm        jmp    near ptr 0x004643D1;
+	__asm        jmp    _T606;
 
-	__asm        jmp    near ptr 0x004643FB;
+_T601:
+	__asm        jmp    _T630;
 
-	__asm        jmp    near ptr 0x004643E0;
+_T606:
+	__asm        jmp    _T615;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004643FB;
+	__asm        je     _T630;
 // LINE 933:
+_T615:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::Sleep;
@@ -4244,22 +4439,25 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 936:
-	__asm        jmp    near ptr 0x00464446;
+_T630:
+	__asm        jmp    _T67b;
 // LINE 938:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T63a:
 	__asm        cmp    nCommand, 0x3A;
-	__asm        jne    near ptr 0x00464421;
+	__asm        jne    _T656;
 // LINE 939:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateCheatCodeEntryMessageBox;
 // LINE 940:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 942:
-	__asm        jmp    near ptr 0x00464441;
+	__asm        jmp    _T676;
 
+_T656:
 	__asm        cmp    nCommand, 0x38;
-	__asm        jne    near ptr 0x00464441;
+	__asm        jne    _T676;
 // LINE 944:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0xA4];
@@ -4267,9 +4465,10 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreatePlayMenu;
 // LINE 946:
-	__asm        jmp    near ptr 0x00464446;
+	__asm        jmp    _T67b;
 // LINE 956:
-	__asm        jmp    near ptr 0x00464446;
+_T676:
+	__asm        jmp    _T67b;
 }
 
 // FUNCTION: COPTER_D 0x0046444d
@@ -4293,7 +4492,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 971:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x0046449F;
+	__asm        je     _T52;
 // LINE 972:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4302,8 +4501,9 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 973:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 976:
+_T52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
@@ -4314,10 +4514,11 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0xC];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004644C3;
+	__asm        je     _T76;
 // LINE 977:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 981:
+_T76:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x10], eax;
@@ -4338,14 +4539,14 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 3;
-	__asm        jne    near ptr 0x0046453D;
+	__asm        jne    _Tf0;
 // LINE 983:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C0], 0;
-	__asm        je     near ptr 0x00464538;
+	__asm        je     _Teb;
 
 	__asm        cmp    lKey, 0x1B;
-	__asm        jne    near ptr 0x00464538;
+	__asm        jne    _Teb;
 // LINE 984:
 	__asm        push   3;
 	__asm        mov    eax, this;
@@ -4359,8 +4560,10 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 994:
-	__asm        jmp    near ptr 0x00464873;
+_Teb:
+	__asm        jmp    _T426;
 
+_Tf0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x18], eax;
@@ -4381,14 +4584,14 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 5;
-	__asm        jne    near ptr 0x004645BC;
+	__asm        jne    _T16f;
 // LINE 996:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 1;
-	__asm        jne    near ptr 0x004645B2;
+	__asm        jne    _T165;
 
 	__asm        cmp    lKey, 0x1B;
-	__asm        jne    near ptr 0x004645B2;
+	__asm        jne    _T165;
 // LINE 998:
 	__asm        push   5;
 	__asm        mov    eax, this;
@@ -4402,10 +4605,12 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1001:
-	__asm        jmp    near ptr 0x00464878;
+_T165:
+	__asm        jmp    _T42b;
 // LINE 1004:
-	__asm        jmp    near ptr 0x00464873;
+	__asm        jmp    _T426;
 
+_T16f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x20], eax;
@@ -4426,7 +4631,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jne    near ptr 0x00464648;
+	__asm        jne    _T1fb;
 // LINE 1006:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4443,7 +4648,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1007:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x00464643;
+	__asm        je     _T1f6;
 // LINE 1008:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4452,10 +4657,12 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1009:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 1012:
-	__asm        jmp    near ptr 0x00464873;
+_T1f6:
+	__asm        jmp    _T426;
 
+_T1fb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x28], eax;
@@ -4476,7 +4683,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 7;
-	__asm        jne    near ptr 0x004646D4;
+	__asm        jne    _T287;
 // LINE 1014:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4493,7 +4700,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1015:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x004646CF;
+	__asm        je     _T282;
 // LINE 1016:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4502,10 +4709,12 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1017:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 1020:
-	__asm        jmp    near ptr 0x00464873;
+_T282:
+	__asm        jmp    _T426;
 
+_T287:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x30], eax;
@@ -4526,7 +4735,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    dword ptr [eax+8], 8;
-	__asm        jne    near ptr 0x00464760;
+	__asm        jne    _T313;
 // LINE 1021:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4543,7 +4752,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1022:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x0046475B;
+	__asm        je     _T30e;
 // LINE 1023:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4552,10 +4761,12 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1024:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 1027:
-	__asm        jmp    near ptr 0x00464873;
+_T30e:
+	__asm        jmp    _T426;
 
+_T313:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x38], eax;
@@ -4576,7 +4787,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    dword ptr [eax+8], 9;
-	__asm        jne    near ptr 0x004647EC;
+	__asm        jne    _T39f;
 // LINE 1028:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4593,7 +4804,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1029:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x004647E7;
+	__asm        je     _T39a;
 // LINE 1030:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4602,10 +4813,12 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1031:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 1034:
-	__asm        jmp    near ptr 0x00464873;
+_T39a:
+	__asm        jmp    _T426;
 
+_T39f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x40], eax;
@@ -4626,7 +4839,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    dword ptr [eax+8], 0xB;
-	__asm        jne    near ptr 0x00464873;
+	__asm        jne    _T426;
 // LINE 1035:
 	__asm        lea    eax, bPushCommand;
 	__asm        push   eax;
@@ -4643,7 +4856,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1036:
 	__asm        cmp    nCommand, 0;
-	__asm        je     near ptr 0x00464873;
+	__asm        je     _T426;
 // LINE 1037:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
@@ -4652,9 +4865,10 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1038:
-	__asm        jmp    near ptr 0x00464878;
+	__asm        jmp    _T42b;
 // LINE 1041:
-	__asm        jmp    near ptr 0x00464878;
+_T426:
+	__asm        jmp    _T42b;
 }
 
 // FUNCTION: COPTER_D 0x0046487f
@@ -4670,10 +4884,11 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x10];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004648AF;
+	__asm        je     _T30;
 // LINE 1051:
-	__asm        jmp    near ptr 0x00464A9E;
+	__asm        jmp    _T21f;
 // LINE 1054:
+_T30:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-8], eax;
@@ -4694,7 +4909,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jne    near ptr 0x00464912;
+	__asm        jne    _T93;
 // LINE 1055:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x110;
@@ -4706,8 +4921,9 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    ecx, ds:[0x599BC0];
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1056:
-	__asm        jmp    near ptr 0x00464A99;
+	__asm        jmp    _T21a;
 
+_T93:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x10], eax;
@@ -4728,7 +4944,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 7;
-	__asm        jne    near ptr 0x00464975;
+	__asm        jne    _Tf6;
 // LINE 1057:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBD0;
@@ -4740,8 +4956,9 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    ecx, ds:[0x599BC0];
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1058:
-	__asm        jmp    near ptr 0x00464A99;
+	__asm        jmp    _T21a;
 
+_Tf6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x18], eax;
@@ -4762,7 +4979,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 8;
-	__asm        jne    near ptr 0x004649D8;
+	__asm        jne    _T159;
 // LINE 1059:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x1690;
@@ -4774,8 +4991,9 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    ecx, ds:[0x599BC0];
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1060:
-	__asm        jmp    near ptr 0x00464A99;
+	__asm        jmp    _T21a;
 
+_T159:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x20], eax;
@@ -4796,7 +5014,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 9;
-	__asm        jne    near ptr 0x00464A3B;
+	__asm        jne    _T1bc;
 // LINE 1061:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x2150;
@@ -4808,8 +5026,9 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    ecx, ds:[0x599BC0];
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1062:
-	__asm        jmp    near ptr 0x00464A99;
+	__asm        jmp    _T21a;
 
+_T1bc:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x28], eax;
@@ -4830,7 +5049,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0xB;
-	__asm        jne    near ptr 0x00464A99;
+	__asm        jne    _T21a;
 // LINE 1063:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x2C10;
@@ -4842,7 +5061,8 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    ecx, ds:[0x599BC0];
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1064:
-	__asm        jmp    near ptr 0x00464A9E;
+_T21a:
+	__asm        jmp    _T21f;
 }
 
 // FUNCTION: COPTER_D 0x00464aa5
@@ -4934,14 +5154,15 @@ void  CGameApp::ClearCommands() {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jne    near ptr 0x00464BC5;
+	__asm        jne    _T60;
 // LINE 1111:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x110;
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1112:
-	__asm        jmp    near ptr 0x00464D10;
+	__asm        jmp    _T1ab;
 
+_T60:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x10], eax;
@@ -4962,14 +5183,15 @@ void  CGameApp::ClearCommands() {
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 7;
-	__asm        jne    near ptr 0x00464C19;
+	__asm        jne    _Tb4;
 // LINE 1113:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBD0;
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1114:
-	__asm        jmp    near ptr 0x00464D10;
+	__asm        jmp    _T1ab;
 
+_Tb4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x18], eax;
@@ -4990,14 +5212,15 @@ void  CGameApp::ClearCommands() {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 8;
-	__asm        jne    near ptr 0x00464C6D;
+	__asm        jne    _T108;
 // LINE 1115:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1690;
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1116:
-	__asm        jmp    near ptr 0x00464D10;
+	__asm        jmp    _T1ab;
 
+_T108:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x20], eax;
@@ -5018,14 +5241,15 @@ void  CGameApp::ClearCommands() {
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 9;
-	__asm        jne    near ptr 0x00464CC1;
+	__asm        jne    _T15c;
 // LINE 1117:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2150;
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1118:
-	__asm        jmp    near ptr 0x00464D10;
+	__asm        jmp    _T1ab;
 
+_T15c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x28], eax;
@@ -5046,12 +5270,13 @@ void  CGameApp::ClearCommands() {
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0xB;
-	__asm        jne    near ptr 0x00464D10;
+	__asm        jne    _T1ab;
 // LINE 1119:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2C10;
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1120:
+_T1ab:
 	__asm        jmp    near ptr 0x00464D15;
 }
 
@@ -5060,10 +5285,11 @@ void  CGameApp::ProcessSystemCloseRequest() {
 // LINE 1129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00464D38;
+	__asm        je     _T1e;
 // LINE 1130:
-	__asm        jmp    near ptr 0x00464DAE;
+	__asm        jmp    _T94;
 // LINE 1131:
+_T1e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x18], 1;
 // LINE 1132:
@@ -5087,7 +5313,7 @@ void  CGameApp::ProcessSystemCloseRequest() {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        jl     near ptr 0x00464D9C;
+	__asm        jl     _T82;
 // LINE 1133:
 	__asm        push   0x20002;
 	__asm        push   3;
@@ -5095,15 +5321,17 @@ void  CGameApp::ProcessSystemCloseRequest() {
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1134:
-	__asm        jmp    near ptr 0x00464DA9;
+	__asm        jmp    _T8f;
 // LINE 1136:
+_T82:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1138:
-	__asm        jmp    near ptr 0x00464DAE;
+_T8f:
+	__asm        jmp    _T94;
 }
 
 // FUNCTION: COPTER_D 0x00464db3
@@ -5112,7 +5340,7 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 
 // LINE 1147:
 	__asm        cmp    dword ptr ds:[0x5C3814], 0;
-	__asm        je     near ptr 0x00464DF6;
+	__asm        je     _T43;
 // LINE 1148:
 	__asm        mov    eax, ds:[0x5C3814];
 	__asm        dec    eax;
@@ -5126,10 +5354,11 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x88];
-	__asm        jmp    near ptr 0x00464DFD;
+	__asm        jmp    _T4a;
 // LINE 1152:
+_T43:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00464DFD;
+	__asm        jmp    _T4a;
 // LINE 1153:
 }
 
@@ -5137,14 +5366,16 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 // LINE 1164:
 	__asm        cmp    nNewLevel, 0;
-	__asm        jl     near ptr 0x00464E22;
+	__asm        jl     _T20;
 
 	__asm        cmp    nNewLevel, 0x1F;
-	__asm        jl     near ptr 0x00464E29;
+	__asm        jl     _T27;
 // LINE 1165:
+_T20:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00464EAB;
+	__asm        jmp    _Ta9;
 // LINE 1166:
+_T27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-8], eax;
@@ -5165,11 +5396,12 @@ int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        je     near ptr 0x00464E71;
+	__asm        je     _T6f;
 // LINE 1167:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00464EAB;
+	__asm        jmp    _Ta9;
 // LINE 1168:
+_T6f:
 	__asm        push   6;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5191,7 +5423,7 @@ int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1172:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00464EAB;
+	__asm        jmp    _Ta9;
 // LINE 1173:
 }
 
@@ -5218,20 +5450,22 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        je     near ptr 0x00464F06;
+	__asm        je     _T54;
 // LINE 1183:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00465019;
+	__asm        jmp    _T167;
 // LINE 1185:
+_T54:
 	__asm        cmp    dword ptr ds:[0x5C2AB4], 0x1E;
-	__asm        jl     near ptr 0x00464F26;
+	__asm        jl     _T74;
 // LINE 1186:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x90];
-	__asm        jmp    near ptr 0x00465019;
+	__asm        jmp    _T167;
 // LINE 1192:
+_T74:
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33D8], 0;
@@ -5240,21 +5474,23 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        jmp    near ptr 0x00464F4E;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00464F60;
+	__asm        je     _Tae;
 
-	__asm        jmp    near ptr 0x00464FCF;
+	__asm        jmp    _T11d;
 
+_Tae:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x00464F82;
+	__asm        jne    _Td0;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00464FCA;
+	__asm        jmp    _T118;
 
-	__asm        jmp    near ptr 0x00464FCA;
+	__asm        jmp    _T118;
 
+_Td0:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00464FB1;
+	__asm        jne    _Tff;
 
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -5263,19 +5499,22 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00464FCA;
+	__asm        jmp    _T118;
 
-	__asm        jmp    near ptr 0x00464FCA;
+	__asm        jmp    _T118;
 
+_Tff:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x00464FCA;
+	__asm        jmp    _T118;
 
-	__asm        jmp    near ptr 0x00464FCF;
+_T118:
+	__asm        jmp    _T11d;
 
+_T11d:
 	__asm        jmp    near ptr 0x00464FD4;
 
 	__asm        jmp    near ptr 0x00464FD9;
@@ -5301,7 +5540,7 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1197:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465019;
+	__asm        jmp    _T167;
 // LINE 1198:
 }
 
@@ -5328,13 +5567,14 @@ int  CGameApp::GraduateUserFromAllCareerLevels() {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
-	__asm        je     near ptr 0x00465072;
+	__asm        je     _T54;
 // LINE 1208:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046507C;
+	__asm        jmp    _T5e;
 // LINE 1209:
+_T54:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0046507C;
+	__asm        jmp    _T5e;
 // LINE 1210:
 }
 
@@ -5364,7 +5604,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1C8], eax;
 	__asm        cmp    dword ptr [ebp-0x1C8], 0;
-	__asm        jne    near ptr 0x00465122;
+	__asm        jne    _Ta1;
 
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -5383,10 +5623,12 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        push   eax;
 	__asm        call   strcat;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x00465127;
+	__asm        jmp    _Ta6;
 
-	__asm        jmp    near ptr 0x00465127;
+_Ta1:
+	__asm        jmp    _Ta6;
 // LINE 1224:
+_Ta6:
 	__asm        lea    eax, szString[0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604530;
@@ -5408,7 +5650,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1CC], eax;
 	__asm        cmp    dword ptr [ebp-0x1CC], 0;
-	__asm        jne    near ptr 0x004651BD;
+	__asm        jne    _T13c;
 
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -5427,10 +5669,12 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        push   eax;
 	__asm        call   strcat;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x004651C2;
+	__asm        jmp    _T141;
 
-	__asm        jmp    near ptr 0x004651C2;
+_T13c:
+	__asm        jmp    _T141;
 // LINE 1227:
+_T141:
 	__asm        lea    eax, szString[0];
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604530;
@@ -5450,7 +5694,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x190], eax;
 	__asm        cmp    dword ptr [ebp-0x190], 0;
-	__asm        je     near ptr 0x0046533D;
+	__asm        je     _T2bc;
 
 	__asm        or     dword ptr [ebp-0x19C], 1;
 	__asm        push   0x10;
@@ -5458,7 +5702,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1BC], eax;
 	__asm        cmp    dword ptr [ebp-0x1BC], 0;
-	__asm        je     near ptr 0x004652F9;
+	__asm        je     _T278;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -5474,7 +5718,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004652CA;
+	__asm        je     _T249;
 
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    eax, [eax+8];
@@ -5499,19 +5743,23 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004652C5;
 
-	__asm        jmp    near ptr 0x004652D6;
+	__asm        jmp    _T255;
 
+_T249:
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    dword ptr [eax], 0;
+_T255:
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004652E8;
 
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    [ebp-0x194], eax;
-	__asm        jmp    near ptr 0x00465303;
+	__asm        jmp    _T282;
 
+_T278:
 	__asm        mov    dword ptr [ebp-0x194], 0;
+_T282:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00465312;
 
@@ -5523,29 +5771,31 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        mov    ecx, [ebp-0x190];
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    tempNotificationSound, eax;
-	__asm        jmp    near ptr 0x00465347;
+	__asm        jmp    _T2c6;
 
+_T2bc:
 	__asm        mov    tempNotificationSound, 0;
+_T2c6:
 	__asm        test   byte ptr [ebp-0x19C], 1;
-	__asm        je     near ptr 0x00465451;
+	__asm        je     _T3d0;
 
 	__asm        and    dword ptr [ebp-0x19C], 0xFFFFFFFE;
 	__asm        mov    eax, [ebp-0x194];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x194];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0046540E;
+	__asm        jne    _T38d;
 
 	__asm        mov    eax, [ebp-0x194];
 	__asm        mov    [ebp-0x1B0], eax;
 	__asm        mov    eax, [ebp-0x1B0];
 	__asm        mov    [ebp-0x1AC], eax;
 	__asm        cmp    dword ptr [ebp-0x1AC], 0;
-	__asm        je     near ptr 0x0046540E;
+	__asm        je     _T38d;
 
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004653EB;
+	__asm        je     _T36a;
 
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        mov    eax, [eax];
@@ -5560,6 +5810,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        mov    dword ptr [eax], 0;
+_T36a:
 	__asm        jmp    near ptr 0x004653F0;
 
 	__asm        jmp    near ptr 0x004653F5;
@@ -5570,12 +5821,13 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00465409;
 
-	__asm        jmp    near ptr 0x0046540E;
+	__asm        jmp    _T38d;
 
+_T38d:
 	__asm        jmp    near ptr 0x00465413;
 
 	__asm        cmp    dword ptr [ebp-0x198], 0;
-	__asm        je     near ptr 0x00465447;
+	__asm        je     _T3c6;
 
 	__asm        mov    eax, [ebp-0x198];
 	__asm        mov    [ebp-0x1A4], eax;
@@ -5585,10 +5837,12 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3c6:
 	__asm        jmp    near ptr 0x0046544C;
 
-	__asm        jmp    near ptr 0x00465451;
+	__asm        jmp    _T3d0;
 // LINE 1232:
+_T3d0:
 	__asm        mov    eax, tempNotificationSound;
 	__asm        push   eax;
 	__asm        push   0x43E250;
@@ -5643,18 +5897,19 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    nCurrentGameMode, eax;
 // LINE 1245:
 	__asm        cmp    lWindowID, 0x7DA;
-	__asm        je     near ptr 0x00465507;
+	__asm        je     _T63;
 
 	__asm        cmp    lWindowID, 0x7D9;
-	__asm        jne    near ptr 0x0046558F;
+	__asm        jne    _Teb;
 // LINE 1246:
+_T63:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DestroyMessageBox;
 // LINE 1247:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00465544;
+	__asm        je     _Ta0;
 // LINE 1248:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -5669,11 +5924,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1251:
-	__asm        jmp    near ptr 0x0046558A;
+	__asm        jmp    _Te6;
 
+_Ta0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x0046558A;
+	__asm        je     _Te6;
 // LINE 1252:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -5695,17 +5951,19 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1258:
-	__asm        jmp    near ptr 0x00465ECD;
+_Te6:
+	__asm        jmp    _Ta29;
 
+_Teb:
 	__asm        cmp    lWindowID, 0x7DF;
-	__asm        jne    near ptr 0x004656F4;
+	__asm        jne    _T250;
 // LINE 1259:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DestroyMessageBox;
 // LINE 1260:
 	__asm        cmp    lMessage, 1;
-	__asm        jne    near ptr 0x004656EF;
+	__asm        jne    _T24b;
 // LINE 1261:
 // Block start:
 	class basic_string<char> sCheatCodeString;
@@ -5714,7 +5972,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x00465601;
+	__asm        je     _T15d;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -5730,9 +5988,11 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    sCheatCodeString.reference, eax;
-	__asm        jmp    near ptr 0x00465608;
+	__asm        jmp    _T164;
 
+_T15d:
 	__asm        mov    sCheatCodeString.reference, 0;
+_T164:
 	__asm        mov    sCheatCodeString.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00465614;
 // LINE 1262:
@@ -5753,18 +6013,18 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sCheatCodeString.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004656BB;
+	__asm        jne    _T217;
 
 	__asm        mov    eax, sCheatCodeString.reference;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x004656BB;
+	__asm        je     _T217;
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0046569B;
+	__asm        je     _T1f7;
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax];
@@ -5779,6 +6039,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax], 0;
+_T1f7:
 	__asm        jmp    near ptr 0x004656A0;
 
 	__asm        jmp    near ptr 0x004656A5;
@@ -5789,12 +6050,13 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004656B6;
 
-	__asm        jmp    near ptr 0x004656BB;
+	__asm        jmp    _T217;
 
+_T217:
 	__asm        jmp    near ptr 0x004656C0;
 
 	__asm        cmp    sCheatCodeString.c_str_ptr, 0;
-	__asm        je     near ptr 0x004656E2;
+	__asm        je     _T23e;
 
 	__asm        mov    eax, sCheatCodeString.c_str_ptr;
 	__asm        mov    [ebp-0x38], eax;
@@ -5804,16 +6066,19 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T23e:
 	__asm        jmp    near ptr 0x004656E7;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1266:
 // Block end:
-	__asm        jmp    near ptr 0x00465ECD;
+_T24b:
+	__asm        jmp    _Ta29;
 
+_T250:
 	__asm        cmp    lWindowID, 0x7E0;
-	__asm        jne    near ptr 0x00465738;
+	__asm        jne    _T294;
 // LINE 1267:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
@@ -5833,12 +6098,13 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1270:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1272:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T294:
 	__asm        cmp    lWindowID, 0x7D2;
-	__asm        jne    near ptr 0x00465771;
+	__asm        jne    _T2cd;
 // LINE 1273:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
@@ -5853,12 +6119,13 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    eax, [eax-0x14];
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x80];
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1276:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T2cd:
 	__asm        cmp    lWindowID, 0x7D3;
-	__asm        jne    near ptr 0x004657A7;
+	__asm        jne    _T303;
 // LINE 1277:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
@@ -5873,21 +6140,23 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    eax, [eax-0x14];
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x7C];
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1280:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T303:
 	__asm        cmp    lWindowID, 0x7D7;
-	__asm        jne    near ptr 0x00465890;
+	__asm        jne    _T3ec;
 // LINE 1281:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x004657CE;
+	__asm        je     _T32a;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465881;
+	__asm        jne    _T3dd;
 // LINE 1282:
 // Block start:
 	long lCurrentCitySelection;
+_T32a:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    lCurrentCitySelection, eax;
@@ -5899,7 +6168,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1284:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        jne    near ptr 0x0046581B;
+	__asm        jne    _T377;
 // LINE 1285:
 	__asm        push   5;
 	__asm        mov    ecx, this;
@@ -5915,31 +6184,34 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1288:
-	__asm        jmp    near ptr 0x00465881;
+	__asm        jmp    _T3dd;
 // LINE 1289:
+_T377:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
-	__asm        je     near ptr 0x0046583C;
+	__asm        je     _T398;
 // LINE 1290:
 	__asm        mov    eax, lCurrentCitySelection;
 	__asm        push   eax;
 	__asm        call   SetUpNewCareerCity;
 	__asm        add    esp, 4;
 // LINE 1291:
-	__asm        jmp    near ptr 0x00465848;
+	__asm        jmp    _T3a4;
 // LINE 1292:
+_T398:
 	__asm        mov    eax, lCurrentCitySelection;
 	__asm        push   eax;
 	__asm        call   MoveToNextCareerCity;
 	__asm        add    esp, 4;
 // LINE 1298:
+_T3a4:
 	__asm        mov    eax, lCurrentCitySelection;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::StartVideoForCitySelection;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00465881;
+	__asm        jne    _T3dd;
 // LINE 1299:
 	__asm        push   5;
 	__asm        mov    ecx, this;
@@ -5956,26 +6228,28 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1304:
 // Block end:
+_T3dd:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1306:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T3ec:
 	__asm        cmp    lWindowID, 0x7DE;
-	__asm        jne    near ptr 0x0046592A;
+	__asm        jne    _T486;
 // LINE 1307:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DestroyMessageBox;
 // LINE 1308:
 	__asm        cmp    lMessage, 2;
-	__asm        jne    near ptr 0x00465911;
+	__asm        jne    _T46d;
 // LINE 1309:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 1;
 // LINE 1314:
 	__asm        cmp    nCurrentGameMode, 6;
-	__asm        jl     near ptr 0x004658E2;
+	__asm        jl     _T43e;
 // LINE 1315:
 	__asm        push   0x20002;
 	__asm        push   0x31;
@@ -5984,8 +6258,9 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1316:
-	__asm        jmp    near ptr 0x0046590C;
+	__asm        jmp    _T468;
 // LINE 1317:
+_T43e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1318:
@@ -6002,25 +6277,30 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1322:
-	__asm        jmp    near ptr 0x0046591B;
+_T468:
+	__asm        jmp    _T477;
 // LINE 1323:
+_T46d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1324:
+_T477:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1326:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T486:
 	__asm        cmp    lWindowID, 0x7D4;
-	__asm        jne    near ptr 0x004659A7;
+	__asm        jne    _T503;
 // LINE 1327:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x00465951;
+	__asm        je     _T4ad;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465998;
+	__asm        jne    _T4f4;
 // LINE 1328:
+_T4ad:
 	__asm        mov    eax, lMessage;
 	__asm        sub    eax, 0x3E9;
 	__asm        cmp    eax, 1;
@@ -6043,22 +6323,25 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 // LINE 1329:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 1;
-	__asm        jmp    near ptr 0x00465998;
+	__asm        jmp    _T4f4;
 // LINE 1331:
+_T4f4:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1334:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T503:
 	__asm        cmp    lWindowID, 0x7D8;
-	__asm        jne    near ptr 0x00465A24;
+	__asm        jne    _T580;
 // LINE 1335:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x004659CE;
+	__asm        je     _T52a;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465A15;
+	__asm        jne    _T571;
 // LINE 1336:
+_T52a:
 	__asm        mov    eax, lMessage;
 	__asm        sub    eax, 0x3E9;
 	__asm        cmp    eax, 1;
@@ -6081,22 +6364,25 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 // LINE 1337:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 1;
-	__asm        jmp    near ptr 0x00465A15;
+	__asm        jmp    _T571;
 // LINE 1339:
+_T571:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1342:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T580:
 	__asm        cmp    lWindowID, 0x7D5;
-	__asm        jne    near ptr 0x00465AA1;
+	__asm        jne    _T5fd;
 // LINE 1343:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x00465A4B;
+	__asm        je     _T5a7;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465A92;
+	__asm        jne    _T5ee;
 // LINE 1344:
+_T5a7:
 	__asm        mov    eax, lMessage;
 	__asm        sub    eax, 0x3E9;
 	__asm        cmp    eax, 1;
@@ -6119,22 +6405,25 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 // LINE 1345:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0x54], 1;
-	__asm        jmp    near ptr 0x00465A92;
+	__asm        jmp    _T5ee;
 // LINE 1347:
+_T5ee:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1350:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T5fd:
 	__asm        cmp    lWindowID, 0x7D6;
-	__asm        jne    near ptr 0x00465B1E;
+	__asm        jne    _T67a;
 // LINE 1351:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x00465AC8;
+	__asm        je     _T624;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465B0F;
+	__asm        jne    _T66b;
 // LINE 1352:
+_T624:
 	__asm        mov    eax, lMessage;
 	__asm        sub    eax, 0x3E9;
 	__asm        cmp    eax, 1;
@@ -6157,22 +6446,25 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 // LINE 1353:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0x54], 1;
-	__asm        jmp    near ptr 0x00465B0F;
+	__asm        jmp    _T66b;
 // LINE 1355:
+_T66b:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1357:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T67a:
 	__asm        cmp    lWindowID, 0x7E1;
-	__asm        jne    near ptr 0x00465B73;
+	__asm        jne    _T6cf;
 // LINE 1358:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        je     near ptr 0x00465B45;
+	__asm        je     _T6a1;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465B64;
+	__asm        jne    _T6c0;
 // LINE 1359:
+_T6a1:
 	__asm        mov    eax, lMessage;
 	__asm        sub    eax, 0x3E9;
 	__asm        cmp    eax, 1;
@@ -6185,32 +6477,35 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DestroyCheckupWindow;
 // LINE 1360:
+_T6c0:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1362:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T6cf:
 	__asm        cmp    lWindowID, 0x2711;
-	__asm        jne    near ptr 0x00465B9D;
+	__asm        jne    _T6f9;
 
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x00465B9D;
+	__asm        jne    _T6f9;
 // LINE 1363:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DestroyControlDisplayWindow;
 // LINE 1365:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T6f9:
 	__asm        cmp    lWindowID, 0x835;
-	__asm        jne    near ptr 0x00465C69;
+	__asm        jne    _T7c5;
 // LINE 1366:
 	__asm        cmp    lMessage, 1;
-	__asm        jne    near ptr 0x00465C64;
+	__asm        jne    _T7c0;
 // LINE 1367:
 	__asm        mov    eax, pMessageData;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x00465BE4;
+	__asm        jne    _T740;
 // LINE 1368:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBA4;
@@ -6223,11 +6518,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1371:
-	__asm        jmp    near ptr 0x00465C64;
+	__asm        jmp    _T7c0;
 
+_T740:
 	__asm        mov    eax, pMessageData;
 	__asm        cmp    dword ptr [eax], 1;
-	__asm        jne    near ptr 0x00465C14;
+	__asm        jne    _T770;
 // LINE 1372:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBA4;
@@ -6240,11 +6536,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1375:
-	__asm        jmp    near ptr 0x00465C64;
+	__asm        jmp    _T7c0;
 
+_T770:
 	__asm        mov    eax, pMessageData;
 	__asm        cmp    dword ptr [eax], 2;
-	__asm        jne    near ptr 0x00465C44;
+	__asm        jne    _T7a0;
 // LINE 1376:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBA4;
@@ -6257,11 +6554,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1379:
-	__asm        jmp    near ptr 0x00465C64;
+	__asm        jmp    _T7c0;
 
+_T7a0:
 	__asm        mov    eax, pMessageData;
 	__asm        cmp    dword ptr [eax], 0x63;
-	__asm        jne    near ptr 0x00465C64;
+	__asm        jne    _T7c0;
 // LINE 1380:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -6270,13 +6568,15 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1384:
-	__asm        jmp    near ptr 0x00465ECD;
+_T7c0:
+	__asm        jmp    _Ta29;
 
+_T7c5:
 	__asm        cmp    lWindowID, 0x836;
-	__asm        jne    near ptr 0x00465C99;
+	__asm        jne    _T7f5;
 // LINE 1385:
 	__asm        cmp    lMessage, 3;
-	__asm        jne    near ptr 0x00465C94;
+	__asm        jne    _T7f0;
 // LINE 1386:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -6285,13 +6585,15 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1388:
-	__asm        jmp    near ptr 0x00465ECD;
+_T7f0:
+	__asm        jmp    _Ta29;
 
+_T7f5:
 	__asm        cmp    lWindowID, 0x838;
-	__asm        jne    near ptr 0x00465CC9;
+	__asm        jne    _T825;
 // LINE 1389:
 	__asm        cmp    lMessage, 1;
-	__asm        jne    near ptr 0x00465CC4;
+	__asm        jne    _T820;
 // LINE 1390:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -6300,10 +6602,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1392:
-	__asm        jmp    near ptr 0x00465ECD;
+_T820:
+	__asm        jmp    _Ta29;
 
+_T825:
 	__asm        cmp    lWindowID, 0x7DB;
-	__asm        jne    near ptr 0x00465CFD;
+	__asm        jne    _T859;
 // LINE 1395:
 	__asm        push   6;
 	__asm        mov    ecx, this;
@@ -6319,18 +6623,20 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1398:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T859:
 	__asm        cmp    lWindowID, 0x7DC;
-	__asm        jne    near ptr 0x00465D48;
+	__asm        jne    _T8a4;
 // LINE 1401:
 	__asm        cmp    lMessage, 2;
-	__asm        jne    near ptr 0x00465D1F;
+	__asm        jne    _T87b;
 // LINE 1402:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::DoSaveGameAs;
 // LINE 1403:
+_T87b:
 	__asm        mov    eax, nCurrentGameMode;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -6346,10 +6652,11 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1406:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T8a4:
 	__asm        cmp    lWindowID, 0x7DD;
-	__asm        jne    near ptr 0x00465ECD;
+	__asm        jne    _Ta29;
 // LINE 1407:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -6359,11 +6666,11 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   CGameApp::DestroyMessageBox;
 // LINE 1409:
 	__asm        cmp    lMessage, 2;
-	__asm        jne    near ptr 0x00465E55;
+	__asm        jne    _T9b1;
 // LINE 1410:
 	__asm        call   GetUserHasSavedCurrentCity;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00465DF0;
+	__asm        jne    _T94c;
 // LINE 1411:
 	__asm        mov    ecx, this;
 	__asm        sub    ecx, 0x14;
@@ -6371,10 +6678,10 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    nResult, eax;
 // LINE 1412:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x00465DC3;
+	__asm        je     _T91f;
 
 	__asm        cmp    nResult, 9;
-	__asm        je     near ptr 0x00465DC3;
+	__asm        je     _T91f;
 // LINE 1413:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6386,10 +6693,11 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1415:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1417:
+_T91f:
 	__asm        cmp    nResult, 0;
-	__asm        jne    near ptr 0x00465DEB;
+	__asm        jne    _T947;
 // LINE 1418:
 	__asm        push   1;
 	__asm        push   0x30;
@@ -6399,10 +6707,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1419:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1422:
-	__asm        jmp    near ptr 0x00465E55;
+_T947:
+	__asm        jmp    _T9b1;
 // LINE 1423:
+_T94c:
 	__asm        push   0x5C2918;
 	__asm        push   0x5C33E8;
 	__asm        mov    ecx, this;
@@ -6411,7 +6721,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    nResult, eax;
 // LINE 1424:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x00465E37;
+	__asm        je     _T993;
 // LINE 1425:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6423,10 +6733,11 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 1427:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1429:
-	__asm        jmp    near ptr 0x00465E55;
+	__asm        jmp    _T9b1;
 // LINE 1430:
+_T993:
 	__asm        push   1;
 	__asm        push   0x30;
 	__asm        push   0x7DA;
@@ -6435,11 +6746,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1431:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1441:
+_T9b1:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00465E87;
+	__asm        je     _T9e3;
 // LINE 1442:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -6454,11 +6766,12 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1445:
-	__asm        jmp    near ptr 0x00465ECD;
+	__asm        jmp    _Ta29;
 
+_T9e3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00465ECD;
+	__asm        je     _Ta29;
 // LINE 1446:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -6480,8 +6793,9 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1452:
+_Ta29:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00465ED4;
+	__asm        jmp    _Ta30;
 // LINE 1453:
 }
 
@@ -6519,7 +6833,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nCurrentGameMode, eax;
 // LINE 1471:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        jne    near ptr 0x00465FBD;
+	__asm        jne    _Te2;
 // LINE 1475:
 // Block start:
 	char szFilePath[260];
@@ -6554,16 +6868,17 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1480:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1482:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1484:
 // Block end:
-	__asm        jmp    near ptr 0x004662E9;
+	__asm        jmp    _T40e;
 
+_Te2:
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x004662E9;
+	__asm        jne    _T40e;
 // LINE 1486:
 // Block start:
 	long lResult;
@@ -6572,7 +6887,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    lResult, eax;
 // LINE 1488:
 	__asm        cmp    lResult, 0;
-	__asm        jne    near ptr 0x00466028;
+	__asm        jne    _T14d;
 // LINE 1490:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -6594,16 +6909,17 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1495:
-	__asm        jmp    near ptr 0x004662DF;
+	__asm        jmp    _T404;
 // LINE 1497:
+_T14d:
 	__asm        cmp    lResult, 2;
-	__asm        je     near ptr 0x0046604F;
+	__asm        je     _T174;
 
 	__asm        cmp    lResult, 3;
-	__asm        je     near ptr 0x0046604F;
+	__asm        je     _T174;
 
 	__asm        cmp    lResult, 1;
-	__asm        jne    near ptr 0x00466297;
+	__asm        jne    _T3bc;
 // LINE 1504:
 // Block start:
 	unsigned long nResult;
@@ -6611,6 +6927,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	long lFileType;
 	int32_t nFullTitleID;
 	char szFileLoadPath[260];
+_T174:
 	__asm        mov    al, ds:[0x599300];
 	__asm        mov    szFileLoadPath[0], al;
 	__asm        lea    edi, szFileLoadPath[1];
@@ -6621,27 +6938,30 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        stosb;
 // LINE 1507:
 	__asm        cmp    lResult, 2;
-	__asm        jne    near ptr 0x00466092;
+	__asm        jne    _T1b7;
 // LINE 1508:
 	__asm        mov    nFullTitleID, 0x28;
 // LINE 1509:
 	__asm        mov    nFullFilterID, 0x29;
 // LINE 1511:
-	__asm        jmp    near ptr 0x004660CC;
+	__asm        jmp    _T1f1;
 
+_T1b7:
 	__asm        cmp    lResult, 3;
-	__asm        jne    near ptr 0x004660B8;
+	__asm        jne    _T1dd;
 // LINE 1512:
 	__asm        mov    nFullTitleID, 0x2A;
 // LINE 1513:
 	__asm        mov    nFullFilterID, 0x2B;
 // LINE 1515:
-	__asm        jmp    near ptr 0x004660CC;
+	__asm        jmp    _T1f1;
 // LINE 1516:
+_T1dd:
 	__asm        mov    nFullTitleID, 0x2C;
 // LINE 1517:
 	__asm        mov    nFullFilterID, 0x2D;
 // LINE 1521:
+_T1f1:
 	__asm        push   0x6EEEEEE;
 	__asm        mov    eax, ds:[0x599BC4];
 	__asm        mov    eax, [eax];
@@ -6676,11 +6996,12 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nResult, eax;
 // LINE 1525:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x00466153;
+	__asm        je     _T278;
 // LINE 1526:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1530:
+_T278:
 	__asm        lea    eax, szSplitPathExtension[0];
 	__asm        push   eax;
 	__asm        lea    eax, szSplitPathFilename[0];
@@ -6731,7 +7052,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nResult, eax;
 // LINE 1539:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x0046621C;
+	__asm        je     _T341;
 // LINE 1540:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6739,8 +7060,9 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1541:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1545:
+_T341:
 	__asm        mov    eax, lFileType;
 	__asm        push   eax;
 	__asm        lea    eax, szFileLoadPath[0];
@@ -6750,7 +7072,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nResult, eax;
 // LINE 1546:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x00466261;
+	__asm        je     _T386;
 // LINE 1547:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6758,8 +7080,9 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1548:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1551:
+_T386:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, gwSource;
@@ -6778,10 +7101,11 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1555:
 // Block end:
-	__asm        jmp    near ptr 0x004662DF;
+	__asm        jmp    _T404;
 
+_T3bc:
 	__asm        cmp    lResult, 4;
-	__asm        jne    near ptr 0x004662DF;
+	__asm        jne    _T404;
 // LINE 1557:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -6801,14 +7125,16 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1560:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1562:
+_T404:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1564:
 // Block end:
+_T40e:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004662F3;
+	__asm        jmp    _T418;
 // LINE 1565:
 }
 
@@ -6841,7 +7167,7 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nCurrentGameMode, eax;
 // LINE 1577:
 	__asm        cmp    lMessage, 0x3EA;
-	__asm        jne    near ptr 0x00466373;
+	__asm        jne    _T79;
 // LINE 1578:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xA4];
@@ -6852,12 +7178,13 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1580:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1583:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T79:
 	__asm        cmp    lMessage, 0x3E9;
-	__asm        jne    near ptr 0x0046659F;
+	__asm        jne    _T2a5;
 // LINE 1585:
 // Block start:
 	long lResult;
@@ -6866,7 +7193,7 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    lResult, eax;
 // LINE 1587:
 	__asm        cmp    lResult, 0;
-	__asm        jne    near ptr 0x004663B3;
+	__asm        jne    _Tb9;
 // LINE 1588:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -6876,10 +7203,11 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::CreateCitySettingsWindow;
 // LINE 1590:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1592:
+_Tb9:
 	__asm        cmp    lResult, 1;
-	__asm        jne    near ptr 0x004663E3;
+	__asm        jne    _Te9;
 // LINE 1593:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -6889,12 +7217,13 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::CreateRenderSettingsWindow;
 // LINE 1595:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1597:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_Te9:
 	__asm        cmp    lResult, 2;
-	__asm        jne    near ptr 0x00466413;
+	__asm        jne    _T119;
 // LINE 1598:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -6904,12 +7233,13 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::CreateSoundSettingsWindow;
 // LINE 1600:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1602:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T119:
 	__asm        cmp    lResult, 3;
-	__asm        jne    near ptr 0x00466443;
+	__asm        jne    _T149;
 // LINE 1603:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -6919,23 +7249,24 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::CreateUserInputWindow;
 // LINE 1605:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1607:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T149:
 	__asm        cmp    lResult, 4;
-	__asm        jne    near ptr 0x004664DE;
+	__asm        jne    _T1e4;
 // LINE 1608:
 	__asm        call   GetUserHasSavedCurrentCity;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00466487;
+	__asm        jne    _T18d;
 // LINE 1609:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DoSaveGameAs;
 	__asm        mov    nResult, eax;
 // LINE 1610:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x00466482;
+	__asm        je     _T188;
 // LINE 1611:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6943,10 +7274,12 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1612:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1615:
-	__asm        jmp    near ptr 0x004664CF;
+_T188:
+	__asm        jmp    _T1d5;
 // LINE 1616:
+_T18d:
 	__asm        push   0x5C2918;
 	__asm        push   0x5C33E8;
 	__asm        mov    ecx, this;
@@ -6954,7 +7287,7 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    nResult, eax;
 // LINE 1617:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x004664BE;
+	__asm        je     _T1c4;
 // LINE 1618:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6962,33 +7295,36 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1619:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1621:
-	__asm        jmp    near ptr 0x004664CF;
+	__asm        jmp    _T1d5;
 // LINE 1622:
+_T1c4:
 	__asm        push   1;
 	__asm        push   0x30;
 	__asm        push   0x7DA;
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1624:
+_T1d5:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1626:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T1e4:
 	__asm        cmp    lResult, 5;
-	__asm        jne    near ptr 0x00466549;
+	__asm        jne    _T24f;
 // LINE 1627:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DoSaveGameAs;
 	__asm        mov    nResult, eax;
 // LINE 1628:
 	__asm        cmp    nResult, 0;
-	__asm        je     near ptr 0x0046651F;
+	__asm        je     _T225;
 
 	__asm        cmp    nResult, 9;
-	__asm        je     near ptr 0x0046651F;
+	__asm        je     _T225;
 // LINE 1629:
 	__asm        mov    eax, nResult;
 	__asm        push   eax;
@@ -6996,12 +7332,13 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1630:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1632:
-	__asm        jmp    near ptr 0x0046653A;
+	__asm        jmp    _T240;
 
+_T225:
 	__asm        cmp    nResult, 9;
-	__asm        je     near ptr 0x0046653A;
+	__asm        je     _T240;
 // LINE 1633:
 	__asm        push   1;
 	__asm        push   0x30;
@@ -7009,13 +7346,15 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1634:
+_T240:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1637:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T24f:
 	__asm        cmp    lResult, 6;
-	__asm        jne    near ptr 0x00466581;
+	__asm        jne    _T287;
 // LINE 1638:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -7031,10 +7370,11 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1642:
-	__asm        jmp    near ptr 0x0046659F;
+	__asm        jmp    _T2a5;
 
+_T287:
 	__asm        cmp    lResult, 7;
-	__asm        jne    near ptr 0x0046659F;
+	__asm        jne    _T2a5;
 // LINE 1643:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -7045,8 +7385,9 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 	__asm        dec    dword ptr [eax+0xA4];
 // LINE 1647:
 // Block end:
+_T2a5:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004665A6;
+	__asm        jmp    _T2ac;
 // LINE 1648:
 }
 
@@ -7094,67 +7435,77 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0046665B;
+	__asm        jmp    _Tae;
 
 	__asm        mov    byte ptr [ebp-0x318], 0;
+_Tae:
 	__asm        jmp    near ptr 0x00466660;
 
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x31C];
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00466684;
+	__asm        jne    _Td7;
 
 	__asm        mov    dword ptr [ebp-0x20C], 1;
-	__asm        jmp    near ptr 0x0046668E;
+	__asm        jmp    _Te1;
 
+_Td7:
 	__asm        mov    dword ptr [ebp-0x20C], 0;
+_Te1:
 	__asm        mov    dword ptr [ebp-0x31C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x214], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x004666AA;
+	__asm        jle    _Tfd;
 
-	__asm        jmp    near ptr 0x004666AF;
+	__asm        jmp    _T102;
 
-	__asm        jmp    near ptr 0x004666DD;
+_Tfd:
+	__asm        jmp    _T130;
 
-	__asm        jmp    near ptr 0x004666C1;
+_T102:
+	__asm        jmp    _T114;
 
 	__asm        cmp    dword ptr [ebp-0x328], 0;
-	__asm        je     near ptr 0x004666DD;
+	__asm        je     _T130;
 
+_T114:
 	__asm        cmp    dword ptr [ebp-0x210], 0;
-	__asm        je     near ptr 0x004666DD;
+	__asm        je     _T130;
 
 	__asm        mov    eax, [ebp-0x214];
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
+_T130:
 	__asm        jmp    near ptr 0x004666E2;
 
 	__asm        mov    eax, [ebp-0x20C];
 	__asm        mov    [ebp-0x324], eax;
 	__asm        cmp    dword ptr [ebp-0x324], 0;
-	__asm        je     near ptr 0x00466702;
+	__asm        je     _T155;
 // LINE 1670:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004668A6;
+	__asm        jmp    _T2f9;
 // LINE 1673:
+_T155:
 	__asm        push   0x27C;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x320], eax;
 	__asm        cmp    dword ptr [ebp-0x320], 0;
-	__asm        je     near ptr 0x0046673E;
+	__asm        je     _T191;
 
 	__asm        mov    ecx, [ebp-0x320];
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0046674E;
+	__asm        jmp    _T1a1;
 
+_T191:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 1674:
+_T1a1:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
 	__asm        lea    eax, szFullCityVideoFilePath[0];
@@ -7238,7 +7589,7 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        mov    [eax+0x98], ecx;
 // LINE 1684:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004668A6;
+	__asm        jmp    _T2f9;
 // LINE 1685:
 }
 
@@ -7286,7 +7637,7 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 	__asm        mov    nErrorCode, eax;
 // LINE 1704:
 	__asm        cmp    nErrorCode, 0;
-	__asm        je     near ptr 0x0046695E;
+	__asm        je     _Tb1;
 // LINE 1705:
 	__asm        push   5;
 	__asm        mov    eax, this;
@@ -7300,6 +7651,7 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1708:
+_Tb1:
 	__asm        jmp    near ptr 0x00466963;
 }
 
@@ -7327,70 +7679,80 @@ int  CGameApp::StartVideoForMainMenu() {
 	__asm        push   eax;
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x004669DD;
+	__asm        jmp    _T75;
 
 	__asm        mov    byte ptr [ebp-0x214], 0;
+_T75:
 	__asm        jmp    near ptr 0x004669E2;
 
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x218];
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00466A06;
+	__asm        jne    _T9e;
 
 	__asm        mov    dword ptr [ebp-0x108], 1;
-	__asm        jmp    near ptr 0x00466A10;
+	__asm        jmp    _Ta8;
 
+_T9e:
 	__asm        mov    dword ptr [ebp-0x108], 0;
+_Ta8:
 	__asm        mov    dword ptr [ebp-0x218], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x110], 0xFFFFFFFF;
-	__asm        jle    near ptr 0x00466A2C;
+	__asm        jle    _Tc4;
 
-	__asm        jmp    near ptr 0x00466A31;
+	__asm        jmp    _Tc9;
 
-	__asm        jmp    near ptr 0x00466A5F;
+_Tc4:
+	__asm        jmp    _Tf7;
 
-	__asm        jmp    near ptr 0x00466A43;
+_Tc9:
+	__asm        jmp    _Tdb;
 
 	__asm        cmp    dword ptr [ebp-0x224], 0;
-	__asm        je     near ptr 0x00466A5F;
+	__asm        je     _Tf7;
 
+_Tdb:
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
-	__asm        je     near ptr 0x00466A5F;
+	__asm        je     _Tf7;
 
 	__asm        mov    eax, [ebp-0x110];
 	__asm        push   eax;
 	__asm        call   _close;
 	__asm        add    esp, 4;
+_Tf7:
 	__asm        jmp    near ptr 0x00466A64;
 
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x220], eax;
 	__asm        cmp    dword ptr [ebp-0x220], 0;
-	__asm        je     near ptr 0x00466A91;
+	__asm        je     _T129;
 // LINE 1720:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x6C], 0;
 // LINE 1721:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00466B2D;
+	__asm        jmp    _T1c5;
 // LINE 1725:
+_T129:
 	__asm        push   0x27C;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x21C], eax;
 	__asm        cmp    dword ptr [ebp-0x21C], 0;
-	__asm        je     near ptr 0x00466ACA;
+	__asm        je     _T162;
 
 	__asm        mov    ecx, [ebp-0x21C];
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
-	__asm        jmp    near ptr 0x00466AD7;
+	__asm        jmp    _T16f;
 
+_T162:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x6C], 0;
 // LINE 1726:
+_T16f:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x6C];
@@ -7414,7 +7776,7 @@ int  CGameApp::StartVideoForMainMenu() {
 	__asm        mov    dword ptr [eax+8], 1;
 // LINE 1730:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00466B2D;
+	__asm        jmp    _T1c5;
 // LINE 1731:
 }
 
@@ -7423,7 +7785,7 @@ void  CGameApp::EndVideoForMainMenu() {
 // LINE 1738:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
-	__asm        je     near ptr 0x00466B8A;
+	__asm        je     _T58;
 // LINE 1739:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x6C];
@@ -7435,18 +7797,20 @@ void  CGameApp::EndVideoForMainMenu() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00466B80;
+	__asm        je     _T4e;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x00466B80;
+	__asm        jmp    _T4e;
 // LINE 1741:
+_T4e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x6C], 0;
 // LINE 1743:
+_T58:
 	__asm        jmp    near ptr 0x00466B8F;
 }
 
@@ -7457,7 +7821,7 @@ void  CGameApp::ComposeMainMenuVideoFrame() {
 // LINE 1752:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
-	__asm        je     near ptr 0x00466C10;
+	__asm        je     _T7c;
 // LINE 1756:
 	__asm        jmp    near ptr 0x00466BB2;
 
@@ -7488,11 +7852,12 @@ void  CGameApp::ComposeMainMenuVideoFrame() {
 	__asm        mov    nErrorCode, eax;
 // LINE 1757:
 	__asm        cmp    nErrorCode, 0;
-	__asm        je     near ptr 0x00466C10;
+	__asm        je     _T7c;
 // LINE 1758:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::EndVideoForMainMenu;
 // LINE 1761:
+_T7c:
 	__asm        jmp    near ptr 0x00466C15;
 }
 

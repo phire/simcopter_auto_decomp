@@ -69,7 +69,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    ds:[0x606A70], eax;
 // LINE 126:
 	__asm        cmp    create_new, 1;
-	__asm        jne    near ptr 0x004D8D00;
+	__asm        jne    _T40;
 // LINE 129:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+0x10];
@@ -83,23 +83,27 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    ecx, hdr;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 132:
+_T40:
 	__asm        mov    eax, hdr;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        jne    near ptr 0x004D8D21;
+	__asm        jne    _T61;
 // LINE 134:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 135:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D8E53;
+	__asm        jmp    _T193;
 // LINE 141:
+_T61:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D8D30;
+	__asm        jmp    _T70;
 
+_T6d:
 	__asm        inc    i;
+_T70:
 	__asm        mov    eax, hdr;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D8E4C;
+	__asm        jle    _T18c;
 // LINE 143:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -112,7 +116,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    eax, bhdr;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004D8D87;
+	__asm        je     _Tc7;
 // LINE 148:
 	__asm        mov    eax, create_new;
 	__asm        push   eax;
@@ -128,8 +132,9 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        call   CreateTiledTexColors;
 	__asm        add    esp, 0x10;
 // LINE 149:
-	__asm        jmp    near ptr 0x004D8D2D;
+	__asm        jmp    _T6d;
 // LINE 152:
+_Tc7:
 	__asm        mov    eax, bhdr;
 	__asm        mov    tptr, eax;
 // LINE 153:
@@ -146,15 +151,17 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        add    esp, 0xC;
 // LINE 156:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D8DBF;
+	__asm        jmp    _Tff;
 
+_Tfc:
 	__asm        inc    j;
+_Tff:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, bhdr;
 	__asm        imul   eax, [ecx];
 	__asm        cmp    eax, j;
-	__asm        jle    near ptr 0x004D8DEA;
+	__asm        jle    _T12a;
 // LINE 158:
 	__asm        mov    eax, tptr;
 	__asm        xor    ecx, ecx;
@@ -163,21 +170,24 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 // LINE 159:
 	__asm        inc    tptr;
 // LINE 160:
-	__asm        jmp    near ptr 0x004D8DBC;
+	__asm        jmp    _Tfc;
 // LINE 162:
+_T12a:
 	__asm        mov    maxval, 0;
 // LINE 163:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D8E00;
+	__asm        jmp    _T140;
 
+_T13d:
 	__asm        inc    j;
+_T140:
 	__asm        cmp    j, 0x100;
-	__asm        jge    near ptr 0x004D8E38;
+	__asm        jge    _T178;
 // LINE 165:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, maxval;
 	__asm        cmp    [eax*4+0x606A78], ecx;
-	__asm        jle    near ptr 0x004D8E33;
+	__asm        jle    _T173;
 // LINE 167:
 	__asm        mov    eax, j;
 	__asm        mov    eax, [eax*4+0x606A78];
@@ -186,18 +196,21 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    eax, j;
 	__asm        mov    maxcolor, eax;
 // LINE 170:
-	__asm        jmp    near ptr 0x004D8DFD;
+_T173:
+	__asm        jmp    _T13d;
 // LINE 171:
+_T178:
 	__asm        mov    eax, maxcolor;
 	__asm        mov    ecx, hdr;
 	__asm        mov    ecx, [ecx+0x14];
 	__asm        mov    edx, i;
 	__asm        mov    [ecx+edx*4], eax;
 // LINE 172:
-	__asm        jmp    near ptr 0x004D8D2D;
+	__asm        jmp    _T6d;
 // LINE 174:
+_T18c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D8E53;
+	__asm        jmp    _T193;
 // LINE 175:
 }
 
@@ -225,7 +238,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        mov    notiles, eax;
 // LINE 205:
 	__asm        cmp    create_new, 1;
-	__asm        jne    near ptr 0x004D8EBC;
+	__asm        jne    _T64;
 // LINE 207:
 	__asm        mov    eax, notiles;
 	__asm        shl    eax, 2;
@@ -243,24 +256,29 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 // LINE 209:
 	__asm        mov    eax, tabentry;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x004D8EB7;
+	__asm        jne    _T5f;
 // LINE 210:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D8FD2;
+	__asm        jmp    _T17a;
 // LINE 212:
-	__asm        jmp    near ptr 0x004D8EC4;
+_T5f:
+	__asm        jmp    _T6c;
 // LINE 214:
+_T64:
 	__asm        mov    eax, tabentry;
 	__asm        mov    eax, [eax];
 	__asm        mov    bmpcolors, eax;
 // LINE 224:
+_T6c:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D8ED3;
+	__asm        jmp    _T7b;
 
+_T78:
 	__asm        inc    i;
+_T7b:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x004D8FC8;
+	__asm        jge    _T170;
 // LINE 226:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, bhdr;
@@ -276,22 +294,26 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        add    esp, 0xC;
 // LINE 231:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D8F15;
+	__asm        jmp    _Tbd;
 
+_Tba:
 	__asm        inc    j;
+_Tbd:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D8F69;
+	__asm        jle    _T111;
 // LINE 233:
 	__asm        mov    k, 0;
-	__asm        jmp    near ptr 0x004D8F33;
+	__asm        jmp    _Tdb;
 
+_Td8:
 	__asm        inc    k;
+_Tdb:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, k;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D8F57;
+	__asm        jle    _Tff;
 // LINE 235:
 	__asm        mov    eax, tptr;
 	__asm        xor    ecx, ecx;
@@ -300,28 +322,32 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 // LINE 236:
 	__asm        inc    tptr;
 // LINE 237:
-	__asm        jmp    near ptr 0x004D8F30;
+	__asm        jmp    _Td8;
 // LINE 238:
+_Tff:
 	__asm        add    ltptr, 0x100;
 // LINE 239:
 	__asm        mov    eax, ltptr;
 	__asm        mov    tptr, eax;
 // LINE 240:
-	__asm        jmp    near ptr 0x004D8F12;
+	__asm        jmp    _Tba;
 // LINE 243:
+_T111:
 	__asm        mov    maxval, 0;
 // LINE 244:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D8F7F;
+	__asm        jmp    _T127;
 
+_T124:
 	__asm        inc    j;
+_T127:
 	__asm        cmp    j, 0x100;
-	__asm        jge    near ptr 0x004D8FB7;
+	__asm        jge    _T15f;
 // LINE 246:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, maxval;
 	__asm        cmp    [eax*4+0x606A78], ecx;
-	__asm        jle    near ptr 0x004D8FB2;
+	__asm        jle    _T15a;
 // LINE 248:
 	__asm        mov    eax, j;
 	__asm        mov    eax, [eax*4+0x606A78];
@@ -330,17 +356,20 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct 
 	__asm        mov    eax, j;
 	__asm        mov    maxcolor, eax;
 // LINE 251:
-	__asm        jmp    near ptr 0x004D8F7C;
+_T15a:
+	__asm        jmp    _T124;
 // LINE 252:
+_T15f:
 	__asm        mov    eax, maxcolor;
 	__asm        mov    ecx, i;
 	__asm        mov    edx, bmpcolors;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 253:
-	__asm        jmp    near ptr 0x004D8ED0;
+	__asm        jmp    _T78;
 // LINE 255:
+_T170:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D8FD2;
+	__asm        jmp    _T17a;
 // LINE 256:
 }
 
@@ -357,26 +386,28 @@ void VRFaceSetTexColor(int32_t face) {
 // LINE 281:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x004D9027;
+	__asm        jne    _T50;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        jne    near ptr 0x004D9027;
+	__asm        jne    _T50;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    near ptr 0x004D9027;
+	__asm        jne    _T50;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        jne    near ptr 0x004D9027;
+	__asm        jne    _T50;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x40;
-	__asm        je     near ptr 0x004D902C;
+	__asm        je     _T55;
 // LINE 282:
-	__asm        jmp    near ptr 0x004D908E;
+_T50:
+	__asm        jmp    _Tb7;
 // LINE 288:
+_T55:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x24];
 	__asm        sar    eax, 0x10;
@@ -388,7 +419,7 @@ void VRFaceSetTexColor(int32_t face) {
 	__asm        mov    loword, eax;
 // LINE 291:
 	__asm        cmp    hiword, 0;
-	__asm        je     near ptr 0x004D9075;
+	__asm        je     _T9e;
 // LINE 293:
 	__asm        mov    eax, ds:[0x606A70];
 	__asm        mov    eax, [eax+0x14];
@@ -402,8 +433,9 @@ void VRFaceSetTexColor(int32_t face) {
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 296:
-	__asm        jmp    near ptr 0x004D9089;
+	__asm        jmp    _Tb2;
 // LINE 298:
+_T9e:
 	__asm        mov    eax, ds:[0x606A70];
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, loword;
@@ -411,7 +443,8 @@ void VRFaceSetTexColor(int32_t face) {
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 301:
-	__asm        jmp    near ptr 0x004D908E;
+_Tb2:
+	__asm        jmp    _Tb7;
 // LINE 302:
 }
 
@@ -432,7 +465,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        mov    loword, eax;
 // LINE 325:
 	__asm        cmp    hiword, 0;
-	__asm        je     near ptr 0x004D90DC;
+	__asm        je     _T49;
 // LINE 327:
 	__asm        mov    eax, ds:[0x606A70];
 	__asm        mov    eax, [eax+0x14];
@@ -445,14 +478,16 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    color, eax;
 // LINE 330:
-	__asm        jmp    near ptr 0x004D90ED;
+	__asm        jmp    _T5a;
 // LINE 332:
+_T49:
 	__asm        mov    eax, ds:[0x606A70];
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, loword;
 	__asm        mov    eax, [eax+ecx*4];
 	__asm        mov    color, eax;
 // LINE 334:
+_T5a:
 	__asm        mov    eax, color;
 	__asm        jmp    near ptr 0x004D90F5;
 // LINE 335:
@@ -466,32 +501,35 @@ struct COLOR_SHADE* VRGetColorShade(int32_t color) {
 	__asm        mov    cptr, 0x5ADC10;
 // LINE 350:
 	__asm        cmp    color, 0;
-	__asm        jl     near ptr 0x004D9121;
+	__asm        jl     _T27;
 
 	__asm        cmp    color, 0x100;
-	__asm        jle    near ptr 0x004D9128;
+	__asm        jle    _T2e;
 // LINE 351:
+_T27:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D915B;
+	__asm        jmp    _T61;
 // LINE 355:
+_T2e:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, color;
 	__asm        cmp    [eax], ecx;
-	__asm        jg     near ptr 0x004D9152;
+	__asm        jg     _T58;
 
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, cptr;
 	__asm        add    eax, [ecx];
 	__asm        cmp    eax, color;
-	__asm        jle    near ptr 0x004D9152;
+	__asm        jle    _T58;
 // LINE 356:
 	__asm        mov    eax, cptr;
-	__asm        jmp    near ptr 0x004D915B;
+	__asm        jmp    _T61;
 // LINE 358:
+_T58:
 	__asm        add    cptr, 8;
 // LINE 359:
-	__asm        jmp    near ptr 0x004D9128;
+	__asm        jmp    _T2e;
 // LINE 361:
 }
 
@@ -539,30 +577,34 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    face, eax;
 // LINE 401:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D91C2;
+	__asm        jmp    _T37;
 
+_T34:
 	__asm        inc    i;
+_T37:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004D93D1;
+	__asm        jle    _T246;
 // LINE 403:
 	__asm        mov    eax, face;
 	__asm        mov    fh, eax;
 // LINE 406:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    near ptr 0x004D91FB;
+	__asm        jne    _T70;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    near ptr 0x004D91FB;
+	__asm        jne    _T70;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        je     near ptr 0x004D9200;
+	__asm        je     _T75;
 // LINE 408:
-	__asm        jmp    near ptr 0x004D93BD;
+_T70:
+	__asm        jmp    _T232;
 // LINE 411:
+_T75:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -571,10 +613,11 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    cptr, eax;
 // LINE 412:
 	__asm        cmp    cptr, 0;
-	__asm        jne    near ptr 0x004D9221;
+	__asm        jne    _T96;
 
-	__asm        jmp    near ptr 0x004D93BD;
+	__asm        jmp    _T232;
 // LINE 416:
+_T96:
 	__asm        mov    intensity, 0;
 // LINE 419:
 	__asm        mov    eax, fh;
@@ -607,7 +650,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    diffuse, ebx;
 // LINE 421:
 	__asm        cmp    diffuse, 0;
-	__asm        jle    near ptr 0x004D9297;
+	__asm        jle    _T10c;
 // LINE 422:
 	__asm        mov    eax, ds:[0x5ADD60];
 	__asm        push   eax;
@@ -617,6 +660,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        add    esp, 8;
 	__asm        mov    intensity, eax;
 // LINE 427:
+_T10c:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+8];
@@ -647,7 +691,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    diffuse, ebx;
 // LINE 429:
 	__asm        cmp    diffuse, 0;
-	__asm        jle    near ptr 0x004D9306;
+	__asm        jle    _T17b;
 // LINE 430:
 	__asm        mov    eax, ds:[0x5ADD64];
 	__asm        push   eax;
@@ -657,11 +701,12 @@ void VRObjSetShading(int32_t obj) {
 	__asm        add    esp, 8;
 	__asm        add    intensity, eax;
 // LINE 433:
+_T17b:
 	__asm        mov    eax, ds:[0x5ADD5C];
 	__asm        add    intensity, eax;
 // LINE 435:
 	__asm        cmp    intensity, 0x10000;
-	__asm        jl     near ptr 0x004D932F;
+	__asm        jl     _T1a4;
 // LINE 437:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+4];
@@ -670,8 +715,9 @@ void VRObjSetShading(int32_t obj) {
 	__asm        dec    eax;
 	__asm        mov    color, eax;
 // LINE 439:
-	__asm        jmp    near ptr 0x004D9357;
+	__asm        jmp    _T1cc;
 // LINE 441:
+_T1a4:
 	__asm        mov    eax, intensity;
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
@@ -689,11 +735,12 @@ void VRObjSetShading(int32_t obj) {
 	__asm        add    eax, level;
 	__asm        mov    color, eax;
 // LINE 449:
+_T1cc:
 	__asm        cmp    color, 0xEA;
-	__asm        jl     near ptr 0x004D9384;
+	__asm        jl     _T1f9;
 
 	__asm        cmp    color, 0xF5;
-	__asm        jg     near ptr 0x004D9384;
+	__asm        jg     _T1f9;
 // LINE 451:
 	__asm        mov    eax, 0xF5;
 	__asm        mov    ecx, color;
@@ -701,34 +748,37 @@ void VRObjSetShading(int32_t obj) {
 	__asm        sub    eax, ecx;
 	__asm        mov    color, eax;
 // LINE 454:
+_T1f9:
 	__asm        mov    eax, color;
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 457:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x004D93A7;
+	__asm        jne    _T21c;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     near ptr 0x004D93BD;
+	__asm        je     _T232;
 
+_T21c:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     near ptr 0x004D93BD;
+	__asm        je     _T232;
 // LINE 458:
 	__asm        mov    eax, color;
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 461:
 next_face:
+_T232:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 462:
-	__asm        jmp    near ptr 0x004D91BF;
+	__asm        jmp    _T34;
 // LINE 463:
 }
 
@@ -750,10 +800,11 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 // LINE 489:
 	__asm        mov    eax, oh;
 	__asm        test   byte ptr [eax+1], 1;
-	__asm        jne    near ptr 0x004D93F7;
+	__asm        jne    _T21;
 // LINE 490:
-	__asm        jmp    near ptr 0x004D9587;
+	__asm        jmp    _T1b1;
 // LINE 493:
+_T21:
 	__asm        mov    eax, tmat;
 	__asm        push   eax;
 	__asm        lea    eax, rotlitevect.x;
@@ -767,28 +818,32 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        mov    fh, eax;
 // LINE 497:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D9424;
+	__asm        jmp    _T4e;
 
+_T4b:
 	__asm        inc    i;
+_T4e:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D9587;
+	__asm        jle    _T1b1;
 // LINE 500:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    near ptr 0x004D945A;
+	__asm        jne    _T84;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    near ptr 0x004D945A;
+	__asm        jne    _T84;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        je     near ptr 0x004D945F;
+	__asm        je     _T89;
 // LINE 502:
-	__asm        jmp    near ptr 0x004D957A;
+_T84:
+	__asm        jmp    _T1a4;
 // LINE 505:
+_T89:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -797,10 +852,11 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        mov    cptr, eax;
 // LINE 506:
 	__asm        cmp    cptr, 0;
-	__asm        jne    near ptr 0x004D9480;
+	__asm        jne    _Taa;
 
-	__asm        jmp    near ptr 0x004D957A;
+	__asm        jmp    _T1a4;
 // LINE 510:
+_Taa:
 	__asm        mov    intensity, 0;
 // LINE 513:
 	__asm        mov    eax, fh;
@@ -833,7 +889,7 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        mov    diffuse, ebx;
 // LINE 515:
 	__asm        cmp    diffuse, 0;
-	__asm        jle    near ptr 0x004D94F0;
+	__asm        jle    _T11a;
 // LINE 516:
 	__asm        mov    eax, ds:[0x5ADD68];
 	__asm        push   eax;
@@ -843,11 +899,12 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        add    esp, 8;
 	__asm        mov    intensity, eax;
 // LINE 519:
+_T11a:
 	__asm        mov    eax, ds:[0x5ADD5C];
 	__asm        add    intensity, eax;
 // LINE 521:
 	__asm        cmp    intensity, 0x10000;
-	__asm        jl     near ptr 0x004D9519;
+	__asm        jl     _T143;
 // LINE 523:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+4];
@@ -856,8 +913,9 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        dec    eax;
 	__asm        mov    color, eax;
 // LINE 525:
-	__asm        jmp    near ptr 0x004D9541;
+	__asm        jmp    _T16b;
 // LINE 527:
+_T143:
 	__asm        mov    eax, intensity;
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
@@ -875,32 +933,35 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 	__asm        add    eax, level;
 	__asm        mov    color, eax;
 // LINE 531:
+_T16b:
 	__asm        mov    eax, color;
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 534:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x004D9564;
+	__asm        jne    _T18e;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     near ptr 0x004D957A;
+	__asm        je     _T1a4;
 
+_T18e:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     near ptr 0x004D957A;
+	__asm        je     _T1a4;
 // LINE 535:
 	__asm        mov    eax, color;
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 539:
 next_face:
+_T1a4:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax];
 	__asm        mov    fh, eax;
 // LINE 540:
-	__asm        jmp    near ptr 0x004D9421;
+	__asm        jmp    _T4b;
 // LINE 541:
 }
 
@@ -918,10 +979,11 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 // LINE 569:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+4], 4;
-	__asm        je     near ptr 0x004D95AD;
+	__asm        je     _T21;
 // LINE 570:
-	__asm        jmp    near ptr 0x004D970D;
+	__asm        jmp    _T181;
 // LINE 573:
+_T21:
 	__asm        mov    stvert, 0;
 // LINE 574:
 	__asm        mov    minu, 0x1E0000;
@@ -929,25 +991,27 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 	__asm        mov    minv, 0x1E0000;
 // LINE 576:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D95D1;
+	__asm        jmp    _T45;
 
+_T42:
 	__asm        inc    i;
+_T45:
 	__asm        cmp    i, 4;
-	__asm        jge    near ptr 0x004D9630;
+	__asm        jge    _Ta4;
 // LINE 578:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    ecx, i;
 	__asm        mov    edx, minu;
 	__asm        cmp    [eax+ecx*8], edx;
-	__asm        jge    near ptr 0x004D962B;
+	__asm        jge    _T9f;
 
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    ecx, i;
 	__asm        mov    edx, minv;
 	__asm        cmp    [eax+ecx*8+4], edx;
-	__asm        jge    near ptr 0x004D962B;
+	__asm        jge    _T9f;
 // LINE 580:
 	__asm        mov    eax, i;
 	__asm        mov    stvert, eax;
@@ -964,8 +1028,10 @@ void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
 	__asm        mov    eax, [eax+ecx*8+4];
 	__asm        mov    minv, eax;
 // LINE 584:
-	__asm        jmp    near ptr 0x004D95CE;
+_T9f:
+	__asm        jmp    _T42;
 // LINE 587:
+_Ta4:
 	__asm        mov    eax, stvert;
 	__asm        and    eax, 3;
 	__asm        mov    ecx, fh;
@@ -1068,20 +1134,23 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    fh, eax;
 // LINE 622:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D9733;
+	__asm        jmp    _T21;
 
+_T1e:
 	__asm        inc    i;
+_T21:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D9902;
+	__asm        jle    _T1f0;
 // LINE 624:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x40;
-	__asm        jne    near ptr 0x004D9754;
+	__asm        jne    _T42;
 
-	__asm        jmp    near ptr 0x004D98F5;
+	__asm        jmp    _T1e3;
 // LINE 625:
+_T42:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -1090,22 +1159,25 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    cptr, eax;
 // LINE 626:
 	__asm        cmp    cptr, 0;
-	__asm        jne    near ptr 0x004D9775;
+	__asm        jne    _T63;
 
-	__asm        jmp    near ptr 0x004D98F5;
+	__asm        jmp    _T1e3;
 // LINE 633:
+_T63:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    faceverts, eax;
 // LINE 634:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D978D;
+	__asm        jmp    _T7b;
 
+_T78:
 	__asm        inc    j;
+_T7b:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D98F5;
+	__asm        jle    _T1e3;
 // LINE 641:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, faceverts;
@@ -1148,7 +1220,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    diffuse, ebx;
 // LINE 651:
 	__asm        cmp    diffuse, 0;
-	__asm        jle    near ptr 0x004D9827;
+	__asm        jle    _T115;
 // LINE 652:
 	__asm        mov    eax, ds:[0x5ADD60];
 	__asm        push   eax;
@@ -1158,6 +1230,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        add    esp, 8;
 	__asm        mov    intensity, eax;
 // LINE 657:
+_T115:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
@@ -1185,7 +1258,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    diffuse, ebx;
 // LINE 659:
 	__asm        cmp    diffuse, 0;
-	__asm        jle    near ptr 0x004D988D;
+	__asm        jle    _T17b;
 // LINE 660:
 	__asm        mov    eax, ds:[0x5ADD64];
 	__asm        push   eax;
@@ -1195,11 +1268,12 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        add    esp, 8;
 	__asm        add    intensity, eax;
 // LINE 663:
+_T17b:
 	__asm        mov    eax, ds:[0x5ADD5C];
 	__asm        add    intensity, eax;
 // LINE 665:
 	__asm        cmp    intensity, 0x10000;
-	__asm        jl     near ptr 0x004D98B6;
+	__asm        jl     _T1a4;
 // LINE 667:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+4];
@@ -1208,8 +1282,9 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        dec    eax;
 	__asm        mov    color, eax;
 // LINE 669:
-	__asm        jmp    near ptr 0x004D98DE;
+	__asm        jmp    _T1cc;
 // LINE 671:
+_T1a4:
 	__asm        mov    eax, intensity;
 	__asm        push   eax;
 	__asm        mov    eax, cptr;
@@ -1227,6 +1302,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        add    eax, level;
 	__asm        mov    color, eax;
 // LINE 677:
+_T1cc:
 	__asm        mov    eax, color;
 	__asm        shl    eax, 0x10;
 	__asm        mov    ecx, fh;
@@ -1234,14 +1310,15 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 	__asm        mov    edx, j;
 	__asm        mov    [ecx+edx*8], eax;
 // LINE 678:
-	__asm        jmp    near ptr 0x004D978A;
+	__asm        jmp    _T78;
 // LINE 681:
 next_face:
+_T1e3:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax];
 	__asm        mov    fh, eax;
 // LINE 682:
-	__asm        jmp    near ptr 0x004D9730;
+	__asm        jmp    _T1e;
 // LINE 683:
 }
 
@@ -1269,13 +1346,15 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 	__asm        mov    fh, eax;
 // LINE 709:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D9941;
+	__asm        jmp    _T3a;
 
+_T37:
 	__asm        inc    i;
+_T3a:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D997A;
+	__asm        jle    _T73;
 // LINE 711:
 	__asm        mov    eax, fh;
 	__asm        mov    dword ptr [eax+8], 3;
@@ -1291,7 +1370,7 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 	__asm        mov    eax, [eax];
 	__asm        mov    fh, eax;
 // LINE 715:
-	__asm        jmp    near ptr 0x004D993E;
+	__asm        jmp    _T37;
 // LINE 716:
 }
 

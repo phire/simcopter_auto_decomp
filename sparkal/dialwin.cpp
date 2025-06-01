@@ -756,7 +756,7 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044837F;
+	__asm        je     _T10f;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
@@ -772,7 +772,7 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00448356;
+	__asm        je     _Te6;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
@@ -797,10 +797,12 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00448351;
 
-	__asm        jmp    near ptr 0x0044835F;
+	__asm        jmp    _Tef;
 
+_Te6:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
+_Tef:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0044836E;
@@ -808,10 +810,12 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x8C], eax;
-	__asm        jmp    near ptr 0x0044838C;
+	__asm        jmp    _T11c;
 
+_T10f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x8C], 0;
+_T11c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        jmp    near ptr 0x0044839E;
@@ -867,7 +871,7 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004484F6;
+	__asm        jne    _Tb7;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -875,11 +879,11 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x004484F6;
+	__asm        je     _Tb7;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004484D6;
+	__asm        je     _T97;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -894,6 +898,7 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
+_T97:
 	__asm        jmp    near ptr 0x004484DB;
 
 	__asm        jmp    near ptr 0x004484E0;
@@ -904,13 +909,14 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004484F1;
 
-	__asm        jmp    near ptr 0x004484F6;
+	__asm        jmp    _Tb7;
 
+_Tb7:
 	__asm        jmp    near ptr 0x004484FB;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
-	__asm        je     near ptr 0x00448529;
+	__asm        je     _Tea;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x88];
@@ -921,6 +927,7 @@ void RadioCompassWindow::~RadioCompassWindow() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tea:
 	__asm        jmp    near ptr 0x0044852E;
 
 	__asm        mov    ecx, this;
@@ -939,14 +946,15 @@ int32_t RadioCompassWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0044856B;
+	__asm        jne    _T30;
 // LINE 95:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004485CE;
+	__asm        jmp    _T93;
 // LINE 98:
+_T30:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
-	__asm        je     near ptr 0x004485C4;
+	__asm        je     _T89;
 // LINE 99:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
@@ -974,8 +982,9 @@ int32_t RadioCompassWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 106:
+_T89:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004485CE;
+	__asm        jmp    _T93;
 // LINE 107:
 }
 
@@ -1002,7 +1011,7 @@ void RadioCompassWindow::DestroyImage() {
 // LINE 128:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        je     near ptr 0x00448678;
+	__asm        je     _T6b;
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
@@ -1010,7 +1019,7 @@ void RadioCompassWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044866B;
+	__asm        je     _T5e;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -1020,11 +1029,13 @@ void RadioCompassWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00448666;
 
-	__asm        jmp    near ptr 0x0044866B;
+	__asm        jmp    _T5e;
 // LINE 130:
+_T5e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 132:
+_T6b:
 	__asm        jmp    near ptr 0x0044867D;
 }
 
@@ -1038,7 +1049,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x004486DE;
+	__asm        je     _T5c;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -1054,9 +1065,11 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    sCompassPath.reference, eax;
-	__asm        jmp    near ptr 0x004486E5;
+	__asm        jmp    _T63;
 
+_T5c:
 	__asm        mov    sCompassPath.reference, 0;
+_T63:
 	__asm        mov    sCompassPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004486F1;
 // LINE 144:
@@ -1067,7 +1080,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 146:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        jne    near ptr 0x00448850;
+	__asm        jne    _T1ce;
 // LINE 147:
 	__asm        lea    eax, sCompassPath.c_str_ptr;
 	__asm        push   eax;
@@ -1085,10 +1098,10 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00448843;
+	__asm        je     _T1c1;
 
 	__asm        cmp    sCompassPath.c_str_ptr, 0;
-	__asm        je     near ptr 0x00448769;
+	__asm        je     _Te7;
 
 	__asm        mov    eax, sCompassPath.c_str_ptr;
 	__asm        mov    [ebp-0x30], eax;
@@ -1098,6 +1111,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Te7:
 	__asm        jmp    near ptr 0x0044876E;
 
 	__asm        mov    eax, sCompassPath.reference;
@@ -1111,7 +1125,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004487F0;
+	__asm        je     _T16e;
 
 	__asm        jmp    near ptr 0x00448798;
 
@@ -1119,18 +1133,20 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004487BC;
+	__asm        je     _T13a;
 
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004487C8;
+	__asm        jmp    _T146;
 
-	__asm        jmp    near ptr 0x004487C8;
+	__asm        jmp    _T146;
 
+_T13a:
 	__asm        mov    dword ptr [ebp-0x44], 0;
-	__asm        jmp    near ptr 0x004487C8;
+	__asm        jmp    _T146;
 
+_T146:
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x48], eax;
@@ -1144,8 +1160,9 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004487F0;
+	__asm        jmp    _T16e;
 
+_T16e:
 	__asm        jmp    near ptr 0x004487F5;
 
 	__asm        mov    byte ptr [ebp-0x34], 0;
@@ -1173,11 +1190,13 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x00448850;
+	__asm        jmp    _T1ce;
 
+_T1c1:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 150:
+_T1ce:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1190,18 +1209,18 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004488ED;
+	__asm        jne    _T26b;
 
 	__asm        mov    eax, sCompassPath.reference;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x004488ED;
+	__asm        je     _T26b;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004488CD;
+	__asm        je     _T24b;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -1216,6 +1235,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax], 0;
+_T24b:
 	__asm        jmp    near ptr 0x004488D2;
 
 	__asm        jmp    near ptr 0x004488D7;
@@ -1226,12 +1246,13 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004488E8;
 
-	__asm        jmp    near ptr 0x004488ED;
+	__asm        jmp    _T26b;
 
+_T26b:
 	__asm        jmp    near ptr 0x004488F2;
 
 	__asm        cmp    sCompassPath.c_str_ptr, 0;
-	__asm        je     near ptr 0x00448914;
+	__asm        je     _T292;
 
 	__asm        mov    eax, sCompassPath.c_str_ptr;
 	__asm        mov    [ebp-0x18], eax;
@@ -1241,6 +1262,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T292:
 	__asm        jmp    near ptr 0x00448919;
 
 	__asm        mov    eax, [ebp-0x10];
@@ -1255,11 +1277,12 @@ int32_t RadioCompassWindow::ComposeSelf() {
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        jne    near ptr 0x00448948;
+	__asm        jne    _T20;
 // LINE 170:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00448A40;
+	__asm        jmp    _T118;
 // LINE 172:
+_T20:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+0x74];
 // LINE 173:
@@ -1267,14 +1290,15 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        mov    eax, [eax+0x74];
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
-	__asm        jne    near ptr 0x00448966;
+	__asm        jne    _T3e;
 // LINE 174:
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::CheckForRadioChange;
 // LINE 175:
+_T3e:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x74], 1;
-	__asm        je     near ptr 0x004489EE;
+	__asm        je     _Tc6;
 // LINE 176:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0x10C];
@@ -1284,7 +1308,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCurrentCompassPosition;
 	__asm        cmp    [eax+0x90], ecx;
-	__asm        je     near ptr 0x004489EE;
+	__asm        je     _Tc6;
 // LINE 183:
 	__asm        mov    ecx, 0x1E0000;
 	__asm        mov    eax, nCurrentCompassPosition;
@@ -1316,6 +1340,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x90], eax;
 // LINE 191:
+_Tc6:
 	__asm        jmp    near ptr 0x004489F3;
 
 	__asm        jmp    near ptr 0x004489F8;
@@ -1347,7 +1372,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 192:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00448A40;
+	__asm        jmp    _T118;
 // LINE 193:
 }
 
@@ -1368,32 +1393,35 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0x94], ecx;
-	__asm        jg     near ptr 0x00448AB4;
+	__asm        jg     _T6f;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0x98], ecx;
-	__asm        jg     near ptr 0x00448AB4;
+	__asm        jg     _T6f;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0x9C], ecx;
-	__asm        jle    near ptr 0x00448AB4;
+	__asm        jle    _T6f;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0xA0], ecx;
-	__asm        jle    near ptr 0x00448AB4;
+	__asm        jle    _T6f;
 
-	__asm        jmp    near ptr 0x00448AB9;
+	__asm        jmp    _T74;
 
-	__asm        jmp    near ptr 0x00448B13;
+_T6f:
+	__asm        jmp    _Tce;
 
-	__asm        jmp    near ptr 0x00448AC8;
+_T74:
+	__asm        jmp    _T83;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x00448B13;
+	__asm        je     _Tce;
 // LINE 206:
+_T83:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x78];
@@ -1422,8 +1450,9 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::SetNewRadioStation;
 // LINE 210:
-	__asm        jmp    near ptr 0x00448CA6;
+	__asm        jmp    _T261;
 
+_Tce:
 	__asm        jmp    near ptr 0x00448B18;
 
 	__asm        mov    eax, nCursorX;
@@ -1435,32 +1464,35 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jg     near ptr 0x00448B76;
+	__asm        jg     _T131;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        jg     near ptr 0x00448B76;
+	__asm        jg     _T131;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0xAC], ecx;
-	__asm        jle    near ptr 0x00448B76;
+	__asm        jle    _T131;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jle    near ptr 0x00448B76;
+	__asm        jle    _T131;
 
-	__asm        jmp    near ptr 0x00448B7B;
+	__asm        jmp    _T136;
 
-	__asm        jmp    near ptr 0x00448CA6;
+_T131:
+	__asm        jmp    _T261;
 
-	__asm        jmp    near ptr 0x00448B8A;
+_T136:
+	__asm        jmp    _T145;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x00448CA6;
+	__asm        je     _T261;
 // LINE 211:
+_T145:
 	__asm        mov    eax, 0x26;
 	__asm        sub    eax, nCursorY;
 	__asm        lea    eax, [eax+eax*4];
@@ -1480,7 +1512,7 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    lNewRadioStationVolume, eax;
 // LINE 214:
 	__asm        cmp    lNewRadioStationVolume, 0x9C4;
-	__asm        jg     near ptr 0x00448C29;
+	__asm        jg     _T1e4;
 // LINE 215:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1497,25 +1529,28 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00448C00;
+	__asm        je     _T1bb;
 
-	__asm        jmp    near ptr 0x00448C1F;
+	__asm        jmp    _T1da;
 
+_T1bb:
 	__asm        jmp    near ptr 0x00448C05;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        je     near ptr 0x00448C1F;
+	__asm        je     _T1da;
 
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   dword ptr [eax+0x1C];
+_T1da:
 	__asm        jmp    near ptr 0x00448C24;
 // LINE 218:
-	__asm        jmp    near ptr 0x00448C9A;
+	__asm        jmp    _T255;
 
+_T1e4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    [ebp-0x28], eax;
@@ -1524,21 +1559,23 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    dword ptr [eax+0x18], 1;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00448C4E;
+	__asm        je     _T209;
 
-	__asm        jmp    near ptr 0x00448C6D;
+	__asm        jmp    _T228;
 
+_T209:
 	__asm        jmp    near ptr 0x00448C53;
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        je     near ptr 0x00448C6D;
+	__asm        je     _T228;
 
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   dword ptr [eax+0x1C];
+_T228:
 	__asm        jmp    near ptr 0x00448C72;
 // LINE 220:
 	__asm        push   1;
@@ -1558,11 +1595,13 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 223:
+_T255:
 	__asm        mov    eax, lNewRadioStationVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 225:
+_T261:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00448CB0;
 // LINE 226:
@@ -1581,7 +1620,7 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00448E97;
+	__asm        je     _T1e0;
 // LINE 245:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1592,7 +1631,7 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        mov    nRadioStationCount, eax;
 // LINE 248:
 	__asm        cmp    nRadioStationCount, 0;
-	__asm        jle    near ptr 0x00448D17;
+	__asm        jle    _T60;
 // LINE 249:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -1605,9 +1644,11 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        add    eax, 0x14;
 	__asm        mov    nStationXPosition, eax;
 // LINE 250:
-	__asm        jmp    near ptr 0x00448D1E;
+	__asm        jmp    _T67;
 // LINE 251:
+_T60:
 	__asm        mov    nStationXPosition, 0x14;
+_T67:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-0xC], eax;
@@ -1669,7 +1710,7 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        jmp    near ptr 0x00448DBC;
 // LINE 258:
 	__asm        cmp    nRadioStationCount, 0;
-	__asm        jle    near ptr 0x00448DE1;
+	__asm        jle    _T12a;
 // LINE 259:
 	__asm        mov    eax, nNewRadioStationIndex;
 	__asm        mov    ecx, eax;
@@ -1681,9 +1722,11 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        add    eax, 0x14;
 	__asm        mov    nStationXPosition, eax;
 // LINE 260:
-	__asm        jmp    near ptr 0x00448DE8;
+	__asm        jmp    _T131;
 // LINE 261:
+_T12a:
 	__asm        mov    nStationXPosition, 0x14;
+_T131:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1751,6 +1794,7 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+4];
 // LINE 269:
+_T1e0:
 	__asm        mov    eax, nNewRadioStationIndex;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
@@ -1776,7 +1820,7 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0044904E;
+	__asm        je     _T1a2;
 // LINE 289:
 	__asm        mov    ecx, 0x26;
 	__asm        mov    eax, this;
@@ -1908,6 +1952,7 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+4];
 // LINE 304:
+_T1a2:
 	__asm        mov    eax, lNewRadioStationVolume;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
@@ -1936,23 +1981,25 @@ void RadioCompassWindow::CheckForRadioChange() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewRadioStationIndex;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        je     near ptr 0x004490AF;
+	__asm        je     _T49;
 // LINE 318:
 	__asm        mov    eax, nNewRadioStationIndex;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::SetNewRadioStation;
 // LINE 320:
+_T49:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewRadioStationVolume;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        je     near ptr 0x004490CD;
+	__asm        je     _T67;
 // LINE 321:
 	__asm        mov    eax, lNewRadioStationVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 322:
+_T67:
 	__asm        jmp    near ptr 0x004490D2;
 }
 
@@ -2003,28 +2050,32 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA4;
 	__asm        mov    [ebp-8], eax;
+_Td7:
 	__asm        dec    dword ptr [ebp-4];
-	__asm        js     near ptr 0x004491C8;
+	__asm        js     _Tf1;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   DialHand::DialHand;
 	__asm        add    dword ptr [ebp-8], 0x34;
-	__asm        jmp    near ptr 0x004491AE;
+	__asm        jmp    _Td7;
 
+_Tf1:
 	__asm        jmp    near ptr 0x004491CD;
 
 	__asm        mov    dword ptr [ebp-0xC], 3;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x140;
 	__asm        mov    [ebp-0x10], eax;
+_T108:
 	__asm        dec    dword ptr [ebp-0xC];
-	__asm        js     near ptr 0x004491F9;
+	__asm        js     _T122;
 
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x10], 0x10;
-	__asm        jmp    near ptr 0x004491DF;
+	__asm        jmp    _T108;
 
+_T122:
 	__asm        jmp    near ptr 0x004491FE;
 
 	__asm        jmp    near ptr 0x00449203;
@@ -2059,14 +2110,16 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x1A4;
 	__asm        mov    [ebp-0x18], eax;
+_T1bf:
 	__asm        dec    dword ptr [ebp-0x14];
-	__asm        js     near ptr 0x004492B0;
+	__asm        js     _T1d9;
 
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x18], 0x10;
-	__asm        jmp    near ptr 0x00449296;
+	__asm        jmp    _T1bf;
 
+_T1d9:
 	__asm        jmp    near ptr 0x004492B5;
 
 	__asm        mov    eax, this;
@@ -2090,12 +2143,13 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xB0];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        jle    near ptr 0x00449333;
+	__asm        jle    _T25c;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
+_T25c:
 	__asm        jmp    near ptr 0x00449338;
 // LINE 370:
 	__asm        mov    eax, this;
@@ -2228,12 +2282,13 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE4];
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        jle    near ptr 0x00449561;
+	__asm        jle    _T48a;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDC], eax;
+_T48a:
 	__asm        jmp    near ptr 0x00449566;
 // LINE 380:
 	__asm        mov    eax, this;
@@ -2366,12 +2421,13 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x118];
 	__asm        cmp    [eax+0x110], ecx;
-	__asm        jle    near ptr 0x0044978F;
+	__asm        jle    _T6b8;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x110], eax;
+_T6b8:
 	__asm        jmp    near ptr 0x00449794;
 // LINE 390:
 	__asm        mov    eax, this;
@@ -2596,174 +2652,195 @@ void DialWindow::InitializeCachedSettings() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xB0];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        jne    near ptr 0x00449B9E;
+	__asm        jne    _Tf0;
 // LINE 440:
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jge    near ptr 0x00449B64;
+	__asm        jge    _Tb6;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    [ebp-4], eax;
+_Tb6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-4];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        je     near ptr 0x00449B94;
+	__asm        je     _Te6;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 1;
-	__asm        jmp    near ptr 0x00449B99;
+	__asm        jmp    _Teb;
 
-	__asm        jmp    near ptr 0x00449B99;
+_Te6:
+	__asm        jmp    _Teb;
 // LINE 441:
-	__asm        jmp    near ptr 0x00449BFD;
+_Teb:
+	__asm        jmp    _T14f;
 // LINE 442:
+_Tf0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-8];
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jge    near ptr 0x00449BC8;
+	__asm        jge    _T11a;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    [ebp-8], eax;
+_T11a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-8];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        je     near ptr 0x00449BF8;
+	__asm        je     _T14a;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 1;
-	__asm        jmp    near ptr 0x00449BFD;
+	__asm        jmp    _T14f;
 
-	__asm        jmp    near ptr 0x00449BFD;
+_T14a:
+	__asm        jmp    _T14f;
 // LINE 444:
+_T14f:
 	__asm        jmp    near ptr 0x00449C02;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE4];
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        jne    near ptr 0x00449C79;
+	__asm        jne    _T1cb;
 // LINE 445:
 	__asm        mov    dword ptr [ebp-0xC], 1;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0xE4], ecx;
-	__asm        jge    near ptr 0x00449C3F;
+	__asm        jge    _T191;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE4];
 	__asm        mov    [ebp-0xC], eax;
+_T191:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        je     near ptr 0x00449C6F;
+	__asm        je     _T1c1;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDC], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD8], 1;
-	__asm        jmp    near ptr 0x00449C74;
+	__asm        jmp    _T1c6;
 
-	__asm        jmp    near ptr 0x00449C74;
+_T1c1:
+	__asm        jmp    _T1c6;
 // LINE 446:
-	__asm        jmp    near ptr 0x00449CD8;
+_T1c6:
+	__asm        jmp    _T22a;
 // LINE 447:
+_T1cb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE4];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xE4], ecx;
-	__asm        jge    near ptr 0x00449CA3;
+	__asm        jge    _T1f5;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE4];
 	__asm        mov    [ebp-0x10], eax;
+_T1f5:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        je     near ptr 0x00449CD3;
+	__asm        je     _T225;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDC], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD8], 1;
-	__asm        jmp    near ptr 0x00449CD8;
+	__asm        jmp    _T22a;
 
-	__asm        jmp    near ptr 0x00449CD8;
+_T225:
+	__asm        jmp    _T22a;
 // LINE 449:
+_T22a:
 	__asm        jmp    near ptr 0x00449CDD;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x118];
 	__asm        cmp    [eax+0x110], ecx;
-	__asm        jne    near ptr 0x00449D54;
+	__asm        jne    _T2a6;
 // LINE 450:
 	__asm        mov    dword ptr [ebp-0x14], 2;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0x118], ecx;
-	__asm        jge    near ptr 0x00449D1A;
+	__asm        jge    _T26c;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    [ebp-0x14], eax;
+_T26c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+0x110], ecx;
-	__asm        je     near ptr 0x00449D4A;
+	__asm        je     _T29c;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x110], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10C], 1;
-	__asm        jmp    near ptr 0x00449D4F;
+	__asm        jmp    _T2a1;
 
-	__asm        jmp    near ptr 0x00449D4F;
+_T29c:
+	__asm        jmp    _T2a1;
 // LINE 451:
-	__asm        jmp    near ptr 0x00449DB3;
+_T2a1:
+	__asm        jmp    _T305;
 // LINE 452:
+_T2a6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0x118], ecx;
-	__asm        jge    near ptr 0x00449D7E;
+	__asm        jge    _T2d0;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    [ebp-0x18], eax;
+_T2d0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0x110], ecx;
-	__asm        je     near ptr 0x00449DAE;
+	__asm        je     _T300;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x110], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10C], 1;
-	__asm        jmp    near ptr 0x00449DB3;
+	__asm        jmp    _T305;
 
-	__asm        jmp    near ptr 0x00449DB3;
+_T300:
+	__asm        jmp    _T305;
 // LINE 453:
+_T305:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1E4], 0xFFFFFFFF;
 // LINE 454:
@@ -2778,7 +2855,7 @@ void DialWindow::DestroyImage() {
 // LINE 465:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
-	__asm        je     near ptr 0x00449E2C;
+	__asm        je     _T62;
 // LINE 466:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -2786,7 +2863,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00449E22;
+	__asm        je     _T58;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2796,14 +2873,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449E1D;
 
-	__asm        jmp    near ptr 0x00449E22;
+	__asm        jmp    _T58;
 // LINE 467:
+_T58:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 // LINE 469:
+_T62:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        je     near ptr 0x00449E83;
+	__asm        je     _Tb9;
 // LINE 470:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
@@ -2811,7 +2890,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00449E76;
+	__asm        je     _Tac;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2821,14 +2900,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449E71;
 
-	__asm        jmp    near ptr 0x00449E76;
+	__asm        jmp    _Tac;
 // LINE 471:
+_Tac:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 473:
+_Tb9:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        je     near ptr 0x00449EDA;
+	__asm        je     _T110;
 // LINE 474:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
@@ -2836,7 +2917,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x00449ECD;
+	__asm        je     _T103;
 
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2846,14 +2927,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449EC8;
 
-	__asm        jmp    near ptr 0x00449ECD;
+	__asm        jmp    _T103;
 // LINE 475:
+_T103:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 477:
+_T110:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
-	__asm        je     near ptr 0x00449F28;
+	__asm        je     _T15e;
 // LINE 478:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
@@ -2861,7 +2944,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x00449F1E;
+	__asm        je     _T154;
 
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   BitmappedFont::~BitmappedFont;
@@ -2871,14 +2954,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449F19;
 
-	__asm        jmp    near ptr 0x00449F1E;
+	__asm        jmp    _T154;
 // LINE 479:
+_T154:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 // LINE 481:
+_T15e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
-	__asm        je     near ptr 0x00449F7F;
+	__asm        je     _T1b5;
 // LINE 482:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x88];
@@ -2886,7 +2971,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x00449F72;
+	__asm        je     _T1a8;
 
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2896,14 +2981,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449F6D;
 
-	__asm        jmp    near ptr 0x00449F72;
+	__asm        jmp    _T1a8;
 // LINE 483:
+_T1a8:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 // LINE 485:
+_T1b5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8C], 0;
-	__asm        je     near ptr 0x00449FD6;
+	__asm        je     _T20c;
 // LINE 486:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -2911,7 +2998,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x00449FC9;
+	__asm        je     _T1ff;
 
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2921,14 +3008,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00449FC4;
 
-	__asm        jmp    near ptr 0x00449FC9;
+	__asm        jmp    _T1ff;
 // LINE 487:
+_T1ff:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x8C], 0;
 // LINE 489:
+_T20c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        je     near ptr 0x0044A02D;
+	__asm        je     _T263;
 // LINE 490:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
@@ -2936,7 +3025,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x0044A020;
+	__asm        je     _T256;
 
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2946,14 +3035,16 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044A01B;
 
-	__asm        jmp    near ptr 0x0044A020;
+	__asm        jmp    _T256;
 // LINE 491:
+_T256:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
 // LINE 493:
+_T263:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0;
-	__asm        je     near ptr 0x0044A084;
+	__asm        je     _T2ba;
 // LINE 494:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x94];
@@ -2961,7 +3052,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        je     near ptr 0x0044A077;
+	__asm        je     _T2ad;
 
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -2971,28 +3062,33 @@ void DialWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044A072;
 
-	__asm        jmp    near ptr 0x0044A077;
+	__asm        jmp    _T2ad;
 // LINE 495:
+_T2ad:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0;
 // LINE 497:
+_T2ba:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jl     near ptr 0x0044A0EC;
+	__asm        jl     _T322;
 // LINE 498:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044A0A7;
+	__asm        jne    _T2dd;
 
-	__asm        jmp    near ptr 0x0044A0AC;
+	__asm        jmp    _T2e2;
 
-	__asm        jmp    near ptr 0x0044A0CD;
+_T2dd:
+	__asm        jmp    _T303;
 
-	__asm        jmp    near ptr 0x0044A0BB;
+_T2e2:
+	__asm        jmp    _T2f1;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x0044A0CD;
+	__asm        je     _T303;
 // LINE 499:
+_T2f1:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -3000,6 +3096,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 500:
+_T303:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1E4];
 	__asm        push   eax;
@@ -3009,6 +3106,7 @@ void DialWindow::DestroyImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1E4], 0xFFFFFFFF;
 // LINE 503:
+_T322:
 	__asm        jmp    near ptr 0x0044A0F1;
 }
 
@@ -3017,7 +3115,7 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 // LINE 510:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jne    near ptr 0x0044A136;
+	__asm        jne    _T40;
 // LINE 511:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3030,11 +3128,12 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x4C], cl;
 	__asm        jmp    near ptr 0x0044A131;
 // LINE 512:
-	__asm        jmp    near ptr 0x0044A1CD;
+	__asm        jmp    _Td7;
 
+_T40:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 1;
-	__asm        jne    near ptr 0x0044A16A;
+	__asm        jne    _T74;
 // LINE 513:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3047,11 +3146,12 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x52], cl;
 	__asm        jmp    near ptr 0x0044A165;
 // LINE 514:
-	__asm        jmp    near ptr 0x0044A1CD;
+	__asm        jmp    _Td7;
 
+_T74:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 2;
-	__asm        jne    near ptr 0x0044A19E;
+	__asm        jne    _Ta8;
 // LINE 515:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3064,11 +3164,12 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x4E], cl;
 	__asm        jmp    near ptr 0x0044A199;
 // LINE 516:
-	__asm        jmp    near ptr 0x0044A1CD;
+	__asm        jmp    _Td7;
 
+_Ta8:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 3;
-	__asm        jne    near ptr 0x0044A1CD;
+	__asm        jne    _Td7;
 // LINE 517:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3079,8 +3180,9 @@ void DialWindow::TurnOffSpotlightCommand(int32_t nIndex) {
 	__asm        and    cl, 0xDF;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [eax+0x50], cl;
-	__asm        jmp    near ptr 0x0044A1CD;
+	__asm        jmp    _Td7;
 // LINE 518:
+_Td7:
 	__asm        jmp    near ptr 0x0044A1D2;
 }
 
@@ -3089,7 +3191,7 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 // LINE 526:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jne    near ptr 0x0044A219;
+	__asm        jne    _T40;
 // LINE 527:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3102,11 +3204,12 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x4C], cl;
 	__asm        jmp    near ptr 0x0044A214;
 // LINE 528:
-	__asm        jmp    near ptr 0x0044A2B0;
+	__asm        jmp    _Td7;
 
+_T40:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 1;
-	__asm        jne    near ptr 0x0044A24D;
+	__asm        jne    _T74;
 // LINE 529:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3119,11 +3222,12 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x52], cl;
 	__asm        jmp    near ptr 0x0044A248;
 // LINE 530:
-	__asm        jmp    near ptr 0x0044A2B0;
+	__asm        jmp    _Td7;
 
+_T74:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 2;
-	__asm        jne    near ptr 0x0044A281;
+	__asm        jne    _Ta8;
 // LINE 531:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3136,11 +3240,12 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 	__asm        mov    [eax+0x4E], cl;
 	__asm        jmp    near ptr 0x0044A27C;
 // LINE 532:
-	__asm        jmp    near ptr 0x0044A2B0;
+	__asm        jmp    _Td7;
 
+_Ta8:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 3;
-	__asm        jne    near ptr 0x0044A2B0;
+	__asm        jne    _Td7;
 // LINE 533:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3151,8 +3256,9 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 	__asm        or     cl, 0x20;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [eax+0x50], cl;
-	__asm        jmp    near ptr 0x0044A2B0;
+	__asm        jmp    _Td7;
 // LINE 534:
+_Td7:
 	__asm        jmp    near ptr 0x0044A2B5;
 }
 
@@ -3168,14 +3274,14 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 550:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
-	__asm        jne    near ptr 0x0044A38C;
+	__asm        jne    _Td0;
 // LINE 551:
 	__asm        push   0x134;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        cmp    dword ptr [ebp-0x108], 0;
-	__asm        je     near ptr 0x0044A34C;
+	__asm        je     _T90;
 
 	__asm        jmp    near ptr 0x0044A312;
 
@@ -3194,14 +3300,16 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
-	__asm        jmp    near ptr 0x0044A359;
+	__asm        jmp    _T9d;
 
+_T90:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 // LINE 552:
+_T9d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
-	__asm        je     near ptr 0x0044A38C;
+	__asm        je     _Td0;
 // LINE 554:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3214,9 +3322,10 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x34];
 // LINE 557:
+_Td0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044A430;
+	__asm        jne    _T174;
 // LINE 558:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3232,7 +3341,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
-	__asm        je     near ptr 0x0044A3FB;
+	__asm        je     _T13f;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3240,11 +3349,13 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
-	__asm        jmp    near ptr 0x0044A40B;
+	__asm        jmp    _T14f;
 
+_T13f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 560:
+_T14f:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
@@ -3255,9 +3366,10 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+8];
 // LINE 562:
+_T174:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        jne    near ptr 0x0044A4AF;
+	__asm        jne    _T1f3;
 // LINE 563:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3273,7 +3385,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x110], eax;
 	__asm        cmp    dword ptr [ebp-0x110], 0;
-	__asm        je     near ptr 0x0044A49F;
+	__asm        je     _T1e3;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3281,14 +3393,16 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044A4AF;
+	__asm        jmp    _T1f3;
 
+_T1e3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
 // LINE 566:
+_T1f3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 0;
-	__asm        jne    near ptr 0x0044A52E;
+	__asm        jne    _T272;
 // LINE 567:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3304,7 +3418,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x114], eax;
 	__asm        cmp    dword ptr [ebp-0x114], 0;
-	__asm        je     near ptr 0x0044A51E;
+	__asm        je     _T262;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3312,14 +3426,16 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
-	__asm        jmp    near ptr 0x0044A52E;
+	__asm        jmp    _T272;
 
+_T262:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 // LINE 570:
+_T272:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
-	__asm        jne    near ptr 0x0044A5B9;
+	__asm        jne    _T2fd;
 // LINE 571:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3335,7 +3451,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x118], eax;
 	__asm        cmp    dword ptr [ebp-0x118], 0;
-	__asm        je     near ptr 0x0044A596;
+	__asm        je     _T2da;
 
 	__asm        push   1;
 	__asm        lea    eax, szFullPath[0];
@@ -3344,11 +3460,13 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   BitmappedFont::BitmappedFont;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
-	__asm        jmp    near ptr 0x0044A5A3;
+	__asm        jmp    _T2e7;
 
+_T2da:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 // LINE 573:
+_T2e7:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x78];
@@ -3356,9 +3474,10 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx];
 // LINE 575:
+_T2fd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8C], 0;
-	__asm        jne    near ptr 0x0044A638;
+	__asm        jne    _T37c;
 // LINE 576:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3374,7 +3493,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        cmp    dword ptr [ebp-0x11C], 0;
-	__asm        je     near ptr 0x0044A628;
+	__asm        je     _T36c;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3382,14 +3501,16 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x8C], eax;
-	__asm        jmp    near ptr 0x0044A638;
+	__asm        jmp    _T37c;
 
+_T36c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x8C], 0;
 // LINE 579:
+_T37c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        jne    near ptr 0x0044A6DC;
+	__asm        jne    _T420;
 // LINE 580:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3405,7 +3526,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x120], eax;
 	__asm        cmp    dword ptr [ebp-0x120], 0;
-	__asm        je     near ptr 0x0044A6A7;
+	__asm        je     _T3eb;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3413,11 +3534,13 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x90], eax;
-	__asm        jmp    near ptr 0x0044A6B7;
+	__asm        jmp    _T3fb;
 
+_T3eb:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
 // LINE 582:
+_T3fb:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
@@ -3428,9 +3551,10 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x90];
 	__asm        call   dword ptr [edx+8];
 // LINE 584:
+_T420:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0;
-	__asm        jne    near ptr 0x0044A75B;
+	__asm        jne    _T49f;
 // LINE 585:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3446,7 +3570,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x124], eax;
 	__asm        cmp    dword ptr [ebp-0x124], 0;
-	__asm        je     near ptr 0x0044A74B;
+	__asm        je     _T48f;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3454,11 +3578,13 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
-	__asm        jmp    near ptr 0x0044A75B;
+	__asm        jmp    _T49f;
 
+_T48f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0;
 // LINE 588:
+_T49f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -3493,32 +3619,37 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        mov    nDamageInRangeOf0to15, eax;
 // LINE 619:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044A7C6;
+	__asm        jmp    _T42;
 
+_T3f:
 	__asm        inc    i;
+_T42:
 	__asm        cmp    i, 6;
-	__asm        jge    near ptr 0x0044A859;
+	__asm        jge    _Td5;
 // LINE 620:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, nDamageInRangeOf0to15;
 	__asm        cmp    [eax*8+0x598F80], ecx;
-	__asm        jg     near ptr 0x0044A7EF;
+	__asm        jg     _T6b;
 // LINE 621:
 	__asm        mov    nSourceImageX, 0;
 // LINE 622:
-	__asm        jmp    near ptr 0x0044A815;
+	__asm        jmp    _T91;
 
+_T6b:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, nDamageInRangeOf0to15;
 	__asm        cmp    [eax*8+0x598F84], ecx;
-	__asm        jg     near ptr 0x0044A80E;
+	__asm        jg     _T8a;
 // LINE 623:
 	__asm        mov    nSourceImageX, 0xF;
 // LINE 624:
-	__asm        jmp    near ptr 0x0044A815;
+	__asm        jmp    _T91;
 // LINE 625:
+_T8a:
 	__asm        mov    nSourceImageX, 0x1E;
 // LINE 629:
+_T91:
 	__asm        push   0xE;
 	__asm        mov    eax, nSourceImageX;
 	__asm        add    eax, 0xF;
@@ -3544,8 +3675,9 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 630:
-	__asm        jmp    near ptr 0x0044A7C3;
+	__asm        jmp    _T3f;
 // LINE 631:
+_Td5:
 	__asm        jmp    near ptr 0x0044A85E;
 }
 
@@ -3561,11 +3693,11 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x98];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0044A969;
+	__asm        je     _T106;
 // LINE 641:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jl     near ptr 0x0044A8AB;
+	__asm        jl     _T48;
 // LINE 642:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1E4];
@@ -3573,50 +3705,56 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOffSpotlightCommand;
 // LINE 643:
+_T48:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044A8BA;
+	__asm        jmp    _T57;
 
+_T54:
 	__asm        inc    i;
+_T57:
 	__asm        cmp    i, 4;
-	__asm        jge    near ptr 0x0044A969;
+	__asm        jge    _T106;
 // LINE 644:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0x1A4], edx;
-	__asm        jg     near ptr 0x0044A92D;
+	__asm        jg     _Tca;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0x1A8], edx;
-	__asm        jg     near ptr 0x0044A92D;
+	__asm        jg     _Tca;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0x1AC], edx;
-	__asm        jle    near ptr 0x0044A92D;
+	__asm        jle    _Tca;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0x1B0], edx;
-	__asm        jle    near ptr 0x0044A92D;
+	__asm        jle    _Tca;
 
-	__asm        jmp    near ptr 0x0044A932;
+	__asm        jmp    _Tcf;
 
-	__asm        jmp    near ptr 0x0044A964;
+_Tca:
+	__asm        jmp    _T101;
 
-	__asm        jmp    near ptr 0x0044A941;
+_Tcf:
+	__asm        jmp    _Tde;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0044A964;
+	__asm        je     _T101;
 // LINE 645:
+_Tde:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1E4], eax;
@@ -3626,10 +3764,12 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOnSpotlightCommand;
 // LINE 646:
-	__asm        jmp    near ptr 0x0044A969;
+	__asm        jmp    _T106;
 // LINE 648:
-	__asm        jmp    near ptr 0x0044A8B7;
+_T101:
+	__asm        jmp    _T54;
 // LINE 650:
+_T106:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044A973;
 // LINE 651:
@@ -3640,17 +3780,20 @@ long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton)
 // LINE 658:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044A999;
+	__asm        jne    _T1f;
 
-	__asm        jmp    near ptr 0x0044A99E;
+	__asm        jmp    _T24;
 
-	__asm        jmp    near ptr 0x0044A9BF;
+_T1f:
+	__asm        jmp    _T45;
 
-	__asm        jmp    near ptr 0x0044A9AD;
+_T24:
+	__asm        jmp    _T33;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044A9BF;
+	__asm        je     _T45;
 // LINE 659:
+_T33:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -3658,9 +3801,10 @@ long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton)
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 660:
+_T45:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jl     near ptr 0x0044A9EE;
+	__asm        jl     _T74;
 // LINE 661:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1E4];
@@ -3671,6 +3815,7 @@ long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton)
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1E4], 0xFFFFFFFF;
 // LINE 664:
+_T74:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044A9F8;
 // LINE 665:
@@ -3684,67 +3829,74 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 676:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jl     near ptr 0x0044AB0E;
+	__asm        jl     _T10f;
 // LINE 677:
 	__asm        mov    i, 0;
 	__asm        mov    lNewSpotlightCommand, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0044AA31;
+	__asm        jmp    _T32;
 
+_T2f:
 	__asm        inc    i;
+_T32:
 	__asm        cmp    i, 4;
-	__asm        jge    near ptr 0x0044AAC8;
+	__asm        jge    _Tc9;
 // LINE 678:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0x1A4], edx;
-	__asm        jg     near ptr 0x0044AAA4;
+	__asm        jg     _Ta5;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0x1A8], edx;
-	__asm        jg     near ptr 0x0044AAA4;
+	__asm        jg     _Ta5;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0x1AC], edx;
-	__asm        jle    near ptr 0x0044AAA4;
+	__asm        jle    _Ta5;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0x1B0], edx;
-	__asm        jle    near ptr 0x0044AAA4;
+	__asm        jle    _Ta5;
 
-	__asm        jmp    near ptr 0x0044AAA9;
+	__asm        jmp    _Taa;
 
-	__asm        jmp    near ptr 0x0044AAC3;
+_Ta5:
+	__asm        jmp    _Tc4;
 
-	__asm        jmp    near ptr 0x0044AAB8;
+_Taa:
+	__asm        jmp    _Tb9;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044AAC3;
+	__asm        je     _Tc4;
 // LINE 679:
+_Tb9:
 	__asm        mov    eax, i;
 	__asm        mov    lNewSpotlightCommand, eax;
 // LINE 680:
-	__asm        jmp    near ptr 0x0044AAC8;
+	__asm        jmp    _Tc9;
 // LINE 682:
-	__asm        jmp    near ptr 0x0044AA2E;
+_Tc4:
+	__asm        jmp    _T2f;
 // LINE 683:
+_Tc9:
 	__asm        cmp    lNewSpotlightCommand, 0;
-	__asm        jl     near ptr 0x0044AB0E;
+	__asm        jl     _T10f;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewSpotlightCommand;
 	__asm        cmp    [eax+0x1E4], ecx;
-	__asm        je     near ptr 0x0044AB0E;
+	__asm        je     _T10f;
 // LINE 684:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1E4];
@@ -3761,6 +3913,7 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1E4], eax;
 // LINE 689:
+_T10f:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044AB18;
 // LINE 690:
@@ -3785,21 +3938,22 @@ int32_t DialWindow::ComposeSelf() {
 // LINE 704:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        jne    near ptr 0x0044AB5C;
+	__asm        jne    _T3d;
 // LINE 705:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044B9DB;
+	__asm        jmp    _Tebc;
 // LINE 707:
+_T3d:
 	__asm        inc    dword ptr ds:[0x598FB0];
 // LINE 708:
 	__asm        test   byte ptr ds:[0x598FB0], 1;
-	__asm        je     near ptr 0x0044B974;
+	__asm        je     _Te55;
 // LINE 709:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x98];
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        je     near ptr 0x0044ABAE;
+	__asm        je     _T8f;
 
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0xD0];
@@ -3807,6 +3961,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    [ecx+0x98], eax;
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::DrawCurrentDamage;
+_T8f:
 	__asm        jmp    near ptr 0x0044ABB3;
 // LINE 712:
 	__asm        mov    ecx, this;
@@ -3814,14 +3969,15 @@ int32_t DialWindow::ComposeSelf() {
 // LINE 715:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044ABE6;
+	__asm        jne    _Tc7;
 
 	__asm        jmp    near ptr 0x0044ABD3;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        je     near ptr 0x0044AEF4;
+	__asm        je     _T3d5;
 
+_Tc7:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        mov    [ebp-0x5C], eax;
@@ -3930,7 +4086,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x140];
 	__asm        cmp    [eax+0x148], ecx;
-	__asm        jge    near ptr 0x0044AE2F;
+	__asm        jge    _T310;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x140];
@@ -3942,11 +4098,12 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x148], eax;
+_T310:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14C];
 	__asm        cmp    [eax+0x144], ecx;
-	__asm        jle    near ptr 0x0044AE83;
+	__asm        jle    _T364;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x144];
@@ -3958,6 +4115,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14C], eax;
+_T364:
 	__asm        jmp    near ptr 0x0044AE88;
 
 	__asm        mov    eax, this;
@@ -3984,18 +4142,20 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        add    [ecx+0x14C], eax;
 	__asm        jmp    near ptr 0x0044AEEF;
 
-	__asm        jmp    near ptr 0x0044AEF4;
+	__asm        jmp    _T3d5;
 // LINE 719:
+_T3d5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044AF1C;
+	__asm        jne    _T3fd;
 
 	__asm        jmp    near ptr 0x0044AF09;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xD8], 0;
-	__asm        je     near ptr 0x0044B248;
+	__asm        je     _T729;
 
+_T3fd:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        mov    [ebp-0x68], eax;
@@ -4104,7 +4264,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x158], ecx;
-	__asm        jge    near ptr 0x0044B16B;
+	__asm        jge    _T64c;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x150];
@@ -4116,11 +4276,12 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x158], eax;
+_T64c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        cmp    [eax+0x15C], ecx;
-	__asm        jge    near ptr 0x0044B1C5;
+	__asm        jge    _T6a6;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x154];
@@ -4132,6 +4293,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x15C], eax;
+_T6a6:
 	__asm        jmp    near ptr 0x0044B1CA;
 
 	__asm        mov    eax, this;
@@ -4158,18 +4320,20 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        add    [ecx+0x15C], eax;
 	__asm        jmp    near ptr 0x0044B243;
 
-	__asm        jmp    near ptr 0x0044B248;
+	__asm        jmp    _T729;
 // LINE 723:
+_T729:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044B270;
+	__asm        jne    _T751;
 
 	__asm        jmp    near ptr 0x0044B25D;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
-	__asm        je     near ptr 0x0044B59C;
+	__asm        je     _Ta7d;
 
+_T751:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        mov    [ebp-0x74], eax;
@@ -4278,7 +4442,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x160];
 	__asm        cmp    [eax+0x168], ecx;
-	__asm        jge    near ptr 0x0044B4BF;
+	__asm        jge    _T9a0;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x160];
@@ -4290,11 +4454,12 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x168], eax;
+_T9a0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x16C];
 	__asm        cmp    [eax+0x164], ecx;
-	__asm        jle    near ptr 0x0044B519;
+	__asm        jle    _T9fa;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x164];
@@ -4306,6 +4471,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x16C], eax;
+_T9fa:
 	__asm        jmp    near ptr 0x0044B51E;
 
 	__asm        mov    eax, this;
@@ -4332,17 +4498,19 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        add    [ecx+0x16C], eax;
 	__asm        jmp    near ptr 0x0044B597;
 
-	__asm        jmp    near ptr 0x0044B59C;
+	__asm        jmp    _Ta7d;
 // LINE 727:
+_Ta7d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044B5C3;
+	__asm        jne    _Taa4;
 
 	__asm        call   GetUserMoney;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x180];
-	__asm        je     near ptr 0x0044B623;
+	__asm        je     _Tb04;
 // LINE 728:
+_Taa4:
 	__asm        call   GetUserMoney;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x180], eax;
@@ -4372,20 +4540,22 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   BitmappedFont::DrawTextLineFormatNoClip;
 // LINE 734:
+_Tb04:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044B663;
+	__asm        jne    _Tb44;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ds:[0x5B492C];
 	__asm        cmp    [eax+0x190], ecx;
-	__asm        jne    near ptr 0x0044B663;
+	__asm        jne    _Tb44;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ds:[0x5B4930];
 	__asm        cmp    [eax+0x18C], ecx;
-	__asm        je     near ptr 0x0044B7D2;
+	__asm        je     _Tcb3;
 // LINE 736:
+_Tb44:
 	__asm        mov    eax, ds:[0x5B492C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x190], eax;
@@ -4499,18 +4669,19 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    ecx, [eax+0x90];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 756:
+_Tcb3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044B80C;
+	__asm        jne    _Tced;
 
 	__asm        call   GetUserPoints;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x184];
-	__asm        je     near ptr 0x0044B974;
+	__asm        je     _Te55;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x188], 0;
-	__asm        jne    near ptr 0x0044B974;
+	__asm        jne    _Te55;
 // LINE 757:
 // Block start:
 	const int32_t iGuageEnd;
@@ -4518,6 +4689,7 @@ int32_t DialWindow::ComposeSelf() {
 	int32_t i;
 	const int32_t nYPosition;
 	int32_t iLitEnd;
+_Tced:
 	__asm        mov    nXPosition, 0x14;
 // LINE 758:
 	__asm        mov    iGuageEnd, 0xF;
@@ -4529,7 +4701,7 @@ int32_t DialWindow::ComposeSelf() {
 // LINE 761:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x184], 0x3E8;
-	__asm        jle    near ptr 0x0044B868;
+	__asm        jle    _Td49;
 // LINE 762:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x184], 0x3E8;
@@ -4537,6 +4709,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x188], 1;
 // LINE 765:
+_Td49:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x184];
 	__asm        lea    eax, [eax+eax*2];
@@ -4547,13 +4720,15 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    iLitEnd, eax;
 // LINE 767:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044B898;
+	__asm        jmp    _Td79;
 
+_Td72:
 	__asm        inc    i;
 	__asm        add    nXPosition, 5;
+_Td79:
 	__asm        mov    eax, i;
 	__asm        cmp    iLitEnd, eax;
-	__asm        jle    near ptr 0x0044B8DE;
+	__asm        jle    _Tdbf;
 // LINE 768:
 	__asm        push   0xD;
 	__asm        push   5;
@@ -4571,10 +4746,11 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    near ptr 0x0044B891;
+	__asm        jmp    _Td72;
 // LINE 769:
+_Tdbf:
 	__asm        cmp    i, 0xF;
-	__asm        jge    near ptr 0x0044B974;
+	__asm        jge    _Te55;
 // LINE 771:
 	__asm        push   0xD;
 	__asm        push   0xA;
@@ -4597,12 +4773,14 @@ int32_t DialWindow::ComposeSelf() {
 // LINE 773:
 	__asm        add    nXPosition, 5;
 // LINE 776:
-	__asm        jmp    near ptr 0x0044B930;
+	__asm        jmp    _Te11;
 
+_Te0a:
 	__asm        inc    i;
 	__asm        add    nXPosition, 5;
+_Te11:
 	__asm        cmp    i, 0xF;
-	__asm        jge    near ptr 0x0044B974;
+	__asm        jge    _Te55;
 // LINE 777:
 	__asm        push   0xD;
 	__asm        push   0xF;
@@ -4620,9 +4798,10 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    near ptr 0x0044B929;
+	__asm        jmp    _Te0a;
 // LINE 784:
 // Block end:
+_Te55:
 	__asm        jmp    near ptr 0x0044B979;
 
 	__asm        jmp    near ptr 0x0044B97E;
@@ -4654,7 +4833,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 786:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044B9DB;
+	__asm        jmp    _Tebc;
 // LINE 787:
 }
 
@@ -4665,30 +4844,33 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
-	__asm        jne    near ptr 0x0044BA45;
+	__asm        jne    _T65;
 
 	__asm        jmp    near ptr 0x0044BA06;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xD8], 0;
-	__asm        jne    near ptr 0x0044BA45;
+	__asm        jne    _T65;
 
 	__asm        jmp    near ptr 0x0044BA1B;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        jne    near ptr 0x0044BA45;
+	__asm        jne    _T65;
 
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x98];
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        je     near ptr 0x0044BA4F;
+	__asm        je     _T6f;
 
+_T65:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044BA51;
+	__asm        jmp    _T71;
 
+_T6f:
 	__asm        xor    eax, eax;
+_T71:
 	__asm        jmp    near ptr 0x0044BA56;
 // LINE 799:
 }
@@ -4703,7 +4885,7 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    eax, ds:[0x598FB4];
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
-	__asm        jne    near ptr 0x0044BC32;
+	__asm        jne    _T1d7;
 // LINE 817:
 	__asm        push   0x640000;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -4731,30 +4913,33 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jge    near ptr 0x0044BAE5;
+	__asm        jge    _T8a;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        mov    [ebp-0x10], eax;
+_T8a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        je     near ptr 0x0044BB15;
+	__asm        je     _Tba;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 1;
-	__asm        jmp    near ptr 0x0044BB29;
+	__asm        jmp    _Tce;
 
-	__asm        jmp    near ptr 0x0044BC32;
+_Tba:
+	__asm        jmp    _T1d7;
 
-	__asm        jmp    near ptr 0x0044BB29;
+	__asm        jmp    _Tce;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044BC32;
+	__asm        je     _T1d7;
 // LINE 819:
+_Tce:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14C];
 	__asm        push   eax;
@@ -4785,31 +4970,35 @@ void DialWindow::SetNewDialPositions() {
 // LINE 820:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9C], 0x1E;
-	__asm        jle    near ptr 0x0044BB99;
+	__asm        jle    _T13e;
 // LINE 821:
 	__asm        mov    lNewFuelLight, 0;
 // LINE 822:
-	__asm        jmp    near ptr 0x0044BBBC;
+	__asm        jmp    _T161;
 
+_T13e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9C], 0xA;
-	__asm        jle    near ptr 0x0044BBB5;
+	__asm        jle    _T15a;
 // LINE 823:
 	__asm        mov    lNewFuelLight, 1;
 // LINE 824:
-	__asm        jmp    near ptr 0x0044BBBC;
+	__asm        jmp    _T161;
 // LINE 825:
+_T15a:
 	__asm        mov    lNewFuelLight, 2;
 // LINE 826:
+_T161:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewFuelLight;
 	__asm        cmp    [eax+0xA0], ecx;
-	__asm        jne    near ptr 0x0044BBDE;
+	__asm        jne    _T183;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9C], 0x1E;
-	__asm        jge    near ptr 0x0044BC32;
+	__asm        jge    _T1d7;
 // LINE 827:
+_T183:
 	__asm        mov    eax, lNewFuelLight;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA0], eax;
@@ -4841,10 +5030,11 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    ecx, [eax+0x84];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 832:
+_T1d7:
 	__asm        mov    eax, ds:[0x598FB4];
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
-	__asm        jne    near ptr 0x0044BE3A;
+	__asm        jne    _T3df;
 // LINE 833:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0xA4];
@@ -4859,30 +5049,33 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0xE4], ecx;
-	__asm        jge    near ptr 0x0044BC85;
+	__asm        jge    _T22a;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE4];
 	__asm        mov    [ebp-0x18], eax;
+_T22a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        je     near ptr 0x0044BCB5;
+	__asm        je     _T25a;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDC], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xD8], 1;
-	__asm        jmp    near ptr 0x0044BCC9;
+	__asm        jmp    _T26e;
 
-	__asm        jmp    near ptr 0x0044BD6A;
+_T25a:
+	__asm        jmp    _T30f;
 
-	__asm        jmp    near ptr 0x0044BCC9;
+	__asm        jmp    _T26e;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x0044BD6A;
+	__asm        je     _T30f;
 // LINE 835:
+_T26e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15C];
 	__asm        push   eax;
@@ -4940,6 +5133,7 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    ecx, [eax+0x8C];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 841:
+_T30f:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0x128];
 	__asm        sar    eax, 0x14;
@@ -4950,30 +5144,33 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        cmp    [eax+0x118], ecx;
-	__asm        jge    near ptr 0x0044BDA2;
+	__asm        jge    _T347;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    [ebp-0x20], eax;
+_T347:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        cmp    [eax+0x110], ecx;
-	__asm        je     near ptr 0x0044BDD2;
+	__asm        je     _T377;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x110], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10C], 1;
-	__asm        jmp    near ptr 0x0044BDE6;
+	__asm        jmp    _T38b;
 
-	__asm        jmp    near ptr 0x0044BE3A;
+_T377:
+	__asm        jmp    _T3df;
 
-	__asm        jmp    near ptr 0x0044BDE6;
+	__asm        jmp    _T38b;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x0044BE3A;
+	__asm        je     _T3df;
 // LINE 842:
+_T38b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x16C];
 	__asm        push   eax;
@@ -5002,6 +5199,7 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 845:
+_T3df:
 	__asm        inc    dword ptr ds:[0x598FB4];
 // LINE 846:
 	__asm        jmp    near ptr 0x0044BE45;
@@ -5043,7 +5241,7 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        mov    dword ptr [eax+0x8C], 0;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044BEFF;
+	__asm        jne    _Tb5;
 
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        push   eax;
@@ -5053,8 +5251,9 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x8C], eax;
-	__asm        jmp    near ptr 0x0044BEFF;
+	__asm        jmp    _Tb5;
 
+_Tb5:
 	__asm        jmp    near ptr 0x0044BF04;
 
 	__asm        mov    eax, this;
@@ -5074,7 +5273,7 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044BFF0;
+	__asm        je     _T1a6;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;
@@ -5090,7 +5289,7 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0044BFC7;
+	__asm        je     _T17d;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+8];
@@ -5115,10 +5314,12 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x0044BFC2;
 
-	__asm        jmp    near ptr 0x0044BFD0;
+	__asm        jmp    _T186;
 
+_T17d:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax], 0;
+_T186:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x0044BFDF;
@@ -5126,10 +5327,12 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
-	__asm        jmp    near ptr 0x0044BFFD;
+	__asm        jmp    _T1b3;
 
+_T1a6:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA8], 0;
+_T1b3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 0;
 	__asm        jmp    near ptr 0x0044C00F;
@@ -5163,7 +5366,7 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0044C0E9;
+	__asm        jne    _Tb7;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA8];
@@ -5171,11 +5374,11 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044C0E9;
+	__asm        je     _Tb7;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0044C0C9;
+	__asm        je     _T97;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -5190,6 +5393,7 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
+_T97:
 	__asm        jmp    near ptr 0x0044C0CE;
 
 	__asm        jmp    near ptr 0x0044C0D3;
@@ -5200,13 +5404,14 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044C0E4;
 
-	__asm        jmp    near ptr 0x0044C0E9;
+	__asm        jmp    _Tb7;
 
+_Tb7:
 	__asm        jmp    near ptr 0x0044C0EE;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
-	__asm        je     near ptr 0x0044C11C;
+	__asm        je     _Tea;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA4];
@@ -5217,6 +5422,7 @@ void PassengerWindow::~PassengerWindow() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tea:
 	__asm        jmp    near ptr 0x0044C121;
 
 	__asm        jmp    near ptr 0x0044C126;
@@ -5244,7 +5450,7 @@ int32_t PassengerWindow::Initialize() {
 void PassengerWindow::InitializeCachedSettings() {
 // LINE 941:
 	__asm        cmp    dword ptr ds:[0x5B4968], 0;
-	__asm        je     near ptr 0x0044C18A;
+	__asm        je     _T2c;
 // LINE 942:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        add    eax, 0x1C4;
@@ -5252,6 +5458,7 @@ void PassengerWindow::InitializeCachedSettings() {
 	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 943:
+_T2c:
 	__asm        jmp    near ptr 0x0044C18F;
 }
 
@@ -5265,7 +5472,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044C1F0;
+	__asm        je     _T5c;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -5281,9 +5488,11 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    sPassengerPath.reference, eax;
-	__asm        jmp    near ptr 0x0044C1F7;
+	__asm        jmp    _T63;
 
+_T5c:
 	__asm        mov    sPassengerPath.reference, 0;
+_T63:
 	__asm        mov    sPassengerPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0044C203;
 // LINE 954:
@@ -5294,7 +5503,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 955:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x58], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044C236;
+	__asm        je     _Ta2;
 // LINE 956:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];
@@ -5307,9 +5516,10 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+8];
 // LINE 958:
+_Ta2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA0], 0;
-	__asm        jne    near ptr 0x0044C3B6;
+	__asm        jne    _T222;
 // LINE 959:
 	__asm        lea    eax, sPassengerPath.c_str_ptr;
 	__asm        push   eax;
@@ -5327,10 +5537,10 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044C37C;
+	__asm        je     _T1e8;
 
 	__asm        cmp    sPassengerPath.c_str_ptr, 0;
-	__asm        je     near ptr 0x0044C2A2;
+	__asm        je     _T10e;
 
 	__asm        mov    eax, sPassengerPath.c_str_ptr;
 	__asm        mov    [ebp-0x30], eax;
@@ -5340,6 +5550,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T10e:
 	__asm        jmp    near ptr 0x0044C2A7;
 
 	__asm        mov    eax, sPassengerPath.reference;
@@ -5353,7 +5564,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0044C329;
+	__asm        je     _T195;
 
 	__asm        jmp    near ptr 0x0044C2D1;
 
@@ -5361,18 +5572,20 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0044C2F5;
+	__asm        je     _T161;
 
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x0044C301;
+	__asm        jmp    _T16d;
 
-	__asm        jmp    near ptr 0x0044C301;
+	__asm        jmp    _T16d;
 
+_T161:
 	__asm        mov    dword ptr [ebp-0x44], 0;
-	__asm        jmp    near ptr 0x0044C301;
+	__asm        jmp    _T16d;
 
+_T16d:
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x48], eax;
@@ -5386,8 +5599,9 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0044C329;
+	__asm        jmp    _T195;
 
+_T195:
 	__asm        jmp    near ptr 0x0044C32E;
 
 	__asm        mov    byte ptr [ebp-0x34], 0;
@@ -5415,14 +5629,16 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA0], eax;
-	__asm        jmp    near ptr 0x0044C389;
+	__asm        jmp    _T1f5;
 
+_T1e8:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA0], 0;
 // LINE 961:
+_T1f5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x58], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044C3B6;
+	__asm        je     _T222;
 // LINE 962:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];
@@ -5435,6 +5651,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+8];
 // LINE 964:
+_T222:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -5447,18 +5664,18 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0044C453;
+	__asm        jne    _T2bf;
 
 	__asm        mov    eax, sPassengerPath.reference;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x0044C453;
+	__asm        je     _T2bf;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0044C433;
+	__asm        je     _T29f;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -5473,6 +5690,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax], 0;
+_T29f:
 	__asm        jmp    near ptr 0x0044C438;
 
 	__asm        jmp    near ptr 0x0044C43D;
@@ -5483,12 +5701,13 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044C44E;
 
-	__asm        jmp    near ptr 0x0044C453;
+	__asm        jmp    _T2bf;
 
+_T2bf:
 	__asm        jmp    near ptr 0x0044C458;
 
 	__asm        cmp    sPassengerPath.c_str_ptr, 0;
-	__asm        je     near ptr 0x0044C47A;
+	__asm        je     _T2e6;
 
 	__asm        mov    eax, sPassengerPath.c_str_ptr;
 	__asm        mov    [ebp-0x18], eax;
@@ -5498,6 +5717,7 @@ int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2e6:
 	__asm        jmp    near ptr 0x0044C47F;
 
 	__asm        mov    eax, [ebp-0x10];
@@ -5513,7 +5733,7 @@ void PassengerWindow::DestroyImage() {
 // LINE 976:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA0], 0;
-	__asm        je     near ptr 0x0044C4F9;
+	__asm        je     _T6b;
 // LINE 977:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
@@ -5521,7 +5741,7 @@ void PassengerWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044C4EC;
+	__asm        je     _T5e;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -5531,24 +5751,29 @@ void PassengerWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044C4E7;
 
-	__asm        jmp    near ptr 0x0044C4EC;
+	__asm        jmp    _T5e;
 // LINE 978:
+_T5e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA0], 0;
 // LINE 980:
+_T6b:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044C50C;
+	__asm        jne    _T7e;
 
-	__asm        jmp    near ptr 0x0044C511;
+	__asm        jmp    _T83;
 
-	__asm        jmp    near ptr 0x0044C53F;
+_T7e:
+	__asm        jmp    _Tb1;
 
-	__asm        jmp    near ptr 0x0044C520;
+_T83:
+	__asm        jmp    _T92;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044C53F;
+	__asm        je     _Tb1;
 // LINE 981:
+_T92:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -5559,6 +5784,7 @@ void PassengerWindow::DestroyImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0xFFFFFFFF;
 // LINE 984:
+_Tb1:
 	__asm        jmp    near ptr 0x0044C544;
 }
 
@@ -5567,21 +5793,23 @@ int32_t PassengerWindow::ComposeSelf() {
 // LINE 991:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        jne    near ptr 0x0044C569;
+	__asm        jne    _T20;
 // LINE 992:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044C962;
+	__asm        jmp    _T419;
 // LINE 997:
+_T20:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC0];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0044C586;
+	__asm        jne    _T3d;
 // LINE 998:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044C962;
+	__asm        jmp    _T419;
 // LINE 999:
+_T3d:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -5591,7 +5819,7 @@ int32_t PassengerWindow::ComposeSelf() {
 // LINE 1001:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        je     near ptr 0x0044C76B;
+	__asm        je     _T222;
 // LINE 1002:
 // Block start:
 	unsigned long lTimeElapsed;
@@ -5602,21 +5830,22 @@ int32_t PassengerWindow::ComposeSelf() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        je     near ptr 0x0044C645;
+	__asm        je     _Tfc;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 1;
-	__asm        jne    near ptr 0x0044C5E9;
+	__asm        jne    _Ta0;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x58], eax;
-	__asm        jmp    near ptr 0x0044C630;
+	__asm        jmp    _Te7;
 
-	__asm        jmp    near ptr 0x0044C630;
+	__asm        jmp    _Te7;
 
+_Ta0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044C619;
+	__asm        jne    _Td0;
 
 	__asm        lea    eax, [ebp-0x54];
 	__asm        push   eax;
@@ -5625,30 +5854,33 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x58], eax;
-	__asm        jmp    near ptr 0x0044C630;
+	__asm        jmp    _Te7;
 
-	__asm        jmp    near ptr 0x0044C630;
+	__asm        jmp    _Te7;
 
+_Td0:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x58], eax;
-	__asm        jmp    near ptr 0x0044C630;
+	__asm        jmp    _Te7;
 
+_Te7:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x84];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        add    [ebp-0x48], eax;
+_Tfc:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044C68C;
+	__asm        jne    _T143;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8C], 0;
-	__asm        je     near ptr 0x0044C68C;
+	__asm        je     _T143;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -5660,15 +5892,17 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    lTimeElapsed, eax;
-	__asm        jmp    near ptr 0x0044C697;
+	__asm        jmp    _T14e;
 
+_T143:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    lTimeElapsed, eax;
-	__asm        jmp    near ptr 0x0044C697;
+	__asm        jmp    _T14e;
 // LINE 1004:
+_T14e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 1;
-	__asm        jne    near ptr 0x0044C6C7;
+	__asm        jne    _T17e;
 // LINE 1006:
 	__asm        mov    eax, lTimeElapsed;
 	__asm        shl    eax, 3;
@@ -5680,8 +5914,9 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 // LINE 1008:
-	__asm        jmp    near ptr 0x0044C6E6;
+	__asm        jmp    _T19d;
 // LINE 1010:
+_T17e:
 	__asm        mov    ecx, 0x73;
 	__asm        mov    eax, lTimeElapsed;
 	__asm        shl    eax, 3;
@@ -5693,9 +5928,10 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x78], ecx;
 // LINE 1013:
+_T19d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0x2B;
-	__asm        jg     near ptr 0x0044C719;
+	__asm        jg     _T1d0;
 // LINE 1014:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0x2B;
@@ -5706,11 +5942,12 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 1;
 // LINE 1018:
-	__asm        jmp    near ptr 0x0044C747;
+	__asm        jmp    _T1fe;
 
+_T1d0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0x73;
-	__asm        jl     near ptr 0x0044C747;
+	__asm        jl     _T1fe;
 // LINE 1019:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0x73;
@@ -5721,6 +5958,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 // LINE 1024:
+_T1fe:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        mov    ecx, this;
@@ -5737,6 +5975,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        call   dword ptr [eax+0x34];
 // LINE 1028:
 // Block end:
+_T222:
 	__asm        jmp    near ptr 0x0044C770;
 
 	__asm        mov    eax, this;
@@ -5769,7 +6008,7 @@ int32_t PassengerWindow::ComposeSelf() {
 // LINE 1033:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044C958;
+	__asm        je     _T40f;
 // LINE 1034:
 // Block start:
 	struct tagHeliPassengerData* tempHeliPassengerData;
@@ -5822,7 +6061,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        jmp    near ptr 0x0044C850;
 // LINE 1039:
 	__asm        cmp    lPassengerIndex, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044C912;
+	__asm        je     _T3c9;
 // LINE 1040:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0xA4];
@@ -5830,7 +6069,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    ecx, ds:[0x5B4968];
 	__asm        sub    eax, [ecx+0x154];
 	__asm        cmp    eax, 0x50000;
-	__asm        jle    near ptr 0x0044C8A3;
+	__asm        jle    _T35a;
 // LINE 1041:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
@@ -5844,8 +6083,9 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
 // LINE 1043:
-	__asm        jmp    near ptr 0x0044C8D1;
+	__asm        jmp    _T388;
 // LINE 1045:
+_T35a:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
 	__asm        mov    eax, lPassengerIndex;
@@ -5863,6 +6103,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    ecx, this;
 	__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
 // LINE 1047:
+_T388:
 	__asm        lea    eax, ptGraphicIconPosition.y;
 	__asm        push   eax;
 	__asm        lea    eax, ptGraphicIconPosition.x;
@@ -5886,24 +6127,28 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1050:
-	__asm        jmp    near ptr 0x0044C958;
+	__asm        jmp    _T40f;
 // LINE 1051:
+_T3c9:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0xFFFFFFFF;
 // LINE 1052:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044C932;
+	__asm        jne    _T3e9;
 
-	__asm        jmp    near ptr 0x0044C937;
+	__asm        jmp    _T3ee;
 
-	__asm        jmp    near ptr 0x0044C958;
+_T3e9:
+	__asm        jmp    _T40f;
 
-	__asm        jmp    near ptr 0x0044C946;
+_T3ee:
+	__asm        jmp    _T3fd;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x0044C958;
+	__asm        je     _T40f;
 // LINE 1053:
+_T3fd:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -5912,8 +6157,9 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1056:
 // Block end:
+_T40f:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044C962;
+	__asm        jmp    _T419;
 // LINE 1057:
 }
 
@@ -5940,32 +6186,38 @@ void PassengerWindow::DrawPassengers() {
 	__asm        jmp    near ptr 0x0044C994;
 // LINE 1071:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044C9A3;
+	__asm        jmp    _T3c;
 
+_T39:
 	__asm        inc    i;
+_T3c:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x0044C9BD;
+	__asm        jge    _T56;
 // LINE 1072:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jmp    near ptr 0x0044C9A0;
+	__asm        jmp    _T39;
 // LINE 1074:
+_T56:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044C9CC;
+	__asm        jmp    _T65;
 
+_T62:
 	__asm        inc    i;
+_T65:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x0044CB1D;
+	__asm        jge    _T1b6;
 // LINE 1075:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, tempHeliPassengerData;
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0044C9F2;
+	__asm        jne    _T8b;
 // LINE 1076:
-	__asm        jmp    near ptr 0x0044C9C9;
+	__asm        jmp    _T62;
 // LINE 1077:
+_T8b:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
@@ -6016,7 +6268,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectDestination.top;
 	__asm        cmp    [eax+0x2C], ecx;
-	__asm        jle    near ptr 0x0044CB0D;
+	__asm        jle    _T1a6;
 // LINE 1084:
 	__asm        jmp    near ptr 0x0044CA84;
 
@@ -6025,7 +6277,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        add    eax, rectDestination.top;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x2C];
-	__asm        jle    near ptr 0x0044CAA8;
+	__asm        jle    _T141;
 // LINE 1085:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -6033,6 +6285,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        add    eax, rectSource.top;
 	__asm        mov    rectSource.bottom, eax;
 // LINE 1086:
+_T141:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
@@ -6040,7 +6293,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x94];
 	__asm        cmp    [eax+ecx+0x28], edx;
-	__asm        jne    near ptr 0x0044CAD7;
+	__asm        jne    _T170;
 // LINE 1087:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
@@ -6049,6 +6302,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    ecx, this;
 	__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
 // LINE 1089:
+_T170:
 	__asm        mov    eax, rectSource.bottom;
 	__asm        push   eax;
 	__asm        mov    eax, rectSource.right;
@@ -6071,11 +6325,13 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1092:
+_T1a6:
 	__asm        mov    eax, nCurrentSeat;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
 // LINE 1093:
-	__asm        jmp    near ptr 0x0044C9C9;
+	__asm        jmp    _T62;
 // LINE 1096:
+_T1b6:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
 	__asm        push   0;
@@ -6084,17 +6340,19 @@ void PassengerWindow::DrawPassengers() {
 	__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
 // LINE 1097:
 	__asm        mov    nCurrentSeat, 0;
-	__asm        jmp    near ptr 0x0044CB3C;
+	__asm        jmp    _T1d5;
 
+_T1d2:
 	__asm        inc    nCurrentSeat;
+_T1d5:
 	__asm        mov    eax, tempHeliPassengerData;
 	__asm        mov    ecx, nCurrentSeat;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x0044CC09;
+	__asm        jle    _T2a2;
 // LINE 1098:
 	__asm        mov    eax, nCurrentSeat;
 	__asm        cmp    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jne    near ptr 0x0044CC04;
+	__asm        jne    _T29d;
 // LINE 1099:
 	__asm        mov    ecx, tempHeliPassengerData;
 	__asm        mov    eax, nCurrentSeat;
@@ -6122,7 +6380,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectDestination.top;
 	__asm        cmp    [eax+0x2C], ecx;
-	__asm        jle    near ptr 0x0044CC04;
+	__asm        jle    _T29d;
 // LINE 1102:
 	__asm        jmp    near ptr 0x0044CBAA;
 
@@ -6131,7 +6389,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        add    eax, rectDestination.top;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x2C];
-	__asm        jle    near ptr 0x0044CBCE;
+	__asm        jle    _T267;
 // LINE 1103:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -6139,6 +6397,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        add    eax, rectSource.top;
 	__asm        mov    rectSource.bottom, eax;
 // LINE 1105:
+_T267:
 	__asm        mov    eax, rectSource.bottom;
 	__asm        push   eax;
 	__asm        mov    eax, rectSource.right;
@@ -6161,8 +6420,10 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1108:
-	__asm        jmp    near ptr 0x0044CB39;
+_T29d:
+	__asm        jmp    _T1d2;
 // LINE 1109:
+_T2a2:
 	__asm        mov    eax, tempHeliPassengerData;
 	__asm        push   eax;
 	__asm        call   HeliPassengerClearChanged;
@@ -6209,15 +6470,15 @@ int32_t PassengerWindow::DoesWindowNeedUpdating() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
-	__asm        jne    near ptr 0x0044CCC9;
+	__asm        jne    _T56;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        jne    near ptr 0x0044CCC9;
+	__asm        jne    _T56;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
-	__asm        je     near ptr 0x0044CCC9;
+	__asm        je     _T56;
 
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        add    eax, 0x1C4;
@@ -6225,12 +6486,15 @@ int32_t PassengerWindow::DoesWindowNeedUpdating() {
 	__asm        call   HeliPassengerHasChanged;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0044CCD3;
+	__asm        je     _T60;
 
+_T56:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044CCD5;
+	__asm        jmp    _T62;
 
+_T60:
 	__asm        xor    eax, eax;
+_T62:
 	__asm        jmp    near ptr 0x0044CCDA;
 // LINE 1147:
 }
@@ -6240,10 +6504,11 @@ void PassengerWindow::MoveToUpPosition() {
 // LINE 1155:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        je     near ptr 0x0044CD00;
+	__asm        je     _T21;
 // LINE 1156:
-	__asm        jmp    near ptr 0x0044CDCC;
+	__asm        jmp    _Ted;
 // LINE 1158:
+_T21:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
@@ -6254,24 +6519,26 @@ void PassengerWindow::MoveToUpPosition() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        je     near ptr 0x0044CD39;
+	__asm        je     _T5a;
 
-	__asm        jmp    near ptr 0x0044CDBA;
+	__asm        jmp    _Tdb;
 
+_T5a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 1;
-	__asm        jne    near ptr 0x0044CD62;
+	__asm        jne    _T83;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CDB5;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CDB5;
+	__asm        jmp    _Td6;
 
+_T83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044CD98;
+	__asm        jne    _Tb9;
 
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -6281,24 +6548,27 @@ void PassengerWindow::MoveToUpPosition() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CDB5;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CDB5;
+	__asm        jmp    _Td6;
 
+_Tb9:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CDB5;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CDBA;
+_Td6:
+	__asm        jmp    _Tdb;
 // LINE 1160:
+_Tdb:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 1;
 // LINE 1161:
-	__asm        jmp    near ptr 0x0044CDCC;
+	__asm        jmp    _Ted;
 }
 
 // FUNCTION: COPTER_D 0x0044cdd1
@@ -6306,10 +6576,11 @@ void PassengerWindow::MoveToDownPosition() {
 // LINE 1168:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        je     near ptr 0x0044CDF2;
+	__asm        je     _T21;
 // LINE 1169:
-	__asm        jmp    near ptr 0x0044CEBE;
+	__asm        jmp    _Ted;
 // LINE 1171:
+_T21:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
 	__asm        mov    eax, this;
@@ -6320,24 +6591,26 @@ void PassengerWindow::MoveToDownPosition() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        je     near ptr 0x0044CE2B;
+	__asm        je     _T5a;
 
-	__asm        jmp    near ptr 0x0044CEAC;
+	__asm        jmp    _Tdb;
 
+_T5a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 1;
-	__asm        jne    near ptr 0x0044CE54;
+	__asm        jne    _T83;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CEA7;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CEA7;
+	__asm        jmp    _Td6;
 
+_T83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044CE8A;
+	__asm        jne    _Tb9;
 
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -6347,24 +6620,27 @@ void PassengerWindow::MoveToDownPosition() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CEA7;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CEA7;
+	__asm        jmp    _Td6;
 
+_Tb9:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x0044CEA7;
+	__asm        jmp    _Td6;
 
-	__asm        jmp    near ptr 0x0044CEAC;
+_Td6:
+	__asm        jmp    _Tdb;
 // LINE 1173:
+_Tdb:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0xFFFFFFFF;
 // LINE 1174:
-	__asm        jmp    near ptr 0x0044CEBE;
+	__asm        jmp    _Ted;
 }
 
 // FUNCTION: COPTER_D 0x0044cec3
@@ -6372,20 +6648,22 @@ void PassengerWindow::TogglePosition() {
 // LINE 1181:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 1;
-	__asm        jne    near ptr 0x0044CEEF;
+	__asm        jne    _T2c;
 // LINE 1182:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1183:
-	__asm        jmp    near ptr 0x0044CEFD;
+	__asm        jmp    _T3a;
 // LINE 1184:
+_T2c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1185:
+_T3a:
 	__asm        jmp    near ptr 0x0044CF02;
 }
 
@@ -6414,76 +6692,84 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 // LINE 1197:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectButtonPositionUp.left, eax;
-	__asm        jg     near ptr 0x0044CF94;
+	__asm        jg     _T8d;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectButtonPositionUp.top, eax;
-	__asm        jg     near ptr 0x0044CF94;
+	__asm        jg     _T8d;
 
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectButtonPositionUp.right, eax;
-	__asm        jle    near ptr 0x0044CF94;
+	__asm        jle    _T8d;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectButtonPositionUp.bottom, eax;
-	__asm        jle    near ptr 0x0044CF94;
+	__asm        jle    _T8d;
 
-	__asm        jmp    near ptr 0x0044CF99;
+	__asm        jmp    _T92;
 
-	__asm        jmp    near ptr 0x0044CFC8;
+_T8d:
+	__asm        jmp    _Tc1;
 
-	__asm        jmp    near ptr 0x0044CFA8;
+_T92:
+	__asm        jmp    _Ta1;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0044CFC8;
+	__asm        je     _Tc1;
 
+_Ta1:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 1;
-	__asm        jne    near ptr 0x0044CFC8;
+	__asm        jne    _Tc1;
 // LINE 1198:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1199:
-	__asm        jmp    near ptr 0x0044D0B2;
+	__asm        jmp    _T1ab;
 
+_Tc1:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectButtonPositionDown.left, eax;
-	__asm        jg     near ptr 0x0044CFFD;
+	__asm        jg     _Tf6;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectButtonPositionDown.top, eax;
-	__asm        jg     near ptr 0x0044CFFD;
+	__asm        jg     _Tf6;
 
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectButtonPositionDown.right, eax;
-	__asm        jle    near ptr 0x0044CFFD;
+	__asm        jle    _Tf6;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectButtonPositionDown.bottom, eax;
-	__asm        jle    near ptr 0x0044CFFD;
+	__asm        jle    _Tf6;
 
-	__asm        jmp    near ptr 0x0044D002;
+	__asm        jmp    _Tfb;
 
-	__asm        jmp    near ptr 0x0044D031;
+_Tf6:
+	__asm        jmp    _T12a;
 
-	__asm        jmp    near ptr 0x0044D011;
+_Tfb:
+	__asm        jmp    _T10a;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x0044D031;
+	__asm        je     _T12a;
 
+_T10a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
-	__asm        jne    near ptr 0x0044D031;
+	__asm        jne    _T12a;
 // LINE 1200:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1201:
-	__asm        jmp    near ptr 0x0044D0B2;
+	__asm        jmp    _T1ab;
 
+_T12a:
 	__asm        lea    eax, lPassengerID;
 	__asm        push   eax;
 	__asm        mov    eax, nCursorY;
@@ -6493,21 +6779,23 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    ecx, this;
 	__asm        call   PassengerWindow::DoesPositionHitPassenger;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0044D0B2;
+	__asm        je     _T1ab;
 // LINE 1203:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044D065;
+	__asm        jne    _T15e;
 
-	__asm        jmp    near ptr 0x0044D0B2;
+	__asm        jmp    _T1ab;
 
-	__asm        jmp    near ptr 0x0044D065;
+	__asm        jmp    _T15e;
 
-	__asm        jmp    near ptr 0x0044D074;
+_T15e:
+	__asm        jmp    _T16d;
 
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        jne    near ptr 0x0044D0B2;
+	__asm        jne    _T1ab;
 
+_T16d:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -6515,7 +6803,7 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x98];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0044D0B2;
+	__asm        je     _T1ab;
 // LINE 1205:
 	__asm        mov    eax, lPassengerID;
 	__asm        mov    ecx, this;
@@ -6529,6 +6817,7 @@ long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x9C], eax;
 // LINE 1214:
+_T1ab:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D0BC;
 // LINE 1215:
@@ -6539,17 +6828,20 @@ long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 // LINE 1222:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044D0E2;
+	__asm        jne    _T1f;
 
-	__asm        jmp    near ptr 0x0044D0E7;
+	__asm        jmp    _T24;
 
-	__asm        jmp    near ptr 0x0044D108;
+_T1f:
+	__asm        jmp    _T45;
 
-	__asm        jmp    near ptr 0x0044D0F6;
+_T24:
+	__asm        jmp    _T33;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044D108;
+	__asm        je     _T45;
 // LINE 1223:
+_T33:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -6557,9 +6849,10 @@ long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1225:
+_T45:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044D155;
+	__asm        je     _T92;
 // LINE 1226:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -6570,7 +6863,7 @@ long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xA8];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0044D148;
+	__asm        jne    _T85;
 // LINE 1227:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x94];
@@ -6578,9 +6871,11 @@ long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        call   GetOutOfHeli;
 	__asm        add    esp, 4;
 // LINE 1228:
+_T85:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0xFFFFFFFF;
 // LINE 1231:
+_T92:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044D15F;
 // LINE 1232:
@@ -6619,21 +6914,24 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 	__asm        mov    tempHeliPassengerData, eax;
 // LINE 1255:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044D1CD;
+	__asm        jmp    _T32;
 
+_T2f:
 	__asm        inc    i;
+_T32:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x0044D2B6;
+	__asm        jge    _T11b;
 // LINE 1256:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, tempHeliPassengerData;
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0044D1F3;
+	__asm        jne    _T58;
 // LINE 1257:
-	__asm        jmp    near ptr 0x0044D1CA;
+	__asm        jmp    _T2f;
 // LINE 1258:
+_T58:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
@@ -6670,29 +6968,32 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 // LINE 1263:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectCurrent.left, eax;
-	__asm        jg     near ptr 0x0044D27E;
+	__asm        jg     _Te3;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectCurrent.top, eax;
-	__asm        jg     near ptr 0x0044D27E;
+	__asm        jg     _Te3;
 
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectCurrent.right, eax;
-	__asm        jle    near ptr 0x0044D27E;
+	__asm        jle    _Te3;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    rectCurrent.bottom, eax;
-	__asm        jle    near ptr 0x0044D27E;
+	__asm        jle    _Te3;
 
-	__asm        jmp    near ptr 0x0044D283;
+	__asm        jmp    _Te8;
 
-	__asm        jmp    near ptr 0x0044D2B1;
+_Te3:
+	__asm        jmp    _T116;
 
-	__asm        jmp    near ptr 0x0044D292;
+_Te8:
+	__asm        jmp    _Tf7;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x0044D2B1;
+	__asm        je     _T116;
 // LINE 1264:
+_Tf7:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
@@ -6702,12 +7003,14 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 	__asm        mov    [ecx], eax;
 // LINE 1265:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044D2BD;
+	__asm        jmp    _T122;
 // LINE 1267:
-	__asm        jmp    near ptr 0x0044D1CA;
+_T116:
+	__asm        jmp    _T2f;
 // LINE 1268:
+_T11b:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044D2BD;
+	__asm        jmp    _T122;
 // LINE 1269:
 }
 
@@ -6746,14 +7049,16 @@ void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class Graph
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA8;
 	__asm        mov    [ebp-8], eax;
+_T88:
 	__asm        dec    dword ptr [ebp-4];
-	__asm        js     near ptr 0x0044D366;
+	__asm        js     _Ta2;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    near ptr 0x0044D34C;
+	__asm        jmp    _T88;
 
+_Ta2:
 	__asm        jmp    near ptr 0x0044D36B;
 
 	__asm        jmp    near ptr 0x0044D370;
@@ -6913,7 +7218,7 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 1363:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x58], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0044D63D;
+	__asm        je     _T54;
 // LINE 1364:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];
@@ -6926,6 +7231,7 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+8];
 // LINE 1365:
+_T54:
 	__asm        mov    byte ptr [ebp-0x108], 0x6F;
 	__asm        mov    byte ptr [ebp-0x107], 0xDA;
 	__asm        mov    byte ptr [ebp-0x106], 0xFF;
@@ -6941,7 +7247,7 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 1366:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
-	__asm        jne    near ptr 0x0044D6F0;
+	__asm        jne    _T107;
 // LINE 1367:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -6957,7 +7263,7 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
-	__asm        je     near ptr 0x0044D6E3;
+	__asm        je     _Tfa;
 
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -6965,11 +7271,13 @@ int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
-	__asm        jmp    near ptr 0x0044D6F0;
+	__asm        jmp    _T107;
 
+_Tfa:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 // LINE 1370:
+_T107:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -6986,7 +7294,7 @@ void MapWindow::DestroyImage() {
 // LINE 1382:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
-	__asm        je     near ptr 0x0044D773;
+	__asm        je     _T5a;
 // LINE 1383:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -6994,7 +7302,7 @@ void MapWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044D769;
+	__asm        je     _T50;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -7004,27 +7312,32 @@ void MapWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044D764;
 
-	__asm        jmp    near ptr 0x0044D769;
+	__asm        jmp    _T50;
 // LINE 1384:
+_T50:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 // LINE 1386:
+_T5a:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1387:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044D78E;
+	__asm        jne    _T75;
 
-	__asm        jmp    near ptr 0x0044D793;
+	__asm        jmp    _T7a;
 
-	__asm        jmp    near ptr 0x0044D7C1;
+_T75:
+	__asm        jmp    _Ta8;
 
-	__asm        jmp    near ptr 0x0044D7A2;
+_T7a:
+	__asm        jmp    _T89;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044D7C1;
+	__asm        je     _Ta8;
 // LINE 1388:
+_T89:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7035,6 +7348,7 @@ void MapWindow::DestroyImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0xFFFFFFFF;
 // LINE 1391:
+_Ta8:
 	__asm        jmp    near ptr 0x0044D7C6;
 }
 
@@ -7047,15 +7361,16 @@ int32_t MapWindow::ComposeSelf() {
 // LINE 1405:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        jne    near ptr 0x0044D7EB;
+	__asm        jne    _T20;
 // LINE 1406:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044D947;
+	__asm        jmp    _T17c;
 // LINE 1408:
+_T20:
 	__asm        inc    dword ptr ds:[0x598FC8];
 // LINE 1409:
 	__asm        test   byte ptr ds:[0x598FC8], 1;
-	__asm        je     near ptr 0x0044D845;
+	__asm        je     _T7a;
 // LINE 1410:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -7086,28 +7401,31 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+4];
 // LINE 1414:
+_T7a:
 	__asm        mov    eax, ds:[0x598FC8];
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
-	__asm        jne    near ptr 0x0044D8F5;
+	__asm        jne    _T12a;
 // LINE 1415:
 	__asm        call   S3MissionGetCurr;
 	__asm        mov    md, eax;
 	__asm        cmp    md, 0;
-	__asm        je     near ptr 0x0044D874;
+	__asm        je     _Ta9;
 // LINE 1416:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    lNewMissionID, eax;
 // LINE 1418:
-	__asm        jmp    near ptr 0x0044D87B;
+	__asm        jmp    _Tb0;
 // LINE 1419:
+_Ta9:
 	__asm        mov    lNewMissionID, 0xFFFFFFFF;
 // LINE 1421:
+_Tb0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewMissionID;
 	__asm        cmp    [eax+0x88], ecx;
-	__asm        je     near ptr 0x0044D8F5;
+	__asm        je     _T12a;
 // LINE 1423:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x108;
@@ -7121,7 +7439,7 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        call   dword ptr [edx+0x44];
 // LINE 1424:
 	__asm        cmp    md, 0;
-	__asm        je     near ptr 0x0044D8E9;
+	__asm        je     _T11e;
 // LINE 1425:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x8C;
@@ -7144,10 +7462,12 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 1426:
+_T11e:
 	__asm        mov    eax, lNewMissionID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 // LINE 1431:
+_T12a:
 	__asm        jmp    near ptr 0x0044D8FA;
 
 	__asm        jmp    near ptr 0x0044D8FF;
@@ -7179,7 +7499,7 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1433:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044D947;
+	__asm        jmp    _T17c;
 // LINE 1434:
 }
 
@@ -7198,14 +7518,14 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        jmp    near ptr 0x0044D96C;
 // LINE 1445:
 	__asm        cmp    nButton, 0;
-	__asm        jne    near ptr 0x0044D9DA;
+	__asm        jne    _T8e;
 // LINE 1446:
 	__asm        mov    ptDestination.x, 9;
 // LINE 1447:
 	__asm        mov    ptDestination.y, 0x36;
 // LINE 1448:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044D9B4;
+	__asm        je     _T68;
 
 	__asm        mov    rectSource.left, 0x20;
 	__asm        mov    rectSource.top, 0;
@@ -7213,25 +7533,28 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x10;
 	__asm        jmp    near ptr 0x0044D9AF;
 
-	__asm        jmp    near ptr 0x0044D9D5;
+	__asm        jmp    _T89;
 
+_T68:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x10;
 	__asm        mov    rectSource.bottom, 0x10;
-	__asm        jmp    near ptr 0x0044D9D5;
+	__asm        jmp    _T89;
 // LINE 1450:
-	__asm        jmp    near ptr 0x0044DBFB;
+_T89:
+	__asm        jmp    _T2af;
 
+_T8e:
 	__asm        cmp    nButton, 1;
-	__asm        jne    near ptr 0x0044DA48;
+	__asm        jne    _Tfc;
 // LINE 1451:
 	__asm        mov    ptDestination.x, 0x1B;
 // LINE 1452:
 	__asm        mov    ptDestination.y, 0x36;
 // LINE 1453:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044DA22;
+	__asm        je     _Td6;
 
 	__asm        mov    rectSource.left, 0x30;
 	__asm        mov    rectSource.top, 0;
@@ -7239,25 +7562,28 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x10;
 	__asm        jmp    near ptr 0x0044DA1D;
 
-	__asm        jmp    near ptr 0x0044DA43;
+	__asm        jmp    _Tf7;
 
+_Td6:
 	__asm        mov    rectSource.left, 0x10;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x20;
 	__asm        mov    rectSource.bottom, 0x10;
-	__asm        jmp    near ptr 0x0044DA43;
+	__asm        jmp    _Tf7;
 // LINE 1455:
-	__asm        jmp    near ptr 0x0044DBFB;
+_Tf7:
+	__asm        jmp    _T2af;
 
+_Tfc:
 	__asm        cmp    nButton, 2;
-	__asm        jne    near ptr 0x0044DAB6;
+	__asm        jne    _T16a;
 // LINE 1456:
 	__asm        mov    ptDestination.x, 9;
 // LINE 1457:
 	__asm        mov    ptDestination.y, 0x49;
 // LINE 1458:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044DA90;
+	__asm        je     _T144;
 
 	__asm        mov    rectSource.left, 0x20;
 	__asm        mov    rectSource.top, 0x10;
@@ -7265,25 +7591,28 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x20;
 	__asm        jmp    near ptr 0x0044DA8B;
 
-	__asm        jmp    near ptr 0x0044DAB1;
+	__asm        jmp    _T165;
 
+_T144:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0x10;
 	__asm        mov    rectSource.right, 0x10;
 	__asm        mov    rectSource.bottom, 0x20;
-	__asm        jmp    near ptr 0x0044DAB1;
+	__asm        jmp    _T165;
 // LINE 1460:
-	__asm        jmp    near ptr 0x0044DBFB;
+_T165:
+	__asm        jmp    _T2af;
 
+_T16a:
 	__asm        cmp    nButton, 3;
-	__asm        jne    near ptr 0x0044DB24;
+	__asm        jne    _T1d8;
 // LINE 1461:
 	__asm        mov    ptDestination.x, 0x1B;
 // LINE 1462:
 	__asm        mov    ptDestination.y, 0x49;
 // LINE 1463:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044DAFE;
+	__asm        je     _T1b2;
 
 	__asm        mov    rectSource.left, 0x30;
 	__asm        mov    rectSource.top, 0x10;
@@ -7291,25 +7620,28 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x20;
 	__asm        jmp    near ptr 0x0044DAF9;
 
-	__asm        jmp    near ptr 0x0044DB1F;
+	__asm        jmp    _T1d3;
 
+_T1b2:
 	__asm        mov    rectSource.left, 0x10;
 	__asm        mov    rectSource.top, 0x10;
 	__asm        mov    rectSource.right, 0x20;
 	__asm        mov    rectSource.bottom, 0x20;
-	__asm        jmp    near ptr 0x0044DB1F;
+	__asm        jmp    _T1d3;
 // LINE 1465:
-	__asm        jmp    near ptr 0x0044DBFB;
+_T1d3:
+	__asm        jmp    _T2af;
 
+_T1d8:
 	__asm        cmp    nButton, 4;
-	__asm        jne    near ptr 0x0044DB92;
+	__asm        jne    _T246;
 // LINE 1466:
 	__asm        mov    ptDestination.x, 9;
 // LINE 1467:
 	__asm        mov    ptDestination.y, 0x5C;
 // LINE 1468:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044DB6C;
+	__asm        je     _T220;
 
 	__asm        mov    rectSource.left, 0x20;
 	__asm        mov    rectSource.top, 0x20;
@@ -7317,25 +7649,28 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x30;
 	__asm        jmp    near ptr 0x0044DB67;
 
-	__asm        jmp    near ptr 0x0044DB8D;
+	__asm        jmp    _T241;
 
+_T220:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0x20;
 	__asm        mov    rectSource.right, 0x10;
 	__asm        mov    rectSource.bottom, 0x30;
-	__asm        jmp    near ptr 0x0044DB8D;
+	__asm        jmp    _T241;
 // LINE 1470:
-	__asm        jmp    near ptr 0x0044DBFB;
+_T241:
+	__asm        jmp    _T2af;
 
+_T246:
 	__asm        cmp    nButton, 5;
-	__asm        jne    near ptr 0x0044DBFB;
+	__asm        jne    _T2af;
 // LINE 1471:
 	__asm        mov    ptDestination.x, 0x1B;
 // LINE 1472:
 	__asm        mov    ptDestination.y, 0x5C;
 // LINE 1473:
 	__asm        cmp    nState, 0;
-	__asm        je     near ptr 0x0044DBDA;
+	__asm        je     _T28e;
 
 	__asm        mov    rectSource.left, 0x30;
 	__asm        mov    rectSource.top, 0x20;
@@ -7343,14 +7678,16 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x30;
 	__asm        jmp    near ptr 0x0044DBD5;
 
-	__asm        jmp    near ptr 0x0044DBFB;
+	__asm        jmp    _T2af;
 
+_T28e:
 	__asm        mov    rectSource.left, 0x10;
 	__asm        mov    rectSource.top, 0x20;
 	__asm        mov    rectSource.right, 0x20;
 	__asm        mov    rectSource.bottom, 0x30;
-	__asm        jmp    near ptr 0x0044DBFB;
+	__asm        jmp    _T2af;
 // LINE 1475:
+_T2af:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
 	__asm        lea    eax, ptDestination.x;
@@ -7375,19 +7712,19 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 // LINE 1490:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    ds:[0x5B5258], eax;
-	__asm        jg     near ptr 0x0044DCDD;
+	__asm        jg     _Tb6;
 
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    ds:[0x5B5260], eax;
-	__asm        jl     near ptr 0x0044DCDD;
+	__asm        jl     _Tb6;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    ds:[0x5B525C], eax;
-	__asm        jg     near ptr 0x0044DCDD;
+	__asm        jg     _Tb6;
 
 	__asm        mov    eax, nCursorY;
 	__asm        cmp    ds:[0x5B5264], eax;
-	__asm        jl     near ptr 0x0044DCDD;
+	__asm        jl     _Tb6;
 // LINE 1492:
 	__asm        mov    eax, nCursorY;
 	__asm        sub    eax, ds:[0x5B525C];
@@ -7402,7 +7739,7 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 // LINE 1493:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
-	__asm        jl     near ptr 0x0044DCD8;
+	__asm        jl     _Tb1;
 // LINE 1494:
 	__asm        jmp    near ptr 0x0044DCA9;
 
@@ -7423,48 +7760,55 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1496:
-	__asm        jmp    near ptr 0x0044DF18;
+_Tb1:
+	__asm        jmp    _T2f1;
 
+_Tb6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xE8], ecx;
-	__asm        jg     near ptr 0x0044DD2A;
+	__asm        jg     _T103;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xEC], ecx;
-	__asm        jg     near ptr 0x0044DD2A;
+	__asm        jg     _T103;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xF0], ecx;
-	__asm        jle    near ptr 0x0044DD2A;
+	__asm        jle    _T103;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xF4], ecx;
-	__asm        jle    near ptr 0x0044DD2A;
+	__asm        jle    _T103;
 
-	__asm        jmp    near ptr 0x0044DD2F;
+	__asm        jmp    _T108;
 
-	__asm        jmp    near ptr 0x0044DD8F;
+_T103:
+	__asm        jmp    _T168;
 
-	__asm        jmp    near ptr 0x0044DD3E;
+_T108:
+	__asm        jmp    _T117;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x0044DD8F;
+	__asm        je     _T168;
 // LINE 1497:
+_T117:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
-	__asm        jne    near ptr 0x0044DD5A;
+	__asm        jne    _T133;
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 1;
-	__asm        jmp    near ptr 0x0044DD64;
+	__asm        jmp    _T13d;
 
+_T133:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
 // LINE 1498:
+_T13d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        push   eax;
@@ -7480,48 +7824,54 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        call   S3MapCommandCurrentMissionVehicleFilter;
 	__asm        add    esp, 4;
 // LINE 1501:
-	__asm        jmp    near ptr 0x0044DF18;
+	__asm        jmp    _T2f1;
 
+_T168:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xF8], ecx;
-	__asm        jg     near ptr 0x0044DDDC;
+	__asm        jg     _T1b5;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xFC], ecx;
-	__asm        jg     near ptr 0x0044DDDC;
+	__asm        jg     _T1b5;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x100], ecx;
-	__asm        jle    near ptr 0x0044DDDC;
+	__asm        jle    _T1b5;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x104], ecx;
-	__asm        jle    near ptr 0x0044DDDC;
+	__asm        jle    _T1b5;
 
-	__asm        jmp    near ptr 0x0044DDE1;
+	__asm        jmp    _T1ba;
 
-	__asm        jmp    near ptr 0x0044DE41;
+_T1b5:
+	__asm        jmp    _T21a;
 
-	__asm        jmp    near ptr 0x0044DDF0;
+_T1ba:
+	__asm        jmp    _T1c9;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044DE41;
+	__asm        je     _T21a;
 // LINE 1502:
+_T1c9:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
-	__asm        jne    near ptr 0x0044DE0C;
+	__asm        jne    _T1e5;
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 1;
-	__asm        jmp    near ptr 0x0044DE16;
+	__asm        jmp    _T1ef;
 
+_T1e5:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
 // LINE 1503:
+_T1ef:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        push   eax;
@@ -7537,52 +7887,58 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        call   S3MapCommandOtherMissionVehicleFilter;
 	__asm        add    esp, 4;
 // LINE 1506:
-	__asm        jmp    near ptr 0x0044DF18;
+	__asm        jmp    _T2f1;
 // LINE 1507:
+_T21a:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044DE50;
+	__asm        jmp    _T229;
 
+_T226:
 	__asm        inc    i;
+_T229:
 	__asm        cmp    i, 4;
-	__asm        jge    near ptr 0x0044DF18;
+	__asm        jge    _T2f1;
 // LINE 1508:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0xA8], edx;
-	__asm        jg     near ptr 0x0044DEC3;
+	__asm        jg     _T29c;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0xAC], edx;
-	__asm        jg     near ptr 0x0044DEC3;
+	__asm        jg     _T29c;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorX;
 	__asm        cmp    [eax+ecx+0xB0], edx;
-	__asm        jle    near ptr 0x0044DEC3;
+	__asm        jle    _T29c;
 
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    edx, nCursorY;
 	__asm        cmp    [eax+ecx+0xB4], edx;
-	__asm        jle    near ptr 0x0044DEC3;
+	__asm        jle    _T29c;
 
-	__asm        jmp    near ptr 0x0044DEC8;
+	__asm        jmp    _T2a1;
 
-	__asm        jmp    near ptr 0x0044DF13;
+_T29c:
+	__asm        jmp    _T2ec;
 
-	__asm        jmp    near ptr 0x0044DED7;
+_T2a1:
+	__asm        jmp    _T2b0;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0044DF13;
+	__asm        je     _T2ec;
 // LINE 1509:
+_T2b0:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7603,12 +7959,14 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        mov    [ecx+0x80], eax;
 // LINE 1512:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044DF22;
+	__asm        jmp    _T2fb;
 // LINE 1514:
-	__asm        jmp    near ptr 0x0044DE4D;
+_T2ec:
+	__asm        jmp    _T226;
 // LINE 1516:
+_T2f1:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044DF22;
+	__asm        jmp    _T2fb;
 // LINE 1517:
 }
 
@@ -7617,17 +7975,20 @@ long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal)
 // LINE 1528:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044DF48;
+	__asm        jne    _T1f;
 
-	__asm        jmp    near ptr 0x0044DF4D;
+	__asm        jmp    _T24;
 
-	__asm        jmp    near ptr 0x0044E1A6;
+_T1f:
+	__asm        jmp    _T27d;
 
-	__asm        jmp    near ptr 0x0044DF5C;
+_T24:
+	__asm        jmp    _T33;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044E1A6;
+	__asm        je     _T27d;
 // LINE 1529:
+_T33:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -7637,158 +7998,174 @@ long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal)
 // LINE 1530:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jl     near ptr 0x0044E1A6;
+	__asm        jl     _T27d;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 4;
-	__asm        jge    near ptr 0x0044E1A6;
+	__asm        jge    _T27d;
 // LINE 1531:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
-	__asm        jne    near ptr 0x0044E009;
+	__asm        jne    _Te0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        jg     near ptr 0x0044DFEB;
+	__asm        jg     _Tc2;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xAC], ecx;
-	__asm        jg     near ptr 0x0044DFEB;
+	__asm        jg     _Tc2;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jle    near ptr 0x0044DFEB;
+	__asm        jle    _Tc2;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xB4], ecx;
-	__asm        jle    near ptr 0x0044DFEB;
+	__asm        jle    _Tc2;
 
-	__asm        jmp    near ptr 0x0044DFF0;
+	__asm        jmp    _Tc7;
 
-	__asm        jmp    near ptr 0x0044E009;
+_Tc2:
+	__asm        jmp    _Te0;
 
-	__asm        jmp    near ptr 0x0044DFFF;
+_Tc7:
+	__asm        jmp    _Td6;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0044E009;
+	__asm        je     _Te0;
 // LINE 1532:
+_Td6:
 	__asm        call   S3MapCommandZoomOut;
 // LINE 1533:
-	__asm        jmp    near ptr 0x0044E175;
+	__asm        jmp    _T24c;
 
+_Te0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 1;
-	__asm        jne    near ptr 0x0044E084;
+	__asm        jne    _T15b;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xB8], ecx;
-	__asm        jg     near ptr 0x0044E066;
+	__asm        jg     _T13d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xBC], ecx;
-	__asm        jg     near ptr 0x0044E066;
+	__asm        jg     _T13d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xC0], ecx;
-	__asm        jle    near ptr 0x0044E066;
+	__asm        jle    _T13d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xC4], ecx;
-	__asm        jle    near ptr 0x0044E066;
+	__asm        jle    _T13d;
 
-	__asm        jmp    near ptr 0x0044E06B;
+	__asm        jmp    _T142;
 
-	__asm        jmp    near ptr 0x0044E084;
+_T13d:
+	__asm        jmp    _T15b;
 
-	__asm        jmp    near ptr 0x0044E07A;
+_T142:
+	__asm        jmp    _T151;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044E084;
+	__asm        je     _T15b;
 // LINE 1534:
+_T151:
 	__asm        call   S3MapCommandZoomIn;
 // LINE 1535:
-	__asm        jmp    near ptr 0x0044E175;
+	__asm        jmp    _T24c;
 
+_T15b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 2;
-	__asm        jne    near ptr 0x0044E0FF;
+	__asm        jne    _T1d6;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xC8], ecx;
-	__asm        jg     near ptr 0x0044E0E1;
+	__asm        jg     _T1b8;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xCC], ecx;
-	__asm        jg     near ptr 0x0044E0E1;
+	__asm        jg     _T1b8;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        jle    near ptr 0x0044E0E1;
+	__asm        jle    _T1b8;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xD4], ecx;
-	__asm        jle    near ptr 0x0044E0E1;
+	__asm        jle    _T1b8;
 
-	__asm        jmp    near ptr 0x0044E0E6;
+	__asm        jmp    _T1bd;
 
-	__asm        jmp    near ptr 0x0044E0FF;
+_T1b8:
+	__asm        jmp    _T1d6;
 
-	__asm        jmp    near ptr 0x0044E0F5;
+_T1bd:
+	__asm        jmp    _T1cc;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x0044E0FF;
+	__asm        je     _T1d6;
 // LINE 1536:
+_T1cc:
 	__asm        call   S3MapCommandPreviousMission;
 // LINE 1537:
-	__asm        jmp    near ptr 0x0044E175;
+	__asm        jmp    _T24c;
 
+_T1d6:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 3;
-	__asm        jne    near ptr 0x0044E175;
+	__asm        jne    _T24c;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xD8], ecx;
-	__asm        jg     near ptr 0x0044E15C;
+	__asm        jg     _T233;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xDC], ecx;
-	__asm        jg     near ptr 0x0044E15C;
+	__asm        jg     _T233;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xE0], ecx;
-	__asm        jle    near ptr 0x0044E15C;
+	__asm        jle    _T233;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xE4], ecx;
-	__asm        jle    near ptr 0x0044E15C;
+	__asm        jle    _T233;
 
-	__asm        jmp    near ptr 0x0044E161;
+	__asm        jmp    _T238;
 
-	__asm        jmp    near ptr 0x0044E175;
+_T233:
+	__asm        jmp    _T24c;
 
-	__asm        jmp    near ptr 0x0044E170;
+_T238:
+	__asm        jmp    _T247;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044E175;
+	__asm        je     _T24c;
 // LINE 1538:
+_T247:
 	__asm        call   S3MapCommandNextMission;
 // LINE 1539:
+_T24c:
 	__asm        push   0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
@@ -7802,10 +8179,11 @@ long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal)
 	__asm        mov    dword ptr [eax+0x80], 0xFFFFFFFF;
 // LINE 1541:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044E1B0;
+	__asm        jmp    _T287;
 // LINE 1550:
+_T27d:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044E1B0;
+	__asm        jmp    _T287;
 // LINE 1551:
 }
 
@@ -7815,17 +8193,17 @@ int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long
 
 // LINE 1560:
 	__asm        cmp    lWindowID, 1;
-	__asm        jne    near ptr 0x0044E200;
+	__asm        jne    _T49;
 
 	__asm        cmp    lMessage, 0x10003;
-	__asm        jne    near ptr 0x0044E200;
+	__asm        jne    _T49;
 // LINE 1561:
 	__asm        mov    eax, pMessageData;
 	__asm        mov    eax, [eax];
 	__asm        mov    lMessageData, eax;
 // LINE 1562:
 	__asm        cmp    lMessageData, 1;
-	__asm        jne    near ptr 0x0044E200;
+	__asm        jne    _T49;
 // LINE 1563:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -7834,6 +8212,7 @@ int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long
 	__asm        call   AutomobileClass::S3AutoMessage;
 	__asm        add    esp, 8;
 // LINE 1565:
+_T49:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044E20A;
 // LINE 1566:
@@ -7860,7 +8239,7 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044E2BA;
+	__asm        je     _Ta9;
 
 	__asm        mov    eax, ptPosition;
 	__asm        mov    eax, [eax+4];
@@ -7900,10 +8279,12 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   PopupMenuExtra::PopupMenuExtra;
 	__asm        mov    tempPopupMenuWindow, eax;
-	__asm        jmp    near ptr 0x0044E2C1;
+	__asm        jmp    _Tb0;
 
+_Ta9:
 	__asm        mov    tempPopupMenuWindow, 0;
 // LINE 1579:
+_Tb0:
 	__asm        mov    eax, tempPopupMenuWindow;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, tempPopupMenuWindow;
@@ -7950,11 +8331,12 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 
 // LINE 1595:
 	__asm        cmp    nAutoID, 0x46;
-	__asm        jl     near ptr 0x0044E34A;
+	__asm        jl     _T1d;
 // LINE 1596:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1598:
+_T1d:
 	__asm        mov    eax, nAutoID;
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        mov    eax, [eax+4];
@@ -7962,68 +8344,75 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 	__asm        jmp    near ptr 0x0044E35F;
 // LINE 1604:
 	__asm        cmp    lCarModel, 0x7A;
-	__asm        je     near ptr 0x0044E3A4;
+	__asm        je     _T77;
 
 	__asm        cmp    lCarModel, 0x7D;
-	__asm        je     near ptr 0x0044E3A4;
+	__asm        je     _T77;
 
 	__asm        cmp    lCarModel, 0x7E;
-	__asm        je     near ptr 0x0044E3A4;
+	__asm        je     _T77;
 
 	__asm        cmp    lCarModel, 0x12A;
-	__asm        je     near ptr 0x0044E3A4;
+	__asm        je     _T77;
 
 	__asm        cmp    lCarModel, 0x12B;
-	__asm        je     near ptr 0x0044E3A4;
+	__asm        je     _T77;
 
 	__asm        cmp    lCarModel, 0x12C;
-	__asm        jne    near ptr 0x0044E3D1;
+	__asm        jne    _Ta4;
 // LINE 1606:
+_T77:
 	__asm        mov    eax, nAutoID;
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        test   byte ptr [eax+9], 0x10;
-	__asm        je     near ptr 0x0044E3C2;
+	__asm        je     _T95;
 // LINE 1607:
 	__asm        mov    eax, 0x5B;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1608:
+_T95:
 	__asm        mov    eax, 0x5A;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1610:
-	__asm        jmp    near ptr 0x0044E43C;
+	__asm        jmp    _T10f;
 
+_Ta4:
 	__asm        cmp    lCarModel, 0x11E;
-	__asm        jne    near ptr 0x0044E3ED;
+	__asm        jne    _Tc0;
 // LINE 1611:
 	__asm        mov    eax, 0x5C;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1612:
-	__asm        jmp    near ptr 0x0044E43C;
+	__asm        jmp    _T10f;
 
+_Tc0:
 	__asm        cmp    lCarModel, 0x11F;
-	__asm        jne    near ptr 0x0044E409;
+	__asm        jne    _Tdc;
 // LINE 1613:
 	__asm        mov    eax, 0x5E;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1614:
-	__asm        jmp    near ptr 0x0044E43C;
+	__asm        jmp    _T10f;
 
+_Tdc:
 	__asm        cmp    lCarModel, 0x11C;
-	__asm        jne    near ptr 0x0044E425;
+	__asm        jne    _Tf8;
 // LINE 1615:
 	__asm        mov    eax, 0x5F;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1616:
-	__asm        jmp    near ptr 0x0044E43C;
+	__asm        jmp    _T10f;
 
+_Tf8:
 	__asm        cmp    lCarModel, 0x11D;
-	__asm        jne    near ptr 0x0044E43C;
+	__asm        jne    _T10f;
 // LINE 1617:
 	__asm        mov    eax, 0x5D;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1618:
+_T10f:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044E443;
+	__asm        jmp    _T116;
 // LINE 1619:
 }
 
@@ -8048,14 +8437,16 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x74;
 	__asm        mov    [ebp-8], eax;
+_T3c:
 	__asm        dec    dword ptr [ebp-4];
-	__asm        js     near ptr 0x0044E4A0;
+	__asm        js     _T56;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    near ptr 0x0044E486;
+	__asm        jmp    _T3c;
 
+_T56:
 	__asm        jmp    near ptr 0x0044E4A5;
 
 	__asm        mov    eax, this;
@@ -8076,7 +8467,7 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 // LINE 1668:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044E5E8;
+	__asm        jne    _T19e;
 // LINE 1669:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0x66;
@@ -8118,11 +8509,12 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 	__asm        mov    dword ptr [eax+0xB0], 0x24;
 	__asm        jmp    near ptr 0x0044E5E3;
 // LINE 1674:
-	__asm        jmp    near ptr 0x0044E6E2;
+	__asm        jmp    _T298;
 
+_T19e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        jne    near ptr 0x0044E62A;
+	__asm        jne    _T1e0;
 // LINE 1675:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0x4D;
@@ -8134,11 +8526,12 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 	__asm        mov    dword ptr [eax+0x80], 0x28;
 	__asm        jmp    near ptr 0x0044E625;
 // LINE 1677:
-	__asm        jmp    near ptr 0x0044E6E2;
+	__asm        jmp    _T298;
 
+_T1e0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x0044E6A5;
+	__asm        jne    _T25b;
 // LINE 1678:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0x50;
@@ -8160,11 +8553,12 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 	__asm        mov    dword ptr [eax+0x90], 0x29;
 	__asm        jmp    near ptr 0x0044E6A0;
 // LINE 1681:
-	__asm        jmp    near ptr 0x0044E6E2;
+	__asm        jmp    _T298;
 
+_T25b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        jne    near ptr 0x0044E6E2;
+	__asm        jne    _T298;
 // LINE 1682:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0x4D;
@@ -8174,8 +8568,9 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MR
 	__asm        mov    dword ptr [eax+0x7C], 0x66;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0x28;
-	__asm        jmp    near ptr 0x0044E6E2;
+	__asm        jmp    _T298;
 // LINE 1684:
+_T298:
 	__asm        jmp    near ptr 0x0044E6E7;
 
 	__asm        mov    eax, this;
@@ -8230,11 +8625,11 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 1720:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044E81C;
+	__asm        jne    _Ta1;
 // LINE 1721:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
-	__asm        jne    near ptr 0x0044E81C;
+	__asm        jne    _Ta1;
 // LINE 1722:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -8250,7 +8645,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        cmp    dword ptr [ebp-0x108], 0;
-	__asm        je     near ptr 0x0044E80C;
+	__asm        je     _T91;
 
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -8258,18 +8653,20 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xBC], eax;
-	__asm        jmp    near ptr 0x0044E81C;
+	__asm        jmp    _Ta1;
 
+_T91:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xBC], 0;
 // LINE 1726:
+_Ta1:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
-	__asm        jne    near ptr 0x0044E91C;
+	__asm        jne    _T1a1;
 // LINE 1727:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044E85D;
+	__asm        jne    _Te2;
 // LINE 1728:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -8280,11 +8677,12 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 1729:
-	__asm        jmp    near ptr 0x0044E8A4;
+	__asm        jmp    _T129;
 
+_Te2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x0044E88B;
+	__asm        jne    _T110;
 // LINE 1730:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -8295,8 +8693,9 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 1731:
-	__asm        jmp    near ptr 0x0044E8A4;
+	__asm        jmp    _T129;
 // LINE 1732:
+_T110:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x598FD4];
@@ -8306,12 +8705,13 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 1733:
+_T129:
 	__asm        push   0x134;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        cmp    dword ptr [ebp-0x10C], 0;
-	__asm        je     near ptr 0x0044E8E7;
+	__asm        je     _T16c;
 
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -8319,11 +8719,13 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC0], eax;
-	__asm        jmp    near ptr 0x0044E8F7;
+	__asm        jmp    _T17c;
 
+_T16c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC0], 0;
 // LINE 1734:
+_T17c:
 	__asm        mov    eax, ds:[0x606988];
 	__asm        push   eax;
 	__asm        push   1;
@@ -8334,6 +8736,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+8];
 // LINE 1736:
+_T1a1:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -8352,7 +8755,7 @@ void EquipmentPanelWindow::DestroyImage() {
 // LINE 1746:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBC], 0;
-	__asm        je     near ptr 0x0044E9AE;
+	__asm        je     _T63;
 // LINE 1747:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xBC];
@@ -8360,7 +8763,7 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044E9A1;
+	__asm        je     _T56;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -8370,14 +8773,16 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044E99C;
 
-	__asm        jmp    near ptr 0x0044E9A1;
+	__asm        jmp    _T56;
 // LINE 1748:
+_T56:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xBC], 0;
 // LINE 1750:
+_T63:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC0], 0;
-	__asm        je     near ptr 0x0044EA05;
+	__asm        je     _Tba;
 // LINE 1751:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC0];
@@ -8385,7 +8790,7 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044E9F8;
+	__asm        je     _Tad;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -8395,27 +8800,32 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0044E9F3;
 
-	__asm        jmp    near ptr 0x0044E9F8;
+	__asm        jmp    _Tad;
 // LINE 1752:
+_Tad:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC0], 0;
 // LINE 1754:
+_Tba:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1755:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044EA20;
+	__asm        jne    _Td5;
 
-	__asm        jmp    near ptr 0x0044EA25;
+	__asm        jmp    _Tda;
 
-	__asm        jmp    near ptr 0x0044EA53;
+_Td5:
+	__asm        jmp    _T108;
 
-	__asm        jmp    near ptr 0x0044EA34;
+_Tda:
+	__asm        jmp    _Te9;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044EA53;
+	__asm        je     _T108;
 // LINE 1756:
+_Te9:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -8426,6 +8836,7 @@ void EquipmentPanelWindow::DestroyImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 0;
 // LINE 1759:
+_T108:
 	__asm        jmp    near ptr 0x0044EA58;
 }
 
@@ -8434,20 +8845,22 @@ int32_t EquipmentPanelWindow::DrawSelf() {
 // LINE 1766:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044EA83;
+	__asm        jne    _T26;
 // LINE 1767:
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::DrawBucketWaterGuage;
 // LINE 1768:
-	__asm        jmp    near ptr 0x0044EA98;
+	__asm        jmp    _T3b;
 
+_T26:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        jne    near ptr 0x0044EA98;
+	__asm        jne    _T3b;
 // LINE 1769:
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::DrawTeargasUsage;
 // LINE 1770:
+_T3b:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044EAA2;
 // LINE 1771:
@@ -8459,11 +8872,11 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 
 // LINE 1780:
 	__asm        test   byte ptr ds:[0x598FDC], 4;
-	__asm        je     near ptr 0x0044EB52;
+	__asm        je     _Tab;
 // LINE 1781:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044EB1D;
+	__asm        jne    _T76;
 // LINE 1782:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0x1C0];
@@ -8479,37 +8892,43 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	__asm        idiv   dword ptr [ecx*8+0x5B4980];
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0xC4];
-	__asm        je     near ptr 0x0044EB11;
+	__asm        je     _T6a;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044EB13;
+	__asm        jmp    _T6c;
 
+_T6a:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044EB65;
+_T6c:
+	__asm        jmp    _Tbe;
 // LINE 1783:
-	__asm        jmp    near ptr 0x0044EB52;
+	__asm        jmp    _Tab;
 
+_T76:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        jne    near ptr 0x0044EB52;
+	__asm        jne    _Tab;
 // LINE 1784:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC8];
 	__asm        cmp    [eax+0x54], ecx;
-	__asm        je     near ptr 0x0044EB4B;
+	__asm        je     _Ta4;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044EB4D;
+	__asm        jmp    _Ta6;
 
+_Ta4:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0044EB65;
+_Ta6:
+	__asm        jmp    _Tbe;
 // LINE 1786:
+_Tab:
 	__asm        inc    dword ptr ds:[0x598FDC];
 // LINE 1788:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DoesWindowNeedUpdating;
-	__asm        jmp    near ptr 0x0044EB65;
+	__asm        jmp    _Tbe;
 // LINE 1789:
 }
 
@@ -8529,18 +8948,18 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 // LINE 1800:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044ED67;
+	__asm        jne    _T1fd;
 // LINE 1801:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
-	__asm        jne    near ptr 0x0044EC0B;
+	__asm        jne    _Ta1;
 // LINE 1802:
 	__asm        mov    ptDestination.x, 0x66;
 // LINE 1803:
 	__asm        mov    ptDestination.y, 0xA;
 // LINE 1804:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044EBE5;
+	__asm        jne    _T7b;
 // LINE 1805:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0;
@@ -8548,26 +8967,29 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0xE;
 	__asm        jmp    near ptr 0x0044EBE0;
 // LINE 1806:
-	__asm        jmp    near ptr 0x0044EC06;
+	__asm        jmp    _T9c;
 // LINE 1807:
+_T7b:
 	__asm        mov    rectSource.left, 0x11;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x22;
 	__asm        mov    rectSource.bottom, 0xE;
-	__asm        jmp    near ptr 0x0044EC06;
+	__asm        jmp    _T9c;
 // LINE 1809:
-	__asm        jmp    near ptr 0x0044ED62;
+_T9c:
+	__asm        jmp    _T1f8;
 
+_Ta1:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 2;
-	__asm        jne    near ptr 0x0044EC7F;
+	__asm        jne    _T115;
 // LINE 1810:
 	__asm        mov    ptDestination.x, 0x66;
 // LINE 1811:
 	__asm        mov    ptDestination.y, 0x18;
 // LINE 1812:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044EC59;
+	__asm        jne    _Tef;
 // LINE 1813:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0xE;
@@ -8575,26 +8997,29 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x1D;
 	__asm        jmp    near ptr 0x0044EC54;
 // LINE 1814:
-	__asm        jmp    near ptr 0x0044EC7A;
+	__asm        jmp    _T110;
 // LINE 1815:
+_Tef:
 	__asm        mov    rectSource.left, 0x11;
 	__asm        mov    rectSource.top, 0xE;
 	__asm        mov    rectSource.right, 0x22;
 	__asm        mov    rectSource.bottom, 0x1D;
-	__asm        jmp    near ptr 0x0044EC7A;
+	__asm        jmp    _T110;
 // LINE 1817:
-	__asm        jmp    near ptr 0x0044ED62;
+_T110:
+	__asm        jmp    _T1f8;
 
+_T115:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 3;
-	__asm        jne    near ptr 0x0044ECF3;
+	__asm        jne    _T189;
 // LINE 1818:
 	__asm        mov    ptDestination.x, 0x4D;
 // LINE 1819:
 	__asm        mov    ptDestination.y, 5;
 // LINE 1820:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044ECCD;
+	__asm        jne    _T163;
 // LINE 1821:
 	__asm        mov    rectSource.left, 0x22;
 	__asm        mov    rectSource.top, 0;
@@ -8602,26 +9027,29 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x15;
 	__asm        jmp    near ptr 0x0044ECC8;
 // LINE 1822:
-	__asm        jmp    near ptr 0x0044ECEE;
+	__asm        jmp    _T184;
 // LINE 1823:
+_T163:
 	__asm        mov    rectSource.left, 0x36;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x4A;
 	__asm        mov    rectSource.bottom, 0x14;
-	__asm        jmp    near ptr 0x0044ECEE;
+	__asm        jmp    _T184;
 // LINE 1825:
-	__asm        jmp    near ptr 0x0044ED62;
+_T184:
+	__asm        jmp    _T1f8;
 
+_T189:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 4;
-	__asm        jne    near ptr 0x0044ED62;
+	__asm        jne    _T1f8;
 // LINE 1826:
 	__asm        mov    ptDestination.x, 0xB;
 // LINE 1827:
 	__asm        mov    ptDestination.y, 0xF;
 // LINE 1828:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044ED41;
+	__asm        jne    _T1d7;
 // LINE 1829:
 	__asm        mov    rectSource.left, 0x22;
 	__asm        mov    rectSource.top, 0;
@@ -8629,30 +9057,33 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x15;
 	__asm        jmp    near ptr 0x0044ED3C;
 // LINE 1830:
-	__asm        jmp    near ptr 0x0044ED62;
+	__asm        jmp    _T1f8;
 // LINE 1831:
+_T1d7:
 	__asm        mov    rectSource.left, 0x36;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x4A;
 	__asm        mov    rectSource.bottom, 0x14;
-	__asm        jmp    near ptr 0x0044ED62;
+	__asm        jmp    _T1f8;
 // LINE 1834:
-	__asm        jmp    near ptr 0x0044EED5;
+_T1f8:
+	__asm        jmp    _T36b;
 
+_T1fd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x0044EE5C;
+	__asm        jne    _T2f2;
 // LINE 1835:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 6;
-	__asm        jne    near ptr 0x0044EDE8;
+	__asm        jne    _T27e;
 // LINE 1836:
 	__asm        mov    ptDestination.x, 0x51;
 // LINE 1837:
 	__asm        mov    ptDestination.y, 0xB;
 // LINE 1838:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044EDC2;
+	__asm        jne    _T258;
 // LINE 1839:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0;
@@ -8660,26 +9091,29 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0xE;
 	__asm        jmp    near ptr 0x0044EDBD;
 // LINE 1840:
-	__asm        jmp    near ptr 0x0044EDE3;
+	__asm        jmp    _T279;
 // LINE 1841:
+_T258:
 	__asm        mov    rectSource.left, 0x11;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x22;
 	__asm        mov    rectSource.bottom, 0xE;
-	__asm        jmp    near ptr 0x0044EDE3;
+	__asm        jmp    _T279;
 // LINE 1843:
-	__asm        jmp    near ptr 0x0044EE57;
+_T279:
+	__asm        jmp    _T2ed;
 
+_T27e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 7;
-	__asm        jne    near ptr 0x0044EE57;
+	__asm        jne    _T2ed;
 // LINE 1844:
 	__asm        mov    ptDestination.x, 0x51;
 // LINE 1845:
 	__asm        mov    ptDestination.y, 0x19;
 // LINE 1846:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044EE36;
+	__asm        jne    _T2cc;
 // LINE 1847:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0xE;
@@ -8687,30 +9121,34 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x1D;
 	__asm        jmp    near ptr 0x0044EE31;
 // LINE 1848:
-	__asm        jmp    near ptr 0x0044EE57;
+	__asm        jmp    _T2ed;
 // LINE 1849:
+_T2cc:
 	__asm        mov    rectSource.left, 0x11;
 	__asm        mov    rectSource.top, 0xE;
 	__asm        mov    rectSource.right, 0x22;
 	__asm        mov    rectSource.bottom, 0x1D;
-	__asm        jmp    near ptr 0x0044EE57;
+	__asm        jmp    _T2ed;
 // LINE 1852:
-	__asm        jmp    near ptr 0x0044EED5;
+_T2ed:
+	__asm        jmp    _T36b;
 
+_T2f2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        je     near ptr 0x0044EE76;
+	__asm        je     _T30c;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        jne    near ptr 0x0044EED5;
+	__asm        jne    _T36b;
 // LINE 1853:
+_T30c:
 	__asm        mov    ptDestination.x, 0x51;
 // LINE 1854:
 	__asm        mov    ptDestination.y, 0xC;
 // LINE 1855:
 	__asm        cmp    nState, 0;
-	__asm        jne    near ptr 0x0044EEB4;
+	__asm        jne    _T34a;
 // LINE 1856:
 	__asm        mov    rectSource.left, 0;
 	__asm        mov    rectSource.top, 0;
@@ -8718,14 +9156,16 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 	__asm        mov    rectSource.bottom, 0x18;
 	__asm        jmp    near ptr 0x0044EEAF;
 // LINE 1857:
-	__asm        jmp    near ptr 0x0044EED5;
+	__asm        jmp    _T36b;
 // LINE 1858:
+_T34a:
 	__asm        mov    rectSource.left, 0x11;
 	__asm        mov    rectSource.top, 0;
 	__asm        mov    rectSource.right, 0x22;
 	__asm        mov    rectSource.bottom, 0x18;
-	__asm        jmp    near ptr 0x0044EED5;
+	__asm        jmp    _T36b;
 // LINE 1860:
+_T36b:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
 	__asm        lea    eax, ptDestination.x;
@@ -8776,13 +9216,15 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        mov    [ecx+0xC4], eax;
 // LINE 1875:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044EF75;
+	__asm        jmp    _T6e;
 
+_T67:
 	__asm        inc    i;
 	__asm        add    nXPosition, 5;
+_T6e:
 	__asm        mov    eax, i;
 	__asm        cmp    iLitEnd, eax;
-	__asm        jle    near ptr 0x0044EFB2;
+	__asm        jle    _Tab;
 // LINE 1876:
 	__asm        push   0xA;
 	__asm        push   5;
@@ -8800,10 +9242,11 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xBC];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    near ptr 0x0044EF6E;
+	__asm        jmp    _T67;
 // LINE 1877:
+_Tab:
 	__asm        cmp    i, 0xB;
-	__asm        jge    near ptr 0x0044F036;
+	__asm        jge    _T12f;
 // LINE 1879:
 	__asm        push   0xA;
 	__asm        push   0xA;
@@ -8826,12 +9269,14 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 // LINE 1881:
 	__asm        add    nXPosition, 5;
 // LINE 1884:
-	__asm        jmp    near ptr 0x0044EFFB;
+	__asm        jmp    _Tf4;
 
+_Ted:
 	__asm        inc    i;
 	__asm        add    nXPosition, 5;
+_Tf4:
 	__asm        cmp    i, 0xB;
-	__asm        jge    near ptr 0x0044F036;
+	__asm        jge    _T12f;
 // LINE 1885:
 	__asm        push   0xA;
 	__asm        push   0xF;
@@ -8849,8 +9294,9 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xBC];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    near ptr 0x0044EFF4;
+	__asm        jmp    _Ted;
 // LINE 1887:
+_T12f:
 	__asm        jmp    near ptr 0x0044F03B;
 }
 
@@ -8889,22 +9335,26 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 	__asm        mov    lTeargasUsed, ebx;
 // LINE 1901:
 	__asm        cmp    lTeargasUsed, 0;
-	__asm        jge    near ptr 0x0044F0C3;
+	__asm        jge    _T83;
 // LINE 1902:
 	__asm        mov    lTeargasUsed, 0;
 // LINE 1903:
+_T83:
 	__asm        cmp    lTeargasUsed, 0xA;
-	__asm        jle    near ptr 0x0044F0D4;
+	__asm        jle    _T94;
 // LINE 1904:
 	__asm        mov    lTeargasUsed, 0xA;
 // LINE 1906:
+_T94:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0044F0E3;
+	__asm        jmp    _Ta3;
 
+_Ta0:
 	__asm        inc    i;
+_Ta3:
 	__asm        mov    eax, lTeargasUsed;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x0044F148;
+	__asm        jge    _T108;
 // LINE 1907:
 	__asm        mov    ecx, 5;
 	__asm        mov    eax, i;
@@ -8938,13 +9388,16 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1910:
-	__asm        jmp    near ptr 0x0044F0E0;
+	__asm        jmp    _Ta0;
 // LINE 1911:
-	__asm        jmp    near ptr 0x0044F150;
+_T108:
+	__asm        jmp    _T110;
 
+_T10d:
 	__asm        inc    i;
+_T110:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x0044F1B3;
+	__asm        jge    _T173;
 // LINE 1912:
 	__asm        mov    ecx, 5;
 	__asm        mov    eax, i;
@@ -8978,8 +9431,9 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1915:
-	__asm        jmp    near ptr 0x0044F14D;
+	__asm        jmp    _T10d;
 // LINE 1916:
+_T173:
 	__asm        jmp    near ptr 0x0044F1B8;
 }
 
@@ -8987,10 +9441,10 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1923:
 	__asm        cmp    lWindowID, 1;
-	__asm        jne    near ptr 0x0044F1EE;
+	__asm        jne    _T31;
 
 	__asm        cmp    lMessage, 0x10003;
-	__asm        jne    near ptr 0x0044F1EE;
+	__asm        jne    _T31;
 // LINE 1924:
 	__asm        mov    eax, pMessageData;
 	__asm        mov    eax, [eax];
@@ -8998,6 +9452,7 @@ int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow* gwSource, long lWin
 	__asm        call   S3PlayMegaphoneMessage;
 	__asm        add    esp, 4;
 // LINE 1925:
+_T31:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044F1F8;
 // LINE 1926:
@@ -9008,315 +9463,356 @@ long EquipmentPanelWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 // LINE 1933:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x0044F3EA;
+	__asm        jne    _T1eb;
 // LINE 1934:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x74], ecx;
-	__asm        jg     near ptr 0x0044F25C;
+	__asm        jg     _T5d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x78], ecx;
-	__asm        jg     near ptr 0x0044F25C;
+	__asm        jg     _T5d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        jle    near ptr 0x0044F25C;
+	__asm        jle    _T5d;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        jle    near ptr 0x0044F25C;
+	__asm        jle    _T5d;
 
-	__asm        jmp    near ptr 0x0044F261;
+	__asm        jmp    _T62;
 
-	__asm        jmp    near ptr 0x0044F282;
+_T5d:
+	__asm        jmp    _T83;
 
-	__asm        jmp    near ptr 0x0044F270;
+_T62:
+	__asm        jmp    _T71;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044F282;
+	__asm        je     _T83;
 // LINE 1935:
+_T71:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 1;
 // LINE 1936:
-	__asm        jmp    near ptr 0x0044F3E5;
+	__asm        jmp    _T1e6;
 
+_T83:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x84], ecx;
-	__asm        jg     near ptr 0x0044F2CF;
+	__asm        jg     _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x88], ecx;
-	__asm        jg     near ptr 0x0044F2CF;
+	__asm        jg     _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x8C], ecx;
-	__asm        jle    near ptr 0x0044F2CF;
+	__asm        jle    _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x90], ecx;
-	__asm        jle    near ptr 0x0044F2CF;
+	__asm        jle    _Td0;
 
-	__asm        jmp    near ptr 0x0044F2D4;
+	__asm        jmp    _Td5;
 
-	__asm        jmp    near ptr 0x0044F2F5;
+_Td0:
+	__asm        jmp    _Tf6;
 
-	__asm        jmp    near ptr 0x0044F2E3;
+_Td5:
+	__asm        jmp    _Te4;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0044F2F5;
+	__asm        je     _Tf6;
 // LINE 1937:
+_Te4:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 2;
 // LINE 1938:
-	__asm        jmp    near ptr 0x0044F3E5;
+	__asm        jmp    _T1e6;
 
+_Tf6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x94], ecx;
-	__asm        jg     near ptr 0x0044F342;
+	__asm        jg     _T143;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x98], ecx;
-	__asm        jg     near ptr 0x0044F342;
+	__asm        jg     _T143;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x9C], ecx;
-	__asm        jle    near ptr 0x0044F342;
+	__asm        jle    _T143;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xA0], ecx;
-	__asm        jle    near ptr 0x0044F342;
+	__asm        jle    _T143;
 
-	__asm        jmp    near ptr 0x0044F347;
+	__asm        jmp    _T148;
 
-	__asm        jmp    near ptr 0x0044F368;
+_T143:
+	__asm        jmp    _T169;
 
-	__asm        jmp    near ptr 0x0044F356;
+_T148:
+	__asm        jmp    _T157;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x0044F368;
+	__asm        je     _T169;
 // LINE 1939:
+_T157:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 3;
 // LINE 1940:
-	__asm        jmp    near ptr 0x0044F3E5;
+	__asm        jmp    _T1e6;
 
+_T169:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jg     near ptr 0x0044F3B5;
+	__asm        jg     _T1b6;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xA8], ecx;
-	__asm        jg     near ptr 0x0044F3B5;
+	__asm        jg     _T1b6;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0xAC], ecx;
-	__asm        jle    near ptr 0x0044F3B5;
+	__asm        jle    _T1b6;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0xB0], ecx;
-	__asm        jle    near ptr 0x0044F3B5;
+	__asm        jle    _T1b6;
 
-	__asm        jmp    near ptr 0x0044F3BA;
+	__asm        jmp    _T1bb;
 
-	__asm        jmp    near ptr 0x0044F3DB;
+_T1b6:
+	__asm        jmp    _T1dc;
 
-	__asm        jmp    near ptr 0x0044F3C9;
+_T1bb:
+	__asm        jmp    _T1ca;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x0044F3DB;
+	__asm        je     _T1dc;
 // LINE 1941:
+_T1ca:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 4;
 // LINE 1942:
-	__asm        jmp    near ptr 0x0044F3E5;
+	__asm        jmp    _T1e6;
 // LINE 1943:
+_T1dc:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1945:
-	__asm        jmp    near ptr 0x0044F5F9;
+_T1e6:
+	__asm        jmp    _T3fa;
 
+_T1eb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x0044F4E3;
+	__asm        jne    _T2e4;
 // LINE 1946:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x74], ecx;
-	__asm        jg     near ptr 0x0044F43B;
+	__asm        jg     _T23c;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x78], ecx;
-	__asm        jg     near ptr 0x0044F43B;
+	__asm        jg     _T23c;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        jle    near ptr 0x0044F43B;
+	__asm        jle    _T23c;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        jle    near ptr 0x0044F43B;
+	__asm        jle    _T23c;
 
-	__asm        jmp    near ptr 0x0044F440;
+	__asm        jmp    _T241;
 
-	__asm        jmp    near ptr 0x0044F461;
+_T23c:
+	__asm        jmp    _T262;
 
-	__asm        jmp    near ptr 0x0044F44F;
+_T241:
+	__asm        jmp    _T250;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044F461;
+	__asm        je     _T262;
 // LINE 1947:
+_T250:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 6;
 // LINE 1948:
-	__asm        jmp    near ptr 0x0044F4DE;
+	__asm        jmp    _T2df;
 
+_T262:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x84], ecx;
-	__asm        jg     near ptr 0x0044F4AE;
+	__asm        jg     _T2af;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x88], ecx;
-	__asm        jg     near ptr 0x0044F4AE;
+	__asm        jg     _T2af;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x8C], ecx;
-	__asm        jle    near ptr 0x0044F4AE;
+	__asm        jle    _T2af;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x90], ecx;
-	__asm        jle    near ptr 0x0044F4AE;
+	__asm        jle    _T2af;
 
-	__asm        jmp    near ptr 0x0044F4B3;
+	__asm        jmp    _T2b4;
 
-	__asm        jmp    near ptr 0x0044F4D4;
+_T2af:
+	__asm        jmp    _T2d5;
 
-	__asm        jmp    near ptr 0x0044F4C2;
+_T2b4:
+	__asm        jmp    _T2c3;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0044F4D4;
+	__asm        je     _T2d5;
 // LINE 1949:
+_T2c3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 7;
 // LINE 1950:
-	__asm        jmp    near ptr 0x0044F4DE;
+	__asm        jmp    _T2df;
 // LINE 1951:
+_T2d5:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1953:
-	__asm        jmp    near ptr 0x0044F5F9;
+_T2df:
+	__asm        jmp    _T3fa;
 
+_T2e4:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        jne    near ptr 0x0044F569;
+	__asm        jne    _T36a;
 // LINE 1954:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x74], ecx;
-	__asm        jg     near ptr 0x0044F534;
+	__asm        jg     _T335;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x78], ecx;
-	__asm        jg     near ptr 0x0044F534;
+	__asm        jg     _T335;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        jle    near ptr 0x0044F534;
+	__asm        jle    _T335;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        jle    near ptr 0x0044F534;
+	__asm        jle    _T335;
 
-	__asm        jmp    near ptr 0x0044F539;
+	__asm        jmp    _T33a;
 
-	__asm        jmp    near ptr 0x0044F55A;
+_T335:
+	__asm        jmp    _T35b;
 
-	__asm        jmp    near ptr 0x0044F548;
+_T33a:
+	__asm        jmp    _T349;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x0044F55A;
+	__asm        je     _T35b;
 // LINE 1955:
+_T349:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 8;
 // LINE 1956:
-	__asm        jmp    near ptr 0x0044F564;
+	__asm        jmp    _T365;
 // LINE 1957:
+_T35b:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1959:
-	__asm        jmp    near ptr 0x0044F5F9;
+_T365:
+	__asm        jmp    _T3fa;
 
+_T36a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        jne    near ptr 0x0044F5EF;
+	__asm        jne    _T3f0;
 // LINE 1960:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x74], ecx;
-	__asm        jg     near ptr 0x0044F5BA;
+	__asm        jg     _T3bb;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x78], ecx;
-	__asm        jg     near ptr 0x0044F5BA;
+	__asm        jg     _T3bb;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        jle    near ptr 0x0044F5BA;
+	__asm        jle    _T3bb;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        jle    near ptr 0x0044F5BA;
+	__asm        jle    _T3bb;
 
-	__asm        jmp    near ptr 0x0044F5BF;
+	__asm        jmp    _T3c0;
 
-	__asm        jmp    near ptr 0x0044F5E0;
+_T3bb:
+	__asm        jmp    _T3e1;
 
-	__asm        jmp    near ptr 0x0044F5CE;
+_T3c0:
+	__asm        jmp    _T3cf;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x0044F5E0;
+	__asm        je     _T3e1;
 // LINE 1961:
+_T3cf:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 5;
 // LINE 1962:
-	__asm        jmp    near ptr 0x0044F5EA;
+	__asm        jmp    _T3eb;
 // LINE 1963:
+_T3e1:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1965:
-	__asm        jmp    near ptr 0x0044F5F9;
+_T3eb:
+	__asm        jmp    _T3fa;
 // LINE 1966:
+_T3f0:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1968:
+_T3fa:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -9335,13 +9831,14 @@ long EquipmentPanelWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 // LINE 1970:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 5;
-	__asm        je     near ptr 0x0044F63D;
+	__asm        je     _T43e;
 // LINE 1971:
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::DoCurrentControlStart;
 // LINE 1972:
+_T43e:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0044F647;
+	__asm        jmp    _T448;
 // LINE 1973:
 }
 
@@ -9350,17 +9847,20 @@ long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 // LINE 1981:
 	__asm        mov    eax, ds:[0x59A960];
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x0044F66D;
+	__asm        jne    _T1f;
 
-	__asm        jmp    near ptr 0x0044F672;
+	__asm        jmp    _T24;
 
-	__asm        jmp    near ptr 0x0044F693;
+_T1f:
+	__asm        jmp    _T45;
 
-	__asm        jmp    near ptr 0x0044F681;
+_T24:
+	__asm        jmp    _T33;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0044F693;
+	__asm        je     _T45;
 // LINE 1982:
+_T33:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -9368,9 +9868,10 @@ long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1983:
+_T45:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
-	__asm        je     near ptr 0x0044F76E;
+	__asm        je     _T120;
 // LINE 1984:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -9383,41 +9884,44 @@ long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 // LINE 1987:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        jne    near ptr 0x0044F759;
+	__asm        jne    _T10b;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 5;
-	__asm        jne    near ptr 0x0044F759;
+	__asm        jne    _T10b;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x74], ecx;
-	__asm        jg     near ptr 0x0044F71E;
+	__asm        jg     _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x78], ecx;
-	__asm        jg     near ptr 0x0044F71E;
+	__asm        jg     _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorX;
 	__asm        cmp    [eax+0x7C], ecx;
-	__asm        jle    near ptr 0x0044F71E;
+	__asm        jle    _Td0;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nCursorY;
 	__asm        cmp    [eax+0x80], ecx;
-	__asm        jle    near ptr 0x0044F71E;
+	__asm        jle    _Td0;
 
-	__asm        jmp    near ptr 0x0044F723;
+	__asm        jmp    _Td5;
 
-	__asm        jmp    near ptr 0x0044F759;
+_Td0:
+	__asm        jmp    _T10b;
 
-	__asm        jmp    near ptr 0x0044F732;
+_Td5:
+	__asm        jmp    _Te4;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x0044F759;
+	__asm        je     _T10b;
 // LINE 1989:
+_Te4:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 5;
 // LINE 1990:
@@ -9427,14 +9931,17 @@ long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 0;
 // LINE 1993:
-	__asm        jmp    near ptr 0x0044F761;
+	__asm        jmp    _T113;
 // LINE 1994:
+_T10b:
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::DoCurrentControlEnd;
 // LINE 1995:
+_T113:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xB4], 0;
 // LINE 1997:
+_T120:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0044F778;
 // LINE 1998:
@@ -9445,15 +9952,16 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 // LINE 2006:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
-	__asm        jne    near ptr 0x0044F7A5;
+	__asm        jne    _T26;
 // LINE 2007:
-	__asm        jmp    near ptr 0x0044F955;
+	__asm        jmp    _T1d6;
 // LINE 2008:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T26:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
-	__asm        jne    near ptr 0x0044F7DC;
+	__asm        jne    _T5d;
 // LINE 2009:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9466,11 +9974,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x1E], cl;
 	__asm        jmp    near ptr 0x0044F7D7;
 // LINE 2010:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T5d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 2;
-	__asm        jne    near ptr 0x0044F813;
+	__asm        jne    _T94;
 // LINE 2011:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9483,11 +9992,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x1C], cl;
 	__asm        jmp    near ptr 0x0044F80E;
 // LINE 2012:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T94:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 3;
-	__asm        jne    near ptr 0x0044F84A;
+	__asm        jne    _Tcb;
 // LINE 2013:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9500,11 +10010,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x20], cl;
 	__asm        jmp    near ptr 0x0044F845;
 // LINE 2014:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_Tcb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 4;
-	__asm        jne    near ptr 0x0044F881;
+	__asm        jne    _T102;
 // LINE 2015:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9517,11 +10028,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x26], cl;
 	__asm        jmp    near ptr 0x0044F87C;
 // LINE 2016:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T102:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 6;
-	__asm        jne    near ptr 0x0044F8B8;
+	__asm        jne    _T139;
 // LINE 2017:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9534,11 +10046,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x24], cl;
 	__asm        jmp    near ptr 0x0044F8B3;
 // LINE 2018:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T139:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 7;
-	__asm        jne    near ptr 0x0044F8EF;
+	__asm        jne    _T170;
 // LINE 2019:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9551,11 +10064,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+0x22], cl;
 	__asm        jmp    near ptr 0x0044F8EA;
 // LINE 2020:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T170:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 8;
-	__asm        jne    near ptr 0x0044F926;
+	__asm        jne    _T1a7;
 // LINE 2021:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9568,11 +10082,12 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    [eax+4], cl;
 	__asm        jmp    near ptr 0x0044F921;
 // LINE 2022:
-	__asm        jmp    near ptr 0x0044F950;
+	__asm        jmp    _T1d1;
 
+_T1a7:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 5;
-	__asm        jne    near ptr 0x0044F950;
+	__asm        jne    _T1d1;
 // LINE 2025:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -9584,7 +10099,8 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow;
 // LINE 2028:
-	__asm        jmp    near ptr 0x0044F955;
+_T1d1:
+	__asm        jmp    _T1d6;
 }
 
 // FUNCTION: COPTER_D 0x0044f95a
@@ -9592,15 +10108,16 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 // LINE 2038:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
-	__asm        jne    near ptr 0x0044F980;
+	__asm        jne    _T26;
 // LINE 2039:
-	__asm        jmp    near ptr 0x0044FB01;
+	__asm        jmp    _T1a7;
 // LINE 2040:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T26:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
-	__asm        jne    near ptr 0x0044F9B7;
+	__asm        jne    _T5d;
 // LINE 2041:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9613,11 +10130,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x1E], cl;
 	__asm        jmp    near ptr 0x0044F9B2;
 // LINE 2042:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T5d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 2;
-	__asm        jne    near ptr 0x0044F9EE;
+	__asm        jne    _T94;
 // LINE 2043:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9630,11 +10148,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x1C], cl;
 	__asm        jmp    near ptr 0x0044F9E9;
 // LINE 2044:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T94:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 3;
-	__asm        jne    near ptr 0x0044FA25;
+	__asm        jne    _Tcb;
 // LINE 2045:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9647,11 +10166,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x20], cl;
 	__asm        jmp    near ptr 0x0044FA20;
 // LINE 2046:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_Tcb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 4;
-	__asm        jne    near ptr 0x0044FA5C;
+	__asm        jne    _T102;
 // LINE 2047:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9664,11 +10184,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x26], cl;
 	__asm        jmp    near ptr 0x0044FA57;
 // LINE 2048:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T102:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 6;
-	__asm        jne    near ptr 0x0044FA93;
+	__asm        jne    _T139;
 // LINE 2049:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9681,11 +10202,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x24], cl;
 	__asm        jmp    near ptr 0x0044FA8E;
 // LINE 2050:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T139:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 7;
-	__asm        jne    near ptr 0x0044FACA;
+	__asm        jne    _T170;
 // LINE 2051:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9698,11 +10220,12 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        mov    [eax+0x22], cl;
 	__asm        jmp    near ptr 0x0044FAC5;
 // LINE 2052:
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 
+_T170:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 8;
-	__asm        jne    near ptr 0x0044FAFC;
+	__asm        jne    _T1a2;
 // LINE 2053:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -9713,9 +10236,10 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        and    cl, 0xDF;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [eax+4], cl;
-	__asm        jmp    near ptr 0x0044FAFC;
+	__asm        jmp    _T1a2;
 // LINE 2054:
-	__asm        jmp    near ptr 0x0044FB01;
+_T1a2:
+	__asm        jmp    _T1a7;
 }
 
 // FUNCTION: COPTER_D 0x0044fb06
@@ -9748,7 +10272,7 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x0044FBB4;
+	__asm        je     _Tae;
 
 	__asm        mov    eax, nMenuYPosition;
 	__asm        inc    eax;
@@ -9784,10 +10308,12 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   PopupMenuExtra::PopupMenuExtra;
 	__asm        mov    tempPopupMenuWindow, eax;
-	__asm        jmp    near ptr 0x0044FBBB;
+	__asm        jmp    _Tb5;
 
+_Tae:
 	__asm        mov    tempPopupMenuWindow, 0;
 // LINE 2071:
+_Tb5:
 	__asm        mov    eax, tempPopupMenuWindow;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, tempPopupMenuWindow;
@@ -9802,11 +10328,13 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        call   dword ptr [eax+0x128];
 // LINE 2073:
 	__asm        mov    i, 0x22;
-	__asm        jmp    near ptr 0x0044FBE9;
+	__asm        jmp    _Te3;
 
+_Te0:
 	__asm        inc    i;
+_Te3:
 	__asm        cmp    i, 0x25;
-	__asm        jg     near ptr 0x0044FC11;
+	__asm        jg     _T10b;
 // LINE 2074:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, i;
@@ -9816,8 +10344,9 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, tempPopupMenuWindow;
 	__asm        call   dword ptr [eax+0xD0];
-	__asm        jmp    near ptr 0x0044FBE6;
+	__asm        jmp    _Te0;
 // LINE 2076:
+_T10b:
 	__asm        jmp    near ptr 0x0044FC16;
 }
 

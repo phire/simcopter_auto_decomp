@@ -313,7 +313,7 @@ void SoundQueueItem::SoundQueueItem() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0042064F;
+	__asm        je     _T5f;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -330,10 +330,12 @@ void SoundQueueItem::SoundQueueItem() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420659;
+	__asm        jmp    _T69;
 
+_T5f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x00420668;
@@ -351,7 +353,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBefor
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x004206D4;
+	__asm        je     _T5f;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -368,10 +370,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBefor
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x004206DE;
+	__asm        jmp    _T69;
 
+_T5f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x004206ED;
@@ -404,7 +408,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0042077F;
+	__asm        je     _T5f;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -421,10 +425,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420789;
+	__asm        jmp    _T69;
 
+_T5f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x00420798;
@@ -458,7 +464,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00420829;
+	__asm        je     _T5f;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -475,10 +481,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420833;
+	__asm        jmp    _T69;
 
+_T5f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x00420842;
@@ -490,7 +498,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
 	__asm        cmp    eax, sNewSoundFile;
-	__asm        je     near ptr 0x00420A0C;
+	__asm        je     _T242;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -498,7 +506,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004208E5;
+	__asm        jne    _T11b;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -506,11 +514,11 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x004208E5;
+	__asm        je     _T11b;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004208C5;
+	__asm        je     _Tfb;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -525,6 +533,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
+_Tfb:
 	__asm        jmp    near ptr 0x004208CA;
 
 	__asm        jmp    near ptr 0x004208CF;
@@ -535,8 +544,9 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004208E0;
 
-	__asm        jmp    near ptr 0x004208E5;
+	__asm        jmp    _T11b;
 
+_T11b:
 	__asm        jmp    near ptr 0x004208EA;
 
 	__asm        jmp    near ptr 0x004208EF;
@@ -544,7 +554,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-	__asm        je     near ptr 0x00420919;
+	__asm        je     _T14f;
 
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
@@ -553,14 +563,15 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        inc    dword ptr [eax+0xC];
-	__asm        jmp    near ptr 0x00420A0C;
+	__asm        jmp    _T242;
 
+_T14f:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x00420A02;
+	__asm        je     _T238;
 
 	__asm        jmp    near ptr 0x00420935;
 
@@ -577,7 +588,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004209DC;
+	__asm        je     _T212;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
@@ -591,19 +602,21 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004209A1;
+	__asm        je     _T1d7;
 
 	__asm        mov    eax, sNewSoundFile;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004209AD;
+	__asm        jmp    _T1e3;
 
-	__asm        jmp    near ptr 0x004209AD;
+	__asm        jmp    _T1e3;
 
+_T1d7:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    near ptr 0x004209AD;
+	__asm        jmp    _T1e3;
 
+_T1e3:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
@@ -620,10 +633,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004209D7;
 
-	__asm        jmp    near ptr 0x004209E5;
+	__asm        jmp    _T21b;
 
+_T212:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
+_T21b:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004209F4;
@@ -631,10 +646,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420A0C;
+	__asm        jmp    _T242;
 
+_T238:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T242:
 	__asm        jmp    near ptr 0x00420A11;
 // LINE 56:
 	__asm        mov    eax, this;
@@ -661,7 +678,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x00420A9B;
+	__asm        je     _T5f;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -678,10 +695,12 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420AA5;
+	__asm        jmp    _T69;
 
+_T5f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
+_T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x00420AB4;
@@ -698,7 +717,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00420B0C;
+	__asm        jne    _Td0;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -713,17 +732,18 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00420B0C;
+	__asm        jmp    _Td0;
 
+_Td0:
 	__asm        jmp    near ptr 0x00420B11;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        ja     near ptr 0x00420B42;
+	__asm        ja     _T106;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x00420CC3;
+	__asm        je     _T287;
 
 	__asm        jmp    near ptr 0x00420B30;
 
@@ -731,17 +751,18 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jae    near ptr 0x00420CC3;
+	__asm        jae    _T287;
 
+_T106:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x00420C1D;
+	__asm        je     _T1e1;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00420B95;
+	__asm        jne    _T159;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -756,8 +777,9 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00420B95;
+	__asm        jmp    _T159;
 
+_T159:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    [ecx+4], eax;
@@ -767,7 +789,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00420BFA;
+	__asm        je     _T1be;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
@@ -792,26 +814,30 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00420BF5;
 
-	__asm        jmp    near ptr 0x00420C03;
+	__asm        jmp    _T1c7;
 
+_T1be:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
+_T1c7:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00420C12;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00420C24;
+	__asm        jmp    _T1e8;
 
+_T1e1:
 	__asm        mov    dword ptr [ebp-4], 0;
+_T1e8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00420CB0;
+	__asm        jne    _T274;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -819,11 +845,11 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x00420CB0;
+	__asm        je     _T274;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00420C90;
+	__asm        je     _T254;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax];
@@ -838,6 +864,7 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax], 0;
+_T254:
 	__asm        jmp    near ptr 0x00420C95;
 
 	__asm        jmp    near ptr 0x00420C9A;
@@ -848,17 +875,19 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420CAB;
 
-	__asm        jmp    near ptr 0x00420CB0;
+	__asm        jmp    _T274;
 
+_T274:
 	__asm        jmp    near ptr 0x00420CB5;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00420CF6;
+	__asm        jmp    _T2ba;
 
+_T287:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x00420CF6;
+	__asm        je     _T2ba;
 
 	__asm        jmp    near ptr 0x00420CD2;
 
@@ -874,8 +903,9 @@ void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, l
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00420CF6;
+	__asm        jmp    _T2ba;
 
+_T2ba:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
@@ -911,7 +941,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00420D7A;
+	__asm        je     _T43;
 
 	__asm        push   2;
 	__asm        mov    eax, sNewDigitalSoundFile;
@@ -920,11 +950,13 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00420D83;
+	__asm        jmp    _T4c;
 
+_T43:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 91:
+_T4c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 92:
@@ -952,7 +984,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00420EC3;
+	__asm        je     _T114;
 
 	__asm        or     dword ptr [ebp-0x10], 1;
 	__asm        push   0x10;
@@ -960,7 +992,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x00420E92;
+	__asm        je     _Te3;
 
 	__asm        mov    eax, szNewSoundFile;
 	__asm        push   eax;
@@ -976,7 +1008,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00420E6F;
+	__asm        je     _Tc0;
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+8];
@@ -1001,19 +1033,23 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00420E6A;
 
-	__asm        jmp    near ptr 0x00420E78;
+	__asm        jmp    _Tc9;
 
+_Tc0:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax], 0;
+_Tc9:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x00420E87;
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00420E99;
+	__asm        jmp    _Tea;
 
+_Te3:
 	__asm        mov    dword ptr [ebp-8], 0;
+_Tea:
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        jmp    near ptr 0x00420EA5;
 
@@ -1026,30 +1062,32 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00420ECC;
+	__asm        jmp    _T11d;
 
+_T114:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
+_T11d:
 	__asm        test   byte ptr [ebp-0x10], 1;
-	__asm        je     near ptr 0x00420F8E;
+	__asm        je     _T1df;
 
 	__asm        and    dword ptr [ebp-0x10], 0xFFFFFFFE;
 	__asm        mov    eax, [ebp-8];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00420F5D;
+	__asm        jne    _T1ae;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x00420F5D;
+	__asm        je     _T1ae;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00420F3D;
+	__asm        je     _T18e;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -1064,6 +1102,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax], 0;
+_T18e:
 	__asm        jmp    near ptr 0x00420F42;
 
 	__asm        jmp    near ptr 0x00420F47;
@@ -1074,12 +1113,13 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420F58;
 
-	__asm        jmp    near ptr 0x00420F5D;
+	__asm        jmp    _T1ae;
 
+_T1ae:
 	__asm        jmp    near ptr 0x00420F62;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00420F84;
+	__asm        je     _T1d5;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x18], eax;
@@ -1089,10 +1129,12 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lN
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1d5:
 	__asm        jmp    near ptr 0x00420F89;
 
-	__asm        jmp    near ptr 0x00420F8E;
+	__asm        jmp    _T1df;
 // LINE 104:
+_T1df:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 105:
@@ -1119,7 +1161,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceI
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00420FFB;
+	__asm        je     _T41;
 
 	__asm        mov    eax, lNewDigitalSoundResourceID;
 	__asm        push   eax;
@@ -1127,11 +1169,13 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceI
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00421004;
+	__asm        jmp    _T4a;
 
+_T41:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 118:
+_T4a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 119:
@@ -1156,18 +1200,19 @@ void SoundQueue::SoundQueue() {
 	__asm        mov    eax, ds:[0x597360];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr ds:[0x597360], 0;
-	__asm        je     near ptr 0x00421078;
+	__asm        je     _T48;
 
 	__asm        mov    eax, ds:[0x597360];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x597360], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x00421255;
+	__asm        jmp    _T225;
 
+_T48:
 	__asm        mov    eax, ds:[0x59735C];
 	__asm        cmp    ds:[0x597358], eax;
-	__asm        jne    near ptr 0x00421240;
+	__asm        jne    _T210;
 
 	__asm        push   0;
 	__asm        call   set_new_handler;
@@ -1177,7 +1222,7 @@ void SoundQueue::SoundQueue() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        jne    near ptr 0x004210D7;
+	__asm        jne    _Ta7;
 
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
@@ -1192,6 +1237,7 @@ void SoundQueue::SoundQueue() {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
+_Ta7:
 	__asm        jmp    near ptr 0x004210DC;
 
 	__asm        jmp    near ptr 0x004210E1;
@@ -1208,14 +1254,16 @@ void SoundQueue::SoundQueue() {
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x0042111C;
+	__asm        jb     _Tec;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00421122;
+	__asm        jmp    _Tf2;
 
+_Tec:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
+_Tf2:
 	__asm        jmp    near ptr 0x00421127;
 
 	__asm        jmp    near ptr 0x0042112C;
@@ -1236,7 +1284,7 @@ void SoundQueue::SoundQueue() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        jne    near ptr 0x0042118F;
+	__asm        jne    _T15f;
 
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
@@ -1251,6 +1299,7 @@ void SoundQueue::SoundQueue() {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
+_T15f:
 	__asm        jmp    near ptr 0x00421194;
 
 	__asm        jmp    near ptr 0x00421199;
@@ -1276,14 +1325,16 @@ void SoundQueue::SoundQueue() {
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x004211F6;
+	__asm        jb     _T1c6;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    near ptr 0x004211FC;
+	__asm        jmp    _T1cc;
 
+_T1c6:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
+_T1cc:
 	__asm        jmp    near ptr 0x00421201;
 
 	__asm        jmp    near ptr 0x00421206;
@@ -1303,13 +1354,15 @@ void SoundQueue::SoundQueue() {
 	__asm        add    dword ptr ds:[0x59735C], 0xC;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x00421255;
+	__asm        jmp    _T225;
 
+_T210:
 	__asm        mov    eax, ds:[0x59735C];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    dword ptr ds:[0x59735C], 0xC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
+_T225:
 	__asm        jmp    near ptr 0x0042125A;
 
 	__asm        mov    eax, [ebp-0x50];
@@ -1377,28 +1430,34 @@ void SoundQueue::~SoundQueue() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x30], eax;
+_T64:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x30], eax;
-	__asm        jne    near ptr 0x00421333;
+	__asm        jne    _T7a;
 
-	__asm        jmp    near ptr 0x00421347;
+	__asm        jmp    _T8e;
 
-	__asm        jmp    near ptr 0x00421333;
+	__asm        jmp    _T7a;
 
-	__asm        jmp    near ptr 0x00421342;
+_T7a:
+	__asm        jmp    _T89;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    near ptr 0x00421347;
+	__asm        jne    _T8e;
 
-	__asm        jmp    near ptr 0x0042134C;
+_T89:
+	__asm        jmp    _T93;
 
-	__asm        jmp    near ptr 0x004213CB;
+_T8e:
+	__asm        jmp    _T112;
 
-	__asm        jmp    near ptr 0x0042135B;
+_T93:
+	__asm        jmp    _Ta2;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x004213CB;
+	__asm        je     _T112;
 
+_Ta2:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -1437,8 +1496,9 @@ void SoundQueue::~SoundQueue() {
 	__asm        dec    dword ptr [eax+8];
 	__asm        jmp    near ptr 0x004213C6;
 
-	__asm        jmp    near ptr 0x0042131D;
+	__asm        jmp    _T64;
 
+_T112:
 	__asm        jmp    near ptr 0x004213D0;
 
 	__asm        mov    eax, this;
@@ -1452,10 +1512,11 @@ void SoundQueue::~SoundQueue() {
 	__asm        jmp    near ptr 0x004213F0;
 
 	__asm        dec    dword ptr ds:[0x597354];
-	__asm        jne    near ptr 0x0042147A;
+	__asm        jne    _T1c1;
 
+_T143:
 	__asm        cmp    dword ptr ds:[0x597364], 0;
-	__asm        je     near ptr 0x00421457;
+	__asm        je     _T19e;
 
 	__asm        mov    eax, ds:[0x597364];
 	__asm        mov    [ebp-0x34], eax;
@@ -1481,13 +1542,15 @@ void SoundQueue::~SoundQueue() {
 
 	__asm        jmp    near ptr 0x00421452;
 
-	__asm        jmp    near ptr 0x004213FC;
+	__asm        jmp    _T143;
 
+_T19e:
 	__asm        mov    dword ptr ds:[0x597360], 0;
 	__asm        mov    dword ptr ds:[0x59735C], 0;
 	__asm        mov    dword ptr ds:[0x597358], 0;
-	__asm        jmp    near ptr 0x0042147A;
+	__asm        jmp    _T1c1;
 
+_T1c1:
 	__asm        jmp    near ptr 0x0042147F;
 }
 
@@ -1496,7 +1559,7 @@ int32_t SoundQueue::Initialize() {
 // LINE 165:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004214BA;
+	__asm        jne    _T36;
 // LINE 167:
 	__asm        push   0x64;
 	__asm        call   dword ptr ds:[0x6C3918];
@@ -1509,6 +1572,7 @@ int32_t SoundQueue::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 172:
+_T36:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004214C4;
 // LINE 173:
@@ -1519,7 +1583,7 @@ void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
 // LINE 180:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     near ptr 0x004214FF;
+	__asm        je     _T36;
 // LINE 182:
 	__asm        push   0x64;
 	__asm        call   dword ptr ds:[0x6C3914];
@@ -1532,6 +1596,7 @@ void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 186:
+_T36:
 	__asm        mov    eax, bStopCurrentlyPlayingSound;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1562,12 +1627,12 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004217BF;
+	__asm        je     _T2a5;
 // LINE 203:
 // Block start:
 	class list<SoundQueueItem *>::iterator iterator;
 	__asm        cmp    bStopCurrentlyPlayingSound, 0;
-	__asm        je     near ptr 0x0042159A;
+	__asm        je     _T80;
 // LINE 204:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1594,6 +1659,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    ecx, [eax];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 207:
+_T80:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    ecx, currentSoundQueueItem;
 	__asm        mov    ecx, [ecx];
@@ -1609,8 +1675,9 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    near ptr 0x004215BF;
 
-	__asm        jmp    near ptr 0x004215C4;
+	__asm        jmp    _Taa;
 // LINE 209:
+_Taa:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x28], eax;
@@ -1622,26 +1689,31 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    iterator.node, eax;
-	__asm        jne    near ptr 0x004215F3;
+	__asm        jne    _Td9;
 
-	__asm        jmp    near ptr 0x00421607;
+	__asm        jmp    _Ted;
 
-	__asm        jmp    near ptr 0x004215F3;
+	__asm        jmp    _Td9;
 
-	__asm        jmp    near ptr 0x00421602;
+_Td9:
+	__asm        jmp    _Te8;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        jne    near ptr 0x00421607;
+	__asm        jne    _Ted;
 
-	__asm        jmp    near ptr 0x0042160C;
+_Te8:
+	__asm        jmp    _Tf2;
 
-	__asm        jmp    near ptr 0x004217BF;
+_Ted:
+	__asm        jmp    _T2a5;
 
-	__asm        jmp    near ptr 0x0042161B;
+_Tf2:
+	__asm        jmp    _T101;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x004217BF;
+	__asm        je     _T2a5;
 // LINE 210:
+_T101:
 	__asm        jmp    near ptr 0x00421620;
 
 	__asm        mov    eax, iterator.node;
@@ -1650,7 +1722,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 // LINE 211:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x0042165F;
+	__asm        je     _T145;
 // LINE 212:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    eax, [eax];
@@ -1658,21 +1730,22 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x0042165F;
+	__asm        je     _T145;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0042165F;
+	__asm        jmp    _T145;
 // LINE 213:
+_T145:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     near ptr 0x0042174E;
+	__asm        je     _T234;
 
 	__asm        jmp    near ptr 0x0042167A;
 
@@ -1682,7 +1755,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00421706;
+	__asm        jne    _T1ec;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+0xC];
@@ -1690,11 +1763,11 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
-	__asm        je     near ptr 0x00421706;
+	__asm        je     _T1ec;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004216E6;
+	__asm        je     _T1cc;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
@@ -1709,6 +1782,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    dword ptr [eax], 0;
+_T1cc:
 	__asm        jmp    near ptr 0x004216EB;
 
 	__asm        jmp    near ptr 0x004216F0;
@@ -1719,13 +1793,14 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421701;
 
-	__asm        jmp    near ptr 0x00421706;
+	__asm        jmp    _T1ec;
 
+_T1ec:
 	__asm        jmp    near ptr 0x0042170B;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421733;
+	__asm        je     _T219;
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+8];
@@ -1736,6 +1811,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T219:
 	__asm        jmp    near ptr 0x00421738;
 
 	__asm        mov    eax, [ebp-0x18];
@@ -1744,8 +1820,9 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421749;
 
-	__asm        jmp    near ptr 0x0042174E;
+	__asm        jmp    _T234;
 // LINE 214:
+_T234:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, iterator.node;
@@ -1784,9 +1861,10 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        add    dword ptr [eax+8], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x004217BA;
 // LINE 215:
-	__asm        jmp    near ptr 0x004215C4;
+	__asm        jmp    _Taa;
 // LINE 217:
 // Block end:
+_T2a5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1800,7 +1878,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 // LINE 225:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     near ptr 0x0042184C;
+	__asm        je     _T76;
 // LINE 226:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
@@ -1813,7 +1891,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x0042182E;
+	__asm        je     _T58;
 
 	__asm        push   0;
 	__asm        push   0;
@@ -1822,9 +1900,11 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   SoundQueueItem::SoundQueueItem;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00421835;
+	__asm        jmp    _T5f;
 
+_T58:
 	__asm        mov    dword ptr [ebp-8], 0;
+_T5f:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -1835,6 +1915,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 231:
+_T76:
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x00421854;
 // LINE 232:
@@ -1845,7 +1926,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     near ptr 0x00421B75;
+	__asm        je     _T31a;
 // LINE 241:
 	__asm        push   0x3E8;
 	__asm        mov    eax, this;
@@ -1867,18 +1948,19 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    eax, ds:[0x597360];
 	__asm        mov    [ebp-0x18], eax;
 	__asm        cmp    dword ptr ds:[0x597360], 0;
-	__asm        je     near ptr 0x004218CF;
+	__asm        je     _T74;
 
 	__asm        mov    eax, ds:[0x597360];
 	__asm        mov    eax, [eax];
 	__asm        mov    ds:[0x597360], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        jmp    near ptr 0x00421AAC;
+	__asm        jmp    _T251;
 
+_T74:
 	__asm        mov    eax, ds:[0x59735C];
 	__asm        cmp    ds:[0x597358], eax;
-	__asm        jne    near ptr 0x00421A97;
+	__asm        jne    _T23c;
 
 	__asm        push   0;
 	__asm        call   set_new_handler;
@@ -1888,7 +1970,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        cmp    dword ptr [ebp-0x50], 0;
-	__asm        jne    near ptr 0x0042192E;
+	__asm        jne    _Td3;
 
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
@@ -1903,6 +1985,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
+_Td3:
 	__asm        jmp    near ptr 0x00421933;
 
 	__asm        jmp    near ptr 0x00421938;
@@ -1919,14 +2002,16 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x00421973;
+	__asm        jb     _T118;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    near ptr 0x00421979;
+	__asm        jmp    _T11e;
 
+_T118:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
+_T11e:
 	__asm        jmp    near ptr 0x0042197E;
 
 	__asm        jmp    near ptr 0x00421983;
@@ -1947,7 +2032,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
-	__asm        jne    near ptr 0x004219E6;
+	__asm        jne    _T18b;
 
 	__asm        push   0x5971AC;
 	__asm        mov    ecx, 0x638BA0;
@@ -1962,6 +2047,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
+_T18b:
 	__asm        jmp    near ptr 0x004219EB;
 
 	__asm        jmp    near ptr 0x004219F0;
@@ -1987,14 +2073,16 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x00421A4D;
+	__asm        jb     _T1f2;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x00421A53;
+	__asm        jmp    _T1f8;
 
+_T1f2:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
+_T1f8:
 	__asm        jmp    near ptr 0x00421A58;
 
 	__asm        jmp    near ptr 0x00421A5D;
@@ -2014,13 +2102,15 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        add    dword ptr ds:[0x59735C], 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        jmp    near ptr 0x00421AAC;
+	__asm        jmp    _T251;
 
+_T23c:
 	__asm        mov    eax, ds:[0x59735C];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        add    dword ptr ds:[0x59735C], 0xC;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
+_T251:
 	__asm        jmp    near ptr 0x00421AB1;
 
 	__asm        mov    eax, [ebp-0x64];
@@ -2033,13 +2123,14 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        jmp    near ptr 0x00421ACA;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     near ptr 0x00421AE1;
+	__asm        je     _T286;
 
 	__asm        mov    eax, newSoundQueueItem;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00421AE1;
+	__asm        jmp    _T286;
 
+_T286:
 	__asm        jmp    near ptr 0x00421AE6;
 
 	__asm        mov    eax, [ebp-0x68];
@@ -2075,11 +2166,11 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 1;
-	__asm        jne    near ptr 0x00421B75;
+	__asm        jne    _T31a;
 // LINE 246:
 	__asm        mov    eax, newSoundQueueItem;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00421B6A;
+	__asm        je     _T30f;
 // LINE 247:
 	__asm        mov    eax, newSoundQueueItem;
 	__asm        mov    eax, [eax+0x10];
@@ -2089,13 +2180,15 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
 // LINE 248:
-	__asm        jmp    near ptr 0x00421B75;
+	__asm        jmp    _T31a;
 // LINE 249:
+_T30f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 252:
+_T31a:
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x00421B7D;
 // LINE 253:
@@ -2126,7 +2219,7 @@ void SoundQueue::EndPauseCallback() {
 // LINE 279:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00421BEF;
+	__asm        je     _T30;
 // LINE 280:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -2136,6 +2229,7 @@ void SoundQueue::EndPauseCallback() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
 // LINE 284:
+_T30:
 	__asm        jmp    near ptr 0x00421BF4;
 }
 
@@ -2154,7 +2248,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421D04;
+	__asm        je     _T10b;
 // LINE 305:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -2176,7 +2270,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 // LINE 306:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00421C81;
+	__asm        je     _T88;
 // LINE 307:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    eax, [eax+4];
@@ -2188,14 +2282,15 @@ void SoundQueue::PlayNextSoundInQueue() {
 	__asm        mov    eax, [eax];
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 310:
-	__asm        jmp    near ptr 0x00421CAC;
+	__asm        jmp    _Tb3;
 
+_T88:
 	__asm        jmp    near ptr 0x00421C86;
 
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00421CAC;
+	__asm        je     _Tb3;
 // LINE 311:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        add    eax, 8;
@@ -2207,6 +2302,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 	__asm        mov    ecx, [eax];
 	__asm        call   dword ptr [edx+4];
 // LINE 313:
+_Tb3:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        push   0x421F41;
@@ -2233,7 +2329,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 	__asm        mov    ecx, [eax];
 	__asm        call   dword ptr [edx+0x10];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00421D04;
+	__asm        jne    _T10b;
 // LINE 316:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2245,6 +2341,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 320:
+_T10b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -2284,7 +2381,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 // LINE 340:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00421D99;
+	__asm        je     _T80;
 // LINE 341:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    eax, [eax];
@@ -2292,21 +2389,22 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     near ptr 0x00421D99;
+	__asm        je     _T80;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x00421D99;
+	__asm        jmp    _T80;
 // LINE 342:
+_T80:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x00421E88;
+	__asm        je     _T16f;
 
 	__asm        jmp    near ptr 0x00421DB4;
 
@@ -2316,7 +2414,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00421E40;
+	__asm        jne    _T127;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+0xC];
@@ -2324,11 +2422,11 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x00421E40;
+	__asm        je     _T127;
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421E20;
+	__asm        je     _T107;
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
@@ -2343,6 +2441,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax], 0;
+_T107:
 	__asm        jmp    near ptr 0x00421E25;
 
 	__asm        jmp    near ptr 0x00421E2A;
@@ -2353,13 +2452,14 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421E3B;
 
-	__asm        jmp    near ptr 0x00421E40;
+	__asm        jmp    _T127;
 
+_T127:
 	__asm        jmp    near ptr 0x00421E45;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421E6D;
+	__asm        je     _T154;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+8];
@@ -2370,6 +2470,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T154:
 	__asm        jmp    near ptr 0x00421E72;
 
 	__asm        mov    eax, [ebp-0x10];
@@ -2378,8 +2479,9 @@ void SoundQueue::RemoveNextSoundInQueue() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00421E83;
 
-	__asm        jmp    near ptr 0x00421E88;
+	__asm        jmp    _T16f;
 // LINE 343:
+_T16f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
@@ -2467,7 +2569,7 @@ void SoundQueue::SoundQueueCompletionCallback() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421FF4;
+	__asm        je     _T98;
 // LINE 391:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2478,7 +2580,7 @@ void SoundQueue::SoundQueueCompletionCallback() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00421FF4;
+	__asm        je     _T98;
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -2500,7 +2602,7 @@ void SoundQueue::SoundQueueCompletionCallback() {
 // LINE 394:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00421FE9;
+	__asm        je     _T8d;
 // LINE 395:
 	__asm        mov    eax, currentSoundQueueItem;
 	__asm        mov    eax, [eax+0x10];
@@ -2510,13 +2612,15 @@ void SoundQueue::SoundQueueCompletionCallback() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
 // LINE 396:
-	__asm        jmp    near ptr 0x00421FF4;
+	__asm        jmp    _T98;
 // LINE 397:
+_T8d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 400:
+_T98:
 	__asm        jmp    near ptr 0x00421FF9;
 }
 
@@ -2541,13 +2645,14 @@ void SoundQueue::SoundQueueWaitTimeCallback() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0042204C;
+	__asm        je     _T33;
 // LINE 419:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 421:
+_T33:
 	__asm        jmp    near ptr 0x00422051;
 }
 
@@ -2565,7 +2670,7 @@ int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 	__asm        mov    timeoutTimer.lTotalElapsedTime, 0;
 	__asm        mov    timeoutTimer.lFrequency, 0;
 	__asm        cmp    timeoutTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x004220A9;
+	__asm        jne    _T53;
 
 	__asm        lea    eax, [ebp-0x34];
 	__asm        push   eax;
@@ -2574,31 +2679,34 @@ int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    timeoutTimer.lFrequency, eax;
-	__asm        jmp    near ptr 0x004220A9;
+	__asm        jmp    _T53;
 
+_T53:
 	__asm        jmp    near ptr 0x004220AE;
 // LINE 432:
 	__asm        cmp    lTimeoutValue, 0;
-	__asm        je     near ptr 0x0042212F;
+	__asm        je     _Td9;
 // LINE 433:
 	__asm        jmp    near ptr 0x004220BD;
 
 	__asm        cmp    timeoutTimer.lStartTime, 0;
-	__asm        je     near ptr 0x004220CC;
+	__asm        je     _T76;
 
-	__asm        jmp    near ptr 0x0042212F;
+	__asm        jmp    _Td9;
 
+_T76:
 	__asm        cmp    timeoutTimer.nTimerResolution, 1;
-	__asm        jne    near ptr 0x004220E9;
+	__asm        jne    _T93;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    timeoutTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0042212A;
+	__asm        jmp    _Td4;
 
-	__asm        jmp    near ptr 0x0042212A;
+	__asm        jmp    _Td4;
 
+_T93:
 	__asm        cmp    timeoutTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x00422113;
+	__asm        jne    _Tbd;
 
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -2607,41 +2715,45 @@ int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    timeoutTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0042212A;
+	__asm        jmp    _Td4;
 
-	__asm        jmp    near ptr 0x0042212A;
+	__asm        jmp    _Td4;
 
+_Tbd:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    timeoutTimer.lStartTime, eax;
-	__asm        jmp    near ptr 0x0042212A;
+	__asm        jmp    _Td4;
 
-	__asm        jmp    near ptr 0x0042212F;
+_Td4:
+	__asm        jmp    _Td9;
 // LINE 435:
 WeDidNotGetIt:
+_Td9:
 	__asm        cmp    lTimeoutValue, 0;
-	__asm        je     near ptr 0x00422232;
+	__asm        je     _T1dc;
 // LINE 436:
 	__asm        mov    eax, timeoutTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x00422144;
 
 	__asm        cmp    timeoutTimer.lStartTime, 0;
-	__asm        je     near ptr 0x004221BB;
+	__asm        je     _T165;
 
 	__asm        cmp    timeoutTimer.nTimerResolution, 1;
-	__asm        jne    near ptr 0x0042216B;
+	__asm        jne    _T115;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004221AC;
+	__asm        jmp    _T156;
 
-	__asm        jmp    near ptr 0x004221AC;
+	__asm        jmp    _T156;
 
+_T115:
 	__asm        cmp    timeoutTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x00422195;
+	__asm        jne    _T13f;
 
 	__asm        lea    eax, [ebp-0x48];
 	__asm        push   eax;
@@ -2650,27 +2762,30 @@ WeDidNotGetIt:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004221AC;
+	__asm        jmp    _T156;
 
-	__asm        jmp    near ptr 0x004221AC;
+	__asm        jmp    _T156;
 
+_T13f:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004221AC;
+	__asm        jmp    _T156;
 
+_T156:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        sub    eax, timeoutTimer.lStartTime;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        add    [ebp-0x3C], eax;
+_T165:
 	__asm        cmp    timeoutTimer.nTimerResolution, 0;
-	__asm        jne    near ptr 0x004221F6;
+	__asm        jne    _T1a0;
 
 	__asm        cmp    timeoutTimer.lFrequency, 0;
-	__asm        je     near ptr 0x004221F6;
+	__asm        je     _T1a0;
 
 	__asm        mov    eax, timeoutTimer.lFrequency;
 	__asm        push   eax;
@@ -2681,20 +2796,22 @@ WeDidNotGetIt:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, lTimeoutValue;
 	__asm        cmp    [ebp-0x3C], eax;
-	__asm        jbe    near ptr 0x00422232;
+	__asm        jbe    _T1dc;
 
-	__asm        jmp    near ptr 0x00422213;
+	__asm        jmp    _T1bd;
 
+_T1a0:
 	__asm        mov    eax, lTimeoutValue;
 	__asm        cmp    [ebp-0x3C], eax;
-	__asm        jbe    near ptr 0x00422232;
+	__asm        jbe    _T1dc;
 
-	__asm        jmp    near ptr 0x00422213;
+	__asm        jmp    _T1bd;
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        cmp    lTimeoutValue, eax;
-	__asm        jae    near ptr 0x00422232;
+	__asm        jae    _T1dc;
 // LINE 438:
+_T1bd:
 	__asm        push   0x597318;
 	__asm        call   dword ptr ds:[0x6C378C];
 // LINE 440:
@@ -2702,17 +2819,18 @@ WeDidNotGetIt:
 	__asm        jmp    near ptr 0x0042222A;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    near ptr 0x00422251;
+	__asm        jmp    _T1fb;
 // LINE 445:
+_T1dc:
 	__asm        bts    timeoutTimer.lFrequency, 0;
 // LINE 446:
-	__asm        jb     near ptr 0x0042212F;
+	__asm        jb     _Td9;
 // LINE 448:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    near ptr 0x00422249;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    near ptr 0x00422251;
+	__asm        jmp    _T1fb;
 // LINE 449:
 }
 

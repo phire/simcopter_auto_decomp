@@ -47,13 +47,14 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    esp, 8;
 	__asm        mov    file, eax;
 	__asm        cmp    file, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D6098;
+	__asm        jne    _T38;
 // LINE 79:
 	__asm        mov    dword ptr ds:[0x662810], 1;
 // LINE 81:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6241;
+	__asm        jmp    _T1e1;
 // LINE 86:
+_T38:
 	__asm        push   0x10;
 	__asm        lea    eax, bmp.MaxBmpFileSize;
 	__asm        push   eax;
@@ -63,7 +64,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    esp, 0xC;
 	__asm        mov    r, eax;
 	__asm        cmp    r, 0x10;
-	__asm        je     near ptr 0x004D60D4;
+	__asm        je     _T74;
 // LINE 87:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -73,8 +74,9 @@ struct VRResource* LoadImages(char * name) {
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 91:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6241;
+	__asm        jmp    _T1e1;
 // LINE 143:
+_T74:
 	__asm        mov    eax, bmp.BmpCount;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
@@ -87,13 +89,14 @@ struct VRResource* LoadImages(char * name) {
 	__asm        mov    res, eax;
 // LINE 144:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D610D;
+	__asm        jne    _Tad;
 // LINE 145:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 147:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6241;
+	__asm        jmp    _T1e1;
 // LINE 169:
+_Tad:
 	__asm        mov    eax, file;
 	__asm        push   eax;
 	__asm        call   _filelength;
@@ -108,7 +111,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    esp, 8;
 	__asm        mov    group, eax;
 	__asm        cmp    group, 0;
-	__asm        jne    near ptr 0x004D6158;
+	__asm        jne    _Tf8;
 // LINE 177:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 179:
@@ -118,8 +121,9 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    esp, 4;
 // LINE 180:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6241;
+	__asm        jmp    _T1e1;
 // LINE 183:
+_Tf8:
 	__asm        mov    eax, group;
 	__asm        mov    byteptr, eax;
 // LINE 184:
@@ -151,12 +155,14 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    esp, 4;
 // LINE 188:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D61AD;
+	__asm        jmp    _T14d;
 
+_T14a:
 	__asm        inc    i;
+_T14d:
 	__asm        mov    eax, i;
 	__asm        cmp    bmp.BmpCount, eax;
-	__asm        jle    near ptr 0x004D6214;
+	__asm        jle    _T1b4;
 // LINE 189:
 	__asm        mov    eax, byteptr;
 	__asm        mov    bhdr, eax;
@@ -191,8 +197,9 @@ struct VRResource* LoadImages(char * name) {
 	__asm        add    eax, 0xC;
 	__asm        add    byteptr, eax;
 // LINE 202:
-	__asm        jmp    near ptr 0x004D61AA;
+	__asm        jmp    _T14a;
 // LINE 206:
+_T1b4:
 	__asm        mov    eax, group;
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx], eax;
@@ -208,7 +215,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        mov    [ecx+0x10], eax;
 // LINE 210:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D6241;
+	__asm        jmp    _T1e1;
 // LINE 212:
 }
 
@@ -227,7 +234,7 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
 	__asm        mov    j, eax;
 // LINE 232:
 	__asm        cmp    j, 0;
-	__asm        je     near ptr 0x004D628E;
+	__asm        je     _T48;
 // LINE 235:
 	__asm        and    i, 0xFFFF;
 // LINE 236:
@@ -240,13 +247,14 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, bhdr;
 	__asm        lea    eax, [ecx+eax*8+0xC];
-	__asm        jmp    near ptr 0x004D62A0;
+	__asm        jmp    _T5a;
 // LINE 241:
+_T48:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, hdr;
 	__asm        mov    eax, [ecx+eax*4+0x20];
-	__asm        jmp    near ptr 0x004D62A0;
+	__asm        jmp    _T5a;
 // LINE 243:
 }
 
@@ -289,8 +297,9 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 302:
 	__asm        mov    eax, mask;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004D6387;
+	__asm        jmp    _Tc3;
 // LINE 305:
+_T2a:
 	__asm        mov    notiles, 0x40;
 // LINE 306:
 	__asm        mov    eax, bhdr;
@@ -304,8 +313,9 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 308:
 	__asm        mov    rowshift, 3;
 // LINE 309:
-	__asm        jmp    near ptr 0x004D63B3;
+	__asm        jmp    _Tef;
 // LINE 311:
+_T59:
 	__asm        mov    notiles, 0x10;
 // LINE 312:
 	__asm        mov    eax, bhdr;
@@ -319,8 +329,9 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 314:
 	__asm        mov    rowshift, 2;
 // LINE 315:
-	__asm        jmp    near ptr 0x004D63B3;
+	__asm        jmp    _Tef;
 // LINE 317:
+_T88:
 	__asm        mov    notiles, 4;
 // LINE 318:
 	__asm        mov    eax, bhdr;
@@ -334,24 +345,27 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 // LINE 320:
 	__asm        mov    rowshift, 1;
 // LINE 321:
-	__asm        jmp    near ptr 0x004D63B3;
+	__asm        jmp    _Tef;
 // LINE 323:
+_Tb7:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D645B;
+	__asm        jmp    _T197;
 // LINE 324:
-	__asm        jmp    near ptr 0x004D63B3;
+	__asm        jmp    _Tef;
 
+_Tc3:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x1F1F;
-	__asm        je     near ptr 0x004D62EE;
+	__asm        je     _T2a;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0x3F3F;
-	__asm        je     near ptr 0x004D631D;
+	__asm        je     _T59;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0x7F7F;
-	__asm        je     near ptr 0x004D634C;
+	__asm        je     _T88;
 
-	__asm        jmp    near ptr 0x004D637B;
+	__asm        jmp    _Tb7;
 // LINE 326:
+_Tef:
 	__asm        mov    eax, bhdr;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        or     eax, 4;
@@ -359,25 +373,29 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 	__asm        mov    [ecx+8], ax;
 // LINE 333:
 	__asm        cmp    basearg, 0;
-	__asm        jne    near ptr 0x004D63E0;
+	__asm        jne    _T11c;
 // LINE 335:
 	__asm        mov    eax, bhdr;
 	__asm        mov    baseptr, eax;
 // LINE 336:
 	__asm        add    baseptr, 0x40C;
 // LINE 338:
-	__asm        jmp    near ptr 0x004D63E6;
+	__asm        jmp    _T122;
 // LINE 340:
+_T11c:
 	__asm        mov    eax, basearg;
 	__asm        mov    baseptr, eax;
 // LINE 346:
+_T122:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D63F5;
+	__asm        jmp    _T131;
 
+_T12e:
 	__asm        inc    i;
+_T131:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x004D6451;
+	__asm        jge    _T18d;
 // LINE 348:
 	__asm        mov    eax, mask;
 	__asm        mov    ecx, i;
@@ -409,10 +427,11 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 	__asm        mov    edx, bhdr;
 	__asm        mov    [edx+ecx*8+0x10], eax;
 // LINE 355:
-	__asm        jmp    near ptr 0x004D63F2;
+	__asm        jmp    _T12e;
 // LINE 357:
+_T18d:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D645B;
+	__asm        jmp    _T197;
 // LINE 358:
 }
 
@@ -429,11 +448,12 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    alignptr, eax;
 // LINE 392:
 	__asm        cmp    alignptr, 0;
-	__asm        jne    near ptr 0x004D6482;
+	__asm        jne    _T22;
 // LINE 393:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 396:
+_T22:
 	__asm        push   0x8000;
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -441,13 +461,14 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        add    esp, 8;
 	__asm        mov    file, eax;
 	__asm        cmp    file, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004D64B1;
+	__asm        jne    _T51;
 // LINE 398:
 	__asm        mov    dword ptr ds:[0x662810], 1;
 // LINE 399:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 406:
+_T51:
 	__asm        push   0x10;
 	__asm        lea    eax, bmp.MaxBmpFileSize;
 	__asm        push   eax;
@@ -457,7 +478,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        add    esp, 0xC;
 	__asm        mov    r, eax;
 	__asm        cmp    r, 0x10;
-	__asm        je     near ptr 0x004D64ED;
+	__asm        je     _T8d;
 // LINE 407:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -467,10 +488,11 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 409:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 448:
+_T8d:
 	__asm        cmp    bmp.BmpCount, 1;
-	__asm        je     near ptr 0x004D6514;
+	__asm        je     _Tb4;
 // LINE 450:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -480,8 +502,9 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 452:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 456:
+_Tb4:
 	__asm        mov    eax, bmp.BmpCount;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
@@ -506,12 +529,13 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 // LINE 471:
 	__asm        mov    eax, bhdr;
 	__asm        cmp    dword ptr [eax], 0x100;
-	__asm        jne    near ptr 0x004D6565;
+	__asm        jne    _T105;
 
 	__asm        mov    eax, bhdr;
 	__asm        cmp    dword ptr [eax+4], 0x100;
-	__asm        je     near ptr 0x004D6582;
+	__asm        je     _T122;
 // LINE 473:
+_T105:
 	__asm        mov    eax, file;
 	__asm        push   eax;
 	__asm        call   _close;
@@ -520,8 +544,9 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 475:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 479:
+_T122:
 	__asm        push   0x400;
 	__asm        mov    eax, alignptr;
 	__asm        push   eax;
@@ -540,7 +565,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    r, eax;
 // LINE 483:
 	__asm        cmp    r, 0x10000;
-	__asm        je     near ptr 0x004D65D9;
+	__asm        je     _T179;
 // LINE 485:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -550,8 +575,9 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        mov    dword ptr ds:[0x662810], 2;
 // LINE 487:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 490:
+_T179:
 	__asm        mov    eax, file;
 	__asm        push   eax;
 	__asm        call   _close;
@@ -569,7 +595,7 @@ int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int3
 	__asm        add    esp, 0x10;
 // LINE 495:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D6607;
+	__asm        jmp    _T1a7;
 // LINE 496:
 }
 

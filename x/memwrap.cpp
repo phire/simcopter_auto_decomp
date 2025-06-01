@@ -138,10 +138,11 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        mov    wstate, 2;
 // LINE 162:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x40;
-	__asm        je     near ptr 0x00554782;
+	__asm        je     _T29;
 
 	__asm        or     wstate, 0xF00;
 // LINE 165:
+_T29:
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, wstate;
@@ -150,18 +151,19 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        mov    mem, eax;
 // LINE 166:
 	__asm        cmp    mem, 0;
-	__asm        je     near ptr 0x005547B3;
+	__asm        je     _T5a;
 
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
-	__asm        je     near ptr 0x005547B3;
+	__asm        je     _T5a;
 
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 // LINE 168:
+_T5a:
 	__asm        cmp    mem, 0;
-	__asm        jne    near ptr 0x005547D9;
+	__asm        jne    _T80;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC130;
@@ -170,8 +172,9 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 169:
+_T80:
 	__asm        cmp    mem, 0;
-	__asm        je     near ptr 0x0055483B;
+	__asm        je     _Te2;
 // LINE 172:
 // Block start:
 	unsigned char * p;
@@ -182,7 +185,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        mov    p, eax;
 // LINE 173:
 	__asm        cmp    p, 0;
-	__asm        je     near ptr 0x0055481F;
+	__asm        je     _Tc6;
 // LINE 175:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -197,8 +200,9 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 178:
-	__asm        jmp    near ptr 0x0055483B;
+	__asm        jmp    _Te2;
 // LINE 180:
+_Tc6:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC16C;
 	__asm        push   0xB4;
@@ -207,6 +211,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        add    esp, 0x10;
 // LINE 183:
 // Block end:
+_Te2:
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x00554843;
 // LINE 184:
@@ -243,7 +248,7 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 	__asm        mov    mem, eax;
 // LINE 211:
 	__asm        cmp    mem, 0;
-	__asm        jne    near ptr 0x005548B6;
+	__asm        jne    _T46;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC1A4;
@@ -252,6 +257,7 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 212:
+_T46:
 	__asm        mov    eax, mem;
 	__asm        jmp    near ptr 0x005548BE;
 // LINE 214:
@@ -272,7 +278,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        mov    p, eax;
 // LINE 226:
 	__asm        cmp    p, 0;
-	__asm        je     near ptr 0x0055491C;
+	__asm        je     _T59;
 // LINE 228:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -290,8 +296,9 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 231:
-	__asm        jmp    near ptr 0x00554938;
+	__asm        jmp    _T75;
 // LINE 233:
+_T59:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC1E0;
 	__asm        push   0xE9;
@@ -299,13 +306,14 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 240:
+_T75:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3714];
 // LINE 242:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0055496C;
+	__asm        je     _Ta9;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC218;
@@ -314,6 +322,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 243:
+_Ta9:
 	__asm        jmp    near ptr 0x00554971;
 }
 
@@ -340,7 +349,7 @@ void Memory::PFree(unsigned char * mem) {
 // LINE 259:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005549D6;
+	__asm        je     _T60;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC248;
@@ -349,6 +358,7 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 260:
+_T60:
 	__asm        jmp    near ptr 0x005549DB;
 }
 
@@ -371,7 +381,7 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 // LINE 279:
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554A30;
+	__asm        je     _T50;
 
 	__asm        movsx  eax, err;
 	__asm        push   eax;
@@ -381,6 +391,7 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 289:
+_T50:
 	__asm        mov    eax, p;
 	__asm        jmp    near ptr 0x00554A38;
 // LINE 290:
@@ -403,7 +414,7 @@ void Memory::HUnlock(void * __ptr32 mem) {
 // LINE 305:
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554A8A;
+	__asm        je     _T4d;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC2B0;
@@ -412,6 +423,7 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 307:
+_T4d:
 	__asm        jmp    near ptr 0x00554A8F;
 }
 
@@ -474,7 +486,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        mov    flags, eax;
 // LINE 361:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&flags) + 1), 0xF;
-	__asm        je     near ptr 0x00554B60;
+	__asm        je     _T5c;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC384;
@@ -483,6 +495,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 363:
+_T5c:
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
@@ -495,7 +508,7 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
 // LINE 371:
 	__asm        cmp    size, 0x7A1200;
-	__asm        jb     near ptr 0x00554BA5;
+	__asm        jb     _T2f;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC3C4;
@@ -504,6 +517,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 375:
+_T2f:
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, from;
@@ -520,7 +534,7 @@ void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
 // LINE 381:
 	__asm        cmp    size, 0x7A1200;
-	__asm        jb     near ptr 0x00554BF2;
+	__asm        jb     _T2f;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC41C;
@@ -529,6 +543,7 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 385:
+_T2f:
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, from;
@@ -564,7 +579,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 // LINE 398:
 	__asm        movsx  eax, err;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554C69;
+	__asm        je     _T59;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC474;
@@ -573,6 +588,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 399:
+_T59:
 	__asm        jmp    near ptr 0x00554C6E;
 }
 
@@ -588,12 +604,14 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 	__asm        call   memcmp;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00554C9E;
+	__asm        jne    _T2b;
 
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x00554CA1;
+	__asm        jmp    _T2e;
 
+_T2b:
 	__asm        xor    ax, ax;
+_T2e:
 	__asm        jmp    near ptr 0x00554CA6;
 // LINE 403:
 }
@@ -641,7 +659,7 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 // LINE 431:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554D4D;
+	__asm        je     _T48;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC514;
@@ -650,6 +668,7 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 432:
+_T48:
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x00554D55;
 // LINE 433:
@@ -670,7 +689,7 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 // LINE 446:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554DA2;
+	__asm        je     _T48;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC54C;
@@ -679,6 +698,7 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 447:
+_T48:
 	__asm        mov    eax, size;
 	__asm        jmp    near ptr 0x00554DAA;
 // LINE 448:
@@ -696,12 +716,14 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 	__asm        mov    state, eax;
 // LINE 456:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
-	__asm        je     near ptr 0x00554DDA;
+	__asm        je     _T2b;
 
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x00554DDD;
+	__asm        jmp    _T2e;
 
+_T2b:
 	__asm        xor    ax, ax;
+_T2e:
 	__asm        jmp    near ptr 0x00554DE2;
 // LINE 457:
 }
@@ -723,18 +745,20 @@ long Memory::HGetState(void * __ptr32 h) {
 	__asm        mov    state, 0;
 // LINE 470:
 	__asm        cmp    reinterpret_cast<uint8_t>(wstate), 0;
-	__asm        je     near ptr 0x00554E1D;
+	__asm        je     _T36;
 
 	__asm        or     state, 0x80;
 // LINE 471:
+_T36:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&wstate) + 1), 0xF;
-	__asm        je     near ptr 0x00554E2B;
+	__asm        je     _T44;
 
 	__asm        or     state, 0x40;
 // LINE 472:
+_T44:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554E55;
+	__asm        je     _T6e;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC584;
@@ -743,6 +767,7 @@ long Memory::HGetState(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 474:
+_T6e:
 	__asm        mov    eax, state;
 	__asm        jmp    near ptr 0x00554E5D;
 // LINE 475:
@@ -752,20 +777,22 @@ long Memory::HGetState(void * __ptr32 h) {
 void Memory::HSetState(void * __ptr32 h, long newState) {
 // LINE 486:
 	__asm        test   reinterpret_cast<uint8_t>(newState), 0x80;
-	__asm        je     near ptr 0x00554E83;
+	__asm        je     _T21;
 
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
 // LINE 487:
-	__asm        jmp    near ptr 0x00554E8F;
+	__asm        jmp    _T2d;
 
+_T21:
 	__asm        mov    eax, h;
 	__asm        push   eax;
 	__asm        call   Memory::HUnlock;
 	__asm        add    esp, 4;
 // LINE 489:
+_T2d:
 	__asm        jmp    near ptr 0x00554E94;
 }
 
@@ -783,7 +810,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00554EDD;
+	__asm        je     _T44;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BC5C4;
@@ -792,6 +819,7 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 503:
+_T44:
 	__asm        push   2;
 	__asm        mov    eax, newSize;
 	__asm        push   eax;

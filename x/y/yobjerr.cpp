@@ -1049,7 +1049,7 @@ void cYObject::Error(short errNum) {
 // LINE 14:
 	__asm        movsx  eax, errNum;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x005625B3;
+	__asm        jmp    _Tb3;
 // LINE 16:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEBAC;
@@ -1058,7 +1058,7 @@ void cYObject::Error(short errNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 17:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 // LINE 20:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEBE8;
@@ -1067,7 +1067,7 @@ void cYObject::Error(short errNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 21:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 // LINE 24:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEC20;
@@ -1076,7 +1076,7 @@ void cYObject::Error(short errNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 25:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 // LINE 28:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEC58;
@@ -1085,8 +1085,9 @@ void cYObject::Error(short errNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 29:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 // LINE 32:
+_T90:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEC98;
 	__asm        push   0x20;
@@ -1094,13 +1095,14 @@ void cYObject::Error(short errNum) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 33:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 // LINE 34:
-	__asm        jmp    near ptr 0x005625FF;
+	__asm        jmp    _Tff;
 
+_Tb3:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        cmp    dword ptr [ebp-8], 0x18;
-	__asm        ja     near ptr 0x00562590;
+	__asm        ja     _T90;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
@@ -1109,6 +1111,7 @@ void cYObject::Error(short errNum) {
 // Switch pointers
 // Switch table
 // LINE 69:
+_Tff:
 	__asm        jmp    near ptr 0x00562604;
 }
 

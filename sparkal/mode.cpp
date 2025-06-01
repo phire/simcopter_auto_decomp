@@ -41,38 +41,42 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 
 // LINE 62:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0048B158;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        mov    eax, i;
 	__asm        cmp    ds:[0x599D80], eax;
-	__asm        jle    near ptr 0x0048B1B8;
+	__asm        jle    _T78;
 // LINE 65:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lWidth;
 	__asm        cmp    [eax*4+0x604818], ecx;
-	__asm        jne    near ptr 0x0048B1B3;
+	__asm        jne    _T73;
 
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lHeight;
 	__asm        cmp    [eax*4+0x60481C], ecx;
-	__asm        jne    near ptr 0x0048B1B3;
+	__asm        jne    _T73;
 
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lBPP;
 	__asm        cmp    [eax*4+0x604820], ecx;
-	__asm        jne    near ptr 0x0048B1B3;
+	__asm        jne    _T73;
 // LINE 66:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0048B1BF;
+	__asm        jmp    _T7f;
 // LINE 67:
-	__asm        jmp    near ptr 0x0048B155;
+_T73:
+	__asm        jmp    _T15;
 // LINE 68:
+_T78:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0048B1BF;
+	__asm        jmp    _T7f;
 // LINE 69:
 }
 
@@ -126,11 +130,12 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
 // LINE 104:
 	__asm        cmp    dword ptr ds:[0x599D80], 0x40;
-	__asm        jl     near ptr 0x0048B24E;
+	__asm        jl     _T1a;
 // LINE 105:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0048B2A0;
+	__asm        jmp    _T6c;
 // LINE 106:
+_T1a:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, ds:[0x599D80];
@@ -152,7 +157,7 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 	__asm        inc    dword ptr ds:[0x599D80];
 // LINE 111:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0048B2A0;
+	__asm        jmp    _T6c;
 // LINE 112:
 }
 

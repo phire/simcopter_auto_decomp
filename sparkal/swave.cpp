@@ -78,14 +78,15 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        call   dword ptr ds:[0x6C38F4];
 	__asm        mov    hmmioIn, eax;
 	__asm        cmp    hmmioIn, 0;
-	__asm        jne    near ptr 0x0048EBF6;
+	__asm        jne    _T46;
 // LINE 62:
 	__asm        mov    nError, 0xE100;
 // LINE 63:
-	__asm        jmp    near ptr 0x0048EDAF;
+	__asm        jmp    _T1ff;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 67:
+_T46:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    eax, pckInRIFF;
@@ -95,26 +96,29 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        call   dword ptr ds:[0x6C3904];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EC1F;
+	__asm        je     _T6f;
 // LINE 68:
-	__asm        jmp    near ptr 0x0048EDAA;
+	__asm        jmp    _T1fa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 70:
+_T6f:
 	__asm        mov    eax, pckInRIFF;
 	__asm        cmp    dword ptr [eax], 0x46464952;
-	__asm        jne    near ptr 0x0048EC3E;
+	__asm        jne    _T8e;
 
 	__asm        mov    eax, pckInRIFF;
 	__asm        cmp    dword ptr [eax+8], 0x45564157;
-	__asm        je     near ptr 0x0048EC4F;
+	__asm        je     _T9f;
 // LINE 71:
+_T8e:
 	__asm        mov    nError, 0xE101;
 // LINE 72:
-	__asm        jmp    near ptr 0x0048EDA5;
+	__asm        jmp    _T1f5;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 76:
+_T9f:
 	__asm        mov    ckIn.ckid, 0x20746D66;
 // LINE 77:
 	__asm        push   0x10;
@@ -127,21 +131,23 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        call   dword ptr ds:[0x6C3904];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EC81;
+	__asm        je     _Td1;
 // LINE 78:
-	__asm        jmp    near ptr 0x0048EDA0;
+	__asm        jmp    _T1f0;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 83:
+_Td1:
 	__asm        cmp    ckIn.cksize, 0x10;
-	__asm        jae    near ptr 0x0048EC9C;
+	__asm        jae    _Tec;
 // LINE 84:
 	__asm        mov    nError, 0xE101;
 // LINE 85:
-	__asm        jmp    near ptr 0x0048ED9B;
+	__asm        jmp    _T1eb;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 89:
+_Tec:
 	__asm        push   0x10;
 	__asm        lea    eax, pcmWaveFormat.wf.wFormatTag;
 	__asm        push   eax;
@@ -149,23 +155,25 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38F8];
 	__asm        cmp    eax, 0x10;
-	__asm        je     near ptr 0x0048ECC6;
+	__asm        je     _T116;
 // LINE 90:
 	__asm        mov    nError, 0xE102;
 // LINE 91:
-	__asm        jmp    near ptr 0x0048ED96;
+	__asm        jmp    _T1e6;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 98:
+_T116:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(pcmWaveFormat.wf.wFormatTag);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x0048ECE2;
+	__asm        jne    _T132;
 // LINE 99:
 	__asm        mov    cbExtraAlloc, 0;
 // LINE 101:
-	__asm        jmp    near ptr 0x0048ED0C;
+	__asm        jmp    _T15c;
 // LINE 103:
+_T132:
 	__asm        push   2;
 	__asm        lea    eax, cbExtraAlloc;
 	__asm        push   eax;
@@ -173,14 +181,15 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38F8];
 	__asm        cmp    eax, 2;
-	__asm        je     near ptr 0x0048ED0C;
+	__asm        je     _T15c;
 // LINE 104:
 	__asm        mov    nError, 0xE102;
 // LINE 105:
-	__asm        jmp    near ptr 0x0048ED91;
+	__asm        jmp    _T1e1;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 110:
+_T15c:
 	__asm        push   0x10;
 	__asm        lea    eax, pcmWaveFormat.wf.wFormatTag;
 	__asm        push   eax;
@@ -201,19 +210,21 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 	__asm        call   dword ptr ds:[0x6C38FC];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048ED50;
+	__asm        je     _T1a0;
 // LINE 127:
-	__asm        jmp    near ptr 0x0048ED8C;
+	__asm        jmp    _T1dc;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+	__asm        jmp    _T1aa;
 // LINE 129:
-	__asm        jmp    near ptr 0x0048ED87;
+_T1a0:
+	__asm        jmp    _T1d7;
 
-	__asm        jmp    near ptr 0x0048ED77;
+	__asm        jmp    _T1c7;
 // LINE 132:
 ERROR_READING_WAVE:
+_T1aa:
 	__asm        cmp    hmmioIn, 0;
-	__asm        je     near ptr 0x0048ED77;
+	__asm        je     _T1c7;
 // LINE 133:
 	__asm        push   0;
 	__asm        mov    eax, hmmioIn;
@@ -223,30 +234,40 @@ ERROR_READING_WAVE:
 	__asm        mov    hmmioIn, 0;
 // LINE 138:
 END_OF_ROUTINE:
+_T1c7:
 	__asm        mov    eax, hmmioIn;
 	__asm        mov    ecx, phmmioIn;
 	__asm        mov    [ecx], eax;
 // LINE 140:
 	__asm        mov    eax, nError;
-	__asm        jmp    near ptr 0x0048EDB4;
+	__asm        jmp    _T204;
 // LINE 141:
-	__asm        jmp    near ptr 0x0048ED77;
+_T1d7:
+	__asm        jmp    _T1c7;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1dc:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1e1:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1e6:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1eb:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1f0:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1f5:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1fa:
+	__asm        jmp    _T1aa;
 
-	__asm        jmp    near ptr 0x0048ED5A;
+_T1ff:
+	__asm        jmp    _T1aa;
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
@@ -265,12 +286,13 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 	__asm        call   dword ptr ds:[0x6C3900];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0048EDF1;
+	__asm        jne    _T38;
 // LINE 161:
-	__asm        jmp    near ptr 0x0048EE1B;
+	__asm        jmp    _T62;
 
-	__asm        jmp    near ptr 0x0048EE13;
+	__asm        jmp    _T5a;
 // LINE 164:
+_T38:
 	__asm        mov    eax, pckIn;
 	__asm        mov    dword ptr [eax], 0x61746164;
 // LINE 165:
@@ -286,10 +308,12 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 	__asm        mov    nError, eax;
 // LINE 168:
 ERROR_READING_WAVE:
+_T5a:
 	__asm        mov    eax, nError;
-	__asm        jmp    near ptr 0x0048EE20;
+	__asm        jmp    _T67;
 // LINE 169:
-	__asm        jmp    near ptr 0x0048EE13;
+_T62:
+	__asm        jmp    _T5a;
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
@@ -309,21 +333,23 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        mov    nError, eax;
 // LINE 199:
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EE55;
+	__asm        je     _T30;
 // LINE 200:
-	__asm        jmp    near ptr 0x0048EF65;
+	__asm        jmp    _T140;
 
-	__asm        jmp    near ptr 0x0048EF40;
+	__asm        jmp    _T11b;
 // LINE 203:
+_T30:
 	__asm        mov    eax, pckIn;
 	__asm        mov    ecx, cbRead;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jae    near ptr 0x0048EE6D;
+	__asm        jae    _T48;
 // LINE 204:
 	__asm        mov    eax, pckIn;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    cbRead, eax;
 // LINE 206:
+_T48:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, cbRead;
 	__asm        neg    eax;
@@ -331,16 +357,18 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        sub    [ecx+4], eax;
 // LINE 208:
 	__asm        mov    cT, 0;
-	__asm        jmp    near ptr 0x0048EE89;
+	__asm        jmp    _T64;
 
+_T61:
 	__asm        inc    cT;
+_T64:
 	__asm        mov    eax, cbRead;
 	__asm        cmp    cT, eax;
-	__asm        jae    near ptr 0x0048EF07;
+	__asm        jae    _Te2;
 // LINE 210:
 	__asm        mov    eax, mmioinfoIn.pchEndRead;
 	__asm        cmp    mmioinfoIn.pchNext, eax;
-	__asm        jne    near ptr 0x0048EEE5;
+	__asm        jne    _Tc0;
 // LINE 211:
 	__asm        push   0;
 	__asm        lea    eax, mmioinfoIn.dwFlags;
@@ -350,22 +378,24 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        call   dword ptr ds:[0x6C38EC];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EEC8;
+	__asm        je     _Ta3;
 // LINE 212:
-	__asm        jmp    near ptr 0x0048EF60;
+	__asm        jmp    _T13b;
 
-	__asm        jmp    near ptr 0x0048EF40;
+	__asm        jmp    _T11b;
 // LINE 214:
+_Ta3:
 	__asm        mov    eax, mmioinfoIn.pchEndRead;
 	__asm        cmp    mmioinfoIn.pchNext, eax;
-	__asm        jne    near ptr 0x0048EEE5;
+	__asm        jne    _Tc0;
 // LINE 215:
 	__asm        mov    nError, 0xE103;
 // LINE 216:
-	__asm        jmp    near ptr 0x0048EF5B;
+	__asm        jmp    _T136;
 
-	__asm        jmp    near ptr 0x0048EF40;
+	__asm        jmp    _T11b;
 // LINE 222:
+_Tc0:
 	__asm        mov    eax, mmioinfoIn.pchNext;
 	__asm        mov    al, [eax];
 	__asm        mov    ecx, cT;
@@ -380,8 +410,9 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        mov    eax, tempBYTEPointerToFoolCrappyMicrosoftCompiler;
 	__asm        mov    mmioinfoIn.pchNext, eax;
 // LINE 226:
-	__asm        jmp    near ptr 0x0048EE86;
+	__asm        jmp    _T61;
 // LINE 228:
+_Te2:
 	__asm        push   0;
 	__asm        lea    eax, mmioinfoIn.dwFlags;
 	__asm        push   eax;
@@ -390,37 +421,45 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 	__asm        call   dword ptr ds:[0x6C38F0];
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EF2E;
+	__asm        je     _T109;
 // LINE 229:
-	__asm        jmp    near ptr 0x0048EF56;
+	__asm        jmp    _T131;
 
-	__asm        jmp    near ptr 0x0048EF40;
+	__asm        jmp    _T11b;
 // LINE 231:
+_T109:
 	__asm        mov    eax, cbRead;
 	__asm        mov    ecx, cbActualRead;
 	__asm        mov    [ecx], eax;
 // LINE 232:
-	__asm        jmp    near ptr 0x0048EF51;
+	__asm        jmp    _T12c;
 
-	__asm        jmp    near ptr 0x0048EF49;
+	__asm        jmp    _T124;
 // LINE 235:
 ERROR_CANNOT_READ:
+_T11b:
 	__asm        mov    eax, cbActualRead;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 238:
 FINISHED_READING:
+_T124:
 	__asm        mov    eax, nError;
-	__asm        jmp    near ptr 0x0048EF6A;
+	__asm        jmp    _T145;
 // LINE 239:
-	__asm        jmp    near ptr 0x0048EF49;
+_T12c:
+	__asm        jmp    _T124;
 
-	__asm        jmp    near ptr 0x0048EF40;
+_T131:
+	__asm        jmp    _T11b;
 
-	__asm        jmp    near ptr 0x0048EF40;
+_T136:
+	__asm        jmp    _T11b;
 
-	__asm        jmp    near ptr 0x0048EF40;
+_T13b:
+	__asm        jmp    _T11b;
 
-	__asm        jmp    near ptr 0x0048EF40;
+_T140:
+	__asm        jmp    _T11b;
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
@@ -428,7 +467,7 @@ int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
 // LINE 252:
 	__asm        mov    eax, phmmio;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0048EF98;
+	__asm        je     _T29;
 // LINE 253:
 	__asm        push   0;
 	__asm        mov    eax, phmmio;
@@ -439,6 +478,7 @@ int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
 	__asm        mov    eax, phmmio;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 257:
+_T29:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0048EF9F;
 // LINE 258:
@@ -471,12 +511,13 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        add    esp, 0x10;
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048EFEE;
+	__asm        je     _T4a;
 // LINE 289:
-	__asm        jmp    near ptr 0x0048F115;
+	__asm        jmp    _T171;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+	__asm        jmp    _T112;
 // LINE 294:
+_T4a:
 	__asm        push   0;
 	__asm        mov    eax, ckInRiff.dwDataOffset;
 	__asm        add    eax, 4;
@@ -485,12 +526,13 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3900];
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0048F014;
+	__asm        jne    _T70;
 // LINE 295:
-	__asm        jmp    near ptr 0x0048F110;
+	__asm        jmp    _T16c;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+	__asm        jmp    _T112;
 // LINE 298:
+_T70:
 	__asm        mov    ckIn.ckid, 0x61746164;
 // LINE 299:
 	__asm        push   0x10;
@@ -502,12 +544,13 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3904];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0048F041;
+	__asm        je     _T9d;
 // LINE 300:
-	__asm        jmp    near ptr 0x0048F10B;
+	__asm        jmp    _T167;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+	__asm        jmp    _T112;
 // LINE 303:
+_T9d:
 	__asm        mov    eax, ckIn.cksize;
 	__asm        push   eax;
 	__asm        push   0;
@@ -516,14 +559,15 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, ppbData;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x0048F06F;
+	__asm        jne    _Tcb;
 // LINE 304:
 	__asm        mov    nError, 0xE000;
 // LINE 305:
-	__asm        jmp    near ptr 0x0048F106;
+	__asm        jmp    _T162;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+	__asm        jmp    _T112;
 // LINE 311:
+_Tcb:
 	__asm        lea    eax, cbActualRead;
 	__asm        push   eax;
 	__asm        lea    eax, ckIn.ckid;
@@ -539,24 +583,26 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 	__asm        add    esp, 0x14;
 	__asm        mov    nError, eax;
 	__asm        cmp    nError, 0;
-	__asm        je     near ptr 0x0048F0A4;
+	__asm        je     _T100;
 // LINE 312:
-	__asm        jmp    near ptr 0x0048F101;
+	__asm        jmp    _T15d;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+	__asm        jmp    _T112;
 // LINE 315:
+_T100:
 	__asm        mov    eax, cbActualRead;
 	__asm        mov    ecx, cbSize;
 	__asm        mov    [ecx], eax;
 // LINE 316:
-	__asm        jmp    near ptr 0x0048F0FC;
+	__asm        jmp    _T158;
 
-	__asm        jmp    near ptr 0x0048F0D7;
+	__asm        jmp    _T133;
 // LINE 319:
 ERROR_LOADING:
+_T112:
 	__asm        mov    eax, ppbData;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0048F0D7;
+	__asm        je     _T133;
 // LINE 320:
 	__asm        mov    eax, ppbData;
 	__asm        mov    eax, [eax];
@@ -567,8 +613,9 @@ ERROR_LOADING:
 	__asm        mov    dword ptr [eax], 0;
 // LINE 326:
 DONE_LOADING:
+_T133:
 	__asm        cmp    hmmioIn, 0;
-	__asm        je     near ptr 0x0048F0F4;
+	__asm        je     _T150;
 // LINE 327:
 	__asm        push   0;
 	__asm        mov    eax, hmmioIn;
@@ -577,19 +624,26 @@ DONE_LOADING:
 // LINE 328:
 	__asm        mov    hmmioIn, 0;
 // LINE 331:
+_T150:
 	__asm        mov    eax, nError;
-	__asm        jmp    near ptr 0x0048F11A;
+	__asm        jmp    _T176;
 // LINE 332:
-	__asm        jmp    near ptr 0x0048F0D7;
+_T158:
+	__asm        jmp    _T133;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+_T15d:
+	__asm        jmp    _T112;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+_T162:
+	__asm        jmp    _T112;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+_T167:
+	__asm        jmp    _T112;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+_T16c:
+	__asm        jmp    _T112;
 
-	__asm        jmp    near ptr 0x0048F0B6;
+_T171:
+	__asm        jmp    _T112;
 }
 

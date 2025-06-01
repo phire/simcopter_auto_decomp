@@ -56,20 +56,22 @@ void SpiralScan::SpiralScan(int32_t radius) {
 // FUNCTION: COPTER_D 0x00542e03
 int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 // LINE 21:
+_T0c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x00542E28;
+	__asm        jle    _T25;
 // LINE 23:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00542EFE;
+	__asm        jmp    _Tfb;
 // LINE 27:
+_T25:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jg     near ptr 0x00542E77;
+	__asm        jg     _T74;
 // LINE 29:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
@@ -84,45 +86,49 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 // LINE 32:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00542E71;
+	__asm        je     _T6e;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x00542E77;
+	__asm        jne    _T74;
 // LINE 33:
+_T6e:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+8];
 // LINE 37:
+_T74:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00542EB4;
+	__asm        jmp    _Tb1;
 // LINE 39:
 	__asm        mov    eax, currLoc;
 	__asm        dec    byte ptr [eax+1];
-	__asm        jmp    near ptr 0x00542ED8;
+	__asm        jmp    _Td5;
 // LINE 40:
 	__asm        mov    eax, currLoc;
 	__asm        inc    byte ptr [eax];
-	__asm        jmp    near ptr 0x00542ED8;
+	__asm        jmp    _Td5;
 // LINE 41:
 	__asm        mov    eax, currLoc;
 	__asm        inc    byte ptr [eax+1];
-	__asm        jmp    near ptr 0x00542ED8;
+	__asm        jmp    _Td5;
 // LINE 42:
 	__asm        mov    eax, currLoc;
 	__asm        dec    byte ptr [eax];
-	__asm        jmp    near ptr 0x00542ED8;
+	__asm        jmp    _Td5;
 // LINE 43:
-	__asm        jmp    near ptr 0x00542ED8;
+	__asm        jmp    _Td5;
 
+_Tb1:
 	__asm        cmp    dword ptr [ebp-0xC], 3;
-	__asm        ja     near ptr 0x00542ED8;
+	__asm        ja     _Td5;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    dword ptr [eax*4+0x542EC8];
 // Switch pointers
 // LINE 44:
+_Td5:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax];
 // LINE 46:
@@ -132,10 +138,10 @@ int32_t SpiralScan::Next(struct _GridCoordinates& currLoc) {
 	__asm        mov    ecx, this;
 	__asm        call   SpiralScan::InCityGridLimits;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00542E0F;
+	__asm        je     _T0c;
 // LINE 48:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00542EFE;
+	__asm        jmp    _Tfb;
 // LINE 49:
 }
 
@@ -145,37 +151,41 @@ int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates currLoc) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, currLoc.x;
 	__asm        cmp    eax, 0x80;
-	__asm        jl     near ptr 0x00542F28;
+	__asm        jl     _T23;
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00542F71;
+	__asm        jmp    _T6c;
 // LINE 54:
+_T23:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currLoc.x;
 	__asm        test   eax, eax;
-	__asm        jge    near ptr 0x00542F3C;
+	__asm        jge    _T37;
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00542F71;
+	__asm        jmp    _T6c;
 // LINE 55:
+_T37:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currLoc.y;
 	__asm        cmp    eax, 0x80;
-	__asm        jl     near ptr 0x00542F53;
+	__asm        jl     _T4e;
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00542F71;
+	__asm        jmp    _T6c;
 // LINE 56:
+_T4e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currLoc.y;
 	__asm        test   eax, eax;
-	__asm        jge    near ptr 0x00542F67;
+	__asm        jge    _T62;
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00542F71;
+	__asm        jmp    _T6c;
 // LINE 58:
+_T62:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00542F71;
+	__asm        jmp    _T6c;
 // LINE 59:
 }
 

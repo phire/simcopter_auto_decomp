@@ -116,7 +116,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004EF4AE;
+	__asm        jmp    _T2ee;
 // LINE 496:
 	__asm        push   0x76;
 	__asm        call   0x004D8821;
@@ -138,7 +138,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 500:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 502:
 	__asm        push   0x116;
 	__asm        call   0x004D8821;
@@ -160,7 +160,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 506:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 508:
 	__asm        push   0x119;
 	__asm        call   0x004D8821;
@@ -182,7 +182,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 512:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 514:
 	__asm        push   0x124;
 	__asm        call   0x004D8821;
@@ -204,7 +204,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 518:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 520:
 	__asm        push   0x125;
 	__asm        call   0x004D8821;
@@ -226,7 +226,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 524:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 526:
 	__asm        push   0x141;
 	__asm        call   0x004D8821;
@@ -248,7 +248,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 530:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 532:
 	__asm        push   0x153;
 	__asm        call   0x004D8821;
@@ -270,7 +270,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 536:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 538:
 	__asm        push   0x170;
 	__asm        call   0x004D8821;
@@ -292,7 +292,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 542:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 544:
 	__asm        push   0x171;
 	__asm        call   0x004D8821;
@@ -314,8 +314,9 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 548:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 550:
+_T2a7:
 	__asm        push   0x76;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -336,17 +337,19 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    rotshadobj, eax;
 // LINE 554:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 // LINE 555:
-	__asm        jmp    near ptr 0x004EF4E6;
+	__asm        jmp    _T326;
 
+_T2ee:
 	__asm        cmp    dword ptr [ebp-0x4C], 8;
-	__asm        ja     near ptr 0x004EF467;
+	__asm        ja     _T2a7;
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    dword ptr [eax*4+0x4EF4C2];
 // Switch pointers
 // LINE 560:
+_T326:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 564:
@@ -432,7 +435,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 // LINE 591:
 	__asm        mov    eax, htd;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jle    near ptr 0x004EF767;
+	__asm        jle    _T5a7;
 // LINE 593:
 	__asm        mov    eax, heliobj;
 	__asm        push   eax;
@@ -566,8 +569,9 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 613:
-	__asm        jmp    near ptr 0x004EF7A3;
+	__asm        jmp    _T5e3;
 // LINE 615:
+_T5a7:
 	__asm        mov    eax, heliobj;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -588,8 +592,9 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0xA8];
 	__asm        mov    [ecx+8], eax;
 // LINE 625:
+_T5e3:
 	__asm        cmp    dword ptr ds:[0x5B4970], 0;
-	__asm        jle    near ptr 0x004EFA58;
+	__asm        jle    _T898;
 // LINE 627:
 	__asm        push   0x7B;
 	__asm        call   0x004D8821;
@@ -817,8 +822,9 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 659:
-	__asm        jmp    near ptr 0x004EFB84;
+	__asm        jmp    _T9c4;
 // LINE 661:
+_T898:
 	__asm        push   0x16D;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -908,6 +914,7 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x6C120C], eax;
 // LINE 684:
+_T9c4:
 	__asm        mov    eax, hdindex;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -1144,12 +1151,13 @@ void S3HeliInitInstance(struct _HELI_DATA* hd) {
 	__asm        mov    obj, eax;
 // LINE 761:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x004EFE71;
+	__asm        jne    _Tcb1;
 // LINE 762:
 	__asm        push   0x5B4CA8;
 	__asm        call   ERexit;
 	__asm        add    esp, 4;
 // LINE 764:
+_Tcb1:
 	__asm        push   2;
 	__asm        mov    eax, obj;
 	__asm        push   eax;
@@ -1270,24 +1278,28 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 	__asm        mov    htd, eax;
 // LINE 832:
 	__asm        mov    heliidx, 0;
-	__asm        jmp    near ptr 0x004EFFCF;
+	__asm        jmp    _T2f;
 
+_T2c:
 	__asm        inc    heliidx;
+_T2f:
 	__asm        cmp    heliidx, 0xA;
-	__asm        jge    near ptr 0x004F0001;
+	__asm        jge    _T61;
 // LINE 834:
 	__asm        mov    eax, heliidx;
 	__asm        cmp    dword ptr [eax*4+0x5B4940], 0;
-	__asm        jne    near ptr 0x004EFFFC;
+	__asm        jne    _T5c;
 // LINE 836:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, heliidx;
 	__asm        mov    [ecx*4+0x5B4940], eax;
 // LINE 837:
-	__asm        jmp    near ptr 0x004F0001;
+	__asm        jmp    _T61;
 // LINE 839:
-	__asm        jmp    near ptr 0x004EFFCC;
+_T5c:
+	__asm        jmp    _T2c;
 // LINE 842:
+_T61:
 	__asm        mov    eax, mapy;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ecx, mapx;
@@ -1863,13 +1875,14 @@ void S3HeliGenInit(struct _HELI_DATA* hd, long mapx, long mapy) {
 // LINE 993:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax], 2;
-	__asm        jne    near ptr 0x004F07A3;
+	__asm        jne    _T803;
 // LINE 994:
 	__asm        mov    dword ptr ds:[0x5B4924], 1;
 // LINE 996:
+_T803:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F07B5;
+	__asm        je     _T815;
 // LINE 997:
 	__asm        call   SetIdealCameraPos;
 // LINE 998:
@@ -1932,7 +1945,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    [ecx+0x328], eax;
 // LINE 1032:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
-	__asm        je     near ptr 0x004F086B;
+	__asm        je     _Tb1;
 // LINE 1034:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -1942,15 +1955,16 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1038:
+_Tb1:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F0B6F;
+	__asm        je     _T3b5;
 // LINE 1040:
 	__asm        mov    dword ptr ds:[0x6BF190], 0;
 // LINE 1043:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jne    near ptr 0x004F08C5;
+	__asm        jne    _T10b;
 // LINE 1045:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -1968,8 +1982,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1048:
-	__asm        jmp    near ptr 0x004F08F3;
+	__asm        jmp    _T139;
 // LINE 1050:
+_T10b:
 	__asm        push   0;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xB8];
@@ -1986,9 +2001,10 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1055:
+_T139:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 4;
-	__asm        je     near ptr 0x004F091E;
+	__asm        je     _T164;
 // LINE 1057:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -1998,8 +2014,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1059:
-	__asm        jmp    near ptr 0x004F0935;
+	__asm        jmp    _T17b;
 // LINE 1061:
+_T164:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xC4];
@@ -2008,9 +2025,10 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1064:
+_T17b:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 0x10;
-	__asm        je     near ptr 0x004F0960;
+	__asm        je     _T1a6;
 // LINE 1066:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -2020,8 +2038,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1068:
-	__asm        jmp    near ptr 0x004F0977;
+	__asm        jmp    _T1bd;
 // LINE 1070:
+_T1a6:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA0];
@@ -2030,14 +2049,15 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1074:
+_T1bd:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        jne    near ptr 0x004F09AE;
+	__asm        jne    _T1f4;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jge    near ptr 0x004F09AE;
+	__asm        jge    _T1f4;
 // LINE 1076:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 6;
@@ -2045,16 +2065,17 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x170], 0;
 // LINE 1080:
+_T1f4:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F0A66;
+	__asm        jne    _T2ac;
 // LINE 1082:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliCrashed;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F0A57;
+	__asm        jne    _T29d;
 // LINE 1085:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -2101,21 +2122,24 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1092:
 	__asm        call   S3PersonUserNextFrame;
 // LINE 1094:
-	__asm        jmp    near ptr 0x004F0A61;
+	__asm        jmp    _T2a7;
 // LINE 1096:
+_T29d:
 	__asm        call   SetIdealCameraPos;
 // LINE 1097:
 	__asm        call   S3ViewerControl;
 // LINE 1099:
-	__asm        jmp    near ptr 0x004F1768;
+_T2a7:
+	__asm        jmp    _Tfae;
 // LINE 1103:
+_T2ac:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xD0], 0;
-	__asm        jge    near ptr 0x004F0AF4;
+	__asm        jge    _T33a;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        je     near ptr 0x004F0AF4;
+	__asm        je     _T33a;
 // LINE 1106:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 5;
@@ -2152,12 +2176,13 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x168], eax;
 // LINE 1122:
+_T33a:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliControlInputs;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F0B5E;
+	__asm        jne    _T3a4;
 // LINE 1125:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -2188,15 +2213,17 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1129:
 	__asm        call   S3PersonUserNextFrame;
 // LINE 1130:
-	__asm        jmp    near ptr 0x004F1768;
+	__asm        jmp    _Tfae;
 // LINE 1132:
+_T3a4:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliTurbulence;
 	__asm        add    esp, 4;
 // LINE 1134:
-	__asm        jmp    near ptr 0x004F0C6B;
+	__asm        jmp    _T4b1;
 // LINE 1139:
+_T3b5:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xC4];
@@ -2255,11 +2282,11 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1150:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xD0], 0;
-	__asm        jge    near ptr 0x004F0C44;
+	__asm        jge    _T48a;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        je     near ptr 0x004F0C44;
+	__asm        je     _T48a;
 // LINE 1152:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 6;
@@ -2267,9 +2294,10 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x170], 0;
 // LINE 1156:
+_T48a:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F0C6B;
+	__asm        jne    _T4b1;
 // LINE 1158:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -2278,8 +2306,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        cmp    eax, 1;
 	__asm        jne    near ptr 0x004F0C66;
 // LINE 1161:
-	__asm        jmp    near ptr 0x004F1768;
+	__asm        jmp    _Tfae;
 // LINE 1165:
+_T4b1:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliYawPitchRollSlide;
@@ -2313,12 +2342,13 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1173:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F0CDA;
+	__asm        je     _T520;
 // LINE 1175:
 	__asm        call   SetIdealCameraPos;
 // LINE 1176:
 	__asm        call   S3ViewerControl;
 // LINE 1183:
+_T520:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        and    eax, 0xFF;
@@ -2333,14 +2363,15 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x18], ecx;
-	__asm        jne    near ptr 0x004F0D25;
+	__asm        jne    _T56b;
 
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x1C];
 	__asm        cmp    [eax+0x14], ecx;
-	__asm        je     near ptr 0x004F0DAD;
+	__asm        je     _T5f3;
 // LINE 1190:
+_T56b:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x14];
 	__asm        and    eax, 0xFF;
@@ -2387,6 +2418,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 1202:
+_T5f3:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
@@ -2570,22 +2602,23 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1239:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F1003;
+	__asm        je     _T849;
 // LINE 1241:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x150];
 	__asm        mov    ds:[0x6BF194], eax;
 // LINE 1245:
+_T849:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        jne    near ptr 0x004F108A;
+	__asm        jne    _T8d0;
 // LINE 1247:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jle    near ptr 0x004F107C;
+	__asm        jle    _T8c2;
 
 	__asm        cmp    dword ptr ds:[0x5C3810], 0;
-	__asm        jne    near ptr 0x004F107C;
+	__asm        jne    _T8c2;
 // LINE 1249:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, ds:[0x5B4768];
@@ -2606,37 +2639,39 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1250:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jge    near ptr 0x004F107C;
+	__asm        jge    _T8c2;
 // LINE 1253:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x320], 0;
 // LINE 1256:
+_T8c2:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x324], eax;
 // LINE 1265:
+_T8d0:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        je     near ptr 0x004F160C;
+	__asm        je     _Te52;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        je     near ptr 0x004F160C;
+	__asm        je     _Te52;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004F160C;
+	__asm        je     _Te52;
 // LINE 1268:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F11DC;
+	__asm        jge    _Ta22;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x174], 1;
-	__asm        jne    near ptr 0x004F11DC;
+	__asm        jne    _Ta22;
 // LINE 1270:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x150];
@@ -2645,14 +2680,14 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1271:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F1130;
+	__asm        jne    _T976;
 // LINE 1272:
 	__asm        mov    eax, hd;
 	__asm        sub    dword ptr [eax+0xD0], 4;
 // LINE 1274:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jne    near ptr 0x004F1130;
+	__asm        jne    _T976;
 // LINE 1276:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -2662,6 +2697,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1279:
+_T976:
 	__asm        push   9;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -2676,7 +2712,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F1179;
+	__asm        jne    _T9bf;
 // LINE 1282:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -2687,6 +2723,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1284:
+_T9bf:
 	__asm        mov    ebx, 1;
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
@@ -2715,18 +2752,19 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    [eax+0x118], ebx;
 // LINE 1288:
-	__asm        jmp    near ptr 0x004F160C;
+	__asm        jmp    _Te52;
 
+_Ta22:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F12F5;
+	__asm        jge    _Tb3b;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x13C], 0;
-	__asm        jne    near ptr 0x004F12F5;
+	__asm        jne    _Tb3b;
 // LINE 1290:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x150];
@@ -2735,14 +2773,14 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1291:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F125B;
+	__asm        jne    _Taa1;
 // LINE 1292:
 	__asm        mov    eax, hd;
 	__asm        sub    dword ptr [eax+0xD0], 4;
 // LINE 1294:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jne    near ptr 0x004F125B;
+	__asm        jne    _Taa1;
 // LINE 1296:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -2752,6 +2790,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1299:
+_Taa1:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -2799,21 +2838,22 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    [eax+0x118], ebx;
 // LINE 1307:
-	__asm        jmp    near ptr 0x004F160C;
+	__asm        jmp    _Te52;
 
+_Tb3b:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F151C;
+	__asm        jge    _Td62;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
-	__asm        jg     near ptr 0x004F151C;
+	__asm        jg     _Td62;
 // LINE 1309:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F1368;
+	__asm        jne    _Tbae;
 // LINE 1311:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B48F8];
@@ -2823,7 +2863,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1313:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jne    near ptr 0x004F1368;
+	__asm        jne    _Tbae;
 // LINE 1315:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -2833,12 +2873,13 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1318:
+_Tbae:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F1398;
+	__asm        jge    _Tbde;
 // LINE 1320:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x150];
@@ -2846,6 +2887,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1324:
+_Tbde:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0x100;
 	__asm        push   eax;
@@ -2921,7 +2963,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        add    esp, 0xC;
 // LINE 1345:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
-	__asm        jne    near ptr 0x004F14CE;
+	__asm        jne    _Td14;
 // LINE 1350:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   2;
@@ -2947,8 +2989,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1351:
-	__asm        jmp    near ptr 0x004F1517;
+	__asm        jmp    _Td5d;
 // LINE 1356:
+_Td14:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -2972,24 +3015,26 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1359:
-	__asm        jmp    near ptr 0x004F160C;
+_Td5d:
+	__asm        jmp    _Te52;
 
+_Td62:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliDyObjCollisionCheck;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F160C;
+	__asm        jne    _Te52;
 // LINE 1361:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F1570;
+	__asm        jne    _Tdb6;
 // LINE 1362:
 	__asm        mov    eax, hd;
 	__asm        sub    dword ptr [eax+0xD0], 4;
 // LINE 1364:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jne    near ptr 0x004F1570;
+	__asm        jne    _Tdb6;
 // LINE 1366:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -2999,6 +3044,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1369:
+_Tdb6:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   1;
 	__asm        mov    eax, normz;
@@ -3049,6 +3095,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    [eax+0x118], ebx;
 // LINE 1379:
+_Te52:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliSmokeTrail;
@@ -3056,43 +3103,47 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1381:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 0;
-	__asm        je     near ptr 0x004F1768;
+	__asm        je     _Tfae;
 // LINE 1386:
 // Block start:
 	struct Point3d loc;
 	int32_t speed;
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 1;
-	__asm        jne    near ptr 0x004F1647;
+	__asm        jne    _Te8d;
 // LINE 1387:
 	__asm        mov    speed, 0x1C20000;
 // LINE 1388:
-	__asm        jmp    near ptr 0x004F16E5;
+	__asm        jmp    _Tf2b;
 
+_Te8d:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 2;
-	__asm        jne    near ptr 0x004F1666;
+	__asm        jne    _Teac;
 // LINE 1389:
 	__asm        mov    speed, 0x2580000;
 // LINE 1390:
-	__asm        jmp    near ptr 0x004F16E5;
+	__asm        jmp    _Tf2b;
 
+_Teac:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 3;
-	__asm        jne    near ptr 0x004F1685;
+	__asm        jne    _Tecb;
 // LINE 1391:
 	__asm        mov    speed, 0x640000;
 // LINE 1392:
-	__asm        jmp    near ptr 0x004F16E5;
+	__asm        jmp    _Tf2b;
 // LINE 1393:
+_Tecb:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 5;
-	__asm        je     near ptr 0x004F16A5;
+	__asm        je     _Teeb;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 6;
-	__asm        jne    near ptr 0x004F16E5;
+	__asm        jne    _Tf2b;
 // LINE 1395:
+_Teeb:
 	__asm        mov    eax, ds:[0x5B48E8];
 	__asm        mov    speed, eax;
 // LINE 1396:
@@ -3106,11 +3157,12 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 // LINE 1397:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
-	__asm        jge    near ptr 0x004F16E5;
+	__asm        jge    _Tf2b;
 // LINE 1398:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1C0], 0;
 // LINE 1402:
+_Tf2b:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
@@ -3192,18 +3244,19 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        mov    [ecx+8], eax;
 // LINE 1448:
 	__asm        cmp    fwd_speed, 0;
-	__asm        jne    near ptr 0x004F17C8;
+	__asm        jne    _T5b;
 // LINE 1449:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F1A1B;
+	__asm        jmp    _T2ae;
 // LINE 1453:
+_T5b:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004F1828;
+	__asm        jne    _Tbb;
 // LINE 1455:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, fwd_speed;
 	__asm        cmp    [eax+0x11C], ecx;
-	__asm        jle    near ptr 0x004F17F9;
+	__asm        jle    _T8c;
 // LINE 1456:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -3211,10 +3264,11 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        sar    eax, 5;
 	__asm        add    fwd_speed, eax;
 // LINE 1457:
+_T8c:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, fwd_speed;
 	__asm        cmp    [eax+0x11C], ecx;
-	__asm        jge    near ptr 0x004F1823;
+	__asm        jge    _Tb6;
 // LINE 1458:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, fwd_speed;
@@ -3225,13 +3279,15 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        neg    eax;
 	__asm        sub    fwd_speed, eax;
 // LINE 1460:
-	__asm        jmp    near ptr 0x004F1880;
+_Tb6:
+	__asm        jmp    _T113;
 // LINE 1462:
+_Tbb:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
 	__asm        add    eax, eax;
 	__asm        cmp    eax, fwd_speed;
-	__asm        jle    near ptr 0x004F1850;
+	__asm        jle    _Te3;
 // LINE 1463:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -3240,11 +3296,12 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        sar    eax, 5;
 	__asm        add    fwd_speed, eax;
 // LINE 1464:
+_Te3:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
 	__asm        add    eax, eax;
 	__asm        cmp    eax, fwd_speed;
-	__asm        jge    near ptr 0x004F1880;
+	__asm        jge    _T113;
 // LINE 1465:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, fwd_speed;
@@ -3257,9 +3314,10 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        neg    eax;
 	__asm        sub    fwd_speed, eax;
 // LINE 1468:
+_T113:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F18AD;
+	__asm        jne    _T140;
 // LINE 1470:
 	__asm        push   0xD6D8;
 	__asm        mov    eax, hd;
@@ -3270,6 +3328,7 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x128], eax;
 // LINE 1474:
+_T140:
 	__asm        mov    eax, fwd_speed;
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -3389,13 +3448,14 @@ int32_t S3HeliCollideTest(struct _HELI_DATA* hd, long no_frames) {
 // LINE 1495:
 	__asm        mov    eax, alt;
 	__asm        cmp    loc.y, eax;
-	__asm        jge    near ptr 0x004F1A14;
+	__asm        jge    _T2a7;
 // LINE 1496:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F1A1B;
+	__asm        jmp    _T2ae;
 // LINE 1498:
+_T2a7:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F1A1B;
+	__asm        jmp    _T2ae;
 // LINE 1499:
 }
 
@@ -3446,14 +3506,15 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    dist, eax;
 // LINE 1532:
 	__asm        cmp    dist, 0x140000;
-	__asm        jg     near ptr 0x004F1AB6;
+	__asm        jg     _T96;
 // LINE 1534:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x120], 0;
 // LINE 1535:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F1C7E;
+	__asm        jmp    _T25e;
 // LINE 1541:
+_T96:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -3480,14 +3541,15 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    deltayaw, eax;
 // LINE 1551:
 	__asm        cmp    dist, 0x400000;
-	__asm        jg     near ptr 0x004F1B1D;
+	__asm        jg     _Tfd;
 
 	__asm        cmp    deltayaw, 0x1E0000;
-	__asm        jle    near ptr 0x004F1B1D;
+	__asm        jle    _Tfd;
 // LINE 1553:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0;
 // LINE 1558:
+_Tfd:
 	__asm        lea    eax, alt;
 	__asm        push   eax;
 	__asm        lea    eax, dist;
@@ -3501,7 +3563,7 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    deflectangle, eax;
 // LINE 1559:
 	__asm        cmp    deflectangle, 0;
-	__asm        jle    near ptr 0x004F1BA8;
+	__asm        jle    _T188;
 // LINE 1562:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
@@ -3533,31 +3595,34 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 // LINE 1568:
 	__asm        mov    eax, deflectangle;
 	__asm        cmp    dist, eax;
-	__asm        jle    near ptr 0x004F1B9E;
+	__asm        jle    _T17e;
 // LINE 1569:
 	__asm        mov    eax, deflectangle;
 	__asm        add    newyaw, eax;
 // LINE 1570:
-	__asm        jmp    near ptr 0x004F1BA8;
+	__asm        jmp    _T188;
 // LINE 1571:
+_T17e:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 1581:
+_T188:
 	__asm        mov    eax, curryaw;
 	__asm        sub    eax, 0x64;
 	__asm        cmp    eax, newyaw;
-	__asm        jge    near ptr 0x004F1BD8;
+	__asm        jge    _T1b8;
 
 	__asm        mov    eax, curryaw;
 	__asm        add    eax, 0x64;
 	__asm        cmp    eax, newyaw;
-	__asm        jle    near ptr 0x004F1BD8;
+	__asm        jle    _T1b8;
 // LINE 1583:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x120], 0;
 // LINE 1585:
-	__asm        jmp    near ptr 0x004F1C37;
+	__asm        jmp    _T217;
 // LINE 1587:
+_T1b8:
 	__asm        mov    eax, newyaw;
 	__asm        sub    eax, curryaw;
 	__asm        push   eax;
@@ -3566,7 +3631,7 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    deltayaw, eax;
 // LINE 1591:
 	__asm        cmp    dword ptr ds:[0x5B4768], 0x400;
-	__asm        jge    near ptr 0x004F1C19;
+	__asm        jge    _T1f9;
 // LINE 1592:
 	__asm        push   0x4000;
 	__asm        mov    eax, deltayaw;
@@ -3576,8 +3641,9 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x120], eax;
 // LINE 1593:
-	__asm        jmp    near ptr 0x004F1C37;
+	__asm        jmp    _T217;
 // LINE 1594:
+_T1f9:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        shl    eax, 4;
 	__asm        push   eax;
@@ -3588,22 +3654,25 @@ int32_t S3HeliHeadToLocXZ(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x120], eax;
 // LINE 1597:
+_T217:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x120], 0x320000;
-	__asm        jle    near ptr 0x004F1C57;
+	__asm        jle    _T237;
 // LINE 1598:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x120], 0x320000;
 // LINE 1599:
+_T237:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x120], 0xFFCE0000;
-	__asm        jge    near ptr 0x004F1C77;
+	__asm        jge    _T257;
 // LINE 1600:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x120], 0xFFCE0000;
 // LINE 1602:
+_T257:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F1C7E;
+	__asm        jmp    _T25e;
 // LINE 1603:
 }
 
@@ -3613,11 +3682,12 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 
 // LINE 1621:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
-	__asm        je     near ptr 0x004F1CA6;
+	__asm        je     _T23;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        jne    near ptr 0x004F1CD9;
+	__asm        jne    _T56;
 // LINE 1623:
+_T23:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA8];
@@ -3634,14 +3704,16 @@ void S3HeliSetShadow(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int32_
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1625:
-	__asm        jmp    near ptr 0x004F1E85;
+	__asm        jmp    _T202;
 // LINE 1628:
+_T56:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x004F1CEB;
+	__asm        jne    _T68;
 // LINE 1629:
-	__asm        jmp    near ptr 0x004F1E85;
+	__asm        jmp    _T202;
 // LINE 1631:
+_T68:
 	__asm        push   0;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA8];
@@ -3801,7 +3873,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    htd, eax;
 // LINE 1699:
 	__asm        cmp    dword ptr ds:[0x598E9C], 1;
-	__asm        jne    near ptr 0x004F1ECD;
+	__asm        jne    _T43;
 // LINE 1701:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -3809,16 +3881,18 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 // LINE 1702:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F2911;
+	__asm        jmp    _Ta87;
 // LINE 1706:
+_T43:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        je     near ptr 0x004F1EE7;
+	__asm        je     _T5d;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F1F18;
+	__asm        jne    _T8e;
 // LINE 1708:
+_T5d:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0;
 // LINE 1709:
@@ -3829,15 +3903,17 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    dword ptr [eax+0x14C], 0;
 // LINE 1711:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F2911;
+	__asm        jmp    _Ta87;
 // LINE 1714:
+_T8e:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
-	__asm        jle    near ptr 0x004F1F32;
+	__asm        jle    _Ta8;
 // LINE 1715:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F2911;
+	__asm        jmp    _Ta87;
 // LINE 1718:
+_Ta8:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x328];
 	__asm        push   eax;
@@ -3849,10 +3925,11 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    pitchrate, eax;
 // LINE 1720:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        je     near ptr 0x004F1F5F;
+	__asm        je     _Td5;
 // LINE 1721:
 	__asm        sar    pitchrate, 1;
 // LINE 1723:
+_Td5:
 	__asm        push   7;
 	__asm        push   6;
 	__asm        call   GetJoystickValueEither;
@@ -3863,24 +3940,27 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        call   GetJoystickValue;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F1F92;
+	__asm        jne    _T108;
 
 	__asm        push   0x1A;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F1F9E;
+	__asm        je     _T114;
 
+_T108:
 	__asm        mov    bSlideEventIsSet, 1;
-	__asm        jmp    near ptr 0x004F1FA5;
+	__asm        jmp    _T11b;
 
+_T114:
 	__asm        mov    bSlideEventIsSet, 0;
 // LINE 1727:
+_T11b:
 	__asm        push   8;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F1FD7;
+	__asm        je     _T14d;
 // LINE 1728:
 	__asm        mov    eax, pitchrate;
 	__asm        push   eax;
@@ -3891,13 +3971,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x11C], eax;
 // LINE 1729:
-	__asm        jmp    near ptr 0x004F20F0;
+	__asm        jmp    _T266;
 
+_T14d:
 	__asm        push   9;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F200F;
+	__asm        je     _T185;
 // LINE 1730:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, pitchrate;
@@ -3911,15 +3992,16 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x11C], ebx;
 // LINE 1731:
-	__asm        jmp    near ptr 0x004F20F0;
+	__asm        jmp    _T266;
 
+_T185:
 	__asm        push   8;
 	__asm        push   9;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickUpDownValue, eax;
 	__asm        cmp    lJoystickUpDownValue, 0;
-	__asm        je     near ptr 0x004F208C;
+	__asm        je     _T202;
 // LINE 1733:
 	__asm        push   0x30000;
 	__asm        mov    eax, lJoystickUpDownValue;
@@ -3955,10 +4037,11 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x11C], eax;
 // LINE 1738:
-	__asm        jmp    near ptr 0x004F20F0;
+	__asm        jmp    _T266;
 // LINE 1740:
+_T202:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004F20C9;
+	__asm        jne    _T23f;
 // LINE 1741:
 	__asm        mov    eax, 0x10000;
 	__asm        mov    ecx, ds:[0x5B4768];
@@ -3973,8 +4056,9 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 1742:
-	__asm        jmp    near ptr 0x004F20F0;
+	__asm        jmp    _T266;
 // LINE 1743:
+_T23f:
 	__asm        mov    eax, 0x10000;
 	__asm        sub    eax, ds:[0x5B4768];
 	__asm        push   eax;
@@ -3986,11 +4070,12 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 1747:
+_T266:
 	__asm        push   7;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F212B;
+	__asm        je     _T2a1;
 // LINE 1748:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, htd;
@@ -4005,13 +4090,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x114], ebx;
 // LINE 1749:
-	__asm        jmp    near ptr 0x004F21EF;
+	__asm        jmp    _T365;
 
+_T2a1:
 	__asm        push   6;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2160;
+	__asm        je     _T2d6;
 // LINE 1750:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x24];
@@ -4023,13 +4109,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x114], eax;
 // LINE 1751:
-	__asm        jmp    near ptr 0x004F21EF;
+	__asm        jmp    _T365;
 
+_T2d6:
 	__asm        cmp    lJoystickLeftRightValue, 0;
-	__asm        je     near ptr 0x004F21C3;
+	__asm        je     _T339;
 
 	__asm        cmp    bSlideEventIsSet, 0;
-	__asm        jne    near ptr 0x004F21C3;
+	__asm        jne    _T339;
 // LINE 1753:
 	__asm        push   0x60000;
 	__asm        mov    eax, lJoystickLeftRightValue;
@@ -4058,8 +4145,9 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x114], eax;
 // LINE 1758:
-	__asm        jmp    near ptr 0x004F21EF;
+	__asm        jmp    _T365;
 // LINE 1759:
+_T339:
 	__asm        mov    eax, 0x10000;
 	__asm        mov    ecx, ds:[0x5B4768];
 	__asm        shl    ecx, 2;
@@ -4073,6 +4161,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 1764:
+_T365:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x328];
 	__asm        push   eax;
@@ -4087,7 +4176,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F223D;
+	__asm        je     _T3b3;
 // LINE 1767:
 	__asm        mov    eax, yawrate;
 	__asm        push   eax;
@@ -4098,13 +4187,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x120], eax;
 // LINE 1768:
-	__asm        jmp    near ptr 0x004F22E7;
+	__asm        jmp    _T45d;
 
+_T3b3:
 	__asm        push   6;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2275;
+	__asm        je     _T3eb;
 // LINE 1769:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, yawrate;
@@ -4118,13 +4208,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x120], ebx;
 // LINE 1770:
-	__asm        jmp    near ptr 0x004F22E7;
+	__asm        jmp    _T45d;
 
+_T3eb:
 	__asm        cmp    lJoystickLeftRightValue, 0;
-	__asm        je     near ptr 0x004F22BB;
+	__asm        je     _T431;
 
 	__asm        cmp    bSlideEventIsSet, 0;
-	__asm        jne    near ptr 0x004F22BB;
+	__asm        jne    _T431;
 // LINE 1772:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, hd;
@@ -4142,8 +4233,9 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x120], ebx;
 // LINE 1773:
-	__asm        jmp    near ptr 0x004F22E7;
+	__asm        jmp    _T45d;
 // LINE 1774:
+_T431:
 	__asm        mov    eax, 0x10000;
 	__asm        mov    ecx, ds:[0x5B4768];
 	__asm        shl    ecx, 2;
@@ -4157,6 +4249,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x120], eax;
 // LINE 1777:
+_T45d:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x328];
 	__asm        push   eax;
@@ -4171,7 +4264,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2335;
+	__asm        je     _T4ab;
 // LINE 1781:
 	__asm        mov    eax, sliderate;
 	__asm        push   eax;
@@ -4182,13 +4275,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x118], eax;
 // LINE 1782:
-	__asm        jmp    near ptr 0x004F243C;
+	__asm        jmp    _T5b2;
 
+_T4ab:
 	__asm        push   0xA;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F236D;
+	__asm        je     _T4e3;
 // LINE 1783:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, sliderate;
@@ -4202,13 +4296,14 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x118], ebx;
 // LINE 1784:
-	__asm        jmp    near ptr 0x004F243C;
+	__asm        jmp    _T5b2;
 
+_T4e3:
 	__asm        cmp    lJoystickLeftRightValue, 0;
-	__asm        je     near ptr 0x004F23E3;
+	__asm        je     _T559;
 
 	__asm        cmp    bSlideEventIsSet, 0;
-	__asm        je     near ptr 0x004F23E3;
+	__asm        je     _T559;
 // LINE 1786:
 	__asm        push   0x20000;
 	__asm        mov    eax, lJoystickLeftRightValue;
@@ -4243,11 +4338,12 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x118], eax;
 // LINE 1791:
-	__asm        jmp    near ptr 0x004F243C;
+	__asm        jmp    _T5b2;
 // LINE 1793:
+_T559:
 	__asm        movsx  eax, byte ptr ds:[0x5B4900];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2411;
+	__asm        je     _T587;
 // LINE 1794:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
@@ -4259,6 +4355,7 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x118], eax;
 // LINE 1795:
+_T587:
 	__asm        mov    eax, 0x10000;
 	__asm        mov    ecx, ds:[0x5B4768];
 	__asm        add    ecx, ecx;
@@ -4272,327 +4369,363 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x118], eax;
 // LINE 1799:
+_T5b2:
 	__asm        push   0xC;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F245D;
+	__asm        je     _T5d3;
 // LINE 1800:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 1801:
-	__asm        jmp    near ptr 0x004F24C5;
+	__asm        jmp    _T63b;
 
+_T5d3:
 	__asm        push   0xD;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F247E;
+	__asm        je     _T5f4;
 // LINE 1802:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
 // LINE 1803:
-	__asm        jmp    near ptr 0x004F24C5;
+	__asm        jmp    _T63b;
 
+_T5f4:
 	__asm        push   0xD;
 	__asm        push   0xC;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickMiscValue1, eax;
 	__asm        cmp    lJoystickMiscValue1, 0;
-	__asm        je     near ptr 0x004F24BB;
+	__asm        je     _T631;
 // LINE 1804:
-	__asm        jle    near ptr 0x004F24AC;
+	__asm        jle    _T622;
 // LINE 1805:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 1806:
-	__asm        jmp    near ptr 0x004F24B6;
+	__asm        jmp    _T62c;
 // LINE 1807:
+_T622:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
 // LINE 1809:
-	__asm        jmp    near ptr 0x004F24C5;
+_T62c:
+	__asm        jmp    _T63b;
 // LINE 1810:
+_T631:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 1813:
+_T63b:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jg     near ptr 0x004F24DF;
+	__asm        jg     _T655;
 // LINE 1814:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
 // LINE 1820:
+_T655:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0;
 // LINE 1821:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 1;
-	__asm        je     near ptr 0x004F2625;
+	__asm        je     _T79b;
 // LINE 1822:
 	__asm        push   0xE;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2551;
+	__asm        je     _T6c7;
 // LINE 1823:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
-	__asm        jne    near ptr 0x004F252F;
+	__asm        jne    _T6a5;
 // LINE 1824:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 2;
 // LINE 1825:
-	__asm        jmp    near ptr 0x004F254C;
+	__asm        jmp    _T6c2;
 
+_T6a5:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 3;
-	__asm        jle    near ptr 0x004F254C;
+	__asm        jle    _T6c2;
 // LINE 1826:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0xFFFFFFFF;
 // LINE 1828:
-	__asm        jmp    near ptr 0x004F2625;
+_T6c2:
+	__asm        jmp    _T79b;
 
+_T6c7:
 	__asm        push   0xF;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2595;
+	__asm        je     _T70b;
 // LINE 1829:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F2590;
+	__asm        jne    _T706;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jge    near ptr 0x004F2590;
+	__asm        jge    _T706;
 // LINE 1830:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 1;
 // LINE 1832:
-	__asm        jmp    near ptr 0x004F2625;
+_T706:
+	__asm        jmp    _T79b;
 
+_T70b:
 	__asm        push   0xF;
 	__asm        push   0xE;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickMiscValue1, eax;
 	__asm        cmp    lJoystickMiscValue1, 0;
-	__asm        je     near ptr 0x004F2625;
+	__asm        je     _T79b;
 // LINE 1833:
-	__asm        jge    near ptr 0x004F25F8;
+	__asm        jge    _T76e;
 // LINE 1834:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
-	__asm        jne    near ptr 0x004F25D6;
+	__asm        jne    _T74c;
 // LINE 1835:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 2;
 // LINE 1836:
-	__asm        jmp    near ptr 0x004F25F3;
+	__asm        jmp    _T769;
 
+_T74c:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 3;
-	__asm        jle    near ptr 0x004F25F3;
+	__asm        jle    _T769;
 // LINE 1837:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0xFFFFFFFF;
 // LINE 1839:
-	__asm        jmp    near ptr 0x004F2625;
+_T769:
+	__asm        jmp    _T79b;
 // LINE 1840:
+_T76e:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F2625;
+	__asm        jne    _T79b;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jge    near ptr 0x004F2625;
+	__asm        jge    _T79b;
 // LINE 1841:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 1;
 // LINE 1846:
+_T79b:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 4;
-	__asm        je     near ptr 0x004F275E;
+	__asm        je     _T8d4;
 // LINE 1847:
 	__asm        push   0x11;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F268A;
+	__asm        je     _T800;
 // LINE 1848:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F2668;
+	__asm        jne    _T7de;
 // LINE 1849:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 1;
 // LINE 1850:
-	__asm        jmp    near ptr 0x004F2685;
+	__asm        jmp    _T7fb;
 
+_T7de:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 3;
-	__asm        jle    near ptr 0x004F2685;
+	__asm        jle    _T7fb;
 // LINE 1851:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0xFFFFFFFE;
 // LINE 1853:
-	__asm        jmp    near ptr 0x004F275E;
+_T7fb:
+	__asm        jmp    _T8d4;
 
+_T800:
 	__asm        push   0x12;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F26CE;
+	__asm        je     _T844;
 // LINE 1854:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
-	__asm        jne    near ptr 0x004F26C9;
+	__asm        jne    _T83f;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jge    near ptr 0x004F26C9;
+	__asm        jge    _T83f;
 // LINE 1855:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 2;
 // LINE 1857:
-	__asm        jmp    near ptr 0x004F275E;
+_T83f:
+	__asm        jmp    _T8d4;
 
+_T844:
 	__asm        push   0x12;
 	__asm        push   0x11;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickMiscValue1, eax;
 	__asm        cmp    lJoystickMiscValue1, 0;
-	__asm        je     near ptr 0x004F275E;
+	__asm        je     _T8d4;
 // LINE 1858:
-	__asm        jge    near ptr 0x004F2731;
+	__asm        jge    _T8a7;
 // LINE 1859:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F270F;
+	__asm        jne    _T885;
 // LINE 1860:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 1;
 // LINE 1861:
-	__asm        jmp    near ptr 0x004F272C;
+	__asm        jmp    _T8a2;
 
+_T885:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 3;
-	__asm        jle    near ptr 0x004F272C;
+	__asm        jle    _T8a2;
 // LINE 1862:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0xFFFFFFFE;
 // LINE 1864:
-	__asm        jmp    near ptr 0x004F275E;
+_T8a2:
+	__asm        jmp    _T8d4;
 // LINE 1865:
+_T8a7:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
-	__asm        jne    near ptr 0x004F275E;
+	__asm        jne    _T8d4;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jge    near ptr 0x004F275E;
+	__asm        jge    _T8d4;
 // LINE 1866:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 2;
 // LINE 1873:
+_T8d4:
 	__asm        push   0x10;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F2782;
+	__asm        jne    _T8f8;
 
 	__asm        push   0x10;
 	__asm        call   GetJoystickValue;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F27C3;
+	__asm        je     _T939;
 
+_T8f8:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F27C3;
+	__asm        jne    _T939;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
-	__asm        je     near ptr 0x004F27C3;
+	__asm        je     _T939;
 // LINE 1875:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 1;
-	__asm        je     near ptr 0x004F27BE;
+	__asm        je     _T934;
 // LINE 1876:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 1;
 // LINE 1878:
-	__asm        jmp    near ptr 0x004F27D0;
+_T934:
+	__asm        jmp    _T946;
 // LINE 1879:
+_T939:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 0;
 // LINE 1882:
+_T946:
 	__asm        push   2;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F27F4;
+	__asm        jne    _T96a;
 
 	__asm        push   2;
 	__asm        call   GetJoystickValue;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F2842;
+	__asm        je     _T9b8;
 // LINE 1884:
+_T96a:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 8;
-	__asm        je     near ptr 0x004F283D;
+	__asm        je     _T9b3;
 // LINE 1886:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax], 2;
-	__asm        jne    near ptr 0x004F2821;
+	__asm        jne    _T997;
 // LINE 1887:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 1;
 // LINE 1888:
-	__asm        jmp    near ptr 0x004F283D;
+	__asm        jmp    _T9b3;
 // LINE 1889:
+_T997:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        jle    near ptr 0x004F283D;
+	__asm        jle    _T9b3;
 // LINE 1890:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 3;
 // LINE 1896:
-	__asm        jmp    near ptr 0x004F2907;
+_T9b3:
+	__asm        jmp    _Ta7d;
 
+_T9b8:
 	__asm        push   0x13;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F2866;
+	__asm        jne    _T9dc;
 
 	__asm        push   0x13;
 	__asm        call   GetJoystickValue;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F28FA;
+	__asm        je     _Ta70;
 // LINE 1898:
+_T9dc:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 1;
-	__asm        je     near ptr 0x004F28E8;
+	__asm        je     _Ta5e;
 // LINE 1900:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax], 2;
-	__asm        jne    near ptr 0x004F2893;
+	__asm        jne    _Ta09;
 // LINE 1901:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 2;
 // LINE 1902:
-	__asm        jmp    near ptr 0x004F28E3;
+	__asm        jmp    _Ta59;
 
+_Ta09:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
-	__asm        je     near ptr 0x004F28D6;
+	__asm        je     _Ta4c;
 // LINE 1904:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 5;
@@ -4609,23 +4742,29 @@ int32_t S3HeliControlInputs(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        sub    [eax+0x11C], ebx;
 // LINE 1908:
-	__asm        jmp    near ptr 0x004F28E3;
+	__asm        jmp    _Ta59;
 // LINE 1909:
+_Ta4c:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 0;
 // LINE 1911:
-	__asm        jmp    near ptr 0x004F28F5;
+_Ta59:
+	__asm        jmp    _Ta6b;
 // LINE 1912:
+_Ta5e:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 0;
 // LINE 1914:
-	__asm        jmp    near ptr 0x004F2907;
+_Ta6b:
+	__asm        jmp    _Ta7d;
 // LINE 1915:
+_Ta70:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x14C], 0;
 // LINE 1917:
+_Ta7d:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F2911;
+	__asm        jmp    _Ta87;
 // LINE 1918:
 }
 
@@ -4652,16 +4791,17 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 // LINE 1938:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        je     near ptr 0x004F2959;
+	__asm        je     _T43;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F2A34;
+	__asm        jne    _T11e;
 // LINE 1941:
+_T43:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        cmp    dword ptr [eax+0xC], 0x30000;
-	__asm        jle    near ptr 0x004F29EA;
+	__asm        jle    _Td4;
 // LINE 1943:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        push   eax;
@@ -4681,7 +4821,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        cmp    dword ptr [eax+0x38], 1;
-	__asm        jne    near ptr 0x004F29CC;
+	__asm        jne    _Tb6;
 // LINE 1947:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -4692,8 +4832,9 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        call   0x004D2034;
 	__asm        add    esp, 8;
 // LINE 1949:
-	__asm        jmp    near ptr 0x004F29E5;
+	__asm        jmp    _Tcf;
 // LINE 1951:
+_Tb6:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x24;
@@ -4703,8 +4844,10 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        call   0x004D201C;
 	__asm        add    esp, 8;
 // LINE 1954:
-	__asm        jmp    near ptr 0x004F2A2F;
+_Tcf:
+	__asm        jmp    _T119;
 // LINE 1956:
+_Td4:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        push   eax;
 	__asm        call   rand;
@@ -4729,11 +4872,13 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        call   0x004D2004;
 	__asm        add    esp, 8;
 // LINE 1959:
-	__asm        jmp    near ptr 0x004F2EC4;
+_T119:
+	__asm        jmp    _T5ae;
 // LINE 1962:
+_T11e:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F2ABD;
+	__asm        jne    _T1a7;
 // LINE 1964:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0;
@@ -4770,16 +4915,18 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        call   0x004D8C2E;
 	__asm        add    esp, 8;
 // LINE 1970:
-	__asm        jmp    near ptr 0x004F2EC4;
+	__asm        jmp    _T5ae;
 // LINE 1974:
+_T1a7:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F2AD8;
+	__asm        je     _T1c2;
 // LINE 1975:
 	__asm        mov    eax, ds:[0x607290];
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x11C], eax;
 // LINE 1978:
+_T1c2:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
@@ -4794,10 +4941,10 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    tempfix2, 0;
 // LINE 1982:
 	__asm        cmp    tempfix, 0;
-	__asm        jle    near ptr 0x004F2B48;
+	__asm        jle    _T232;
 
 	__asm        cmp    tempfix, 0x960000;
-	__asm        jge    near ptr 0x004F2B48;
+	__asm        jge    _T232;
 // LINE 1984:
 	__asm        push   0x960000;
 	__asm        mov    eax, 0x960000;
@@ -4816,26 +4963,28 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 	__asm        mov    tempfix2, eax;
 // LINE 1989:
+_T232:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004F2BA6;
+	__asm        jne    _T290;
 // LINE 1991:
 	__asm        mov    eax, max_pitch;
 	__asm        add    eax, tempfix2;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x11C];
-	__asm        jge    near ptr 0x004F2B79;
+	__asm        jge    _T263;
 // LINE 1992:
 	__asm        mov    eax, max_pitch;
 	__asm        add    eax, tempfix2;
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 1993:
+_T263:
 	__asm        mov    eax, max_pitch;
 	__asm        neg    eax;
 	__asm        sub    eax, tempfix2;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x11C];
-	__asm        jle    near ptr 0x004F2BA1;
+	__asm        jle    _T28b;
 // LINE 1994:
 	__asm        mov    eax, max_pitch;
 	__asm        neg    eax;
@@ -4843,8 +4992,10 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 1996:
-	__asm        jmp    near ptr 0x004F2C12;
+_T28b:
+	__asm        jmp    _T2fc;
 // LINE 1998:
+_T290:
 	__asm        mov    eax, max_pitch;
 	__asm        sar    eax, 1;
 	__asm        mov    ecx, tempfix2;
@@ -4852,7 +5003,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x11C];
-	__asm        jge    near ptr 0x004F2BDA;
+	__asm        jge    _T2c4;
 // LINE 1999:
 	__asm        mov    eax, max_pitch;
 	__asm        sar    eax, 1;
@@ -4862,6 +5013,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 2000:
+_T2c4:
 	__asm        mov    eax, max_pitch;
 	__asm        sar    eax, 1;
 	__asm        neg    eax;
@@ -4870,7 +5022,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        sub    eax, ecx;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x11C];
-	__asm        jle    near ptr 0x004F2C12;
+	__asm        jle    _T2fc;
 // LINE 2001:
 	__asm        mov    eax, max_pitch;
 	__asm        sar    eax, 1;
@@ -4881,23 +5033,25 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x11C], eax;
 // LINE 2020:
+_T2fc:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, htd;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+0x114], ecx;
-	__asm        jle    near ptr 0x004F2C36;
+	__asm        jle    _T320;
 // LINE 2021:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 2022:
+_T320:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0xC];
 	__asm        neg    eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x114];
-	__asm        jle    near ptr 0x004F2C5E;
+	__asm        jle    _T348;
 // LINE 2023:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0xC];
@@ -4905,74 +5059,81 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 2024:
+_T348:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
 	__asm        mov    tempfix, eax;
 // LINE 2025:
 	__asm        cmp    tempfix, 0;
-	__asm        jge    near ptr 0x004F2C7C;
+	__asm        jge    _T366;
 // LINE 2026:
 	__asm        mov    eax, tempfix;
 	__asm        neg    eax;
 	__asm        mov    tempfix, eax;
 // LINE 2027:
+_T366:
 	__asm        add    tempfix, 0x12C0000;
 // LINE 2028:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x114], 0;
-	__asm        jle    near ptr 0x004F2CB6;
+	__asm        jle    _T3a0;
 // LINE 2030:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, tempfix;
 	__asm        cmp    [eax+0x114], ecx;
-	__asm        jle    near ptr 0x004F2CB1;
+	__asm        jle    _T39b;
 // LINE 2031:
 	__asm        mov    eax, tempfix;
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 2033:
-	__asm        jmp    near ptr 0x004F2CE8;
+_T39b:
+	__asm        jmp    _T3d2;
 
+_T3a0:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x114], 0;
-	__asm        jge    near ptr 0x004F2CE8;
+	__asm        jge    _T3d2;
 // LINE 2035:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, tempfix;
 	__asm        neg    ecx;
 	__asm        cmp    [eax+0x114], ecx;
-	__asm        jge    near ptr 0x004F2CE8;
+	__asm        jge    _T3d2;
 // LINE 2036:
 	__asm        mov    eax, tempfix;
 	__asm        neg    eax;
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 2040:
+_T3d2:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F2D03;
+	__asm        je     _T3ed;
 // LINE 2041:
 	__asm        mov    eax, ds:[0x607268];
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x118], eax;
 // LINE 2044:
+_T3ed:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, htd;
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x118], ecx;
-	__asm        jle    near ptr 0x004F2D27;
+	__asm        jle    _T411;
 // LINE 2045:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x118], eax;
 // LINE 2046:
+_T411:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x10];
 	__asm        neg    eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x118];
-	__asm        jle    near ptr 0x004F2D4F;
+	__asm        jle    _T439;
 // LINE 2047:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x10];
@@ -4980,31 +5141,34 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x118], eax;
 // LINE 2051:
+_T439:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F2D6A;
+	__asm        je     _T454;
 // LINE 2052:
 	__asm        mov    eax, ds:[0x6071F0];
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x120], eax;
 // LINE 2055:
+_T454:
 	__asm        mov    eax, htd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x120];
 	__asm        cmp    [eax+0x18], ecx;
-	__asm        jge    near ptr 0x004F2D8E;
+	__asm        jge    _T478;
 // LINE 2056:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x120], eax;
 // LINE 2057:
+_T478:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x18];
 	__asm        neg    eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x120];
-	__asm        jle    near ptr 0x004F2DB6;
+	__asm        jle    _T4a0;
 // LINE 2058:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x18];
@@ -5012,6 +5176,7 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x120], eax;
 // LINE 2060:
+_T4a0:
 	__asm        push   0xF0000;
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        push   eax;
@@ -5028,51 +5193,56 @@ void S3HeliYawPitchRollSlide(struct _HELI_DATA* hd) {
 // LINE 2062:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x10C], 0xE100000;
-	__asm        jle    near ptr 0x004F2E0A;
+	__asm        jle    _T4f4;
 // LINE 2063:
 	__asm        mov    eax, hd;
 	__asm        sub    dword ptr [eax+0x10C], 0xE100000;
 // LINE 2064:
-	__asm        jmp    near ptr 0x004F2E27;
+	__asm        jmp    _T511;
 
+_T4f4:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
-	__asm        jge    near ptr 0x004F2E27;
+	__asm        jge    _T511;
 // LINE 2065:
 	__asm        mov    eax, hd;
 	__asm        add    dword ptr [eax+0x10C], 0xE100000;
 // LINE 2068:
+_T511:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x114];
 	__asm        mov    tempfix, eax;
 // LINE 2069:
 	__asm        cmp    tempfix, 0;
-	__asm        jge    near ptr 0x004F2E45;
+	__asm        jge    _T52f;
 // LINE 2070:
 	__asm        mov    eax, tempfix;
 	__asm        neg    eax;
 	__asm        mov    tempfix, eax;
 // LINE 2071:
+_T52f:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    tempfix2, eax;
 // LINE 2072:
 	__asm        cmp    tempfix2, 0;
-	__asm        jge    near ptr 0x004F2E63;
+	__asm        jge    _T54d;
 // LINE 2073:
 	__asm        mov    eax, tempfix2;
 	__asm        neg    eax;
 	__asm        mov    tempfix2, eax;
 // LINE 2074:
+_T54d:
 	__asm        mov    eax, tempfix;
 	__asm        cmp    tempfix2, eax;
-	__asm        jle    near ptr 0x004F2E81;
+	__asm        jle    _T56b;
 // LINE 2075:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x118];
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x114], eax;
 // LINE 2077:
+_T56b:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x114];
 	__asm        push   eax;
@@ -5110,7 +5280,7 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 // LINE 2093:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F2F0A;
+	__asm        jne    _T41;
 // LINE 2095:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x130], 0;
@@ -5118,11 +5288,12 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x134], 0;
 // LINE 2097:
-	__asm        jmp    near ptr 0x004F32F9;
+	__asm        jmp    _T430;
 // LINE 2101:
+_T41:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        jne    near ptr 0x004F2F8F;
+	__asm        jne    _Tc6;
 // LINE 2103:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
@@ -5158,8 +5329,9 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2106:
-	__asm        jmp    near ptr 0x004F32F9;
+	__asm        jmp    _T430;
 // LINE 2110:
+_Tc6:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x24;
@@ -5182,7 +5354,7 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 // LINE 2116:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
-	__asm        jle    near ptr 0x004F300D;
+	__asm        jle    _T144;
 // LINE 2118:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4768];
@@ -5196,16 +5368,17 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x128], eax;
 // LINE 2121:
-	__asm        jmp    near ptr 0x004F310D;
+	__asm        jmp    _T244;
 
+_T144:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004F3091;
+	__asm        jne    _T1c8;
 // LINE 2123:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x11C];
 	__asm        cmp    [eax+0x128], ecx;
-	__asm        jge    near ptr 0x004F3050;
+	__asm        jge    _T187;
 // LINE 2124:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -5215,11 +5388,12 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x128], eax;
 // LINE 2125:
+_T187:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x11C];
 	__asm        cmp    [eax+0x128], ecx;
-	__asm        jle    near ptr 0x004F308C;
+	__asm        jle    _T1c3;
 // LINE 2126:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
@@ -5232,14 +5406,16 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0x128], eax;
 // LINE 2128:
-	__asm        jmp    near ptr 0x004F310D;
+_T1c3:
+	__asm        jmp    _T244;
 // LINE 2130:
+_T1c8:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
 	__asm        add    eax, eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x128];
-	__asm        jle    near ptr 0x004F30CB;
+	__asm        jle    _T202;
 // LINE 2131:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -5250,12 +5426,13 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x128], eax;
 // LINE 2132:
+_T202:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
 	__asm        add    eax, eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x128];
-	__asm        jge    near ptr 0x004F310D;
+	__asm        jge    _T244;
 // LINE 2133:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
@@ -5270,13 +5447,15 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0x128], eax;
 // LINE 2136:
+_T244:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F3127;
+	__asm        jne    _T25e;
 // LINE 2138:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x128], 0;
 // LINE 2142:
+_T25e:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
 	__asm        sub    eax, origFwdSpeed;
@@ -5288,27 +5467,28 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        mov    velocity, eax;
 // LINE 2147:
 	__asm        cmp    dword ptr ds:[0x5C3808], 0;
-	__asm        je     near ptr 0x004F31A1;
+	__asm        je     _T2d8;
 
 	__asm        push   1;
 	__asm        call   IsModifierSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F31A1;
+	__asm        je     _T2d8;
 
 	__asm        push   8;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F318D;
+	__asm        jne    _T2c4;
 
 	__asm        push   8;
 	__asm        push   9;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F31A1;
+	__asm        je     _T2d8;
 // LINE 2149:
+_T2c4:
 	__asm        push   0xA0000;
 	__asm        mov    eax, velocity;
 	__asm        push   eax;
@@ -5316,6 +5496,7 @@ void S3HeliMoveXZ(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 	__asm        mov    velocity, eax;
 // LINE 2152:
+_T2d8:
 	__asm        mov    eax, velocity;
 	__asm        push   eax;
 	__asm        call   AdjustPersonBeamingSlices;
@@ -5473,22 +5654,24 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    texid, edx;
 // LINE 2197:
 	__asm        cmp    texid, 0;
-	__asm        jl     near ptr 0x004F339A;
+	__asm        jl     _T9c;
 
 	__asm        cmp    texid, 5;
-	__asm        jl     near ptr 0x004F33AE;
+	__asm        jl     _Tb0;
 
+_T9c:
 	__asm        cmp    texid, 5;
-	__asm        jl     near ptr 0x004F33E5;
+	__asm        jl     _Te7;
 
 	__asm        cmp    texid, 0xA;
-	__asm        jge    near ptr 0x004F33E5;
+	__asm        jge    _Te7;
 
+_Tb0:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        cmp    [eax+0x150], ecx;
-	__asm        jl     near ptr 0x004F33E5;
+	__asm        jl     _Te7;
 // LINE 2199:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x13C], 0;
@@ -5496,24 +5679,28 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x174], 1;
 // LINE 2202:
-	__asm        jmp    near ptr 0x004F33F2;
+	__asm        jmp    _Tf4;
 // LINE 2204:
+_Te7:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x174], 0;
 // LINE 2208:
+_Tf4:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        je     near ptr 0x004F340C;
+	__asm        je     _T10e;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F3411;
+	__asm        jne    _T113;
 // LINE 2209:
-	__asm        jmp    near ptr 0x004F3B7D;
+_T10e:
+	__asm        jmp    _T87f;
 // LINE 2213:
+_T113:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jle    near ptr 0x004F358A;
+	__asm        jle    _T28c;
 // LINE 2216:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x328];
@@ -5529,33 +5716,35 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, yrate;
 	__asm        cmp    [eax+0x124], ecx;
-	__asm        jle    near ptr 0x004F345B;
+	__asm        jle    _T15d;
 // LINE 2220:
 	__asm        mov    eax, yrate;
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x124], eax;
 // LINE 2225:
+_T15d:
 	__asm        cmp    dword ptr ds:[0x5C3808], 0;
-	__asm        je     near ptr 0x004F34BE;
+	__asm        je     _T1c0;
 
 	__asm        push   1;
 	__asm        call   IsModifierSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F34BE;
+	__asm        je     _T1c0;
 
 	__asm        push   0xC;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F349E;
+	__asm        jne    _T1a0;
 
 	__asm        push   0xD;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F34BE;
+	__asm        je     _T1c0;
 // LINE 2227:
+_T1a0:
 	__asm        push   0xA0000;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x124];
@@ -5565,25 +5754,28 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x124], eax;
 // LINE 2231:
+_T1c0:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x12C;
-	__asm        jge    near ptr 0x004F3504;
+	__asm        jge    _T206;
 // LINE 2233:
 	__asm        mov    eax, hd;
 	__asm        add    dword ptr [eax+0x148], 4;
 // LINE 2235:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F34F2;
+	__asm        je     _T1f4;
 // LINE 2237:
 	__asm        mov    eax, hd;
 	__asm        add    dword ptr [eax+0x148], 0x14;
 // LINE 2240:
+_T1f4:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2242:
-	__asm        jmp    near ptr 0x004F3557;
+	__asm        jmp    _T259;
 // LINE 2245:
+_T206:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        add    eax, eax;
 	__asm        push   eax;
@@ -5614,22 +5806,25 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x124], eax;
 // LINE 2251:
+_T259:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, hd;
 	__asm        sub    eax, [ecx+0x150];
 	__asm        cmp    eax, ds:[0x5B48F4];
-	__asm        jle    near ptr 0x004F3585;
+	__asm        jle    _T287;
 // LINE 2252:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2254:
-	__asm        jmp    near ptr 0x004F3804;
+_T287:
+	__asm        jmp    _T506;
 
+_T28c:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jge    near ptr 0x004F3709;
+	__asm        jge    _T40b;
 // LINE 2261:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, ds:[0x5B4768];
@@ -5649,7 +5844,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        neg    eax;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0x124];
-	__asm        jle    near ptr 0x004F35E8;
+	__asm        jle    _T2ea;
 // LINE 2265:
 	__asm        mov    eax, ds:[0x5B48D0];
 	__asm        shl    eax, 2;
@@ -5657,17 +5852,18 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x124], eax;
 // LINE 2272:
+_T2ea:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jne    near ptr 0x004F364F;
+	__asm        jne    _T351;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x128], 0;
-	__asm        jle    near ptr 0x004F364F;
+	__asm        jle    _T351;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x12C], 0;
-	__asm        jge    near ptr 0x004F364F;
+	__asm        jge    _T351;
 // LINE 2274:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
@@ -5680,32 +5876,34 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2275:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
-	__asm        jle    near ptr 0x004F364F;
+	__asm        jle    _T351;
 
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2280:
+_T351:
 	__asm        cmp    dword ptr ds:[0x5C3808], 0;
-	__asm        je     near ptr 0x004F36B4;
+	__asm        je     _T3b6;
 
 	__asm        push   1;
 	__asm        call   IsModifierSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F36B4;
+	__asm        je     _T3b6;
 
 	__asm        push   0xC;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F3692;
+	__asm        jne    _T394;
 
 	__asm        push   0xD;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004F36B4;
+	__asm        je     _T3b6;
 // LINE 2282:
+_T394:
 	__asm        push   0xA0000;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x124];
@@ -5716,32 +5914,36 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x124], eax;
 // LINE 2287:
+_T3b6:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    near ptr 0x004F36F7;
+	__asm        jle    _T3f9;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    near ptr 0x004F36F7;
+	__asm        jle    _T3f9;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F3704;
+	__asm        jne    _T406;
 // LINE 2289:
+_T3f9:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2292:
-	__asm        jmp    near ptr 0x004F3804;
+_T406:
+	__asm        jmp    _T506;
 // LINE 2295:
+_T40b:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
-	__asm        jle    near ptr 0x004F3761;
+	__asm        jle    _T463;
 // LINE 2297:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, hd;
@@ -5757,16 +5959,18 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2298:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
-	__asm        jge    near ptr 0x004F375C;
+	__asm        jge    _T45e;
 
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2300:
-	__asm        jmp    near ptr 0x004F37B4;
+_T45e:
+	__asm        jmp    _T4b6;
 
+_T463:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
-	__asm        jge    near ptr 0x004F37B4;
+	__asm        jge    _T4b6;
 // LINE 2302:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, hd;
@@ -5782,32 +5986,35 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2303:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
-	__asm        jle    near ptr 0x004F37B4;
+	__asm        jle    _T4b6;
 
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2308:
+_T4b6:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    near ptr 0x004F37F7;
+	__asm        jle    _T4f9;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    near ptr 0x004F37F7;
+	__asm        jle    _T4f9;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F3804;
+	__asm        jne    _T506;
 // LINE 2309:
+_T4f9:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x124], 0;
 // LINE 2313:
+_T506:
 	__asm        mov    eax, ds:[0x5B4768];
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -5829,17 +6036,17 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 // LINE 2316:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F38C9;
+	__asm        jne    _T5cb;
 // LINE 2318:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jle    near ptr 0x004F38C4;
+	__asm        jle    _T5c6;
 // LINE 2321:
 	__asm        push   3;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F388B;
+	__asm        jne    _T58d;
 // LINE 2322:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -5850,27 +6057,32 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2324:
+_T58d:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F38BA;
+	__asm        je     _T5bc;
 // LINE 2326:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x12C;
-	__asm        jl     near ptr 0x004F38B5;
+	__asm        jl     _T5b7;
 // LINE 2327:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 1;
 // LINE 2329:
-	__asm        jmp    near ptr 0x004F38C4;
+_T5b7:
+	__asm        jmp    _T5c6;
 // LINE 2330:
+_T5bc:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 4;
 // LINE 2335:
-	__asm        jmp    near ptr 0x004F3B7D;
+_T5c6:
+	__asm        jmp    _T87f;
 // LINE 2340:
+_T5cb:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x13C], 1;
-	__asm        jne    near ptr 0x004F3A0D;
+	__asm        jne    _T70f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -5878,7 +6090,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0x150];
 	__asm        add    ecx, 0x10000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F3A0D;
+	__asm        jge    _T70f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -5886,7 +6098,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C4];
-	__asm        jg     near ptr 0x004F3A0D;
+	__asm        jg     _T70f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x124];
@@ -5894,7 +6106,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C0];
-	__asm        jg     near ptr 0x004F3A0D;
+	__asm        jg     _T70f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x118];
@@ -5902,7 +6114,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C8];
-	__asm        jg     near ptr 0x004F3A0D;
+	__asm        jg     _T70f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
@@ -5910,23 +6122,23 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48CC];
-	__asm        jg     near ptr 0x004F3A0D;
+	__asm        jg     _T70f;
 // LINE 2342:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 4;
-	__asm        je     near ptr 0x004F3A08;
+	__asm        je     _T70a;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004F3A08;
+	__asm        je     _T70a;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        je     near ptr 0x004F3A08;
+	__asm        je     _T70a;
 // LINE 2345:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jle    near ptr 0x004F39B7;
+	__asm        jle    _T6b9;
 // LINE 2346:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -5937,8 +6149,9 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2347:
-	__asm        jmp    near ptr 0x004F39D0;
+	__asm        jmp    _T6d2;
 // LINE 2348:
+_T6b9:
 	__asm        push   0;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -5948,6 +6161,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2350:
+_T6d2:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x150];
 	__asm        add    eax, 0x13333;
@@ -5965,11 +6179,13 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0xD0], eax;
 // LINE 2359:
-	__asm        jmp    near ptr 0x004F3B7D;
+_T70a:
+	__asm        jmp    _T87f;
 // LINE 2366:
+_T70f:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x13C], 1;
-	__asm        jne    near ptr 0x004F3B7D;
+	__asm        jne    _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -5977,7 +6193,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        add    ecx, 0x10000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F3B7D;
+	__asm        jge    _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -5985,11 +6201,11 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        sub    ecx, 0x10000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    near ptr 0x004F3B7D;
+	__asm        jle    _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
-	__asm        jg     near ptr 0x004F3B7D;
+	__asm        jg     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -5997,7 +6213,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C4];
-	__asm        jg     near ptr 0x004F3B7D;
+	__asm        jg     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x124];
@@ -6005,7 +6221,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C0];
-	__asm        jg     near ptr 0x004F3B7D;
+	__asm        jg     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x118];
@@ -6013,7 +6229,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48C8];
-	__asm        jg     near ptr 0x004F3B7D;
+	__asm        jg     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
@@ -6021,23 +6237,23 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, ds:[0x5B48CC];
-	__asm        jg     near ptr 0x004F3B7D;
+	__asm        jg     _T87f;
 // LINE 2368:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 4;
-	__asm        je     near ptr 0x004F3B7D;
+	__asm        je     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004F3B7D;
+	__asm        je     _T87f;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        je     near ptr 0x004F3B7D;
+	__asm        je     _T87f;
 // LINE 2371:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jle    near ptr 0x004F3B2C;
+	__asm        jle    _T82e;
 // LINE 2372:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -6048,8 +6264,9 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2373:
-	__asm        jmp    near ptr 0x004F3B45;
+	__asm        jmp    _T847;
 // LINE 2374:
+_T82e:
 	__asm        push   0;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -6059,6 +6276,7 @@ void S3HeliMoveY(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2376:
+_T847:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 2377:
@@ -6093,45 +6311,51 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 // LINE 2406:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F3BB9;
+	__asm        jne    _T37;
 // LINE 2409:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0;
-	__asm        jle    near ptr 0x004F3BB4;
+	__asm        jle    _T32;
 
 	__asm        mov    eax, hd;
 	__asm        dec    dword ptr [eax+0x148];
 // LINE 2411:
-	__asm        jmp    near ptr 0x004F3C02;
+_T32:
+	__asm        jmp    _T80;
 
+_T37:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        jne    near ptr 0x004F3BE5;
+	__asm        jne    _T63;
 // LINE 2414:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0xA;
-	__asm        jle    near ptr 0x004F3BE0;
+	__asm        jle    _T5e;
 
 	__asm        mov    eax, hd;
 	__asm        sub    dword ptr [eax+0x148], 0xA;
 // LINE 2416:
-	__asm        jmp    near ptr 0x004F3C02;
+_T5e:
+	__asm        jmp    _T80;
 // LINE 2419:
+_T63:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x168;
-	__asm        jge    near ptr 0x004F3C02;
+	__asm        jge    _T80;
 // LINE 2420:
 	__asm        mov    eax, hd;
 	__asm        add    dword ptr [eax+0x148], 3;
 // LINE 2423:
+_T80:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0xFA;
-	__asm        jle    near ptr 0x004F3C21;
+	__asm        jle    _T9f;
 // LINE 2425:
 	__asm        mov    tempfix, 0x1870000;
 // LINE 2427:
-	__asm        jmp    near ptr 0x004F3C53;
+	__asm        jmp    _Td1;
 // LINE 2429:
+_T9f:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x148];
 	__asm        shl    eax, 0x10;
@@ -6150,6 +6374,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        add    eax, eax;
 	__asm        mov    tempfix2, eax;
 // LINE 2434:
+_Td1:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0x20;
 	__asm        push   eax;
@@ -6271,7 +6496,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 // LINE 2455:
 	__asm        mov    eax, htd;
 	__asm        test   byte ptr [eax+0x3C], 1;
-	__asm        je     near ptr 0x004F3DDF;
+	__asm        je     _T25d;
 // LINE 2457:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -6281,8 +6506,9 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 2459:
-	__asm        jmp    near ptr 0x004F3E16;
+	__asm        jmp    _T294;
 // LINE 2461:
+_T25d:
 	__asm        mov    eax, hd;
 	__asm        mov    esi, [eax+0xB0];
 	__asm        lea    edi, pos.matrix[0][0];
@@ -6300,13 +6526,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 2466:
+_T294:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x12C;
-	__asm        jge    near ptr 0x004F3F70;
+	__asm        jge    _T3ee;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x144], 1;
-	__asm        jne    near ptr 0x004F3F70;
+	__asm        jne    _T3ee;
 // LINE 2468:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -6326,12 +6553,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        mov    face, eax;
 // LINE 2470:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x004F3E79;
+	__asm        jmp    _T2f7;
 
+_T2f4:
 	__asm        inc    count;
+_T2f7:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004F3ECE;
+	__asm        jle    _T34c;
 // LINE 2472:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -6341,7 +6570,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 // LINE 2473:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x004F3EBA;
+	__asm        jne    _T338;
 // LINE 2475:
 	__asm        mov    eax, finfo.Attribute;
 	__asm        or     eax, 0x80000000;
@@ -6354,14 +6583,16 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2478:
+_T338:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2479:
-	__asm        jmp    near ptr 0x004F3E76;
+	__asm        jmp    _T2f4;
 // LINE 2481:
+_T34c:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -6380,12 +6611,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        mov    face, eax;
 // LINE 2483:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x004F3F0E;
+	__asm        jmp    _T38c;
 
+_T389:
 	__asm        inc    count;
+_T38c:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004F3F63;
+	__asm        jle    _T3e1;
 // LINE 2485:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -6395,7 +6628,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 // LINE 2486:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x004F3F4F;
+	__asm        jne    _T3cd;
 // LINE 2488:
 	__asm        mov    eax, finfo.Attribute;
 	__asm        or     eax, 0x80000000;
@@ -6408,24 +6641,27 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2491:
+_T3cd:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2492:
-	__asm        jmp    near ptr 0x004F3F0B;
+	__asm        jmp    _T389;
 // LINE 2493:
+_T3e1:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x144], 0;
 // LINE 2496:
+_T3ee:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x12C;
-	__asm        jl     near ptr 0x004F40C2;
+	__asm        jl     _T540;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x144], 0;
-	__asm        jne    near ptr 0x004F40C2;
+	__asm        jne    _T540;
 // LINE 2498:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -6445,12 +6681,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        mov    face, eax;
 // LINE 2500:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x004F3FD3;
+	__asm        jmp    _T451;
 
+_T44e:
 	__asm        inc    count;
+_T451:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004F4024;
+	__asm        jle    _T4a2;
 // LINE 2502:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -6460,7 +6698,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 // LINE 2503:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x004F4010;
+	__asm        jne    _T48e;
 // LINE 2505:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 2506:
@@ -6471,14 +6709,16 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2509:
+_T48e:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2510:
-	__asm        jmp    near ptr 0x004F3FD0;
+	__asm        jmp    _T44e;
 // LINE 2512:
+_T4a2:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -6497,12 +6737,14 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        mov    face, eax;
 // LINE 2514:
 	__asm        mov    count, 0;
-	__asm        jmp    near ptr 0x004F4064;
+	__asm        jmp    _T4e2;
 
+_T4df:
 	__asm        inc    count;
+_T4e2:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004F40B5;
+	__asm        jle    _T533;
 // LINE 2516:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -6512,7 +6754,7 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        add    esp, 8;
 // LINE 2517:
 	__asm        cmp    finfo.Plotter, 0xB;
-	__asm        jne    near ptr 0x004F40A1;
+	__asm        jne    _T51f;
 // LINE 2519:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 2520:
@@ -6523,14 +6765,16 @@ void S3HeliMainRotor(struct _HELI_DATA* hd) {
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 2522:
+_T51f:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2523:
-	__asm        jmp    near ptr 0x004F4061;
+	__asm        jmp    _T4df;
 // LINE 2524:
+_T533:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x144], 1;
 // LINE 2526:
@@ -6557,17 +6801,17 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2545:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B8], 0;
-	__asm        jge    near ptr 0x004F41EB;
+	__asm        jge    _T124;
 // LINE 2548:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F412F;
+	__asm        je     _T68;
 
 	__asm        push   0x15;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F412F;
+	__asm        jne    _T68;
 // LINE 2550:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -6578,12 +6822,13 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2553:
+_T68:
 	__asm        mov    eax, hd;
 	__asm        dec    dword ptr [eax+0x1AC];
 // LINE 2555:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x10;
-	__asm        jne    near ptr 0x004F41E6;
+	__asm        jne    _T11f;
 // LINE 2557:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -6595,7 +6840,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2558:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B8], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004F41AD;
+	__asm        jne    _Te6;
 // LINE 2560:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B0], 0;
@@ -6614,8 +6859,9 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 2564:
-	__asm        jmp    near ptr 0x004F41E6;
+	__asm        jmp    _T11f;
 // LINE 2566:
+_Te6:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B4], 0;
 // LINE 2567:
@@ -6633,21 +6879,23 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 2572:
-	__asm        jmp    near ptr 0x004F42E7;
+_T11f:
+	__asm        jmp    _T220;
 
+_T124:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B8], 0;
-	__asm        jle    near ptr 0x004F42BD;
+	__asm        jle    _T1f6;
 // LINE 2575:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F4242;
+	__asm        je     _T17b;
 // LINE 2577:
 	__asm        push   0x15;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F4233;
+	__asm        jne    _T16c;
 // LINE 2579:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -6658,17 +6906,19 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2581:
+_T16c:
 	__asm        push   0xA0;
 	__asm        push   0x15;
 	__asm        call   S3SoundAdjFreq;
 	__asm        add    esp, 8;
 // LINE 2584:
+_T17b:
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0x1AC];
 // LINE 2588:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jne    near ptr 0x004F42B8;
+	__asm        jne    _T1f1;
 // LINE 2590:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -6688,32 +6938,36 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2592:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B8], 1;
-	__asm        jne    near ptr 0x004F42AB;
+	__asm        jne    _T1e4;
 // LINE 2594:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B0], 1;
 // LINE 2596:
-	__asm        jmp    near ptr 0x004F42B8;
+	__asm        jmp    _T1f1;
 // LINE 2598:
+_T1e4:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B4], 1;
 // LINE 2603:
-	__asm        jmp    near ptr 0x004F42E7;
+_T1f1:
+	__asm        jmp    _T220;
 
+_T1f6:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F42E7;
+	__asm        je     _T220;
 // LINE 2606:
 	__asm        push   0x15;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F42E7;
+	__asm        jne    _T220;
 // LINE 2607:
 	__asm        push   0x15;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 2612:
+_T220:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
@@ -6729,7 +6983,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2615:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 0;
-	__asm        jne    near ptr 0x004F436A;
+	__asm        jne    _T2a3;
 // LINE 2617:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -6756,16 +7010,18 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        mov    ecx, [ecx+0xB8];
 	__asm        add    [ecx+0x20], eax;
 // LINE 2625:
+_T2a3:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 1;
-	__asm        jne    near ptr 0x004F438F;
+	__asm        jne    _T2c8;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B4], 1;
-	__asm        jne    near ptr 0x004F438F;
+	__asm        jne    _T2c8;
 // LINE 2626:
-	__asm        jmp    near ptr 0x004F4761;
+	__asm        jmp    _T69a;
 // LINE 2628:
+_T2c8:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xB8];
 	__asm        add    eax, 0x18;
@@ -6865,11 +7121,11 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        mov    ecx, galt;
 	__asm        add    ecx, 0x20000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jg     near ptr 0x004F460F;
+	__asm        jg     _T548;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F460F;
+	__asm        jne    _T548;
 // LINE 2651:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xBC];
@@ -6895,20 +7151,22 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2655:
 	__asm        movsx  eax, texid;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x004F4542;
+	__asm        jl     _T47b;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 5;
-	__asm        jl     near ptr 0x004F455C;
+	__asm        jl     _T495;
 
+_T47b:
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 5;
-	__asm        jl     near ptr 0x004F460F;
+	__asm        jl     _T548;
 
 	__asm        movsx  eax, texid;
 	__asm        cmp    eax, 0xA;
-	__asm        jge    near ptr 0x004F460F;
+	__asm        jge    _T548;
 // LINE 2657:
+_T495:
 	__asm        mov    eax, ds:[0x5B48D4];
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0x1C0], eax;
@@ -6917,7 +7175,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0x1C0];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004F45AE;
+	__asm        jge    _T4e7;
 // LINE 2660:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+8];
@@ -6934,13 +7192,14 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2663:
-	__asm        jmp    near ptr 0x004F460F;
+	__asm        jmp    _T548;
 // LINE 2666:
+_T4e7:
 	__asm        push   0xA;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F45D9;
+	__asm        jne    _T512;
 // LINE 2667:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -6951,6 +7210,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2669:
+_T512:
 	__asm        push   8;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xBC];
@@ -6971,6 +7231,7 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2675:
+_T548:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0x184;
 	__asm        mov    ecx, hd;
@@ -7024,11 +7285,12 @@ void S3HeliRopeAndBucket(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 // LINE 2682:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1A8], 0;
-	__asm        jge    near ptr 0x004F46DA;
+	__asm        jge    _T613;
 // LINE 2683:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1A8], 0;
 // LINE 2684:
+_T613:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1A8];
 	__asm        imul   eax, ds:[0x5B48E4];
@@ -7085,13 +7347,14 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 // LINE 2706:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
-	__asm        jne    near ptr 0x004F4784;
+	__asm        jne    _T1e;
 // LINE 2707:
-	__asm        jmp    near ptr 0x004F48E7;
+	__asm        jmp    _T181;
 // LINE 2710:
+_T1e:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1BC], 1;
-	__asm        jne    near ptr 0x004F48E2;
+	__asm        jne    _T17c;
 // LINE 2712:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B48D8];
@@ -7101,11 +7364,12 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 // LINE 2713:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
-	__asm        jge    near ptr 0x004F47C4;
+	__asm        jge    _T5e;
 // LINE 2714:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1C0], 0;
 // LINE 2716:
+_T5e:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x190];
 	__asm        mov    ecx, hd;
@@ -7211,7 +7475,8 @@ void S3HeliDropWater(struct _HELI_DATA* hd, int32_t alt, struct _CELL_INFO* cptr
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 2742:
-	__asm        jmp    near ptr 0x004F48E7;
+_T17c:
+	__asm        jmp    _T181;
 // LINE 2744:
 }
 
@@ -7230,15 +7495,15 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	__asm        mov    eax, [eax+0x1C];
 	__asm        sub    eax, alt;
 	__asm        cmp    eax, 0x140000;
-	__asm        jge    near ptr 0x004F4A5F;
+	__asm        jge    _T173;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x118;
-	__asm        jle    near ptr 0x004F4A5F;
+	__asm        jle    _T173;
 // LINE 2763:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F4948;
+	__asm        jne    _T5c;
 // LINE 2764:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x148];
@@ -7246,8 +7511,9 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	__asm        sar    eax, 2;
 	__asm        mov    num, eax;
 // LINE 2765:
-	__asm        jmp    near ptr 0x004F4967;
+	__asm        jmp    _T7b;
 // LINE 2766:
+_T5c:
 	__asm        mov    eax, 0x14;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -7258,11 +7524,13 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	__asm        sar    eax, 1;
 	__asm        mov    num, eax;
 // LINE 2768:
+_T7b:
 	__asm        cmp    num, 0;
-	__asm        jge    near ptr 0x004F4976;
+	__asm        jge    _T8a;
 
-	__asm        jmp    near ptr 0x004F4A64;
+	__asm        jmp    _T178;
 // LINE 2770:
+_T8a:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
@@ -7351,7 +7619,8 @@ void S3HeliSimDust(struct _HELI_DATA* hd, int32_t alt) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 2800:
-	__asm        jmp    near ptr 0x004F4A64;
+_T173:
+	__asm        jmp    _T178;
 // LINE 2802:
 }
 
@@ -7360,28 +7629,31 @@ void NormalizeMapPoints(int32_t * x, int32_t * z) {
 // LINE 2813:
 	__asm        mov    eax, x;
 	__asm        cmp    dword ptr [eax], 0x20000000;
-	__asm        jle    near ptr 0x004F4A87;
+	__asm        jle    _T1e;
 // LINE 2814:
 	__asm        mov    eax, x;
 	__asm        sub    dword ptr [eax], 0x40000000;
 // LINE 2815:
+_T1e:
 	__asm        mov    eax, x;
 	__asm        cmp    dword ptr [eax], 0xE0000000;
-	__asm        jge    near ptr 0x004F4A9F;
+	__asm        jge    _T36;
 // LINE 2816:
 	__asm        mov    eax, x;
 	__asm        add    dword ptr [eax], 0x40000000;
 // LINE 2818:
+_T36:
 	__asm        mov    eax, z;
 	__asm        cmp    dword ptr [eax], 0x20000000;
-	__asm        jle    near ptr 0x004F4AB7;
+	__asm        jle    _T4e;
 // LINE 2819:
 	__asm        mov    eax, z;
 	__asm        sub    dword ptr [eax], 0x40000000;
 // LINE 2820:
+_T4e:
 	__asm        mov    eax, z;
 	__asm        cmp    dword ptr [eax], 0xE0000000;
-	__asm        jge    near ptr 0x004F4ACF;
+	__asm        jge    _T66;
 // LINE 2821:
 	__asm        mov    eax, z;
 	__asm        add    dword ptr [eax], 0x40000000;
@@ -7417,6 +7689,7 @@ void NormalizeXZVector(struct Point3d* vector) {
 	__asm        call   0x004D19FC;
 	__asm        add    esp, 0xC;
 // LINE 2847:
+_T42:
 	__asm        mov    eax, vector;
 	__asm        push   eax;
 	__asm        call   MTMagnitude;
@@ -7424,44 +7697,50 @@ void NormalizeXZVector(struct Point3d* vector) {
 	__asm        mov    length, eax;
 // LINE 2848:
 	__asm        cmp    length, 0x10000;
-	__asm        jge    near ptr 0x004F4BFC;
+	__asm        jge    _T128;
 // LINE 2850:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x004F4B69;
+	__asm        jne    _T95;
 // LINE 2852:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jle    near ptr 0x004F4B5A;
+	__asm        jle    _T86;
 // LINE 2853:
 	__asm        mov    eax, vector;
 	__asm        mov    dword ptr [eax+8], 0x10000;
 // LINE 2854:
-	__asm        jmp    near ptr 0x004F4B64;
+	__asm        jmp    _T90;
 // LINE 2855:
+_T86:
 	__asm        mov    eax, vector;
 	__asm        mov    dword ptr [eax+8], 0xFFFF0000;
 // LINE 2857:
-	__asm        jmp    near ptr 0x004F4BFC;
+_T90:
+	__asm        jmp    _T128;
 
+_T95:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x004F4B9F;
+	__asm        jne    _Tcb;
 // LINE 2859:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jle    near ptr 0x004F4B91;
+	__asm        jle    _Tbd;
 // LINE 2860:
 	__asm        mov    eax, vector;
 	__asm        mov    dword ptr [eax], 0x10000;
 // LINE 2861:
-	__asm        jmp    near ptr 0x004F4B9A;
+	__asm        jmp    _Tc6;
 // LINE 2862:
+_Tbd:
 	__asm        mov    eax, vector;
 	__asm        mov    dword ptr [eax], 0xFFFF0000;
 // LINE 2864:
-	__asm        jmp    near ptr 0x004F4BFC;
+_Tc6:
+	__asm        jmp    _T128;
 
+_Tcb:
 	__asm        mov    eax, vector;
 	__asm        mov    eax, [eax];
 	__asm        cdq;
@@ -7474,36 +7753,41 @@ void NormalizeXZVector(struct Point3d* vector) {
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    ecx, eax;
-	__asm        jge    near ptr 0x004F4BDE;
+	__asm        jge    _T10a;
 // LINE 2866:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jle    near ptr 0x004F4BD4;
+	__asm        jle    _T100;
 // LINE 2867:
 	__asm        mov    eax, vector;
 	__asm        inc    dword ptr [eax];
 // LINE 2868:
-	__asm        jmp    near ptr 0x004F4BD9;
+	__asm        jmp    _T105;
 // LINE 2869:
+_T100:
 	__asm        mov    eax, vector;
 	__asm        dec    dword ptr [eax];
 // LINE 2871:
-	__asm        jmp    near ptr 0x004F4BFC;
+_T105:
+	__asm        jmp    _T128;
 // LINE 2873:
+_T10a:
 	__asm        mov    eax, vector;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jle    near ptr 0x004F4BF6;
+	__asm        jle    _T122;
 // LINE 2874:
 	__asm        mov    eax, vector;
 	__asm        inc    dword ptr [eax+8];
 // LINE 2875:
-	__asm        jmp    near ptr 0x004F4BFC;
+	__asm        jmp    _T128;
 // LINE 2876:
+_T122:
 	__asm        mov    eax, vector;
 	__asm        dec    dword ptr [eax+8];
 // LINE 2879:
+_T128:
 	__asm        cmp    length, 0x10000;
-	__asm        jl     near ptr 0x004F4B16;
+	__asm        jl     _T42;
 // LINE 2881:
 }
 
@@ -7549,7 +7833,7 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 // LINE 2910:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
-	__asm        jne    near ptr 0x004F4C6E;
+	__asm        jne    _T60;
 // LINE 2912:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C0];
@@ -7564,6 +7848,7 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	__asm        sar    eax, 0x10;
 	__asm        add    ropeload, eax;
 // LINE 2918:
+_T60:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x130];
 	__asm        mov    absdx, eax;
@@ -7573,32 +7858,36 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	__asm        mov    absdz, eax;
 // LINE 2920:
 	__asm        cmp    absdx, 0;
-	__asm        jge    near ptr 0x004F4C98;
+	__asm        jge    _T8a;
 
 	__asm        mov    eax, absdx;
 	__asm        neg    eax;
 	__asm        mov    absdx, eax;
 // LINE 2921:
+_T8a:
 	__asm        cmp    absdz, 0;
-	__asm        jge    near ptr 0x004F4CAA;
+	__asm        jge    _T9c;
 
 	__asm        mov    eax, absdz;
 	__asm        neg    eax;
 	__asm        mov    absdz, eax;
 // LINE 2924:
+_T9c:
 	__asm        mov    c, 0;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x178];
 	__asm        mov    vert, eax;
-	__asm        jmp    near ptr 0x004F4CC9;
+	__asm        jmp    _Tbb;
 
+_Tb4:
 	__asm        inc    c;
 	__asm        add    vert, 0xC;
+_Tbb:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1AC];
 	__asm        inc    eax;
 	__asm        cmp    eax, c;
-	__asm        jle    near ptr 0x004F4D02;
+	__asm        jle    _Tf4;
 // LINE 2926:
 	__asm        mov    eax, vert;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -7611,8 +7900,9 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	__asm        mov    ecx, vert;
 	__asm        mov    [ecx], eax;
 // LINE 2927:
-	__asm        jmp    near ptr 0x004F4CC2;
+	__asm        jmp    _Tb4;
 // LINE 2930:
+_Tf4:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1AC];
 	__asm        lea    eax, [eax+eax*2];
@@ -7633,13 +7923,15 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	__asm        mov    eax, [eax+0x1AC];
 	__asm        inc    eax;
 	__asm        mov    c, eax;
-	__asm        jmp    near ptr 0x004F4D56;
+	__asm        jmp    _T148;
 
+_T13d:
 	__asm        inc    c;
 	__asm        add    vert, 0xC;
 	__asm        add    pvert, 0xC;
+_T148:
 	__asm        cmp    c, 0x14;
-	__asm        jge    near ptr 0x004F5129;
+	__asm        jge    _T51b;
 // LINE 2934:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -7674,48 +7966,53 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 	__asm        mov    vectorx, eax;
 // LINE 2946:
 	__asm        cmp    distx, 0;
-	__asm        jl     near ptr 0x004F4DD1;
+	__asm        jl     _T1c3;
 // LINE 2947:
 	__asm        mov    eax, distx;
 	__asm        cdq;
 	__asm        idiv   ropeload;
 	__asm        mov    absvectorx, eax;
 // LINE 2948:
-	__asm        jmp    near ptr 0x004F4DDD;
+	__asm        jmp    _T1cf;
 // LINE 2949:
+_T1c3:
 	__asm        mov    eax, distx;
 	__asm        cdq;
 	__asm        idiv   ropeload;
 	__asm        neg    eax;
 	__asm        mov    absvectorx, eax;
 // LINE 2951:
+_T1cf:
 	__asm        cmp    distz, 0;
-	__asm        jl     near ptr 0x004F4DF6;
+	__asm        jl     _T1e8;
 // LINE 2952:
 	__asm        mov    eax, distz;
 	__asm        cdq;
 	__asm        idiv   ropeload;
 	__asm        mov    absvectorz, eax;
 // LINE 2953:
-	__asm        jmp    near ptr 0x004F4E02;
+	__asm        jmp    _T1f4;
 // LINE 2954:
+_T1e8:
 	__asm        mov    eax, distz;
 	__asm        cdq;
 	__asm        idiv   ropeload;
 	__asm        neg    eax;
 	__asm        mov    absvectorz, eax;
 // LINE 2957:
+_T1f4:
 	__asm        mov    eax, absvectorx;
 	__asm        add    eax, absvectorz;
 	__asm        mov    absvectorxz, eax;
 // LINE 2958:
 	__asm        mov    eax, absvectorxz;
 	__asm        cmp    ds:[0x5B4908], eax;
-	__asm        jge    near ptr 0x004F4E22;
+	__asm        jge    _T214;
 // LINE 2959:
 	__asm        mov    eax, ds:[0x5B4908];
 	__asm        mov    absvectorxz, eax;
 // LINE 2961:
+_T214:
 	__asm        mov    eax, pvert;
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, ds:[0x5B4908];
@@ -7773,8 +8070,9 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 // LINE 2981:
 	__asm        mov    maxobjy, 0;
 // LINE 2982:
+_T2b4:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x004F4F26;
+	__asm        je     _T318;
 // LINE 2984:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+8];
@@ -7803,17 +8101,19 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 // LINE 2986:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
-	__asm        jge    near ptr 0x004F4F19;
+	__asm        jge    _T30b;
 // LINE 2987:
 	__asm        mov    eax, objy;
 	__asm        mov    maxobjy, eax;
 // LINE 2988:
+_T30b:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 2989:
-	__asm        jmp    near ptr 0x004F4EC2;
+	__asm        jmp    _T2b4;
 // LINE 2992:
+_T318:
 	__asm        mov    eax, gralt;
 	__asm        add    eax, maxobjy;
 	__asm        mov    ecx, hd;
@@ -7829,23 +8129,26 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 // LINE 2996:
 	__asm        mov    maxobjy, 0;
 // LINE 2997:
+_T344:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x004F501D;
+	__asm        je     _T40f;
 // LINE 3000:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jne    near ptr 0x004F4F75;
+	__asm        jne    _T367;
 // LINE 3002:
-	__asm        jmp    near ptr 0x004F4FE2;
+	__asm        jmp    _T3d4;
 // LINE 3005:
+_T367:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
-	__asm        je     near ptr 0x004F4F89;
+	__asm        je     _T37b;
 // LINE 3007:
-	__asm        jmp    near ptr 0x004F4FE2;
+	__asm        jmp    _T3d4;
 // LINE 3009:
+_T37b:
 	__asm        mov    eax, ploc.x;
 	__asm        mov    ecx, dyobj;
 	__asm        sub    eax, [ecx+0x18];
@@ -7877,16 +8180,17 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 // LINE 3017:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
-	__asm        jge    near ptr 0x004F4FE2;
+	__asm        jge    _T3d4;
 // LINE 3018:
 	__asm        mov    eax, objy;
 	__asm        mov    maxobjy, eax;
 // LINE 3022:
 next_dyobj:
+_T3d4:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004F5010;
+	__asm        je     _T402;
 // LINE 3024:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
@@ -7901,21 +8205,24 @@ next_dyobj:
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 3026:
-	__asm        jmp    near ptr 0x004F5018;
+	__asm        jmp    _T40a;
 // LINE 3027:
+_T402:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 3028:
-	__asm        jmp    near ptr 0x004F4F52;
+_T40a:
+	__asm        jmp    _T344;
 // LINE 3030:
+_T40f:
 	__asm        mov    eax, maxobjy;
 	__asm        add    alt, eax;
 // LINE 3032:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, alt;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004F50A0;
+	__asm        jge    _T492;
 // LINE 3034:
 	__asm        mov    eax, alt;
 	__asm        mov    ecx, vert;
@@ -7923,7 +8230,7 @@ next_dyobj:
 // LINE 3035:
 	__asm        mov    eax, absdx;
 	__asm        cmp    absvectorx, eax;
-	__asm        jle    near ptr 0x004F5058;
+	__asm        jle    _T44a;
 // LINE 3036:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, vectorx;
@@ -7931,8 +8238,9 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        sub    [ecx], eax;
 // LINE 3037:
-	__asm        jmp    near ptr 0x004F506A;
+	__asm        jmp    _T45c;
 // LINE 3038:
+_T44a:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
 	__asm        sub    eax, [ecx+0x130];
@@ -7940,9 +8248,10 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        sub    [ecx], eax;
 // LINE 3040:
+_T45c:
 	__asm        mov    eax, absvectorz;
 	__asm        cmp    absdz, eax;
-	__asm        jge    near ptr 0x004F5088;
+	__asm        jge    _T47a;
 // LINE 3041:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, vectorz;
@@ -7950,8 +8259,9 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        sub    [ecx+8], eax;
 // LINE 3042:
-	__asm        jmp    near ptr 0x004F509B;
+	__asm        jmp    _T48d;
 // LINE 3043:
+_T47a:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hd;
 	__asm        sub    eax, [ecx+0x134];
@@ -7959,8 +8269,10 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        sub    [ecx+8], eax;
 // LINE 3045:
-	__asm        jmp    near ptr 0x004F50B9;
+_T48d:
+	__asm        jmp    _T4ab;
 // LINE 3047:
+_T492:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, vectorx;
 	__asm        neg    eax;
@@ -7973,6 +8285,7 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        sub    [ecx+8], eax;
 // LINE 3053:
+_T4ab:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, pvert;
@@ -8017,7 +8330,7 @@ next_dyobj:
 	__asm        mov    ecx, vert;
 	__asm        mov    [ecx+8], eax;
 // LINE 3061:
-	__asm        jmp    near ptr 0x004F4D4B;
+	__asm        jmp    _T13d;
 // LINE 3063:
 }
 
@@ -8113,8 +8426,9 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 3355:
+_T9c:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x004F52C3;
+	__asm        je     _T146;
 // LINE 3357:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+8];
@@ -8149,7 +8463,7 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 // LINE 3364:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
-	__asm        jge    near ptr 0x004F52B6;
+	__asm        jge    _T139;
 // LINE 3366:
 	__asm        mov    eax, flags;
 	__asm        mov    ecx, hd;
@@ -8172,14 +8486,16 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x13C], eax;
 // LINE 3371:
+_T139:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 3372:
-	__asm        jmp    near ptr 0x004F5219;
+	__asm        jmp    _T9c;
 // LINE 3377:
+_T146:
 	__asm        cmp    maxobjy, 0;
-	__asm        jne    near ptr 0x004F52F9;
+	__asm        jne    _T17c;
 // LINE 3378:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -8194,14 +8510,16 @@ int32_t GetCopterBldAlt(struct _HELI_DATA* hd) {
 	__asm        add    esp, 0xC;
 	__asm        mov    alt, eax;
 // LINE 3379:
-	__asm        jmp    near ptr 0x004F5309;
+	__asm        jmp    _T18c;
 // LINE 3380:
+_T17c:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        shl    eax, 0x10;
 	__asm        add    eax, maxobjy;
 	__asm        mov    alt, eax;
 // LINE 3382:
+_T18c:
 	__asm        mov    eax, alt;
 	__asm        jmp    near ptr 0x004F5311;
 // LINE 3383:
@@ -8216,32 +8534,35 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 
 // LINE 3403:
 	__asm        cmp    hd, 0;
-	__asm        jne    near ptr 0x004F532E;
+	__asm        jne    _T18;
 // LINE 3404:
-	__asm        jmp    near ptr 0x004F56B4;
+	__asm        jmp    _T39e;
 // LINE 3406:
+_T18:
 	__asm        cmp    dword ptr ds:[0x5B4938], 0;
-	__asm        je     near ptr 0x004F5346;
+	__asm        je     _T30;
 // LINE 3410:
 	__asm        dec    dword ptr ds:[0x5B4938];
 // LINE 3412:
-	__asm        jmp    near ptr 0x004F56B4;
+	__asm        jmp    _T39e;
 // LINE 3413:
+_T30:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 1;
-	__asm        je     near ptr 0x004F5360;
+	__asm        je     _T4a;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x004F53A0;
+	__asm        jne    _T8a;
 
+_T4a:
 	__asm        push   8;
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliCollideTest;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F53A0;
+	__asm        jne    _T8a;
 // LINE 3416:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0xFED40000;
@@ -8251,42 +8572,46 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 // LINE 3418:
 	__asm        mov    dword ptr ds:[0x5B4938], 8;
 // LINE 3420:
-	__asm        jmp    near ptr 0x004F56B4;
+	__asm        jmp    _T39e;
 // LINE 3421:
+_T8a:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 3;
-	__asm        je     near ptr 0x004F53C7;
+	__asm        je     _Tb1;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        je     near ptr 0x004F53C7;
+	__asm        je     _Tb1;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F54B6;
+	__asm        jne    _T1a0;
 // LINE 3423:
+_Tb1:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 0;
 // LINE 3424:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
-	__asm        jge    near ptr 0x004F53F6;
+	__asm        jge    _Te0;
 // LINE 3426:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 1;
 // LINE 3428:
-	__asm        jmp    near ptr 0x004F5403;
+	__asm        jmp    _Ted;
 // LINE 3430:
+_Te0:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0;
 // LINE 3432:
+_Ted:
 	__asm        push   0x6BF1C0;
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliLand;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F54B1;
+	__asm        jne    _T19b;
 // LINE 3434:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 4;
@@ -8336,24 +8661,28 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x5B493C], eax;
 // LINE 3448:
-	__asm        jmp    near ptr 0x004F56B4;
+_T19b:
+	__asm        jmp    _T39e;
 
+_T1a0:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 4;
-	__asm        jne    near ptr 0x004F5523;
+	__asm        jne    _T20d;
 // LINE 3450:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 3;
-	__asm        jle    near ptr 0x004F54E5;
+	__asm        jle    _T1cf;
 // LINE 3452:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0xFFFFFFFF;
 // LINE 3454:
-	__asm        jmp    near ptr 0x004F54F2;
+	__asm        jmp    _T1dc;
 // LINE 3456:
+_T1cf:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1B8], 0;
 // LINE 3458:
+_T1dc:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 0;
 // LINE 3459:
@@ -8362,20 +8691,23 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	__asm        call   S3HeliTakeOff;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F551E;
+	__asm        jne    _T208;
 // LINE 3461:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 1;
 // LINE 3464:
-	__asm        jmp    near ptr 0x004F56B4;
+_T208:
+	__asm        jmp    _T39e;
 // LINE 3467:
+_T20d:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F553A;
+	__asm        jne    _T224;
 // LINE 3468:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 4;
 // LINE 3471:
+_T224:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0x4B0000;
 // LINE 3472:
@@ -8389,34 +8721,37 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, ds:[0x5B493C];
 	__asm        add    ecx, 0xB40000;
 	__asm        cmp    [eax+0x138], ecx;
-	__asm        jle    near ptr 0x004F558B;
+	__asm        jle    _T275;
 // LINE 3477:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
 // LINE 3478:
-	__asm        jmp    near ptr 0x004F55BF;
+	__asm        jmp    _T2a9;
 
+_T275:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, ds:[0x5B493C];
 	__asm        add    ecx, 0x960000;
 	__asm        cmp    [eax+0x138], ecx;
-	__asm        jge    near ptr 0x004F55B5;
+	__asm        jge    _T29f;
 // LINE 3479:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 3480:
-	__asm        jmp    near ptr 0x004F55BF;
+	__asm        jmp    _T2a9;
 // LINE 3481:
+_T29f:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 3483:
+_T2a9:
 	__asm        push   0x6BF1C0;
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   S3HeliHeadToLocXZ;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F5663;
+	__asm        jne    _T34d;
 // LINE 3486:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x1F40;
@@ -8463,22 +8798,24 @@ void S3HeliTestCopter(struct _HELI_DATA* hd) {
 	__asm        add    esp, 4;
 	__asm        mov    ds:[0x5B493C], eax;
 // LINE 3510:
+_T34d:
 	__asm        mov    eax, ds:[0x5B4934];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        inc    dword ptr ds:[0x5B4934];
 	__asm        cmp    dword ptr [ebp-0x14], 0x32;
-	__asm        jge    near ptr 0x004F568D;
+	__asm        jge    _T377;
 // LINE 3512:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 1;
 // LINE 3514:
-	__asm        jmp    near ptr 0x004F56B4;
+	__asm        jmp    _T39e;
 // LINE 3516:
+_T377:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x1BC], 0;
 // LINE 3517:
 	__asm        cmp    dword ptr ds:[0x5B4934], 0x96;
-	__asm        jle    near ptr 0x004F56B4;
+	__asm        jle    _T39e;
 
 	__asm        mov    dword ptr ds:[0x5B4934], 0;
 // LINE 3520:
@@ -8495,7 +8832,7 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 // LINE 3542:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    near ptr 0x004F57A7;
+	__asm        jne    _Tee;
 // LINE 3546:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+4];
@@ -8503,7 +8840,7 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jge    near ptr 0x004F571F;
+	__asm        jge    _T66;
 // LINE 3548:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -8511,15 +8848,16 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0x140000;
 // LINE 3551:
-	__asm        jmp    near ptr 0x004F5770;
+	__asm        jmp    _Tb7;
 
+_T66:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    ecx, loc;
 	__asm        mov    ecx, [ecx+4];
 	__asm        add    ecx, 0x640000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F5759;
+	__asm        jge    _Ta0;
 // LINE 3553:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 1;
@@ -8527,14 +8865,16 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0x140000;
 // LINE 3556:
-	__asm        jmp    near ptr 0x004F5770;
+	__asm        jmp    _Tb7;
 // LINE 3558:
+_Ta0:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 3559:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0x4B0000;
 // LINE 3561:
+_Tb7:
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -8542,7 +8882,7 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        call   S3HeliHeadToLocXZ;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 1;
-	__asm        jne    near ptr 0x004F57A0;
+	__asm        jne    _Te7;
 // LINE 3563:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+4], 3;
@@ -8550,9 +8890,11 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x128], 0;
 // LINE 3567:
+_Te7:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F57FB;
+	__asm        jmp    _T142;
 // LINE 3571:
+_Tee:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x11C], 0;
 // LINE 3572:
@@ -8561,22 +8903,25 @@ int32_t S3HeliLand(struct _HELI_DATA* hd, struct Point3d* loc) {
 // LINE 3574:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F57EA;
+	__asm        jne    _T131;
 // LINE 3577:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x14;
-	__asm        jge    near ptr 0x004F57E5;
+	__asm        jge    _T12c;
 // LINE 3578:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F57FB;
+	__asm        jmp    _T142;
 // LINE 3580:
-	__asm        jmp    near ptr 0x004F57F4;
+_T12c:
+	__asm        jmp    _T13b;
 // LINE 3582:
+_T131:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0xFFFFFFFF;
 // LINE 3585:
+_T13b:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F57FB;
+	__asm        jmp    _T142;
 // LINE 3586:
 }
 
@@ -8599,11 +8944,12 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 // LINE 3609:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F584E;
+	__asm        jne    _T4e;
 // LINE 3611:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F5893;
+	__asm        jmp    _T93;
 // LINE 3615:
+_T4e:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
 	__asm        call   GetCopterBldAlt;
@@ -8615,16 +8961,17 @@ int32_t S3HeliTakeOff(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, alt;
 	__asm        add    ecx, 0x960000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F587F;
+	__asm        jge    _T7f;
 // LINE 3619:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F5893;
+	__asm        jmp    _T93;
 // LINE 3622:
+_T7f:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xC], 0;
 // LINE 3623:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F5893;
+	__asm        jmp    _T93;
 // LINE 3624:
 }
 
@@ -8675,15 +9022,17 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	__asm        mov    lcptr, 0;
 // LINE 3680:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F590F;
+	__asm        jmp    _T6c;
 
+_T5d:
 	__asm        inc    i;
 	__asm        mov    eax, deltax;
 	__asm        add    fx, eax;
 	__asm        mov    eax, deltaz;
 	__asm        add    fz, eax;
+_T6c:
 	__asm        cmp    i, 0x50;
-	__asm        jge    near ptr 0x004F5995;
+	__asm        jge    _Tf2;
 // LINE 3683:
 	__asm        mov    eax, fx;
 	__asm        add    eax, 0x20000000;
@@ -8705,10 +9054,11 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 // LINE 3686:
 	__asm        mov    eax, cptr;
 	__asm        cmp    lcptr, eax;
-	__asm        jne    near ptr 0x004F5964;
+	__asm        jne    _Tc1;
 // LINE 3687:
-	__asm        jmp    near ptr 0x004F5900;
+	__asm        jmp    _T5d;
 // LINE 3688:
+_Tc1:
 	__asm        mov    eax, cptr;
 	__asm        mov    lcptr, eax;
 // LINE 3693:
@@ -8721,22 +9071,25 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, maxradius;
 	__asm        cmp    [eax+0x138], ecx;
-	__asm        jge    near ptr 0x004F5990;
+	__asm        jge    _Ted;
 // LINE 3695:
-	__asm        jmp    near ptr 0x004F5995;
+	__asm        jmp    _Tf2;
 // LINE 3696:
-	__asm        jmp    near ptr 0x004F5900;
+_Ted:
+	__asm        jmp    _T5d;
 // LINE 3698:
+_Tf2:
 	__asm        mov    eax, maxradius;
 	__asm        mov    ecx, alt;
 	__asm        mov    [ecx], eax;
 // LINE 3701:
 	__asm        cmp    i, 0x50;
-	__asm        jne    near ptr 0x004F59AE;
+	__asm        jne    _T10b;
 // LINE 3702:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F5A07;
+	__asm        jmp    _T164;
 // LINE 3706:
+_T10b:
 	__asm        mov    eax, i;
 	__asm        inc    eax;
 	__asm        shl    eax, 0x12;
@@ -8745,11 +9098,12 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 // LINE 3707:
 	__asm        mov    eax, dist;
 	__asm        cmp    dword ptr [eax], 0x1400000;
-	__asm        jl     near ptr 0x004F59D0;
+	__asm        jl     _T12d;
 // LINE 3708:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F5A07;
+	__asm        jmp    _T164;
 // LINE 3710:
+_T12d:
 	__asm        mov    ebx, 0x10000;
 	__asm        push   0x1400000;
 	__asm        mov    eax, dist;
@@ -8768,7 +9122,7 @@ int32_t S3HeliGetDeflection(struct _HELI_DATA* hd, struct Point3d* vector, int32
 	__asm        mov    deflectangle, eax;
 // LINE 3713:
 	__asm        mov    eax, deflectangle;
-	__asm        jmp    near ptr 0x004F5A07;
+	__asm        jmp    _T164;
 // LINE 3715:
 }
 
@@ -8785,12 +9139,13 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 // LINE 3734:
 	__asm        mov    maxradius, 0;
 // LINE 3735:
+_T19:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x004F5A71;
+	__asm        je     _T65;
 // LINE 3737:
 	__asm        mov    eax, stobj;
 	__asm        test   dword ptr [eax+8], 0x1A4;
-	__asm        je     near ptr 0x004F5A64;
+	__asm        je     _T58;
 // LINE 3739:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -8802,17 +9157,19 @@ int32_t S3HeliHighestBuildAlt(struct _CELL_INFO* cptr) {
 // LINE 3740:
 	__asm        mov    eax, maxradius;
 	__asm        cmp    oinfo.Radius, eax;
-	__asm        jle    near ptr 0x004F5A64;
+	__asm        jle    _T58;
 // LINE 3741:
 	__asm        mov    eax, oinfo.Radius;
 	__asm        mov    maxradius, eax;
 // LINE 3744:
+_T58:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 3745:
-	__asm        jmp    near ptr 0x004F5A25;
+	__asm        jmp    _T19;
 // LINE 3747:
+_T65:
 	__asm        mov    eax, maxradius;
 	__asm        add    eax, eax;
 	__asm        jmp    near ptr 0x004F5A7B;
@@ -8832,30 +9189,34 @@ struct _HELI_DATA* S3HeliGetDataByDyObj(struct _DYOBJ_INST* dyheli) {
 
 // LINE 3775:
 	__asm        mov    heliidx, 0;
-	__asm        jmp    near ptr 0x004F5AA8;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    heliidx;
+_T18:
 	__asm        cmp    heliidx, 0xA;
-	__asm        jge    near ptr 0x004F5AF0;
+	__asm        jge    _T60;
 // LINE 3777:
 	__asm        mov    eax, heliidx;
 	__asm        cmp    dword ptr [eax*4+0x5B4940], 0;
-	__asm        je     near ptr 0x004F5AEB;
+	__asm        je     _T5b;
 // LINE 3779:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, [eax*4+0x5B4940];
 	__asm        mov    ecx, dyheli;
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jne    near ptr 0x004F5AEB;
+	__asm        jne    _T5b;
 // LINE 3780:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, [eax*4+0x5B4940];
-	__asm        jmp    near ptr 0x004F5AF7;
+	__asm        jmp    _T67;
 // LINE 3782:
-	__asm        jmp    near ptr 0x004F5AA5;
+_T5b:
+	__asm        jmp    _T15;
 // LINE 3784:
+_T60:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F5AF7;
+	__asm        jmp    _T67;
 // LINE 3785:
 }
 
@@ -8865,31 +9226,36 @@ void S3HeliNextFrameDriver() {
 
 // LINE 3800:
 	__asm        mov    heliidx, 0;
-	__asm        jmp    near ptr 0x004F5B14;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    heliidx;
+_T18:
 	__asm        cmp    heliidx, 0xA;
-	__asm        jge    near ptr 0x004F5B60;
+	__asm        jge    _T64;
 // LINE 3802:
 	__asm        mov    eax, heliidx;
 	__asm        cmp    dword ptr [eax*4+0x5B4940], 0;
-	__asm        je     near ptr 0x004F5B5B;
+	__asm        je     _T5f;
 // LINE 3804:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, [eax*4+0x5B4940];
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F5B48;
+	__asm        je     _T4c;
 // LINE 3805:
-	__asm        jmp    near ptr 0x004F5B11;
+	__asm        jmp    _T15;
 // LINE 3810:
+_T4c:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, [eax*4+0x5B4940];
 	__asm        push   eax;
 	__asm        call   S3HeliNextFrame;
 	__asm        add    esp, 4;
 // LINE 3812:
-	__asm        jmp    near ptr 0x004F5B11;
+_T5f:
+	__asm        jmp    _T15;
 // LINE 3815:
+_T64:
 	__asm        call   S3HeliSoundDriver;
 // LINE 3817:
 }
@@ -8909,36 +9275,41 @@ void S3HeliSoundDriver() {
 	__asm        mov    [ebp-0x28], eax;
 	__asm        inc    dword ptr ds:[0x5B4904];
 	__asm        cmp    dword ptr [ebp-0x28], 5;
-	__asm        jle    near ptr 0x004F5B9A;
+	__asm        jle    _T30;
 // LINE 3843:
 	__asm        mov    dword ptr ds:[0x5B4904], 0;
 // LINE 3845:
-	__asm        jmp    near ptr 0x004F5B9F;
+	__asm        jmp    _T35;
 // LINE 3847:
-	__asm        jmp    near ptr 0x004F5E62;
+_T30:
+	__asm        jmp    _T2f8;
 // LINE 3852:
+_T35:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004F5BB9;
+	__asm        je     _T4f;
 // LINE 3854:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    hd, eax;
 // LINE 3856:
-	__asm        jmp    near ptr 0x004F5C9D;
+	__asm        jmp    _T133;
 // LINE 3859:
+_T4f:
 	__asm        mov    closest, 0x7800000;
 // LINE 3860:
 	__asm        mov    closehd, 0;
 // LINE 3862:
 	__asm        mov    heliidx, 0;
-	__asm        jmp    near ptr 0x004F5BD6;
+	__asm        jmp    _T6c;
 
+_T69:
 	__asm        inc    heliidx;
+_T6c:
 	__asm        cmp    heliidx, 0xA;
-	__asm        jge    near ptr 0x004F5C79;
+	__asm        jge    _T10f;
 // LINE 3864:
 	__asm        mov    eax, heliidx;
 	__asm        cmp    dword ptr [eax*4+0x5B4940], 0;
-	__asm        je     near ptr 0x004F5C74;
+	__asm        je     _T10a;
 // LINE 3866:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, [eax*4+0x5B4940];
@@ -8946,7 +9317,7 @@ void S3HeliSoundDriver() {
 // LINE 3867:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0;
-	__asm        je     near ptr 0x004F5C74;
+	__asm        je     _T10a;
 // LINE 3869:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -8974,7 +9345,7 @@ void S3HeliSoundDriver() {
 // LINE 3873:
 	__asm        mov    eax, dist;
 	__asm        cmp    closest, eax;
-	__asm        jle    near ptr 0x004F5C74;
+	__asm        jle    _T10a;
 // LINE 3875:
 	__asm        mov    eax, dist;
 	__asm        mov    closest, eax;
@@ -8982,25 +9353,29 @@ void S3HeliSoundDriver() {
 	__asm        mov    eax, hd;
 	__asm        mov    closehd, eax;
 // LINE 3880:
-	__asm        jmp    near ptr 0x004F5BD3;
+_T10a:
+	__asm        jmp    _T69;
 // LINE 3882:
+_T10f:
 	__asm        cmp    closehd, 0;
-	__asm        jne    near ptr 0x004F5C97;
+	__asm        jne    _T12d;
 // LINE 3884:
 	__asm        push   0;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3885:
-	__asm        jmp    near ptr 0x004F5E62;
+	__asm        jmp    _T2f8;
 // LINE 3887:
-	__asm        jmp    near ptr 0x004F5C9D;
+	__asm        jmp    _T133;
 // LINE 3889:
+_T12d:
 	__asm        mov    eax, closehd;
 	__asm        mov    hd, eax;
 // LINE 3893:
+_T133:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004F5DB1;
+	__asm        je     _T247;
 // LINE 3895:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -9027,27 +9402,29 @@ void S3HeliSoundDriver() {
 	__asm        mov    dist, eax;
 // LINE 3901:
 	__asm        cmp    dist, 0x7800000;
-	__asm        jge    near ptr 0x004F5D28;
+	__asm        jge    _T1be;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x96;
-	__asm        jl     near ptr 0x004F5D28;
+	__asm        jl     _T1be;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jg     near ptr 0x004F5D37;
+	__asm        jg     _T1cd;
 // LINE 3903:
+_T1be:
 	__asm        push   0;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3904:
-	__asm        jmp    near ptr 0x004F5E62;
+	__asm        jmp    _T2f8;
 // LINE 3909:
+_T1cd:
 	__asm        push   0;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F5D62;
+	__asm        jne    _T1f8;
 // LINE 3911:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -9058,6 +9435,7 @@ void S3HeliSoundDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 3914:
+_T1f8:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        sar    eax, 0xC;
@@ -9084,27 +9462,29 @@ void S3HeliSoundDriver() {
 	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 3924:
-	__asm        jmp    near ptr 0x004F5E5D;
+	__asm        jmp    _T2f3;
 // LINE 3927:
+_T247:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0xFA;
-	__asm        jge    near ptr 0x004F5DD3;
+	__asm        jge    _T269;
 // LINE 3929:
 	__asm        push   0;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3930:
-	__asm        jmp    near ptr 0x004F5E62;
+	__asm        jmp    _T2f8;
 // LINE 3935:
+_T269:
 	__asm        push   0;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F5E18;
+	__asm        jne    _T2ae;
 // LINE 3937:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
-	__asm        jle    near ptr 0x004F5E13;
+	__asm        jle    _T2a9;
 // LINE 3938:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -9115,10 +9495,12 @@ void S3HeliSoundDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 3939:
-	__asm        jmp    near ptr 0x004F5E18;
+	__asm        jmp    _T2ae;
 // LINE 3940:
-	__asm        jmp    near ptr 0x004F5E62;
+_T2a9:
+	__asm        jmp    _T2f8;
 // LINE 3944:
+_T2ae:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x148];
 	__asm        sub    eax, 0x168;
@@ -9146,7 +9528,8 @@ void S3HeliSoundDriver() {
 	__asm        call   S3SoundAdjVol;
 	__asm        add    esp, 8;
 // LINE 3952:
-	__asm        jmp    near ptr 0x004F5E62;
+_T2f3:
+	__asm        jmp    _T2f8;
 // LINE 3953:
 }
 
@@ -9167,10 +9550,11 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 3979:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x004F5E85;
+	__asm        jne    _T1e;
 // LINE 3980:
-	__asm        jmp    near ptr 0x004F631C;
+	__asm        jmp    _T4b5;
 // LINE 3983:
+_T1e:
 	__asm        mov    color, 1;
 	__asm        mov    eax, color;
 	__asm        mov    maxobjy, eax;
@@ -9231,11 +9615,13 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        mov    totdist, 0;
 // LINE 4002:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F5F3B;
+	__asm        jmp    _Td4;
 
+_Td1:
 	__asm        inc    i;
+_Td4:
 	__asm        cmp    i, 0x10;
-	__asm        jge    near ptr 0x004F6035;
+	__asm        jge    _T1ce;
 // LINE 4004:
 	__asm        mov    eax, 0x20000000;
 	__asm        sub    eax, loc.z;
@@ -9275,16 +9661,17 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        mov    dist, eax;
 // LINE 4010:
 	__asm        cmp    dist, 0;
-	__asm        jle    near ptr 0x004F5FDA;
+	__asm        jle    _T173;
 // LINE 4012:
 	__asm        mov    eax, dist;
 	__asm        add    totdist, eax;
 // LINE 4014:
-	__asm        jmp    near ptr 0x004F6035;
+	__asm        jmp    _T1ce;
 // LINE 4017:
+_T173:
 	__asm        mov    eax, cptr;
 	__asm        cmp    ncptr, eax;
-	__asm        je     near ptr 0x004F6002;
+	__asm        je     _T19b;
 // LINE 4018:
 	__asm        mov    eax, ncptr;
 	__asm        push   eax;
@@ -9297,14 +9684,16 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        add    esp, 0x10;
 	__asm        mov    dist, eax;
 // LINE 4019:
+_T19b:
 	__asm        cmp    dist, 0;
-	__asm        jle    near ptr 0x004F6017;
+	__asm        jle    _T1b0;
 // LINE 4021:
 	__asm        mov    eax, dist;
 	__asm        add    totdist, eax;
 // LINE 4023:
-	__asm        jmp    near ptr 0x004F6035;
+	__asm        jmp    _T1ce;
 // LINE 4027:
+_T1b0:
 	__asm        mov    eax, vstep.x;
 	__asm        add    loc.x, eax;
 // LINE 4028:
@@ -9316,13 +9705,15 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 // LINE 4030:
 	__asm        add    totdist, 0x200000;
 // LINE 4032:
-	__asm        jmp    near ptr 0x004F5F38;
+	__asm        jmp    _Td1;
 // LINE 4036:
+_T1ce:
 	__asm        cmp    totdist, 0x2000000;
-	__asm        jl     near ptr 0x004F6049;
+	__asm        jl     _T1e2;
 // LINE 4040:
 	__asm        mov    totdist, 0x1FF0000;
 // LINE 4044:
+_T1e2:
 	__asm        mov    eax, ds:[0x5B4CA0];
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
@@ -9332,32 +9723,36 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        mov    ds:[0x5B4CA0], eax;
 // LINE 4047:
 	__asm        cmp    dword ptr ds:[0x5B4CA0], 0x800000;
-	__asm        jg     near ptr 0x004F607C;
+	__asm        jg     _T215;
 // LINE 4049:
 	__asm        mov    spotlevel, 0;
 // LINE 4051:
-	__asm        jmp    near ptr 0x004F60BB;
+	__asm        jmp    _T254;
 
+_T215:
 	__asm        cmp    dword ptr ds:[0x5B4CA0], 0x1000000;
-	__asm        jg     near ptr 0x004F6098;
+	__asm        jg     _T231;
 // LINE 4053:
 	__asm        mov    spotlevel, 1;
 // LINE 4055:
-	__asm        jmp    near ptr 0x004F60BB;
+	__asm        jmp    _T254;
 
+_T231:
 	__asm        cmp    dword ptr ds:[0x5B4CA0], 0x1800000;
-	__asm        jg     near ptr 0x004F60B4;
+	__asm        jg     _T24d;
 // LINE 4057:
 	__asm        mov    spotlevel, 2;
 // LINE 4059:
-	__asm        jmp    near ptr 0x004F60BB;
+	__asm        jmp    _T254;
 // LINE 4061:
+_T24d:
 	__asm        mov    spotlevel, 3;
 // LINE 4065:
+_T254:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, spotlevel;
 	__asm        cmp    [eax+0x140], ecx;
-	__asm        je     near ptr 0x004F6184;
+	__asm        je     _T31d;
 // LINE 4071:
 // Block start:
 	struct VRFaceInfo finfo;
@@ -9381,12 +9776,14 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        mov    face, eax;
 // LINE 4073:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F6113;
+	__asm        jmp    _T2ac;
 
+_T2a9:
 	__asm        inc    i;
+_T2ac:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004F6178;
+	__asm        jle    _T311;
 // LINE 4075:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -9412,13 +9809,15 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 4079:
-	__asm        jmp    near ptr 0x004F6110;
+	__asm        jmp    _T2a9;
 // LINE 4081:
+_T311:
 	__asm        mov    eax, spotlevel;
 	__asm        mov    ecx, hd;
 	__asm        mov    [ecx+0x140], eax;
 // LINE 4085:
 // Block end:
+_T31d:
 	__asm        mov    eax, ds:[0x5B4CA0];
 	__asm        push   eax;
 	__asm        mov    eax, svec.x;
@@ -9479,10 +9878,11 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        mov    scale, eax;
 // LINE 4094:
 	__asm        cmp    scale, 0x4CCC;
-	__asm        jge    near ptr 0x004F624D;
+	__asm        jge    _T3e6;
 
 	__asm        mov    scale, 0x4CCC;
 // LINE 4095:
+_T3e6:
 	__asm        mov    eax, scale;
 	__asm        mov    pos.scale.z, eax;
 	__asm        mov    eax, pos.scale.z;
@@ -9533,7 +9933,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        add    esp, 0x14;
 // LINE 4112:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        jne    near ptr 0x004F631C;
+	__asm        jne    _T4b5;
 // LINE 4114:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -9543,7 +9943,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 4115:
-	__asm        jmp    near ptr 0x004F631C;
+	__asm        jmp    _T4b5;
 // LINE 4118:
 }
 
@@ -9589,8 +9989,9 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 4158:
+_T39:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x004F643E;
+	__asm        je     _Tfd;
 // LINE 4161:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -9641,7 +10042,7 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	__asm        mov    newdist, eax;
 // LINE 4178:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x004F641F;
+	__asm        jle    _Tde;
 // LINE 4185:
 	__asm        push   0;
 	__asm        mov    eax, stobj;
@@ -9659,18 +10060,21 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	__asm        add    esp, 0x18;
 	__asm        mov    newdist, eax;
 // LINE 4188:
+_Tde:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x004F6431;
+	__asm        jle    _Tf0;
 // LINE 4191:
 	__asm        mov    eax, newdist;
-	__asm        jmp    near ptr 0x004F6472;
+	__asm        jmp    _T131;
 // LINE 4196:
+_Tf0:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 4197:
-	__asm        jmp    near ptr 0x004F637A;
+	__asm        jmp    _T39;
 // LINE 4203:
+_Tfd:
 	__asm        lea    eax, cloc.x;
 	__asm        push   eax;
 	__asm        mov    eax, dist;
@@ -9684,13 +10088,14 @@ int32_t S3HeliSpotDistance(struct Point3d* spotloc, struct Point3d* spotvec, int
 	__asm        mov    newdist, eax;
 // LINE 4204:
 	__asm        cmp    newdist, 0;
-	__asm        jle    near ptr 0x004F646B;
+	__asm        jle    _T12a;
 // LINE 4206:
 	__asm        mov    eax, newdist;
-	__asm        jmp    near ptr 0x004F6472;
+	__asm        jmp    _T131;
 // LINE 4209:
+_T12a:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F6472;
+	__asm        jmp    _T131;
 // LINE 4210:
 }
 
@@ -9701,32 +10106,36 @@ void S3HeliRotateSpotLite(int32_t rotx, int32_t roty) {
 	__asm        add    ds:[0x5B492C], eax;
 // LINE 4255:
 	__asm        cmp    dword ptr ds:[0x5B492C], 0x1F40000;
-	__asm        jle    near ptr 0x004F64A5;
+	__asm        jle    _T2e;
 // LINE 4256:
 	__asm        mov    dword ptr ds:[0x5B492C], 0x1F40000;
 // LINE 4257:
-	__asm        jmp    near ptr 0x004F64BF;
+	__asm        jmp    _T48;
 
+_T2e:
 	__asm        cmp    dword ptr ds:[0x5B492C], 0xFE0C0000;
-	__asm        jge    near ptr 0x004F64BF;
+	__asm        jge    _T48;
 // LINE 4258:
 	__asm        mov    dword ptr ds:[0x5B492C], 0xFE0C0000;
 // LINE 4260:
+_T48:
 	__asm        mov    eax, roty;
 	__asm        add    ds:[0x5B4930], eax;
 // LINE 4261:
 	__asm        cmp    dword ptr ds:[0x5B4930], 0x1F40000;
-	__asm        jle    near ptr 0x004F64E7;
+	__asm        jle    _T70;
 // LINE 4262:
 	__asm        mov    dword ptr ds:[0x5B4930], 0x1F40000;
 // LINE 4263:
-	__asm        jmp    near ptr 0x004F6501;
+	__asm        jmp    _T8a;
 
+_T70:
 	__asm        cmp    dword ptr ds:[0x5B4930], 0xFE0C0000;
-	__asm        jge    near ptr 0x004F6501;
+	__asm        jge    _T8a;
 // LINE 4264:
 	__asm        mov    dword ptr ds:[0x5B4930], 0xFE0C0000;
 // LINE 4266:
+_T8a:
 	__asm        push   0x607218;
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
@@ -9828,11 +10237,11 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        mov    firealt, eax;
 // LINE 4307:
 	__asm        cmp    firealt, 0;
-	__asm        je     near ptr 0x004F664E;
+	__asm        je     _Tf9;
 
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F664E;
+	__asm        je     _Tf9;
 // LINE 4309:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -9840,18 +10249,20 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        sub    eax, firealt;
 	__asm        mov    ds:[0x6BF190], eax;
 // LINE 4313:
+_Tf9:
 	__asm        mov    eax, htd;
 	__asm        mov    ecx, hd;
 	__asm        mov    ecx, [ecx+0xD0];
 	__asm        cmp    [eax+0x4C], ecx;
-	__asm        jne    near ptr 0x004F66BF;
+	__asm        jne    _T16a;
 
 	__asm        cmp    firealt, 0;
-	__asm        je     near ptr 0x004F667A;
+	__asm        je     _T125;
 
 	__asm        cmp    firealt, 0xFA0000;
-	__asm        jle    near ptr 0x004F66BF;
+	__asm        jle    _T16a;
 // LINE 4322:
+_T125:
 	__asm        mov    tfactor, 3;
 // LINE 4323:
 	__asm        lea    edi, ds:[0x60726C];
@@ -9869,8 +10280,9 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, 8;
 	__asm        rep movsd;
 // LINE 4326:
-	__asm        jmp    near ptr 0x004F67D1;
+	__asm        jmp    _T27c;
 // LINE 4330:
+_T16a:
 	__asm        lea    edi, ds:[0x60726C];
 	__asm        lea    esi, ds:[0x607270];
 	__asm        mov    ecx, 8;
@@ -9889,18 +10301,18 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        mov    ffactor, 0;
 // LINE 4339:
 	__asm        cmp    firealt, 0;
-	__asm        je     near ptr 0x004F67A1;
+	__asm        je     _T24c;
 // LINE 4342:
 	__asm        mov    eax, ds:[0x5B48EC];
 	__asm        cmp    firealt, eax;
-	__asm        jl     near ptr 0x004F676B;
+	__asm        jl     _T216;
 
 	__asm        mov    eax, ds:[0x5B48F0];
 	__asm        cmp    firealt, eax;
-	__asm        jg     near ptr 0x004F676B;
+	__asm        jg     _T216;
 
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F676B;
+	__asm        jne    _T216;
 // LINE 4344:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F0];
@@ -9922,11 +10334,12 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4353:
+_T216:
 	__asm        cmp    firealt, 0xFFD00000;
-	__asm        jl     near ptr 0x004F679A;
+	__asm        jl     _T245;
 
 	__asm        cmp    firealt, 0xFA0000;
-	__asm        jg     near ptr 0x004F679A;
+	__asm        jg     _T245;
 // LINE 4355:
 	__asm        mov    eax, 0xFA;
 	__asm        mov    ecx, firealt;
@@ -9934,10 +10347,12 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        sub    eax, ecx;
 	__asm        mov    ffactor, eax;
 // LINE 4357:
-	__asm        jmp    near ptr 0x004F67A1;
+	__asm        jmp    _T24c;
 // LINE 4359:
+_T245:
 	__asm        mov    ffactor, 0;
 // LINE 4364:
+_T24c:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        mov    ecx, hd;
@@ -9950,11 +10365,12 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 	__asm        mov    tfactor, ecx;
 // LINE 4366:
 	__asm        cmp    tfactor, 0;
-	__asm        jg     near ptr 0x004F67D1;
+	__asm        jg     _T27c;
 
 	__asm        mov    tfactor, 1;
 // LINE 4369:
 calc_turbulence:
+_T27c:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -9969,12 +10385,13 @@ calc_turbulence:
 	__asm        and    eax, 1;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        je     near ptr 0x004F6802;
+	__asm        je     _T2ad;
 // LINE 4371:
 	__asm        mov    eax, slide;
 	__asm        neg    eax;
 	__asm        mov    slide, eax;
 // LINE 4372:
+_T2ad:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -9989,12 +10406,13 @@ calc_turbulence:
 	__asm        and    eax, 1;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        je     near ptr 0x004F6833;
+	__asm        je     _T2de;
 // LINE 4374:
 	__asm        mov    eax, pitch;
 	__asm        neg    eax;
 	__asm        mov    pitch, eax;
 // LINE 4375:
+_T2de:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -10009,12 +10427,13 @@ calc_turbulence:
 	__asm        and    eax, 1;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        je     near ptr 0x004F6864;
+	__asm        je     _T30f;
 // LINE 4377:
 	__asm        mov    eax, yaw;
 	__asm        neg    eax;
 	__asm        mov    yaw, eax;
 // LINE 4380:
+_T30f:
 	__asm        mov    eax, slide;
 	__asm        shl    eax, 0x10;
 	__asm        mov    ds:[0x60728C], eax;
@@ -10034,11 +10453,13 @@ calc_turbulence:
 	__asm        mov    slide, eax;
 // LINE 4386:
 	__asm        mov    i, 1;
-	__asm        jmp    near ptr 0x004F68A7;
+	__asm        jmp    _T352;
 
+_T34f:
 	__asm        inc    i;
+_T352:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F68DD;
+	__asm        jge    _T388;
 // LINE 4388:
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x607268];
@@ -10052,8 +10473,9 @@ calc_turbulence:
 	__asm        mov    eax, [eax*4+0x607290];
 	__asm        add    pitch, eax;
 // LINE 4391:
-	__asm        jmp    near ptr 0x004F68A4;
+	__asm        jmp    _T34f;
 // LINE 4394:
+_T388:
 	__asm        mov    ecx, 9;
 	__asm        mov    eax, slide;
 	__asm        cdq;
@@ -10105,7 +10527,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4423:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 5;
-	__asm        jne    near ptr 0x004F6C9C;
+	__asm        jne    _T38a;
 // LINE 4425:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4768];
@@ -10115,14 +10537,15 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 // LINE 4426:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0;
-	__asm        jge    near ptr 0x004F6993;
+	__asm        jge    _T81;
 // LINE 4427:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x16C], 0x11999;
 // LINE 4429:
+_T81:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
-	__asm        jle    near ptr 0x004F69C6;
+	__asm        jle    _Tb4;
 // LINE 4430:
 	__asm        push   5;
 	__asm        mov    eax, hd;
@@ -10134,11 +10557,12 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 4431:
-	__asm        jmp    near ptr 0x004F6A5A;
+	__asm        jmp    _T148;
 
+_Tb4:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0xE666;
-	__asm        jle    near ptr 0x004F69F9;
+	__asm        jle    _Te7;
 // LINE 4432:
 	__asm        push   4;
 	__asm        mov    eax, hd;
@@ -10150,11 +10574,12 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 4433:
-	__asm        jmp    near ptr 0x004F6A5A;
+	__asm        jmp    _T148;
 
+_Te7:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0x1999;
-	__asm        jge    near ptr 0x004F6A2C;
+	__asm        jge    _T11a;
 // LINE 4434:
 	__asm        push   2;
 	__asm        mov    eax, hd;
@@ -10166,11 +10591,12 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 4435:
-	__asm        jmp    near ptr 0x004F6A5A;
+	__asm        jmp    _T148;
 
+_T11a:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0x3333;
-	__asm        jge    near ptr 0x004F6A5A;
+	__asm        jge    _T148;
 // LINE 4436:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -10182,15 +10608,16 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 4439:
+_T148:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jge    near ptr 0x004F6C97;
+	__asm        jge    _T385;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        cmp    dword ptr [eax+0x38], 1;
-	__asm        jne    near ptr 0x004F6C97;
+	__asm        jne    _T385;
 // LINE 4441:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -10215,7 +10642,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        mov    scale, eax;
 // LINE 4445:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
-	__asm        jne    near ptr 0x004F6B02;
+	__asm        jne    _T1f0;
 // LINE 4447:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -10239,8 +10666,9 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        shl    eax, 4;
 	__asm        add    loc.z, eax;
 // LINE 4452:
-	__asm        jmp    near ptr 0x004F6B59;
+	__asm        jmp    _T247;
 // LINE 4454:
+_T1f0:
 	__asm        mov    ebx, 0xA;
 	__asm        call   rand;
 	__asm        mov    ecx, 0x14;
@@ -10271,6 +10699,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        shl    ebx, 0x10;
 	__asm        add    loc.z, ebx;
 // LINE 4459:
+_T247:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x168];
 	__asm        mov    dword ptr [eax+8], 0xCCCC;
@@ -10281,7 +10710,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x004F6C32;
+	__asm        jne    _T320;
 // LINE 4463:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
@@ -10350,6 +10779,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 4485:
+_T320:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, scale;
 	__asm        push   eax;
@@ -10377,7 +10807,7 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        add    esp, 0x18;
 // LINE 4487:
 	__asm        cmp    scale, 0;
-	__asm        jle    near ptr 0x004F6C97;
+	__asm        jle    _T385;
 // LINE 4490:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -10388,34 +10818,39 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4494:
-	__asm        jmp    near ptr 0x004F6D69;
+_T385:
+	__asm        jmp    _T457;
 // LINE 4498:
+_T38a:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
-	__asm        jne    near ptr 0x004F6CAE;
+	__asm        jne    _T39c;
 // LINE 4500:
-	__asm        jmp    near ptr 0x004F6D69;
+	__asm        jmp    _T457;
 // LINE 4504:
+_T39c:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, htd;
 	__asm        mov    ecx, [ecx+0x4C];
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        jl     near ptr 0x004F6CC8;
+	__asm        jl     _T3b6;
 // LINE 4506:
-	__asm        jmp    near ptr 0x004F6D69;
+	__asm        jmp    _T457;
 // LINE 4509:
+_T3b6:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F6CDA;
+	__asm        jne    _T3c8;
 // LINE 4510:
-	__asm        jmp    near ptr 0x004F6D69;
+	__asm        jmp    _T457;
 // LINE 4516:
+_T3c8:
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0xD4];
 // LINE 4517:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xD4], 7;
-	__asm        jle    near ptr 0x004F6D4E;
+	__asm        jle    _T43c;
 // LINE 4519:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xD0];
@@ -10423,13 +10858,13 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        add    eax, 7;
 	__asm        mov    ecx, hd;
 	__asm        cmp    eax, [ecx+0xD4];
-	__asm        jg     near ptr 0x004F6D49;
+	__asm        jg     _T437;
 // LINE 4522:
 	__asm        push   0xE;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F6D3C;
+	__asm        jne    _T42a;
 // LINE 4523:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -10440,11 +10875,14 @@ void S3HeliSmokeTrail(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4525:
+_T42a:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xD4], 0;
 // LINE 4527:
-	__asm        jmp    near ptr 0x004F6D69;
+_T437:
+	__asm        jmp    _T457;
 // LINE 4530:
+_T43c:
 	__asm        push   1;
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -11239,7 +11677,7 @@ void S3HeliPurchaseRepairs(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, max_damage;
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        jle    near ptr 0x004F74E6;
+	__asm        jle    _T73;
 // LINE 4810:
 	__asm        mov    eax, max_damage;
 	__asm        mov    ecx, hd;
@@ -11320,7 +11758,7 @@ void S3HeliPurchaseFuel(struct _HELI_DATA* hd, long lPurchaseBucks) {
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, max_fuel;
 	__asm        cmp    [eax+0x320], ecx;
-	__asm        jle    near ptr 0x004F75B0;
+	__asm        jle    _T72;
 // LINE 4849:
 	__asm        mov    eax, max_fuel;
 	__asm        mov    ecx, hd;
@@ -11379,11 +11817,11 @@ int32_t S3HeliGetMaximumFuel(struct _HELI_DATA* hd) {
 void S3HeliCommand(int32_t nCommand) {
 // LINE 4889:
 	__asm        cmp    nCommand, 3;
-	__asm        jne    near ptr 0x004F76F3;
+	__asm        jne    _Tc5;
 // LINE 4891:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004F76EE;
+	__asm        jne    _Tc0;
 // LINE 4893:
 	__asm        push   0;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -11434,12 +11872,14 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4901:
-	__asm        jmp    near ptr 0x004F7816;
+	__asm        jmp    _T1e8;
 // LINE 4904:
-	__asm        jmp    near ptr 0x004F7816;
+_Tc0:
+	__asm        jmp    _T1e8;
 
+_Tc5:
 	__asm        cmp    nCommand, 0x15;
-	__asm        jne    near ptr 0x004F773D;
+	__asm        jne    _T10f;
 // LINE 4906:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, ds:[0x5B4968];
@@ -11458,10 +11898,11 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4908:
-	__asm        jmp    near ptr 0x004F7816;
+	__asm        jmp    _T1e8;
 
+_T10f:
 	__asm        cmp    nCommand, 0x16;
-	__asm        jne    near ptr 0x004F7787;
+	__asm        jne    _T159;
 // LINE 4910:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, ds:[0x5B4968];
@@ -11480,10 +11921,11 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4912:
-	__asm        jmp    near ptr 0x004F7816;
+	__asm        jmp    _T1e8;
 
+_T159:
 	__asm        cmp    nCommand, 0x17;
-	__asm        jne    near ptr 0x004F77D1;
+	__asm        jne    _T1a3;
 // LINE 4914:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, ds:[0x5B4968];
@@ -11502,10 +11944,11 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4916:
-	__asm        jmp    near ptr 0x004F7816;
+	__asm        jmp    _T1e8;
 
+_T1a3:
 	__asm        cmp    nCommand, 0x18;
-	__asm        jne    near ptr 0x004F7816;
+	__asm        jne    _T1e8;
 // LINE 4918:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, ds:[0x5B4968];
@@ -11636,10 +12079,10 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 4971:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F7999;
+	__asm        je     _T9f;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
-	__asm        jne    near ptr 0x004F7999;
+	__asm        jne    _T9f;
 // LINE 4973:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -11663,10 +12106,11 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        shl    eax, 4;
 	__asm        add    loc.z, eax;
 // LINE 4980:
+_T9f:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x170];
 	__asm        mov    [ebp-0x70], eax;
-	__asm        jmp    near ptr 0x004F7DB2;
+	__asm        jmp    _T4b8;
 // LINE 4984:
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
@@ -11678,7 +12122,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0x170];
 // LINE 4986:
-	__asm        jmp    near ptr 0x004F7DDA;
+	__asm        jmp    _T4e0;
 // LINE 4989:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -11691,11 +12135,13 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        add    esp, 0xC;
 // LINE 4991:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F79F2;
+	__asm        jmp    _Tf8;
 
+_Tf5:
 	__asm        inc    i;
+_Tf8:
 	__asm        cmp    i, 5;
-	__asm        jge    near ptr 0x004F7AB2;
+	__asm        jge    _T1b8;
 // LINE 4993:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
@@ -11764,8 +12210,9 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 5009:
-	__asm        jmp    near ptr 0x004F79EF;
+	__asm        jmp    _Tf5;
 // LINE 5015:
+_T1b8:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   4;
 	__asm        mov    eax, loc.z;
@@ -11802,7 +12249,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5022:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F7B81;
+	__asm        je     _T287;
 // LINE 5024:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -11821,7 +12268,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004F7B66;
+	__asm        jne    _T26c;
 // LINE 5029:
 	__asm        push   1;
 	__asm        push   0x607258;
@@ -11829,18 +12276,21 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 5032:
+_T26c:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x16C], 0x30000;
 // LINE 5033:
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0x170];
 // LINE 5035:
-	__asm        jmp    near ptr 0x004F7B8E;
+	__asm        jmp    _T294;
 // LINE 5039:
+_T287:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x170], 4;
 // LINE 5042:
-	__asm        jmp    near ptr 0x004F7DDA;
+_T294:
+	__asm        jmp    _T4e0;
 // LINE 5045:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, ds:[0x5B4768];
@@ -11865,7 +12315,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5050:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
-	__asm        jle    near ptr 0x004F7BFE;
+	__asm        jle    _T304;
 // LINE 5052:
 	__asm        push   1;
 	__asm        lea    eax, loc.x;
@@ -11875,8 +12325,9 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 5054:
-	__asm        jmp    near ptr 0x004F7C10;
+	__asm        jmp    _T316;
 // LINE 5056:
+_T304:
 	__asm        push   4;
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
@@ -11885,9 +12336,10 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 5059:
+_T316:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0;
-	__asm        jge    near ptr 0x004F7C36;
+	__asm        jge    _T33c;
 // LINE 5061:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x16C], 0x80000;
@@ -11895,7 +12347,8 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0x170];
 // LINE 5064:
-	__asm        jmp    near ptr 0x004F7DDA;
+_T33c:
+	__asm        jmp    _T4e0;
 // LINE 5067:
 	__asm        xor    ebx, ebx;
 	__asm        mov    eax, ds:[0x5B4768];
@@ -11920,7 +12373,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5072:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0;
-	__asm        jge    near ptr 0x004F7CA2;
+	__asm        jge    _T3a8;
 // LINE 5074:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0x16C], 0x80000;
@@ -11928,27 +12381,32 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        mov    eax, hd;
 	__asm        inc    dword ptr [eax+0x170];
 // LINE 5077:
-	__asm        jmp    near ptr 0x004F7DDA;
+_T3a8:
+	__asm        jmp    _T4e0;
 // LINE 5080:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F7CB6;
+	__asm        jmp    _T3bc;
 
+_T3b9:
 	__asm        inc    i;
+_T3bc:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F7CEB;
+	__asm        jge    _T3f1;
 // LINE 5082:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, hd;
 	__asm        cmp    [eax*4+0x5B4940], ecx;
-	__asm        jne    near ptr 0x004F7CE6;
+	__asm        jne    _T3ec;
 // LINE 5084:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*4+0x5B4940], 0;
 // LINE 5085:
-	__asm        jmp    near ptr 0x004F7CEB;
+	__asm        jmp    _T3f1;
 // LINE 5087:
-	__asm        jmp    near ptr 0x004F7CB3;
+_T3ec:
+	__asm        jmp    _T3b9;
 // LINE 5089:
+_T3f1:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    up, eax;
 // LINE 5090:
@@ -11962,7 +12420,7 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 // LINE 5092:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004F7D9E;
+	__asm        je     _T4a4;
 // LINE 5095:
 	__asm        push   0x26;
 	__asm        call   S3DSStopPlay;
@@ -12010,22 +12468,25 @@ int32_t S3HeliCrashed(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        mov    [ecx+0x20], eax;
 // LINE 5111:
+_T4a4:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F7DE1;
+	__asm        jmp    _T4e7;
 // LINE 5112:
-	__asm        jmp    near ptr 0x004F7DDA;
+	__asm        jmp    _T4e0;
 // LINE 5113:
-	__asm        jmp    near ptr 0x004F7DDA;
+	__asm        jmp    _T4e0;
 
+_T4b8:
 	__asm        cmp    dword ptr [ebp-0x70], 4;
-	__asm        ja     near ptr 0x004F7DDA;
+	__asm        ja     _T4e0;
 
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    dword ptr [eax*4+0x4F7DC6];
 // Switch pointers
 // LINE 5115:
+_T4e0:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F7DE1;
+	__asm        jmp    _T4e7;
 // LINE 5117:
 }
 
@@ -12053,30 +12514,34 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyobj, eax;
 // LINE 5138:
+_T3d:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x004F7F70;
+	__asm        je     _T18a;
 // LINE 5141:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jne    near ptr 0x004F7E44;
+	__asm        jne    _T5e;
 // LINE 5143:
-	__asm        jmp    near ptr 0x004F7F35;
+	__asm        jmp    _T14f;
 // LINE 5148:
+_T5e:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004F7E58;
+	__asm        je     _T72;
 // LINE 5150:
-	__asm        jmp    near ptr 0x004F7F35;
+	__asm        jmp    _T14f;
 // LINE 5154:
+_T72:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x40;
-	__asm        je     near ptr 0x004F7E6C;
+	__asm        je     _T86;
 // LINE 5156:
-	__asm        jmp    near ptr 0x004F7F35;
+	__asm        jmp    _T14f;
 // LINE 5159:
+_T86:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
@@ -12093,40 +12558,40 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 	__asm        mov    ecx, dyobj;
 	__asm        add    eax, [ecx+0x10];
 	__asm        cmp    eax, loc.x;
-	__asm        jle    near ptr 0x004F7F35;
+	__asm        jle    _T14f;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, dyobj;
 	__asm        sub    eax, [ecx+0x10];
 	__asm        cmp    eax, loc.x;
-	__asm        jge    near ptr 0x004F7F35;
+	__asm        jge    _T14f;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    ecx, loc.y;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    near ptr 0x004F7F35;
+	__asm        jge    _T14f;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, dyobj;
 	__asm        add    eax, [ecx+0x1C];
 	__asm        cmp    eax, loc.y;
-	__asm        jle    near ptr 0x004F7F35;
+	__asm        jle    _T14f;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        mov    ecx, dyobj;
 	__asm        add    eax, [ecx+0x10];
 	__asm        cmp    eax, loc.z;
-	__asm        jle    near ptr 0x004F7F35;
+	__asm        jle    _T14f;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        mov    ecx, dyobj;
 	__asm        sub    eax, [ecx+0x10];
 	__asm        cmp    eax, loc.z;
-	__asm        jge    near ptr 0x004F7F35;
+	__asm        jge    _T14f;
 // LINE 5170:
 	__asm        push   0;
 	__asm        push   0xFFFFFFFF;
@@ -12142,15 +12607,16 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
-	__asm        jne    near ptr 0x004F7F35;
+	__asm        jne    _T14f;
 // LINE 5178:
 	__asm        mov    ret_code, 1;
 // LINE 5190:
 next_dyobj:
+_T14f:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004F7F63;
+	__asm        je     _T17d;
 // LINE 5192:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
@@ -12165,14 +12631,17 @@ next_dyobj:
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 5194:
-	__asm        jmp    near ptr 0x004F7F6B;
+	__asm        jmp    _T185;
 // LINE 5195:
+_T17d:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 5196:
-	__asm        jmp    near ptr 0x004F7E23;
+_T185:
+	__asm        jmp    _T3d;
 // LINE 5198:
+_T18a:
 	__asm        mov    eax, ret_code;
 	__asm        jmp    near ptr 0x004F7F78;
 // LINE 5199:
@@ -12201,30 +12670,34 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 // LINE 5225:
 	__asm        mov    eax, hit_type;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004F7FCD;
+	__asm        jmp    _T50;
 // LINE 5228:
+_T29:
 	__asm        mov    spiral_dist, 3;
 // LINE 5229:
-	__asm        jmp    near ptr 0x004F7FE6;
+	__asm        jmp    _T69;
 // LINE 5231:
+_T35:
 	__asm        mov    spiral_dist, 5;
 // LINE 5232:
-	__asm        jmp    near ptr 0x004F7FE6;
+	__asm        jmp    _T69;
 // LINE 5234:
-	__asm        jmp    near ptr 0x004F81B6;
+	__asm        jmp    _T239;
 // LINE 5235:
-	__asm        jmp    near ptr 0x004F7FE6;
+	__asm        jmp    _T69;
 // LINE 5236:
-	__asm        jmp    near ptr 0x004F7FE6;
+	__asm        jmp    _T69;
 
+_T50:
 	__asm        cmp    dword ptr [ebp-0x30], 1;
-	__asm        je     near ptr 0x004F7FA6;
+	__asm        je     _T29;
 
 	__asm        cmp    dword ptr [ebp-0x30], 2;
-	__asm        je     near ptr 0x004F7FB2;
+	__asm        je     _T35;
 
-	__asm        jmp    near ptr 0x004F81B6;
+	__asm        jmp    _T239;
 // LINE 5238:
+_T69:
 	__asm        mov    eax, cell;
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
@@ -12233,11 +12706,12 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 // LINE 5247:
+_T7a:
 	__asm        inc    curr_dir;
 // LINE 5248:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x004F8063;
+	__asm        jmp    _Te6;
 // LINE 5252:
 	__asm        mov    curr_dir, 0;
 // LINE 5253:
@@ -12247,13 +12721,13 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 // LINE 5255:
 	__asm        mov    ydir, 0xFFFFFFFF;
 // LINE 5256:
-	__asm        jmp    near ptr 0x004F808B;
+	__asm        jmp    _T10e;
 // LINE 5258:
 	__asm        mov    xdir, 1;
 // LINE 5259:
 	__asm        mov    ydir, 0;
 // LINE 5260:
-	__asm        jmp    near ptr 0x004F808B;
+	__asm        jmp    _T10e;
 // LINE 5262:
 	__asm        inc    curr_dist;
 // LINE 5263:
@@ -12261,38 +12735,43 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 // LINE 5264:
 	__asm        mov    ydir, 1;
 // LINE 5265:
-	__asm        jmp    near ptr 0x004F808B;
+	__asm        jmp    _T10e;
 // LINE 5267:
 	__asm        mov    xdir, 0xFFFFFFFF;
 // LINE 5268:
 	__asm        mov    ydir, 0;
 // LINE 5269:
-	__asm        jmp    near ptr 0x004F808B;
+	__asm        jmp    _T10e;
 // LINE 5270:
-	__asm        jmp    near ptr 0x004F808B;
+	__asm        jmp    _T10e;
 
+_Te6:
 	__asm        cmp    dword ptr [ebp-0x34], 4;
-	__asm        ja     near ptr 0x004F808B;
+	__asm        ja     _T10e;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    dword ptr [eax*4+0x4F8077];
 // Switch pointers
 // LINE 5274:
+_T10e:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
-	__asm        jne    near ptr 0x004F80A1;
+	__asm        jne    _T124;
 // LINE 5276:
 	__asm        dec    curr_dist;
 // LINE 5277:
 	__asm        mov    stop_now, 1;
 // LINE 5281:
+_T124:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F80B0;
+	__asm        jmp    _T133;
 
+_T130:
 	__asm        inc    i;
+_T133:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
-	__asm        jle    near ptr 0x004F81A2;
+	__asm        jle    _T225;
 // LINE 5284:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -12306,36 +12785,41 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyobj, eax;
 // LINE 5288:
+_T166:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x004F8191;
+	__asm        je     _T214;
 // LINE 5291:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004F8101;
+	__asm        je     _T184;
 // LINE 5293:
-	__asm        jmp    near ptr 0x004F8156;
+	__asm        jmp    _T1d9;
 // LINE 5297:
+_T184:
 	__asm        mov    eax, dyhitter;
 	__asm        cmp    dyobj, eax;
-	__asm        jne    near ptr 0x004F8112;
+	__asm        jne    _T195;
 // LINE 5299:
-	__asm        jmp    near ptr 0x004F8156;
+	__asm        jmp    _T1d9;
 // LINE 5303:
+_T195:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x004F8126;
+	__asm        je     _T1a9;
 // LINE 5305:
-	__asm        jmp    near ptr 0x004F8156;
+	__asm        jmp    _T1d9;
 // LINE 5309:
+_T1a9:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x40;
-	__asm        je     near ptr 0x004F813A;
+	__asm        je     _T1bd;
 // LINE 5311:
-	__asm        jmp    near ptr 0x004F8156;
+	__asm        jmp    _T1d9;
 // LINE 5315:
+_T1bd:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -12350,10 +12834,11 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 	__asm        add    esp, 0x14;
 // LINE 5319:
 next_dyobj:
+_T1d9:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004F8184;
+	__asm        je     _T207;
 // LINE 5321:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
@@ -12368,28 +12853,33 @@ next_dyobj:
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 5323:
-	__asm        jmp    near ptr 0x004F818C;
+	__asm        jmp    _T20f;
 // LINE 5324:
+_T207:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 5325:
-	__asm        jmp    near ptr 0x004F80E3;
+_T20f:
+	__asm        jmp    _T166;
 // LINE 5328:
+_T214:
 	__asm        mov    eax, xdir;
 	__asm        add    x, eax;
 // LINE 5329:
 	__asm        mov    eax, ydir;
 	__asm        add    y, eax;
 // LINE 5330:
-	__asm        jmp    near ptr 0x004F80AD;
+	__asm        jmp    _T130;
 // LINE 5332:
+_T225:
 	__asm        cmp    stop_now, 1;
-	__asm        jne    near ptr 0x004F81B1;
+	__asm        jne    _T234;
 // LINE 5333:
-	__asm        jmp    near ptr 0x004F81B6;
+	__asm        jmp    _T239;
 // LINE 5334:
-	__asm        jmp    near ptr 0x004F7FF7;
+_T234:
+	__asm        jmp    _T7a;
 // LINE 5335:
 }
 
@@ -12405,13 +12895,15 @@ struct Point2d* S3HeliGetFreePad() {
 // LINE 5358:
 	__asm        mov    pad, 0x6C1190;
 // LINE 5361:
-	__asm        jmp    near ptr 0x004F81DB;
+	__asm        jmp    _T20;
 
+_T1c:
 	__asm        add    pad, 8;
+_T20:
 	__asm        mov    eax, 0x6C1190;
 	__asm        add    eax, 0x60;
 	__asm        cmp    eax, pad;
-	__asm        je     near ptr 0x004F8263;
+	__asm        je     _Ta8;
 // LINE 5364:
 	__asm        mov    eax, pad;
 	__asm        mov    eax, [eax+4];
@@ -12425,39 +12917,45 @@ struct Point2d* S3HeliGetFreePad() {
 // LINE 5367:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    near ptr 0x004F8224;
+	__asm        jne    _T69;
 // LINE 5368:
 	__asm        mov    eax, pad;
-	__asm        jmp    near ptr 0x004F826B;
+	__asm        jmp    _Tb0;
 // LINE 5371:
+_T69:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyobj, eax;
 // LINE 5372:
+_T72:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x004F8258;
+	__asm        je     _T9d;
 // LINE 5374:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x004F824B;
+	__asm        je     _T90;
 // LINE 5375:
-	__asm        jmp    near ptr 0x004F825E;
+	__asm        jmp    _Ta3;
 // LINE 5378:
+_T90:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 5379:
-	__asm        jmp    near ptr 0x004F822D;
+	__asm        jmp    _T72;
 // LINE 5382:
+_T9d:
 	__asm        mov    eax, pad;
 	__asm        mov    noheliloc, eax;
 // LINE 5386:
 contains_a_heli:
-	__asm        jmp    near ptr 0x004F81D7;
+_Ta3:
+	__asm        jmp    _T1c;
 // LINE 5390:
+_Ta8:
 	__asm        mov    eax, noheliloc;
-	__asm        jmp    near ptr 0x004F826B;
+	__asm        jmp    _Tb0;
 // LINE 5391:
 }
 
@@ -12467,11 +12965,13 @@ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 
 // LINE 5405:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F8288;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F82D3;
+	__asm        jge    _T63;
 // LINE 5406:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -12481,7 +12981,7 @@ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, lHeliType;
 	__asm        cmp    [eax*2+0x6BF1D0], ecx;
-	__asm        jne    near ptr 0x004F82CE;
+	__asm        jne    _T5e;
 // LINE 5407:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -12490,12 +12990,14 @@ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
 	__asm        lea    eax, [eax*2+0x6BF1D0];
-	__asm        jmp    near ptr 0x004F82DA;
+	__asm        jmp    _T6a;
 // LINE 5408:
-	__asm        jmp    near ptr 0x004F8285;
+_T5e:
+	__asm        jmp    _T15;
 // LINE 5409:
+_T63:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F82DA;
+	__asm        jmp    _T6a;
 // LINE 5410:
 }
 
@@ -12512,14 +13014,15 @@ long S3HeliGetNewValue(long lHeliType) {
 	__asm        mov    htd, eax;
 // LINE 5422:
 	__asm        cmp    htd, 0;
-	__asm        je     near ptr 0x004F8312;
+	__asm        je     _T33;
 // LINE 5425:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x48];
-	__asm        jmp    near ptr 0x004F8319;
+	__asm        jmp    _T3a;
 // LINE 5427:
+_T33:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F8319;
+	__asm        jmp    _T3a;
 // LINE 5428:
 }
 
@@ -12544,7 +13047,7 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	__asm        mov    htd, eax;
 // LINE 5443:
 	__asm        cmp    hd, 0;
-	__asm        je     near ptr 0x004F839C;
+	__asm        je     _T7e;
 // LINE 5448:
 	__asm        mov    eax, ds:[0x5B48FC];
 	__asm        push   eax;
@@ -12567,13 +13070,15 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	__asm        sar    eax, 1;
 	__asm        mov    ecx, newval;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x004F8397;
+	__asm        jg     _T79;
 
 	__asm        mov    eax, ecx;
-	__asm        jmp    near ptr 0x004F83A3;
+_T79:
+	__asm        jmp    _T85;
 // LINE 5454:
+_T7e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F83A3;
+	__asm        jmp    _T85;
 // LINE 5455:
 }
 
@@ -12594,36 +13099,39 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	__asm        mov    lValues[4], 0x7D0;
 // LINE 5476:
 	__asm        cmp    lEquipmentType, 3;
-	__asm        jne    near ptr 0x004F842D;
+	__asm        jne    _T85;
 // LINE 5484:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 8;
-	__asm        jne    near ptr 0x004F8400;
+	__asm        jne    _T58;
 // LINE 5485:
 	__asm        mov    eax, lValues[3];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        jmp    near ptr 0x004F8439;
+	__asm        jmp    _T91;
 // LINE 5486:
-	__asm        jmp    near ptr 0x004F842D;
+	__asm        jmp    _T85;
 // LINE 5487:
+_T58:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x54];
 	__asm        mov    lTeargasCanisterCount, eax;
 // LINE 5488:
 	__asm        cmp    lTeargasCanisterCount, 0xA;
-	__asm        jle    near ptr 0x004F841C;
+	__asm        jle    _T74;
 // LINE 5489:
 	__asm        mov    lTeargasCanisterCount, 0xA;
 // LINE 5490:
+_T74:
 	__asm        mov    eax, 0xA;
 	__asm        sub    eax, lTeargasCanisterCount;
 	__asm        imul   eax, lValues[3];
-	__asm        jmp    near ptr 0x004F8439;
+	__asm        jmp    _T91;
 // LINE 5493:
+_T85:
 	__asm        mov    eax, lEquipmentType;
 	__asm        mov    eax, [ebp+eax*4-0x14];
-	__asm        jmp    near ptr 0x004F8439;
+	__asm        jmp    _T91;
 // LINE 5494:
 }
 
@@ -12679,25 +13187,28 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lHeliType);
 	__asm        shl    edx, cl;
 	__asm        test   [eax+0x44], edx;
-	__asm        je     near ptr 0x004F84CD;
+	__asm        je     _T3b;
 // LINE 5538:
-	__asm        jmp    near ptr 0x004F8525;
+	__asm        jmp    _T93;
 // LINE 5540:
+_T3b:
 	__asm        cmp    lHeliType, 2;
-	__asm        jne    near ptr 0x004F84F4;
+	__asm        jne    _T62;
 
 	__asm        cmp    dword ptr ds:[0x5B4920], 1;
-	__asm        jne    near ptr 0x004F84F4;
+	__asm        jne    _T62;
 // LINE 5541:
 	__asm        mov    eax, 0x6C1190;
 	__asm        add    eax, 0x68;
 	__asm        mov    freepad, eax;
 // LINE 5542:
-	__asm        jmp    near ptr 0x004F84FC;
+	__asm        jmp    _T6a;
 // LINE 5543:
+_T62:
 	__asm        call   S3HeliGetFreePad;
 	__asm        mov    freepad, eax;
 // LINE 5545:
+_T6a:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lHeliType);
 	__asm        shl    eax, cl;
@@ -12732,24 +13243,27 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	__asm        mov    hd, eax;
 // LINE 5563:
 	__asm        cmp    hd, 0;
-	__asm        jne    near ptr 0x004F8551;
+	__asm        jne    _T27;
 // LINE 5564:
-	__asm        jmp    near ptr 0x004F85E3;
+	__asm        jmp    _Tb9;
 // LINE 5566:
+_T27:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    up, eax;
 // LINE 5569:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F8568;
+	__asm        jmp    _T3e;
 
+_T3b:
 	__asm        inc    i;
+_T3e:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F85E3;
+	__asm        jge    _Tb9;
 // LINE 5571:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, hd;
 	__asm        cmp    [eax*4+0x5B4940], ecx;
-	__asm        jne    near ptr 0x004F85DE;
+	__asm        jne    _Tb4;
 // LINE 5573:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C];
@@ -12778,9 +13292,10 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	__asm        mov    ecx, up;
 	__asm        and    [ecx+0x44], eax;
 // LINE 5577:
-	__asm        jmp    near ptr 0x004F85E3;
+	__asm        jmp    _Tb9;
 // LINE 5579:
-	__asm        jmp    near ptr 0x004F8565;
+_Tb4:
+	__asm        jmp    _T3b;
 // LINE 5581:
 }
 
@@ -12793,15 +13308,16 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
 // LINE 5595:
+_T12:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x004F864E;
+	__asm        je     _T66;
 // LINE 5597:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jne    near ptr 0x004F8641;
+	__asm        jne    _T59;
 // LINE 5599:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -12818,13 +13334,14 @@ void S3HeliUnlink(struct _HELI_DATA* hd, struct _CELL_INFO* cptr) {
 	__asm        mov    ecx, dyptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 5600:
-	__asm        jmp    near ptr 0x004F864E;
+	__asm        jmp    _T66;
 // LINE 5602:
+_T59:
 	__asm        mov    eax, dyptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptrptr, eax;
 // LINE 5603:
-	__asm        jmp    near ptr 0x004F85FA;
+	__asm        jmp    _T12;
 // LINE 5604:
 }
 
@@ -12845,10 +13362,10 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 // LINE 5620:
 	__asm        mov    eax, hitter_type;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004F87EA;
+	__asm        jmp    _T197;
 // LINE 5623:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F86AA;
+	__asm        jne    _T57;
 // LINE 5624:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -12858,14 +13375,15 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5625:
-	__asm        jmp    near ptr 0x004F8842;
+_T57:
+	__asm        jmp    _T1ef;
 // LINE 5627:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5629:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5631:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F86DE;
+	__asm        jne    _T8b;
 // LINE 5632:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -12875,14 +13393,15 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5633:
-	__asm        jmp    near ptr 0x004F8842;
+_T8b:
+	__asm        jmp    _T1ef;
 // LINE 5635:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5637:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5639:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F8712;
+	__asm        jne    _Tbf;
 // LINE 5640:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -12892,10 +13411,11 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5641:
-	__asm        jmp    near ptr 0x004F8842;
+_Tbf:
+	__asm        jmp    _T1ef;
 // LINE 5643:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F8737;
+	__asm        jne    _Te4;
 // LINE 5644:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B48F8];
@@ -12903,12 +13423,13 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5645:
-	__asm        jmp    near ptr 0x004F8842;
+_Te4:
+	__asm        jmp    _T1ef;
 // LINE 5647:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5649:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F8766;
+	__asm        jne    _T113;
 // LINE 5650:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -12918,14 +13439,15 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5651:
-	__asm        jmp    near ptr 0x004F8842;
+_T113:
+	__asm        jmp    _T1ef;
 // LINE 5653:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5655:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5657:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F8795;
+	__asm        jne    _T142;
 // LINE 5658:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B48F8];
@@ -12933,19 +13455,20 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5659:
-	__asm        jmp    near ptr 0x004F8842;
+_T142:
+	__asm        jmp    _T1ef;
 // LINE 5661:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5663:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5666:
 	__asm        mov    eax, hd;
 	__asm        mov    dword ptr [eax+0xD0], 0xFFFFFFFF;
 // LINE 5667:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5669:
 	__asm        cmp    dword ptr ds:[0x5C380C], 0;
-	__asm        jne    near ptr 0x004F87DB;
+	__asm        jne    _T188;
 // LINE 5670:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ds:[0x5B48F8];
@@ -12955,14 +13478,16 @@ void S3HeliHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5671:
-	__asm        jmp    near ptr 0x004F8842;
+_T188:
+	__asm        jmp    _T1ef;
 // LINE 5673:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 // LINE 5674:
-	__asm        jmp    near ptr 0x004F8842;
+	__asm        jmp    _T1ef;
 
+_T197:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
-	__asm        ja     near ptr 0x004F8842;
+	__asm        ja     _T1ef;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    dword ptr [eax*4+0x4F87FE];
@@ -12988,17 +13513,20 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 5703:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x004F8880;
+	__asm        jne    _T39;
 // LINE 5704:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F894A;
+	__asm        jmp    _T103;
 // LINE 5707:
+_T39:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F888F;
+	__asm        jmp    _T48;
 
+_T45:
 	__asm        inc    i;
+_T48:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F8940;
+	__asm        jge    _Tf9;
 // LINE 5709:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -13042,18 +13570,20 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 5724:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x004F893B;
+	__asm        jne    _Tf4;
 
 	__asm        cmp    i, 9;
-	__asm        je     near ptr 0x004F893B;
+	__asm        je     _Tf4;
 // LINE 5725:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F894A;
+	__asm        jmp    _T103;
 // LINE 5726:
-	__asm        jmp    near ptr 0x004F888C;
+_Tf4:
+	__asm        jmp    _T45;
 // LINE 5728:
+_Tf9:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F894A;
+	__asm        jmp    _T103;
 // LINE 5729:
 }
 
@@ -13064,11 +13594,13 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 
 // LINE 5737:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004F8967;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x004F89B9;
+	__asm        jge    _T6a;
 // LINE 5742:
 	__asm        push   0x32C;
 	__asm        mov    eax, i;
@@ -13088,15 +13620,17 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    ret, eax;
 // LINE 5743:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x004F89B4;
+	__asm        jne    _T65;
 // LINE 5744:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004F89C3;
+	__asm        jmp    _T74;
 // LINE 5745:
-	__asm        jmp    near ptr 0x004F8964;
+_T65:
+	__asm        jmp    _T15;
 // LINE 5747:
+_T6a:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004F89C3;
+	__asm        jmp    _T74;
 // LINE 5748:
 }
 
@@ -13125,19 +13659,23 @@ void S3HeliUserExit() {
 	__asm        mov    maxRadius, 0x200000;
 // LINE 5768:
 	__asm        mov    radius, 0x80000;
-	__asm        jmp    near ptr 0x004F8A0C;
+	__asm        jmp    _T44;
 
+_T3d:
 	__asm        add    radius, 0x80000;
+_T44:
 	__asm        mov    eax, maxRadius;
 	__asm        cmp    radius, eax;
-	__asm        jge    near ptr 0x004F8AE7;
+	__asm        jge    _T11f;
 // LINE 5770:
 	__asm        mov    angle, 0;
-	__asm        jmp    near ptr 0x004F8A2B;
+	__asm        jmp    _T63;
 
+_T5c:
 	__asm        add    angle, 0x640000;
+_T63:
 	__asm        cmp    angle, 0xE100000;
-	__asm        jge    near ptr 0x004F8AE2;
+	__asm        jge    _T11a;
 // LINE 5772:
 	__asm        lea    eax, rcos;
 	__asm        push   eax;
@@ -13180,13 +13718,13 @@ void S3HeliUserExit() {
 	__asm        mov    eax, [eax+0x154];
 	__asm        sub    eax, 0x50000;
 	__asm        cmp    eax, personLoc.y;
-	__asm        jg     near ptr 0x004F8ADD;
+	__asm        jg     _T115;
 
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    eax, [eax+0x154];
 	__asm        add    eax, 0x50000;
 	__asm        cmp    eax, personLoc.y;
-	__asm        jl     near ptr 0x004F8ADD;
+	__asm        jl     _T115;
 // LINE 5784:
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        add    eax, 0x100;
@@ -13196,11 +13734,13 @@ void S3HeliUserExit() {
 	__asm        call   S3PersonUserAppearNew;
 	__asm        add    esp, 8;
 // LINE 5785:
-	__asm        jmp    near ptr 0x004F8AE7;
+	__asm        jmp    _T11f;
 // LINE 5788:
-	__asm        jmp    near ptr 0x004F8A24;
+_T115:
+	__asm        jmp    _T5c;
 // LINE 5789:
-	__asm        jmp    near ptr 0x004F8A05;
+_T11a:
+	__asm        jmp    _T3d;
 // LINE 5790:
 }
 

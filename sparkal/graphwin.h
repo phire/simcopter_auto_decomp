@@ -82,7 +82,7 @@ void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
 int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 // LINE 364:
 	__asm        cmp    nXPosition, 0;
-	__asm        jle    near ptr 0x0040D90E;
+	__asm        jle    _T5e;
 
 	__asm        jmp    near ptr 0x0040D8CB;
 
@@ -91,10 +91,10 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x10];
 	__asm        cmp    eax, nXPosition;
-	__asm        jle    near ptr 0x0040D90E;
+	__asm        jle    _T5e;
 
 	__asm        cmp    nYPosition, 0;
-	__asm        jle    near ptr 0x0040D90E;
+	__asm        jle    _T5e;
 
 	__asm        jmp    near ptr 0x0040D8EF;
 
@@ -103,12 +103,14 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x14];
 	__asm        cmp    eax, nYPosition;
-	__asm        jle    near ptr 0x0040D90E;
+	__asm        jle    _T5e;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0040D910;
+	__asm        jmp    _T60;
 
+_T5e:
 	__asm        xor    eax, eax;
+_T60:
 	__asm        jmp    near ptr 0x0040D915;
 // LINE 365:
 }

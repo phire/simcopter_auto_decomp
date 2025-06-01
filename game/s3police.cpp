@@ -394,12 +394,14 @@ int32_t CreatePoliceCarInstance(int32_t instanceID) {
 	__asm        call   PoliceCarClass::CreateInstance;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00536E24;
+	__asm        je     _T24;
 
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00536E26;
+	__asm        jmp    _T26;
 
+_T24:
 	__asm        xor    eax, eax;
+_T26:
 	__asm        jmp    near ptr 0x00536E2B;
 // LINE 91:
 }
@@ -446,24 +448,26 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x00536ECB;
+	__asm        je     _T33;
 
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        call   PoliceCarClass::PoliceCarClass;
 	__asm        mov    youveWonABrandNewCar, eax;
-	__asm        jmp    near ptr 0x00536ED2;
+	__asm        jmp    _T3a;
 
+_T33:
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 128:
+_T3a:
 	__asm        cmp    youveWonABrandNewCar, 0;
-	__asm        je     near ptr 0x00537075;
+	__asm        je     _T1dd;
 // LINE 131:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
 	__asm        mov    ecx, youveWonABrandNewCar;
 	__asm        call   AutomobileClass::Initialize;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0053704E;
+	__asm        je     _T1b6;
 // LINE 135:
 // Block start:
 	struct VRObjInfo oinfo;
@@ -484,7 +488,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    objectMemory, eax;
 // LINE 138:
 	__asm        cmp    objectMemory, 0;
-	__asm        je     near ptr 0x00536FAB;
+	__asm        je     _T113;
 // LINE 143:
 	__asm        mov    eax, objectMemory;
 	__asm        push   eax;
@@ -497,7 +501,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 // LINE 145:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        cmp    dword ptr [eax+0x12E], 0;
-	__asm        je     near ptr 0x00536F6E;
+	__asm        je     _Td6;
 // LINE 148:
 	__asm        mov    eax, ds:[0x5B4780];
 	__asm        push   eax;
@@ -507,41 +511,49 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 150:
-	__asm        jmp    near ptr 0x00536FA6;
+	__asm        jmp    _T10e;
 // LINE 153:
+_Td6:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        cmp    dword ptr [eax+0x12E], 0;
-	__asm        jne    near ptr 0x00536F9A;
+	__asm        jne    _T102;
 
 	__asm        push   0x99;
 	__asm        push   0x5B7EB4;
 	__asm        push   0x5B7ED8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00536F9F;
+	__asm        jmp    _T107;
 
-	__asm        jmp    near ptr 0x00536F9F;
+_T102:
+	__asm        jmp    _T107;
 // LINE 155:
+_T107:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0053707C;
+	__asm        jmp    _T1e4;
 // LINE 158:
-	__asm        jmp    near ptr 0x00536FDD;
+_T10e:
+	__asm        jmp    _T145;
 // LINE 161:
+_T113:
 	__asm        cmp    objectMemory, 0;
-	__asm        jne    near ptr 0x00536FD1;
+	__asm        jne    _T139;
 
 	__asm        push   0xA1;
 	__asm        push   0x5B7F00;
 	__asm        push   0x5B7F24;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00536FD6;
+	__asm        jmp    _T13e;
 
-	__asm        jmp    near ptr 0x00536FD6;
+_T139:
+	__asm        jmp    _T13e;
 // LINE 163:
+_T13e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0053707C;
+	__asm        jmp    _T1e4;
 // LINE 169:
+_T145:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    word ptr [eax+0x134], 0;
 // LINE 170:
@@ -573,27 +585,29 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        inc    dword ptr ds:[0x5B7EB0];
 // LINE 177:
 	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    near ptr 0x0053707C;
+	__asm        jmp    _T1e4;
 // LINE 179:
 // Block end:
-	__asm        jmp    near ptr 0x00537075;
+	__asm        jmp    _T1dd;
 // LINE 182:
+_T1b6:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        je     near ptr 0x00537075;
+	__asm        je     _T1dd;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x00537075;
+	__asm        jmp    _T1dd;
 // LINE 188:
+_T1dd:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0053707C;
+	__asm        jmp    _T1e4;
 // LINE 189:
 }
 
@@ -632,11 +646,11 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    near ptr 0x005379F3;
+	__asm        jmp    _T940;
 // LINE 253:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
-	__asm        jle    near ptr 0x00537100;
+	__asm        jle    _T4d;
 // LINE 254:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4760];
@@ -644,14 +658,15 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
 // LINE 256:
+_T4d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
-	__asm        jg     near ptr 0x00537187;
+	__asm        jg     _Td4;
 
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOut;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00537187;
+	__asm        je     _Td4;
 // LINE 261:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
@@ -685,8 +700,9 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 273:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 276:
+_Td4:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
@@ -700,13 +716,13 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x00537242;
+	__asm        je     _T18f;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
-	__asm        je     near ptr 0x00537242;
+	__asm        je     _T18f;
 // LINE 281:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
@@ -744,7 +760,8 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 292:
-	__asm        jmp    near ptr 0x00537A22;
+_T18f:
+	__asm        jmp    _T96f;
 // LINE 295:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
@@ -756,7 +773,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11A];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x005372B7;
+	__asm        jne    _T204;
 
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -765,7 +782,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11B];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x005372B7;
+	__asm        jne    _T204;
 // LINE 301:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
@@ -782,22 +799,24 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 305:
-	__asm        jmp    near ptr 0x00537A27;
+	__asm        jmp    _T974;
 // LINE 308:
+_T204:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 309:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 312:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x10;
-	__asm        je     near ptr 0x005372DE;
+	__asm        je     _T22b;
 // LINE 314:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 315:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 318:
+_T22b:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 320:
@@ -814,18 +833,18 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 322:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x00537353;
+	__asm        je     _T2a0;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        test   byte ptr [eax+8], 0x10;
-	__asm        je     near ptr 0x00537353;
+	__asm        je     _T2a0;
 // LINE 326:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x10;
-	__asm        jne    near ptr 0x0053734E;
+	__asm        jne    _T29b;
 // LINE 327:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, this;
@@ -833,22 +852,24 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 329:
-	__asm        jmp    near ptr 0x005375EB;
+_T29b:
+	__asm        jmp    _T538;
 
+_T2a0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x00537431;
+	__asm        je     _T37e;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        test   byte ptr [eax+8], 0x20;
-	__asm        je     near ptr 0x00537431;
+	__asm        je     _T37e;
 
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
-	__asm        je     near ptr 0x00537431;
+	__asm        je     _T37e;
 // LINE 332:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
@@ -864,7 +885,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PlacePerson;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005373EE;
+	__asm        je     _T33b;
 // LINE 338:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 5;
@@ -875,19 +896,21 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xFE], 0xF00000;
 // LINE 341:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 343:
-	__asm        jmp    near ptr 0x0053742C;
+	__asm        jmp    _T379;
 // LINE 346:
+_T33b:
 	__asm        push   0x15A;
 	__asm        push   0x5B7F34;
 	__asm        push   0x5B7F58;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0053740F;
+	__asm        jmp    _T35c;
 
-	__asm        jmp    near ptr 0x0053740F;
+	__asm        jmp    _T35c;
 // LINE 348:
+_T35c:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 349:
@@ -897,17 +920,19 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 350:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 354:
-	__asm        jmp    near ptr 0x005375EB;
+_T379:
+	__asm        jmp    _T538;
 // LINE 356:
+_T37e:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
 	__asm        mov    reinterpret_cast<uint16_t>(oldemergencyloc.x), ax;
 // LINE 358:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x0053746F;
+	__asm        je     _T3bc;
 // LINE 360:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(badGuyLoc.x);
 	__asm        mov    ecx, this;
@@ -916,13 +941,15 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x31E], 1;
 // LINE 363:
-	__asm        jmp    near ptr 0x00537480;
+	__asm        jmp    _T3cd;
 // LINE 365:
+_T3bc:
 	__asm        mov    ecx, this;
 	__asm        call   PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x31E], eax;
 // LINE 369:
+_T3cd:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
@@ -946,11 +973,12 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 373:
 	__asm        mov    eax, dist;
 	__asm        cmp    ds:[0x608F74], eax;
-	__asm        jle    near ptr 0x005374D0;
+	__asm        jle    _T41d;
 // LINE 374:
 	__asm        mov    eax, dist;
 	__asm        mov    ds:[0x608F74], eax;
 // LINE 376:
+_T41d:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 380:
@@ -975,17 +1003,19 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, [eax+ecx*4+0x67ED30];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        jne    near ptr 0x00537544;
+	__asm        jne    _T491;
 
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00537549;
+	__asm        jmp    _T496;
 
-	__asm        jmp    near ptr 0x00537549;
+_T491:
+	__asm        jmp    _T496;
 
+_T496:
 	__asm        jmp    near ptr 0x0053754E;
 
 	__asm        mov    eax, [ebp-0x38];
@@ -1025,7 +1055,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11C];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x005375E3;
+	__asm        jne    _T530;
 
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1034,12 +1064,14 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11D];
 	__asm        cmp    ecx, edx;
-	__asm        je     near ptr 0x005375EB;
+	__asm        je     _T538;
 // LINE 389:
+_T530:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 392:
-	__asm        jmp    near ptr 0x00537A22;
+_T538:
+	__asm        jmp    _T96f;
 // LINE 396:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
@@ -1051,7 +1083,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11C];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x00537642;
+	__asm        jne    _T58f;
 
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1060,27 +1092,28 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x11D];
 	__asm        cmp    ecx, edx;
-	__asm        jne    near ptr 0x00537642;
+	__asm        jne    _T58f;
 
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x70;
-	__asm        jne    near ptr 0x00537642;
+	__asm        jne    _T58f;
 // LINE 401:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 4;
 // LINE 404:
+_T58f:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x0053777D;
+	__asm        je     _T6ca;
 // LINE 406:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x30;
-	__asm        jne    near ptr 0x0053767E;
+	__asm        jne    _T5cb;
 
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOver;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0053767E;
+	__asm        je     _T5cb;
 // LINE 408:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, this;
@@ -1088,11 +1121,12 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 410:
-	__asm        jmp    near ptr 0x00537770;
+	__asm        jmp    _T6bd;
 
+_T5cb:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
-	__asm        je     near ptr 0x00537770;
+	__asm        je     _T6bd;
 // LINE 412:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
@@ -1119,14 +1153,14 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 419:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x0053773C;
+	__asm        je     _T689;
 // LINE 422:
 	__asm        push   8;
 	__asm        push   0xE;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PlacePerson;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0053771D;
+	__asm        je     _T66a;
 // LINE 424:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 5;
@@ -1137,16 +1171,19 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xFE], 0xF00000;
 // LINE 428:
-	__asm        jmp    near ptr 0x00537737;
+	__asm        jmp    _T684;
 // LINE 432:
+_T66a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xFE], 0;
 // LINE 433:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 1;
 // LINE 436:
-	__asm        jmp    near ptr 0x0053776B;
+_T684:
+	__asm        jmp    _T6b8;
 // LINE 439:
+_T689:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 440:
@@ -1159,13 +1196,16 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xFE], 0x12C0000;
 // LINE 445:
-	__asm        jmp    near ptr 0x00537A27;
+_T6b8:
+	__asm        jmp    _T974;
 // LINE 448:
+_T6bd:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 450:
-	__asm        jmp    near ptr 0x005377DD;
+	__asm        jmp    _T72a;
 // LINE 453:
+_T6ca:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
@@ -1189,31 +1229,34 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 457:
 	__asm        mov    eax, dist;
 	__asm        cmp    ds:[0x608F74], eax;
-	__asm        jle    near ptr 0x005377CD;
+	__asm        jle    _T71a;
 // LINE 458:
 	__asm        mov    eax, dist;
 	__asm        mov    ds:[0x608F74], eax;
 // LINE 460:
+_T71a:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 461:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 463:
-	__asm        jmp    near ptr 0x00537A22;
+_T72a:
+	__asm        jmp    _T96f;
 // LINE 466:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
-	__asm        jne    near ptr 0x005377FC;
+	__asm        jne    _T749;
 // LINE 469:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 470:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 // LINE 473:
+_T749:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
-	__asm        jle    near ptr 0x0053781F;
+	__asm        jle    _T76c;
 // LINE 474:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4760];
@@ -1221,22 +1264,25 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
 // LINE 477:
+_T76c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xF6], 0;
-	__asm        jne    near ptr 0x0053783F;
+	__asm        jne    _T78c;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
-	__asm        jg     near ptr 0x00537907;
+	__asm        jg     _T854;
 // LINE 479:
+_T78c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFA], 0;
-	__asm        jne    near ptr 0x0053785F;
+	__asm        jne    _T7ac;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
-	__asm        jg     near ptr 0x005378FA;
+	__asm        jg     _T847;
 // LINE 481:
+_T7ac:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PullOut;
 // LINE 485:
@@ -1265,14 +1311,14 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 495:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x005378F5;
+	__asm        je     _T842;
 // LINE 497:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        test   byte ptr [eax+9], 0x10;
-	__asm        je     near ptr 0x005378F5;
+	__asm        je     _T842;
 // LINE 498:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
@@ -1280,12 +1326,15 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        or     dword ptr [eax+8], 0x2000;
 // LINE 501:
-	__asm        jmp    near ptr 0x00537907;
+_T842:
+	__asm        jmp    _T854;
 // LINE 503:
+_T847:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 1;
 // LINE 506:
-	__asm        jmp    near ptr 0x00537A22;
+_T854:
+	__asm        jmp    _T96f;
 // LINE 509:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x7C];
@@ -1300,13 +1349,13 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 511:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
-	__asm        je     near ptr 0x005379B6;
+	__asm        je     _T903;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
-	__asm        je     near ptr 0x005379B6;
+	__asm        je     _T903;
 // LINE 514:
 	__asm        mov    eax, ds:[0x6C126C];
 	__asm        mov    ecx, this;
@@ -1331,46 +1380,53 @@ void PoliceCarClass::ItterateFSM() {
 // LINE 518:
 	__asm        mov    eax, dist;
 	__asm        cmp    ds:[0x608F74], eax;
-	__asm        jle    near ptr 0x005379A1;
+	__asm        jle    _T8ee;
 // LINE 519:
 	__asm        mov    eax, dist;
 	__asm        mov    ds:[0x608F74], eax;
 // LINE 521:
+_T8ee:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 522:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
 // LINE 524:
-	__asm        jmp    near ptr 0x005379C3;
+	__asm        jmp    _T910;
 // LINE 527:
+_T903:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x294], 2;
 // LINE 529:
-	__asm        jmp    near ptr 0x00537A22;
+_T910:
+	__asm        jmp    _T96f;
 // LINE 532:
+_T915:
 	__asm        push   0x214;
 	__asm        push   0x5B7F60;
 	__asm        push   0x5B7F84;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005379E9;
+	__asm        jmp    _T936;
 
-	__asm        jmp    near ptr 0x005379E9;
+	__asm        jmp    _T936;
 // LINE 533:
-	__asm        jmp    near ptr 0x00537A22;
+_T936:
+	__asm        jmp    _T96f;
 // LINE 534:
-	__asm        jmp    near ptr 0x00537A22;
+	__asm        jmp    _T96f;
 
+_T940:
 	__asm        dec    dword ptr [ebp-0x48];
 	__asm        cmp    dword ptr [ebp-0x48], 5;
-	__asm        ja     near ptr 0x005379C8;
+	__asm        ja     _T915;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    dword ptr [eax*4+0x537A0A];
 // Switch pointers
 // LINE 535:
-	__asm        jmp    near ptr 0x00537A27;
+_T96f:
+	__asm        jmp    _T974;
 }
 
 // FUNCTION: COPTER_D 0x00537a2c
@@ -1380,11 +1436,11 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 545:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11E], 3;
-	__asm        jne    near ptr 0x00537E06;
+	__asm        jne    _T3da;
 // LINE 547:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x31E], 0;
-	__asm        je     near ptr 0x00537DAA;
+	__asm        je     _T37e;
 // LINE 552:
 // Block start:
 	struct _RGIndex destVertex;
@@ -1425,21 +1481,23 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 562:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
-	__asm        jne    near ptr 0x00537B19;
+	__asm        jne    _Ted;
 // LINE 564:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2CA], 0;
-	__asm        jne    near ptr 0x00537AF4;
+	__asm        jne    _Tc8;
 
 	__asm        push   0x234;
 	__asm        push   0x5B7F8C;
 	__asm        push   0x5B7FB0;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00537AF9;
+	__asm        jmp    _Tcd;
 
-	__asm        jmp    near ptr 0x00537AF9;
+_Tc8:
+	__asm        jmp    _Tcd;
 // LINE 565:
+_Tcd:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
 	__asm        add    edi, 0x2A0;
@@ -1448,25 +1506,28 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 567:
-	__asm        jmp    near ptr 0x00537CB9;
+	__asm        jmp    _T28d;
 
+_Ted:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2CA], 0;
-	__asm        jne    near ptr 0x00537B7A;
+	__asm        jne    _T14e;
 // LINE 569:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
-	__asm        jne    near ptr 0x00537B55;
+	__asm        jne    _T129;
 
 	__asm        push   0x239;
 	__asm        push   0x5B7FC0;
 	__asm        push   0x5B7FE4;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00537B5A;
+	__asm        jmp    _T12e;
 
-	__asm        jmp    near ptr 0x00537B5A;
+_T129:
+	__asm        jmp    _T12e;
 // LINE 570:
+_T12e:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
 	__asm        add    edi, 0x2A0;
@@ -1475,8 +1536,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 574:
-	__asm        jmp    near ptr 0x00537CB9;
+	__asm        jmp    _T28d;
 
+_T14e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2CA];
 	__asm        xor    ecx, ecx;
@@ -1484,7 +1546,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x00537BF0;
+	__asm        jne    _T1c4;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2CA];
@@ -1493,7 +1555,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x00537BF0;
+	__asm        jne    _T1c4;
 // LINE 576:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
@@ -1509,10 +1571,11 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
 	__asm        mov    eax, [ecx+eax*4+0x5932D0];
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 579:
-	__asm        jmp    near ptr 0x00537CB9;
+	__asm        jmp    _T28d;
 
+_T1c4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2F4];
 	__asm        xor    ecx, ecx;
@@ -1520,7 +1583,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x00537C66;
+	__asm        jne    _T23a;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2F4];
@@ -1529,7 +1592,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        cmp    ecx, eax;
-	__asm        jne    near ptr 0x00537C66;
+	__asm        jne    _T23a;
 // LINE 581:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
@@ -1545,15 +1608,16 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
 	__asm        mov    eax, [ecx+eax*4+0x5932D0];
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 584:
-	__asm        jmp    near ptr 0x00537CB9;
+	__asm        jmp    _T28d;
 
+_T23a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x2CA];
 	__asm        cmp    [eax+0x2A0], ecx;
-	__asm        jne    near ptr 0x00537C9E;
+	__asm        jne    _T272;
 // LINE 586:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
@@ -1563,8 +1627,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 588:
-	__asm        jmp    near ptr 0x00537CB9;
+	__asm        jmp    _T28d;
 // LINE 590:
+_T272:
 	__asm        mov    esi, this;
 	__asm        mov    edi, this;
 	__asm        add    edi, 0x2A0;
@@ -1573,23 +1638,25 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 593:
+_T28d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2CA], 0;
-	__asm        jne    near ptr 0x00537CFA;
+	__asm        jne    _T2ce;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
-	__asm        jne    near ptr 0x00537CFA;
+	__asm        jne    _T2ce;
 
 	__asm        push   0x251;
 	__asm        push   0x5B7FF4;
 	__asm        push   0x5B8018;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00537CFA;
+	__asm        jmp    _T2ce;
 
-	__asm        jmp    near ptr 0x00537CFA;
+	__asm        jmp    _T2ce;
 // LINE 595:
+_T2ce:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
 	__asm        mov    al, [eax];
@@ -1614,14 +1681,14 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startVertex.x;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x00537D79;
+	__asm        jne    _T34d;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.yindex;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startVertex.yindex;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x00537D79;
+	__asm        jne    _T34d;
 // LINE 602:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xDE], 0;
@@ -1630,10 +1697,11 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 605:
-	__asm        jmp    near ptr 0x00537D9B;
+	__asm        jmp    _T36f;
 // LINE 608:
+_T34d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destVertex.x);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
@@ -1648,12 +1716,14 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 613:
+_T36f:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x292], 0;
 // LINE 615:
 // Block end:
-	__asm        jmp    near ptr 0x00537DD2;
+	__asm        jmp    _T3a6;
 // LINE 621:
+_T37e:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x293];
@@ -1662,11 +1732,12 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x292];
 	__asm        cmp    ecx, edx;
-	__asm        jle    near ptr 0x00537DD2;
+	__asm        jle    _T3a6;
 // LINE 622:
 	__asm        mov    eax, this;
 	__asm        inc    byte ptr [eax+0x292];
 // LINE 628:
+_T3a6:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x292];
@@ -1677,21 +1748,23 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
 	__asm        mov    eax, [eax+edx*4+0x5932D0];
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 630:
-	__asm        jmp    near ptr 0x00537E17;
+	__asm        jmp    _T3eb;
 // LINE 633:
+_T3da:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 636:
+_T3eb:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    near ptr 0x00537E28;
+	__asm        jmp    _T3fc;
 // LINE 637:
 }
 
@@ -1719,29 +1792,32 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        sar    eax, 0x16;
 	__asm        mov    loc.y, al;
 // LINE 653:
+_T49:
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.x;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x00537EAE;
+	__asm        jl     _T7f;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.x;
 	__asm        cmp    eax, 0x7F;
-	__asm        jg     near ptr 0x00537EAE;
+	__asm        jg     _T7f;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.y;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x00537EAE;
+	__asm        jl     _T7f;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.y;
 	__asm        cmp    eax, 0x7F;
-	__asm        jle    near ptr 0x00537EBA;
+	__asm        jle    _T8b;
 
+_T7f:
 	__asm        mov    dword ptr [ebp-0x24], 0;
-	__asm        jmp    near ptr 0x00537F13;
+	__asm        jmp    _Te4;
 
+_T8b:
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.x;
 	__asm        mov    eax, [eax*4+0x639850];
@@ -1752,23 +1828,25 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1D;
-	__asm        jl     near ptr 0x00537F07;
+	__asm        jl     _Td8;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2C;
-	__asm        jge    near ptr 0x00537F07;
+	__asm        jge    _Td8;
 
 	__asm        mov    dword ptr [ebp-0x24], 1;
-	__asm        jmp    near ptr 0x00537F13;
+	__asm        jmp    _Te4;
 
-	__asm        jmp    near ptr 0x00537F13;
+	__asm        jmp    _Te4;
 
+_Td8:
 	__asm        mov    dword ptr [ebp-0x24], 0;
-	__asm        jmp    near ptr 0x00537F13;
+	__asm        jmp    _Te4;
 
+_Te4:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x00537F3F;
+	__asm        je     _T110;
 // LINE 655:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
 	__asm        mov    ecx, this;
@@ -1778,20 +1856,21 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        jmp    near ptr 0x00537F37;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    near ptr 0x00537F67;
+	__asm        jmp    _T138;
 // LINE 659:
+_T110:
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00537E78;
+	__asm        jne    _T49;
 // LINE 661:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x00537F5F;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    near ptr 0x00537F67;
+	__asm        jmp    _T138;
 // LINE 662:
 }
 
@@ -1801,29 +1880,33 @@ int32_t PoliceCarClass::AtScene() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11E];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00537FB4;
+	__asm        jmp    _T48;
 // LINE 673:
-	__asm        jmp    near ptr 0x00537FCD;
+	__asm        jmp    _T61;
 // LINE 675:
+_T22:
 	__asm        push   0x2A3;
 	__asm        push   0x5B8020;
 	__asm        push   0x5B8044;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00537FAF;
+	__asm        jmp    _T43;
 
-	__asm        jmp    near ptr 0x00537FAF;
+	__asm        jmp    _T43;
 // LINE 676:
-	__asm        jmp    near ptr 0x00537FCD;
+_T43:
+	__asm        jmp    _T61;
 
+_T48:
 	__asm        cmp    dword ptr [ebp-8], 3;
-	__asm        jl     near ptr 0x00537F8E;
+	__asm        jl     _T22;
 
 	__asm        cmp    dword ptr [ebp-8], 4;
-	__asm        jle    near ptr 0x00537FCD;
+	__asm        jle    _T61;
 
-	__asm        jmp    near ptr 0x00537F8E;
+	__asm        jmp    _T22;
 // LINE 681:
+_T61:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00537FD4;
 // LINE 682:
@@ -1840,6 +1923,7 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 694:
+_T16:
 	__asm        mov    eax, scanLoc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -1857,17 +1941,19 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 	__asm        mov    eax, [eax+ecx*4+0x67ED30];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        jne    near ptr 0x00538048;
+	__asm        jne    _T6f;
 
 	__asm        push   0xA0;
 	__asm        push   0x5B57C4;
 	__asm        push   0x5B57B8;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0053804D;
+	__asm        jmp    _T74;
 
-	__asm        jmp    near ptr 0x0053804D;
+_T6f:
+	__asm        jmp    _T74;
 
+_T74:
 	__asm        jmp    near ptr 0x00538052;
 
 	__asm        mov    eax, [ebp-0x28];
@@ -1877,67 +1963,71 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scan
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyptr, eax;
 // LINE 701:
+_T88:
 	__asm        cmp    dyptr, 0;
-	__asm        je     near ptr 0x005380F0;
+	__asm        je     _T117;
 // LINE 703:
 	__asm        mov    eax, dyptr;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
-	__asm        je     near ptr 0x005380A6;
+	__asm        je     _Tcd;
 
 	__asm        mov    eax, dyptr;
 	__asm        push   eax;
 	__asm        call   IsThisABadGuy;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005380A6;
+	__asm        je     _Tcd;
 // LINE 705:
 	__asm        mov    eax, dyptr;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00538099;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    near ptr 0x00538118;
+	__asm        jmp    _T13f;
 // LINE 707:
-	__asm        jmp    near ptr 0x005380E3;
+	__asm        jmp    _T10a;
 
+_Tcd:
 	__asm        mov    eax, dyptr;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x10;
-	__asm        je     near ptr 0x005380E3;
+	__asm        je     _T10a;
 
 	__asm        mov    eax, dyptr;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    ecx, [eax*4+0x608F80];
 	__asm        call   AutomobileClass::AmIABadGuy;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x005380E3;
+	__asm        je     _T10a;
 // LINE 709:
 	__asm        mov    eax, dyptr;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x005380DB;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    near ptr 0x00538118;
+	__asm        jmp    _T13f;
 // LINE 712:
+_T10a:
 	__asm        mov    eax, dyptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyptr, eax;
 // LINE 713:
-	__asm        jmp    near ptr 0x00538061;
+	__asm        jmp    _T88;
 // LINE 715:
+_T117:
 	__asm        mov    eax, scanLoc;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00537FEF;
+	__asm        jne    _T16;
 // LINE 717:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x00538110;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    near ptr 0x00538118;
+	__asm        jmp    _T13f;
 // LINE 718:
 }
 
@@ -1975,7 +2065,7 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 735:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
-	__asm        je     near ptr 0x00538216;
+	__asm        je     _Tf7;
 // LINE 739:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -2013,6 +2103,7 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx+0x33F], al;
 // LINE 748:
+_Tf7:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2029,10 +2120,11 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 764:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
-	__asm        jne    near ptr 0x0053824B;
+	__asm        jne    _T1d;
 // LINE 766:
-	__asm        jmp    near ptr 0x00538421;
+	__asm        jmp    _T1f3;
 // LINE 770:
+_T1d:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2070,28 +2162,31 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x005382ED;
+	__asm        jmp    _Tbf;
 // LINE 784:
+_T9d:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::LinkIconToCell;
 // LINE 785:
-	__asm        jmp    near ptr 0x00538306;
+	__asm        jmp    _Td8;
 // LINE 788:
-	__asm        jmp    near ptr 0x00538306;
+	__asm        jmp    _Td8;
 // LINE 789:
-	__asm        jmp    near ptr 0x00538306;
+	__asm        jmp    _Td8;
 
+_Tbf:
 	__asm        cmp    dword ptr [ebp-0x10], 1;
-	__asm        jl     near ptr 0x00538306;
+	__asm        jl     _Td8;
 
 	__asm        cmp    dword ptr [ebp-0x10], 4;
-	__asm        jle    near ptr 0x005382CB;
+	__asm        jle    _T9d;
 
-	__asm        jmp    near ptr 0x00538306;
+	__asm        jmp    _Td8;
 // LINE 794:
+_Td8:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x2E7];
@@ -2181,7 +2276,7 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x322], eax;
 // LINE 807:
-	__asm        jmp    near ptr 0x00538421;
+	__asm        jmp    _T1f3;
 }
 
 

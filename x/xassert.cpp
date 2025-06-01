@@ -45,7 +45,7 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	__asm        add    esp, 0x14;
 // LINE 51:
 	__asm        cmp    tackonNumber, 0x8C085;
-	__asm        je     near ptr 0x00554FAA;
+	__asm        je     _T7a;
 // LINE 52:
 	__asm        mov    eax, tackonNumber;
 	__asm        push   eax;
@@ -57,6 +57,7 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 67:
+_T7a:
 	__asm        push   2;
 	__asm        push   0x5BC62C;
 	__asm        lea    eax, message[0];
@@ -67,13 +68,15 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	__asm        mov    answer, eax;
 // LINE 68:
 	__asm        cmp    answer, 0;
-	__asm        je     near ptr 0x00554FDC;
+	__asm        je     _Tac;
 
 	__asm        cmp    answer, 3;
-	__asm        jne    near ptr 0x00554FE1;
+	__asm        jne    _Tb1;
 
+_Tac:
 	__asm        call   abort;
 // LINE 70:
+_Tb1:
 	__asm        jmp    near ptr 0x00554FE6;
 }
 

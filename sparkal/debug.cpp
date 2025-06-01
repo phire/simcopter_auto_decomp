@@ -705,7 +705,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    num, eax;
 // LINE 30:
 	__asm        cmp    num, 1;
-	__asm        jne    near ptr 0x00422443;
+	__asm        jne    _T1c3;
 // LINE 32:
 	__asm        push   0x5973A4;
 	__asm        call   DebugOutput;
@@ -717,15 +717,17 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    it, eax;
 // LINE 35:
-	__asm        jmp    near ptr 0x004222FE;
+	__asm        jmp    _T7e;
 
+_T7a:
 	__asm        add    it, 4;
+_T7e:
 	__asm        jmp    near ptr 0x00422303;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, it;
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00422431;
+	__asm        je     _T1b1;
 // LINE 36:
 	__asm        mov    eax, it;
 	__asm        mov    eax, [eax];
@@ -733,7 +735,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00422346;
+	__asm        je     _Tc6;
 
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax];
@@ -744,6 +746,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tc6:
 	__asm        jmp    near ptr 0x0042234B;
 
 	__asm        mov    eax, [ebp-0x6C];
@@ -760,7 +763,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004223E0;
+	__asm        je     _T160;
 
 	__asm        jmp    near ptr 0x0042237D;
 
@@ -769,19 +772,21 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004223A7;
+	__asm        je     _T127;
 
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x004223B3;
+	__asm        jmp    _T133;
 
-	__asm        jmp    near ptr 0x004223B3;
+	__asm        jmp    _T133;
 
+_T127:
 	__asm        mov    dword ptr [ebp-0x60], 0;
-	__asm        jmp    near ptr 0x004223B3;
+	__asm        jmp    _T133;
 
+_T133:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -797,8 +802,9 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004223E0;
+	__asm        jmp    _T160;
 
+_T160:
 	__asm        jmp    near ptr 0x004223E5;
 
 	__asm        mov    byte ptr [ebp-0x50], 0;
@@ -827,29 +833,33 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004222FA;
+	__asm        jmp    _T7a;
 // LINE 37:
+_T1b1:
 	__asm        push   0x5973B8;
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
 // LINE 39:
-	__asm        jmp    near ptr 0x0042280F;
+	__asm        jmp    _T58f;
 // LINE 41:
+_T1c3:
 	__asm        jmp    near ptr 0x00422448;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    it, eax;
 // LINE 43:
-	__asm        jmp    near ptr 0x0042245D;
+	__asm        jmp    _T1dd;
 
+_T1d9:
 	__asm        add    it, 4;
+_T1dd:
 	__asm        jmp    near ptr 0x00422462;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, it;
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x0042280F;
+	__asm        je     _T58f;
 // LINE 44:
 	__asm        jmp    near ptr 0x00422479;
 
@@ -867,7 +877,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-	__asm        jae    near ptr 0x004224BD;
+	__asm        jae    _T23d;
 
 	__asm        jmp    near ptr 0x004224AC;
 
@@ -875,9 +885,11 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004224C4;
+	__asm        jmp    _T244;
 
+_T23d:
 	__asm        mov    dword ptr [ebp-0x1C], 0xFFFFFFFF;
+_T244:
 	__asm        jmp    near ptr 0x004224C9;
 
 	__asm        jmp    near ptr 0x004224CE;
@@ -885,19 +897,21 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004224F3;
+	__asm        je     _T273;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x004224FF;
+	__asm        jmp    _T27f;
 
-	__asm        jmp    near ptr 0x004224FF;
+	__asm        jmp    _T27f;
 
+_T273:
 	__asm        mov    dword ptr [ebp-0x20], 0;
-	__asm        jmp    near ptr 0x004224FF;
+	__asm        jmp    _T27f;
 
+_T27f:
 	__asm        jmp    near ptr 0x00422504;
 
 	__asm        mov    eax, [ebp-0x24];
@@ -912,17 +926,20 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0042252D;
+	__asm        jne    _T2ad;
 
-	__asm        jmp    near ptr 0x00422532;
+	__asm        jmp    _T2b2;
 
-	__asm        jmp    near ptr 0x0042280A;
+_T2ad:
+	__asm        jmp    _T58a;
 
-	__asm        jmp    near ptr 0x00422541;
+_T2b2:
+	__asm        jmp    _T2c1;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0042280A;
+	__asm        je     _T58a;
 // LINE 46:
+_T2c1:
 	__asm        jmp    near ptr 0x00422546;
 
 	__asm        jmp    near ptr 0x0042254B;
@@ -933,7 +950,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00422585;
+	__asm        je     _T305;
 
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax];
@@ -944,6 +961,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T305:
 	__asm        jmp    near ptr 0x0042258A;
 
 	__asm        mov    eax, [ebp-0x90];
@@ -960,7 +978,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00422649;
+	__asm        je     _T3c9;
 
 	__asm        jmp    near ptr 0x004225C5;
 
@@ -969,19 +987,21 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004225F8;
+	__asm        je     _T378;
 
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x84], eax;
-	__asm        jmp    near ptr 0x00422607;
+	__asm        jmp    _T387;
 
-	__asm        jmp    near ptr 0x00422607;
+	__asm        jmp    _T387;
 
+_T378:
 	__asm        mov    dword ptr [ebp-0x84], 0;
-	__asm        jmp    near ptr 0x00422607;
+	__asm        jmp    _T387;
 
+_T387:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -997,8 +1017,9 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00422649;
+	__asm        jmp    _T3c9;
 
+_T3c9:
 	__asm        jmp    near ptr 0x0042264E;
 
 	__asm        mov    byte ptr [ebp-0x74], 0;
@@ -1027,7 +1048,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x004226D1;
+	__asm        je     _T451;
 
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax];
@@ -1038,6 +1059,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T451:
 	__asm        jmp    near ptr 0x004226D6;
 
 	__asm        mov    eax, [ebp-0xB4];
@@ -1054,7 +1076,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00422795;
+	__asm        je     _T515;
 
 	__asm        jmp    near ptr 0x00422711;
 
@@ -1063,19 +1085,21 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00422744;
+	__asm        je     _T4c4;
 
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA8], eax;
-	__asm        jmp    near ptr 0x00422753;
+	__asm        jmp    _T4d3;
 
-	__asm        jmp    near ptr 0x00422753;
+	__asm        jmp    _T4d3;
 
+_T4c4:
 	__asm        mov    dword ptr [ebp-0xA8], 0;
-	__asm        jmp    near ptr 0x00422753;
+	__asm        jmp    _T4d3;
 
+_T4d3:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -1091,8 +1115,9 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00422795;
+	__asm        jmp    _T515;
 
+_T515:
 	__asm        jmp    near ptr 0x0042279A;
 
 	__asm        mov    byte ptr [ebp-0x98], 0;
@@ -1126,15 +1151,18 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 0xC;
 // LINE 49:
-	__asm        jmp    near ptr 0x00422459;
+_T58a:
+	__asm        jmp    _T1d9;
 // LINE 50:
+_T58f:
 	__asm        mov    eax, commands.finish;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, commands.start;
 	__asm        mov    [ebp-0x48], eax;
+_T59b:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        cmp    [ebp-0x48], eax;
-	__asm        je     near ptr 0x004228BC;
+	__asm        je     _T63c;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
@@ -1142,7 +1170,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00422868;
+	__asm        jne    _T5e8;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
@@ -1150,18 +1178,19 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        je     near ptr 0x00422868;
+	__asm        je     _T5e8;
 
 	__asm        push   1;
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
-	__asm        jmp    near ptr 0x00422868;
+	__asm        jmp    _T5e8;
 
+_T5e8:
 	__asm        jmp    near ptr 0x0042286D;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00422893;
+	__asm        je     _T613;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
@@ -1172,21 +1201,24 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T613:
 	__asm        jmp    near ptr 0x00422898;
 
-	__asm        jmp    near ptr 0x004228A9;
+	__asm        jmp    _T629;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T629:
 	__asm        jmp    near ptr 0x004228AE;
 
 	__asm        jmp    near ptr 0x004228B3;
 
 	__asm        add    dword ptr [ebp-0x48], 8;
-	__asm        jmp    near ptr 0x0042281B;
+	__asm        jmp    _T59b;
 
+_T63c:
 	__asm        jmp    near ptr 0x004228C1;
 
 	__asm        mov    eax, commands.start;
@@ -1245,14 +1277,16 @@ void CDebugWindow::CDebugWindow() {
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x004229A6;
+	__asm        jb     _Tb8;
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x004229AC;
+	__asm        jmp    _Tbe;
 
+_Tb8:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x20], eax;
+_Tbe:
 	__asm        jmp    near ptr 0x004229B1;
 
 	__asm        mov    eax, [ebp-0x20];
@@ -1273,7 +1307,7 @@ void CDebugWindow::CDebugWindow() {
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x5C28F8];
 	__asm        test   al, 1;
-	__asm        jne    near ptr 0x00422D29;
+	__asm        jne    _T43b;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x5C28F8];
@@ -1284,7 +1318,7 @@ void CDebugWindow::CDebugWindow() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
-	__asm        je     near ptr 0x00422A57;
+	__asm        je     _T169;
 
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -1300,9 +1334,11 @@ void CDebugWindow::CDebugWindow() {
 
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ds:[0x5C2908], eax;
-	__asm        jmp    near ptr 0x00422A61;
+	__asm        jmp    _T173;
 
+_T169:
 	__asm        mov    dword ptr ds:[0x5C2908], 0;
+_T173:
 	__asm        mov    dword ptr ds:[0x5C2904], 0;
 	__asm        jmp    near ptr 0x00422A70;
 
@@ -1311,14 +1347,16 @@ void CDebugWindow::CDebugWindow() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
-	__asm        je     near ptr 0x00422A99;
+	__asm        je     _T1ab;
 
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    ds:[0x5C2910], eax;
-	__asm        jmp    near ptr 0x00422AA3;
+	__asm        jmp    _T1b5;
 
+_T1ab:
 	__asm        mov    dword ptr ds:[0x5C2910], 0;
+_T1b5:
 	__asm        mov    dword ptr ds:[0x5C290C], 0;
 	__asm        jmp    near ptr 0x00422AB2;
 
@@ -1338,7 +1376,7 @@ void CDebugWindow::CDebugWindow() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00422B2B;
+	__asm        jne    _T23d;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -1353,30 +1391,32 @@ void CDebugWindow::CDebugWindow() {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00422B2B;
+	__asm        jmp    _T23d;
 
+_T23d:
 	__asm        jmp    near ptr 0x00422B30;
 
 	__asm        mov    eax, ds:[0x5C2910];
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        ja     near ptr 0x00422B5F;
+	__asm        ja     _T271;
 
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x00422BAD;
+	__asm        je     _T2bf;
 
 	__asm        jmp    near ptr 0x00422B4E;
 
 	__asm        mov    eax, ds:[0x5C2910];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jae    near ptr 0x00422BAD;
+	__asm        jae    _T2bf;
 
+_T271:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        je     near ptr 0x00422B8E;
+	__asm        je     _T2a0;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
@@ -1385,17 +1425,20 @@ void CDebugWindow::CDebugWindow() {
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00422B95;
+	__asm        jmp    _T2a7;
 
+_T2a0:
 	__asm        mov    dword ptr [ebp-0x24], 0;
+_T2a7:
 	__asm        lea    ecx, ds:[0x5C290C];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ds:[0x5C2910], eax;
-	__asm        jmp    near ptr 0x00422BDF;
+	__asm        jmp    _T2f1;
 
+_T2bf:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x00422BDF;
+	__asm        je     _T2f1;
 
 	__asm        jmp    near ptr 0x00422BBC;
 
@@ -1410,8 +1453,9 @@ void CDebugWindow::CDebugWindow() {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00422BDF;
+	__asm        jmp    _T2f1;
 
+_T2f1:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, ds:[0x5C2910];
 	__asm        mov    [ecx+4], eax;
@@ -1429,7 +1473,7 @@ void CDebugWindow::CDebugWindow() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        cmp    dword ptr [ebp-0x4C], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00422C4D;
+	__asm        jne    _T35f;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -1444,30 +1488,32 @@ void CDebugWindow::CDebugWindow() {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00422C4D;
+	__asm        jmp    _T35f;
 
+_T35f:
 	__asm        jmp    near ptr 0x00422C52;
 
 	__asm        mov    eax, ds:[0x5C2908];
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        ja     near ptr 0x00422C81;
+	__asm        ja     _T393;
 
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
-	__asm        je     near ptr 0x00422CCF;
+	__asm        je     _T3e1;
 
 	__asm        jmp    near ptr 0x00422C70;
 
 	__asm        mov    eax, ds:[0x5C2908];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jae    near ptr 0x00422CCF;
+	__asm        jae    _T3e1;
 
+_T393:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x00422CB0;
+	__asm        je     _T3c2;
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
@@ -1476,17 +1522,20 @@ void CDebugWindow::CDebugWindow() {
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x00422CB7;
+	__asm        jmp    _T3c9;
 
+_T3c2:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
+_T3c9:
 	__asm        lea    ecx, ds:[0x5C2904];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ds:[0x5C2908], eax;
-	__asm        jmp    near ptr 0x00422D01;
+	__asm        jmp    _T413;
 
+_T3e1:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
-	__asm        je     near ptr 0x00422D01;
+	__asm        je     _T413;
 
 	__asm        jmp    near ptr 0x00422CDE;
 
@@ -1501,8 +1550,9 @@ void CDebugWindow::CDebugWindow() {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00422D01;
+	__asm        jmp    _T413;
 
+_T413:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    ecx, ds:[0x5C2908];
 	__asm        mov    [ecx+4], eax;
@@ -1515,13 +1565,14 @@ void CDebugWindow::CDebugWindow() {
 	__asm        push   0x422DBA;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
+_T43b:
 	__asm        mov    dword ptr [ebp-0xC], 0x5C2900;
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x34];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00422D7E;
+	__asm        je     _T490;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
@@ -1531,19 +1582,21 @@ void CDebugWindow::CDebugWindow() {
 	__asm        jmp    near ptr 0x00422D56;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00422D6D;
+	__asm        je     _T47f;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00422D6D;
+	__asm        jmp    _T47f;
 
+_T47f:
 	__asm        jmp    near ptr 0x00422D72;
 
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x30], 4;
-	__asm        jmp    near ptr 0x00422D99;
+	__asm        jmp    _T4ab;
 
+_T490:
 	__asm        jmp    near ptr 0x00422D83;
 
 	__asm        lea    eax, [ebp-0xC];
@@ -1554,6 +1607,7 @@ void CDebugWindow::CDebugWindow() {
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2C;
 	__asm        call   vector<debug_command *>::insert_aux;
+_T4ab:
 	__asm        jmp    near ptr 0x00422D9E;
 
 	__asm        jmp    near ptr 0x00422DA3;
@@ -1578,18 +1632,18 @@ void $E20() {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, ds:[0x5C2910];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00422E56;
+	__asm        jne    _T9c;
 
 	__asm        mov    eax, ds:[0x5C2910];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     near ptr 0x00422E56;
+	__asm        je     _T9c;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00422E36;
+	__asm        je     _T7c;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
@@ -1604,6 +1658,7 @@ void $E20() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax], 0;
+_T7c:
 	__asm        jmp    near ptr 0x00422E3B;
 
 	__asm        jmp    near ptr 0x00422E40;
@@ -1614,12 +1669,13 @@ void $E20() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00422E51;
 
-	__asm        jmp    near ptr 0x00422E56;
+	__asm        jmp    _T9c;
 
+_T9c:
 	__asm        jmp    near ptr 0x00422E5B;
 
 	__asm        cmp    dword ptr ds:[0x5C290C], 0;
-	__asm        je     near ptr 0x00422E82;
+	__asm        je     _Tc8;
 
 	__asm        mov    eax, ds:[0x5C290C];
 	__asm        mov    [ebp-4], eax;
@@ -1629,24 +1685,25 @@ void $E20() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tc8:
 	__asm        jmp    near ptr 0x00422E87;
 
 	__asm        mov    eax, ds:[0x5C2908];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, ds:[0x5C2908];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x00422F10;
+	__asm        jne    _T156;
 
 	__asm        mov    eax, ds:[0x5C2908];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     near ptr 0x00422F10;
+	__asm        je     _T156;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00422EF0;
+	__asm        je     _T136;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -1661,6 +1718,7 @@ void $E20() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax], 0;
+_T136:
 	__asm        jmp    near ptr 0x00422EF5;
 
 	__asm        jmp    near ptr 0x00422EFA;
@@ -1671,12 +1729,13 @@ void $E20() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00422F0B;
 
-	__asm        jmp    near ptr 0x00422F10;
+	__asm        jmp    _T156;
 
+_T156:
 	__asm        jmp    near ptr 0x00422F15;
 
 	__asm        cmp    dword ptr ds:[0x5C2904], 0;
-	__asm        je     near ptr 0x00422F3C;
+	__asm        je     _T182;
 
 	__asm        mov    eax, ds:[0x5C2904];
 	__asm        mov    [ebp-0x1C], eax;
@@ -1686,6 +1745,7 @@ void $E20() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T182:
 	__asm        jmp    near ptr 0x00422F41;
 
 	__asm        jmp    near ptr 0x00422F46;
@@ -1696,13 +1756,14 @@ void CDebugWindow::~CDebugWindow() {
 // LINE 69:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
-	__asm        je     near ptr 0x00422F71;
+	__asm        je     _T26;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3804];
 // LINE 70:
+_T26:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x38], 0;
 // LINE 72:
@@ -1711,16 +1772,18 @@ void CDebugWindow::~CDebugWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x6C], eax;
+_T3e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00422FA6;
+	__asm        je     _T5b;
 
 	__asm        jmp    near ptr 0x00422F9D;
 
 	__asm        add    dword ptr [ebp-0x6C], 4;
-	__asm        jmp    near ptr 0x00422F89;
+	__asm        jmp    _T3e;
 
+_T5b:
 	__asm        jmp    near ptr 0x00422FAB;
 
 	__asm        mov    eax, this;
@@ -1734,32 +1797,36 @@ void CDebugWindow::~CDebugWindow() {
 
 	__asm        jmp    near ptr 0x00422FCA;
 
-	__asm        jmp    near ptr 0x00422FCF;
+	__asm        jmp    _T84;
 
+_T84:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x00422FE6;
+	__asm        jne    _T9b;
 
-	__asm        jmp    near ptr 0x004231DC;
+	__asm        jmp    _T291;
 
-	__asm        jmp    near ptr 0x00422FE6;
+	__asm        jmp    _T9b;
 
-	__asm        jmp    near ptr 0x00422FF5;
+_T9b:
+	__asm        jmp    _Taa;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        jne    near ptr 0x004231DC;
+	__asm        jne    _T291;
 
+_Taa:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    near ptr 0x00423016;
+	__asm        jmp    _Tcb;
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_Tcb:
 	__asm        jmp    near ptr 0x0042301B;
 
 	__asm        jmp    near ptr 0x00423020;
@@ -1770,17 +1837,19 @@ void CDebugWindow::~CDebugWindow() {
 	__asm        dec    dword ptr [eax+0x20];
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x00423043;
+	__asm        jne    _Tf8;
 
-	__asm        jmp    near ptr 0x004230A0;
+	__asm        jmp    _T155;
 
-	__asm        jmp    near ptr 0x00423043;
+	__asm        jmp    _Tf8;
 
-	__asm        jmp    near ptr 0x00423052;
+_Tf8:
+	__asm        jmp    _T107;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        jne    near ptr 0x004230A0;
+	__asm        jne    _T155;
 
+_T107:
 	__asm        mov    eax, this;
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        mov    edx, [eax];
@@ -1807,8 +1876,9 @@ void CDebugWindow::~CDebugWindow() {
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x1C], eax;
-	__asm        jne    near ptr 0x004231D2;
+	__asm        jne    _T287;
 
+_T155:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x50], eax;
@@ -1827,17 +1897,20 @@ void CDebugWindow::~CDebugWindow() {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x004230E0;
+	__asm        jne    _T195;
 
-	__asm        jmp    near ptr 0x004230E5;
+	__asm        jmp    _T19a;
 
-	__asm        jmp    near ptr 0x00423174;
+_T195:
+	__asm        jmp    _T229;
 
-	__asm        jmp    near ptr 0x004230F4;
+_T19a:
+	__asm        jmp    _T1a9;
 
 	__asm        cmp    dword ptr [ebp-0x58], 0;
-	__asm        je     near ptr 0x00423174;
+	__asm        je     _T229;
 
+_T1a9:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        mov    dword ptr [ebp-0x34], 0;
@@ -1876,8 +1949,9 @@ void CDebugWindow::~CDebugWindow() {
 
 	__asm        jmp    near ptr 0x0042316F;
 
-	__asm        jmp    near ptr 0x004231CD;
+	__asm        jmp    _T282;
 
+_T229:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x60], eax;
@@ -1909,12 +1983,15 @@ void CDebugWindow::~CDebugWindow() {
 	__asm        mov    [ecx+8], edx;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x004231D2;
+_T282:
+	__asm        jmp    _T287;
 
+_T287:
 	__asm        jmp    near ptr 0x004231D7;
 
-	__asm        jmp    near ptr 0x00422FCF;
+	__asm        jmp    _T84;
 
+_T291:
 	__asm        jmp    near ptr 0x004231E1;
 }
 
@@ -1923,7 +2000,7 @@ int32_t CDebugWindow::Create(char * windowName) {
 // LINE 77:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
-	__asm        jne    near ptr 0x00423359;
+	__asm        jne    _T173;
 // LINE 79:
 // Block start:
 	int32_t Width;
@@ -1974,12 +2051,13 @@ int32_t CDebugWindow::Create(char * windowName) {
 	__asm        mov    xPos, 0x280;
 // LINE 94:
 	__asm        cmp    Width, 0;
-	__asm        jg     near ptr 0x004232BB;
+	__asm        jg     _Td5;
 // LINE 96:
 	__asm        mov    Width, 0x64;
 // LINE 97:
 	__asm        mov    xPos, 0x21C;
 // LINE 110:
+_Td5:
 	__asm        push   0;
 	__asm        mov    eax, ds:[0x5C28C8];
 	__asm        push   eax;
@@ -2039,11 +2117,12 @@ int32_t CDebugWindow::Create(char * windowName) {
 	__asm        call   CDebugWindow::OnSize;
 // LINE 126:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00423360;
+	__asm        jmp    _T17a;
 // LINE 129:
 // Block end:
+_T173:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00423360;
+	__asm        jmp    _T17a;
 // LINE 130:
 }
 
@@ -2085,11 +2164,12 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    file, eax;
 // LINE 154:
 	__asm        cmp    file, 0;
-	__asm        jne    near ptr 0x004233E2;
+	__asm        jne    _T31;
 // LINE 155:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004236BF;
+	__asm        jmp    _T30e;
 // LINE 157:
+_T31:
 	__asm        mov    eax, this;
 	__asm        lea    ecx, it.current;
 	__asm        mov    edx, [eax];
@@ -2100,8 +2180,9 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    [ecx+8], edx;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x00423403;
+	__asm        jmp    _T52;
 // LINE 158:
+_T52:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        lea    ecx, [ebp-0x24];
@@ -2117,19 +2198,20 @@ int32_t CDebugWindow::Save(char * filePath) {
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    it.current, eax;
-	__asm        je     near ptr 0x004234AE;
+	__asm        je     _Tfd;
 
 	__asm        mov    eax, it.current;
 	__asm        cmp    it.first, eax;
-	__asm        je     near ptr 0x0042344B;
+	__asm        je     _T9a;
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    [ebp-0x20], eax;
-	__asm        jne    near ptr 0x004234B8;
+	__asm        jne    _T107;
 
+_T9a:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    it.node, eax;
-	__asm        jne    near ptr 0x00423472;
+	__asm        jne    _Tc1;
 
 	__asm        mov    eax, it.current;
 	__asm        sub    eax, [ebp-0x24];
@@ -2137,10 +2219,11 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        xor    ecx, ecx;
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x004234B8;
+	__asm        jne    _T107;
 
-	__asm        jmp    near ptr 0x0042349F;
+	__asm        jmp    _Tee;
 
+_Tc1:
 	__asm        mov    eax, it.node;
 	__asm        sub    eax, [ebp-0x18];
 	__asm        sar    eax, 2;
@@ -2154,31 +2237,38 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        sub    ecx, [ebp-0x24];
 	__asm        sar    ecx, 3;
 	__asm        add    eax, ecx;
-	__asm        jne    near ptr 0x004234B8;
+	__asm        jne    _T107;
 
-	__asm        jmp    near ptr 0x004234AE;
+_Tee:
+	__asm        jmp    _Tfd;
 
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        jne    near ptr 0x004234B8;
+	__asm        jne    _T107;
 
-	__asm        jmp    near ptr 0x004234CC;
+_Tfd:
+	__asm        jmp    _T11b;
 
-	__asm        jmp    near ptr 0x004234B8;
+	__asm        jmp    _T107;
 
-	__asm        jmp    near ptr 0x004234C7;
+_T107:
+	__asm        jmp    _T116;
 
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        jne    near ptr 0x004234CC;
+	__asm        jne    _T11b;
 
-	__asm        jmp    near ptr 0x004234D1;
+_T116:
+	__asm        jmp    _T120;
 
-	__asm        jmp    near ptr 0x0042369D;
+_T11b:
+	__asm        jmp    _T2ec;
 
-	__asm        jmp    near ptr 0x004234E0;
+_T120:
+	__asm        jmp    _T12f;
 
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x0042369D;
+	__asm        je     _T2ec;
 // LINE 160:
+_T12f:
 	__asm        jmp    near ptr 0x004234E5;
 
 	__asm        jmp    near ptr 0x004234EA;
@@ -2189,7 +2279,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0042351B;
+	__asm        je     _T16a;
 
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
@@ -2200,6 +2290,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T16a:
 	__asm        jmp    near ptr 0x00423520;
 
 	__asm        mov    eax, [ebp-0x74];
@@ -2216,7 +2307,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x004235B5;
+	__asm        je     _T204;
 
 	__asm        jmp    near ptr 0x00423552;
 
@@ -2225,19 +2316,21 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0042357C;
+	__asm        je     _T1cb;
 
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        jmp    near ptr 0x00423588;
+	__asm        jmp    _T1d7;
 
-	__asm        jmp    near ptr 0x00423588;
+	__asm        jmp    _T1d7;
 
+_T1cb:
 	__asm        mov    dword ptr [ebp-0x68], 0;
-	__asm        jmp    near ptr 0x00423588;
+	__asm        jmp    _T1d7;
 
+_T1d7:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2253,8 +2346,9 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004235B5;
+	__asm        jmp    _T204;
 
+_T204:
 	__asm        jmp    near ptr 0x004235BA;
 
 	__asm        mov    byte ptr [ebp-0x58], 0;
@@ -2312,7 +2406,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        add    it.current, 8;
 	__asm        mov    eax, it.last;
 	__asm        cmp    it.current, eax;
-	__asm        jne    near ptr 0x00423672;
+	__asm        jne    _T2c1;
 
 	__asm        add    it.node, 4;
 	__asm        mov    eax, it.node;
@@ -2324,6 +2418,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        shl    eax, 3;
 	__asm        add    eax, it.first;
 	__asm        mov    it.last, eax;
+_T2c1:
 	__asm        jmp    near ptr 0x00423677;
 
 	__asm        lea    eax, [ebp-0x50];
@@ -2338,8 +2433,9 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    near ptr 0x00423698;
 // LINE 163:
-	__asm        jmp    near ptr 0x00423403;
+	__asm        jmp    _T52;
 // LINE 165:
+_T2ec:
 	__asm        mov    eax, file;
 	__asm        push   eax;
 	__asm        call   fflush;
@@ -2351,7 +2447,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        add    esp, 4;
 // LINE 167:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004236BF;
+	__asm        jmp    _T30e;
 // LINE 168:
 }
 
@@ -2465,8 +2561,9 @@ void CDebugWindow::OnPaint() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 23:
-	__asm        jmp    near ptr 0x004238A9;
+	__asm        jmp    _T170;
 // LINE 204:
+_Td4:
 	__asm        lea    eax, it.current;
 	__asm        lea    ecx, [ebp-0xE8];
 	__asm        mov    edx, [eax];
@@ -2480,7 +2577,7 @@ void CDebugWindow::OnPaint() {
 	__asm        add    it.current, 8;
 	__asm        mov    eax, it.current;
 	__asm        cmp    it.last, eax;
-	__asm        jne    near ptr 0x0042387D;
+	__asm        jne    _T144;
 
 	__asm        add    it.node, 4;
 	__asm        mov    eax, it.node;
@@ -2492,6 +2589,7 @@ void CDebugWindow::OnPaint() {
 	__asm        shl    eax, 3;
 	__asm        add    eax, it.first;
 	__asm        mov    it.last, eax;
+_T144:
 	__asm        jmp    near ptr 0x00423882;
 
 	__asm        lea    eax, [ebp-0xE8];
@@ -2504,8 +2602,9 @@ void CDebugWindow::OnPaint() {
 	__asm        mov    [ecx+8], edx;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x004238A9;
+	__asm        jmp    _T170;
 
+_T170:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        lea    ecx, [ebp-0xC8];
@@ -2521,19 +2620,20 @@ void CDebugWindow::OnPaint() {
 
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        cmp    it.current, eax;
-	__asm        je     near ptr 0x0042398D;
+	__asm        je     _T254;
 
 	__asm        mov    eax, it.current;
 	__asm        cmp    it.first, eax;
-	__asm        je     near ptr 0x00423909;
+	__asm        je     _T1d0;
 
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        cmp    [ebp-0xC4], eax;
-	__asm        jne    near ptr 0x00423997;
+	__asm        jne    _T25e;
 
+_T1d0:
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        cmp    it.node, eax;
-	__asm        jne    near ptr 0x0042393C;
+	__asm        jne    _T203;
 
 	__asm        mov    eax, it.current;
 	__asm        sub    eax, [ebp-0xC8];
@@ -2541,10 +2641,11 @@ void CDebugWindow::OnPaint() {
 	__asm        xor    ecx, ecx;
 	__asm        and    ecx, 0xFFFFFFF8;
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x00423997;
+	__asm        jne    _T25e;
 
-	__asm        jmp    near ptr 0x0042397B;
+	__asm        jmp    _T242;
 
+_T203:
 	__asm        mov    eax, it.node;
 	__asm        sub    eax, [ebp-0xBC];
 	__asm        sar    eax, 2;
@@ -2558,38 +2659,45 @@ void CDebugWindow::OnPaint() {
 	__asm        sub    ecx, [ebp-0xC8];
 	__asm        sar    ecx, 3;
 	__asm        add    eax, ecx;
-	__asm        jne    near ptr 0x00423997;
+	__asm        jne    _T25e;
 
-	__asm        jmp    near ptr 0x0042398D;
+_T242:
+	__asm        jmp    _T254;
 
 	__asm        cmp    dword ptr [ebp-0xD0], 0;
-	__asm        jne    near ptr 0x00423997;
+	__asm        jne    _T25e;
 
-	__asm        jmp    near ptr 0x004239AE;
+_T254:
+	__asm        jmp    _T275;
 
-	__asm        jmp    near ptr 0x00423997;
+	__asm        jmp    _T25e;
 
-	__asm        jmp    near ptr 0x004239A9;
+_T25e:
+	__asm        jmp    _T270;
 
 	__asm        cmp    dword ptr [ebp-0xD4], 0;
-	__asm        jne    near ptr 0x004239AE;
+	__asm        jne    _T275;
 
-	__asm        jmp    near ptr 0x004239B3;
+_T270:
+	__asm        jmp    _T27a;
 
-	__asm        jmp    near ptr 0x00423B84;
+_T275:
+	__asm        jmp    _T44b;
 
-	__asm        jmp    near ptr 0x004239C5;
+_T27a:
+	__asm        jmp    _T28c;
 
 	__asm        cmp    dword ptr [ebp-0xD8], 0;
-	__asm        je     near ptr 0x00423B84;
+	__asm        je     _T44b;
 // LINE 206:
+_T28c:
 	__asm        jmp    near ptr 0x004239CA;
 
 	__asm        mov    eax, it.current;
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00423A0E;
+	__asm        je     _T2d5;
 
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax];
@@ -2600,6 +2708,7 @@ void CDebugWindow::OnPaint() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T2d5:
 	__asm        jmp    near ptr 0x00423A13;
 
 	__asm        mov    eax, [ebp-0x10C];
@@ -2616,7 +2725,7 @@ void CDebugWindow::OnPaint() {
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00423AD2;
+	__asm        je     _T399;
 
 	__asm        jmp    near ptr 0x00423A4E;
 
@@ -2625,19 +2734,21 @@ void CDebugWindow::OnPaint() {
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00423A81;
+	__asm        je     _T348;
 
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x100], eax;
-	__asm        jmp    near ptr 0x00423A90;
+	__asm        jmp    _T357;
 
-	__asm        jmp    near ptr 0x00423A90;
+	__asm        jmp    _T357;
 
+_T348:
 	__asm        mov    dword ptr [ebp-0x100], 0;
-	__asm        jmp    near ptr 0x00423A90;
+	__asm        jmp    _T357;
 
+_T357:
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -2653,8 +2764,9 @@ void CDebugWindow::OnPaint() {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00423AD2;
+	__asm        jmp    _T399;
 
+_T399:
 	__asm        jmp    near ptr 0x00423AD7;
 
 	__asm        mov    byte ptr [ebp-0xF0], 0;
@@ -2683,7 +2795,7 @@ void CDebugWindow::OnPaint() {
 	__asm        mov    str, eax;
 // LINE 207:
 	__asm        cmp    scrollStart, 0;
-	__asm        jne    near ptr 0x00423B7C;
+	__asm        jne    _T443;
 // LINE 208:
 	__asm        mov    eax, index;
 	__asm        mov    [ebp-0xCC], eax;
@@ -2703,12 +2815,15 @@ void CDebugWindow::OnPaint() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 209:
-	__asm        jmp    near ptr 0x00423B7F;
+	__asm        jmp    _T446;
 // LINE 210:
+_T443:
 	__asm        dec    scrollStart;
 // LINE 211:
-	__asm        jmp    near ptr 0x0042380D;
+_T446:
+	__asm        jmp    _Td4;
 // LINE 214:
+_T44b:
 	__asm        lea    eax, ps.hdc;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -2735,40 +2850,43 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 // LINE 223:
 	__asm        mov    eax, scrollCode;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00423C05;
+	__asm        jmp    _T60;
 // LINE 225:
 	__asm        dec    curPos;
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 226:
 	__asm        inc    curPos;
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 227:
 	__asm        sub    curPos, 0xA;
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 228:
 	__asm        add    curPos, 0xA;
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 230:
 	__asm        mov    eax, pos;
 	__asm        mov    curPos, eax;
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 231:
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 // LINE 232:
-	__asm        jmp    near ptr 0x00423C31;
+	__asm        jmp    _T8c;
 
+_T60:
 	__asm        cmp    dword ptr [ebp-0x14], 5;
-	__asm        ja     near ptr 0x00423C31;
+	__asm        ja     _T8c;
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    dword ptr [eax*4+0x423C19];
 // Switch pointers
 // LINE 233:
+_T8c:
 	__asm        cmp    curPos, 0;
-	__asm        jge    near ptr 0x00423C42;
+	__asm        jge    _T9d;
 
 	__asm        mov    curPos, 0;
 // LINE 235:
+_T9d:
 	__asm        lea    eax, maxPos;
 	__asm        push   eax;
 	__asm        lea    eax, minPos;
@@ -2781,11 +2899,12 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 // LINE 236:
 	__asm        mov    eax, curPos;
 	__asm        cmp    maxPos, eax;
-	__asm        jge    near ptr 0x00423C6B;
+	__asm        jge    _Tc6;
 // LINE 237:
 	__asm        mov    eax, maxPos;
 	__asm        mov    curPos, eax;
 // LINE 238:
+_Tc6:
 	__asm        push   1;
 	__asm        mov    eax, curPos;
 	__asm        push   eax;
@@ -2815,7 +2934,7 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     near ptr 0x00423CFF;
+	__asm        je     _T62;
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -2831,9 +2950,11 @@ void CDebugWindow::OutputString(char * buf) {
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    str.reference, eax;
-	__asm        jmp    near ptr 0x00423D06;
+	__asm        jmp    _T69;
 
+_T62:
 	__asm        mov    str.reference, 0;
+_T69:
 	__asm        mov    str.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00423D12;
 // LINE 251:
@@ -2845,7 +2966,7 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0xFFFFFFFF;
-	__asm        jne    near ptr 0x00423D62;
+	__asm        jne    _Tc5;
 
 	__asm        push   0x5971E4;
 	__asm        mov    ecx, 0x638C00;
@@ -2860,30 +2981,32 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00423D62;
+	__asm        jmp    _Tc5;
 
+_Tc5:
 	__asm        jmp    near ptr 0x00423D67;
 
 	__asm        mov    eax, str.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        ja     near ptr 0x00423D92;
+	__asm        ja     _Tf5;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x00423DDB;
+	__asm        je     _T13e;
 
 	__asm        jmp    near ptr 0x00423D83;
 
 	__asm        mov    eax, str.reference;
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jae    near ptr 0x00423DDB;
+	__asm        jae    _T13e;
 
+_Tf5:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     near ptr 0x00423DC1;
+	__asm        je     _T124;
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
@@ -2892,17 +3015,20 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00423DC8;
+	__asm        jmp    _T12b;
 
+_T124:
 	__asm        mov    dword ptr [ebp-0xC], 0;
+_T12b:
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    str.reference, eax;
-	__asm        jmp    near ptr 0x00423E0B;
+	__asm        jmp    _T16e;
 
+_T13e:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     near ptr 0x00423E0B;
+	__asm        je     _T16e;
 
 	__asm        jmp    near ptr 0x00423DEA;
 
@@ -2917,8 +3043,9 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00423E0B;
+	__asm        jmp    _T16e;
 
+_T16e:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, str.reference;
 	__asm        mov    [ecx+4], eax;
@@ -2928,17 +3055,19 @@ void CDebugWindow::OutputString(char * buf) {
 // LINE 252:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x00423E38;
+	__asm        jne    _T19b;
 
-	__asm        jmp    near ptr 0x00423EB0;
+	__asm        jmp    _T213;
 
-	__asm        jmp    near ptr 0x00423E38;
+	__asm        jmp    _T19b;
 
-	__asm        jmp    near ptr 0x00423E4A;
+_T19b:
+	__asm        jmp    _T1ad;
 
 	__asm        cmp    dword ptr [ebp-0xB4], 0;
-	__asm        jne    near ptr 0x00423EB0;
+	__asm        jne    _T213;
 
+_T1ad:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        lea    ecx, [ebp-0xA0];
@@ -2967,10 +3096,12 @@ void CDebugWindow::OutputString(char * buf) {
 
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        cmp    [ebp-0xA8], eax;
-	__asm        jne    near ptr 0x00423EBB;
+	__asm        jne    _T21e;
 
+_T213:
 	__asm        mov    ecx, this;
 	__asm        call   deque<basic_string<char>>::allocate_at_end;
+_T21e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0xBC], eax;
@@ -2979,7 +3110,7 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        jmp    near ptr 0x00423EDB;
 
 	__asm        cmp    dword ptr [ebp-0xB8], 0;
-	__asm        je     near ptr 0x00423F00;
+	__asm        je     _T263;
 
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
@@ -2987,8 +3118,9 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xB8];
 	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        jmp    near ptr 0x00423F00;
+	__asm        jmp    _T263;
 
+_T263:
 	__asm        jmp    near ptr 0x00423F05;
 
 	__asm        mov    eax, this;
@@ -2997,11 +3129,12 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        inc    dword ptr [eax+0x20];
 	__asm        jmp    near ptr 0x00423F1D;
 // LINE 253:
-	__asm        jmp    near ptr 0x00423F22;
+	__asm        jmp    _T285;
 
+_T285:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0x1F4;
-	__asm        jbe    near ptr 0x00424125;
+	__asm        jbe    _T488;
 // LINE 254:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3017,17 +3150,19 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        dec    dword ptr [eax+0x20];
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x00423F7B;
+	__asm        jne    _T2de;
 
-	__asm        jmp    near ptr 0x00423FDE;
+	__asm        jmp    _T341;
 
-	__asm        jmp    near ptr 0x00423F7B;
+	__asm        jmp    _T2de;
 
-	__asm        jmp    near ptr 0x00423F8A;
+_T2de:
+	__asm        jmp    _T2ed;
 
 	__asm        cmp    dword ptr [ebp-0x60], 0;
-	__asm        jne    near ptr 0x00423FDE;
+	__asm        jne    _T341;
 
+_T2ed:
 	__asm        mov    eax, this;
 	__asm        lea    ecx, [ebp-0x48];
 	__asm        mov    edx, [eax];
@@ -3054,8 +3189,9 @@ void CDebugWindow::OutputString(char * buf) {
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    [ebp-0x50], eax;
-	__asm        jne    near ptr 0x0042411B;
+	__asm        jne    _T47e;
 
+_T341:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x84], eax;
@@ -3074,17 +3210,20 @@ void CDebugWindow::OutputString(char * buf) {
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        jne    near ptr 0x00424033;
+	__asm        jne    _T396;
 
-	__asm        jmp    near ptr 0x00424038;
+	__asm        jmp    _T39b;
 
-	__asm        jmp    near ptr 0x004240DC;
+_T396:
+	__asm        jmp    _T43f;
 
-	__asm        jmp    near ptr 0x0042404A;
+_T39b:
+	__asm        jmp    _T3ad;
 
 	__asm        cmp    dword ptr [ebp-0x8C], 0;
-	__asm        je     near ptr 0x004240DC;
+	__asm        je     _T43f;
 
+_T3ad:
 	__asm        mov    dword ptr [ebp-0x70], 0;
 	__asm        mov    dword ptr [ebp-0x6C], 0;
 	__asm        mov    dword ptr [ebp-0x68], 0;
@@ -3123,8 +3262,9 @@ void CDebugWindow::OutputString(char * buf) {
 
 	__asm        jmp    near ptr 0x004240D7;
 
-	__asm        jmp    near ptr 0x00424116;
+	__asm        jmp    _T479;
 
+_T43f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
@@ -3143,12 +3283,15 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        mov    [ecx+8], edx;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    near ptr 0x0042411B;
+_T479:
+	__asm        jmp    _T47e;
 
+_T47e:
 	__asm        jmp    near ptr 0x00424120;
 
-	__asm        jmp    near ptr 0x00423F22;
+	__asm        jmp    _T285;
 // LINE 255:
+_T488:
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::RecalcScrollRange;
 // LINE 256:
@@ -3163,18 +3306,18 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, str.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x004241C7;
+	__asm        jne    _T52a;
 
 	__asm        mov    eax, str.reference;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x004241C7;
+	__asm        je     _T52a;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004241A7;
+	__asm        je     _T50a;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
@@ -3189,6 +3332,7 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax], 0;
+_T50a:
 	__asm        jmp    near ptr 0x004241AC;
 
 	__asm        jmp    near ptr 0x004241B1;
@@ -3199,12 +3343,13 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x004241C2;
 
-	__asm        jmp    near ptr 0x004241C7;
+	__asm        jmp    _T52a;
 
+_T52a:
 	__asm        jmp    near ptr 0x004241CC;
 
 	__asm        cmp    str.c_str_ptr, 0;
-	__asm        je     near ptr 0x004241EE;
+	__asm        je     _T551;
 
 	__asm        mov    eax, str.c_str_ptr;
 	__asm        mov    [ebp-0x24], eax;
@@ -3214,6 +3359,7 @@ void CDebugWindow::OutputString(char * buf) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T551:
 	__asm        jmp    near ptr 0x004241F3;
 
 	__asm        jmp    near ptr 0x004241F8;
@@ -3283,10 +3429,11 @@ void CDebugWindow::RecalcScrollRange() {
 	__asm        mov    range, eax;
 // LINE 276:
 	__asm        cmp    range, 0;
-	__asm        jge    near ptr 0x00424291;
+	__asm        jge    _T92;
 
 	__asm        mov    range, 0;
 // LINE 279:
+_T92:
 	__asm        lea    eax, maxPos;
 	__asm        push   eax;
 	__asm        lea    eax, minPos;
@@ -3316,7 +3463,7 @@ void CDebugWindow::RecalcScrollRange() {
 // LINE 284:
 	__asm        mov    eax, maxPos;
 	__asm        cmp    curPos, eax;
-	__asm        jl     near ptr 0x004242F2;
+	__asm        jl     _Tf3;
 // LINE 285:
 	__asm        push   1;
 	__asm        mov    eax, range;
@@ -3327,6 +3474,7 @@ void CDebugWindow::RecalcScrollRange() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C383C];
 // LINE 287:
+_Tf3:
 	__asm        push   1;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3375,7 +3523,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    count, eax;
 // LINE 305:
 	__asm        cmp    count, 1;
-	__asm        jle    near ptr 0x004248CA;
+	__asm        jle    _T5bd;
 // LINE 308:
 // Block start:
 	struct debug_command** it;
@@ -3407,7 +3555,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x274], eax;
 	__asm        cmp    dword ptr [ebp-0x274], 0;
-	__asm        je     near ptr 0x004244C5;
+	__asm        je     _T1b8;
 
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
@@ -3423,7 +3571,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, [ebp-0x274];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00424496;
+	__asm        je     _T189;
 
 	__asm        mov    eax, [ebp-0x274];
 	__asm        mov    eax, [eax+8];
@@ -3448,19 +3596,23 @@ void CDebugWindow::OnEditChange() {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x00424491;
 
-	__asm        jmp    near ptr 0x004244A2;
+	__asm        jmp    _T195;
 
+_T189:
 	__asm        mov    eax, [ebp-0x274];
 	__asm        mov    dword ptr [eax], 0;
+_T195:
 	__asm        mov    eax, [ebp-0x274];
 	__asm        mov    dword ptr [eax+0xC], 1;
 	__asm        jmp    near ptr 0x004244B4;
 
 	__asm        mov    eax, [ebp-0x274];
 	__asm        mov    str.reference, eax;
-	__asm        jmp    near ptr 0x004244CF;
+	__asm        jmp    _T1c2;
 
+_T1b8:
 	__asm        mov    str.reference, 0;
+_T1c2:
 	__asm        mov    str.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004244DE;
 // LINE 314:
@@ -3484,22 +3636,24 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    num, eax;
 // LINE 319:
 	__asm        cmp    num, 0;
-	__asm        je     near ptr 0x00424699;
+	__asm        je     _T38c;
 // LINE 320:
 	__asm        jmp    near ptr 0x00424547;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    it, eax;
-	__asm        jmp    near ptr 0x00424562;
+	__asm        jmp    _T255;
 
+_T24e:
 	__asm        add    it, 4;
+_T255:
 	__asm        jmp    near ptr 0x00424567;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, it;
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00424699;
+	__asm        je     _T38c;
 // LINE 321:
 	__asm        jmp    near ptr 0x00424581;
 
@@ -3516,7 +3670,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-	__asm        jae    near ptr 0x004245D7;
+	__asm        jae    _T2ca;
 
 	__asm        jmp    near ptr 0x004245C0;
 
@@ -3524,9 +3678,11 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x22C], eax;
-	__asm        jmp    near ptr 0x004245E1;
+	__asm        jmp    _T2d4;
 
+_T2ca:
 	__asm        mov    dword ptr [ebp-0x22C], 0xFFFFFFFF;
+_T2d4:
 	__asm        jmp    near ptr 0x004245E6;
 
 	__asm        jmp    near ptr 0x004245EB;
@@ -3534,19 +3690,21 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    eax, [ebp-0x234];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00424619;
+	__asm        je     _T30c;
 
 	__asm        mov    eax, [ebp-0x234];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x230], eax;
-	__asm        jmp    near ptr 0x00424628;
+	__asm        jmp    _T31b;
 
-	__asm        jmp    near ptr 0x00424628;
+	__asm        jmp    _T31b;
 
+_T30c:
 	__asm        mov    dword ptr [ebp-0x230], 0;
-	__asm        jmp    near ptr 0x00424628;
+	__asm        jmp    _T31b;
 
+_T31b:
 	__asm        jmp    near ptr 0x0042462D;
 
 	__asm        mov    eax, [ebp-0x234];
@@ -3561,17 +3719,20 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    ecx, [ebp-0x238];
 	__asm        call   basic_string<char>::compare_str;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00424662;
+	__asm        jne    _T355;
 
-	__asm        jmp    near ptr 0x00424667;
+	__asm        jmp    _T35a;
 
-	__asm        jmp    near ptr 0x00424694;
+_T355:
+	__asm        jmp    _T387;
 
-	__asm        jmp    near ptr 0x00424679;
+_T35a:
+	__asm        jmp    _T36c;
 
 	__asm        cmp    dword ptr [ebp-0x23C], 0;
-	__asm        je     near ptr 0x00424694;
+	__asm        je     _T387;
 // LINE 322:
+_T36c:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        mov    eax, it;
@@ -3581,8 +3742,10 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    ecx, [eax];
 	__asm        call   dword ptr [edx];
 // LINE 323:
-	__asm        jmp    near ptr 0x0042455B;
+_T387:
+	__asm        jmp    _T24e;
 
+_T38c:
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::RecalcScrollRange;
 // LINE 324:
@@ -3590,9 +3753,10 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    [ebp-0x254], eax;
 	__asm        mov    eax, command_vector.start;
 	__asm        mov    [ebp-0x258], eax;
+_T3af:
 	__asm        mov    eax, [ebp-0x254];
 	__asm        cmp    [ebp-0x258], eax;
-	__asm        je     near ptr 0x004247AA;
+	__asm        je     _T49d;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        mov    eax, [eax+4];
@@ -3600,7 +3764,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    eax, [ebp-0x258];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0042473E;
+	__asm        jne    _T431;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        mov    eax, [eax+4];
@@ -3608,7 +3772,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    eax, [ebp-0x250];
 	__asm        mov    [ebp-0x24C], eax;
 	__asm        cmp    dword ptr [ebp-0x24C], 0;
-	__asm        je     near ptr 0x0042473E;
+	__asm        je     _T431;
 
 	__asm        mov    ecx, [ebp-0x24C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
@@ -3620,13 +3784,14 @@ void CDebugWindow::OnEditChange() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00424739;
 
-	__asm        jmp    near ptr 0x0042473E;
+	__asm        jmp    _T431;
 
+_T431:
 	__asm        jmp    near ptr 0x00424743;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0042477B;
+	__asm        je     _T46e;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        mov    eax, [eax];
@@ -3637,21 +3802,24 @@ void CDebugWindow::OnEditChange() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T46e:
 	__asm        jmp    near ptr 0x00424780;
 
-	__asm        jmp    near ptr 0x00424794;
+	__asm        jmp    _T487;
 
 	__asm        mov    eax, [ebp-0x258];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T487:
 	__asm        jmp    near ptr 0x00424799;
 
 	__asm        jmp    near ptr 0x0042479E;
 
 	__asm        add    dword ptr [ebp-0x258], 8;
-	__asm        jmp    near ptr 0x004246BC;
+	__asm        jmp    _T3af;
 
+_T49d:
 	__asm        jmp    near ptr 0x004247AF;
 
 	__asm        mov    eax, command_vector.start;
@@ -3670,18 +3838,18 @@ void CDebugWindow::OnEditChange() {
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, str.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0042488C;
+	__asm        jne    _T57f;
 
 	__asm        mov    eax, str.reference;
 	__asm        mov    [ebp-0x268], eax;
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    [ebp-0x264], eax;
 	__asm        cmp    dword ptr [ebp-0x264], 0;
-	__asm        je     near ptr 0x0042488C;
+	__asm        je     _T57f;
 
 	__asm        mov    eax, [ebp-0x264];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x00424869;
+	__asm        je     _T55c;
 
 	__asm        mov    eax, [ebp-0x264];
 	__asm        mov    eax, [eax];
@@ -3696,6 +3864,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x264];
 	__asm        mov    dword ptr [eax], 0;
+_T55c:
 	__asm        jmp    near ptr 0x0042486E;
 
 	__asm        jmp    near ptr 0x00424873;
@@ -3706,12 +3875,13 @@ void CDebugWindow::OnEditChange() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00424887;
 
-	__asm        jmp    near ptr 0x0042488C;
+	__asm        jmp    _T57f;
 
+_T57f:
 	__asm        jmp    near ptr 0x00424891;
 
 	__asm        cmp    str.c_str_ptr, 0;
-	__asm        je     near ptr 0x004248C5;
+	__asm        je     _T5b8;
 
 	__asm        mov    eax, str.c_str_ptr;
 	__asm        mov    [ebp-0x25C], eax;
@@ -3721,9 +3891,11 @@ void CDebugWindow::OnEditChange() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004248CA;
+_T5b8:
+	__asm        jmp    _T5bd;
 // LINE 325:
 // Block end:
+_T5bd:
 	__asm        jmp    near ptr 0x004248CF;
 }
 
@@ -3732,8 +3904,9 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 // LINE 338:
 	__asm        mov    eax, Message;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00424999;
+	__asm        jmp    _Tc5;
 // LINE 341:
+_T17:
 	__asm        mov    eax, LParam;
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
@@ -3745,20 +3918,23 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::OnSize;
 // LINE 342:
-	__asm        jmp    near ptr 0x004249E1;
+	__asm        jmp    _T10d;
 // LINE 344:
+_T38:
 	__asm        mov    eax, WParam;
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
 	__asm        movzx  eax, ax;
 	__asm        cmp    eax, 0x300;
-	__asm        jne    near ptr 0x0042492D;
+	__asm        jne    _T59;
 // LINE 345:
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::OnEditChange;
 // LINE 346:
-	__asm        jmp    near ptr 0x004249E1;
+_T59:
+	__asm        jmp    _T10d;
 // LINE 348:
+_T5e:
 	__asm        mov    eax, WParam;
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
@@ -3770,20 +3946,23 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::OnScroll;
 // LINE 349:
-	__asm        jmp    near ptr 0x004249E1;
+	__asm        jmp    _T10d;
 // LINE 351:
+_T83:
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::OnPaint;
 // LINE 352:
-	__asm        jmp    near ptr 0x004249E1;
+	__asm        jmp    _T10d;
 // LINE 354:
+_T90:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3864];
 // LINE 355:
-	__asm        jmp    near ptr 0x004249E1;
+	__asm        jmp    _T10d;
 // LINE 357:
+_Ta2:
 	__asm        mov    eax, LParam;
 	__asm        push   eax;
 	__asm        mov    eax, WParam;
@@ -3794,33 +3973,36 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    near ptr 0x004249E8;
+	__asm        jmp    _T114;
 // LINE 358:
-	__asm        jmp    near ptr 0x004249E1;
+	__asm        jmp    _T10d;
 
+_Tc5:
 	__asm        cmp    dword ptr [ebp-8], 0xF;
-	__asm        ja     near ptr 0x004249C2;
+	__asm        ja     _Tee;
 
-	__asm        je     near ptr 0x00424957;
+	__asm        je     _T83;
 
 	__asm        cmp    dword ptr [ebp-8], 5;
-	__asm        je     near ptr 0x004248EB;
+	__asm        je     _T17;
 
 	__asm        cmp    dword ptr [ebp-8], 7;
-	__asm        je     near ptr 0x00424964;
+	__asm        je     _T90;
 
-	__asm        jmp    near ptr 0x00424976;
+	__asm        jmp    _Ta2;
 
+_Tee:
 	__asm        cmp    dword ptr [ebp-8], 0x111;
-	__asm        je     near ptr 0x0042490C;
+	__asm        je     _T38;
 
 	__asm        cmp    dword ptr [ebp-8], 0x115;
-	__asm        je     near ptr 0x00424932;
+	__asm        je     _T5e;
 
-	__asm        jmp    near ptr 0x00424976;
+	__asm        jmp    _Ta2;
 // LINE 359:
+_T10d:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004249E8;
+	__asm        jmp    _T114;
 // LINE 360:
 }
 
@@ -3836,7 +4018,7 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        mov    debugWin, eax;
 // LINE 364:
 	__asm        cmp    debugWin, 0;
-	__asm        je     near ptr 0x00424A2F;
+	__asm        je     _T40;
 // LINE 365:
 	__asm        mov    eax, LParam;
 	__asm        push   eax;
@@ -3846,10 +4028,11 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        push   eax;
 	__asm        mov    ecx, debugWin;
 	__asm        call   CDebugWindow::InstanceWindowProcedure;
-	__asm        jmp    near ptr 0x00424A4A;
+	__asm        jmp    _T5b;
 // LINE 366:
-	__asm        jmp    near ptr 0x00424A4A;
+	__asm        jmp    _T5b;
 // LINE 367:
+_T40:
 	__asm        mov    eax, LParam;
 	__asm        push   eax;
 	__asm        mov    eax, WParam;
@@ -3859,7 +4042,7 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        mov    eax, hWindow;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    near ptr 0x00424A4A;
+	__asm        jmp    _T5b;
 // LINE 368:
 }
 
@@ -3867,26 +4050,29 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 void CreateDebugWindow() {
 // LINE 384:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        jne    near ptr 0x00424AAA;
+	__asm        jne    _T59;
 // LINE 386:
 	__asm        push   0x40;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00424A90;
+	__asm        je     _T3f;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CDebugWindow::CDebugWindow;
 	__asm        mov    ds:[0x597374], eax;
-	__asm        jmp    near ptr 0x00424A9A;
+	__asm        jmp    _T49;
 
+_T3f:
 	__asm        mov    dword ptr ds:[0x597374], 0;
 // LINE 387:
+_T49:
 	__asm        push   0x5973F8;
 	__asm        mov    ecx, ds:[0x597374];
 	__asm        call   CDebugWindow::Create;
 // LINE 389:
+_T59:
 	__asm        jmp    near ptr 0x00424AAF;
 }
 
@@ -3894,14 +4080,14 @@ void CreateDebugWindow() {
 void DestroyDebugWindow() {
 // LINE 393:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        je     near ptr 0x00424B0A;
+	__asm        je     _T56;
 // LINE 395:
 	__asm        mov    eax, ds:[0x597374];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00424B00;
+	__asm        je     _T4c;
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CDebugWindow::~CDebugWindow;
@@ -3911,10 +4097,12 @@ void DestroyDebugWindow() {
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00424AFB;
 
-	__asm        jmp    near ptr 0x00424B00;
+	__asm        jmp    _T4c;
 // LINE 396:
+_T4c:
 	__asm        mov    dword ptr ds:[0x597374], 0;
 // LINE 398:
+_T56:
 	__asm        jmp    near ptr 0x00424B0F;
 }
 
@@ -3937,13 +4125,14 @@ void DebugOutput(char * text, ...) {
 	__asm        add    esp, 0xC;
 // LINE 406:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        je     near ptr 0x00424B62;
+	__asm        je     _T4e;
 // LINE 407:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x597374];
 	__asm        call   CDebugWindow::OutputString;
 // LINE 408:
+_T4e:
 	__asm        jmp    near ptr 0x00424B67;
 }
 
@@ -3951,7 +4140,7 @@ void DebugOutput(char * text, ...) {
 void RegisterDebugCommand(struct debug_command* aCommand) {
 // LINE 412:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        je     near ptr 0x00424F26;
+	__asm        je     _T3ba;
 // LINE 413:
 	__asm        mov    eax, aCommand;
 	__asm        mov    [ebp-0x7C], eax;
@@ -3961,7 +4150,7 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    ecx, [ecx+0x34];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00424BE1;
+	__asm        je     _T75;
 
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x30];
@@ -3971,19 +4160,21 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424BB9;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
-	__asm        je     near ptr 0x00424BD0;
+	__asm        je     _T64;
 
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424BD0;
+	__asm        jmp    _T64;
 
+_T64:
 	__asm        jmp    near ptr 0x00424BD5;
 
 	__asm        mov    eax, [ebp-0x80];
 	__asm        add    dword ptr [eax+0x30], 4;
-	__asm        jmp    near ptr 0x00424F1C;
+	__asm        jmp    _T3b0;
 
+_T75:
 	__asm        jmp    near ptr 0x00424BE6;
 
 	__asm        mov    eax, [ebp-0x80];
@@ -3993,7 +4184,7 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    ecx, [ecx+0x34];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00424C90;
+	__asm        je     _T124;
 
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x30];
@@ -4007,14 +4198,15 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424C21;
 
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        je     near ptr 0x00424C3A;
+	__asm        je     _Tce;
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424C3A;
+	__asm        jmp    _Tce;
 
+_Tce:
 	__asm        jmp    near ptr 0x00424C3F;
 
 	__asm        mov    eax, [ebp-0x80];
@@ -4024,9 +4216,10 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    eax, [eax+0x30];
 	__asm        sub    eax, 4;
 	__asm        mov    [ebp-0x34], eax;
+_Te8:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x78], eax;
-	__asm        je     near ptr 0x00424C77;
+	__asm        je     _T10b;
 
 	__asm        sub    dword ptr [ebp-0x30], 4;
 	__asm        sub    dword ptr [ebp-0x34], 4;
@@ -4034,8 +4227,9 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424C54;
+	__asm        jmp    _Te8;
 
+_T10b:
 	__asm        jmp    near ptr 0x00424C7C;
 
 	__asm        mov    eax, [ebp-0x7C];
@@ -4043,8 +4237,9 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        add    dword ptr [eax+0x30], 4;
-	__asm        jmp    near ptr 0x00424F17;
+	__asm        jmp    _T3ab;
 
+_T124:
 	__asm        jmp    near ptr 0x00424C95;
 
 	__asm        jmp    near ptr 0x00424C9A;
@@ -4057,7 +4252,7 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        sar    eax, 2;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00424CDE;
+	__asm        je     _T172;
 
 	__asm        jmp    near ptr 0x00424CBB;
 
@@ -4072,8 +4267,9 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        sar    eax, 2;
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00424D2B;
+	__asm        jmp    _T1bf;
 
+_T172:
 	__asm        mov    dword ptr [ebp-0x1C], 0x400;
 	__asm        lea    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
@@ -4084,21 +4280,24 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax], ecx;
-	__asm        jb     near ptr 0x00424D13;
+	__asm        jb     _T1a7;
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00424D19;
+	__asm        jmp    _T1ad;
 
+_T1a7:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x2C], eax;
+_T1ad:
 	__asm        jmp    near ptr 0x00424D1E;
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00424D2B;
+	__asm        jmp    _T1bf;
 
+_T1bf:
 	__asm        jmp    near ptr 0x00424D30;
 
 	__asm        push   0;
@@ -4114,9 +4313,10 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x5C], eax;
+_T1e9:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        cmp    [ebp-0x78], eax;
-	__asm        je     near ptr 0x00424DA3;
+	__asm        je     _T237;
 
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x4C], eax;
@@ -4129,18 +4329,20 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424D80;
 
 	__asm        cmp    dword ptr [ebp-0x54], 0;
-	__asm        je     near ptr 0x00424D99;
+	__asm        je     _T22d;
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424D99;
+	__asm        jmp    _T22d;
 
+_T22d:
 	__asm        jmp    near ptr 0x00424D9E;
 
-	__asm        jmp    near ptr 0x00424D55;
+	__asm        jmp    _T1e9;
 
+_T237:
 	__asm        jmp    near ptr 0x00424DA8;
 
 	__asm        jmp    near ptr 0x00424DAD;
@@ -4160,13 +4362,14 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424DD3;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x00424DEA;
+	__asm        je     _T27e;
 
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424DEA;
+	__asm        jmp    _T27e;
 
+_T27e:
 	__asm        jmp    near ptr 0x00424DEF;
 
 	__asm        jmp    near ptr 0x00424DF4;
@@ -4189,9 +4392,10 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x74], eax;
+_T2ba:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        cmp    [ebp-0x74], eax;
-	__asm        je     near ptr 0x00424E74;
+	__asm        je     _T308;
 
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x60], eax;
@@ -4204,18 +4408,20 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        jmp    near ptr 0x00424E51;
 
 	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        je     near ptr 0x00424E6A;
+	__asm        je     _T2fe;
 
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x68];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x00424E6A;
+	__asm        jmp    _T2fe;
 
+_T2fe:
 	__asm        jmp    near ptr 0x00424E6F;
 
-	__asm        jmp    near ptr 0x00424E26;
+	__asm        jmp    _T2ba;
 
+_T308:
 	__asm        jmp    near ptr 0x00424E79;
 
 	__asm        jmp    near ptr 0x00424E7E;
@@ -4225,16 +4431,18 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x18], eax;
+_T320:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0x30], ecx;
-	__asm        je     near ptr 0x00424EA9;
+	__asm        je     _T33d;
 
 	__asm        jmp    near ptr 0x00424EA0;
 
 	__asm        add    dword ptr [ebp-0x18], 4;
-	__asm        jmp    near ptr 0x00424E8C;
+	__asm        jmp    _T320;
 
+_T33d:
 	__asm        jmp    near ptr 0x00424EAE;
 
 	__asm        jmp    near ptr 0x00424EB3;
@@ -4274,12 +4482,15 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx+0x2C], eax;
-	__asm        jmp    near ptr 0x00424F1C;
+_T3ab:
+	__asm        jmp    _T3b0;
 
+_T3b0:
 	__asm        jmp    near ptr 0x00424F21;
 
-	__asm        jmp    near ptr 0x00424F26;
+	__asm        jmp    _T3ba;
 // LINE 414:
+_T3ba:
 	__asm        jmp    near ptr 0x00424F2B;
 }
 
@@ -4287,7 +4498,7 @@ void RegisterDebugCommand(struct debug_command* aCommand) {
 void UnregisterDebugCommand(struct debug_command* aCommand) {
 // LINE 418:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        je     near ptr 0x0042500B;
+	__asm        je     _Tdb;
 // LINE 419:
 	__asm        mov    eax, aCommand;
 	__asm        mov    [ebp-0x1C], eax;
@@ -4305,18 +4516,20 @@ void UnregisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
+_T46:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-8], eax;
-	__asm        je     near ptr 0x00424F99;
+	__asm        je     _T69;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    [eax], ecx;
-	__asm        je     near ptr 0x00424F99;
+	__asm        je     _T69;
 
 	__asm        add    dword ptr [ebp-8], 4;
-	__asm        jmp    near ptr 0x00424F76;
+	__asm        jmp    _T46;
 
+_T69:
 	__asm        jmp    near ptr 0x00424F9E;
 
 	__asm        mov    eax, [ebp-8];
@@ -4325,38 +4538,44 @@ void UnregisterDebugCommand(struct debug_command* aCommand) {
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x18], eax;
-	__asm        jne    near ptr 0x00424FBB;
+	__asm        jne    _T8b;
 
-	__asm        jmp    near ptr 0x00425001;
+	__asm        jmp    _Td1;
 
+_T8b:
 	__asm        add    dword ptr [ebp-4], 4;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x10], eax;
+_T9b:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x10], eax;
-	__asm        je     near ptr 0x00424FFC;
+	__asm        je     _Tcc;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        cmp    [eax], ecx;
-	__asm        je     near ptr 0x00424FF3;
+	__asm        je     _Tc3;
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
 	__asm        add    dword ptr [ebp-0xC], 4;
+_Tc3:
 	__asm        add    dword ptr [ebp-0x10], 4;
-	__asm        jmp    near ptr 0x00424FCB;
+	__asm        jmp    _T9b;
 
-	__asm        jmp    near ptr 0x00425001;
+_Tcc:
+	__asm        jmp    _Td1;
 
+_Td1:
 	__asm        jmp    near ptr 0x00425006;
 
-	__asm        jmp    near ptr 0x0042500B;
+	__asm        jmp    _Tdb;
 // LINE 420:
+_Tdb:
 	__asm        jmp    near ptr 0x00425010;
 }
 
@@ -4364,13 +4583,14 @@ void UnregisterDebugCommand(struct debug_command* aCommand) {
 void SaveDebugWindow(char * fileName) {
 // LINE 424:
 	__asm        cmp    dword ptr ds:[0x597374], 0;
-	__asm        je     near ptr 0x00425037;
+	__asm        je     _T22;
 // LINE 425:
 	__asm        mov    eax, fileName;
 	__asm        push   eax;
 	__asm        mov    ecx, ds:[0x597374];
 	__asm        call   CDebugWindow::Save;
 // LINE 426:
+_T22:
 	__asm        jmp    near ptr 0x0042503C;
 }
 
@@ -4386,14 +4606,15 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 
 	__asm        mov    eax, str.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x00425076;
+	__asm        jne    _T35;
 
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    near ptr 0x004256C4;
+	__asm        jmp    _T683;
 // LINE 434:
+_T35:
 	__asm        lea    ecx, subString.c_str_ptr;
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        lea    ecx, parseStr.c_str_ptr;
@@ -4414,7 +4635,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    pos, eax;
 // LINE 438:
 	__asm        cmp    pos, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x004250E1;
+	__asm        jne    _Ta0;
 
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        lea    ecx, parseStr.c_str_ptr;
@@ -4424,8 +4645,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    near ptr 0x004256C4;
+	__asm        jmp    _T683;
 // LINE 441:
+_Ta0:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, pos;
 	__asm        push   eax;
@@ -4455,8 +4677,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 // LINE 444:
 	__asm        mov    index, 0;
 // LINE 446:
+_Tf4:
 	__asm        cmp    pos, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0042543D;
+	__asm        je     _T3fc;
 // LINE 449:
 	__asm        inc    index;
 // LINE 452:
@@ -4473,7 +4696,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        lea    ecx, [ebp-0x30];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     near ptr 0x00425193;
+	__asm        je     _T152;
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xC0], eax;
@@ -4483,6 +4706,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T152:
 	__asm        jmp    near ptr 0x00425198;
 // LINE 455:
 	__asm        push   0xFFFFFFFF;
@@ -4498,7 +4722,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        lea    ecx, [ebp-0x38];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
-	__asm        je     near ptr 0x004251E9;
+	__asm        je     _T1a8;
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0xB4], eax;
@@ -4508,6 +4732,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T1a8:
 	__asm        jmp    near ptr 0x004251EE;
 // LINE 456:
 	__asm        jmp    near ptr 0x004251F3;
@@ -4525,14 +4750,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    pos, eax;
 // LINE 459:
 	__asm        cmp    pos, 0xFFFFFFFF;
-	__asm        je     near ptr 0x00425438;
+	__asm        je     _T3f7;
 // LINE 461:
 	__asm        jmp    near ptr 0x00425227;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        mov    ecx, pos;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jae    near ptr 0x0042526E;
+	__asm        jae    _T22d;
 
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
@@ -4547,13 +4772,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0042526E;
+	__asm        jmp    _T22d;
 
+_T22d:
 	__asm        jmp    near ptr 0x00425273;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00425305;
+	__asm        je     _T2c4;
 
 	__asm        jmp    near ptr 0x00425285;
 
@@ -4561,7 +4787,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, pos;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jae    near ptr 0x004252B0;
+	__asm        jae    _T26f;
 
 	__asm        jmp    near ptr 0x0042529C;
 
@@ -4569,9 +4795,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, pos;
 	__asm        mov    [ebp-0xA8], eax;
-	__asm        jmp    near ptr 0x004252BA;
+	__asm        jmp    _T279;
 
+_T26f:
 	__asm        mov    dword ptr [ebp-0xA8], 0xFFFFFFFF;
+_T279:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xA8];
@@ -4590,10 +4818,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    eax, [ebp-0x40];
 	__asm        mov    [ebp-0xB0], eax;
-	__asm        jmp    near ptr 0x00425336;
+	__asm        jmp    _T2f5;
 
-	__asm        jmp    near ptr 0x00425336;
+	__asm        jmp    _T2f5;
 
+_T2c4:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0xA4];
@@ -4605,11 +4834,12 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    eax, [ebp-0x40];
 	__asm        mov    [ebp-0xB0], eax;
-	__asm        jmp    near ptr 0x00425336;
+	__asm        jmp    _T2f5;
 
+_T2f5:
 	__asm        lea    eax, parseStr.c_str_ptr;
 	__asm        cmp    [ebp-0xB0], eax;
-	__asm        je     near ptr 0x004253CE;
+	__asm        je     _T38d;
 
 	__asm        lea    ecx, parseStr.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -4618,21 +4848,22 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-	__asm        je     near ptr 0x0042537C;
+	__asm        je     _T33b;
 
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    parseStr.reference, eax;
 	__asm        mov    eax, parseStr.reference;
 	__asm        inc    dword ptr [eax+0xC];
-	__asm        jmp    near ptr 0x004253CE;
+	__asm        jmp    _T38d;
 
+_T33b:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0xBC], eax;
 	__asm        cmp    dword ptr [ebp-0xBC], 0;
-	__asm        je     near ptr 0x004253C7;
+	__asm        je     _T386;
 
 	__asm        jmp    near ptr 0x0042539E;
 
@@ -4646,15 +4877,17 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        mov    ecx, [ebp-0xBC];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    parseStr.reference, eax;
-	__asm        jmp    near ptr 0x004253CE;
+	__asm        jmp    _T38d;
 
+_T386:
 	__asm        mov    parseStr.reference, 0;
+_T38d:
 	__asm        jmp    near ptr 0x004253D3;
 
 	__asm        lea    ecx, [ebp-0x40];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     near ptr 0x00425409;
+	__asm        je     _T3c8;
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x90], eax;
@@ -4664,6 +4897,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T3c8:
 	__asm        jmp    near ptr 0x0042540E;
 // LINE 462:
 	__asm        jmp    near ptr 0x00425413;
@@ -4680,13 +4914,15 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        call   basic_string<char>::find_first_of_str;
 	__asm        mov    pos, eax;
 // LINE 464:
-	__asm        jmp    near ptr 0x00425135;
+_T3f7:
+	__asm        jmp    _Tf4;
 // LINE 467:
+_T3fc:
 	__asm        jmp    near ptr 0x00425442;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x00425629;
+	__asm        je     _T5e8;
 
 	__asm        jmp    near ptr 0x00425454;
 
@@ -4701,7 +4937,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        lea    ecx, parseStr.c_str_ptr;
 	__asm        call   basic_string<char>::find_first_not_of_str;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     near ptr 0x00425629;
+	__asm        je     _T5e8;
 // LINE 469:
 	__asm        inc    index;
 // LINE 470:
@@ -4722,7 +4958,7 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jae    near ptr 0x004254F9;
+	__asm        jae    _T4b8;
 
 	__asm        push   0x59722C;
 	__asm        mov    ecx, 0x638C00;
@@ -4737,30 +4973,33 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004254F9;
+	__asm        jmp    _T4b8;
 
+_T4b8:
 	__asm        jmp    near ptr 0x004254FE;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     near ptr 0x0042557B;
+	__asm        je     _T53a;
 
 	__asm        jmp    near ptr 0x00425510;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        mov    ecx, [ebp-0x8C];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jae    near ptr 0x00425535;
+	__asm        jae    _T4f4;
 
 	__asm        jmp    near ptr 0x00425527;
 
 	__asm        mov    eax, parseStr.reference;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x80], eax;
-	__asm        jmp    near ptr 0x0042553E;
+	__asm        jmp    _T4fd;
 
+_T4f4:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x80], eax;
+_T4fd:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x80];
@@ -4777,10 +5016,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    near ptr 0x004255A6;
+	__asm        jmp    _T565;
 
-	__asm        jmp    near ptr 0x004255A6;
+	__asm        jmp    _T565;
 
+_T53a:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x7C];
@@ -4792,13 +5032,14 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    near ptr 0x004255A6;
+	__asm        jmp    _T565;
 
+_T565:
 	__asm        mov    eax, commands;
 	__asm        mov    ecx, commands;
 	__asm        mov    ecx, [ecx+8];
 	__asm        cmp    [eax+4], ecx;
-	__asm        je     near ptr 0x004255DA;
+	__asm        je     _T599;
 
 	__asm        mov    eax, [ebp-0x88];
 	__asm        push   eax;
@@ -4809,8 +5050,9 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        add    esp, 8;
 	__asm        mov    eax, commands;
 	__asm        add    dword ptr [eax+4], 8;
-	__asm        jmp    near ptr 0x004255F5;
+	__asm        jmp    _T5b4;
 
+_T599:
 	__asm        jmp    near ptr 0x004255DF;
 
 	__asm        mov    eax, [ebp-0x88];
@@ -4820,12 +5062,13 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        mov    ecx, commands;
 	__asm        call   vector<basic_string<char>>::insert_aux;
+_T5b4:
 	__asm        jmp    near ptr 0x004255FA;
 
 	__asm        lea    ecx, [ebp-0x48];
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
-	__asm        je     near ptr 0x00425624;
+	__asm        je     _T5e3;
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x50], eax;
@@ -4835,14 +5078,16 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00425629;
+_T5e3:
+	__asm        jmp    _T5e8;
 // LINE 472:
+_T5e8:
 	__asm        mov    eax, index;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        lea    ecx, parseStr.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    parseStr.c_str_ptr, 0;
-	__asm        je     near ptr 0x00425659;
+	__asm        je     _T618;
 
 	__asm        mov    eax, parseStr.c_str_ptr;
 	__asm        mov    [ebp-0x58], eax;
@@ -4852,12 +5097,13 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T618:
 	__asm        jmp    near ptr 0x0042565E;
 
 	__asm        lea    ecx, subString.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    subString.c_str_ptr, 0;
-	__asm        je     near ptr 0x00425688;
+	__asm        je     _T647;
 
 	__asm        mov    eax, subString.c_str_ptr;
 	__asm        mov    [ebp-0x60], eax;
@@ -4867,12 +5113,13 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T647:
 	__asm        jmp    near ptr 0x0042568D;
 
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        cmp    str.c_str_ptr, 0;
-	__asm        je     near ptr 0x004256B7;
+	__asm        je     _T676;
 
 	__asm        mov    eax, str.c_str_ptr;
 	__asm        mov    [ebp-0x68], eax;
@@ -4882,10 +5129,11 @@ int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
+_T676:
 	__asm        jmp    near ptr 0x004256BC;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    near ptr 0x004256C4;
+	__asm        jmp    _T683;
 // LINE 473:
 }
 

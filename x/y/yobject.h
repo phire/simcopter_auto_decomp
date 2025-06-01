@@ -4,19 +4,21 @@ class cYObject* cYObject::GetObjectA(short id) {
 // LINE 513:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
-	__asm        jne    near ptr 0x0055205F;
+	__asm        jne    _T1f;
 
 	__asm        mov    eax, ds:[0x5B8680];
-	__asm        jmp    near ptr 0x005520D2;
+	__asm        jmp    _T92;
 // LINE 515:
+_T1f:
 	__asm        movsx  eax, id;
 	__asm        test   eax, eax;
-	__asm        jl     near ptr 0x00552078;
+	__asm        jl     _T38;
 
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
-	__asm        jl     near ptr 0x00552094;
+	__asm        jl     _T54;
 // LINE 516:
+_T38:
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9F4;
 	__asm        push   0x204;
@@ -24,9 +26,10 @@ class cYObject* cYObject::GetObjectA(short id) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 517:
+_T54:
 	__asm        movsx  eax, id;
 	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
-	__asm        jne    near ptr 0x005520C2;
+	__asm        jne    _T82;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BB9D0;
@@ -35,9 +38,10 @@ class cYObject* cYObject::GetObjectA(short id) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 519:
+_T82:
 	__asm        movsx  eax, id;
 	__asm        mov    eax, [eax*4+0x636D40];
-	__asm        jmp    near ptr 0x005520D2;
+	__asm        jmp    _T92;
 // LINE 520:
 }
 
@@ -47,7 +51,7 @@ void cYObject::SetAnim(unsigned long name) {
 // LINE 760:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
-	__asm        jne    near ptr 0x00552118;
+	__asm        jne    _T38;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB9C;
@@ -56,16 +60,18 @@ void cYObject::SetAnim(unsigned long name) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 761:
+_T38:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
-	__asm        je     near ptr 0x0055213D;
+	__asm        je     _T5d;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    ecx, name;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        je     near ptr 0x00552184;
+	__asm        je     _Ta4;
 // LINE 762:
+_T5d:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -76,7 +82,7 @@ void cYObject::SetAnim(unsigned long name) {
 // LINE 763:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
-	__asm        jne    near ptr 0x00552184;
+	__asm        jne    _Ta4;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBB74;
@@ -85,6 +91,7 @@ void cYObject::SetAnim(unsigned long name) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 765:
+_Ta4:
 	__asm        jmp    near ptr 0x00552189;
 }
 
@@ -95,7 +102,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 
 // LINE 1023:
 	__asm        cmp    thing, 0;
-	__asm        jne    near ptr 0x005521C2;
+	__asm        jne    _T32;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBE90;
@@ -104,19 +111,20 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1024:
+_T32:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
 	__asm        mov    obj, eax;
 // LINE 1025:
 	__asm        cmp    obj, 0;
-	__asm        je     near ptr 0x0055235C;
+	__asm        je     _T1cc;
 // LINE 1026:
 // Block start:
 	unsigned short yes;
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;
-	__asm        je     near ptr 0x00552206;
+	__asm        je     _T76;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBE70;
@@ -125,13 +133,14 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1027:
+_T76:
 	__asm        jmp    near ptr 0x0055220B;
 
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
 	__asm        cmp    [eax+0x130], ecx;
-	__asm        je     near ptr 0x0055223C;
+	__asm        je     _Tac;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBE44;
@@ -140,8 +149,9 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1029:
+_Tac:
 	__asm        cmp    thing, 0;
-	__asm        jne    near ptr 0x00552262;
+	__asm        jne    _Td2;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBEBC;
@@ -149,6 +159,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        push   0x5BBA14;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
+_Td2:
 	__asm        jmp    near ptr 0x00552267;
 
 	__asm        mov    eax, obj;
@@ -174,17 +185,19 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1E;
-	__asm        jle    near ptr 0x005522B5;
+	__asm        jle    _T125;
 
-	__asm        jmp    near ptr 0x005522CC;
+	__asm        jmp    _T13c;
 
-	__asm        jmp    near ptr 0x005522E8;
+_T125:
+	__asm        jmp    _T158;
 
-	__asm        jmp    near ptr 0x005522CC;
+	__asm        jmp    _T13c;
 
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
-	__asm        jne    near ptr 0x005522E8;
+	__asm        jne    _T158;
 
+_T13c:
 	__asm        push   0x8C085;
 	__asm        push   0x5BBE24;
 	__asm        push   0x405;
@@ -192,6 +205,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1030:
+_T158:
 	__asm        mov    eax, thing;
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
@@ -199,7 +213,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        mov    yes, ax;
 // LINE 1031:
 	__asm        test   reinterpret_cast<uint32_t>(yes), 0xFFFF;
-	__asm        jne    near ptr 0x00552321;
+	__asm        jne    _T191;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBDE4;
@@ -208,10 +222,11 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1032:
+_T191:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xE2];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0055234F;
+	__asm        je     _T1bf;
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BBDC8;
@@ -220,14 +235,16 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1033:
+_T1bf:
 	__asm        mov    eax, obj;
-	__asm        jmp    near ptr 0x00552363;
+	__asm        jmp    _T1d3;
 // LINE 1035:
 // Block end:
-	__asm        jmp    near ptr 0x00552363;
+	__asm        jmp    _T1d3;
 // LINE 1036:
+_T1cc:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00552363;
+	__asm        jmp    _T1d3;
 // LINE 1038:
 }
 

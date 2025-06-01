@@ -88,7 +88,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    cpu_speed.norm_freq, 0;
 // LINE 135:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&processor) + 1), 0x80;
-	__asm        je     near ptr 0x00447BFE;
+	__asm        je     _T87;
 // LINE 136:
 	__asm        lea    eax, cpu_speed.in_cycles;
 	__asm        mov    ecx, [ebp+8];
@@ -101,10 +101,11 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    near ptr 0x00447FC9;
+	__asm        jmp    _T452;
 // LINE 139:
+_T87:
 	__asm        cmp    clocks, 0;
-	__asm        jne    near ptr 0x00447C2B;
+	__asm        jne    _Tb4;
 // LINE 140:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -115,13 +116,14 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        shl    eax, 5;
 	__asm        mov    cycles, eax;
 // LINE 142:
-	__asm        jmp    near ptr 0x00447C84;
+	__asm        jmp    _T10d;
 
+_Tb4:
 	__asm        cmp    clocks, 0;
-	__asm        jle    near ptr 0x00447C60;
+	__asm        jle    _Te9;
 
 	__asm        cmp    clocks, 0x96;
-	__asm        jg     near ptr 0x00447C60;
+	__asm        jg     _Te9;
 // LINE 143:
 	__asm        mov    eax, clocks;
 	__asm        lea    eax, [eax+eax*4];
@@ -132,8 +134,9 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 144:
 	__asm        mov    manual, 1;
 // LINE 153:
-	__asm        jmp    near ptr 0x00447C84;
+	__asm        jmp    _T10d;
 // LINE 154:
+_Te9:
 	__asm        lea    eax, cpu_speed.in_cycles;
 	__asm        mov    ecx, [ebp+8];
 	__asm        mov    edx, [eax];
@@ -145,13 +148,14 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    near ptr 0x00447FC9;
+	__asm        jmp    _T452;
 // LINE 159:
+_T10d:
 	__asm        lea    eax, count_freq<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3668];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x00447CBA;
+	__asm        jne    _T143;
 // LINE 164:
 	__asm        lea    eax, cpu_speed.in_cycles;
 	__asm        mov    ecx, [ebp+8];
@@ -164,14 +168,16 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    near ptr 0x00447FC9;
+	__asm        jmp    _T452;
 // LINE 166:
+_T143:
 	__asm        test   reinterpret_cast<uint8_t>(features), 0x10;
-	__asm        je     near ptr 0x00447E72;
+	__asm        je     _T2fb;
 
 	__asm        cmp    manual, 0;
-	__asm        jne    near ptr 0x00447E72;
+	__asm        jne    _T2fb;
 // LINE 183:
+_T157:
 	__asm        inc    tries;
 // LINE 186:
 	__asm        mov    eax, freq2;
@@ -190,17 +196,19 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, t0<_LARGE_INTEGER+0x04:4>;
 	__asm        mov    t1<_LARGE_INTEGER+0x04:4>, eax;
 // LINE 197:
+_T17c:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
 	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
 	__asm        cmp    eax, 0x32;
-	__asm        jae    near ptr 0x00447D11;
+	__asm        jae    _T19a;
 // LINE 203:
 	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 205:
-	__asm        jmp    near ptr 0x00447CF3;
+	__asm        jmp    _T17c;
 // LINE 208:
+_T19a:
 	__asm        rdtsc;
 // LINE 212:
 	__asm        mov    stamp0, eax;
@@ -211,17 +219,19 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x04:4>;
 	__asm        mov    t0<_LARGE_INTEGER+0x04:4>, eax;
 // LINE 218:
+_T1ab:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
 	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
 	__asm        cmp    eax, 0x3E8;
-	__asm        jae    near ptr 0x00447D42;
+	__asm        jae    _T1cb;
 // LINE 225:
 	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 227:
-	__asm        jmp    near ptr 0x00447D22;
+	__asm        jmp    _T1ab;
 // LINE 230:
+_T1cb:
 	__asm        rdtsc;
 // LINE 234:
 	__asm        mov    stamp1, eax;
@@ -260,10 +270,11 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
 	__asm        shr    eax, 1;
 	__asm        cmp    edx, eax;
-	__asm        jbe    near ptr 0x00447DA3;
+	__asm        jbe    _T22c;
 // LINE 269:
 	__asm        inc    ticks;
 // LINE 271:
+_T22c:
 	__asm        mov    eax, cycles;
 	__asm        sub    edx, edx;
 	__asm        div    ticks;
@@ -275,20 +286,21 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    eax, ticks;
 	__asm        shr    eax, 1;
 	__asm        cmp    edx, eax;
-	__asm        jbe    near ptr 0x00447DC7;
+	__asm        jbe    _T250;
 // LINE 274:
 	__asm        inc    freq;
 // LINE 276:
+_T250:
 	__asm        mov    eax, freq2;
 	__asm        add    eax, freq3;
 	__asm        add    eax, freq;
 	__asm        mov    total, eax;
 // LINE 285:
 	__asm        cmp    tries, 3;
-	__asm        jl     near ptr 0x00447CCE;
+	__asm        jl     _T157;
 
 	__asm        cmp    tries, 0x14;
-	__asm        jge    near ptr 0x00447E38;
+	__asm        jge    _T2c1;
 
 	__asm        mov    eax, freq;
 	__asm        lea    eax, [eax+eax*2];
@@ -297,7 +309,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     near ptr 0x00447CCE;
+	__asm        jg     _T157;
 
 	__asm        mov    eax, freq2;
 	__asm        lea    eax, [eax+eax*2];
@@ -306,7 +318,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     near ptr 0x00447CCE;
+	__asm        jg     _T157;
 
 	__asm        mov    eax, freq3;
 	__asm        lea    eax, [eax+eax*2];
@@ -315,8 +327,9 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     near ptr 0x00447CCE;
+	__asm        jg     _T157;
 // LINE 290:
+_T2c1:
 	__asm        mov    eax, total;
 	__asm        mov    ecx, 3;
 	__asm        inc    eax;
@@ -328,22 +341,24 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        sub    edx, edx;
 	__asm        div    ebx;
 	__asm        cmp    ecx, eax;
-	__asm        je     near ptr 0x00447E5E;
+	__asm        je     _T2e7;
 // LINE 291:
 	__asm        inc    total;
 // LINE 293:
+_T2e7:
 	__asm        mov    ecx, 3;
 	__asm        mov    eax, total;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    freq, eax;
 // LINE 298:
-	__asm        jmp    near ptr 0x00447F80;
+	__asm        jmp    _T409;
 
+_T2fb:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 3;
-	__asm        jl     near ptr 0x00447F6B;
+	__asm        jl     _T3f4;
 // LINE 309:
 // Block start:
 	unsigned long lowest;
@@ -354,11 +369,13 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    lowest, 0xFFFFFFFF;
 // LINE 325:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00447EA0;
+	__asm        jmp    _T329;
 
+_T326:
 	__asm        inc    i;
+_T329:
 	__asm        cmp    i, 0xA;
-	__asm        jge    near ptr 0x00447EF2;
+	__asm        jge    _T37b;
 // LINE 331:
 	__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
@@ -369,11 +386,12 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        mov    bx, 0xFA0;
 // LINE 344:
 loop1:
+_T346:
 	__asm        bsf    ecx, eax;
 // LINE 346:
 	__asm        dec    bx;
 // LINE 347:
-	__asm        jne    near ptr 0x00447EBD;
+	__asm        jne    _T346;
 // LINE 350:
 	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
@@ -385,13 +403,15 @@ loop1:
 // LINE 357:
 	__asm        mov    eax, current;
 	__asm        cmp    lowest, eax;
-	__asm        jbe    near ptr 0x00447EED;
+	__asm        jbe    _T376;
 // LINE 358:
 	__asm        mov    eax, current;
 	__asm        mov    lowest, eax;
 // LINE 359:
-	__asm        jmp    near ptr 0x00447E9D;
+_T376:
+	__asm        jmp    _T326;
 // LINE 363:
+_T37b:
 	__asm        mov    eax, lowest;
 	__asm        mov    ticks, eax;
 // LINE 374:
@@ -421,10 +441,11 @@ loop1:
 	__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
 	__asm        shr    eax, 1;
 	__asm        cmp    edx, eax;
-	__asm        jbe    near ptr 0x00447F42;
+	__asm        jbe    _T3cb;
 // LINE 384:
 	__asm        inc    ticks;
 // LINE 386:
+_T3cb:
 	__asm        mov    eax, cycles;
 	__asm        sub    edx, edx;
 	__asm        div    ticks;
@@ -436,19 +457,22 @@ loop1:
 	__asm        mov    eax, ticks;
 	__asm        shr    eax, 1;
 	__asm        cmp    edx, eax;
-	__asm        jbe    near ptr 0x00447F66;
+	__asm        jbe    _T3ef;
 // LINE 389:
 	__asm        inc    freq;
 // LINE 394:
 // Block end:
-	__asm        jmp    near ptr 0x00447F80;
+_T3ef:
+	__asm        jmp    _T409;
 // LINE 396:
+_T3f4:
 	__asm        mov    cycles, 0;
 // LINE 397:
 	__asm        mov    ticks, 0;
 // LINE 398:
 	__asm        mov    freq, 0;
 // LINE 402:
+_T409:
 	__asm        mov    eax, cycles;
 	__asm        mov    cpu_speed.in_cycles, eax;
 // LINE 403:
@@ -477,7 +501,7 @@ loop1:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    near ptr 0x00447FC9;
+	__asm        jmp    _T452;
 // LINE 409:
 }
 
@@ -537,17 +561,18 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 3;
-	__asm        jne    near ptr 0x0044811B;
+	__asm        jne    _T14d;
 // LINE 442:
 	__asm        lea    eax, i386Speeds[0];
 	__asm        mov    speeds, eax;
 // LINE 444:
+_Tf9:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        test   edx, edx;
-	__asm        je     near ptr 0x0044810E;
+	__asm        je     _T140;
 // LINE 445:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
@@ -555,38 +580,42 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        add    edx, 2;
 	__asm        cmp    edx, freq;
-	__asm        jl     near ptr 0x00448106;
+	__asm        jl     _T138;
 // LINE 446:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 451:
+_T138:
 	__asm        inc    ptr;
 // LINE 452:
-	__asm        jmp    near ptr 0x004480C7;
+	__asm        jmp    _Tf9;
 // LINE 454:
+_T140:
 	__asm        mov    eax, freq;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 458:
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 
+_T14d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 4;
-	__asm        jne    near ptr 0x00448186;
+	__asm        jne    _T1b8;
 // LINE 460:
 	__asm        lea    eax, i486Speeds[0];
 	__asm        mov    speeds, eax;
 // LINE 462:
+_T164:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        test   edx, edx;
-	__asm        je     near ptr 0x00448179;
+	__asm        je     _T1ab;
 // LINE 463:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
@@ -594,38 +623,42 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        add    edx, 4;
 	__asm        cmp    edx, freq;
-	__asm        jl     near ptr 0x00448171;
+	__asm        jl     _T1a3;
 // LINE 464:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 469:
+_T1a3:
 	__asm        inc    ptr;
 // LINE 470:
-	__asm        jmp    near ptr 0x00448132;
+	__asm        jmp    _T164;
 // LINE 472:
+_T1ab:
 	__asm        mov    eax, freq;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 476:
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 
+_T1b8:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
-	__asm        jne    near ptr 0x004481F1;
+	__asm        jne    _T223;
 // LINE 478:
 	__asm        lea    eax, iPentiumSpeeds[0];
 	__asm        mov    speeds, eax;
 // LINE 480:
+_T1cf:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        test   edx, edx;
-	__asm        je     near ptr 0x004481E4;
+	__asm        je     _T216;
 // LINE 481:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
@@ -633,38 +666,42 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        add    edx, 5;
 	__asm        cmp    edx, freq;
-	__asm        jl     near ptr 0x004481DC;
+	__asm        jl     _T20e;
 // LINE 482:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 487:
+_T20e:
 	__asm        inc    ptr;
 // LINE 488:
-	__asm        jmp    near ptr 0x0044819D;
+	__asm        jmp    _T1cf;
 // LINE 490:
+_T216:
 	__asm        mov    eax, freq;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 494:
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 
+_T223:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 6;
-	__asm        jne    near ptr 0x0044825C;
+	__asm        jne    _T28e;
 // LINE 496:
 	__asm        lea    eax, iPentiumProSpeeds[0];
 	__asm        mov    speeds, eax;
 // LINE 498:
+_T23a:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        test   edx, edx;
-	__asm        je     near ptr 0x0044824F;
+	__asm        je     _T281;
 // LINE 499:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
@@ -672,26 +709,29 @@ unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        add    edx, 5;
 	__asm        cmp    edx, freq;
-	__asm        jl     near ptr 0x00448247;
+	__asm        jl     _T279;
 // LINE 500:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 505:
+_T279:
 	__asm        inc    ptr;
 // LINE 506:
-	__asm        jmp    near ptr 0x00448208;
+	__asm        jmp    _T23a;
 // LINE 508:
+_T281:
 	__asm        mov    eax, freq;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 512:
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 513:
+_T28e:
 	__asm        mov    eax, freq;
-	__asm        jmp    near ptr 0x00448264;
+	__asm        jmp    _T296;
 // LINE 515:
 }
 

@@ -19,7 +19,7 @@ void MRect::NormalizeRect() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x0044FC99;
+	__asm        jge    _T39;
 // LINE 593:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -34,11 +34,12 @@ void MRect::NormalizeRect() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 // LINE 597:
+_T39:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x0044FCC9;
+	__asm        jle    _T69;
 // LINE 598:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -53,6 +54,7 @@ void MRect::NormalizeRect() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 602:
+_T69:
 	__asm        jmp    near ptr 0x0044FCCE;
 }
 

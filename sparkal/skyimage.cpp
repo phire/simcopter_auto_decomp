@@ -332,7 +332,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewSkyType;
 	__asm        cmp    [eax+0x13C], ecx;
-	__asm        je     near ptr 0x00495500;
+	__asm        je     _T32;
 // LINE 61:
 	__asm        mov    eax, nNewSkyType;
 	__asm        mov    ecx, this;
@@ -341,6 +341,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::LoadImageA;
 // LINE 64:
+_T32:
 	__asm        jmp    near ptr 0x00495505;
 }
 
@@ -348,29 +349,31 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 void SkyImage::SwitchToProperSkyType() {
 // LINE 71:
 	__asm        cmp    dword ptr ds:[0x598E90], 0;
-	__asm        jne    near ptr 0x00495544;
+	__asm        jne    _T38;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 0;
-	__asm        je     near ptr 0x00495544;
+	__asm        je     _T38;
 // LINE 72:
 	__asm        push   0;
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 73:
-	__asm        jmp    near ptr 0x0049556B;
+	__asm        jmp    _T5f;
 
+_T38:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
-	__asm        jne    near ptr 0x0049556B;
+	__asm        jne    _T5f;
 
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 1;
-	__asm        je     near ptr 0x0049556B;
+	__asm        je     _T5f;
 // LINE 74:
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 75:
+_T5f:
 	__asm        jmp    near ptr 0x00495570;
 }
 
@@ -386,7 +389,7 @@ int32_t SkyImage::LoadImageA() {
 // LINE 102:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x13C], 0;
-	__asm        jne    near ptr 0x004955B8;
+	__asm        jne    _T43;
 // LINE 103:
 	__asm        lea    eax, szFullSkyImagePath[0];
 	__asm        push   eax;
@@ -397,8 +400,9 @@ int32_t SkyImage::LoadImageA() {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 104:
-	__asm        jmp    near ptr 0x004955D1;
+	__asm        jmp    _T5c;
 // LINE 105:
+_T43:
 	__asm        lea    eax, szFullSkyImagePath[0];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59A124];
@@ -408,6 +412,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 107:
+_T5c:
 	__asm        push   0x59A13C;
 	__asm        push   3;
 	__asm        lea    eax, szFullSkyImagePath[0];
@@ -417,11 +422,12 @@ int32_t SkyImage::LoadImageA() {
 	__asm        mov    vrResource, eax;
 // LINE 108:
 	__asm        cmp    vrResource, 0;
-	__asm        jne    near ptr 0x00495601;
+	__asm        jne    _T8c;
 // LINE 109:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004958E2;
+	__asm        jmp    _T36d;
 // LINE 112:
+_T8c:
 	__asm        push   0;
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
@@ -443,7 +449,7 @@ int32_t SkyImage::LoadImageA() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004956E1;
+	__asm        je     _T16c;
 // LINE 118:
 	__asm        jmp    near ptr 0x00495647;
 
@@ -452,13 +458,15 @@ int32_t SkyImage::LoadImageA() {
 	__asm        mov    pDestinationImage, eax;
 // LINE 119:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0049566B;
+	__asm        jmp    _Tf6;
 
+_Tf0:
 	__asm        inc    i;
+_Tf6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x138], ecx;
-	__asm        jle    near ptr 0x004956CB;
+	__asm        jle    _T156;
 // LINE 120:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];
@@ -480,20 +488,23 @@ int32_t SkyImage::LoadImageA() {
 	__asm        mov    eax, [eax+0x134];
 	__asm        add    pSourceImage, eax;
 // LINE 123:
-	__asm        jmp    near ptr 0x00495665;
+	__asm        jmp    _Tf0;
 // LINE 124:
+_T156:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 126:
-	__asm        jmp    near ptr 0x004956E8;
+	__asm        jmp    _T173;
 // LINE 127:
+_T16c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004958E2;
+	__asm        jmp    _T36d;
 // LINE 133:
+_T173:
 	__asm        cmp    dword ptr ds:[0x5B476C], 0;
-	__asm        je     near ptr 0x004958C9;
+	__asm        je     _T354;
 // LINE 136:
 	__asm        push   2;
 	__asm        mov    eax, ds:[0x5B476C];
@@ -654,13 +665,14 @@ int32_t SkyImage::LoadImageA() {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 203:
+_T354:
 	__asm        mov    eax, vrResource;
 	__asm        push   eax;
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 204:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004958E2;
+	__asm        jmp    _T36d;
 // LINE 205:
 }
 
@@ -689,10 +701,11 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    pitch, eax;
 // LINE 227:
 	__asm        cmp    pitch, 0x7080000;
-	__asm        jle    near ptr 0x0049592A;
+	__asm        jle    _T43;
 // LINE 228:
 	__asm        sub    pitch, 0xE100000;
 // LINE 232:
+_T43:
 	__asm        mov    eax, this;
 	__asm        mov    ebx, [eax+0x138];
 	__asm        dec    ebx;
@@ -719,16 +732,18 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    eax, this;
 	__asm        mov    ecx, start_row;
 	__asm        cmp    [eax+0x138], ecx;
-	__asm        jg     near ptr 0x00495989;
+	__asm        jg     _Ta2;
 // LINE 235:
 	__asm        mov    eax, 0x80000000;
-	__asm        jmp    near ptr 0x00495B2B;
+	__asm        jmp    _T244;
 // LINE 236:
+_Ta2:
 	__asm        cmp    start_row, 0;
-	__asm        jge    near ptr 0x0049599A;
+	__asm        jge    _Tb3;
 // LINE 237:
 	__asm        mov    start_row, 0;
 // LINE 241:
+_Tb3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x140];
 	__asm        push   eax;
@@ -742,7 +757,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    eax, this;
 	__asm        mov    ecx, start_col;
 	__asm        cmp    [eax+0x134], ecx;
-	__asm        jg     near ptr 0x004959DA;
+	__asm        jg     _Tf3;
 // LINE 245:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -750,11 +765,12 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        neg    eax;
 	__asm        sub    start_col, eax;
 // LINE 249:
+_Tf3:
 	__asm        mov    eax, start_col;
 	__asm        add    eax, nDestinationWidth;
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0x134];
-	__asm        jle    near ptr 0x00495A0F;
+	__asm        jle    _T128;
 // LINE 250:
 	__asm        mov    eax, start_col;
 	__asm        add    eax, nDestinationWidth;
@@ -766,13 +782,15 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        sub    eax, len2;
 	__asm        mov    len1, eax;
 // LINE 253:
-	__asm        jmp    near ptr 0x00495A1C;
+	__asm        jmp    _T135;
 // LINE 254:
+_T128:
 	__asm        mov    len2, 0;
 // LINE 255:
 	__asm        mov    eax, nDestinationWidth;
 	__asm        mov    len1, eax;
 // LINE 261:
+_T135:
 	__asm        mov    eax, start_row;
 	__asm        mov    rectSource.top, eax;
 // LINE 262:
@@ -788,7 +806,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    rectSource.right, eax;
 // LINE 268:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
-	__asm        jne    near ptr 0x00495AC8;
+	__asm        jne    _T1e1;
 // LINE 270:
 	__asm        mov    rectDestination.top, 0;
 // LINE 271:
@@ -815,7 +833,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        call   dword ptr [eax+0x30];
 // LINE 277:
 	__asm        cmp    len2, 0;
-	__asm        je     near ptr 0x00495AC3;
+	__asm        je     _T1dc;
 // LINE 278:
 	__asm        mov    rectSource.left, 0;
 // LINE 279:
@@ -842,8 +860,10 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 285:
-	__asm        jmp    near ptr 0x00495B21;
+_T1dc:
+	__asm        jmp    _T23a;
 // LINE 289:
+_T1e1:
 	__asm        mov    eax, rectSource.bottom;
 	__asm        push   eax;
 	__asm        mov    eax, rectSource.right;
@@ -860,7 +880,7 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        call   CBackBuffer::Compose;
 // LINE 292:
 	__asm        cmp    len2, 0;
-	__asm        je     near ptr 0x00495B21;
+	__asm        je     _T23a;
 // LINE 293:
 	__asm        mov    rectSource.left, 0;
 // LINE 294:
@@ -883,8 +903,9 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Compose;
 // LINE 299:
+_T23a:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00495B2B;
+	__asm        jmp    _T244;
 // LINE 300:
 }
 

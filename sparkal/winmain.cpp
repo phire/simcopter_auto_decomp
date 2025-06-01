@@ -63,29 +63,32 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        je     near ptr 0x0041F900;
+	__asm        je     _T90;
 
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   CGameApp::CGameApp;
 	__asm        mov    ds:[0x598580], eax;
-	__asm        jmp    near ptr 0x0041F90A;
+	__asm        jmp    _T9a;
 
+_T90:
 	__asm        mov    dword ptr ds:[0x598580], 0;
 // LINE 50:
+_T9a:
 	__asm        cmp    dword ptr ds:[0x598580], 0;
-	__asm        jne    near ptr 0x0041F923;
+	__asm        jne    _Tb3;
 // LINE 52:
 	__asm        jmp    near ptr 0x0041F91C;
 // LINE 53:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0041FABB;
+	__asm        jmp    _T24b;
 // LINE 56:
+_Tb3:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, ds:[0x598580];
 	__asm        call   dword ptr [eax+0x14];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0041F970;
+	__asm        je     _T100;
 // LINE 57:
 	__asm        jmp    near ptr 0x0041F940;
 // LINE 58:
@@ -94,18 +97,20 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     near ptr 0x0041F969;
+	__asm        je     _Tf9;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0041F969;
+	__asm        jmp    _Tf9;
 // LINE 59:
+_Tf9:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0041FABB;
+	__asm        jmp    _T24b;
 // LINE 62:
+_T100:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
@@ -119,7 +124,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    ecx, ds:[0x598580];
 	__asm        call   dword ptr [eax+8];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0041F9D6;
+	__asm        je     _T166;
 // LINE 65:
 	__asm        jmp    near ptr 0x0041F9A6;
 // LINE 66:
@@ -128,24 +133,28 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        cmp    dword ptr [ebp-0x34], 0;
-	__asm        je     near ptr 0x0041F9CF;
+	__asm        je     _T15f;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0041F9CF;
+	__asm        jmp    _T15f;
 // LINE 67:
+_T15f:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0041FABB;
+	__asm        jmp    _T24b;
 // LINE 70:
-	__asm        jmp    near ptr 0x0041F9DB;
+_T166:
+	__asm        jmp    _T16b;
 
+_T16b:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        test   byte ptr [eax+0xC], 1;
-	__asm        je     near ptr 0x0041FA71;
+	__asm        je     _T201;
 // LINE 71:
+_T17a:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -154,10 +163,10 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3800];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x0041FA45;
+	__asm        je     _T1d5;
 // LINE 72:
 	__asm        cmp    Message.message, 0x12;
-	__asm        jne    near ptr 0x0041FA2C;
+	__asm        jne    _T1bc;
 
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    [ebp-0x48], eax;
@@ -166,10 +175,11 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
 	__asm        jmp    near ptr 0x0041FA22;
 // LINE 74:
-	__asm        jmp    near ptr 0x0041FAB6;
+	__asm        jmp    _T246;
 
-	__asm        jmp    near ptr 0x0041FA71;
+	__asm        jmp    _T201;
 // LINE 76:
+_T1bc:
 	__asm        lea    eax, Message.hwnd;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37F8];
@@ -178,24 +188,27 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37EC];
 // LINE 78:
-	__asm        jmp    near ptr 0x0041F9EA;
+	__asm        jmp    _T17a;
 // LINE 82:
+_T1d5:
 	__asm        jmp    near ptr 0x0041FA4A;
 
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax+0xC];
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
-	__asm        jne    near ptr 0x0041FA6C;
+	__asm        jne    _T1fc;
 // LINE 84:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, ds:[0x598580];
 	__asm        call   dword ptr [eax+0xC];
 // LINE 86:
-	__asm        jmp    near ptr 0x0041F9DB;
+_T1fc:
+	__asm        jmp    _T16b;
 // LINE 89:
 Cleanup:
+_T201:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, ds:[0x598580];
@@ -208,19 +221,21 @@ Cleanup:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
-	__asm        je     near ptr 0x0041FAAF;
+	__asm        je     _T23f;
 
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0041FAAF;
+	__asm        jmp    _T23f;
 // LINE 92:
+_T23f:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0041FABB;
+	__asm        jmp    _T24b;
 // LINE 93:
-	__asm        jmp    near ptr 0x0041FA71;
+_T246:
+	__asm        jmp    _T201;
 }
 
 

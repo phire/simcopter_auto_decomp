@@ -124,13 +124,14 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    res, eax;
 // LINE 153:
 	__asm        cmp    res, 0;
-	__asm        jne    near ptr 0x004D21BF;
+	__asm        jne    _T3f;
 // LINE 154:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 155:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 166:
+_T3f:
 	__asm        mov    eax, info;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, info;
@@ -181,13 +182,14 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 // LINE 169:
 	__asm        mov    eax, res;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        jge    near ptr 0x004D2261;
+	__asm        jge    _Te1;
 // LINE 171:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 172:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 175:
+_Te1:
 	__asm        mov    eax, ds:[0x606A5C];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x59C22C];
@@ -196,25 +198,28 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        add    esp, 8;
 	__asm        mov    group, eax;
 	__asm        cmp    group, 0;
-	__asm        jne    near ptr 0x004D2293;
+	__asm        jne    _T113;
 // LINE 176:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 177:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 180:
+_T113:
 	__asm        mov    eax, group;
 	__asm        mov    ds:[0x606A60], eax;
 // LINE 184:
 	__asm        mov    dword ptr ds:[0x6666C0], 0;
 // LINE 185:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D22B4;
+	__asm        jmp    _T134;
 
+_T131:
 	__asm        inc    i;
+_T134:
 	__asm        mov    eax, objs;
 	__asm        cmp    i, eax;
-	__asm        jge    near ptr 0x004D231B;
+	__asm        jge    _T19b;
 // LINE 186:
 	__asm        mov    eax, ds:[0x606A60];
 	__asm        mov    ecx, i;
@@ -227,28 +232,31 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        call   LoadObjtType;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D2316;
+	__asm        jne    _T196;
 // LINE 189:
 	__asm        cmp    dword ptr ds:[0x6666C0], 0;
-	__asm        je     near ptr 0x004D2301;
+	__asm        je     _T181;
 // LINE 190:
 	__asm        mov    eax, ds:[0x6666C0];
 	__asm        push   eax;
 	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 191:
+_T181:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 192:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 194:
-	__asm        jmp    near ptr 0x004D22B1;
+_T196:
+	__asm        jmp    _T131;
 // LINE 196:
+_T19b:
 	__asm        cmp    dword ptr ds:[0x606A5C], 0;
-	__asm        jge    near ptr 0x004D2347;
+	__asm        jge    _T1c7;
 // LINE 198:
 	__asm        mov    eax, ds:[0x59C22C];
 	__asm        push   eax;
@@ -258,8 +266,9 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    dword ptr ds:[0x662810], 0xA;
 // LINE 200:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 208:
+_T1c7:
 	__asm        mov    eax, group;
 	__asm        mov    ecx, res;
 	__asm        mov    [ecx], eax;
@@ -275,7 +284,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        mov    [ecx+0x10], eax;
 // LINE 212:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x004D2374;
+	__asm        jmp    _T1f4;
 // LINE 214:
 }
 
@@ -289,13 +298,15 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 	__asm        mov    geo, eax;
 // LINE 230:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D2397;
+	__asm        jmp    _T1e;
 
+_T1b:
 	__asm        inc    i;
+_T1e:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D23C2;
+	__asm        jle    _T49;
 // LINE 231:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -306,7 +317,7 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 232:
-	__asm        jmp    near ptr 0x004D2394;
+	__asm        jmp    _T1b;
 // LINE 233:
 }
 
@@ -374,24 +385,26 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   0x004D8643;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D2457;
+	__asm        jne    _T4e;
 // LINE 302:
 	__asm        mov    dword ptr ds:[0x662810], 9;
 // LINE 303:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 307:
+_T4e:
 	__asm        push   0x7C;
 	__asm        lea    eax, fileobjhdr.Id[0];
 	__asm        push   eax;
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D2477;
+	__asm        jne    _T6e;
 // LINE 308:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 375:
+_T6e:
 	__asm        mov    eax, fileobjhdr.Attrib;
 	__asm        mov    ecx, ObjectPtr;
 	__asm        mov    [ecx], eax;
@@ -427,11 +440,12 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D24EB;
+	__asm        jne    _Te2;
 // LINE 390:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 413:
+_Te2:
 	__asm        mov    eax, ObjectPtr;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
@@ -442,11 +456,12 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D2516;
+	__asm        jne    _T10d;
 // LINE 414:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 415:
+_T10d:
 	__asm        mov    eax, ObjectPtr;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
@@ -454,7 +469,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    dataptr, eax;
 // LINE 448:
 	__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
-	__asm        je     near ptr 0x004D2571;
+	__asm        je     _T168;
 // LINE 450:
 	__asm        movsx  eax, fileobjhdr.NFaces;
 	__asm        shl    eax, 2;
@@ -465,25 +480,28 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    esp, 8;
 	__asm        mov    ds:[0x6666C0], eax;
 	__asm        cmp    dword ptr ds:[0x6666C0], 0;
-	__asm        jne    near ptr 0x004D2571;
+	__asm        jne    _T168;
 // LINE 452:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 453:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 459:
+_T168:
 	__asm        mov    eax, dataptr;
 	__asm        mov    ecx, ObjectPtr;
 	__asm        mov    [ecx+0x4C], eax;
 // LINE 460:
 	__asm        mov    x, 0;
 	__asm        mov    VertCount, 0;
-	__asm        jmp    near ptr 0x004D259C;
+	__asm        jmp    _T193;
 
+_T18d:
 	__asm        inc    x;
+_T193:
 	__asm        movsx  eax, fileobjhdr.NFaces;
 	__asm        cmp    eax, x;
-	__asm        jle    near ptr 0x004D29C8;
+	__asm        jle    _T5bf;
 // LINE 461:
 	__asm        mov    eax, dataptr;
 	__asm        mov    faceptr, eax;
@@ -494,7 +512,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D25E3;
+	__asm        jne    _T1da;
 // LINE 466:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
@@ -502,8 +520,9 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    esp, 4;
 // LINE 467:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 505:
+_T1da:
 	__asm        push   4;
 	__asm        push   0x59C218;
 	__asm        lea    eax, filefacehdr.Id[0];
@@ -511,7 +530,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   strncmp;
 	__asm        add    esp, 0xC;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004D261D;
+	__asm        je     _T214;
 // LINE 506:
 	__asm        mov    dword ptr ds:[0x662810], 6;
 // LINE 507:
@@ -521,8 +540,9 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    esp, 4;
 // LINE 508:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 512:
+_T214:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        add    VertCount, eax;
 // LINE 513:
@@ -561,16 +581,18 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 528:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+9], 0x40;
-	__asm        je     near ptr 0x004D2696;
+	__asm        je     _T28d;
 // LINE 529:
 	__asm        mov    uses_gouraud, 1;
 // LINE 532:
+_T28d:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D26AD;
+	__asm        je     _T2a4;
 // LINE 533:
 	__asm        mov    y, 0;
 // LINE 539:
+_T2a4:
 	__asm        mov    eax, dataptr;
 	__asm        mov    ecx, faceptr;
 	__asm        mov    [ecx+0x1C], eax;
@@ -586,18 +608,21 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D26EA;
+	__asm        jne    _T2e1;
 // LINE 545:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 566:
+_T2e1:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x004D26FF;
+	__asm        jmp    _T2f6;
 
+_T2f0:
 	__asm        inc    y;
+_T2f6:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        cmp    eax, y;
-	__asm        jle    near ptr 0x004D2742;
+	__asm        jle    _T339;
 // LINE 568:
 	__asm        mov    eax, y;
 	__asm        dec    word ptr [ebp+eax*2-0x138];
@@ -609,8 +634,9 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    [ecx], eax;
 	__asm        add    FaceVertPtr, 4;
 // LINE 570:
-	__asm        jmp    near ptr 0x004D26F9;
+	__asm        jmp    _T2f0;
 // LINE 571:
+_T339:
 	__asm        mov    eax, FaceVertPtr;
 	__asm        mov    dataptr, eax;
 // LINE 577:
@@ -626,7 +652,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D278E;
+	__asm        jne    _T385;
 // LINE 583:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
@@ -634,8 +660,9 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    esp, 4;
 // LINE 584:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 586:
+_T385:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        shl    eax, 3;
 	__asm        add    dataptr, eax;
@@ -705,12 +732,12 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x004D28B8;
+	__asm        jne    _T4af;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004D28B8;
+	__asm        jne    _T4af;
 // LINE 629:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x10000000;
@@ -724,22 +751,24 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        fcomp  qword ptr ds:[0x592468];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x41;
-	__asm        jne    near ptr 0x004D28B3;
+	__asm        jne    _T4aa;
 // LINE 631:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x20000000;
 // LINE 633:
-	__asm        jmp    near ptr 0x004D298A;
+_T4aa:
+	__asm        jmp    _T581;
 
+_T4af:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    near ptr 0x004D291C;
+	__asm        jne    _T513;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x004D291C;
+	__asm        jne    _T513;
 // LINE 635:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x8000000;
@@ -753,22 +782,24 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        fcomp  qword ptr ds:[0x592468];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x41;
-	__asm        jne    near ptr 0x004D2917;
+	__asm        jne    _T50e;
 // LINE 637:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x20000000;
 // LINE 639:
-	__asm        jmp    near ptr 0x004D298A;
+_T50e:
+	__asm        jmp    _T581;
 
+_T513:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x004D2980;
+	__asm        jne    _T577;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jne    near ptr 0x004D2980;
+	__asm        jne    _T577;
 // LINE 641:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x4000000;
@@ -782,16 +813,19 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        fcomp  qword ptr ds:[0x592468];
 	__asm        fnstsw ax;
 	__asm        test   ah, 0x41;
-	__asm        jne    near ptr 0x004D297B;
+	__asm        jne    _T572;
 // LINE 643:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x20000000;
 // LINE 645:
-	__asm        jmp    near ptr 0x004D298A;
+_T572:
+	__asm        jmp    _T581;
 // LINE 646:
+_T577:
 	__asm        mov    eax, faceptr;
 	__asm        or     dword ptr [eax+8], 0x40000000;
 // LINE 648:
+_T581:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, faceptr;
 	__asm        mov    ecx, [ecx+0x2C];
@@ -802,17 +836,19 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        mov    [ecx], eax;
 // LINE 651:
 	__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
-	__asm        je     near ptr 0x004D29C3;
+	__asm        je     _T5ba;
 // LINE 652:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, x;
 	__asm        mov    edx, ds:[0x6666C0];
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 653:
-	__asm        jmp    near ptr 0x004D2596;
+_T5ba:
+	__asm        jmp    _T18d;
 // LINE 658:
+_T5bf:
 	__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
-	__asm        je     near ptr 0x004D2A38;
+	__asm        je     _T62f;
 // LINE 659:
 	__asm        mov    eax, dataptr;
 	__asm        mov    ds:[0x606A64], eax;
@@ -823,7 +859,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D2A0B;
+	__asm        jne    _T602;
 // LINE 664:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
@@ -831,8 +867,9 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        add    esp, 4;
 // LINE 665:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 687:
+_T602:
 	__asm        mov    word ptr ds:[0x606A68], 0;
 // LINE 688:
 	__asm        call   ReadTree;
@@ -846,11 +883,13 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        shl    eax, 2;
 	__asm        add    dataptr, eax;
 // LINE 691:
-	__asm        jmp    near ptr 0x004D2A42;
+	__asm        jmp    _T639;
 
+_T62f:
 	__asm        mov    eax, ObjectPtr;
 	__asm        mov    dword ptr [eax+0x34], 0;
 // LINE 693:
+_T639:
 	__asm        mov    eax, ds:[0x63A854];
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
@@ -874,23 +913,25 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 703:
 	__asm        mov    eax, ObjectPtr;
 	__asm        test   byte ptr [eax], 2;
-	__asm        je     near ptr 0x004D2AA1;
+	__asm        je     _T698;
 
 	__asm        mov    eax, ObjectPtr;
 	__asm        push   eax;
 	__asm        call   NormalizeObj;
 	__asm        add    esp, 4;
 // LINE 706:
+_T698:
 	__asm        cmp    uses_gouraud, 1;
-	__asm        jne    near ptr 0x004D2AB7;
+	__asm        jne    _T6ae;
 // LINE 707:
 	__asm        mov    eax, ObjectPtr;
 	__asm        push   eax;
 	__asm        call   ObjCalcVnormsAndShade;
 	__asm        add    esp, 4;
 // LINE 709:
+_T6ae:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D2AC1;
+	__asm        jmp    _T6b8;
 // LINE 711:
 }
 
@@ -978,31 +1019,35 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        add    eax, eax;
 	__asm        add    eax, 0x50000;
 	__asm        cmp    eax, y;
-	__asm        jge    near ptr 0x004D2B69;
+	__asm        jge    _T41;
 // LINE 794:
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+0x30];
 	__asm        sar    eax, 3;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 796:
+_T41:
 	__asm        mov    eax, flags;
 	__asm        test   byte ptr [eax+1], 2;
-	__asm        je     near ptr 0x004D2B7D;
+	__asm        je     _T55;
 // LINE 797:
 	__asm        mov    check_for_overhang, 1;
 // LINE 799:
+_T55:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D2B90;
+	__asm        je     _T68;
 // LINE 800:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 803:
+_T68:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x004D2BA1;
+	__asm        jne    _T79;
 // LINE 804:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 807:
+_T79:
 	__asm        mov    altydown, 0x75300000;
 // LINE 808:
 	__asm        mov    altyupabove, 0x75300000;
@@ -1014,53 +1059,62 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    faceptr, eax;
 // LINE 813:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D2BCE;
+	__asm        jmp    _Ta6;
 
+_Ta3:
 	__asm        inc    i;
+_Ta6:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D317E;
+	__asm        jle    _T656;
 // LINE 816:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D2BEF;
+	__asm        je     _Tc7;
 // LINE 817:
-	__asm        jmp    near ptr 0x004D3079;
+	__asm        jmp    _T551;
 // LINE 819:
+_Tc7:
 	__asm        mov    eax, faceptr;
 	__asm        test   dword ptr [eax+8], 0x18000;
-	__asm        je     near ptr 0x004D2C04;
+	__asm        je     _Tdc;
 // LINE 820:
-	__asm        jmp    near ptr 0x004D306C;
+	__asm        jmp    _T544;
 // LINE 823:
+_Tdc:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
-	__asm        jge    near ptr 0x004D2C20;
+	__asm        jge    _Tf8;
 // LINE 824:
 	__asm        mov    normaldir, 1;
 // LINE 825:
-	__asm        jmp    near ptr 0x004D2C55;
+	__asm        jmp    _T12d;
 
+_Tf8:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0x64;
-	__asm        jle    near ptr 0x004D2C50;
+	__asm        jle    _T128;
 // LINE 826:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D2C44;
+	__asm        jne    _T11c;
 // LINE 827:
-	__asm        jmp    near ptr 0x004D306C;
+	__asm        jmp    _T544;
 // LINE 828:
-	__asm        jmp    near ptr 0x004D2C4B;
+	__asm        jmp    _T123;
 // LINE 829:
+_T11c:
 	__asm        mov    normaldir, 0xFFFFFFFF;
 // LINE 830:
-	__asm        jmp    near ptr 0x004D2C55;
+_T123:
+	__asm        jmp    _T12d;
 // LINE 831:
-	__asm        jmp    near ptr 0x004D306C;
+_T128:
+	__asm        jmp    _T544;
 // LINE 834:
+_T12d:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 835:
@@ -1083,13 +1137,15 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    maxx, eax;
 // LINE 845:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D2C9D;
+	__asm        jmp    _T175;
 
+_T172:
 	__asm        inc    j;
+_T175:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D2D58;
+	__asm        jle    _T230;
 // LINE 851:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -1105,78 +1161,85 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x004D2CDD;
+	__asm        jge    _T1b5;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    minx, eax;
 // LINE 859:
+_T1b5:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, miny;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004D2CF5;
+	__asm        jge    _T1cd;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    miny, eax;
 // LINE 860:
+_T1cd:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004D2D0D;
+	__asm        jge    _T1e5;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    minz, eax;
 // LINE 861:
+_T1e5:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxx;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D2D23;
+	__asm        jle    _T1fb;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    maxx, eax;
 // LINE 862:
+_T1fb:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D2D3B;
+	__asm        jle    _T213;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 863:
+_T213:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x004D2D53;
+	__asm        jle    _T22b;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    maxz, eax;
 // LINE 864:
-	__asm        jmp    near ptr 0x004D2C9A;
+_T22b:
+	__asm        jmp    _T172;
 // LINE 868:
+_T230:
 	__asm        mov    eax, dim;
 	__asm        add    eax, x;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D306C;
+	__asm        jl     _T544;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D306C;
+	__asm        jg     _T544;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D306C;
+	__asm        jl     _T544;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D306C;
+	__asm        jg     _T544;
 // LINE 877:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -1243,23 +1306,25 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 // LINE 890:
 	__asm        mov    eax, maxy;
 	__asm        cmp    facealt, eax;
-	__asm        jg     near ptr 0x004D2E4C;
+	__asm        jg     _T324;
 
 	__asm        mov    eax, miny;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D2E58;
+	__asm        jge    _T330;
 // LINE 891:
+_T324:
 	__asm        mov    eax, maxy;
 	__asm        add    eax, miny;
 	__asm        sar    eax, 1;
 	__asm        mov    facealt, eax;
 // LINE 893:
+_T330:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D2F33;
+	__asm        jne    _T40b;
 // LINE 895:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altyupbelow, eax;
-	__asm        jge    near ptr 0x004D2F2E;
+	__asm        jge    _T406;
 // LINE 897:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupbelow, eax;
@@ -1270,7 +1335,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    [ecx], eax;
 // LINE 902:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D2EB6;
+	__asm        je     _T38e;
 // LINE 904:
 	__asm        mov    eax, minx;
 	__asm        add    eax, maxx;
@@ -1289,54 +1354,58 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 912:
+_T38e:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D2F2E;
+	__asm        je     _T406;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-	__asm        jge    near ptr 0x004D2F2E;
+	__asm        jge    _T406;
 // LINE 915:
 	__asm        mov    eax, x;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D2F25;
+	__asm        jl     _T3fd;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D2F25;
+	__asm        jg     _T3fd;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D2F25;
+	__asm        jl     _T3fd;
 
 	__asm        mov    eax, z;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D2F25;
+	__asm        jg     _T3fd;
 // LINE 917:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 919:
-	__asm        jmp    near ptr 0x004D2F2E;
+	__asm        jmp    _T406;
 // LINE 921:
+_T3fd:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 925:
-	__asm        jmp    near ptr 0x004D306C;
+_T406:
+	__asm        jmp    _T544;
 // LINE 929:
+_T40b:
 	__asm        cmp    normaldir, 0;
-	__asm        jle    near ptr 0x004D303D;
+	__asm        jle    _T515;
 // LINE 932:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D301A;
+	__asm        jge    _T4f2;
 
 	__asm        mov    eax, facealt;
 	__asm        cmp    altyupbelow, eax;
-	__asm        jge    near ptr 0x004D301A;
+	__asm        jge    _T4f2;
 // LINE 934:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupbelow, eax;
@@ -1347,7 +1416,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    [ecx], eax;
 // LINE 941:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D2F9D;
+	__asm        je     _T475;
 // LINE 943:
 	__asm        mov    eax, minx;
 	__asm        add    eax, maxx;
@@ -1366,81 +1435,90 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 950:
+_T475:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D3015;
+	__asm        je     _T4ed;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-	__asm        jge    near ptr 0x004D3015;
+	__asm        jge    _T4ed;
 // LINE 953:
 	__asm        mov    eax, x;
 	__asm        sub    eax, 0x10000;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D300C;
+	__asm        jl     _T4e4;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x10000;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D300C;
+	__asm        jg     _T4e4;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, 0x10000;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D300C;
+	__asm        jl     _T4e4;
 
 	__asm        mov    eax, z;
 	__asm        add    eax, 0x10000;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D300C;
+	__asm        jg     _T4e4;
 // LINE 955:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 957:
-	__asm        jmp    near ptr 0x004D3015;
+	__asm        jmp    _T4ed;
 // LINE 959:
+_T4e4:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 964:
-	__asm        jmp    near ptr 0x004D3038;
+_T4ed:
+	__asm        jmp    _T510;
 
+_T4f2:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
-	__asm        jl     near ptr 0x004D3038;
+	__asm        jl     _T510;
 
 	__asm        mov    eax, altyupabove;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D3038;
+	__asm        jge    _T510;
 // LINE 966:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupabove, eax;
 // LINE 971:
-	__asm        jmp    near ptr 0x004D306C;
+_T510:
+	__asm        jmp    _T544;
 // LINE 978:
+_T515:
 	__asm        mov    eax, y;
 	__asm        add    eax, 0xA0000;
 	__asm        cmp    eax, facealt;
-	__asm        jle    near ptr 0x004D3053;
+	__asm        jle    _T52b;
 // LINE 979:
-	__asm        jmp    near ptr 0x004D306C;
+	__asm        jmp    _T544;
 // LINE 981:
+_T52b:
 	__asm        mov    overhang, 1;
 // LINE 984:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altydown, eax;
-	__asm        jle    near ptr 0x004D306C;
+	__asm        jle    _T544;
 // LINE 986:
 	__asm        mov    eax, facealt;
 	__asm        mov    altydown, eax;
 // LINE 994:
 next_face:
+_T544:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 995:
-	__asm        jmp    near ptr 0x004D2BCB;
+	__asm        jmp    _Ta3;
 // LINE 1003:
 do_2d_face:
+_T551:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    vertno, eax;
@@ -1471,7 +1549,7 @@ do_2d_face:
 	__asm        mov    ecx, dim;
 	__asm        add    ecx, x;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x004D3171;
+	__asm        jg     _T649;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -1479,7 +1557,7 @@ do_2d_face:
 	__asm        mov    ecx, x;
 	__asm        sub    ecx, dim;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x004D3171;
+	__asm        jl     _T649;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
@@ -1487,7 +1565,7 @@ do_2d_face:
 	__asm        mov    ecx, dim;
 	__asm        add    ecx, z;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x004D3171;
+	__asm        jg     _T649;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
@@ -1495,25 +1573,26 @@ do_2d_face:
 	__asm        mov    ecx, z;
 	__asm        sub    ecx, dim;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x004D3171;
+	__asm        jl     _T649;
 // LINE 1023:
 	__asm        mov    eax, vert2;
 	__asm        mov    ecx, altyupbelow;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3171;
+	__asm        jle    _T649;
 // LINE 1025:
 	__asm        mov    eax, vert2;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    altyupbelow, eax;
 // LINE 1027:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D3141;
+	__asm        je     _T619;
 // LINE 1029:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1032:
+_T619:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D3171;
+	__asm        je     _T649;
 // LINE 1034:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -1530,45 +1609,52 @@ do_2d_face:
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1042:
+_T649:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1044:
-	__asm        jmp    near ptr 0x004D2BCB;
+	__asm        jmp    _Ta3;
 // LINE 1046:
+_T656:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D3190;
+	__asm        jne    _T668;
 // LINE 1048:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1053:
+_T668:
 	__asm        cmp    overhang, 1;
-	__asm        jne    near ptr 0x004D31C0;
+	__asm        jne    _T698;
 // LINE 1055:
 	__asm        mov    eax, altyupabove;
 	__asm        cmp    altydown, eax;
-	__asm        jle    near ptr 0x004D31B3;
+	__asm        jle    _T68b;
 // LINE 1056:
 	__asm        mov    eax, altyupabove;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1057:
-	__asm        jmp    near ptr 0x004D31BB;
+	__asm        jmp    _T693;
 // LINE 1058:
+_T68b:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1060:
-	__asm        jmp    near ptr 0x004D31E2;
+_T693:
+	__asm        jmp    _T6ba;
 // LINE 1062:
+_T698:
 	__asm        cmp    altyupabove, 0x75300000;
-	__asm        je     near ptr 0x004D31DA;
+	__asm        je     _T6b2;
 // LINE 1063:
 	__asm        mov    eax, altyupabove;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1064:
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1065:
+_T6b2:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D31E2;
+	__asm        jmp    _T6ba;
 // LINE 1067:
 }
 
@@ -1611,31 +1697,35 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        add    eax, eax;
 	__asm        add    eax, 0x50000;
 	__asm        cmp    eax, y;
-	__asm        jge    near ptr 0x004D3228;
+	__asm        jge    _T41;
 // LINE 1106:
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+0x30];
 	__asm        sar    eax, 3;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1108:
+_T41:
 	__asm        mov    eax, flags;
 	__asm        test   byte ptr [eax+1], 2;
-	__asm        je     near ptr 0x004D323C;
+	__asm        je     _T55;
 // LINE 1109:
 	__asm        mov    check_for_overhang, 1;
 // LINE 1111:
+_T55:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D324F;
+	__asm        je     _T68;
 // LINE 1112:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1115:
+_T68:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x004D3260;
+	__asm        jne    _T79;
 // LINE 1116:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1119:
+_T79:
 	__asm        mov    altydown, 0x75300000;
 // LINE 1120:
 	__asm        mov    altyupabove, 0x75300000;
@@ -1647,60 +1737,70 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    faceptr, eax;
 // LINE 1125:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D328D;
+	__asm        jmp    _Ta6;
 
+_Ta3:
 	__asm        inc    i;
+_Ta6:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D38C6;
+	__asm        jle    _T6df;
 // LINE 1128:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D32AE;
+	__asm        je     _Tc7;
 // LINE 1129:
-	__asm        jmp    near ptr 0x004D37C1;
+	__asm        jmp    _T5da;
 // LINE 1131:
+_Tc7:
 	__asm        mov    eax, faceptr;
 	__asm        test   dword ptr [eax+8], 0x18004;
-	__asm        je     near ptr 0x004D32C3;
+	__asm        je     _Tdc;
 // LINE 1132:
-	__asm        jmp    near ptr 0x004D37B4;
+	__asm        jmp    _T5cd;
 // LINE 1135:
+_Tdc:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
-	__asm        jge    near ptr 0x004D32DF;
+	__asm        jge    _Tf8;
 // LINE 1137:
 	__asm        mov    normaldir, 1;
 // LINE 1139:
-	__asm        jmp    near ptr 0x004D332A;
+	__asm        jmp    _T143;
 
+_Tf8:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0x64;
-	__asm        jle    near ptr 0x004D330F;
+	__asm        jle    _T128;
 // LINE 1141:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D3303;
+	__asm        jne    _T11c;
 // LINE 1142:
-	__asm        jmp    near ptr 0x004D37B4;
+	__asm        jmp    _T5cd;
 // LINE 1143:
-	__asm        jmp    near ptr 0x004D330A;
+	__asm        jmp    _T123;
 // LINE 1144:
+_T11c:
 	__asm        mov    normaldir, 0xFFFFFFFF;
 // LINE 1146:
-	__asm        jmp    near ptr 0x004D332A;
+_T123:
+	__asm        jmp    _T143;
 // LINE 1149:
+_T128:
 	__asm        cmp    check_for_overhang, 1;
-	__asm        jne    near ptr 0x004D3325;
+	__asm        jne    _T13e;
 // LINE 1150:
 	__asm        mov    normaldir, 0;
 // LINE 1151:
-	__asm        jmp    near ptr 0x004D332A;
+	__asm        jmp    _T143;
 // LINE 1152:
-	__asm        jmp    near ptr 0x004D37B4;
+_T13e:
+	__asm        jmp    _T5cd;
 // LINE 1156:
+_T143:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 1157:
@@ -1723,13 +1823,15 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    maxx, eax;
 // LINE 1167:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D3372;
+	__asm        jmp    _T18b;
 
+_T188:
 	__asm        inc    j;
+_T18b:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D342D;
+	__asm        jle    _T246;
 // LINE 1173:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -1745,81 +1847,88 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x004D33B2;
+	__asm        jge    _T1cb;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    minx, eax;
 // LINE 1181:
+_T1cb:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, miny;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004D33CA;
+	__asm        jge    _T1e3;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    miny, eax;
 // LINE 1182:
+_T1e3:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004D33E2;
+	__asm        jge    _T1fb;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    minz, eax;
 // LINE 1183:
+_T1fb:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxx;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D33F8;
+	__asm        jle    _T211;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    maxx, eax;
 // LINE 1184:
+_T211:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3410;
+	__asm        jle    _T229;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 1185:
+_T229:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x004D3428;
+	__asm        jle    _T241;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    maxz, eax;
 // LINE 1186:
-	__asm        jmp    near ptr 0x004D336F;
+_T241:
+	__asm        jmp    _T188;
 // LINE 1190:
+_T246:
 	__asm        mov    eax, dim;
 	__asm        add    eax, x;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D37B4;
+	__asm        jl     _T5cd;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D37B4;
+	__asm        jg     _T5cd;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D37B4;
+	__asm        jl     _T5cd;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D37B4;
+	__asm        jg     _T5cd;
 // LINE 1195:
 	__asm        cmp    normaldir, 0;
-	__asm        je     near ptr 0x004D353C;
+	__asm        je     _T355;
 // LINE 1201:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -1886,43 +1995,48 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 // LINE 1214:
 	__asm        mov    eax, maxy;
 	__asm        cmp    facealt, eax;
-	__asm        jg     near ptr 0x004D352B;
+	__asm        jg     _T344;
 
 	__asm        mov    eax, miny;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D3537;
+	__asm        jge    _T350;
 // LINE 1215:
+_T344:
 	__asm        mov    eax, maxy;
 	__asm        add    eax, miny;
 	__asm        sar    eax, 1;
 	__asm        mov    facealt, eax;
 // LINE 1217:
-	__asm        jmp    near ptr 0x004D356D;
+_T350:
+	__asm        jmp    _T386;
 // LINE 1220:
+_T355:
 	__asm        mov    eax, ydim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, miny;
-	__asm        jle    near ptr 0x004D3568;
+	__asm        jle    _T381;
 
 	__asm        mov    eax, y;
 	__asm        cmp    maxy, eax;
-	__asm        jle    near ptr 0x004D3568;
+	__asm        jle    _T381;
 // LINE 1221:
 	__asm        mov    eax, maxy;
 	__asm        add    eax, y;
 	__asm        sar    eax, 1;
 	__asm        mov    facealt, eax;
 // LINE 1222:
-	__asm        jmp    near ptr 0x004D356D;
+	__asm        jmp    _T386;
 // LINE 1223:
-	__asm        jmp    near ptr 0x004D37B4;
+_T381:
+	__asm        jmp    _T5cd;
 // LINE 1226:
+_T386:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D3648;
+	__asm        jne    _T461;
 // LINE 1228:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altyupbelow, eax;
-	__asm        jge    near ptr 0x004D3643;
+	__asm        jge    _T45c;
 // LINE 1230:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupbelow, eax;
@@ -1933,7 +2047,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    [ecx], eax;
 // LINE 1235:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D35CB;
+	__asm        je     _T3e4;
 // LINE 1237:
 	__asm        mov    eax, maxx;
 	__asm        add    eax, minx;
@@ -1952,54 +2066,58 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1245:
+_T3e4:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D3643;
+	__asm        je     _T45c;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-	__asm        jge    near ptr 0x004D3643;
+	__asm        jge    _T45c;
 // LINE 1248:
 	__asm        mov    eax, x;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D363A;
+	__asm        jl     _T453;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D363A;
+	__asm        jg     _T453;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D363A;
+	__asm        jl     _T453;
 
 	__asm        mov    eax, z;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D363A;
+	__asm        jg     _T453;
 // LINE 1250:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1252:
-	__asm        jmp    near ptr 0x004D3643;
+	__asm        jmp    _T45c;
 // LINE 1254:
+_T453:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1258:
-	__asm        jmp    near ptr 0x004D37B4;
+_T45c:
+	__asm        jmp    _T5cd;
 // LINE 1262:
+_T461:
 	__asm        cmp    normaldir, 0;
-	__asm        jl     near ptr 0x004D3787;
+	__asm        jl     _T5a0;
 // LINE 1265:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D3764;
+	__asm        jge    _T57d;
 
 	__asm        mov    eax, facealt;
 	__asm        cmp    altyupbelow, eax;
-	__asm        jge    near ptr 0x004D3764;
+	__asm        jge    _T57d;
 // LINE 1267:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupbelow, eax;
@@ -2010,10 +2128,10 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    [ecx], eax;
 // LINE 1274:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D36E7;
+	__asm        je     _T500;
 // LINE 1276:
 	__asm        cmp    normaldir, 0;
-	__asm        jle    near ptr 0x004D36C1;
+	__asm        jle    _T4da;
 // LINE 1278:
 	__asm        mov    eax, maxx;
 	__asm        add    eax, minx;
@@ -2032,8 +2150,9 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1282:
-	__asm        jmp    near ptr 0x004D36E7;
+	__asm        jmp    _T500;
 // LINE 1284:
+_T4da:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax];
@@ -2049,81 +2168,90 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1292:
+_T500:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D375F;
+	__asm        je     _T578;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-	__asm        jge    near ptr 0x004D375F;
+	__asm        jge    _T578;
 // LINE 1295:
 	__asm        mov    eax, x;
 	__asm        sub    eax, 0x10000;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D3756;
+	__asm        jl     _T56f;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x10000;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D3756;
+	__asm        jg     _T56f;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, 0x10000;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D3756;
+	__asm        jl     _T56f;
 
 	__asm        mov    eax, z;
 	__asm        add    eax, 0x10000;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D3756;
+	__asm        jg     _T56f;
 // LINE 1297:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 1;
 // LINE 1299:
-	__asm        jmp    near ptr 0x004D375F;
+	__asm        jmp    _T578;
 // LINE 1301:
+_T56f:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1306:
-	__asm        jmp    near ptr 0x004D3782;
+_T578:
+	__asm        jmp    _T59b;
 
+_T57d:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
-	__asm        jl     near ptr 0x004D3782;
+	__asm        jl     _T59b;
 
 	__asm        mov    eax, altyupabove;
 	__asm        cmp    facealt, eax;
-	__asm        jge    near ptr 0x004D3782;
+	__asm        jge    _T59b;
 // LINE 1308:
 	__asm        mov    eax, facealt;
 	__asm        mov    altyupabove, eax;
 // LINE 1313:
-	__asm        jmp    near ptr 0x004D37B4;
+_T59b:
+	__asm        jmp    _T5cd;
 // LINE 1320:
+_T5a0:
 	__asm        mov    eax, ydim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, facealt;
-	__asm        jle    near ptr 0x004D379B;
+	__asm        jle    _T5b4;
 // LINE 1321:
-	__asm        jmp    near ptr 0x004D37B4;
+	__asm        jmp    _T5cd;
 // LINE 1323:
+_T5b4:
 	__asm        mov    overhang, 1;
 // LINE 1326:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altydown, eax;
-	__asm        jle    near ptr 0x004D37B4;
+	__asm        jle    _T5cd;
 // LINE 1328:
 	__asm        mov    eax, facealt;
 	__asm        mov    altydown, eax;
 // LINE 1336:
 next_face:
+_T5cd:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1337:
-	__asm        jmp    near ptr 0x004D328A;
+	__asm        jmp    _Ta3;
 // LINE 1345:
 do_2d_face:
+_T5da:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    vertno, eax;
@@ -2154,7 +2282,7 @@ do_2d_face:
 	__asm        mov    ecx, dim;
 	__asm        add    ecx, x;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x004D38B9;
+	__asm        jg     _T6d2;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -2162,7 +2290,7 @@ do_2d_face:
 	__asm        mov    ecx, x;
 	__asm        sub    ecx, dim;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x004D38B9;
+	__asm        jl     _T6d2;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
@@ -2170,7 +2298,7 @@ do_2d_face:
 	__asm        mov    ecx, dim;
 	__asm        add    ecx, z;
 	__asm        cmp    eax, ecx;
-	__asm        jg     near ptr 0x004D38B9;
+	__asm        jg     _T6d2;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
@@ -2178,25 +2306,26 @@ do_2d_face:
 	__asm        mov    ecx, z;
 	__asm        sub    ecx, dim;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x004D38B9;
+	__asm        jl     _T6d2;
 // LINE 1365:
 	__asm        mov    eax, vert2;
 	__asm        mov    ecx, altyupbelow;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D38B9;
+	__asm        jle    _T6d2;
 // LINE 1367:
 	__asm        mov    eax, vert2;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    altyupbelow, eax;
 // LINE 1369:
 	__asm        cmp    landable, 0;
-	__asm        je     near ptr 0x004D3889;
+	__asm        je     _T6a2;
 // LINE 1371:
 	__asm        mov    eax, landable;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1374:
+_T6a2:
 	__asm        cmp    collisvec, 0;
-	__asm        je     near ptr 0x004D38B9;
+	__asm        je     _T6d2;
 // LINE 1376:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -2213,45 +2342,52 @@ do_2d_face:
 	__asm        mov    eax, collisvec;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1384:
+_T6d2:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1386:
-	__asm        jmp    near ptr 0x004D328A;
+	__asm        jmp    _Ta3;
 // LINE 1388:
+_T6df:
 	__asm        cmp    check_for_overhang, 0;
-	__asm        jne    near ptr 0x004D38D8;
+	__asm        jne    _T6f1;
 // LINE 1390:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1395:
+_T6f1:
 	__asm        cmp    overhang, 1;
-	__asm        jne    near ptr 0x004D3908;
+	__asm        jne    _T721;
 // LINE 1397:
 	__asm        mov    eax, altyupabove;
 	__asm        cmp    altydown, eax;
-	__asm        jle    near ptr 0x004D38FB;
+	__asm        jle    _T714;
 // LINE 1398:
 	__asm        mov    eax, altyupabove;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1399:
-	__asm        jmp    near ptr 0x004D3903;
+	__asm        jmp    _T71c;
 // LINE 1400:
+_T714:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1402:
-	__asm        jmp    near ptr 0x004D392A;
+_T71c:
+	__asm        jmp    _T743;
 // LINE 1404:
+_T721:
 	__asm        cmp    altyupabove, 0x75300000;
-	__asm        je     near ptr 0x004D3922;
+	__asm        je     _T73b;
 // LINE 1405:
 	__asm        mov    eax, altyupabove;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1406:
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1407:
+_T73b:
 	__asm        mov    eax, altyupbelow;
-	__asm        jmp    near ptr 0x004D392A;
+	__asm        jmp    _T743;
 // LINE 1409:
 }
 
@@ -2278,11 +2414,12 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        mov    oh, eax;
 // LINE 1435:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x004D394F;
+	__asm        jne    _T20;
 // LINE 1436:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D3B3E;
+	__asm        jmp    _T20f;
 // LINE 1439:
+_T20:
 	__asm        mov    distz, 0;
 // LINE 1442:
 	__asm        mov    eax, oh;
@@ -2290,40 +2427,45 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        mov    faceptr, eax;
 // LINE 1443:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D396E;
+	__asm        jmp    _T3f;
 
+_T3c:
 	__asm        inc    i;
+_T3f:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D3B36;
+	__asm        jle    _T207;
 // LINE 1446:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D398F;
+	__asm        je     _T60;
 
-	__asm        jmp    near ptr 0x004D3B29;
+	__asm        jmp    _T1fa;
 // LINE 1449:
+_T60:
 	__asm        cmp    dir, 0;
-	__asm        jge    near ptr 0x004D39B1;
+	__asm        jge    _T82;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+8], 0xFFFFD8F0;
-	__asm        jle    near ptr 0x004D39B1;
+	__asm        jle    _T82;
 // LINE 1450:
-	__asm        jmp    near ptr 0x004D3B29;
+	__asm        jmp    _T1fa;
 // LINE 1451:
+_T82:
 	__asm        cmp    dir, 0;
-	__asm        jle    near ptr 0x004D39D3;
+	__asm        jle    _Ta4;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax+8], 0x2710;
-	__asm        jge    near ptr 0x004D39D3;
+	__asm        jge    _Ta4;
 // LINE 1452:
-	__asm        jmp    near ptr 0x004D3B29;
+	__asm        jmp    _T1fa;
 // LINE 1455:
+_Ta4:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 1456:
@@ -2345,13 +2487,15 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        mov    maxx, eax;
 // LINE 1466:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D3A18;
+	__asm        jmp    _Te9;
 
+_Te6:
 	__asm        inc    j;
+_Te9:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3AD3;
+	__asm        jle    _T1a4;
 // LINE 1472:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -2367,78 +2511,85 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x004D3A58;
+	__asm        jge    _T129;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    minx, eax;
 // LINE 1480:
+_T129:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, miny;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004D3A70;
+	__asm        jge    _T141;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    miny, eax;
 // LINE 1481:
+_T141:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004D3A88;
+	__asm        jge    _T159;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    minz, eax;
 // LINE 1482:
+_T159:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxx;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D3A9E;
+	__asm        jle    _T16f;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    maxx, eax;
 // LINE 1483:
+_T16f:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3AB6;
+	__asm        jle    _T187;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 1484:
+_T187:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x004D3ACE;
+	__asm        jle    _T19f;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    maxz, eax;
 // LINE 1485:
-	__asm        jmp    near ptr 0x004D3A15;
+_T19f:
+	__asm        jmp    _Te6;
 // LINE 1489:
+_T1a4:
 	__asm        mov    eax, dim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, miny;
-	__asm        jl     near ptr 0x004D3B29;
+	__asm        jl     _T1fa;
 
 	__asm        mov    eax, y;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxy;
-	__asm        jg     near ptr 0x004D3B29;
+	__asm        jg     _T1fa;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, dim;
 	__asm        cmp    eax, minx;
-	__asm        jl     near ptr 0x004D3B29;
+	__asm        jl     _T1fa;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     near ptr 0x004D3B29;
+	__asm        jg     _T1fa;
 // LINE 1492:
 	__asm        mov    eax, maxz;
 	__asm        add    eax, minz;
@@ -2449,17 +2600,19 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        mov    distz, eax;
 // LINE 1494:
 	__asm        mov    eax, distz;
-	__asm        jmp    near ptr 0x004D3B3E;
+	__asm        jmp    _T20f;
 // LINE 1506:
 next_face:
+_T1fa:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1507:
-	__asm        jmp    near ptr 0x004D396B;
+	__asm        jmp    _T3c;
 // LINE 1509:
+_T207:
 	__asm        mov    eax, distz;
-	__asm        jmp    near ptr 0x004D3B3E;
+	__asm        jmp    _T20f;
 // LINE 1511:
 }
 
@@ -2486,11 +2639,12 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        mov    oh, eax;
 // LINE 1537:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x004D3B63;
+	__asm        jne    _T20;
 // LINE 1538:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D3D50;
+	__asm        jmp    _T20d;
 // LINE 1541:
+_T20:
 	__asm        mov    distx, 0;
 // LINE 1544:
 	__asm        mov    eax, oh;
@@ -2498,40 +2652,45 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        mov    faceptr, eax;
 // LINE 1545:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D3B82;
+	__asm        jmp    _T3f;
 
+_T3c:
 	__asm        inc    i;
+_T3f:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D3D48;
+	__asm        jle    _T205;
 // LINE 1548:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D3BA3;
+	__asm        je     _T60;
 
-	__asm        jmp    near ptr 0x004D3D3B;
+	__asm        jmp    _T1f8;
 // LINE 1551:
+_T60:
 	__asm        cmp    dir, 0;
-	__asm        jge    near ptr 0x004D3BC4;
+	__asm        jge    _T81;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax], 0xFFFFD8F0;
-	__asm        jle    near ptr 0x004D3BC4;
+	__asm        jle    _T81;
 // LINE 1552:
-	__asm        jmp    near ptr 0x004D3D3B;
+	__asm        jmp    _T1f8;
 // LINE 1553:
+_T81:
 	__asm        cmp    dir, 0;
-	__asm        jle    near ptr 0x004D3BE5;
+	__asm        jle    _Ta2;
 
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        cmp    dword ptr [eax], 0x2710;
-	__asm        jge    near ptr 0x004D3BE5;
+	__asm        jge    _Ta2;
 // LINE 1554:
-	__asm        jmp    near ptr 0x004D3D3B;
+	__asm        jmp    _T1f8;
 // LINE 1557:
+_Ta2:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 1558:
@@ -2553,13 +2712,15 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        mov    maxx, eax;
 // LINE 1568:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D3C2A;
+	__asm        jmp    _Te7;
 
+_Te4:
 	__asm        inc    j;
+_Te7:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3CE5;
+	__asm        jle    _T1a2;
 // LINE 1574:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -2575,78 +2736,85 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x004D3C6A;
+	__asm        jge    _T127;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    minx, eax;
 // LINE 1582:
+_T127:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, miny;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004D3C82;
+	__asm        jge    _T13f;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    miny, eax;
 // LINE 1583:
+_T13f:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004D3C9A;
+	__asm        jge    _T157;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    minz, eax;
 // LINE 1584:
+_T157:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxx;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D3CB0;
+	__asm        jle    _T16d;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
 	__asm        mov    maxx, eax;
 // LINE 1585:
+_T16d:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3CC8;
+	__asm        jle    _T185;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 1586:
+_T185:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x004D3CE0;
+	__asm        jle    _T19d;
 
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    maxz, eax;
 // LINE 1587:
-	__asm        jmp    near ptr 0x004D3C27;
+_T19d:
+	__asm        jmp    _Te4;
 // LINE 1591:
+_T1a2:
 	__asm        mov    eax, dim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, miny;
-	__asm        jl     near ptr 0x004D3D3B;
+	__asm        jl     _T1f8;
 
 	__asm        mov    eax, y;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxy;
-	__asm        jg     near ptr 0x004D3D3B;
+	__asm        jg     _T1f8;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     near ptr 0x004D3D3B;
+	__asm        jl     _T1f8;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     near ptr 0x004D3D3B;
+	__asm        jg     _T1f8;
 // LINE 1594:
 	__asm        mov    eax, minx;
 	__asm        add    eax, maxx;
@@ -2657,17 +2825,19 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        mov    distx, eax;
 // LINE 1596:
 	__asm        mov    eax, distx;
-	__asm        jmp    near ptr 0x004D3D50;
+	__asm        jmp    _T20d;
 // LINE 1608:
 next_face:
+_T1f8:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1609:
-	__asm        jmp    near ptr 0x004D3B7F;
+	__asm        jmp    _T3c;
 // LINE 1611:
+_T205:
 	__asm        mov    eax, distx;
-	__asm        jmp    near ptr 0x004D3D50;
+	__asm        jmp    _T20d;
 // LINE 1613:
 }
 
@@ -2694,20 +2864,23 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 	__asm        mov    faceptr, eax;
 // LINE 1640:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D3D85;
+	__asm        jmp    _T30;
 
+_T2d:
 	__asm        inc    i;
+_T30:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D3E1F;
+	__asm        jle    _Tca;
 // LINE 1642:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    near ptr 0x004D3DA6;
+	__asm        jne    _T51;
 // LINE 1643:
-	__asm        jmp    near ptr 0x004D3E12;
+	__asm        jmp    _Tbd;
 // LINE 1646:
+_T51:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 1647:
@@ -2754,11 +2927,12 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 	__asm        mov    [ecx+4], eax;
 // LINE 1670:
 next_face:
+_Tbd:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    faceptr, eax;
 // LINE 1671:
-	__asm        jmp    near ptr 0x004D3D82;
+	__asm        jmp    _T2d;
 // LINE 1673:
 }
 
@@ -2776,14 +2950,16 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    vert, eax;
-	__asm        jmp    near ptr 0x004D3E4F;
+	__asm        jmp    _T2b;
 
+_T24:
 	__asm        inc    i;
 	__asm        add    vert, 0xC;
+_T2b:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3E7D;
+	__asm        jle    _T59;
 // LINE 1691:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, vert;
@@ -2797,8 +2973,9 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        mov    ecx, vert;
 	__asm        add    [ecx+8], eax;
 // LINE 1694:
-	__asm        jmp    near ptr 0x004D3E48;
+	__asm        jmp    _T24;
 // LINE 1697:
+_T59:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, oh;
 	__asm        add    [ecx+0x18], eax;
@@ -2830,26 +3007,30 @@ int32_t VRObjGetHeight(int32_t obj) {
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    vert, eax;
-	__asm        jmp    near ptr 0x004D3ECF;
+	__asm        jmp    _T32;
 
+_T2b:
 	__asm        inc    i;
 	__asm        add    vert, 0xC;
+_T32:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3EFB;
+	__asm        jle    _T5e;
 // LINE 1720:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D3EF6;
+	__asm        jle    _T59;
 // LINE 1721:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 1722:
-	__asm        jmp    near ptr 0x004D3EC8;
+_T59:
+	__asm        jmp    _T2b;
 // LINE 1724:
+_T5e:
 	__asm        mov    eax, maxy;
 	__asm        jmp    near ptr 0x004D3F03;
 // LINE 1725:
@@ -2876,10 +3057,11 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 // LINE 1749:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    near ptr 0x004D3F32;
+	__asm        jne    _T2a;
 // LINE 1750:
-	__asm        jmp    near ptr 0x004D3FE5;
+	__asm        jmp    _Tdd;
 // LINE 1752:
+_T2a:
 	__asm        mov    eax, faceptr;
 	__asm        mov    dataptr, eax;
 // LINE 1753:
@@ -2975,7 +3157,7 @@ struct _BSPtree* ReadTree() {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0xFFFF;
-	__asm        je     near ptr 0x004D40D5;
+	__asm        je     _Teb;
 // LINE 1811:
 	__asm        mov    ax, ds:[0x606A68];
 	__asm        mov    ThisIndex, ax;
@@ -3007,7 +3189,7 @@ struct _BSPtree* ReadTree() {
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 // LINE 1827:
-	__asm        call   0x004D3FEA;
+	__asm        call   ReadTree;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ThisIndex);
 	__asm        and    ecx, 0xFFFF;
 	__asm        mov    edx, ecx;
@@ -3016,7 +3198,7 @@ struct _BSPtree* ReadTree() {
 	__asm        mov    edx, ds:[0x606A64];
 	__asm        mov    [edx+ecx*4+0x14], eax;
 // LINE 1828:
-	__asm        call   0x004D3FEA;
+	__asm        call   ReadTree;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ThisIndex);
 	__asm        and    ecx, 0xFFFF;
 	__asm        mov    edx, ecx;
@@ -3032,12 +3214,13 @@ struct _BSPtree* ReadTree() {
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
 	__asm        add    eax, ds:[0x606A64];
-	__asm        jmp    near ptr 0x004D40DC;
+	__asm        jmp    _Tf2;
 // LINE 1831:
-	__asm        jmp    near ptr 0x004D40DC;
+	__asm        jmp    _Tf2;
 
+_Teb:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D40DC;
+	__asm        jmp    _Tf2;
 // LINE 1833:
 }
 
@@ -3068,13 +3251,15 @@ void NormalizeObj(struct ObjectHdr* obj) {
 	__asm        mov    d, eax;
 // LINE 1851:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4124;
+	__asm        jmp    _T43;
 
+_T40:
 	__asm        inc    i;
+_T43:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D416B;
+	__asm        jle    _T8a;
 // LINE 1852:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
@@ -3098,8 +3283,9 @@ void NormalizeObj(struct ObjectHdr* obj) {
 // LINE 1856:
 	__asm        add    s, 0xC;
 // LINE 1857:
-	__asm        jmp    near ptr 0x004D4121;
+	__asm        jmp    _T40;
 // LINE 1858:
+_T8a:
 	__asm        mov    eax, obj;
 	__asm        mov    dword ptr [eax+0x20], 0;
 	__asm        mov    eax, obj;
@@ -3135,13 +3321,15 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        mov    bmp, eax;
 // LINE 1882:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D41B6;
+	__asm        jmp    _T24;
 
+_T21:
 	__asm        inc    i;
+_T24:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D4328;
+	__asm        jle    _T196;
 // LINE 1883:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, geo;
@@ -3162,42 +3350,47 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        mov    face, eax;
 // LINE 1886:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D4200;
+	__asm        jmp    _T6e;
 
+_T6b:
 	__asm        inc    j;
+_T6e:
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    near ptr 0x004D4323;
+	__asm        jle    _T191;
 // LINE 1887:
 	__asm        mov    eax, face;
 	__asm        mov    fh, eax;
 // LINE 1893:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x004D422C;
+	__asm        je     _T9a;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x004D4260;
+	__asm        je     _Tce;
 
+_T9a:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        jne    near ptr 0x004D4260;
+	__asm        jne    _Tce;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    near ptr 0x004D4260;
+	__asm        jne    _Tce;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        jne    near ptr 0x004D4260;
+	__asm        jne    _Tce;
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x40;
-	__asm        je     near ptr 0x004D4265;
+	__asm        je     _Td3;
 // LINE 1894:
-	__asm        jmp    near ptr 0x004D430F;
+_Tce:
+	__asm        jmp    _T17d;
 // LINE 1895:
+_Td3:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D8610;
@@ -3213,18 +3406,19 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        mov    loword, eax;
 // LINE 1901:
 	__asm        cmp    hiword, 0;
-	__asm        je     near ptr 0x004D42D5;
+	__asm        je     _T143;
 // LINE 1903:
 	__asm        mov    eax, bmp;
 	__asm        mov    ecx, hiword;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jge    near ptr 0x004D42B2;
+	__asm        jge    _T120;
 // LINE 1905:
 	__asm        mov    dword ptr ds:[0x662810], 0xD;
 // LINE 1906:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4332;
+	__asm        jmp    _T1a0;
 // LINE 1909:
+_T120:
 	__asm        mov    eax, loword;
 	__asm        push   eax;
 	__asm        mov    eax, hiword;
@@ -3237,18 +3431,20 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        call   VRBCApplyTiledMap;
 	__asm        add    esp, 0xC;
 // LINE 1911:
-	__asm        jmp    near ptr 0x004D430F;
+	__asm        jmp    _T17d;
 // LINE 1913:
+_T143:
 	__asm        mov    eax, bmp;
 	__asm        mov    ecx, k;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jge    near ptr 0x004D42F5;
+	__asm        jge    _T163;
 // LINE 1914:
 	__asm        mov    dword ptr ds:[0x662810], 0xD;
 // LINE 1915:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4332;
+	__asm        jmp    _T1a0;
 // LINE 1917:
+_T163:
 	__asm        mov    eax, k;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, bmp;
@@ -3260,18 +3456,21 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 	__asm        add    esp, 8;
 // LINE 1919:
 next_face:
+_T17d:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1920:
-	__asm        jmp    near ptr 0x004D41FD;
+	__asm        jmp    _T6b;
 // LINE 1921:
-	__asm        jmp    near ptr 0x004D41B3;
+_T191:
+	__asm        jmp    _T21;
 // LINE 1922:
+_T196:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004D4332;
+	__asm        jmp    _T1a0;
 // LINE 1923:
 }
 
@@ -3301,13 +3500,15 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 	__asm        mov    h, eax;
 // LINE 1946:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4372;
+	__asm        jmp    _T3b;
 
+_T38:
 	__asm        inc    i;
+_T3b:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D43AC;
+	__asm        jle    _T75;
 // LINE 1948:
 	__asm        mov    eax, barry;
 	__asm        mov    eax, [eax];
@@ -3325,8 +3526,9 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 // LINE 1951:
 	__asm        add    barry, 8;
 // LINE 1952:
-	__asm        jmp    near ptr 0x004D436F;
+	__asm        jmp    _T38;
 // LINE 1958:
+_T75:
 	__asm        mov    eax, tileid;
 	__asm        shl    eax, 3;
 	__asm        add    eax, bmp;
@@ -3349,13 +3551,14 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        add    esp, 4;
 	__asm        mov    mp, eax;
 	__asm        cmp    mp, 0;
-	__asm        jne    near ptr 0x004D43FE;
+	__asm        jne    _T3b;
 // LINE 1976:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 1977:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D44B6;
+	__asm        jmp    _Tf3;
 // LINE 1982:
+_T3b:
 	__asm        mov    eax, mp;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1983:
@@ -3392,11 +3595,12 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        add    ds:[0x59B524], eax;
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
-	__asm        jae    near ptr 0x004D4478;
+	__asm        jae    _Tb5;
 
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 1989:
+_Tb5:
 	__asm        mov    eax, d2;
 	__asm        add    eax, xf;
 	__asm        add    eax, 0xA0;
@@ -3407,15 +3611,16 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        call   0x004D8491;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D44AE;
+	__asm        jne    _Teb;
 // LINE 1993:
 	__asm        mov    dword ptr ds:[0x662810], 0xE;
 // LINE 1994:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D44B6;
+	__asm        jmp    _Tf3;
 // LINE 1996:
+_Teb:
 	__asm        mov    eax, mp;
-	__asm        jmp    near ptr 0x004D44B6;
+	__asm        jmp    _Tf3;
 // LINE 1997:
 }
 
@@ -3614,10 +3819,11 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        mov    vnorms, eax;
 // LINE 2106:
 	__asm        cmp    vnorms, 0;
-	__asm        jne    near ptr 0x004D46EC;
+	__asm        jne    _T30;
 // LINE 2107:
-	__asm        jmp    near ptr 0x004D4947;
+	__asm        jmp    _T28b;
 // LINE 2109:
+_T30:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
@@ -3625,11 +3831,12 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        add    ds:[0x59B524], eax;
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        cmp    ds:[0x59B52C], eax;
-	__asm        jae    near ptr 0x004D4719;
+	__asm        jae    _T5d;
 
 	__asm        mov    eax, ds:[0x59B524];
 	__asm        mov    ds:[0x59B52C], eax;
 // LINE 2110:
+_T5d:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
@@ -3637,13 +3844,15 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        add    ds:[0x59B530], eax;
 // LINE 2116:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D473A;
+	__asm        jmp    _T7e;
 
+_T7b:
 	__asm        inc    i;
+_T7e:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D48FB;
+	__asm        jle    _T23f;
 // LINE 2118:
 // Block start:
 	struct Point3d* vn;
@@ -3676,13 +3885,15 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        mov    fp, eax;
 // LINE 2137:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D47A1;
+	__asm        jmp    _Te5;
 
+_Te2:
 	__asm        inc    j;
+_Te5:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D482E;
+	__asm        jle    _T172;
 // LINE 2139:
 // Block start:
 	struct Project3d* fn;
@@ -3695,19 +3906,21 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        mov    faceverts, eax;
 // LINE 2147:
 	__asm        mov    k, 0;
-	__asm        jmp    near ptr 0x004D47D1;
+	__asm        jmp    _T115;
 
+_T112:
 	__asm        inc    k;
+_T115:
 	__asm        mov    eax, fp;
 	__asm        mov    ecx, k;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D4821;
+	__asm        jle    _T165;
 // LINE 2149:
 	__asm        mov    eax, k;
 	__asm        mov    ecx, faceverts;
 	__asm        mov    edx, vertid;
 	__asm        cmp    [ecx+eax*4], edx;
-	__asm        jne    near ptr 0x004D481C;
+	__asm        jne    _T160;
 // LINE 2151:
 	__asm        inc    no_vert_faces;
 // LINE 2152:
@@ -3726,19 +3939,22 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        mov    ecx, vn;
 	__asm        add    [ecx+8], eax;
 // LINE 2155:
-	__asm        jmp    near ptr 0x004D4821;
+	__asm        jmp    _T165;
 // LINE 2157:
-	__asm        jmp    near ptr 0x004D47CE;
+_T160:
+	__asm        jmp    _T112;
 // LINE 2160:
+_T165:
 	__asm        mov    eax, fp;
 	__asm        mov    eax, [eax];
 	__asm        mov    fp, eax;
 // LINE 2162:
 // Block end:
-	__asm        jmp    near ptr 0x004D479E;
+	__asm        jmp    _Te2;
 // LINE 2168:
+_T172:
 	__asm        cmp    no_vert_faces, 0;
-	__asm        jle    near ptr 0x004D48F6;
+	__asm        jle    _T23a;
 // LINE 2171:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax];
@@ -3804,8 +4020,10 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 	__asm        mov    [ecx+8], eax;
 // LINE 2182:
 // Block end:
-	__asm        jmp    near ptr 0x004D4737;
+_T23a:
+	__asm        jmp    _T7b;
 // LINE 2185:
+_T23f:
 	__asm        mov    eax, vnorms;
 	__asm        push   eax;
 	__asm        mov    eax, obj;
@@ -3886,25 +4104,27 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        add    esp, 8;
 	__asm        mov    dataptr, eax;
 	__asm        cmp    dataptr, 0;
-	__asm        jne    near ptr 0x004D49CD;
+	__asm        jne    _T5f;
 // LINE 2244:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 2245:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4B7B;
+	__asm        jmp    _T20d;
 // LINE 2248:
+_T5f:
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
 	__asm        call   0x004D8643;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D49F2;
+	__asm        jne    _T84;
 // LINE 2250:
 	__asm        mov    dword ptr ds:[0x662810], 9;
 // LINE 2251:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4B7B;
+	__asm        jmp    _T20d;
 // LINE 2254:
+_T84:
 	__asm        mov    eax, ds:[0x606A5C];
 	__asm        push   eax;
 	__asm        push   0;
@@ -3958,12 +4178,14 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        add    ptr, eax;
 // LINE 2272:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4A83;
+	__asm        jmp    _T115;
 
+_T112:
 	__asm        inc    i;
+_T115:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
-	__asm        jle    near ptr 0x004D4ABC;
+	__asm        jle    _T14e;
 // LINE 2274:
 	__asm        mov    eax, vert;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -3980,8 +4202,9 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 // LINE 2276:
 	__asm        add    vert, 0xC;
 // LINE 2277:
-	__asm        jmp    near ptr 0x004D4A80;
+	__asm        jmp    _T112;
 // LINE 2281:
+_T14e:
 	__asm        mov    eax, ptr;
 	__asm        mov    mvert, eax;
 // LINE 2282:
@@ -3997,13 +4220,15 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        add    ptr, 0x30;
 // LINE 2288:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4AE8;
+	__asm        jmp    _T17a;
 
+_T177:
 	__asm        inc    i;
+_T17a:
 	__asm        mov    eax, nverts;
 	__asm        dec    eax;
 	__asm        cmp    eax, i;
-	__asm        jle    near ptr 0x004D4B73;
+	__asm        jle    _T205;
 // LINE 2291:
 	__asm        mov    eax, ptr;
 	__asm        mov    iptr, eax;
@@ -4056,10 +4281,11 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 // LINE 2310:
 	__asm        add    ptr, 0x30;
 // LINE 2311:
-	__asm        jmp    near ptr 0x004D4AE5;
+	__asm        jmp    _T177;
 // LINE 2313:
+_T205:
 	__asm        mov    eax, dataptr;
-	__asm        jmp    near ptr 0x004D4B7B;
+	__asm        jmp    _T20d;
 // LINE 2314:
 }
 
@@ -4094,25 +4320,27 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        add    esp, 8;
 	__asm        mov    dataptr, eax;
 	__asm        cmp    dataptr, 0;
-	__asm        jne    near ptr 0x004D4BDD;
+	__asm        jne    _T5d;
 // LINE 2349:
 	__asm        mov    dword ptr ds:[0x662810], 4;
 // LINE 2350:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4D6E;
+	__asm        jmp    _T1ee;
 // LINE 2353:
+_T5d:
 	__asm        mov    eax, dataptr;
 	__asm        push   eax;
 	__asm        call   0x004D8643;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D4C02;
+	__asm        jne    _T82;
 // LINE 2355:
 	__asm        mov    dword ptr ds:[0x662810], 9;
 // LINE 2356:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4D6E;
+	__asm        jmp    _T1ee;
 // LINE 2359:
+_T82:
 	__asm        mov    eax, ds:[0x606A5C];
 	__asm        push   eax;
 	__asm        push   0;
@@ -4162,12 +4390,14 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        add    ptr, eax;
 // LINE 2377:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4C8C;
+	__asm        jmp    _T10c;
 
+_T109:
 	__asm        inc    i;
+_T10c:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
-	__asm        jle    near ptr 0x004D4CC1;
+	__asm        jle    _T141;
 // LINE 2379:
 	__asm        mov    eax, vert;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -4182,8 +4412,9 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 // LINE 2380:
 	__asm        add    vert, 0xC;
 // LINE 2381:
-	__asm        jmp    near ptr 0x004D4C89;
+	__asm        jmp    _T109;
 // LINE 2385:
+_T141:
 	__asm        mov    eax, ptr;
 	__asm        mov    mvert, eax;
 // LINE 2386:
@@ -4199,12 +4430,14 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        add    ptr, 0x30;
 // LINE 2392:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4CED;
+	__asm        jmp    _T16d;
 
+_T16a:
 	__asm        inc    i;
+_T16d:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
-	__asm        jle    near ptr 0x004D4D66;
+	__asm        jle    _T1e6;
 // LINE 2395:
 	__asm        mov    eax, ptr;
 	__asm        mov    iptr, eax;
@@ -4251,10 +4484,11 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 // LINE 2413:
 	__asm        add    ptr, 0x30;
 // LINE 2414:
-	__asm        jmp    near ptr 0x004D4CEA;
+	__asm        jmp    _T16a;
 // LINE 2416:
+_T1e6:
 	__asm        mov    eax, dataptr;
-	__asm        jmp    near ptr 0x004D4D6E;
+	__asm        jmp    _T1ee;
 // LINE 2417:
 }
 
@@ -4317,13 +4551,14 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        call   0x004D8643;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x004D4DFF;
+	__asm        jne    _T40;
 // LINE 2463:
 	__asm        mov    dword ptr ds:[0x662810], 9;
 // LINE 2464:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004D4F20;
+	__asm        jmp    _T161;
 // LINE 2468:
+_T40:
 	__asm        push   0x90;
 	__asm        mov    eax, oh;
 	__asm        push   eax;
@@ -4366,13 +4601,15 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        mov    fh, eax;
 // LINE 2482:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4E74;
+	__asm        jmp    _Tb5;
 
+_Tb2:
 	__asm        inc    i;
+_Tb5:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D4F18;
+	__asm        jle    _T159;
 // LINE 2485:
 	__asm        push   0x30;
 	__asm        mov    eax, fh;
@@ -4437,10 +4674,11 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        mov    eax, [eax];
 	__asm        mov    fh, eax;
 // LINE 2504:
-	__asm        jmp    near ptr 0x004D4E71;
+	__asm        jmp    _Tb2;
 // LINE 2506:
+_T159:
 	__asm        mov    eax, mem;
-	__asm        jmp    near ptr 0x004D4F20;
+	__asm        jmp    _T161;
 // LINE 2508:
 }
 
@@ -4492,16 +4730,18 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    fh, eax;
 // LINE 2547:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D4F7F;
+	__asm        jmp    _T5a;
 
+_T4f:
 	__asm        inc    i;
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax];
 	__asm        mov    fh, eax;
+_T5a:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    near ptr 0x004D52AC;
+	__asm        jle    _T387;
 // LINE 2552:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x2C];
@@ -4537,10 +4777,11 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    dotp1, ebx;
 // LINE 2557:
 	__asm        cmp    dotp1, 0xFFFFFAE2;
-	__asm        jl     near ptr 0x004D4FF4;
+	__asm        jl     _Tcf;
 // LINE 2558:
-	__asm        jmp    near ptr 0x004D4F74;
+	__asm        jmp    _T4f;
 // LINE 2562:
+_Tcf:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+0xC];
@@ -4621,10 +4862,11 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    eax, dist;
 	__asm        add    eax, 0x50000;
 	__asm        cmp    eax, tval;
-	__asm        jge    near ptr 0x004D50CC;
+	__asm        jge    _T1a7;
 // LINE 2578:
-	__asm        jmp    near ptr 0x004D4F74;
+	__asm        jmp    _T4f;
 // LINE 2581:
+_T1a7:
 	__asm        mov    eax, svec;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
@@ -4675,13 +4917,15 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    vertno, eax;
 // LINE 2594:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D515A;
+	__asm        jmp    _T235;
 
+_T232:
 	__asm        inc    j;
+_T235:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D5215;
+	__asm        jle    _T2f0;
 // LINE 2600:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -4697,110 +4941,125 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, minx;
 	__asm        cmp    [eax], ecx;
-	__asm        jge    near ptr 0x004D519A;
+	__asm        jge    _T275;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax];
 	__asm        mov    minx, eax;
 // LINE 2608:
+_T275:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, miny;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jge    near ptr 0x004D51B2;
+	__asm        jge    _T28d;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    miny, eax;
 // LINE 2609:
+_T28d:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, minz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jge    near ptr 0x004D51CA;
+	__asm        jge    _T2a5;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    minz, eax;
 // LINE 2610:
+_T2a5:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, maxx;
 	__asm        cmp    [eax], ecx;
-	__asm        jle    near ptr 0x004D51E0;
+	__asm        jle    _T2bb;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax];
 	__asm        mov    maxx, eax;
 // LINE 2611:
+_T2bb:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, maxy;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    near ptr 0x004D51F8;
+	__asm        jle    _T2d3;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    maxy, eax;
 // LINE 2612:
+_T2d3:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, maxz;
 	__asm        cmp    [eax+8], ecx;
-	__asm        jle    near ptr 0x004D5210;
+	__asm        jle    _T2eb;
 
 	__asm        mov    eax, v0;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    maxz, eax;
 // LINE 2613:
-	__asm        jmp    near ptr 0x004D5157;
+_T2eb:
+	__asm        jmp    _T232;
 // LINE 2617:
+_T2f0:
 	__asm        mov    eax, maxz;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    iloc.z, eax;
-	__asm        jg     near ptr 0x004D5237;
+	__asm        jg     _T312;
 
 	__asm        mov    eax, minz;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    iloc.z, eax;
-	__asm        jge    near ptr 0x004D523C;
+	__asm        jge    _T317;
 // LINE 2618:
-	__asm        jmp    near ptr 0x004D4F74;
+_T312:
+	__asm        jmp    _T4f;
 // LINE 2619:
+_T317:
 	__asm        mov    eax, maxy;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    iloc.y, eax;
-	__asm        jg     near ptr 0x004D525E;
+	__asm        jg     _T339;
 
 	__asm        mov    eax, miny;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    iloc.y, eax;
-	__asm        jge    near ptr 0x004D5263;
+	__asm        jge    _T33e;
 // LINE 2620:
-	__asm        jmp    near ptr 0x004D4F74;
+_T339:
+	__asm        jmp    _T4f;
 // LINE 2621:
+_T33e:
 	__asm        mov    eax, maxx;
 	__asm        add    eax, 0x20000;
 	__asm        cmp    iloc.x, eax;
-	__asm        jg     near ptr 0x004D5285;
+	__asm        jg     _T360;
 
 	__asm        mov    eax, minx;
 	__asm        sub    eax, 0x20000;
 	__asm        cmp    eax, iloc.x;
-	__asm        jle    near ptr 0x004D528A;
+	__asm        jle    _T365;
 // LINE 2622:
-	__asm        jmp    near ptr 0x004D4F74;
+_T360:
+	__asm        jmp    _T4f;
 // LINE 2626:
+_T365:
 	__asm        cmp    nptrptr, 0;
-	__asm        je     near ptr 0x004D529F;
+	__asm        je     _T37a;
 // LINE 2627:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    ecx, nptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 2629:
+_T37a:
 	__asm        mov    eax, tval;
-	__asm        jmp    near ptr 0x004D52B6;
+	__asm        jmp    _T391;
 // LINE 2631:
-	__asm        jmp    near ptr 0x004D4F74;
+	__asm        jmp    _T4f;
 // LINE 2635:
+_T387:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004D52B6;
+	__asm        jmp    _T391;
 // LINE 2637:
 }
 

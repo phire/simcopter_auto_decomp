@@ -80,15 +80,16 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, pCommander;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jne    near ptr 0x00432290;
+	__asm        jne    _T30;
 // LINE 22:
 	__asm        mov    ReturnCommander, 0;
 // LINE 23:
-	__asm        jmp    near ptr 0x004322C8;
+	__asm        jmp    _T68;
 // LINE 25:
+_T30:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x004322B0;
+	__asm        je     _T50;
 // LINE 26:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -98,6 +99,7 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x20];
 // LINE 28:
+_T50:
 	__asm        mov    eax, pCommander;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
@@ -109,6 +111,7 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 	__asm        mov    ecx, pCommander;
 	__asm        call   dword ptr [eax+0x20];
 // LINE 32:
+_T68:
 	__asm        mov    eax, ReturnCommander;
 	__asm        jmp    near ptr 0x004322D0;
 // LINE 33:
@@ -148,7 +151,7 @@ unsigned long CSparkalWindow::SwapBuffer() {
 // LINE 64:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x00432380;
+	__asm        je     _T5b;
 // LINE 65:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -157,7 +160,7 @@ unsigned long CSparkalWindow::SwapBuffer() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x00432380;
+	__asm        je     _T5b;
 // LINE 66:
 	__asm        push   0;
 	__asm        push   0;
@@ -177,6 +180,7 @@ unsigned long CSparkalWindow::SwapBuffer() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 70:
+_T5b:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x00432387;
 // LINE 71:
@@ -191,7 +195,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 // LINE 86:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     near ptr 0x004324C6;
+	__asm        je     _T13a;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -200,7 +204,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx];
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004324C6;
+	__asm        je     _T13a;
 // LINE 92:
 // Block start:
 	long Step;
@@ -243,17 +247,19 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        call   dword ptr [edx+0x20];
 // LINE 99:
 	__asm        cmp    Step, 0;
-	__asm        jne    near ptr 0x00432437;
+	__asm        jne    _Tab;
 
 	__asm        push   0x63;
 	__asm        push   0x59836C;
 	__asm        push   0x598394;
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0043243C;
+	__asm        jmp    _Tb0;
 
-	__asm        jmp    near ptr 0x0043243C;
+_Tab:
+	__asm        jmp    _Tb0;
 // LINE 102:
+_Tb0:
 	__asm        mov    eax, DestTop;
 	__asm        push   eax;
 	__asm        mov    eax, Left;
@@ -286,7 +292,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 // LINE 105:
 	__asm        mov    eax, Top;
 	__asm        cmp    DestTop, eax;
-	__asm        jg     near ptr 0x0043243C;
+	__asm        jg     _Tb0;
 // LINE 106:
 	__asm        mov    eax, Top;
 	__asm        push   eax;
@@ -317,6 +323,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        call   dword ptr [edx+4];
 // LINE 110:
 // Block end:
+_T13a:
 	__asm        mov    eax, Error;
 	__asm        jmp    near ptr 0x004324CE;
 // LINE 111:

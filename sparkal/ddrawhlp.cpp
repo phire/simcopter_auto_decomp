@@ -201,7 +201,7 @@ long DDEnable() {
 
 // LINE 33:
 	__asm        cmp    dword ptr ds:[0x597264], 0;
-	__asm        jne    near ptr 0x0041F527;
+	__asm        jne    _T27;
 // LINE 34:
 	__asm        push   0;
 	__asm        push   0x597264;
@@ -209,12 +209,14 @@ long DDEnable() {
 	__asm        call   0x004C4612;
 	__asm        mov    hResult, eax;
 // LINE 35:
+_T27:
 	__asm        cmp    hResult, 0;
-	__asm        je     near ptr 0x0041F539;
+	__asm        je     _T39;
 // LINE 36:
 	__asm        mov    eax, hResult;
-	__asm        jmp    near ptr 0x0041F5A0;
+	__asm        jmp    _Ta0;
 // LINE 38:
+_T39:
 	__asm        mov    dword ptr ds:[0x5C2798], 0xAC;
 // LINE 39:
 	__asm        push   0;
@@ -227,25 +229,28 @@ long DDEnable() {
 	__asm        mov    hResult, eax;
 // LINE 40:
 	__asm        cmp    hResult, 0;
-	__asm        je     near ptr 0x0041F599;
+	__asm        je     _T99;
 // LINE 41:
+_T67:
 	__asm        mov    eax, ds:[0x597264];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x597264];
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
-	__asm        jne    near ptr 0x0041F587;
+	__asm        jne    _T87;
 
-	__asm        jmp    near ptr 0x0041F567;
+	__asm        jmp    _T67;
 // LINE 42:
+_T87:
 	__asm        mov    dword ptr ds:[0x597264], 0;
 // LINE 43:
 	__asm        mov    eax, hResult;
-	__asm        jmp    near ptr 0x0041F5A0;
+	__asm        jmp    _Ta0;
 // LINE 47:
+_T99:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0041F5A0;
+	__asm        jmp    _Ta0;
 // LINE 49:
 }
 
@@ -253,23 +258,25 @@ long DDEnable() {
 void DDDisable() {
 // LINE 60:
 	__asm        cmp    dword ptr ds:[0x597264], 0;
-	__asm        jne    near ptr 0x0041F5BD;
+	__asm        jne    _T18;
 // LINE 61:
-	__asm        jmp    near ptr 0x0041F5EC;
+	__asm        jmp    _T47;
 // LINE 65:
+_T18:
 	__asm        mov    eax, ds:[0x597264];
 	__asm        push   eax;
 	__asm        mov    eax, ds:[0x597264];
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
-	__asm        jne    near ptr 0x0041F5DD;
+	__asm        jne    _T38;
 
-	__asm        jmp    near ptr 0x0041F5BD;
+	__asm        jmp    _T18;
 // LINE 66:
+_T38:
 	__asm        mov    dword ptr ds:[0x597264], 0;
 // LINE 70:
-	__asm        jmp    near ptr 0x0041F5EC;
+	__asm        jmp    _T47;
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
@@ -291,7 +298,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x44];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0041F64C;
+	__asm        jne    _T5b;
 // LINE 93:
 	__asm        push   0;
 	__asm        push   0;
@@ -316,6 +323,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x68];
 // LINE 98:
+_T5b:
 	__asm        mov    ddsd.dwSize, 0x6C;
 // LINE 99:
 	__asm        push   0;
@@ -331,7 +339,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    hres, eax;
 // LINE 101:
 	__asm        cmp    hres, 0;
-	__asm        jne    near ptr 0x0041F69D;
+	__asm        jne    _Tac;
 // LINE 103:
 	__asm        mov    eax, ddsd.lpSurface;
 	__asm        mov    eax, [eax];
@@ -350,6 +358,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x80];
 // LINE 108:
+_Tac:
 	__asm        lea    eax, hdc;
 	__asm        push   eax;
 	__asm        mov    eax, pdds;
@@ -358,7 +367,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x44];
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0041F6D7;
+	__asm        jne    _Te6;
 // LINE 110:
 	__asm        mov    eax, rgbT;
 	__asm        push   eax;
@@ -376,6 +385,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x68];
 // LINE 114:
+_Te6:
 	__asm        mov    eax, dw;
 	__asm        jmp    near ptr 0x0041F6DF;
 // LINE 115:
@@ -399,7 +409,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	__asm        mov    fh, eax;
 // LINE 147:
 	__asm        cmp    fh, 0xFFFFFFFF;
-	__asm        je     near ptr 0x0041F733;
+	__asm        je     _T4f;
 // LINE 149:
 	__asm        push   0x418;
 	__asm        lea    eax, pal.dwRiff;
@@ -412,40 +422,44 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C374C];
 // LINE 162:
+_T4f:
 	__asm        cmp    pal.dwRiff, 0x46464952;
-	__asm        jne    near ptr 0x0041F79F;
+	__asm        jne    _Tbb;
 
 	__asm        cmp    pal.dwPal, 0x204C4150;
-	__asm        jne    near ptr 0x0041F79F;
+	__asm        jne    _Tbb;
 
 	__asm        cmp    pal.dwData, 0x61746164;
-	__asm        jne    near ptr 0x0041F79F;
+	__asm        jne    _Tbb;
 
 	__asm        mov    eax, reinterpret_cast<uint32_t>(pal.palVersion);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x300;
-	__asm        jne    near ptr 0x0041F79F;
+	__asm        jne    _Tbb;
 
 	__asm        xor    eax, eax;
 	__asm        mov    ax, pal.palNumEntries;
 	__asm        cmp    eax, 0x100;
-	__asm        jg     near ptr 0x0041F79F;
+	__asm        jg     _Tbb;
 
 	__asm        xor    eax, eax;
 	__asm        mov    ax, pal.palNumEntries;
 	__asm        cmp    eax, 1;
-	__asm        jge    near ptr 0x0041F83B;
+	__asm        jge    _T157;
 // LINE 164:
+_Tbb:
 	__asm        push   0x59726C;
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
 // LINE 166:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0041F7BB;
+	__asm        jmp    _Td7;
 
+_Td4:
 	__asm        inc    i;
+_Td7:
 	__asm        cmp    i, 0x100;
-	__asm        jge    near ptr 0x0041F83B;
+	__asm        jge    _T157;
 // LINE 168:
 	__asm        mov    eax, i;
 	__asm        shr    eax, 5;
@@ -485,8 +499,9 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x40D], 0;
 // LINE 172:
-	__asm        jmp    near ptr 0x0041F7B8;
+	__asm        jmp    _Td4;
 // LINE 179:
+_T157:
 	__asm        push   0;
 	__asm        lea    eax, ppal;
 	__asm        push   eax;

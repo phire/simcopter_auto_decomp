@@ -85,11 +85,12 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        mov    dword ptr [eax+0x18], 0;
 // LINE 45:
 	__asm        cmp    bLoadNow, 0;
-	__asm        je     near ptr 0x00447871;
+	__asm        je     _T63;
 // LINE 46:
 	__asm        mov    ecx, this;
 	__asm        call   ResourceRCData::ReadResource;
 // LINE 47:
+_T63:
 	__asm        jmp    near ptr 0x00447876;
 
 	__asm        mov    eax, this;
@@ -117,7 +118,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // LINE 59:
 	__asm        mov    eax, resData;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x0044790D;
+	__asm        je     _T8d;
 // LINE 60:
 // Block start:
 	uint32_t nAllocationSize;
@@ -147,6 +148,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 65:
 // Block end:
+_T8d:
 	__asm        jmp    near ptr 0x00447912;
 
 	__asm        mov    eax, this;
@@ -169,11 +171,12 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 // LINE 82:
 	__asm        mov    eax, resData;
 	__asm        cmp    this, eax;
-	__asm        jne    near ptr 0x00447963;
+	__asm        jne    _T20;
 // LINE 83:
 	__asm        mov    eax, this;
-	__asm        jmp    near ptr 0x004479E3;
+	__asm        jmp    _Ta0;
 // LINE 85:
+_T20:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 86:
@@ -190,7 +193,7 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 // LINE 89:
 	__asm        mov    eax, resData;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     near ptr 0x004479DB;
+	__asm        je     _T98;
 // LINE 90:
 // Block start:
 	uint32_t nAllocationSize;
@@ -220,8 +223,9 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 96:
 // Block end:
+_T98:
 	__asm        mov    eax, this;
-	__asm        jmp    near ptr 0x004479E3;
+	__asm        jmp    _Ta0;
 // LINE 97:
 }
 
@@ -230,13 +234,14 @@ void ResourceRCData::Reset() {
 // LINE 106:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00447A10;
+	__asm        je     _T26;
 // LINE 107:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3634];
 // LINE 108:
+_T26:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 109:
@@ -251,7 +256,7 @@ void ResourceRCData::Reset() {
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     near ptr 0x00447A60;
+	__asm        je     _T76;
 // LINE 114:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -263,6 +268,7 @@ void ResourceRCData::Reset() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 115:
+_T76:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 116:
@@ -274,7 +280,7 @@ unsigned long ResourceRCData::DataSize() {
 // LINE 132:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00447AA6;
+	__asm        je     _T32;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -283,10 +289,11 @@ unsigned long ResourceRCData::DataSize() {
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3630];
-	__asm        jmp    near ptr 0x00447AAD;
+	__asm        jmp    _T39;
 // LINE 135:
+_T32:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00447AAD;
+	__asm        jmp    _T39;
 // LINE 136:
 }
 
@@ -307,7 +314,7 @@ int32_t ResourceRCData::ReadResource() {
 // LINE 146:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     near ptr 0x00447B2E;
+	__asm        je     _T7c;
 // LINE 147:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -321,7 +328,7 @@ int32_t ResourceRCData::ReadResource() {
 // LINE 148:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
-	__asm        je     near ptr 0x00447B2E;
+	__asm        je     _T7c;
 // LINE 149:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -331,10 +338,11 @@ int32_t ResourceRCData::ReadResource() {
 	__asm        mov    [ecx+8], eax;
 // LINE 150:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00447B35;
+	__asm        jmp    _T83;
 // LINE 154:
+_T7c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00447B35;
+	__asm        jmp    _T83;
 // LINE 155:
 }
 

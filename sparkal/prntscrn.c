@@ -60,7 +60,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 
 // LINE 74:
 	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
-	__asm        jne    near ptr 0x0046B90E;
+	__asm        jne    _T33;
 // LINE 76:
 	__asm        mov    eax, ds:[0x598EE8];
 	__asm        mov    xdim, eax;
@@ -71,8 +71,9 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    eax, ds:[0x598EF4];
 	__asm        mov    pitch, eax;
 // LINE 80:
-	__asm        jmp    near ptr 0x0046B926;
+	__asm        jmp    _T4b;
 // LINE 82:
+_T33:
 	__asm        mov    eax, ds:[0x598EC8];
 	__asm        mov    xdim, eax;
 // LINE 83:
@@ -82,6 +83,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    eax, ds:[0x598ED4];
 	__asm        mov    pitch, eax;
 // LINE 87:
+_T4b:
 	__asm        mov    byte ptr ds:[0x603DC8], 0xA;
 // LINE 88:
 	__asm        mov    byte ptr ds:[0x603DCA], 1;
@@ -117,7 +119,7 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    hFileOut, eax;
 // LINE 100:
 	__asm        cmp    hFileOut, 0;
-	__asm        je     near ptr 0x0046BABE;
+	__asm        je     _T1e3;
 // LINE 101:
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
@@ -131,12 +133,14 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    ptr, eax;
 // LINE 104:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x0046B9D1;
+	__asm        jmp    _Tf6;
 
+_Tf3:
 	__asm        inc    y;
+_Tf6:
 	__asm        mov    eax, y;
 	__asm        cmp    ydim, eax;
-	__asm        jle    near ptr 0x0046B9FC;
+	__asm        jle    _T121;
 // LINE 106:
 	__asm        mov    eax, xdim;
 	__asm        push   eax;
@@ -150,8 +154,9 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    eax, pitch;
 	__asm        add    ptr, eax;
 // LINE 108:
-	__asm        jmp    near ptr 0x0046B9CE;
+	__asm        jmp    _Tf3;
 // LINE 109:
+_T121:
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
 	__asm        push   0xC;
@@ -175,11 +180,13 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 114:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x0046BA4C;
+	__asm        jmp    _T171;
 
+_T16e:
 	__asm        inc    y;
+_T171:
 	__asm        cmp    y, 0x100;
-	__asm        jge    near ptr 0x0046BA9A;
+	__asm        jge    _T1bf;
 // LINE 116:
 	__asm        mov    eax, y;
 	__asm        mov    al, [eax*4+0x603E48];
@@ -196,8 +203,9 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        mov    ecx, y;
 	__asm        mov    [ecx+ecx*2+0x603AC2], al;
 // LINE 119:
-	__asm        jmp    near ptr 0x0046BA49;
+	__asm        jmp    _T16e;
 // LINE 120:
+_T1bf:
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
 	__asm        push   1;
@@ -224,8 +232,10 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    j, 0;
 	__asm        mov    t, 0;
 // LINE 140:
+_T1b:
 	__asm        mov    i, 0;
 // LINE 141:
+_T21:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
@@ -241,7 +251,7 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    edx, p;
 	__asm        movsx  ecx, byte ptr [ecx+edx];
 	__asm        cmp    eax, ecx;
-	__asm        jne    near ptr 0x0046BB60;
+	__asm        jne    _T9d;
 
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
@@ -251,18 +261,19 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(n);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x0046BB60;
+	__asm        jge    _T9d;
 
 	__asm        mov    eax, reinterpret_cast<uint32_t>(i);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x3F;
-	__asm        jge    near ptr 0x0046BB60;
+	__asm        jge    _T9d;
 
 	__asm        inc    i;
-	__asm        jmp    near ptr 0x0046BAE4;
+	__asm        jmp    _T21;
 // LINE 142:
+_T9d:
 	__asm        test   reinterpret_cast<uint32_t>(i), 0xFFFF;
-	__asm        jle    near ptr 0x0046BBF4;
+	__asm        jle    _T131;
 // LINE 143:
 	__asm        mov    eax, fp;
 	__asm        push   eax;
@@ -273,11 +284,12 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0046BB9A;
+	__asm        jne    _Td7;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0046BC9A;
+	__asm        jmp    _T1d7;
 // LINE 144:
+_Td7:
 	__asm        mov    eax, fp;
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
@@ -288,11 +300,12 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0046BBC9;
+	__asm        jne    _T106;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0046BC9A;
+	__asm        jmp    _T1d7;
 // LINE 145:
+_T106:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
@@ -305,15 +318,16 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        add    eax, 2;
 	__asm        mov    j, ax;
 // LINE 148:
-	__asm        jmp    near ptr 0x0046BC74;
+	__asm        jmp    _T1b1;
 // LINE 149:
+_T131:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, p;
 	__asm        movsx  eax, byte ptr [eax+ecx];
 	__asm        and    al, 0xC0;
 	__asm        cmp    al, 0xC0;
-	__asm        jne    near ptr 0x0046BC35;
+	__asm        jne    _T172;
 // LINE 150:
 	__asm        mov    eax, fp;
 	__asm        push   eax;
@@ -321,13 +335,15 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0046BC31;
+	__asm        jne    _T16e;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0046BC9A;
+	__asm        jmp    _T1d7;
 // LINE 151:
+_T16e:
 	__asm        inc    j;
 // LINE 153:
+_T172:
 	__asm        mov    ax, t;
 	__asm        mov    [ebp-0x10], ax;
 	__asm        inc    t;
@@ -341,23 +357,25 @@ int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
 	__asm        call   fputc;
 	__asm        add    esp, 8;
 	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    near ptr 0x0046BC70;
+	__asm        jne    _T1ad;
 
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0046BC9A;
+	__asm        jmp    _T1d7;
 // LINE 154:
+_T1ad:
 	__asm        inc    j;
 // LINE 156:
+_T1b1:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(n);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
-	__asm        jl     near ptr 0x0046BADE;
+	__asm        jl     _T1b;
 // LINE 157:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(n);
 	__asm        and    eax, 0xFFFF;
-	__asm        jmp    near ptr 0x0046BC9A;
+	__asm        jmp    _T1d7;
 // LINE 158:
 }
 

@@ -73,11 +73,13 @@ void Random::seed(unsigned long j) {
 	__asm        mov    [ecx+0xD8], eax;
 // LINE 37:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0049101F;
+	__asm        jmp    _T2e;
 
+_T2b:
 	__asm        inc    i;
+_T2e:
 	__asm        cmp    i, 0x36;
-	__asm        jae    near ptr 0x00491066;
+	__asm        jae    _T75;
 // LINE 38:
 // Block start:
 	uint32_t ii;
@@ -105,21 +107,26 @@ void Random::seed(unsigned long j) {
 	__asm        mov    j, eax;
 // LINE 42:
 // Block end:
-	__asm        jmp    near ptr 0x0049101C;
+	__asm        jmp    _T2b;
 // LINE 43:
+_T75:
 	__asm        mov    loop, 0;
-	__asm        jmp    near ptr 0x00491075;
+	__asm        jmp    _T84;
 
+_T81:
 	__asm        inc    loop;
+_T84:
 	__asm        cmp    loop, 4;
-	__asm        jge    near ptr 0x004910C4;
+	__asm        jge    _Td3;
 // LINE 44:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0049108E;
+	__asm        jmp    _T9d;
 
+_T9a:
 	__asm        inc    i;
+_T9d:
 	__asm        cmp    i, 0x37;
-	__asm        jae    near ptr 0x004910BF;
+	__asm        jae    _Tce;
 // LINE 45:
 	__asm        xor    ecx, ecx;
 	__asm        mov    eax, i;
@@ -133,10 +140,12 @@ void Random::seed(unsigned long j) {
 	__asm        mov    eax, i;
 	__asm        mov    edx, this;
 	__asm        sub    [edx+eax*4], ecx;
-	__asm        jmp    near ptr 0x0049108B;
+	__asm        jmp    _T9a;
 // LINE 46:
-	__asm        jmp    near ptr 0x00491072;
+_Tce:
+	__asm        jmp    _T81;
 // LINE 47:
+_Td3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xDC], 0;
 // LINE 48:

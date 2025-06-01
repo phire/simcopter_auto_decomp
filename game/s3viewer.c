@@ -178,15 +178,17 @@ void S3ViewerControl() {
 
 // LINE 177:
 	__asm        cmp    dword ptr ds:[0x5B4760], 0x200;
-	__asm        jge    near ptr 0x004EE916;
+	__asm        jge    _T25;
 // LINE 178:
 	__asm        mov    timerDelay, 0x200;
 // LINE 179:
-	__asm        jmp    near ptr 0x004EE91E;
+	__asm        jmp    _T2d;
 // LINE 180:
+_T25:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        mov    timerDelay, eax;
 // LINE 183:
+_T2d:
 	__asm        mov    roty, 0;
 	__asm        mov    eax, roty;
 	__asm        mov    rotx, eax;
@@ -195,110 +197,123 @@ void S3ViewerControl() {
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EE956;
+	__asm        je     _T65;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EE956;
+	__asm        je     _T65;
 // LINE 187:
 	__asm        mov    rotx, 0x280000;
 // LINE 188:
-	__asm        jmp    near ptr 0x004EE9D8;
+	__asm        jmp    _Te7;
 
+_T65:
 	__asm        push   0x27;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EE981;
+	__asm        je     _T90;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EE981;
+	__asm        je     _T90;
 // LINE 189:
 	__asm        mov    rotx, 0xFFD80000;
 // LINE 190:
-	__asm        jmp    near ptr 0x004EE9D8;
+	__asm        jmp    _Te7;
 // LINE 191:
+_T90:
 	__asm        push   0x27;
 	__asm        push   0x26;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EE9AE;
+	__asm        je     _Tbd;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EE9AE;
+	__asm        je     _Tbd;
 
 	__asm        mov    lJoystickValue, 1;
-	__asm        jmp    near ptr 0x004EE9B5;
+	__asm        jmp    _Tc4;
 
+_Tbd:
 	__asm        mov    lJoystickValue, 0;
+_Tc4:
 	__asm        cmp    lJoystickValue, 0;
-	__asm        je     near ptr 0x004EE9D8;
+	__asm        je     _Te7;
 // LINE 193:
-	__asm        jle    near ptr 0x004EE9D1;
+	__asm        jle    _Te0;
 // LINE 194:
 	__asm        mov    rotx, 0x280000;
 // LINE 195:
-	__asm        jmp    near ptr 0x004EE9D8;
+	__asm        jmp    _Te7;
 // LINE 196:
+_Te0:
 	__asm        mov    rotx, 0xFFD80000;
 // LINE 199:
+_Te7:
 	__asm        push   0x28;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EEA03;
+	__asm        je     _T112;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EEA03;
+	__asm        je     _T112;
 // LINE 200:
 	__asm        mov    roty, 0x280000;
 // LINE 201:
-	__asm        jmp    near ptr 0x004EEA85;
+	__asm        jmp    _T194;
 
+_T112:
 	__asm        push   0x29;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EEA2E;
+	__asm        je     _T13d;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EEA2E;
+	__asm        je     _T13d;
 // LINE 202:
 	__asm        mov    roty, 0xFFD80000;
 // LINE 203:
-	__asm        jmp    near ptr 0x004EEA85;
+	__asm        jmp    _T194;
 // LINE 204:
+_T13d:
 	__asm        push   0x29;
 	__asm        push   0x28;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EEA5B;
+	__asm        je     _T16a;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EEA5B;
+	__asm        je     _T16a;
 
 	__asm        mov    lJoystickValue, 1;
-	__asm        jmp    near ptr 0x004EEA62;
+	__asm        jmp    _T171;
 
+_T16a:
 	__asm        mov    lJoystickValue, 0;
+_T171:
 	__asm        cmp    lJoystickValue, 0;
-	__asm        je     near ptr 0x004EEA85;
+	__asm        je     _T194;
 // LINE 206:
-	__asm        jle    near ptr 0x004EEA7E;
+	__asm        jle    _T18d;
 // LINE 207:
 	__asm        mov    roty, 0x280000;
 // LINE 208:
-	__asm        jmp    near ptr 0x004EEA85;
+	__asm        jmp    _T194;
 // LINE 209:
+_T18d:
 	__asm        mov    roty, 0xFFD80000;
 // LINE 212:
+_T194:
 	__asm        cmp    rotx, 0;
-	__asm        jne    near ptr 0x004EEA99;
+	__asm        jne    _T1a8;
 
 	__asm        cmp    roty, 0;
-	__asm        je     near ptr 0x004EEAA9;
+	__asm        je     _T1b8;
 // LINE 213:
+_T1a8:
 	__asm        mov    eax, roty;
 	__asm        push   eax;
 	__asm        mov    eax, rotx;
@@ -306,6 +321,7 @@ void S3ViewerControl() {
 	__asm        call   S3HeliRotateSpotLite;
 	__asm        add    esp, 8;
 // LINE 223:
+_T1b8:
 	__asm        lea    eax, IdealCameraPos.x;
 	__asm        push   eax;
 	__asm        call   GetIdealCameraPos;
@@ -465,7 +481,7 @@ void S3ViewerControl() {
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EECE5;
+	__asm        je     _T3f4;
 // LINE 268:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        mov    viewSize, eax;
@@ -489,19 +505,21 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
 	__asm        cmp    eax, ds:[0x6663A0];
-	__asm        jne    near ptr 0x004EECE0;
+	__asm        jne    _T3ef;
 // LINE 273:
 	__asm        dec    dword ptr ds:[0x67ED28];
 // LINE 274:
 	__asm        dec    dword ptr ds:[0x67ED2C];
 // LINE 277:
-	__asm        jmp    near ptr 0x004EEE0D;
+_T3ef:
+	__asm        jmp    _T51c;
 
+_T3f4:
 	__asm        push   0x2B;
 	__asm        call   IsEventSet;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     near ptr 0x004EED4B;
+	__asm        je     _T45a;
 // LINE 278:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        mov    viewSize, eax;
@@ -525,23 +543,25 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
 	__asm        cmp    eax, ds:[0x6663A0];
-	__asm        jne    near ptr 0x004EED46;
+	__asm        jne    _T455;
 // LINE 282:
 	__asm        inc    dword ptr ds:[0x67ED28];
 // LINE 283:
 	__asm        inc    dword ptr ds:[0x67ED2C];
 // LINE 286:
-	__asm        jmp    near ptr 0x004EEE0D;
+_T455:
+	__asm        jmp    _T51c;
 
+_T45a:
 	__asm        push   0x2B;
 	__asm        push   0x2C;
 	__asm        call   GetJoystickValueEither;
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickValue, eax;
 	__asm        cmp    lJoystickValue, 0;
-	__asm        je     near ptr 0x004EEE0D;
+	__asm        je     _T51c;
 // LINE 287:
-	__asm        jle    near ptr 0x004EEDBE;
+	__asm        jle    _T4cd;
 // LINE 288:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        mov    viewSize, eax;
@@ -565,14 +585,16 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
 	__asm        cmp    eax, ds:[0x6663A0];
-	__asm        jne    near ptr 0x004EEDB9;
+	__asm        jne    _T4c8;
 // LINE 293:
 	__asm        dec    dword ptr ds:[0x67ED28];
 // LINE 294:
 	__asm        dec    dword ptr ds:[0x67ED2C];
 // LINE 297:
-	__asm        jmp    near ptr 0x004EEE0D;
+_T4c8:
+	__asm        jmp    _T51c;
 // LINE 298:
+_T4cd:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        mov    viewSize, eax;
 // LINE 299:
@@ -595,7 +617,7 @@ void S3ViewerControl() {
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
 	__asm        cmp    eax, ds:[0x6663A0];
-	__asm        jne    near ptr 0x004EEE0D;
+	__asm        jne    _T51c;
 // LINE 302:
 	__asm        inc    dword ptr ds:[0x67ED28];
 // LINE 303:
@@ -613,15 +635,17 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	__asm        mov    nOriginalViewSize, eax;
 // LINE 325:
 	__asm        cmp    lValue, 0;
-	__asm        jge    near ptr 0x004EEE34;
+	__asm        jge    _T22;
 // LINE 326:
 	__asm        mov    lValue, 0;
 // LINE 327:
+_T22:
 	__asm        cmp    lValue, 0x64;
-	__asm        jle    near ptr 0x004EEE45;
+	__asm        jle    _T33;
 // LINE 328:
 	__asm        mov    lValue, 0x64;
 // LINE 329:
+_T33:
 	__asm        mov    eax, lValue;
 	__asm        push   eax;
 	__asm        call   ConvertGUIBackPlaneValueToRender;
@@ -645,7 +669,7 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 // LINE 335:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cmp    nConvertedValue, eax;
-	__asm        jne    near ptr 0x004EEEB2;
+	__asm        jne    _Ta0;
 // LINE 337:
 	__asm        mov    eax, nOriginalViewSize;
 	__asm        sub    eax, ds:[0x6663A0];
@@ -787,51 +811,57 @@ void S3ViewerSetView() {
 void S3ViewerCommand(int32_t nCommand) {
 // LINE 445:
 	__asm        cmp    nCommand, 0x1B;
-	__asm        jl     near ptr 0x004EF004;
+	__asm        jl     _T2b;
 
 	__asm        cmp    nCommand, 0x20;
-	__asm        jg     near ptr 0x004EF004;
+	__asm        jg     _T2b;
 // LINE 447:
 	__asm        mov    eax, nCommand;
 	__asm        push   eax;
 	__asm        call   S3CameraChaseAdjust;
 	__asm        add    esp, 4;
 // LINE 449:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_T2b:
 	__asm        cmp    nCommand, 0x2D;
-	__asm        jne    near ptr 0x004EF01A;
+	__asm        jne    _T41;
 // LINE 450:
 	__asm        xor    dword ptr ds:[0x598E88], 1;
 // LINE 451:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_T41:
 	__asm        cmp    nCommand, 0x2E;
-	__asm        jne    near ptr 0x004EF030;
+	__asm        jne    _T57;
 // LINE 452:
 	__asm        xor    dword ptr ds:[0x598E8C], 1;
 // LINE 453:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_T57:
 	__asm        cmp    nCommand, 5;
-	__asm        jne    near ptr 0x004EF051;
+	__asm        jne    _T78;
 // LINE 455:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004EF04C;
+	__asm        jne    _T73;
 // LINE 456:
 	__asm        call   S3CameraCycleChase;
 // LINE 458:
-	__asm        jmp    near ptr 0x004EF146;
+_T73:
+	__asm        jmp    _T16d;
 
+_T78:
 	__asm        cmp    nCommand, 4;
-	__asm        jne    near ptr 0x004EF065;
+	__asm        jne    _T8c;
 // LINE 459:
 	__asm        call   S3MissionSetCurrNext;
 // LINE 460:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_T8c:
 	__asm        cmp    nCommand, 0x2F;
-	__asm        jne    near ptr 0x004EF088;
+	__asm        jne    _Taf;
 // LINE 461:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
 	__asm        sbb    eax, eax;
@@ -840,23 +870,25 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 462:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_Taf:
 	__asm        cmp    nCommand, 0x14;
-	__asm        jne    near ptr 0x004EF146;
+	__asm        jne    _T16d;
 
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
-	__asm        je     near ptr 0x004EF146;
+	__asm        je     _T16d;
 // LINE 464:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
-	__asm        jne    near ptr 0x004EF0BB;
+	__asm        jne    _Te2;
 // LINE 465:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 0;
 // LINE 466:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_Te2:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
-	__asm        jne    near ptr 0x004EF116;
+	__asm        jne    _T13d;
 // LINE 468:
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -867,7 +899,7 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        add    esp, 8;
 // LINE 469:
 	__asm        cmp    dword ptr ds:[0x598E98], 1;
-	__asm        jne    near ptr 0x004EF107;
+	__asm        jne    _T12e;
 // LINE 470:
 	__asm        push   1;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -877,12 +909,14 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 471:
+_T12e:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 1;
 // LINE 473:
-	__asm        jmp    near ptr 0x004EF146;
+	__asm        jmp    _T16d;
 
+_T13d:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
-	__asm        jne    near ptr 0x004EF146;
+	__asm        jne    _T16d;
 // LINE 475:
 	__asm        push   0;
 	__asm        mov    eax, ds:[0x5B4968];
@@ -903,23 +937,25 @@ void S3SetDayNight(int32_t nDayOrNight) {
 	__asm        mov    ds:[0x598E90], eax;
 // LINE 490:
 	__asm        cmp    dword ptr ds:[0x5B4794], 0;
-	__asm        je     near ptr 0x004EF1B0;
+	__asm        je     _T65;
 // LINE 492:
 	__asm        call   S3ObjSetFlatShading;
 // LINE 493:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
-	__asm        jne    near ptr 0x004EF187;
+	__asm        jne    _T3c;
 // LINE 494:
 	__asm        push   1;
 	__asm        call   AutoSetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 495:
-	__asm        jmp    near ptr 0x004EF191;
+	__asm        jmp    _T46;
 // LINE 496:
+_T3c:
 	__asm        push   0;
 	__asm        call   AutoSetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 497:
+_T46:
 	__asm        mov    eax, ds:[0x6663A0];
 	__asm        cdq;
 	__asm        sub    eax, edx;

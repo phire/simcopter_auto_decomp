@@ -82,24 +82,29 @@ void S3FireReset() {
 // LINE 111:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x00524620;
+	__asm        jmp    _T30;
 
+_T26:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T30:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x0052463B;
+	__asm        jge    _T4b;
 // LINE 114:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 115:
-	__asm        jmp    near ptr 0x00524616;
+	__asm        jmp    _T26;
 // LINE 119:
+_T4b:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0052464A;
+	__asm        jmp    _T5a;
 
+_T57:
 	__asm        inc    i;
+_T5a:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00524678;
+	__asm        jge    _T88;
 // LINE 121:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*8+0x66BE90], 0;
@@ -107,7 +112,7 @@ void S3FireReset() {
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*8+0x66BE94], 0;
 // LINE 123:
-	__asm        jmp    near ptr 0x00524647;
+	__asm        jmp    _T57;
 // LINE 126:
 }
 
@@ -148,12 +153,14 @@ void S3FireInit() {
 // LINE 154:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x005246EF;
+	__asm        jmp    _T72;
 
+_T68:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T72:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x005247E7;
+	__asm        jge    _T16a;
 // LINE 157:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax], 0;
@@ -235,14 +242,17 @@ void S3FireInit() {
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 177:
-	__asm        jmp    near ptr 0x005246E5;
+	__asm        jmp    _T68;
 // LINE 181:
+_T16a:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x005247F6;
+	__asm        jmp    _T179;
 
+_T176:
 	__asm        inc    i;
+_T179:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00524824;
+	__asm        jge    _T1a7;
 // LINE 183:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*8+0x66BE90], 0;
@@ -250,7 +260,7 @@ void S3FireInit() {
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [eax*8+0x66BE94], 0;
 // LINE 185:
-	__asm        jmp    near ptr 0x005247F3;
+	__asm        jmp    _T176;
 // LINE 187:
 }
 
@@ -267,27 +277,32 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 // LINE 213:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x0052484F;
+	__asm        jmp    _T26;
 
+_T1c:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T26:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00524872;
+	__asm        jge    _T49;
 // LINE 215:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x0052486D;
+	__asm        jne    _T44;
 // LINE 216:
-	__asm        jmp    near ptr 0x00524872;
+	__asm        jmp    _T49;
 // LINE 217:
-	__asm        jmp    near ptr 0x00524845;
+_T44:
+	__asm        jmp    _T1c;
 // LINE 220:
+_T49:
 	__asm        cmp    i, 0x8C;
-	__asm        jne    near ptr 0x00524886;
+	__asm        jne    _T5d;
 // LINE 221:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00524ADA;
+	__asm        jmp    _T2b1;
 // LINE 223:
+_T5d:
 	__asm        mov    eax, celly;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ecx, cellx;
@@ -298,11 +313,12 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 // LINE 225:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x005248B8;
+	__asm        jne    _T8f;
 // LINE 226:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00524ADA;
+	__asm        jmp    _T2b1;
 // LINE 228:
+_T8f:
 	__asm        mov    eax, cellx;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x8C], eax;
@@ -329,8 +345,9 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax+0x94], 0;
 // LINE 241:
+_Tdb:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x00524967;
+	__asm        je     _T13e;
 // LINE 243:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -342,7 +359,7 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 // LINE 244:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x00524948;
+	__asm        je     _T11f;
 // LINE 246:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+4];
@@ -352,25 +369,28 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	__asm        mov    eax, oinfo.Radius;
 	__asm        mov    maxradius, eax;
 // LINE 248:
-	__asm        jmp    near ptr 0x00524967;
+	__asm        jmp    _T13e;
 // LINE 250:
+_T11f:
 	__asm        mov    eax, maxradius;
 	__asm        cmp    oinfo.Radius, eax;
-	__asm        jle    near ptr 0x0052495A;
+	__asm        jle    _T131;
 
 	__asm        mov    eax, oinfo.Radius;
 	__asm        mov    maxradius, eax;
 // LINE 251:
+_T131:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 252:
-	__asm        jmp    near ptr 0x00524904;
+	__asm        jmp    _Tdb;
 // LINE 254:
+_T13e:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
-	__asm        jle    near ptr 0x0052498F;
+	__asm        jle    _T166;
 // LINE 255:
 	__asm        mov    eax, cptr;
 	__asm        movsx  ecx, word ptr [eax+8];
@@ -380,11 +400,13 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 256:
-	__asm        jmp    near ptr 0x00524999;
+	__asm        jmp    _T170;
 // LINE 257:
+_T166:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax+0xC], 0x200000;
 // LINE 259:
+_T170:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        dec    eax;
@@ -503,7 +525,7 @@ int32_t S3FireStart(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, int32_t
 	__asm        mov    [ecx], ax;
 // LINE 297:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00524ADA;
+	__asm        jmp    _T2b1;
 // LINE 299:
 }
 
@@ -533,34 +555,39 @@ void S3FireDriver() {
 	__asm        mov    fireloopsound, eax;
 // LINE 328:
 	__asm        cmp    dword ptr ds:[0x5B73A0], 0;
-	__asm        jne    near ptr 0x00524B22;
+	__asm        jne    _T43;
 // LINE 330:
 	__asm        cmp    fireloopsound, 1;
-	__asm        jne    near ptr 0x00524B1D;
+	__asm        jne    _T3e;
 // LINE 332:
 	__asm        push   0xD;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 335:
-	__asm        jmp    near ptr 0x005250B9;
+_T3e:
+	__asm        jmp    _T5da;
 // LINE 338:
+_T43:
 	__asm        mov    mindist, 0x7D00;
 // LINE 341:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x00524B46;
+	__asm        jmp    _T67;
 
+_T5d:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T67:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00525064;
+	__asm        jge    _T585;
 // LINE 343:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x00524B64;
+	__asm        jne    _T85;
 // LINE 344:
-	__asm        jmp    near ptr 0x00524B3C;
+	__asm        jmp    _T5d;
 // LINE 346:
+_T85:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
@@ -611,7 +638,7 @@ void S3FireDriver() {
 // LINE 362:
 	__asm        mov    eax, dist;
 	__asm        cmp    mindist, eax;
-	__asm        jle    near ptr 0x00524C1B;
+	__asm        jle    _T13c;
 // LINE 364:
 	__asm        mov    eax, dist;
 	__asm        mov    mindist, eax;
@@ -625,6 +652,7 @@ void S3FireDriver() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 369:
+_T13c:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4768];
 	__asm        neg    eax;
@@ -633,21 +661,22 @@ void S3FireDriver() {
 // LINE 370:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jg     near ptr 0x00524FEC;
+	__asm        jg     _T50d;
 // LINE 375:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        jle    near ptr 0x00524E2F;
+	__asm        jle    _T350;
 // LINE 378:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+0x94], 0;
-	__asm        jne    near ptr 0x00524C64;
+	__asm        jne    _T185;
 // LINE 380:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax+0x1C], 0;
 // LINE 381:
-	__asm        jmp    near ptr 0x00524B3C;
+	__asm        jmp    _T5d;
 // LINE 385:
+_T185:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x10;
 	__asm        lea    ecx, loc.x;
@@ -664,7 +693,7 @@ void S3FireDriver() {
 // LINE 390:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 2;
-	__asm        je     near ptr 0x00524CC1;
+	__asm        je     _T1e2;
 // LINE 397:
 	__asm        push   0x20000;
 	__asm        push   0xFFFFFFFF;
@@ -682,11 +711,12 @@ void S3FireDriver() {
 	__asm        mov    eax, newcoord;
 	__asm        mov    loc.z, eax;
 // LINE 400:
-	__asm        jmp    near ptr 0x00524D6D;
+	__asm        jmp    _T28e;
 
+_T1e2:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 4;
-	__asm        je     near ptr 0x00524CFC;
+	__asm        je     _T21d;
 // LINE 407:
 	__asm        push   0x20000;
 	__asm        push   1;
@@ -704,11 +734,12 @@ void S3FireDriver() {
 	__asm        mov    eax, newcoord;
 	__asm        mov    loc.z, eax;
 // LINE 410:
-	__asm        jmp    near ptr 0x00524D6D;
+	__asm        jmp    _T28e;
 
+_T21d:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 8;
-	__asm        je     near ptr 0x00524D37;
+	__asm        je     _T258;
 // LINE 417:
 	__asm        push   0x20000;
 	__asm        push   0xFFFFFFFF;
@@ -726,11 +757,12 @@ void S3FireDriver() {
 	__asm        mov    eax, newcoord;
 	__asm        mov    loc.x, eax;
 // LINE 420:
-	__asm        jmp    near ptr 0x00524D6D;
+	__asm        jmp    _T28e;
 
+_T258:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 0x10;
-	__asm        je     near ptr 0x00524D6D;
+	__asm        je     _T28e;
 // LINE 427:
 	__asm        push   0x20000;
 	__asm        push   1;
@@ -748,14 +780,16 @@ void S3FireDriver() {
 	__asm        mov    eax, newcoord;
 	__asm        mov    loc.x, eax;
 // LINE 431:
+_T28e:
 	__asm        cmp    newcoord, 0;
-	__asm        jne    near ptr 0x00524D86;
+	__asm        jne    _T2a7;
 // LINE 433:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax+0x1C], 0;
 // LINE 434:
-	__asm        jmp    near ptr 0x00524B3C;
+	__asm        jmp    _T5d;
 // LINE 437:
+_T2a7:
 	__asm        mov    eax, fd;
 	__asm        dec    dword ptr [eax+0x1C];
 // LINE 438:
@@ -818,8 +852,9 @@ void S3FireDriver() {
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x44], eax;
 // LINE 451:
-	__asm        jmp    near ptr 0x00524FE7;
+	__asm        jmp    _T508;
 // LINE 453:
+_T350:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x90];
 	__asm        and    eax, 0xFF;
@@ -834,15 +869,16 @@ void S3FireDriver() {
 	__asm        add    eax, 0xC;
 	__asm        mov    stptrptr, eax;
 // LINE 456:
+_T383:
 	__asm        mov    eax, stptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x00524E9E;
+	__asm        je     _T3bf;
 // LINE 458:
 	__asm        mov    eax, fd;
 	__asm        mov    ecx, stptrptr;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+0x20], ecx;
-	__asm        jne    near ptr 0x00524E91;
+	__asm        jne    _T3b2;
 // LINE 460:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x20];
@@ -850,14 +886,16 @@ void S3FireDriver() {
 	__asm        mov    ecx, stptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 461:
-	__asm        jmp    near ptr 0x00524E9E;
+	__asm        jmp    _T3bf;
 // LINE 463:
+_T3b2:
 	__asm        mov    eax, stptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    stptrptr, eax;
 // LINE 464:
-	__asm        jmp    near ptr 0x00524E62;
+	__asm        jmp    _T383;
 // LINE 466:
+_T3bf:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax];
 	__asm        and    eax, 0xFFFFFFFE;
@@ -888,7 +926,7 @@ void S3FireDriver() {
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x00524FE7;
+	__asm        jne    _T508;
 // LINE 483:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
@@ -919,19 +957,19 @@ void S3FireDriver() {
 	__asm        mov    missloc, eax;
 // LINE 492:
 	__asm        cmp    missloc, 0;
-	__asm        je     near ptr 0x00524FDB;
+	__asm        je     _T4fc;
 
 	__asm        mov    eax, fd;
 	__asm        mov    ecx, missloc;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+0x8C], ecx;
-	__asm        jne    near ptr 0x00524FDB;
+	__asm        jne    _T4fc;
 
 	__asm        mov    eax, missloc;
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x90];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jne    near ptr 0x00524FDB;
+	__asm        jne    _T4fc;
 // LINE 494:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x9C];
@@ -941,10 +979,11 @@ void S3FireDriver() {
 	__asm        mov    nfd, eax;
 // LINE 495:
 	__asm        cmp    nfd, 0;
-	__asm        jne    near ptr 0x00524FA7;
+	__asm        jne    _T4c8;
 // LINE 500:
-	__asm        jmp    near ptr 0x00524FDB;
+	__asm        jmp    _T4fc;
 // LINE 502:
+_T4c8:
 	__asm        mov    mp.op, 0;
 // LINE 503:
 	__asm        mov    eax, nfd;
@@ -964,13 +1003,16 @@ void S3FireDriver() {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 509:
+_T4fc:
 	__asm        mov    eax, fd;
 	__asm        push   eax;
 	__asm        call   S3FireDestroyCell;
 	__asm        add    esp, 4;
 // LINE 513:
-	__asm        jmp    near ptr 0x00524B3C;
+_T508:
+	__asm        jmp    _T5d;
 // LINE 517:
+_T50d:
 	__asm        push   6;
 	__asm        mov    eax, fd;
 	__asm        push   eax;
@@ -986,7 +1028,7 @@ void S3FireDriver() {
 	__asm        shl    ecx, 0x12;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, ds:[0x5B73C8];
-	__asm        jge    near ptr 0x0052505F;
+	__asm        jge    _T580;
 // LINE 523:
 	__asm        mov    dword ptr ds:[0x5B73C8], 0;
 // LINE 524:
@@ -1000,37 +1042,42 @@ void S3FireDriver() {
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x0052505F;
+	__asm        jne    _T580;
 // LINE 525:
 	__asm        mov    eax, fd;
 	__asm        push   eax;
 	__asm        call   S3FireSpread;
 	__asm        add    esp, 4;
 // LINE 529:
-	__asm        jmp    near ptr 0x00524B3C;
+_T580:
+	__asm        jmp    _T5d;
 // LINE 535:
+_T585:
 	__asm        cmp    fireloopsound, 1;
-	__asm        jne    near ptr 0x0052509A;
+	__asm        jne    _T5bb;
 // LINE 539:
 	__asm        cmp    mindist, 0x32;
-	__asm        jl     near ptr 0x00525087;
+	__asm        jl     _T5a8;
 // LINE 541:
 	__asm        push   0xD;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 543:
-	__asm        jmp    near ptr 0x00525095;
+	__asm        jmp    _T5b6;
 // LINE 547:
+_T5a8:
 	__asm        lea    eax, minloc.x;
 	__asm        push   eax;
 	__asm        push   0xD;
 	__asm        call   S3SoundSetPosition;
 	__asm        add    esp, 8;
 // LINE 551:
-	__asm        jmp    near ptr 0x005250B4;
+_T5b6:
+	__asm        jmp    _T5d5;
 // LINE 554:
+_T5bb:
 	__asm        cmp    mindist, 0x32;
-	__asm        jge    near ptr 0x005250B4;
+	__asm        jge    _T5d5;
 // LINE 556:
 	__asm        push   1;
 	__asm        lea    eax, minloc.x;
@@ -1039,7 +1086,8 @@ void S3FireDriver() {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 562:
-	__asm        jmp    near ptr 0x005250B9;
+_T5d5:
+	__asm        jmp    _T5da;
 // LINE 563:
 }
 
@@ -1086,39 +1134,45 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x0052513B;
+	__asm        je     _T7d;
 // LINE 590:
-	__asm        jmp    near ptr 0x005251D1;
+	__asm        jmp    _T113;
 // LINE 593:
+_T7d:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    near ptr 0x0052514D;
+	__asm        jne    _T8f;
 // LINE 594:
-	__asm        jmp    near ptr 0x005251D1;
+	__asm        jmp    _T113;
 // LINE 599:
+_T8f:
 	__asm        mov    i, 0;
 	__asm        mov    tfd, 0x6666F0;
-	__asm        jmp    near ptr 0x0052516A;
+	__asm        jmp    _Tac;
 
+_Ta2:
 	__asm        inc    i;
 	__asm        add    tfd, 0xA0;
+_Tac:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x005251A1;
+	__asm        jge    _Te3;
 // LINE 601:
 	__asm        mov    eax, tfd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        je     near ptr 0x0052519C;
+	__asm        je     _Tde;
 
 	__asm        mov    eax, tfd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    ecx, cptr;
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x0052519C;
+	__asm        jne    _Tde;
 // LINE 602:
-	__asm        jmp    near ptr 0x005251D1;
+	__asm        jmp    _T113;
 // LINE 603:
-	__asm        jmp    near ptr 0x00525160;
+_Tde:
+	__asm        jmp    _Ta2;
 // LINE 605:
+_Te3:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 // LINE 606:
@@ -1147,24 +1201,28 @@ struct _CELL_FIRE_DATA* S3FireGetCellData() {
 
 // LINE 621:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x005251EE;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00525220;
+	__asm        jge    _T4a;
 // LINE 623:
 	__asm        mov    eax, i;
 	__asm        cmp    dword ptr [eax*8+0x66BE94], 0;
-	__asm        jne    near ptr 0x0052521B;
+	__asm        jne    _T45;
 // LINE 624:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax*8+0x66BE90];
-	__asm        jmp    near ptr 0x00525227;
+	__asm        jmp    _T51;
 // LINE 625:
-	__asm        jmp    near ptr 0x005251EB;
+_T45:
+	__asm        jmp    _T15;
 // LINE 627:
+_T4a:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00525227;
+	__asm        jmp    _T51;
 // LINE 628:
 }
 
@@ -1194,10 +1252,11 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        jne    near ptr 0x0052525C;
+	__asm        jne    _T30;
 // LINE 655:
-	__asm        jmp    near ptr 0x00525572;
+	__asm        jmp    _T346;
 // LINE 658:
+_T30:
 	__asm        mov    eax, wloc;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, cptr;
@@ -1226,15 +1285,17 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 665:
+_T77:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x00525572;
+	__asm        je     _T346;
 // LINE 667:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x005252BF;
+	__asm        jne    _T93;
 // LINE 668:
-	__asm        jmp    near ptr 0x00525565;
+	__asm        jmp    _T339;
 // LINE 671:
+_T93:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    fd, eax;
@@ -1253,30 +1314,33 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    eax, center.x;
 	__asm        add    eax, radius;
 	__asm        cmp    eax, loc.x;
-	__asm        jle    near ptr 0x00525321;
+	__asm        jle    _Tf5;
 
 	__asm        mov    eax, center.x;
 	__asm        sub    eax, radius;
 	__asm        cmp    eax, loc.x;
-	__asm        jge    near ptr 0x00525321;
+	__asm        jge    _Tf5;
 
 	__asm        mov    eax, center.z;
 	__asm        add    eax, radius;
 	__asm        cmp    eax, loc.z;
-	__asm        jle    near ptr 0x00525321;
+	__asm        jle    _Tf5;
 
 	__asm        mov    eax, center.z;
 	__asm        sub    eax, radius;
 	__asm        cmp    eax, loc.z;
-	__asm        jl     near ptr 0x00525326;
+	__asm        jl     _Tfa;
 // LINE 686:
-	__asm        jmp    near ptr 0x00525565;
+_Tf5:
+	__asm        jmp    _T339;
 // LINE 692:
+_Tfa:
 	__asm        cmp    water_timetolive, 0;
-	__asm        jg     near ptr 0x00525335;
+	__asm        jg     _T109;
 // LINE 693:
-	__asm        jmp    near ptr 0x0052561F;
+	__asm        jmp    _T3f3;
 // LINE 696:
+_T109:
 	__asm        push   0x50000;
 	__asm        mov    eax, 0x50000;
 	__asm        sub    eax, water_timetolive;
@@ -1293,7 +1357,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    dfactor, eax;
 // LINE 700:
 	__asm        cmp    dfactor, 0;
-	__asm        je     near ptr 0x005253BF;
+	__asm        je     _T193;
 // LINE 702:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -1323,6 +1387,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 710:
+_T193:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, dfactor;
 	__asm        neg    eax;
@@ -1331,21 +1396,22 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 // LINE 711:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        jge    near ptr 0x00525560;
+	__asm        jge    _T334;
 // LINE 715:
 	__asm        mov    eax, cptr;
 	__asm        add    eax, 0xC;
 	__asm        mov    stptrptr, eax;
 // LINE 716:
+_T1b6:
 	__asm        mov    eax, stptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     near ptr 0x0052541E;
+	__asm        je     _T1f2;
 // LINE 718:
 	__asm        mov    eax, fd;
 	__asm        mov    ecx, stptrptr;
 	__asm        mov    ecx, [ecx];
 	__asm        cmp    [eax+0x20], ecx;
-	__asm        jne    near ptr 0x00525411;
+	__asm        jne    _T1e5;
 // LINE 720:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x20];
@@ -1353,14 +1419,16 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    ecx, stptrptr;
 	__asm        mov    [ecx], eax;
 // LINE 721:
-	__asm        jmp    near ptr 0x0052541E;
+	__asm        jmp    _T1f2;
 // LINE 723:
+_T1e5:
 	__asm        mov    eax, stptrptr;
 	__asm        mov    eax, [eax];
 	__asm        mov    stptrptr, eax;
 // LINE 724:
-	__asm        jmp    near ptr 0x005253E2;
+	__asm        jmp    _T1b6;
 // LINE 726:
+_T1f2:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax];
 	__asm        and    eax, 0xFFFFFFFE;
@@ -1389,7 +1457,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        jne    near ptr 0x00525555;
+	__asm        jne    _T329;
 // LINE 742:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
@@ -1420,19 +1488,19 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    missloc, eax;
 // LINE 751:
 	__asm        cmp    missloc, 0;
-	__asm        je     near ptr 0x00525555;
+	__asm        je     _T329;
 
 	__asm        mov    eax, missloc;
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        cmp    [eax], ecx;
-	__asm        jne    near ptr 0x00525555;
+	__asm        jne    _T329;
 
 	__asm        mov    eax, missloc;
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x90];
 	__asm        cmp    [eax+4], ecx;
-	__asm        jne    near ptr 0x00525555;
+	__asm        jne    _T329;
 // LINE 753:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x9C];
@@ -1442,10 +1510,11 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        mov    nfd, eax;
 // LINE 754:
 	__asm        cmp    nfd, 0;
-	__asm        jne    near ptr 0x00525521;
+	__asm        jne    _T2f5;
 // LINE 758:
-	__asm        jmp    near ptr 0x00525555;
+	__asm        jmp    _T329;
 // LINE 760:
+_T2f5:
 	__asm        mov    mp.op, 0;
 // LINE 761:
 	__asm        mov    eax, nfd;
@@ -1465,81 +1534,88 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 768:
+_T329:
 	__asm        dec    dword ptr ds:[0x5B73A0];
 // LINE 769:
-	__asm        jmp    near ptr 0x0052561F;
+	__asm        jmp    _T3f3;
 // LINE 774:
-	__asm        jmp    near ptr 0x0052561F;
+_T334:
+	__asm        jmp    _T3f3;
 // LINE 777:
 next_obj:
+_T339:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 778:
-	__asm        jmp    near ptr 0x005252A3;
+	__asm        jmp    _T77;
 // LINE 786:
 check_dyobjs:
-	__asm        jmp    near ptr 0x0052561F;
+_T346:
+	__asm        jmp    _T3f3;
 // LINE 788:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyobj, eax;
 // LINE 789:
+_T354:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x0052561F;
+	__asm        je     _T3f3;
 // LINE 792:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 0x10;
-	__asm        je     near ptr 0x00525612;
+	__asm        je     _T3e6;
 // LINE 798:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, radius;
 	__asm        mov    ecx, wloc;
 	__asm        cmp    eax, [ecx];
-	__asm        jle    near ptr 0x00525612;
+	__asm        jle    _T3e6;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        sub    eax, radius;
 	__asm        mov    ecx, wloc;
 	__asm        cmp    eax, [ecx];
-	__asm        jge    near ptr 0x00525612;
+	__asm        jge    _T3e6;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    eax, radius;
 	__asm        mov    ecx, wloc;
 	__asm        cmp    eax, [ecx+8];
-	__asm        jle    near ptr 0x00525612;
+	__asm        jle    _T3e6;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        sub    eax, radius;
 	__asm        mov    ecx, wloc;
 	__asm        cmp    eax, [ecx+8];
-	__asm        jge    near ptr 0x00525612;
+	__asm        jge    _T3e6;
 // LINE 804:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 4;
-	__asm        je     near ptr 0x0052560D;
+	__asm        je     _T3e1;
 // LINE 806:
 	__asm        mov    eax, dyobj;
 	__asm        push   eax;
 	__asm        call   S3MissileDebrisDouse;
 	__asm        add    esp, 4;
 // LINE 808:
-	__asm        jmp    near ptr 0x0052560D;
+	__asm        jmp    _T3e1;
 // LINE 813:
-	__asm        jmp    near ptr 0x0052561F;
+_T3e1:
+	__asm        jmp    _T3f3;
 // LINE 817:
+_T3e6:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 818:
-	__asm        jmp    near ptr 0x00525580;
+	__asm        jmp    _T354;
 // LINE 820:
 }
 
@@ -1556,11 +1632,12 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x0052564B;
+	__asm        je     _T27;
 // LINE 838:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00526123;
+	__asm        jmp    _Taff;
 // LINE 841:
+_T27:
 	__asm        mov    eax, celly;
 	__asm        push   eax;
 	__asm        mov    eax, cellx;
@@ -1568,17 +1645,19 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        call   S3FireCanCellBurn;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    near ptr 0x0052566A;
+	__asm        jne    _T46;
 // LINE 842:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00526123;
+	__asm        jmp    _Taff;
 // LINE 846:
+_T46:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00526008;
+	__asm        jmp    _T9e4;
 // LINE 849:
+_T57:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -1603,7 +1682,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x005256ED;
+	__asm        jne    _Tc9;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1623,13 +1702,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 851:
+_Tc9:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525732;
+	__asm        jne    _T10e;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1649,13 +1729,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 852:
+_T10e:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525777;
+	__asm        jne    _T153;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1675,13 +1756,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 853:
+_T153:
 	__asm        call   rand;
 	__asm        mov    ecx, 7;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x005257BC;
+	__asm        jne    _T198;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1701,13 +1783,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 854:
+_T198:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525801;
+	__asm        jne    _T1dd;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1727,13 +1810,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 855:
+_T1dd:
 	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525846;
+	__asm        jne    _T222;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1753,13 +1837,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 856:
+_T222:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x0052588B;
+	__asm        jne    _T267;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1779,8 +1864,10 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 857:
-	__asm        jmp    near ptr 0x0052602B;
+_T267:
+	__asm        jmp    _Ta07;
 // LINE 859:
+_T26c:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -1805,7 +1892,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x005258FF;
+	__asm        jne    _T2db;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1825,13 +1912,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 861:
+_T2db:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525944;
+	__asm        jne    _T320;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1851,13 +1939,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 862:
+_T320:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525989;
+	__asm        jne    _T365;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1877,6 +1966,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 863:
+_T365:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1885,7 +1975,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        and    eax, 3;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    near ptr 0x005259CD;
+	__asm        jne    _T3a9;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1905,13 +1995,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 864:
+_T3a9:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525A12;
+	__asm        jne    _T3ee;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1931,13 +2022,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 865:
+_T3ee:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525A57;
+	__asm        jne    _T433;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1957,6 +2049,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 866:
+_T433:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1965,7 +2058,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        and    eax, 7;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    near ptr 0x00525A9B;
+	__asm        jne    _T477;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -1985,13 +2078,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 867:
+_T477:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525AE0;
+	__asm        jne    _T4bc;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2011,13 +2105,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 868:
+_T4bc:
 	__asm        call   rand;
 	__asm        mov    ecx, 9;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525B25;
+	__asm        jne    _T501;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2037,13 +2132,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 869:
+_T501:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525B67;
+	__asm        jne    _T543;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2063,6 +2159,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 870:
+_T543:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2081,8 +2178,9 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 871:
-	__asm        jmp    near ptr 0x0052602B;
+	__asm        jmp    _Ta07;
 // LINE 873:
+_T575:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2107,7 +2205,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525C0B;
+	__asm        jne    _T5e7;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2127,6 +2225,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 875:
+_T5e7:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2151,7 +2250,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525C7D;
+	__asm        jne    _T659;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2171,13 +2270,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 877:
+_T659:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525CC2;
+	__asm        jne    _T69e;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2197,13 +2297,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 878:
+_T69e:
 	__asm        call   rand;
 	__asm        mov    ecx, 7;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525D07;
+	__asm        jne    _T6e3;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2223,6 +2324,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 879:
+_T6e3:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2247,7 +2349,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525D79;
+	__asm        jne    _T755;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2267,6 +2369,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 881:
+_T755:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2275,7 +2378,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        and    eax, 7;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    near ptr 0x00525DC0;
+	__asm        jne    _T79c;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2295,13 +2398,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 882:
+_T79c:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525E05;
+	__asm        jne    _T7e1;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2321,13 +2425,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 883:
+_T7e1:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525E4A;
+	__asm        jne    _T826;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2347,6 +2452,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 884:
+_T826:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2355,7 +2461,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        and    eax, 3;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    near ptr 0x00525E91;
+	__asm        jne    _T86d;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2375,13 +2481,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 885:
+_T86d:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525ED6;
+	__asm        jne    _T8b2;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2401,13 +2508,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 886:
+_T8b2:
 	__asm        call   rand;
 	__asm        mov    ecx, 6;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525F1B;
+	__asm        jne    _T8f7;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2427,13 +2535,14 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 887:
+_T8f7:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525F60;
+	__asm        jne    _T93c;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2453,6 +2562,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 888:
+_T93c:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2471,15 +2581,16 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 889:
-	__asm        jmp    near ptr 0x0052602B;
+	__asm        jmp    _Ta07;
 // LINE 891:
+_T96e:
 	__asm        call   rand;
 	__asm        mov    ecx, 0xA;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    near ptr 0x00525FD4;
+	__asm        jne    _T9b0;
 
 	__asm        mov    eax, flags;
 	__asm        push   eax;
@@ -2499,6 +2610,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 892:
+_T9b0:
 	__asm        mov    eax, flags;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -2517,27 +2629,30 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 0x24;
 	__asm        or     retval, eax;
 // LINE 893:
-	__asm        jmp    near ptr 0x0052602B;
+	__asm        jmp    _Ta07;
 // LINE 894:
-	__asm        jmp    near ptr 0x0052602B;
+	__asm        jmp    _Ta07;
 
+_T9e4:
 	__asm        cmp    dword ptr [ebp-0x24], 2;
-	__asm        je     near ptr 0x0052567B;
+	__asm        je     _T57;
 
 	__asm        cmp    dword ptr [ebp-0x24], 3;
-	__asm        je     near ptr 0x00525890;
+	__asm        je     _T26c;
 
 	__asm        cmp    dword ptr [ebp-0x24], 4;
-	__asm        je     near ptr 0x00525B99;
+	__asm        je     _T575;
 
-	__asm        jmp    near ptr 0x00525F92;
+	__asm        jmp    _T96e;
 // LINE 896:
+_Ta07:
 	__asm        cmp    retval, 0;
-	__asm        jne    near ptr 0x0052603C;
+	__asm        jne    _Ta18;
 // LINE 897:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00526123;
+	__asm        jmp    _Taff;
 // LINE 899:
+_Ta18:
 	__asm        mov    mp.op, 5;
 // LINE 900:
 	__asm        mov    eax, mission_id;
@@ -2554,7 +2669,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        add    esp, 4;
 // LINE 907:
 	__asm        test   reinterpret_cast<uint8_t>(flags), 1;
-	__asm        je     near ptr 0x005260D0;
+	__asm        je     _Taac;
 // LINE 909:
 	__asm        mov    mp.op, 0x23;
 // LINE 910:
@@ -2594,6 +2709,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 926:
+_Taac:
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, celly;
@@ -2605,11 +2721,11 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        mov    lz, eax;
 // LINE 927:
 	__asm        cmp    lz, 0;
-	__asm        je     near ptr 0x00526119;
+	__asm        je     _Taf5;
 
 	__asm        mov    eax, lz;
 	__asm        test   byte ptr [eax], 4;
-	__asm        je     near ptr 0x00526119;
+	__asm        je     _Taf5;
 // LINE 929:
 	__asm        push   0x80010;
 	__asm        mov    eax, celly;
@@ -2619,8 +2735,9 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA* cfd, long cellx, long celly, lon
 	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 933:
+_Taf5:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00526123;
+	__asm        jmp    _Taff;
 // LINE 934:
 }
 
@@ -2632,29 +2749,33 @@ struct _FIRE_DATA* S3FireGetByMission(long mission_id) {
 // LINE 947:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x0052614E;
+	__asm        jmp    _T26;
 
+_T1c:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T26:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00526186;
+	__asm        jge    _T5e;
 // LINE 949:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        je     near ptr 0x00526181;
+	__asm        je     _T59;
 
 	__asm        mov    eax, fd;
 	__asm        mov    ecx, mission_id;
 	__asm        cmp    [eax+0x9C], ecx;
-	__asm        jne    near ptr 0x00526181;
+	__asm        jne    _T59;
 // LINE 950:
 	__asm        mov    eax, fd;
-	__asm        jmp    near ptr 0x0052618D;
+	__asm        jmp    _T65;
 // LINE 951:
-	__asm        jmp    near ptr 0x00526144;
+_T59:
+	__asm        jmp    _T1c;
 // LINE 953:
+_T5e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052618D;
+	__asm        jmp    _T65;
 // LINE 954:
 }
 
@@ -2669,11 +2790,12 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        jne    near ptr 0x005261B0;
+	__asm        jne    _T1e;
 // LINE 973:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052628D;
+	__asm        jmp    _Tfb;
 // LINE 976:
+_T1e:
 	__asm        mov    eax, ds:[0x5B739C];
 	__asm        mov    ecx, ds:[0x598EB0];
 	__asm        dec    ecx;
@@ -2685,15 +2807,17 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 981:
+_T3b:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x00526286;
+	__asm        je     _Tf4;
 // LINE 983:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    near ptr 0x005261E9;
+	__asm        jne    _T57;
 // LINE 984:
-	__asm        jmp    near ptr 0x00526279;
+	__asm        jmp    _Te7;
 // LINE 987:
+_T57:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    fd, eax;
@@ -2703,31 +2827,33 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	__asm        add    eax, radius;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx];
-	__asm        jle    near ptr 0x00526244;
+	__asm        jle    _Tb2;
 
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x10];
 	__asm        sub    eax, radius;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx];
-	__asm        jge    near ptr 0x00526244;
+	__asm        jge    _Tb2;
 
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, radius;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx+8];
-	__asm        jle    near ptr 0x00526244;
+	__asm        jle    _Tb2;
 
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x18];
 	__asm        sub    eax, radius;
 	__asm        mov    ecx, loc;
 	__asm        cmp    eax, [ecx+8];
-	__asm        jl     near ptr 0x00526249;
+	__asm        jl     _Tb7;
 // LINE 994:
-	__asm        jmp    near ptr 0x00526279;
+_Tb2:
+	__asm        jmp    _Te7;
 // LINE 999:
+_Tb7:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, fd;
@@ -2738,22 +2864,25 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	__asm        mov    height, eax;
 // LINE 1001:
 	__asm        cmp    height, 0;
-	__asm        jne    near ptr 0x00526271;
+	__asm        jne    _Tdf;
 
 	__asm        mov    height, 1;
 // LINE 1004:
+_Tdf:
 	__asm        mov    eax, height;
-	__asm        jmp    near ptr 0x0052628D;
+	__asm        jmp    _Tfb;
 // LINE 1008:
 next_obj:
+_Te7:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 1009:
-	__asm        jmp    near ptr 0x005261CD;
+	__asm        jmp    _T3b;
 // LINE 1012:
+_Tf4:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052628D;
+	__asm        jmp    _Tfb;
 // LINE 1013:
 }
 
@@ -2791,11 +2920,12 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 // LINE 1044:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x005262F3;
+	__asm        jne    _T61;
 // LINE 1045:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x005263E7;
+	__asm        jmp    _T155;
 // LINE 1049:
+_T61:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
 	__asm        movsx  eax, ax;
@@ -2823,21 +2953,23 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 	__asm        add    ds:[0x5B73CC], eax;
 // LINE 1066:
 	__asm        cmp    dword ptr ds:[0x5B73CC], 0x40000;
-	__asm        jle    near ptr 0x00526360;
+	__asm        jle    _Tce;
 // LINE 1068:
 	__asm        mov    dword ptr ds:[0x5B73CC], 0x40000;
 // LINE 1069:
 	__asm        mov    dword ptr ds:[0x5B73D0], 0xFFFFE667;
 // LINE 1071:
-	__asm        jmp    near ptr 0x00526381;
+	__asm        jmp    _Tef;
 
+_Tce:
 	__asm        cmp    dword ptr ds:[0x5B73CC], 0;
-	__asm        jge    near ptr 0x00526381;
+	__asm        jge    _Tef;
 // LINE 1073:
 	__asm        mov    dword ptr ds:[0x5B73CC], 0;
 // LINE 1074:
 	__asm        mov    dword ptr ds:[0x5B73D0], 0x1999;
 // LINE 1076:
+_Tef:
 	__asm        mov    eax, ds:[0x5B73CC];
 	__asm        mov    vec.y, eax;
 // LINE 1077:
@@ -2870,15 +3002,16 @@ int32_t S3FireTruckDouse(struct _FIRE_DATA* fd, int32_t dist, struct _DYOBJ_INST
 	__asm        and    eax, 7;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        je     near ptr 0x005263DD;
+	__asm        je     _T14b;
 // LINE 1095:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x005263E7;
+	__asm        jmp    _T155;
 // LINE 1096:
-	__asm        jmp    near ptr 0x005263E7;
+	__asm        jmp    _T155;
 // LINE 1097:
+_T14b:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x005263E7;
+	__asm        jmp    _T155;
 // LINE 1098:
 }
 
@@ -2917,11 +3050,12 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 0x10;
-	__asm        jne    near ptr 0x00526451;
+	__asm        jne    _T65;
 // LINE 1126:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00526545;
+	__asm        jmp    _T159;
 // LINE 1128:
+_T65:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
 	__asm        movsx  eax, ax;
@@ -2949,21 +3083,23 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 	__asm        add    ds:[0x5B73CC], eax;
 // LINE 1132:
 	__asm        cmp    dword ptr ds:[0x5B73CC], 0x40000;
-	__asm        jle    near ptr 0x005264BE;
+	__asm        jle    _Td2;
 // LINE 1134:
 	__asm        mov    dword ptr ds:[0x5B73CC], 0x40000;
 // LINE 1135:
 	__asm        mov    dword ptr ds:[0x5B73D0], 0xFFFFE667;
 // LINE 1137:
-	__asm        jmp    near ptr 0x005264DF;
+	__asm        jmp    _Tf3;
 
+_Td2:
 	__asm        cmp    dword ptr ds:[0x5B73CC], 0;
-	__asm        jge    near ptr 0x005264DF;
+	__asm        jge    _Tf3;
 // LINE 1139:
 	__asm        mov    dword ptr ds:[0x5B73CC], 0;
 // LINE 1140:
 	__asm        mov    dword ptr ds:[0x5B73D0], 0x1999;
 // LINE 1142:
+_Tf3:
 	__asm        mov    eax, ds:[0x5B73CC];
 	__asm        mov    vec.y, eax;
 // LINE 1143:
@@ -2996,15 +3132,16 @@ int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST* dyobj, int32_t dist, struct _D
 	__asm        and    eax, 7;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        je     near ptr 0x0052653B;
+	__asm        je     _T14f;
 // LINE 1161:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00526545;
+	__asm        jmp    _T159;
 // LINE 1162:
-	__asm        jmp    near ptr 0x00526545;
+	__asm        jmp    _T159;
 // LINE 1163:
+_T14f:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00526545;
+	__asm        jmp    _T159;
 // LINE 1164:
 }
 
@@ -3040,20 +3177,22 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 
 // LINE 1200:
 	__asm        cmp    cellx, 0;
-	__asm        jl     near ptr 0x005265C6;
+	__asm        jl     _T31;
 
 	__asm        cmp    celly, 0;
-	__asm        jl     near ptr 0x005265C6;
+	__asm        jl     _T31;
 
 	__asm        cmp    cellx, 0x7F;
-	__asm        jg     near ptr 0x005265C6;
+	__asm        jg     _T31;
 
 	__asm        cmp    celly, 0x7F;
-	__asm        jle    near ptr 0x005265CD;
+	__asm        jle    _T38;
 // LINE 1201:
+_T31:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052665C;
+	__asm        jmp    _Tc7;
 // LINE 1203:
+_T38:
 	__asm        mov    eax, cellx;
 	__asm        mov    eax, [eax*4+0x639850];
 	__asm        mov    ecx, celly;
@@ -3062,37 +3201,41 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 	__asm        mov    tile, edx;
 // LINE 1214:
 	__asm        cmp    tile, 0x1D;
-	__asm        jl     near ptr 0x005265F6;
+	__asm        jl     _T61;
 
 	__asm        cmp    tile, 0x6B;
-	__asm        jle    near ptr 0x0052664B;
+	__asm        jle    _Tb6;
 
+_T61:
 	__asm        cmp    tile, 0;
-	__asm        jl     near ptr 0x0052660A;
+	__asm        jl     _T75;
 
 	__asm        cmp    tile, 4;
-	__asm        jle    near ptr 0x0052664B;
+	__asm        jle    _Tb6;
 
+_T75:
 	__asm        cmp    tile, 0xDE;
-	__asm        je     near ptr 0x0052664B;
+	__asm        je     _Tb6;
 
 	__asm        cmp    tile, 0xF6;
-	__asm        je     near ptr 0x0052664B;
+	__asm        je     _Tb6;
 
 	__asm        cmp    tile, 0xD2;
-	__asm        je     near ptr 0x0052664B;
+	__asm        je     _Tb6;
 
 	__asm        cmp    tile, 0xD3;
-	__asm        je     near ptr 0x0052664B;
+	__asm        je     _Tb6;
 
 	__asm        cmp    tile, 0xD1;
-	__asm        jne    near ptr 0x00526652;
+	__asm        jne    _Tbd;
 // LINE 1215:
+_Tb6:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052665C;
+	__asm        jmp    _Tc7;
 // LINE 1217:
+_Tbd:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052665C;
+	__asm        jmp    _Tc7;
 // LINE 1218:
 }
 
@@ -3145,7 +3288,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        cmp    eax, 1;
-	__asm        jle    near ptr 0x005267EC;
+	__asm        jle    _T18b;
 // LINE 1253:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x8C];
@@ -3155,6 +3298,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, [eax+0x90];
 	__asm        mov    y, eax;
 // LINE 1255:
+_T9a:
 	__asm        dec    x;
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -3165,12 +3309,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    edx, [edx+0x98];
 	__asm        mov    edx, [edx];
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
-	__asm        jne    near ptr 0x0052672F;
+	__asm        jne    _Tce;
 
-	__asm        jmp    near ptr 0x005266FB;
+	__asm        jmp    _T9a;
 // LINE 1256:
+_Tce:
 	__asm        inc    x;
 // LINE 1257:
+_Td1:
 	__asm        dec    y;
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -3181,37 +3327,42 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    edx, [edx+0x98];
 	__asm        mov    edx, [edx];
 	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
-	__asm        jne    near ptr 0x00526766;
+	__asm        jne    _T105;
 
-	__asm        jmp    near ptr 0x00526732;
+	__asm        jmp    _Td1;
 // LINE 1258:
+_T105:
 	__asm        inc    y;
 // LINE 1261:
 	__asm        mov    eax, x;
 	__asm        mov    i, eax;
-	__asm        jmp    near ptr 0x00526777;
+	__asm        jmp    _T116;
 
+_T113:
 	__asm        inc    i;
+_T116:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        add    eax, x;
 	__asm        cmp    eax, i;
-	__asm        jle    near ptr 0x005267E7;
+	__asm        jle    _T186;
 // LINE 1262:
 	__asm        mov    eax, y;
 	__asm        mov    j, eax;
-	__asm        jmp    near ptr 0x005267A0;
+	__asm        jmp    _T13f;
 
+_T13c:
 	__asm        inc    j;
+_T13f:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        add    eax, y;
 	__asm        cmp    eax, j;
-	__asm        jle    near ptr 0x005267E2;
+	__asm        jle    _T181;
 // LINE 1264:
 	__asm        mov    eax, i;
 	__asm        mov    eax, [eax*4+0x639850];
@@ -3223,12 +3374,15 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        shl    ecx, 8;
 	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0xA;
 // LINE 1266:
-	__asm        jmp    near ptr 0x0052679D;
+	__asm        jmp    _T13c;
 
-	__asm        jmp    near ptr 0x00526774;
+_T181:
+	__asm        jmp    _T113;
 // LINE 1268:
-	__asm        jmp    near ptr 0x00526826;
+_T186:
+	__asm        jmp    _T1c5;
 // LINE 1270:
+_T18b:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    eax, [eax*4+0x639850];
@@ -3243,13 +3397,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        shl    ecx, 8;
 	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0xA;
 // LINE 1275:
+_T1c5:
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 6;
-	__asm        jl     near ptr 0x005268A7;
+	__asm        jl     _T246;
 
 	__asm        movsx  eax, tile;
 	__asm        cmp    eax, 0xC;
-	__asm        jg     near ptr 0x005268A7;
+	__asm        jg     _T246;
 // LINE 1277:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -3257,12 +3412,13 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 1278:
+_T1f0:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x00526888;
+	__asm        je     _T227;
 // LINE 1280:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 8;
-	__asm        je     near ptr 0x0052687B;
+	__asm        je     _T21a;
 // LINE 1282:
 	__asm        push   0x14E;
 	__asm        call   0x004D8821;
@@ -3270,12 +3426,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    ecx, stobj;
 	__asm        mov    [ecx+4], eax;
 // LINE 1285:
+_T21a:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 1286:
-	__asm        jmp    near ptr 0x00526851;
+	__asm        jmp    _T1f0;
 // LINE 1288:
+_T227:
 	__asm        push   1;
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
@@ -3286,8 +3444,9 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1290:
-	__asm        jmp    near ptr 0x00526B7C;
+	__asm        jmp    _T51b;
 // LINE 1297:
+_T246:
 	__asm        push   0;
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
@@ -3301,19 +3460,20 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 1302:
+_T267:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x005269EC;
+	__asm        je     _T38b;
 // LINE 1304:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 4;
-	__asm        je     near ptr 0x005269DF;
+	__asm        je     _T37e;
 // LINE 1306:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        jmp    near ptr 0x005269B3;
+	__asm        jmp    _T352;
 // LINE 1309:
 	__asm        push   0x14F;
 	__asm        call   0x004D8821;
@@ -3327,7 +3487,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, stobj;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1312:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 // LINE 1314:
 	__asm        push   0x150;
 	__asm        call   0x004D8821;
@@ -3341,7 +3501,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, stobj;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1317:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 // LINE 1319:
 	__asm        push   0x151;
 	__asm        call   0x004D8821;
@@ -3355,7 +3515,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, stobj;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1322:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 // LINE 1324:
 	__asm        push   0x152;
 	__asm        call   0x004D8821;
@@ -3369,30 +3529,35 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    eax, stobj;
 	__asm        mov    dword ptr [eax], 0;
 // LINE 1327:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 // LINE 1329:
+_T341:
 	__asm        mov    stobj, 0;
 // LINE 1330:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 // LINE 1331:
-	__asm        jmp    near ptr 0x005269DA;
+	__asm        jmp    _T379;
 
+_T352:
 	__asm        dec    dword ptr [ebp-0x7C];
 	__asm        cmp    dword ptr [ebp-0x7C], 3;
-	__asm        ja     near ptr 0x005269A2;
+	__asm        ja     _T341;
 
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        jmp    dword ptr [eax*4+0x5269CA];
 // Switch pointers
 // LINE 1333:
-	__asm        jmp    near ptr 0x005269EC;
+_T379:
+	__asm        jmp    _T38b;
 // LINE 1336:
+_T37e:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 1337:
-	__asm        jmp    near ptr 0x005268C8;
+	__asm        jmp    _T267;
 // LINE 1340:
+_T38b:
 	__asm        push   0x10;
 	__asm        mov    eax, fd;
 	__asm        push   eax;
@@ -3450,12 +3615,14 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        mov    num_debris, eax;
 // LINE 1352:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x00526AA8;
+	__asm        jmp    _T447;
 
+_T444:
 	__asm        inc    j;
+_T447:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
-	__asm        jle    near ptr 0x00526B7C;
+	__asm        jle    _T51b;
 // LINE 1354:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
@@ -3529,7 +3696,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 1370:
-	__asm        jmp    near ptr 0x00526AA5;
+	__asm        jmp    _T444;
 // LINE 1371:
 }
 
@@ -3574,11 +3741,12 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 // LINE 1418:
+_T36:
 	__asm        inc    curr_dir;
 // LINE 1419:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    near ptr 0x00526C38;
+	__asm        jmp    _Ta2;
 // LINE 1423:
 	__asm        mov    curr_dir, 0;
 // LINE 1424:
@@ -3588,13 +3756,13 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 // LINE 1426:
 	__asm        mov    ydir, 0xFFFFFFFF;
 // LINE 1427:
-	__asm        jmp    near ptr 0x00526C60;
+	__asm        jmp    _Tca;
 // LINE 1429:
 	__asm        mov    xdir, 1;
 // LINE 1430:
 	__asm        mov    ydir, 0;
 // LINE 1431:
-	__asm        jmp    near ptr 0x00526C60;
+	__asm        jmp    _Tca;
 // LINE 1433:
 	__asm        inc    curr_dist;
 // LINE 1434:
@@ -3602,38 +3770,43 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 // LINE 1435:
 	__asm        mov    ydir, 1;
 // LINE 1436:
-	__asm        jmp    near ptr 0x00526C60;
+	__asm        jmp    _Tca;
 // LINE 1438:
 	__asm        mov    xdir, 0xFFFFFFFF;
 // LINE 1439:
 	__asm        mov    ydir, 0;
 // LINE 1440:
-	__asm        jmp    near ptr 0x00526C60;
+	__asm        jmp    _Tca;
 // LINE 1441:
-	__asm        jmp    near ptr 0x00526C60;
+	__asm        jmp    _Tca;
 
+_Ta2:
 	__asm        cmp    dword ptr [ebp-0x38], 4;
-	__asm        ja     near ptr 0x00526C60;
+	__asm        ja     _Tca;
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    dword ptr [eax*4+0x526C4C];
 // Switch pointers
 // LINE 1445:
+_Tca:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
-	__asm        jne    near ptr 0x00526C76;
+	__asm        jne    _Te0;
 // LINE 1447:
 	__asm        dec    curr_dist;
 // LINE 1448:
 	__asm        mov    stop_now, 1;
 // LINE 1452:
+_Te0:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00526C85;
+	__asm        jmp    _Tef;
 
+_Tec:
 	__asm        inc    i;
+_Tef:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
-	__asm        jle    near ptr 0x00526CD3;
+	__asm        jle    _T13d;
 // LINE 1454:
 	__asm        mov    eax, xdir;
 	__asm        add    x, eax;
@@ -3652,33 +3825,39 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x00526CCE;
+	__asm        je     _T138;
 // LINE 1458:
-	__asm        jmp    near ptr 0x00526CF1;
+	__asm        jmp    _T15b;
 // LINE 1459:
-	__asm        jmp    near ptr 0x00526C82;
+_T138:
+	__asm        jmp    _Tec;
 // LINE 1461:
+_T13d:
 	__asm        cmp    stop_now, 1;
-	__asm        jne    near ptr 0x00526CE2;
+	__asm        jne    _T14c;
 // LINE 1463:
-	__asm        jmp    near ptr 0x00526CE7;
+	__asm        jmp    _T151;
 // LINE 1465:
-	__asm        jmp    near ptr 0x00526BCC;
+_T14c:
+	__asm        jmp    _T36;
 // LINE 1468:
+_T151:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x00526D79;
+	__asm        jmp    _T1e3;
 // LINE 1474:
 FoundFire:
+_T15b:
 	__asm        mov    eax, cptr;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    stobj, eax;
 // LINE 1475:
+_T164:
 	__asm        cmp    stobj, 0;
-	__asm        je     near ptr 0x00526D6F;
+	__asm        je     _T1d9;
 // LINE 1477:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     near ptr 0x00526D62;
+	__asm        je     _T1cc;
 // LINE 1480:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax+0xC];
@@ -3687,7 +3866,7 @@ FoundFire:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
-	__asm        je     near ptr 0x00526D54;
+	__asm        je     _T1be;
 // LINE 1483:
 	__asm        mov    eax, fcptr;
 	__asm        mov    ecx, cfd;
@@ -3706,18 +3885,21 @@ FoundFire:
 	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 // LINE 1486:
+_T1be:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x9C];
-	__asm        jmp    near ptr 0x00526D79;
+	__asm        jmp    _T1e3;
 // LINE 1490:
+_T1cc:
 	__asm        mov    eax, stobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    stobj, eax;
 // LINE 1491:
-	__asm        jmp    near ptr 0x00526CFA;
+	__asm        jmp    _T164;
 // LINE 1493:
+_T1d9:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x00526D79;
+	__asm        jmp    _T1e3;
 // LINE 1494:
 }
 
@@ -3731,7 +3913,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    ret_code, 0;
 // LINE 1510:
 	__asm        cmp    hit_type, 6;
-	__asm        jne    near ptr 0x00526DC0;
+	__asm        jne    _T42;
 // LINE 1512:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, ds:[0x5B4768];
@@ -3741,10 +3923,11 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 // LINE 1513:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+0x88], 0;
-	__asm        jle    near ptr 0x00526DC0;
+	__asm        jle    _T42;
 // LINE 1514:
-	__asm        jmp    near ptr 0x00526FB0;
+	__asm        jmp    _T232;
 // LINE 1517:
+_T42:
 	__asm        mov    eax, fd;
 	__asm        mov    dword ptr [eax+0x88], 0x8000;
 // LINE 1521:
@@ -3754,11 +3937,12 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    dyobj, eax;
 // LINE 1522:
+_T60:
 	__asm        cmp    dyobj, 0;
-	__asm        je     near ptr 0x00526FAB;
+	__asm        je     _T22d;
 // LINE 1525:
 	__asm        cmp    hit_type, 0x10;
-	__asm        jne    near ptr 0x00526E48;
+	__asm        jne    _Tca;
 // LINE 1527:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x3C;
@@ -3775,7 +3959,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        add    eax, loc.y;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jle    near ptr 0x00526E43;
+	__asm        jle    _Tc5;
 // LINE 1534:
 	__asm        push   0;
 	__asm        mov    eax, fd;
@@ -3791,34 +3975,39 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        call   S3ObjHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 1540:
-	__asm        jmp    near ptr 0x00526F70;
+_Tc5:
+	__asm        jmp    _T1f2;
 // LINE 1545:
+_Tca:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x00526E70;
+	__asm        je     _Tf2;
 
 	__asm        mov    eax, ds:[0x5B4968];
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0xA4], ecx;
-	__asm        jne    near ptr 0x00526E70;
+	__asm        jne    _Tf2;
 // LINE 1547:
-	__asm        jmp    near ptr 0x00526F70;
+	__asm        jmp    _T1f2;
 // LINE 1552:
+_Tf2:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x20;
-	__asm        je     near ptr 0x00526E84;
+	__asm        je     _T106;
 // LINE 1554:
-	__asm        jmp    near ptr 0x00526F70;
+	__asm        jmp    _T1f2;
 // LINE 1558:
+_T106:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 0x40;
-	__asm        je     near ptr 0x00526E98;
+	__asm        je     _T11a;
 // LINE 1560:
-	__asm        jmp    near ptr 0x00526F70;
+	__asm        jmp    _T1f2;
 // LINE 1563:
+_T11a:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x3C;
 	__asm        lea    ecx, loc.x;
@@ -3836,7 +4025,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    ecx, loc.x;
 	__asm        sub    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jle    near ptr 0x00526F70;
+	__asm        jle    _T1f2;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
@@ -3845,19 +4034,19 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    ecx, loc.x;
 	__asm        add    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x00526F70;
+	__asm        jge    _T1f2;
 
 	__asm        mov    eax, loc.y;
 	__asm        sub    eax, 0xF0000;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jge    near ptr 0x00526F70;
+	__asm        jge    _T1f2;
 
 	__asm        mov    eax, loc.y;
 	__asm        add    eax, 0x320000;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jle    near ptr 0x00526F70;
+	__asm        jle    _T1f2;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x10];
@@ -3866,7 +4055,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    ecx, loc.z;
 	__asm        sub    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jle    near ptr 0x00526F70;
+	__asm        jle    _T1f2;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
@@ -3875,7 +4064,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        mov    ecx, loc.z;
 	__asm        add    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jge    near ptr 0x00526F70;
+	__asm        jge    _T1f2;
 // LINE 1574:
 	__asm        push   0;
 	__asm        mov    eax, fd;
@@ -3892,10 +4081,11 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        add    esp, 0x14;
 // LINE 1590:
 next_dyobj:
+_T1f2:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        je     near ptr 0x00526F9E;
+	__asm        je     _T220;
 // LINE 1592:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
@@ -3910,15 +4100,18 @@ next_dyobj:
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 1594:
-	__asm        jmp    near ptr 0x00526FA6;
+	__asm        jmp    _T228;
 // LINE 1595:
+_T220:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax];
 	__asm        mov    dyobj, eax;
 // LINE 1596:
-	__asm        jmp    near ptr 0x00526DDE;
+_T228:
+	__asm        jmp    _T60;
 // LINE 1598:
-	__asm        jmp    near ptr 0x00526FB0;
+_T22d:
+	__asm        jmp    _T232;
 // LINE 1599:
 }
 
@@ -3940,17 +4133,20 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 1627:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x00526FEE;
+	__asm        jne    _T39;
 // LINE 1628:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00527355;
+	__asm        jmp    _T3a0;
 // LINE 1631:
+_T39:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00526FFD;
+	__asm        jmp    _T48;
 
+_T45:
 	__asm        inc    i;
+_T48:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00527106;
+	__asm        jge    _T151;
 // LINE 1633:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -4025,16 +4221,18 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 1654:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x00527101;
+	__asm        jne    _T14c;
 
 	__asm        cmp    i, 0x8B;
-	__asm        je     near ptr 0x00527101;
+	__asm        je     _T14c;
 // LINE 1655:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00527355;
+	__asm        jmp    _T3a0;
 // LINE 1656:
-	__asm        jmp    near ptr 0x00526FFA;
+_T14c:
+	__asm        jmp    _T45;
 // LINE 1662:
+_T151:
 	__asm        push   8;
 	__asm        push   0x62B548;
 	__asm        mov    eax, ds:[0x5B73D8];
@@ -4046,17 +4244,20 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 1663:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x00527133;
+	__asm        jne    _T17e;
 // LINE 1664:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00527355;
+	__asm        jmp    _T3a0;
 // LINE 1667:
+_T17e:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00527142;
+	__asm        jmp    _T18d;
 
+_T18a:
 	__asm        inc    i;
+_T18d:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x0052719D;
+	__asm        jge    _T1e8;
 // LINE 1671:
 	__asm        mov    eax, ds:[0x62B54C];
 	__asm        mov    ecx, i;
@@ -4073,33 +4274,38 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ret, eax;
 // LINE 1679:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x00527198;
+	__asm        jne    _T1e3;
 
 	__asm        cmp    i, 0x8B;
-	__asm        je     near ptr 0x00527198;
+	__asm        je     _T1e3;
 // LINE 1680:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00527355;
+	__asm        jmp    _T3a0;
 // LINE 1681:
-	__asm        jmp    near ptr 0x0052713F;
+_T1e3:
+	__asm        jmp    _T18a;
 // LINE 1685:
+_T1e8:
 	__asm        mov    dword ptr ds:[0x5B73A0], 0;
 // LINE 1686:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
-	__asm        jmp    near ptr 0x005271C4;
+	__asm        jmp    _T20f;
 
+_T205:
 	__asm        inc    i;
 	__asm        add    fd, 0xA0;
+_T20f:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x0052734B;
+	__asm        jge    _T396;
 // LINE 1688:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
-	__asm        jne    near ptr 0x005271E2;
+	__asm        jne    _T22d;
 // LINE 1689:
-	__asm        jmp    near ptr 0x005271BA;
+	__asm        jmp    _T205;
 // LINE 1692:
+_T22d:
 	__asm        inc    dword ptr ds:[0x5B73A0];
 // LINE 1695:
 	__asm        mov    eax, fd;
@@ -4216,10 +4422,11 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1720:
-	__asm        jmp    near ptr 0x005271BA;
+	__asm        jmp    _T205;
 // LINE 1722:
+_T396:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00527355;
+	__asm        jmp    _T3a0;
 // LINE 1723:
 }
 
@@ -4230,11 +4437,13 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 
 // LINE 1731:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x00527372;
+	__asm        jmp    _T18;
 
+_T15:
 	__asm        inc    i;
+_T18:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    near ptr 0x00527454;
+	__asm        jge    _Tfa;
 // LINE 1734:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -4245,7 +4454,7 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	__asm        rep movsd;
 // LINE 1739:
 	__asm        test   byte ptr ds:[0x62B550], 1;
-	__asm        je     near ptr 0x005273EC;
+	__asm        je     _T92;
 // LINE 1741:
 	__asm        mov    eax, ds:[0x62B5E4];
 	__asm        push   eax;
@@ -4269,6 +4478,7 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1749:
+_T92:
 	__asm        push   0xA0;
 	__asm        push   0x62B550;
 	__asm        mov    eax, ds:[0x5B73D4];
@@ -4280,11 +4490,12 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    ret, eax;
 // LINE 1750:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x0052741C;
+	__asm        jne    _Tc2;
 // LINE 1751:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052745E;
+	__asm        jmp    _T104;
 // LINE 1757:
+_Tc2:
 	__asm        push   8;
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax*8+0x66BE90];
@@ -4298,15 +4509,17 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    ret, eax;
 // LINE 1758:
 	__asm        cmp    ret, 0;
-	__asm        jne    near ptr 0x0052744F;
+	__asm        jne    _Tf5;
 // LINE 1759:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0052745E;
+	__asm        jmp    _T104;
 // LINE 1760:
-	__asm        jmp    near ptr 0x0052736F;
+_Tf5:
+	__asm        jmp    _T15;
 // LINE 1762:
+_Tfa:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0052745E;
+	__asm        jmp    _T104;
 // LINE 1763:
 }
 

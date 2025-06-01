@@ -25,14 +25,15 @@ void ERexit(char * p) {
 	__asm        mov    answer, eax;
 // LINE 57:
 	__asm        cmp    answer, 3;
-	__asm        jne    near ptr 0x0058E359;
+	__asm        jne    _T39;
 // LINE 58:
 	__asm        call   abort;
 // LINE 59:
-	__asm        jmp    near ptr 0x0058E369;
+	__asm        jmp    _T49;
 
+_T39:
 	__asm        cmp    answer, 4;
-	__asm        jne    near ptr 0x0058E369;
+	__asm        jne    _T49;
 // LINE 60:
 	__asm        call   dword ptr ds:[0x6C369C];
 // LINE 65:

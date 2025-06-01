@@ -47,33 +47,37 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    plotter, 0;
 // LINE 134:
 	__asm        cmp    dword ptr ds:[0x59D2D8], 0;
-	__asm        je     near ptr 0x004D6B78;
+	__asm        je     _T38;
 // LINE 136:
 	__asm        call   InitGridPool;
 // LINE 137:
 	__asm        cmp    dword ptr ds:[0x59D2D4], 0;
-	__asm        jge    near ptr 0x004D6B78;
+	__asm        jge    _T38;
 // LINE 138:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x004D71D2;
+	__asm        jmp    _T692;
 // LINE 143:
-	__asm        jmp    near ptr 0x004D6B80;
+_T38:
+	__asm        jmp    _T40;
 // LINE 144:
 	__asm        inc    ViewSize;
 // LINE 146:
+_T40:
 	__asm        cmp    ViewSize, 0xD;
-	__asm        jge    near ptr 0x004D6B91;
+	__asm        jge    _T51;
 // LINE 147:
 	__asm        mov    ViewSize, 0xD;
 // LINE 153:
+_T51:
 	__asm        cmp    ViewSize, 0x3D;
-	__asm        jle    near ptr 0x004D6BAA;
+	__asm        jle    _T6a;
 // LINE 155:
 	__asm        mov    ViewSize, 0x3D;
 // LINE 156:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x004D71D2;
+	__asm        jmp    _T692;
 // LINE 158:
+_T6a:
 	__asm        mov    eax, ViewSize;
 	__asm        inc    eax;
 	__asm        mov    ds:[0x666358], eax;
@@ -266,20 +270,24 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    goff, eax;
 // LINE 226:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x004D6E3F;
+	__asm        jmp    _T2ff;
 
+_T2fc:
 	__asm        inc    y;
+_T2ff:
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6663A0], eax;
-	__asm        jle    near ptr 0x004D6E9D;
+	__asm        jle    _T35d;
 // LINE 228:
 	__asm        mov    x, 0;
-	__asm        jmp    near ptr 0x004D6E5D;
+	__asm        jmp    _T31d;
 
+_T31a:
 	__asm        inc    x;
+_T31d:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6663A0], eax;
-	__asm        jle    near ptr 0x004D6E98;
+	__asm        jle    _T358;
 // LINE 230:
 	__asm        mov    eax, goff;
 	__asm        mov    ecx, y;
@@ -295,10 +303,12 @@ short VRInitGridObj(long ViewSize) {
 	__asm        add    eax, eax;
 	__asm        add    goff, eax;
 // LINE 232:
-	__asm        jmp    near ptr 0x004D6E5A;
+	__asm        jmp    _T31a;
 // LINE 233:
-	__asm        jmp    near ptr 0x004D6E3C;
+_T358:
+	__asm        jmp    _T2fc;
 // LINE 240:
+_T35d:
 	__asm        mov    dword ptr ds:[0x662840], 0;
 // LINE 241:
 	__asm        mov    dword ptr ds:[0x662844], 1;
@@ -357,23 +367,27 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    v, eax;
 // LINE 258:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D6F5C;
+	__asm        jmp    _T41c;
 
+_T418:
 	__asm        inc    i;
+_T41c:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, ds:[0x666358];
-	__asm        jge    near ptr 0x004D6FC0;
+	__asm        jge    _T480;
 // LINE 260:
 	__asm        mov    eax, x_start;
 	__asm        mov    x_val, eax;
 // LINE 261:
 	__asm        mov    j, 0;
-	__asm        jmp    near ptr 0x004D6F81;
+	__asm        jmp    _T441;
 
+_T43d:
 	__asm        inc    j;
+_T441:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, ds:[0x666358];
-	__asm        jge    near ptr 0x004D6FB1;
+	__asm        jge    _T471;
 // LINE 263:
 	__asm        mov    eax, x_val;
 	__asm        mov    ecx, v;
@@ -388,33 +402,39 @@ short VRInitGridObj(long ViewSize) {
 // LINE 266:
 	__asm        add    v, 0xC;
 // LINE 267:
-	__asm        jmp    near ptr 0x004D6F7D;
+	__asm        jmp    _T43d;
 // LINE 268:
+_T471:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, vert_inc;
 	__asm        neg    eax;
 	__asm        sub    z_val, eax;
 // LINE 269:
-	__asm        jmp    near ptr 0x004D6F58;
+	__asm        jmp    _T418;
 // LINE 275:
+_T480:
 	__asm        mov    eax, ds:[0x662824];
 	__asm        mov    dataptr, eax;
 // LINE 276:
 	__asm        mov    y, 0;
-	__asm        jmp    near ptr 0x004D6FD7;
+	__asm        jmp    _T497;
 
+_T494:
 	__asm        inc    y;
+_T497:
 	__asm        mov    eax, y;
 	__asm        cmp    ds:[0x6663A0], eax;
-	__asm        jle    near ptr 0x004D7184;
+	__asm        jle    _T644;
 // LINE 278:
 	__asm        mov    x, 0;
-	__asm        jmp    near ptr 0x004D6FF5;
+	__asm        jmp    _T4b5;
 
+_T4b2:
 	__asm        inc    x;
+_T4b5:
 	__asm        mov    eax, x;
 	__asm        cmp    ds:[0x6663A0], eax;
-	__asm        jle    near ptr 0x004D717F;
+	__asm        jle    _T63f;
 // LINE 281:
 	__asm        mov    eax, ds:[0x666358];
 	__asm        imul   eax, y;
@@ -422,12 +442,14 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    ul, eax;
 // LINE 303:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x004D7022;
+	__asm        jmp    _T4e2;
 
+_T4de:
 	__asm        inc    i;
+_T4e2:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 2;
-	__asm        jge    near ptr 0x004D717A;
+	__asm        jge    _T63a;
 // LINE 305:
 	__asm        mov    eax, dataptr;
 	__asm        mov    gf, eax;
@@ -452,8 +474,9 @@ short VRInitGridObj(long ViewSize) {
 // LINE 314:
 	__asm        movsx  eax, i;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004D715C;
+	__asm        jmp    _T61c;
 // LINE 317:
+_T52d:
 	__asm        mov    eax, ds:[0x662840];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
@@ -493,8 +516,9 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    eax, mapv;
 	__asm        mov    dword ptr [eax+4], 0x1F8000;
 // LINE 328:
-	__asm        jmp    near ptr 0x004D7175;
+	__asm        jmp    _T635;
 // LINE 330:
+_T5a2:
 	__asm        mov    eax, ds:[0x662844];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
@@ -534,26 +558,31 @@ short VRInitGridObj(long ViewSize) {
 	__asm        mov    eax, mapv;
 	__asm        mov    dword ptr [eax+4], 0x1F8000;
 // LINE 341:
-	__asm        jmp    near ptr 0x004D7175;
+	__asm        jmp    _T635;
 // LINE 342:
-	__asm        jmp    near ptr 0x004D7175;
+	__asm        jmp    _T635;
 
+_T61c:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     near ptr 0x004D706D;
+	__asm        je     _T52d;
 
 	__asm        cmp    dword ptr [ebp-0x44], 1;
-	__asm        je     near ptr 0x004D70E2;
+	__asm        je     _T5a2;
 
-	__asm        jmp    near ptr 0x004D7175;
+	__asm        jmp    _T635;
 // LINE 343:
-	__asm        jmp    near ptr 0x004D701E;
+_T635:
+	__asm        jmp    _T4de;
 // LINE 344:
-	__asm        jmp    near ptr 0x004D6FF2;
+_T63a:
+	__asm        jmp    _T4b2;
 // LINE 345:
-	__asm        jmp    near ptr 0x004D6FD4;
+_T63f:
+	__asm        jmp    _T494;
 // LINE 350:
+_T644:
 	__asm        cmp    dword ptr ds:[0x59D2D8], 0;
-	__asm        je     near ptr 0x004D71CA;
+	__asm        je     _T68a;
 // LINE 352:
 	__asm        mov    eax, 0x666300;
 	__asm        add    eax, 0x18;
@@ -569,8 +598,9 @@ short VRInitGridObj(long ViewSize) {
 // LINE 354:
 	__asm        mov    dword ptr ds:[0x59D2D8], 0;
 // LINE 357:
+_T68a:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x004D71D2;
+	__asm        jmp    _T692;
 // LINE 358:
 }
 

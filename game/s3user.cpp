@@ -41,7 +41,7 @@ void $E45() {
 	__asm        mov    dword ptr ds:[0x5C33DC], 0;
 	__asm        mov    dword ptr ds:[0x5C33E0], 0;
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00428EF5;
+	__asm        jne    _T5b;
 
 	__asm        lea    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -50,8 +50,9 @@ void $E45() {
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ds:[0x5C33E0], eax;
-	__asm        jmp    near ptr 0x00428EF5;
+	__asm        jmp    _T5b;
 
+_T5b:
 	__asm        jmp    near ptr 0x00428EFA;
 
 	__asm        mov    dword ptr ds:[0x5C33D0], 0;
@@ -85,13 +86,14 @@ void $E46() {
 struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 // LINE 84:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
-	__asm        jne    near ptr 0x00428F68;
+	__asm        jne    _T1e;
 // LINE 85:
 	__asm        lea    eax, ds:[0x5C2A48];
-	__asm        jmp    near ptr 0x00428F73;
+	__asm        jmp    _T29;
 // LINE 86:
+_T1e:
 	__asm        lea    eax, ds:[0x5C2ABC];
-	__asm        jmp    near ptr 0x00428F73;
+	__asm        jmp    _T29;
 // LINE 87:
 }
 
@@ -99,13 +101,14 @@ struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
 // LINE 93:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
-	__asm        jne    near ptr 0x00428F9B;
+	__asm        jne    _T23;
 // LINE 94:
 	__asm        lea    edi, ds:[0x5C2A48];
 	__asm        mov    esi, newUserPersonalInfo;
 	__asm        mov    ecx, 0x16;
 	__asm        rep movsd;
 // LINE 95:
+_T23:
 	__asm        lea    edi, ds:[0x5C2ABC];
 	__asm        mov    esi, newUserPersonalInfo;
 	__asm        mov    ecx, 0x16;
@@ -184,15 +187,16 @@ void ChangeUserPoints(long lNewPointsDelta) {
 struct tagCitySettings* GetCurrentCitySettings() {
 // LINE 147:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
-	__asm        jne    near ptr 0x00429092;
+	__asm        jne    _T1d;
 // LINE 148:
 	__asm        mov    eax, 0x5C2A20;
-	__asm        jmp    near ptr 0x004290A6;
+	__asm        jmp    _T31;
 // LINE 149:
+_T1d:
 	__asm        mov    eax, ds:[0x5C2AB4];
 	__asm        shl    eax, 3;
 	__asm        lea    eax, [eax+eax*8+0x5C2B1C];
-	__asm        jmp    near ptr 0x004290A6;
+	__asm        jmp    _T31;
 // LINE 150:
 }
 
@@ -236,14 +240,16 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 void SetUserHasSavedCurrentCity() {
 // LINE 186:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
-	__asm        jne    near ptr 0x0042912B;
+	__asm        jne    _T22;
 // LINE 187:
 	__asm        mov    dword ptr ds:[0x5C2A44], 1;
 // LINE 188:
-	__asm        jmp    near ptr 0x00429135;
+	__asm        jmp    _T2c;
 // LINE 189:
+_T22:
 	__asm        mov    dword ptr ds:[0x5C2AB8], 1;
 // LINE 190:
+_T2c:
 	__asm        jmp    near ptr 0x0042913A;
 }
 
@@ -251,15 +257,16 @@ void SetUserHasSavedCurrentCity() {
 int32_t GetUserHasSavedCurrentCity() {
 // LINE 197:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
-	__asm        jne    near ptr 0x00429161;
+	__asm        jne    _T22;
 // LINE 198:
 	__asm        mov    eax, ds:[0x5C2A44];
-	__asm        jmp    near ptr 0x0042916B;
+	__asm        jmp    _T2c;
 // LINE 199:
-	__asm        jmp    near ptr 0x0042916B;
+	__asm        jmp    _T2c;
 // LINE 200:
+_T22:
 	__asm        mov    eax, ds:[0x5C2AB8];
-	__asm        jmp    near ptr 0x0042916B;
+	__asm        jmp    _T2c;
 // LINE 201:
 }
 
@@ -274,7 +281,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        add    esp, 8;
 // LINE 217:
 	__asm        cmp    nCityFileType, 1;
-	__asm        jne    near ptr 0x004291A7;
+	__asm        jne    _T37;
 // LINE 218:
 	__asm        mov    eax, ds:[0x597540];
 	__asm        push   eax;
@@ -283,10 +290,11 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 219:
-	__asm        jmp    near ptr 0x004291E4;
+	__asm        jmp    _T74;
 
+_T37:
 	__asm        cmp    nCityFileType, 2;
-	__asm        jne    near ptr 0x004291C8;
+	__asm        jne    _T58;
 // LINE 220:
 	__asm        mov    eax, ds:[0x597544];
 	__asm        push   eax;
@@ -295,10 +303,11 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 221:
-	__asm        jmp    near ptr 0x004291E4;
+	__asm        jmp    _T74;
 
+_T58:
 	__asm        cmp    nCityFileType, 3;
-	__asm        jne    near ptr 0x004291E4;
+	__asm        jne    _T74;
 // LINE 222:
 	__asm        mov    eax, ds:[0x597548];
 	__asm        push   eax;
@@ -307,6 +316,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 223:
+_T74:
 	__asm        jmp    near ptr 0x004291E9;
 }
 
@@ -377,11 +387,13 @@ void CareerCityTweakInit() {
 	__asm        mov    nPvals, 9;
 // LINE 273:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0042930B;
+	__asm        jmp    _T1f;
 
+_T1c:
 	__asm        inc    i;
+_T1f:
 	__asm        cmp    i, 0x1F;
-	__asm        jge    near ptr 0x00429391;
+	__asm        jge    _Ta5;
 // LINE 274:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
@@ -434,8 +446,9 @@ void CareerCityTweakInit() {
 	__asm        call   TWKEnQueue;
 	__asm        add    esp, 0xC;
 // LINE 285:
-	__asm        jmp    near ptr 0x00429308;
+	__asm        jmp    _T1c;
 // LINE 286:
+_Ta5:
 	__asm        jmp    near ptr 0x00429396;
 }
 
@@ -445,13 +458,15 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 
 // LINE 303:
 	__asm        cmp    lNewCareerCityIndex, 0x1F;
-	__asm        jge    near ptr 0x004293BB;
+	__asm        jge    _T20;
 
 	__asm        cmp    lNewCareerCityIndex, 0;
-	__asm        jge    near ptr 0x004293C2;
+	__asm        jge    _T27;
 // LINE 304:
+_T20:
 	__asm        mov    lNewCareerCityIndex, 0;
 // LINE 307:
+_T27:
 	__asm        lea    eax, szFullCityFileName[0];
 	__asm        push   eax;
 	__asm        mov    eax, lNewCareerCityIndex;
@@ -512,21 +527,23 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        jmp    near ptr 0x004294B4;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x004294C6;
+	__asm        je     _T12b;
 
-	__asm        jmp    near ptr 0x00429541;
+	__asm        jmp    _T1a6;
 
+_T12b:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x004294E8;
+	__asm        jne    _T14d;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    _T1a1;
 
-	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    _T1a1;
 
+_T14d:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00429523;
+	__asm        jne    _T188;
 
 	__asm        lea    eax, [ebp-0x10C];
 	__asm        push   eax;
@@ -535,19 +552,22 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    [ebp-0x104], eax;
 	__asm        mov    eax, [ebp-0x104];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    _T1a1;
 
-	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    _T1a1;
 
+_T188:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042953C;
+	__asm        jmp    _T1a1;
 
-	__asm        jmp    near ptr 0x00429541;
+_T1a1:
+	__asm        jmp    _T1a6;
 
+_T1a6:
 	__asm        jmp    near ptr 0x00429546;
 
 	__asm        jmp    near ptr 0x0042954B;
@@ -600,7 +620,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    dword ptr ds:[0x5C2AA0], 1;
 // LINE 361:
 	__asm        cmp    dword ptr ds:[0x599BC4], 0;
-	__asm        je     near ptr 0x00429661;
+	__asm        je     _Tdf;
 // LINE 362:
 	__asm        push   0x5EEEEEE;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -610,7 +630,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    chPrefData, eax;
 // LINE 363:
 	__asm        cmp    chPrefData, 0;
-	__asm        je     near ptr 0x00429661;
+	__asm        je     _Tdf;
 // LINE 364:
 	__asm        push   0x5EEEEEE;
 	__asm        mov    eax, ds:[0x599BC4];
@@ -618,13 +638,14 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    ecx, ds:[0x599BC4];
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x24;
-	__asm        jne    near ptr 0x00429661;
+	__asm        jne    _Tdf;
 // LINE 365:
 	__asm        mov    edi, 0x5C2A20;
 	__asm        mov    esi, chPrefData;
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 368:
+_Tdf:
 	__asm        call   IsActualTimeDaytime;
 	__asm        cmp    eax, 1;
 	__asm        sbb    eax, eax;
@@ -641,21 +662,23 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        jmp    near ptr 0x0042969E;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x004296B0;
+	__asm        je     _T12e;
 
-	__asm        jmp    near ptr 0x0042971F;
+	__asm        jmp    _T19d;
 
+_T12e:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x004296D2;
+	__asm        jne    _T150;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    _T198;
 
-	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    _T198;
 
+_T150:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00429701;
+	__asm        jne    _T17f;
 
 	__asm        lea    eax, [ebp-0x10];
 	__asm        push   eax;
@@ -664,19 +687,22 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    _T198;
 
-	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    _T198;
 
+_T17f:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x0042971A;
+	__asm        jmp    _T198;
 
-	__asm        jmp    near ptr 0x0042971F;
+_T198:
+	__asm        jmp    _T19d;
 
+_T19d:
 	__asm        jmp    near ptr 0x00429724;
 
 	__asm        jmp    near ptr 0x00429729;
@@ -754,21 +780,23 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        jmp    near ptr 0x00429827;
 
 	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
-	__asm        je     near ptr 0x00429839;
+	__asm        je     _Td9;
 
-	__asm        jmp    near ptr 0x004298B4;
+	__asm        jmp    _T154;
 
+_Td9:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
-	__asm        jne    near ptr 0x0042985B;
+	__asm        jne    _Tfb;
 
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    _T14f;
 
-	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    _T14f;
 
+_Tfb:
 	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
-	__asm        jne    near ptr 0x00429896;
+	__asm        jne    _T136;
 
 	__asm        lea    eax, [ebp-0x110];
 	__asm        push   eax;
@@ -777,19 +805,22 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    [ebp-0x108], eax;
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    _T14f;
 
-	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    _T14f;
 
+_T136:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    ds:[0x5C33D8], eax;
-	__asm        jmp    near ptr 0x004298AF;
+	__asm        jmp    _T14f;
 
-	__asm        jmp    near ptr 0x004298B4;
+_T14f:
+	__asm        jmp    _T154;
 
+_T154:
 	__asm        jmp    near ptr 0x004298B9;
 
 	__asm        jmp    near ptr 0x004298BE;
@@ -1417,11 +1448,13 @@ void InitializeAllCareerCitiesInfo() {
 	__asm        mov    ds:[0x5C3414], eax;
 // LINE 744:
 	__asm        mov    i, 0;
-	__asm        jmp    near ptr 0x0042A42F;
+	__asm        jmp    _Tb58;
 
+_Tb55:
 	__asm        inc    i;
+_Tb58:
 	__asm        cmp    i, 0x1F;
-	__asm        jge    near ptr 0x0042A4E1;
+	__asm        jge    _Tc0a;
 // LINE 745:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -1464,8 +1497,9 @@ void InitializeAllCareerCitiesInfo() {
 	__asm        shl    eax, 3;
 	__asm        mov    dword ptr [eax+eax*8+0x5C2B3C], 1;
 // LINE 754:
-	__asm        jmp    near ptr 0x0042A42C;
+	__asm        jmp    _Tb55;
 // LINE 755:
+_Tc0a:
 	__asm        jmp    near ptr 0x0042A4E6;
 }
 
