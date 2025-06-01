@@ -520,10 +520,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        je     _T16f;
 
 	__asm        jmp    _T174;
-
 _T16f:
 	__asm        jmp    _T375;
-
 _T174:
 	__asm        jmp    _T186;
 
@@ -550,7 +548,6 @@ _T186:
 
 	__asm        cmp    dword ptr [ebp-0x108], 0;
 	__asm        jne    _T1ea;
-
 _T1ce:
 	__asm        push   0x12A;
 	__asm        push   0x597444;
@@ -558,10 +555,8 @@ _T1ce:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1ef;
-
 _T1ea:
 	__asm        jmp    _T1ef;
-
 _T1ef:
 	__asm        mov    eax, [ebp-0x108];
 	__asm        push   eax;
@@ -593,7 +588,6 @@ _T21e:
 	__asm        je     _T265;
 
 	__asm        jmp    _T281;
-
 _T265:
 	__asm        push   0x147;
 	__asm        push   0x597444;
@@ -601,10 +595,8 @@ _T265:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T286;
-
 _T281:
 	__asm        jmp    _T286;
-
 _T286:
 	__asm        mov    eax, [ebp-0x100];
 	__asm        push   eax;
@@ -639,7 +631,6 @@ _T2af:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T30f;
-
 _T30a:
 	__asm        jmp    _T30f;
 // LINE 86:
@@ -662,10 +653,8 @@ _T30f:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T363;
-
 _T35e:
 	__asm        jmp    _T363;
-
 _T363:
 	__asm        mov    eax, [ebp-0xF8];
 	__asm        push   eax;
@@ -718,7 +707,6 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T37;
-
 _T32:
 	__asm        jmp    _T37;
 // LINE 113:
@@ -740,10 +728,8 @@ _T37:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T7c;
-
 _T77:
 	__asm        jmp    _T7c;
-
 _T7c:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
@@ -776,7 +762,6 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 4;
 	__asm        jne    _T65;
-
 _T49:
 	__asm        push   0x147;
 	__asm        push   0x597444;
@@ -784,10 +769,8 @@ _T49:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T6a;
-
 _T65:
 	__asm        jmp    _T6a;
-
 _T6a:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
@@ -836,7 +819,6 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3a;
-
 _T35:
 	__asm        jmp    _T3a;
 // LINE 138:
@@ -863,10 +845,8 @@ _T3a:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T8c;
-
 _T87:
 	__asm        jmp    _T8c;
-
 _T8c:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
@@ -907,7 +887,6 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3a;
-
 _T35:
 	__asm        jmp    _T3a;
 // LINE 158:
@@ -921,7 +900,6 @@ _T3a:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T65;
-
 _T60:
 	__asm        jmp    _T65;
 // LINE 160:
@@ -1040,7 +1018,6 @@ _T12d:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T178;
-
 _T173:
 	__asm        jmp    _T178;
 // LINE 200:
@@ -1058,7 +1035,6 @@ _T178:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1ae;
-
 _T1a9:
 	__asm        jmp    _T1ae;
 // LINE 202:
@@ -1309,7 +1285,6 @@ _T13f:
 	__asm        jmp    _T175;
 // LINE 396:
 	__asm        jmp    _T175;
-
 _T14e:
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        cmp    dword ptr [ebp-0x20], 3;
@@ -1648,7 +1623,6 @@ _T2d7:
 	__asm        jmp    _T30d;
 // LINE 573:
 	__asm        jmp    _T30d;
-
 _T2e6:
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        cmp    dword ptr [ebp-0x20], 3;

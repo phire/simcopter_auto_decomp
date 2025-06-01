@@ -102,7 +102,6 @@ _T46:
 	__asm        movsx  eax, partnum;
 	__asm        test   eax, eax;
 	__asm        jge    _T9a;
-
 _T7e:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;
@@ -157,7 +156,6 @@ _T46:
 	__asm        jl     _T74;
 
 	__asm        jmp    _T90;
-
 _T74:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE49C;

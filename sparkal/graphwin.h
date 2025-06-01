@@ -107,7 +107,6 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T60;
-
 _T5e:
 	__asm        xor    eax, eax;
 _T60:

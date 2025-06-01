@@ -58,7 +58,6 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	__asm        mov    nCursor, 1;
 // LINE 49:
 	__asm        jmp    _T4d;
-
 _T26:
 	__asm        cmp    nCursor, 2;
 	__asm        jne    _T3c;
@@ -66,7 +65,6 @@ _T26:
 	__asm        mov    nCursor, 2;
 // LINE 51:
 	__asm        jmp    _T4d;
-
 _T3c:
 	__asm        cmp    nCursor, 4;
 	__asm        jne    _T4d;
@@ -134,6 +132,7 @@ _Tf3:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tfd;
 // LINE 77:
+_Tfd:
 }
 
 // FUNCTION: COPTER_D 0x00474921

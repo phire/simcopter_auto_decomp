@@ -54,7 +54,6 @@ _T7d:
 	__asm        jmp    _T1c2;
 // LINE 874:
 	__asm        jmp    _T1c2;
-
 _T89:
 	__asm        cmp    dword ptr [ebp-4], 0x2B;
 	__asm        jg     _Tb6;
@@ -69,7 +68,6 @@ _T89:
 	__asm        jle    _T19;
 
 	__asm        jmp    _T7d;
-
 _Tb6:
 	__asm        cmp    dword ptr [ebp-4], 0x50;
 	__asm        jg     _Te3;
@@ -84,7 +82,6 @@ _Tb6:
 	__asm        jle    _T2d;
 
 	__asm        jmp    _T7d;
-
 _Te3:
 	__asm        cmp    dword ptr [ebp-4], 0x59;
 	__asm        jg     _T110;
@@ -99,7 +96,6 @@ _Te3:
 	__asm        jle    _T41;
 
 	__asm        jmp    _T7d;
-
 _T110:
 	__asm        cmp    dword ptr [ebp-4], 0x68;
 	__asm        jg     _T13d;
@@ -114,7 +110,6 @@ _T110:
 	__asm        jle    _T55;
 
 	__asm        jmp    _T7d;
-
 _T13d:
 	__asm        cmp    dword ptr [ebp-4], 0x8056;
 	__asm        jg     _T17a;
@@ -132,7 +127,6 @@ _T13d:
 	__asm        jle    _T73;
 
 	__asm        jmp    _T7d;
-
 _T17a:
 	__asm        sub    dword ptr [ebp-4], 0x8057;
 	__asm        cmp    dword ptr [ebp-4], 0x14;
@@ -145,5 +139,6 @@ _T17a:
 // Switch pointers
 // Switch table
 // LINE 876:
+_T1c2:
 }
 

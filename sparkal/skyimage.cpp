@@ -360,7 +360,6 @@ void SkyImage::SwitchToProperSkyType() {
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 73:
 	__asm        jmp    _T5f;
-
 _T38:
 	__asm        cmp    dword ptr ds:[0x598E90], 1;
 	__asm        jne    _T5f;
@@ -459,7 +458,6 @@ _T8c:
 // LINE 119:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf6;
-
 _Tf0:
 	__asm        inc    i;
 _Tf6:
@@ -674,6 +672,7 @@ _T354:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T36d;
 // LINE 205:
+_T36d:
 }
 
 // FUNCTION: COPTER_D 0x004958e7
@@ -907,6 +906,7 @@ _T23a:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T244;
 // LINE 300:
+_T244:
 }
 
 

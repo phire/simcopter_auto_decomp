@@ -77,7 +77,6 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 
 	__asm        cmp    y, 0;
 	__asm        jge    _T22;
-
 _T1d:
 	__asm        jmp    _T117;
 // LINE 149:
@@ -91,7 +90,6 @@ _T22:
 	__asm        dec    eax;
 	__asm        cmp    eax, y;
 	__asm        jge    _T45;
-
 _T40:
 	__asm        jmp    _T117;
 // LINE 151:
@@ -177,6 +175,7 @@ _T10f:
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 169:
+_T117:
 }
 
 // FUNCTION: COPTER_D 0x00563fd1
@@ -248,7 +247,6 @@ _T7c:
 // LINE 209:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tbd;
-
 _Tb7:
 	__asm        inc    i;
 _Tbd:
@@ -278,14 +276,12 @@ _T112:
 	__asm        mov    hiColor, al;
 // LINE 214:
 	__asm        jmp    _T2f2;
-
 _T12a:
 	__asm        cmp    shadeFlag, 2;
 	__asm        jne    _T2f2;
 // LINE 216:
 	__asm        mov    i, 0;
 	__asm        jmp    _T149;
-
 _T143:
 	__asm        inc    i;
 _T149:
@@ -316,7 +312,6 @@ _T19e:
 // LINE 223:
 	__asm        mov    j, 0;
 	__asm        jmp    _T1c7;
-
 _T1c0:
 	__asm        add    j, 6;
 _T1c7:
@@ -407,7 +402,6 @@ _T2f2:
 // LINE 233:
 	__asm        mov    i, 0;
 	__asm        jmp    _T311;
-
 _T30b:
 	__asm        inc    i;
 _T311:
@@ -492,7 +486,6 @@ _T3f3:
 // LINE 252:
 _T42b:
 	__asm        jmp    _T79a;
-
 _T430:
 	__asm        cmp    shadeFlag, 2;
 	__asm        jne    _T68c;
@@ -551,7 +544,6 @@ _T4c4:
 // LINE 267:
 	__asm        mov    j, 0;
 	__asm        jmp    _T519;
-
 _T513:
 	__asm        inc    j;
 _T519:
@@ -671,7 +663,6 @@ _T687:
 _T68c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6a1;
-
 _T69b:
 	__asm        inc    i;
 _T6a1:
@@ -750,6 +741,7 @@ _T76c:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 328:
+_T79a:
 }
 
 // FUNCTION: COPTER_D 0x00564770
@@ -853,7 +845,6 @@ _T84:
 // LINE 455:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10d;
-
 _T10a:
 	__asm        inc    i;
 _T10d:
@@ -991,6 +982,7 @@ _T20f:
 	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 482:
+_T24c:
 }
 
 // FUNCTION: COPTER_D 0x005649c1
@@ -1059,7 +1051,6 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 	__asm        add    esp, 0x1C;
 // LINE 546:
 	__asm        jmp    _T1e0;
-
 _T83:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jge    _Ta5;
@@ -1072,7 +1063,6 @@ _T83:
 	__asm        jmp    _T1e0;
 // LINE 550:
 	__asm        jmp    _T1e0;
-
 _Ta5:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jge    _T14b;
@@ -1211,6 +1201,7 @@ _T14b:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 576:
+_T1e0:
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
@@ -1284,7 +1275,6 @@ _T4a:
 	__asm        fnstsw ax;
 	__asm        test   ah, 1;
 	__asm        jne    _T8e;
-
 _T72:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF03C;
@@ -1426,7 +1416,6 @@ _T52:
 _T61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T70;
-
 _T6d:
 	__asm        inc    i;
 _T70:
@@ -1594,7 +1583,6 @@ _T1cb:
 _T215:
 	__asm        mov    i, 0;
 	__asm        jmp    _T224;
-
 _T221:
 	__asm        inc    i;
 _T224:
@@ -1621,7 +1609,6 @@ _T224:
 	__asm        mov    eax, startWidth;
 	__asm        mov    j, eax;
 	__asm        jmp    _T264;
-
 _T261:
 	__asm        inc    j;
 _T264:
@@ -1711,7 +1698,6 @@ _T318:
 _T329:
 	__asm        mov    i, 0;
 	__asm        jmp    _T338;
-
 _T335:
 	__asm        inc    i;
 _T338:
@@ -1855,6 +1841,7 @@ _T488:
 // LINE 816:
 	__asm        jmp    _T335;
 // LINE 818:
+_T493:
 }
 
 // FUNCTION: COPTER_D 0x00565225
@@ -1898,7 +1885,6 @@ _T2f:
 _T3e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4d;
-
 _T4a:
 	__asm        inc    i;
 _T4d:
@@ -2052,7 +2038,6 @@ _T1a2:
 // LINE 896:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1de;
-
 _T1db:
 	__asm        inc    i;
 _T1de:
@@ -2065,7 +2050,6 @@ _T1de:
 // LINE 900:
 	__asm        mov    j, 0;
 	__asm        jmp    _T1ff;
-
 _T1fc:
 	__asm        inc    j;
 _T1ff:
@@ -2135,7 +2119,6 @@ _T273:
 // LINE 920:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2a5;
-
 _T2a2:
 	__asm        inc    i;
 _T2a5:
@@ -2276,6 +2259,7 @@ _T40c:
 // LINE 963:
 	__asm        jmp    _T2a2;
 // LINE 966:
+_T417:
 }
 
 // FUNCTION: COPTER_D 0x00565641
@@ -2502,6 +2486,7 @@ _T1c1:
 // LINE 1047:
 	__asm        jmp    _T18e;
 // LINE 1050:
+_T252:
 }
 
 // FUNCTION: COPTER_D 0x00565898
@@ -2661,6 +2646,7 @@ _T189:
 // LINE 1120:
 	__asm        jmp    _T156;
 // LINE 1123:
+_T19a:
 }
 
 

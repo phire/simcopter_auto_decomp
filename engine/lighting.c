@@ -96,7 +96,6 @@ _T40:
 _T61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T70;
-
 _T6d:
 	__asm        inc    i;
 _T70:
@@ -152,7 +151,6 @@ _Tc7:
 // LINE 156:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tff;
-
 _Tfc:
 	__asm        inc    j;
 _Tff:
@@ -177,7 +175,6 @@ _T12a:
 // LINE 163:
 	__asm        mov    j, 0;
 	__asm        jmp    _T140;
-
 _T13d:
 	__asm        inc    j;
 _T140:
@@ -212,6 +209,7 @@ _T18c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T193;
 // LINE 175:
+_T193:
 }
 
 // FUNCTION: COPTER_D 0x004d8e58
@@ -272,7 +270,6 @@ _T64:
 _T6c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7b;
-
 _T78:
 	__asm        inc    i;
 _T7b:
@@ -295,7 +292,6 @@ _T7b:
 // LINE 231:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tbd;
-
 _Tba:
 	__asm        inc    j;
 _Tbd:
@@ -306,7 +302,6 @@ _Tbd:
 // LINE 233:
 	__asm        mov    k, 0;
 	__asm        jmp    _Tdb;
-
 _Td8:
 	__asm        inc    k;
 _Tdb:
@@ -337,7 +332,6 @@ _T111:
 // LINE 244:
 	__asm        mov    j, 0;
 	__asm        jmp    _T127;
-
 _T124:
 	__asm        inc    j;
 _T127:
@@ -371,6 +365,7 @@ _T170:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T17a;
 // LINE 256:
+_T17a:
 }
 
 // FUNCTION: COPTER_D 0x004d8fd7
@@ -446,6 +441,7 @@ _T9e:
 _Tb2:
 	__asm        jmp    _Tb7;
 // LINE 302:
+_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x004d9093
@@ -531,6 +527,7 @@ _T58:
 // LINE 359:
 	__asm        jmp    _T2e;
 // LINE 361:
+_T61:
 }
 
 // FUNCTION: COPTER_D 0x004d9160
@@ -578,7 +575,6 @@ void VRObjSetShading(int32_t obj) {
 // LINE 401:
 	__asm        mov    i, 0;
 	__asm        jmp    _T37;
-
 _T34:
 	__asm        inc    i;
 _T37:
@@ -760,7 +756,6 @@ _T1f9:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T232;
-
 _T21c:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
@@ -780,6 +775,7 @@ _T232:
 // LINE 462:
 	__asm        jmp    _T34;
 // LINE 463:
+_T246:
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
@@ -819,7 +815,6 @@ _T21:
 // LINE 497:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
-
 _T4b:
 	__asm        inc    i;
 _T4e:
@@ -945,7 +940,6 @@ _T16b:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T1a4;
-
 _T18e:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
@@ -963,6 +957,7 @@ _T1a4:
 // LINE 540:
 	__asm        jmp    _T4b;
 // LINE 541:
+_T1b1:
 }
 
 // FUNCTION: COPTER_D 0x004d958c
@@ -992,7 +987,6 @@ _T21:
 // LINE 576:
 	__asm        mov    i, 0;
 	__asm        jmp    _T45;
-
 _T42:
 	__asm        inc    i;
 _T45:
@@ -1112,6 +1106,7 @@ _Ta4:
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 600:
+_T181:
 }
 
 // FUNCTION: COPTER_D 0x004d9712
@@ -1135,7 +1130,6 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 // LINE 622:
 	__asm        mov    i, 0;
 	__asm        jmp    _T21;
-
 _T1e:
 	__asm        inc    i;
 _T21:
@@ -1170,7 +1164,6 @@ _T63:
 // LINE 634:
 	__asm        mov    j, 0;
 	__asm        jmp    _T7b;
-
 _T78:
 	__asm        inc    j;
 _T7b:
@@ -1320,6 +1313,7 @@ _T1e3:
 // LINE 682:
 	__asm        jmp    _T1e;
 // LINE 683:
+_T1f0:
 }
 
 // FUNCTION: COPTER_D 0x004d9907
@@ -1347,7 +1341,6 @@ void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
 // LINE 709:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3a;
-
 _T37:
 	__asm        inc    i;
 _T3a:
@@ -1372,6 +1365,7 @@ _T3a:
 // LINE 715:
 	__asm        jmp    _T37;
 // LINE 716:
+_T73:
 }
 
 // FUNCTION: COPTER_D 0x004d997f

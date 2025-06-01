@@ -266,21 +266,17 @@ _T1e9:
 // LINE 720:
 _T23a:
 	__asm        jmp    _T1e9;
-
 _T23f:
 	__asm        jmp    _T1e9;
-
 _T244:
 	__asm        jmp    _T1e9;
-
 _T249:
 	__asm        jmp    _T1e9;
-
 _T24e:
 	__asm        jmp    _T1e9;
-
 _T253:
 	__asm        jmp    _T1e9;
+_T258:
 }
 
 // FUNCTION: COPTER_D 0x004cf2ed
@@ -319,7 +315,6 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 	__asm        mov    eax, s;
 	__asm        mov    i, eax;
 	__asm        jmp    _T55;
-
 _T52:
 	__asm        inc    i;
 _T55:
@@ -335,7 +330,6 @@ _T55:
 _T70:
 	__asm        mov    len, 0;
 	__asm        jmp    _T7f;
-
 _T7c:
 	__asm        inc    len;
 _T7f:
@@ -373,7 +367,6 @@ _Tc3:
 // LINE 543:
 	__asm        mov    i, 1;
 	__asm        jmp    _Tdb;
-
 _Td8:
 	__asm        inc    i;
 _Tdb:
@@ -479,7 +472,6 @@ _T1df:
 // LINE 561:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1fa;
-
 _T1f7:
 	__asm        inc    i;
 _T1fa:
@@ -600,6 +592,7 @@ _T2f3:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T315;
 // LINE 589:
+_T315:
 }
 
 // FUNCTION: COPTER_D 0x004cf607
@@ -609,7 +602,6 @@ void InitTree(struct tLZSSBinaryForest* forest) {
 // LINE 206:
 	__asm        mov    i, 0x1001;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -624,7 +616,6 @@ _T18:
 _T3b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4a;
-
 _T47:
 	__asm        inc    i;
 _T4a:
@@ -735,7 +726,6 @@ _Ted:
 _T112:
 	__asm        mov    i, 1;
 	__asm        jmp    _T121;
-
 _T11e:
 	__asm        inc    i;
 _T121:
@@ -760,7 +750,6 @@ _T121:
 // LINE 245:
 _T158:
 	__asm        jmp    _T11e;
-
 _T15d:
 	__asm        cmp    i, 2;
 	__asm        jle    _T1f1;
@@ -787,7 +776,6 @@ _T15d:
 // LINE 249:
 _T1ae:
 	__asm        jmp    _T1f1;
-
 _T1b3:
 	__asm        mov    eax, forest;
 	__asm        mov    ecx, i;
@@ -862,7 +850,6 @@ _T1f6:
 	__asm        mov    [edx+ecx*4+0x5047], eax;
 // LINE 261:
 	__asm        jmp    _T2d1;
-
 _T2b7:
 	__asm        mov    eax, r;
 	__asm        mov    ecx, p;
@@ -877,6 +864,7 @@ _T2d1:
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 263:
 	__asm        jmp    _T2e7;
+_T2e7:
 }
 
 // FUNCTION: COPTER_D 0x004cf96a
@@ -903,7 +891,6 @@ _T25:
 	__asm        mov    q, eax;
 // LINE 271:
 	__asm        jmp    _T17b;
-
 _T51:
 	__asm        mov    eax, p;
 	__asm        mov    ecx, forest;
@@ -1010,7 +997,6 @@ _T17b:
 	__asm        mov    [edx+ecx*4+0x5047], eax;
 // LINE 288:
 	__asm        jmp    _T1ee;
-
 _T1d4:
 	__asm        mov    eax, q;
 	__asm        mov    ecx, p;
@@ -1025,6 +1011,7 @@ _T1ee:
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 290:
 	__asm        jmp    _T204;
+_T204:
 }
 
 // FUNCTION: COPTER_D 0x004cfb73
@@ -1039,7 +1026,6 @@ void StartModel(struct tACompModel* model) {
 // LINE 304:
 	__asm        mov    sym, 0x13A;
 	__asm        jmp    _T25;
-
 _T22:
 	__asm        dec    sym;
 _T25:
@@ -1085,7 +1071,6 @@ _T90:
 // LINE 313:
 	__asm        mov    i, 0x1000;
 	__asm        jmp    _Tb9;
-
 _Tb6:
 	__asm        dec    i;
 _Tb9:
@@ -1171,7 +1156,6 @@ _T6e:
 // LINE 368:
 _Ta4:
 	__asm        jmp    _T138;
-
 _Ta9:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x10000;
@@ -1199,7 +1183,6 @@ _Tde:
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 372:
 	__asm        jmp    _T138;
-
 _Tf6:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
@@ -1219,7 +1202,6 @@ _Tf6:
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 376:
 	__asm        jmp    _T138;
-
 _T133:
 	__asm        jmp    _T153;
 // LINE 377:
@@ -1247,6 +1229,7 @@ _T153:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T16b;
 // LINE 383:
+_T16b:
 }
 
 // FUNCTION: COPTER_D 0x004cfde2
@@ -1265,7 +1248,6 @@ void UpdateModel(long sym, struct tACompModel* model) {
 // LINE 325:
 	__asm        mov    i, 0x13A;
 	__asm        jmp    _T32;
-
 _T2f:
 	__asm        dec    i;
 _T32:
@@ -1302,7 +1284,6 @@ _T8e:
 	__asm        mov    eax, sym;
 	__asm        mov    i, eax;
 	__asm        jmp    _T9c;
-
 _T99:
 	__asm        dec    i;
 _T9c:
@@ -1387,7 +1368,6 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 // LINE 348:
 _T2a:
 	__asm        jmp    _T35;
-
 _T2f:
 	__asm        mov    eax, model;
 	__asm        dec    dword ptr [eax+0xC];
@@ -1418,6 +1398,7 @@ _T70:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T78;
 // LINE 353:
+_T78:
 }
 
 // FUNCTION: COPTER_D 0x004cffb8
@@ -1473,6 +1454,7 @@ _T7c:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T84;
 // LINE 142:
+_T84:
 }
 
 // FUNCTION: COPTER_D 0x004d0041
@@ -1530,7 +1512,6 @@ _T61:
 // LINE 395:
 _T97:
 	__asm        jmp    _T12b;
-
 _T9c:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x10000;
@@ -1558,7 +1539,6 @@ _Td1:
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 399:
 	__asm        jmp    _T12b;
-
 _Te9:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
@@ -1578,7 +1558,6 @@ _Te9:
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 403:
 	__asm        jmp    _T12b;
-
 _T126:
 	__asm        jmp    _T146;
 // LINE 404:
@@ -1599,6 +1578,7 @@ _T146:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T14e;
 // LINE 409:
+_T14e:
 }
 
 // FUNCTION: COPTER_D 0x004d0194
@@ -1650,6 +1630,7 @@ _T6c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T7d;
 // LINE 420:
+_T7d:
 }
 
 // FUNCTION: COPTER_D 0x004d0216
@@ -1660,7 +1641,6 @@ short FlushBitBuffer(struct tCompressState* dest) {
 // LINE 149:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -1688,6 +1668,7 @@ _T4e:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T56;
 // LINE 159:
+_T56:
 }
 
 // FUNCTION: COPTER_D 0x004d0271
@@ -1825,12 +1806,11 @@ _T110:
 // LINE 775:
 _T161:
 	__asm        jmp    _T110;
-
 _T166:
 	__asm        jmp    _T110;
-
 _T16b:
 	__asm        jmp    _T110;
+_T170:
 }
 
 // FUNCTION: COPTER_D 0x004d03e6
@@ -1883,7 +1863,6 @@ _T49:
 // LINE 603:
 	__asm        mov    i, 0;
 	__asm        jmp    _T74;
-
 _T71:
 	__asm        inc    i;
 _T74:
@@ -1966,7 +1945,6 @@ _T119:
 // LINE 618:
 	__asm        mov    k, 0;
 	__asm        jmp    _T152;
-
 _T14f:
 	__asm        inc    k;
 _T152:
@@ -2020,6 +1998,7 @@ _T1c5:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T1cd;
 // LINE 632:
+_T1cd:
 }
 
 // FUNCTION: COPTER_D 0x004d05b8
@@ -2029,7 +2008,6 @@ void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 // LINE 458:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -2093,7 +2071,6 @@ _T48:
 	__asm        mov    [ecx+8], eax;
 // LINE 182:
 	__asm        jmp    _T6f;
-
 _T65:
 	__asm        mov    eax, source;
 	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
@@ -2111,7 +2088,6 @@ _T79:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T97;
-
 _T95:
 	__asm        xor    eax, eax;
 _T97:
@@ -2187,7 +2163,6 @@ _T8d:
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 478:
 	__asm        jmp    _T114;
-
 _Tbe:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
@@ -2207,7 +2182,6 @@ _Tbe:
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 482:
 	__asm        jmp    _T114;
-
 _Tff:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x10000;
@@ -2289,7 +2263,6 @@ _T17:
 	__asm        mov    i, eax;
 // LINE 433:
 	__asm        jmp    _T5a;
-
 _T54:
 	__asm        mov    eax, k;
 	__asm        mov    j, eax;
@@ -2370,7 +2343,6 @@ _T8d:
 	__asm        sub    dword ptr [eax+4], 0x10000;
 // LINE 509:
 	__asm        jmp    _T114;
-
 _Tbe:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
@@ -2390,7 +2362,6 @@ _Tbe:
 	__asm        sub    dword ptr [eax+4], 0x8000;
 // LINE 513:
 	__asm        jmp    _T114;
-
 _Tff:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+4], 0x10000;
@@ -2460,7 +2431,6 @@ _T17:
 	__asm        mov    i, eax;
 // LINE 449:
 	__asm        jmp    _T5a;
-
 _T54:
 	__asm        mov    eax, k;
 	__asm        mov    j, eax;

@@ -71,7 +71,6 @@ void S3ExplosionReset() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    _T37;
-
 _T30:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
@@ -88,7 +87,6 @@ _T4f:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    _T69;
-
 _T62:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
@@ -101,6 +99,7 @@ _T69:
 // LINE 75:
 	__asm        jmp    _T62;
 // LINE 77:
+_T81:
 }
 
 // FUNCTION: COPTER_D 0x00523996
@@ -125,7 +124,6 @@ void S3ExplosionInit() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    _T39;
-
 _T32:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
@@ -238,7 +236,6 @@ _T14a:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    _T17d;
-
 _T176:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
@@ -644,7 +641,6 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    _T23;
-
 _T1c:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
@@ -790,6 +786,7 @@ _T61:
 // LINE 303:
 	__asm        inc    dword ptr ds:[0x5B7380];
 // LINE 304:
+_T187:
 }
 
 // FUNCTION: COPTER_D 0x005240dc
@@ -802,7 +799,6 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    _T23;
-
 _T1c:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
@@ -936,7 +932,6 @@ _T162:
 	__asm        jmp    _T1b6;
 // LINE 386:
 	__asm        jmp    _T1b6;
-
 _T176:
 	__asm        cmp    dword ptr [ebp-0x2C], 0xA;
 	__asm        ja     _T162;
@@ -948,6 +943,7 @@ _T176:
 _T1b6:
 	__asm        inc    dword ptr ds:[0x5B7384];
 // LINE 389:
+_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x0052429d
@@ -965,7 +961,6 @@ void S3ExplosionDriver() {
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
 	__asm        jmp    _T2c;
-
 _T22:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
@@ -1004,7 +999,6 @@ _T57:
 // LINE 424:
 	__asm        mov    j, 0;
 	__asm        jmp    _Ta7;
-
 _Ta4:
 	__asm        inc    j;
 _Ta7:
@@ -1139,7 +1133,6 @@ _T218:
 	__asm        mov    i, 0;
 	__asm        mov    sd, 0x62AA58;
 	__asm        jmp    _T232;
-
 _T22b:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;

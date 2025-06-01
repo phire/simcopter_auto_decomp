@@ -252,6 +252,7 @@ _T99:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Ta0;
 // LINE 49:
+_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x0041f5a5
@@ -277,6 +278,7 @@ _T38:
 	__asm        mov    dword ptr ds:[0x597264], 0;
 // LINE 70:
 	__asm        jmp    _T47;
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
@@ -454,7 +456,6 @@ _Tbb:
 // LINE 166:
 	__asm        mov    i, 0;
 	__asm        jmp    _Td7;
-
 _Td4:
 	__asm        inc    i;
 _Td7:

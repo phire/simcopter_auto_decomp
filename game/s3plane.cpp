@@ -291,7 +291,6 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 // LINE 177:
 	__asm        mov    currentFlag, 0;
 	__asm        jmp    _T24;
-
 _T21:
 	__asm        inc    currentFlag;
 _T24:
@@ -400,6 +399,7 @@ _T17:
 	__asm        mov    eax, [eax*4+0x62B7A8];
 	__asm        jmp    _T26;
 // LINE 270:
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x0052b29e
@@ -435,7 +435,6 @@ class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t insta
 	__asm        call   PlaneClass::PlaneClass;
 	__asm        mov    newplane, eax;
 	__asm        jmp    _T42;
-
 _T3b:
 	__asm        mov    newplane, 0;
 // LINE 357:
@@ -474,6 +473,7 @@ _T94:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T9b;
 // LINE 377:
+_T9b:
 }
 
 // FUNCTION: COPTER_D 0x0052b35e
@@ -500,7 +500,6 @@ void PlaneClass::ResetAll() {
 // LINE 498:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentPlaneIndex;
 _T18:
@@ -524,7 +523,6 @@ void PlaneClass::ItterateAll() {
 // LINE 548:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentPlaneIndex;
 _T18:
@@ -548,7 +546,6 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 // LINE 580:
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentPlaneIndex;
 _T18:
@@ -577,7 +574,6 @@ _T18:
 	__asm        jne    _T74;
 
 	__asm        jmp    _T88;
-
 _T74:
 	__asm        jmp    _Tb4;
 
@@ -608,6 +604,7 @@ _Tb9:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tc0;
 // LINE 592:
+_Tc0:
 }
 
 // FUNCTION: COPTER_D 0x0052b4d5
@@ -634,7 +631,6 @@ void PlaneClass::Itterate() {
 	__asm        jmp    _T7c;
 
 	__asm        jmp    _T5d;
-
 _T4e:
 	__asm        jmp    _T5d;
 
@@ -743,12 +739,12 @@ _T136:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T16b;
-
 _T166:
 	__asm        jmp    _T16b;
 // LINE 669:
 _T16b:
 	__asm        jmp    _T170;
+_T170:
 }
 
 // FUNCTION: COPTER_D 0x0052b64a
@@ -805,7 +801,6 @@ void PlaneClass::PlaneSoundDriver() {
 	__asm        jne    _T21;
 
 	__asm        jmp    _T35;
-
 _T21:
 	__asm        jmp    _T1d3;
 
@@ -1067,6 +1062,7 @@ _T2ac:
 // LINE 852:
 _T2c9:
 	__asm        jmp    _T2ce;
+_T2ce:
 }
 
 // FUNCTION: COPTER_D 0x0052b9a3
@@ -1097,7 +1093,6 @@ _T3d:
 	__asm        jmp    _T6e;
 
 	__asm        jmp    _T66;
-
 _T57:
 	__asm        jmp    _T66;
 
@@ -1188,7 +1183,6 @@ _T124:
 // LINE 931:
 _T134:
 	__asm        jmp    _T148;
-
 _T139:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _Tbe;
@@ -1197,6 +1191,7 @@ _T139:
 // LINE 932:
 _T148:
 	__asm        jmp    _T14d;
+_T14d:
 }
 
 // FUNCTION: COPTER_D 0x0052baf5
@@ -1253,7 +1248,6 @@ void PlaneClass::SetCrashWhenReady() {
 	__asm        jmp    _T5d;
 
 	__asm        jmp    _T35;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -1365,10 +1359,8 @@ _Tc6:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T161;
-
 _T15c:
 	__asm        jmp    _T161;
-
 _T161:
 	__asm        jmp    near ptr 0x0052BCC6;
 
@@ -1436,7 +1428,6 @@ _T1e8:
 	__asm        jne    _T215;
 
 	__asm        jmp    _T229;
-
 _T215:
 	__asm        jmp    _T243;
 
@@ -1458,6 +1449,7 @@ _T229:
 // LINE 1258:
 _T243:
 	__asm        jmp    _T248;
+_T248:
 }
 
 // FUNCTION: COPTER_D 0x0052bdad
@@ -1547,6 +1539,7 @@ _Te1:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Te8;
 // LINE 1323:
+_Te8:
 }
 
 // FUNCTION: COPTER_D 0x0052be9a
@@ -1700,10 +1693,8 @@ _Ta0:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T165;
-
 _T160:
 	__asm        jmp    _T165;
-
 _T165:
 	__asm        jmp    near ptr 0x0052C044;
 
@@ -1726,10 +1717,8 @@ _T165:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1b9;
-
 _T1b4:
 	__asm        jmp    _T1b9;
-
 _T1b9:
 	__asm        jmp    near ptr 0x0052C098;
 
@@ -1837,6 +1826,7 @@ _T2a6:
 // LINE 1465:
 _T2bf:
 	__asm        jmp    _T2c4;
+_T2c4:
 }
 
 // FUNCTION: COPTER_D 0x0052c1a3
@@ -2129,7 +2119,6 @@ _T2e4:
 // LINE 1575:
 	__asm        mov    j, 0;
 	__asm        jmp    _T362;
-
 _T35c:
 	__asm        inc    j;
 _T362:
@@ -2222,7 +2211,6 @@ _T449:
 // LINE 1599:
 	__asm        mov    j, 0;
 	__asm        jmp    _T479;
-
 _T473:
 	__asm        inc    j;
 _T479:
@@ -2459,7 +2447,6 @@ _T5e3:
 // LINE 1711:
 	__asm        mov    j, 0;
 	__asm        jmp    _T75a;
-
 _T754:
 	__asm        inc    j;
 _T75a:
@@ -2558,6 +2545,7 @@ _T878:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T87f;
 // LINE 1744:
+_T87f:
 }
 
 // FUNCTION: COPTER_D 0x0052ca29
@@ -2576,6 +2564,7 @@ _T28:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2f;
 // LINE 1773:
+_T2f:
 }
 
 // FUNCTION: COPTER_D 0x0052ca5d
@@ -2615,6 +2604,7 @@ _T62:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T69;
 // LINE 1808:
+_T69:
 }
 
 // FUNCTION: COPTER_D 0x0052cacb
@@ -2640,10 +2630,8 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5a;
-
 _T55:
 	__asm        jmp    _T5a;
-
 _T5a:
 	__asm        jmp    near ptr 0x0052CB2A;
 
@@ -2659,7 +2647,6 @@ _T5a:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T90;
-
 _T8b:
 	__asm        jmp    _T90;
 // LINE 1834:
@@ -2709,13 +2696,13 @@ _Tdd:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T10a;
-
 _T105:
 	__asm        jmp    _T10a;
 // LINE 1856:
 // Block end:
 _T10a:
 	__asm        jmp    _T10f;
+_T10f:
 }
 
 // FUNCTION: COPTER_D 0x0052cbe1
@@ -2741,10 +2728,8 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5a;
-
 _T55:
 	__asm        jmp    _T5a;
-
 _T5a:
 	__asm        jmp    near ptr 0x0052CC40;
 
@@ -2763,7 +2748,6 @@ _T5a:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T98;
-
 _T93:
 	__asm        jmp    _T98;
 // LINE 1882:
@@ -2805,10 +2789,8 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5b;
-
 _T56:
 	__asm        jmp    _T5b;
-
 _T5b:
 	__asm        jmp    near ptr 0x0052CCFD;
 
@@ -2824,7 +2806,6 @@ _T5b:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T91;
-
 _T8c:
 	__asm        jmp    _T91;
 // LINE 1911:
@@ -2894,10 +2875,8 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5a;
-
 _T55:
 	__asm        jmp    _T5a;
-
 _T5a:
 	__asm        jmp    near ptr 0x0052CE00;
 
@@ -2913,7 +2892,6 @@ _T5a:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T90;
-
 _T8b:
 	__asm        jmp    _T90;
 // LINE 1951:
@@ -3004,7 +2982,6 @@ void PlaneClass::AdjustNextAltitude() {
 	__asm        jmp    _Tb2;
 
 	__asm        jmp    _T35;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -3103,10 +3080,8 @@ _Tb2:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T13d;
-
 _T138:
 	__asm        jmp    _T13d;
-
 _T13d:
 	__asm        jmp    near ptr 0x0052D027;
 
@@ -3285,7 +3260,6 @@ _T123:
 	__asm        jmp    _T170;
 // LINE 2109:
 	__asm        jmp    _T170;
-
 _T14d:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     _T70;
@@ -3369,7 +3343,6 @@ _T1ce:
 	__asm        jmp    _T262;
 // LINE 2149:
 	__asm        jmp    _T262;
-
 _T23a:
 	__asm        cmp    dword ptr [ebp-0x50], 4;
 	__asm        ja     _T262;
@@ -3390,7 +3363,6 @@ _T262:
 _T278:
 	__asm        mov    i, 0;
 	__asm        jmp    _T287;
-
 _T284:
 	__asm        inc    i;
 _T287:
@@ -3426,7 +3398,6 @@ foundCell:
 _T2c7:
 	__asm        mov    currentFlag, 3;
 	__asm        jmp    _T2d6;
-
 _T2d3:
 	__asm        inc    currentFlag;
 _T2d6:
@@ -3476,7 +3447,6 @@ _T2f0:
 	__asm        jne    _T359;
 
 	__asm        jmp    _T36d;
-
 _T359:
 	__asm        jmp    _T377;
 
@@ -3491,9 +3461,9 @@ _T36d:
 // LINE 2213:
 _T377:
 	__asm        jmp    _T381;
-
 _T37c:
 	__asm        jmp    _T2c7;
+_T381:
 }
 
 // FUNCTION: COPTER_D 0x0052d411
@@ -3631,7 +3601,6 @@ _T111:
 	__asm        jmp    _T144;
 // LINE 2410:
 	__asm        jmp    _T144;
-
 _T125:
 	__asm        cmp    dword ptr [ebp-0x30], 0x12E;
 	__asm        je     _T102;
@@ -3688,6 +3657,7 @@ _T19d:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1bb;
 // LINE 2454:
+_T1bb:
 }
 
 // FUNCTION: COPTER_D 0x0052d618
@@ -3811,7 +3781,6 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 	__asm        jmp    _Td4;
 
 	__asm        jmp    _T57;
-
 _T48:
 	__asm        jmp    _T57;
 
@@ -3887,7 +3856,6 @@ _T110:
 	__asm        jmp    _T185;
 
 	__asm        jmp    _T158;
-
 _T149:
 	__asm        jmp    _T158;
 
@@ -3945,7 +3913,6 @@ _T1c1:
 	__asm        jmp    _T24c;
 // LINE 2696:
 	__asm        jmp    _T24c;
-
 _T1f8:
 	__asm        cmp    dword ptr [ebp-0x18], 0xF;
 	__asm        ja     _T24c;
@@ -4002,7 +3969,6 @@ void PlaneClass::TurnOnShields() {
 // LINE 2730:
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
-
 _T3d:
 	__asm        inc    count;
 _T40:
@@ -4067,7 +4033,6 @@ void PlaneClass::TurnOffShields() {
 // LINE 2752:
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
-
 _T3d:
 	__asm        inc    count;
 _T40:
@@ -4156,7 +4121,6 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
-
 _T44:
 	__asm        inc    i;
 _T47:
@@ -4305,6 +4269,7 @@ _T1d0:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1da;
 // LINE 2846:
+_T1da:
 }
 
 // FUNCTION: COPTER_D 0x0052dcf2
@@ -4315,7 +4280,6 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 2859:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -4346,6 +4310,7 @@ _T5c:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T66;
 // LINE 2869:
+_T66:
 }
 
 

@@ -101,7 +101,6 @@ void CharList::~CharList() {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 38:
 	__asm        jmp    _T32;
-
 _T29:
 	__asm        mov    eax, nextCharData;
 	__asm        mov    ecx, this;
@@ -150,7 +149,6 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        call   CharData::CharData;
 	__asm        mov    tempCharData, eax;
 	__asm        jmp    _T3e;
-
 _T37:
 	__asm        mov    tempCharData, 0;
 // LINE 53:
@@ -308,6 +306,7 @@ _T2a:
 	__asm        call   CharList::DeleteItem;
 // LINE 107:
 	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0043d6c1
@@ -333,6 +332,7 @@ _T2a:
 	__asm        call   CharList::DeleteItem;
 // LINE 117:
 	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0043d703
@@ -347,7 +347,6 @@ void CharList::DeleteAllItems() {
 // LINE 123:
 	__asm        mov    i, 0;
 	__asm        jmp    _T23;
-
 _T20:
 	__asm        inc    i;
 _T23:
@@ -387,7 +386,6 @@ _T21:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 138:
 	__asm        jmp    _T45;
-
 _T39:
 	__asm        inc    nPresentIndex;
 	__asm        mov    eax, nextCharData;
@@ -414,6 +412,7 @@ _T6f:
 	__asm        mov    eax, [eax+0xC];
 	__asm        jmp    _T7a;
 // LINE 145:
+_T7a:
 }
 
 // FUNCTION: COPTER_D 0x0043d7ce
@@ -427,7 +426,6 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 154:
 	__asm        jmp    _T26;
-
 _T1d:
 	__asm        mov    eax, nextCharData;
 	__asm        mov    ecx, this;
@@ -462,5 +460,6 @@ _T66:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6d;
 // LINE 161:
+_T6d:
 }
 

@@ -452,6 +452,7 @@ _T8a:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T91;
 // LINE 214:
+_T91:
 }
 
 // FUNCTION: COPTER_D 0x005433be
@@ -607,6 +608,7 @@ _Tbd:
 	__asm        mov    eax, p;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 282:
+_Tdb:
 }
 
 // FUNCTION: COPTER_D 0x00543535
@@ -646,7 +648,6 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        mov    eax, Vmax;
 	__asm        mov    nv, eax;
 	__asm        jmp    _T62;
-
 _T5a:
 	__asm        mov    eax, Vmax;
 	__asm        neg    eax;
@@ -715,6 +716,7 @@ _T79:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T80;
 // LINE 344:
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x00543629
@@ -741,7 +743,6 @@ _T35:
 	__asm        mov    eax, a;
 	__asm        sub    eax, 0xE100000;
 	__asm        jmp    _T52;
-
 _T4f:
 	__asm        mov    eax, a;
 _T52:

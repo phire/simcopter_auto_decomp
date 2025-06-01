@@ -449,7 +449,6 @@ _T23:
 	__asm        or     dwWindowStyle, 0x40000;
 // LINE 94:
 	__asm        jmp    _T83;
-
 _T63:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 4;
@@ -595,6 +594,7 @@ _T1dd:
 	__asm        mov    eax, 0x80000000;
 	__asm        jmp    _T1e7;
 // LINE 141:
+_T1e7:
 }
 
 // FUNCTION: COPTER_D 0x004672cb
@@ -792,7 +792,6 @@ _Tb1:
 _Te8:
 	__asm        mov    Counter, 0;
 	__asm        jmp    _Tf7;
-
 _Tf4:
 	__asm        inc    Counter;
 _Tf7:
@@ -809,7 +808,6 @@ _T113:
 	__asm        je     _T181;
 // LINE 239:
 	__asm        jmp    _T125;
-
 _T122:
 	__asm        inc    Counter;
 _T125:
@@ -845,7 +843,6 @@ _T17c:
 // LINE 247:
 _T181:
 	__asm        jmp    _T189;
-
 _T186:
 	__asm        inc    Counter;
 _T189:
@@ -872,7 +869,6 @@ _T189:
 // LINE 256:
 _T1cc:
 	__asm        jmp    _T1d4;
-
 _T1d1:
 	__asm        inc    Counter;
 _T1d4:
@@ -951,6 +947,7 @@ _T2a9:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2b0;
 // LINE 277:
+_T2b0:
 }
 
 // FUNCTION: COPTER_D 0x004676a1
@@ -1763,7 +1760,6 @@ _T339:
 	__asm        jmp    _T477;
 // LINE 609:
 	__asm        jmp    _T459;
-
 _T345:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
 	__asm        ja     _T385;
@@ -1792,6 +1788,7 @@ _T459:
 	__asm        call   CSparkalWindow::MySparkalWindowProc;
 	__asm        jmp    _T477;
 // LINE 611:
+_T477:
 }
 
 

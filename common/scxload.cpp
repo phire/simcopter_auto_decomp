@@ -402,7 +402,6 @@ _T36:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _Ta1;
-
 _T97:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -458,10 +457,8 @@ unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBy
 	__asm        jle    _T31;
 
 	__asm        jmp    _T36;
-
 _T31:
 	__asm        jmp    _T72;
-
 _T36:
 	__asm        jmp    _T45;
 
@@ -489,6 +486,7 @@ _T72:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T79;
 // LINE 112:
+_T79:
 }
 
 // FUNCTION: COPTER_D 0x004cba9c
@@ -504,10 +502,8 @@ unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nB
 	__asm        jle    _T31;
 
 	__asm        jmp    _T36;
-
 _T31:
 	__asm        jmp    _T72;
-
 _T36:
 	__asm        jmp    _T45;
 
@@ -535,6 +531,7 @@ _T72:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T79;
 // LINE 119:
+_T79:
 }
 
 // FUNCTION: COPTER_D 0x004cbb1c
@@ -633,6 +630,7 @@ _T29:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T30;
 // LINE 144:
+_T30:
 }
 
 // FUNCTION: COPTER_D 0x004cbc42
@@ -757,7 +755,6 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 230:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T2e;
-
 _T2b:
 	__asm        inc    loop;
 _T2e:
@@ -782,7 +779,6 @@ _T2e:
 _T5c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T6b;
-
 _T68:
 	__asm        inc    loop;
 _T6b:
@@ -808,7 +804,6 @@ _T6b:
 _T9c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _Tab;
-
 _Ta8:
 	__asm        inc    loop;
 _Tab:
@@ -834,7 +829,6 @@ _Tab:
 _Tdc:
 	__asm        mov    loop, 0;
 	__asm        jmp    _Teb;
-
 _Te8:
 	__asm        inc    loop;
 _Teb:
@@ -860,7 +854,6 @@ _Teb:
 _T11c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T12b;
-
 _T128:
 	__asm        inc    loop;
 _T12b:
@@ -886,7 +879,6 @@ _T12b:
 _T15c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T16b;
-
 _T168:
 	__asm        inc    loop;
 _T16b:
@@ -1109,7 +1101,6 @@ _Tfe:
 	__asm        jne    _T12b;
 
 	__asm        jmp    _T1ae;
-
 _T12b:
 	__asm        jmp    near ptr 0x004CC133;
 
@@ -1132,7 +1123,6 @@ _T12b:
 	__asm        jne    _T16d;
 
 	__asm        jmp    _T1ae;
-
 _T16d:
 	__asm        mov    memstrm.curPos, 0;
 _T174:
@@ -1150,14 +1140,12 @@ _T174:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x594];
 	__asm        jmp    _Tfe;
-
 _T1a9:
 	__asm        jmp    _T1ae;
 // LINE 318:
 _T1ae:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1bd;
-
 _T1ba:
 	__asm        inc    loop;
 _T1bd:
@@ -1212,7 +1200,6 @@ _T22e:
 	__asm        jne    _T25b;
 
 	__asm        jmp    _T2e0;
-
 _T25b:
 	__asm        jmp    near ptr 0x004CC263;
 
@@ -1235,7 +1222,6 @@ _T25b:
 	__asm        jne    _T29d;
 
 	__asm        jmp    _T2e0;
-
 _T29d:
 	__asm        mov    memstrm.curPos, 0;
 _T2a4:
@@ -1254,7 +1240,6 @@ _T2a4:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x598];
 	__asm        jmp    _T22e;
-
 _T2db:
 	__asm        jmp    _T2e0;
 // LINE 334:
@@ -1274,7 +1259,6 @@ _T2ea:
 	__asm        jne    _T317;
 
 	__asm        jmp    _T39a;
-
 _T317:
 	__asm        jmp    near ptr 0x004CC31F;
 
@@ -1297,7 +1281,6 @@ _T317:
 	__asm        jne    _T359;
 
 	__asm        jmp    _T39a;
-
 _T359:
 	__asm        mov    memstrm.curPos, 0;
 _T360:
@@ -1315,7 +1298,6 @@ _T360:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A0];
 	__asm        jmp    _T2ea;
-
 _T395:
 	__asm        jmp    _T39a;
 // LINE 337:
@@ -1335,7 +1317,6 @@ _T3a4:
 	__asm        jne    _T3d1;
 
 	__asm        jmp    _T453;
-
 _T3d1:
 	__asm        jmp    near ptr 0x004CC3D9;
 
@@ -1358,7 +1339,6 @@ _T3d1:
 	__asm        jne    _T413;
 
 	__asm        jmp    _T453;
-
 _T413:
 	__asm        mov    memstrm.curPos, 0;
 _T41a:
@@ -1376,7 +1356,6 @@ _T41a:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A4];
 	__asm        jmp    _T3a4;
-
 _T44e:
 	__asm        jmp    _T453;
 // LINE 340:
@@ -1396,7 +1375,6 @@ _T45d:
 	__asm        jne    _T48a;
 
 	__asm        jmp    _T50c;
-
 _T48a:
 	__asm        jmp    near ptr 0x004CC492;
 
@@ -1419,7 +1397,6 @@ _T48a:
 	__asm        jne    _T4cc;
 
 	__asm        jmp    _T50c;
-
 _T4cc:
 	__asm        mov    memstrm.curPos, 0;
 _T4d3:
@@ -1437,7 +1414,6 @@ _T4d3:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A8];
 	__asm        jmp    _T45d;
-
 _T507:
 	__asm        jmp    _T50c;
 // LINE 343:
@@ -1457,7 +1433,6 @@ _T516:
 	__asm        jne    _T543;
 
 	__asm        jmp    _T5c5;
-
 _T543:
 	__asm        jmp    near ptr 0x004CC54B;
 
@@ -1480,7 +1455,6 @@ _T543:
 	__asm        jne    _T585;
 
 	__asm        jmp    _T5c5;
-
 _T585:
 	__asm        mov    memstrm.curPos, 0;
 _T58c:
@@ -1498,7 +1472,6 @@ _T58c:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5AC];
 	__asm        jmp    _T516;
-
 _T5c0:
 	__asm        jmp    _T5c5;
 // LINE 346:
@@ -1518,7 +1491,6 @@ _T5cf:
 	__asm        jne    _T5fc;
 
 	__asm        jmp    _T67e;
-
 _T5fc:
 	__asm        jmp    near ptr 0x004CC604;
 
@@ -1541,7 +1513,6 @@ _T5fc:
 	__asm        jne    _T63e;
 
 	__asm        jmp    _T67e;
-
 _T63e:
 	__asm        mov    memstrm.curPos, 0;
 _T645:
@@ -1559,7 +1530,6 @@ _T645:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B0];
 	__asm        jmp    _T5cf;
-
 _T679:
 	__asm        jmp    _T67e;
 // LINE 349:
@@ -1579,7 +1549,6 @@ _T688:
 	__asm        jne    _T6b5;
 
 	__asm        jmp    _T737;
-
 _T6b5:
 	__asm        jmp    near ptr 0x004CC6BD;
 
@@ -1602,7 +1571,6 @@ _T6b5:
 	__asm        jne    _T6f7;
 
 	__asm        jmp    _T737;
-
 _T6f7:
 	__asm        mov    memstrm.curPos, 0;
 _T6fe:
@@ -1620,7 +1588,6 @@ _T6fe:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B4];
 	__asm        jmp    _T688;
-
 _T732:
 	__asm        jmp    _T737;
 // LINE 354:
@@ -1640,7 +1607,6 @@ _T741:
 	__asm        jne    _T771;
 
 	__asm        jmp    _T7f4;
-
 _T771:
 	__asm        jmp    near ptr 0x004CC779;
 
@@ -1663,7 +1629,6 @@ _T771:
 	__asm        jne    _T7b3;
 
 	__asm        jmp    _T7f4;
-
 _T7b3:
 	__asm        mov    memstrm.curPos, 0;
 _T7ba:
@@ -1681,14 +1646,12 @@ _T7ba:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B8];
 	__asm        jmp    _T741;
-
 _T7ef:
 	__asm        jmp    _T7f4;
 // LINE 355:
 _T7f4:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T803;
-
 _T800:
 	__asm        inc    loop;
 _T803:
@@ -1717,7 +1680,6 @@ _T831:
 	__asm        jne    _T85e;
 
 	__asm        jmp    _T8e0;
-
 _T85e:
 	__asm        jmp    near ptr 0x004CC866;
 
@@ -1740,7 +1702,6 @@ _T85e:
 	__asm        jne    _T8a0;
 
 	__asm        jmp    _T8e0;
-
 _T8a0:
 	__asm        mov    memstrm.curPos, 0;
 _T8a7:
@@ -1758,7 +1719,6 @@ _T8a7:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5BC];
 	__asm        jmp    _T831;
-
 _T8db:
 	__asm        jmp    _T8e0;
 // LINE 362:
@@ -1778,7 +1738,6 @@ _T8ea:
 	__asm        jne    _T917;
 
 	__asm        jmp    _T999;
-
 _T917:
 	__asm        jmp    near ptr 0x004CC91F;
 
@@ -1801,7 +1760,6 @@ _T917:
 	__asm        jne    _T959;
 
 	__asm        jmp    _T999;
-
 _T959:
 	__asm        mov    memstrm.curPos, 0;
 _T960:
@@ -1819,7 +1777,6 @@ _T960:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C0];
 	__asm        jmp    _T8ea;
-
 _T994:
 	__asm        jmp    _T999;
 // LINE 365:
@@ -1839,7 +1796,6 @@ _T9a3:
 	__asm        jne    _T9d0;
 
 	__asm        jmp    _Ta52;
-
 _T9d0:
 	__asm        jmp    near ptr 0x004CC9D8;
 
@@ -1862,7 +1818,6 @@ _T9d0:
 	__asm        jne    _Ta12;
 
 	__asm        jmp    _Ta52;
-
 _Ta12:
 	__asm        mov    memstrm.curPos, 0;
 _Ta19:
@@ -1880,7 +1835,6 @@ _Ta19:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C4];
 	__asm        jmp    _T9a3;
-
 _Ta4d:
 	__asm        jmp    _Ta52;
 // LINE 368:
@@ -1900,7 +1854,6 @@ _Ta5c:
 	__asm        jne    _Ta89;
 
 	__asm        jmp    _Tb0b;
-
 _Ta89:
 	__asm        jmp    near ptr 0x004CCA91;
 
@@ -1923,7 +1876,6 @@ _Ta89:
 	__asm        jne    _Tacb;
 
 	__asm        jmp    _Tb0b;
-
 _Tacb:
 	__asm        mov    memstrm.curPos, 0;
 _Tad2:
@@ -1941,7 +1893,6 @@ _Tad2:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C8];
 	__asm        jmp    _Ta5c;
-
 _Tb06:
 	__asm        jmp    _Tb0b;
 // LINE 371:
@@ -1961,7 +1912,6 @@ _Tb15:
 	__asm        jne    _Tb42;
 
 	__asm        jmp    _Tbc4;
-
 _Tb42:
 	__asm        jmp    near ptr 0x004CCB4A;
 
@@ -1984,7 +1934,6 @@ _Tb42:
 	__asm        jne    _Tb84;
 
 	__asm        jmp    _Tbc4;
-
 _Tb84:
 	__asm        mov    memstrm.curPos, 0;
 _Tb8b:
@@ -2002,7 +1951,6 @@ _Tb8b:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5CC];
 	__asm        jmp    _Tb15;
-
 _Tbbf:
 	__asm        jmp    _Tbc4;
 // LINE 374:
@@ -2022,7 +1970,6 @@ _Tbce:
 	__asm        jne    _Tbfb;
 
 	__asm        jmp    _Tc7d;
-
 _Tbfb:
 	__asm        jmp    near ptr 0x004CCC03;
 
@@ -2045,7 +1992,6 @@ _Tbfb:
 	__asm        jne    _Tc3d;
 
 	__asm        jmp    _Tc7d;
-
 _Tc3d:
 	__asm        mov    memstrm.curPos, 0;
 _Tc44:
@@ -2063,10 +2009,8 @@ _Tc44:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D0];
 	__asm        jmp    _Tbce;
-
 _Tc78:
 	__asm        jmp    _Tc7d;
-
 _Tc7d:
 	__asm        mov    eax, ds:[0x639730];
 	__asm        mov    [ebp-0x5D8], eax;
@@ -2086,7 +2030,6 @@ _Tc92:
 	__asm        jne    _Tcc2;
 
 	__asm        jmp    _Td47;
-
 _Tcc2:
 	__asm        jmp    near ptr 0x004CCCCA;
 
@@ -2109,7 +2052,6 @@ _Tcc2:
 	__asm        jne    _Td04;
 
 	__asm        jmp    _Td47;
-
 _Td04:
 	__asm        mov    memstrm.curPos, 0;
 _Td0b:
@@ -2128,10 +2070,8 @@ _Td0b:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D4];
 	__asm        jmp    _Tc92;
-
 _Td42:
 	__asm        jmp    _Td47;
-
 _Td47:
 	__asm        mov    eax, ds:[0x639CD0];
 	__asm        mov    [ebp-0x5E0], eax;
@@ -2151,7 +2091,6 @@ _Td5c:
 	__asm        jne    _Td8c;
 
 	__asm        jmp    _Te11;
-
 _Td8c:
 	__asm        jmp    near ptr 0x004CCD94;
 
@@ -2174,7 +2113,6 @@ _Td8c:
 	__asm        jne    _Tdce;
 
 	__asm        jmp    _Te11;
-
 _Tdce:
 	__asm        mov    memstrm.curPos, 0;
 _Tdd5:
@@ -2193,10 +2131,8 @@ _Tdd5:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5DC];
 	__asm        jmp    _Td5c;
-
 _Te0c:
 	__asm        jmp    _Te11;
-
 _Te11:
 	__asm        mov    eax, ds:[0x63A470];
 	__asm        mov    [ebp-0x5E8], eax;
@@ -2216,7 +2152,6 @@ _Te26:
 	__asm        jne    _Te56;
 
 	__asm        jmp    _Tedb;
-
 _Te56:
 	__asm        jmp    near ptr 0x004CCE5E;
 
@@ -2239,7 +2174,6 @@ _Te56:
 	__asm        jne    _Te98;
 
 	__asm        jmp    _Tedb;
-
 _Te98:
 	__asm        mov    memstrm.curPos, 0;
 _Te9f:
@@ -2258,10 +2192,8 @@ _Te9f:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5E4];
 	__asm        jmp    _Te26;
-
 _Ted6:
 	__asm        jmp    _Tedb;
-
 _Tedb:
 	__asm        mov    eax, ds:[0x63A750];
 	__asm        mov    [ebp-0x5F0], eax;
@@ -2281,7 +2213,6 @@ _Tef0:
 	__asm        jne    _Tf20;
 
 	__asm        jmp    _Tfa5;
-
 _Tf20:
 	__asm        jmp    near ptr 0x004CCF28;
 
@@ -2304,7 +2235,6 @@ _Tf20:
 	__asm        jne    _Tf62;
 
 	__asm        jmp    _Tfa5;
-
 _Tf62:
 	__asm        mov    memstrm.curPos, 0;
 _Tf69:
@@ -2323,7 +2253,6 @@ _Tf69:
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5EC];
 	__asm        jmp    _Tef0;
-
 _Tfa0:
 	__asm        jmp    _Tfa5;
 // LINE 383:
@@ -2432,7 +2361,6 @@ _Tfa5:
 // LINE 410:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T10f0;
-
 _T10ed:
 	__asm        inc    loop;
 _T10f0:
@@ -2504,7 +2432,6 @@ _T1119:
 // LINE 441:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T11cd;
-
 _T11ca:
 	__asm        inc    loop;
 _T11cd:
@@ -2524,7 +2451,6 @@ _T11cd:
 _T11f6:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1205;
-
 _T1202:
 	__asm        inc    loop;
 _T1205:
@@ -2689,7 +2615,6 @@ _T128c:
 // LINE 515:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T141a;
-
 _T1417:
 	__asm        inc    loop;
 _T141a:
@@ -2712,7 +2637,6 @@ _T1440:
 // LINE 520:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1460;
-
 _T145d:
 	__asm        inc    loop;
 _T1460:
@@ -2735,7 +2659,6 @@ _T1486:
 // LINE 525:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T14a5;
-
 _T14a2:
 	__asm        inc    loop;
 _T14a5:
@@ -2773,6 +2696,7 @@ _T14cc:
 	__asm        mov    eax, [ebp-0x58C];
 	__asm        jmp    _T152e;
 // LINE 531:
+_T152e:
 }
 
 

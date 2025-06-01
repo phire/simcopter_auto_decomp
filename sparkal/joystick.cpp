@@ -123,7 +123,6 @@ void JoystickManager::JoystickManager() {
 // LINE 33:
 	__asm        mov    i, 0;
 	__asm        jmp    _T43;
-
 _T40:
 	__asm        inc    i;
 _T43:
@@ -162,7 +161,6 @@ int32_t JoystickManager::Initialize() {
 // LINE 61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2d;
-
 _T2a:
 	__asm        inc    i;
 _T2d:
@@ -191,7 +189,6 @@ _T55:
 _T6f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
-
 _T7b:
 	__asm        inc    i;
 _T7e:
@@ -255,7 +252,6 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 // LINE 93:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -288,6 +284,7 @@ _T5f:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T66;
 // LINE 100:
+_T66:
 }
 
 // FUNCTION: COPTER_D 0x0049a696
@@ -327,6 +324,7 @@ _T37:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T64;
 // LINE 115:
+_T64:
 }
 
 // FUNCTION: COPTER_D 0x0049a701
@@ -336,7 +334,6 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 // LINE 127:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -373,6 +370,7 @@ _T67:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T71;
 // LINE 136:
+_T71:
 }
 
 // FUNCTION: COPTER_D 0x0049a779
@@ -443,6 +441,7 @@ _T6d:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T74;
 // LINE 200:
+_T74:
 }
 
 // FUNCTION: COPTER_D 0x0049a836
@@ -538,7 +537,6 @@ _Td4:
 	__asm        jmp    _T1a0;
 // LINE 262:
 	__asm        jmp    _T10c;
-
 _Te0:
 	__asm        cmp    dword ptr [ebp-0x50], 5;
 	__asm        ja     _Td4;
@@ -604,6 +602,7 @@ _T198:
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    _T1a0;
 // LINE 279:
+_T1a0:
 }
 
 // FUNCTION: COPTER_D 0x0049a9dd
@@ -676,6 +675,7 @@ _Ta0:
 	__asm        and    eax, [ecx+0x20];
 	__asm        jmp    _Tb5;
 // LINE 323:
+_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x0049aa99
@@ -731,6 +731,7 @@ _T93:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T9a;
 // LINE 351:
+_T9a:
 }
 
 // FUNCTION: COPTER_D 0x0049ab3a
@@ -797,6 +798,7 @@ _T96:
 	__asm        mov    eax, [eax+0x28];
 	__asm        jmp    _Ta1;
 // LINE 401:
+_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0049abe2
@@ -819,6 +821,7 @@ _T30:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T37;
 // LINE 427:
+_T37:
 }
 
 // FUNCTION: COPTER_D 0x0049ac20
@@ -854,6 +857,7 @@ _T4e:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T55;
 // LINE 463:
+_T55:
 }
 
 // FUNCTION: COPTER_D 0x0049ac7c
@@ -889,6 +893,7 @@ _T4e:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T55;
 // LINE 487:
+_T55:
 }
 
 // FUNCTION: COPTER_D 0x0049acd8

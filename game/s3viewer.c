@@ -205,7 +205,6 @@ _T2d:
 	__asm        mov    rotx, 0x280000;
 // LINE 188:
 	__asm        jmp    _Te7;
-
 _T65:
 	__asm        push   0x27;
 	__asm        call   IsEventSet;
@@ -233,7 +232,6 @@ _T90:
 
 	__asm        mov    lJoystickValue, 1;
 	__asm        jmp    _Tc4;
-
 _Tbd:
 	__asm        mov    lJoystickValue, 0;
 _Tc4:
@@ -262,7 +260,6 @@ _Te7:
 	__asm        mov    roty, 0x280000;
 // LINE 201:
 	__asm        jmp    _T194;
-
 _T112:
 	__asm        push   0x29;
 	__asm        call   IsEventSet;
@@ -290,7 +287,6 @@ _T13d:
 
 	__asm        mov    lJoystickValue, 1;
 	__asm        jmp    _T171;
-
 _T16a:
 	__asm        mov    lJoystickValue, 0;
 _T171:
@@ -513,7 +509,6 @@ _T1b8:
 // LINE 277:
 _T3ef:
 	__asm        jmp    _T51c;
-
 _T3f4:
 	__asm        push   0x2B;
 	__asm        call   IsEventSet;
@@ -551,7 +546,6 @@ _T3f4:
 // LINE 286:
 _T455:
 	__asm        jmp    _T51c;
-
 _T45a:
 	__asm        push   0x2B;
 	__asm        push   0x2C;
@@ -623,6 +617,7 @@ _T4cd:
 // LINE 303:
 	__asm        inc    dword ptr ds:[0x67ED2C];
 // LINE 307:
+_T51c:
 }
 
 // FUNCTION: COPTER_D 0x004eee12
@@ -685,6 +680,7 @@ _T33:
 	__asm        sar    eax, 1;
 	__asm        add    ds:[0x67ED2C], eax;
 // LINE 340:
+_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004eeeb7
@@ -822,7 +818,6 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        add    esp, 4;
 // LINE 449:
 	__asm        jmp    _T16d;
-
 _T2b:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T41;
@@ -830,7 +825,6 @@ _T2b:
 	__asm        xor    dword ptr ds:[0x598E88], 1;
 // LINE 451:
 	__asm        jmp    _T16d;
-
 _T41:
 	__asm        cmp    nCommand, 0x2E;
 	__asm        jne    _T57;
@@ -838,7 +832,6 @@ _T41:
 	__asm        xor    dword ptr ds:[0x598E8C], 1;
 // LINE 453:
 	__asm        jmp    _T16d;
-
 _T57:
 	__asm        cmp    nCommand, 5;
 	__asm        jne    _T78;
@@ -850,7 +843,6 @@ _T57:
 // LINE 458:
 _T73:
 	__asm        jmp    _T16d;
-
 _T78:
 	__asm        cmp    nCommand, 4;
 	__asm        jne    _T8c;
@@ -858,7 +850,6 @@ _T78:
 	__asm        call   S3MissionSetCurrNext;
 // LINE 460:
 	__asm        jmp    _T16d;
-
 _T8c:
 	__asm        cmp    nCommand, 0x2F;
 	__asm        jne    _Taf;
@@ -871,7 +862,6 @@ _T8c:
 	__asm        add    esp, 4;
 // LINE 462:
 	__asm        jmp    _T16d;
-
 _Taf:
 	__asm        cmp    nCommand, 0x14;
 	__asm        jne    _T16d;
@@ -885,7 +875,6 @@ _Taf:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 0;
 // LINE 466:
 	__asm        jmp    _T16d;
-
 _Te2:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        jne    _T13d;
@@ -913,7 +902,6 @@ _T12e:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 1;
 // LINE 473:
 	__asm        jmp    _T16d;
-
 _T13d:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
 	__asm        jne    _T16d;
@@ -928,6 +916,7 @@ _T13d:
 // LINE 476:
 	__asm        mov    dword ptr ds:[0x5B4DB8], 2;
 // LINE 481:
+_T16d:
 }
 
 // FUNCTION: COPTER_D 0x004ef14b
@@ -968,6 +957,7 @@ _T46:
 // LINE 498:
 	__asm        call   S3SwitchToProperSkyType;
 // LINE 500:
+_T65:
 }
 
 

@@ -218,6 +218,7 @@ _T29:
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    _T8b;
 // LINE 98:
+_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043dce9
@@ -267,6 +268,7 @@ _T29:
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    _T8b;
 // LINE 121:
+_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043dd7b
@@ -316,6 +318,7 @@ _T29:
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    _T8b;
 // LINE 145:
+_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043de0d
@@ -365,6 +368,7 @@ _T29:
 	__asm        mov    eax, nReturnValue;
 	__asm        jmp    _T8b;
 // LINE 168:
+_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043de9f
@@ -411,7 +415,6 @@ _T50:
 	__asm        jmp    _Tdd;
 // LINE 200:
 	__asm        jmp    _Td3;
-
 _T75:
 	__asm        cmp    nVersionComponent, 1;
 	__asm        jne    _T94;
@@ -423,7 +426,6 @@ _T75:
 	__asm        jmp    _Tdd;
 // LINE 202:
 	__asm        jmp    _Td3;
-
 _T94:
 	__asm        cmp    nVersionComponent, 2;
 	__asm        jne    _Tb9;
@@ -436,7 +438,6 @@ _T94:
 	__asm        jmp    _Tdd;
 // LINE 204:
 	__asm        jmp    _Td3;
-
 _Tb9:
 	__asm        cmp    nVersionComponent, 3;
 	__asm        jne    _Td3;
@@ -451,6 +452,7 @@ _Td3:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tdd;
 // LINE 208:
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0043df83
@@ -540,7 +542,6 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 	__asm        jmp    _T49;
 // LINE 311:
 	__asm        jmp    _T3f;
-
 _T2b:
 	__asm        cmp    nVersionComponent, 1;
 	__asm        jne    _T3f;
@@ -553,6 +554,7 @@ _T3f:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T49;
 // LINE 316:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x0043e086

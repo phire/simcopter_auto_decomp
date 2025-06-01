@@ -213,6 +213,7 @@ _T175:
 	__asm        mov    eax, bOK;
 	__asm        jmp    _T189;
 // LINE 160:
+_T189:
 }
 
 // FUNCTION: COPTER_D 0x004c481e
@@ -393,6 +394,7 @@ _T1a0:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T1b5;
 // LINE 231:
+_T1b5:
 }
 
 // FUNCTION: COPTER_D 0x004c49d8
@@ -486,6 +488,7 @@ _T7f:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T86;
 // LINE 284:
+_T86:
 }
 
 // FUNCTION: COPTER_D 0x004c4ab6
@@ -618,7 +621,6 @@ _T126:
 // LINE 335:
 _T171:
 	__asm        jmp    _T7ca;
-
 _T176:
 	__asm        push   0x59B01C;
 	__asm        call   stol;
@@ -649,7 +651,6 @@ _T1b8:
 	__asm        add    esp, 8;
 // LINE 340:
 	__asm        jmp    _T7ca;
-
 _T1cf:
 	__asm        push   0x59B024;
 	__asm        call   stol;
@@ -674,7 +675,6 @@ _T1cf:
 // LINE 344:
 _T216:
 	__asm        jmp    _T7ca;
-
 _T21b:
 	__asm        push   0x59B02C;
 	__asm        call   stol;
@@ -699,7 +699,6 @@ _T21b:
 // LINE 348:
 _T262:
 	__asm        jmp    _T7ca;
-
 _T267:
 	__asm        push   0x59B034;
 	__asm        call   stol;
@@ -724,7 +723,6 @@ _T267:
 // LINE 352:
 _T2ae:
 	__asm        jmp    _T7ca;
-
 _T2b3:
 	__asm        push   0x59B03C;
 	__asm        call   stol;
@@ -749,7 +747,6 @@ _T2b3:
 // LINE 356:
 _T2fa:
 	__asm        jmp    _T7ca;
-
 _T2ff:
 	__asm        push   0x59B044;
 	__asm        call   stol;
@@ -774,7 +771,6 @@ _T2ff:
 // LINE 360:
 _T346:
 	__asm        jmp    _T7ca;
-
 _T34b:
 	__asm        push   0x59B04C;
 	__asm        call   stol;
@@ -801,7 +797,6 @@ _T34b:
 // LINE 366:
 _T39b:
 	__asm        jmp    _T7ca;
-
 _T3a0:
 	__asm        push   0x59B054;
 	__asm        call   stol;
@@ -832,7 +827,6 @@ _T3e7:
 	__asm        add    esp, 8;
 // LINE 372:
 	__asm        jmp    _T7ca;
-
 _T3ff:
 	__asm        push   0x59B05C;
 	__asm        call   stol;
@@ -857,7 +851,6 @@ _T3ff:
 // LINE 377:
 _T446:
 	__asm        jmp    _T7ca;
-
 _T44b:
 	__asm        push   0x59B064;
 	__asm        call   stol;
@@ -882,7 +875,6 @@ _T44b:
 // LINE 382:
 _T492:
 	__asm        jmp    _T7ca;
-
 _T497:
 	__asm        push   0x59B06C;
 	__asm        call   stol;
@@ -907,7 +899,6 @@ _T497:
 // LINE 386:
 _T4de:
 	__asm        jmp    _T7ca;
-
 _T4e3:
 	__asm        push   0x59B074;
 	__asm        call   stol;
@@ -932,7 +923,6 @@ _T4e3:
 // LINE 390:
 _T52a:
 	__asm        jmp    _T7ca;
-
 _T52f:
 	__asm        push   0x59B07C;
 	__asm        call   stol;
@@ -957,7 +947,6 @@ _T52f:
 // LINE 394:
 _T576:
 	__asm        jmp    _T7ca;
-
 _T57b:
 	__asm        push   0x59B084;
 	__asm        call   stol;
@@ -982,7 +971,6 @@ _T57b:
 // LINE 398:
 _T5c2:
 	__asm        jmp    _T7ca;
-
 _T5c7:
 	__asm        push   0x59B08C;
 	__asm        call   stol;
@@ -1007,7 +995,6 @@ _T5c7:
 // LINE 402:
 _T60e:
 	__asm        jmp    _T7ca;
-
 _T613:
 	__asm        push   0x59B094;
 	__asm        call   stol;
@@ -1032,7 +1019,6 @@ _T613:
 // LINE 406:
 _T65a:
 	__asm        jmp    _T7ca;
-
 _T65f:
 	__asm        push   0x59B09C;
 	__asm        call   stol;
@@ -1057,7 +1043,6 @@ _T65f:
 // LINE 410:
 _T6a6:
 	__asm        jmp    _T7ca;
-
 _T6ab:
 	__asm        push   0x59B0A4;
 	__asm        call   stol;
@@ -1082,7 +1067,6 @@ _T6ab:
 // LINE 414:
 _T6f2:
 	__asm        jmp    _T7ca;
-
 _T6f7:
 	__asm        push   0x59B0AC;
 	__asm        call   stol;
@@ -1113,7 +1097,6 @@ _T73e:
 	__asm        add    esp, 8;
 // LINE 419:
 	__asm        jmp    _T7ca;
-
 _T756:
 	__asm        push   0x59B0B4;
 	__asm        call   stol;
@@ -1139,7 +1122,6 @@ _T799:
 	__asm        mov    bFoundName, 1;
 // LINE 424:
 	__asm        jmp    _T7ca;
-
 _T7a7:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1241,6 +1223,7 @@ _T8a1:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T8b8;
 // LINE 459:
+_T8b8:
 }
 
 // FUNCTION: COPTER_D 0x004c5373
@@ -1251,7 +1234,6 @@ void label_kludge() {
 // LINE 476:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T14:
 	__asm        inc    i;
 _T18:
@@ -1294,6 +1276,7 @@ _T7a:
 // LINE 481:
 	__asm        jmp    _T14;
 // LINE 482:
+_T9a:
 }
 
 // FUNCTION: COPTER_D 0x004c5412
@@ -1304,7 +1287,6 @@ void clear_label() {
 // LINE 499:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T14:
 	__asm        inc    i;
 _T18:
@@ -1314,7 +1296,6 @@ _T18:
 // LINE 500:
 	__asm        mov    j, 0;
 	__asm        jmp    _T36;
-
 _T32:
 	__asm        inc    j;
 _T36:
@@ -1334,6 +1315,7 @@ _T36:
 _T62:
 	__asm        jmp    _T14;
 // LINE 503:
+_T67:
 }
 
 // FUNCTION: COPTER_D 0x004c547e
@@ -1344,7 +1326,6 @@ void graph_kludge() {
 // LINE 519:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T14:
 	__asm        inc    i;
 _T18:
@@ -1360,7 +1341,6 @@ _T18:
 // LINE 521:
 	__asm        mov    j, 0;
 	__asm        jmp    _T4c;
-
 _T48:
 	__asm        inc    j;
 _T4c:
@@ -1394,7 +1374,6 @@ _Ta2:
 _Ta7:
 	__asm        mov    i, 1;
 	__asm        jmp    _Tb6;
-
 _Tb2:
 	__asm        inc    i;
 _Tb6:
@@ -1409,6 +1388,7 @@ _Tb6:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        jmp    _Tb2;
 // LINE 528:
+_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x004c555f
@@ -1559,6 +1539,7 @@ _Te2:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Teb;
 // LINE 614:
+_Teb:
 }
 
 // FUNCTION: COPTER_D 0x004c56e2
@@ -1788,7 +1769,6 @@ _T63:
 // LINE 685:
 	__asm        mov    i, 0;
 	__asm        jmp    _T31a;
-
 _T316:
 	__asm        inc    i;
 _T31a:
@@ -1825,7 +1805,6 @@ _T31a:
 _T386:
 	__asm        mov    i, 0;
 	__asm        jmp    _T395;
-
 _T391:
 	__asm        inc    i;
 _T395:
@@ -1862,7 +1841,6 @@ _T395:
 _T403:
 	__asm        mov    i, 0;
 	__asm        jmp    _T412;
-
 _T40e:
 	__asm        inc    i;
 _T412:
@@ -1882,7 +1860,6 @@ _T412:
 _T445:
 	__asm        mov    i, 0;
 	__asm        jmp    _T454;
-
 _T450:
 	__asm        inc    i;
 _T454:
@@ -1903,7 +1880,6 @@ _T454:
 _T484:
 	__asm        mov    i, 0;
 	__asm        jmp    _T493;
-
 _T48f:
 	__asm        inc    i;
 _T493:
@@ -1923,7 +1899,6 @@ _T493:
 _T4c2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4d1;
-
 _T4cd:
 	__asm        inc    i;
 _T4d1:
@@ -2015,7 +1990,6 @@ _T58e:
 _T5ed:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5fc;
-
 _T5f8:
 	__asm        inc    i;
 _T5fc:
@@ -2034,7 +2008,6 @@ _T5fc:
 _T62b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T63a;
-
 _T636:
 	__asm        inc    i;
 _T63a:
@@ -2053,7 +2026,6 @@ _T63a:
 _T669:
 	__asm        mov    i, 0;
 	__asm        jmp    _T678;
-
 _T674:
 	__asm        inc    i;
 _T678:
@@ -2099,7 +2071,6 @@ _T678:
 // LINE 736:
 	__asm        mov    j, 0;
 	__asm        jmp    _T70f;
-
 _T70b:
 	__asm        inc    j;
 _T70f:
@@ -2173,7 +2144,6 @@ _T785:
 // LINE 749:
 	__asm        mov    i, 0;
 	__asm        jmp    _T806;
-
 _T802:
 	__asm        inc    i;
 _T806:
@@ -2231,7 +2201,6 @@ _T806:
 _T8c1:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8d0;
-
 _T8cc:
 	__asm        inc    i;
 _T8d0:
@@ -2304,7 +2273,6 @@ _T99d:
 // LINE 769:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9d8;
-
 _T9d4:
 	__asm        inc    i;
 _T9d8:
@@ -2662,6 +2630,7 @@ _Tb3c:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Tef8;
 // LINE 846:
+_Tef8:
 }
 
 // FUNCTION: COPTER_D 0x004c65df
@@ -2686,6 +2655,7 @@ _T2c:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T35;
 // LINE 866:
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x004c6619
@@ -2741,6 +2711,7 @@ _T6f:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T86;
 // LINE 898:
+_T86:
 }
 
 // FUNCTION: COPTER_D 0x004c66a4
@@ -2831,7 +2802,6 @@ _T88:
 	__asm        inc    tp;
 // LINE 938:
 	__asm        jmp    _Tdc;
-
 _Td9:
 	__asm        dec    ix;
 _Tdc:
@@ -2853,7 +2823,6 @@ _Tff:
 	__asm        mov    ix, eax;
 // LINE 942:
 	__asm        jmp    _T10e;
-
 _T10b:
 	__asm        dec    ix;
 _T10e:
@@ -2890,6 +2859,7 @@ _T15c:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T165;
 // LINE 953:
+_T165:
 }
 
 // FUNCTION: COPTER_D 0x004c680e
@@ -3333,6 +3303,7 @@ _T4d7:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T4eb;
 // LINE 1053:
+_T4eb:
 }
 
 // FUNCTION: COPTER_D 0x004c6cfe
@@ -3420,6 +3391,7 @@ _Tbd:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Td2;
 // LINE 1094:
+_Td2:
 }
 
 // FUNCTION: COPTER_D 0x004c6dd5
@@ -3529,6 +3501,7 @@ _Tdc:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T101;
 // LINE 1138:
+_T101:
 }
 
 // FUNCTION: COPTER_D 0x004c6edb
@@ -3635,6 +3608,7 @@ _Tfd:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T106;
 // LINE 1181:
+_T106:
 }
 
 // FUNCTION: COPTER_D 0x004c6fe6
@@ -3686,7 +3660,6 @@ _T6a:
 	__asm        add    esp, 8;
 // LINE 1209:
 	__asm        jmp    _Ta5;
-
 _T7f:
 	__asm        push   0x59B1CC;
 	__asm        call   stol;
@@ -3861,7 +3834,6 @@ _T215:
 	__asm        add    esp, 8;
 // LINE 1252:
 	__asm        jmp    _T266;
-
 _T240:
 	__asm        push   0x59B1DC;
 	__asm        call   stol;
@@ -3966,6 +3938,7 @@ _T32d:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T343;
 // LINE 1284:
+_T343:
 }
 
 // FUNCTION: COPTER_D 0x004c732e
@@ -4169,7 +4142,6 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 // LINE 1339:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2e2;
-
 _T2de:
 	__asm        inc    i;
 _T2e2:
@@ -4206,7 +4178,6 @@ _T2e2:
 _T34e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T35d;
-
 _T359:
 	__asm        inc    i;
 _T35d:
@@ -4243,7 +4214,6 @@ _T35d:
 _T3cb:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3da;
-
 _T3d6:
 	__asm        inc    i;
 _T3da:
@@ -4264,7 +4234,6 @@ _T3da:
 _T40f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41e;
-
 _T41a:
 	__asm        inc    i;
 _T41e:
@@ -4284,7 +4253,6 @@ _T41e:
 _T44e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T45d;
-
 _T459:
 	__asm        inc    i;
 _T45d:
@@ -4303,7 +4271,6 @@ _T45d:
 _T48c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T49b;
-
 _T497:
 	__asm        inc    i;
 _T49b:
@@ -4348,7 +4315,6 @@ _T49b:
 _T526:
 	__asm        mov    i, 0;
 	__asm        jmp    _T535;
-
 _T531:
 	__asm        inc    i;
 _T535:
@@ -4367,7 +4333,6 @@ _T535:
 _T564:
 	__asm        mov    i, 0;
 	__asm        jmp    _T573;
-
 _T56f:
 	__asm        inc    i;
 _T573:
@@ -4386,7 +4351,6 @@ _T573:
 _T5a2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5b1;
-
 _T5ad:
 	__asm        inc    i;
 _T5b1:
@@ -4432,7 +4396,6 @@ _T5b1:
 // LINE 1369:
 	__asm        mov    j, 0;
 	__asm        jmp    _T648;
-
 _T644:
 	__asm        inc    j;
 _T648:
@@ -4510,7 +4473,6 @@ _T6be:
 // LINE 1382:
 	__asm        mov    i, 0;
 	__asm        jmp    _T748;
-
 _T744:
 	__asm        inc    i;
 _T748:
@@ -4573,7 +4535,6 @@ _T748:
 _T80d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T81c;
-
 _T818:
 	__asm        inc    i;
 _T81c:
@@ -4650,7 +4611,6 @@ _T8f1:
 // LINE 1403:
 	__asm        mov    i, 0;
 	__asm        jmp    _T92c;
-
 _T928:
 	__asm        inc    i;
 _T92c:
@@ -5001,7 +4961,6 @@ _T95f:
 	__asm        inc    ix;
 // LINE 1476:
 	__asm        jmp    _Te47;
-
 _Te43:
 	__asm        inc    ix;
 _Te47:
@@ -5049,7 +5008,6 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1504:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2d;
-
 _T2a:
 	__asm        inc    i;
 _T2d:
@@ -5072,6 +5030,7 @@ _T2d:
 // LINE 1507:
 	__asm        jmp    _T2a;
 // LINE 1509:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x004c822d
@@ -5089,7 +5048,6 @@ void swizzle_Micro(char * data, long count) {
 // LINE 1532:
 	__asm        mov    i, 0;
 	__asm        jmp    _T27;
-
 _T24:
 	__asm        inc    i;
 _T27:
@@ -5125,6 +5083,7 @@ _T27:
 // LINE 1537:
 	__asm        jmp    _T24;
 // LINE 1539:
+_T81:
 }
 
 // FUNCTION: COPTER_D 0x004c82b3
@@ -5145,7 +5104,6 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1562:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2a;
-
 _T27:
 	__asm        inc    i;
 _T2a:
@@ -5168,6 +5126,7 @@ _T2a:
 // LINE 1565:
 	__asm        jmp    _T27;
 // LINE 1567:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x004c8317
@@ -5483,7 +5442,6 @@ _T2d3:
 _T2ff:
 	__asm        mov    i, 0;
 	__asm        jmp    _T30e;
-
 _T30b:
 	__asm        inc    i;
 _T30e:
@@ -5501,7 +5459,6 @@ _T30e:
 // LINE 1817:
 	__asm        mov    j, 0;
 	__asm        jmp    _T345;
-
 _T342:
 	__asm        inc    j;
 _T345:
@@ -5549,7 +5506,6 @@ _T37d:
 _T3dc:
 	__asm        mov    cnt, 1;
 	__asm        jmp    _T3eb;
-
 _T3e8:
 	__asm        inc    cnt;
 _T3eb:
@@ -5579,7 +5535,6 @@ _T413:
 _T442:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T451;
-
 _T44e:
 	__asm        inc    cnt;
 _T451:
@@ -5609,7 +5564,6 @@ _T479:
 _T4a8:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T4b7;
-
 _T4b4:
 	__asm        inc    cnt;
 _T4b7:
@@ -5639,7 +5593,6 @@ _T4df:
 _T50e:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T51d;
-
 _T51a:
 	__asm        inc    cnt;
 _T51d:
@@ -5669,7 +5622,6 @@ _T545:
 _T574:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T583;
-
 _T580:
 	__asm        inc    cnt;
 _T583:
@@ -5699,7 +5651,6 @@ _T5ab:
 _T5da:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T5e9;
-
 _T5e6:
 	__asm        inc    cnt;
 _T5e9:
@@ -5757,7 +5708,6 @@ _T69e:
 // LINE 1858:
 	__asm        mov    x, 0;
 	__asm        jmp    _T6b3;
-
 _T6af:
 	__asm        inc    x;
 _T6b3:
@@ -5767,7 +5717,6 @@ _T6b3:
 // LINE 1859:
 	__asm        mov    y, 0;
 	__asm        jmp    _T6d1;
-
 _T6cd:
 	__asm        inc    y;
 _T6d1:
@@ -5949,7 +5898,6 @@ _T911:
 _T940:
 	__asm        mov    i, 0;
 	__asm        jmp    _T94f;
-
 _T94c:
 	__asm        inc    i;
 _T94f:
@@ -5973,7 +5921,6 @@ _T94f:
 _T98d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T99c;
-
 _T999:
 	__asm        inc    i;
 _T99c:
@@ -6009,7 +5956,6 @@ _T99c:
 _Ta03:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta12;
-
 _Ta0f:
 	__asm        inc    i;
 _Ta12:
@@ -6316,6 +6262,7 @@ _Tdfd:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Te14;
 // LINE 1953:
+_Te14:
 }
 
 // FUNCTION: COPTER_D 0x004c920e
@@ -6340,7 +6287,6 @@ void PStringToCString(char * string) {
 // LINE 1983:
 	__asm        mov    i, 0;
 	__asm        jmp    _T20;
-
 _T1d:
 	__asm        inc    i;
 _T20:
@@ -6385,7 +6331,6 @@ _T2c:
 	__asm        dec    eax;
 	__asm        mov    i, eax;
 	__asm        jmp    _T3b;
-
 _T38:
 	__asm        dec    i;
 _T3b:
@@ -6425,7 +6370,6 @@ void CopyPString(char * stringDestination, char * stringSource) {
 // LINE 2015:
 	__asm        mov    i, 1;
 	__asm        jmp    _T2c;
-
 _T29:
 	__asm        inc    i;
 _T2c:
@@ -6441,6 +6385,7 @@ _T2c:
 	__asm        mov    [ecx+edx], al;
 	__asm        jmp    _T29;
 // LINE 2017:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x004c9339
@@ -6473,6 +6418,7 @@ void check_backslash_terminate(char * path) {
 	__asm        mov    eax, s;
 	__asm        mov    byte ptr [eax+1], 0;
 // LINE 2051:
+_T43:
 }
 
 // FUNCTION: COPTER_D 0x004c9381
@@ -6553,7 +6499,6 @@ _Ta1:
 	__asm        dec    count;
 // LINE 2094:
 	__asm        jmp    _Ted;
-
 _Tcb:
 	__asm        lea    eax, pathonly[0];
 	__asm        cmp    s, eax;
@@ -6581,6 +6526,7 @@ _T106:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T10f;
 // LINE 2104:
+_T10f:
 }
 
 // FUNCTION: COPTER_D 0x004c9495
@@ -6659,6 +6605,7 @@ _T86:
 	__asm        mov    ecx, ret;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 2145:
+_Tab:
 }
 
 // FUNCTION: COPTER_D 0x004c9545
@@ -6695,7 +6642,6 @@ _T30:
 // LINE 2173:
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
-
 _T51:
 	__asm        inc    i;
 _T55:
@@ -6725,6 +6671,7 @@ _T91:
 // LINE 2177:
 	__asm        jmp    _T51;
 // LINE 2178:
+_T99:
 }
 
 // FUNCTION: COPTER_D 0x004c95e3
@@ -6787,7 +6734,6 @@ _T75:
 	__asm        inc    s;
 // LINE 2214:
 	__asm        jmp    _T9c;
-
 _T89:
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6804,6 +6750,7 @@ _T9c:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2218:
+_Tac:
 }
 
 // FUNCTION: COPTER_D 0x004c9694
@@ -6850,6 +6797,7 @@ _T5b:
 // LINE 2248:
 	__asm        jmp    _T35;
 // LINE 2249:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x004c96fc
@@ -6984,6 +6932,7 @@ _T113:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2303:
+_T134:
 }
 
 // FUNCTION: COPTER_D 0x004c9835
@@ -7013,6 +6962,7 @@ _T2f:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T44;
 // LINE 2326:
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x004c987e
@@ -7169,6 +7119,7 @@ _T192:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2371:
+_T1ab:
 }
 
 // FUNCTION: COPTER_D 0x004c9a2e
@@ -7235,6 +7186,7 @@ _T84:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2405:
+_T9d:
 }
 
 

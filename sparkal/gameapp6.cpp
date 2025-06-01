@@ -40,7 +40,6 @@ void  CGameApp::ToggleMusicSoundTrack() {
 	__asm        je     _T3a;
 
 	__asm        jmp    _T5b;
-
 _T3a:
 	__asm        jmp    near ptr 0x00471EC3;
 
@@ -62,7 +61,6 @@ _T65:
 	__asm        je     _T81;
 
 	__asm        jmp    _Ta2;
-
 _T81:
 	__asm        jmp    near ptr 0x00471F0A;
 

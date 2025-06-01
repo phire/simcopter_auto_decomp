@@ -101,6 +101,7 @@ _T5f:
 	__asm        add    eax, y;
 	__asm        jmp    _T6d;
 // LINE 30:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00543704
@@ -167,7 +168,6 @@ _T74:
 // LINE 57:
 	__asm        mov    x, 0;
 	__asm        jmp    _Ta9;
-
 _Ta6:
 	__asm        inc    x;
 _Ta9:
@@ -178,7 +178,6 @@ _Ta9:
 	int32_t yindex;
 	__asm        mov    yindex, 0;
 	__asm        jmp    _Tc5;
-
 _Tc2:
 	__asm        inc    yindex;
 _Tc5:
@@ -303,7 +302,6 @@ _T143:
 _T1e9:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f8;
-
 _T1f5:
 	__asm        inc    i;
 _T1f8:
@@ -385,6 +383,7 @@ _T2a8:
 	__asm        mov    eax, pathFoundFlag;
 	__asm        jmp    _T2b0;
 // LINE 132:
+_T2b0:
 }
 
 // FUNCTION: COPTER_D 0x005439bb
@@ -461,7 +460,6 @@ _T85:
 // LINE 163:
 	__asm        mov    x, 0;
 	__asm        jmp    _Tba;
-
 _Tb7:
 	__asm        inc    x;
 _Tba:
@@ -472,7 +470,6 @@ _Tba:
 	int32_t yindex;
 	__asm        mov    yindex, 0;
 	__asm        jmp    _Td6;
-
 _Td3:
 	__asm        inc    yindex;
 _Td6:
@@ -623,7 +620,6 @@ _T192:
 _T238:
 	__asm        mov    i, 0;
 	__asm        jmp    _T247;
-
 _T244:
 	__asm        inc    i;
 _T247:
@@ -720,6 +716,7 @@ _T313:
 	__asm        mov    eax, pathFoundFlag;
 	__asm        jmp    _T31b;
 // LINE 247:
+_T31b:
 }
 
 // FUNCTION: COPTER_D 0x00543cdd

@@ -411,7 +411,6 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T26;
-
 _T24:
 	__asm        xor    eax, eax;
 _T26:
@@ -464,7 +463,6 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        call   AmbulanceClass::AmbulanceClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
-
 _T33:
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 116:
@@ -534,7 +532,6 @@ _Td6:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T107;
-
 _T102:
 	__asm        jmp    _T107;
 // LINE 143:
@@ -555,7 +552,6 @@ _T113:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T13e;
-
 _T139:
 	__asm        jmp    _T13e;
 // LINE 151:
@@ -619,6 +615,7 @@ _T1dd:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e4;
 // LINE 177:
+_T1e4:
 }
 
 // FUNCTION: COPTER_D 0x00535b14
@@ -650,7 +647,6 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T25;
-
 _T23:
 	__asm        xor    eax, eax;
 _T25:
@@ -672,12 +668,10 @@ int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
 
 	__asm        cmp    mapY, 0x80;
 	__asm        jl     _T41;
-
 _T37:
 	__asm        jmp    _Ta0;
 
 	__asm        jmp    _T96;
-
 _T41:
 	__asm        mov    eax, mapX;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -703,11 +697,9 @@ _T41:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0xD1;
 	__asm        jne    _Ta0;
-
 _T96:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Ta2;
-
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
@@ -956,12 +948,10 @@ _T2a5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFA], 0;
 	__asm        jne    _T2d5;
-
 _T2c5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jg     _T337;
-
 _T2d5:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOut;
@@ -995,7 +985,6 @@ _T2d5:
 	__asm        call   dword ptr [eax+8];
 // LINE 394:
 	__asm        jmp    _T354;
-
 _T337:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFA], 0;
@@ -1021,7 +1010,6 @@ _T37a:
 	__asm        jmp    _T3af;
 // LINE 403:
 	__asm        jmp    _T3af;
-
 _T384:
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        cmp    dword ptr [ebp-0x18], 4;
@@ -1033,6 +1021,7 @@ _T384:
 // LINE 404:
 _T3af:
 	__asm        jmp    _T3b4;
+_T3b4:
 }
 
 // FUNCTION: COPTER_D 0x00535fda
@@ -1087,7 +1076,6 @@ _T3a:
 	__asm        jmp    _T75;
 // LINE 458:
 	__asm        jmp    _T75;
-
 _T5c:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        jl     _T75;
@@ -1099,6 +1087,7 @@ _T5c:
 // LINE 460:
 _T75:
 	__asm        jmp    _T7a;
+_T7a:
 }
 
 

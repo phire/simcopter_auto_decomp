@@ -383,7 +383,6 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T26;
-
 _T24:
 	__asm        xor    eax, eax;
 _T26:
@@ -436,7 +435,6 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        call   FireEngineClass::FireEngineClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
-
 _T33:
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 120:
@@ -506,7 +504,6 @@ _Td6:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T107;
-
 _T102:
 	__asm        jmp    _T107;
 // LINE 147:
@@ -527,7 +524,6 @@ _T113:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T13e;
-
 _T139:
 	__asm        jmp    _T13e;
 // LINE 155:
@@ -594,6 +590,7 @@ _T1ea:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1f1;
 // LINE 184:
+_T1f1:
 }
 
 // FUNCTION: COPTER_D 0x00536381
@@ -625,7 +622,6 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T25;
-
 _T23:
 	__asm        xor    eax, eax;
 _T25:
@@ -647,12 +643,10 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 
 	__asm        cmp    mapY, 0x80;
 	__asm        jl     _T41;
-
 _T37:
 	__asm        jmp    _Ta0;
 
 	__asm        jmp    _T96;
-
 _T41:
 	__asm        mov    eax, mapX;
 	__asm        mov    eax, [eax*4+0x638F70];
@@ -678,11 +672,9 @@ _T41:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0xD3;
 	__asm        jne    _Ta0;
-
 _T96:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Ta2;
-
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
@@ -930,7 +922,6 @@ _T2b3:
 	__asm        jmp    _T2e0;
 // LINE 347:
 	__asm        jmp    _T2e0;
-
 _T2bd:
 	__asm        cmp    dword ptr [ebp-0x18], 2;
 	__asm        je     _T1d;
@@ -993,7 +984,6 @@ _T78:
 // LINE 374:
 _T7f:
 	__asm        jmp    _Tf7;
-
 _T84:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2A8], 0;
@@ -1066,6 +1056,7 @@ _T146:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T150;
 // LINE 400:
+_T150:
 }
 
 // FUNCTION: COPTER_D 0x005368cd
@@ -1124,10 +1115,8 @@ _T3f:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tac;
-
 _Ta7:
 	__asm        jmp    _Tac;
-
 _Tac:
 	__asm        jmp    near ptr 0x0053697E;
 
@@ -1266,6 +1255,7 @@ _T1fa:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    _T20e;
 // LINE 498:
+_T20e:
 }
 
 // FUNCTION: COPTER_D 0x00536ae2
@@ -1324,7 +1314,6 @@ _Ta8:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Td9;
-
 _Td4:
 	__asm        jmp    _Td9;
 // LINE 531:
@@ -1443,7 +1432,6 @@ _T3a:
 	__asm        jmp    _T75;
 // LINE 594:
 	__asm        jmp    _T75;
-
 _T5c:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        jl     _T75;
@@ -1493,6 +1481,7 @@ _T75:
 // LINE 606:
 _Tef:
 	__asm        jmp    _Tf4;
+_Tf4:
 }
 
 

@@ -244,30 +244,23 @@ _T1c7:
 // LINE 141:
 _T1d7:
 	__asm        jmp    _T1c7;
-
 _T1dc:
 	__asm        jmp    _T1aa;
-
 _T1e1:
 	__asm        jmp    _T1aa;
-
 _T1e6:
 	__asm        jmp    _T1aa;
-
 _T1eb:
 	__asm        jmp    _T1aa;
-
 _T1f0:
 	__asm        jmp    _T1aa;
-
 _T1f5:
 	__asm        jmp    _T1aa;
-
 _T1fa:
 	__asm        jmp    _T1aa;
-
 _T1ff:
 	__asm        jmp    _T1aa;
+_T204:
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
@@ -314,6 +307,7 @@ _T5a:
 // LINE 169:
 _T62:
 	__asm        jmp    _T5a;
+_T67:
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
@@ -358,7 +352,6 @@ _T48:
 // LINE 208:
 	__asm        mov    cT, 0;
 	__asm        jmp    _T64;
-
 _T61:
 	__asm        inc    cT;
 _T64:
@@ -448,18 +441,15 @@ _T124:
 // LINE 239:
 _T12c:
 	__asm        jmp    _T124;
-
 _T131:
 	__asm        jmp    _T11b;
-
 _T136:
 	__asm        jmp    _T11b;
-
 _T13b:
 	__asm        jmp    _T11b;
-
 _T140:
 	__asm        jmp    _T11b;
+_T145:
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
@@ -630,20 +620,16 @@ _T150:
 // LINE 332:
 _T158:
 	__asm        jmp    _T133;
-
 _T15d:
 	__asm        jmp    _T112;
-
 _T162:
 	__asm        jmp    _T112;
-
 _T167:
 	__asm        jmp    _T112;
-
 _T16c:
 	__asm        jmp    _T112;
-
 _T171:
 	__asm        jmp    _T112;
+_T176:
 }
 

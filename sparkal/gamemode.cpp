@@ -495,7 +495,6 @@ int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGame
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T22;
-
 _T20:
 	__asm        xor    eax, eax;
 _T22:
@@ -601,7 +600,6 @@ _T58:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
 	__asm        jmp    _T58;
-
 _T7b:
 	__asm        jmp    near ptr 0x004BD89A;
 
@@ -609,7 +607,6 @@ _T7b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
-
 _T94:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -689,7 +686,6 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    tempUMWD.sImageFileName.reference, eax;
 	__asm        jmp    _T81;
-
 _T7a:
 	__asm        mov    tempUMWD.sImageFileName.reference, 0;
 _T81:
@@ -824,7 +820,6 @@ _T81:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T23b;
-
 _T231:
 	__asm        mov    dword ptr [ebp-0x8C], 0;
 _T23b:
@@ -841,7 +836,6 @@ _T23b:
 	__asm        call   CopterMainMenu::CopterMainMenu;
 	__asm        mov    myUserMenuWindow, eax;
 	__asm        jmp    _T271;
-
 _T26a:
 	__asm        mov    myUserMenuWindow, 0;
 // LINE 220:
@@ -874,7 +868,6 @@ _T271:
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T2dd;
-
 _T2dd:
 	__asm        jmp    near ptr 0x004BDC2C;
 
@@ -1000,7 +993,6 @@ _T58:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
 	__asm        jmp    _T58;
-
 _T7b:
 	__asm        jmp    near ptr 0x004BDDDB;
 
@@ -1008,7 +1000,6 @@ _T7b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
-
 _T94:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1099,7 +1090,6 @@ _T3b:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T7a;
-
 _T73:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 _T7a:
@@ -1136,7 +1126,6 @@ _T7a:
 	__asm        call   CareerWindow::CareerWindow;
 	__asm        mov    myCareerWindow, eax;
 	__asm        jmp    _Tea;
-
 _Te3:
 	__asm        mov    myCareerWindow, 0;
 // LINE 313:
@@ -1332,7 +1321,6 @@ _T58:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x118], 4;
 	__asm        jmp    _T58;
-
 _T7b:
 	__asm        jmp    near ptr 0x004BE1EE;
 
@@ -1340,7 +1328,6 @@ _T7b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
-
 _T94:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1379,7 +1366,6 @@ _Tf6:
 // LINE 425:
 	__asm        mov    i, 0;
 	__asm        jmp    _T116;
-
 _T110:
 	__asm        inc    i;
 _T116:
@@ -2038,13 +2024,11 @@ int32_t GameModePlayData::CreatePanels() {
 	__asm        jmp    near ptr 0x004BEA42;
 // LINE 574:
 	__asm        jmp    _T19b;
-
 _T17c:
 	__asm        cmp    dword ptr ds:[0x598F00], 2;
 	__asm        jne    _T18e;
 // LINE 577:
 	__asm        jmp    _T19b;
-
 _T18e:
 	__asm        cmp    dword ptr ds:[0x598F00], 3;
 	__asm        jne    _T19b;
@@ -2073,7 +2057,6 @@ _T19b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    _T1fa;
-
 _T1ed:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x40], 0;
@@ -2110,7 +2093,6 @@ _T1fa:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    _T275;
-
 _T268:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x44], 0;
@@ -2147,7 +2129,6 @@ _T275:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x48], eax;
 	__asm        jmp    _T2f0;
-
 _T2e3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x48], 0;
@@ -2184,7 +2165,6 @@ _T2f0:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    _T368;
-
 _T35b:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4C], 0;
@@ -2219,7 +2199,6 @@ _T368:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x50], eax;
 	__asm        jmp    _T3e3;
-
 _T3d6:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x50], 0;
@@ -2252,7 +2231,6 @@ _T3e3:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x54], eax;
 	__asm        jmp    _T454;
-
 _T447:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -2288,7 +2266,6 @@ _T454:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 	__asm        jmp    _T4cf;
-
 _T4c2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x58], 0;
@@ -2324,7 +2301,6 @@ _T4cf:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x6C], eax;
 	__asm        jmp    _T54b;
-
 _T53e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x6C], 0;
@@ -2546,7 +2522,6 @@ _Tcd:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x5C], eax;
 	__asm        jmp    _T13a;
-
 _T130:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
@@ -2620,7 +2595,6 @@ _T1b3:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T20c;
-
 _T205:
 	__asm        mov    dword ptr [ebp-0x58], 0;
 _T20c:
@@ -2642,7 +2616,6 @@ _T20c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    _T247;
-
 _T23d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x60], 0;
@@ -2716,7 +2689,6 @@ _T2c0:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T319;
-
 _T312:
 	__asm        mov    dword ptr [ebp-0x5C], 0;
 _T319:
@@ -2738,7 +2710,6 @@ _T319:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    _T354;
-
 _T34a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x64], 0;
@@ -2812,7 +2783,6 @@ _T3cd:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T426;
-
 _T41f:
 	__asm        mov    dword ptr [ebp-0x60], 0;
 _T426:
@@ -2834,7 +2804,6 @@ _T426:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
 	__asm        jmp    _T461;
-
 _T457:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x68], 0;
@@ -2906,7 +2875,6 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    _T53;
-
 _T49:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x3C], 0;
@@ -2947,7 +2915,6 @@ _T53:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    _Tbf;
-
 _Tb5:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x38], 0;
@@ -3756,10 +3723,8 @@ long GameModePlayData::TestForUserInHelicopter() {
 	__asm        je     _T25;
 
 	__asm        jmp    _T2a;
-
 _T25:
 	__asm        jmp    _T62;
-
 _T2a:
 	__asm        jmp    _T39;
 
@@ -3797,6 +3762,7 @@ _T86:
 	__asm        mov    eax, lReturnValue;
 	__asm        jmp    _T8e;
 // LINE 1035:
+_T8e:
 }
 
 // FUNCTION: COPTER_D 0x004bff6b
@@ -3834,6 +3800,7 @@ _T2b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T32;
 // LINE 1069:
+_T32:
 }
 
 // FUNCTION: COPTER_D 0x004bffda
@@ -3869,7 +3836,6 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        sub    dword ptr [eax+0x24], 0x28;
 // LINE 1092:
 	__asm        jmp    _Tbe;
-
 _T5d:
 	__asm        cmp    dword ptr ds:[0x598F00], 1;
 	__asm        jne    _T7d;
@@ -3881,7 +3847,6 @@ _T5d:
 	__asm        sub    dword ptr [eax+0x24], 0x50;
 // LINE 1096:
 	__asm        jmp    _Tbe;
-
 _T7d:
 	__asm        cmp    dword ptr ds:[0x598F00], 2;
 	__asm        jne    _T9d;
@@ -3893,7 +3858,6 @@ _T7d:
 	__asm        sub    dword ptr [eax+0x24], 0x64;
 // LINE 1100:
 	__asm        jmp    _Tbe;
-
 _T9d:
 	__asm        cmp    dword ptr ds:[0x598F00], 3;
 	__asm        jne    _Tbe;
@@ -4045,19 +4009,15 @@ _T2a:
 	__asm        jmp    _T70;
 
 	__asm        jmp    _T5c;
-
 _T5c:
 	__asm        jmp    _T6b;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T70;
-
 _T6b:
 	__asm        jmp    _T75;
-
 _T70:
 	__asm        jmp    _T13d;
-
 _T75:
 	__asm        jmp    _T84;
 
@@ -4556,7 +4516,6 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T5a5;
-
 _T5a5:
 	__asm        jmp    near ptr 0x004C08D0;
 
@@ -4654,7 +4613,6 @@ _T5a5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T72e;
-
 _T72e:
 	__asm        jmp    near ptr 0x004C0A59;
 
@@ -4722,7 +4680,6 @@ _T72e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T844;
-
 _T844:
 	__asm        jmp    near ptr 0x004C0B6F;
 
@@ -4820,7 +4777,6 @@ _T844:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T9cd;
-
 _T9cd:
 	__asm        jmp    near ptr 0x004C0CF8;
 
@@ -4888,7 +4844,6 @@ _T9cd:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tae3;
-
 _Tae3:
 	__asm        jmp    near ptr 0x004C0E0E;
 
@@ -4986,7 +4941,6 @@ _Tae3:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tc6c;
-
 _Tc6c:
 	__asm        jmp    near ptr 0x004C0F97;
 
@@ -5054,7 +5008,6 @@ _Tc6c:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Td82;
-
 _Td82:
 	__asm        jmp    near ptr 0x004C10AD;
 
@@ -5152,7 +5105,6 @@ _Td82:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tf0b;
-
 _Tf0b:
 	__asm        jmp    near ptr 0x004C1236;
 
@@ -5236,7 +5188,6 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
-
 _T44:
 	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
@@ -5252,7 +5203,6 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
-
 _T70:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -5383,7 +5333,6 @@ _T40:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    _T40;
-
 _T5a:
 	__asm        jmp    near ptr 0x004C150E;
 
@@ -5391,7 +5340,6 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
-
 _T6d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -5478,25 +5426,20 @@ _T64:
 	__asm        jmp    _T97;
 
 	__asm        jmp    _T80;
-
 _T80:
 	__asm        jmp    _T92;
 
 	__asm        cmp    dword ptr [ebp-0xAC], 0;
 	__asm        jne    _T97;
-
 _T92:
 	__asm        jmp    _T9c;
-
 _T97:
 	__asm        jmp    _Tfb;
-
 _T9c:
 	__asm        jmp    _Tae;
 
 	__asm        cmp    dword ptr [ebp-0xB0], 0;
 	__asm        je     _Tfb;
-
 _Tae:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    [ebp-0xA8], eax;
@@ -5515,7 +5458,6 @@ _Tae:
 	__asm        add    ecx, 0xF0;
 	__asm        call   list<Shortcut>::erase;
 	__asm        jmp    _T64;
-
 _Tfb:
 	__asm        jmp    near ptr 0x004C16B3;
 // LINE 1524:
@@ -5561,7 +5503,6 @@ _Tfb:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T192;
-
 _T192:
 	__asm        jmp    near ptr 0x004C174A;
 
@@ -5659,7 +5600,6 @@ _T192:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T2d0;
-
 _T2d0:
 	__asm        jmp    near ptr 0x004C1888;
 
@@ -5727,7 +5667,6 @@ _T2d0:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T3aa;
-
 _T3aa:
 	__asm        jmp    near ptr 0x004C1962;
 
@@ -5825,7 +5764,6 @@ _T3aa:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T50f;
-
 _T50f:
 	__asm        jmp    near ptr 0x004C1AC7;
 
@@ -5901,7 +5839,6 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
-
 _T44:
 	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
@@ -5917,7 +5854,6 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
-
 _T70:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -6048,7 +5984,6 @@ _T40:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    _T40;
-
 _T5a:
 	__asm        jmp    near ptr 0x004C1D84;
 
@@ -6056,7 +5991,6 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
-
 _T6d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -6143,25 +6077,20 @@ _T64:
 	__asm        jmp    _T97;
 
 	__asm        jmp    _T80;
-
 _T80:
 	__asm        jmp    _T92;
 
 	__asm        cmp    dword ptr [ebp-0xE4], 0;
 	__asm        jne    _T97;
-
 _T92:
 	__asm        jmp    _T9c;
-
 _T97:
 	__asm        jmp    _T14e;
-
 _T9c:
 	__asm        jmp    _Tae;
 
 	__asm        cmp    dword ptr [ebp-0xE8], 0;
 	__asm        je     _T14e;
-
 _Tae:
 	__asm        mov    eax, [ebp-0xF4];
 	__asm        mov    [ebp-0xE0], eax;
@@ -6202,7 +6131,6 @@ _Tae:
 	__asm        jmp    near ptr 0x004C1F72;
 
 	__asm        jmp    _T64;
-
 _T14e:
 	__asm        jmp    near ptr 0x004C1F7C;
 // LINE 1678:
@@ -6240,7 +6168,6 @@ _T14e:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T1ce:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -6268,7 +6195,6 @@ _T1ce:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
-
 _T228:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
@@ -6314,7 +6240,6 @@ _T22e:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
-
 _T2b2:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x74], eax;
@@ -6338,7 +6263,6 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T2f9:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0x48], eax;
@@ -6365,7 +6289,6 @@ _T30e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T348;
-
 _T348:
 	__asm        jmp    near ptr 0x004C2176;
 
@@ -6425,7 +6348,6 @@ _T348:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T423:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -6453,7 +6375,6 @@ _T423:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
-
 _T49e:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xB8], eax;
@@ -6499,7 +6420,6 @@ _T4aa:
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
-
 _T55e:
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    [ebp-0xCC], eax;
@@ -6523,7 +6443,6 @@ _T56a:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T5b7:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0xA0], eax;
@@ -6550,7 +6469,6 @@ _T5d5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T621;
-
 _T621:
 	__asm        jmp    near ptr 0x004C244F;
 
@@ -6626,7 +6544,6 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
-
 _T44:
 	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
@@ -6642,7 +6559,6 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
-
 _T70:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -6773,7 +6689,6 @@ _T40:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    _T40;
-
 _T5a:
 	__asm        jmp    near ptr 0x004C270C;
 
@@ -6781,7 +6696,6 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
-
 _T6d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -6868,25 +6782,20 @@ _T64:
 	__asm        jmp    _T97;
 
 	__asm        jmp    _T80;
-
 _T80:
 	__asm        jmp    _T92;
 
 	__asm        cmp    dword ptr [ebp-0xE4], 0;
 	__asm        jne    _T97;
-
 _T92:
 	__asm        jmp    _T9c;
-
 _T97:
 	__asm        jmp    _T14e;
-
 _T9c:
 	__asm        jmp    _Tae;
 
 	__asm        cmp    dword ptr [ebp-0xE8], 0;
 	__asm        je     _T14e;
-
 _Tae:
 	__asm        mov    eax, [ebp-0xF4];
 	__asm        mov    [ebp-0xE0], eax;
@@ -6927,7 +6836,6 @@ _Tae:
 	__asm        jmp    near ptr 0x004C28FA;
 
 	__asm        jmp    _T64;
-
 _T14e:
 	__asm        jmp    near ptr 0x004C2904;
 // LINE 1803:
@@ -6965,7 +6873,6 @@ _T14e:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T1ce:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -6993,7 +6900,6 @@ _T1ce:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
-
 _T228:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
@@ -7039,7 +6945,6 @@ _T22e:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
-
 _T2b2:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x74], eax;
@@ -7063,7 +6968,6 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T2f9:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0x48], eax;
@@ -7090,7 +6994,6 @@ _T30e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T348;
-
 _T348:
 	__asm        jmp    near ptr 0x004C2AFE;
 
@@ -7150,7 +7053,6 @@ _T348:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T423:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -7178,7 +7080,6 @@ _T423:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
-
 _T49e:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xB8], eax;
@@ -7224,7 +7125,6 @@ _T4aa:
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
-
 _T55e:
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    [ebp-0xCC], eax;
@@ -7248,7 +7148,6 @@ _T56a:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T5b7:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0xA0], eax;
@@ -7275,7 +7174,6 @@ _T5d5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T621;
-
 _T621:
 	__asm        jmp    near ptr 0x004C2DD7;
 
@@ -7351,7 +7249,6 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
-
 _T44:
 	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
@@ -7367,7 +7264,6 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
-
 _T70:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
@@ -7498,7 +7394,6 @@ _T40:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
 	__asm        jmp    _T40;
-
 _T5a:
 	__asm        jmp    near ptr 0x004C3094;
 
@@ -7506,7 +7401,6 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
-
 _T6d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -7593,25 +7487,20 @@ _T64:
 	__asm        jmp    _T97;
 
 	__asm        jmp    _T80;
-
 _T80:
 	__asm        jmp    _T92;
 
 	__asm        cmp    dword ptr [ebp-0xE4], 0;
 	__asm        jne    _T97;
-
 _T92:
 	__asm        jmp    _T9c;
-
 _T97:
 	__asm        jmp    _T14e;
-
 _T9c:
 	__asm        jmp    _Tae;
 
 	__asm        cmp    dword ptr [ebp-0xE8], 0;
 	__asm        je     _T14e;
-
 _Tae:
 	__asm        mov    eax, [ebp-0xF4];
 	__asm        mov    [ebp-0xE0], eax;
@@ -7652,7 +7541,6 @@ _Tae:
 	__asm        jmp    near ptr 0x004C3282;
 
 	__asm        jmp    _T64;
-
 _T14e:
 	__asm        jmp    near ptr 0x004C328C;
 // LINE 1924:
@@ -7690,7 +7578,6 @@ _T14e:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T1ce:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -7718,7 +7605,6 @@ _T1ce:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
-
 _T228:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
@@ -7764,7 +7650,6 @@ _T22e:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
-
 _T2b2:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x74], eax;
@@ -7788,7 +7673,6 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
-
 _T2f9:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0x48], eax;
@@ -7815,7 +7699,6 @@ _T30e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T348;
-
 _T348:
 	__asm        jmp    near ptr 0x004C3486;
 
@@ -7875,7 +7758,6 @@ _T348:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T423:
 	__asm        mov    eax, ds:[0x59721C];
 	__asm        cmp    ds:[0x597220], eax;
@@ -7903,7 +7785,6 @@ _T423:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
-
 _T49e:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xB8], eax;
@@ -7949,7 +7830,6 @@ _T4aa:
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
-
 _T55e:
 	__asm        mov    eax, [ebp-0xC4];
 	__asm        mov    [ebp-0xCC], eax;
@@ -7973,7 +7853,6 @@ _T56a:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
-
 _T5b7:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0xA0], eax;
@@ -8000,7 +7879,6 @@ _T5d5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T621;
-
 _T621:
 	__asm        jmp    near ptr 0x004C375F;
 

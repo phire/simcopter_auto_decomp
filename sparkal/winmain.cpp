@@ -69,7 +69,6 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        call   CGameApp::CGameApp;
 	__asm        mov    ds:[0x598580], eax;
 	__asm        jmp    _T9a;
-
 _T90:
 	__asm        mov    dword ptr ds:[0x598580], 0;
 // LINE 50:
@@ -148,7 +147,6 @@ _T15f:
 // LINE 70:
 _T166:
 	__asm        jmp    _T16b;
-
 _T16b:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        test   byte ptr [eax+0xC], 1;
@@ -236,6 +234,7 @@ _T23f:
 // LINE 93:
 _T246:
 	__asm        jmp    _T201;
+_T24b:
 }
 
 

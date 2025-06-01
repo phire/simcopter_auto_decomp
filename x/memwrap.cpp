@@ -608,7 +608,6 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 
 	__asm        mov    ax, 1;
 	__asm        jmp    _T2e;
-
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
@@ -720,7 +719,6 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 
 	__asm        mov    ax, 1;
 	__asm        jmp    _T2e;
-
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
@@ -785,7 +783,6 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	__asm        add    esp, 4;
 // LINE 487:
 	__asm        jmp    _T2d;
-
 _T21:
 	__asm        mov    eax, h;
 	__asm        push   eax;

@@ -43,6 +43,7 @@ _T82:
 	__asm        mov    eax, [eax*4+0x636D40];
 	__asm        jmp    _T92;
 // LINE 520:
+_T92:
 }
 
 // Function in module: Yobject.obj
@@ -188,7 +189,6 @@ _Td2:
 	__asm        jle    _T125;
 
 	__asm        jmp    _T13c;
-
 _T125:
 	__asm        jmp    _T158;
 
@@ -196,7 +196,6 @@ _T125:
 
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        jne    _T158;
-
 _T13c:
 	__asm        push   0x8C085;
 	__asm        push   0x5BBE24;
@@ -246,6 +245,7 @@ _T1cc:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1d3;
 // LINE 1038:
+_T1d3:
 }
 
 // Function in module: Yobject.obj

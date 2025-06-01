@@ -373,7 +373,6 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        test   eax, eax;
 	__asm        jg     _T41;
-
 _T28:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDF04;
@@ -451,7 +450,6 @@ _T42:
 	__asm        movsx  ecx, stackSize;
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T87;
-
 _T6d:
 	__asm        mov    eax, 0x10;
 	__asm        mov    ecx, curBeh;
@@ -461,7 +459,6 @@ _T6d:
 	__asm        jmp    _Tb8;
 
 	__asm        jmp    _Ta9;
-
 _T87:
 	__asm        movsx  eax, stackSize;
 	__asm        shl    eax, 2;
@@ -473,7 +470,6 @@ _T87:
 	__asm        je     _T10c;
 
 	__asm        jmp    _Tb8;
-
 _Ta9:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, curBeh;
@@ -494,13 +490,11 @@ _Tb8:
 	__asm        movsx  ecx, word ptr [ecx+8];
 	__asm        cmp    eax, ecx;
 	__asm        jl     _Teb;
-
 _Tdf:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T107;
 
 	__asm        jmp    _T104;
-
 _Teb:
 	__asm        movsx  eax, stackSize;
 	__asm        inc    eax;
@@ -510,7 +504,6 @@ _Teb:
 	__asm        mov    ecx, this;
 	__asm        add    eax, [ecx+4];
 	__asm        jmp    _T107;
-
 _T104:
 	__asm        mov    eax, [ebp-0x10];
 _T107:
@@ -531,17 +524,16 @@ _T115:
 	__asm        jmp    _T13e;
 
 	__asm        jmp    _T13b;
-
 _T130:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        jmp    _T13e;
-
 _T13b:
 	__asm        mov    eax, [ebp-0x14];
 _T13e:
 	__asm        jmp    _T143;
 // LINE 71:
+_T143:
 }
 
 // FUNCTION: COPTER_D 0x0055ce37
@@ -637,6 +629,7 @@ _Te1:
 	__asm        xor    ax, ax;
 	__asm        jmp    _Tf9;
 // LINE 106:
+_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x0055cf37
@@ -720,7 +713,6 @@ _Ta0:
 	__asm        jmp    _Tf0;
 
 	__asm        jmp    _Td5;
-
 _Td5:
 	__asm        jmp    _Te7;
 
@@ -825,7 +817,6 @@ _T1bd:
 	__asm        jmp    _T214;
 // LINE 170:
 	__asm        jmp    _T214;
-
 _T1e9:
 	__asm        inc    dword ptr [ebp-0x24];
 	__asm        cmp    dword ptr [ebp-0x24], 4;
@@ -859,7 +850,6 @@ _T240:
 
 	__asm        mov    ax, 1;
 	__asm        jmp    _T263;
-
 _T260:
 	__asm        xor    ax, ax;
 _T263:
@@ -872,15 +862,13 @@ _T268:
 // LINE 190:
 _T271:
 	__asm        jmp    _T268;
-
 _T276:
 	__asm        jmp    _T268;
-
 _T27b:
 	__asm        jmp    _T268;
-
 _T280:
 	__asm        jmp    _T268;
+_T285:
 }
 
 // FUNCTION: COPTER_D 0x0055d1c3
@@ -942,7 +930,6 @@ _T49:
 	__asm        mov    trans, al;
 // LINE 212:
 	__asm        jmp    _Ta9;
-
 _Ta0:
 	__asm        mov    eax, node;
 	__asm        mov    al, [eax+3];
@@ -961,7 +948,6 @@ _Ta9:
 	__asm        mov    success, 1;
 // LINE 218:
 	__asm        jmp    _T11a;
-
 _Tce:
 	__asm        movsx  eax, trans;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1002,6 +988,7 @@ _T127:
 // LINE 233:
 _T12e:
 	__asm        jmp    _T127;
+_T133:
 }
 
 // FUNCTION: COPTER_D 0x0055d2fd

@@ -240,17 +240,14 @@ _T100:
 	__asm        add    esp, 0x10;
 _T178:
 	__asm        jmp    _T192;
-
 _T17d:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T100;
-
 _T18d:
 	__asm        jmp    _T192;
-
 _T192:
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-0x1C], eax;
@@ -265,11 +262,11 @@ _T192:
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    _T1ba;
-
 _T1ba:
 	__asm        jmp    near ptr 0x0055F4CF;
 // LINE 68:
 	__asm        jmp    _T1c4;
+_T1c4:
 }
 
 // Function in module: Bodydefs.obj

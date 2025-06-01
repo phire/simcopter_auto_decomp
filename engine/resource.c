@@ -71,6 +71,7 @@ _T33:
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 122:
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x004d5356
@@ -96,7 +97,6 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 _T2f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3e;
-
 _T3b:
 	__asm        inc    i;
 _T3e:
@@ -255,7 +255,6 @@ _T1c9:
 _T1ec:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1fb;
-
 _T1f8:
 	__asm        inc    i;
 _T1fb:
@@ -386,7 +385,6 @@ _T332:
 _T363:
 	__asm        mov    i, 0;
 	__asm        jmp    _T372;
-
 _T36f:
 	__asm        inc    i;
 _T372:
@@ -492,7 +490,6 @@ _T490:
 	__asm        jmp    _T4ca;
 // LINE 255:
 	__asm        jmp    _T4c3;
-
 _T49c:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        cmp    dword ptr [ebp-0xC], 3;
@@ -506,6 +503,7 @@ _T4c3:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
 // LINE 257:
+_T4ca:
 }
 
 // FUNCTION: COPTER_D 0x004d5825
@@ -537,6 +535,7 @@ _T3e:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T48;
 // LINE 284:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x004d5872
@@ -583,7 +582,6 @@ _T50:
 	__asm        jmp    _Taf;
 // LINE 331:
 	__asm        jmp    _T89;
-
 _T66:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        je     _T17;
@@ -611,6 +609,7 @@ _Ta5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Taf;
 // LINE 338:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004d5926
@@ -642,7 +641,6 @@ _T24:
 _T48:
 	__asm        mov    i, 0;
 	__asm        jmp    _T57;
-
 _T54:
 	__asm        inc    i;
 _T57:
@@ -825,6 +823,7 @@ _T273:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
 // LINE 615:
+_T284:
 }
 
 // FUNCTION: COPTER_D 0x004d5baf
@@ -853,7 +852,6 @@ _T24:
 _T3b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4a;
-
 _T47:
 	__asm        inc    i;
 _T4a:
@@ -966,6 +964,7 @@ _T183:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T194;
 // LINE 732:
+_T194:
 }
 
 // FUNCTION: COPTER_D 0x004d5d48
@@ -1077,6 +1076,7 @@ _T12a:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T134;
 // LINE 849:
+_T134:
 }
 
 // FUNCTION: COPTER_D 0x004d5e81
@@ -1126,6 +1126,7 @@ _T7d:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T98;
 // LINE 887:
+_T98:
 }
 
 // FUNCTION: COPTER_D 0x004d5f1e
@@ -1151,6 +1152,7 @@ _T36:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T40;
 // LINE 1064:
+_T40:
 }
 
 // FUNCTION: COPTER_D 0x004d5f63
@@ -1202,6 +1204,7 @@ _T24:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T4f;
 // LINE 1127:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
@@ -1236,6 +1239,7 @@ _T2a:
 	__asm        mov    ecx, r;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1153:
+_T5c:
 }
 
 

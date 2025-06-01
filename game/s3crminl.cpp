@@ -331,7 +331,6 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T26;
-
 _T24:
 	__asm        xor    eax, eax;
 _T26:
@@ -399,7 +398,6 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 	__asm        call   CriminalEvaderCarClass::CriminalEvaderCarClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
-
 _T33:
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 130:
@@ -443,6 +441,7 @@ _Ta2:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Ta9;
 // LINE 150:
+_Ta9:
 }
 
 // FUNCTION: COPTER_D 0x00534b21
@@ -460,7 +459,6 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 // LINE 165:
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
-
 _T21:
 	__asm        inc    i;
 _T24:
@@ -542,6 +540,7 @@ _T118:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T11f;
 // LINE 199:
+_T11f:
 }
 
 // FUNCTION: COPTER_D 0x00534c45
@@ -631,10 +630,8 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T113;
-
 _T10e:
 	__asm        jmp    _T113;
-
 _T113:
 	__asm        jmp    near ptr 0x00534D5D;
 
@@ -698,7 +695,6 @@ _T195:
 	__asm        mov    dword ptr [eax+0x11A], 2;
 // LINE 253:
 	__asm        jmp    _T2a5;
-
 _T1cc:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x30;
@@ -721,7 +717,6 @@ _T1cc:
 	__asm        call   dword ptr [eax+4];
 // LINE 257:
 	__asm        jmp    _T2a5;
-
 _T20b:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
@@ -909,7 +904,6 @@ _T427:
 	__asm        mov    [ecx+0x126], eax;
 // LINE 354:
 	__asm        jmp    _T48d;
-
 _T44a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x126], 0;
@@ -947,7 +941,6 @@ _T48d:
 // LINE 371:
 _T4b2:
 	__asm        jmp    _T4df;
-
 _T4b7:
 	__asm        cmp    dword ptr [ebp-0x68], 4;
 	__asm        ja     _T4df;
@@ -958,6 +951,7 @@ _T4b7:
 // LINE 387:
 _T4df:
 	__asm        jmp    _T4e4;
+_T4e4:
 }
 
 // FUNCTION: COPTER_D 0x0053512e
@@ -982,7 +976,6 @@ _T31:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        jne    _T6d;
-
 _T50:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 1;
@@ -1000,6 +993,7 @@ _T6d:
 // LINE 399:
 _T79:
 	__asm        jmp    _T7e;
+_T7e:
 }
 
 // FUNCTION: COPTER_D 0x005351b3
@@ -1076,7 +1070,6 @@ _T27:
 	__asm        jmp    _T153;
 // LINE 482:
 	__asm        jmp    _T153;
-
 _T80:
 	__asm        sub    dword ptr [ebp-0x3C], 0x70;
 	__asm        cmp    dword ptr [ebp-0x3C], 0x8F;
@@ -1106,7 +1099,6 @@ _T153:
 	__asm        jmp    _T255;
 // LINE 512:
 	__asm        jmp    _T255;
-
 _T186:
 	__asm        sub    dword ptr [ebp-0x40], 0x7D;
 	__asm        cmp    dword ptr [ebp-0x40], 0x7A;
@@ -1136,7 +1128,6 @@ _T255:
 	__asm        jmp    _T2f0;
 // LINE 533:
 	__asm        jmp    _T2f0;
-
 _T288:
 	__asm        sub    dword ptr [ebp-0x44], 0x90;
 	__asm        cmp    dword ptr [ebp-0x44], 0x28;
@@ -1166,7 +1157,6 @@ _T2f0:
 	__asm        jmp    _T3ed;
 // LINE 574:
 	__asm        jmp    _T3ed;
-
 _T323:
 	__asm        sub    dword ptr [ebp-0x48], 0x80;
 	__asm        cmp    dword ptr [ebp-0x48], 0x72;
@@ -1196,7 +1186,6 @@ _T3ed:
 	__asm        jmp    _T4a8;
 // LINE 615:
 	__asm        jmp    _T4a8;
-
 _T420:
 	__asm        sub    dword ptr [ebp-0x4C], 0xC6;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x34;
@@ -1213,7 +1202,6 @@ _T4a8:
 	__asm        jmp    _T4da;
 // LINE 617:
 	__asm        jmp    _T4da;
-
 _T4b2:
 	__asm        cmp    dword ptr [ebp-0x38], 4;
 	__asm        ja     _T4da;
@@ -1237,6 +1225,7 @@ _T4da:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    _T502;
 // LINE 622:
+_T502:
 }
 
 // FUNCTION: COPTER_D 0x00535709
@@ -1335,6 +1324,7 @@ _T1d:
 	__asm        mov    [ecx+0x126], eax;
 // LINE 702:
 	__asm        jmp    _T76;
+_T76:
 }
 
 

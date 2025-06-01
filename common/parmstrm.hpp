@@ -119,14 +119,12 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T1dc;
-
 _T1dc:
 	__asm        jmp    near ptr 0x004CD781;
 
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T57f;
-
 _T1f0:
 	__asm        jmp    near ptr 0x004CD795;
 
@@ -160,7 +158,6 @@ _T1f0:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T261;
-
 _T261:
 	__asm        jmp    near ptr 0x004CD806;
 
@@ -185,7 +182,6 @@ _T281:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T281;
-
 _T2ad:
 	__asm        jmp    near ptr 0x004CD852;
 
@@ -197,7 +193,6 @@ _T2ad:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T57a;
-
 _T2d2:
 	__asm        jmp    near ptr 0x004CD877;
 
@@ -227,7 +222,6 @@ _T2d2:
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T379;
-
 _T32c:
 	__asm        mov    dword ptr [ebp-0x54], 0x200;
 	__asm        lea    eax, [ebp-0x54];
@@ -244,7 +238,6 @@ _T32c:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T367;
-
 _T361:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x64], eax;
@@ -255,7 +248,6 @@ _T367:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T379;
-
 _T379:
 	__asm        jmp    near ptr 0x004CD91E;
 
@@ -297,12 +289,10 @@ _T3ac:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T41d;
-
 _T41d:
 	__asm        jmp    near ptr 0x004CD9C2;
 
 	__asm        jmp    _T3ac;
-
 _T427:
 	__asm        jmp    near ptr 0x004CD9CC;
 
@@ -331,7 +321,6 @@ _T427:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T47a;
-
 _T47a:
 	__asm        jmp    near ptr 0x004CDA1F;
 
@@ -374,7 +363,6 @@ _T4da:
 
 	__asm        add    dword ptr [ebp-0x50], 8;
 	__asm        jmp    _T4da;
-
 _T4fa:
 	__asm        jmp    near ptr 0x004CDA9F;
 
@@ -417,7 +405,6 @@ _T4fa:
 	__asm        mov    [ecx+0x16], eax;
 _T57a:
 	__asm        jmp    _T57f;
-
 _T57f:
 	__asm        jmp    near ptr 0x004CDB24;
 // LINE 241:
@@ -447,14 +434,12 @@ _T57f:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T5f2;
-
 _T5f2:
 	__asm        jmp    near ptr 0x004CDB97;
 
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T9aa;
-
 _T606:
 	__asm        jmp    near ptr 0x004CDBAB;
 
@@ -488,7 +473,6 @@ _T606:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T68c;
-
 _T68c:
 	__asm        jmp    near ptr 0x004CDC31;
 
@@ -513,7 +497,6 @@ _T6b2:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T6b2;
-
 _T6ed:
 	__asm        jmp    near ptr 0x004CDC92;
 
@@ -525,7 +508,6 @@ _T6ed:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T9a5;
-
 _T712:
 	__asm        jmp    near ptr 0x004CDCB7;
 
@@ -555,7 +537,6 @@ _T712:
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    _T7e6;
-
 _T76f:
 	__asm        mov    dword ptr [ebp-0xB4], 0x200;
 	__asm        lea    eax, [ebp-0xB4];
@@ -572,7 +553,6 @@ _T76f:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T7ce;
-
 _T7c2:
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
@@ -583,7 +563,6 @@ _T7ce:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    _T7e6;
-
 _T7e6:
 	__asm        jmp    near ptr 0x004CDD8B;
 
@@ -629,7 +608,6 @@ _T7e6:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T887;
-
 _T887:
 	__asm        jmp    near ptr 0x004CDE2C;
 
@@ -672,7 +650,6 @@ _T8ed:
 
 	__asm        add    dword ptr [ebp-0xB0], 8;
 	__asm        jmp    _T8ed;
-
 _T913:
 	__asm        jmp    near ptr 0x004CDEB8;
 
@@ -715,7 +692,6 @@ _T913:
 	__asm        mov    [ecx+0x16], eax;
 _T9a5:
 	__asm        jmp    _T9aa;
-
 _T9aa:
 	__asm        jmp    near ptr 0x004CDF4F;
 // LINE 242:
@@ -773,7 +749,6 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 // LINE 366:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    loop;
 _T1b:
@@ -944,6 +919,7 @@ _Te3:
 	__asm        mov    eax, i;
 	__asm        jmp    _Teb;
 // LINE 297:
+_Teb:
 }
 
 // Function in module: scxload.obj
@@ -1063,14 +1039,12 @@ _T19:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T187;
-
 _T187:
 	__asm        jmp    near ptr 0x004CE38C;
 
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T5a5;
-
 _T19b:
 	__asm        jmp    near ptr 0x004CE3A0;
 
@@ -1104,7 +1078,6 @@ _T19b:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T20c;
-
 _T20c:
 	__asm        jmp    near ptr 0x004CE411;
 
@@ -1129,7 +1102,6 @@ _T22c:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T22c;
-
 _T258:
 	__asm        jmp    near ptr 0x004CE45D;
 
@@ -1141,7 +1113,6 @@ _T258:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _T5a0;
-
 _T27d:
 	__asm        jmp    near ptr 0x004CE482;
 
@@ -1171,7 +1142,6 @@ _T27d:
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T324;
-
 _T2d7:
 	__asm        mov    dword ptr [ebp-0x4C], 0x200;
 	__asm        lea    eax, [ebp-0x4C];
@@ -1188,7 +1158,6 @@ _T2d7:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T312;
-
 _T30c:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x5C], eax;
@@ -1199,7 +1168,6 @@ _T312:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T324;
-
 _T324:
 	__asm        jmp    near ptr 0x004CE529;
 
@@ -1241,12 +1209,10 @@ _T357:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T3bc;
-
 _T3bc:
 	__asm        jmp    near ptr 0x004CE5C1;
 
 	__asm        jmp    _T357;
-
 _T3c6:
 	__asm        jmp    near ptr 0x004CE5CB;
 
@@ -1275,7 +1241,6 @@ _T3c6:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T419;
-
 _T419:
 	__asm        jmp    near ptr 0x004CE61E;
 
@@ -1324,12 +1289,10 @@ _T46a:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T4db;
-
 _T4db:
 	__asm        jmp    near ptr 0x004CE6E0;
 
 	__asm        jmp    _T46a;
-
 _T4e5:
 	__asm        jmp    near ptr 0x004CE6EA;
 
@@ -1350,7 +1313,6 @@ _T500:
 
 	__asm        add    dword ptr [ebp-0x48], 8;
 	__asm        jmp    _T500;
-
 _T520:
 	__asm        jmp    near ptr 0x004CE725;
 
@@ -1393,7 +1355,6 @@ _T520:
 	__asm        mov    [ecx+0x16], eax;
 _T5a0:
 	__asm        jmp    _T5a5;
-
 _T5a5:
 	__asm        jmp    _T5aa;
 // LINE 320:
@@ -1536,14 +1497,12 @@ _T5e6:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _T791;
-
 _T791:
 	__asm        jmp    near ptr 0x004CE996;
 
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _Tc4b;
-
 _T7a5:
 	__asm        jmp    near ptr 0x004CE9AA;
 
@@ -1577,7 +1536,6 @@ _T7a5:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T82b;
-
 _T82b:
 	__asm        jmp    near ptr 0x004CEA30;
 
@@ -1602,7 +1560,6 @@ _T851:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _T851;
-
 _T88c:
 	__asm        jmp    near ptr 0x004CEA91;
 
@@ -1614,7 +1571,6 @@ _T88c:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x1A], 8;
 	__asm        jmp    _Tc46;
-
 _T8b1:
 	__asm        jmp    near ptr 0x004CEAB6;
 
@@ -1644,7 +1600,6 @@ _T8b1:
 	__asm        add    eax, eax;
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T985;
-
 _T90e:
 	__asm        mov    dword ptr [ebp-0xC4], 0x200;
 	__asm        lea    eax, [ebp-0xC4];
@@ -1661,7 +1616,6 @@ _T90e:
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T96d;
-
 _T961:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    [ebp-0xD4], eax;
@@ -1672,7 +1626,6 @@ _T96d:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T985;
-
 _T985:
 	__asm        jmp    near ptr 0x004CEB8A;
 
@@ -1714,12 +1667,10 @@ _T9c1:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _Ta32;
-
 _Ta32:
 	__asm        jmp    near ptr 0x004CEC37;
 
 	__asm        jmp    _T9c1;
-
 _Ta3c:
 	__asm        jmp    near ptr 0x004CEC41;
 
@@ -1748,7 +1699,6 @@ _Ta3c:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 	__asm        jmp    _Taa1;
-
 _Taa1:
 	__asm        jmp    near ptr 0x004CECA6;
 
@@ -1797,12 +1747,10 @@ _Taf5:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    _Tb66;
-
 _Tb66:
 	__asm        jmp    near ptr 0x004CED6B;
 
 	__asm        jmp    _Taf5;
-
 _Tb70:
 	__asm        jmp    near ptr 0x004CED75;
 
@@ -1823,7 +1771,6 @@ _Tb8e:
 
 	__asm        add    dword ptr [ebp-0xC0], 8;
 	__asm        jmp    _Tb8e;
-
 _Tbb4:
 	__asm        jmp    near ptr 0x004CEDB9;
 
@@ -1866,7 +1813,6 @@ _Tbb4:
 	__asm        mov    [ecx+0x16], eax;
 _Tc46:
 	__asm        jmp    _Tc4b;
-
 _Tc4b:
 	__asm        jmp    _Tc50;
 // LINE 339:
@@ -1940,6 +1886,7 @@ _Td2d:
 	__asm        mov    eax, i;
 	__asm        jmp    _Td35;
 // LINE 349:
+_Td35:
 }
 
 // Function in module: scxload.obj
@@ -1953,7 +1900,6 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 // LINE 356:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T22;
-
 _T1f:
 	__asm        inc    loop;
 _T22:

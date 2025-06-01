@@ -105,7 +105,6 @@ int32_t operator==(const class NotificationItem& P1, const class NotificationIte
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T34;
-
 _T32:
 	__asm        xor    eax, eax;
 _T34:

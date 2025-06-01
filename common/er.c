@@ -30,13 +30,13 @@ void ERexit(char * p) {
 	__asm        call   abort;
 // LINE 59:
 	__asm        jmp    _T49;
-
 _T39:
 	__asm        cmp    answer, 4;
 	__asm        jne    _T49;
 // LINE 60:
 	__asm        call   dword ptr ds:[0x6C369C];
 // LINE 65:
+_T49:
 }
 
 

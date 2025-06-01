@@ -117,7 +117,6 @@ _T87:
 	__asm        mov    cycles, eax;
 // LINE 142:
 	__asm        jmp    _T10d;
-
 _Tb4:
 	__asm        cmp    clocks, 0;
 	__asm        jle    _Te9;
@@ -353,7 +352,6 @@ _T2e7:
 	__asm        mov    freq, eax;
 // LINE 298:
 	__asm        jmp    _T409;
-
 _T2fb:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -370,7 +368,6 @@ _T2fb:
 // LINE 325:
 	__asm        mov    i, 0;
 	__asm        jmp    _T329;
-
 _T326:
 	__asm        inc    i;
 _T329:
@@ -503,6 +500,7 @@ _T409:
 	__asm        mov    eax, [ebp+8];
 	__asm        jmp    _T452;
 // LINE 409:
+_T452:
 }
 
 // FUNCTION: COPTER_D 0x00447fce
@@ -599,7 +597,6 @@ _T140:
 	__asm        jmp    _T296;
 // LINE 458:
 	__asm        jmp    _T296;
-
 _T14d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -642,7 +639,6 @@ _T1ab:
 	__asm        jmp    _T296;
 // LINE 476:
 	__asm        jmp    _T296;
-
 _T1b8:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -685,7 +681,6 @@ _T216:
 	__asm        jmp    _T296;
 // LINE 494:
 	__asm        jmp    _T296;
-
 _T223:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -733,6 +728,7 @@ _T28e:
 	__asm        mov    eax, freq;
 	__asm        jmp    _T296;
 // LINE 515:
+_T296:
 }
 
 

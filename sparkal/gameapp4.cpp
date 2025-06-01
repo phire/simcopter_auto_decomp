@@ -373,7 +373,6 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    eax, [ebp-0x4D0];
 	__asm        mov    sCurrentInitializer.reference, eax;
 	__asm        jmp    _Td6;
-
 _Tcc:
 	__asm        mov    sCurrentInitializer.reference, 0;
 _Td6:
@@ -602,7 +601,6 @@ _T2c5:
 	__asm        jmp    near ptr 0x004BBF1C;
 
 	__asm        jmp    _T5cd;
-
 _T40a:
 	__asm        jmp    near ptr 0x004BBF26;
 
@@ -628,7 +626,6 @@ _T40a:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T469;
-
 _T469:
 	__asm        jmp    near ptr 0x004BBF85;
 
@@ -645,7 +642,6 @@ _T469:
 	__asm        mov    ecx, [ebp-0x1530];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T56d;
-
 _T4a5:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -662,7 +658,6 @@ _T4a5:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1518], eax;
 	__asm        jmp    _T4f0;
-
 _T4e6:
 	__asm        mov    dword ptr [ebp-0x1518], 0;
 _T4f0:
@@ -690,14 +685,12 @@ _T4f0:
 	__asm        jmp    near ptr 0x004BC069;
 
 	__asm        jmp    _T557;
-
 _T557:
 	__asm        jmp    near ptr 0x004BC073;
 
 	__asm        mov    eax, [ebp-0x1518];
 	__asm        mov    sCurrentInitializer.reference, eax;
 	__asm        jmp    _T5af;
-
 _T56d:
 	__asm        cmp    dword ptr [ebp-0x1530], 0;
 	__asm        je     _T5af;
@@ -716,7 +709,6 @@ _T56d:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5af;
-
 _T5af:
 	__asm        mov    eax, [ebp-0x1530];
 	__asm        mov    ecx, sCurrentInitializer.reference;
@@ -752,11 +744,9 @@ _T5cd:
 	__asm        jmp    _T62e;
 
 	__asm        jmp    _T62e;
-
 _T61f:
 	__asm        mov    dword ptr [ebp-0x4C4], 0;
 	__asm        jmp    _T62e;
-
 _T62e:
 	__asm        push   0;
 	__asm        lea    eax, rectText.left;
@@ -837,7 +827,6 @@ _T737:
 	__asm        jmp    near ptr 0x004BC26C;
 
 	__asm        jmp    _T75a;
-
 _T75a:
 	__asm        jmp    near ptr 0x004BC276;
 
@@ -904,7 +893,6 @@ _T848:
 	__asm        jmp    near ptr 0x004BC37D;
 
 	__asm        jmp    _T86b;
-
 _T86b:
 	__asm        jmp    near ptr 0x004BC387;
 
@@ -927,6 +915,7 @@ _T8a4:
 	__asm        mov    eax, [ebp-0x4C0];
 	__asm        jmp    _T8bf;
 // LINE 150:
+_T8bf:
 }
 
 // FUNCTION: COPTER_D 0x004bc3db
@@ -965,7 +954,6 @@ _T4f:
 _L48859:
 	__asm        mov    eax, 0x595CE0;
 	__asm        jmp    near ptr 0x0056F590;
-
 _T6f:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

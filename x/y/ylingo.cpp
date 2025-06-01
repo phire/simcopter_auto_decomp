@@ -506,7 +506,6 @@ _T4c:
 	__asm        jmp    _Tb2;
 // LINE 71:
 	__asm        jmp    _Tb2;
-
 _T8f:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        je     _T15;

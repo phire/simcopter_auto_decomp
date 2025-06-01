@@ -156,7 +156,6 @@ _Tf8:
 // LINE 188:
 	__asm        mov    i, 0;
 	__asm        jmp    _T14d;
-
 _T14a:
 	__asm        inc    i;
 _T14d:
@@ -217,6 +216,7 @@ _T1b4:
 	__asm        mov    eax, res;
 	__asm        jmp    _T1e1;
 // LINE 212:
+_T1e1:
 }
 
 // FUNCTION: COPTER_D 0x004d6246
@@ -256,6 +256,7 @@ _T48:
 	__asm        mov    eax, [ecx+eax*4+0x20];
 	__asm        jmp    _T5a;
 // LINE 243:
+_T5a:
 }
 
 // FUNCTION: COPTER_D 0x004d62a5
@@ -352,7 +353,6 @@ _Tb7:
 	__asm        jmp    _T197;
 // LINE 324:
 	__asm        jmp    _Tef;
-
 _Tc3:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x1F1F;
 	__asm        je     _T2a;
@@ -389,7 +389,6 @@ _T11c:
 _T122:
 	__asm        mov    i, 0;
 	__asm        jmp    _T131;
-
 _T12e:
 	__asm        inc    i;
 _T131:
@@ -433,6 +432,7 @@ _T18d:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T197;
 // LINE 358:
+_T197:
 }
 
 // FUNCTION: COPTER_D 0x004d6460
@@ -597,5 +597,6 @@ _T179:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1a7;
 // LINE 496:
+_T1a7:
 }
 

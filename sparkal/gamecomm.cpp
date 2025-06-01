@@ -472,7 +472,6 @@ void CommandSystem::CommandSystem() {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T230;
-
 _T59:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        cmp    ds:[0x59721C], eax;
@@ -523,7 +522,6 @@ _Tb8:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T103;
-
 _Tfd:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
@@ -593,7 +591,6 @@ _T16d:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1da;
-
 _T1d4:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -617,7 +614,6 @@ _T1da:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T230;
-
 _T21b:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0xC], eax;
@@ -658,7 +654,6 @@ void CommandSystem::Initialize() {
 // LINE 46:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -678,7 +673,6 @@ _T1b:
 _T3f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
-
 _T4b:
 	__asm        inc    i;
 _T4e:
@@ -693,7 +687,6 @@ _T4e:
 _T6e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7d;
-
 _T7a:
 	__asm        inc    i;
 _T7d:
@@ -702,7 +695,6 @@ _T7d:
 // LINE 55:
 	__asm        mov    j, 0;
 	__asm        jmp    _T96;
-
 _T93:
 	__asm        inc    j;
 _T96:
@@ -725,7 +717,6 @@ _Tbf:
 _Tc4:
 	__asm        mov    i, 0;
 	__asm        jmp    _Td3;
-
 _Td0:
 	__asm        inc    i;
 _Td3:
@@ -748,7 +739,6 @@ void CommandSystem::ClearAllCommands() {
 // LINE 74:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -777,7 +767,6 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 // LINE 89:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -852,19 +841,15 @@ _T3c:
 	__asm        jmp    _T82;
 
 	__asm        jmp    _T6e;
-
 _T6e:
 	__asm        jmp    _T7d;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T82;
-
 _T7d:
 	__asm        jmp    _T87;
-
 _T82:
 	__asm        jmp    _T2b2;
-
 _T87:
 	__asm        jmp    _T96;
 
@@ -1101,7 +1086,6 @@ void CommandSystem::PollJoysticksForCommands() {
 _T2a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T39;
-
 _T36:
 	__asm        inc    i;
 _T39:
@@ -1111,7 +1095,6 @@ _T39:
 // LINE 206:
 	__asm        mov    j, 0;
 	__asm        jmp    _T54;
-
 _T51:
 	__asm        inc    j;
 _T54:
@@ -1137,7 +1120,6 @@ _T8c:
 _T91:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta0;
-
 _T9d:
 	__asm        inc    i;
 _Ta0:
@@ -1147,7 +1129,6 @@ _Ta0:
 // LINE 212:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tbb;
-
 _Tb8:
 	__asm        inc    j;
 _Tbb:
@@ -1205,7 +1186,6 @@ _T14a:
 _T14f:
 	__asm        mov    j, 6;
 	__asm        jmp    _T15e;
-
 _T15b:
 	__asm        inc    j;
 _T15e:
@@ -1952,7 +1932,6 @@ _Tb1:
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    [ebp-0x2D0], eax;
 	__asm        jmp    _T3a5;
-
 _T13e:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        cmp    ds:[0x59721C], eax;
@@ -2003,7 +1982,6 @@ _T1a9:
 	__asm        mov    eax, [ebp-0x2A0];
 	__asm        mov    [ebp-0x2A4], eax;
 	__asm        jmp    _T21e;
-
 _T212:
 	__asm        mov    eax, [ebp-0x29C];
 	__asm        mov    [ebp-0x2A4], eax;
@@ -2073,7 +2051,6 @@ _T29d:
 	__asm        mov    eax, [ebp-0x2B4];
 	__asm        mov    [ebp-0x2B8], eax;
 	__asm        jmp    _T33a;
-
 _T32e:
 	__asm        mov    eax, [ebp-0x2B0];
 	__asm        mov    [ebp-0x2B8], eax;
@@ -2097,7 +2074,6 @@ _T33a:
 	__asm        mov    eax, [ebp-0x288];
 	__asm        mov    [ebp-0x2D0], eax;
 	__asm        jmp    _T3a5;
-
 _T387:
 	__asm        mov    eax, ds:[0x597220];
 	__asm        mov    [ebp-0x28C], eax;
@@ -2124,7 +2100,6 @@ _T3a5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T3f4;
-
 _T3f4:
 	__asm        jmp    near ptr 0x0048C62D;
 
@@ -2175,6 +2150,7 @@ _T498:
 	__asm        mov    eax, [ebp-0x26C];
 	__asm        jmp    _T4b8;
 // LINE 579:
+_T4b8:
 }
 
 // FUNCTION: COPTER_D 0x0048c6f1
@@ -2247,19 +2223,15 @@ _Ta0:
 	__asm        jmp    _Tf4;
 
 	__asm        jmp    _Tdd;
-
 _Tdd:
 	__asm        jmp    _Tef;
 
 	__asm        cmp    dword ptr [ebp-0x284], 0;
 	__asm        jne    _Tf4;
-
 _Tef:
 	__asm        jmp    _Tf9;
-
 _Tf4:
 	__asm        jmp    _T171;
-
 _Tf9:
 	__asm        jmp    _T10b;
 
@@ -2316,6 +2288,7 @@ _T1a7:
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        jmp    _T1c7;
 // LINE 605:
+_T1c7:
 }
 
 // FUNCTION: COPTER_D 0x0048c8bd
@@ -3016,7 +2989,6 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T7ff;
-
 _T7ff:
 	__asm        jmp    near ptr 0x0048D0C1;
 
@@ -3122,7 +3094,6 @@ _T7ff:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T96d;
-
 _T96d:
 	__asm        jmp    near ptr 0x0048D22F;
 
@@ -3194,7 +3165,6 @@ _T96d:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Ta72;
-
 _Ta72:
 	__asm        jmp    near ptr 0x0048D334;
 
@@ -3300,7 +3270,6 @@ _Ta72:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tbe0;
-
 _Tbe0:
 	__asm        jmp    near ptr 0x0048D4A2;
 
@@ -3372,7 +3341,6 @@ _Tbe0:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tce5;
-
 _Tce5:
 	__asm        jmp    near ptr 0x0048D5A7;
 
@@ -3478,7 +3446,6 @@ _Tce5:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Te53;
-
 _Te53:
 	__asm        jmp    near ptr 0x0048D715;
 
@@ -3584,7 +3551,6 @@ _Te53:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _Tfc1;
-
 _Tfc1:
 	__asm        jmp    near ptr 0x0048D883;
 
@@ -3656,7 +3622,6 @@ _Tfc1:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T10c6;
-
 _T10c6:
 	__asm        jmp    near ptr 0x0048D988;
 
@@ -3762,7 +3727,6 @@ _T10c6:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T1234;
-
 _T1234:
 	__asm        jmp    near ptr 0x0048DAF6;
 
@@ -3834,7 +3798,6 @@ _T1234:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T1339;
-
 _T1339:
 	__asm        jmp    near ptr 0x0048DBFB;
 
@@ -3864,7 +3827,6 @@ _T1339:
 // LINE 858:
 	__asm        mov    i, 1;
 	__asm        jmp    _T13af;
-
 _T13ac:
 	__asm        inc    i;
 _T13af:
@@ -3942,7 +3904,6 @@ _T13af:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T14bb;
-
 _T14bb:
 	__asm        jmp    near ptr 0x0048DD7D;
 
@@ -4009,7 +3970,6 @@ _T14bb:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T15bb;
-
 _T15bb:
 	__asm        jmp    near ptr 0x0048DE7D;
 
@@ -4105,7 +4065,6 @@ _T15bb:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T171e;
-
 _T171e:
 	__asm        jmp    near ptr 0x0048DFE0;
 
@@ -4172,7 +4131,6 @@ _T171e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T181e;
-
 _T181e:
 	__asm        jmp    near ptr 0x0048E0E0;
 
@@ -4268,7 +4226,6 @@ _T181e:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T1981;
-
 _T1981:
 	__asm        jmp    near ptr 0x0048E243;
 
@@ -4335,7 +4292,6 @@ _T1981:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 	__asm        jmp    _T1a81;
-
 _T1a81:
 	__asm        jmp    near ptr 0x0048E343;
 
@@ -4575,6 +4531,7 @@ _Tb9:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Te0;
 // LINE 1007:
+_Te0:
 }
 
 // FUNCTION: COPTER_D 0x0048e5fa
@@ -4594,11 +4551,9 @@ int32_t IsKeyReserved(long lKey) {
 
 	__asm        cmp    lKey, 0x12;
 	__asm        jne    _T45;
-
 _T3b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T47;
-
 _T45:
 	__asm        xor    eax, eax;
 _T47:
@@ -4641,7 +4596,6 @@ int32_t IsCommandConfigurable(long lCommand) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T26;
-
 _T24:
 	__asm        xor    eax, eax;
 _T26:
@@ -4659,7 +4613,6 @@ long GetJoystickCommandTwin(long lCommand) {
 	__asm        jmp    _T1ca;
 // LINE 1059:
 	__asm        jmp    _T1c3;
-
 _T1f:
 	__asm        cmp    lCommand, 7;
 	__asm        jne    _T38;
@@ -4668,7 +4621,6 @@ _T1f:
 	__asm        jmp    _T1ca;
 // LINE 1061:
 	__asm        jmp    _T1c3;
-
 _T38:
 	__asm        cmp    lCommand, 8;
 	__asm        jne    _T51;
@@ -4677,7 +4629,6 @@ _T38:
 	__asm        jmp    _T1ca;
 // LINE 1063:
 	__asm        jmp    _T1c3;
-
 _T51:
 	__asm        cmp    lCommand, 9;
 	__asm        jne    _T6a;
@@ -4686,7 +4637,6 @@ _T51:
 	__asm        jmp    _T1ca;
 // LINE 1065:
 	__asm        jmp    _T1c3;
-
 _T6a:
 	__asm        cmp    lCommand, 0xA;
 	__asm        jne    _T83;
@@ -4695,7 +4645,6 @@ _T6a:
 	__asm        jmp    _T1ca;
 // LINE 1067:
 	__asm        jmp    _T1c3;
-
 _T83:
 	__asm        cmp    lCommand, 0xB;
 	__asm        jne    _T9c;
@@ -4704,7 +4653,6 @@ _T83:
 	__asm        jmp    _T1ca;
 // LINE 1069:
 	__asm        jmp    _T1c3;
-
 _T9c:
 	__asm        cmp    lCommand, 0xC;
 	__asm        jne    _Tb5;
@@ -4713,7 +4661,6 @@ _T9c:
 	__asm        jmp    _T1ca;
 // LINE 1071:
 	__asm        jmp    _T1c3;
-
 _Tb5:
 	__asm        cmp    lCommand, 0xD;
 	__asm        jne    _Tce;
@@ -4722,7 +4669,6 @@ _Tb5:
 	__asm        jmp    _T1ca;
 // LINE 1073:
 	__asm        jmp    _T1c3;
-
 _Tce:
 	__asm        cmp    lCommand, 0xE;
 	__asm        jne    _Te7;
@@ -4731,7 +4677,6 @@ _Tce:
 	__asm        jmp    _T1ca;
 // LINE 1075:
 	__asm        jmp    _T1c3;
-
 _Te7:
 	__asm        cmp    lCommand, 0xF;
 	__asm        jne    _T100;
@@ -4740,7 +4685,6 @@ _Te7:
 	__asm        jmp    _T1ca;
 // LINE 1077:
 	__asm        jmp    _T1c3;
-
 _T100:
 	__asm        cmp    lCommand, 0x11;
 	__asm        jne    _T119;
@@ -4749,7 +4693,6 @@ _T100:
 	__asm        jmp    _T1ca;
 // LINE 1079:
 	__asm        jmp    _T1c3;
-
 _T119:
 	__asm        cmp    lCommand, 0x12;
 	__asm        jne    _T132;
@@ -4758,7 +4701,6 @@ _T119:
 	__asm        jmp    _T1ca;
 // LINE 1081:
 	__asm        jmp    _T1c3;
-
 _T132:
 	__asm        cmp    lCommand, 0x1B;
 	__asm        jne    _T14b;
@@ -4767,7 +4709,6 @@ _T132:
 	__asm        jmp    _T1ca;
 // LINE 1083:
 	__asm        jmp    _T1c3;
-
 _T14b:
 	__asm        cmp    lCommand, 0x1C;
 	__asm        jne    _T164;
@@ -4776,7 +4717,6 @@ _T14b:
 	__asm        jmp    _T1ca;
 // LINE 1085:
 	__asm        jmp    _T1c3;
-
 _T164:
 	__asm        cmp    lCommand, 0x1D;
 	__asm        jne    _T17d;
@@ -4785,7 +4725,6 @@ _T164:
 	__asm        jmp    _T1ca;
 // LINE 1087:
 	__asm        jmp    _T1c3;
-
 _T17d:
 	__asm        cmp    lCommand, 0x1E;
 	__asm        jne    _T196;
@@ -4794,7 +4733,6 @@ _T17d:
 	__asm        jmp    _T1ca;
 // LINE 1089:
 	__asm        jmp    _T1c3;
-
 _T196:
 	__asm        cmp    lCommand, 0x1F;
 	__asm        jne    _T1af;
@@ -4803,7 +4741,6 @@ _T196:
 	__asm        jmp    _T1ca;
 // LINE 1091:
 	__asm        jmp    _T1c3;
-
 _T1af:
 	__asm        cmp    lCommand, 0x20;
 	__asm        jne    _T1c3;
@@ -4815,6 +4752,7 @@ _T1c3:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1ca;
 // LINE 1094:
+_T1ca:
 }
 
 

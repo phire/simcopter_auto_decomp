@@ -227,6 +227,7 @@ _T98:
 	__asm        mov    eax, this;
 	__asm        jmp    _Ta0;
 // LINE 97:
+_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004479ea
@@ -295,6 +296,7 @@ _T32:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T39;
 // LINE 136:
+_T39:
 }
 
 // FUNCTION: COPTER_D 0x00447ab2
@@ -344,6 +346,7 @@ _T7c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T83;
 // LINE 155:
+_T83:
 }
 
 // FUNCTION: COPTER_D 0x00447b3a

@@ -284,10 +284,8 @@ _T3b:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T79;
-
 _T74:
 	__asm        jmp    _T79;
-
 _T79:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        mov    word ptr [ebp-0xC], 0;
@@ -299,10 +297,8 @@ _T79:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tac;
-
 _Ta7:
 	__asm        jmp    _Tac;
-
 _Tac:
 	__asm        push   2;
 	__asm        push   0x40;
@@ -323,7 +319,6 @@ _Tc9:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ds:[0x59A9D4], eax;
 	__asm        jmp    _Tf3;
-
 _Ted:
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _Tf3:
@@ -360,10 +355,8 @@ void CSparkalApp::~CSparkalApp() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T48;
-
 _T43:
 	__asm        jmp    _T48;
-
 _T48:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
@@ -375,10 +368,8 @@ _T48:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T79;
-
 _T74:
 	__asm        jmp    _T79;
-
 _T79:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
@@ -446,7 +437,6 @@ _T60:
 // LINE 75:
 _T6a:
 	__asm        jmp    _Ta4;
-
 _T6f:
 	__asm        xor    eax, eax;
 	__asm        mov    al, WinMajor;
@@ -457,7 +447,6 @@ _T6f:
 	__asm        mov    dword ptr [eax+8], 3;
 // LINE 77:
 	__asm        jmp    _Ta4;
-
 _T8c:
 	__asm        xor    eax, eax;
 	__asm        mov    al, WinMajor;
@@ -502,7 +491,6 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	__asm        call   GameWindow::GameWindow;
 	__asm        mov    Window, eax;
 	__asm        jmp    _T58;
-
 _T51:
 	__asm        mov    Window, 0;
 // LINE 108:
@@ -538,7 +526,6 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _T55;
-
 _T4e:
 	__asm        mov    pDDBitmap, 0;
 // LINE 122:
@@ -565,7 +552,6 @@ _T60:
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _T95;
-
 _T8e:
 	__asm        mov    pBBitmap, 0;
 // LINE 126:
@@ -613,7 +599,6 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _T67;
-
 _T60:
 	__asm        mov    pDDBitmap, 0;
 // LINE 149:
@@ -639,7 +624,6 @@ _T6c:
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _Tac;
-
 _Ta5:
 	__asm        mov    pDDBitmap, 0;
 // LINE 151:
@@ -673,7 +657,6 @@ _Tb7:
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _Tfe;
-
 _Tf7:
 	__asm        mov    pBBitmap, 0;
 // LINE 157:
@@ -699,7 +682,6 @@ _T103:
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _T143;
-
 _T13c:
 	__asm        mov    pBBitmap, 0;
 // LINE 159:

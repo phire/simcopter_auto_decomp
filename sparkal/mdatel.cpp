@@ -653,7 +653,6 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    _Tb8;
-
 _Tae:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 _Tb8:
@@ -694,7 +693,6 @@ _T118:
 	__asm        sub    eax, 0xC;
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    _T152;
-
 _T146:
 	__asm        mov    eax, hh;
 	__asm        mov    [ebp-0x120], eax;
@@ -762,7 +760,6 @@ _T1ed:
 	__asm        add    esp, 0x10;
 // LINE 101:
 	__asm        jmp    _T29f;
-
 _T211:
 	__asm        sub    dword ptr [ebp-0x128], 2;
 	__asm        cmp    dword ptr [ebp-0x128], 0x24;
@@ -1102,6 +1099,7 @@ _T66:
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    _T76;
 // LINE 231:
+_T76:
 }
 
 // FUNCTION: COPTER_D 0x004201c9
@@ -1112,7 +1110,6 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 // LINE 246:
 	__asm        mov    i, 1;
 	__asm        jmp    _T1f;
-
 _T1c:
 	__asm        inc    i;
 _T1f:
@@ -1145,6 +1142,7 @@ _T62:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T69;
 // LINE 251:
+_T69:
 }
 
 // FUNCTION: COPTER_D 0x00420237
@@ -1155,7 +1153,6 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 // LINE 267:
 	__asm        mov    i, 1;
 	__asm        jmp    _T1f;
-
 _T1c:
 	__asm        inc    i;
 _T1f:
@@ -1188,6 +1185,7 @@ _T62:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T69;
 // LINE 272:
+_T69:
 }
 
 // FUNCTION: COPTER_D 0x004202a5
@@ -1236,7 +1234,6 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    _T8a;
-
 _T85:
 	__asm        jmp    _T8a;
 // LINE 292:
@@ -1292,7 +1289,6 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    _T8a;
-
 _T85:
 	__asm        jmp    _T8a;
 // LINE 312:
@@ -1426,7 +1422,6 @@ _T124:
 	__asm        add    esp, 0x14;
 // LINE 402:
 	__asm        jmp    _T1e0;
-
 _T155:
 	__asm        inc    dword ptr [ebp-0x58];
 	__asm        cmp    dword ptr [ebp-0x58], 0x27;

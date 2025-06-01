@@ -180,7 +180,6 @@ unsigned short wincpuidext() {
 // LINE 183:
 	__asm        mov    i, 0;
 	__asm        jmp    _T78;
-
 _T75:
 	__asm        inc    i;
 _T78:
@@ -282,7 +281,6 @@ unsigned long wincpufeatures() {
 // LINE 273:
 	__asm        mov    i, 0;
 	__asm        jmp    _T73;
-
 _T70:
 	__asm        inc    i;
 _T73:
@@ -603,7 +601,6 @@ unsigned short check_IDProc() {
 // LINE 581:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6a;
-
 _T67:
 	__asm        inc    i;
 _T6a:

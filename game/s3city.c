@@ -137,7 +137,6 @@ _Tad:
 _Te9:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tfe;
-
 _Tf8:
 	__asm        inc    i;
 _Tfe:
@@ -346,6 +345,7 @@ _T3e8:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T401;
 // LINE 322:
+_T401:
 }
 
 // FUNCTION: COPTER_D 0x0050a406
@@ -388,6 +388,7 @@ _T4c:
 // LINE 350:
 	__asm        dec    dword ptr ds:[0x5B59E0];
 // LINE 352:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x0050a478
@@ -510,6 +511,7 @@ _Te0:
 // LINE 418:
 	__asm        mov    dword ptr ds:[0x66281C], 0x2580000;
 // LINE 419:
+_T162:
 }
 
 // FUNCTION: COPTER_D 0x0050a5df
@@ -539,7 +541,6 @@ short S3CityInitOmap() {
 // LINE 467:
 	__asm        mov    x, 0;
 	__asm        jmp    _T26;
-
 _T23:
 	__asm        inc    x;
 _T26:
@@ -548,7 +549,6 @@ _T26:
 // LINE 469:
 	__asm        mov    y, 0;
 	__asm        jmp    _T42;
-
 _T3f:
 	__asm        inc    y;
 _T42:
@@ -651,7 +651,6 @@ _T151:
 	__asm        jmp    _T3f;
 // LINE 512:
 	__asm        jmp    _T3814;
-
 _T173:
 	__asm        cmp    tile, 4;
 	__asm        jg     _T199;
@@ -664,7 +663,6 @@ _T173:
 	__asm        mov    obj1user, 0x400;
 // LINE 518:
 	__asm        jmp    _T3814;
-
 _T199:
 	__asm        cmp    tile, 0x1D;
 	__asm        jge    _T5be;
@@ -995,7 +993,6 @@ _T199:
 	__asm        jmp    _T5b9;
 // LINE 646:
 	__asm        jmp    _T5b9;
-
 _T545:
 	__asm        sub    dword ptr [ebp-0x44], 6;
 	__asm        cmp    dword ptr [ebp-0x44], 0x16;
@@ -1007,7 +1004,6 @@ _T545:
 // LINE 649:
 _T5b9:
 	__asm        jmp    _T3814;
-
 _T5be:
 	__asm        cmp    tile, 0x70;
 	__asm        jge    _T1816;
@@ -2550,7 +2546,6 @@ _T11a1:
 	__asm        jmp    _T3f;
 // LINE 1210:
 	__asm        jmp    _T1811;
-
 _T16bd:
 	__asm        sub    dword ptr [ebp-0x48], 0x1D;
 	__asm        cmp    dword ptr [ebp-0x48], 0x4E;
@@ -5341,7 +5336,6 @@ _T2932:
 	__asm        jmp    _T3f;
 // LINE 2012:
 	__asm        jmp    _T3814;
-
 _T35b9:
 	__asm        sub    dword ptr [ebp-0x4C], 0x70;
 	__asm        cmp    dword ptr [ebp-0x4C], 0x8F;
@@ -5741,7 +5735,6 @@ _T3814:
 	__asm        jmp    _T3d67;
 // LINE 2084:
 	__asm        jmp    _T3d67;
-
 _T3d40:
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        cmp    dword ptr [ebp-0x50], 3;
@@ -5839,7 +5832,6 @@ _T3e42:
 _T3e47:
 	__asm        mov    x, 0;
 	__asm        jmp    _T3e56;
-
 _T3e53:
 	__asm        inc    x;
 _T3e56:
@@ -5848,7 +5840,6 @@ _T3e56:
 // LINE 2121:
 	__asm        mov    y, 0;
 	__asm        jmp    _T3e72;
-
 _T3e6f:
 	__asm        inc    y;
 _T3e72:
@@ -5893,7 +5884,6 @@ _T3ecf:
 _T3eef:
 	__asm        mov    j, 0;
 	__asm        jmp    _T3efe;
-
 _T3efb:
 	__asm        inc    j;
 _T3efe:
@@ -5903,7 +5893,6 @@ _T3efe:
 // LINE 2137:
 	__asm        mov    k, 0;
 	__asm        jmp    _T3f1a;
-
 _T3f17:
 	__asm        inc    k;
 _T3f1a:
@@ -5944,7 +5933,6 @@ _T3f66:
 // LINE 2152:
 _T3f86:
 	__asm        jmp    _T3fc4;
-
 _T3f8b:
 	__asm        mov    eax, j;
 	__asm        cmp    k, eax;
@@ -6360,7 +6348,6 @@ _T44dd:
 	__asm        jmp    _T4514;
 // LINE 2231:
 	__asm        jmp    _T4514;
-
 _T44ed:
 	__asm        dec    dword ptr [ebp-0x54];
 	__asm        cmp    dword ptr [ebp-0x54], 3;
@@ -6442,7 +6429,6 @@ _T45cc:
 _T45d1:
 	__asm        mov    x, 0x80;
 	__asm        jmp    _T45e1;
-
 _T45dd:
 	__asm        add    x, 0x10;
 _T45e1:
@@ -6451,7 +6437,6 @@ _T45e1:
 // LINE 2266:
 	__asm        mov    y, 0;
 	__asm        jmp    _T45fe;
-
 _T45fa:
 	__asm        add    y, 0x10;
 _T45fe:
@@ -6475,7 +6460,6 @@ _T45fe:
 _T4635:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4644;
-
 _T4640:
 	__asm        inc    i;
 _T4644:
@@ -6485,7 +6469,6 @@ _T4644:
 // LINE 2273:
 	__asm        mov    j, 0;
 	__asm        jmp    _T4660;
-
 _T465d:
 	__asm        inc    j;
 _T4660:
@@ -6502,7 +6485,6 @@ _T4660:
 	__asm        and    edx, 0xFF;
 	__asm        mov    [ecx+edx*4+0x67ED30], eax;
 	__asm        jmp    _T465d;
-
 _T4695:
 	__asm        jmp    _T4640;
 // LINE 2276:
@@ -6565,7 +6547,6 @@ _T473e:
 _T4743:
 	__asm        mov    x, 0;
 	__asm        jmp    _T4753;
-
 _T474f:
 	__asm        add    x, 0x10;
 _T4753:
@@ -6574,7 +6555,6 @@ _T4753:
 // LINE 2296:
 	__asm        mov    y, 0x80;
 	__asm        jmp    _T4770;
-
 _T476c:
 	__asm        add    y, 0x10;
 _T4770:
@@ -6617,7 +6597,6 @@ _T47b9:
 _T47e3:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47f2;
-
 _T47ee:
 	__asm        inc    i;
 _T47f2:
@@ -6627,7 +6606,6 @@ _T47f2:
 // LINE 2310:
 	__asm        mov    j, 0;
 	__asm        jmp    _T480e;
-
 _T480b:
 	__asm        inc    j;
 _T480e:
@@ -6644,7 +6622,6 @@ _T480e:
 	__asm        and    edx, 0xFF;
 	__asm        mov    [ecx+edx*4+0x67ED30], eax;
 	__asm        jmp    _T480b;
-
 _T4843:
 	__asm        jmp    _T47ee;
 // LINE 2314:
@@ -6707,7 +6684,6 @@ _T48ec:
 _T48f1:
 	__asm        mov    x, 0;
 	__asm        jmp    _T4900;
-
 _T48fd:
 	__asm        inc    x;
 _T4900:
@@ -6716,7 +6692,6 @@ _T4900:
 // LINE 2421:
 	__asm        mov    y, 0;
 	__asm        jmp    _T491c;
-
 _T4919:
 	__asm        inc    y;
 _T491c:
@@ -6954,7 +6929,6 @@ _T229:
 	__asm        call   city_fovscan_horizedge;
 // LINE 2739:
 	__asm        jmp    _T719;
-
 _T2b7:
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
@@ -6965,7 +6939,6 @@ _T2b7:
 	__asm        call   city_fovscan_vertedge;
 // LINE 2743:
 	__asm        jmp    _T719;
-
 _T2d6:
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
@@ -7060,7 +7033,6 @@ _T3de:
 // LINE 2780:
 _T3e3:
 	__asm        jmp    _T719;
-
 _T3e8:
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
@@ -7155,7 +7127,6 @@ _T4f0:
 // LINE 2817:
 _T4f5:
 	__asm        jmp    _T719;
-
 _T4fa:
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
@@ -7250,7 +7221,6 @@ _T602:
 // LINE 2854:
 _T607:
 	__asm        jmp    _T719;
-
 _T60c:
 	__asm        mov    eax, ds:[0x609104];
 	__asm        mov    ecx, ds:[0x62A4A0];
@@ -7349,6 +7319,7 @@ _T719:
 // LINE 2894:
 	__asm        jmp    _T72b;
 // LINE 2896:
+_T72b:
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
@@ -7857,7 +7828,6 @@ _T501:
 	__asm        mov    get_y_next, 0;
 // LINE 3141:
 	__asm        jmp    _T5d8;
-
 _T550:
 	__asm        fld    xdist;
 	__asm        fcomp  ydist;
@@ -8039,6 +8009,7 @@ _T7a4:
 	__asm        mov    ecx, cell_last;
 	__asm        mov    [ecx], eax;
 // LINE 3191:
+_T7af:
 }
 
 // FUNCTION: COPTER_D 0x0050fe32
@@ -8110,7 +8081,6 @@ _T95:
 	__asm        mov    eax, y_start;
 	__asm        mov    y, eax;
 	__asm        jmp    _Tad;
-
 _Ta7:
 	__asm        mov    eax, y_dir;
 	__asm        add    y, eax;
@@ -8124,7 +8094,6 @@ _Tad:
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    _Tcc;
-
 _Tc9:
 	__asm        inc    x;
 _Tcc:
@@ -8274,7 +8243,6 @@ _T252:
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    _T262;
-
 _T25f:
 	__asm        dec    x;
 _T262:
@@ -8557,7 +8525,6 @@ _T93:
 	__asm        mov    eax, x_start;
 	__asm        mov    x, eax;
 	__asm        jmp    _Tab;
-
 _Ta5:
 	__asm        mov    eax, x_dir;
 	__asm        add    x, eax;
@@ -8571,7 +8538,6 @@ _Tab:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    _Tcb;
-
 _Tc8:
 	__asm        inc    y;
 _Tcb:
@@ -8721,7 +8687,6 @@ _T252:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    _T263;
-
 _T260:
 	__asm        dec    y;
 _T263:
@@ -9004,7 +8969,6 @@ _T9d:
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    _Tad;
-
 _Taa:
 	__asm        inc    x;
 _Tad:
@@ -9145,7 +9109,6 @@ _T221:
 	__asm        mov    eax, [eax];
 	__asm        mov    x, eax;
 	__asm        jmp    _T231;
-
 _T22e:
 	__asm        dec    x;
 _T231:
@@ -9349,6 +9312,7 @@ _T433:
 _T46a:
 	__asm        dec    dword ptr ds:[0x5B59EC];
 // LINE 3632:
+_T470:
 }
 
 // FUNCTION: COPTER_D 0x00510beb
@@ -9410,7 +9374,6 @@ _T7b:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    _T8c;
-
 _T89:
 	__asm        inc    y;
 _T8c:
@@ -9551,7 +9514,6 @@ _T202:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    y, eax;
 	__asm        jmp    _T213;
-
 _T210:
 	__asm        dec    y;
 _T213:
@@ -9752,6 +9714,7 @@ _T416:
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    _T416;
 // LINE 3738:
+_T44e:
 }
 
 // FUNCTION: COPTER_D 0x0051103e
@@ -9790,7 +9753,6 @@ void S3CityDrawGrid() {
 	__asm        mov    sface, eax;
 // LINE 3778:
 	__asm        jmp    _T59;
-
 _T55:
 	__asm        add    cellptr, 8;
 _T59:
@@ -10100,7 +10062,6 @@ _T384:
 	__asm        jmp    _T3a7;
 // LINE 3874:
 	__asm        jmp    _T3a7;
-
 _T38e:
 	__asm        cmp    dword ptr [ebp-0x34], 1;
 	__asm        je     _T2b4;
@@ -10162,6 +10123,7 @@ _T417:
 // LINE 3912:
 	__asm        call   0x004D6AFC;
 // LINE 3913:
+_T439:
 }
 
 // FUNCTION: COPTER_D 0x0051147c
@@ -10193,7 +10155,6 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 	__asm        mov    eax, endcaddr;
 	__asm        mov    caddr1, eax;
 	__asm        jmp    _T35;
-
 _T27:
 	__asm        inc    i;
 	__asm        sub    cptrptr1, 4;
@@ -10269,7 +10230,6 @@ _T99:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T119;
-
 _T114:
 	__asm        jmp    _T119;
 // LINE 4049:
@@ -10424,7 +10384,6 @@ _T2b2:
 	__asm        mov    eax, endcaddr;
 	__asm        mov    caddr2, eax;
 	__asm        jmp    _T2cb;
-
 _T2c3:
 	__asm        sub    cptrptr2, 4;
 	__asm        sub    caddr2, 4;
@@ -10485,7 +10444,6 @@ _T349:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T379;
-
 _T374:
 	__asm        jmp    _T379;
 // LINE 4105:
@@ -10508,7 +10466,6 @@ _T379:
 	__asm        jmp    _T5dd;
 // LINE 4110:
 	__asm        jmp    _T5d8;
-
 _T3a9:
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr2;
@@ -10556,7 +10513,6 @@ _T405:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T435;
-
 _T430:
 	__asm        jmp    _T435;
 // LINE 4125:
@@ -10579,7 +10535,6 @@ _T435:
 	__asm        jmp    _T5dd;
 // LINE 4130:
 	__asm        jmp    _T5d8;
-
 _T465:
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr3;
@@ -10627,7 +10582,6 @@ _T4c1:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T4f1;
-
 _T4ec:
 	__asm        jmp    _T4f1;
 // LINE 4145:
@@ -10650,7 +10604,6 @@ _T4f1:
 	__asm        jmp    _T5dd;
 // LINE 4150:
 	__asm        jmp    _T5d8;
-
 _T521:
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptr4;
@@ -10698,7 +10651,6 @@ _T57d:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T5ad;
-
 _T5a8:
 	__asm        jmp    _T5ad;
 // LINE 4165:
@@ -11398,7 +11350,6 @@ _Tb5b:
 // LINE 4291:
 _Tc72:
 	__asm        jmp    _Tccb;
-
 _Tc77:
 	__asm        cmp    dword ptr ds:[0x5B59E4], 1;
 	__asm        jne    _Tccb;
@@ -11438,6 +11389,7 @@ _Tccb:
 _Tcd8:
 	__asm        jmp    _T27;
 // LINE 4301:
+_Tcdd:
 }
 
 // FUNCTION: COPTER_D 0x0051215e
@@ -11511,6 +11463,7 @@ _Tb4:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tbb;
 // LINE 4340:
+_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x0051221e
@@ -11561,7 +11514,6 @@ void S3CityCheckGridPos() {
 	__asm        mov    word ptr ds:[0x62A4D4], 0xA;
 // LINE 4370:
 	__asm        jmp    _Tc4;
-
 _T9d:
 	__asm        cmp    dword ptr ds:[0x5B59D0], 0xA0;
 	__asm        jge    _Tbb;
@@ -11582,7 +11534,6 @@ _Tc4:
 	__asm        mov    dword ptr ds:[0x5B59DC], 0;
 // LINE 4380:
 	__asm        jmp    _T116;
-
 _Te3:
 	__asm        cmp    altdiff, 0;
 	__asm        jle    _T102;
@@ -11707,7 +11658,6 @@ _T1bd:
 	__asm        sub    ds:[0x666308], eax;
 // LINE 4430:
 	__asm        jmp    _T2db;
-
 _T26d:
 	__asm        cmp    xdiff, 0;
 	__asm        jne    _T28e;
@@ -11743,6 +11693,7 @@ _T28e:
 	__asm        neg    eax;
 	__asm        sub    ds:[0x666308], eax;
 // LINE 4440:
+_T2db:
 }
 
 // FUNCTION: COPTER_D 0x005124fe
@@ -11818,7 +11769,6 @@ _T53:
 	__asm        jmp    _Te7;
 // LINE 4501:
 	__asm        jmp    _Te7;
-
 _Tbf:
 	__asm        cmp    dword ptr [ebp-0x20], 4;
 	__asm        ja     _Te7;
@@ -11839,7 +11789,6 @@ _Te7:
 _Tfd:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10c;
-
 _T109:
 	__asm        inc    i;
 _T10c:
@@ -11882,6 +11831,7 @@ _T159:
 _T168:
 	__asm        jmp    _T53;
 // LINE 4530:
+_T16d:
 }
 
 // FUNCTION: COPTER_D 0x00512670
@@ -12170,6 +12120,7 @@ _T2e5:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2ec;
 // LINE 4878:
+_T2ec:
 }
 
 // FUNCTION: COPTER_D 0x00512961
@@ -12264,7 +12215,6 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 	__asm        mov    eax, startx;
 	__asm        mov    x, eax;
 	__asm        jmp    _T1d;
-
 _T1a:
 	__asm        inc    x;
 _T1d:
@@ -12276,7 +12226,6 @@ _T1d:
 	__asm        mov    eax, starty;
 	__asm        mov    y, eax;
 	__asm        jmp    _T3a;
-
 _T37:
 	__asm        inc    y;
 _T3a:
@@ -12309,7 +12258,6 @@ _T3a:
 // LINE 4953:
 _T97:
 	__asm        jmp    _T37;
-
 _T9c:
 	__asm        jmp    _T1a;
 // LINE 4955:
@@ -12408,6 +12356,7 @@ _T12a:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T131;
 // LINE 4974:
+_T131:
 }
 
 // FUNCTION: COPTER_D 0x00512c2b
@@ -12474,7 +12423,6 @@ _T69:
 	__asm        jmp    _T20a;
 // LINE 5004:
 	__asm        jmp    _Tdc;
-
 _Tb5:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        cmp    dword ptr [ebp-8], 3;
@@ -12486,7 +12434,6 @@ _Tb5:
 // LINE 5006:
 _Tdc:
 	__asm        jmp    _T1f8;
-
 _Te1:
 	__asm        cmp    zone, 3;
 	__asm        je     _Tf5;
@@ -12520,7 +12467,6 @@ _Tf5:
 	__asm        jmp    _T20a;
 // LINE 5018:
 	__asm        jmp    _T174;
-
 _T14d:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        cmp    dword ptr [ebp-0xC], 3;
@@ -12559,7 +12505,6 @@ _T179:
 	__asm        jmp    _T20a;
 // LINE 5032:
 	__asm        jmp    _T1f8;
-
 _T1d1:
 	__asm        dec    dword ptr [ebp-0x10];
 	__asm        cmp    dword ptr [ebp-0x10], 3;
@@ -12575,6 +12520,7 @@ _T1f8:
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5037:
+_T20a:
 }
 
 // FUNCTION: COPTER_D 0x00512e3a
@@ -12601,7 +12547,6 @@ void S3CityCreateHeliBase(long x, long y) {
 	__asm        mov    eax, x;
 	__asm        mov    px, eax;
 	__asm        jmp    _T3f;
-
 _T3c:
 	__asm        inc    px;
 _T3f:
@@ -12613,7 +12558,6 @@ _T3f:
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    _T5c;
-
 _T59:
 	__asm        inc    py;
 _T5c:
@@ -12927,7 +12871,6 @@ _T319:
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    _T41d;
-
 _T41a:
 	__asm        inc    px;
 _T41d:
@@ -13031,7 +12974,6 @@ _T532:
 	__asm        add    eax, 3;
 	__asm        mov    py, eax;
 	__asm        jmp    _T549;
-
 _T546:
 	__asm        inc    px;
 _T549:
@@ -13512,7 +13454,6 @@ _Taa0:
 	__asm        mov    eax, x;
 	__asm        mov    px, eax;
 	__asm        jmp    _Tac3;
-
 _Tabf:
 	__asm        add    px, 4;
 _Tac3:
@@ -13524,7 +13465,6 @@ _Tac3:
 	__asm        mov    eax, y;
 	__asm        mov    py, eax;
 	__asm        jmp    _Tae1;
-
 _Tadd:
 	__asm        add    py, 4;
 _Tae1:
@@ -13862,6 +13802,7 @@ _Tdc6:
 // LINE 5409:
 	__asm        mov    dword ptr ds:[0x5B491C], 1;
 // LINE 5410:
+_Tf04:
 }
 
 

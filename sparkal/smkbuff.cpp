@@ -545,6 +545,7 @@ _T30:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T37;
 // LINE 118:
+_T37:
 }
 
 // FUNCTION: COPTER_D 0x00497e25
@@ -642,6 +643,7 @@ _T84:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tf8;
 // LINE 150:
+_Tf8:
 }
 
 // FUNCTION: COPTER_D 0x00497f22
@@ -901,7 +903,6 @@ _T20:
 	__asm        mov    dword ptr [eax+4], 1;
 // LINE 319:
 	__asm        jmp    _T140;
-
 _T3c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
@@ -1171,6 +1172,7 @@ _T2f5:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2fc;
 // LINE 386:
+_T2fc:
 }
 
 // FUNCTION: COPTER_D 0x00498489
@@ -1195,7 +1197,6 @@ void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMe
 	__asm        call   VRBmpSmackerBuffer::VRBmpSmackerBuffer;
 	__asm        mov    tempVRBmpSmackerBuffer, eax;
 	__asm        jmp    _T46;
-
 _T3f:
 	__asm        mov    tempVRBmpSmackerBuffer, 0;
 // LINE 428:
@@ -1510,7 +1511,6 @@ _T78:
 // LINE 561:
 	__asm        mov    i, 0;
 	__asm        jmp    _T150;
-
 _T14d:
 	__asm        inc    i;
 _T150:
@@ -1540,7 +1540,6 @@ _T181:
 _T191:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1a0;
-
 _T19d:
 	__asm        inc    i;
 _T1a0:
@@ -1564,6 +1563,7 @@ _T1d1:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1db;
 // LINE 572:
+_T1db:
 }
 
 // FUNCTION: COPTER_D 0x0049891f
@@ -1650,7 +1650,6 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 // LINE 623:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -1712,7 +1711,6 @@ int32_t VRBmpSmackerBuffer::Compose() {
 // LINE 658:
 _T40:
 	__asm        jmp    _T161;
-
 _T45:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 2;
@@ -1737,7 +1735,6 @@ _T7c:
 	__asm        jmp    _T168;
 // LINE 664:
 	__asm        jmp    _T161;
-
 _T8b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -1822,6 +1819,7 @@ _T161:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T168;
 // LINE 683:
+_T168:
 }
 
 // FUNCTION: COPTER_D 0x00498c00
@@ -1974,7 +1972,6 @@ _Tf4:
 _Tfd:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10c;
-
 _T109:
 	__asm        inc    i;
 _T10c:
@@ -2031,7 +2028,6 @@ _T19d:
 	__asm        jge    _T1ea;
 // LINE 767:
 	__asm        jmp    _T1b1;
-
 _T1ae:
 	__asm        inc    i;
 _T1b1:
@@ -2078,6 +2074,7 @@ _T236:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T240;
 // LINE 780:
+_T240:
 }
 
 // FUNCTION: COPTER_D 0x00498ee8
@@ -2180,7 +2177,6 @@ _T54:
 	__asm        add    eax, 0x140;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T7a;
-
 _T73:
 	__asm        mov    dword ptr [ebp-4], 0;
 _T7a:
@@ -2216,6 +2212,7 @@ _T26:
 	__asm        call   dword ptr [eax+8];
 	__asm        jmp    _T36;
 // LINE 869:
+_T36:
 }
 
 // FUNCTION: COPTER_D 0x004990d2
@@ -2329,6 +2326,7 @@ _Ta5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tba;
 // LINE 919:
+_Tba:
 }
 
 // FUNCTION: COPTER_D 0x0049920a
@@ -2448,6 +2446,7 @@ _T13b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T187;
 // LINE 987:
+_T187:
 }
 
 // FUNCTION: COPTER_D 0x00499396
@@ -2461,7 +2460,6 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 	__asm        mov    dword ptr [eax-0x13C], 1;
 // LINE 1018:
 	__asm        jmp    _T10c;
-
 _T2e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x13C], 2;
@@ -2813,6 +2811,7 @@ _T3c9:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3d0;
 // LINE 1094:
+_T3d0:
 }
 
 // FUNCTION: COPTER_D 0x0049976d
@@ -2826,7 +2825,6 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 	__asm        mov    dword ptr [eax-0x13C], 1;
 // LINE 1108:
 	__asm        jmp    _Tfe;
-
 _T2e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x13C], 2;
@@ -3174,6 +3172,7 @@ _T3ba:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3c1;
 // LINE 1186:
+_T3c1:
 }
 
 // FUNCTION: COPTER_D 0x00499b35
@@ -3406,6 +3405,7 @@ _T210:
 	__asm        call   dword ptr [eax+4];
 // LINE 1299:
 	__asm        jmp    _T220;
+_T220:
 }
 
 // FUNCTION: COPTER_D 0x00499d5c
@@ -3499,6 +3499,7 @@ _Tbc:
 	__asm        call   dword ptr [eax+4];
 // LINE 1362:
 	__asm        jmp    _Tcc;
+_Tcc:
 }
 
 

@@ -322,7 +322,6 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*par
 // LINE 50:
 	__asm        mov    count, 0;
 	__asm        jmp    _T24;
-
 _T20:
 	__asm        inc    count;
 _T24:
@@ -379,7 +378,6 @@ const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T3e;
-
 _T37:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        add    dword ptr [ebp-0x10], 0xC;
@@ -395,10 +393,8 @@ _T3e:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T79;
-
 _T62:
 	__asm        jmp    _T37;
-
 _T67:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    _T79;
@@ -415,11 +411,9 @@ _T79:
 	__asm        jmp    _Ta8;
 
 	__asm        jmp    _Ta2;
-
 _T96:
 	__asm        mov    tree, 0;
 	__asm        jmp    _Ta8;
-
 _Ta2:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    tree, eax;
@@ -437,7 +431,6 @@ _Tad:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Td0;
-
 _Tc9:
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        add    dword ptr [ebp-0x24], 0xC;
@@ -453,10 +446,8 @@ _Td0:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T10b;
-
 _Tf4:
 	__asm        jmp    _Tc9;
-
 _Tf9:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T10b;
@@ -473,11 +464,9 @@ _T10b:
 	__asm        jmp    _T13a;
 
 	__asm        jmp    _T134;
-
 _T128:
 	__asm        mov    tree, 0;
 	__asm        jmp    _T13a;
-
 _T134:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    tree, eax;
@@ -650,6 +639,7 @@ _Tb5:
 // LINE 174:
 // Block end:
 	__asm        jmp    _Teb;
+_Teb:
 }
 
 // FUNCTION: COPTER_D 0x0056072f
@@ -676,6 +666,7 @@ _T3c:
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    _T47;
 // LINE 187:
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x0056077d
@@ -706,7 +697,6 @@ short Behavior::GetBaseID(short treeclass) {
 	__asm        jmp    _T70;
 // LINE 204:
 	__asm        jmp    _T70;
-
 _T4c:
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     _T70;
@@ -749,7 +739,6 @@ short Behavior::GetMaxID(short treeclass) {
 	__asm        jmp    _T70;
 // LINE 223:
 	__asm        jmp    _T70;
-
 _T4c:
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     _T70;
@@ -818,6 +807,7 @@ _T9e:
 	__asm        xor    ax, ax;
 	__asm        jmp    _Ta6;
 // LINE 237:
+_Ta6:
 }
 
 // FUNCTION: COPTER_D 0x00560924
@@ -851,7 +841,6 @@ _T45:
 	__asm        jmp    _T7a;
 // LINE 257:
 	__asm        jmp    _T7a;
-
 _T56:
 	__asm        cmp    dword ptr [ebp-8], 3;
 	__asm        ja     _T45;

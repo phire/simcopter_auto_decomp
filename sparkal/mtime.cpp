@@ -590,16 +590,13 @@ void MDate::MDate(const class MTime& t) {
 	__asm        jbe    _T26;
 
 	__asm        jmp    _T2b;
-
 _T26:
 	__asm        jmp    _T5b;
-
 _T2b:
 	__asm        jmp    _T3a;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T5b;
-
 _T3a:
 	__asm        mov    ecx, t;
 	__asm        call   MTime::LocalSecs;
@@ -610,7 +607,6 @@ _T3a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T65;
-
 _T5b:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -674,7 +670,6 @@ int  MTime::AssertMDate(const class MDate& date) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T39;
-
 _T37:
 	__asm        xor    eax, eax;
 _T39:
@@ -850,6 +845,7 @@ _Tde:
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    _T113;
 // LINE 133:
+_T113:
 }
 
 // FUNCTION: COPTER_D 0x0043ca36
@@ -975,10 +971,8 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        jbe    _T28;
 
 	__asm        jmp    _T2d;
-
 _T28:
 	__asm        jmp    _Tf8;
-
 _T2d:
 	__asm        jmp    _T3c;
 
@@ -1098,14 +1092,12 @@ int  MTime::CompareTo(const class MTime& t) {
 
 	__asm        xor    eax, eax;
 	__asm        jmp    _T43;
-
 _T2a:
 	__asm        cmp    diff, 0;
 	__asm        jbe    _T3e;
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T43;
-
 _T3e:
 	__asm        mov    eax, 0xFFFFFFFF;
 _T43:
@@ -1197,16 +1189,13 @@ _T20:
 	__asm        jb     _T71;
 
 	__asm        jmp    _T76;
-
 _T71:
 	__asm        jmp    _Tcb;
-
 _T76:
 	__asm        jmp    _T85;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     _Tcb;
-
 _T85:
 	__asm        mov    eax, year;
 	__asm        push   eax;
@@ -1222,25 +1211,22 @@ _T85:
 	__asm        jae    _Tad;
 
 	__asm        jmp    _Tb2;
-
 _Tad:
 	__asm        jmp    _Tcb;
-
 _Tb2:
 	__asm        jmp    _Tc1;
 
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _Tcb;
-
 _Tc1:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tcd;
-
 _Tcb:
 	__asm        xor    eax, eax;
 _Tcd:
 	__asm        jmp    _Td2;
 // LINE 314:
+_Td2:
 }
 
 // FUNCTION: COPTER_D 0x0043ce2a
@@ -1253,10 +1239,8 @@ class MTime  MTime::MaxTime(const class MTime& t) {
 	__asm        jbe    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T52;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -1285,6 +1269,7 @@ _T52:
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    _T6a;
 // LINE 330:
+_T6a:
 }
 
 // FUNCTION: COPTER_D 0x0043ce9b
@@ -1297,10 +1282,8 @@ class MTime  MTime::MinTime(const class MTime& t) {
 	__asm        jae    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T52;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -1329,6 +1312,7 @@ _T52:
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        jmp    _T6a;
 // LINE 346:
+_T6a:
 }
 
 // FUNCTION: COPTER_D 0x0043cf0c
@@ -1475,7 +1459,6 @@ _T59:
 	__asm        sub    eax, 0xC;
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        jmp    _T94;
-
 _T88:
 	__asm        mov    eax, hh;
 	__asm        mov    [ebp-0xE0], eax;
@@ -1508,7 +1491,6 @@ _T94:
 
 	__asm        mov    dword ptr [ebp-0xEC], 0;
 	__asm        jmp    _T133;
-
 _T11c:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    eax, [eax];
@@ -1529,7 +1511,6 @@ _T133:
 
 	__asm        mov    dword ptr [ebp-0xF4], 0;
 	__asm        jmp    _T182;
-
 _T16b:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    eax, [eax];
@@ -1568,7 +1549,6 @@ _T182:
 
 	__asm        mov    dword ptr [ebp-0xFC], 0;
 	__asm        jmp    _T221;
-
 _T20a:
 	__asm        mov    eax, [ebp-0x100];
 	__asm        mov    eax, [eax];
@@ -1607,7 +1587,6 @@ _T221:
 
 	__asm        mov    dword ptr [ebp-0x108], 0;
 	__asm        jmp    _T2c0;
-
 _T2a9:
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    eax, [eax];

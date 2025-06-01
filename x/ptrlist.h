@@ -66,6 +66,7 @@ _T8f:
 // LINE 55:
 _T9f:
 	__asm        jmp    _Ta4;
+_Ta4:
 }
 
 // Function in module: Bodydefs.obj
@@ -82,7 +83,6 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T34;
-
 _T2a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -130,7 +130,6 @@ _T0c:
 	__asm        add    esp, 0x10;
 _T74:
 	__asm        jmp    _T0c;
-
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -202,7 +201,6 @@ _T0c:
 	__asm        add    esp, 0x10;
 _T74:
 	__asm        jmp    _T0c;
-
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -248,7 +246,6 @@ void PtrList<cCopterBody>::Iter::Reset() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T34;
-
 _T2a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -296,7 +293,6 @@ _T0c:
 	__asm        add    esp, 0x10;
 _T74:
 	__asm        jmp    _T0c;
-
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];

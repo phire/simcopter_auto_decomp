@@ -271,7 +271,6 @@ _T6a:
 // LINE 226:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2ff;
-
 _T2fc:
 	__asm        inc    y;
 _T2ff:
@@ -281,7 +280,6 @@ _T2ff:
 // LINE 228:
 	__asm        mov    x, 0;
 	__asm        jmp    _T31d;
-
 _T31a:
 	__asm        inc    x;
 _T31d:
@@ -368,7 +366,6 @@ _T35d:
 // LINE 258:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41c;
-
 _T418:
 	__asm        inc    i;
 _T41c:
@@ -381,7 +378,6 @@ _T41c:
 // LINE 261:
 	__asm        mov    j, 0;
 	__asm        jmp    _T441;
-
 _T43d:
 	__asm        inc    j;
 _T441:
@@ -418,7 +414,6 @@ _T480:
 // LINE 276:
 	__asm        mov    y, 0;
 	__asm        jmp    _T497;
-
 _T494:
 	__asm        inc    y;
 _T497:
@@ -428,7 +423,6 @@ _T497:
 // LINE 278:
 	__asm        mov    x, 0;
 	__asm        jmp    _T4b5;
-
 _T4b2:
 	__asm        inc    x;
 _T4b5:
@@ -443,7 +437,6 @@ _T4b5:
 // LINE 303:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e2;
-
 _T4de:
 	__asm        inc    i;
 _T4e2:
@@ -561,7 +554,6 @@ _T5a2:
 	__asm        jmp    _T635;
 // LINE 342:
 	__asm        jmp    _T635;
-
 _T61c:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     _T52d;
@@ -602,6 +594,7 @@ _T68a:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T692;
 // LINE 358:
+_T692:
 }
 
 // FUNCTION: COPTER_D 0x004d71d7

@@ -329,7 +329,6 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 	__asm        jmp    _T8c;
 // LINE 67:
 	__asm        jmp    _T82;
-
 _T35:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
@@ -365,6 +364,7 @@ _T82:
 	__asm        mov    eax, 6;
 	__asm        jmp    _T8c;
 // LINE 77:
+_T8c:
 }
 
 // FUNCTION: COPTER_D 0x004275e3
@@ -396,7 +396,6 @@ _T3e:
 	__asm        jmp    _Ta7;
 // LINE 93:
 	__asm        jmp    _T9d;
-
 _T56:
 	__asm        cmp    lFileType, 3;
 	__asm        je     _T6a;
@@ -412,7 +411,6 @@ _T6a:
 	__asm        jmp    _Ta7;
 // LINE 96:
 	__asm        jmp    _T9d;
-
 _T80:
 	__asm        cmp    lFileType, 5;
 	__asm        jne    _T9d;
@@ -429,6 +427,7 @@ _T9d:
 	__asm        mov    eax, 0x80000000;
 	__asm        jmp    _Ta7;
 // LINE 102:
+_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x00427691
@@ -799,6 +798,7 @@ _T555:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T55c;
 // LINE 213:
+_T55c:
 }
 
 // FUNCTION: COPTER_D 0x00427bf4
@@ -833,7 +833,6 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	__asm        mov    lFileType, 0x43524552;
 // LINE 238:
 	__asm        jmp    _T7a;
-
 _T63:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    _T7a;
@@ -968,7 +967,6 @@ _T1d2:
 // LINE 267:
 _T24f:
 	__asm        jmp    _T2b8;
-
 _T254:
 	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
 	__asm        jne    _T2b8;
@@ -1061,6 +1059,7 @@ _T31e:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T39d;
 // LINE 292:
+_T39d:
 }
 
 // FUNCTION: COPTER_D 0x00427f98
@@ -1115,7 +1114,6 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x728], eax;
 	__asm        jmp    _Ta7;
-
 _T9d:
 	__asm        mov    dword ptr [ebp-0x728], 0;
 _Ta7:
@@ -1160,7 +1158,6 @@ _Ta7:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T149;
-
 _T149:
 	__asm        mov    eax, [ebp-0x7F4];
 	__asm        add    eax, 4;
@@ -1202,7 +1199,6 @@ _T149:
 	__asm        mov    ecx, [ebp-0x784];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T1f6;
-
 _T1f6:
 	__asm        jmp    near ptr 0x00428193;
 
@@ -1237,7 +1233,6 @@ _T22f:
 	__asm        mov    ecx, [ebp-0x794];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T284;
-
 _T284:
 	__asm        jmp    near ptr 0x00428221;
 
@@ -1320,7 +1315,6 @@ _T30c:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 	__asm        jmp    _T3b1;
-
 _T3ac:
 	__asm        jmp    _T3b1;
 // LINE 343:
@@ -1345,7 +1339,6 @@ _T3b1:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x73C], eax;
 	__asm        jmp    _T40b;
-
 _T401:
 	__asm        mov    dword ptr [ebp-0x73C], 0;
 _T40b:
@@ -1361,7 +1354,6 @@ _T40b:
 
 	__asm        mov    dword ptr [ebp-0x738], 1;
 	__asm        jmp    _T44a;
-
 _T440:
 	__asm        mov    dword ptr [ebp-0x738], 0;
 _T44a:
@@ -1382,7 +1374,6 @@ _T44a:
 	__asm        mov    ecx, [ebp-0x7A4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T49a;
-
 _T49a:
 	__asm        jmp    near ptr 0x00428437;
 
@@ -1452,7 +1443,6 @@ _T4d3:
 	__asm        jmp    near ptr 0x0042853E;
 
 	__asm        jmp    _T5b7;
-
 _T5ab:
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    dword ptr [eax], 0;
@@ -1464,7 +1454,6 @@ _T5b7:
 	__asm        mov    eax, [ebp-0x7D4];
 	__asm        mov    [ebp-0x76C], eax;
 	__asm        jmp    _T5e4;
-
 _T5da:
 	__asm        mov    dword ptr [ebp-0x76C], 0;
 _T5e4:
@@ -1486,7 +1475,6 @@ _T5e4:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x764], eax;
 	__asm        jmp    _T642;
-
 _T638:
 	__asm        mov    dword ptr [ebp-0x764], 0;
 _T642:
@@ -1522,7 +1510,6 @@ _T642:
 	__asm        mov    ecx, [ebp-0x7B4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T6c9;
-
 _T6c9:
 	__asm        jmp    near ptr 0x00428666;
 
@@ -1579,7 +1566,6 @@ _T74b:
 	__asm        mov    ecx, [ebp-0x7C4];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T7b6;
-
 _T7b6:
 	__asm        jmp    near ptr 0x00428753;
 
@@ -1827,6 +1813,7 @@ _Tacc:
 	__asm        mov    eax, nResult;
 	__asm        jmp    _Tad7;
 // LINE 406:
+_Tad7:
 }
 
 // FUNCTION: COPTER_D 0x00428a74
@@ -1919,7 +1906,6 @@ _T13e:
 	__asm        jmp    _T1bd;
 // LINE 452:
 	__asm        jmp    _T19d;
-
 _T170:
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        jne    _T19d;
@@ -1937,6 +1923,7 @@ _T19d:
 	__asm        mov    eax, [ebp-0x168];
 	__asm        jmp    _T1bd;
 // LINE 455:
+_T1bd:
 }
 
 // FUNCTION: COPTER_D 0x00428c38

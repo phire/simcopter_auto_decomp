@@ -577,21 +577,17 @@ char * MDate::DayName(uint32_t weekDayNumber) {
 	__asm        ja     _T22;
 
 	__asm        jmp    _T27;
-
 _T22:
 	__asm        jmp    _T45;
-
 _T27:
 	__asm        jmp    _T36;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T45;
-
 _T36:
 	__asm        mov    eax, weekDayNumber;
 	__asm        mov    eax, [eax*4+0x59ACF4];
 	__asm        jmp    _T47;
-
 _T45:
 	__asm        xor    eax, eax;
 _T47:
@@ -672,7 +668,6 @@ int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
 	__asm        jmp    _T47;
 
 	__asm        jmp    _T31;
-
 _T31:
 	__asm        jmp    _T40;
 
@@ -708,12 +703,12 @@ _T76:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T8e;
-
 _T8c:
 	__asm        xor    eax, eax;
 _T8e:
 	__asm        jmp    _T93;
 // LINE 188:
+_T93:
 }
 
 // FUNCTION: COPTER_D 0x004bc76f
@@ -728,7 +723,6 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 
 	__asm        mov    eax, 0x16E;
 	__asm        jmp    _T29;
-
 _T24:
 	__asm        mov    eax, 0x16D;
 _T29:
@@ -835,6 +829,7 @@ _T57:
 	__asm        lea    eax, [eax+ecx+0x1A431F];
 	__asm        jmp    _Td4;
 // LINE 250:
+_Td4:
 }
 
 // FUNCTION: COPTER_D 0x004bc89f
@@ -849,7 +844,6 @@ int32_t MDate::LeapYear(uint32_t year) {
 	__asm        div    ecx;
 	__asm        test   edx, edx;
 	__asm        jne    _T38;
-
 _T24:
 	__asm        mov    ecx, 0x190;
 	__asm        mov    eax, year;
@@ -857,11 +851,9 @@ _T24:
 	__asm        div    ecx;
 	__asm        test   edx, edx;
 	__asm        jne    _T42;
-
 _T38:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T44;
-
 _T42:
 	__asm        xor    eax, eax;
 _T44:
@@ -879,21 +871,17 @@ char * MDate::MonthName(uint32_t monthNumber) {
 	__asm        ja     _T22;
 
 	__asm        jmp    _T27;
-
 _T22:
 	__asm        jmp    _T45;
-
 _T27:
 	__asm        jmp    _T36;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T45;
-
 _T36:
 	__asm        mov    eax, monthNumber;
 	__asm        mov    eax, [eax*4+0x59AC94];
 	__asm        jmp    _T47;
-
 _T45:
 	__asm        xor    eax, eax;
 _T47:
@@ -914,7 +902,6 @@ int32_t MDate::CompareTo(const class MDate& d) {
 	__asm        jmp    _T55;
 // LINE 295:
 	__asm        jmp    _T55;
-
 _T2d:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, d;
@@ -931,6 +918,7 @@ _T4e:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T55;
 // LINE 299:
+_T55:
 }
 
 // FUNCTION: COPTER_D 0x004bc99a
@@ -987,7 +975,6 @@ uint32_t MDate::FirstDayOfMonth(uint32_t month) {
 	__asm        jmp    _T40;
 
 	__asm        jmp    _T2a;
-
 _T2a:
 	__asm        jmp    _T39;
 
@@ -1022,6 +1009,7 @@ _T78:
 	__asm        mov    eax, firstDay;
 	__asm        jmp    _T80;
 // LINE 343:
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x004bca84
@@ -1165,7 +1153,6 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 	__asm        mov    eax, dt;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
-
 _T29:
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-4], eax;
@@ -1201,7 +1188,6 @@ class MDate MDate::MinDate(const class MDate& dt) {
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
-
 _T29:
 	__asm        mov    eax, dt;
 	__asm        mov    [ebp-4], eax;
@@ -1423,10 +1409,8 @@ void MDate::ParseFrom(class istream& s) {
 	__asm        jne    _T31;
 
 	__asm        jmp    _T36;
-
 _T31:
 	__asm        jmp    _T228;
-
 _T36:
 	__asm        jmp    _T45;
 
@@ -1625,16 +1609,13 @@ _T228:
 	__asm        jne    _T243;
 
 	__asm        jmp    _T248;
-
 _T243:
 	__asm        jmp    _T276;
-
 _T248:
 	__asm        jmp    _T257;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T276;
-
 _T257:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -1647,7 +1628,6 @@ _T257:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T280;
-
 _T276:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -1696,6 +1676,7 @@ _T2ec:
 // LINE 608:
 _T2f6:
 	__asm        jmp    _T2fb;
+_T2fb:
 }
 
 // FUNCTION: COPTER_D 0x004bd175
@@ -1713,7 +1694,6 @@ void SkipDelim(class istream& strm) {
 	__asm        jmp    _T3d;
 
 	__asm        jmp    _T29;
-
 _T29:
 	__asm        jmp    _T38;
 
@@ -1737,16 +1717,13 @@ _T3d:
 	__asm        jne    _T64;
 
 	__asm        jmp    _T69;
-
 _T64:
 	__asm        jmp    _Tc2;
-
 _T69:
 	__asm        jmp    _T78;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Tc2;
-
 _T78:
 	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
 	__asm        jle    _T9f;
@@ -1758,7 +1735,6 @@ _T78:
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tb8;
-
 _T9f:
 	__asm        movsx  eax, c;
 	__asm        mov    ecx, ds:[0x5C0998];
@@ -1779,10 +1755,8 @@ _Tc2:
 	__asm        jne    _Tdd;
 
 	__asm        jmp    _Te2;
-
 _Tdd:
 	__asm        jmp    _Tfd;
-
 _Te2:
 	__asm        jmp    _Tf1;
 
@@ -1797,6 +1771,7 @@ _Tf1:
 // LINE 536:
 _Tfd:
 	__asm        jmp    _T102;
+_T102:
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
@@ -1827,16 +1802,13 @@ _T28:
 	__asm        jne    _T43;
 
 	__asm        jmp    _T48;
-
 _T43:
 	__asm        jmp    _Tce;
-
 _T48:
 	__asm        jmp    _T57;
 
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Tce;
-
 _T57:
 	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
 	__asm        jle    _T7e;
@@ -1848,7 +1820,6 @@ _T57:
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T97;
-
 _T7e:
 	__asm        movsx  eax, c;
 	__asm        mov    ecx, ds:[0x5C0998];
@@ -1886,10 +1857,8 @@ _Tce:
 	__asm        jne    _Te9;
 
 	__asm        jmp    _Tee;
-
 _Te9:
 	__asm        jmp    _T109;
-
 _Tee:
 	__asm        jmp    _Tfd;
 
@@ -2094,7 +2063,6 @@ class ostream& operator<<(class ostream& s, const class MDate& d) {
 	__asm        jmp    _T287;
 // LINE 653:
 	__asm        jmp    _T287;
-
 _T259:
 	__asm        cmp    dword ptr [ebp-0xC0], 4;
 	__asm        ja     _T287;

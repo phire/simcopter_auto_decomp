@@ -42,7 +42,6 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 // LINE 62:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -78,6 +77,7 @@ _T78:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T7f;
 // LINE 69:
+_T7f:
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
@@ -159,6 +159,7 @@ _T1a:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6c;
 // LINE 112:
+_T6c:
 }
 
 

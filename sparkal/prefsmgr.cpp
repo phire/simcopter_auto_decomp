@@ -513,7 +513,6 @@ int32_t operator==(const class PreferenceItem& P1, const class PreferenceItem& P
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1e;
-
 _T1c:
 	__asm        xor    eax, eax;
 _T1e:
@@ -535,6 +534,7 @@ _T22:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T29;
 // LINE 113:
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x0047bd7e
@@ -548,7 +548,6 @@ int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T22;
-
 _T20:
 	__asm        xor    eax, eax;
 _T22:
@@ -572,7 +571,6 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        mov    prefItemReturn, eax;
 	__asm        jmp    _T3a;
-
 _T33:
 	__asm        mov    prefItemReturn, 0;
 // LINE 133:
@@ -668,7 +666,6 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
-
 _T48:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
@@ -719,7 +716,6 @@ _Ta7:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tf2;
-
 _Tec:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
@@ -790,7 +786,6 @@ _T15f:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1cc;
-
 _T1c6:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -815,7 +810,6 @@ _T1cc:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
-
 _T210:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0xC], eax;
@@ -887,7 +881,6 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    _T47;
-
 _T3d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
@@ -909,6 +902,7 @@ _T5b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T70;
 // LINE 184:
+_T70:
 }
 
 // FUNCTION: COPTER_D 0x0047c1be
@@ -973,25 +967,20 @@ _T99:
 	__asm        jmp    _Tc3;
 
 	__asm        jmp    _Taf;
-
 _Taf:
 	__asm        jmp    _Tbe;
 
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _Tc3;
-
 _Tbe:
 	__asm        jmp    _Tc8;
-
 _Tc3:
 	__asm        jmp    _T16b;
-
 _Tc8:
 	__asm        jmp    _Td7;
 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     _T16b;
-
 _Td7:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x24], eax;
@@ -1045,7 +1034,6 @@ _T13a:
 	__asm        jmp    near ptr 0x0047C324;
 
 	__asm        jmp    _T99;
-
 _T16b:
 	__asm        jmp    near ptr 0x0047C32E;
 
@@ -1061,7 +1049,6 @@ _T16b:
 
 	__asm        dec    dword ptr ds:[0x599A5C];
 	__asm        jne    _T21a;
-
 _T19c:
 	__asm        cmp    dword ptr ds:[0x599A6C], 0;
 	__asm        je     _T1f7;
@@ -1091,13 +1078,11 @@ _T19c:
 	__asm        jmp    near ptr 0x0047C3B0;
 
 	__asm        jmp    _T19c;
-
 _T1f7:
 	__asm        mov    dword ptr ds:[0x599A68], 0;
 	__asm        mov    dword ptr ds:[0x599A64], 0;
 	__asm        mov    dword ptr ds:[0x599A60], 0;
 	__asm        jmp    _T21a;
-
 _T21a:
 	__asm        jmp    near ptr 0x0047C3DD;
 }
@@ -1136,7 +1121,6 @@ _T37:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T55;
-
 _T55:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1154,19 +1138,15 @@ _T55:
 	__asm        jmp    _T98;
 
 	__asm        jmp    _T84;
-
 _T84:
 	__asm        jmp    _T93;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T98;
-
 _T93:
 	__asm        jmp    _T9d;
-
 _T98:
 	__asm        jmp    _Tc1;
-
 _T9d:
 	__asm        jmp    _Tac;
 
@@ -1279,7 +1259,6 @@ _Tcd:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _Teb;
-
 _Teb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1297,19 +1276,15 @@ _Teb:
 	__asm        jmp    _T12e;
 
 	__asm        jmp    _T11a;
-
 _T11a:
 	__asm        jmp    _T129;
 
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    _T12e;
-
 _T129:
 	__asm        jmp    _T133;
-
 _T12e:
 	__asm        jmp    _T17c;
-
 _T133:
 	__asm        jmp    _T142;
 
@@ -1368,6 +1343,7 @@ _T1aa:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1be;
 // LINE 253:
+_T1be:
 }
 
 // FUNCTION: COPTER_D 0x0047c670
@@ -1443,7 +1419,6 @@ _Tb2:
 	__asm        mov    bStillMoreRecords, eax;
 // LINE 288:
 	__asm        jmp    _Tdf;
-
 _Tcb:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1537,6 +1512,7 @@ _T18d:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _T1bf;
 // LINE 304:
+_T1bf:
 }
 
 // FUNCTION: COPTER_D 0x0047c834
@@ -1573,25 +1549,20 @@ _T4c:
 	__asm        jmp    _T76;
 
 	__asm        jmp    _T62;
-
 _T62:
 	__asm        jmp    _T71;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T76;
-
 _T71:
 	__asm        jmp    _T7b;
-
 _T76:
 	__asm        jmp    _T11e;
-
 _T7b:
 	__asm        jmp    _T8a;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T11e;
-
 _T8a:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x18], eax;
@@ -1645,7 +1616,6 @@ _Ted:
 	__asm        jmp    near ptr 0x0047C94D;
 
 	__asm        jmp    _T4c;
-
 _T11e:
 	__asm        jmp    near ptr 0x0047C957;
 // LINE 314:
@@ -1690,7 +1660,6 @@ _T37:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T55;
-
 _T55:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1708,19 +1677,15 @@ _T55:
 	__asm        jmp    _T98;
 
 	__asm        jmp    _T84;
-
 _T84:
 	__asm        jmp    _T93;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    _T98;
-
 _T93:
 	__asm        jmp    _T9d;
-
 _T98:
 	__asm        jmp    _T162;
-
 _T9d:
 	__asm        jmp    _Tac;
 
@@ -1799,6 +1764,7 @@ _T162:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T169;
 // LINE 339:
+_T169:
 }
 
 // FUNCTION: COPTER_D 0x0047cae0
@@ -1834,7 +1800,6 @@ _T37:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T55;
-
 _T55:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1852,19 +1817,15 @@ _T55:
 	__asm        jmp    _T98;
 
 	__asm        jmp    _T84;
-
 _T84:
 	__asm        jmp    _T93;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    _T98;
-
 _T93:
 	__asm        jmp    _T9d;
-
 _T98:
 	__asm        jmp    _Td5;
-
 _T9d:
 	__asm        jmp    _Tac;
 
@@ -1892,6 +1853,7 @@ _Td5:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tdc;
 // LINE 362:
+_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x0047cbc3
@@ -1922,6 +1884,7 @@ _T3b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T42;
 // LINE 385:
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x0047cc0c
@@ -1948,6 +1911,7 @@ _T33:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3a;
 // LINE 409:
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0047cc4d
@@ -1992,6 +1956,7 @@ _T5c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T63;
 // LINE 436:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x0047ccb7
@@ -2018,6 +1983,7 @@ _T33:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3a;
 // LINE 457:
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0047ccf8
@@ -2041,7 +2007,6 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        mov    prefItemToSet, eax;
 	__asm        jmp    _T45;
-
 _T3e:
 	__asm        mov    prefItemToSet, 0;
 // LINE 475:
@@ -2126,7 +2091,6 @@ _Tb0:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T16c;
-
 _T121:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
@@ -2141,7 +2105,6 @@ _T121:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T16c;
-
 _T157:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0x38], eax;
@@ -2168,7 +2131,6 @@ _T16c:
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        jmp    _T1a5;
-
 _T1a5:
 	__asm        jmp    near ptr 0x0047CEA2;
 
@@ -2235,6 +2197,7 @@ _T243:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T258;
 // LINE 499:
+_T258:
 }
 
 // FUNCTION: COPTER_D 0x0047cf57
@@ -2270,7 +2233,6 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T245;
-
 _T68:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        cmp    ds:[0x599A60], eax;
@@ -2321,7 +2283,6 @@ _Tc7:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T112;
-
 _T10c:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -2392,7 +2353,6 @@ _T17f:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1ec;
-
 _T1e6:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
@@ -2417,7 +2377,6 @@ _T1ec:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T245;
-
 _T230:
 	__asm        mov    eax, ds:[0x599A64];
 	__asm        mov    [ebp-0x20], eax;
@@ -2444,7 +2403,6 @@ _T245:
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   PreferenceItem::PreferenceItem;
 	__asm        jmp    _T27e;
-
 _T27e:
 	__asm        jmp    near ptr 0x0047D1DA;
 
@@ -2517,7 +2475,6 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T237;
-
 _T60:
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        cmp    ds:[0x599A74], eax;
@@ -2568,7 +2525,6 @@ _Tbf:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T10a;
-
 _T104:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
@@ -2638,7 +2594,6 @@ _T174:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1e1;
-
 _T1db:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -2662,7 +2617,6 @@ _T1e1:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T237;
-
 _T222:
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-0xC], eax;
@@ -2742,7 +2696,6 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T22e;
-
 _T57:
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        cmp    ds:[0x599A74], eax;
@@ -2793,7 +2746,6 @@ _Tb6:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T101;
-
 _Tfb:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
@@ -2863,7 +2815,6 @@ _T16b:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1d8;
-
 _T1d2:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
@@ -2887,7 +2838,6 @@ _T1d8:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T22e;
-
 _T219:
 	__asm        mov    eax, ds:[0x599A78];
 	__asm        mov    [ebp-0x20], eax;
@@ -2914,7 +2864,6 @@ _T22e:
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   NotificationItem::NotificationItem;
 	__asm        jmp    _T267;
-
 _T267:
 	__asm        jmp    near ptr 0x0047D772;
 
@@ -2987,19 +2936,15 @@ _T39:
 	__asm        jmp    _T7c;
 
 	__asm        jmp    _T68;
-
 _T68:
 	__asm        jmp    _T77;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T7c;
-
 _T77:
 	__asm        jmp    _T81;
-
 _T7c:
 	__asm        jmp    _T159;
-
 _T81:
 	__asm        jmp    _T90;
 
@@ -3179,19 +3124,15 @@ _T27:
 	__asm        jmp    _T6a;
 
 	__asm        jmp    _T56;
-
 _T56:
 	__asm        jmp    _T65;
 
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T6a;
-
 _T65:
 	__asm        jmp    _T6f;
-
 _T6a:
 	__asm        jmp    _Tdb;
-
 _T6f:
 	__asm        jmp    _T7e;
 

@@ -25,7 +25,6 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T34;
-
 _T2f:
 	__asm        jmp    _T34;
 // LINE 24:

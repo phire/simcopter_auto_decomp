@@ -17,7 +17,6 @@ long S2TileSize(long tile) {
 
 	__asm        cmp    tile, 0x6C;
 	__asm        jl     _T31;
-
 _T1d:
 	__asm        cmp    tile, 0x49;
 	__asm        jl     _T3d;
@@ -29,7 +28,6 @@ _T31:
 	__asm        mov    size, 2;
 // LINE 49:
 	__asm        jmp    _T61;
-
 _T3d:
 	__asm        cmp    tile, 0x70;
 	__asm        jge    _T53;

@@ -247,7 +247,6 @@ _T50:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    _T50;
-
 _T6a:
 	__asm        jmp    near ptr 0x004472AF;
 
@@ -255,7 +254,6 @@ _T6a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
 	__asm        jmp    _T8d;
-
 _T80:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x134], 0;
@@ -288,7 +286,6 @@ _T8d:
 	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _Tdf;
-
 _Td8:
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 _Tdf:
@@ -336,7 +333,6 @@ _T50:
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    _T50;
-
 _T6a:
 	__asm        jmp    near ptr 0x004473AF;
 
@@ -344,7 +340,6 @@ _T6a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
 	__asm        jmp    _T8d;
-
 _T80:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x134], 0;
@@ -384,7 +379,6 @@ _Ta9:
 	__asm        call   MFont::MFont;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _Tf3;
-
 _Tec:
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 _Tf3:
@@ -435,7 +429,6 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 // LINE 81:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -491,7 +484,6 @@ _T2d:
 // LINE 104:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5c;
-
 _T59:
 	__asm        inc    i;
 _T5c:
@@ -537,6 +529,7 @@ _Tba:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tdc;
 // LINE 114:
+_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x004475e2
@@ -570,7 +563,6 @@ void PaletteBuffer::DrawPalette() {
 // LINE 138:
 	__asm        mov    i, 0;
 	__asm        jmp    _T66;
-
 _T63:
 	__asm        inc    i;
 _T66:

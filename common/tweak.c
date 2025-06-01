@@ -44,7 +44,6 @@ _T23:
 _T37:
 	__asm        mov    nCt, 0;
 	__asm        jmp    _T46;
-
 _T43:
 	__asm        inc    nCt;
 _T46:
@@ -91,6 +90,7 @@ _T79:
 	__asm        mov    eax, ds:[0x59B3A8];
 	__asm        jmp    _Tc6;
 // LINE 57:
+_Tc6:
 }
 
 // FUNCTION: COPTER_D 0x004c9b9b
@@ -157,7 +157,6 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 _Tc6:
 	__asm        mov    nCt, 0;
 	__asm        jmp    _Tdb;
-
 _Td5:
 	__asm        inc    nCt;
 _Tdb:
@@ -184,7 +183,6 @@ _Tdb:
 // LINE 92:
 _T123:
 	__asm        jmp    _Td5;
-
 _T128:
 	__asm        mov    eax, nCt;
 	__asm        cmp    ds:[0x59B3A8], eax;
@@ -219,6 +217,7 @@ _T184:
 	__asm        mov    eax, ds:[0x59B3AC];
 	__asm        jmp    _T18e;
 // LINE 105:
+_T18e:
 }
 
 // FUNCTION: COPTER_D 0x004c9d2e
@@ -259,7 +258,6 @@ void TWKReadAllFiles(char * pszTWKFile) {
 // LINE 171:
 	__asm        mov    nCt, 0;
 	__asm        jmp    _T38;
-
 _T32:
 	__asm        inc    nCt;
 _T38:
@@ -316,6 +314,7 @@ _Tc3:
 // LINE 185:
 	__asm        jmp    _T32;
 // LINE 191:
+_Te2:
 }
 
 // FUNCTION: COPTER_D 0x004c9e4f
@@ -359,7 +358,6 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 // LINE 216:
 	__asm        mov    nCt2, 0;
 	__asm        jmp    _T7e;
-
 _T78:
 	__asm        inc    nCt2;
 _T7e:
@@ -487,6 +485,7 @@ _T1ef:
 // LINE 246:
 	__asm        inc    dword ptr ds:[0x59B3AC];
 // LINE 249:
+_T205:
 }
 
 // FUNCTION: COPTER_D 0x004ca059

@@ -111,7 +111,6 @@ _T45:
 	__asm        inc    count;
 // LINE 75:
 	__asm        jmp    _T96;
-
 _T7d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, count;
@@ -247,6 +246,7 @@ _T1bc:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T1c5;
 // LINE 96:
+_T1c5:
 }
 
 // FUNCTION: COPTER_D 0x00565e80
@@ -380,6 +380,7 @@ _Te9:
 // LINE 150:
 _T133:
 	__asm        jmp    _T138;
+_T138:
 }
 
 // FUNCTION: COPTER_D 0x00565fbd
@@ -438,7 +439,6 @@ _T43:
 	__asm        mov    digitval, dl;
 // LINE 164:
 	__asm        jmp    _Td3;
-
 _T87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, digit;
@@ -490,6 +490,7 @@ _Teb:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Tfc;
 // LINE 173:
+_Tfc:
 }
 
 // FUNCTION: COPTER_D 0x005660be
@@ -594,6 +595,7 @@ _Td4:
 // LINE 208:
 _Tec:
 	__asm        jmp    _Tf1;
+_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x005661b4
@@ -667,6 +669,7 @@ _T50:
 	__asm        jmp    _T6d;
 // LINE 232:
 // Block end:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00566266
@@ -683,7 +686,6 @@ void CToPString(char * cstr, unsigned char * pstr) {
 // LINE 261:
 	__asm        mov    count, 0;
 	__asm        jmp    _T29;
-
 _T26:
 	__asm        inc    count;
 _T29:
@@ -731,7 +733,6 @@ short Round(float val) {
 	__asm        fstp   dint;
 // LINE 272:
 	__asm        jmp    _T63;
-
 _T43:
 	__asm        fld    frac;
 	__asm        fcomp  qword ptr ds:[0x593A28];
@@ -952,7 +953,6 @@ _T51:
 // LINE 515:
 _T75:
 	__asm        jmp    _T85;
-
 _T7a:
 	__asm        movsx  eax, position;
 	__asm        sub    eax, 4;
@@ -985,7 +985,6 @@ _T85:
 	__asm        mov    letter, al;
 // LINE 520:
 	__asm        jmp    _Tda;
-
 _Td0:
 	__asm        movsx  eax, letter;
 	__asm        add    eax, 0x30;
@@ -1005,6 +1004,7 @@ _Tda:
 // LINE 523:
 _Tf4:
 	__asm        jmp    _Tf9;
+_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x005665b7
@@ -1040,7 +1040,6 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 _T3e:
 	__asm        mov    count, 1;
 	__asm        jmp    _T4d;
-
 _T49:
 	__asm        inc    count;
 _T4d:
@@ -1145,6 +1144,7 @@ _T142:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T149;
 // LINE 925:
+_T149:
 }
 
 // FUNCTION: COPTER_D 0x00566705
@@ -1210,7 +1210,6 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1078:
 	__asm        jmp    _T54;
-
 _T26:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 0xFFFFFFFE;

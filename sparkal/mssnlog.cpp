@@ -527,7 +527,6 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _Tf3;
-
 _Tf3:
 	__asm        jmp    near ptr 0x0046BD98;
 
@@ -546,7 +545,6 @@ _Tf3:
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T2aa;
-
 _T129:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -572,7 +570,6 @@ _T129:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T17c;
-
 _T17c:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    ecx, [ebp-0x18];
@@ -609,7 +606,6 @@ _T17c:
 	__asm        jmp    near ptr 0x0046BE7C;
 
 	__asm        jmp    _T1ea;
-
 _T1e1:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax], 0;
@@ -621,7 +617,6 @@ _T1ea:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T20b;
-
 _T204:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 _T20b:
@@ -670,7 +665,6 @@ _T277:
 	__asm        jmp    near ptr 0x0046BF32;
 
 	__asm        jmp    _T297;
-
 _T297:
 	__asm        jmp    near ptr 0x0046BF3C;
 
@@ -678,7 +672,6 @@ _T297:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    _T2dd;
-
 _T2aa:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     _T2dd;
@@ -698,7 +691,6 @@ _T2aa:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T2dd;
-
 _T2dd:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    ecx, this;
@@ -765,7 +757,6 @@ int32_t MissionLogWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T6d;
-
 _T66:
 	__asm        mov    sText.reference, 0;
 _T6d:
@@ -804,7 +795,6 @@ _T6d:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    _Tf7;
-
 _Tf0:
 	__asm        mov    tempButtonWindow, 0;
 // LINE 76:
@@ -864,7 +854,6 @@ _Tf7:
 	__asm        jmp    near ptr 0x0046C194;
 
 	__asm        jmp    _T306;
-
 _T1b6:
 	__asm        jmp    near ptr 0x0046C19E;
 
@@ -890,7 +879,6 @@ _T1b6:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T215;
-
 _T215:
 	__asm        jmp    near ptr 0x0046C1FD;
 
@@ -907,7 +895,6 @@ _T215:
 	__asm        mov    ecx, [ebp-0x1094];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T2ac;
-
 _T24b:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -924,7 +911,6 @@ _T24b:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1084], eax;
 	__asm        jmp    _T296;
-
 _T28c:
 	__asm        mov    dword ptr [ebp-0x1084], 0;
 _T296:
@@ -933,7 +919,6 @@ _T296:
 	__asm        mov    eax, [ebp-0x1084];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T2eb;
-
 _T2ac:
 	__asm        cmp    dword ptr [ebp-0x1094], 0;
 	__asm        je     _T2eb;
@@ -952,7 +937,6 @@ _T2ac:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T2eb;
-
 _T2eb:
 	__asm        mov    eax, [ebp-0x1094];
 	__asm        mov    ecx, sText.reference;
@@ -1005,7 +989,6 @@ _T306:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    _T393;
-
 _T38c:
 	__asm        mov    tempButtonWindow, 0;
 // LINE 84:
@@ -1065,7 +1048,6 @@ _T393:
 	__asm        jmp    near ptr 0x0046C430;
 
 	__asm        jmp    _T480;
-
 _T452:
 	__asm        jmp    near ptr 0x0046C43A;
 
@@ -1124,7 +1106,6 @@ _T480:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow, eax;
 	__asm        jmp    _T50d;
-
 _T506:
 	__asm        mov    tempButtonWindow, 0;
 // LINE 92:
@@ -1184,7 +1165,6 @@ _T50d:
 	__asm        jmp    near ptr 0x0046C5AA;
 
 	__asm        jmp    _T71c;
-
 _T5cc:
 	__asm        jmp    near ptr 0x0046C5B4;
 
@@ -1210,7 +1190,6 @@ _T5cc:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T62b;
-
 _T62b:
 	__asm        jmp    near ptr 0x0046C613;
 
@@ -1227,7 +1206,6 @@ _T62b:
 	__asm        mov    ecx, [ebp-0x30B0];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T6c2;
-
 _T661:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1244,7 +1222,6 @@ _T661:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x30A0], eax;
 	__asm        jmp    _T6ac;
-
 _T6a2:
 	__asm        mov    dword ptr [ebp-0x30A0], 0;
 _T6ac:
@@ -1253,7 +1230,6 @@ _T6ac:
 	__asm        mov    eax, [ebp-0x30A0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T701;
-
 _T6c2:
 	__asm        cmp    dword ptr [ebp-0x30B0], 0;
 	__asm        je     _T701;
@@ -1272,7 +1248,6 @@ _T6c2:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T701;
-
 _T701:
 	__asm        mov    eax, [ebp-0x30B0];
 	__asm        mov    ecx, sText.reference;
@@ -1324,7 +1299,6 @@ _T71c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x74], eax;
 	__asm        jmp    _T7af;
-
 _T7a2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
@@ -1428,7 +1402,6 @@ _T7af:
 	__asm        jmp    near ptr 0x0046C8CC;
 
 	__asm        jmp    _T8ee;
-
 _T8ee:
 	__asm        jmp    near ptr 0x0046C8D6;
 
@@ -1502,11 +1475,9 @@ _T34:
 	__asm        jmp    _Ta2;
 
 	__asm        jmp    _Ta2;
-
 _T96:
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    _Ta2;
-
 _Ta2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
@@ -1524,7 +1495,6 @@ _Ta2:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Td0;
-
 _Td0:
 	__asm        jmp    near ptr 0x0046C9DF;
 
@@ -1561,7 +1531,6 @@ _Td0:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T136;
-
 _T134:
 	__asm        xor    eax, eax;
 _T136:
@@ -1605,7 +1574,6 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    _T95;
-
 _T88:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
@@ -1738,6 +1706,7 @@ _Td3:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tdd;
 // LINE 176:
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0046cc44
@@ -1751,7 +1720,6 @@ void MissionLogWindow::DrawBackground() {
 	__asm        mov    x, 0x42;
 	__asm        mov    y, 0x50;
 	__asm        jmp    _T29;
-
 _T26:
 	__asm        inc    i;
 _T29:
@@ -1801,7 +1769,6 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 // LINE 210:
 _T2b:
 	__asm        jmp    _T7f;
-
 _T30:
 	__asm        cmp    lWindowID, 2;
 	__asm        jne    _T54;
@@ -1815,7 +1782,6 @@ _T30:
 // LINE 214:
 _T4f:
 	__asm        jmp    _T7f;
-
 _T54:
 	__asm        cmp    lWindowID, 3;
 	__asm        jne    _T7f;
@@ -1871,7 +1837,6 @@ void MissionLogWindow::SortByTimeDate() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    sCurrentText.reference, eax;
 	__asm        jmp    _T68;
-
 _T61:
 	__asm        mov    sCurrentText.reference, 0;
 _T68:
@@ -1923,19 +1888,15 @@ _Tba:
 	__asm        jmp    _T104;
 
 	__asm        jmp    _Tf0;
-
 _Tf0:
 	__asm        jmp    _Tff;
 
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T104;
-
 _Tff:
 	__asm        jmp    _T109;
-
 _T104:
 	__asm        jmp    _T16f;
-
 _T109:
 	__asm        jmp    _T118;
 
@@ -2023,7 +1984,6 @@ _T1dc:
 	__asm        jmp    near ptr 0x0046CF3C;
 
 	__asm        jmp    _T1fc;
-
 _T1fc:
 	__asm        jmp    near ptr 0x0046CF46;
 
@@ -2075,7 +2035,6 @@ void MissionLogWindow::SortByType() {
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    sCurrentText.reference, eax;
 	__asm        jmp    _T6e;
-
 _T67:
 	__asm        mov    sCurrentText.reference, 0;
 _T6e:
@@ -2134,19 +2093,15 @@ _Td7:
 	__asm        jmp    _T121;
 
 	__asm        jmp    _T10d;
-
 _T10d:
 	__asm        jmp    _T11c;
 
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T121;
-
 _T11c:
 	__asm        jmp    _T126;
-
 _T121:
 	__asm        jmp    _T34b;
-
 _T126:
 	__asm        jmp    _T135;
 
@@ -2207,7 +2162,6 @@ _T135:
 	__asm        jmp    near ptr 0x0046D14A;
 
 	__asm        jmp    _T1e1;
-
 _T1d8:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    dword ptr [eax], 0;
@@ -2219,7 +2173,6 @@ _T1e1:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T202;
-
 _T1fb:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T202:
@@ -2277,7 +2230,6 @@ _T291:
 	__asm        jmp    near ptr 0x0046D223;
 
 	__asm        jmp    _T2b1;
-
 _T2b1:
 	__asm        jmp    near ptr 0x0046D22D;
 
@@ -2383,7 +2335,6 @@ _T3bb:
 	__asm        jmp    near ptr 0x0046D34D;
 
 	__asm        jmp    _T3db;
-
 _T3db:
 	__asm        jmp    near ptr 0x0046D357;
 
@@ -2440,7 +2391,6 @@ void MessageDisplayManager::MessageDisplayManager() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x20], eax;
 	__asm        jmp    _T91;
-
 _T91:
 	__asm        jmp    near ptr 0x0046D41E;
 
@@ -2516,7 +2466,6 @@ _T53:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    _T53;
-
 _T6d:
 	__asm        jmp    near ptr 0x0046D508;
 
@@ -2572,7 +2521,6 @@ _Tf2:
 	__asm        jmp    near ptr 0x0046D5A3;
 
 	__asm        jmp    _T112;
-
 _T112:
 	__asm        jmp    near ptr 0x0046D5AD;
 
@@ -2651,7 +2599,6 @@ _T57:
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        jmp    _T57;
-
 _T71:
 	__asm        jmp    near ptr 0x0046D688;
 
@@ -2707,7 +2654,6 @@ _Tf6:
 	__asm        jmp    near ptr 0x0046D723;
 
 	__asm        jmp    _T116;
-
 _T116:
 	__asm        jmp    near ptr 0x0046D72D;
 
@@ -2767,7 +2713,6 @@ _T19d:
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x18], 8;
 	__asm        jmp    _T19d;
-
 _T1b7:
 	__asm        jmp    near ptr 0x0046D7CE;
 
@@ -2776,7 +2721,6 @@ _T1b7:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    _T1d7;
-
 _T1cd:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
@@ -2826,7 +2770,6 @@ _T28:
 	__asm        jmp    _Ta7;
 
 	__asm        jmp    _Ta7;
-
 _T63:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2842,7 +2785,6 @@ _T63:
 	__asm        jmp    _Ta7;
 
 	__asm        jmp    _Ta7;
-
 _T90:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -2850,7 +2792,6 @@ _T90:
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _Ta7;
-
 _Ta7:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
@@ -2881,7 +2822,6 @@ _Tb9:
 	__asm        jae    _T3ec;
 
 	__asm        jmp    _T123;
-
 _T100:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x2C];
@@ -2898,7 +2838,6 @@ _T100:
 _T123:
 	__asm        mov    i, 0;
 	__asm        jmp    _T132;
-
 _T12f:
 	__asm        inc    i;
 _T132:
@@ -2967,7 +2906,6 @@ _T1dc:
 	__asm        jmp    near ptr 0x0046D9F9;
 
 	__asm        jmp    _T1fc;
-
 _T1fc:
 	__asm        jmp    near ptr 0x0046DA03;
 
@@ -2986,7 +2924,6 @@ _T1fc:
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    _T323;
-
 _T230:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3033,11 +2970,9 @@ _T230:
 	__asm        jmp    _T2c4;
 
 	__asm        jmp    _T2c4;
-
 _T2b8:
 	__asm        mov    dword ptr [ebp-0x58], 0;
 	__asm        jmp    _T2c4;
-
 _T2c4:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    eax, [eax+4];
@@ -3056,7 +2991,6 @@ _T2c4:
 	__asm        jmp    near ptr 0x0046DAF0;
 
 	__asm        jmp    _T2fc;
-
 _T2f3:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    dword ptr [eax], 0;
@@ -3069,7 +3003,6 @@ _T2fc:
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T323;
-
 _T319:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -3102,7 +3035,6 @@ _T345:
 	__asm        je     _T375;
 
 	__asm        jmp    _T3e7;
-
 _T375:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 1;
@@ -3114,7 +3046,6 @@ _T375:
 	__asm        jmp    _T3e2;
 
 	__asm        jmp    _T3e2;
-
 _T398:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -3131,7 +3062,6 @@ _T398:
 	__asm        jmp    _T3e2;
 
 	__asm        jmp    _T3e2;
-
 _T3c8:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -3140,10 +3070,8 @@ _T3c8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T3e2;
-
 _T3e2:
 	__asm        jmp    _T3e7;
-
 _T3e7:
 	__asm        jmp    _T3ec;
 // LINE 339:
@@ -3168,7 +3096,6 @@ _T3ec:
 // LINE 345:
 	__asm        mov    i, 0;
 	__asm        jmp    _T42c;
-
 _T429:
 	__asm        inc    i;
 _T42c:
@@ -3197,11 +3124,9 @@ _T42c:
 	__asm        jmp    _T484;
 
 	__asm        jmp    _T484;
-
 _T478:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    _T484;
-
 _T484:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x24;
@@ -3230,6 +3155,7 @@ _T484:
 // LINE 350:
 _T4bf:
 	__asm        jmp    _T4c4;
+_T4c4:
 }
 
 // FUNCTION: COPTER_D 0x0046dccd
@@ -3252,7 +3178,6 @@ _T27:
 // LINE 363:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
-
 _T4b:
 	__asm        inc    i;
 _T4e:
@@ -3296,7 +3221,6 @@ _T4e:
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _Te5;
-
 _Te5:
 	__asm        jmp    near ptr 0x0046DDB7;
 
@@ -3315,7 +3239,6 @@ _Te5:
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+0xC];
 	__asm        jmp    _T16e;
-
 _T11f:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3338,7 +3261,6 @@ _T11f:
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T16e;
-
 _T161:
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    dword ptr [eax+4], 0;
@@ -3346,7 +3268,6 @@ _T16e:
 	__asm        jmp    near ptr 0x0046DE40;
 
 	__asm        jmp    _T4b;
-
 _T178:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -3378,7 +3299,6 @@ _T178:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T1da;
-
 _T1da:
 	__asm        jmp    near ptr 0x0046DEAC;
 
@@ -3397,7 +3317,6 @@ _T1da:
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T25c;
-
 _T210:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3414,7 +3333,6 @@ _T210:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T246;
-
 _T23f:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 _T246:
@@ -3424,7 +3342,6 @@ _T246:
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T28f;
-
 _T25c:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T28f;
@@ -3444,7 +3361,6 @@ _T25c:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T28f;
-
 _T28f:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, [ebp-0x38];
@@ -3467,7 +3383,6 @@ _T28f:
 	__asm        je     _T2de;
 
 	__asm        jmp    _T35f;
-
 _T2de:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 1;
@@ -3479,7 +3394,6 @@ _T2de:
 	__asm        jmp    _T35a;
 
 	__asm        jmp    _T35a;
-
 _T307:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -3496,7 +3410,6 @@ _T307:
 	__asm        jmp    _T35a;
 
 	__asm        jmp    _T35a;
-
 _T33d:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -3505,15 +3418,12 @@ _T33d:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T35a;
-
 _T35a:
 	__asm        jmp    _T35f;
-
 _T35f:
 	__asm        jmp    near ptr 0x0046E031;
 // LINE 368:
 	__asm        jmp    _T6f1;
-
 _T369:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -3547,7 +3457,6 @@ _T369:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T3d5;
-
 _T3d5:
 	__asm        jmp    near ptr 0x0046E0A7;
 
@@ -3566,7 +3475,6 @@ _T3d5:
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T457;
-
 _T40b:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3583,7 +3491,6 @@ _T40b:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T441;
-
 _T43a:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 _T441:
@@ -3593,7 +3500,6 @@ _T441:
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T48a;
-
 _T457:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     _T48a;
@@ -3613,7 +3519,6 @@ _T457:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T48a;
-
 _T48a:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    ecx, [ebp-0x50];
@@ -3639,7 +3544,6 @@ _T48a:
 	__asm        je     _T4e6;
 
 	__asm        jmp    _T567;
-
 _T4e6:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 1;
@@ -3651,7 +3555,6 @@ _T4e6:
 	__asm        jmp    _T562;
 
 	__asm        jmp    _T562;
-
 _T50f:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -3668,7 +3571,6 @@ _T50f:
 	__asm        jmp    _T562;
 
 	__asm        jmp    _T562;
-
 _T545:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -3677,10 +3579,8 @@ _T545:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T562;
-
 _T562:
 	__asm        jmp    _T567;
-
 _T567:
 	__asm        jmp    near ptr 0x0046E239;
 // LINE 373:
@@ -3721,7 +3621,6 @@ _T571:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T5e8;
-
 _T5e8:
 	__asm        jmp    near ptr 0x0046E2BA;
 
@@ -3740,7 +3639,6 @@ _T5e8:
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T6a8;
-
 _T61e:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3757,7 +3655,6 @@ _T61e:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T654;
-
 _T64d:
 	__asm        mov    dword ptr [ebp-0x54], 0;
 _T654:
@@ -3781,7 +3678,6 @@ _T654:
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T695;
-
 _T695:
 	__asm        jmp    near ptr 0x0046E367;
 
@@ -3789,7 +3685,6 @@ _T695:
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T6db;
-
 _T6a8:
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     _T6db;
@@ -3809,7 +3704,6 @@ _T6a8:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T6db;
-
 _T6db:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    ecx, [ebp-0x70];
@@ -3821,6 +3715,7 @@ _T6db:
 // LINE 377:
 _T6f1:
 	__asm        jmp    _T6f6;
+_T6f6:
 }
 
 // FUNCTION: COPTER_D 0x0046e3ca
@@ -3874,11 +3769,9 @@ _T32:
 	__asm        jmp    _T9f;
 
 	__asm        jmp    _T9f;
-
 _T93:
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    _T9f;
-
 _T9f:
 	__asm        mov    eax, sNewMessage;
 	__asm        mov    eax, [eax+4];
@@ -3896,7 +3789,6 @@ _T9f:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tcc;
-
 _Tcc:
 	__asm        jmp    near ptr 0x0046E49B;
 

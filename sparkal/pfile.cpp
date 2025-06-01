@@ -183,10 +183,8 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	__asm        jle    _T28;
 
 	__asm        jmp    _T2d;
-
 _T28:
 	__asm        jmp    _T46;
-
 _T2d:
 	__asm        jmp    _T3c;
 
@@ -290,7 +288,6 @@ _T120:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T13c;
-
 _T13a:
 	__asm        xor    eax, eax;
 _T13c:
@@ -300,6 +297,7 @@ _T13c:
 _T144:
 	__asm        jmp    _T149;
 // LINE 67:
+_T149:
 }
 
 // FUNCTION: COPTER_D 0x004a04f0
@@ -310,10 +308,8 @@ int32_t PFile::Close() {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T66;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -339,6 +335,7 @@ _T66:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6d;
 // LINE 83:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x004a0562
@@ -353,7 +350,6 @@ long PFile::Length() {
 	__asm        jmp    _T75;
 
 	__asm        jmp    _T26;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -391,6 +387,7 @@ _T75:
 	__asm        add    esp, 4;
 	__asm        jmp    _T8c;
 // LINE 102:
+_T8c:
 }
 
 // FUNCTION: COPTER_D 0x004a05f3
@@ -401,10 +398,8 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T3c;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -476,7 +471,6 @@ _Ta7:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tdf;
-
 _Tdd:
 	__asm        xor    eax, eax;
 _Tdf:
@@ -486,6 +480,7 @@ _Tdf:
 _Te7:
 	__asm        jmp    _Tec;
 // LINE 130:
+_Tec:
 }
 
 // FUNCTION: COPTER_D 0x004a06e6
@@ -519,7 +514,6 @@ _T39:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T67;
-
 _T65:
 	__asm        xor    eax, eax;
 _T67:
@@ -535,10 +529,8 @@ long PFile::SetPath(char * szPath) {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T3c;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -561,6 +553,7 @@ _T3c:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T59;
 // LINE 166:
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x004a07b9
@@ -594,7 +587,6 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    _T65;
-
 _T5e:
 	__asm        mov    tempPFile.szFilePath[0], 0;
 _T65:
@@ -626,7 +618,6 @@ _T65:
 	__asm        mov    lCurrentBlockStartPosition, 0;
 // LINE 193:
 	__asm        jmp    _Tca;
-
 _Tc3:
 	__asm        add    lCurrentBlockStartPosition, 0x7D00;
 _Tca:
@@ -660,7 +651,6 @@ _Tf7:
 // LINE 199:
 	__asm        mov    lIndex, 0;
 	__asm        jmp    _T128;
-
 _T122:
 	__asm        inc    lIndex;
 _T128:
@@ -695,7 +685,6 @@ _T17b:
 	__asm        mov    eax, lCurrentValue;
 	__asm        mov    lIndex, eax;
 	__asm        jmp    _T196;
-
 _T190:
 	__asm        inc    lIndex;
 _T196:
@@ -730,16 +719,13 @@ _T1da:
 	__asm        jle    _T1fc;
 
 	__asm        jmp    _T201;
-
 _T1fc:
 	__asm        jmp    _T229;
-
 _T201:
 	__asm        jmp    _T213;
 
 	__asm        cmp    dword ptr [ebp-0x140], 0;
 	__asm        je     _T229;
-
 _T213:
 	__asm        cmp    tempPFile.ShouldClose, 0;
 	__asm        je     _T229;

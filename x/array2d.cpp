@@ -366,6 +366,7 @@ _T65:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T6d;
 // LINE 24:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00567552
@@ -587,7 +588,6 @@ _T2b6:
 	long ycount;
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T2e0;
-
 _T2da:
 	__asm        inc    xcount;
 _T2e0:
@@ -598,7 +598,6 @@ _T2e0:
 // LINE 95:
 	__asm        mov    ycount, 0;
 	__asm        jmp    _T30a;
-
 _T304:
 	__asm        inc    ycount;
 _T30a:
@@ -659,7 +658,6 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 
 	__asm        cmp    rType, 0;
 	__asm        je     _T39;
-
 _T20:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF8F4;
@@ -771,7 +769,6 @@ _T40:
 // LINE 172:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T62;
-
 _T5f:
 	__asm        inc    cnt;
 _T62:
@@ -861,7 +858,6 @@ void _cArray::MakeTable() {
 _T51:
 	__asm        mov    count, 0;
 	__asm        jmp    _T60;
-
 _T5d:
 	__asm        inc    count;
 _T60:
@@ -932,7 +928,6 @@ _T42:
 // LINE 255:
 	__asm        mov    count, 0;
 	__asm        jmp    _T5d;
-
 _T5a:
 	__asm        inc    count;
 _T5d:
@@ -1199,7 +1194,6 @@ _Tbf:
 
 	__asm        cmp    numBytes, 0x7A1200;
 	__asm        jl     _T109;
-
 _Ted:
 	__asm        push   0x8C085;
 	__asm        push   0x5BFC78;
@@ -1211,7 +1205,6 @@ _Ted:
 _T109:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T118;
-
 _T115:
 	__asm        inc    cnt;
 _T118:
@@ -1250,6 +1243,7 @@ _T15f:
 // LINE 354:
 _T16f:
 	__asm        jmp    _T174;
+_T174:
 }
 
 // FUNCTION: COPTER_D 0x00567fe6
@@ -1288,7 +1282,6 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        mov    ecx, oldysize;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T72;
-
 _T56:
 	__asm        push   0x8C085;
 	__asm        push   0x5BFCF8;
@@ -1320,7 +1313,6 @@ _T72:
 	__asm        dec    eax;
 	__asm        mov    count, ax;
 	__asm        jmp    _Tac;
-
 _Ta8:
 	__asm        dec    count;
 _Tac:
@@ -1414,7 +1406,6 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        inc    ecx;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T72;
-
 _T56:
 	__asm        push   0x8C085;
 	__asm        push   0x5BFD48;
@@ -1439,7 +1430,6 @@ _T72:
 	short xcount;
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T9a;
-
 _T96:
 	__asm        inc    xcount;
 _T9a:
@@ -1455,7 +1445,6 @@ _T9a:
 	__asm        dec    eax;
 	__asm        mov    ycount, ax;
 	__asm        jmp    _Tbe;
-
 _Tba:
 	__asm        dec    ycount;
 _Tbe:
@@ -1559,7 +1548,6 @@ _T44:
 	__asm        movsx  eax, which;
 	__asm        test   eax, eax;
 	__asm        jge    _T7c;
-
 _T60:
 	__asm        push   0x8C085;
 	__asm        push   0x5BFDC8;
@@ -1578,7 +1566,6 @@ _T7c:
 	__asm        mov    ax, which;
 	__asm        mov    count, ax;
 	__asm        jmp    _T9a;
-
 _T96:
 	__asm        inc    count;
 _T9a:
@@ -1712,7 +1699,6 @@ _T44:
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jg     _T7c;
-
 _T60:
 	__asm        push   0x8C085;
 	__asm        push   0x5BFEA4;
@@ -1724,7 +1710,6 @@ _T60:
 _T7c:
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T8b;
-
 _T87:
 	__asm        inc    xcount;
 _T8b:
@@ -1738,7 +1723,6 @@ _T8b:
 	__asm        mov    ax, which;
 	__asm        mov    ycount, ax;
 	__asm        jmp    _Tac;
-
 _Ta8:
 	__asm        inc    ycount;
 _Tac:
@@ -1983,7 +1967,6 @@ _Tc0:
 // LINE 477:
 	__asm        mov    xcnt, 0;
 	__asm        jmp    _Tdb;
-
 _Td8:
 	__asm        inc    xcnt;
 _Tdb:
@@ -1998,7 +1981,6 @@ _Tdb:
 // LINE 479:
 	__asm        mov    ycnt, 0;
 	__asm        jmp    _T105;
-
 _T102:
 	__asm        inc    ycnt;
 _T105:
@@ -2070,7 +2052,6 @@ _L27257:
 _L27256:
 	__asm        mov    eax, 0x5961E0;
 	__asm        jmp    near ptr 0x0056F590;
-
 _T1b9:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -2186,6 +2167,7 @@ _T12e:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T14c;
 // LINE 512:
+_T14c:
 }
 
 // FUNCTION: COPTER_D 0x005689cc
@@ -2217,7 +2199,6 @@ _T2d:
 // LINE 523:
 	__asm        mov    count, 1;
 	__asm        jmp    _T53;
-
 _T4f:
 	__asm        inc    count;
 _T53:
@@ -2244,6 +2225,7 @@ _T53:
 // LINE 527:
 _T92:
 	__asm        jmp    _T97;
+_T97:
 }
 
 // FUNCTION: COPTER_D 0x00568a68
@@ -2321,7 +2303,6 @@ _T60:
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _Ta0;
-
 _T84:
 	__asm        push   0x8C085;
 	__asm        push   0x5C0100;
@@ -2344,7 +2325,6 @@ _Ta0:
 
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     _Tea;
-
 _Tce:
 	__asm        push   0x8C085;
 	__asm        push   0x5C0144;
@@ -2415,7 +2395,6 @@ _T60:
 	__asm        mov    ecx, [ecx+0x10];
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _Ta0;
-
 _T84:
 	__asm        push   0x8C085;
 	__asm        push   0x5C020C;
@@ -2438,7 +2417,6 @@ _Ta0:
 
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     _Tea;
-
 _Tce:
 	__asm        push   0x8C085;
 	__asm        push   0x5C024C;
@@ -2535,7 +2513,6 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 // LINE 613:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T1d;
-
 _T19:
 	__asm        inc    cnt;
 _T1d:
@@ -2584,7 +2561,6 @@ _T73:
 	__asm        jmp    _T16f;
 // LINE 618:
 	__asm        jmp    _T163;
-
 _Tc4:
 	__asm        movsx  eax, numChars;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -2610,7 +2586,6 @@ _Tc4:
 	__asm        movsx  eax, shiftnum;
 	__asm        cmp    eax, 0x20;
 	__asm        jb     _T12c;
-
 _T110:
 	__asm        push   0x8C085;
 	__asm        push   0x5C02D0;
@@ -2645,6 +2620,7 @@ _T168:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T16f;
 // LINE 626:
+_T16f:
 }
 
 // FUNCTION: COPTER_D 0x00568f25
@@ -2660,7 +2636,6 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 // LINE 633:
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
-
 _T1f:
 	__asm        inc    count;
 _T23:
@@ -2698,6 +2673,7 @@ _T77:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T7e;
 // LINE 643:
+_T7e:
 }
 
 // FUNCTION: COPTER_D 0x00568fa8
@@ -2712,7 +2688,6 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 649:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T23;
-
 _T1f:
 	__asm        inc    cnt;
 _T23:
@@ -2757,7 +2732,6 @@ short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 // LINE 662:
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
-
 _T1f:
 	__asm        inc    count;
 _T23:
@@ -2795,6 +2769,7 @@ _T77:
 	__asm        mov    ax, 0xFFFF;
 	__asm        jmp    _T80;
 // LINE 672:
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x00569095
@@ -2864,7 +2839,6 @@ _T7d:
 // LINE 722:
 	__asm        mov    count, 1;
 	__asm        jmp    _Tce;
-
 _Tca:
 	__asm        inc    count;
 _Tce:
@@ -2959,7 +2933,6 @@ _T170:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1d8;
-
 _T1d1:
 	__asm        mov    dword ptr [ebp-0x40], 0;
 _T1d8:
@@ -3018,7 +2991,6 @@ _L27272:
 _L27271:
 	__asm        mov    eax, 0x596208;
 	__asm        jmp    near ptr 0x0056F590;
-
 _T27a:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -3040,7 +3012,6 @@ short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 // LINE 781:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T2a;
-
 _T26:
 	__asm        inc    cnt;
 _T2a:

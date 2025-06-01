@@ -36,7 +36,6 @@ _L45526:
 	__asm        ret;
 _T86:
 	__asm        jmp    _T92;
-
 _T8b:
 	__asm        mov    dword ptr [ebp-0x18], 0;
 _T92:
@@ -114,7 +113,6 @@ _Tff:
 	__asm        call   FlatResFile::GetResType;
 	__asm        cmp    ebx, eax;
 	__asm        je     _T19c;
-
 _T180:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2FC;
@@ -179,7 +177,6 @@ _T1ff:
 	__asm        mov    cl, [eax+0xC];
 	__asm        test   ecx, ecx;
 	__asm        jne    _T265;
-
 _T249:
 	__asm        push   0x8C085;
 	__asm        push   0x5BE2D4;
@@ -254,7 +251,6 @@ _L45522:
 _L45521:
 	__asm        mov    eax, 0x5960E0;
 	__asm        jmp    near ptr 0x0056F590;
-
 _T340:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;

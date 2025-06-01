@@ -142,7 +142,6 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    tempTimer.lFrequency, eax;
 	__asm        jmp    _T4a;
-
 _T4a:
 	__asm        jmp    near ptr 0x0043D96E;
 // LINE 104:
@@ -152,7 +151,6 @@ _T4a:
 	__asm        je     _T63;
 
 	__asm        jmp    _Tc6;
-
 _T63:
 	__asm        cmp    tempTimer.nTimerResolution, 1;
 	__asm        jne    _T80;
@@ -162,7 +160,6 @@ _T63:
 	__asm        jmp    _Tc1;
 
 	__asm        jmp    _Tc1;
-
 _T80:
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    _Taa;
@@ -177,7 +174,6 @@ _T80:
 	__asm        jmp    _Tc1;
 
 	__asm        jmp    _Tc1;
-
 _Taa:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -185,7 +181,6 @@ _Taa:
 	__asm        div    ecx;
 	__asm        mov    tempTimer.lStartTime, eax;
 	__asm        jmp    _Tc1;
-
 _Tc1:
 	__asm        jmp    _Tc6;
 // LINE 105:
@@ -205,7 +200,6 @@ _Tc6:
 	__asm        jmp    _T139;
 
 	__asm        jmp    _T139;
-
 _Tf8:
 	__asm        cmp    tempTimer.nTimerResolution, 0;
 	__asm        jne    _T122;
@@ -220,7 +214,6 @@ _Tf8:
 	__asm        jmp    _T139;
 
 	__asm        jmp    _T139;
-
 _T122:
 	__asm        call   dword ptr ds:[0x6C3908];
 	__asm        mov    ecx, 0x3E8;
@@ -228,7 +221,6 @@ _T122:
 	__asm        div    ecx;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T139;
-
 _T139:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        sub    eax, tempTimer.lStartTime;
@@ -254,7 +246,6 @@ _T148:
 	__asm        jae    _T1a5;
 
 	__asm        jmp    _T1a0;
-
 _T183:
 	__asm        mov    eax, lMilliseconds;
 	__asm        cmp    [ebp-0x30], eax;

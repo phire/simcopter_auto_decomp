@@ -146,12 +146,12 @@ _T27:
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T4f;
-
 _T4d:
 	__asm        xor    eax, eax;
 _T4f:
 	__asm        jmp    _T54;
 // LINE 59:
+_T54:
 }
 
 // FUNCTION: COPTER_D 0x00431d8d
@@ -209,7 +209,6 @@ void Keyboard::ClearSettings() {
 // LINE 98:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -254,6 +253,7 @@ _T40:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T47;
 // LINE 116:
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x00431eb1
@@ -334,7 +334,6 @@ char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifi
 
 	__asm        mov    dword ptr [ebp-0x10], 1;
 	__asm        jmp    _T89;
-
 _T5d:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T7d;
@@ -344,11 +343,9 @@ _T5d:
 
 	__asm        mov    dword ptr [ebp-0x10], 1;
 	__asm        jmp    _T89;
-
 _T7d:
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    _T89;
-
 _T89:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Ta0;
@@ -391,7 +388,6 @@ _Tad:
 
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    _T12d;
-
 _T101:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T121;
@@ -401,11 +397,9 @@ _T101:
 
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    _T12d;
-
 _T121:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T12d;
-
 _T12d:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T14c;
@@ -432,7 +426,6 @@ _T154:
 	__asm        mov    chIndex, 0;
 // LINE 192:
 	__asm        jmp    _T250;
-
 _T16f:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -442,7 +435,6 @@ _T16f:
 	__asm        mov    chIndex, 1;
 // LINE 194:
 	__asm        jmp    _T250;
-
 _T186:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -452,7 +444,6 @@ _T186:
 	__asm        mov    chIndex, 2;
 // LINE 196:
 	__asm        jmp    _T250;
-
 _T19d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -462,7 +453,6 @@ _T19d:
 	__asm        mov    chIndex, 3;
 // LINE 198:
 	__asm        jmp    _T250;
-
 _T1b4:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -472,7 +462,6 @@ _T1b4:
 	__asm        mov    chIndex, 4;
 // LINE 200:
 	__asm        jmp    _T250;
-
 _T1cb:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -482,7 +471,6 @@ _T1cb:
 	__asm        mov    chIndex, 5;
 // LINE 202:
 	__asm        jmp    _T250;
-
 _T1e2:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -492,7 +480,6 @@ _T1e2:
 	__asm        mov    chIndex, 6;
 // LINE 204:
 	__asm        jmp    _T250;
-
 _T1f9:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -502,7 +489,6 @@ _T1f9:
 	__asm        mov    chIndex, 7;
 // LINE 206:
 	__asm        jmp    _T250;
-
 _T210:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -512,7 +498,6 @@ _T210:
 	__asm        mov    chIndex, 8;
 // LINE 208:
 	__asm        jmp    _T250;
-
 _T227:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -522,7 +507,6 @@ _T227:
 	__asm        mov    chIndex, 9;
 // LINE 210:
 	__asm        jmp    _T250;
-
 _T23e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
@@ -552,7 +536,6 @@ _T250:
 
 	__asm        mov    dword ptr [ebp-0x28], 1;
 	__asm        jmp    _T2c0;
-
 _T294:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T2b4;
@@ -562,11 +545,9 @@ _T294:
 
 	__asm        mov    dword ptr [ebp-0x28], 1;
 	__asm        jmp    _T2c0;
-
 _T2b4:
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    _T2c0;
-
 _T2c0:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     _T2de;
@@ -594,6 +575,7 @@ _T2fb:
 	__asm        xor    al, al;
 	__asm        jmp    _T302;
 // LINE 226:
+_T302:
 }
 
 // FUNCTION: COPTER_D 0x00432226
@@ -614,6 +596,7 @@ _T27:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2e;
 // LINE 249:
+_T2e:
 }
 
 

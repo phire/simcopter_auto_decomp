@@ -189,6 +189,7 @@ _T2f:
 	__asm        call   dword ptr [eax+0x40];
 	__asm        jmp    _T47;
 // LINE 22:
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x004ab57c
@@ -217,6 +218,7 @@ _T24:
 	__asm        call   dword ptr [eax+0x40];
 	__asm        jmp    _T3c;
 // LINE 33:
+_T3c:
 }
 
 // FUNCTION: COPTER_D 0x004ab5bd
@@ -321,7 +323,6 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 	__asm        jmp    _T62;
-
 _T5b:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+4], 0;
@@ -368,10 +369,8 @@ void MIFF::~MIFF() {
 	__asm        jle    _T2a;
 
 	__asm        jmp    _T2f;
-
 _T2a:
 	__asm        jmp    _T46;
-
 _T2f:
 	__asm        jmp    _T3e;
 
@@ -392,16 +391,13 @@ _T46:
 	__asm        jle    _T69;
 
 	__asm        jmp    _T6e;
-
 _T69:
 	__asm        jmp    _T9f;
-
 _T6e:
 	__asm        jmp    _T7d;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _T9f;
-
 _T7d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
@@ -432,7 +428,6 @@ long MIFF::OpenForReading() {
 	__asm        jmp    _Tb3;
 
 	__asm        jmp    _T38;
-
 _T38:
 	__asm        jmp    _T47;
 
@@ -452,10 +447,8 @@ _T47:
 	__asm        jle    _T72;
 
 	__asm        jmp    _T77;
-
 _T72:
 	__asm        jmp    _Tb3;
-
 _T77:
 	__asm        jmp    _T86;
 
@@ -483,6 +476,7 @@ _Tb3:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tba;
 // LINE 124:
+_Tba:
 }
 
 // FUNCTION: COPTER_D 0x004ab937
@@ -514,7 +508,6 @@ _T46:
 	__asm        jmp    _T85;
 
 	__asm        jmp    _T60;
-
 _T60:
 	__asm        jmp    _T6f;
 
@@ -535,10 +528,8 @@ _T85:
 	__asm        jle    _T9a;
 
 	__asm        jmp    _T9f;
-
 _T9a:
 	__asm        jmp    _Te7;
-
 _T9f:
 	__asm        jmp    _Tae;
 
@@ -572,6 +563,7 @@ _Te7:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tee;
 // LINE 154:
+_Tee:
 }
 
 // FUNCTION: COPTER_D 0x004aba2c
@@ -603,7 +595,6 @@ _T46:
 	__asm        jmp    _T85;
 
 	__asm        jmp    _T60;
-
 _T60:
 	__asm        jmp    _T6f;
 
@@ -624,10 +615,8 @@ _T85:
 	__asm        jle    _T9a;
 
 	__asm        jmp    _T9f;
-
 _T9a:
 	__asm        jmp    _T10f;
-
 _T9f:
 	__asm        jmp    _Tae;
 
@@ -672,6 +661,7 @@ _T10f:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T116;
 // LINE 186:
+_T116:
 }
 
 // FUNCTION: COPTER_D 0x004abb47
@@ -709,7 +699,6 @@ long MIFF::VerifyFile() {
 	__asm        jmp    _T70;
 
 	__asm        jmp    _T26;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -729,7 +718,6 @@ _T35:
 	__asm        jmp    _T70;
 
 	__asm        jmp    _T5a;
-
 _T5a:
 	__asm        jmp    _T69;
 
@@ -754,6 +742,7 @@ _T91:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T98;
 // LINE 214:
+_T98:
 }
 
 // FUNCTION: COPTER_D 0x004abc32
@@ -764,10 +753,8 @@ long MIFF::ReadMIFFHeader() {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T7c;
-
 _T26:
 	__asm        jmp    _T35;
 
@@ -802,6 +789,7 @@ _T7c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T83;
 // LINE 229:
+_T83:
 }
 
 // FUNCTION: COPTER_D 0x004abcba
@@ -819,7 +807,6 @@ long MIFF::ReadFileCreator() {
 	__asm        jmp    _T5d;
 
 	__asm        jmp    _T2d;
-
 _T2d:
 	__asm        jmp    _T3c;
 
@@ -870,6 +857,7 @@ _T7e:
 	__asm        mov    eax, lResult;
 	__asm        jmp    _Taf;
 // LINE 251:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abd6e
@@ -887,7 +875,6 @@ long MIFF::ReadFileType() {
 	__asm        jmp    _T5d;
 
 	__asm        jmp    _T2d;
-
 _T2d:
 	__asm        jmp    _T3c;
 
@@ -938,6 +925,7 @@ _T7e:
 	__asm        mov    eax, lResult;
 	__asm        jmp    _Taf;
 // LINE 273:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abe22
@@ -955,7 +943,6 @@ long MIFF::ReadFileVersion() {
 	__asm        jmp    _T5d;
 
 	__asm        jmp    _T2d;
-
 _T2d:
 	__asm        jmp    _T3c;
 
@@ -1006,6 +993,7 @@ _T7e:
 	__asm        mov    eax, lResult;
 	__asm        jmp    _Taf;
 // LINE 294:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abed6
@@ -1087,6 +1075,7 @@ _Te7:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tf1;
 // LINE 329:
+_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x004abfcc
@@ -1106,7 +1095,6 @@ long MIFF::CountRecords() {
 	__asm        jmp    _T74;
 
 	__asm        jmp    _T34;
-
 _T34:
 	__asm        jmp    _T43;
 
@@ -1130,7 +1118,6 @@ _T68:
 	__asm        mov    bWeOpenedFile, 1;
 // LINE 360:
 	__asm        jmp    _T8b;
-
 _T74:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x128], 0;
@@ -1181,6 +1168,7 @@ _Tdb:
 	__asm        mov    eax, lCount;
 	__asm        jmp    _Te3;
 // LINE 374:
+_Te3:
 }
 
 // FUNCTION: COPTER_D 0x004ac0b4
@@ -1191,16 +1179,13 @@ long MIFF::GoToFirstRecord() {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T45;
-
 _T26:
 	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T45;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x128], 0;
@@ -1234,6 +1219,7 @@ _T4c:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T96;
 // LINE 398:
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x004ac14f
@@ -1251,16 +1237,13 @@ long MIFF::GoToNextRecord() {
 	__asm        jle    _T2d;
 
 	__asm        jmp    _T32;
-
 _T2d:
 	__asm        jmp    _T51;
-
 _T32:
 	__asm        jmp    _T41;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T51;
-
 _T41:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x128], 0;
@@ -1278,7 +1261,6 @@ _T58:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x118], 0;
 	__asm        jg     _Tab;
-
 _T7b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x110];
@@ -1383,6 +1365,7 @@ _T18a:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T19d;
 // LINE 452:
+_T19d:
 }
 
 // FUNCTION: COPTER_D 0x004ac2f1
@@ -1455,6 +1438,7 @@ _T6b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T72;
 // LINE 501:
+_T72:
 }
 
 // FUNCTION: COPTER_D 0x004ac3ab
@@ -1485,6 +1469,7 @@ _T42:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T49;
 // LINE 520:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x004ac3fb
@@ -1499,7 +1484,6 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 // LINE 541:
 	__asm        mov    lTempPresentRecord, 0;
 	__asm        jmp    _T26;
-
 _T23:
 	__asm        inc    lTempPresentRecord;
 _T26:
@@ -1530,16 +1514,13 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T45;
-
 _T26:
 	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T45;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x128], 0;
@@ -1609,6 +1590,7 @@ _Te5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tef;
 // LINE 582:
+_Tef:
 }
 
 // FUNCTION: COPTER_D 0x004ac544
@@ -1622,16 +1604,13 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T45;
-
 _T26:
 	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T45;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x128], 0;
@@ -1701,6 +1680,7 @@ _Te6:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tf0;
 // LINE 619:
+_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x004ac63b
@@ -1713,16 +1693,13 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T45;
-
 _T26:
 	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _T45;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x120], 2;
@@ -1796,6 +1773,7 @@ _T10c:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T116;
 // LINE 662:
+_T116:
 }
 
 // FUNCTION: COPTER_D 0x004ac758
@@ -1809,16 +1787,13 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 	__asm        jle    _T21;
 
 	__asm        jmp    _T26;
-
 _T21:
 	__asm        jmp    _T45;
-
 _T26:
 	__asm        jmp    _T35;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T45;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x120], 2;
@@ -1867,6 +1842,7 @@ _Ta8:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tb2;
 // LINE 693:
+_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x004ac811
@@ -1884,16 +1860,13 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	__asm        jle    _T2a;
 
 	__asm        jmp    _T2f;
-
 _T2a:
 	__asm        jmp    _T4e;
-
 _T2f:
 	__asm        jmp    _T3e;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T4e;
-
 _T3e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x120], 2;
@@ -1954,6 +1927,7 @@ _Td9:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Te3;
 // LINE 724:
+_Te3:
 }
 
 // FUNCTION: COPTER_D 0x004ac8fb

@@ -393,7 +393,6 @@ int32_t S3StartSpeederMission() {
 // LINE 74:
 	__asm        mov    i, 1;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -427,7 +426,6 @@ _T18:
 	__asm        mov    eax, pCar;
 	__asm        cmp    dword ptr [eax+4], 0x12C;
 	__asm        jne    _Td8;
-
 _T86:
 	__asm        mov    eax, pCar;
 	__asm        test   byte ptr [eax+9], 1;
@@ -461,6 +459,7 @@ _Tdd:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Te4;
 // LINE 99:
+_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005016c9
@@ -536,6 +535,7 @@ _T92:
 	__asm        add    eax, deltay;
 	__asm        jmp    _Ta0;
 // LINE 127:
+_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x0050176e
@@ -562,7 +562,6 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cell
 // LINE 153:
 	__asm        mov    i, 0;
 	__asm        jmp    _T36;
-
 _T33:
 	__asm        inc    i;
 _T36:
@@ -623,7 +622,6 @@ _Tc3:
 _Td5:
 	__asm        mov    i, 0;
 	__asm        jmp    _Te4;
-
 _Te1:
 	__asm        inc    i;
 _Te4:
@@ -684,7 +682,6 @@ _T171:
 _T183:
 	__asm        mov    i, 0;
 	__asm        jmp    _T192;
-
 _T18f:
 	__asm        inc    i;
 _T192:
@@ -745,7 +742,6 @@ _T21f:
 _T231:
 	__asm        mov    i, 0;
 	__asm        jmp    _T240;
-
 _T23d:
 	__asm        inc    i;
 _T240:
@@ -808,7 +804,6 @@ _T2df:
 	__asm        jmp    _T316;
 // LINE 238:
 	__asm        jmp    _T30f;
-
 _T2eb:
 	__asm        cmp    dword ptr [ebp-0x1C], 3;
 	__asm        ja     _T2df;
@@ -821,6 +816,7 @@ _T30f:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T316;
 // LINE 241:
+_T316:
 }
 
 // FUNCTION: COPTER_D 0x00501a89
@@ -853,7 +849,6 @@ _T20:
 	__asm        jmp    _T3b;
 // LINE 259:
 	__asm        jmp    _T3b;
-
 _T36:
 	__asm        jmp    _T3b;
 // LINE 261:
@@ -861,6 +856,7 @@ _T3b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T45;
 // LINE 262:
+_T45:
 }
 
 // FUNCTION: COPTER_D 0x00501af9
@@ -887,6 +883,7 @@ _T22:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T29;
 // LINE 282:
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00501b3c
@@ -901,7 +898,6 @@ int32_t CreateAutomobileInstance(int32_t instanceID) {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T26;
-
 _T24:
 	__asm        xor    eax, eax;
 _T26:
@@ -956,7 +952,6 @@ _T85:
 	__asm        jmp    _Tbf;
 // LINE 344:
 	__asm        jmp    _Tbf;
-
 _T9c:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T61;
@@ -1020,7 +1015,6 @@ _T136:
 	__asm        mov    dword ptr [eax+4], 0x12B;
 // LINE 391:
 	__asm        jmp    _T189;
-
 _T14f:
 	__asm        cmp    odds, 0x6E;
 	__asm        jge    _T168;
@@ -1089,7 +1083,6 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T36;
-
 _T31:
 	__asm        jmp    _T36;
 // LINE 453:
@@ -1106,6 +1099,7 @@ _T4c:
 	__asm        mov    eax, [eax*4+0x608F80];
 	__asm        jmp    _T5b;
 // LINE 457:
+_T5b:
 }
 
 // FUNCTION: COPTER_D 0x00501db8
@@ -1124,7 +1118,6 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
 	__asm        call   AutomobileClass::AutomobileClass;
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
-
 _T33:
 	__asm        mov    youveWonABrandNewCar, 0;
 // LINE 483:
@@ -1173,6 +1166,7 @@ _Tad:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tb4;
 // LINE 501:
+_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x00501e71
@@ -1182,7 +1176,6 @@ void AutomobileClass::ResetAll() {
 // LINE 543:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -1206,7 +1199,6 @@ void AutomobileClass::ItterateAll() {
 // LINE 574:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -1236,7 +1228,6 @@ void AutomobileClass::Itterate() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3a;
-
 _T35:
 	__asm        jmp    _T3a;
 // LINE 608:
@@ -1257,19 +1248,16 @@ _T3a:
 
 	__asm        mov    dword ptr [ebp-0x5C], 1;
 	__asm        jmp    _Tc5;
-
 _T6e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    _T8d;
-
 _T7c:
 	__asm        mov    dword ptr [ebp-0x5C], 1;
 	__asm        jmp    _Tc5;
 
 	__asm        jmp    _Tb9;
-
 _T8d:
 	__asm        cmp    dword ptr [ebp-0x68], 0x11C;
 	__asm        jl     _Tb9;
@@ -1281,11 +1269,9 @@ _T8d:
 	__asm        je     _T7c;
 
 	__asm        jmp    _Tb9;
-
 _Tb9:
 	__asm        mov    dword ptr [ebp-0x5C], 0;
 	__asm        jmp    _Tc5;
-
 _Tc5:
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        jne    _Tec;
@@ -1316,7 +1302,6 @@ _Tec:
 	__asm        sub    [ecx+0xC6], eax;
 // LINE 629:
 	__asm        jmp    _T200;
-
 _T121:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIPullOut;
@@ -1333,19 +1318,16 @@ _T121:
 
 	__asm        mov    dword ptr [ebp-0x60], 1;
 	__asm        jmp    _T1ae;
-
 _T157:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T176;
-
 _T165:
 	__asm        mov    dword ptr [ebp-0x60], 1;
 	__asm        jmp    _T1ae;
 
 	__asm        jmp    _T1a2;
-
 _T176:
 	__asm        cmp    dword ptr [ebp-0x6C], 0x11C;
 	__asm        jl     _T1a2;
@@ -1357,11 +1339,9 @@ _T176:
 	__asm        je     _T165;
 
 	__asm        jmp    _T1a2;
-
 _T1a2:
 	__asm        mov    dword ptr [ebp-0x60], 0;
 	__asm        jmp    _T1ae;
-
 _T1ae:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    _T1d0;
@@ -1375,7 +1355,6 @@ _T1ae:
 	__asm        call   dword ptr [eax+8];
 // LINE 634:
 	__asm        jmp    _T200;
-
 _T1d0:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 0x10;
@@ -1431,7 +1410,6 @@ _T21b:
 // LINE 680:
 // Block end:
 	__asm        jmp    _T281;
-
 _T25e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1446,6 +1424,7 @@ _T25e:
 // LINE 685:
 _T281:
 	__asm        jmp    _T286;
+_T286:
 }
 
 // FUNCTION: COPTER_D 0x0050217c
@@ -1479,7 +1458,6 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        add    eax, 0x50000;
 	__asm        mov    radius, eax;
 	__asm        jmp    _T4d;
-
 _T46:
 	__asm        add    radius, 0xA0000;
 _T4d:
@@ -1489,7 +1467,6 @@ _T4d:
 // LINE 758:
 	__asm        mov    angle, 0;
 	__asm        jmp    _T6c;
-
 _T65:
 	__asm        add    angle, 0x640000;
 _T6c:
@@ -1570,6 +1547,7 @@ _T126:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T12d;
 // LINE 772:
+_T12d:
 }
 
 // FUNCTION: COPTER_D 0x005022b0
@@ -1590,7 +1568,6 @@ void AutomobileClass::ItterateFSM() {
 	__asm        jmp    _T7e6;
 // LINE 801:
 	__asm        jmp    _Tae;
-
 _T2b:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 2;
@@ -1602,7 +1579,6 @@ _T2b:
 	__asm        jmp    _T7e6;
 // LINE 806:
 	__asm        jmp    _Tae;
-
 _T4a:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 0x10;
@@ -1654,7 +1630,6 @@ _Tc9:
 
 	__asm        mov    itterationDist, 0;
 	__asm        jmp    _Tfd;
-
 _Te2:
 	__asm        mov    eax, ds:[0x5B4760];
 	__asm        push   eax;
@@ -1700,19 +1675,16 @@ _Tfd:
 
 	__asm        mov    dword ptr [ebp-0x44], 1;
 	__asm        jmp    _T1c9;
-
 _T172:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T191;
-
 _T180:
 	__asm        mov    dword ptr [ebp-0x44], 1;
 	__asm        jmp    _T1c9;
 
 	__asm        jmp    _T1bd;
-
 _T191:
 	__asm        cmp    dword ptr [ebp-0x5C], 0x11C;
 	__asm        jl     _T1bd;
@@ -1724,11 +1696,9 @@ _T191:
 	__asm        je     _T180;
 
 	__asm        jmp    _T1bd;
-
 _T1bd:
 	__asm        mov    dword ptr [ebp-0x44], 0;
 	__asm        jmp    _T1c9;
-
 _T1c9:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    _T219;
@@ -1767,19 +1737,16 @@ _T219:
 
 	__asm        mov    dword ptr [ebp-0x48], 1;
 	__asm        jmp    _T29c;
-
 _T245:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T264;
-
 _T253:
 	__asm        mov    dword ptr [ebp-0x48], 1;
 	__asm        jmp    _T29c;
 
 	__asm        jmp    _T290;
-
 _T264:
 	__asm        cmp    dword ptr [ebp-0x60], 0x11C;
 	__asm        jl     _T290;
@@ -1791,11 +1758,9 @@ _T264:
 	__asm        je     _T253;
 
 	__asm        jmp    _T290;
-
 _T290:
 	__asm        mov    dword ptr [ebp-0x48], 0;
 	__asm        jmp    _T29c;
-
 _T29c:
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    _T31a;
@@ -1828,7 +1793,6 @@ _T29c:
 // LINE 878:
 _T2f8:
 	__asm        jmp    _T31a;
-
 _T2fd:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIDoAUTurn;
@@ -1859,19 +1823,16 @@ _T31a:
 
 	__asm        mov    dword ptr [ebp-0x4C], 1;
 	__asm        jmp    _T3b5;
-
 _T35e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T37d;
-
 _T36c:
 	__asm        mov    dword ptr [ebp-0x4C], 1;
 	__asm        jmp    _T3b5;
 
 	__asm        jmp    _T3a9;
-
 _T37d:
 	__asm        cmp    dword ptr [ebp-0x64], 0x11C;
 	__asm        jl     _T3a9;
@@ -1883,11 +1844,9 @@ _T37d:
 	__asm        je     _T36c;
 
 	__asm        jmp    _T3a9;
-
 _T3a9:
 	__asm        mov    dword ptr [ebp-0x4C], 0;
 	__asm        jmp    _T3b5;
-
 _T3b5:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        jne    _T433;
@@ -1920,7 +1879,6 @@ _T3b5:
 // LINE 904:
 _T411:
 	__asm        jmp    _T433;
-
 _T416:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIDoAUTurn;
@@ -1951,19 +1909,16 @@ _T433:
 
 	__asm        mov    dword ptr [ebp-0x50], 1;
 	__asm        jmp    _T4ce;
-
 _T477:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    _T496;
-
 _T485:
 	__asm        mov    dword ptr [ebp-0x50], 1;
 	__asm        jmp    _T4ce;
 
 	__asm        jmp    _T4c2;
-
 _T496:
 	__asm        cmp    dword ptr [ebp-0x68], 0x11C;
 	__asm        jl     _T4c2;
@@ -1975,11 +1930,9 @@ _T496:
 	__asm        je     _T485;
 
 	__asm        jmp    _T4c2;
-
 _T4c2:
 	__asm        mov    dword ptr [ebp-0x50], 0;
 	__asm        jmp    _T4ce;
-
 _T4ce:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        jne    _T54c;
@@ -2012,7 +1965,6 @@ _T4ce:
 // LINE 931:
 _T52a:
 	__asm        jmp    _T54c;
-
 _T52f:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::CanIDoAUTurn;
@@ -2039,7 +1991,6 @@ _T556:
 	__asm        jmp    _T59f;
 // LINE 945:
 	__asm        jmp    _T59f;
-
 _T573:
 	__asm        cmp    dword ptr [ebp-0x58], 5;
 	__asm        ja     _T556;
@@ -2125,10 +2076,8 @@ _T59f:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T690;
-
 _T68b:
 	__asm        jmp    _T690;
-
 _T690:
 	__asm        jmp    near ptr 0x00502945;
 
@@ -2244,6 +2193,7 @@ _T7c0:
 	__asm        add    [ecx+0xEA], eax;
 // LINE 1044:
 	__asm        jmp    _T7e6;
+_T7e6:
 }
 
 // FUNCTION: COPTER_D 0x00502a9b
@@ -2270,7 +2220,6 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T53;
-
 _T4e:
 	__asm        jmp    _T53;
 // LINE 1057:
@@ -2320,13 +2269,13 @@ _Ta0:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tcd;
-
 _Tc8:
 	__asm        jmp    _Tcd;
 // LINE 1075:
 // Block end:
 _Tcd:
 	__asm        jmp    _Td2;
+_Td2:
 }
 
 // FUNCTION: COPTER_D 0x00502b74
@@ -2353,7 +2302,6 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T53;
-
 _T4e:
 	__asm        jmp    _T53;
 // LINE 1089:
@@ -2402,7 +2350,6 @@ _T53:
 	__asm        jmp    _Tf9;
 // LINE 1105:
 	__asm        jmp    _Tf9;
-
 _Td5:
 	__asm        cmp    dword ptr [ebp-0x14], 3;
 	__asm        ja     _Tf9;
@@ -2513,7 +2460,6 @@ _Tc3:
 
 	__asm        mov    turn, 1;
 	__asm        jmp    _T109;
-
 _T102:
 	__asm        mov    turn, 2;
 _T109:
@@ -2532,23 +2478,19 @@ _T109:
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T153;
-
 _T136:
 	__asm        mov    turn, 2;
 	__asm        jmp    _T162;
-
 _T142:
 	__asm        mov    turn, 0;
 	__asm        jmp    _T162;
 
 	__asm        jmp    _T162;
-
 _T153:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     _T136;
 
 	__asm        jmp    _T142;
-
 _T162:
 	__asm        jmp    _T270;
 // LINE 1185:
@@ -2562,23 +2504,19 @@ _T162:
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T1a0;
-
 _T183:
 	__asm        mov    turn, 1;
 	__asm        jmp    _T1af;
-
 _T18f:
 	__asm        mov    turn, 0;
 	__asm        jmp    _T1af;
 
 	__asm        jmp    _T1af;
-
 _T1a0:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T183;
 
 	__asm        jmp    _T18f;
-
 _T1af:
 	__asm        jmp    _T270;
 // LINE 1187:
@@ -2596,17 +2534,14 @@ _T1af:
 _T1d0:
 	__asm        mov    turn, 1;
 	__asm        jmp    _T212;
-
 _T1dc:
 	__asm        mov    turn, 2;
 	__asm        jmp    _T212;
-
 _T1e8:
 	__asm        mov    turn, 0;
 	__asm        jmp    _T212;
 
 	__asm        jmp    _T212;
-
 _T1f9:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T1d0;
@@ -2615,7 +2550,6 @@ _T1f9:
 	__asm        je     _T1dc;
 
 	__asm        jmp    _T1e8;
-
 _T212:
 	__asm        jmp    _T270;
 // LINE 1190:
@@ -2631,7 +2565,6 @@ _T217:
 // LINE 1191:
 _T238:
 	__asm        jmp    _T270;
-
 _T23d:
 	__asm        dec    dword ptr [ebp-0x14];
 	__asm        cmp    dword ptr [ebp-0x14], 6;
@@ -2766,7 +2699,6 @@ _T103:
 	__asm        jmp    _T150;
 // LINE 1248:
 	__asm        jmp    _T150;
-
 _T12d:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     _T50;
@@ -2853,11 +2785,9 @@ _T42:
 	__asm        mov    al, scanLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T87;
-
 _T7c:
 	__asm        mov    tile, 0;
 	__asm        jmp    _Tc7;
-
 _T87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -2893,7 +2823,6 @@ _Tc7:
 	__asm        jmp    _T159;
 
 	__asm        jmp    _T14c;
-
 _Tee:
 	__asm        cmp    dword ptr [ebp-0x10C], 0x6B;
 	__asm        jg     _T127;
@@ -2908,7 +2837,6 @@ _Tee:
 	__asm        jle    _T159;
 
 	__asm        jmp    _T282;
-
 _T127:
 	__asm        cmp    dword ptr [ebp-0x10C], 0x806A;
 	__asm        jl     _T282;
@@ -2917,7 +2845,6 @@ _T127:
 	__asm        jle    _T159;
 
 	__asm        jmp    _T282;
-
 _T14c:
 	__asm        cmp    dword ptr [ebp-0xF8], 0;
 	__asm        je     _T282;
@@ -2935,7 +2862,6 @@ _T159:
 	__asm        jmp    _T1ac;
 
 	__asm        jmp    _T19f;
-
 _T180:
 	__asm        cmp    dword ptr [ebp-0x110], 0x49;
 	__asm        jl     _T27d;
@@ -2944,11 +2870,9 @@ _T180:
 	__asm        jle    _T1ac;
 
 	__asm        jmp    _T27d;
-
 _T19f:
 	__asm        cmp    dword ptr [ebp-0xE0], 0;
 	__asm        je     _T27d;
-
 _T1ac:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
@@ -2983,10 +2907,8 @@ _T1ac:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T23d;
-
 _T238:
 	__asm        jmp    _T23d;
-
 _T23d:
 	__asm        jmp    near ptr 0x005032EC;
 
@@ -3007,7 +2929,6 @@ _T23d:
 // LINE 1318:
 _T27d:
 	__asm        jmp    _T4a0;
-
 _T282:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -3028,11 +2949,9 @@ _T282:
 	__asm        mov    al, scanLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T2ca;
-
 _T2bc:
 	__asm        mov    word ptr [ebp-0xDC], 0;
 	__asm        jmp    _T30d;
-
 _T2ca:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -3054,7 +2973,6 @@ _T2ca:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0xDC], ax;
 	__asm        jmp    _T30d;
-
 _T30d:
 	__asm        mov    ax, [ebp-0xDC];
 	__asm        mov    [ebp-0xE4], ax;
@@ -3080,17 +2998,14 @@ _T30d:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x26;
 	__asm        jle    _T387;
-
 _T37d:
 	__asm        jmp    _T39e;
 
 	__asm        jmp    _T391;
-
 _T387:
 	__asm        jmp    _T4a0;
 
 	__asm        jmp    _T39e;
-
 _T391:
 	__asm        cmp    dword ptr [ebp-0xE8], 0;
 	__asm        je     _T4a0;
@@ -3158,10 +3073,8 @@ _T3f8:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T47f;
-
 _T47a:
 	__asm        jmp    _T47f;
-
 _T47f:
 	__asm        jmp    near ptr 0x0050352E;
 
@@ -3218,7 +3131,6 @@ _T50b:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T53c;
-
 _T537:
 	__asm        jmp    _T53c;
 // LINE 1484:
@@ -3275,11 +3187,9 @@ _T53c:
 	__asm        mov    cl, [eax+0xD3];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T623;
-
 _T615:
 	__asm        mov    word ptr [ebp-0xFC], 0;
 	__asm        jmp    _T68a;
-
 _T623:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3305,7 +3215,6 @@ _T623:
 	__asm        or     eax, edx;
 	__asm        mov    [ebp-0xFC], ax;
 	__asm        jmp    _T68a;
-
 _T68a:
 	__asm        mov    eax, [ebp-0xFC];
 	__asm        push   eax;
@@ -3356,7 +3265,6 @@ _T6f9:
 	__asm        mov    al, scanLoc.y;
 	__asm        cmp    ecx, eax;
 	__asm        je     _T745;
-
 _T729:
 	__asm        push   0x5EB;
 	__asm        push   0x5B5490;
@@ -3364,7 +3272,6 @@ _T729:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T74a;
-
 _T745:
 	__asm        jmp    _T74a;
 // LINE 1518:
@@ -3381,7 +3288,6 @@ _T74a:
 // LINE 1525:
 	__asm        mov    i, 0;
 	__asm        jmp    _T779;
-
 _T773:
 	__asm        inc    i;
 _T779:
@@ -3430,7 +3336,6 @@ _T779:
 	__asm        jmp    _T826;
 // LINE 1534:
 	__asm        jmp    _T826;
-
 _T7fc:
 	__asm        cmp    dword ptr [ebp-0x114], 3;
 	__asm        ja     _T826;
@@ -3459,11 +3364,9 @@ _T826:
 	__asm        mov    al, nextLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T86e;
-
 _T860:
 	__asm        mov    word ptr [ebp-0x100], 0;
 	__asm        jmp    _T8b1;
-
 _T86e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLoc.x;
@@ -3485,7 +3388,6 @@ _T86e:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x100], ax;
 	__asm        jmp    _T8b1;
-
 _T8b1:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -3506,11 +3408,9 @@ _T8b1:
 	__asm        mov    al, scanLoc.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T8f9;
-
 _T8eb:
 	__asm        mov    word ptr [ebp-0x104], 0;
 	__asm        jmp    _T93c;
-
 _T8f9:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -3532,7 +3432,6 @@ _T8f9:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x104], ax;
 	__asm        jmp    _T93c;
-
 _T93c:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(dirIndex);
@@ -3597,7 +3496,6 @@ _T9c5:
 // LINE 1575:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta26;
-
 _Ta20:
 	__asm        inc    i;
 _Ta26:
@@ -3631,7 +3529,6 @@ _Ta6c:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Ta9a;
-
 _Ta95:
 	__asm        jmp    _Ta9a;
 // LINE 1582:
@@ -3703,7 +3600,6 @@ _Tb35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x96], 2;
 	__asm        jle    _Tbee;
-
 _Tbd2:
 	__asm        push   0x63D;
 	__asm        push   0x5B5518;
@@ -3711,7 +3607,6 @@ _Tbd2:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tbf3;
-
 _Tbee:
 	__asm        jmp    _Tbf3;
 // LINE 1607:
@@ -3756,7 +3651,6 @@ _Tbf3:
 	__asm        jmp    _Tc8f;
 // LINE 1613:
 	__asm        jmp    _Tc8f;
-
 _Tc65:
 	__asm        cmp    dword ptr [ebp-0x118], 3;
 	__asm        ja     _Tc8f;
@@ -3782,10 +3676,8 @@ _Tc8f:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tcd7;
-
 _Tcd2:
 	__asm        jmp    _Tcd7;
-
 _Tcd7:
 	__asm        jmp    near ptr 0x00503D86;
 
@@ -3846,6 +3738,7 @@ _Td28:
 // Block end:
 _Tdb8:
 	__asm        jmp    _Tdbd;
+_Tdbd:
 }
 
 // FUNCTION: COPTER_D 0x00503e6e
@@ -3932,7 +3825,6 @@ _T1e:
 	__asm        add    esp, 4;
 // LINE 1707:
 	__asm        jmp    _Td3;
-
 _T82:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 2;
@@ -3969,6 +3861,7 @@ _Td3:
 	__asm        add    esp, 0xC;
 // LINE 1725:
 	__asm        jmp    _Teb;
+_Teb:
 }
 
 // FUNCTION: COPTER_D 0x00503fd0
@@ -4038,6 +3931,7 @@ _T67:
 	__asm        add    esp, 0xC;
 // LINE 1764:
 	__asm        jmp    _Tc3;
+_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0050409a
@@ -4052,7 +3946,6 @@ void AutomobileClass::AdjustSpeed() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
 	__asm        jmp    _T45;
-
 _T33:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB2];
@@ -4108,6 +4001,7 @@ _T33:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3a;
 // LINE 1803:
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0050417d
@@ -4149,10 +4043,8 @@ _T21:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T7a;
-
 _T75:
 	__asm        jmp    _T7a;
-
 _T7a:
 	__asm        jmp    near ptr 0x005041FC;
 
@@ -4199,19 +4091,16 @@ _Tae:
 
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    _T14e;
-
 _Tf7:
 	__asm        mov    eax, pCar;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T116;
-
 _T105:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    _T14e;
 
 	__asm        jmp    _T142;
-
 _T116:
 	__asm        cmp    dword ptr [ebp-0x34], 0x11C;
 	__asm        jl     _T142;
@@ -4223,11 +4112,9 @@ _T116:
 	__asm        je     _T105;
 
 	__asm        jmp    _T142;
-
 _T142:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    _T14e;
-
 _T14e:
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     _T178;
@@ -4295,7 +4182,6 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T53;
-
 _T4e:
 	__asm        jmp    _T53;
 // LINE 1887:
@@ -4332,7 +4218,6 @@ _T6b:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tb4;
-
 _Taf:
 	__asm        jmp    _Tb4;
 // LINE 1908:
@@ -4356,7 +4241,6 @@ _Tb4:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tf8;
-
 _Tf3:
 	__asm        jmp    _Tf8;
 // LINE 1912:
@@ -4444,7 +4328,6 @@ _T1bf:
 	__asm        mov    dword ptr [eax+0xBA], 0xA0000;
 // LINE 1942:
 	__asm        jmp    _T1f8;
-
 _T1d9:
 	__asm        cmp    dword ptr [ebp-0x34], 0x11C;
 	__asm        jl     _T1bf;
@@ -4533,11 +4416,9 @@ int32_t AutomobileClass::CanIPullOver() {
 	__asm        mov    cl, [eax+0x7D];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T5f;
-
 _T54:
 	__asm        mov    word ptr [ebp-0x34], 0;
 	__asm        jmp    _Tab;
-
 _T5f:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4563,7 +4444,6 @@ _T5f:
 	__asm        or     eax, edx;
 	__asm        mov    [ebp-0x34], ax;
 	__asm        jmp    _Tab;
-
 _Tab:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        and    eax, 0xFFFF;
@@ -4578,12 +4458,10 @@ _Tab:
 	__asm        jmp    _Teb;
 
 	__asm        jmp    _Te1;
-
 _Td7:
 	__asm        jmp    _Tf2;
 
 	__asm        jmp    _Teb;
-
 _Te1:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     _Tf2;
@@ -4654,11 +4532,9 @@ _T11d:
 	__asm        mov    al, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T1ad;
-
 _T1a2:
 	__asm        mov    word ptr [ebp-0x2C], 0;
 	__asm        jmp    _T1ed;
-
 _T1ad:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
@@ -4680,7 +4556,6 @@ _T1ad:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x2C], ax;
 	__asm        jmp    _T1ed;
-
 _T1ed:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        and    eax, 0xFFFF;
@@ -4695,12 +4570,10 @@ _T1ed:
 	__asm        jmp    _T22d;
 
 	__asm        jmp    _T223;
-
 _T219:
 	__asm        jmp    _T234;
 
 	__asm        jmp    _T22d;
-
 _T223:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     _T234;
@@ -4734,10 +4607,8 @@ _T234:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T293;
-
 _T28e:
 	__asm        jmp    _T293;
-
 _T293:
 	__asm        jmp    near ptr 0x0050484E;
 
@@ -4792,6 +4663,7 @@ _T308:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T312;
 // LINE 2147:
+_T312:
 }
 
 // FUNCTION: COPTER_D 0x005048cd
@@ -4803,19 +4675,16 @@ void AutomobileClass::PullOver(short __formal) {
 
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        jmp    _T7c;
-
 _T25:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T44;
-
 _T33:
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        jmp    _T7c;
 
 	__asm        jmp    _T70;
-
 _T44:
 	__asm        cmp    dword ptr [ebp-0xC], 0x11C;
 	__asm        jl     _T70;
@@ -4827,11 +4696,9 @@ _T44:
 	__asm        je     _T33;
 
 	__asm        jmp    _T70;
-
 _T70:
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        jmp    _T7c;
-
 _T7c:
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T98;
@@ -4919,10 +4786,8 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T6b;
-
 _T66:
 	__asm        jmp    _T6b;
-
 _T6b:
 	__asm        jmp    near ptr 0x00504A6E;
 
@@ -4979,6 +4844,7 @@ _Tfd:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T107;
 // LINE 2203:
+_T107:
 }
 
 // FUNCTION: COPTER_D 0x00504b0a
@@ -5073,7 +4939,6 @@ _T64:
 	__asm        jmp    _Tfd;
 // LINE 2247:
 	__asm        jmp    _Tfd;
-
 _Td9:
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     _Tfd;
@@ -5122,7 +4987,6 @@ _Tfd:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x2B;
 	__asm        jle    _T1e2;
-
 _T17c:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
@@ -5133,7 +4997,6 @@ _T17c:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x46;
 	__asm        jle    _T1e2;
-
 _T19e:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
@@ -5144,7 +5007,6 @@ _T19e:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x59;
 	__asm        jle    _T1e2;
-
 _T1c0:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        and    eax, 0xFFFF;
@@ -5155,17 +5017,14 @@ _T1c0:
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x6B;
 	__asm        jg     _T1f1;
-
 _T1e2:
 	__asm        jmp    _T238;
 
 	__asm        jmp    _T200;
 
 	__asm        jmp    _T1f6;
-
 _T1f1:
 	__asm        jmp    _T200;
-
 _T1f6:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T238;
@@ -5381,10 +5240,8 @@ _T3e0:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T4b1;
-
 _T4ac:
 	__asm        jmp    _T4b1;
-
 _T4b1:
 	__asm        jmp    near ptr 0x00504FFE;
 
@@ -5412,6 +5269,7 @@ _T4da:
 	__asm        call   dword ptr [eax+8];
 // LINE 2345:
 	__asm        jmp    _T4f2;
+_T4f2:
 }
 
 // FUNCTION: COPTER_D 0x0050503f
@@ -5442,7 +5300,6 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 
 	__asm        mov    diagRoad, 0;
 	__asm        jmp    _T5c;
-
 _T55:
 	__asm        mov    diagRoad, 2;
 // LINE 2381:
@@ -5469,7 +5326,6 @@ _T5c:
 
 	__asm        mov    diagRoad, 1;
 	__asm        jmp    _Tbd;
-
 _Tb6:
 	__asm        mov    diagRoad, 3;
 // LINE 2386:
@@ -5496,7 +5352,6 @@ _Tbd:
 
 	__asm        mov    diagRoad, 2;
 	__asm        jmp    _T11e;
-
 _T117:
 	__asm        mov    diagRoad, 0;
 // LINE 2391:
@@ -5523,7 +5378,6 @@ _T11e:
 
 	__asm        mov    diagRoad, 3;
 	__asm        jmp    _T17f;
-
 _T178:
 	__asm        mov    diagRoad, 1;
 // LINE 2396:
@@ -5547,7 +5401,6 @@ _T17f:
 	__asm        jmp    _T1eb;
 // LINE 2401:
 	__asm        jmp    _T1eb;
-
 _T1c7:
 	__asm        cmp    dword ptr [ebp-0x10], 3;
 	__asm        ja     _T1eb;
@@ -5595,10 +5448,8 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T6b;
-
 _T66:
 	__asm        jmp    _T6b;
-
 _T6b:
 	__asm        jmp    near ptr 0x005052A4;
 
@@ -5652,7 +5503,6 @@ _T6b:
 
 	__asm        mov    diagRoad, 0;
 	__asm        jmp    _T110;
-
 _T109:
 	__asm        mov    diagRoad, 2;
 _T110:
@@ -5664,7 +5514,6 @@ _T110:
 
 	__asm        mov    diagRoad, 1;
 	__asm        jmp    _T138;
-
 _T131:
 	__asm        mov    diagRoad, 3;
 _T138:
@@ -5676,7 +5525,6 @@ _T138:
 
 	__asm        mov    diagRoad, 2;
 	__asm        jmp    _T160;
-
 _T159:
 	__asm        mov    diagRoad, 0;
 _T160:
@@ -5688,7 +5536,6 @@ _T160:
 
 	__asm        mov    diagRoad, 3;
 	__asm        jmp    _T188;
-
 _T181:
 	__asm        mov    diagRoad, 1;
 _T188:
@@ -5697,7 +5544,6 @@ _T188:
 	__asm        jmp    _T1bb;
 // LINE 2454:
 	__asm        jmp    _T1bb;
-
 _T197:
 	__asm        cmp    dword ptr [ebp-0x2C], 3;
 	__asm        ja     _T1bb;
@@ -5735,7 +5581,6 @@ _T1bb:
 	__asm        mov    pRotMatrix, eax;
 // LINE 2461:
 	__asm        jmp    _T3df;
-
 _T216:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEE], 0xA;
@@ -5982,7 +5827,6 @@ _T31:
 	__asm        mov    dword ptr [eax+0xE6], 1;
 // LINE 2526:
 	__asm        jmp    _T70;
-
 _T53:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE6], 1;
@@ -6040,6 +5884,7 @@ _Tf5:
 	__asm        mov    [ecx+0xEA], eax;
 // LINE 2545:
 	__asm        jmp    _T115;
+_T115:
 }
 
 // FUNCTION: COPTER_D 0x00505820
@@ -6112,7 +5957,6 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 // LINE 2580:
 _Tbb:
 	__asm        jmp    _T101;
-
 _Tc0:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x40;
@@ -6292,10 +6136,8 @@ _T3c:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T168;
-
 _T163:
 	__asm        jmp    _T168;
-
 _T168:
 	__asm        jmp    near ptr 0x00505AF9;
 
@@ -6321,11 +6163,9 @@ _T168:
 	__asm        mov    al, currentLocation.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T1b8;
-
 _T1ad:
 	__asm        mov    word ptr [ebp-0x4C], 0;
 	__asm        jmp    _T1f8;
-
 _T1b8:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currentLocation.x;
@@ -6347,7 +6187,6 @@ _T1b8:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x4C], ax;
 	__asm        jmp    _T1f8;
-
 _T1f8:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        and    eax, 0xFFFF;
@@ -6362,12 +6201,10 @@ _T1f8:
 	__asm        jmp    _T238;
 
 	__asm        jmp    _T22e;
-
 _T224:
 	__asm        jmp    _T247;
 
 	__asm        jmp    _T238;
-
 _T22e:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _T247;
@@ -6449,11 +6286,9 @@ _T2d1:
 	__asm        mov    al, nextLocation.y;
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T316;
-
 _T30b:
 	__asm        mov    word ptr [ebp-0x44], 0;
 	__asm        jmp    _T356;
-
 _T316:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLocation.x;
@@ -6475,7 +6310,6 @@ _T316:
 	__asm        or     eax, ebx;
 	__asm        mov    [ebp-0x44], ax;
 	__asm        jmp    _T356;
-
 _T356:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        and    eax, 0xFFFF;
@@ -6490,12 +6324,10 @@ _T356:
 	__asm        jmp    _T396;
 
 	__asm        jmp    _T38c;
-
 _T382:
 	__asm        jmp    _T52c;
 
 	__asm        jmp    _T396;
-
 _T38c:
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        je     _T52c;
@@ -6517,10 +6349,8 @@ _T396:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3d8;
-
 _T3d3:
 	__asm        jmp    _T3d8;
-
 _T3d8:
 	__asm        jmp    near ptr 0x00505D69;
 
@@ -6607,7 +6437,6 @@ _T4ab:
 	__asm        jmp    _T914;
 // LINE 2730:
 	__asm        jmp    _T51f;
-
 _T4ba:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6618,7 +6447,6 @@ _T4ba:
 	__asm        jmp    _T914;
 // LINE 2734:
 	__asm        jmp    _T51f;
-
 _T4d8:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6629,7 +6457,6 @@ _T4d8:
 	__asm        jmp    _T914;
 // LINE 2738:
 	__asm        jmp    _T51f;
-
 _T4f6:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6764,7 +6591,6 @@ _T577:
 // LINE 2808:
 _T654:
 	__asm        jmp    _T6be;
-
 _T659:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6775,7 +6601,6 @@ _T659:
 	__asm        jmp    _T914;
 // LINE 2812:
 	__asm        jmp    _T6be;
-
 _T677:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6786,7 +6611,6 @@ _T677:
 	__asm        jmp    _T914;
 // LINE 2816:
 	__asm        jmp    _T6be;
-
 _T695:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6844,10 +6668,8 @@ _T6f6:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T738;
-
 _T733:
 	__asm        jmp    _T738;
-
 _T738:
 	__asm        jmp    near ptr 0x005060C9;
 
@@ -6977,7 +6799,6 @@ _T7b9:
 // LINE 2899:
 _T896:
 	__asm        jmp    _T900;
-
 _T89b:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6988,7 +6809,6 @@ _T89b:
 	__asm        jmp    _T914;
 // LINE 2903:
 	__asm        jmp    _T900;
-
 _T8b9:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -6999,7 +6819,6 @@ _T8b9:
 	__asm        jmp    _T914;
 // LINE 2907:
 	__asm        jmp    _T900;
-
 _T8d7:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -7026,6 +6845,7 @@ _T90d:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T914;
 // LINE 2924:
+_T914:
 }
 
 // FUNCTION: COPTER_D 0x005062a7
@@ -7075,6 +6895,7 @@ _T7b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T85;
 // LINE 2959:
+_T85:
 }
 
 // FUNCTION: COPTER_D 0x00506333
@@ -7166,6 +6987,7 @@ _Td4:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tdb;
 // LINE 3014:
+_Tdb:
 }
 
 // FUNCTION: COPTER_D 0x00506413
@@ -7252,7 +7074,6 @@ _Tca:
 	__asm        jmp    _T12d;
 // LINE 3073:
 	__asm        jmp    _T12d;
-
 _Td9:
 	__asm        cmp    dword ptr [ebp-8], 0xF;
 	__asm        ja     _T12d;
@@ -7318,7 +7139,6 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, struct Point2d* cello
 // LINE 3128:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -7372,6 +7192,7 @@ _T64:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Ta1;
 // LINE 3145:
+_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00506665
@@ -7382,7 +7203,6 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, struct Point2d* celloc
 // LINE 3161:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -7436,6 +7256,7 @@ _T64:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Ta1;
 // LINE 3178:
+_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0050670b
@@ -7544,6 +7365,7 @@ _T4c:
 // LINE 3233:
 _T142:
 	__asm        jmp    _T147;
+_T147:
 }
 
 // FUNCTION: COPTER_D 0x00506859
@@ -7633,6 +7455,7 @@ _T4c:
 // LINE 3281:
 _T10c:
 	__asm        jmp    _T111;
+_T111:
 }
 
 // FUNCTION: COPTER_D 0x00506971
@@ -7846,6 +7669,7 @@ _T203:
 // LINE 3362:
 _T254:
 	__asm        jmp    _T259;
+_T259:
 }
 
 // FUNCTION: COPTER_D 0x00506bcf
@@ -7934,6 +7758,7 @@ _T21:
 	__asm        add    dword ptr [eax+0x116], 2;
 // LINE 3449:
 	__asm        jmp    _T49;
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x00506ccd
@@ -7944,7 +7769,6 @@ void AutomobileClass::MissionCancel(long mission_id) {
 // LINE 3464:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -8000,7 +7824,6 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 // LINE 3511:
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    currentCarIndex;
 _T18:
@@ -8059,7 +7882,6 @@ void AutomobileClass::TurnOnHeadlight() {
 // LINE 3546:
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
-
 _T3d:
 	__asm        inc    count;
 _T40:
@@ -8124,7 +7946,6 @@ void AutomobileClass::TurnOffHeadlight() {
 // LINE 3569:
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
-
 _T3d:
 	__asm        inc    count;
 _T40:
@@ -8179,7 +8000,6 @@ _T1a:
 	__asm        jmp    _T5c;
 // LINE 3592:
 	__asm        jmp    _T55;
-
 _T29:
 	__asm        cmp    dword ptr [ebp-8], 0x11C;
 	__asm        jl     _T55;
@@ -8196,6 +8016,7 @@ _T55:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T5c;
 // LINE 3595:
+_T5c:
 }
 
 // FUNCTION: COPTER_D 0x00506f6f
@@ -8256,11 +8077,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 	__asm        dec    ecx;
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _Tcb;
-
 _Tc0:
 	__asm        mov    tile, 0;
 	__asm        jmp    _T125;
-
 _Tcb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -8333,11 +8152,9 @@ _T161:
 	__asm        inc    ecx;
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T1c0;
-
 _T1b5:
 	__asm        mov    tile, 0;
 	__asm        jmp    _T21a;
-
 _T1c0:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -8410,11 +8227,9 @@ _T256:
 	__asm        mov    cl, [eax+0xD3];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T2b5;
-
 _T2aa:
 	__asm        mov    tile, 0;
 	__asm        jmp    _T30d;
-
 _T2b5:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -8487,11 +8302,9 @@ _T349:
 	__asm        mov    cl, [eax+0xD3];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T3a8;
-
 _T39d:
 	__asm        mov    tile, 0;
 	__asm        jmp    _T400;
-
 _T3a8:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -8580,7 +8393,6 @@ _T44b:
 	__asm        jmp    _T50d;
 // LINE 3704:
 	__asm        jmp    _T50d;
-
 _T4b2:
 	__asm        dec    dword ptr [ebp-0x30];
 	__asm        cmp    dword ptr [ebp-0x30], 0x17;
@@ -8595,6 +8407,7 @@ _T4b2:
 // LINE 3706:
 _T50d:
 	__asm        jmp    _T512;
+_T512:
 }
 
 // FUNCTION: COPTER_D 0x00507488
@@ -8618,7 +8431,6 @@ _T27:
 	__asm        jmp    _T55;
 // LINE 3741:
 	__asm        jmp    _T55;
-
 _T3c:
 	__asm        cmp    dword ptr [ebp-0x20], 0x4B;
 	__asm        je     _T1c;
@@ -8647,7 +8459,6 @@ _T70:
 	__asm        jmp    _T9e;
 // LINE 3753:
 	__asm        jmp    _T9e;
-
 _T85:
 	__asm        cmp    dword ptr [ebp-0x24], 0x4B;
 	__asm        je     _T65;
@@ -8670,7 +8481,6 @@ _T9e:
 	__asm        jmp    _T118;
 
 	__asm        jmp    _T10e;
-
 _Tc2:
 	__asm        cmp    dword ptr [ebp-0x28], 0x6B;
 	__asm        jg     _Tef;
@@ -8685,7 +8495,6 @@ _Tc2:
 	__asm        jle    _T118;
 
 	__asm        jmp    _T2ec;
-
 _Tef:
 	__asm        cmp    dword ptr [ebp-0x28], 0x806A;
 	__asm        jl     _T2ec;
@@ -8694,11 +8503,9 @@ _Tef:
 	__asm        jle    _T118;
 
 	__asm        jmp    _T2ec;
-
 _T10e:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T2ec;
-
 _T118:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    eax, 0xFFFF;
@@ -8712,7 +8519,6 @@ _T118:
 	__asm        jmp    _T192;
 
 	__asm        jmp    _T188;
-
 _T13c:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x6B;
 	__asm        jg     _T169;
@@ -8727,7 +8533,6 @@ _T13c:
 	__asm        jle    _T192;
 
 	__asm        jmp    _T2ec;
-
 _T169:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x806A;
 	__asm        jl     _T2ec;
@@ -8736,7 +8541,6 @@ _T169:
 	__asm        jle    _T192;
 
 	__asm        jmp    _T2ec;
-
 _T188:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _T2ec;
@@ -8757,7 +8561,6 @@ _T199:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    fromConnections, eax;
 	__asm        jmp    _T1ef;
-
 _T1bb:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax], 0;
@@ -8767,11 +8570,9 @@ _T1bb:
 	__asm        add    eax, 0xF40;
 	__asm        cmp    eax, [ebp-0x14];
 	__asm        jae    _T1e6;
-
 _T1da:
 	__asm        mov    fromConnections, 0;
 	__asm        jmp    _T1ef;
-
 _T1e6:
 	__asm        add    dword ptr [ebp-0x14], 8;
 	__asm        jmp    _T199;
@@ -8789,7 +8590,6 @@ _T1f6:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    toConnections, eax;
 	__asm        jmp    _T24c;
-
 _T218:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax], 0;
@@ -8799,11 +8599,9 @@ _T218:
 	__asm        add    eax, 0xF40;
 	__asm        cmp    eax, [ebp-0x18];
 	__asm        jae    _T243;
-
 _T237:
 	__asm        mov    toConnections, 0;
 	__asm        jmp    _T24c;
-
 _T243:
 	__asm        add    dword ptr [ebp-0x18], 8;
 	__asm        jmp    _T1f6;
@@ -8865,6 +8663,7 @@ _T2ec:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T2f3;
 // LINE 3791:
+_T2f3:
 }
 
 // FUNCTION: COPTER_D 0x00507782
@@ -8897,10 +8696,8 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T71;
-
 _T6c:
 	__asm        jmp    _T71;
-
 _T71:
 	__asm        jmp    near ptr 0x005077F8;
 
@@ -8916,7 +8713,6 @@ _T71:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Ta7;
-
 _Ta2:
 	__asm        jmp    _Ta7;
 // LINE 3819:
@@ -8950,7 +8746,6 @@ _Ta7:
 	__asm        sub    dword ptr [eax+0x2C], 0x1E0000;
 // LINE 3830:
 	__asm        jmp    _T176;
-
 _T100:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
@@ -8963,7 +8758,6 @@ _T100:
 	__asm        add    dword ptr [eax+0x2C], 0x1E0000;
 // LINE 3835:
 	__asm        jmp    _T176;
-
 _T129:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
@@ -8976,7 +8770,6 @@ _T129:
 	__asm        sub    dword ptr [eax+0x2C], 0xD0000;
 // LINE 3840:
 	__asm        jmp    _T176;
-
 _T152:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
@@ -9031,10 +8824,8 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T71;
-
 _T6c:
 	__asm        jmp    _T71;
-
 _T71:
 	__asm        jmp    near ptr 0x00507982;
 
@@ -9064,11 +8855,9 @@ _T71:
 	__asm        mov    cl, [eax+0xD3];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _Tdb;
-
 _Td0:
 	__asm        mov    tile, 0;
 	__asm        jmp    _T133;
-
 _Tdb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -9119,11 +8908,9 @@ _T133:
 	__asm        mov    cl, [eax+0xD5];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T192;
-
 _T187:
 	__asm        mov    ntile, 0;
 	__asm        jmp    _T1ea;
-
 _T192:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -9163,7 +8950,6 @@ _T1ea:
 	__asm        jmp    _T250;
 
 	__asm        jmp    _T246;
-
 _T20e:
 	__asm        cmp    dword ptr [ebp-0x50], 0x806B;
 	__asm        jg     _T327;
@@ -9180,7 +8966,6 @@ _T20e:
 	__asm        jmp    _T327;
 
 	__asm        jmp    _T327;
-
 _T246:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T327;
@@ -9211,11 +8996,9 @@ _T250:
 	__asm        and    cl, 0xFE;
 	__asm        cmp    cl, 0x80;
 	__asm        jb     _T2b7;
-
 _T2ac:
 	__asm        mov    ntile, 0;
 	__asm        jmp    _T327;
-
 _T2b7:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -9256,7 +9039,6 @@ _T327:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T352;
-
 _T34d:
 	__asm        jmp    _T352;
 // LINE 3885:
@@ -9321,7 +9103,6 @@ _T352:
 	__asm        jmp    _T439;
 
 	__asm        jmp    _T42f;
-
 _T3f7:
 	__asm        cmp    dword ptr [ebp-0x54], 0x806B;
 	__asm        jg     _T44c;
@@ -9338,7 +9119,6 @@ _T3f7:
 	__asm        jmp    _T44c;
 
 	__asm        jmp    _T44c;
-
 _T42f:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     _T44c;
@@ -9360,7 +9140,6 @@ _T45a:
 	__asm        mov    dword ptr [eax+0xCE], 8;
 // LINE 3912:
 	__asm        jmp    _T6a3;
-
 _T46c:
 	__asm        cmp    xdiff, 0;
 	__asm        jle    _T529;
@@ -9389,7 +9168,6 @@ _T46c:
 	__asm        jmp    _T4f6;
 
 	__asm        jmp    _T4ec;
-
 _T4b4:
 	__asm        cmp    dword ptr [ebp-0x58], 0x806B;
 	__asm        jg     _T509;
@@ -9406,7 +9184,6 @@ _T4b4:
 	__asm        jmp    _T509;
 
 	__asm        jmp    _T509;
-
 _T4ec:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     _T509;
@@ -9428,7 +9205,6 @@ _T517:
 	__asm        mov    dword ptr [eax+0xCE], 2;
 // LINE 3927:
 	__asm        jmp    _T6a3;
-
 _T529:
 	__asm        cmp    ydiff, 0;
 	__asm        jle    _T5e6;
@@ -9457,7 +9233,6 @@ _T529:
 	__asm        jmp    _T5b3;
 
 	__asm        jmp    _T5a9;
-
 _T571:
 	__asm        cmp    dword ptr [ebp-0x5C], 0x806B;
 	__asm        jg     _T5c6;
@@ -9474,7 +9249,6 @@ _T571:
 	__asm        jmp    _T5c6;
 
 	__asm        jmp    _T5c6;
-
 _T5a9:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     _T5c6;
@@ -9496,7 +9270,6 @@ _T5d4:
 	__asm        mov    dword ptr [eax+0xCE], 4;
 // LINE 3941:
 	__asm        jmp    _T6a3;
-
 _T5e6:
 	__asm        cmp    ydiff, 0;
 	__asm        jge    _T6a3;
@@ -9525,7 +9298,6 @@ _T5e6:
 	__asm        jmp    _T670;
 
 	__asm        jmp    _T666;
-
 _T62e:
 	__asm        cmp    dword ptr [ebp-0x60], 0x806B;
 	__asm        jg     _T683;
@@ -9542,7 +9314,6 @@ _T62e:
 	__asm        jmp    _T683;
 
 	__asm        jmp    _T683;
-
 _T666:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     _T683;
@@ -9578,7 +9349,6 @@ _T6aa:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    connectionType, eax;
 	__asm        jmp    _T700;
-
 _T6cc:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        cmp    dword ptr [eax], 0;
@@ -9588,11 +9358,9 @@ _T6cc:
 	__asm        add    eax, 0xF40;
 	__asm        cmp    eax, [ebp-0x48];
 	__asm        jae    _T6f7;
-
 _T6eb:
 	__asm        mov    connectionType, 0;
 	__asm        jmp    _T700;
-
 _T6f7:
 	__asm        add    dword ptr [ebp-0x48], 8;
 	__asm        jmp    _T6aa;
@@ -9650,7 +9418,6 @@ _T78a:
 	__asm        jmp    _T7fb;
 // LINE 3994:
 	__asm        jmp    _T7fb;
-
 _T7a0:
 	__asm        cmp    dword ptr [ebp-0x64], 0x6B;
 	__asm        jg     _T7dc;
@@ -9788,11 +9555,9 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    cl, [eax+1];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _Tdd;
-
 _Td2:
 	__asm        mov    currentTile, 0;
 	__asm        jmp    _T127;
-
 _Tdd:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9832,7 +9597,6 @@ _T127:
 	__asm        jmp    _T18d;
 
 	__asm        jmp    _T183;
-
 _T14b:
 	__asm        cmp    dword ptr [ebp-0x24], 0x806B;
 	__asm        jg     _T367;
@@ -9849,7 +9613,6 @@ _T14b:
 	__asm        jmp    _T367;
 
 	__asm        jmp    _T367;
-
 _T183:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T367;
@@ -9880,11 +9643,9 @@ _T18d:
 	__asm        and    cl, 0xFE;
 	__asm        cmp    cl, 0x80;
 	__asm        jb     _T1e6;
-
 _T1db:
 	__asm        mov    currentTile, 0;
 	__asm        jmp    _T248;
-
 _T1e6:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -10006,7 +9767,6 @@ _T31a:
 	__asm        jmp    _T367;
 // LINE 4099:
 	__asm        jmp    _T367;
-
 _T32f:
 	__asm        sub    dword ptr [ebp-0x28], 0x61;
 	__asm        cmp    dword ptr [ebp-0x28], 7;
@@ -10040,11 +9800,9 @@ _T367:
 	__asm        mov    cl, [eax+0xD7];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T3c6;
-
 _T3bb:
 	__asm        mov    northTile, 0;
 	__asm        jmp    _T41e;
-
 _T3c6:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10095,11 +9853,9 @@ _T41e:
 	__asm        mov    cl, [eax+0xD9];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T47d;
-
 _T472:
 	__asm        mov    southTile, 0;
 	__asm        jmp    _T4d5;
-
 _T47d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10150,11 +9906,9 @@ _T4d5:
 	__asm        mov    cl, [eax+0xDB];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T534;
-
 _T529:
 	__asm        mov    eastTile, 0;
 	__asm        jmp    _T58c;
-
 _T534:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10205,11 +9959,9 @@ _T58c:
 	__asm        mov    cl, [eax+0xDD];
 	__asm        cmp    ecx, 0x80;
 	__asm        jl     _T5eb;
-
 _T5e0:
 	__asm        mov    westTile, 0;
 	__asm        jmp    _T643;
-
 _T5eb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10268,11 +10020,9 @@ _T653:
 	__asm        and    cl, 0xFE;
 	__asm        cmp    cl, 0x80;
 	__asm        jb     _T6ba;
-
 _T6af:
 	__asm        mov    westTile, 0;
 	__asm        jmp    _T72a;
-
 _T6ba:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10307,7 +10057,6 @@ _T72a:
 	__asm        jmp    _T74d;
 // LINE 4118:
 	__asm        jmp    _T74d;
-
 _T734:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x6A;
 	__asm        jl     _T74d;
@@ -10364,7 +10113,6 @@ _T7a0:
 // LINE 4143:
 _T7be:
 	__asm        jmp    _T917;
-
 _T7c3:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
@@ -10410,7 +10158,6 @@ _T80f:
 // LINE 4159:
 _T82d:
 	__asm        jmp    _T917;
-
 _T832:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
@@ -10456,7 +10203,6 @@ _T87e:
 // LINE 4175:
 _T89c:
 	__asm        jmp    _T917;
-
 _T8a1:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
@@ -10527,6 +10273,7 @@ _T945:
 	__asm        mov    eax, intersection;
 	__asm        jmp    _T94d;
 // LINE 4217:
+_T94d:
 }
 
 // FUNCTION: COPTER_D 0x00508ad4
@@ -10641,12 +10388,10 @@ _T108:
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
-
 _T129:
 	__asm        jmp    _T156;
 // LINE 4309:
 	__asm        jmp    _T156;
-
 _T133:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _Te1;
@@ -10679,7 +10424,6 @@ _T168:
 // LINE 4324:
 _T189:
 	__asm        jmp    _T1e3;
-
 _T18e:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
 	__asm        ja     _T168;
@@ -10708,7 +10452,6 @@ void AutomobileClass::GoStraight() {
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4352:
 	__asm        jmp    _Td1;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
@@ -10720,7 +10463,6 @@ _T35:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4357:
 	__asm        jmp    _Td1;
-
 _T5e:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
@@ -10732,7 +10474,6 @@ _T5e:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4362:
 	__asm        jmp    _Td1;
-
 _T87:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
@@ -10772,7 +10513,6 @@ void AutomobileClass::TurnLeft() {
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4398:
 	__asm        jmp    _Td1;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
@@ -10784,7 +10524,6 @@ _T35:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4403:
 	__asm        jmp    _Td1;
-
 _T5e:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
@@ -10796,7 +10535,6 @@ _T5e:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4408:
 	__asm        jmp    _Td1;
-
 _T87:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
@@ -10836,7 +10574,6 @@ void AutomobileClass::TurnRight() {
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4446:
 	__asm        jmp    _Td1;
-
 _T35:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
@@ -10848,7 +10585,6 @@ _T35:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4452:
 	__asm        jmp    _Td1;
-
 _T5e:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
@@ -10860,7 +10596,6 @@ _T5e:
 	__asm        mov    [ecx+0xD4], ax;
 // LINE 4458:
 	__asm        jmp    _Td1;
-
 _T87:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
@@ -10996,7 +10731,6 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
-
 _T44:
 	__asm        inc    i;
 _T47:
@@ -11036,6 +10770,7 @@ _Tad:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tb7;
 // LINE 4567:
+_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x005090fb
@@ -11046,7 +10781,6 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 4580:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -11083,6 +10817,7 @@ _T74:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T7e;
 // LINE 4593:
+_T7e:
 }
 
 // FUNCTION: COPTER_D 0x0050917e
@@ -11571,10 +11306,8 @@ _T1d:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T375;
-
 _T370:
 	__asm        jmp    _T375;
-
 _T375:
 	__asm        jmp    near ptr 0x00509803;
 
@@ -11616,10 +11349,8 @@ _T39c:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3fb;
-
 _T3f6:
 	__asm        jmp    _T3fb;
-
 _T3fb:
 	__asm        jmp    near ptr 0x00509889;
 
@@ -11635,6 +11366,7 @@ _T3fb:
 // LINE 4727:
 _T41b:
 	__asm        jmp    _T420;
+_T420:
 }
 
 // FUNCTION: COPTER_D 0x005098b0
@@ -11693,6 +11425,7 @@ _T5c:
 // LINE 4759:
 _T91:
 	__asm        jmp    _T96;
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x0050994b
@@ -12098,7 +11831,6 @@ _T4c:
 // LINE 4943:
 	__asm        mov    count, 0;
 	__asm        jmp    _T80;
-
 _T7d:
 	__asm        inc    count;
 _T80:
@@ -12219,7 +11951,6 @@ _T19c:
 	__asm        jmp    _T29d;
 // LINE 4983:
 	__asm        jmp    _T29d;
-
 _T1ab:
 	__asm        sub    dword ptr [ebp-0x64], 0x7A;
 	__asm        cmp    dword ptr [ebp-0x64], 0xB2;

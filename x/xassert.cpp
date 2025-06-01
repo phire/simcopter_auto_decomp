@@ -72,7 +72,6 @@ _T7a:
 
 	__asm        cmp    answer, 3;
 	__asm        jne    _Tb1;
-
 _Tac:
 	__asm        call   abort;
 // LINE 70:

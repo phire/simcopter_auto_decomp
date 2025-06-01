@@ -126,7 +126,6 @@ _Td7:
 	__asm        add    ds:[0x6C131C], eax;
 // LINE 148:
 	__asm        jmp    _T238;
-
 _Tfe:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
 	__asm        jne    _T172;
@@ -160,7 +159,6 @@ _Tfe:
 	__asm        mov    ds:[0x6C1320], eax;
 // LINE 156:
 	__asm        jmp    _T238;
-
 _T172:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
 	__asm        jne    _T1f2;
@@ -421,6 +419,7 @@ _T452:
 	__asm        mov    eax, ds:[0x5B4E00];
 	__asm        add    ds:[0x6C131C], eax;
 // LINE 276:
+_T474:
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
@@ -434,7 +433,6 @@ void NormalizeGridPoint(struct Point3d* P) {
 	__asm        add    dword ptr [eax], 0x40000000;
 // LINE 286:
 	__asm        jmp    _T3b;
-
 _T23:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax], 0x10000000;
@@ -452,7 +450,6 @@ _T3b:
 	__asm        add    dword ptr [eax+8], 0x40000000;
 // LINE 291:
 	__asm        jmp    _T74;
-
 _T5a:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
@@ -461,6 +458,7 @@ _T5a:
 	__asm        mov    eax, P;
 	__asm        sub    dword ptr [eax+8], 0x40000000;
 // LINE 293:
+_T74:
 }
 
 // FUNCTION: COPTER_D 0x004f8fe2
@@ -661,6 +659,7 @@ _T24a:
 	__asm        and    eax, 0xFFFFFF00;
 	__asm        mov    ds:[0x6BF1A4], eax;
 // LINE 398:
+_T259:
 }
 
 // FUNCTION: COPTER_D 0x004f9240
@@ -964,6 +963,7 @@ _T2d7:
 	__asm        call   0x004D2034;
 	__asm        add    esp, 8;
 // LINE 520:
+_T2f7:
 }
 
 // FUNCTION: COPTER_D 0x004f955f
@@ -1196,7 +1196,6 @@ void S3CameraRotate() {
 // LINE 636:
 // Block end:
 	__asm        jmp    _T1a2;
-
 _T5c:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
 	__asm        jne    _Td6;
@@ -1207,7 +1206,6 @@ _T5c:
 	__asm        mov    eax, ds:[0x6BF194];
 	__asm        mov    alt, eax;
 	__asm        jmp    _T8b;
-
 _T83:
 	__asm        mov    eax, ds:[0x6BF194];
 	__asm        mov    alt, eax;
@@ -1235,7 +1233,6 @@ _T8b:
 	__asm        add    esp, 4;
 // LINE 656:
 	__asm        jmp    _T1a2;
-
 _Td6:
 	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
 	__asm        je     _T114;
@@ -1298,6 +1295,7 @@ _T139:
 	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 699:
+_T1a2:
 }
 
 // FUNCTION: COPTER_D 0x004f98dc
@@ -1388,7 +1386,6 @@ _Tc8:
 	__asm        jmp    _T137;
 // LINE 771:
 	__asm        jmp    _T137;
-
 _T107:
 	__asm        sub    dword ptr [ebp-4], 0x1B;
 	__asm        cmp    dword ptr [ebp-4], 5;
@@ -1398,6 +1395,7 @@ _T107:
 	__asm        jmp    dword ptr [eax*4+0x4F9A31];
 // Switch pointers
 // LINE 772:
+_T137:
 }
 
 // FUNCTION: COPTER_D 0x004f9a4e
@@ -1410,6 +1408,7 @@ void S3CameraCycleChase() {
 // LINE 784:
 	__asm        mov    dword ptr ds:[0x5B4DFC], 0;
 // LINE 785:
+_T23:
 }
 
 // FUNCTION: COPTER_D 0x004f9a76

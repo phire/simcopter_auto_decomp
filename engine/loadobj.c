@@ -213,7 +213,6 @@ _T113:
 // LINE 185:
 	__asm        mov    i, 0;
 	__asm        jmp    _T134;
-
 _T131:
 	__asm        inc    i;
 _T134:
@@ -286,6 +285,7 @@ _T1c7:
 	__asm        mov    eax, res;
 	__asm        jmp    _T1f4;
 // LINE 214:
+_T1f4:
 }
 
 // FUNCTION: COPTER_D 0x004d2379
@@ -299,7 +299,6 @@ void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
 // LINE 230:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1e;
-
 _T1b:
 	__asm        inc    i;
 _T1e:
@@ -319,6 +318,7 @@ _T1e:
 // LINE 232:
 	__asm        jmp    _T1b;
 // LINE 233:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x004d23c7
@@ -495,7 +495,6 @@ _T168:
 	__asm        mov    x, 0;
 	__asm        mov    VertCount, 0;
 	__asm        jmp    _T193;
-
 _T18d:
 	__asm        inc    x;
 _T193:
@@ -616,7 +615,6 @@ _T2a4:
 _T2e1:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2f6;
-
 _T2f0:
 	__asm        inc    y;
 _T2f6:
@@ -758,7 +756,6 @@ _T385:
 // LINE 633:
 _T4aa:
 	__asm        jmp    _T581;
-
 _T4af:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -789,7 +786,6 @@ _T4af:
 // LINE 639:
 _T50e:
 	__asm        jmp    _T581;
-
 _T513:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -884,7 +880,6 @@ _T602:
 	__asm        add    dataptr, eax;
 // LINE 691:
 	__asm        jmp    _T639;
-
 _T62f:
 	__asm        mov    eax, ObjectPtr;
 	__asm        mov    dword ptr [eax+0x34], 0;
@@ -933,6 +928,7 @@ _T6ae:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6b8;
 // LINE 711:
+_T6b8:
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
@@ -1060,7 +1056,6 @@ _T79:
 // LINE 813:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta6;
-
 _Ta3:
 	__asm        inc    i;
 _Ta6:
@@ -1091,7 +1086,6 @@ _Tdc:
 	__asm        mov    normaldir, 1;
 // LINE 825:
 	__asm        jmp    _T12d;
-
 _Tf8:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -1138,7 +1132,6 @@ _T12d:
 // LINE 845:
 	__asm        mov    j, 0;
 	__asm        jmp    _T175;
-
 _T172:
 	__asm        inc    j;
 _T175:
@@ -1475,7 +1468,6 @@ _T4e4:
 // LINE 964:
 _T4ed:
 	__asm        jmp    _T510;
-
 _T4f2:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
@@ -1656,6 +1648,7 @@ _T6b2:
 	__asm        mov    eax, altyupbelow;
 	__asm        jmp    _T6ba;
 // LINE 1067:
+_T6ba:
 }
 
 // FUNCTION: COPTER_D 0x004d31e7
@@ -1738,7 +1731,6 @@ _T79:
 // LINE 1125:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta6;
-
 _Ta3:
 	__asm        inc    i;
 _Ta6:
@@ -1769,7 +1761,6 @@ _Tdc:
 	__asm        mov    normaldir, 1;
 // LINE 1139:
 	__asm        jmp    _T143;
-
 _Tf8:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -1824,7 +1815,6 @@ _T143:
 // LINE 1167:
 	__asm        mov    j, 0;
 	__asm        jmp    _T18b;
-
 _T188:
 	__asm        inc    j;
 _T18b:
@@ -2208,7 +2198,6 @@ _T56f:
 // LINE 1306:
 _T578:
 	__asm        jmp    _T59b;
-
 _T57d:
 	__asm        mov    eax, y;
 	__asm        cmp    facealt, eax;
@@ -2389,6 +2378,7 @@ _T73b:
 	__asm        mov    eax, altyupbelow;
 	__asm        jmp    _T743;
 // LINE 1409:
+_T743:
 }
 
 // FUNCTION: COPTER_D 0x004d392f
@@ -2428,7 +2418,6 @@ _T20:
 // LINE 1443:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3f;
-
 _T3c:
 	__asm        inc    i;
 _T3f:
@@ -2488,7 +2477,6 @@ _Ta4:
 // LINE 1466:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te9;
-
 _Te6:
 	__asm        inc    j;
 _Te9:
@@ -2614,6 +2602,7 @@ _T207:
 	__asm        mov    eax, distz;
 	__asm        jmp    _T20f;
 // LINE 1511:
+_T20f:
 }
 
 // FUNCTION: COPTER_D 0x004d3b43
@@ -2653,7 +2642,6 @@ _T20:
 // LINE 1545:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3f;
-
 _T3c:
 	__asm        inc    i;
 _T3f:
@@ -2713,7 +2701,6 @@ _Ta2:
 // LINE 1568:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te7;
-
 _Te4:
 	__asm        inc    j;
 _Te7:
@@ -2839,6 +2826,7 @@ _T205:
 	__asm        mov    eax, distx;
 	__asm        jmp    _T20d;
 // LINE 1613:
+_T20d:
 }
 
 // FUNCTION: COPTER_D 0x004d3d55
@@ -2865,7 +2853,6 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 // LINE 1640:
 	__asm        mov    i, 0;
 	__asm        jmp    _T30;
-
 _T2d:
 	__asm        inc    i;
 _T30:
@@ -2934,6 +2921,7 @@ _Tbd:
 // LINE 1671:
 	__asm        jmp    _T2d;
 // LINE 1673:
+_Tca:
 }
 
 // FUNCTION: COPTER_D 0x004d3e24
@@ -2951,7 +2939,6 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    vert, eax;
 	__asm        jmp    _T2b;
-
 _T24:
 	__asm        inc    i;
 	__asm        add    vert, 0xC;
@@ -3008,7 +2995,6 @@ int32_t VRObjGetHeight(int32_t obj) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    vert, eax;
 	__asm        jmp    _T32;
-
 _T2b:
 	__asm        inc    i;
 	__asm        add    vert, 0xC;
@@ -3140,6 +3126,7 @@ _T2a:
 	__asm        mov    ecx, oh;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 1787:
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x004d3fea
@@ -3217,11 +3204,11 @@ struct _BSPtree* ReadTree() {
 	__asm        jmp    _Tf2;
 // LINE 1831:
 	__asm        jmp    _Tf2;
-
 _Teb:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tf2;
 // LINE 1833:
+_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x004d40e1
@@ -3252,7 +3239,6 @@ void NormalizeObj(struct ObjectHdr* obj) {
 // LINE 1851:
 	__asm        mov    i, 0;
 	__asm        jmp    _T43;
-
 _T40:
 	__asm        inc    i;
 _T43:
@@ -3322,7 +3308,6 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 // LINE 1882:
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
-
 _T21:
 	__asm        inc    i;
 _T24:
@@ -3351,7 +3336,6 @@ _T24:
 // LINE 1886:
 	__asm        mov    j, 0;
 	__asm        jmp    _T6e;
-
 _T6b:
 	__asm        inc    j;
 _T6e:
@@ -3369,7 +3353,6 @@ _T6e:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _Tce;
-
 _T9a:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
@@ -3472,6 +3455,7 @@ _T196:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1a0;
 // LINE 1923:
+_T1a0:
 }
 
 // FUNCTION: COPTER_D 0x004d4337
@@ -3501,7 +3485,6 @@ void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid
 // LINE 1946:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3b;
-
 _T38:
 	__asm        inc    i;
 _T3b:
@@ -3622,6 +3605,7 @@ _Teb:
 	__asm        mov    eax, mp;
 	__asm        jmp    _Tf3;
 // LINE 1997:
+_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x004d44bb
@@ -3845,7 +3829,6 @@ _T5d:
 // LINE 2116:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
-
 _T7b:
 	__asm        inc    i;
 _T7e:
@@ -3886,7 +3869,6 @@ _T7e:
 // LINE 2137:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te5;
-
 _Te2:
 	__asm        inc    j;
 _Te5:
@@ -3907,7 +3889,6 @@ _Te5:
 // LINE 2147:
 	__asm        mov    k, 0;
 	__asm        jmp    _T115;
-
 _T112:
 	__asm        inc    k;
 _T115:
@@ -4054,6 +4035,7 @@ _T23f:
 	__asm        neg    eax;
 	__asm        sub    ds:[0x59B530], eax;
 // LINE 2192:
+_T28b:
 }
 
 // FUNCTION: COPTER_D 0x004d494c
@@ -4179,7 +4161,6 @@ _T84:
 // LINE 2272:
 	__asm        mov    i, 0;
 	__asm        jmp    _T115;
-
 _T112:
 	__asm        inc    i;
 _T115:
@@ -4221,7 +4202,6 @@ _T14e:
 // LINE 2288:
 	__asm        mov    i, 0;
 	__asm        jmp    _T17a;
-
 _T177:
 	__asm        inc    i;
 _T17a:
@@ -4287,6 +4267,7 @@ _T205:
 	__asm        mov    eax, dataptr;
 	__asm        jmp    _T20d;
 // LINE 2314:
+_T20d:
 }
 
 // FUNCTION: COPTER_D 0x004d4b80
@@ -4391,7 +4372,6 @@ _T82:
 // LINE 2377:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10c;
-
 _T109:
 	__asm        inc    i;
 _T10c:
@@ -4431,7 +4411,6 @@ _T141:
 // LINE 2392:
 	__asm        mov    i, 0;
 	__asm        jmp    _T16d;
-
 _T16a:
 	__asm        inc    i;
 _T16d:
@@ -4490,6 +4469,7 @@ _T1e6:
 	__asm        mov    eax, dataptr;
 	__asm        jmp    _T1ee;
 // LINE 2417:
+_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x004d4d73
@@ -4602,7 +4582,6 @@ _T40:
 // LINE 2482:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb5;
-
 _Tb2:
 	__asm        inc    i;
 _Tb5:
@@ -4680,6 +4659,7 @@ _T159:
 	__asm        mov    eax, mem;
 	__asm        jmp    _T161;
 // LINE 2508:
+_T161:
 }
 
 // FUNCTION: COPTER_D 0x004d4f25
@@ -4731,7 +4711,6 @@ int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist,
 // LINE 2547:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5a;
-
 _T4f:
 	__asm        inc    i;
 	__asm        mov    eax, fh;
@@ -4918,7 +4897,6 @@ _T1a7:
 // LINE 2594:
 	__asm        mov    j, 0;
 	__asm        jmp    _T235;
-
 _T232:
 	__asm        inc    j;
 _T235:
@@ -5061,6 +5039,7 @@ _T387:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T391;
 // LINE 2637:
+_T391:
 }
 
 

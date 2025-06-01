@@ -127,7 +127,6 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    srch, eax;
 	__asm        jmp    _T1f;
-
 _T16:
 	__asm        mov    eax, srch;
 	__asm        mov    eax, [eax+4];
@@ -162,6 +161,7 @@ _T64:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6b;
 // LINE 49:
+_T6b:
 }
 
 // FUNCTION: COPTER_D 0x0055c36a
@@ -224,7 +224,6 @@ _T32:
 	long test;
 	__asm        mov    test, 1;
 	__asm        jmp    _T61;
-
 _T5e:
 	__asm        inc    test;
 _T61:
@@ -283,7 +282,6 @@ _Tad:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0xFFFFFFFF;
 	__asm        jne    _T121;
-
 _T11a:
 	__asm        mov    err, 0xFFFFFFCE;
 // LINE 85:
@@ -334,6 +332,7 @@ _T1b0:
 	__asm        mov    eax, err;
 	__asm        jmp    _T1b8;
 // LINE 108:
+_T1b8:
 }
 
 // FUNCTION: COPTER_D 0x0055c586
@@ -382,7 +381,6 @@ _T38:
 	__asm        mov    err, 0xFFFFFFCF;
 // LINE 133:
 	__asm        jmp    _Ta0;
-
 _T54:
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Exclusive;
@@ -401,7 +399,6 @@ _T54:
 	__asm        mov    err, 0xFFFFFFCE;
 // LINE 136:
 	__asm        jmp    _T94;
-
 _T8d:
 	__asm        mov    err, 0;
 // LINE 138:
@@ -464,11 +461,11 @@ _T29:
 	__asm        jmp    _T6e;
 // LINE 174:
 	__asm        jmp    _T6e;
-
 _T67:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6e;
 // LINE 176:
+_T6e:
 }
 
 // FUNCTION: COPTER_D 0x0055c711
@@ -499,11 +496,11 @@ _T29:
 	__asm        jmp    _T5f;
 // LINE 186:
 	__asm        jmp    _T5f;
-
 _T58:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T5f;
 // LINE 188:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x0055c777
@@ -534,11 +531,11 @@ _T29:
 	__asm        jmp    _T5f;
 // LINE 198:
 	__asm        jmp    _T5f;
-
 _T58:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T5f;
 // LINE 200:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x0055c7dd
@@ -552,11 +549,11 @@ unsigned short FlatFile::ValidFile() {
 	__asm        jmp    _T32;
 // LINE 222:
 	__asm        jmp    _T32;
-
 _T29:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T32;
 // LINE 223:
+_T32:
 }
 
 // FUNCTION: COPTER_D 0x0055c814
@@ -587,6 +584,7 @@ _T57:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T5f;
 // LINE 239:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x0055c87a
@@ -725,6 +723,7 @@ _T4f:
 	__asm        add    esp, 0x10;
 // LINE 281:
 	__asm        jmp    _T70;
+_T70:
 }
 
 // FUNCTION: COPTER_D 0x0055c9e3
@@ -765,6 +764,7 @@ _T57:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T60;
 // LINE 292:
+_T60:
 }
 
 // FUNCTION: COPTER_D 0x0055ca48
@@ -799,7 +799,6 @@ short FlatFile::CheckForLeaks() {
 	__asm        mov    eax, ds:[0x5BDDD8];
 	__asm        mov    list, eax;
 	__asm        jmp    _T25;
-
 _T1c:
 	__asm        mov    eax, list;
 	__asm        mov    eax, [eax+4];

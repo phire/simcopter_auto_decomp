@@ -314,7 +314,6 @@ _T49:
 	__asm        add    eax, 2;
 	__asm        mov    str, eax;
 	__asm        jmp    _T66;
-
 _T62:
 	__asm        dec    cnt;
 _T66:
@@ -333,6 +332,7 @@ _T83:
 	__asm        mov    eax, str;
 	__asm        jmp    _T8b;
 // LINE 77:
+_T8b:
 }
 
 

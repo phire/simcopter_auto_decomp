@@ -441,7 +441,6 @@ _T40:
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
 	__asm        jmp    _T40;
-
 _T5a:
 	__asm        jmp    near ptr 0x0047DF5D;
 
@@ -460,7 +459,6 @@ _T7d:
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 	__asm        add    dword ptr [ebp-0x10], 0x27C;
 	__asm        jmp    _T7d;
-
 _T9a:
 	__asm        jmp    near ptr 0x0047DF9D;
 
@@ -593,7 +591,6 @@ _T46:
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        jmp    _T46;
-
 _T63:
 	__asm        jmp    near ptr 0x0047E191;
 
@@ -633,7 +630,6 @@ int32_t CareerWindow::Initialize() {
 	__asm        mov    eax, [ebp-0x298];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T85;
-
 _T7e:
 	__asm        mov    sText.reference, 0;
 _T85:
@@ -679,7 +675,6 @@ _T85:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow1, eax;
 	__asm        jmp    _T140;
-
 _T136:
 	__asm        mov    tempButtonWindow1, 0;
 // LINE 116:
@@ -739,7 +734,6 @@ _T140:
 	__asm        jmp    near ptr 0x0047E395;
 
 	__asm        jmp    _T390;
-
 _T1fc:
 	__asm        jmp    near ptr 0x0047E39F;
 
@@ -765,7 +759,6 @@ _T1fc:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T25b;
-
 _T25b:
 	__asm        jmp    near ptr 0x0047E3FE;
 
@@ -782,7 +775,6 @@ _T25b:
 	__asm        mov    ecx, [ebp-0x12C8];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T336;
-
 _T291:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -799,7 +791,6 @@ _T291:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x12B0], eax;
 	__asm        jmp    _T2dc;
-
 _T2d2:
 	__asm        mov    dword ptr [ebp-0x12B0], 0;
 _T2dc:
@@ -820,14 +811,12 @@ _T2dc:
 	__asm        mov    ecx, [ebp-0x12C0];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T323;
-
 _T323:
 	__asm        jmp    near ptr 0x0047E4C6;
 
 	__asm        mov    eax, [ebp-0x12B0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T375;
-
 _T336:
 	__asm        cmp    dword ptr [ebp-0x12C8], 0;
 	__asm        je     _T375;
@@ -846,7 +835,6 @@ _T336:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T375;
-
 _T375:
 	__asm        mov    eax, [ebp-0x12C8];
 	__asm        mov    ecx, sText.reference;
@@ -906,7 +894,6 @@ _T390:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow2, eax;
 	__asm        jmp    _T465;
-
 _T45b:
 	__asm        mov    tempButtonWindow2, 0;
 // LINE 125:
@@ -966,7 +953,6 @@ _T465:
 	__asm        jmp    near ptr 0x0047E6BA;
 
 	__asm        jmp    _T6b5;
-
 _T521:
 	__asm        jmp    near ptr 0x0047E6C4;
 
@@ -992,7 +978,6 @@ _T521:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T580;
-
 _T580:
 	__asm        jmp    near ptr 0x0047E723;
 
@@ -1009,7 +994,6 @@ _T580:
 	__asm        mov    ecx, [ebp-0x22E8];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T65b;
-
 _T5b6:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1026,7 +1010,6 @@ _T5b6:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x22D0], eax;
 	__asm        jmp    _T601;
-
 _T5f7:
 	__asm        mov    dword ptr [ebp-0x22D0], 0;
 _T601:
@@ -1047,14 +1030,12 @@ _T601:
 	__asm        mov    ecx, [ebp-0x22E0];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T648;
-
 _T648:
 	__asm        jmp    near ptr 0x0047E7EB;
 
 	__asm        mov    eax, [ebp-0x22D0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T69a;
-
 _T65b:
 	__asm        cmp    dword ptr [ebp-0x22E8], 0;
 	__asm        je     _T69a;
@@ -1073,7 +1054,6 @@ _T65b:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T69a;
-
 _T69a:
 	__asm        mov    eax, [ebp-0x22E8];
 	__asm        mov    ecx, sText.reference;
@@ -1139,7 +1119,6 @@ _T6fe:
 	__asm        call   SoundButtonWindow::SoundButtonWindow;
 	__asm        mov    tempButtonWindow1, eax;
 	__asm        jmp    _T78f;
-
 _T785:
 	__asm        mov    tempButtonWindow1, 0;
 // LINE 135:
@@ -1199,7 +1178,6 @@ _T78f:
 	__asm        jmp    near ptr 0x0047E9E4;
 
 	__asm        jmp    _T99b;
-
 _T84b:
 	__asm        jmp    near ptr 0x0047E9EE;
 
@@ -1225,7 +1203,6 @@ _T84b:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T8aa;
-
 _T8aa:
 	__asm        jmp    near ptr 0x0047EA4D;
 
@@ -1242,7 +1219,6 @@ _T8aa:
 	__asm        mov    ecx, [ebp-0x3300];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T941;
-
 _T8e0:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1259,7 +1235,6 @@ _T8e0:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x32F0], eax;
 	__asm        jmp    _T92b;
-
 _T921:
 	__asm        mov    dword ptr [ebp-0x32F0], 0;
 _T92b:
@@ -1268,7 +1243,6 @@ _T92b:
 	__asm        mov    eax, [ebp-0x32F0];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T980;
-
 _T941:
 	__asm        cmp    dword ptr [ebp-0x3300], 0;
 	__asm        je     _T980;
@@ -1287,7 +1261,6 @@ _T941:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T980;
-
 _T980:
 	__asm        mov    eax, [ebp-0x3300];
 	__asm        mov    ecx, sText.reference;
@@ -1381,7 +1354,6 @@ _T9df:
 	__asm        jmp    near ptr 0x0047EC4A;
 
 	__asm        jmp    _Tc01;
-
 _Tab1:
 	__asm        jmp    near ptr 0x0047EC54;
 
@@ -1407,7 +1379,6 @@ _Tab1:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb10;
-
 _Tb10:
 	__asm        jmp    near ptr 0x0047ECB3;
 
@@ -1424,7 +1395,6 @@ _Tb10:
 	__asm        mov    ecx, [ebp-0x4318];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _Tba7;
-
 _Tb46:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1441,7 +1411,6 @@ _Tb46:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x4308], eax;
 	__asm        jmp    _Tb91;
-
 _Tb87:
 	__asm        mov    dword ptr [ebp-0x4308], 0;
 _Tb91:
@@ -1450,7 +1419,6 @@ _Tb91:
 	__asm        mov    eax, [ebp-0x4308];
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _Tbe6;
-
 _Tba7:
 	__asm        cmp    dword ptr [ebp-0x4318], 0;
 	__asm        je     _Tbe6;
@@ -1469,7 +1437,6 @@ _Tba7:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tbe6;
-
 _Tbe6:
 	__asm        mov    eax, [ebp-0x4318];
 	__asm        mov    ecx, sText.reference;
@@ -1510,7 +1477,6 @@ _Tc01:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x834], eax;
 	__asm        jmp    _Tc97;
-
 _Tc87:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x834], 0;
@@ -1618,7 +1584,6 @@ _Tc97:
 	__asm        jmp    near ptr 0x0047EFB8;
 
 	__asm        jmp    _Te4d;
-
 _Te1f:
 	__asm        jmp    near ptr 0x0047EFC2;
 
@@ -1665,7 +1630,6 @@ _Te4d:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x838], eax;
 	__asm        jmp    _Tee3;
-
 _Ted3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x838], 0;
@@ -1856,7 +1820,6 @@ _Tee3:
 	__asm        jmp    near ptr 0x0047F344;
 
 	__asm        jmp    _T11ab;
-
 _T11ab:
 	__asm        jmp    near ptr 0x0047F34E;
 
@@ -1907,7 +1870,6 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    _T63;
-
 _T5c:
 	__asm        mov    sImageFile.reference, 0;
 _T63:
@@ -1936,7 +1898,6 @@ _T63:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    _Tc6;
-
 _Tbf:
 	__asm        mov    sImagePath.reference, 0;
 _Tc6:
@@ -2025,11 +1986,9 @@ _T16e:
 	__asm        jmp    _T1cd;
 
 	__asm        jmp    _T1cd;
-
 _T1c1:
 	__asm        mov    dword ptr [ebp-0x6C], 0;
 	__asm        jmp    _T1cd;
-
 _T1cd:
 	__asm        mov    eax, sImagePath.reference;
 	__asm        mov    eax, [eax+4];
@@ -2045,7 +2004,6 @@ _T1cd:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1f5;
-
 _T1f5:
 	__asm        jmp    near ptr 0x0047F58B;
 
@@ -2075,7 +2033,6 @@ _T1f5:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x83C], eax;
 	__asm        jmp    _T255;
-
 _T248:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x83C], 0;
@@ -2124,7 +2081,6 @@ _T2bf:
 	__asm        jmp    near ptr 0x0047F66B;
 
 	__asm        jmp    _T2df;
-
 _T2df:
 	__asm        jmp    near ptr 0x0047F675;
 
@@ -2184,7 +2140,6 @@ _T36e:
 	__asm        jmp    near ptr 0x0047F71A;
 
 	__asm        jmp    _T38e;
-
 _T38e:
 	__asm        jmp    near ptr 0x0047F724;
 
@@ -2251,7 +2206,6 @@ int32_t CareerWindow::DrawSelf() {
 // LINE 241:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -2344,7 +2298,6 @@ _T28:
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x130], 8;
 	__asm        jmp    _T28;
-
 _T4b:
 	__asm        jmp    near ptr 0x0047F8FB;
 
@@ -2360,7 +2313,6 @@ _T66:
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x138], 0x10;
 	__asm        jmp    _T66;
-
 _T89:
 	__asm        jmp    near ptr 0x0047F939;
 // LINE 261:
@@ -2373,7 +2325,6 @@ _T89:
 // LINE 262:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tbc;
-
 _Tb6:
 	__asm        inc    i;
 _Tbc:
@@ -2382,7 +2333,6 @@ _Tbc:
 // LINE 263:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tde;
-
 _Td8:
 	__asm        inc    j;
 _Tde:
@@ -2512,7 +2462,6 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 // LINE 299:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -2558,10 +2507,8 @@ _T1b:
 	__asm        jle    _Ta6;
 
 	__asm        jmp    _Tab;
-
 _Ta6:
 	__asm        jmp    _T11d;
-
 _Tab:
 	__asm        jmp    _Tba;
 
@@ -2614,6 +2561,7 @@ _T122:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T12c;
 // LINE 314:
+_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0047fc47
@@ -2623,7 +2571,6 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 324:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    i;
 _T1b:
@@ -2669,10 +2616,8 @@ _T1b:
 	__asm        jle    _Ta6;
 
 	__asm        jmp    _Tab;
-
 _Ta6:
 	__asm        jmp    _Td0;
-
 _Tab:
 	__asm        jmp    _Tba;
 
@@ -2695,6 +2640,7 @@ _Td5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tdf;
 // LINE 331:
+_Tdf:
 }
 
 // FUNCTION: COPTER_D 0x0047fd2d
@@ -2755,7 +2701,6 @@ _T8f:
 	__asm        jmp    _Tbe;
 // LINE 349:
 	__asm        jmp    _Tb7;
-
 _T9e:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        je     _T17;
@@ -2769,6 +2714,7 @@ _Tb7:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tbe;
 // LINE 352:
+_Tbe:
 }
 
 // FUNCTION: COPTER_D 0x0047fdf2
@@ -2864,6 +2810,7 @@ _T126:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T130;
 // LINE 371:
+_T130:
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
@@ -2977,7 +2924,6 @@ _T4f:
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0xC8], 0x10;
 	__asm        jmp    _T4f;
-
 _T72:
 	__asm        jmp    near ptr 0x004800A9;
 
@@ -3073,7 +3019,6 @@ _T72:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 409:
 	__asm        jmp    _T459;
-
 _T1c8:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -3255,7 +3200,6 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDes
 // LINE 427:
 	__asm        mov    nN, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    nN;
 _T1b:
@@ -3289,7 +3233,6 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 // LINE 435:
 	__asm        mov    nN, 0;
 	__asm        jmp    _T1b;
-
 _T18:
 	__asm        inc    nN;
 _T1b:

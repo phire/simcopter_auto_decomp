@@ -57,6 +57,7 @@ _T5d:
 	__asm        mov    eax, res;
 	__asm        jmp    _T82;
 // LINE 99:
+_T82:
 }
 
 // FUNCTION: COPTER_D 0x004d2157

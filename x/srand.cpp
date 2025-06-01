@@ -178,7 +178,6 @@ unsigned short GetNextRandomNumber() {
 	__asm        mov    temp, ax;
 // LINE 111:
 	__asm        jmp    _T39;
-
 _T34:
 	__asm        shl    temp, 1;
 // LINE 113:
@@ -325,6 +324,7 @@ _T50:
 	__asm        mov    ax, x;
 	__asm        jmp    _T59;
 // LINE 141:
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x0055d882
@@ -361,6 +361,7 @@ _T50:
 	__asm        mov    ax, x;
 	__asm        jmp    _T59;
 // LINE 156:
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x0055d8e0

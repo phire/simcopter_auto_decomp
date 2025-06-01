@@ -134,7 +134,6 @@ _T4b:
 // LINE 104:
 	__asm        mov    y, 0;
 	__asm        jmp    _Tf6;
-
 _Tf3:
 	__asm        inc    y;
 _Tf6:
@@ -181,7 +180,6 @@ _T121:
 // LINE 114:
 	__asm        mov    y, 0;
 	__asm        jmp    _T171;
-
 _T16e:
 	__asm        inc    y;
 _T171:
@@ -219,6 +217,7 @@ _T1bf:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 127:
+_T1e3:
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
@@ -377,6 +376,7 @@ _T1b1:
 	__asm        and    eax, 0xFFFF;
 	__asm        jmp    _T1d7;
 // LINE 158:
+_T1d7:
 }
 
 

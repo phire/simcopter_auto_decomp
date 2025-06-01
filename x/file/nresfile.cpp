@@ -171,7 +171,6 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        mov    eax, [eax];
 	__asm        mov    i.fCur, eax;
 	__asm        jmp    _T35;
-
 _T2e:
 	__asm        mov    i.fCur, 0;
 _T35:
@@ -180,7 +179,6 @@ _T35:
 	__asm        jmp    near ptr 0x00499F2F;
 // LINE 14:
 	__asm        jmp    _T5c;
-
 _T44:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T57;
@@ -190,7 +188,6 @@ _T44:
 	__asm        mov    i.fCur, eax;
 _T57:
 	__asm        jmp    _T5c;
-
 _T5c:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T7c;
@@ -202,12 +199,10 @@ _T5c:
 	__asm        jmp    _T90;
 
 	__asm        jmp    _T86;
-
 _T7c:
 	__asm        jmp    _Tf9;
 
 	__asm        jmp    _T90;
-
 _T86:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     _Tf9;
@@ -222,11 +217,9 @@ _T90:
 	__asm        jmp    _Tb8;
 
 	__asm        jmp    _Tb8;
-
 _Tac:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    _Tb8;
-
 _Tb8:
 	__asm        jmp    near ptr 0x00499FAD;
 
@@ -243,11 +236,9 @@ _Tb8:
 	__asm        jmp    _Tef;
 
 	__asm        jmp    _Tec;
-
 _Te5:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tef;
-
 _Tec:
 	__asm        mov    eax, [ebp-0x1C];
 _Tef:
@@ -284,7 +275,6 @@ _Tf9:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T154;
-
 _T14b:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax], 0;
@@ -303,7 +293,6 @@ _T154:
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T17f;
-
 _T17c:
 	__asm        dec    dword ptr [ebp-0x20];
 _T17f:
@@ -355,7 +344,6 @@ _T17f:
 	__asm        jmp    near ptr 0x0049A0F8;
 
 	__asm        jmp    _T234;
-
 _T20d:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
@@ -369,7 +357,6 @@ _T20d:
 	__asm        mov    dword ptr [eax+ecx*4], 0;
 _T234:
 	__asm        jmp    _T17c;
-
 _T239:
 	__asm        jmp    near ptr 0x0049A12E;
 
@@ -378,7 +365,6 @@ _T239:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    loader, eax;
 	__asm        jmp    _T255;
-
 _T24e:
 	__asm        mov    loader, 0;
 // LINE 21:
@@ -390,7 +376,6 @@ _T255:
 	__asm        mov    eax, [eax+0x11A];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T279;
-
 _T270:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+4];
@@ -405,10 +390,8 @@ _T279:
 	__asm        jne    _T296;
 
 	__asm        jmp    _T2b2;
-
 _T296:
 	__asm        jmp    _T270;
-
 _T29b:
 	__asm        jmp    _T2b7;
 
@@ -416,10 +399,8 @@ _T29b:
 
 	__asm        test   dword ptr [ebp-0x34], 0xFFFF;
 	__asm        je     _T2b7;
-
 _T2b2:
 	__asm        jmp    _T2f6;
-
 _T2b7:
 	__asm        push   8;
 	__asm        call   operator new;
@@ -443,6 +424,7 @@ _T2f6:
 	__asm        mov    eax, loader;
 	__asm        jmp    _T2fe;
 // LINE 23:
+_T2fe:
 }
 
 // FUNCTION: COPTER_D 0x0049a1f5
@@ -463,7 +445,6 @@ void NResFile::~NResFile() {
 	__asm        mov    eax, [eax];
 	__asm        mov    i.fCur, eax;
 	__asm        jmp    _T3e;
-
 _T37:
 	__asm        mov    i.fCur, 0;
 _T3e:
@@ -472,7 +453,6 @@ _T3e:
 	__asm        jmp    near ptr 0x0049A23D;
 // LINE 32:
 	__asm        jmp    _T65;
-
 _T4d:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T60;
@@ -482,7 +462,6 @@ _T4d:
 	__asm        mov    i.fCur, eax;
 _T60:
 	__asm        jmp    _T65;
-
 _T65:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T85;
@@ -494,12 +473,10 @@ _T65:
 	__asm        jmp    _T99;
 
 	__asm        jmp    _T8f;
-
 _T85:
 	__asm        jmp    _T14d;
 
 	__asm        jmp    _T99;
-
 _T8f:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T14d;
@@ -514,11 +491,9 @@ _T99:
 	__asm        jmp    _Tc1;
 
 	__asm        jmp    _Tc1;
-
 _Tb5:
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    _Tc1;
-
 _Tc1:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
@@ -532,7 +507,6 @@ _Tc1:
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _Te7;
-
 _Te4:
 	__asm        dec    dword ptr [ebp-0x18];
 _Te7:
@@ -549,7 +523,6 @@ _Te7:
 	__asm        mov    ecx, [eax+8];
 	__asm        call   FlatResFile::Release;
 	__asm        jmp    _Te4;
-
 _T112:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
@@ -575,7 +548,6 @@ _T148:
 // LINE 35:
 _T14d:
 	__asm        jmp    _T152;
-
 _T152:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 0;
@@ -612,7 +584,6 @@ _T152:
 	__asm        add    esp, 0x10;
 _T1d0:
 	__asm        jmp    _T152;
-
 _T1d5:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x11E];

@@ -789,6 +789,7 @@ _T39b:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T3c7;
 // LINE 230:
+_T3c7:
 }
 
 // FUNCTION: COPTER_D 0x0049ea6a
@@ -1133,6 +1134,7 @@ _T2ac:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T2b6;
 // LINE 350:
+_T2b6:
 }
 
 // FUNCTION: COPTER_D 0x0049ee15
@@ -1315,6 +1317,7 @@ _T1d9:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1e3;
 // LINE 409:
+_T1e3:
 }
 
 // FUNCTION: COPTER_D 0x0049efff
@@ -1410,6 +1413,7 @@ _T72:
 // LINE 455:
 _Tb0:
 	__asm        jmp    _Tb5;
+_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x0049f0fa
@@ -1460,7 +1464,6 @@ _T8f:
 _T94:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta3;
-
 _Ta0:
 	__asm        inc    i;
 _Ta3:
@@ -1499,7 +1502,6 @@ _Ta3:
 _T107:
 	__asm        mov    i, 0xA;
 	__asm        jmp    _T116;
-
 _T113:
 	__asm        inc    i;
 _T116:
@@ -1673,7 +1675,6 @@ _T30c:
 _L40603:
 	__asm        mov    eax, 0x595C58;
 	__asm        jmp    near ptr 0x0056F590;
-
 _T320:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -1900,6 +1901,7 @@ _T210:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T217;
 // LINE 711:
+_T217:
 }
 
 // FUNCTION: COPTER_D 0x0049f690

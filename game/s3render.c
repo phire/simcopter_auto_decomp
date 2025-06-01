@@ -254,7 +254,6 @@ _T29c:
 // LINE 340:
 	__asm        mov    j, 0;
 	__asm        jmp    _T2db;
-
 _T2d5:
 	__asm        inc    j;
 _T2db:
@@ -309,7 +308,6 @@ _T373:
 // LINE 350:
 	__asm        mov    j, 0;
 	__asm        jmp    _T39c;
-
 _T396:
 	__asm        inc    j;
 _T39c:
@@ -364,7 +362,6 @@ _T434:
 // LINE 361:
 	__asm        mov    j, 0;
 	__asm        jmp    _T45d;
-
 _T457:
 	__asm        inc    j;
 _T45d:
@@ -581,7 +578,6 @@ _T531:
 // LINE 439:
 	__asm        mov    instanceID, 0;
 	__asm        jmp    _T736;
-
 _T730:
 	__asm        inc    instanceID;
 _T736:
@@ -606,7 +602,6 @@ _T764:
 	__asm        mov    totalVehicles, eax;
 // LINE 446:
 	__asm        jmp    _T77e;
-
 _T778:
 	__asm        inc    instanceID;
 _T77e:
@@ -632,7 +627,6 @@ _T7b1:
 	__asm        mov    totalVehicles, eax;
 // LINE 453:
 	__asm        jmp    _T7cb;
-
 _T7c5:
 	__asm        inc    instanceID;
 _T7cb:
@@ -658,7 +652,6 @@ _T7fe:
 	__asm        mov    totalVehicles, eax;
 // LINE 460:
 	__asm        jmp    _T818;
-
 _T812:
 	__asm        inc    instanceID;
 _T818:
@@ -686,7 +679,6 @@ _T84b:
 	__asm        mov    totalVehicles, eax;
 // LINE 469:
 	__asm        jmp    _T86f;
-
 _T869:
 	__asm        inc    instanceID;
 _T86f:
@@ -709,7 +701,6 @@ _T89d:
 _T8a2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8b7;
-
 _T8b1:
 	__asm        inc    i;
 _T8b7:
@@ -726,7 +717,6 @@ _T8b7:
 _T8d8:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8ed;
-
 _T8e7:
 	__asm        inc    i;
 _T8ed:
@@ -743,7 +733,6 @@ _T8ed:
 _T90e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T923;
-
 _T91d:
 	__asm        inc    i;
 _T923:
@@ -919,7 +908,6 @@ _T1a0:
 // LINE 648:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b7;
-
 _T1b4:
 	__asm        inc    i;
 _T1b7:

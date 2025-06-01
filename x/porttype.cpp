@@ -166,6 +166,7 @@ _T3b:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(textSize.cx);
 	__asm        jmp    _T44;
 // LINE 41:
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x00566b13
@@ -694,6 +695,7 @@ _T38:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T41;
 // LINE 199:
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x005670a9
@@ -756,17 +758,16 @@ unsigned short PtInRect(struct Point p, struct Rect* r) {
 	__asm        movsx  ecx, p.v;
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T5e;
-
 _T51:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T67;
 // LINE 212:
 	__asm        jmp    _T67;
-
 _T5e:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T67;
 // LINE 213:
+_T67:
 }
 
 // FUNCTION: COPTER_D 0x00567173
@@ -785,7 +786,6 @@ unsigned short EmptyRect(struct Rect* r) {
 	__asm        movsx  ecx, word ptr [ecx+6];
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T3a;
-
 _T31:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T42;
@@ -794,6 +794,7 @@ _T3a:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T42;
 // LINE 219:
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x005671ba

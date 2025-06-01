@@ -128,7 +128,6 @@ int  CGameApp::CanWeSwitchToWindowedMode() {
 
 	__asm        mov    eax, 1;
 	__asm        jmp    _T4e;
-
 _T4c:
 	__asm        xor    eax, eax;
 _T4e:
@@ -288,6 +287,7 @@ _Tf8:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T173;
 // LINE 100:
+_T173:
 }
 
 // FUNCTION: COPTER_D 0x004326cb
@@ -434,6 +434,7 @@ _Tf8:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T173;
 // LINE 156:
+_T173:
 }
 
 // FUNCTION: COPTER_D 0x00432843
@@ -501,6 +502,7 @@ _T2e:
 	__asm        call   dword ptr [eax+0x50];
 	__asm        jmp    _T3e;
 // LINE 203:
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00432900
@@ -554,7 +556,6 @@ int  CGameApp::CreateDisplaySurfaces() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x34], eax;
 	__asm        jmp    _T8f;
-
 _T85:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x34], 0;
@@ -584,7 +585,6 @@ _T8f:
 	__asm        jmp    near ptr 0x004329E0;
 // LINE 228:
 	__asm        jmp    _T146;
-
 _Te5:
 	__asm        cmp    dword ptr ds:[0x598F00], 2;
 	__asm        jne    _T118;
@@ -596,7 +596,6 @@ _Te5:
 	__asm        jmp    near ptr 0x00432A13;
 // LINE 230:
 	__asm        jmp    _T146;
-
 _T118:
 	__asm        cmp    dword ptr ds:[0x598F00], 3;
 	__asm        jne    _T146;
@@ -622,7 +621,6 @@ _T146:
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T17c;
-
 _T175:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 _T17c:
@@ -640,7 +638,6 @@ _T17c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    _T1ac;
-
 _T1a2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x38], 0;
@@ -702,7 +699,6 @@ _T3c:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T6f;
-
 _T6a:
 	__asm        jmp    _T6f;
 // LINE 253:
@@ -792,19 +788,15 @@ _T4a:
 	__asm        jmp    _T90;
 
 	__asm        jmp    _T7c;
-
 _T7c:
 	__asm        jmp    _T8b;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    _T90;
-
 _T8b:
 	__asm        jmp    _T95;
-
 _T90:
 	__asm        jmp    _T107;
-
 _T95:
 	__asm        jmp    _Ta4;
 
@@ -830,7 +822,6 @@ _Tbd:
 	__asm        jmp    _Te4;
 // LINE 297:
 	__asm        jmp    _Te4;
-
 _Td5:
 	__asm        cmp    dword ptr [ebp-0x2C], 6;
 	__asm        je     _Tbd;
@@ -920,19 +911,15 @@ _T89:
 	__asm        jmp    _Tcf;
 
 	__asm        jmp    _Tbb;
-
 _Tbb:
 	__asm        jmp    _Tca;
 
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _Tcf;
-
 _Tca:
 	__asm        jmp    _Td4;
-
 _Tcf:
 	__asm        jmp    _T146;
-
 _Td4:
 	__asm        jmp    _Te3;
 
@@ -958,7 +945,6 @@ _Tfc:
 	__asm        jmp    _T123;
 // LINE 340:
 	__asm        jmp    _T123;
-
 _T114:
 	__asm        cmp    dword ptr [ebp-0x34], 6;
 	__asm        je     _Tfc;
@@ -1019,7 +1005,6 @@ void  CGameApp::PaletteInitialize() {
 	__asm        call   GameModeMainMenuData::UsePalette;
 // LINE 364:
 	__asm        jmp    _T2a9;
-
 _T68:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1052,7 +1037,6 @@ _T68:
 	__asm        call   GameModePickCareerCityData::UsePalette;
 // LINE 368:
 	__asm        jmp    _T2a9;
-
 _Tc4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1085,7 +1069,6 @@ _Tc4:
 	__asm        call   GameModePlayData::UsePalette;
 // LINE 372:
 	__asm        jmp    _T2a9;
-
 _T126:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1118,7 +1101,6 @@ _T126:
 	__asm        call   GameModeHangarData::UsePalette;
 // LINE 376:
 	__asm        jmp    _T2a9;
-
 _T188:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1151,7 +1133,6 @@ _T188:
 	__asm        call   GameModeCatalogData::UsePalette;
 // LINE 380:
 	__asm        jmp    _T2a9;
-
 _T1ea:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1184,7 +1165,6 @@ _T1ea:
 	__asm        call   GameModeMissionLogData::UsePalette;
 // LINE 384:
 	__asm        jmp    _T2a9;
-
 _T24c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];

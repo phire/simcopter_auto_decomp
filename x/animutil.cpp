@@ -194,6 +194,7 @@ _T25:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T6c;
 // LINE 64:
+_T6c:
 }
 
 // FUNCTION: COPTER_D 0x00562766
@@ -248,6 +249,7 @@ _T62:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T97;
 // LINE 73:
+_T97:
 }
 
 // FUNCTION: COPTER_D 0x00562802
@@ -750,7 +752,6 @@ float my_acos(float x, float rad) {
 	__asm        mov    eax, rad;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T30;
-
 _T28:
 	__asm        fld    rad;
 	__asm        fchs;
@@ -771,7 +772,6 @@ _T30:
 	__asm        mov    eax, x;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T6b;
-
 _T63:
 	__asm        fld    x;
 	__asm        fchs;
@@ -794,7 +794,6 @@ _T9b:
 	__asm        mov    res, 0;
 // LINE 197:
 	__asm        jmp    _T104;
-
 _Ta7:
 	__asm        fld    x;
 	__asm        fdiv   rad;
@@ -806,7 +805,6 @@ _Ta7:
 	__asm        mov    res, 0;
 // LINE 199:
 	__asm        jmp    _T104;
-
 _Tca:
 	__asm        fld    x;
 	__asm        fdiv   rad;

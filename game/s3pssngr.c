@@ -100,7 +100,6 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 // LINE 76:
 	__asm        mov    i, 0;
 	__asm        jmp    _T99;
-
 _T96:
 	__asm        inc    i;
 _T99:
@@ -133,6 +132,7 @@ _T99:
 // LINE 81:
 	__asm        jmp    _T96;
 // LINE 82:
+_Tf8:
 }
 
 // FUNCTION: COPTER_D 0x004f9cfa
@@ -166,7 +166,6 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 _T28:
 	__asm        mov    i, 0;
 	__asm        jmp    _T37;
-
 _T34:
 	__asm        inc    i;
 _T37:
@@ -238,6 +237,7 @@ _Te2:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Te9;
 // LINE 136:
+_Te9:
 }
 
 // FUNCTION: COPTER_D 0x004f9e04
@@ -247,7 +247,6 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 // LINE 147:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -272,6 +271,7 @@ _T48:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T52;
 // LINE 153:
+_T52:
 }
 
 // FUNCTION: COPTER_D 0x004f9e5b
@@ -304,6 +304,7 @@ _T43:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4a;
 // LINE 167:
+_T4a:
 }
 
 // FUNCTION: COPTER_D 0x004f9eaa
@@ -375,6 +376,7 @@ _Tb8:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tbf;
 // LINE 193:
+_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x004f9f6e
@@ -397,7 +399,6 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 // LINE 220:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    i;
 _T18:
@@ -411,7 +412,6 @@ _T18:
 _T32:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41;
-
 _T3e:
 	__asm        inc    i;
 _T41:
@@ -451,6 +451,7 @@ _T41:
 _T9f:
 	__asm        jmp    _T3e;
 // LINE 230:
+_Ta4:
 }
 
 // FUNCTION: COPTER_D 0x004fa033
@@ -460,7 +461,6 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 // LINE 245:
 	__asm        mov    j, 0;
 	__asm        jmp    _T18;
-
 _T15:
 	__asm        inc    j;
 _T18:
@@ -483,5 +483,6 @@ _T41:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T4b;
 // LINE 250:
+_T4b:
 }
 

@@ -154,7 +154,6 @@ int32_t S2AllocPool(unsigned long poolsize) {
 _T20:
 	__asm        mov    index, 0;
 	__asm        jmp    _T2f;
-
 _T2c:
 	__asm        inc    index;
 _T2f:
@@ -200,6 +199,7 @@ _T98:
 	__asm        mov    eax, index;
 	__asm        jmp    _Ta6;
 // LINE 315:
+_Ta6:
 }
 
 // FUNCTION: COPTER_D 0x004cb4ac
@@ -404,6 +404,7 @@ _T5d:
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+8], eax;
 // LINE 474:
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x004cb6c3
@@ -487,6 +488,7 @@ _T9e:
 // LINE 517:
 	__asm        call   _heapchk;
 // LINE 523:
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x004cb7a5
@@ -538,6 +540,7 @@ _T6e:
 	__asm        mov    eax, retaddr;
 	__asm        jmp    _T80;
 // LINE 771:
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x004cb83f

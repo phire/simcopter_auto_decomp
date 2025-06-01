@@ -255,7 +255,6 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _Tb0;
-
 _Tab:
 	__asm        jmp    _Tb0;
 // LINE 102:

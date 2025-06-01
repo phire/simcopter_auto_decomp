@@ -216,7 +216,6 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T37;
-
 _T32:
 	__asm        jmp    _T37;
 // LINE 82:

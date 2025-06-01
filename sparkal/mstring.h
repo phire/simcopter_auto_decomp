@@ -55,7 +55,6 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc9;
-
 _Tc9:
 	__asm        jmp    near ptr 0x0040F7DE;
 
@@ -74,7 +73,6 @@ _Tc9:
 	__asm        mov    ecx, [ebp-0x1020];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T1cd;
-
 _T105:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -91,7 +89,6 @@ _T105:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1008], eax;
 	__asm        jmp    _T150;
-
 _T146:
 	__asm        mov    dword ptr [ebp-0x1008], 0;
 _T150:
@@ -122,7 +119,6 @@ _T150:
 	__asm        jmp    near ptr 0x0040F8C2;
 
 	__asm        jmp    _T1b7;
-
 _T1b7:
 	__asm        jmp    near ptr 0x0040F8CC;
 
@@ -130,7 +126,6 @@ _T1b7:
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T20f;
-
 _T1cd:
 	__asm        cmp    dword ptr [ebp-0x1020], 0;
 	__asm        je     _T20f;
@@ -150,7 +145,6 @@ _T1cd:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T20f;
-
 _T20f:
 	__asm        mov    eax, [ebp-0x1020];
 	__asm        mov    ecx, stringToSet;
@@ -189,7 +183,6 @@ _T20f:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T297;
-
 _T297:
 	__asm        jmp    near ptr 0x0040F9AC;
 
@@ -210,7 +203,6 @@ _T297:
 	__asm        sub    eax, [ecx+4];
 	__asm        cmp    eax, [ebp-0x1040];
 	__asm        jae    _T3d9;
-
 _T2d4:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -237,11 +229,9 @@ _T2d4:
 	__asm        jmp    _T337;
 
 	__asm        jmp    _T337;
-
 _T328:
 	__asm        mov    dword ptr [ebp-0x1030], 0;
 	__asm        jmp    _T337;
-
 _T337:
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -258,7 +248,6 @@ _T337:
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
 	__asm        mov    [ebp-0x1024], eax;
 	__asm        jmp    _T378;
-
 _T36e:
 	__asm        mov    dword ptr [ebp-0x1024], 0;
 _T378:
@@ -282,7 +271,6 @@ _T378:
 	__asm        mov    ecx, [ebp-0x1038];
 	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
 	__asm        jmp    _T3c8;
-
 _T3c8:
 	__asm        jmp    near ptr 0x0040FADD;
 
@@ -312,7 +300,6 @@ _T3d9:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T427;
-
 _T427:
 	__asm        mov    eax, [ebp-0x1040];
 	__asm        mov    ecx, stringToSet;
@@ -350,7 +337,6 @@ _T44b:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T4aa;
-
 _T4aa:
 	__asm        jmp    near ptr 0x0040FBBF;
 
@@ -369,7 +355,6 @@ _T4aa:
 	__asm        mov    ecx, [ebp-0x1070];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T6d9;
-
 _T4e6:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -395,7 +380,6 @@ _T4e6:
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T548;
-
 _T548:
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        mov    ecx, [ebp-0x1048];
@@ -432,7 +416,6 @@ _T548:
 	__asm        jmp    near ptr 0x0040FCE2;
 
 	__asm        jmp    _T5e3;
-
 _T5d7:
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    dword ptr [eax], 0;
@@ -444,7 +427,6 @@ _T5e3:
 	__asm        mov    eax, [ebp-0x1048];
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        jmp    _T610;
-
 _T606:
 	__asm        mov    dword ptr [ebp-0x1044], 0;
 _T610:
@@ -493,7 +475,6 @@ _T6a0:
 	__asm        jmp    near ptr 0x0040FDCE;
 
 	__asm        jmp    _T6c3;
-
 _T6c3:
 	__asm        jmp    near ptr 0x0040FDD8;
 
@@ -501,7 +482,6 @@ _T6c3:
 	__asm        mov    ecx, stringToSet;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T71b;
-
 _T6d9:
 	__asm        cmp    dword ptr [ebp-0x1070], 0;
 	__asm        je     _T71b;
@@ -521,7 +501,6 @@ _T6d9:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T71b;
-
 _T71b:
 	__asm        mov    eax, [ebp-0x1070];
 	__asm        mov    ecx, stringToSet;
@@ -534,5 +513,6 @@ _T71b:
 	__asm        mov    eax, nChars;
 	__asm        jmp    _T73f;
 // LINE 139:
+_T73f:
 }
 

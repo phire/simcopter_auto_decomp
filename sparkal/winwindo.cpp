@@ -182,7 +182,6 @@ void CSparkalWindow::CSparkalWindow() {
 // LINE 65:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
-
 _T7b:
 	__asm        inc    i;
 _T7e:
@@ -247,7 +246,6 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 90:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9f;
-
 _T9c:
 	__asm        inc    i;
 _T9f:
@@ -308,7 +306,6 @@ _T13a:
 	__asm        or     dwWindowsStyle, 0x40000;
 // LINE 112:
 	__asm        jmp    _T174;
-
 _T157:
 	__asm        test   reinterpret_cast<uint8_t>(Style), 4;
 	__asm        je     _T16d;
@@ -540,7 +537,6 @@ _T373:
 _T3aa:
 	__asm        mov    Counter, 0;
 	__asm        jmp    _T3b9;
-
 _T3b6:
 	__asm        inc    Counter;
 _T3b9:
@@ -557,7 +553,6 @@ _T3d5:
 	__asm        je     _T443;
 // LINE 197:
 	__asm        jmp    _T3e7;
-
 _T3e4:
 	__asm        inc    Counter;
 _T3e7:
@@ -593,7 +588,6 @@ _T43e:
 // LINE 205:
 _T443:
 	__asm        jmp    _T44b;
-
 _T448:
 	__asm        inc    Counter;
 _T44b:
@@ -620,7 +614,6 @@ _T44b:
 // LINE 214:
 _T48e:
 	__asm        jmp    _T496;
-
 _T493:
 	__asm        inc    Counter;
 _T496:
@@ -765,7 +758,6 @@ _T4b:
 _T65:
 	__asm        mov    i, 0;
 	__asm        jmp    _T74;
-
 _T71:
 	__asm        inc    i;
 _T74:
@@ -810,7 +802,6 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 
 	__asm        cmp    pHeight, 0;
 	__asm        jne    _T3c;
-
 _T20:
 	__asm        push   0x115;
 	__asm        push   0x599AF0;
@@ -818,7 +809,6 @@ _T20:
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T41;
-
 _T3c:
 	__asm        jmp    _T41;
 // LINE 279:
@@ -1001,7 +991,6 @@ unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned l
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3a;
-
 _T35:
 	__asm        jmp    _T3a;
 // LINE 376:
@@ -1217,7 +1206,6 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 	__asm        call   _assert;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T3a;
-
 _T35:
 	__asm        jmp    _T3a;
 // LINE 465:
@@ -1280,7 +1268,6 @@ void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* 
 	__asm        mov    eax, start;
 	__asm        mov    i, eax;
 	__asm        jmp    _T36;
-
 _T30:
 	__asm        inc    i;
 _T36:
@@ -1400,7 +1387,6 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 // LINE 537:
 	__asm        mov    i, 0;
 	__asm        jmp    _T105;
-
 _Tff:
 	__asm        inc    i;
 _T105:
@@ -1433,7 +1419,6 @@ _T105:
 _T175:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18a;
-
 _T184:
 	__asm        inc    i;
 _T18a:
@@ -1479,7 +1464,6 @@ _T1b2:
 // LINE 555:
 	__asm        mov    i, 0;
 	__asm        jmp    _T235;
-
 _T22f:
 	__asm        inc    i;
 _T235:
@@ -1566,6 +1550,7 @@ _T48:
 	__asm        call   dword ptr ds:[0x6C3860];
 	__asm        jmp    _T63;
 // LINE 589:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x00481647
@@ -1696,7 +1681,6 @@ _T125:
 	__asm        jmp    _T468;
 // LINE 642:
 	__asm        jmp    _T12f;
-
 _T12f:
 	__asm        mov    eax, ds:[0x598580];
 	__asm        mov    [ebp-0x64], eax;
@@ -1935,7 +1919,6 @@ _T373:
 // LINE 703:
 // Block end:
 	__asm        jmp    _T468;
-
 _T3a7:
 	__asm        cmp    dword ptr [ebp-0x70], 6;
 	__asm        ja     _T3c6;
@@ -1946,7 +1929,6 @@ _T3a7:
 	__asm        je     _T12f;
 
 	__asm        jmp    _T468;
-
 _T3c6:
 	__asm        cmp    dword ptr [ebp-0x70], 0x1C;
 	__asm        ja     _T3ef;
@@ -1960,7 +1942,6 @@ _T3c6:
 	__asm        je     _T12f;
 
 	__asm        jmp    _T468;
-
 _T3ef:
 	__asm        cmp    dword ptr [ebp-0x70], 0x200;
 	__asm        ja     _T414;
@@ -1971,7 +1952,6 @@ _T3ef:
 	__asm        je     _T198;
 
 	__asm        jmp    _T468;
-
 _T414:
 	__asm        cmp    dword ptr [ebp-0x70], 0x30F;
 	__asm        ja     _T456;
@@ -1998,6 +1978,7 @@ _T468:
 	__asm        call   dword ptr ds:[0x6C3860];
 	__asm        jmp    _T483;
 // LINE 706:
+_T483:
 }
 
 

@@ -119,7 +119,6 @@ _T74:
 	__asm        jmp    _Td5;
 // LINE 43:
 	__asm        jmp    _Td5;
-
 _Tb1:
 	__asm        cmp    dword ptr [ebp-0xC], 3;
 	__asm        ja     _Td5;
@@ -143,6 +142,7 @@ _Td5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tfb;
 // LINE 49:
+_Tfb:
 }
 
 // FUNCTION: COPTER_D 0x00542f05
@@ -187,5 +187,6 @@ _T62:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6c;
 // LINE 59:
+_T6c:
 }
 

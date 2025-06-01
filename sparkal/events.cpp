@@ -52,6 +52,7 @@ _T41:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T48;
 // LINE 39:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x00431bd6
@@ -91,5 +92,6 @@ _T33:
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        jmp    _T4d;
 // LINE 61:
+_T4d:
 }
 

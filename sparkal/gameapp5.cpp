@@ -169,7 +169,6 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 	__asm        mov    dword ptr [eax], 0xF0;
 // LINE 72:
 	__asm        jmp    _T97;
-
 _T30:
 	__asm        cmp    dword ptr ds:[0x598F00], 1;
 	__asm        jne    _T54;
@@ -181,7 +180,6 @@ _T30:
 	__asm        mov    dword ptr [eax], 0x1E0;
 // LINE 76:
 	__asm        jmp    _T97;
-
 _T54:
 	__asm        cmp    dword ptr ds:[0x598F00], 2;
 	__asm        jne    _T78;
@@ -193,7 +191,6 @@ _T54:
 	__asm        mov    dword ptr [eax], 0x258;
 // LINE 80:
 	__asm        jmp    _T97;
-
 _T78:
 	__asm        cmp    dword ptr ds:[0x598F00], 3;
 	__asm        jne    _T97;
@@ -238,7 +235,6 @@ int  CGameApp::S3PreRender() {
 	__asm        shl    dword ptr ds:[0x59C248], cl;
 // LINE 104:
 	__asm        jmp    _T16c;
-
 _T6d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4308], 1;
@@ -580,7 +576,6 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 // LINE 244:
 	__asm        mov    i, 0;
 	__asm        jmp    _T84;
-
 _T81:
 	__asm        inc    i;
 _T84:
@@ -608,7 +603,6 @@ _Ta6:
 // LINE 250:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tc8;
-
 _Tc5:
 	__asm        inc    i;
 _Tc8:
@@ -867,6 +861,7 @@ _T292:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 380:
 	__asm        jmp    _T2d9;
+_T2d9:
 }
 
 
