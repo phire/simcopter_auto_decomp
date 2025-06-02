@@ -280,15 +280,47 @@ struct TypefaceTestStruct{
 // Type: unsigned long;
 
 // Type: struct tagENUMLOGFONTA (forward reference);
-// tagENUMLOGFONTA Class implementation not found
+struct tagENUMLOGFONTA{
+	struct tagLOGFONTA elfLogFont;
+	unsigned char elfFullName[64];
+	unsigned char elfStyle[32];
+};
 
 // Type: struct tagNEWTEXTMETRICA (forward reference);
-// tagNEWTEXTMETRICA Class implementation not found
+struct tagNEWTEXTMETRICA{
+	long tmHeight;
+	long tmAscent;
+	long tmDescent;
+	long tmInternalLeading;
+	long tmExternalLeading;
+	long tmAveCharWidth;
+	long tmMaxCharWidth;
+	long tmWeight;
+	long tmOverhang;
+	long tmDigitizedAspectX;
+	long tmDigitizedAspectY;
+	unsigned char tmFirstChar;
+	unsigned char tmLastChar;
+	unsigned char tmDefaultChar;
+	unsigned char tmBreakChar;
+	unsigned char tmItalic;
+	unsigned char tmUnderlined;
+	unsigned char tmStruckOut;
+	unsigned char tmPitchAndFamily;
+	unsigned char tmCharSet;
+	unsigned long ntmFlags;
+	uint32_t ntmSizeEM;
+	uint32_t ntmCellHeight;
+	uint32_t ntmAvgWidth;
+};
 
 // Type: long;
 
 // Type: struct TypefaceTestStruct (forward reference);
-// TypefaceTestStruct Class implementation not found
+struct TypefaceTestStruct{
+	char * szLanguageTypefaceName;
+	long bExists;
+};
 
 
 

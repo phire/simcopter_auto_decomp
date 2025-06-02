@@ -310,7 +310,14 @@ struct Shortcut{
 // Type: char;
 
 // Type: struct Shortcut (forward reference);
-// Shortcut Class implementation not found
+struct Shortcut{
+	long lDeviceID;
+	long lCommand;
+	long lKey;
+	long lModifiers;
+	long lPush;
+	long lIgnoreModifiers;
+};
 
 // Type: long *;
 
@@ -320,7 +327,11 @@ struct Shortcut{
 // Type: uint32_t;
 
 // Type: struct list<Shortcut>::list_node (forward reference);
-// list<Shortcut>::list_node Class implementation not found
+struct list<Shortcut>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	struct Shortcut data;
+};
 
 // Type: class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>

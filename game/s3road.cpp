@@ -5,13 +5,23 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: struct _fPoint2d (forward reference);
-// _fPoint2d Class implementation not found
+struct _fPoint2d{
+	int32_t x;
+	int32_t z;
+};
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: double;
 

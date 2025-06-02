@@ -67,13 +67,54 @@ private:
 // Type: int32_t;
 
 // Type: struct RGVertex (forward reference);
-// RGVertex Class implementation not found
+struct RGVertex{
+	unsigned char x;
+	unsigned char y;
+	LfBitfield @ 0x11f58:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1771
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 turnFlags;
+	LfBitfield @ 0x11f60:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1772
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 deadEndFlags;
+	unsigned char fElevated;
+	struct Edge edge[4];
+	unsigned char yindexPrev;
+	unsigned char xPrev;
+	unsigned char edgeIndexPrev;
+	int32_t STVisited;
+};
 
 // Type: struct Goal (forward reference);
-// Goal Class implementation not found
+struct Goal{
+	struct RGVertex* pRGV;
+	int32_t elementIndex;
+	int32_t gridIndex;
+	struct _GridCoordinates gridLoc;
+	enum DirIndex2 edgeIndex;
+	enum DirIndex2 direction;
+	int32_t distance;
+	int32_t turnFlags;
+	int32_t deadEndFlags;
+	int32_t fElevated;
+	enum SlopeIndex slope;
+};
 
 // Type: struct Edge (forward reference);
-// Edge Class implementation not found
+struct Edge{
+	unsigned char yindex;
+	unsigned char x;
+	unsigned short Time;
+	unsigned short numElementsToPath;
+	struct Road* roadArray;
+};
 
 // Type: enum SlopeIndex;
 enum SlopeIndex {
@@ -83,7 +124,30 @@ enum SlopeIndex {
 };
 
 // Type: struct Road (forward reference);
-// Road Class implementation not found
+struct Road{
+	LfBitfield @ 0x11b34:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x174e
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 direction;
+	LfBitfield @ 0x11b3c:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x174f
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x2
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 slope;
+	LfBitfield @ 0x11b44:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x1
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1750
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 fElevated;
+	unsigned char repeatCount;
+};
 
 // Type: struct _GridCoordinates;
 struct _GridCoordinates{

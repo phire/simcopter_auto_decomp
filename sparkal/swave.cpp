@@ -7,10 +7,24 @@
 // Type: void * __ptr32;
 
 // Type: struct tWAVEFORMATEX (forward reference);
-// tWAVEFORMATEX Class implementation not found
+struct tWAVEFORMATEX{
+	unsigned short wFormatTag;
+	unsigned short nChannels;
+	unsigned long nSamplesPerSec;
+	unsigned long nAvgBytesPerSec;
+	unsigned short nBlockAlign;
+	unsigned short wBitsPerSample;
+	unsigned short cbSize;
+};
 
 // Type: struct _MMCKINFO (forward reference);
-// _MMCKINFO Class implementation not found
+struct _MMCKINFO{
+	unsigned long ckid;
+	unsigned long cksize;
+	unsigned long fccType;
+	unsigned long dwDataOffset;
+	unsigned long dwFlags;
+};
 
 // Type: unsigned short;
 

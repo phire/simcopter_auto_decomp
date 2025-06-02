@@ -24,17 +24,43 @@ public:
 // Type: unsigned long *;
 
 // Type: struct tLZSSBinaryForest (forward reference);
-// tLZSSBinaryForest Class implementation not found
+struct tLZSSBinaryForest{
+	unsigned char text_buf[4155];
+	long match_position;
+	long match_length;
+	long lson[4097];
+	long rson[4353];
+	long dad[4097];
+};
 
 // Type: short;
 
 // Type: struct tCompressState (forward reference);
-// tCompressState Class implementation not found
+struct tCompressState{
+	unsigned long putBuffer;
+	unsigned long putMask;
+	unsigned long getBuffer;
+	unsigned long getMask;
+	unsigned long textsize;
+	unsigned long codesize;
+	class cGZXBitstream* infile;
+	class cGZXBitstream* outfile;
+};
 
 // Type: unsigned char;
 
 // Type: struct tACompModel (forward reference);
-// tACompModel Class implementation not found
+struct tACompModel{
+	unsigned long low;
+	unsigned long high;
+	unsigned long value;
+	long shifts;
+	long char_to_sym[314];
+	long sym_to_char[315];
+	unsigned long sym_freq[315];
+	unsigned long sym_cum[315];
+	unsigned long position_cum[4097];
+};
 
 // Type: long;
 

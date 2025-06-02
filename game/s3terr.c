@@ -25,15 +25,34 @@ struct Point2d{
 };
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: short *;
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct _STOBJ_INST (forward reference);
-// _STOBJ_INST Class implementation not found
+struct _STOBJ_INST{
+	struct _STOBJ_INST* next;
+	void * __ptr32 mesh;
+	long user1;
+	long user2;
+};
 
 
 

@@ -13,7 +13,12 @@ struct DXZY{
 };
 
 // Type: struct DXZY (forward reference);
-// DXZY Class implementation not found
+struct DXZY{
+	float x;
+	float z;
+	float y;
+	float info;
+};
 
 // Type: void;
 
@@ -22,14 +27,28 @@ struct DXZY{
 // Type: unsigned short;
 
 // Type: struct XZY (forward reference);
-// XZY Class implementation not found
+struct XZY{
+	short x;
+	short z;
+	short y;
+	short _win8pad;
+};
 
 // Type: float *;
 
 // Type: short *;
 
 // Type: struct Polar (forward reference);
-// Polar Class implementation not found
+struct Polar{
+	float phi;
+	float psi;
+	float tau;
+	float _win8pad;
+	short lng;
+	short lat;
+	short trq;
+	short _win8pad2;
+};
 
 // Type: struct Polar;
 struct Polar{
@@ -46,10 +65,18 @@ struct Polar{
 // Type: double;
 
 // Type: struct Rect (forward reference);
-// Rect Class implementation not found
+struct Rect{
+	short top;
+	short left;
+	short bottom;
+	short right;
+};
 
 // Type: struct Point (forward reference);
-// Point Class implementation not found
+struct Point{
+	short v;
+	short h;
+};
 
 // Type: struct Point;
 struct Point{

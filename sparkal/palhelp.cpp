@@ -77,7 +77,12 @@ protected:
 };
 
 // Type: struct tagPALETTEENTRY (forward reference);
-// tagPALETTEENTRY Class implementation not found
+struct tagPALETTEENTRY{
+	unsigned char peRed;
+	unsigned char peGreen;
+	unsigned char peBlue;
+	unsigned char peFlags;
+};
 
 // Type: struct SparkalColor;
 struct SparkalColor{
@@ -90,7 +95,9 @@ struct SparkalColor{
 };
 
 // Type: struct SparkalPalette::FadeToPalette::TempPalette (forward reference);
-// SparkalPalette::FadeToPalette::TempPalette Class implementation not found
+struct SparkalPalette::FadeToPalette::TempPalette{
+	struct tagPALETTEENTRY palEntries[256];
+};
 
 // Type: class CopterSparkalPalette (forward reference);
 class CopterSparkalPalette : public SparkalPalette

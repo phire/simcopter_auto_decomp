@@ -374,7 +374,16 @@ protected:
 };
 
 // Type: struct tagHeliPassengerData (forward reference);
-// tagHeliPassengerData Class implementation not found
+struct tagHeliPassengerData{
+	long lPassengerDataChanged;
+	long lSeatsTotal;
+	long lSeatsUsed;
+	long lDoubleSeatsTotal;
+	long lDoubleSeatsUsed;
+	long lRowWidth;
+	long lPassengerCount;
+	struct tagPassengerInfo passengers[16];
+};
 
 // Type: class MRect;
 class MRect : public SparkalRect
@@ -477,7 +486,21 @@ public:
 };
 
 // Type: struct MISSION_DATA (forward reference);
-// MISSION_DATA Class implementation not found
+struct MISSION_DATA{
+	char mtext[32];
+	long type_ctr;
+	long key;
+	struct Point2d maploc;
+	struct Point2d destmaploc;
+	struct Point2d pickuploc;
+	int32_t timer;
+	long money_bonus;
+	long points_bonus;
+	long flags;
+	long type;
+	long state;
+	struct MISSION_DATA::__unnamed mdata;
+};
 
 // Type: void * __ptr32;
 

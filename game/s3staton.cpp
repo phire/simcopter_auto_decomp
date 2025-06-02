@@ -42,7 +42,10 @@ struct _GridCoordinates{
 };
 
 // Type: struct _GridCoordinates (forward reference);
-// _GridCoordinates Class implementation not found
+struct _GridCoordinates{
+	unsigned char x;
+	unsigned char y;
+};
 
 // Type: short;
 
@@ -153,10 +156,17 @@ enum EmergencyLevel {
 };
 
 // Type: struct _StationHeapStruct (forward reference);
-// _StationHeapStruct Class implementation not found
+struct _StationHeapStruct{
+	long cost;
+	int32_t stationID;
+};
 
 // Type: struct _VehicleHeapStruct (forward reference);
-// _VehicleHeapStruct Class implementation not found
+struct _VehicleHeapStruct{
+	long cost;
+	class EmergencyVehicleClass* pVehicle;
+	struct _GridCoordinates loc;
+};
 
 // Type: long;
 
@@ -376,10 +386,40 @@ protected:
 };
 
 // Type: struct _StructStation (forward reference);
-// _StructStation Class implementation not found
+struct _StructStation{
+	struct Goal goal1;
+	struct Goal goal2;
+	int32_t direction;
+	struct _GridCoordinates location;
+	struct _GridCoordinates nearestRoadTile;
+	int32_t quanVehiclesDispatched;
+};
 
 // Type: struct RGVertex (forward reference);
-// RGVertex Class implementation not found
+struct RGVertex{
+	unsigned char x;
+	unsigned char y;
+	LfBitfield @ 0x11f58:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1771
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 turnFlags;
+	LfBitfield @ 0x11f60:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1772
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 deadEndFlags;
+	unsigned char fElevated;
+	struct Edge edge[4];
+	unsigned char yindexPrev;
+	unsigned char xPrev;
+	unsigned char edgeIndexPrev;
+	int32_t STVisited;
+};
 
 // Type: unsigned char *;
 

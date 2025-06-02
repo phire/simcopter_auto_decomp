@@ -9,7 +9,10 @@
 // Type: long;
 
 // Type: struct PrivAnimPartInfo (forward reference);
-// PrivAnimPartInfo Class implementation not found
+struct PrivAnimPartInfo{
+	struct TinyXZY start;
+	struct TinyXZY end;
+};
 
 // Type: void;
 
@@ -30,17 +33,30 @@ struct TinyXZY{
 };
 
 // Type: struct TinyXZY (forward reference);
-// TinyXZY Class implementation not found
+struct TinyXZY{
+	char x;
+	char y;
+	char z;
+	char info;
+};
 
 // Type: struct DXZY (forward reference);
-// DXZY Class implementation not found
+struct DXZY{
+	float x;
+	float z;
+	float y;
+	float info;
+};
 
 // Type: char;
 
 // Type: float;
 
 // Type: struct Point (forward reference);
-// Point Class implementation not found
+struct Point{
+	short v;
+	short h;
+};
 
 // Type: char;
 
@@ -169,7 +185,10 @@ public:
 };
 
 // Type: struct PtrList<cBBase>::PtrNode (forward reference);
-// PtrList<cBBase>::PtrNode Class implementation not found
+struct PtrList<cBBase>::PtrNode{
+	class cBBase* data;
+	struct PtrList<cBBase>::PtrNode* next;
+};
 
 // Type: class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{

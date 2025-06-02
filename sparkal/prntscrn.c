@@ -5,7 +5,10 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: short;
 
@@ -32,7 +35,12 @@ struct PCXHEAD{
 // Type: unsigned char;
 
 // Type: struct tagPALETTEENTRY (forward reference);
-// tagPALETTEENTRY Class implementation not found
+struct tagPALETTEENTRY{
+	unsigned char peRed;
+	unsigned char peGreen;
+	unsigned char peBlue;
+	unsigned char peFlags;
+};
 
 // Type: void * __ptr32;
 
@@ -43,7 +51,16 @@ struct PCXHEAD{
 // Type: void;
 
 // Type: struct _iobuf (forward reference);
-// _iobuf Class implementation not found
+struct _iobuf{
+	char * _ptr;
+	int32_t _cnt;
+	char * _base;
+	int32_t _flag;
+	int32_t _file;
+	int32_t _charbuf;
+	int32_t _bufsiz;
+	char * _tmpfname;
+};
 
 // Type: unsigned short;
 

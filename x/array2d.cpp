@@ -105,7 +105,10 @@ public:
 };
 
 // Type: struct _cArray::FileAndType (forward reference);
-// _cArray::FileAndType Class implementation not found
+struct _cArray::FileAndType{
+	class ResFile* file;
+	unsigned long type;
+};
 
 // Type: class ResFile (forward reference);
 class ResFile : public FlatResFile
@@ -123,7 +126,12 @@ public:
 // Type: char *;
 
 // Type: struct _cArray::Header (forward reference);
-// _cArray::Header Class implementation not found
+struct _cArray::Header{
+	short entrySize;
+	short xSize;
+	short ySize;
+	short _pad;
+};
 
 // Type: unsigned char;
 

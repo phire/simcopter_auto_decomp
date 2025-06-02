@@ -67,7 +67,12 @@ public:
 // Type: unsigned long;
 
 // Type: struct RLEHeader (forward reference);
-// RLEHeader Class implementation not found
+struct RLEHeader{
+	short Width;
+	short Height;
+	short XOffset;
+	short YOffset;
+};
 
 // Type: void;
 

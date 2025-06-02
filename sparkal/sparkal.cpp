@@ -39,7 +39,40 @@ protected:
 };
 
 // Type: class CSparkalApp (forward reference);
-// CSparkalApp Class implementation not found
+class CSparkalApp{
+public:
+	void CSparkalApp();
+	// vtable: 0
+	intro void ~CSparkalApp();
+	// vtable: 4
+	intro class CSparkalWindow* NewWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
+	class IFlatImage* NewImage(long, long, const const struct SparkalColor*);
+	class IFlatImage* NewImage(char *);
+	// vtable: 8
+	intro unsigned long PrepareGame();
+	// vtable: 12
+	intro unsigned long TickGame();
+	// vtable: 16
+	intro unsigned long FinishGame();
+	unsigned long TestFlag(unsigned long);
+	unsigned long SetFlag(unsigned long);
+	unsigned long ResetFlag(unsigned long);
+	int32_t GetRuntimePlatform();
+	int32_t DecideRuntimePlatform();
+	enum PlatfromType {
+		Unknown = 0,
+		Win32s = 1,
+		WinNT31 = 2,
+		WinNT35 = 3,
+		Win95 = 4,
+		MacSystem7 = 5,
+	};
+protected:
+	struct SparkalColor* mpColorTable;
+	int32_t _mRuntimePlatform;
+	unsigned long _mFlags;
+	int32_t mbUseDirectDraw;
+};
 
 // Type: float;
 

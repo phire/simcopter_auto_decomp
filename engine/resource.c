@@ -7,10 +7,20 @@
 // Type: void;
 
 // Type: struct VRResource (forward reference);
-// VRResource Class implementation not found
+struct VRResource{
+	char * mem;
+	int32_t mempoolid;
+	int32_t type;
+	int32_t entry;
+};
 
 // Type: struct GEOM_Resource (forward reference);
-// GEOM_Resource Class implementation not found
+struct GEOM_Resource{
+	struct VRResource res;
+	int32_t count;
+	int32_t barrymempool;
+	int32_t pointer[0];
+};
 
 // Type: char *;
 

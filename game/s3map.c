@@ -11,7 +11,10 @@ struct Point2d{
 };
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: struct VRwindowType;
 struct VRwindowType{
@@ -31,28 +34,72 @@ struct VRwindowType{
 // Type: char;
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: void;
 
 // Type: unsigned short;
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: long *;
 
 // Type: struct _MAP_CARINFO (forward reference);
-// _MAP_CARINFO Class implementation not found
+struct _MAP_CARINFO{
+	long flags;
+	long car_id;
+	long car_type;
+	long mission_id;
+	struct _GridCoordinates* currpos;
+	struct _GridCoordinates* disppos;
+	long top;
+	long bottom;
+	long left;
+	long right;
+};
 
 // Type: struct MISSION_DATA (forward reference);
-// MISSION_DATA Class implementation not found
+struct MISSION_DATA{
+	char mtext[32];
+	long type_ctr;
+	long key;
+	struct Point2d maploc;
+	struct Point2d destmaploc;
+	struct Point2d pickuploc;
+	int32_t timer;
+	long money_bonus;
+	long points_bonus;
+	long flags;
+	long type;
+	long state;
+	struct MISSION_DATA::__unnamed mdata;
+};
 
 // Type: struct _GridCoordinates (forward reference);
-// _GridCoordinates Class implementation not found
+struct _GridCoordinates{
+	unsigned char x;
+	unsigned char y;
+};
 
 
 

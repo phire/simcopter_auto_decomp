@@ -13,7 +13,16 @@
 // Type: int32_t;
 
 // Type: struct _iobuf (forward reference);
-// _iobuf Class implementation not found
+struct _iobuf{
+	char * _ptr;
+	int32_t _cnt;
+	char * _base;
+	int32_t _flag;
+	int32_t _file;
+	int32_t _charbuf;
+	int32_t _bufsiz;
+	char * _tmpfname;
+};
 
 // Type: unsigned short;
 
@@ -28,7 +37,13 @@
 // Type: unsigned char;
 
 // Type: struct Micro (forward reference);
-// Micro Class implementation not found
+struct Micro{
+	unsigned char type;
+	unsigned char stat0;
+	unsigned short stat1;
+	unsigned short stat2;
+	unsigned short stat3;
+};
 
 // Type: short *;
 

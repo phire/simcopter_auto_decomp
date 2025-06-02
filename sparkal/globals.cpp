@@ -63,7 +63,33 @@ private:
 // Type: char;
 
 // Type: class Station (forward reference);
-// Station Class implementation not found
+class Station{
+public:
+	void Station(unsigned char);
+	void ~Station();
+	int32_t DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
+	short GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*);
+	short GetNextNearest(struct _GridCoordinates*);
+	void DecrementQuantityOfVehicleDispatched(int32_t);
+private:
+	struct _StructStation* stationList;
+	int32_t quantityOfStations;
+	struct _StationHeapStruct* stationHeap;
+	int32_t stationHeapSize;
+	struct _VehicleHeapStruct* vehicleHeap;
+	int32_t vehicleHeapSize;
+	int32_t maxVehicles;
+	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
+	int32_t FindNearestRoadToEmergency(struct _GridCoordinates&);
+	int32_t FindNearestStation(struct _GridCoordinates);
+	class EmergencyVehicleClass* FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
+	void SortStationsByDistanceFromDestination(struct _GridCoordinates);
+	void SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t);
+	void StationHeapInsert(const struct _StationHeapStruct*);
+	void StationHeapRemove(struct _StationHeapStruct*);
+	void VehicleHeapInsert(const struct _VehicleHeapStruct*);
+	void VehicleHeapRemove(struct _VehicleHeapStruct*);
+};
 
 // Type: class ShortestPath;
 class ShortestPath{

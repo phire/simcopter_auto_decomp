@@ -55,10 +55,17 @@ public:
 };
 
 // Type: struct list<tagLogBase *>::list_node_buffer (forward reference);
-// list<tagLogBase *>::list_node_buffer Class implementation not found
+struct list<tagLogBase *>::list_node_buffer{
+	void * __ptr32 next_buffer;
+	struct list<tagLogBase *>::list_node* buffer;
+};
 
 // Type: struct list<tagLogBase *>::list_node (forward reference);
-// list<tagLogBase *>::list_node Class implementation not found
+struct list<tagLogBase *>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	struct tagLogBase* data;
+};
 
 // Type: uint32_t;
 
@@ -67,7 +74,11 @@ public:
 // Type: void;
 
 // Type: struct tagLogBase (forward reference);
-// tagLogBase Class implementation not found
+struct tagLogBase{
+	unsigned long nType;
+	unsigned long nTime;
+	unsigned long nMissionID;
+};
 
 // Type: int32_t;
 
@@ -269,15 +280,33 @@ public:
 };
 
 // Type: struct tagLogString (forward reference);
-// tagLogString Class implementation not found
+struct tagLogString{
+	unsigned long nType;
+	unsigned long nTime;
+	unsigned long nMissionID;
+	char * szLogString;
+	char szData[4];
+};
 
 // Type: char;
 
 // Type: struct tagLogMissionEvent (forward reference);
-// tagLogMissionEvent Class implementation not found
+struct tagLogMissionEvent{
+	unsigned long nType;
+	unsigned long nTime;
+	unsigned long nMissionID;
+	unsigned long nInfo0;
+	unsigned long nInfo1;
+};
 
 // Type: struct tagLogCityEnterExit (forward reference);
-// tagLogCityEnterExit Class implementation not found
+struct tagLogCityEnterExit{
+	unsigned long nType;
+	unsigned long nTime;
+	unsigned long nMissionID;
+	unsigned long nEnterOrExit;
+	char szCity[32];
+};
 
 // Type: class basic_string<char>;
 class basic_string<char>{

@@ -169,7 +169,13 @@ struct TreeSim::StackElem{
 // Type: long;
 
 // Type: struct Behavior::Node (forward reference);
-// Behavior::Node Class implementation not found
+struct Behavior::Node{
+	short treeID;
+	short primCode;
+	char trueTrans;
+	char falseTrans;
+	struct Behavior::NodeParameter param;
+};
 
 // Type: enum TreeSim::ReturnCode;
 enum ReturnCode {

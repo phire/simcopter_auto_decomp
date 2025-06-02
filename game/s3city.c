@@ -7,10 +7,16 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: struct Point3d;
 struct Point3d{
@@ -37,7 +43,17 @@ struct VRview{
 // Type: long *;
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct tagLogCityEnterExit;
 struct tagLogCityEnterExit{
@@ -53,20 +69,42 @@ struct tagLogCityEnterExit{
 // Type: void;
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: struct _STOBJ_INST (forward reference);
-// _STOBJ_INST Class implementation not found
+struct _STOBJ_INST{
+	struct _STOBJ_INST* next;
+	void * __ptr32 mesh;
+	long user1;
+	long user2;
+};
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: double;
 
 // Type: unsigned short;
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 
 

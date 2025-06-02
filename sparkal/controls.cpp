@@ -5,10 +5,17 @@
 // Type: char *;
 
 // Type: struct list<RadioButtonWindow *>::list_node_buffer (forward reference);
-// list<RadioButtonWindow *>::list_node_buffer Class implementation not found
+struct list<RadioButtonWindow *>::list_node_buffer{
+	void * __ptr32 next_buffer;
+	struct list<RadioButtonWindow *>::list_node* buffer;
+};
 
 // Type: struct list<RadioButtonWindow *>::list_node (forward reference);
-// list<RadioButtonWindow *>::list_node Class implementation not found
+struct list<RadioButtonWindow *>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	class RadioButtonWindow* data;
+};
 
 // Type: uint32_t;
 
@@ -951,7 +958,10 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
-// list<basic_string<char>>::list_node_buffer Class implementation not found
+struct list<basic_string<char>>::list_node_buffer{
+	void * __ptr32 next_buffer;
+	struct list<basic_string<char>>::list_node* buffer;
+};
 
 // Type: struct SparkalRect;
 struct SparkalRect{

@@ -109,7 +109,10 @@ public:
 };
 
 // Type: struct Behavior::Tree (forward reference);
-// Behavior::Tree Class implementation not found
+struct Behavior::Tree{
+	short numNodes;
+	struct Behavior::Node nodes[1];
+};
 
 // Type: long;
 
@@ -118,7 +121,13 @@ public:
 // Type: short;
 
 // Type: struct Behavior::Node (forward reference);
-// Behavior::Node Class implementation not found
+struct Behavior::Node{
+	short treeID;
+	short primCode;
+	char trueTrans;
+	char falseTrans;
+	struct Behavior::NodeParameter param;
+};
 
 // Type: unsigned char *;
 

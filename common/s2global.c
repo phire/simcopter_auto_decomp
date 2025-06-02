@@ -13,10 +13,20 @@
 // Type: unsigned long;
 
 // Type: struct _rect (forward reference);
-// _rect Class implementation not found
+struct _rect{
+	short Xmin;
+	short Xmax;
+	short Ymin;
+	short Ymax;
+};
 
 // Type: struct S2Rect (forward reference);
-// S2Rect Class implementation not found
+struct S2Rect{
+	short top;
+	short left;
+	short bottom;
+	short right;
+};
 
 
 

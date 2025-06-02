@@ -35,7 +35,12 @@
 // Type: void * __ptr32;
 
 // Type: struct Rect (forward reference);
-// Rect Class implementation not found
+struct Rect{
+	short top;
+	short left;
+	short bottom;
+	short right;
+};
 
 // Type: struct Point;
 struct Point{
@@ -44,7 +49,10 @@ struct Point{
 };
 
 // Type: struct Point (forward reference);
-// Point Class implementation not found
+struct Point{
+	short v;
+	short h;
+};
 
 
 

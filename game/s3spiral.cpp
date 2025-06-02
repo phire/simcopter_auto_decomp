@@ -21,7 +21,10 @@ private:
 // Type: void;
 
 // Type: struct _GridCoordinates (forward reference);
-// _GridCoordinates Class implementation not found
+struct _GridCoordinates{
+	unsigned char x;
+	unsigned char y;
+};
 
 // Type: struct _GridCoordinates;
 struct _GridCoordinates{

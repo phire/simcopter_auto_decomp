@@ -121,7 +121,12 @@ struct tagSIZE{
 };
 
 // Type: struct tagPALETTEENTRY (forward reference);
-// tagPALETTEENTRY Class implementation not found
+struct tagPALETTEENTRY{
+	unsigned char peRed;
+	unsigned char peGreen;
+	unsigned char peBlue;
+	unsigned char peFlags;
+};
 
 // Type: unsigned char;
 

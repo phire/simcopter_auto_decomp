@@ -80,7 +80,59 @@ struct tagRECT{
 };
 
 // Type: class CSparkalWindow (forward reference);
-// CSparkalWindow Class implementation not found
+class CSparkalWindow{
+public:
+	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
+	void CSparkalWindow();
+	// vtable: 0
+	intro void ~CSparkalWindow();
+	void * __ptr32 GetPlatformData();
+	long GetWidth();
+	long GetHeight();
+	// vtable: 4
+	intro unsigned long GetClientSize(long *, long *);
+	class ScreenBuffer* GetBackBuffer();
+	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
+	class ICommander* GetCommander();
+	class ICommander* SetCommander(class ICommander*);
+	// vtable: 8
+	intro unsigned long Draw();
+	// vtable: 12
+	intro unsigned long SetCursor(unsigned long);
+	// vtable: 16
+	intro unsigned long SetCursorFromIndex(int32_t);
+	// vtable: 20
+	intro unsigned long LoadGameCursors();
+	// vtable: 24
+	intro void FreeGameCursors();
+	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
+	// vtable: 28
+	intro unsigned long Sleep();
+	// vtable: 32
+	intro unsigned long WakeUp();
+	unsigned long ScreenScroll(long, long, long, long, long, long);
+	unsigned long RectSlideUp(long, long, long, long);
+	// vtable: 36
+	intro unsigned long SwapBuffer(long, long, long, long);
+	// vtable: 40
+	intro unsigned long SwapBuffer();
+	// vtable: 44
+	intro void UpdatePalette(long, long, struct SparkalColor*);
+protected:
+	long mHeight;
+	long mWidth;
+	unsigned long mStyle;
+	class ICommander* mpCommander;
+	class ScreenBuffer* mpBackBuffer;
+	void * __ptr32 mWindow;
+	// vtable: 48
+	// calltype: NearStd
+	intro long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long);
+	void * __ptr32 mPalette;
+	void * __ptr32 mhCurrentCursor;
+	void * __ptr32 mhCustomCursor;
+	void * __ptr32 mCursors[16];
+};
 
 // Type: struct SparkalRect (forward reference);
 struct SparkalRect{
@@ -123,7 +175,10 @@ public:
 };
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: class SmackerBackBuffer (forward reference);
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer

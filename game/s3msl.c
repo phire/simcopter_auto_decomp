@@ -26,14 +26,32 @@ struct _MISSILE_DATA{
 // Type: int32_t;
 
 // Type: struct _MISSILE_DATA (forward reference);
-// _MISSILE_DATA Class implementation not found
+struct _MISSILE_DATA{
+	long flags;
+	int32_t timetolive;
+	int32_t smoketime;
+	int32_t speed;
+	struct Point3d vector;
+	struct Point3d targloc;
+	struct _DYOBJ_INST* dymissile;
+	struct Point2d celloc;
+	long animseq;
+	int32_t gas_on;
+	struct _DYOBJ_INST* dystarter;
+	long mission_id;
+	long scale;
+};
 
 // Type: void;
 
 // Type: char *;
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -49,10 +67,23 @@ struct VRObjInfo{
 };
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 // Type: struct VRview;
 struct VRview{
@@ -62,7 +93,17 @@ struct VRview{
 };
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -99,10 +140,18 @@ struct Point2d{
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
-// _CELL_FIRE_DATA Class implementation not found
+struct _CELL_FIRE_DATA{
+	struct _CELL_INFO* cptr;
+	long fire_count;
+};
 
 // Type: struct _STOBJ_INST (forward reference);
-// _STOBJ_INST Class implementation not found
+struct _STOBJ_INST{
+	struct _STOBJ_INST* next;
+	void * __ptr32 mesh;
+	long user1;
+	long user2;
+};
 
 // Type: struct FP3D;
 struct FP3D{
@@ -114,7 +163,12 @@ struct FP3D{
 // Type: double;
 
 // Type: struct VRBlit (forward reference);
-// VRBlit Class implementation not found
+struct VRBlit{
+	int32_t nverts;
+	struct Proj2d* verts;
+	int32_t notused;
+	int32_t user1;
+};
 
 // Type: long *;
 

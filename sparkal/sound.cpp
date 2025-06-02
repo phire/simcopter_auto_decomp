@@ -354,7 +354,13 @@ struct _DSBUFFERDESC{
 };
 
 // Type: struct _DSBUFFERDESC (forward reference);
-// _DSBUFFERDESC Class implementation not found
+struct _DSBUFFERDESC{
+	unsigned long dwSize;
+	unsigned long dwFlags;
+	unsigned long dwBufferBytes;
+	unsigned long dwReserved;
+	struct tWAVEFORMATEX* lpwfxFormat;
+};
 
 // Type: struct IDirectSoundBuffer (forward reference);
 struct IDirectSoundBuffer : public IUnknown

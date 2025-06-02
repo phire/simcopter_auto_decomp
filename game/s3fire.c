@@ -7,10 +7,16 @@
 // Type: long;
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: struct _FIRE_DATA;
 struct _FIRE_DATA{
@@ -36,7 +42,21 @@ struct _CELL_FIRE_DATA{
 };
 
 // Type: struct _FIRE_DATA (forward reference);
-// _FIRE_DATA Class implementation not found
+struct _FIRE_DATA{
+	long flags;
+	int32_t timetolive;
+	int32_t douse_points;
+	int32_t hdelta;
+	struct Point3d loc;
+	long elevation;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST dyfire;
+	int32_t dycheck_timer;
+	struct Point2d celloc;
+	int32_t building;
+	struct _CELL_FIRE_DATA* cfd;
+	long mission_id;
+};
 
 // Type: void;
 
@@ -56,10 +76,23 @@ struct VRObjInfo{
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
-// _CELL_FIRE_DATA Class implementation not found
+struct _CELL_FIRE_DATA{
+	struct _CELL_INFO* cptr;
+	long fire_count;
+};
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -71,7 +104,12 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-// _STOBJ_INST Class implementation not found
+struct _STOBJ_INST{
+	struct _STOBJ_INST* next;
+	void * __ptr32 mesh;
+	long user1;
+	long user2;
+};
 
 // Type: struct Point3d;
 struct Point3d{
@@ -81,13 +119,33 @@ struct Point3d{
 };
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 // Type: struct _LZ_INFO (forward reference);
-// _LZ_INFO Class implementation not found
+struct _LZ_INFO{
+	int32_t flags;
+	int32_t ulx;
+	int32_t ulz;
+	int32_t dimx;
+	int32_t dimz;
+};
 
 // Type: struct Point2d;
 struct Point2d{

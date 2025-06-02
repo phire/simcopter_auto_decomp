@@ -17,14 +17,23 @@ struct Point3d{
 };
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: double;
 
 // Type: int32_t;
 
 // Type: struct Plane (forward reference);
-// Plane Class implementation not found
+struct Plane{
+	int32_t A;
+	int32_t B;
+	int32_t C;
+	int32_t D;
+};
 
 // Type: void;
 
@@ -37,10 +46,17 @@ struct Plane{
 };
 
 // Type: struct mv (forward reference);
-// mv Class implementation not found
+struct mv{
+	int32_t M;
+	int32_t Vmag;
+	struct Point3d V;
+};
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 
 

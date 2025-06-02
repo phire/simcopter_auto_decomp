@@ -679,7 +679,11 @@ enum LocationType {
 };
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: short;
 
@@ -702,10 +706,17 @@ public:
 };
 
 // Type: struct cYObject::LocationInfo (forward reference);
-// cYObject::LocationInfo Class implementation not found
+struct cYObject::LocationInfo{
+	enum cYObject::SearchType searchType;
+	short maxNormalLoiterers;
+};
 
 // Type: struct BodyDebugInfo (forward reference);
-// BodyDebugInfo Class implementation not found
+struct BodyDebugInfo{
+	long screenx;
+	long screeny;
+	char text[20];
+};
 
 // Type: unsigned short;
 
@@ -1165,7 +1176,17 @@ protected:
 // Type: int32_t *;
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 // Type: struct Point3d;
 struct Point3d{
@@ -1175,7 +1196,17 @@ struct Point3d{
 };
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: enum cYObject::SearchType;
 enum SearchType {
@@ -1208,10 +1239,72 @@ enum MissionSupertype {
 // Type: unsigned char;
 
 // Type: struct VRBlit (forward reference);
-// VRBlit Class implementation not found
+struct VRBlit{
+	int32_t nverts;
+	struct Proj2d* verts;
+	int32_t notused;
+	int32_t user1;
+};
 
 // Type: struct _HELI_DATA (forward reference);
-// _HELI_DATA Class implementation not found
+struct _HELI_DATA{
+	int32_t type;
+	int32_t state;
+	int32_t flags;
+	int32_t altdelta;
+	struct Point2d lastpos;
+	struct Point2d currpos;
+	int32_t rotor_mat[4][4];
+	int32_t rotortl_mat[4][4];
+	struct _DYOBJ_INST* dycannon;
+	struct _DYOBJ_INST* dyheli;
+	struct _DYOBJ_INST* dyshadow;
+	struct _DYOBJ_INST* dyrotor;
+	struct _DYOBJ_INST* dyrotortl;
+	struct _DYOBJ_INST* dyrotshadow;
+	struct _DYOBJ_INST* dyrope;
+	struct _DYOBJ_INST* dybucket;
+	struct _DYOBJ_INST* dyspot;
+	struct _DYOBJ_INST* dybracket;
+	void * __ptr32 bucketmesh;
+	void * __ptr32 harnessmesh;
+	int32_t damage;
+	int32_t smokeseq;
+	struct mv heli_p;
+	struct mv heli_r;
+	struct Point3d vector;
+	int32_t yaw;
+	int32_t collide_delay;
+	int32_t roll;
+	int32_t slide;
+	int32_t pitch;
+	int32_t yawrate;
+	int32_t yspeed;
+	int32_t fwd_speed;
+	int32_t delta_fwd_speed;
+	int32_t movex;
+	int32_t movez;
+	int32_t hover_ht;
+	int32_t can_land;
+	long spotlevel;
+	int32_t rotstate;
+	int32_t rotspeed;
+	int32_t fireprojectile;
+	int32_t terralt;
+	int32_t buildalt;
+	struct Point3d collisvec;
+	int32_t shad_color;
+	struct _MISSILE_DATA* crash_traj;
+	int32_t crash_timer;
+	long crash_seq;
+	int32_t over_water;
+	struct _ROPE_DATA rinfo;
+	struct _WATER_DATA winfo;
+	struct tagHeliPassengerData passengerData;
+	int32_t fuel;
+	int32_t flight_time;
+	int32_t pct_load;
+};
 
 // Type: enum PersonType;
 enum PersonType {
@@ -1258,7 +1351,13 @@ enum MissionType {
 };
 
 // Type: struct _LZ_INFO (forward reference);
-// _LZ_INFO Class implementation not found
+struct _LZ_INFO{
+	int32_t flags;
+	int32_t ulx;
+	int32_t ulz;
+	int32_t dimx;
+	int32_t dimz;
+};
 
 // Type: struct Rect;
 struct Rect{
@@ -1404,7 +1503,12 @@ struct tagPassengerInfo{
 };
 
 // Type: struct cYObject::MoveInfo (forward reference);
-// cYObject::MoveInfo Class implementation not found
+struct cYObject::MoveInfo{
+	enum cYObject::LocationType* locType;
+	char * roadDir;
+	struct _DYOBJ_INST* dyBlock;
+	struct _STOBJ_INST* stBlock;
+};
 
 // Type: enum cYObject::MoveErrorCode;
 enum MoveErrorCode {
@@ -1521,7 +1625,12 @@ protected:
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-// _STOBJ_INST Class implementation not found
+struct _STOBJ_INST{
+	struct _STOBJ_INST* next;
+	void * __ptr32 mesh;
+	long user1;
+	long user2;
+};
 
 // Type: class FlatResFile (forward reference);
 class FlatResFile : public FlatFile
@@ -1674,7 +1783,13 @@ struct TreeSim::StackElem{
 };
 
 // Type: struct Behavior::Node (forward reference);
-// Behavior::Node Class implementation not found
+struct Behavior::Node{
+	short treeID;
+	short primCode;
+	char trueTrans;
+	char falseTrans;
+	struct Behavior::NodeParameter param;
+};
 
 // Type: enum TreeSim::ReturnCode;
 enum ReturnCode {

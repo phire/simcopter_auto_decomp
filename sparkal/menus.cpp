@@ -45,7 +45,23 @@ protected:
 // Type: void;
 
 // Type: struct UserMenuWindowDescription (forward reference);
-// UserMenuWindowDescription Class implementation not found
+struct UserMenuWindowDescription{
+	class basic_string<char> sImageFileName;
+	int32_t nTransparentIndex;
+	class MRect rectPosition;
+	long lMenuStringResourceIndex;
+	long lMenuStringResourceCount;
+	long lSelectionBase;
+	struct SparkalColor colorFont;
+	struct SparkalColor colorFontHighlighted;
+	class MPoint ptPositionFirstItem;
+	int32_t nSizeItemFont;
+	int32_t nLineHeight;
+	long lTitleStringResourceIndex;
+	int32_t bTitleCentered;
+	class MPoint ptTitlePosition;
+	int32_t nSizeTitleFont;
+};
 
 // Type: int32_t;
 

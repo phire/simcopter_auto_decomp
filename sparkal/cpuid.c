@@ -17,7 +17,10 @@ struct TIME_STAMP{
 };
 
 // Type: struct TIME_STAMP (forward reference);
-// TIME_STAMP Class implementation not found
+struct TIME_STAMP{
+	unsigned long High;
+	unsigned long Low;
+};
 
 // Type: short;
 

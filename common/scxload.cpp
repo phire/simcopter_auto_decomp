@@ -56,7 +56,13 @@ public:
 };
 
 // Type: struct SCXNeighborData (forward reference);
-// SCXNeighborData Class implementation not found
+struct SCXNeighborData{
+	char name[32];
+	short nameIndex;
+	unsigned long val;
+	unsigned long pop;
+	unsigned long fame;
+};
 
 // Type: class cLZAPFileBitStream;
 class cLZAPFileBitStream : public cGZXBitstream

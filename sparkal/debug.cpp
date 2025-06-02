@@ -128,7 +128,16 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 };
 
 // Type: struct _iobuf (forward reference);
-// _iobuf Class implementation not found
+struct _iobuf{
+	char * _ptr;
+	int32_t _cnt;
+	char * _base;
+	int32_t _flag;
+	int32_t _file;
+	int32_t _charbuf;
+	int32_t _bufsiz;
+	char * _tmpfname;
+};
 
 // Type: class deque<basic_string<char>>::iterator;
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>

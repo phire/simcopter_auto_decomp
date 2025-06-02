@@ -13,7 +13,12 @@
 // Type: short;
 
 // Type: struct Rect (forward reference);
-// Rect Class implementation not found
+struct Rect{
+	short top;
+	short left;
+	short bottom;
+	short right;
+};
 
 // Type: short *;
 

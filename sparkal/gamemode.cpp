@@ -303,7 +303,15 @@ public:
 };
 
 // Type: struct tagUserPersonalInfo (forward reference);
-// tagUserPersonalInfo Class implementation not found
+struct tagUserPersonalInfo{
+	char szUserName[64];
+	long lMoney;
+	long lHelicopters;
+	long lEquipment;
+	long lTrophies;
+	long lPoints;
+	long lTeargasCount;
+};
 
 // Type: long;
 

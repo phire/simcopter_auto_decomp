@@ -75,7 +75,25 @@ public:
 // Type: void (void * __ptr32, long);
 
 // Type: struct ResMap::Entry (forward reference);
-// ResMap::Entry Class implementation not found
+struct ResMap::Entry{
+	short id;
+	short nameOffset;
+	LfBitfield @ 0x7104c:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3deb
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 flags;
+	LfBitfield @ 0x71054:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x18
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3dec
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 dataLoc;
+	void * __ptr32 hand;
+};
 
 // Type: class StringSet;
 class StringSet{
@@ -96,7 +114,11 @@ public:
 };
 
 // Type: struct ResMap::TypeHead (forward reference);
-// ResMap::TypeHead Class implementation not found
+struct ResMap::TypeHead{
+	unsigned long type;
+	short resCnt;
+	short listOff;
+};
 
 // Type: unsigned short;
 

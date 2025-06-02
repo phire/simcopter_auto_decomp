@@ -58,10 +58,70 @@ protected:
 };
 
 // Type: class ICommander (forward reference);
-// ICommander Class implementation not found
+class ICommander{
+public:
+	void ICommander();
+	// vtable: 0
+	intro void ~ICommander();
+	// vtable: 4
+	intro unsigned long Idle();
+	// vtable: 8
+	intro unsigned long OnCharacter(char, int32_t);
+	// vtable: 12
+	intro unsigned long OnMouseDown(int32_t, int32_t);
+	// vtable: 16
+	intro unsigned long OnMouseUp(int32_t, int32_t);
+	// vtable: 20
+	intro unsigned long OnMouseMove(int32_t, int32_t);
+	// vtable: 24
+	intro unsigned long OnWindowActivate();
+	// vtable: 28
+	intro unsigned long OnWindowDeactivate();
+	// vtable: 32
+	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
+	class CSparkalWindow* GetWindow();
+protected:
+	class CSparkalWindow* mpWindow;
+};
 
 // Type: class ScreenBuffer (forward reference);
-// ScreenBuffer Class implementation not found
+class ScreenBuffer : public CBackBuffer
+{
+public:
+	class CSparkalWindow* pWindow;
+	long bOK;
+	void ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t);
+	void ScreenBuffer();
+	// vtable: 100
+	intro void ~ScreenBuffer();
+	virtual unsigned long Swap(class CSparkalWindow*, long, long);
+	// vtable: 104
+	intro int32_t DeleteSurfaces();
+	// vtable: 108
+	intro int32_t CreateSurfaces();
+	// vtable: 112
+	intro int32_t ClearSurfaces(int32_t);
+	// vtable: 116
+	intro int32_t UsePalette(struct SparkalColor*);
+	// vtable: 120
+	intro void FreePalette();
+	// vtable: 124
+	intro void SetPalette();
+	virtual unsigned long FillRect(long, struct SparkalRect*);
+	// vtable: 128
+	intro void SetWindowRect(struct SparkalRect*);
+	// vtable: 132
+	intro void SetNewModeType(enum tagModeType);
+	// vtable: 136
+	intro void WaitTillReadyToFlip();
+protected:
+	struct SparkalRect rectBuffer;
+	short nBackBuffers;
+	enum tagModeType nCurrentModeType;
+	int32_t bUsingFlipping;
+	struct IDirectDrawClipper* lpClipper;
+	struct tagRECT rectDirectDrawBackBuffer;
+};
 
 // Type: unsigned long;
 

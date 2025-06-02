@@ -116,7 +116,21 @@ struct joyinfoex_tag{
 };
 
 // Type: struct joyinfoex_tag (forward reference);
-// joyinfoex_tag Class implementation not found
+struct joyinfoex_tag{
+	unsigned long dwSize;
+	unsigned long dwFlags;
+	unsigned long dwXpos;
+	unsigned long dwYpos;
+	unsigned long dwZpos;
+	unsigned long dwRpos;
+	unsigned long dwUpos;
+	unsigned long dwVpos;
+	unsigned long dwButtons;
+	unsigned long dwButtonNumber;
+	unsigned long dwPOV;
+	unsigned long dwReserved1;
+	unsigned long dwReserved2;
+};
 
 // Type: unsigned long *;
 

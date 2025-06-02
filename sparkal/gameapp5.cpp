@@ -105,7 +105,21 @@ protected:
 // Type: char;
 
 // Type: struct MISSION_DATA (forward reference);
-// MISSION_DATA Class implementation not found
+struct MISSION_DATA{
+	char mtext[32];
+	long type_ctr;
+	long key;
+	struct Point2d maploc;
+	struct Point2d destmaploc;
+	struct Point2d pickuploc;
+	int32_t timer;
+	long money_bonus;
+	long points_bonus;
+	long flags;
+	long type;
+	long state;
+	struct MISSION_DATA::__unnamed mdata;
+};
 
 // Type: class IBackBuffer;
 class IBackBuffer : public IFlatImage

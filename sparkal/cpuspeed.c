@@ -21,7 +21,12 @@ struct FREQ_INFO{
 // Type: unsigned short;
 
 // Type: struct FREQ_INFO (forward reference);
-// FREQ_INFO Class implementation not found
+struct FREQ_INFO{
+	unsigned long in_cycles;
+	unsigned long ex_ticks;
+	unsigned long raw_freq;
+	unsigned long norm_freq;
+};
 
 // Type: unsigned short *;
 

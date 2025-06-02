@@ -60,13 +60,49 @@ struct _FringeHeapNode{
 };
 
 // Type: struct RGVertex (forward reference);
-// RGVertex Class implementation not found
+struct RGVertex{
+	unsigned char x;
+	unsigned char y;
+	LfBitfield @ 0x11f58:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1771
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 turnFlags;
+	LfBitfield @ 0x11f60:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x1772
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 deadEndFlags;
+	unsigned char fElevated;
+	struct Edge edge[4];
+	unsigned char yindexPrev;
+	unsigned char xPrev;
+	unsigned char edgeIndexPrev;
+	int32_t STVisited;
+};
 
 // Type: struct Edge (forward reference);
-// Edge Class implementation not found
+struct Edge{
+	unsigned char yindex;
+	unsigned char x;
+	unsigned short Time;
+	unsigned short numElementsToPath;
+	struct Road* roadArray;
+};
 
 // Type: struct _FringeHeapNode (forward reference);
-// _FringeHeapNode Class implementation not found
+struct _FringeHeapNode{
+	unsigned char xCurr;
+	unsigned char yindexCurr;
+	unsigned char edgeIndexPrev;
+	unsigned char xPrev;
+	unsigned char yindexPrev;
+	long cost;
+};
 
 // Type: void;
 

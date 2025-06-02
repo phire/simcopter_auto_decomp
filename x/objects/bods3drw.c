@@ -9,7 +9,10 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: char *;
 
@@ -39,7 +42,10 @@ struct BmpLineInfo{
 // Type: unsigned char *;
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: struct Point3D;
 struct Point3D{
@@ -49,10 +55,19 @@ struct Point3D{
 };
 
 // Type: struct BmpLineInfo (forward reference);
-// BmpLineInfo Class implementation not found
+struct BmpLineInfo{
+	long width;
+	long index;
+	double xStride;
+	unsigned char * ptr;
+};
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: char;
 

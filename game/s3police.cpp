@@ -89,7 +89,17 @@ struct _GridCoordinates{
 };
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -108,7 +118,19 @@ struct Point3d{
 };
 
 // Type: struct Goal (forward reference);
-// Goal Class implementation not found
+struct Goal{
+	struct RGVertex* pRGV;
+	int32_t elementIndex;
+	int32_t gridIndex;
+	struct _GridCoordinates gridLoc;
+	enum DirIndex2 edgeIndex;
+	enum DirIndex2 direction;
+	int32_t distance;
+	int32_t turnFlags;
+	int32_t deadEndFlags;
+	int32_t fElevated;
+	enum SlopeIndex slope;
+};
 
 // Type: struct _RGIndex;
 struct _RGIndex{
@@ -131,13 +153,107 @@ private:
 };
 
 // Type: struct _GridCoordinates (forward reference);
-// _GridCoordinates Class implementation not found
+struct _GridCoordinates{
+	unsigned char x;
+	unsigned char y;
+};
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
-// _AUTO_LOAD_SAVE Class implementation not found
+struct _AUTO_LOAD_SAVE{
+	int32_t flags;
+	struct _DYOBJ_INST autoDynomitor;
+	struct Goal goal;
+	struct _GridCoordinates goalpRGVFixup;
+	int32_t DeltaFromCenter;
+	int32_t stalledTimer;
+	struct Point3d directionVector;
+	int32_t remainingTime;
+	int32_t desiredSpeed;
+	int32_t desiredHiwaySpeed;
+	int32_t beamDelay;
+	int32_t beamTimer;
+	int32_t m_cellBaseY;
+	int32_t timePulledOver;
+	enum DirectionTypes hiwaydir;
+	struct _GridCoordinates currentLocation;
+	struct _GridCoordinates nextLocation;
+	struct _GridCoordinates northCell;
+	struct _GridCoordinates southCell;
+	struct _GridCoordinates eastCell;
+	struct _GridCoordinates westCell;
+	int32_t speed;
+	long prevDir;
+	long turnIndex;
+	int32_t currDist;
+	int32_t legOfTurn;
+	struct Point3d* pDirVector;
+	int32_t personDone;
+	int32_t personState;
+	int32_t personTimer;
+	int32_t timeToLive;
+	int32_t fireTime;
+	long fireSeq;
+	long missionId;
+	struct _GridCoordinates cptrfixup;
+	int32_t spotlightHitCounter;
+	struct _AUTO_LOAD_SAVE::_CRIMINAL{
+		long missionState;
+		long criminalType;
+		int32_t timeToLeaveCar;
+		int32_t timeToBeOnTheRun;
+	};
+public:
+	struct _AUTO_LOAD_SAVE::_CRIMINAL c;
+	struct _AUTO_LOAD_SAVE::_EMERGENCY{
+		struct _GridCoordinates baseLocation;
+		struct _GridCoordinates emergencyLocation;
+		long emergencyType;
+		long timeOfArrival;
+		struct _DYOBJ_INST dispatchIcon;
+		int32_t timeToEmergency;
+		long targetfixup;
+		unsigned char dispatchPath[256];
+		unsigned char dispatchPathIndex;
+		unsigned char dispatchPathLength;
+		long emergencyState;
+		int32_t stationID;
+		int32_t numberOfSeats;
+	};
+public:
+	struct _AUTO_LOAD_SAVE::_EMERGENCY e;
+	struct _AUTO_LOAD_SAVE::_FIRE{
+		int32_t dousingFire;
+		int32_t distToFire;
+		struct Point3d firevec;
+		int32_t pathID;
+	};
+public:
+	struct _AUTO_LOAD_SAVE::_FIRE f;
+	struct _AUTO_LOAD_SAVE::_POLICE{
+		struct Goal currDestGoal;
+		struct _GridCoordinates currpRGVFixup;
+		struct Goal destGoal1;
+		struct _GridCoordinates dest1pRGVFixup;
+		struct Goal destGoal2;
+		struct _GridCoordinates dest2pRGVFixup;
+		int32_t foundRoad;
+	};
+public:
+	struct _AUTO_LOAD_SAVE::_POLICE p;
+};
 
 // Type: uint32_t;
 

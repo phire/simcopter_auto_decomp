@@ -7,7 +7,13 @@
 // Type: char;
 
 // Type: struct _LZ_INFO (forward reference);
-// _LZ_INFO Class implementation not found
+struct _LZ_INFO{
+	int32_t flags;
+	int32_t ulx;
+	int32_t ulz;
+	int32_t dimx;
+	int32_t dimz;
+};
 
 // Type: char *;
 
@@ -26,7 +32,10 @@ struct VRFaceInfo{
 };
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -44,10 +53,25 @@ struct VRObjInfo{
 // Type: void;
 
 // Type: struct VRBlit (forward reference);
-// VRBlit Class implementation not found
+struct VRBlit{
+	int32_t nverts;
+	struct Proj2d* verts;
+	int32_t notused;
+	int32_t user1;
+};
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 
 

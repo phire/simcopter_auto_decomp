@@ -320,7 +320,10 @@ protected:
 // Type: uint32_t;
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound

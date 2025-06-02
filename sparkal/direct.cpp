@@ -566,7 +566,11 @@ public:
 };
 
 // Type: struct list<DirectoryEntry>::list_node (forward reference);
-// list<DirectoryEntry>::list_node Class implementation not found
+struct list<DirectoryEntry>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	class DirectoryEntry data;
+};
 
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
@@ -587,7 +591,11 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
-// list<basic_string<char>>::list_node Class implementation not found
+struct list<basic_string<char>>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	class basic_string<char> data;
+};
 
 // Type: class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>

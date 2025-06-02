@@ -328,20 +328,65 @@ public:
 // Type: short;
 
 // Type: struct Behavior::NodeParameter (forward reference);
-// Behavior::NodeParameter Class implementation not found
+struct Behavior::NodeParameter{
+	short p1;
+	short p2;
+	short p3;
+	short p4;
+};
 
 // Type: struct YObjLang::AttrParam (forward reference);
-// YObjLang::AttrParam Class implementation not found
+struct YObjLang::AttrParam{
+	short lhsData;
+	short rhsData;
+	LfBitfield @ 0x5d5b4:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3565
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 isSigned;
+	LfBitfield @ 0x5d5bc:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3566
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 opType;
+	LfBitfield @ 0x5d5b4:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3565
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 lhsOwner;
+	LfBitfield @ 0x5d5bc:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
+	[90m   LB.[95msymbols[m = []
+	[90m   LB.[95mTI[m = 0x3566
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 rhsOwner;
+};
 
 // Type: void * __ptr32;
 
 // Type: long;
 
 // Type: struct Behavior::Tree (forward reference);
-// Behavior::Tree Class implementation not found
+struct Behavior::Tree{
+	short numNodes;
+	struct Behavior::Node nodes[1];
+};
 
 // Type: struct Behavior::Node (forward reference);
-// Behavior::Node Class implementation not found
+struct Behavior::Node{
+	short treeID;
+	short primCode;
+	char trueTrans;
+	char falseTrans;
+	struct Behavior::NodeParameter param;
+};
 
 // Type: unsigned short;
 

@@ -5,7 +5,11 @@
 // Type: int32_t;
 
 // Type: struct tagMode (forward reference);
-// tagMode Class implementation not found
+struct tagMode{
+	long lWidth;
+	long lHeight;
+	long lBPP;
+};
 
 // Type: long;
 
@@ -14,7 +18,24 @@
 // Type: void;
 
 // Type: struct _DDSURFACEDESC (forward reference);
-// _DDSURFACEDESC Class implementation not found
+struct _DDSURFACEDESC{
+	unsigned long dwSize;
+	unsigned long dwFlags;
+	unsigned long dwHeight;
+	unsigned long dwWidth;
+	long lPitch;
+	unsigned long dwBackBufferCount;
+	unsigned long dwZBufferBitDepth;
+	unsigned long dwAlphaBitDepth;
+	unsigned long dwReserved;
+	void * __ptr32 lpSurface;
+	struct _DDCOLORKEY ddckCKDestOverlay;
+	struct _DDCOLORKEY ddckCKDestBlt;
+	struct _DDCOLORKEY ddckCKSrcOverlay;
+	struct _DDCOLORKEY ddckCKSrcBlt;
+	struct _DDPIXELFORMAT ddpfPixelFormat;
+	struct _DDSCAPS ddsCaps;
+};
 
 
 

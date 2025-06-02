@@ -13,10 +13,37 @@ struct Rect{
 };
 
 // Type: struct TransformedInfo (forward reference);
-// TransformedInfo Class implementation not found
+struct TransformedInfo{
+	struct Point startPoint;
+	struct Point endPoint;
+	short startDepth;
+	short endDepth;
+	unsigned char bStartTransformed;
+	unsigned char bEndTransformed;
+	float info;
+};
 
 // Type: struct cCopterBody::Part (forward reference);
-// cCopterBody::Part Class implementation not found
+struct cCopterBody::Part{
+	char drawProc;
+	char calcID;
+	char framePartID;
+	char color;
+	char scaleFlags;
+	char dontAnimateColor;
+	char _pad2;
+	char _pad3;
+	unsigned long tinyName;
+	unsigned long parentName;
+	struct cCopterBody::Part* parent;
+	struct Point tmpCenterPt;
+	struct Point tmpEndPt;
+	short tmpCenterDepth;
+	short tmpEndDepth;
+	float length;
+	float width;
+	float taper;
+};
 
 // Type: class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
@@ -51,7 +78,10 @@ public:
 // Type: unsigned long;
 
 // Type: struct AnimLookup (forward reference);
-// AnimLookup Class implementation not found
+struct AnimLookup{
+	unsigned long animName;
+	unsigned long privAnimName;
+};
 
 // Type: class cCopterAnim (forward reference);
 class cCopterAnim : public cBBase
@@ -121,7 +151,10 @@ enum SPHERE_SHADE_FLAG {
 };
 
 // Type: struct PrivAnimPartInfo (forward reference);
-// PrivAnimPartInfo Class implementation not found
+struct PrivAnimPartInfo{
+	struct TinyXZY start;
+	struct TinyXZY end;
+};
 
 // Type: int32_t;
 

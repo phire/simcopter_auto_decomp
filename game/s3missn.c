@@ -7,7 +7,10 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-// _dPoint2d Class implementation not found
+struct _dPoint2d{
+	double x;
+	double z;
+};
 
 // Type: struct _MISSION_STATICS;
 struct _MISSION_STATICS{
@@ -40,7 +43,17 @@ struct tagLogString{
 // Type: void;
 
 // Type: struct tagCitySettings (forward reference);
-// tagCitySettings Class implementation not found
+struct tagCitySettings{
+	long lDifficulty;
+	long lMissionFrequencyFire;
+	long lMissionFrequencyCrime;
+	long lMissionFrequencyRescue;
+	long lMissionFrequencyRiot;
+	long lMissionFrequencyTraffic;
+	long lMissionFrequencyMedEvac;
+	long lMissionFrequencyTransport;
+	long lDaytime;
+};
 
 // Type: float;
 
@@ -58,22 +71,68 @@ struct tagCitySettings{
 };
 
 // Type: struct MISSION_DATA (forward reference);
-// MISSION_DATA Class implementation not found
+struct MISSION_DATA{
+	char mtext[32];
+	long type_ctr;
+	long key;
+	struct Point2d maploc;
+	struct Point2d destmaploc;
+	struct Point2d pickuploc;
+	int32_t timer;
+	long money_bonus;
+	long points_bonus;
+	long flags;
+	long type;
+	long state;
+	struct MISSION_DATA::__unnamed mdata;
+};
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
-// _CELL_FIRE_DATA Class implementation not found
+struct _CELL_FIRE_DATA{
+	struct _CELL_INFO* cptr;
+	long fire_count;
+};
 
 // Type: struct _DYOBJ_INST (forward reference);
-// _DYOBJ_INST Class implementation not found
+struct _DYOBJ_INST{
+	struct _DYOBJ_INST* next;
+	struct _DYOBJ_INST* vnext;
+	void * __ptr32 mesh;
+	short flags;
+	short user1;
+	long radius;
+	long height;
+	struct Point3d loc;
+	int32_t matrix[4][4];
+};
 
 // Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
+struct Point2d{
+	int32_t x;
+	int32_t y;
+};
 
 // Type: struct _MISSION_PARMS (forward reference);
-// _MISSION_PARMS Class implementation not found
+struct _MISSION_PARMS{
+	long op;
+	long id;
+	struct Point2d maploc;
+	long i2num;
+	long flags;
+};
 
 // Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
+struct _CELL_INFO{
+	short flags;
+	short x;
+	short y;
+	short z;
+	short size;
+	short ctr;
+	struct _STOBJ_INST* stptr;
+	struct _DYOBJ_INST* dyptr;
+	struct _DYOBJ_INST* vwptr;
+};
 
 // Type: char *;
 

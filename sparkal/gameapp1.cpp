@@ -563,7 +563,11 @@ public:
 };
 
 // Type: struct list<Shortcut>::list_node (forward reference);
-// list<Shortcut>::list_node Class implementation not found
+struct list<Shortcut>::list_node{
+	void * __ptr32 next;
+	void * __ptr32 prev;
+	struct Shortcut data;
+};
 
 // Type: class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
@@ -706,7 +710,10 @@ public:
 };
 
 // Type: struct list<CopterGameMode>::list_node_buffer (forward reference);
-// list<CopterGameMode>::list_node_buffer Class implementation not found
+struct list<CopterGameMode>::list_node_buffer{
+	void * __ptr32 next_buffer;
+	struct list<CopterGameMode>::list_node* buffer;
+};
 
 // Type: class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>

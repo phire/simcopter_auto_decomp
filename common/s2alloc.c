@@ -5,7 +5,10 @@
 // Type: uint32_t;
 
 // Type: struct alloc_root_s (forward reference);
-// alloc_root_s Class implementation not found
+struct alloc_root_s{
+	struct alloc_hdr_s* first;
+	struct alloc_hdr_s* current;
+};
 
 // Type: int32_t;
 
@@ -14,12 +17,19 @@
 // Type: unsigned long;
 
 // Type: struct alloc_handle_t (forward reference);
-// alloc_handle_t Class implementation not found
+struct alloc_handle_t{
+	int32_t dummy;
+};
 
 // Type: char *;
 
 // Type: struct alloc_hdr_s (forward reference);
-// alloc_hdr_s Class implementation not found
+struct alloc_hdr_s{
+	struct alloc_hdr_s* next;
+	char * block;
+	char * free;
+	char * end;
+};
 
 // Type: unsigned short;
 

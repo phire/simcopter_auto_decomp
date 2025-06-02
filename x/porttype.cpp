@@ -9,7 +9,10 @@ struct GrafPtr{
 };
 
 // Type: struct Point (forward reference);
-// Point Class implementation not found
+struct Point{
+	short v;
+	short h;
+};
 
 // Type: struct tagPOINT;
 struct tagPOINT{
@@ -34,7 +37,12 @@ struct tagSIZE{
 // Type: char *;
 
 // Type: struct Rect (forward reference);
-// Rect Class implementation not found
+struct Rect{
+	short top;
+	short left;
+	short bottom;
+	short right;
+};
 
 // Type: struct tagRECT;
 struct tagRECT{
@@ -49,10 +57,18 @@ struct tagRECT{
 // Type: void * __ptr32;
 
 // Type: struct GrafPtr (forward reference);
-// GrafPtr Class implementation not found
+struct GrafPtr{
+	void * __ptr32 window;
+	void * __ptr32 dc;
+};
 
 // Type: struct tagRECT (forward reference);
-// tagRECT Class implementation not found
+struct tagRECT{
+	long left;
+	long top;
+	long right;
+	long bottom;
+};
 
 // Type: unsigned long;
 

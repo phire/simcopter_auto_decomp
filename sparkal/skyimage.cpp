@@ -40,12 +40,20 @@ enum SkyType {
 };
 
 // Type: struct VRResource (forward reference);
-// VRResource Class implementation not found
+struct VRResource{
+	char * mem;
+	int32_t mempoolid;
+	int32_t type;
+	int32_t entry;
+};
 
 // Type: char;
 
 // Type: struct VRBmpHdr (forward reference);
-// VRBmpHdr Class implementation not found
+struct VRBmpHdr{
+	struct VRBmpInfo info;
+	int32_t ScanOffset[1];
+};
 
 // Type: class CBackBuffer (forward reference);
 class CBackBuffer : public IBackBuffer

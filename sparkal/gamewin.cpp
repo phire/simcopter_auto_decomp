@@ -162,7 +162,13 @@ public:
 };
 
 // Type: struct tagMINMAXINFO (forward reference);
-// tagMINMAXINFO Class implementation not found
+struct tagMINMAXINFO{
+	struct tagPOINT ptReserved;
+	struct tagPOINT ptMaxSize;
+	struct tagPOINT ptMaxPosition;
+	struct tagPOINT ptMinTrackSize;
+	struct tagPOINT ptMaxTrackSize;
+};
 
 // Type: class CSparkalWindow (forward reference);
 class CSparkalWindow{

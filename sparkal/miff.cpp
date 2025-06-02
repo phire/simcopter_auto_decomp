@@ -84,7 +84,11 @@ public:
 // Type: void;
 
 // Type: struct MIFFRecord (forward reference);
-// MIFFRecord Class implementation not found
+struct MIFFRecord{
+	long lRecordType;
+	long lRecordLength;
+	char chRecordData[4];
+};
 
 // Type: uint32_t;
 

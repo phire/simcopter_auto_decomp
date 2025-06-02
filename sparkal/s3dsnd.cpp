@@ -84,7 +84,12 @@ public:
 // Type: char *;
 
 // Type: struct SoundPreferences (forward reference);
-// SoundPreferences Class implementation not found
+struct SoundPreferences{
+	long lMasterVolume;
+	long lDispatchVolume;
+	long lSoundEffectsVolume;
+	long lVehicleVolume;
+};
 
 // Type: void * __ptr32;
 
@@ -171,7 +176,11 @@ protected:
 };
 
 // Type: struct Point3d (forward reference);
-// Point3d Class implementation not found
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
 
 // Type: struct Point3d;
 struct Point3d{
