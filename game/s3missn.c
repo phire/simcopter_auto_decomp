@@ -4,6 +4,48 @@
 
 // Type: long;
 
+// Type: int32_t;
+
+// Type: const int32_t[8][4];
+
+// Type: const int32_t[4][4];
+
+// Type: const int32_t[4];
+
+// Type: const int32_t[16];
+
+// Type: const struct _dPoint2d[4];
+
+// Type: long[6];
+
+// Type: struct _MISSION_STATICS;
+struct _MISSION_STATICS{
+	long crime_ctr;
+	long fire_ctr;
+	long medevac_ctr;
+	long plane_ctr;
+	long rescue_ctr;
+	long riot_ctr;
+	long speeder_ctr;
+	long traffic_ctr;
+	long train_ctr;
+	long transport_ctr;
+	long num_active_missions;
+	long num_delayed_missions;
+	long key_ctr;
+	struct MISSION_DATA* curr_mission;
+	struct MISSION_DATA missions[31];
+};
+
+// Type: struct tagLogString;
+struct tagLogString{
+	unsigned long nType;
+	unsigned long nTime;
+	unsigned long nMissionID;
+	char * szLogString;
+	char szData[4];
+};
+
 // Type: void;
 
 // Type: struct tagCitySettings (forward reference);
@@ -22,8 +64,6 @@ struct tagCitySettings{
 	long lMissionFrequencyTransport;
 	long lDaytime;
 };
-
-// Type: int32_t;
 
 // Type: struct MISSION_DATA (forward reference);
 
@@ -6436,142 +6476,207 @@ _T182:
 
 
 // Contribution: 2:00003898-00003aaf Module: 173, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00592898
-// TurnTable3
-// LOCAL: COPTER_D 0x00592918
-// TurnTable2
-// LOCAL: COPTER_D 0x00592958
-// IndexToType
-// LOCAL: COPTER_D 0x00592968
-// TypeToIndex2
-// LOCAL: COPTER_D 0x005929a8
-// TILUT
-// LOCAL: COPTER_D 0x005929e8
-// OT
-// LOCAL: COPTER_D 0x00592a28
-// RRT
-// LOCAL: COPTER_D 0x00592a68
-// LRT
+// GLOBAL: COPTER_D 0x00592898
+const int32_t TurnTable3[4][8] = { /* <data@0x00592898> */ };
+
+// GLOBAL: COPTER_D 0x00592918
+const int32_t TurnTable2[4][4] = { /* <data@0x00592918> */ };
+
+// GLOBAL: COPTER_D 0x00592958
+const int32_t IndexToType[4] = { /* <data@0x00592958> */ };
+
+// GLOBAL: COPTER_D 0x00592968
+const int32_t TypeToIndex2[16] = { /* <data@0x00592968> */ };
+
+// GLOBAL: COPTER_D 0x005929a8
+const int32_t TILUT[4][4] = { /* <data@0x005929a8> */ };
+
+// GLOBAL: COPTER_D 0x005929e8
+const struct _dPoint2d OT[4] = { /* <data@0x005929e8> */ };
+
+// GLOBAL: COPTER_D 0x00592a28
+const struct _dPoint2d RRT[4] = { /* <data@0x00592a28> */ };
+
+// GLOBAL: COPTER_D 0x00592a68
+const struct _dPoint2d LRT[4] = { /* <data@0x00592a68> */ };
+
 
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x005b4e18
-// S_riotcheckctr
-// LOCAL: COPTER_D 0x005b4e1c
-// S_mission_interval_easy
-// LOCAL: COPTER_D 0x005b4e20
-// S_max_missions_easy
-// LOCAL: COPTER_D 0x005b4e24
-// S_mission_interval
-// LOCAL: COPTER_D 0x005b4e28
-// S_mission_interval_adj
-// LOCAL: COPTER_D 0x005b4e2c
-// S_mission_timer
-// LOCAL: COPTER_D 0x005b4e30
-// S_max_missions
-// LOCAL: COPTER_D 0x005b4e34
-// SpeederMissionActive
+// GLOBAL: COPTER_D 0x005b4e18
+long S_riotcheckctr = { /* <data@0x005b4e18> */ };
+
+// GLOBAL: COPTER_D 0x005b4e1c
+int32_t S_mission_interval_easy = { /* <data@0x005b4e1c> */ };
+
+// GLOBAL: COPTER_D 0x005b4e20
+long S_max_missions_easy = { /* <data@0x005b4e20> */ };
+
+// GLOBAL: COPTER_D 0x005b4e24
+int32_t S_mission_interval = { /* <data@0x005b4e24> */ };
+
+// GLOBAL: COPTER_D 0x005b4e28
+int32_t S_mission_interval_adj = { /* <data@0x005b4e28> */ };
+
+// GLOBAL: COPTER_D 0x005b4e2c
+int32_t S_mission_timer = { /* <data@0x005b4e2c> */ };
+
+// GLOBAL: COPTER_D 0x005b4e30
+long S_max_missions = { /* <data@0x005b4e30> */ };
+
+// GLOBAL: COPTER_D 0x005b4e34
+int32_t SpeederMissionActive = { /* <data@0x005b4e34> */ };
+
 // GLOBAL: COPTER_D 0x005b4e38
-// S_money_mission_riot
+long S_money_mission_riot = { /* <data@0x005b4e38> */ };
+
 // GLOBAL: COPTER_D 0x005b4e3c
-// S_pts_mission_riot
+long S_pts_mission_riot = { /* <data@0x005b4e3c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e40
-// S_money_mission_riot_penalty
+long S_money_mission_riot_penalty = { /* <data@0x005b4e40> */ };
+
 // GLOBAL: COPTER_D 0x005b4e44
-// S_pts_mission_riot_penalty
+long S_pts_mission_riot_penalty = { /* <data@0x005b4e44> */ };
+
 // GLOBAL: COPTER_D 0x005b4e48
-// S_mission_riot_time
+int32_t S_mission_riot_time = { /* <data@0x005b4e48> */ };
+
 // GLOBAL: COPTER_D 0x005b4e4c
-// S_money_mission_rescue
+long S_money_mission_rescue = { /* <data@0x005b4e4c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e50
-// S_pts_mission_rescue
+long S_pts_mission_rescue = { /* <data@0x005b4e50> */ };
+
 // GLOBAL: COPTER_D 0x005b4e54
-// S_money_mission_medevac
+long S_money_mission_medevac = { /* <data@0x005b4e54> */ };
+
 // GLOBAL: COPTER_D 0x005b4e58
-// S_pts_mission_medevac
+long S_pts_mission_medevac = { /* <data@0x005b4e58> */ };
+
 // GLOBAL: COPTER_D 0x005b4e5c
-// S_money_mission_transport
+long S_money_mission_transport = { /* <data@0x005b4e5c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e60
-// S_pts_mission_transport
+long S_pts_mission_transport = { /* <data@0x005b4e60> */ };
+
 // GLOBAL: COPTER_D 0x005b4e64
-// S_money_mission_fire
+long S_money_mission_fire = { /* <data@0x005b4e64> */ };
+
 // GLOBAL: COPTER_D 0x005b4e68
-// S_pts_mission_fire
+long S_pts_mission_fire = { /* <data@0x005b4e68> */ };
+
 // GLOBAL: COPTER_D 0x005b4e6c
-// S_money_mission_fire_penalty
+long S_money_mission_fire_penalty = { /* <data@0x005b4e6c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e70
-// S_pts_mission_fire_penalty
+long S_pts_mission_fire_penalty = { /* <data@0x005b4e70> */ };
+
 // GLOBAL: COPTER_D 0x005b4e74
-// S_money_mission_plane
+long S_money_mission_plane = { /* <data@0x005b4e74> */ };
+
 // GLOBAL: COPTER_D 0x005b4e78
-// S_pts_mission_plane
+long S_pts_mission_plane = { /* <data@0x005b4e78> */ };
+
 // GLOBAL: COPTER_D 0x005b4e7c
-// S_money_mission_train
+long S_money_mission_train = { /* <data@0x005b4e7c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e80
-// S_pts_mission_train
+long S_pts_mission_train = { /* <data@0x005b4e80> */ };
+
 // GLOBAL: COPTER_D 0x005b4e84
-// S_money_mission_criminal
+long S_money_mission_criminal = { /* <data@0x005b4e84> */ };
+
 // GLOBAL: COPTER_D 0x005b4e88
-// S_pts_mission_criminal
+long S_pts_mission_criminal = { /* <data@0x005b4e88> */ };
+
 // GLOBAL: COPTER_D 0x005b4e8c
-// S_money_mission_speeder
+long S_money_mission_speeder = { /* <data@0x005b4e8c> */ };
+
 // GLOBAL: COPTER_D 0x005b4e90
-// S_pts_mission_speeder
+long S_pts_mission_speeder = { /* <data@0x005b4e90> */ };
+
 // GLOBAL: COPTER_D 0x005b4e94
-// S_money_mission_jam
+long S_money_mission_jam = { /* <data@0x005b4e94> */ };
+
 // GLOBAL: COPTER_D 0x005b4e98
-// S_pts_mission_jam
+long S_pts_mission_jam = { /* <data@0x005b4e98> */ };
+
 // GLOBAL: COPTER_D 0x005b4e9c
-// S_mission_jam_time
+int32_t S_mission_jam_time = { /* <data@0x005b4e9c> */ };
+
 // GLOBAL: COPTER_D 0x005b4ea0
-// S_money_mission_vehiclefire
+long S_money_mission_vehiclefire = { /* <data@0x005b4ea0> */ };
+
 // GLOBAL: COPTER_D 0x005b4ea4
-// S_pts_mission_vehiclefire
+long S_pts_mission_vehiclefire = { /* <data@0x005b4ea4> */ };
+
 // GLOBAL: COPTER_D 0x005b4ea8
-// S_money_mission_debris
+long S_money_mission_debris = { /* <data@0x005b4ea8> */ };
+
 // GLOBAL: COPTER_D 0x005b4eac
-// S_pts_mission_debris
+long S_pts_mission_debris = { /* <data@0x005b4eac> */ };
+
 // GLOBAL: COPTER_D 0x005b4eb0
-// S_money_mission_ufo
+long S_money_mission_ufo = { /* <data@0x005b4eb0> */ };
+
 // GLOBAL: COPTER_D 0x005b4eb4
-// S_pts_mission_ufo
+long S_pts_mission_ufo = { /* <data@0x005b4eb4> */ };
+
 // GLOBAL: COPTER_D 0x005b4eb8
-// S_log
+struct tagLogString S_log = { /* <data@0x005b4eb8> */ };
+
 // GLOBAL: COPTER_D 0x005b4ecc
-// S_pts_flame
+long S_pts_flame = { /* <data@0x005b4ecc> */ };
+
 // GLOBAL: COPTER_D 0x005b4ed0
-// S_money_flame
+long S_money_flame = { /* <data@0x005b4ed0> */ };
+
 // GLOBAL: COPTER_D 0x005b4ed4
-// S_pts_destroyed_building
+long S_pts_destroyed_building = { /* <data@0x005b4ed4> */ };
+
 // GLOBAL: COPTER_D 0x005b4ed8
-// S_money_saved_building
+long S_money_saved_building = { /* <data@0x005b4ed8> */ };
+
 // GLOBAL: COPTER_D 0x005b4edc
-// S_pts_new_debris
+long S_pts_new_debris = { /* <data@0x005b4edc> */ };
+
 // GLOBAL: COPTER_D 0x005b4ee0
-// S_money_debris_doused
+long S_money_debris_doused = { /* <data@0x005b4ee0> */ };
+
 // GLOBAL: COPTER_D 0x005b4ee4
-// S_money_person_rescued
+long S_money_person_rescued = { /* <data@0x005b4ee4> */ };
+
 // GLOBAL: COPTER_D 0x005b4ee8
-// S_money_person_transport
+long S_money_person_transport = { /* <data@0x005b4ee8> */ };
+
 // GLOBAL: COPTER_D 0x005b4eec
-// S_money_person_medevaced
+long S_money_person_medevaced = { /* <data@0x005b4eec> */ };
+
 // GLOBAL: COPTER_D 0x005b4ef0
-// S_money_person_pickup
+long S_money_person_pickup = { /* <data@0x005b4ef0> */ };
+
 // GLOBAL: COPTER_D 0x005b4ef4
-// S_money_vehicle_doused
+long S_money_vehicle_doused = { /* <data@0x005b4ef4> */ };
+
 // GLOBAL: COPTER_D 0x005b4ef8
-// S_money_vehicle_unjammed
+long S_money_vehicle_unjammed = { /* <data@0x005b4ef8> */ };
+
 // GLOBAL: COPTER_D 0x005b4efc
-// S_pts_vehicle_burned
-// LOCAL: COPTER_D 0x005b4f00
-// missionMIFFID
+long S_pts_vehicle_burned = { /* <data@0x005b4efc> */ };
+
+// GLOBAL: COPTER_D 0x005b4f00
+long missionMIFFID = { /* <data@0x005b4f00> */ };
+
 // GLOBAL: COPTER_D 0x005b4f08
-// S_msg_general
+long S_msg_general[6] = { /* <data@0x005b4f08> */ };
+
 
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x006072b8
-// S_mstatics
+// GLOBAL: COPTER_D 0x006072b8
+struct _MISSION_STATICS S_mstatics = { /* <data@0x006072b8> */ };
+
 
 
 // Unknown globals:
@@ -6579,16 +6684,21 @@ _T182:
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x0066be70
-// G_fireseq
+struct VRBmpHdr* G_fireseq[6] = { /* <data@0x0066be70> */ };
+
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x006666d0
-// G_smokeseq
+struct VRBmpHdr* G_smokeseq[7] = { /* <data@0x006666d0> */ };
+
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3map.c
 // GLOBAL: COPTER_D 0x006bed40
-// S_carinfo
+struct _MAP_CARINFO S_carinfo[20] = { /* <data@0x006bed40> */ };
+
 // GLOBAL: COPTER_D 0x006bf060
-// _logmsg
+char logmsg[256] = { /* <data@0x006bf060> */ };
+
 // GLOBAL: COPTER_D 0x006bf060
-// logmsg
+char logmsg[256] = { /* <data@0x006bf060> */ };
+

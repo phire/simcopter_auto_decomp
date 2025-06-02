@@ -4,6 +4,8 @@
 
 // Type: int32_t;
 
+// Type: struct tagMode[64];
+
 // Type: long;
 
 // Type: struct tagMode (forward reference);
@@ -166,9 +168,11 @@ _T6c:
 
 // Contribution: 3:00002d80-00002d83 Module: 27, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599d80
-// gNumModes
+int32_t gNumModes = { /* <data@0x00599d80> */ };
+
 
 
 // Contribution: 3:0006d818-0006db17 Module: 27, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604818
-// gModeList
+struct tagMode gModeList[64] = { /* <data@0x00604818> */ };
+

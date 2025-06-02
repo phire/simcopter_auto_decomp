@@ -4,6 +4,10 @@
 
 // Type: int32_t;
 
+// Type: class AmbulanceClass*[5];
+
+// Type: class AmbulanceClass*[0];
+
 // Type: class AmbulanceClass (forward reference);
 class AmbulanceClass : public EmergencyVehicleClass
 {
@@ -1103,14 +1107,17 @@ _T7a:
 
 // Contribution: 2:00004280-000042a7 Module: 160, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593280
+// GLOBAL: COPTER_D 0x00593280
 // ??_7AmbulanceClass@@6B@
 
 
 // Contribution: 3:00020d18-00020dc5 Module: 160, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7d18
-// curAmbulances
+int32_t curAmbulances = { /* <data@0x005b7d18> */ };
+
 
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9b8
-// ambulances
+class AmbulanceClass* ambulances[5] = { /* <data@0x0062b9b8> */ };
+

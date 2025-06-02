@@ -4,6 +4,12 @@
 
 // Type: void * __ptr32;
 
+// Type: char[0];
+
+// Type: float;
+
+// Type: char[128];
+
 // Type: char *;
 
 // Type: int32_t;
@@ -244,11 +250,14 @@ _T24b:
 
 // Contribution: 3:0002b848-0002b8cf Module: 73, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2848
-// gszCommandLine
+char gszCommandLine[128] = { /* <data@0x005c2848> */ };
+
 // GLOBAL: COPTER_D 0x005c28c8
-// _ghWindowsInstance
+void * __ptr32 _ghWindowsInstance = { /* <data@0x005c28c8> */ };
+
 // GLOBAL: COPTER_D 0x005c28cc
-// _gTimerFrequency
+float _gTimerFrequency = { /* <data@0x005c28cc> */ };
+
 
 
 // Unknown globals:

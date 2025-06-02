@@ -34,6 +34,24 @@ private:
 
 // Type: char *;
 
+// Type: unsigned char;
+
+// Type: uint32_t;
+
+// Type: struct tagWNDCLASSA;
+struct tagWNDCLASSA{
+	uint32_t style;
+	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
+	int32_t cbClsExtra;
+	int32_t cbWndExtra;
+	void * __ptr32 hInstance;
+	void * __ptr32 hIcon;
+	void * __ptr32 hCursor;
+	void * __ptr32 hbrBackground;
+	char * lpszMenuName;
+	char * lpszClassName;
+};
+
 // Type: struct debug_command (forward reference);
 struct debug_command{
 	class basic_string<char> command_string;
@@ -295,8 +313,6 @@ public:
 // Type: long;
 
 // Type: char[256];
-
-// Type: uint32_t;
 
 // Type: class vector<basic_string<char>> (forward reference);
 class vector<basic_string<char>>{
@@ -5060,32 +5076,41 @@ _T683:
 
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f41c
+// GLOBAL: COPTER_D 0x0058f41c
 // ??_7?$class_debugger@VCDebugWindow@@$1?CDebugWindowhelp_text@@3PBDB$1?CDebugWindowusage_text@@3PBDB@@6B@
 
 
 // Contribution: 2:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x0058f420
 // GLOBAL: COPTER_D 0x0058f420
 // ??_7debug_command@@6B@
 
 
 // Contribution: 3:00000368-0000041d Module: 70, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597368
-// CDebugWindow::m_className
+char * CDebugWindow::m_className = { /* <data@0x00597368> */ };
+
 // GLOBAL: COPTER_D 0x0059736c
-// CDebugWindowhelp_text
+char * CDebugWindowhelp_text = { /* <data@0x0059736c> */ };
+
 // GLOBAL: COPTER_D 0x00597370
-// CDebugWindowusage_text
+char * CDebugWindowusage_text = { /* <data@0x00597370> */ };
+
 // GLOBAL: COPTER_D 0x00597374
-// gDebugWindow
+class CDebugWindow* gDebugWindow = { /* <data@0x00597374> */ };
+
 
 
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597420
-// deque<basic_string<char>>::buffer_size
+uint32_t deque<basic_string<char>>::buffer_size = { /* <data@0x00597420> */ };
+
 
 
 // Contribution: 3:0002b8d0-0002b917 Module: 70, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c28d0
-// CDebugWindow::m_class
-// LOCAL: COPTER_D 0x005c28f8
-// ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA
+struct tagWNDCLASSA CDebugWindow::m_class = { /* <data@0x005c28d0> */ };
+
+// GLOBAL: COPTER_D 0x005c28f8
+unsigned char ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA = { /* <data@0x005c28f8> */ };
+

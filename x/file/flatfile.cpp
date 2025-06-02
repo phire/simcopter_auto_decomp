@@ -47,6 +47,8 @@ public:
 	struct _iobuf* GetFile();
 };
 
+// Type: long;
+
 // Type: void;
 
 // Type: unsigned char *;
@@ -54,8 +56,6 @@ public:
 // Type: char *;
 
 // Type: unsigned char[256];
-
-// Type: long;
 
 // Type: char[256];
 
@@ -827,11 +827,14 @@ _T38:
 
 // Contribution: 2:00004620-0000462f Module: 195, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593620
+// GLOBAL: COPTER_D 0x00593620
 // ??_7FlatFile@@6B@
 
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bddd8
-// FlatFile::sList
+class FlatFile* FlatFile::sList = { /* <data@0x005bddd8> */ };
+
 // GLOBAL: COPTER_D 0x005bdddc
-// FlatFile::sLastFileID
+long FlatFile::sLastFileID = { /* <data@0x005bdddc> */ };
+

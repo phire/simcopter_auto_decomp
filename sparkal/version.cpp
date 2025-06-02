@@ -622,6 +622,7 @@ long Version::GetCPUSpeed() {
 
 // Contribution: 2:000005b8-000005bb Module: 55, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f5b8
+// GLOBAL: COPTER_D 0x0058f5b8
 // ??_7Version@@6B@
 
 

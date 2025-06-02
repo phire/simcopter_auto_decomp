@@ -629,19 +629,23 @@ _T230:
 
 // Contribution: 2:00002218-00002227 Module: 16, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591218
+// GLOBAL: COPTER_D 0x00591218
 // ??_7NResFile@@6B@
 
 
 // Contribution: 3:0000324c-00003252 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x0059a24c
 // GLOBAL: COPTER_D 0x0059a24c
 // ??_C@_06BBEO@whoops?$AA@
 
 
 // Contribution: 3:00003254-00003270 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a254
+// GLOBAL: COPTER_D 0x0059a254
 // ??_C@_0BN@BGMO@c?3?2copter?2source?2x?2PtrList?4h?$AA@
 
 
 // Contribution: 3:00003274-0000328a Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x0059a274
 // GLOBAL: COPTER_D 0x0059a274
 // ??_C@_0BH@OELJ@count?5error?5in?5ptrlist?$AA@

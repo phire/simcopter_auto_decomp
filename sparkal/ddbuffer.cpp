@@ -5143,10 +5143,12 @@ _T92d:
 
 // Contribution: 2:000017e0-00001807 Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005907e0
+// GLOBAL: COPTER_D 0x005907e0
 // ??_7IBackBuffer@@6B@
 
 
 // Contribution: 2:00001808-0000186b Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00590808
 // GLOBAL: COPTER_D 0x00590808
 // ??_7CBackBuffer@@6B@
 

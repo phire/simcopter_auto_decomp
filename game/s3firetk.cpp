@@ -4,6 +4,10 @@
 
 // Type: int32_t;
 
+// Type: class FireEngineClass*[5];
+
+// Type: class FireEngineClass*[0];
+
 // Type: class FireEngineClass (forward reference);
 class FireEngineClass : public EmergencyVehicleClass
 {
@@ -1494,14 +1498,17 @@ _Tf4:
 
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005932a8
+// GLOBAL: COPTER_D 0x005932a8
 // ??_7FireEngineClass@@6B@
 
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7dc8
-// curFireTrucks
+int32_t curFireTrucks = { /* <data@0x005b7dc8> */ };
+
 
 
 // Contribution: 3:000949d0-000949e3 Module: 159, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9d0
-// fireTrucks
+class FireEngineClass* fireTrucks[5] = { /* <data@0x0062b9d0> */ };
+

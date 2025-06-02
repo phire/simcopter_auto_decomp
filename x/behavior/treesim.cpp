@@ -1156,6 +1156,7 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 
 // Contribution: 2:00004630-0000463f Module: 194, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593630
+// GLOBAL: COPTER_D 0x00593630
 // ??_7TreeSim@@6B@
 
 

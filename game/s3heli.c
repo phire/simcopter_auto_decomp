@@ -4,13 +4,106 @@
 
 // Type: struct _HELI_DATA (forward reference);
 
+// Type: struct _HELI_TYPE_DATA[9];
+
+// Type: long;
+
+// Type: struct _HELI_TYPE_DATA[1];
+
 // Type: int32_t;
+
+// Type: struct _HELI_DATA;
+struct _HELI_DATA{
+	int32_t type;
+	int32_t state;
+	int32_t flags;
+	int32_t altdelta;
+	struct Point2d lastpos;
+	struct Point2d currpos;
+	int32_t rotor_mat[4][4];
+	int32_t rotortl_mat[4][4];
+	struct _DYOBJ_INST* dycannon;
+	struct _DYOBJ_INST* dyheli;
+	struct _DYOBJ_INST* dyshadow;
+	struct _DYOBJ_INST* dyrotor;
+	struct _DYOBJ_INST* dyrotortl;
+	struct _DYOBJ_INST* dyrotshadow;
+	struct _DYOBJ_INST* dyrope;
+	struct _DYOBJ_INST* dybucket;
+	struct _DYOBJ_INST* dyspot;
+	struct _DYOBJ_INST* dybracket;
+	void * __ptr32 bucketmesh;
+	void * __ptr32 harnessmesh;
+	int32_t damage;
+	int32_t smokeseq;
+	struct mv heli_p;
+	struct mv heli_r;
+	struct Point3d vector;
+	int32_t yaw;
+	int32_t collide_delay;
+	int32_t roll;
+	int32_t slide;
+	int32_t pitch;
+	int32_t yawrate;
+	int32_t yspeed;
+	int32_t fwd_speed;
+	int32_t delta_fwd_speed;
+	int32_t movex;
+	int32_t movez;
+	int32_t hover_ht;
+	int32_t can_land;
+	long spotlevel;
+	int32_t rotstate;
+	int32_t rotspeed;
+	int32_t fireprojectile;
+	int32_t terralt;
+	int32_t buildalt;
+	struct Point3d collisvec;
+	int32_t shad_color;
+	struct _MISSILE_DATA* crash_traj;
+	int32_t crash_timer;
+	long crash_seq;
+	int32_t over_water;
+	struct _ROPE_DATA rinfo;
+	struct _WATER_DATA winfo;
+	struct tagHeliPassengerData passengerData;
+	int32_t fuel;
+	int32_t flight_time;
+	int32_t pct_load;
+};
+
+// Type: const int32_t[8][4];
+
+// Type: const int32_t[4][4];
+
+// Type: const int32_t[4];
+
+// Type: const int32_t[16];
+
+// Type: const struct _dPoint2d[4];
+
+// Type: struct Point3d;
+struct Point3d{
+	int32_t x;
+	int32_t y;
+	int32_t z;
+};
+
+// Type: char;
+
+// Type: struct VRBmpHdr (forward reference);
+
+// Type: struct _HELI_DATA*[10];
+
+// Type: int32_t[4][4];
+
+// Type: int32_t[10];
+
+// Type: struct _HELI_DATA (forward reference);
 
 // Type: struct _HELI_TYPE_DATA (forward reference);
 
 // Type: char *;
-
-// Type: long;
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -36,15 +129,6 @@ struct VRview{
 	int32_t matrix[4][4];
 };
 
-// Type: int32_t[4][4];
-
-// Type: struct Point3d;
-struct Point3d{
-	int32_t x;
-	int32_t y;
-	int32_t z;
-};
-
 // Type: struct Point2d (forward reference);
 
 // Type: struct Point3d (forward reference);
@@ -60,8 +144,6 @@ struct VRFaceInfo{
 	struct MapVert* MapVList;
 	struct MapVert* BarryPtr;
 };
-
-// Type: char;
 
 // Type: int32_t *;
 
@@ -13703,122 +13785,177 @@ _T11f:
 
 
 // Contribution: 2:00003688-00003897 Module: 176, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00592688
-// TurnTable3
-// LOCAL: COPTER_D 0x00592708
-// TurnTable2
-// LOCAL: COPTER_D 0x00592748
-// IndexToType
-// LOCAL: COPTER_D 0x00592758
-// TypeToIndex2
-// LOCAL: COPTER_D 0x00592798
-// TILUT
-// LOCAL: COPTER_D 0x005927d8
-// OT
-// LOCAL: COPTER_D 0x00592818
-// RRT
-// LOCAL: COPTER_D 0x00592858
-// LRT
+// GLOBAL: COPTER_D 0x00592688
+const int32_t TurnTable3[4][8] = { /* <data@0x00592688> */ };
+
+// GLOBAL: COPTER_D 0x00592708
+const int32_t TurnTable2[4][4] = { /* <data@0x00592708> */ };
+
+// GLOBAL: COPTER_D 0x00592748
+const int32_t IndexToType[4] = { /* <data@0x00592748> */ };
+
+// GLOBAL: COPTER_D 0x00592758
+const int32_t TypeToIndex2[16] = { /* <data@0x00592758> */ };
+
+// GLOBAL: COPTER_D 0x00592798
+const int32_t TILUT[4][4] = { /* <data@0x00592798> */ };
+
+// GLOBAL: COPTER_D 0x005927d8
+const struct _dPoint2d OT[4] = { /* <data@0x005927d8> */ };
+
+// GLOBAL: COPTER_D 0x00592818
+const struct _dPoint2d RRT[4] = { /* <data@0x00592818> */ };
+
+// GLOBAL: COPTER_D 0x00592858
+const struct _dPoint2d LRT[4] = { /* <data@0x00592858> */ };
+
 
 
 // Contribution: 3:0001d8c0-0001ddb4 Module: 176, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b48c0
-// S_htwk_landing_yspeed
+int32_t S_htwk_landing_yspeed = { /* <data@0x005b48c0> */ };
+
 // GLOBAL: COPTER_D 0x005b48c4
-// S_htwk_landing_pitch
+int32_t S_htwk_landing_pitch = { /* <data@0x005b48c4> */ };
+
 // GLOBAL: COPTER_D 0x005b48c8
-// S_htwk_landing_slide
+int32_t S_htwk_landing_slide = { /* <data@0x005b48c8> */ };
+
 // GLOBAL: COPTER_D 0x005b48cc
-// S_htwk_landing_speed
+int32_t S_htwk_landing_speed = { /* <data@0x005b48cc> */ };
+
 // GLOBAL: COPTER_D 0x005b48d0
-// S_htwk_max_descent_rate
+int32_t S_htwk_max_descent_rate = { /* <data@0x005b48d0> */ };
+
 // GLOBAL: COPTER_D 0x005b48d4
-// S_htwk_bucket_fillrate
+int32_t S_htwk_bucket_fillrate = { /* <data@0x005b48d4> */ };
+
 // GLOBAL: COPTER_D 0x005b48d8
-// S_htwk_bucket_dumprate
+int32_t S_htwk_bucket_dumprate = { /* <data@0x005b48d8> */ };
+
 // GLOBAL: COPTER_D 0x005b48dc
-// S_htwk_rope_loadfactor
+int32_t S_htwk_rope_loadfactor = { /* <data@0x005b48dc> */ };
+
 // GLOBAL: COPTER_D 0x005b48e0
-// S_htwk_rope_tension
+int32_t S_htwk_rope_tension = { /* <data@0x005b48e0> */ };
+
 // GLOBAL: COPTER_D 0x005b48e4
-// S_htwk_water_throwfact
+int32_t S_htwk_water_throwfact = { /* <data@0x005b48e4> */ };
+
 // GLOBAL: COPTER_D 0x005b48e8
-// S_htwk_watercannon_speed
+int32_t S_htwk_watercannon_speed = { /* <data@0x005b48e8> */ };
+
 // GLOBAL: COPTER_D 0x005b48ec
-// S_htwk_firedmg_alt_min
+int32_t S_htwk_firedmg_alt_min = { /* <data@0x005b48ec> */ };
+
 // GLOBAL: COPTER_D 0x005b48f0
-// S_htwk_firedmg_alt_max
+int32_t S_htwk_firedmg_alt_max = { /* <data@0x005b48f0> */ };
+
 // GLOBAL: COPTER_D 0x005b48f4
-// S_htwk_max_helialt
+int32_t S_htwk_max_helialt = { /* <data@0x005b48f4> */ };
+
 // GLOBAL: COPTER_D 0x005b48f8
-// S_htwk_collide_damage_val
+int32_t S_htwk_collide_damage_val = { /* <data@0x005b48f8> */ };
+
 // GLOBAL: COPTER_D 0x005b48fc
-// S_htwk_depreciation
-// LOCAL: COPTER_D 0x005b4900
-// ControlNoise
-// LOCAL: COPTER_D 0x005b4904
-// S_sound_frames
-// LOCAL: COPTER_D 0x005b4908
-// RopeSeg
-// LOCAL: COPTER_D 0x005b490c
-// RopeDim
+int32_t S_htwk_depreciation = { /* <data@0x005b48fc> */ };
+
+// GLOBAL: COPTER_D 0x005b4900
+char ControlNoise = { /* <data@0x005b4900> */ };
+
+// GLOBAL: COPTER_D 0x005b4904
+long S_sound_frames = { /* <data@0x005b4904> */ };
+
+// GLOBAL: COPTER_D 0x005b4908
+int32_t RopeSeg = { /* <data@0x005b4908> */ };
+
+// GLOBAL: COPTER_D 0x005b490c
+int32_t RopeDim = { /* <data@0x005b490c> */ };
+
 // GLOBAL: COPTER_D 0x005b4910
-// G_helidir
+struct Point3d G_helidir = { /* <data@0x005b4910> */ };
+
 // GLOBAL: COPTER_D 0x005b491c
-// G_helibase_found
+int32_t G_helibase_found = { /* <data@0x005b491c> */ };
+
 // GLOBAL: COPTER_D 0x005b4920
-// G_apachebase_found
+int32_t G_apachebase_found = { /* <data@0x005b4920> */ };
+
 // GLOBAL: COPTER_D 0x005b4924
-// G_apache_placed
+int32_t G_apache_placed = { /* <data@0x005b4924> */ };
+
 // GLOBAL: COPTER_D 0x005b4928
-// G_uheli_objalt
+int32_t G_uheli_objalt = { /* <data@0x005b4928> */ };
+
 // GLOBAL: COPTER_D 0x005b492c
-// G_SpotLiteXRotation
+long G_SpotLiteXRotation = { /* <data@0x005b492c> */ };
+
 // GLOBAL: COPTER_D 0x005b4930
-// G_SpotLiteYRotation
-// LOCAL: COPTER_D 0x005b4934
-// S_test_frames
-// LOCAL: COPTER_D 0x005b4938
-// S_avoiding
-// LOCAL: COPTER_D 0x005b493c
-// S_targalt
+long G_SpotLiteYRotation = { /* <data@0x005b4930> */ };
+
+// GLOBAL: COPTER_D 0x005b4934
+long S_test_frames = { /* <data@0x005b4934> */ };
+
+// GLOBAL: COPTER_D 0x005b4938
+long S_avoiding = { /* <data@0x005b4938> */ };
+
+// GLOBAL: COPTER_D 0x005b493c
+int32_t S_targalt = { /* <data@0x005b493c> */ };
+
 // GLOBAL: COPTER_D 0x005b4940
-// G_helis
+struct _HELI_DATA* G_helis[10] = { /* <data@0x005b4940> */ };
+
 // GLOBAL: COPTER_D 0x005b4968
-// G_uheli
+struct _HELI_DATA* G_uheli = { /* <data@0x005b4968> */ };
+
 // GLOBAL: COPTER_D 0x005b496c
-// G_testheli
-// LOCAL: COPTER_D 0x005b4970
-// S_numhelis
+struct _HELI_DATA* G_testheli = { /* <data@0x005b496c> */ };
+
+// GLOBAL: COPTER_D 0x005b4970
+long S_numhelis = { /* <data@0x005b4970> */ };
+
 // GLOBAL: COPTER_D 0x005b4978
-// S_helitype_data
-// LOCAL: COPTER_D 0x005b4c90
-// S_bracket_loc
-// LOCAL: COPTER_D 0x005b4c9c
-// S_shadalt
-// LOCAL: COPTER_D 0x005b4ca0
-// S_spotdist
-// LOCAL: COPTER_D 0x005b4ca4
-// HeliMIFFID
+struct _HELI_TYPE_DATA S_helitype_data[1] = { /* <data@0x005b4978> */ };
+
+// GLOBAL: COPTER_D 0x005b4c90
+struct Point3d S_bracket_loc = { /* <data@0x005b4c90> */ };
+
+// GLOBAL: COPTER_D 0x005b4c9c
+int32_t S_shadalt = { /* <data@0x005b4c9c> */ };
+
+// GLOBAL: COPTER_D 0x005b4ca0
+int32_t S_spotdist = { /* <data@0x005b4ca0> */ };
+
+// GLOBAL: COPTER_D 0x005b4ca4
+long HeliMIFFID = { /* <data@0x005b4ca4> */ };
+
 
 
 // Contribution: 3:0006feb0-000702b7 Module: 176, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00606eb0
-// lsheli
-// LOCAL: COPTER_D 0x006071e0
-// S_spotvect
-// LOCAL: COPTER_D 0x006071ec
-// S_shadbmp
-// LOCAL: COPTER_D 0x006071f0
-// S_turbyaw
-// LOCAL: COPTER_D 0x00607218
-// S_spotmat
-// LOCAL: COPTER_D 0x00607258
-// S_sound_loc
-// LOCAL: COPTER_D 0x00607268
-// S_turbslide
-// LOCAL: COPTER_D 0x00607290
-// S_turbpitch
+// GLOBAL: COPTER_D 0x00606eb0
+struct _HELI_DATA lsheli = { /* <data@0x00606eb0> */ };
+
+// GLOBAL: COPTER_D 0x006071e0
+struct Point3d S_spotvect = { /* <data@0x006071e0> */ };
+
+// GLOBAL: COPTER_D 0x006071ec
+struct VRBmpHdr* S_shadbmp = { /* <data@0x006071ec> */ };
+
+// GLOBAL: COPTER_D 0x006071f0
+int32_t S_turbyaw[10] = { /* <data@0x006071f0> */ };
+
+// GLOBAL: COPTER_D 0x00607218
+int32_t S_spotmat[4][4] = { /* <data@0x00607218> */ };
+
+// GLOBAL: COPTER_D 0x00607258
+struct Point3d S_sound_loc = { /* <data@0x00607258> */ };
+
+// GLOBAL: COPTER_D 0x00607268
+int32_t S_turbslide[10] = { /* <data@0x00607268> */ };
+
+// GLOBAL: COPTER_D 0x00607290
+int32_t S_turbpitch[10] = { /* <data@0x00607290> */ };
+
 
 
 // Unknown globals:
@@ -13826,20 +13963,29 @@ _T11f:
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3city.c
 // GLOBAL: COPTER_D 0x006c1190
-// G_helibase
+struct _HELIBASE_DATA G_helibase = { /* <data@0x006c1190> */ };
+
 // GLOBAL: COPTER_D 0x006c1200
-// _S_spotlevels
+struct VRBmpHdr* S_spotlevels[4] = { /* <data@0x006c1200> */ };
+
 // GLOBAL: COPTER_D 0x006bf1d0
-// _G_helidata
+struct _HELI_DATA G_helidata[10] = { /* <data@0x006bf1d0> */ };
+
 // GLOBAL: COPTER_D 0x006bf1c0
-// _G_testloc
+struct Point3d G_testloc = { /* <data@0x006bf1c0> */ };
+
 // GLOBAL: COPTER_D 0x006bf1b8
-// _S_spotloc
+struct Point2d S_spotloc = { /* <data@0x006bf1b8> */ };
+
 // GLOBAL: COPTER_D 0x006bf1b8
-// S_spotloc
+struct Point2d S_spotloc = { /* <data@0x006bf1b8> */ };
+
 // GLOBAL: COPTER_D 0x006bf1d0
-// G_helidata
+struct _HELI_DATA G_helidata[10] = { /* <data@0x006bf1d0> */ };
+
 // GLOBAL: COPTER_D 0x006bf1c0
-// G_testloc
+struct Point3d G_testloc = { /* <data@0x006bf1c0> */ };
+
 // GLOBAL: COPTER_D 0x006c1200
-// S_spotlevels
+struct VRBmpHdr* S_spotlevels[4] = { /* <data@0x006c1200> */ };
+

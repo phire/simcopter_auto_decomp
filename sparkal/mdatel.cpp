@@ -1455,10 +1455,12 @@ _T1e0:
 
 // Contribution: 2:000003d0-000003e7 Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f3d0
+// GLOBAL: COPTER_D 0x0058f3d0
 // ??_7MDateLocalized@@6B@
 
 
 // Contribution: 2:000003e8-000003ef Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x0058f3e8
 // GLOBAL: COPTER_D 0x0058f3e8
 // ??_7MDate@@6B@
 
