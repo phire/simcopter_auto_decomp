@@ -12162,10 +12162,10 @@ static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b52c4
-static int32_t lastSpeederID = { 0 /* todo */ };
+static int32_t lastSpeederID = 32000;
 
 // GLOBAL: COPTER_D 0x005b52c8
-int32_t curAutos = { 0 /* todo */ };
+int32_t curAutos = 50;
 
 
 

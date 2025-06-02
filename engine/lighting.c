@@ -1413,16 +1413,16 @@ struct Point3d G_litevect2 = { 0 /* todo */ };
 struct Point3d G_litevect3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add5c
-static int32_t S_ambient = { 0 /* todo */ };
+static int32_t S_ambient = 6553;
 
 // GLOBAL: COPTER_D 0x005add60
-static int32_t S_intensity1 = { 0 /* todo */ };
+static int32_t S_intensity1 = 26214;
 
 // GLOBAL: COPTER_D 0x005add64
-static int32_t S_intensity2 = { 0 /* todo */ };
+static int32_t S_intensity2 = 19660;
 
 // GLOBAL: COPTER_D 0x005add68
-static int32_t S_intensity3 = { 0 /* todo */ };
+static int32_t S_intensity3 = 52428;
 
 
 

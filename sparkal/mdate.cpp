@@ -2110,10 +2110,10 @@ _T287:
 
 // Contribution: 2:00003380-000033bf Module: 2, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592380
-static const unsigned char DaysInMonth[12] = { 0 /* todo */ };
+static const unsigned char DaysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 // GLOBAL: COPTER_D 0x00592390
-static const uint32_t FirstDayOfEachMonth[12] = { 0 /* todo */ };
+static const uint32_t FirstDayOfEachMonth[12] = {1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
 
 
 

@@ -3072,7 +3072,7 @@ _Ta9:
 class _cArray** _cArray::sArrayTable = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bf750
-unsigned short _cArray::sAllLoaded = { 0 /* todo */ };
+unsigned short _cArray::sAllLoaded = 0;
 
 
 

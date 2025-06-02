@@ -3228,7 +3228,7 @@ _Tdb:
 
 // Contribution: 3:00002a5c-00002a5f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a5c
-uint32_t list<PreferenceItem>::number_of_lists = { 0 /* todo */ };
+uint32_t list<PreferenceItem>::number_of_lists = 0;
 
 
 
@@ -3258,7 +3258,7 @@ struct list<PreferenceItem>::list_node_buffer* list<PreferenceItem>::buffer_list
 
 // Contribution: 3:00002a70-00002a73 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a70
-uint32_t list<NotificationItem>::number_of_lists = { 0 /* todo */ };
+uint32_t list<NotificationItem>::number_of_lists = 0;
 
 
 

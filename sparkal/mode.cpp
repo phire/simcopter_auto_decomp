@@ -170,7 +170,7 @@ _T6c:
 
 // Contribution: 3:00002d80-00002d83 Module: 27, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599d80
-int32_t gNumModes = { 0 /* todo */ };
+int32_t gNumModes = 0;
 
 
 

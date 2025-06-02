@@ -10992,7 +10992,7 @@ _T23d:
 
 // Contribution: 3:00025634-00026d84 Module: 196, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bc634
-int32_t radiusReduction = { 0 /* todo */ };
+int32_t radiusReduction = 131072;
 
 
 

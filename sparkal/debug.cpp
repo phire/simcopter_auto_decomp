@@ -5104,7 +5104,7 @@ class CDebugWindow* gDebugWindow = { 0 /* todo */ };
 
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597420
-uint32_t deque<basic_string<char>>::buffer_size = { 0 /* todo */ };
+uint32_t deque<basic_string<char>>::buffer_size = 0;
 
 
 

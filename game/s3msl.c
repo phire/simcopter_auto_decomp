@@ -7369,46 +7369,46 @@ _T11b:
 
 // Contribution: 3:000202c8-0002037c Module: 167, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b72c8
-static short S_num_active_missiles = { 0 /* todo */ };
+static short S_num_active_missiles = 0;
 
 // GLOBAL: COPTER_D 0x005b72cc
-static short S_num_active_bullets = { 0 /* todo */ };
+static short S_num_active_bullets = 0;
 
 // GLOBAL: COPTER_D 0x005b72d0
-static short S_num_active_teargas = { 0 /* todo */ };
+static short S_num_active_teargas = 0;
 
 // GLOBAL: COPTER_D 0x005b72d4
-static short S_num_active_debris = { 0 /* todo */ };
+static short S_num_active_debris = 0;
 
 // GLOBAL: COPTER_D 0x005b72d8
-static short S_num_active_traj = { 0 /* todo */ };
+static short S_num_active_traj = 0;
 
 // GLOBAL: COPTER_D 0x005b72dc
-static short S_num_active_lasers = { 0 /* todo */ };
+static short S_num_active_lasers = 0;
 
 // GLOBAL: COPTER_D 0x005b72e0
-static long S_debris_fireseq[8] = { 0 /* todo */ };
+static long S_debris_fireseq[8] = {5, 4, 10, 11, 11, 10, 2, 1};
 
 // GLOBAL: COPTER_D 0x005b7300
-static int32_t S_debris_firealt[8] = { 0 /* todo */ };
+static int32_t S_debris_firealt[8] = {0, 327680, 327680, 983040, 655360, 327680, 655360, 1966080};
 
 // GLOBAL: COPTER_D 0x005b7320
-static long S_tracer = { 0 /* todo */ };
+static long S_tracer = 16;
 
 // GLOBAL: COPTER_D 0x005b7328
-int32_t S_debris_types[3] = { 0 /* todo */ };
+int32_t S_debris_types[3] = {329, 330, 331};
 
 // GLOBAL: COPTER_D 0x005b7334
-int32_t S_num_debris_types = { 0 /* todo */ };
+int32_t S_num_debris_types = 3;
 
 // GLOBAL: COPTER_D 0x005b7338
-static int32_t S_msl_fire_delay = { 0 /* todo */ };
+static int32_t S_msl_fire_delay = 0;
 
 // GLOBAL: COPTER_D 0x005b733c
-static long tgMIFFID = { 0 /* todo */ };
+static long tgMIFFID = 1413955923;
 
 // GLOBAL: COPTER_D 0x005b7340
-static long dbMIFFID = { 0 /* todo */ };
+static long dbMIFFID = 1145197139;
 
 
 

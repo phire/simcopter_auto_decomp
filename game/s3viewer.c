@@ -964,31 +964,31 @@ _T65:
 
 // Contribution: 3:0001d898-0001d8bb Module: 177, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b4898
-int32_t thetaspeed = { 0 /* todo */ };
+int32_t thetaspeed = 327680;
 
 // GLOBAL: COPTER_D 0x005b489c
-int32_t phispeed = { 0 /* todo */ };
+int32_t phispeed = 327680;
 
 // GLOBAL: COPTER_D 0x005b48a0
-int32_t radius = { 0 /* todo */ };
+int32_t radius = 524288;
 
 // GLOBAL: COPTER_D 0x005b48a4
-int32_t circley = { 0 /* todo */ };
+int32_t circley = 262144;
 
 // GLOBAL: COPTER_D 0x005b48a8
-int32_t yposcilate = { 0 /* todo */ };
+int32_t yposcilate = 131072;
 
 // GLOBAL: COPTER_D 0x005b48ac
-int32_t ynoscilate = { 0 /* todo */ };
+int32_t ynoscilate = 131072;
 
 // GLOBAL: COPTER_D 0x005b48b0
-int32_t S_hover_ht = { 0 /* todo */ };
+int32_t S_hover_ht = 3276800;
 
 // GLOBAL: COPTER_D 0x005b48b4
-int32_t build_insert = { 0 /* todo */ };
+int32_t build_insert = 1;
 
 // GLOBAL: COPTER_D 0x005b48b8
-long G_zoom_level = { 0 /* todo */ };
+long G_zoom_level = 0;
 
 
 

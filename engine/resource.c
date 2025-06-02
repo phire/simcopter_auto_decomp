@@ -1248,16 +1248,16 @@ _T5c:
 
 // Contribution: 3:00005220-00005230 Module: 146, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059c220
-int32_t bufferBad = { 0 /* todo */ };
+int32_t bufferBad = 1;
 
 // GLOBAL: COPTER_D 0x0059c224
-int32_t NextResource = { 0 /* todo */ };
+int32_t NextResource = 0;
 
 // GLOBAL: COPTER_D 0x0059c228
-int32_t ResFileMemPool = { 0 /* todo */ };
+int32_t ResFileMemPool = -1;
 
 // GLOBAL: COPTER_D 0x0059c22c
-int32_t G_currmempool = { 0 /* todo */ };
+int32_t G_currmempool = -1;
 
 
 

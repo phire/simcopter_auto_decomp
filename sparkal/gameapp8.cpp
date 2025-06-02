@@ -1971,7 +1971,7 @@ char * SZ_USER_DATA_FILE_SUFFIX = { 0 /* todo */ };
 
 // Contribution: 3:000004ac-000004af Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974ac
-uint32_t list<DirectoryEntry>::number_of_lists = { 0 /* todo */ };
+uint32_t list<DirectoryEntry>::number_of_lists = 0;
 
 
 

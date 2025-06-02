@@ -3978,7 +3978,7 @@ static void (*$S58)() = { 0 /* todo */ };
 
 // Contribution: 3:0001d884-0001d887 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4884
-uint32_t list<tagLogBase *>::number_of_lists = { 0 /* todo */ };
+uint32_t list<tagLogBase *>::number_of_lists = 0;
 
 
 

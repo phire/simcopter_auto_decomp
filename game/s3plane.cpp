@@ -4505,7 +4505,7 @@ static void (*$S9)() = { 0 /* todo */ };
 struct Point2d PlaneClass::lastScannedLocation = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7698
-int32_t PlaneClass::sPlaneModelSet = { 0 /* todo */ };
+int32_t PlaneClass::sPlaneModelSet = 0;
 
 
 

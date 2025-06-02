@@ -18000,7 +18000,7 @@ char * SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // Contribution: 3:000001bc-000001bf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971bc
-uint32_t list<KeyColors>::number_of_lists = { 0 /* todo */ };
+uint32_t list<KeyColors>::number_of_lists = 0;
 
 
 
@@ -18024,7 +18024,7 @@ struct list<KeyColors>::list_node* list<KeyColors>::free_list = { 0 /* todo */ }
 
 // Contribution: 3:000001cc-000001cf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971cc
-uint32_t list<HotSpot>::number_of_lists = { 0 /* todo */ };
+uint32_t list<HotSpot>::number_of_lists = 0;
 
 
 
@@ -18072,7 +18072,7 @@ struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { 0 /* 
 
 // Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597204
-uint32_t list<StringIDAssociation>::number_of_lists = { 0 /* todo */ };
+uint32_t list<StringIDAssociation>::number_of_lists = 0;
 
 
 
@@ -18102,7 +18102,7 @@ struct list<StringIDAssociation>::list_node_buffer* list<StringIDAssociation>::b
 
 // Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597218
-uint32_t list<Shortcut>::number_of_lists = { 0 /* todo */ };
+uint32_t list<Shortcut>::number_of_lists = 0;
 
 
 
@@ -18144,7 +18144,7 @@ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<lon
 
 // Contribution: 3:00000250-00000253 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597250
-uint32_t rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees = { 0 /* todo */ };
+uint32_t rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees = 0;
 
 
 

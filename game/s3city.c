@@ -13839,19 +13839,19 @@ _Tf04:
 
 // Contribution: 2:00003dc0-00003fd7 Module: 170, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592dc0
-static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
+static const int32_t TurnTable3[4][8] = {{0, 1, 2, 3, 4, 5, 6, 7}, {2, 3, 4, 5, 6, 7, 0, 1}, {6, 7, 0, 1, 2, 3, 4, 5}, {4, 5, 6, 7, 0, 1, 2, 3}};
 
 // GLOBAL: COPTER_D 0x00592e40
-static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
+static const int32_t TurnTable2[4][4] = {{0, 1, 2, 3}, {1, 2, 3, 0}, {3, 0, 1, 2}, {2, 3, 0, 1}};
 
 // GLOBAL: COPTER_D 0x00592e80
-static const int32_t IndexToType[4] = { 0 /* todo */ };
+static const int32_t IndexToType[4] = {1, 2, 4, 8};
 
 // GLOBAL: COPTER_D 0x00592e90
-static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
+static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1};
 
 // GLOBAL: COPTER_D 0x00592ed0
-static const int32_t TILUT[4][4] = { 0 /* todo */ };
+static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00592f10
 static const struct _dPoint2d OT[4] = { 0 /* todo */ };
@@ -13866,34 +13866,34 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 // Contribution: 3:0001e9d0-0001ecb1 Module: 170, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b59d0
-long G_alt = { 0 /* todo */ };
+long G_alt = 64;
 
 // GLOBAL: COPTER_D 0x005b59d4
-long G_last_grid_size = { 0 /* todo */ };
+long G_last_grid_size = 17;
 
 // GLOBAL: COPTER_D 0x005b59d8
-long S_down_trend = { 0 /* todo */ };
+long S_down_trend = 0;
 
 // GLOBAL: COPTER_D 0x005b59dc
-long S_up_trend = { 0 /* todo */ };
+long S_up_trend = 0;
 
 // GLOBAL: COPTER_D 0x005b59e0
-static long S_S2CityAlloc_Count = { 0 /* todo */ };
+static long S_S2CityAlloc_Count = 0;
 
 // GLOBAL: COPTER_D 0x005b59e4
-static int32_t S_inmapmode = { 0 /* todo */ };
+static int32_t S_inmapmode = 0;
 
 // GLOBAL: COPTER_D 0x005b59e8
-static int32_t S_watermorph = { 0 /* todo */ };
+static int32_t S_watermorph = 0;
 
 // GLOBAL: COPTER_D 0x005b59ec
-static int32_t how_deep = { 0 /* todo */ };
+static int32_t how_deep = 0;
 
 // GLOBAL: COPTER_D 0x005b59f0
-static long S_water_cycle = { 0 /* todo */ };
+static long S_water_cycle = 0;
 
 // GLOBAL: COPTER_D 0x005b59f4
-static long S_water_timer = { 0 /* todo */ };
+static long S_water_timer = 0;
 
 
 

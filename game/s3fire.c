@@ -4560,19 +4560,19 @@ _T104:
 
 // Contribution: 2:00003ff0-000041ff Module: 165, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592ff0
-static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
+static const int32_t TurnTable3[4][8] = {{0, 1, 2, 3, 4, 5, 6, 7}, {2, 3, 4, 5, 6, 7, 0, 1}, {6, 7, 0, 1, 2, 3, 4, 5}, {4, 5, 6, 7, 0, 1, 2, 3}};
 
 // GLOBAL: COPTER_D 0x00593070
-static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
+static const int32_t TurnTable2[4][4] = {{0, 1, 2, 3}, {1, 2, 3, 0}, {3, 0, 1, 2}, {2, 3, 0, 1}};
 
 // GLOBAL: COPTER_D 0x005930b0
-static const int32_t IndexToType[4] = { 0 /* todo */ };
+static const int32_t IndexToType[4] = {1, 2, 4, 8};
 
 // GLOBAL: COPTER_D 0x005930c0
-static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
+static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1};
 
 // GLOBAL: COPTER_D 0x00593100
-static const int32_t TILUT[4][4] = { 0 /* todo */ };
+static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00593140
 static const struct _dPoint2d OT[4] = { 0 /* todo */ };
@@ -4587,43 +4587,43 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 // Contribution: 3:00020388-000203e6 Module: 165, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7388
-int32_t S_ftwk_douse_points = { 0 /* todo */ };
+int32_t S_ftwk_douse_points = 4194304;
 
 // GLOBAL: COPTER_D 0x005b738c
-int32_t S_ftwk_douse_multiplier = { 0 /* todo */ };
+int32_t S_ftwk_douse_multiplier = 10;
 
 // GLOBAL: COPTER_D 0x005b7390
-int32_t S_ftwk_time_to_live = { 0 /* todo */ };
+int32_t S_ftwk_time_to_live = 13107200;
 
 // GLOBAL: COPTER_D 0x005b7394
-int32_t S_ftwk_spread_interval = { 0 /* todo */ };
+int32_t S_ftwk_spread_interval = 557056;
 
 // GLOBAL: COPTER_D 0x005b7398
-int32_t S_ftwk_spread_probability = { 0 /* todo */ };
+int32_t S_ftwk_spread_probability = 256;
 
 // GLOBAL: COPTER_D 0x005b739c
-int32_t S_ftwk_fire_radius = { 0 /* todo */ };
+int32_t S_ftwk_fire_radius = 1572864;
 
 // GLOBAL: COPTER_D 0x005b73a0
-static long S_fire_count = { 0 /* todo */ };
+static long S_fire_count = 0;
 
 // GLOBAL: COPTER_D 0x005b73a8
 struct Point2d S_dirs[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b73c8
-int32_t S_spread_time = { 0 /* todo */ };
+int32_t S_spread_time = 0;
 
 // GLOBAL: COPTER_D 0x005b73cc
-static int32_t S_yval = { 0 /* todo */ };
+static int32_t S_yval = 0;
 
 // GLOBAL: COPTER_D 0x005b73d0
-static int32_t S_yvaldelta = { 0 /* todo */ };
+static int32_t S_yvaldelta = 6553;
 
 // GLOBAL: COPTER_D 0x005b73d4
-static long FireMIFFID = { 0 /* todo */ };
+static long FireMIFFID = 1179210309;
 
 // GLOBAL: COPTER_D 0x005b73d8
-static long CfdMIFFID = { 0 /* todo */ };
+static long CfdMIFFID = 1128679748;
 
 
 

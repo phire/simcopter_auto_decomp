@@ -738,5 +738,5 @@ _T296:
 
 // Contribution: 3:00001f28-00001f57 Module: 48, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598f28
-static unsigned long processor_cycles[12] = { 0 /* todo */ };
+static unsigned long processor_cycles[12] = {0, 0, 0, 115, 47, 43, 38, 38, 38, 38, 38, 38};
 

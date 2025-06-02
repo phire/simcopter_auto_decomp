@@ -10630,7 +10630,7 @@ class GraphicWindow* GraphicWindow::screenWindow = { 0 /* todo */ };
 
 // Contribution: 3:00003970-00003973 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a970
-uint32_t list<GraphicWindow *>::number_of_lists = { 0 /* todo */ };
+uint32_t list<GraphicWindow *>::number_of_lists = 0;
 
 
 

@@ -422,19 +422,19 @@ _T1d7:
 
 // Contribution: 2:000014f8-00001707 Module: 41, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x005904f8
-static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
+static const int32_t TurnTable3[4][8] = {{0, 1, 2, 3, 4, 5, 6, 7}, {2, 3, 4, 5, 6, 7, 0, 1}, {6, 7, 0, 1, 2, 3, 4, 5}, {4, 5, 6, 7, 0, 1, 2, 3}};
 
 // GLOBAL: COPTER_D 0x00590578
-static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
+static const int32_t TurnTable2[4][4] = {{0, 1, 2, 3}, {1, 2, 3, 0}, {3, 0, 1, 2}, {2, 3, 0, 1}};
 
 // GLOBAL: COPTER_D 0x005905b8
-static const int32_t IndexToType[4] = { 0 /* todo */ };
+static const int32_t IndexToType[4] = {1, 2, 4, 8};
 
 // GLOBAL: COPTER_D 0x005905c8
-static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
+static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1};
 
 // GLOBAL: COPTER_D 0x00590608
-static const int32_t TILUT[4][4] = { 0 /* todo */ };
+static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00590648
 static const struct _dPoint2d OT[4] = { 0 /* todo */ };
@@ -449,7 +449,7 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 // Contribution: 3:00002430-00002446 Module: 41, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599430
-static short S_ctr = { 0 /* todo */ };
+static short S_ctr = 0;
 
 
 

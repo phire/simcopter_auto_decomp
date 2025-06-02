@@ -16987,7 +16987,7 @@ char * SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // Contribution: 3:00003c30-00003c33 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac30
-uint32_t list<RadioButtonWindow *>::number_of_lists = { 0 /* todo */ };
+uint32_t list<RadioButtonWindow *>::number_of_lists = 0;
 
 
 

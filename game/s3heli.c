@@ -13797,19 +13797,19 @@ _T11f:
 
 // Contribution: 2:00003688-00003897 Module: 176, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592688
-static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
+static const int32_t TurnTable3[4][8] = {{0, 1, 2, 3, 4, 5, 6, 7}, {2, 3, 4, 5, 6, 7, 0, 1}, {6, 7, 0, 1, 2, 3, 4, 5}, {4, 5, 6, 7, 0, 1, 2, 3}};
 
 // GLOBAL: COPTER_D 0x00592708
-static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
+static const int32_t TurnTable2[4][4] = {{0, 1, 2, 3}, {1, 2, 3, 0}, {3, 0, 1, 2}, {2, 3, 0, 1}};
 
 // GLOBAL: COPTER_D 0x00592748
-static const int32_t IndexToType[4] = { 0 /* todo */ };
+static const int32_t IndexToType[4] = {1, 2, 4, 8};
 
 // GLOBAL: COPTER_D 0x00592758
-static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
+static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1};
 
 // GLOBAL: COPTER_D 0x00592798
-static const int32_t TILUT[4][4] = { 0 /* todo */ };
+static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x005927d8
 static const struct _dPoint2d OT[4] = { 0 /* todo */ };
@@ -13824,94 +13824,94 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 // Contribution: 3:0001d8c0-0001ddb4 Module: 176, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b48c0
-int32_t S_htwk_landing_yspeed = { 0 /* todo */ };
+int32_t S_htwk_landing_yspeed = 327680;
 
 // GLOBAL: COPTER_D 0x005b48c4
-int32_t S_htwk_landing_pitch = { 0 /* todo */ };
+int32_t S_htwk_landing_pitch = 655360;
 
 // GLOBAL: COPTER_D 0x005b48c8
-int32_t S_htwk_landing_slide = { 0 /* todo */ };
+int32_t S_htwk_landing_slide = 655360;
 
 // GLOBAL: COPTER_D 0x005b48cc
-int32_t S_htwk_landing_speed = { 0 /* todo */ };
+int32_t S_htwk_landing_speed = 655360;
 
 // GLOBAL: COPTER_D 0x005b48d0
-int32_t S_htwk_max_descent_rate = { 0 /* todo */ };
+int32_t S_htwk_max_descent_rate = 655360;
 
 // GLOBAL: COPTER_D 0x005b48d4
-int32_t S_htwk_bucket_fillrate = { 0 /* todo */ };
+int32_t S_htwk_bucket_fillrate = 30;
 
 // GLOBAL: COPTER_D 0x005b48d8
-int32_t S_htwk_bucket_dumprate = { 0 /* todo */ };
+int32_t S_htwk_bucket_dumprate = 10;
 
 // GLOBAL: COPTER_D 0x005b48dc
-int32_t S_htwk_rope_loadfactor = { 0 /* todo */ };
+int32_t S_htwk_rope_loadfactor = 40;
 
 // GLOBAL: COPTER_D 0x005b48e0
-int32_t S_htwk_rope_tension = { 0 /* todo */ };
+int32_t S_htwk_rope_tension = 6553;
 
 // GLOBAL: COPTER_D 0x005b48e4
-int32_t S_htwk_water_throwfact = { 0 /* todo */ };
+int32_t S_htwk_water_throwfact = 18;
 
 // GLOBAL: COPTER_D 0x005b48e8
-int32_t S_htwk_watercannon_speed = { 0 /* todo */ };
+int32_t S_htwk_watercannon_speed = 9830400;
 
 // GLOBAL: COPTER_D 0x005b48ec
-int32_t S_htwk_firedmg_alt_min = { 0 /* todo */ };
+int32_t S_htwk_firedmg_alt_min = -3145728;
 
 // GLOBAL: COPTER_D 0x005b48f0
-int32_t S_htwk_firedmg_alt_max = { 0 /* todo */ };
+int32_t S_htwk_firedmg_alt_max = 7864320;
 
 // GLOBAL: COPTER_D 0x005b48f4
-int32_t S_htwk_max_helialt = { 0 /* todo */ };
+int32_t S_htwk_max_helialt = 52428800;
 
 // GLOBAL: COPTER_D 0x005b48f8
-int32_t S_htwk_collide_damage_val = { 0 /* todo */ };
+int32_t S_htwk_collide_damage_val = 50;
 
 // GLOBAL: COPTER_D 0x005b48fc
-int32_t S_htwk_depreciation = { 0 /* todo */ };
+int32_t S_htwk_depreciation = 32768;
 
 // GLOBAL: COPTER_D 0x005b4900
-static char ControlNoise = { 0 /* todo */ };
+static char ControlNoise = 0;
 
 // GLOBAL: COPTER_D 0x005b4904
-static long S_sound_frames = { 0 /* todo */ };
+static long S_sound_frames = 0;
 
 // GLOBAL: COPTER_D 0x005b4908
-static int32_t RopeSeg = { 0 /* todo */ };
+static int32_t RopeSeg = 262144;
 
 // GLOBAL: COPTER_D 0x005b490c
-static int32_t RopeDim = { 0 /* todo */ };
+static int32_t RopeDim = 65536;
 
 // GLOBAL: COPTER_D 0x005b4910
 struct Point3d G_helidir = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b491c
-int32_t G_helibase_found = { 0 /* todo */ };
+int32_t G_helibase_found = 0;
 
 // GLOBAL: COPTER_D 0x005b4920
-int32_t G_apachebase_found = { 0 /* todo */ };
+int32_t G_apachebase_found = 0;
 
 // GLOBAL: COPTER_D 0x005b4924
-int32_t G_apache_placed = { 0 /* todo */ };
+int32_t G_apache_placed = 0;
 
 // GLOBAL: COPTER_D 0x005b4928
-int32_t G_uheli_objalt = { 0 /* todo */ };
+int32_t G_uheli_objalt = 0;
 
 // GLOBAL: COPTER_D 0x005b492c
-long G_SpotLiteXRotation = { 0 /* todo */ };
+long G_SpotLiteXRotation = 0;
 
 // GLOBAL: COPTER_D 0x005b4930
-long G_SpotLiteYRotation = { 0 /* todo */ };
+long G_SpotLiteYRotation = 0;
 
 // GLOBAL: COPTER_D 0x005b4934
-static long S_test_frames = { 0 /* todo */ };
+static long S_test_frames = 0;
 
 // GLOBAL: COPTER_D 0x005b4938
-static long S_avoiding = { 0 /* todo */ };
+static long S_avoiding = 0;
 
 // GLOBAL: COPTER_D 0x005b493c
-static int32_t S_targalt = { 0 /* todo */ };
+static int32_t S_targalt = 6553600;
 
 // GLOBAL: COPTER_D 0x005b4940
 struct _HELI_DATA* G_helis[10] = { 0 /* todo */ };
@@ -13923,7 +13923,7 @@ struct _HELI_DATA* G_uheli = { 0 /* todo */ };
 struct _HELI_DATA* G_testheli = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4970
-static long S_numhelis = { 0 /* todo */ };
+static long S_numhelis = 0;
 
 // GLOBAL: COPTER_D 0x005b4978
 struct _HELI_TYPE_DATA S_helitype_data[1] = { 0 /* todo */ };
@@ -13932,13 +13932,13 @@ struct _HELI_TYPE_DATA S_helitype_data[1] = { 0 /* todo */ };
 static struct Point3d S_bracket_loc = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4c9c
-static int32_t S_shadalt = { 0 /* todo */ };
+static int32_t S_shadalt = 0;
 
 // GLOBAL: COPTER_D 0x005b4ca0
-static int32_t S_spotdist = { 0 /* todo */ };
+static int32_t S_spotdist = 0;
 
 // GLOBAL: COPTER_D 0x005b4ca4
-static long HeliMIFFID = { 0 /* todo */ };
+static long HeliMIFFID = 1212501065;
 
 
 

@@ -9177,25 +9177,25 @@ _Tcb:
 
 // Contribution: 3:0001ee78-000202c3 Module: 168, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b5e78
-int32_t G_dyobjmempool = { 0 /* todo */ };
+int32_t G_dyobjmempool = -1;
 
 // GLOBAL: COPTER_D 0x005b5e80
-static char S_hires_fire[8] = { 0 /* todo */ };
+static char S_hires_fire[8] = {19, 23, 115, 123, 100, 29, 31, 127};
 
 // GLOBAL: COPTER_D 0x005b5e88
-static char S_hires_smoke_day[8] = { 0 /* todo */ };
+static char S_hires_smoke_day[8] = {58, 58, 59, 58, 60, 58, 57, 58};
 
 // GLOBAL: COPTER_D 0x005b5e90
-static char S_hires_smoke_night[8] = { 0 /* todo */ };
+static char S_hires_smoke_night[8] = {49, 49, 48, 49, 51, 49, 50, 49};
 
 // GLOBAL: COPTER_D 0x005b5e98
-static char S_hires_water[8] = { 0 /* todo */ };
+static char S_hires_water[8] = {-108, -88, -106, -86, -102, -84, -110, -85};
 
 // GLOBAL: COPTER_D 0x005b5ea0
 static struct _LZ_INFO S_objlzinfo[256] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b72a0
-static long S_color_no = { 0 /* todo */ };
+static long S_color_no = 0;
 
 
 

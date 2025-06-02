@@ -836,5 +836,5 @@ _T38:
 class FlatFile* FlatFile::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bdddc
-long FlatFile::sLastFileID = { 0 /* todo */ };
+long FlatFile::sLastFileID = 10;
 

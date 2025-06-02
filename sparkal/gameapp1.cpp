@@ -4636,7 +4636,7 @@ char * SZ_SOUND_BUTTON_WINDOW_SOUND_FILE = { 0 /* todo */ };
 
 // Contribution: 3:00002d74-00002d77 Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599d74
-uint32_t list<CopterGameMode>::number_of_lists = { 0 /* todo */ };
+uint32_t list<CopterGameMode>::number_of_lists = 0;
 
 
 

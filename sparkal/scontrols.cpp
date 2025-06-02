@@ -1221,16 +1221,16 @@ static void (*$S81)() = { 0 /* todo */ };
 
 // Contribution: 3:000027b8-000027c7 Module: 38, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005997b8
-long SoundButtonWindow::lButtonSoundReferenceCount = { 0 /* todo */ };
+long SoundButtonWindow::lButtonSoundReferenceCount = 0;
 
 // GLOBAL: COPTER_D 0x005997bc
-long SoundRadioButtonWindow::lRadioSoundReferenceCount = { 0 /* todo */ };
+long SoundRadioButtonWindow::lRadioSoundReferenceCount = 0;
 
 // GLOBAL: COPTER_D 0x005997c0
-long SoundCheckBoxWindow::lCheckBoxSoundReferenceCount = { 0 /* todo */ };
+long SoundCheckBoxWindow::lCheckBoxSoundReferenceCount = 0;
 
 // GLOBAL: COPTER_D 0x005997c4
-long SoundScrollBarWindow::lScrollBarSoundReferenceCount = { 0 /* todo */ };
+long SoundScrollBarWindow::lScrollBarSoundReferenceCount = 0;
 
 
 

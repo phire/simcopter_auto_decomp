@@ -6484,19 +6484,19 @@ _T182:
 
 // Contribution: 2:00003898-00003aaf Module: 173, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592898
-static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
+static const int32_t TurnTable3[4][8] = {{0, 1, 2, 3, 4, 5, 6, 7}, {2, 3, 4, 5, 6, 7, 0, 1}, {6, 7, 0, 1, 2, 3, 4, 5}, {4, 5, 6, 7, 0, 1, 2, 3}};
 
 // GLOBAL: COPTER_D 0x00592918
-static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
+static const int32_t TurnTable2[4][4] = {{0, 1, 2, 3}, {1, 2, 3, 0}, {3, 0, 1, 2}, {2, 3, 0, 1}};
 
 // GLOBAL: COPTER_D 0x00592958
-static const int32_t IndexToType[4] = { 0 /* todo */ };
+static const int32_t IndexToType[4] = {1, 2, 4, 8};
 
 // GLOBAL: COPTER_D 0x00592968
-static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
+static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1};
 
 // GLOBAL: COPTER_D 0x005929a8
-static const int32_t TILUT[4][4] = { 0 /* todo */ };
+static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x005929e8
 static const struct _dPoint2d OT[4] = { 0 /* todo */ };
@@ -6511,172 +6511,172 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b4e18
-static long S_riotcheckctr = { 0 /* todo */ };
+static long S_riotcheckctr = 0;
 
 // GLOBAL: COPTER_D 0x005b4e1c
-static int32_t S_mission_interval_easy = { 0 /* todo */ };
+static int32_t S_mission_interval_easy = 39321600;
 
 // GLOBAL: COPTER_D 0x005b4e20
-static long S_max_missions_easy = { 0 /* todo */ };
+static long S_max_missions_easy = 2;
 
 // GLOBAL: COPTER_D 0x005b4e24
-static int32_t S_mission_interval = { 0 /* todo */ };
+static int32_t S_mission_interval = 31457280;
 
 // GLOBAL: COPTER_D 0x005b4e28
-static int32_t S_mission_interval_adj = { 0 /* todo */ };
+static int32_t S_mission_interval_adj = 13107;
 
 // GLOBAL: COPTER_D 0x005b4e2c
-static int32_t S_mission_timer = { 0 /* todo */ };
+static int32_t S_mission_timer = 11796480;
 
 // GLOBAL: COPTER_D 0x005b4e30
-static long S_max_missions = { 0 /* todo */ };
+static long S_max_missions = 2;
 
 // GLOBAL: COPTER_D 0x005b4e34
-static int32_t SpeederMissionActive = { 0 /* todo */ };
+static int32_t SpeederMissionActive = 0;
 
 // GLOBAL: COPTER_D 0x005b4e38
-long S_money_mission_riot = { 0 /* todo */ };
+long S_money_mission_riot = 1300;
 
 // GLOBAL: COPTER_D 0x005b4e3c
-long S_pts_mission_riot = { 0 /* todo */ };
+long S_pts_mission_riot = 600;
 
 // GLOBAL: COPTER_D 0x005b4e40
-long S_money_mission_riot_penalty = { 0 /* todo */ };
+long S_money_mission_riot_penalty = 100;
 
 // GLOBAL: COPTER_D 0x005b4e44
-long S_pts_mission_riot_penalty = { 0 /* todo */ };
+long S_pts_mission_riot_penalty = 50;
 
 // GLOBAL: COPTER_D 0x005b4e48
-int32_t S_mission_riot_time = { 0 /* todo */ };
+int32_t S_mission_riot_time = 11796480;
 
 // GLOBAL: COPTER_D 0x005b4e4c
-long S_money_mission_rescue = { 0 /* todo */ };
+long S_money_mission_rescue = 110;
 
 // GLOBAL: COPTER_D 0x005b4e50
-long S_pts_mission_rescue = { 0 /* todo */ };
+long S_pts_mission_rescue = 60;
 
 // GLOBAL: COPTER_D 0x005b4e54
-long S_money_mission_medevac = { 0 /* todo */ };
+long S_money_mission_medevac = 140;
 
 // GLOBAL: COPTER_D 0x005b4e58
-long S_pts_mission_medevac = { 0 /* todo */ };
+long S_pts_mission_medevac = 70;
 
 // GLOBAL: COPTER_D 0x005b4e5c
-long S_money_mission_transport = { 0 /* todo */ };
+long S_money_mission_transport = 70;
 
 // GLOBAL: COPTER_D 0x005b4e60
-long S_pts_mission_transport = { 0 /* todo */ };
+long S_pts_mission_transport = 35;
 
 // GLOBAL: COPTER_D 0x005b4e64
-long S_money_mission_fire = { 0 /* todo */ };
+long S_money_mission_fire = 200;
 
 // GLOBAL: COPTER_D 0x005b4e68
-long S_pts_mission_fire = { 0 /* todo */ };
+long S_pts_mission_fire = 100;
 
 // GLOBAL: COPTER_D 0x005b4e6c
-long S_money_mission_fire_penalty = { 0 /* todo */ };
+long S_money_mission_fire_penalty = 100;
 
 // GLOBAL: COPTER_D 0x005b4e70
-long S_pts_mission_fire_penalty = { 0 /* todo */ };
+long S_pts_mission_fire_penalty = 50;
 
 // GLOBAL: COPTER_D 0x005b4e74
-long S_money_mission_plane = { 0 /* todo */ };
+long S_money_mission_plane = 100;
 
 // GLOBAL: COPTER_D 0x005b4e78
-long S_pts_mission_plane = { 0 /* todo */ };
+long S_pts_mission_plane = 50;
 
 // GLOBAL: COPTER_D 0x005b4e7c
-long S_money_mission_train = { 0 /* todo */ };
+long S_money_mission_train = 100;
 
 // GLOBAL: COPTER_D 0x005b4e80
-long S_pts_mission_train = { 0 /* todo */ };
+long S_pts_mission_train = 50;
 
 // GLOBAL: COPTER_D 0x005b4e84
-long S_money_mission_criminal = { 0 /* todo */ };
+long S_money_mission_criminal = 900;
 
 // GLOBAL: COPTER_D 0x005b4e88
-long S_pts_mission_criminal = { 0 /* todo */ };
+long S_pts_mission_criminal = 400;
 
 // GLOBAL: COPTER_D 0x005b4e8c
-long S_money_mission_speeder = { 0 /* todo */ };
+long S_money_mission_speeder = 100;
 
 // GLOBAL: COPTER_D 0x005b4e90
-long S_pts_mission_speeder = { 0 /* todo */ };
+long S_pts_mission_speeder = 30;
 
 // GLOBAL: COPTER_D 0x005b4e94
-long S_money_mission_jam = { 0 /* todo */ };
+long S_money_mission_jam = 50;
 
 // GLOBAL: COPTER_D 0x005b4e98
-long S_pts_mission_jam = { 0 /* todo */ };
+long S_pts_mission_jam = 30;
 
 // GLOBAL: COPTER_D 0x005b4e9c
-int32_t S_mission_jam_time = { 0 /* todo */ };
+int32_t S_mission_jam_time = 3932160;
 
 // GLOBAL: COPTER_D 0x005b4ea0
-long S_money_mission_vehiclefire = { 0 /* todo */ };
+long S_money_mission_vehiclefire = 80;
 
 // GLOBAL: COPTER_D 0x005b4ea4
-long S_pts_mission_vehiclefire = { 0 /* todo */ };
+long S_pts_mission_vehiclefire = 50;
 
 // GLOBAL: COPTER_D 0x005b4ea8
-long S_money_mission_debris = { 0 /* todo */ };
+long S_money_mission_debris = 40;
 
 // GLOBAL: COPTER_D 0x005b4eac
-long S_pts_mission_debris = { 0 /* todo */ };
+long S_pts_mission_debris = 20;
 
 // GLOBAL: COPTER_D 0x005b4eb0
-long S_money_mission_ufo = { 0 /* todo */ };
+long S_money_mission_ufo = 1500;
 
 // GLOBAL: COPTER_D 0x005b4eb4
-long S_pts_mission_ufo = { 0 /* todo */ };
+long S_pts_mission_ufo = 900;
 
 // GLOBAL: COPTER_D 0x005b4eb8
 struct tagLogString S_log = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4ecc
-long S_pts_flame = { 0 /* todo */ };
+long S_pts_flame = 20;
 
 // GLOBAL: COPTER_D 0x005b4ed0
-long S_money_flame = { 0 /* todo */ };
+long S_money_flame = 50;
 
 // GLOBAL: COPTER_D 0x005b4ed4
-long S_pts_destroyed_building = { 0 /* todo */ };
+long S_pts_destroyed_building = 100;
 
 // GLOBAL: COPTER_D 0x005b4ed8
-long S_money_saved_building = { 0 /* todo */ };
+long S_money_saved_building = 100;
 
 // GLOBAL: COPTER_D 0x005b4edc
-long S_pts_new_debris = { 0 /* todo */ };
+long S_pts_new_debris = 10;
 
 // GLOBAL: COPTER_D 0x005b4ee0
-long S_money_debris_doused = { 0 /* todo */ };
+long S_money_debris_doused = 20;
 
 // GLOBAL: COPTER_D 0x005b4ee4
-long S_money_person_rescued = { 0 /* todo */ };
+long S_money_person_rescued = 50;
 
 // GLOBAL: COPTER_D 0x005b4ee8
-long S_money_person_transport = { 0 /* todo */ };
+long S_money_person_transport = 30;
 
 // GLOBAL: COPTER_D 0x005b4eec
-long S_money_person_medevaced = { 0 /* todo */ };
+long S_money_person_medevaced = 70;
 
 // GLOBAL: COPTER_D 0x005b4ef0
-long S_money_person_pickup = { 0 /* todo */ };
+long S_money_person_pickup = 10;
 
 // GLOBAL: COPTER_D 0x005b4ef4
-long S_money_vehicle_doused = { 0 /* todo */ };
+long S_money_vehicle_doused = 30;
 
 // GLOBAL: COPTER_D 0x005b4ef8
-long S_money_vehicle_unjammed = { 0 /* todo */ };
+long S_money_vehicle_unjammed = 3;
 
 // GLOBAL: COPTER_D 0x005b4efc
-long S_pts_vehicle_burned = { 0 /* todo */ };
+long S_pts_vehicle_burned = 10;
 
 // GLOBAL: COPTER_D 0x005b4f00
-static long missionMIFFID = { 0 /* todo */ };
+static long missionMIFFID = 1297306446;
 
 // GLOBAL: COPTER_D 0x005b4f08
-long S_msg_general[6] = { 0 /* todo */ };
+long S_msg_general[6] = {78, 80, 81, 84, 88, 96};
 
 
 

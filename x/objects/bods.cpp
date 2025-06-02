@@ -2436,7 +2436,7 @@ struct Rect standardAnimRect = { 0 /* todo */ };
 class cBList<cCopterBody>* cCopterBody::fsList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005be634
-short sTestPersonFrameNum = { 0 /* todo */ };
+short sTestPersonFrameNum = 0;
 
 
 

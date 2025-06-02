@@ -2803,7 +2803,7 @@ void SoundQueue::ReleaseMutex() {
 
 // Contribution: 3:00000354-00000357 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597354
-uint32_t list<SoundQueueItem *>::number_of_lists = { 0 /* todo */ };
+uint32_t list<SoundQueueItem *>::number_of_lists = 0;
 
 
 

@@ -1404,10 +1404,10 @@ _Teb:
 
 // Contribution: 3:00002da0-00003066 Module: 24, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599da0
-unsigned long IFlatImage::lTotalMemoryUsage = { 0 /* todo */ };
+unsigned long IFlatImage::lTotalMemoryUsage = 0;
 
 // GLOBAL: COPTER_D 0x00599da4
-unsigned long IFlatImage::lTotalLockCount = { 0 /* todo */ };
+unsigned long IFlatImage::lTotalLockCount = 0;
 
 
 

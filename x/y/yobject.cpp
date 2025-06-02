@@ -2551,6 +2551,51 @@ public:
 	void SetDynAnimFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 };
 
+// Type: class FlatFile;
+class FlatFile{
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
+protected:
+	class FlatFile* fNext;
+	unsigned char fName[256];
+	long fFileID;
+	struct _iobuf* fFile;
+	long UniqueID();
+private:
+	static class FlatFile* sList;
+	static long sLastFileID;
+	void Link();
+	void Unlink();
+	unsigned short Exclusive();
+public:
+	void FlatFile();
+	// vtable: 0
+	intro void ~FlatFile();
+	// calltype: NearC
+	static class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(class FlatFile*);
+	// vtable: 4
+	intro long Open(unsigned char *);
+	// vtable: 8
+	intro long Open(char *);
+	// vtable: 12
+	intro long Close();
+	void OpenFromOtherFile(class FlatFile*);
+	long GetFileName(unsigned char *);
+	unsigned short ValidFile();
+	long ReadBlock(void * __ptr32, long *);
+	long Read4(long *);
+	long Read2(short *);
+	long Read1(char *);
+	long SetPos(long);
+	long Advance(long);
+	// calltype: NearC
+	static short CheckForLeaks();
+	long GetFileID();
+	struct _iobuf* GetFile();
+};
+
 // Type: class Sound;
 class Sound{
 	enum SoundSourceType {
@@ -2602,51 +2647,6 @@ public:
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
-};
-
-// Type: class FlatFile;
-class FlatFile{
-	enum /* __unnamed */ {
-		kMaxNameLen = 255,
-	};
-protected:
-	class FlatFile* fNext;
-	unsigned char fName[256];
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
-public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
 };
 
 // Type: class IBackBuffer;
@@ -20485,49 +20485,49 @@ static void (*$S87)() = { 0 /* todo */ };
 
 // Contribution: 3:00021644-00024974 Module: 200, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b8644
-short gPersonBeamingSlices = { 0 /* todo */ };
+short gPersonBeamingSlices = 4;
 
 // GLOBAL: COPTER_D 0x005b8648
-short gPersonBeamingForwardWeight = { 0 /* todo */ };
+short gPersonBeamingForwardWeight = 4;
 
 // GLOBAL: COPTER_D 0x005b864c
-short gPersonBeamingSlicesSlice = { 0 /* todo */ };
+short gPersonBeamingSlicesSlice = 0;
 
 // GLOBAL: COPTER_D 0x005b8650
-int32_t gFarLimit = { 0 /* todo */ };
+int32_t gFarLimit = 2000;
 
 // GLOBAL: COPTER_D 0x005b8654
-int32_t gFarBoundary = { 0 /* todo */ };
+int32_t gFarBoundary = 200;
 
 // GLOBAL: COPTER_D 0x005b8658
-int32_t gMidBoundary = { 0 /* todo */ };
+int32_t gMidBoundary = 60;
 
 // GLOBAL: COPTER_D 0x005b865c
-int32_t gNearBoundary = { 0 /* todo */ };
+int32_t gNearBoundary = 4;
 
 // GLOBAL: COPTER_D 0x005b8660
-int32_t gNearLimit = { 0 /* todo */ };
+int32_t gNearLimit = 2;
 
 // GLOBAL: COPTER_D 0x005b8664
-int32_t CopterDir = { 0 /* todo */ };
+int32_t CopterDir = 1;
 
 // GLOBAL: COPTER_D 0x005b8668
-unsigned short cYObject::sInited = { 0 /* todo */ };
+unsigned short cYObject::sInited = 0;
 
 // GLOBAL: COPTER_D 0x005b866c
-unsigned short cYObject::sAllAmbientStarted = { 0 /* todo */ };
+unsigned short cYObject::sAllAmbientStarted = 0;
 
 // GLOBAL: COPTER_D 0x005b8670
-short cYObject::sNumMissionAwake = { 0 /* todo */ };
+short cYObject::sNumMissionAwake = 0;
 
 // GLOBAL: COPTER_D 0x005b8674
-short cYObject::sNumAmbientAwake = { 0 /* todo */ };
+short cYObject::sNumAmbientAwake = 0;
 
 // GLOBAL: COPTER_D 0x005b8678
-short cYObject::sAmbientTopOff = { 0 /* todo */ };
+short cYObject::sAmbientTopOff = 200;
 
 // GLOBAL: COPTER_D 0x005b867c
-short cYObject::sAmbientAbsoluteMax = { 0 /* todo */ };
+short cYObject::sAmbientAbsoluteMax = 400;
 
 // GLOBAL: COPTER_D 0x005b8680
 class cAvatar* gAvatar = { 0 /* todo */ };
@@ -20536,40 +20536,40 @@ class cAvatar* gAvatar = { 0 /* todo */ };
 class cYObject* cYObject::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8688
-short cYObject::sBeamed = { 0 /* todo */ };
+short cYObject::sBeamed = 12;
 
 // GLOBAL: COPTER_D 0x005b868c
-short cYObject::sDebugNumBeamed = { 0 /* todo */ };
+short cYObject::sDebugNumBeamed = 0;
 
 // GLOBAL: COPTER_D 0x005b8690
-long cYObject::sSimTicks = { 0 /* todo */ };
+long cYObject::sSimTicks = 0;
 
 // GLOBAL: COPTER_D 0x005b8694
-int32_t gPersonBeamSlice = { 0 /* todo */ };
+int32_t gPersonBeamSlice = 0;
 
 // GLOBAL: COPTER_D 0x005b8698
-int32_t gNextTime = { 0 /* todo */ };
+int32_t gNextTime = 0;
 
 // GLOBAL: COPTER_D 0x005b869c
-int32_t gCumTime = { 0 /* todo */ };
+int32_t gCumTime = 0;
 
 // GLOBAL: COPTER_D 0x005b86a0
-short gBodyDebugInfoIndex = { 0 /* todo */ };
+short gBodyDebugInfoIndex = 0;
 
 // GLOBAL: COPTER_D 0x005b86a4
-short cYObject::sScurkRectRad = { 0 /* todo */ };
+short cYObject::sScurkRectRad = 5;
 
 // GLOBAL: COPTER_D 0x005b86a8
-static short sAvLastCellX = { 0 /* todo */ };
+static short sAvLastCellX = -1;
 
 // GLOBAL: COPTER_D 0x005b86ac
-static short sAvLastCellY = { 0 /* todo */ };
+static short sAvLastCellY = -1;
 
 // GLOBAL: COPTER_D 0x005b86b0
-static short gPersonSoundBeamSlice = { 0 /* todo */ };
+static short gPersonSoundBeamSlice = 0;
 
 // GLOBAL: COPTER_D 0x005b86b4
-static short sCheckTotedCount = { 0 /* todo */ };
+static short sCheckTotedCount = 0;
 
 
 

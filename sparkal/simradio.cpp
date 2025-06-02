@@ -9537,7 +9537,7 @@ char * SZ_CALL_ID_FILTER = { 0 /* todo */ };
 
 // Contribution: 3:00001560-00001563 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598560
-uint32_t list<basic_string<char>>::number_of_lists = { 0 /* todo */ };
+uint32_t list<basic_string<char>>::number_of_lists = 0;
 
 
 

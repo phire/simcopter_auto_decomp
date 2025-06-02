@@ -535,10 +535,10 @@ _T38:
 
 // Contribution: 3:000043a8-000044f6 Module: 93, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059b3a8
-int32_t g_nNextTWKQueueSlot = { 0 /* todo */ };
+int32_t g_nNextTWKQueueSlot = 0;
 
 // GLOBAL: COPTER_D 0x0059b3ac
-int32_t g_nNextTWKErrorSlot = { 0 /* todo */ };
+int32_t g_nNextTWKErrorSlot = 0;
 
 
 

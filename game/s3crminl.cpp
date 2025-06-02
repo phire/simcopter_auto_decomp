@@ -1351,22 +1351,22 @@ _T76:
 
 // Contribution: 3:00020ca8-00020d15 Module: 161, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7ca8
-int32_t CriminalEvaderCarClass::baseTimeBetweenCriminalActivities = { 0 /* todo */ };
+int32_t CriminalEvaderCarClass::baseTimeBetweenCriminalActivities = 6553600;
 
 // GLOBAL: COPTER_D 0x005b7cac
-int32_t CriminalEvaderCarClass::maxTimeBetweenCriminalActivities = { 0 /* todo */ };
+int32_t CriminalEvaderCarClass::maxTimeBetweenCriminalActivities = 39321600;
 
 // GLOBAL: COPTER_D 0x005b7cb0
-int32_t CriminalEvaderCarClass::constantTimeToBeOnTheRun = { 0 /* todo */ };
+int32_t CriminalEvaderCarClass::constantTimeToBeOnTheRun = 1310720;
 
 // GLOBAL: COPTER_D 0x005b7cb4
-int32_t CriminalEvaderCarClass::evasionSpeedMultiplier = { 0 /* todo */ };
+int32_t CriminalEvaderCarClass::evasionSpeedMultiplier = 131072;
 
 // GLOBAL: COPTER_D 0x005b7cb8
-short CriminalEvaderCarClass::maxSearchForBuildingRadius = { 0 /* todo */ };
+short CriminalEvaderCarClass::maxSearchForBuildingRadius = 3;
 
 // GLOBAL: COPTER_D 0x005b7cbc
-int32_t CriminalEvaderCarClass::curCriminalCars = { 0 /* todo */ };
+int32_t CriminalEvaderCarClass::curCriminalCars = 0;
 
 
 

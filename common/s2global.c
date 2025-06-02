@@ -54,124 +54,124 @@
 
 // Contribution: 3:00004550-00005167 Module: 90, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059b550
-short GameSpeed = { 0 /* todo */ };
+short GameSpeed = 3;
 
 // GLOBAL: COPTER_D 0x0059b554
-short NewDisaster = { 0 /* todo */ };
+short NewDisaster = 0;
 
 // GLOBAL: COPTER_D 0x0059b558
-short DisasterObject = { 0 /* todo */ };
+short DisasterObject = -1;
 
 // GLOBAL: COPTER_D 0x0059b55c
-unsigned short AutoBudget = { 0 /* todo */ };
+unsigned short AutoBudget = 0;
 
 // GLOBAL: COPTER_D 0x0059b560
-unsigned short AutoGo = { 0 /* todo */ };
+unsigned short AutoGo = 1;
 
 // GLOBAL: COPTER_D 0x0059b564
-unsigned short UserSoundOn = { 0 /* todo */ };
+unsigned short UserSoundOn = 1;
 
 // GLOBAL: COPTER_D 0x0059b568
-unsigned short UserMusicOn = { 0 /* todo */ };
+unsigned short UserMusicOn = 0;
 
 // GLOBAL: COPTER_D 0x0059b56c
-unsigned short NoDisasters = { 0 /* todo */ };
+unsigned short NoDisasters = 0;
 
 // GLOBAL: COPTER_D 0x0059b570
-short VMax[8] = { 0 /* todo */ };
+short VMax[8] = {2000, 1500, 1500, 1000, 1000, 500, 1000, 1000};
 
 // GLOBAL: COPTER_D 0x0059b580
-long simCycle = { 0 /* todo */ };
+long simCycle = 1;
 
 // GLOBAL: COPTER_D 0x0059b584
-short baseYear = { 0 /* todo */ };
+short baseYear = 2000;
 
 // GLOBAL: COPTER_D 0x0059b588
-unsigned char WthrState[4][12][8] = { 0 /* todo */ };
+unsigned char WthrState[4][12][8] = {{{0, 0, 0, 3, 4, 5, 1, 8}, {1, 1, 1, 0, 0, 3, 4, 8}, {2, 1, 1, 1, 8, 8, 5, 3}, {3, 3, 0, 1, 4, 5, 8, 7}, {4, 4, 0, 1, 4, 5, 7, 6}, {5, 5, 1, 4, 3, 7, 7, 8}, {6, 6, 7, 7, 5, 4, 0, 9}, {7, 7, 7, 6, 8, 4, 3, 10}, {8, 8, 8, 7, 7, 5, 4, 10}, {9, 9, 10, 6, 6, 7, 7, 3}, {10, 10, 9, 6, 6, 7, 7, 8}, {11, 10, 9, 8, 8, 7, 6, 4}}, {{0, 0, 0, 1, 1, 1, 3, 4}, {1, 1, 1, 1, 2, 2, 0, 4}, {2, 2, 2, 1, 1, 5, 4, 3}, {3, 3, 0, 8, 1, 1, 4, 7}, {4, 4, 4, 1, 8, 0, 5, 3}, {5, 5, 5, 7, 2, 4, 1, 8}, {6, 7, 7, 7, 3, 8, 5, 4}, {7, 7, 7, 6, 3, 5, 8, 10}, {8, 8, 8, 7, 5, 4, 1, 11}, {9, 6, 6, 7, 7, 8, 8, 4}, {10, 10, 7, 7, 8, 8, 4, 4}, {11, 11, 8, 8, 8, 4, 1, 2}}, {{0, 0, 0, 1, 1, 1, 3, 4}, {1, 1, 1, 1, 2, 2, 0, 4}, {2, 2, 2, 1, 1, 5, 4, 3}, {3, 3, 0, 8, 1, 1, 4, 7}, {4, 4, 4, 1, 8, 0, 5, 3}, {5, 5, 5, 7, 2, 4, 1, 8}, {6, 7, 7, 7, 3, 8, 5, 4}, {7, 7, 7, 6, 3, 5, 8, 10}, {8, 8, 8, 7, 5, 4, 1, 11}, {9, 6, 6, 7, 7, 8, 8, 4}, {10, 10, 7, 7, 8, 8, 4, 4}, {11, 11, 8, 8, 8, 4, 1, 2}}, {{0, 0, 0, 3, 4, 5, 1, 8}, {1, 1, 1, 0, 0, 3, 4, 8}, {2, 1, 1, 1, 8, 8, 5, 3}, {3, 3, 0, 1, 4, 5, 8, 7}, {4, 4, 0, 1, 4, 5, 7, 6}, {5, 5, 1, 4, 3, 7, 7, 8}, {6, 6, 7, 7, 5, 4, 0, 9}, {7, 7, 7, 6, 8, 4, 3, 10}, {8, 8, 8, 7, 7, 5, 4, 10}, {9, 9, 10, 6, 6, 7, 7, 3}, {10, 10, 9, 6, 6, 7, 7, 8}, {11, 10, 9, 8, 8, 7, 6, 4}}};
 
 // GLOBAL: COPTER_D 0x0059b708
-unsigned char WthrHeat[12] = { 0 /* todo */ };
+unsigned char WthrHeat[12] = {80, 165, 210, 100, 145, 175, 80, 150, 175, 60, 140, 175};
 
 // GLOBAL: COPTER_D 0x0059b718
-unsigned char WthrWind[12] = { 0 /* todo */ };
+unsigned char WthrWind[12] = {15, 30, 0, 0, 15, 5, 10, 30, 60, 100, 100, 100};
 
 // GLOBAL: COPTER_D 0x0059b728
-unsigned char WthrHumid[12] = { 0 /* todo */ };
+unsigned char WthrHumid[12] = {0, 0, 0, 15, 15, 15, 30, 30, 30, 60, 60, 60};
 
 // GLOBAL: COPTER_D 0x0059b738
-unsigned char ToolSize[18][12] = { 0 /* todo */ };
+unsigned char ToolSize[18][12] = {{1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 4, 1, 4, 4, 4, 1, 4, 4, 4, 0}, {1, 1, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0}, {2, 3, 1, 4, 0, 4, 4, 4, 4, 0, 0, 0}, {1, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {3, 4, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0}, {3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 3, 4, 4, 3, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 // GLOBAL: COPTER_D 0x0059b810
-long ToolCost[18][12] = { 0 /* todo */ };
+long ToolCost[18][12] = {{1, 25, 25, 25, 1, 0, 0, 0, 0, 0, 0, 0}, {3, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {2, 0, 4000, 400, 6600, 2000, 15000, 100, 1300, 28000, 40000, 0}, {3, 100, 250, 500, 1000, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 100000, 120000, 150000, 200000, 0, 0, 0}, {10, 100, 150, 25, 250, 0, 0, 0, 0, 0, 0, 0}, {25, 100, 500, 250, 250, 0, 0, 0, 0, 0, 0, 0}, {150, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {250, 1000, 500, 1000, 0, 0, 0, 0, 0, 0, 0, 0}, {500, 500, 500, 3000, 0, 0, 0, 0, 0, 0, 0, 0}, {20, 150, 3000, 5000, 1000, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 // GLOBAL: COPTER_D 0x0059bb70
-unsigned long ToolActive[18] = { 0 /* todo */ };
+unsigned long ToolActive[18] = {31, 3, 3, 3, 31, 0, 31, 31, 3, 3, 3, 3, 15, 15, 31, 0, 0, 0};
 
 // GLOBAL: COPTER_D 0x0059bbb8
-unsigned long MapActive[9] = { 0 /* todo */ };
+unsigned long MapActive[9] = {3, 7, 0, 0, 3, 7, 0, 0, 15};
 
 // GLOBAL: COPTER_D 0x0059bbdc
-short mapValue = { 0 /* todo */ };
+short mapValue = 0;
 
 // GLOBAL: COPTER_D 0x0059bbe0
-short toolValue = { 0 /* todo */ };
+short toolValue = 17;
 
 // GLOBAL: COPTER_D 0x0059bbe4
-short emerValue = { 0 /* todo */ };
+short emerValue = 0;
 
 // GLOBAL: COPTER_D 0x0059bbe8
-short terValue = { 0 /* todo */ };
+short terValue = 1;
 
 // GLOBAL: COPTER_D 0x0059bbec
-unsigned char Military = { 0 /* todo */ };
+unsigned char Military = 0;
 
 // GLOBAL: COPTER_D 0x0059bbf0
-unsigned short terCoast = { 0 /* todo */ };
+unsigned short terCoast = 0;
 
 // GLOBAL: COPTER_D 0x0059bbf4
-unsigned short terRiver = { 0 /* todo */ };
+unsigned short terRiver = 1;
 
 // GLOBAL: COPTER_D 0x0059bbf8
-short terHills = { 0 /* todo */ };
+short terHills = 12;
 
 // GLOBAL: COPTER_D 0x0059bbfc
-short terWater = { 0 /* todo */ };
+short terWater = 5;
 
 // GLOBAL: COPTER_D 0x0059bc00
-short terTrees = { 0 /* todo */ };
+short terTrees = 15;
 
 // GLOBAL: COPTER_D 0x0059bc04
-short popDisplay = { 0 /* todo */ };
+short popDisplay = 0;
 
 // GLOBAL: COPTER_D 0x0059bc08
-short indDisplay = { 0 /* todo */ };
+short indDisplay = 0;
 
 // GLOBAL: COPTER_D 0x0059bc0c
-short graphDisplay = { 0 /* todo */ };
+short graphDisplay = 0;
 
 // GLOBAL: COPTER_D 0x0059bc10
-unsigned long graphOn = { 0 /* todo */ };
+unsigned long graphOn = 15;
 
 // GLOBAL: COPTER_D 0x0059bc14
-short GameMode = { 0 /* todo */ };
+short GameMode = -1;
 
 // GLOBAL: COPTER_D 0x0059bc18
-short Compass = { 0 /* todo */ };
+short Compass = 0;
 
 // GLOBAL: COPTER_D 0x0059bc1c
-short Scale = { 0 /* todo */ };
+short Scale = 0;
 
 // GLOBAL: COPTER_D 0x0059bc20
-unsigned short DisplayLayer[5] = { 0 /* todo */ };
+unsigned short DisplayLayer[5] = {0, 1, 1, 1, 1};
 
 // GLOBAL: COPTER_D 0x0059bc30
-unsigned short StashLayer[10] = { 0 /* todo */ };
+unsigned short StashLayer[10] = {0, 1, 1, 1, 1, 0, 0, 1, 0, 0};
 
 // GLOBAL: COPTER_D 0x0059bc48
-short CompFaceTab[4] = { 0 /* todo */ };
+short CompFaceTab[4] = {128, 16, 32, 64};
 
 // GLOBAL: COPTER_D 0x0059bc50
-short FaceTab[4][4] = { 0 /* todo */ };
+short FaceTab[4][4] = {{16, 32, 64, 128}, {32, 64, 128, 16}, {64, 128, 16, 32}, {128, 16, 32, 64}};
 
 // GLOBAL: COPTER_D 0x0059bc70
 struct _rect toolRect[35] = { 0 /* todo */ };
@@ -198,58 +198,58 @@ struct S2Rect popRect[3] = { 0 /* todo */ };
 struct S2Rect indRect[3] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c000
-short EditData = { 0 /* todo */ };
+short EditData = 0;
 
 // GLOBAL: COPTER_D 0x0059c004
-short ClipXlow = { 0 /* todo */ };
+short ClipXlow = 1000;
 
 // GLOBAL: COPTER_D 0x0059c008
-short ClipYlow = { 0 /* todo */ };
+short ClipYlow = 1000;
 
 // GLOBAL: COPTER_D 0x0059c00c
-short ClipXhigh = { 0 /* todo */ };
+short ClipXhigh = 0;
 
 // GLOBAL: COPTER_D 0x0059c010
-short ClipYhigh = { 0 /* todo */ };
+short ClipYhigh = 0;
 
 // GLOBAL: COPTER_D 0x0059c014
-unsigned short YearEnd = { 0 /* todo */ };
+unsigned short YearEnd = 0;
 
 // GLOBAL: COPTER_D 0x0059c018
-long oldResPop = { 0 /* todo */ };
+long oldResPop = 0;
 
 // GLOBAL: COPTER_D 0x0059c01c
-short CityCentX = { 0 /* todo */ };
+short CityCentX = 64;
 
 // GLOBAL: COPTER_D 0x0059c020
-short CityCentY = { 0 /* todo */ };
+short CityCentY = 64;
 
 // GLOBAL: COPTER_D 0x0059c024
-short CurrentDisaster = { 0 /* todo */ };
+short CurrentDisaster = 0;
 
 // GLOBAL: COPTER_D 0x0059c028
-short HOFFX = { 0 /* todo */ };
+short HOFFX = 0;
 
 // GLOBAL: COPTER_D 0x0059c02c
-short HOFFY = { 0 /* todo */ };
+short HOFFY = 320;
 
 // GLOBAL: COPTER_D 0x0059c030
-short WINCENTERY = { 0 /* todo */ };
+short WINCENTERY = 240;
 
 // GLOBAL: COPTER_D 0x0059c034
-short WINCENTERX = { 0 /* todo */ };
+short WINCENTERX = 320;
 
 // GLOBAL: COPTER_D 0x0059c038
-unsigned short PaperExtra = { 0 /* todo */ };
+unsigned short PaperExtra = 1;
 
 // GLOBAL: COPTER_D 0x0059c03c
-unsigned short PaperDeliver = { 0 /* todo */ };
+unsigned short PaperDeliver = 0;
 
 // GLOBAL: COPTER_D 0x0059c040
-short HurricaneCnt = { 0 /* todo */ };
+short HurricaneCnt = 0;
 
 // GLOBAL: COPTER_D 0x0059c048
-short TileSize[144] = { 0 /* todo */ };
+short TileSize[144] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4};
 
 
 
