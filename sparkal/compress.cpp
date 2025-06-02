@@ -50,7 +50,7 @@ public:
 	int32_t setmode(int32_t);
 };
 
-// Type: char[13];
+// Type: char;
 
 // Type: class ostrstream;
 class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios

@@ -84,7 +84,7 @@ private:
 
 // Type: uint32_t;
 
-// Type: char[80];
+// Type: char;
 
 // Type: class MDateLocalized (forward reference);
 class MDateLocalized : public MDate
@@ -263,8 +263,6 @@ protected:
 	unsigned long Julnum;
 	enum MDate::HowToPrint PrintOption;
 };
-
-// Type: char[4096];
 
 // Type: class ios;
 class ios{

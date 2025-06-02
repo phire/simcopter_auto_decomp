@@ -486,8 +486,6 @@ public:
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: char[261];
-
 // Type: class CBackBuffer (forward reference);
 // CBackBuffer Class implementation not found
 

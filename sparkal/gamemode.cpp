@@ -43,7 +43,7 @@ public:
 	class SmackerBackBuffer* myVideoBuffer;
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{

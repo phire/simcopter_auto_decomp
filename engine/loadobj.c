@@ -46,7 +46,7 @@ struct GameObjectHdrType{
 
 // Type: int32_t *;
 
-// Type: short[128];
+// Type: short;
 
 // Type: struct FileBSPTreeHdrType;
 struct FileBSPTreeHdrType{
@@ -71,8 +71,6 @@ struct FileFaceHdrType{
 
 // Type: struct ObjectHdr (forward reference);
 // ObjectHdr Class implementation not found
-
-// Type: int32_t[4][4];
 
 // Type: struct Point3d;
 struct Point3d{

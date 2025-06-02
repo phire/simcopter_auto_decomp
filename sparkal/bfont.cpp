@@ -250,13 +250,9 @@ public:
 	class MRect operator|(const struct SparkalRect&);
 };
 
-// Type: char[4096];
-
-// Type: char[256];
+// Type: char;
 
 // Type: unsigned char;
-
-// Type: char[260];
 
 // Type: unsigned long;
 
@@ -407,11 +403,7 @@ public:
 	class MRect operator|(const struct SparkalRect&);
 };
 
-// Type: char;
-
 // Type: long *;
-
-// Type: char[3];
 
 // Type: class vector<MRect> (forward reference);
 class vector<MRect>{

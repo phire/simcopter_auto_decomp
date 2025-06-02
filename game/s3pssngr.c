@@ -14,8 +14,6 @@
 // Type: struct tagPassengerInfo (forward reference);
 // tagPassengerInfo Class implementation not found
 
-// Type: int32_t[16];
-
 // Type: int32_t *;
 
 

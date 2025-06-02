@@ -12,9 +12,11 @@ struct Rect{
 	short right;
 };
 
-// Type: struct TransformedInfo[200];
+// Type: struct TransformedInfo (forward reference);
+// TransformedInfo Class implementation not found
 
-// Type: struct cCopterBody::Part*[200];
+// Type: struct cCopterBody::Part (forward reference);
+// cCopterBody::Part Class implementation not found
 
 // Type: class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
@@ -83,9 +85,6 @@ public:
 
 // Type: unsigned short;
 
-// Type: struct cCopterBody::Part (forward reference);
-// cCopterBody::Part Class implementation not found
-
 // Type: unsigned char *;
 
 // Type: float;
@@ -128,9 +127,6 @@ enum SPHERE_SHADE_FLAG {
 
 // Type: long;
 
-// Type: struct TransformedInfo (forward reference);
-// TransformedInfo Class implementation not found
-
 // Type: struct DXZY;
 struct DXZY{
 	float x;
@@ -139,7 +135,7 @@ struct DXZY{
 	float info;
 };
 
-// Type: unsigned char[16];
+// Type: unsigned char;
 
 // Type: void * __ptr32;
 

@@ -271,9 +271,7 @@ public:
 // Type: struct tagLogString (forward reference);
 // tagLogString Class implementation not found
 
-// Type: char[276];
-
-// Type: char[56];
+// Type: char;
 
 // Type: struct tagLogMissionEvent (forward reference);
 // tagLogMissionEvent Class implementation not found
@@ -625,10 +623,6 @@ public:
 	intro char * PrintStringLocalized(char *, int32_t);
 	int32_t nLanguage;
 };
-
-// Type: char[256];
-
-// Type: char[64];
 
 // Type: class PFile;
 class PFile{

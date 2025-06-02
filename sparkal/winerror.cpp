@@ -6,7 +6,7 @@
 
 // Type: unsigned char;
 
-// Type: char[255];
+// Type: char;
 
 // Type: void;
 

@@ -58,10 +58,6 @@ public:
 // Type: struct SCXNeighborData (forward reference);
 // SCXNeighborData Class implementation not found
 
-// Type: long[11];
-
-// Type: long[256];
-
 // Type: class cLZAPFileBitStream;
 class cLZAPFileBitStream : public cGZXBitstream
 {
@@ -93,8 +89,6 @@ struct ReadSCXFile::__unnamed{
 	short stat2;
 	short stat3;
 };
-
-// Type: long[50];
 
 // Type: class cGZXParamBitstream<t_alloc,t_free>;
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream

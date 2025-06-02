@@ -6,7 +6,7 @@
 
 // Type: unsigned short;
 
-// Type: unsigned char[12];
+// Type: unsigned char;
 
 // Type: unsigned long;
 
@@ -20,8 +20,6 @@ struct TIME_STAMP{
 // TIME_STAMP Class implementation not found
 
 // Type: short;
-
-// Type: unsigned char;
 
 
 

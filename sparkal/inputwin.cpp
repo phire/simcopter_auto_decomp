@@ -492,8 +492,6 @@ public:
 	class MRect operator|(const struct SparkalRect&);
 };
 
-// Type: char[64];
-
 // Type: char;
 
 // Type: unsigned long;
@@ -549,10 +547,6 @@ protected:
 	class CBackBuffer* myHandleImage;
 	class CBackBuffer* myHandleBaseImage;
 };
-
-// Type: long[14];
-
-// Type: class MRect[4];
 
 // Type: long *;
 
@@ -720,8 +714,6 @@ public:
 	class list<StringIDAssociation>::iterator& operator--();
 };
 
-// Type: long[16];
-
 // Type: struct KeyColors;
 struct KeyColors{
 	long lKey;
@@ -757,8 +749,6 @@ public:
 
 // Type: class CBackBuffer (forward reference);
 // CBackBuffer Class implementation not found
-
-// Type: char[260];
 
 // Type: class list<Shortcut> (forward reference);
 class list<Shortcut>{
@@ -1749,8 +1739,6 @@ public:
 	class rb_tree<long,long,ident<long,long>,less<long>>::iterator& operator--();
 };
 
-// Type: char[4096];
-
 // Type: class basic_string_ref<char> (forward reference);
 // basic_string_ref<char> Class implementation not found
 
@@ -1813,10 +1801,6 @@ struct bidirectional_iterator<HotSpot,int>{
 
 // Type: struct bidirectional_iterator<StringIDAssociation,int>;
 struct bidirectional_iterator<StringIDAssociation,int>{
-};
-
-// Type: struct bidirectional_iterator<KeyColors,int>;
-struct bidirectional_iterator<KeyColors,int>{
 };
 
 // Type: class ios;
@@ -1950,6 +1934,10 @@ private:
 	static struct _CRT_CRITICAL_SECTION x_lockc;
 	int32_t LockFlg;
 	struct _CRT_CRITICAL_SECTION x_lock;
+};
+
+// Type: struct bidirectional_iterator<KeyColors,int>;
+struct bidirectional_iterator<KeyColors,int>{
 };
 
 

@@ -83,10 +83,6 @@ public:
 
 // Type: char;
 
-// Type: char[11];
-
-// Type: char[10];
-
 
 
 // Contribution: 1:00030c50-00031258 Module: 62, 16 byte alignment, code, execute, read, 

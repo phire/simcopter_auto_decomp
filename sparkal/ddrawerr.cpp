@@ -13,7 +13,7 @@ public:
 
 // Type: char *;
 
-// Type: char[256];
+// Type: char;
 
 // Type: void;
 

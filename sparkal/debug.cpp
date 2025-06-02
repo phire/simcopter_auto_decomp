@@ -313,7 +313,7 @@ public:
 
 // Type: long;
 
-// Type: char[256];
+// Type: char;
 
 // Type: class vector<basic_string<char>> (forward reference);
 class vector<basic_string<char>>{

@@ -4,7 +4,8 @@
 
 // Type: uint32_t;
 
-// Type: struct alloc_root_s*[32];
+// Type: struct alloc_root_s (forward reference);
+// alloc_root_s Class implementation not found
 
 // Type: int32_t;
 

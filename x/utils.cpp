@@ -30,8 +30,6 @@
 
 // Type: char *;
 
-// Type: unsigned char[256];
-
 // Type: char;
 
 // Type: void * __ptr32;

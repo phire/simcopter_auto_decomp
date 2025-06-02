@@ -6,7 +6,7 @@
 
 // Type: long;
 
-// Type: char[256];
+// Type: char;
 
 // Type: int32_t;
 

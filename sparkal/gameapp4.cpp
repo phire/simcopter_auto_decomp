@@ -77,7 +77,7 @@ public:
 	class MRect operator|(const struct SparkalRect&);
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct VRAppInitThreadStruct;
 struct VRAppInitThreadStruct{

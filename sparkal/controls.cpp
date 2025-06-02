@@ -403,7 +403,7 @@ protected:
 	void * __ptr32 hFont;
 };
 
-// Type: char[64];
+// Type: char;
 
 // Type: class CheckBoxWindow (forward reference);
 class CheckBoxWindow : public ButtonWindow
@@ -810,8 +810,6 @@ public:
 	class list<basic_string<char>>::iterator operator--(int32_t);
 	class list<basic_string<char>>::iterator& operator--();
 };
-
-// Type: char;
 
 // Type: class PopupMenuWindow (forward reference);
 class PopupMenuWindow : public ListBoxWindow

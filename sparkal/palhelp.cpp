@@ -76,7 +76,8 @@ protected:
 	unsigned long lFrequency;
 };
 
-// Type: struct tagPALETTEENTRY[256];
+// Type: struct tagPALETTEENTRY (forward reference);
+// tagPALETTEENTRY Class implementation not found
 
 // Type: struct SparkalColor;
 struct SparkalColor{

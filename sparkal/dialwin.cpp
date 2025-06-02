@@ -298,9 +298,7 @@ struct CommandSystem{
 	void PollJoysticksForCommands();
 };
 
-// Type: char[260];
-
-// Type: int32_t[2][6];
+// Type: char;
 
 // Type: class MPoint;
 class MPoint : public SparkalPoint
@@ -328,8 +326,6 @@ public:
 	class MPoint operator-();
 	class MPoint operator-(struct SparkalSize);
 };
-
-// Type: char[16];
 
 // Type: class PassengerWindow (forward reference);
 class PassengerWindow : public GraphicWindow
@@ -447,8 +443,6 @@ public:
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
-
-// Type: int32_t[16];
 
 // Type: class MapWindow (forward reference);
 class MapWindow : public GraphicWindow

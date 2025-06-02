@@ -11,9 +11,7 @@
 // Type: class CGameApp (forward reference);
 // CGameApp Class implementation not found
 
-// Type: char[64];
-
-// Type: char[512];
+// Type: char;
 
 // Type: class Version;
 class Version{
@@ -324,8 +322,6 @@ protected:
 // Type: struct Point2d (forward reference);
 // Point2d Class implementation not found
 
-// Type: char[3];
-
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
 {
@@ -405,10 +401,6 @@ protected:
 	// vtable: 136
 	intro int32_t StartCompletionNotificationEstimationTimer();
 };
-
-// Type: char[260];
-
-// Type: char[128];
 
 // Type: struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{
@@ -645,8 +637,6 @@ protected:
 	class SliderWindow* mySliderWindows[3];
 	class TextWindow* myTextWindows[5];
 };
-
-// Type: long[3];
 
 // Type: class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found

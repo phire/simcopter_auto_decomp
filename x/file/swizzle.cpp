@@ -4,15 +4,13 @@
 
 // Type: void * __ptr32;
 
-// Type: char[8];
+// Type: char;
 
 // Type: void;
 
 // Type: long;
 
 // Type: short;
-
-// Type: char;
 
 // Type: struct Rect (forward reference);
 // Rect Class implementation not found

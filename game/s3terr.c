@@ -4,21 +4,17 @@
 
 // Type: unsigned short *;
 
-// Type: unsigned short[4];
+// Type: unsigned short;
 
 // Type: short;
 
 // Type: int32_t;
-
-// Type: short[32];
 
 // Type: long;
 
 // Type: void;
 
 // Type: unsigned char;
-
-// Type: unsigned short;
 
 // Type: int32_t *;
 

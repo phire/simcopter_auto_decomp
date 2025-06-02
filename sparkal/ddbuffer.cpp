@@ -193,7 +193,8 @@ struct SparkalColor{
 	void SparkalColor();
 };
 
-// Type: struct tagRGBQUAD[256];
+// Type: struct tagRGBQUAD (forward reference);
+// tagRGBQUAD Class implementation not found
 
 // Type: unsigned char *;
 
@@ -599,7 +600,8 @@ struct _DDCOLORKEY{
 	unsigned long dwColorSpaceHighValue;
 };
 
-// Type: struct tagPALETTEENTRY[256];
+// Type: struct tagPALETTEENTRY (forward reference);
+// tagPALETTEENTRY Class implementation not found
 
 // Type: struct tagRECT (forward reference);
 // tagRECT Class implementation not found

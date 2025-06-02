@@ -115,7 +115,8 @@ struct _DDBLTFX{
 
 // Type: unsigned long;
 
-// Type: struct tagPALETTEENTRY[256];
+// Type: struct tagPALETTEENTRY (forward reference);
+// tagPALETTEENTRY Class implementation not found
 
 // Type: void * __ptr32;
 

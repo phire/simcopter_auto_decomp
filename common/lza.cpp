@@ -31,12 +31,10 @@ public:
 // Type: struct tCompressState (forward reference);
 // tCompressState Class implementation not found
 
-// Type: unsigned char[5];
+// Type: unsigned char;
 
 // Type: struct tACompModel (forward reference);
 // tACompModel Class implementation not found
-
-// Type: unsigned char;
 
 // Type: long;
 

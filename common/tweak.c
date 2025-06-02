@@ -8,17 +8,9 @@
 
 // Type: char *;
 
-// Type: char[50];
-
-// Type: char[300];
-
-// Type: char[260];
+// Type: char;
 
 // Type: void;
-
-// Type: char[20];
-
-// Type: char[15];
 
 
 

@@ -162,7 +162,7 @@ protected:
 	unsigned long nTextDrawStyle;
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: long;
 
@@ -192,8 +192,6 @@ public:
 	class MPoint operator-();
 	class MPoint operator-(struct SparkalSize);
 };
-
-// Type: char;
 
 // Type: unsigned long;
 
@@ -320,10 +318,6 @@ public:
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
-
-// Type: class MPoint[5];
-
-// Type: class MRect[5];
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect

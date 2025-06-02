@@ -10,8 +10,6 @@
 
 // Type: uint32_t;
 
-// Type: char *[9];
-
 // Type: char *;
 
 // Type: class RadioStation (forward reference);

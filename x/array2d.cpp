@@ -104,7 +104,8 @@ public:
 	static unsigned short IsNameTaken(unsigned long, short);
 };
 
-// Type: struct _cArray::FileAndType[64];
+// Type: struct _cArray::FileAndType (forward reference);
+// _cArray::FileAndType Class implementation not found
 
 // Type: class ResFile (forward reference);
 class ResFile : public FlatResFile
@@ -124,7 +125,7 @@ public:
 // Type: struct _cArray::Header (forward reference);
 // _cArray::Header Class implementation not found
 
-// Type: unsigned char[256];
+// Type: unsigned char;
 
 // Type: void;
 

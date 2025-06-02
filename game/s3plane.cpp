@@ -160,12 +160,6 @@ public:
 	class PlaneClass operator=(const class PlaneClass&);
 };
 
-// Type: class PlaneClass*[2];
-
-// Type: void ();
-
-// Type: void;
-
 // Type: class PlaneClass (forward reference);
 class PlaneClass{
 	enum /* __unnamed */ {
@@ -316,6 +310,10 @@ public:
 	class PlaneClass operator=(const class PlaneClass&);
 };
 
+// Type: void ();
+
+// Type: void;
+
 // Type: long;
 
 // Type: struct VRview;
@@ -359,8 +357,6 @@ struct _MISSION_PARMS{
 	long i2num;
 	long flags;
 };
-
-// Type: int32_t[4][4];
 
 // Type: struct _STOBJ_INST (forward reference);
 // _STOBJ_INST Class implementation not found

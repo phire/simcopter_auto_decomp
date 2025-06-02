@@ -4,24 +4,13 @@
 
 // Type: long;
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
-
 // Type: int32_t;
 
-// Type: struct Point2d[256];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct Point2d (forward reference);
 // Point2d Class implementation not found
-
-// Type: struct Point2d[16384];
 
 // Type: struct Point3d;
 struct Point3d{
@@ -45,13 +34,10 @@ struct VRview{
 	int32_t matrix[4][4];
 };
 
-// Type: int32_t[4][4];
-
-// Type: long[4];
-
 // Type: long *;
 
-// Type: struct _CELL_INFO[30];
+// Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct tagLogCityEnterExit;
 struct tagLogCityEnterExit{
@@ -62,7 +48,7 @@ struct tagLogCityEnterExit{
 	char szCity[32];
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: void;
 
@@ -71,9 +57,6 @@ struct tagLogCityEnterExit{
 
 // Type: struct _STOBJ_INST (forward reference);
 // _STOBJ_INST Class implementation not found
-
-// Type: struct _CELL_INFO (forward reference);
-// _CELL_INFO Class implementation not found
 
 // Type: struct Point3d (forward reference);
 // Point3d Class implementation not found

@@ -98,7 +98,7 @@ public:
 	class list<PreferenceItem>::iterator& operator--();
 };
 
-// Type: char[41];
+// Type: char;
 
 // Type: class PreferenceItem;
 class PreferenceItem{

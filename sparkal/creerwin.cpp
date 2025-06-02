@@ -145,11 +145,9 @@ public:
 	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
 };
 
-// Type: char[256];
+// Type: char;
 
 // Type: long;
-
-// Type: char[260];
 
 // Type: class basic_string<char>;
 class basic_string<char>{
@@ -298,15 +296,32 @@ protected:
 
 // Type: unsigned long;
 
-// Type: class MPoint[4][3];
-
-// Type: class MRect[4][3];
-
-// Type: char;
-
-// Type: class MPoint[4];
-
-// Type: class MRect[4];
+// Type: class MPoint (forward reference);
+class MPoint : public SparkalPoint
+{
+public:
+	void MPoint(unsigned long);
+	void MPoint(struct SparkalSize);
+	void MPoint(struct SparkalPoint);
+	void MPoint(long, long);
+	void MPoint();
+	void Offset(struct SparkalSize);
+	void Offset(struct SparkalPoint);
+	void Offset(long, long);
+	int32_t operator==(struct SparkalPoint);
+	int32_t operator!=(struct SparkalPoint);
+	void operator+=(struct SparkalPoint);
+	void operator+=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
+	void operator-=(struct SparkalSize);
+	class MRect operator+(const struct SparkalRect*);
+	class MPoint operator+(struct SparkalPoint);
+	class MPoint operator+(struct SparkalSize);
+	class MRect operator-(const struct SparkalRect*);
+	class MSize operator-(struct SparkalPoint);
+	class MPoint operator-();
+	class MPoint operator-(struct SparkalSize);
+};
 
 // Type: class CareerWindow::CitySelectionFrame;
 class CareerWindow::CitySelectionFrame{
@@ -334,33 +349,6 @@ public:
 	int32_t bTop;
 	int32_t bSelected;
 	class MRect rectFrame[4];
-};
-
-// Type: class MPoint (forward reference);
-class MPoint : public SparkalPoint
-{
-public:
-	void MPoint(unsigned long);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
-	void MPoint(long, long);
-	void MPoint();
-	void Offset(struct SparkalSize);
-	void Offset(struct SparkalPoint);
-	void Offset(long, long);
-	int32_t operator==(struct SparkalPoint);
-	int32_t operator!=(struct SparkalPoint);
-	void operator+=(struct SparkalPoint);
-	void operator+=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator-=(struct SparkalSize);
-	class MRect operator+(const struct SparkalRect*);
-	class MPoint operator+(struct SparkalPoint);
-	class MPoint operator+(struct SparkalSize);
-	class MRect operator-(const struct SparkalRect*);
-	class MSize operator-(struct SparkalPoint);
-	class MPoint operator-();
-	class MPoint operator-(struct SparkalSize);
 };
 
 // Type: uint32_t;

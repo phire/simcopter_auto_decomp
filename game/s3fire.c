@@ -6,17 +6,11 @@
 
 // Type: long;
 
-// Type: struct Point2d[4];
+// Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct _FIRE_DATA;
 struct _FIRE_DATA{
@@ -86,9 +80,6 @@ struct Point3d{
 	int32_t z;
 };
 
-// Type: struct Point2d (forward reference);
-// Point2d Class implementation not found
-
 // Type: struct Point3d (forward reference);
 // Point3d Class implementation not found
 
@@ -104,11 +95,9 @@ struct Point2d{
 	int32_t y;
 };
 
-// Type: int32_t *[10];
+// Type: int32_t *;
 
 // Type: short;
-
-// Type: int32_t[4][4];
 
 // Type: void * __ptr32;
 

@@ -25,8 +25,6 @@ public:
 	void SoundChangeNotificationSink();
 };
 
-// Type: long[113];
-
 // Type: void;
 
 // Type: class SoundChangeNotificationSink (forward reference);
@@ -90,7 +88,7 @@ public:
 
 // Type: void * __ptr32;
 
-// Type: char[260];
+// Type: char;
 
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound

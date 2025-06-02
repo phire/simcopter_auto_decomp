@@ -6,17 +6,8 @@
 
 // Type: int32_t;
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
-
-// Type: long[6];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct _MISSION_STATICS;
 struct _MISSION_STATICS{

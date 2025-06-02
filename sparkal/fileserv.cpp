@@ -493,7 +493,7 @@ public:
 	class list<basic_string<char>>::iterator& operator--();
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct bidirectional_iterator<basic_string<char>,int>;
 struct bidirectional_iterator<basic_string<char>,int>{

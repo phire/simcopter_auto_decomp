@@ -13,8 +13,6 @@ struct Point3d{
 
 // Type: int32_t;
 
-// Type: int32_t[4][4];
-
 // Type: void;
 
 

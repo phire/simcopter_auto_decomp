@@ -4,15 +4,14 @@
 
 // Type: int32_t;
 
-// Type: char[8];
+// Type: char;
 
-// Type: struct _LZ_INFO[256];
+// Type: struct _LZ_INFO (forward reference);
+// _LZ_INFO Class implementation not found
 
 // Type: char *;
 
 // Type: long;
-
-// Type: char[80];
 
 // Type: struct VRFaceInfo;
 struct VRFaceInfo{
@@ -46,11 +45,6 @@ struct VRObjInfo{
 
 // Type: struct VRBlit (forward reference);
 // VRBlit Class implementation not found
-
-// Type: char;
-
-// Type: struct _LZ_INFO (forward reference);
-// _LZ_INFO Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
 // _DYOBJ_INST Class implementation not found

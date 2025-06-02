@@ -4,12 +4,10 @@
 
 // Type: int32_t;
 
-// Type: struct tagMode[64];
-
-// Type: long;
-
 // Type: struct tagMode (forward reference);
 // tagMode Class implementation not found
+
+// Type: long;
 
 // Type: void * __ptr32;
 

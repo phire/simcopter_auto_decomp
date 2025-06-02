@@ -243,7 +243,7 @@ private:
 	int32_t x_floatused;
 };
 
-// Type: char[80];
+// Type: char;
 
 // Type: class ios (forward reference);
 class ios{

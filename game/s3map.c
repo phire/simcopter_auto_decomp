@@ -10,15 +10,8 @@ struct Point2d{
 	int32_t y;
 };
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct VRwindowType;
 struct VRwindowType{
@@ -36,10 +29,6 @@ struct VRwindowType{
 // Type: char *;
 
 // Type: char;
-
-// Type: char *[8];
-
-// Type: char *[3];
 
 // Type: struct VRBmpHdr (forward reference);
 // VRBmpHdr Class implementation not found

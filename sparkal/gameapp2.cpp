@@ -20,7 +20,7 @@
 // Type: class CGameApp (forward reference);
 // CGameApp Class implementation not found
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct SoundPreferences;
 struct SoundPreferences{
@@ -34,8 +34,6 @@ struct SoundPreferences{
 // SoundPreferences Class implementation not found
 
 // Type: long;
-
-// Type: char[64];
 
 // Type: class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
@@ -54,8 +52,6 @@ public:
 	class list<CopterGameMode>::iterator operator--(int32_t);
 	class list<CopterGameMode>::iterator& operator--();
 };
-
-// Type: char;
 
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
@@ -136,8 +132,6 @@ protected:
 	// vtable: 136
 	intro int32_t StartCompletionNotificationEstimationTimer();
 };
-
-// Type: char[128];
 
 // Type: class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
@@ -250,10 +244,6 @@ public:
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
-
-// Type: char[256];
-
-// Type: char[3];
 
 // Type: float;
 

@@ -28,8 +28,6 @@ enum tagResolution {
 
 // Type: int32_t;
 
-// Type: long[6];
-
 // Type: void * __ptr32;
 
 // Type: class RoadGraph;
@@ -62,7 +60,7 @@ private:
 	int32_t SetElevation(unsigned short);
 };
 
-// Type: char[262144];
+// Type: char;
 
 // Type: class Station (forward reference);
 // Station Class implementation not found

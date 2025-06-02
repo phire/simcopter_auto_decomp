@@ -4,11 +4,9 @@
 
 // Type: void * __ptr32;
 
-// Type: char[0];
+// Type: char;
 
 // Type: float;
-
-// Type: char[128];
 
 // Type: char *;
 

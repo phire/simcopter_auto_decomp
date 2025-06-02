@@ -6,21 +6,14 @@
 
 // Type: double;
 
-// Type: const int32_t[8][4];
+// Type: int32_t;
 
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: char *;
 
 // Type: short;
-
-// Type: int32_t;
 
 // Type: unsigned char;
 
@@ -32,10 +25,6 @@ struct Point3d{
 	int32_t y;
 	int32_t z;
 };
-
-// Type: unsigned char[51];
-
-// Type: unsigned char[51][3];
 
 // Type: float;
 
@@ -65,7 +54,7 @@ struct Point3D{
 // Type: struct Point3d (forward reference);
 // Point3d Class implementation not found
 
-// Type: char[26];
+// Type: char;
 
 // Type: unsigned long;
 

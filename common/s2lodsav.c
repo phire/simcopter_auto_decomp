@@ -8,8 +8,6 @@
 
 // Type: short;
 
-// Type: long[16];
-
 // Type: char *;
 
 // Type: int32_t;
@@ -19,21 +17,13 @@
 
 // Type: unsigned short;
 
-// Type: char[5];
-
-// Type: char[256];
+// Type: char;
 
 // Type: void;
 
 // Type: uint32_t;
 
-// Type: char[3];
-
 // Type: long *;
-
-// Type: char;
-
-// Type: char[33];
 
 // Type: unsigned char;
 
@@ -47,10 +37,6 @@
 // Type: unsigned short *;
 
 // Type: unsigned long;
-
-// Type: char[260];
-
-// Type: char[64];
 
 
 

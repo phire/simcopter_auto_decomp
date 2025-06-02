@@ -55,7 +55,7 @@ public:
 
 // Type: long;
 
-// Type: unsigned char[28];
+// Type: unsigned char;
 
 // Type: void;
 
@@ -76,8 +76,6 @@ public:
 
 // Type: struct ResMap::Entry (forward reference);
 // ResMap::Entry Class implementation not found
-
-// Type: unsigned char;
 
 // Type: class StringSet;
 class StringSet{

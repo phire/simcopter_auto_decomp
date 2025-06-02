@@ -17,7 +17,7 @@
 
 // Type: long;
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct tagUserCityInfo;
 struct tagUserCityInfo{
@@ -29,8 +29,6 @@ struct tagUserCityInfo{
 // Type: unsigned long;
 
 // Type: int32_t;
-
-// Type: char[256];
 
 // Type: struct tagCitySettings;
 struct tagCitySettings{
@@ -52,8 +50,6 @@ struct tagCurrentCareerCityInfo{
 	long bUserHasSavedGame;
 	struct tagUserPersonalInfo userPersonalInfo;
 };
-
-// Type: char[3];
 
 // Type: class MIFF;
 class MIFF : public PFile

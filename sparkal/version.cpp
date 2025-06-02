@@ -34,13 +34,11 @@ protected:
 
 // Type: uint32_t;
 
-// Type: char[260];
+// Type: char;
 
 // Type: void;
 
 // Type: char *;
-
-// Type: char[255];
 
 // Type: int32_t;
 

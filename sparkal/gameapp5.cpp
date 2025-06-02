@@ -102,7 +102,7 @@ protected:
 
 // Type: long;
 
-// Type: char[256];
+// Type: char;
 
 // Type: struct MISSION_DATA (forward reference);
 // MISSION_DATA Class implementation not found

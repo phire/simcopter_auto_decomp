@@ -5,11 +5,10 @@
 // Type: struct _HELI_DATA (forward reference);
 // _HELI_DATA Class implementation not found
 
-// Type: struct _HELI_TYPE_DATA[9];
+// Type: struct _HELI_TYPE_DATA (forward reference);
+// _HELI_TYPE_DATA Class implementation not found
 
 // Type: long;
-
-// Type: struct _HELI_TYPE_DATA[1];
 
 // Type: int32_t;
 
@@ -73,15 +72,8 @@ struct _HELI_DATA{
 	int32_t pct_load;
 };
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct Point3d;
 struct Point3d{
@@ -95,17 +87,8 @@ struct Point3d{
 // Type: struct VRBmpHdr (forward reference);
 // VRBmpHdr Class implementation not found
 
-// Type: struct _HELI_DATA*[10];
-
-// Type: int32_t[4][4];
-
-// Type: int32_t[10];
-
 // Type: struct _HELI_DATA (forward reference);
 // _HELI_DATA Class implementation not found
-
-// Type: struct _HELI_TYPE_DATA (forward reference);
-// _HELI_TYPE_DATA Class implementation not found
 
 // Type: char *;
 
@@ -163,14 +146,8 @@ struct VRFaceInfo{
 // Type: struct VRBlit (forward reference);
 // VRBlit Class implementation not found
 
-// Type: int32_t *[14];
-
-// Type: char[12][4];
-
 // Type: struct tagUserPersonalInfo (forward reference);
 // tagUserPersonalInfo Class implementation not found
-
-// Type: long[5];
 
 // Type: void * __ptr32;
 

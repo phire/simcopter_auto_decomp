@@ -26,8 +26,6 @@ protected:
 
 // Type: long;
 
-// Type: long[2];
-
 // Type: int32_t;
 
 // Type: struct HotSpotResourceRecord (forward reference);

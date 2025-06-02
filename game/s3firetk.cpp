@@ -4,10 +4,6 @@
 
 // Type: int32_t;
 
-// Type: class FireEngineClass*[5];
-
-// Type: class FireEngineClass*[0];
-
 // Type: class FireEngineClass (forward reference);
 class FireEngineClass : public EmergencyVehicleClass
 {

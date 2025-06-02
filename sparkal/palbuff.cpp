@@ -16,7 +16,7 @@ public:
 	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
 };
 
-// Type: char[64];
+// Type: char;
 
 // Type: void;
 
@@ -36,8 +36,6 @@ struct SparkalColor{
 
 // Type: struct tagPALETTEENTRY (forward reference);
 // tagPALETTEENTRY Class implementation not found
-
-// Type: char[256];
 
 // Type: struct SparkalRect;
 struct SparkalRect{

@@ -133,7 +133,7 @@ struct Behavior::Node{
 
 // Type: void * __ptr32;
 
-// Type: unsigned char[256];
+// Type: unsigned char;
 
 // Type: char *;
 

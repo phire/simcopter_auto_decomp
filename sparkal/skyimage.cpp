@@ -42,7 +42,7 @@ enum SkyType {
 // Type: struct VRResource (forward reference);
 // VRResource Class implementation not found
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct VRBmpHdr (forward reference);
 // VRBmpHdr Class implementation not found

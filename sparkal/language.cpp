@@ -265,7 +265,7 @@ public:
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct TypefaceTestStruct;
 struct TypefaceTestStruct{

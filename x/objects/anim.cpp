@@ -37,7 +37,7 @@ public:
 
 // Type: unsigned short;
 
-// Type: unsigned char[16];
+// Type: unsigned char;
 
 // Type: void;
 

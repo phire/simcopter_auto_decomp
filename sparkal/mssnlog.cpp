@@ -208,7 +208,7 @@ struct SparkalColor{
 	void SparkalColor();
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: long;
 

@@ -14,15 +14,8 @@
 
 // Type: char *;
 
-// Type: const int32_t[8][4];
-
-// Type: const int32_t[4][4];
-
-// Type: const int32_t[4];
-
-// Type: const int32_t[16];
-
-// Type: const struct _dPoint2d[4];
+// Type: struct _dPoint2d (forward reference);
+// _dPoint2d Class implementation not found
 
 // Type: struct VRResource (forward reference);
 // VRResource Class implementation not found
@@ -30,7 +23,7 @@
 // Type: struct VRMemPool (forward reference);
 // VRMemPool Class implementation not found
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct tagUserPersonalInfo (forward reference);
 // tagUserPersonalInfo Class implementation not found

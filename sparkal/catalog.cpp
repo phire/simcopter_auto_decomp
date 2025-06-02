@@ -214,7 +214,73 @@ public:
 // Type: struct tagUserPersonalInfo (forward reference);
 // tagUserPersonalInfo Class implementation not found
 
-// Type: class MRect[5];
+// Type: class MRect (forward reference);
+class MRect : public SparkalRect
+{
+public:
+	void MRect(struct SparkalPoint, struct SparkalPoint);
+	void MRect(struct SparkalPoint, struct SparkalSize);
+	void MRect(struct SparkalRect*);
+	void MRect(class MRect*);
+	void MRect(const struct SparkalRect&);
+	void MRect(long, long, long, long);
+	void MRect();
+	long Width();
+	long Height();
+	class MSize Size();
+	const class MPoint& TopLeft();
+	class MPoint& TopLeft();
+	const class MPoint& BottomRight();
+	class MPoint& BottomRight();
+	class MPoint CenterPoint();
+	struct SparkalRect* operator struct SparkalRect *();
+	class MRect* operator class MRect *();
+	int32_t IsRectEmpty();
+	int32_t IsRectNull();
+	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(long, long);
+	int32_t DoesRectOverlap(struct SparkalRect*);
+	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	void SetRect(long, long, long, long);
+	void SetRectEmpty();
+	void CopyRect(class MRect*);
+	int32_t EqualRect(class MRect*);
+	void InflateRect(long, long, long, long);
+	void InflateRect(class MRect*);
+	void InflateRect(struct SparkalSize);
+	void InflateRect(long, long);
+	void DeflateRect(long, long, long, long);
+	void DeflateRect(class MRect*);
+	void DeflateRect(struct SparkalSize);
+	void DeflateRect(long, long);
+	void MoveRect(struct SparkalPoint);
+	void MoveRect(long, long);
+	void OffsetRect(struct SparkalPoint);
+	void OffsetRect(struct SparkalSize);
+	void OffsetRect(long, long);
+	void NormalizeRect();
+	int32_t IntersectRect(class MRect*, class MRect*);
+	int32_t UnionRect(class MRect*, class MRect*);
+	int32_t SubtractRect(class MRect*, class MRect*);
+	int32_t operator==(const struct SparkalRect&);
+	int32_t operator!=(const struct SparkalRect&);
+	void operator+=(class MRect*);
+	void operator+=(struct SparkalSize);
+	void operator+=(struct SparkalPoint);
+	void operator-=(class MRect*);
+	void operator-=(struct SparkalSize);
+	void operator-=(struct SparkalPoint);
+	void operator&=(const struct SparkalRect&);
+	void operator|=(const struct SparkalRect&);
+	class MRect operator+(struct SparkalSize);
+	class MRect operator+(class MRect*);
+	class MRect operator+(struct SparkalPoint);
+	class MRect operator-(class MRect*);
+	class MRect operator-(struct SparkalSize);
+	class MRect operator-(struct SparkalPoint);
+	class MRect operator&(const struct SparkalRect&);
+	class MRect operator|(const struct SparkalRect&);
+};
 
 // Type: class MRect;
 class MRect : public SparkalRect
@@ -283,15 +349,6 @@ public:
 	class MRect operator&(const struct SparkalRect&);
 	class MRect operator|(const struct SparkalRect&);
 };
-
-// Type: class basic_string<char>[5];
-
-// Type: char[260];
-
-// Type: class CBackBuffer (forward reference);
-// CBackBuffer Class implementation not found
-
-// Type: unsigned long[6];
 
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
@@ -398,7 +455,12 @@ public:
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: char *[9];
+// Type: char;
+
+// Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
+
+// Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
 struct SparkalColor{
@@ -410,19 +472,7 @@ struct SparkalColor{
 	void SparkalColor();
 };
 
-// Type: const class MRect[5];
-
-// Type: char;
-
-// Type: unsigned long;
-
 // Type: void * __ptr32;
-
-// Type: long[2];
-
-// Type: const long[8];
-
-// Type: const long[5];
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
@@ -453,14 +503,6 @@ public:
 
 // Type: uint32_t;
 
-// Type: struct SparkalPoint;
-struct SparkalPoint{
-	long x;
-	long y;
-	void SparkalPoint(long, long);
-	void SparkalPoint();
-};
-
 // Type: struct SparkalRect;
 struct SparkalRect{
 	long left;
@@ -469,6 +511,14 @@ struct SparkalRect{
 	long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
+};
+
+// Type: struct SparkalPoint;
+struct SparkalPoint{
+	long x;
+	long y;
+	void SparkalPoint(long, long);
+	void SparkalPoint();
 };
 
 

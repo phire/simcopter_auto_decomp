@@ -39,8 +39,6 @@ struct Plane{
 // Type: struct mv (forward reference);
 // mv Class implementation not found
 
-// Type: int32_t[4];
-
 // Type: struct Point2d (forward reference);
 // Point2d Class implementation not found
 

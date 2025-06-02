@@ -307,7 +307,7 @@ struct Shortcut{
 	long lIgnoreModifiers;
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: struct Shortcut (forward reference);
 // Shortcut Class implementation not found

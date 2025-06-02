@@ -21,13 +21,9 @@ struct Point3d{
 // Type: struct _DYOBJ_INST (forward reference);
 // _DYOBJ_INST Class implementation not found
 
-// Type: int32_t[4][4];
-
 // Type: void;
 
-// Type: int32_t[4];
-
-// Type: int32_t *[10];
+// Type: int32_t *;
 
 // Type: struct _CHASE_INFO (forward reference);
 // _CHASE_INFO Class implementation not found

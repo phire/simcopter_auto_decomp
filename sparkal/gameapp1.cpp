@@ -131,7 +131,49 @@ public:
 	intro void DeleteAllSounds();
 };
 
-// Type: class SoundQueue[2];
+// Type: class SoundQueue (forward reference);
+class SoundQueue{
+public:
+	void SoundQueue();
+	void ~SoundQueue();
+	// vtable: 0
+	intro int32_t Initialize();
+	// vtable: 4
+	intro void DeInitialize(int32_t);
+	// vtable: 8
+	intro void ClearQueue(int32_t);
+	class SoundQueue& operator+=(struct SoundQueueItem*);
+	class SoundQueue& operator+=(class Sound*);
+	// vtable: 12
+	intro int32_t StartPauseCallback(long);
+	// vtable: 16
+	intro void EndPauseCallback();
+	// vtable: 20
+	intro void PlayNextSoundInQueue();
+	// vtable: 24
+	intro void RemoveNextSoundInQueue();
+	// vtable: 28
+	intro void SoundQueueCompletionCallback();
+	// calltype: NearC
+	static void StaticSoundQueueCompletionCallback(long);
+	// vtable: 32
+	intro void SoundQueueWaitTimeCallback();
+	// calltype: NearC
+	static void StaticSoundQueueWaitTimeCallback(long);
+	// vtable: 36
+	intro int32_t GetMutex(unsigned long);
+	// vtable: 40
+	intro void ReleaseMutex();
+protected:
+	class list<SoundQueueItem *> mySoundQueueItemList;
+	int32_t bOK;
+	long bMutex;
+	int32_t nWaitTimerSet;
+	// calltype: NearStd
+	static void WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long);
+	// calltype: NearStd
+	static void WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long);
+};
 
 // Type: class MessageDisplayManager;
 class MessageDisplayManager{
@@ -160,8 +202,6 @@ protected:
 };
 
 // Type: char *;
-
-// Type: class SoundQueue[1];
 
 // Type: class SoundManager;
 class SoundManager{
@@ -314,7 +354,7 @@ public:
 	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: char[260];
+// Type: char;
 
 // Type: int32_t;
 
@@ -330,15 +370,7 @@ struct SparkalColor{
 	void SparkalColor();
 };
 
-// Type: char[128];
-
-// Type: char;
-
 // Type: short;
-
-// Type: char[32];
-
-// Type: char[256];
 
 // Type: class Version;
 class Version{
@@ -389,8 +421,6 @@ struct Shortcut{
 	long lPush;
 	long lIgnoreModifiers;
 };
-
-// Type: char[64];
 
 // Type: class list<Shortcut> (forward reference);
 class list<Shortcut>{

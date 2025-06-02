@@ -23,12 +23,6 @@ struct _MISSILE_DATA{
 
 // Type: short;
 
-// Type: long[8];
-
-// Type: int32_t[8];
-
-// Type: int32_t[3];
-
 // Type: int32_t;
 
 // Type: struct _MISSILE_DATA (forward reference);
@@ -106,8 +100,6 @@ struct Point2d{
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
 // _CELL_FIRE_DATA Class implementation not found
-
-// Type: int32_t[4][4];
 
 // Type: struct _STOBJ_INST (forward reference);
 // _STOBJ_INST Class implementation not found
