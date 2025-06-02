@@ -234,7 +234,7 @@ protected:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
-	enum SliderWindow::SliderWindowDirection {
+	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,
 	};
@@ -242,7 +242,7 @@ protected:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -284,7 +284,7 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -323,13 +323,13 @@ protected:
 
 // Type: class Sound;
 class Sound{
-		enum Sound::SoundSourceType {
+		enum SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum Sound::SoundDuplicateType {
+		enum SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,
@@ -401,7 +401,7 @@ public:
 // Type: class ScrollBarWindow;
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollBarWindow::ScrollHitTestResult {
+		enum ScrollHitTestResult {
 			nScrollHitTestResultNone = 0,
 			nScrollHitTestResultLinePrevious = 1,
 			nScrollHitTestResultLineNext = 2,
@@ -477,7 +477,7 @@ protected:
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindow::SliderWindowDirection {
+		enum SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};

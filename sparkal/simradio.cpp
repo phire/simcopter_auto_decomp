@@ -745,7 +745,7 @@ protected:
 
 // Type: class MTimer (forward reference);
 class MTimer{
-		enum MTimer::TimerResolution {
+		enum TimerResolution {
 			nTimerResolutionMicroseconds = 0,
 			nTimerResolutionMilliseconds = 1,
 			nTimerResolutionSeconds = 2,
@@ -771,7 +771,7 @@ protected:
 };
 
 // Type: enum MTimer::TimerResolution;
-	enum MTimer::TimerResolution {
+	enum TimerResolution {
 		nTimerResolutionMicroseconds = 0,
 		nTimerResolutionMilliseconds = 1,
 		nTimerResolutionSeconds = 2,

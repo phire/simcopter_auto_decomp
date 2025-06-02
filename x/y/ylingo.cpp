@@ -17,7 +17,7 @@ public:
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler();
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kIdle = 0,
 			kSetAnim = 1,
 			kAttr = 2,
@@ -86,7 +86,7 @@ public:
 		};
 public:
 	virtual short CountPrimitives();
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kMyself = 0,
 			kTreeParam = 1,
 			kTargetObj = 2,
@@ -229,7 +229,7 @@ public:
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 rhsOwner;
 	};
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kGreaterThan = 0,
 			kLessThan = 1,
 			kEquals = 2,
@@ -251,7 +251,7 @@ public:
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// union YObjLang::Param Param
-		enum YObjLang::TreeNum {
+		enum TreeNum {
 			kNoTree = -1,
 			kSpotlightTree = 900,
 			kMegaphoneTree = 901,
@@ -261,7 +261,7 @@ public:
 			kRunOrSwoonTree = 905,
 			kSwoonTree = 906,
 		};
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kWeightStringsID = 140,
 			kPrimitiveStringsID = 139,
 			kDataLabelsID = 129,
@@ -354,7 +354,7 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
 			kActionBase = 256,
@@ -384,7 +384,7 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kUndefined = -3,
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,

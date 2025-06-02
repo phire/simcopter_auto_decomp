@@ -337,7 +337,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -465,7 +465,7 @@ public:
 // Type: class SliderWindow (forward reference);
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindow::SliderWindowDirection {
+		enum SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};
@@ -513,7 +513,7 @@ public:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
-	enum SliderWindow::SliderWindowDirection {
+	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,
 	};
@@ -626,7 +626,7 @@ public:
 // Type: class ScrollBarWindow (forward reference);
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollBarWindow::ScrollHitTestResult {
+		enum ScrollHitTestResult {
 			nScrollHitTestResultNone = 0,
 			nScrollHitTestResultLinePrevious = 1,
 			nScrollHitTestResultLineNext = 2,
@@ -678,7 +678,7 @@ protected:
 };
 
 // Type: enum ScrollBarWindow::ScrollHitTestResult;
-	enum ScrollBarWindow::ScrollHitTestResult {
+	enum ScrollHitTestResult {
 		nScrollHitTestResultNone = 0,
 		nScrollHitTestResultLinePrevious = 1,
 		nScrollHitTestResultLineNext = 2,
@@ -968,7 +968,7 @@ struct SparkalRect{
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindow::SliderWindowDirection {
+		enum SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};
@@ -1018,7 +1018,7 @@ public:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

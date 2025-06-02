@@ -470,7 +470,7 @@ protected:
 // Type: class UserInputWindow (forward reference);
 class UserInputWindow : public GraphicWindow
 {
-		enum UserInputWindow::KeyUsageType {
+		enum KeyUsageType {
 			nKeyUsageTypeFree = 0,
 			nKeyUsageTypeReserved = 1,
 			nKeyUsageTypeCurrentCommand = 2,
@@ -653,13 +653,13 @@ protected:
 
 // Type: class Sound;
 class Sound{
-		enum Sound::SoundSourceType {
+		enum SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum Sound::SoundDuplicateType {
+		enum SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

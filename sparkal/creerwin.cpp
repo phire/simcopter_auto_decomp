@@ -259,7 +259,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

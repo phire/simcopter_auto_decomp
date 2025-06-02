@@ -28,13 +28,13 @@ struct SoundQueueItem{
 
 // Type: class Sound (forward reference);
 class Sound{
-		enum Sound::SoundSourceType {
+		enum SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum Sound::SoundDuplicateType {
+		enum SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,
@@ -265,7 +265,7 @@ public:
 
 // Type: class MTimer;
 class MTimer{
-		enum MTimer::TimerResolution {
+		enum TimerResolution {
 			nTimerResolutionMicroseconds = 0,
 			nTimerResolutionMilliseconds = 1,
 			nTimerResolutionSeconds = 2,

@@ -7,7 +7,7 @@
 // Type: class MissionLogWindow (forward reference);
 class MissionLogWindow : public GraphicWindow
 {
-		enum MissionLogWindow::MissionLogWindowSortType {
+		enum MissionLogWindowSortType {
 			nSortByTimeDate = 0,
 			nSortByType = 1,
 		};
@@ -46,7 +46,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

@@ -18,7 +18,7 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum FileServices::AppBaseType {
+		enum AppBaseType {
 			nAppBaseTypeUnknown = 0,
 			nAppBaseTypeLocal = 1,
 			nAppBaseTypeRemote = 2,
@@ -54,7 +54,7 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum FileServices::AppBaseType {
+		enum AppBaseType {
 			nAppBaseTypeUnknown = 0,
 			nAppBaseTypeLocal = 1,
 			nAppBaseTypeRemote = 2,
@@ -177,15 +177,15 @@ public:
 
 // Type: class PFile;
 class PFile{
-		enum PFile::__unnamed {
+		enum /* __unnamed */ {
 			FileNull = -1,
 		};
-		enum PFile::SeekTypes {
+		enum SeekTypes {
 			N_SEEK_FROM_FILE_START = 0,
 			N_SEEK_FROM_FILE_CURRENT = 1,
 			N_SEEK_FROM_FILE_END = 2,
 		};
-		enum PFile::AccessTypes {
+		enum AccessTypes {
 			ReadOnly = 0,
 			ReadWrite = 2,
 			WriteOnly = 1,
@@ -200,12 +200,12 @@ class PFile{
 			DenyRdWr = 16,
 			NoInherit = 128,
 		};
-		enum PFile::PermissionTypes {
+		enum PermissionTypes {
 			PermRead = 256,
 			PermWrite = 128,
 			PermRdWr = 384,
 		};
-		enum PFile::seek_dir {
+		enum seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,

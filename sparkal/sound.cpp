@@ -94,13 +94,13 @@ public:
 
 // Type: class Sound (forward reference);
 class Sound{
-		enum Sound::SoundSourceType {
+		enum SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum Sound::SoundDuplicateType {
+		enum SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,
@@ -448,13 +448,13 @@ struct IUnknown{
 
 // Type: class Sound;
 class Sound{
-		enum Sound::SoundSourceType {
+		enum SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum Sound::SoundDuplicateType {
+		enum SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

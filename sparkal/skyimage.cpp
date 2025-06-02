@@ -7,7 +7,7 @@
 // Type: class SkyImage (forward reference);
 class SkyImage : public CBackBuffer
 {
-		enum SkyImage::SkyType {
+		enum SkyType {
 			nSkyTypeDay = 0,
 			nSkyTypeNight = 1,
 		};
@@ -34,7 +34,7 @@ protected:
 // Type: void;
 
 // Type: enum SkyImage::SkyType;
-	enum SkyImage::SkyType {
+	enum SkyType {
 		nSkyTypeDay = 0,
 		nSkyTypeNight = 1,
 	};

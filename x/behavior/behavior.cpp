@@ -11,7 +11,7 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
 			kActionBase = 256,
@@ -41,7 +41,7 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kUndefined = -3,
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
@@ -186,7 +186,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum FlatFile::__unnamed {
+		enum /* __unnamed */ {
 			kMaxNameLen = 255,
 		};
 protected:

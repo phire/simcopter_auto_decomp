@@ -4,7 +4,7 @@
 
 // Type: class BitmappedFont (forward reference);
 class BitmappedFont{
-		enum BitmappedFont::PitchType {
+		enum PitchType {
 			pitchTypeFixed = 0,
 			pitchTypeVariable = 1,
 		};

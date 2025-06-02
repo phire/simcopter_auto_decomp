@@ -334,11 +334,11 @@ public:
 // Type: class PassengerWindow (forward reference);
 class PassengerWindow : public GraphicWindow
 {
-		enum PassengerWindow::Position {
+		enum Position {
 			nPositionUp = 0,
 			nPositionDown = 1,
 		};
-		enum PassengerWindow::PositionChangeDirection {
+		enum PositionChangeDirection {
 			nPositionChangeDirectionDown = -1,
 			nPositionChangeDirectionNone = 0,
 			nPositionChangeDirectionUp = 1,
@@ -568,7 +568,7 @@ protected:
 
 // Type: class DialHand (forward reference);
 class DialHand{
-		enum DialHand::DialDirection {
+		enum DialDirection {
 			nDialDirectionClockwise = -1,
 			nDialDirectionCounterClockwise = 1,
 		};

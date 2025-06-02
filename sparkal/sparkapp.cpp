@@ -23,7 +23,7 @@ public:
 	unsigned long ResetFlag(unsigned long);
 	int32_t GetRuntimePlatform();
 	int32_t DecideRuntimePlatform();
-		enum CSparkalApp::PlatfromType {
+		enum PlatfromType {
 			Unknown = 0,
 			Win32s = 1,
 			WinNT31 = 2,

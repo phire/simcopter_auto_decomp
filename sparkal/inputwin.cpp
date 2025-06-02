@@ -559,7 +559,7 @@ protected:
 // Type: class UserInputWindow (forward reference);
 class UserInputWindow : public GraphicWindow
 {
-		enum UserInputWindow::KeyUsageType {
+		enum KeyUsageType {
 			nKeyUsageTypeFree = 0,
 			nKeyUsageTypeReserved = 1,
 			nKeyUsageTypeCurrentCommand = 2,
@@ -610,7 +610,7 @@ protected:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -667,7 +667,7 @@ protected:
 };
 
 // Type: enum UserInputWindow::KeyUsageType;
-	enum UserInputWindow::KeyUsageType {
+	enum KeyUsageType {
 		nKeyUsageTypeFree = 0,
 		nKeyUsageTypeReserved = 1,
 		nKeyUsageTypeCurrentCommand = 2,
@@ -1574,7 +1574,7 @@ public:
 
 // Type: class rb_tree<long,long,ident<long,long>,less<long>> (forward reference);
 class rb_tree<long,long,ident<long,long>,less<long>>{
-		enum rb_tree<long,long,ident<long,long>,less<long>>::color_type {
+		enum color_type {
 			red = 0,
 			black = 1,
 		};
@@ -1821,13 +1821,13 @@ struct bidirectional_iterator<KeyColors,int>{
 
 // Type: class ios;
 class ios{
-		enum ios::io_state {
+		enum io_state {
 			goodbit = 0,
 			eofbit = 1,
 			failbit = 2,
 			badbit = 4,
 		};
-		enum ios::open_mode {
+		enum open_mode {
 			in = 1,
 			out = 2,
 			ate = 4,
@@ -1837,12 +1837,12 @@ class ios{
 			noreplace = 64,
 			binary = 128,
 		};
-		enum ios::seek_dir {
+		enum seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,
 		};
-		enum ios::__unnamed {
+		enum /* __unnamed */ {
 			skipws = 1,
 			left = 2,
 			right = 4,
@@ -1915,7 +1915,7 @@ public:
 protected:
 	class ios& operator=(const class ios&);
 	void init(class streambuf*);
-		enum ios::__unnamed {
+		enum /* __unnamed */ {
 			skipping = 0,
 			tied = 1,
 		};

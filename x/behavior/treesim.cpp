@@ -4,7 +4,7 @@
 
 // Type: class TreeSim (forward reference);
 class TreeSim{
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
@@ -25,14 +25,14 @@ private:
 	short fIterations;
 	short _pad;
 	short * fAutoStackArea;
-		enum TreeSim::ReturnCode {
+		enum ReturnCode {
 			kTrueComplete = 1,
 			kFalseComplete = 0,
 			kEngaged = 2,
 			kError = -1,
 			kStackLoaded = 3,
 		};
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kStackErrorBase = 1000,
 			kStackOverflow = 1000,
 			kUndefinedTransition = 1001,
@@ -74,7 +74,7 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
 			kActionBase = 256,
@@ -104,7 +104,7 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum Behavior::__unnamed {
+		enum /* __unnamed */ {
 			kUndefined = -3,
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
@@ -172,7 +172,7 @@ struct TreeSim::StackElem{
 // Behavior::Node Class implementation not found
 
 // Type: enum TreeSim::ReturnCode;
-	enum TreeSim::ReturnCode {
+	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,
 		kEngaged = 2,
@@ -198,7 +198,7 @@ public:
 
 // Type: class TreeSim;
 class TreeSim{
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
@@ -219,14 +219,14 @@ private:
 	short fIterations;
 	short _pad;
 	short * fAutoStackArea;
-		enum TreeSim::ReturnCode {
+		enum ReturnCode {
 			kTrueComplete = 1,
 			kFalseComplete = 0,
 			kEngaged = 2,
 			kError = -1,
 			kStackLoaded = 3,
 		};
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kStackErrorBase = 1000,
 			kStackOverflow = 1000,
 			kUndefinedTransition = 1001,

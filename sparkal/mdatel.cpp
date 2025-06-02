@@ -187,7 +187,7 @@ private:
 
 // Type: class MDate (forward reference);
 class MDate{
-		enum MDate::HowToPrint {
+		enum HowToPrint {
 			Normal = 0,
 			Terse = 1,
 			Numbers = 2,
@@ -268,13 +268,13 @@ protected:
 
 // Type: class ios;
 class ios{
-		enum ios::io_state {
+		enum io_state {
 			goodbit = 0,
 			eofbit = 1,
 			failbit = 2,
 			badbit = 4,
 		};
-		enum ios::open_mode {
+		enum open_mode {
 			in = 1,
 			out = 2,
 			ate = 4,
@@ -284,12 +284,12 @@ class ios{
 			noreplace = 64,
 			binary = 128,
 		};
-		enum ios::seek_dir {
+		enum seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,
 		};
-		enum ios::__unnamed {
+		enum /* __unnamed */ {
 			skipws = 1,
 			left = 2,
 			right = 4,
@@ -362,7 +362,7 @@ public:
 protected:
 	class ios& operator=(const class ios&);
 	void init(class streambuf*);
-		enum ios::__unnamed {
+		enum /* __unnamed */ {
 			skipping = 0,
 			tied = 1,
 		};
@@ -452,7 +452,7 @@ private:
 
 // Type: class MDate;
 class MDate{
-		enum MDate::HowToPrint {
+		enum HowToPrint {
 			Normal = 0,
 			Terse = 1,
 			Numbers = 2,

@@ -14,12 +14,12 @@ struct Point2d{
 
 // Type: class BoatClass;
 class BoatClass{
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			BOAT_TYPES = 1,
 			PERCENTAGE_OF_BOAT1 = 100,
 			TOTAL_PERCENTAGE = 100,
 		};
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -27,7 +27,7 @@ class BoatClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum BoatClass::IntersectionTypes {
+		enum IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -37,7 +37,7 @@ class BoatClass{
 			RIGHT_OR_STRAIGHT = 5,
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 		};
-		enum BoatClass::StoppedReasons {
+		enum StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -45,11 +45,11 @@ class BoatClass{
 			END_OF_WATER = 4,
 			INTERSECTION_FULL = 5,
 		};
-		enum BoatClass::WaterTileOffsets {
+		enum WaterTileOffsets {
 			WT_CENTOFF = 0,
 			WT_EDGEOFF = 0,
 		};
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			COLLISION_SPACE = 655360,
 			SPRAY_TIME = 58982,
 			WATER_SPEED = 917504,
@@ -59,7 +59,7 @@ class BoatClass{
 			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 655360,
 		};
-		enum BoatClass::flagEnums {
+		enum flagEnums {
 			INITIALIZED = 0,
 			PLACED = 1,
 			TURNING = 2,
@@ -199,12 +199,12 @@ public:
 
 // Type: class BoatClass (forward reference);
 class BoatClass{
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			BOAT_TYPES = 1,
 			PERCENTAGE_OF_BOAT1 = 100,
 			TOTAL_PERCENTAGE = 100,
 		};
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -212,7 +212,7 @@ class BoatClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum BoatClass::IntersectionTypes {
+		enum IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -222,7 +222,7 @@ class BoatClass{
 			RIGHT_OR_STRAIGHT = 5,
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 		};
-		enum BoatClass::StoppedReasons {
+		enum StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -230,11 +230,11 @@ class BoatClass{
 			END_OF_WATER = 4,
 			INTERSECTION_FULL = 5,
 		};
-		enum BoatClass::WaterTileOffsets {
+		enum WaterTileOffsets {
 			WT_CENTOFF = 0,
 			WT_EDGEOFF = 0,
 		};
-		enum BoatClass::__unnamed {
+		enum /* __unnamed */ {
 			COLLISION_SPACE = 655360,
 			SPRAY_TIME = 58982,
 			WATER_SPEED = 917504,
@@ -244,7 +244,7 @@ class BoatClass{
 			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 655360,
 		};
-		enum BoatClass::flagEnums {
+		enum flagEnums {
 			INITIALIZED = 0,
 			PLACED = 1,
 			TURNING = 2,
@@ -402,7 +402,7 @@ struct Point3d{
 };
 
 // Type: enum BoatClass::StoppedReasons;
-	enum BoatClass::StoppedReasons {
+	enum StoppedReasons {
 		NO_REASON = 0,
 		TRAFFIC = 1,
 		STOPPED_TRAFFIC = 2,
@@ -425,7 +425,7 @@ struct Point3d{
 // Type: enum DirectionTypes[4];
 
 // Type: enum BoatClass::IntersectionTypes;
-	enum BoatClass::IntersectionTypes {
+	enum IntersectionTypes {
 		DEAD_END = 0,
 		STRAIGHT_AHEAD = 1,
 		LEFT_ONLY = 2,

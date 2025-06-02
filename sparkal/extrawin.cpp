@@ -198,7 +198,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -345,12 +345,12 @@ public:
 // Type: class AnimationWindow (forward reference);
 class AnimationWindow : public GraphicWindow
 {
-		enum AnimationWindow::AnimationLoopType {
+		enum AnimationLoopType {
 			nAnimationLoopTypeOnce = 0,
 			nAnimationLoopTypeCircular = 1,
 			nAnimationLoopTypeBackAndForth = 2,
 		};
-		enum AnimationWindow::AnimationDirection {
+		enum AnimationDirection {
 			nAnimationDirectionForward = 1,
 			nAnimationDirectionBackward = -1,
 		};
@@ -571,7 +571,7 @@ public:
 };
 
 // Type: enum AnimationWindow::AnimationLoopType;
-	enum AnimationWindow::AnimationLoopType {
+	enum AnimationLoopType {
 		nAnimationLoopTypeOnce = 0,
 		nAnimationLoopTypeCircular = 1,
 		nAnimationLoopTypeBackAndForth = 2,
@@ -1014,7 +1014,7 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonWindow::ButtonState {
+		enum ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

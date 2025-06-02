@@ -12,7 +12,7 @@ struct Point2d{
 
 // Type: class PlaneClass;
 class PlaneClass{
-		enum PlaneClass::__unnamed {
+		enum /* __unnamed */ {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -20,7 +20,7 @@ class PlaneClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum PlaneClass::IntersectionTypes {
+		enum IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -30,7 +30,7 @@ class PlaneClass{
 			RIGHT_OR_STRAIGHT = 5,
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 		};
-		enum PlaneClass::StoppedReasons {
+		enum StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -38,11 +38,11 @@ class PlaneClass{
 			END_OF_RAIL = 4,
 			INTERSECTION_FULL = 5,
 		};
-		enum PlaneClass::RailTileOffsets {
+		enum RailTileOffsets {
 			RL_CENTOFF = 0,
 			RL_EDGEOFF = 131072,
 		};
-		enum PlaneClass::__unnamed {
+		enum /* __unnamed */ {
 			COLLISION_SPACE = 655360,
 			PLANE_SPEED = 7864320,
 			PLANE_SLOWDOWN_FACTOR = 131072,
@@ -50,7 +50,7 @@ class PlaneClass{
 			MIN_ALTITUDE = 22937600,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 3932160,
 		};
-		enum PlaneClass::flagEnums {
+		enum flagEnums {
 			INITIALIZED = 0,
 			PLACED = 1,
 			CRASH_WHEN_READY = 2,
@@ -168,7 +168,7 @@ public:
 
 // Type: class PlaneClass (forward reference);
 class PlaneClass{
-		enum PlaneClass::__unnamed {
+		enum /* __unnamed */ {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -176,7 +176,7 @@ class PlaneClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum PlaneClass::IntersectionTypes {
+		enum IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -186,7 +186,7 @@ class PlaneClass{
 			RIGHT_OR_STRAIGHT = 5,
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 		};
-		enum PlaneClass::StoppedReasons {
+		enum StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -194,11 +194,11 @@ class PlaneClass{
 			END_OF_RAIL = 4,
 			INTERSECTION_FULL = 5,
 		};
-		enum PlaneClass::RailTileOffsets {
+		enum RailTileOffsets {
 			RL_CENTOFF = 0,
 			RL_EDGEOFF = 131072,
 		};
-		enum PlaneClass::__unnamed {
+		enum /* __unnamed */ {
 			COLLISION_SPACE = 655360,
 			PLANE_SPEED = 7864320,
 			PLANE_SLOWDOWN_FACTOR = 131072,
@@ -206,7 +206,7 @@ class PlaneClass{
 			MIN_ALTITUDE = 22937600,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 3932160,
 		};
-		enum PlaneClass::flagEnums {
+		enum flagEnums {
 			INITIALIZED = 0,
 			PLACED = 1,
 			CRASH_WHEN_READY = 2,
@@ -333,7 +333,7 @@ struct Point3d{
 };
 
 // Type: enum PlaneClass::StoppedReasons;
-	enum PlaneClass::StoppedReasons {
+	enum StoppedReasons {
 		NO_REASON = 0,
 		TRAFFIC = 1,
 		STOPPED_TRAFFIC = 2,

@@ -19,7 +19,7 @@ struct Point3d{
 class cYObject : public TreeSim, public YObjLang
 {
 	using DataType = short;
-		enum cYObject::__unnamed {
+		enum /* __unnamed */ {
 			kNumData = 48,
 			kNumTemp = 8,
 			kNumPointers = 4,
@@ -39,7 +39,7 @@ class cYObject : public TreeSim, public YObjLang
 		short blue;
 		short _padding2;
 	};
-		enum cYObject::MoveErrorCode {
+		enum MoveErrorCode {
 			kMoveError = -1,
 			kMoveSuccess = 0,
 			kMoveFailTooHigh = 1,
@@ -55,7 +55,7 @@ class cYObject : public TreeSim, public YObjLang
 			kMoveFailUnwalkableLoctype = 11,
 			kMoveFailOutOfRoad = 12,
 		};
-		enum cYObject::ObjectType {
+		enum ObjectType {
 			kPerson = 0,
 			kNumObjectTypes = 1,
 		};
@@ -66,7 +66,7 @@ public:
 	short GetTree();
 	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
 	void Die();
-		enum cYObject::MissionUpdates {
+		enum MissionUpdates {
 			kPickedUp = 0,
 			kOuttaHere = 1,
 			kReportNewPickupLocation = 2,
@@ -78,14 +78,14 @@ public:
 			kMedVicPickedUp = 8,
 			kPersonCaught = 9,
 		};
-		enum cYObject::Checks {
+		enum Checks {
 			kHeliLanded = 0,
 			kHeliLow = 1,
 			kMasterObjectLow = 2,
 			kMasterObjectMovingSlowly = 3,
 			kStackObjectLow = 4,
 		};
-		enum cYObject::CompareMyLocWith {
+		enum CompareMyLocWith {
 			kMissionDestLoc = 0,
 			kStackPointer = 1,
 			kHeli = 2,
@@ -131,7 +131,7 @@ public:
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
 	long fLastInterrupt;
-		enum cYObject::LocationType {
+		enum LocationType {
 			kOutOfCity = -1,
 			kLocNoInfo = 0,
 			kLocUnknown = 1,
@@ -151,7 +151,7 @@ public:
 		};
 public:
 	static enum cYObject::LocationType sLocType[256];
-		enum cYObject::SearchType {
+		enum SearchType {
 			kSearchEdgeGround = 0,
 			kSearchAnywhereGround = 1,
 			kSearchRoof = 2,
@@ -327,11 +327,11 @@ public:
 	short _pad2;
 	short fDirInc;
 	struct cYObject::ObjDefHeader fDefinition;
-		enum cYObject::__unnamed {
+		enum /* __unnamed */ {
 			kMasterObject = 0,
 			kLastHitterObject = 1,
 		};
-		enum cYObject::__unnamed {
+		enum /* __unnamed */ {
 			kDirection = 0,
 			kAwake = 1,
 			kHeightCanJump = 2,
@@ -384,7 +384,7 @@ public:
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
 	static char GetRoadDir(struct Point3d);
-		enum cYObject::SoundNum {
+		enum SoundNum {
 			kSNone = -1,
 			kSAssertion = 1,
 			kSDunno = 2,
@@ -695,7 +695,7 @@ struct Point2d{
 // _STOBJ_INST Class implementation not found
 
 // Type: enum cYObject::LocationType;
-	enum cYObject::LocationType {
+	enum LocationType {
 		kOutOfCity = -1,
 		kLocNoInfo = 0,
 		kLocUnknown = 1,
@@ -720,7 +720,7 @@ struct Point2d{
 // cYObject::MoveInfo Class implementation not found
 
 // Type: enum cYObject::MoveErrorCode;
-	enum cYObject::MoveErrorCode {
+	enum MoveErrorCode {
 		kMoveError = -1,
 		kMoveSuccess = 0,
 		kMoveFailTooHigh = 1,
@@ -799,7 +799,7 @@ struct _MISSION_PARMS{
 // Behavior::Node Class implementation not found
 
 // Type: enum TreeSim::ReturnCode;
-	enum TreeSim::ReturnCode {
+	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,
 		kEngaged = 2,
@@ -922,7 +922,7 @@ struct YObjLang::TurnToFireParam{
 };
 
 // Type: enum cYObject::MissionUpdates;
-	enum cYObject::MissionUpdates {
+	enum MissionUpdates {
 		kPickedUp = 0,
 		kOuttaHere = 1,
 		kReportNewPickupLocation = 2,
@@ -940,7 +940,7 @@ struct YObjLang::TurnToFireParam{
 
 // Type: class TreeSim;
 class TreeSim{
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kNumLocals = 4,
 			kMaxIterations = 128,
 		};
@@ -961,14 +961,14 @@ private:
 	short fIterations;
 	short _pad;
 	short * fAutoStackArea;
-		enum TreeSim::ReturnCode {
+		enum ReturnCode {
 			kTrueComplete = 1,
 			kFalseComplete = 0,
 			kEngaged = 2,
 			kError = -1,
 			kStackLoaded = 3,
 		};
-		enum TreeSim::__unnamed {
+		enum /* __unnamed */ {
 			kStackErrorBase = 1000,
 			kStackOverflow = 1000,
 			kUndefinedTransition = 1001,
@@ -1014,7 +1014,7 @@ public:
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler();
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kIdle = 0,
 			kSetAnim = 1,
 			kAttr = 2,
@@ -1080,7 +1080,7 @@ public:
 		};
 public:
 	virtual short CountPrimitives();
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kMyself = 0,
 			kTreeParam = 1,
 			kTargetObj = 2,
@@ -1223,7 +1223,7 @@ public:
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 rhsOwner;
 	};
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kGreaterThan = 0,
 			kLessThan = 1,
 			kEquals = 2,
@@ -1245,7 +1245,7 @@ public:
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// union YObjLang::Param Param
-		enum YObjLang::TreeNum {
+		enum TreeNum {
 			kNoTree = -1,
 			kSpotlightTree = 900,
 			kMegaphoneTree = 901,
@@ -1255,7 +1255,7 @@ public:
 			kRunOrSwoonTree = 905,
 			kSwoonTree = 906,
 		};
-		enum YObjLang::__unnamed {
+		enum /* __unnamed */ {
 			kWeightStringsID = 140,
 			kPrimitiveStringsID = 139,
 			kDataLabelsID = 129,

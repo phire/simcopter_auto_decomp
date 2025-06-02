@@ -9,7 +9,7 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum _cArray::__unnamed {
+		enum /* __unnamed */ {
 			kHeaderSize = 8,
 			kMaxArrays = 1024,
 			kMaxLoadable = 64,
@@ -141,7 +141,7 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum _cArray::__unnamed {
+		enum /* __unnamed */ {
 			kHeaderSize = 8,
 			kMaxArrays = 1024,
 			kMaxLoadable = 64,
@@ -284,7 +284,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum FlatFile::__unnamed {
+		enum /* __unnamed */ {
 			kMaxNameLen = 255,
 		};
 protected:

@@ -4,7 +4,7 @@
 
 // Type: class FlatFile (forward reference);
 class FlatFile{
-		enum FlatFile::__unnamed {
+		enum /* __unnamed */ {
 			kMaxNameLen = 255,
 		};
 protected:
