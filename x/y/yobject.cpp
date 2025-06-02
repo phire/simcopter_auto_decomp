@@ -2551,51 +2551,6 @@ public:
 	void SetDynAnimFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
 };
 
-// Type: class FlatFile;
-class FlatFile{
-	enum /* __unnamed */ {
-		kMaxNameLen = 255,
-	};
-protected:
-	class FlatFile* fNext;
-	unsigned char fName[256];
-	long fFileID;
-	struct _iobuf* fFile;
-	long UniqueID();
-private:
-	static class FlatFile* sList;
-	static long sLastFileID;
-	void Link();
-	void Unlink();
-	unsigned short Exclusive();
-public:
-	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
-	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
-	void OpenFromOtherFile(class FlatFile*);
-	long GetFileName(unsigned char *);
-	unsigned short ValidFile();
-	long ReadBlock(void * __ptr32, long *);
-	long Read4(long *);
-	long Read2(short *);
-	long Read1(char *);
-	long SetPos(long);
-	long Advance(long);
-	// calltype: NearC
-	static short CheckForLeaks();
-	long GetFileID();
-	struct _iobuf* GetFile();
-};
-
 // Type: class Sound;
 class Sound{
 	enum SoundSourceType {
@@ -2647,6 +2602,51 @@ public:
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
+};
+
+// Type: class FlatFile;
+class FlatFile{
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
+protected:
+	class FlatFile* fNext;
+	unsigned char fName[256];
+	long fFileID;
+	struct _iobuf* fFile;
+	long UniqueID();
+private:
+	static class FlatFile* sList;
+	static long sLastFileID;
+	void Link();
+	void Unlink();
+	unsigned short Exclusive();
+public:
+	void FlatFile();
+	// vtable: 0
+	intro void ~FlatFile();
+	// calltype: NearC
+	static class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(class FlatFile*);
+	// vtable: 4
+	intro long Open(unsigned char *);
+	// vtable: 8
+	intro long Open(char *);
+	// vtable: 12
+	intro long Close();
+	void OpenFromOtherFile(class FlatFile*);
+	long GetFileName(unsigned char *);
+	unsigned short ValidFile();
+	long ReadBlock(void * __ptr32, long *);
+	long Read4(long *);
+	long Read2(short *);
+	long Read1(char *);
+	long SetPos(long);
+	long Advance(long);
+	// calltype: NearC
+	static short CheckForLeaks();
+	long GetFileID();
+	struct _iobuf* GetFile();
 };
 
 // Type: class IBackBuffer;
@@ -20797,64 +20797,64 @@ short sCheckTotedCount = { /* <data@0x005b86b4> */ };
 
 // Contribution: 3:0009e250-000a05a4 Module: 200, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00635250
-class YObjLang* cYObject::sLanguage = { /* <data@0x00635250> */ };
+class YObjLang* cYObject::sLanguage;
 
 // GLOBAL: COPTER_D 0x00635258
-class MTimer gXTimer = { /* <data@0x00635258> */ };
+class MTimer gXTimer;
 
 // GLOBAL: COPTER_D 0x00635268
-struct cYObject::LocationInfo cYObject::sLocInfo[14] = { /* <data@0x00635268> */ };
+struct cYObject::LocationInfo cYObject::sLocInfo[14];
 
 // GLOBAL: COPTER_D 0x006352d8
-short cYObject::sHitRxnTree[20] = { /* <data@0x006352d8> */ };
+short cYObject::sHitRxnTree[20];
 
 // GLOBAL: COPTER_D 0x00635300
-enum cYObject::LocationType cYObject::sNeutralMissionLocs[14][10] = { /* <data@0x00635300> */ };
+enum cYObject::LocationType cYObject::sNeutralMissionLocs[14][10];
 
 // GLOBAL: COPTER_D 0x00635530
-struct Point3d cYObject::sMoveTable[8] = { /* <data@0x00635530> */ };
+struct Point3d cYObject::sMoveTable[8];
 
 // GLOBAL: COPTER_D 0x00635590
-class ResFile cYObject::sErrorFile = { /* <data@0x00635590> */ };
+class ResFile cYObject::sErrorFile;
 
 // GLOBAL: COPTER_D 0x006356b0
-short cYObject::sSoundChannels[15] = { /* <data@0x006356b0> */ };
+short cYObject::sSoundChannels[15];
 
 // GLOBAL: COPTER_D 0x006356d0
-struct BodyDebugInfo gBodyDebugInfo[100] = { /* <data@0x006356d0> */ };
+struct BodyDebugInfo gBodyDebugInfo[100];
 
 // GLOBAL: COPTER_D 0x006361c0
-short cYObject::sStackSize[1] = { /* <data@0x006361c0> */ };
+short cYObject::sStackSize[1];
 
 // GLOBAL: COPTER_D 0x006361c8
-long g_sqrtTable[625] = { /* <data@0x006361c8> */ };
+long g_sqrtTable[625];
 
 // GLOBAL: COPTER_D 0x00636b8c
-class Behavior* cYObject::sBehavior = { /* <data@0x00636b8c> */ };
+class Behavior* cYObject::sBehavior;
 
 // GLOBAL: COPTER_D 0x00636b90
-int32_t LastCameraY = { /* <data@0x00636b90> */ };
+int32_t LastCameraY;
 
 // GLOBAL: COPTER_D 0x00636b94
-int32_t LastCameraX = { /* <data@0x00636b94> */ };
+int32_t LastCameraX;
 
 // GLOBAL: COPTER_D 0x00636b98
-short cYObject::sInitBhav[14] = { /* <data@0x00636b98> */ };
+short cYObject::sInitBhav[14];
 
 // GLOBAL: COPTER_D 0x00636bb8
-class NResFile cYObject::sFile = { /* <data@0x00636bb8> */ };
+class NResFile cYObject::sFile;
 
 // GLOBAL: COPTER_D 0x00636ce0
-struct Point3d cYObject::sUnitVectorTable[8] = { /* <data@0x00636ce0> */ };
+struct Point3d cYObject::sUnitVectorTable[8];
 
 // GLOBAL: COPTER_D 0x00636d40
-class cYObject* cYObject::sObjects[100] = { /* <data@0x00636d40> */ };
+class cYObject* cYObject::sObjects[100];
 
 // GLOBAL: COPTER_D 0x00636ed0
-enum cYObject::LocationType cYObject::sLocType[256] = { /* <data@0x00636ed0> */ };
+enum cYObject::LocationType cYObject::sLocType[256];
 
 // GLOBAL: COPTER_D 0x006372d0
-enum cYObject::LocationType cYObject::sNeutralPersonLocs[18][10] = { /* <data@0x006372d0> */ };
+enum cYObject::LocationType cYObject::sNeutralPersonLocs[18][10];
 
 // GLOBAL: COPTER_D 0x006375a0
 // LOCAL: COPTER_D 0x006375a0
@@ -20867,11 +20867,11 @@ enum cYObject::LocationType cYObject::sNeutralPersonLocs[18][10] = { /* <data@0x
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006bf188
-struct Point2d CameraCell = { /* <data@0x006bf188> */ };
+struct Point2d CameraCell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer = { /* <data@0x006c12a0> */ };
+struct ViewerInfo Viewer; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1210
-struct _VIEW_STATE ViewState = { /* <data@0x006c1210> */ };
+struct _VIEW_STATE ViewState; // Contrib missing
 

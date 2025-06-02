@@ -5732,7 +5732,7 @@ void (*$S33)() = { /* <data@0x00597088> */ };
 
 // Contribution: 3:0006dc00-0006dc73 Module: 21, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604c00
-class FileServices gFileServices = { /* <data@0x00604c00> */ };
+class FileServices gFileServices;
 
 
 
@@ -5741,25 +5741,25 @@ class FileServices gFileServices = { /* <data@0x00604c00> */ };
 
 // WARNING: this global might actually belong to: FIXED.OBJ
 // GLOBAL: COPTER_D 0x006bf1ac
-int32_t cameraHeading = { /* <data@0x006bf1ac> */ };
+int32_t cameraHeading; // Contrib missing
 
 
 // WARNING: this global might actually belong to: FIXED.OBJ
 // GLOBAL: COPTER_D 0x006bf1b0
-int32_t cameraPitch = { /* <data@0x006bf1b0> */ };
+int32_t cameraPitch; // Contrib missing
 
 
 // WARNING: this global might actually belong to: FIXED.OBJ
 // GLOBAL: COPTER_D 0x006c1210
-struct _VIEW_STATE ViewState = { /* <data@0x006c1210> */ };
+struct _VIEW_STATE ViewState; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3render.c
 // GLOBAL: COPTER_D 0x0067ed20
-int32_t G_terr_maxalt = { /* <data@0x0067ed20> */ };
+int32_t G_terr_maxalt; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3render.c
 // GLOBAL: COPTER_D 0x006c1210
-struct _VIEW_STATE ViewState = { /* <data@0x006c1210> */ };
+struct _VIEW_STATE ViewState; // Contrib missing
 

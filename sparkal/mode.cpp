@@ -176,5 +176,5 @@ int32_t gNumModes = { /* <data@0x00599d80> */ };
 
 // Contribution: 3:0006d818-0006db17 Module: 27, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604818
-struct tagMode gModeList[64] = { /* <data@0x00604818> */ };
+struct tagMode gModeList[64];
 

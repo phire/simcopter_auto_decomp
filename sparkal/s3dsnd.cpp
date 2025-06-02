@@ -5818,13 +5818,13 @@ void (*$S59)() = { /* <data@0x00597038> */ };
 
 // Contribution: 3:0002c628-0002c7f3 Module: 52, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c3628
-long lOriginalSoundVolumes[113] = { /* <data@0x005c3628> */ };
+long lOriginalSoundVolumes[113];
 
 // GLOBAL: COPTER_D 0x005c37ec
-class SoundChangeNotificationSink gSoundChangeNotificationSink = { /* <data@0x005c37ec> */ };
+class SoundChangeNotificationSink gSoundChangeNotificationSink;
 
 // GLOBAL: COPTER_D 0x005c37f0
-long glMasterVolume = { /* <data@0x005c37f0> */ };
+long glMasterVolume;
 
 
 
@@ -5833,10 +5833,10 @@ long glMasterVolume = { /* <data@0x005c37f0> */ };
 
 // WARNING: this global might actually belong to: rotate.asm
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer = { /* <data@0x006c12a0> */ };
+struct ViewerInfo Viewer; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Gameapp7.cpp
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer = { /* <data@0x006c12a0> */ };
+struct ViewerInfo Viewer; // Contrib missing
 

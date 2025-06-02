@@ -1675,8 +1675,8 @@ void (*$S21)() = { /* <data@0x00597030> */ };
 
 // Contribution: 3:0002c600-0002c623 Module: 58, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c3608
-class MDate MTime::RefDate = { /* <data@0x005c3608> */ };
+class MDate MTime::RefDate;
 
 // GLOBAL: COPTER_D 0x005c3618
-class MDate MTime::MaxDate = { /* <data@0x005c3618> */ };
+class MDate MTime::MaxDate;
 

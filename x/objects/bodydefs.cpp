@@ -1768,5 +1768,5 @@ _T3a3:
 
 // Contribution: 3:000a06b0-000a06c5 Module: 192, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006376b0
-short PersonFaceNums[11] = { /* <data@0x006376b0> */ };
+short PersonFaceNums[11];
 

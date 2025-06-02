@@ -937,18 +937,18 @@ char * SZ_SKY_NIGHT_IMAGE_FILE_NAME = { /* <data@0x0059a124> */ };
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662820
-void * __ptr32 GridProjectEnd = { /* <data@0x00662820> */ };
+void * __ptr32 GridProjectEnd; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067ed20
-int32_t G_terr_maxalt = { /* <data@0x0067ed20> */ };
+int32_t G_terr_maxalt; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Fileserv.cpp
 // GLOBAL: COPTER_D 0x006bf1ac
-int32_t cameraHeading = { /* <data@0x006bf1ac> */ };
+int32_t cameraHeading; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Fileserv.cpp
 // GLOBAL: COPTER_D 0x006bf1b0
-int32_t cameraPitch = { /* <data@0x006bf1b0> */ };
+int32_t cameraPitch; // Contrib missing
 

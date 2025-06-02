@@ -12189,20 +12189,20 @@ struct CONNECTION_INFO_TYPE connections[61] = { /* <data@0x005b57e8> */ };
 
 // Contribution: 3:00071c28-00072097 Module: 171, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00608c28
-struct _AUTO_LOAD_SAVE S_autols = { /* <data@0x00608c28> */ };
+struct _AUTO_LOAD_SAVE S_autols;
 
 // GLOBAL: COPTER_D 0x00608f6c
-int32_t AutomobileClass::fireHoseDist = { /* <data@0x00608f6c> */ };
+int32_t AutomobileClass::fireHoseDist;
 
 // GLOBAL: COPTER_D 0x00608f70
-int32_t AutomobileClass::ambSirenDist = { /* <data@0x00608f70> */ };
+int32_t AutomobileClass::ambSirenDist;
 
 // GLOBAL: COPTER_D 0x00608f74
-int32_t AutomobileClass::policeSirenDist = { /* <data@0x00608f74> */ };
+int32_t AutomobileClass::policeSirenDist;
 
 // GLOBAL: COPTER_D 0x00608f78
-int32_t AutomobileClass::fireSirenDist = { /* <data@0x00608f78> */ };
+int32_t AutomobileClass::fireSirenDist;
 
 // GLOBAL: COPTER_D 0x00608f80
-class AutomobileClass* cars[70] = { /* <data@0x00608f80> */ };
+class AutomobileClass* cars[70];
 

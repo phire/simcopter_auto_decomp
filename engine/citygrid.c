@@ -712,230 +712,230 @@ int32_t S_gridmempool = { /* <data@0x0059d2d4> */ };
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x0066286c
-struct Clip2d* dbgvertptr = { /* <data@0x0066286c> */ };
+struct Clip2d* dbgvertptr; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x006662f4
-long dbgverts = { /* <data@0x006662f4> */ };
+long dbgverts; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x0066639c
-void * __ptr32 GridSortFacesEnd = { /* <data@0x0066639c> */ };
+void * __ptr32 GridSortFacesEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666394
-void * __ptr32 GridFacesEnd = { /* <data@0x00666394> */ };
+void * __ptr32 GridFacesEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666380
-struct _CELL_INFO*** GridCellAddrsEnd = { /* <data@0x00666380> */ };
+struct _CELL_INFO*** GridCellAddrsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666378
-struct _CELL_INFO** GridSortCellsEnd = { /* <data@0x00666378> */ };
+struct _CELL_INFO** GridSortCellsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666374
-struct _CELL_INFO*** GridCellAddrs = { /* <data@0x00666374> */ };
+struct _CELL_INFO*** GridCellAddrs; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666370
-struct Project3d** WhereIsItEnd = { /* <data@0x00666370> */ };
+struct Project3d** WhereIsItEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666358
-long G_VertDim = { /* <data@0x00666358> */ };
+long G_VertDim; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x006662a4
-void * __ptr32 GridRotateEnd = { /* <data@0x006662a4> */ };
+void * __ptr32 GridRotateEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662880
-long GridCellOffsets[61][61] = { /* <data@0x00662880> */ };
+long GridCellOffsets[61][61]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662874
-struct Point3d* GridVertsEnd = { /* <data@0x00662874> */ };
+struct Point3d* GridVertsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662868
-char * G_fog = { /* <data@0x00662868> */ };
+char * G_fog; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662864
-unsigned char * IsRotatedEnd = { /* <data@0x00662864> */ };
+unsigned char * IsRotatedEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662840
-long CVerts[3][3] = { /* <data@0x00662840> */ };
+long CVerts[3][3]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662830
-long G_FaceDim = { /* <data@0x00662830> */ };
+long G_FaceDim; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662834
-char * G_fogbase = { /* <data@0x00662834> */ };
+char * G_fogbase; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662868
-char * G_fog = { /* <data@0x00662868> */ };
+char * G_fog; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662818
-int32_t G_fogZ1 = { /* <data@0x00662818> */ };
+int32_t G_fogZ1; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x0066281c
-int32_t G_plotglob = { /* <data@0x0066281c> */ };
+int32_t G_plotglob; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666388
-int32_t G_deltafogZ = { /* <data@0x00666388> */ };
+int32_t G_deltafogZ; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666398
-struct Project3d** WhereIsIt = { /* <data@0x00666398> */ };
+struct Project3d** WhereIsIt; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666370
-struct Project3d** WhereIsItEnd = { /* <data@0x00666370> */ };
+struct Project3d** WhereIsItEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666368
-struct Point3d* GridVerts = { /* <data@0x00666368> */ };
+struct Point3d* GridVerts; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662874
-struct Point3d* GridVertsEnd = { /* <data@0x00662874> */ };
+struct Point3d* GridVertsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666360
-unsigned char * IsRotated = { /* <data@0x00666360> */ };
+unsigned char * IsRotated; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662864
-unsigned char * IsRotatedEnd = { /* <data@0x00662864> */ };
+unsigned char * IsRotatedEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662828
-void * __ptr32 GridRotate = { /* <data@0x00662828> */ };
+void * __ptr32 GridRotate; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x006662a4
-void * __ptr32 GridRotateEnd = { /* <data@0x006662a4> */ };
+void * __ptr32 GridRotateEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x006662f0
-void * __ptr32 GridProject = { /* <data@0x006662f0> */ };
+void * __ptr32 GridProject; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x006662b0
-int32_t GridMat[4][4] = { /* <data@0x006662b0> */ };
+int32_t GridMat[4][4]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666364
-void * __ptr32 GridSortFaces = { /* <data@0x00666364> */ };
+void * __ptr32 GridSortFaces; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x0066639c
-void * __ptr32 GridSortFacesEnd = { /* <data@0x0066639c> */ };
+void * __ptr32 GridSortFacesEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662814
-long GridNVerts = { /* <data@0x00662814> */ };
+long GridNVerts; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x0066637c
-long GridNFaces = { /* <data@0x0066637c> */ };
+long GridNFaces; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x006662a8
-long GridFaceSize = { /* <data@0x006662a8> */ };
+long GridFaceSize; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666300
-struct VRview GridPos = { /* <data@0x00666300> */ };
+struct VRview GridPos; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662824
-void * __ptr32 GridFaces = { /* <data@0x00662824> */ };
+void * __ptr32 GridFaces; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666384
-struct _CELL_INFO** GridSortCells = { /* <data@0x00666384> */ };
+struct _CELL_INFO** GridSortCells; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666378
-struct _CELL_INFO** GridSortCellsEnd = { /* <data@0x00666378> */ };
+struct _CELL_INFO** GridSortCellsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666374
-struct _CELL_INFO*** GridCellAddrs = { /* <data@0x00666374> */ };
+struct _CELL_INFO*** GridCellAddrs; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666380
-struct _CELL_INFO*** GridCellAddrsEnd = { /* <data@0x00666380> */ };
+struct _CELL_INFO*** GridCellAddrsEnd; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666358
-long G_VertDim = { /* <data@0x00666358> */ };
+long G_VertDim; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662830
-long G_FaceDim = { /* <data@0x00662830> */ };
+long G_FaceDim; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00662880
-long GridCellOffsets[61][61] = { /* <data@0x00662880> */ };
+long GridCellOffsets[61][61]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: vrcalls.asm
 // GLOBAL: COPTER_D 0x00666394
-void * __ptr32 GridFacesEnd = { /* <data@0x00666394> */ };
+void * __ptr32 GridFacesEnd; // Contrib missing
 

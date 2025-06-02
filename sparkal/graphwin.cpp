@@ -10660,17 +10660,17 @@ struct list<GraphicWindow *>::list_node_buffer* list<GraphicWindow *>::buffer_li
 
 // Contribution: 3:0006f960-0006f9a7 Module: 9, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606960
-class list<GraphicWindow *> GraphicWindow::listFocusWindows = { /* <data@0x00606960> */ };
+class list<GraphicWindow *> GraphicWindow::listFocusWindows;
 
 // GLOBAL: COPTER_D 0x00606968
-struct GraphicWindowColorConstants GraphicWindow::colorConstants = { /* <data@0x00606968> */ };
+struct GraphicWindowColorConstants GraphicWindow::colorConstants;
 
 // GLOBAL: COPTER_D 0x00606990
-class list<GraphicWindow *> GraphicWindow::listModalWindows = { /* <data@0x00606990> */ };
+class list<GraphicWindow *> GraphicWindow::listModalWindows;
 
 // GLOBAL: COPTER_D 0x00606998
 // LOCAL: COPTER_D 0x00606998
 // $S46
 // GLOBAL: COPTER_D 0x006069a0
-class list<GraphicWindow *> GraphicWindow::listValidWindows = { /* <data@0x006069a0> */ };
+class list<GraphicWindow *> GraphicWindow::listValidWindows;
 

@@ -11010,12 +11010,12 @@ int32_t radiusReduction = { /* <data@0x005bc634> */ };
 
 // Contribution: 3:000a05a8-000a06a7 Module: 196, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006375a8
-enum TreeSim::ReturnCode (*cYObject::PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*) = { /* <data@0x006375a8> */ };
+enum TreeSim::ReturnCode (*cYObject::PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
 
 
 
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO* G_omap[256][256] = { /* <data@0x0067ed30> */ };
+struct _CELL_INFO* G_omap[256][256]; // Contrib missing
 

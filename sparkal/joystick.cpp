@@ -984,5 +984,5 @@ void (*$S3)() = { /* <data@0x0059708c> */ };
 
 // Contribution: 3:0006dc78-0006f95b Module: 15, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604c78
-class JoystickManager gJoystickManager = { /* <data@0x00604c78> */ };
+class JoystickManager gJoystickManager;
 

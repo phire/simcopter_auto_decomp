@@ -1437,13 +1437,13 @@ long G_VRAppInitCalled = { /* <data@0x005b4794> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\gameapp1.cpp
 // GLOBAL: COPTER_D 0x0063a858
-int32_t MainPoolIndex = { /* <data@0x0063a858> */ };
+int32_t MainPoolIndex; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\gameapp1.cpp
 // GLOBAL: COPTER_D 0x0063a854
-int32_t ScratchPoolIndex = { /* <data@0x0063a854> */ };
+int32_t ScratchPoolIndex; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1d0
-struct _HELI_DATA G_helidata[10] = { /* <data@0x006bf1d0> */ };
+struct _HELI_DATA G_helidata[10]; // Contrib missing
 

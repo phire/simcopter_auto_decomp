@@ -374,30 +374,6 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: struct SparkalRect;
-struct SparkalRect{
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
-};
-
-// Type: class CheckBoxWindow;
-class CheckBoxWindow : public ButtonWindow
-{
-public:
-	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void CheckBoxWindow();
-	virtual int32_t ComposeSelf();
-	virtual int32_t GetImageCount();
-	virtual void SetState(int32_t);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-};
-
 // Type: class ScrollBarWindow;
 class ScrollBarWindow : public SliderWindow
 {
@@ -450,6 +426,30 @@ protected:
 	class MTimer myTimer;
 	enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
 	int32_t bCursorIsOnInitialHitTestResult;
+};
+
+// Type: struct SparkalRect;
+struct SparkalRect{
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: class CheckBoxWindow;
+class CheckBoxWindow : public ButtonWindow
+{
+public:
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf();
+	virtual int32_t GetImageCount();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
 };
 
 // Type: class RadioButtonWindow;
@@ -1236,16 +1236,16 @@ long SoundScrollBarWindow::lScrollBarSoundReferenceCount = { /* <data@0x005997c4
 
 // Contribution: 3:0006d248-0006d444 Module: 38, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604248
-class DigitalSound SoundScrollBarWindow::scrollBarSound = { /* <data@0x00604248> */ };
+class DigitalSound SoundScrollBarWindow::scrollBarSound;
 
 // GLOBAL: COPTER_D 0x006042c8
-class DigitalSound SoundButtonWindow::buttonSound = { /* <data@0x006042c8> */ };
+class DigitalSound SoundButtonWindow::buttonSound;
 
 // GLOBAL: COPTER_D 0x00604348
-class DigitalSound SoundCheckBoxWindow::checkBoxSound = { /* <data@0x00604348> */ };
+class DigitalSound SoundCheckBoxWindow::checkBoxSound;
 
 // GLOBAL: COPTER_D 0x006043c8
-class DigitalSound SoundRadioButtonWindow::radioButtonSound = { /* <data@0x006043c8> */ };
+class DigitalSound SoundRadioButtonWindow::radioButtonSound;
 
 // GLOBAL: COPTER_D 0x00604444
 // LOCAL: COPTER_D 0x00604444

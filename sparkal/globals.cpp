@@ -287,25 +287,25 @@ int32_t bFullScreen = { /* <data@0x00598f10> */ };
 
 // Contribution: 3:0002c7f8-0006caaf Module: 51, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c37f8
-class ShortestPath gShortestPath = { /* <data@0x005c37f8> */ };
+class ShortestPath gShortestPath;
 
 // GLOBAL: COPTER_D 0x005c3800
-class Station* gPoliceStations = { /* <data@0x005c3800> */ };
+class Station* gPoliceStations;
 
 // GLOBAL: COPTER_D 0x005c3808
-long G_CheatCodes[6] = { /* <data@0x005c3808> */ };
+long G_CheatCodes[6];
 
 // GLOBAL: COPTER_D 0x005c3820
-class Station* gHospitals = { /* <data@0x005c3820> */ };
+class Station* gHospitals;
 
 // GLOBAL: COPTER_D 0x005c3828
-class RoadGraph gRoadGraph = { /* <data@0x005c3828> */ };
+class RoadGraph gRoadGraph;
 
 // GLOBAL: COPTER_D 0x005c3aa8
-class Station* gFireStations = { /* <data@0x005c3aa8> */ };
+class Station* gFireStations;
 
 // GLOBAL: COPTER_D 0x005c3ab0
-char gScratchBuffer[262144] = { /* <data@0x005c3ab0> */ };
+char gScratchBuffer[262144];
 
 
 
@@ -314,5 +314,5 @@ char gScratchBuffer[262144] = { /* <data@0x005c3ab0> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\sound.cpp
 // GLOBAL: COPTER_D 0x00666390
-long GridNSortCells = { /* <data@0x00666390> */ };
+long GridNSortCells; // Contrib missing
 

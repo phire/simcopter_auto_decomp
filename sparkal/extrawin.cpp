@@ -21461,14 +21461,14 @@ char * SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME = { /* <data@0x0059918c> */ };
 
 // Contribution: 3:0006cab0-0006cabf Module: 45, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00603ab0
-struct SparkalColor colorTextGamePaletteNormal = { /* <data@0x00603ab0> */ };
+struct SparkalColor colorTextGamePaletteNormal;
 
 // GLOBAL: COPTER_D 0x00603ab4
-struct SparkalColor colorTextCheckupHighlighted = { /* <data@0x00603ab4> */ };
+struct SparkalColor colorTextCheckupHighlighted;
 
 // GLOBAL: COPTER_D 0x00603ab8
-struct SparkalColor colorTextGamePaletteHighlighted = { /* <data@0x00603ab8> */ };
+struct SparkalColor colorTextGamePaletteHighlighted;
 
 // GLOBAL: COPTER_D 0x00603abc
-struct SparkalColor colorTextCheckupNormal = { /* <data@0x00603abc> */ };
+struct SparkalColor colorTextCheckupNormal;
 

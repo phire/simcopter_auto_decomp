@@ -3078,5 +3078,5 @@ unsigned short _cArray::sAllLoaded = { /* <data@0x005bf750> */ };
 
 // Contribution: 3:000a1998-000a1b97 Module: 180, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00638998
-struct _cArray::FileAndType _cArray::fsLoaded[64] = { /* <data@0x00638998> */ };
+struct _cArray::FileAndType _cArray::fsLoaded[64];
 

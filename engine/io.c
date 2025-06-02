@@ -21,32 +21,32 @@ int32_t VRDebugMode = { /* <data@0x005add74> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x00654cd4
-char * ObjSortData = { /* <data@0x00654cd4> */ };
+char * ObjSortData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654cd0
-void (*VRPostRender)(void * __ptr32) = { /* <data@0x00654cd0> */ };
+void (*VRPostRender)(void * __ptr32); // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647210
-struct SortFace NoSortArray[2000] = { /* <data@0x00647210> */ };
+struct SortFace NoSortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006627a0
-union KeyUnion VRKeyBoard = { /* <data@0x006627a0> */ };
+union KeyUnion VRKeyBoard; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654ce0
-struct SortFace SortArray[2000] = { /* <data@0x00654ce0> */ };
+struct SortFace SortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647210
-struct SortFace NoSortArray[2000] = { /* <data@0x00647210> */ };
+struct SortFace NoSortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647204
-int32_t SortCount = { /* <data@0x00647204> */ };
+int32_t SortCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654cd8
-int32_t NoSortCount = { /* <data@0x00654cd8> */ };
+int32_t NoSortCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654cd4
-char * ObjSortData = { /* <data@0x00654cd4> */ };
+char * ObjSortData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654cd0
-void (*VRPostRender)(void * __ptr32) = { /* <data@0x00654cd0> */ };
+void (*VRPostRender)(void * __ptr32); // Contrib missing
 

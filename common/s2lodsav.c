@@ -7205,31 +7205,31 @@ long GraphStart[16] = { /* <data@0x0059afb0> */ };
 
 // Contribution: 3:0006f9b4-0006f9d7 Module: 94, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006069b4
-short newCX = { /* <data@0x006069b4> */ };
+short newCX;
 
 // GLOBAL: COPTER_D 0x006069b8
-short newCY = { /* <data@0x006069b8> */ };
+short newCY;
 
 // GLOBAL: COPTER_D 0x006069bc
-short newSC = { /* <data@0x006069bc> */ };
+short newSC;
 
 // GLOBAL: COPTER_D 0x006069c0
-long WriteLength = { /* <data@0x006069c0> */ };
+long WriteLength;
 
 // GLOBAL: COPTER_D 0x006069c4
-void * __ptr32 S_ptr1 = { /* <data@0x006069c4> */ };
+void * __ptr32 S_ptr1;
 
 // GLOBAL: COPTER_D 0x006069c8
-void * __ptr32 S_ptr3 = { /* <data@0x006069c8> */ };
+void * __ptr32 S_ptr3;
 
 // GLOBAL: COPTER_D 0x006069cc
-void * __ptr32 S_ptr2 = { /* <data@0x006069cc> */ };
+void * __ptr32 S_ptr2;
 
 // GLOBAL: COPTER_D 0x006069d0
-void * __ptr32 S_ptr5 = { /* <data@0x006069d0> */ };
+void * __ptr32 S_ptr5;
 
 // GLOBAL: COPTER_D 0x006069d4
-void * __ptr32 S_ptr4 = { /* <data@0x006069d4> */ };
+void * __ptr32 S_ptr4;
 
 
 
@@ -7238,23 +7238,23 @@ void * __ptr32 S_ptr4 = { /* <data@0x006069d4> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063984c
-unsigned long * NeighborFame = { /* <data@0x0063984c> */ };
+unsigned long * NeighborFame; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a264
-unsigned long * NeighborValue = { /* <data@0x0063a264> */ };
+unsigned long * NeighborValue; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639710
-unsigned long * NeighborPop = { /* <data@0x00639710> */ };
+unsigned long * NeighborPop; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639250
-unsigned char Neighbor[4][32] = { /* <data@0x00639250> */ };
+unsigned char Neighbor[4][32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647200
-int32_t G_citymempool = { /* <data@0x00647200> */ };
+int32_t G_citymempool; // Contrib missing
 

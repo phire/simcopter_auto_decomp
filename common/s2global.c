@@ -258,777 +258,777 @@ short TileSize[144] = { /* <data@0x0059c048> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639fe0
-unsigned long * GraphData[16] = { /* <data@0x00639fe0> */ };
+unsigned long * GraphData[16]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a020
-unsigned long * GraphMax = { /* <data@0x0063a020> */ };
+unsigned long * GraphMax; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639a54
-unsigned long * IndRatio = { /* <data@0x00639a54> */ };
+unsigned long * IndRatio; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639308
-short * IndDemand = { /* <data@0x00639308> */ };
+short * IndDemand; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639aac
-short SewerBonus = { /* <data@0x00639aac> */ };
+short SewerBonus; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a632
-short PoliceBonus = { /* <data@0x0063a632> */ };
+short PoliceBonus; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639a62
-short IndustryBonus = { /* <data@0x00639a62> */ };
+short IndustryBonus; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639dd0
-short PolluteBonus = { /* <data@0x00639dd0> */ };
+short PolluteBonus; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639aa0
-long SubTrips = { /* <data@0x00639aa0> */ };
+long SubTrips; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639dd8
-long RailTrips = { /* <data@0x00639dd8> */ };
+long RailTrips; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639234
-long BusTrips = { /* <data@0x00639234> */ };
+long BusTrips; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ab0
-unsigned short SubwayCnt = { /* <data@0x00639ab0> */ };
+unsigned short SubwayCnt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a60
-unsigned short CommerceConnect = { /* <data@0x00639a60> */ };
+unsigned short CommerceConnect; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639abc
-unsigned short IndustryConnect = { /* <data@0x00639abc> */ };
+unsigned short IndustryConnect; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063924a
-unsigned char weatherTrend = { /* <data@0x0063924a> */ };
+unsigned char weatherTrend; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a6c0
-unsigned char heat = { /* <data@0x0063a6c0> */ };
+unsigned char heat; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638eda
-unsigned char wind = { /* <data@0x00638eda> */ };
+unsigned char wind; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ab2
-unsigned char humid = { /* <data@0x00639ab2> */ };
+unsigned char humid; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro* MicroRecord = { /* <data@0x0063a744> */ };
+struct Micro* MicroRecord; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639834
-unsigned char[25]* LabelArray = { /* <data@0x00639834> */ };
+unsigned char[25]* LabelArray; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639840
-short GlobalSeaLevel = { /* <data@0x00639840> */ };
+short GlobalSeaLevel; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639844
-unsigned long * HealthRatio = { /* <data@0x00639844> */ };
+unsigned long * HealthRatio; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ddc
-unsigned long * EducateRatio = { /* <data@0x00639ddc> */ };
+unsigned long * EducateRatio; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639244
-unsigned long * PopRatio = { /* <data@0x00639244> */ };
+unsigned long * PopRatio; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063930c
-unsigned long NationalValue = { /* <data@0x0063930c> */ };
+unsigned long NationalValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638f60
-unsigned long NationalPop = { /* <data@0x00638f60> */ };
+unsigned long NationalPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ab8
-short NationalTrend = { /* <data@0x00639ab8> */ };
+short NationalTrend; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638ed8
-short NationalTax = { /* <data@0x00638ed8> */ };
+short NationalTax; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ac8
-unsigned short * TileCnt = { /* <data@0x00639ac8> */ };
+unsigned short * TileCnt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639510
-unsigned short * AltMap[128] = { /* <data@0x00639510> */ };
+unsigned short * AltMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ad0
-unsigned char * TextMap[128] = { /* <data@0x00639ad0> */ };
+unsigned char * TextMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a030
-unsigned char * UnderMap[128] = { /* <data@0x0063a030> */ };
+unsigned char * UnderMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a270
-unsigned char * TerrainMap[128] = { /* <data@0x0063a270> */ };
+unsigned char * TerrainMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639de0
-unsigned char * ZoneMap[128] = { /* <data@0x00639de0> */ };
+unsigned char * ZoneMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639850
-unsigned char * BuildMap[128] = { /* <data@0x00639850> */ };
+unsigned char * BuildMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638f70
-unsigned char * BitsMap[128] = { /* <data@0x00638f70> */ };
+unsigned char * BitsMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a640
-unsigned char * ROGMap[32] = { /* <data@0x0063a640> */ };
+unsigned char * ROGMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638ee0
-unsigned char * PopMap[32] = { /* <data@0x00638ee0> */ };
+unsigned char * PopMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5b0
-unsigned char * FireMap[32] = { /* <data@0x0063a5b0> */ };
+unsigned char * FireMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639170
-unsigned char * PoliceMap[32] = { /* <data@0x00639170> */ };
+unsigned char * PoliceMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a750
-unsigned char * CrimeMap[64] = { /* <data@0x0063a750> */ };
+unsigned char * CrimeMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a470
-unsigned char * ValueMap[64] = { /* <data@0x0063a470> */ };
+unsigned char * ValueMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639cd0
-unsigned char * PolluteMap[64] = { /* <data@0x00639cd0> */ };
+unsigned char * PolluteMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639730
-unsigned char * TrafficMap[64] = { /* <data@0x00639730> */ };
+unsigned char * TrafficMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639238
-short CityStatus = { /* <data@0x00639238> */ };
+short CityStatus; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a250
-short season = { /* <data@0x0063a250> */ };
+short season; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f0
-short year = { /* <data@0x006391f0> */ };
+short year; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aae
-short month = { /* <data@0x00639aae> */ };
+short month; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a5a4
-long TotalRate = { /* <data@0x0063a5a4> */ };
+long TotalRate; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a6d0
-short BondRate[50] = { /* <data@0x0063a6d0> */ };
+short BondRate[50]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a740
-unsigned long TotalPop = { /* <data@0x0063a740> */ };
+unsigned long TotalPop; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x00639ab4
-long TotalBonds = { /* <data@0x00639ab4> */ };
+long TotalBonds; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a850
-long TotalFunds = { /* <data@0x0063a850> */ };
+long TotalFunds; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a580
-short Invent[17] = { /* <data@0x0063a580> */ };
+short Invent[17]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x00639a90
-short Valve[8] = { /* <data@0x00639a90> */ };
+short Valve[8]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a570
-char * CityNameString = { /* <data@0x0063a570> */ };
+char * CityNameString; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats* budgetList = { /* <data@0x00639830> */ };
+struct budgetStats* budgetList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a570
-char * CityNameString = { /* <data@0x0063a570> */ };
+char * CityNameString; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639730
-unsigned char * TrafficMap[64] = { /* <data@0x00639730> */ };
+unsigned char * TrafficMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639cd0
-unsigned char * PolluteMap[64] = { /* <data@0x00639cd0> */ };
+unsigned char * PolluteMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a470
-unsigned char * ValueMap[64] = { /* <data@0x0063a470> */ };
+unsigned char * ValueMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a750
-unsigned char * CrimeMap[64] = { /* <data@0x0063a750> */ };
+unsigned char * CrimeMap[64]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639170
-unsigned char * PoliceMap[32] = { /* <data@0x00639170> */ };
+unsigned char * PoliceMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5b0
-unsigned char * FireMap[32] = { /* <data@0x0063a5b0> */ };
+unsigned char * FireMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638ee0
-unsigned char * PopMap[32] = { /* <data@0x00638ee0> */ };
+unsigned char * PopMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a640
-unsigned char * ROGMap[32] = { /* <data@0x0063a640> */ };
+unsigned char * ROGMap[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00638f70
-unsigned char * BitsMap[128] = { /* <data@0x00638f70> */ };
+unsigned char * BitsMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a6d0
-short BondRate[50] = { /* <data@0x0063a6d0> */ };
+short BondRate[50]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a850
-long TotalFunds = { /* <data@0x0063a850> */ };
+long TotalFunds; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ab4
-long TotalBonds = { /* <data@0x00639ab4> */ };
+long TotalBonds; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5a4
-long TotalRate = { /* <data@0x0063a5a4> */ };
+long TotalRate; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639aae
-short month = { /* <data@0x00639aae> */ };
+short month; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a250
-short season = { /* <data@0x0063a250> */ };
+short season; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x006391f0
-short year = { /* <data@0x006391f0> */ };
+short year; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639238
-short CityStatus = { /* <data@0x00639238> */ };
+short CityStatus; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639a90
-short Valve[8] = { /* <data@0x00639a90> */ };
+short Valve[8]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a580
-short Invent[17] = { /* <data@0x0063a580> */ };
+short Invent[17]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a740
-unsigned long TotalPop = { /* <data@0x0063a740> */ };
+unsigned long TotalPop; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00638ed8
-short NationalTax = { /* <data@0x00638ed8> */ };
+short NationalTax; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ab8
-short NationalTrend = { /* <data@0x00639ab8> */ };
+short NationalTrend; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00638f60
-unsigned long NationalPop = { /* <data@0x00638f60> */ };
+unsigned long NationalPop; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063930c
-unsigned long NationalValue = { /* <data@0x0063930c> */ };
+unsigned long NationalValue; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639250
-unsigned char Neighbor[4][32] = { /* <data@0x00639250> */ };
+unsigned char Neighbor[4][32]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a578
-short * NeighborName = { /* <data@0x0063a578> */ };
+short * NeighborName; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a264
-unsigned long * NeighborValue = { /* <data@0x0063a264> */ };
+unsigned long * NeighborValue; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639710
-unsigned long * NeighborPop = { /* <data@0x00639710> */ };
+unsigned long * NeighborPop; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063984c
-unsigned long * NeighborFame = { /* <data@0x0063984c> */ };
+unsigned long * NeighborFame; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639244
-unsigned long * PopRatio = { /* <data@0x00639244> */ };
+unsigned long * PopRatio; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ddc
-unsigned long * EducateRatio = { /* <data@0x00639ddc> */ };
+unsigned long * EducateRatio; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639844
-unsigned long * HealthRatio = { /* <data@0x00639844> */ };
+unsigned long * HealthRatio; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639308
-short * IndDemand = { /* <data@0x00639308> */ };
+short * IndDemand; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639a54
-unsigned long * IndRatio = { /* <data@0x00639a54> */ };
+unsigned long * IndRatio; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ac8
-unsigned short * TileCnt = { /* <data@0x00639ac8> */ };
+unsigned short * TileCnt; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ab0
-unsigned short SubwayCnt = { /* <data@0x00639ab0> */ };
+unsigned short SubwayCnt; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a6c0
-unsigned char heat = { /* <data@0x0063a6c0> */ };
+unsigned char heat; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00638eda
-unsigned char wind = { /* <data@0x00638eda> */ };
+unsigned char wind; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ab2
-unsigned char humid = { /* <data@0x00639ab2> */ };
+unsigned char humid; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063924a
-unsigned char weatherTrend = { /* <data@0x0063924a> */ };
+unsigned char weatherTrend; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639510
-unsigned short * AltMap[128] = { /* <data@0x00639510> */ };
+unsigned short * AltMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639850
-unsigned char * BuildMap[128] = { /* <data@0x00639850> */ };
+unsigned char * BuildMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639de0
-unsigned char * ZoneMap[128] = { /* <data@0x00639de0> */ };
+unsigned char * ZoneMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a270
-unsigned char * TerrainMap[128] = { /* <data@0x0063a270> */ };
+unsigned char * TerrainMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a030
-unsigned char * UnderMap[128] = { /* <data@0x0063a030> */ };
+unsigned char * UnderMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639ad0
-unsigned char * TextMap[128] = { /* <data@0x00639ad0> */ };
+unsigned char * TextMap[128]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639834
-unsigned char[25]* LabelArray = { /* <data@0x00639834> */ };
+unsigned char[25]* LabelArray; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro* MicroRecord = { /* <data@0x0063a744> */ };
+struct Micro* MicroRecord; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats* budgetList = { /* <data@0x00639830> */ };
+struct budgetStats* budgetList; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639fe0
-unsigned long * GraphData[16] = { /* <data@0x00639fe0> */ };
+unsigned long * GraphData[16]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a020
-unsigned long * GraphMax = { /* <data@0x0063a020> */ };
+unsigned long * GraphMax; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639840
-short GlobalSeaLevel = { /* <data@0x00639840> */ };
+short GlobalSeaLevel; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639dd0
-short PolluteBonus = { /* <data@0x00639dd0> */ };
+short PolluteBonus; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a62
-short IndustryBonus = { /* <data@0x00639a62> */ };
+short IndustryBonus; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a632
-short PoliceBonus = { /* <data@0x0063a632> */ };
+short PoliceBonus; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639abc
-unsigned short IndustryConnect = { /* <data@0x00639abc> */ };
+unsigned short IndustryConnect; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a60
-unsigned short CommerceConnect = { /* <data@0x00639a60> */ };
+unsigned short CommerceConnect; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aac
-short SewerBonus = { /* <data@0x00639aac> */ };
+short SewerBonus; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639234
-long BusTrips = { /* <data@0x00639234> */ };
+long BusTrips; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639dd8
-long RailTrips = { /* <data@0x00639dd8> */ };
+long RailTrips; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aa0
-long SubTrips = { /* <data@0x00639aa0> */ };
+long SubTrips; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a748
-unsigned long Ordinances = { /* <data@0x0063a748> */ };
+unsigned long Ordinances; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a73c
-short CivilizedTiles = { /* <data@0x0063a73c> */ };
+short CivilizedTiles; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a738
-long GlobalArcoPop = { /* <data@0x0063a738> */ };
+long GlobalArcoPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a734
-unsigned long Resolutions = { /* <data@0x0063a734> */ };
+unsigned long Resolutions; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a6c4
-unsigned long LandValue = { /* <data@0x0063a6c4> */ };
+unsigned long LandValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a638
-unsigned long Emigrants = { /* <data@0x0063a638> */ };
+unsigned long Emigrants; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a634
-unsigned long CrimeCount = { /* <data@0x0063a634> */ };
+unsigned long CrimeCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a630
-unsigned short GlobalRiver = { /* <data@0x0063a630> */ };
+unsigned short GlobalRiver; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5a8
-unsigned short Scenario = { /* <data@0x0063a5a8> */ };
+unsigned short Scenario; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a574
-unsigned long * ZonePop = { /* <data@0x0063a574> */ };
+unsigned long * ZonePop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a260
-unsigned long WorkerHealth = { /* <data@0x0063a260> */ };
+unsigned long WorkerHealth; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News* NewsList = { /* <data@0x0063a25c> */ };
+struct News* NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a258
-short GlobalHills = { /* <data@0x0063a258> */ };
+short GlobalHills; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a254
-unsigned long Immigrants = { /* <data@0x0063a254> */ };
+unsigned long Immigrants; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a230
-char userName[32] = { /* <data@0x0063a230> */ };
+char userName[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a02c
-unsigned short GlobalCoast = { /* <data@0x0063a02c> */ };
+unsigned short GlobalCoast; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a028
-long Garbage = { /* <data@0x0063a028> */ };
+long Garbage; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a024
-short PaperChoice = { /* <data@0x0063a024> */ };
+short PaperChoice; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639dd4
-unsigned long WaterUse = { /* <data@0x00639dd4> */ };
+unsigned long WaterUse; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ac4
-unsigned short * MilCnt = { /* <data@0x00639ac4> */ };
+unsigned short * MilCnt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ac0
-unsigned long WorkerPercent = { /* <data@0x00639ac0> */ };
+unsigned long WorkerPercent; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aba
-unsigned short oldArrest = { /* <data@0x00639aba> */ };
+unsigned short oldArrest; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aa8
-unsigned long Pollution = { /* <data@0x00639aa8> */ };
+unsigned long Pollution; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aa4
-unsigned long PowerUse = { /* <data@0x00639aa4> */ };
+unsigned long PowerUse; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a82
-short FTop = { /* <data@0x00639a82> */ };
+short FTop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a70
-short mapNum[9] = { /* <data@0x00639a70> */ };
+short mapNum[9]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a64
-long unemployed = { /* <data@0x00639a64> */ };
+long unemployed; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a5c
-unsigned long WorkerEducate = { /* <data@0x00639a5c> */ };
+unsigned long WorkerEducate; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a58
-short * IndRates = { /* <data@0x00639a58> */ };
+short * IndRates; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a50
-unsigned long Advertising = { /* <data@0x00639a50> */ };
+unsigned long Advertising; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639848
-short SaveSpeed = { /* <data@0x00639848> */ };
+short SaveSpeed; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063983c
-unsigned long CityFame = { /* <data@0x0063983c> */ };
+unsigned long CityFame; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639838
-unsigned long TrafficCount = { /* <data@0x00639838> */ };
+unsigned long TrafficCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639724
-unsigned long CityValue = { /* <data@0x00639724> */ };
+unsigned long CityValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things* ThingList = { /* <data@0x00639720> */ };
+struct Things* ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063971c
-short TeamsActive = { /* <data@0x0063971c> */ };
+short TeamsActive; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point* StackPts = { /* <data@0x00639718> */ };
+struct S2Point* StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper* PaperList = { /* <data@0x00639714> */ };
+struct Paper* PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639310
-short * TMap[128] = { /* <data@0x00639310> */ };
+short * TMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639304
-short ConnectTiles = { /* <data@0x00639304> */ };
+short ConnectTiles; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006392e0
-short toolNum[18] = { /* <data@0x006392e0> */ };
+short toolNum[18]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006392d0
-short FloodCycle = { /* <data@0x006392d0> */ };
+short FloodCycle; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639248
-short FBot = { /* <data@0x00639248> */ };
+short FBot; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639240
-unsigned long * TaxPop = { /* <data@0x00639240> */ };
+unsigned long * TaxPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063923c
-long * MiscInfo = { /* <data@0x0063923c> */ };
+long * MiscInfo; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639200
-struct scenario ScenarioData = { /* <data@0x00639200> */ };
+struct scenario ScenarioData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391fa
-short GameLevel = { /* <data@0x006391fa> */ };
+short GameLevel; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f8
-unsigned short GoDisaster = { /* <data@0x006391f8> */ };
+unsigned short GoDisaster; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f4
-struct S2Point DisasterLoc = { /* <data@0x006391f4> */ };
+struct S2Point DisasterLoc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639848
-short SaveSpeed = { /* <data@0x00639848> */ };
+short SaveSpeed; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391fa
-short GameLevel = { /* <data@0x006391fa> */ };
+short GameLevel; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f4
-struct S2Point DisasterLoc = { /* <data@0x006391f4> */ };
+struct S2Point DisasterLoc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point* StackPts = { /* <data@0x00639718> */ };
+struct S2Point* StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a82
-short FTop = { /* <data@0x00639a82> */ };
+short FTop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639248
-short FBot = { /* <data@0x00639248> */ };
+short FBot; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639310
-short * TMap[128] = { /* <data@0x00639310> */ };
+short * TMap[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a028
-long Garbage = { /* <data@0x0063a028> */ };
+long Garbage; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a90
-short Valve[8] = { /* <data@0x00639a90> */ };
+short Valve[8]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a580
-short Invent[17] = { /* <data@0x0063a580> */ };
+short Invent[17]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a748
-unsigned long Ordinances = { /* <data@0x0063a748> */ };
+unsigned long Ordinances; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639724
-unsigned long CityValue = { /* <data@0x00639724> */ };
+unsigned long CityValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a6c4
-unsigned long LandValue = { /* <data@0x0063a6c4> */ };
+unsigned long LandValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a634
-unsigned long CrimeCount = { /* <data@0x0063a634> */ };
+unsigned long CrimeCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639838
-unsigned long TrafficCount = { /* <data@0x00639838> */ };
+unsigned long TrafficCount; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aa8
-unsigned long Pollution = { /* <data@0x00639aa8> */ };
+unsigned long Pollution; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aa4
-unsigned long PowerUse = { /* <data@0x00639aa4> */ };
+unsigned long PowerUse; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639dd4
-unsigned long WaterUse = { /* <data@0x00639dd4> */ };
+unsigned long WaterUse; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063983c
-unsigned long CityFame = { /* <data@0x0063983c> */ };
+unsigned long CityFame; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a50
-unsigned long Advertising = { /* <data@0x00639a50> */ };
+unsigned long Advertising; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a254
-unsigned long Immigrants = { /* <data@0x0063a254> */ };
+unsigned long Immigrants; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a638
-unsigned long Emigrants = { /* <data@0x0063a638> */ };
+unsigned long Emigrants; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ac0
-unsigned long WorkerPercent = { /* <data@0x00639ac0> */ };
+unsigned long WorkerPercent; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a5c
-unsigned long WorkerEducate = { /* <data@0x00639a5c> */ };
+unsigned long WorkerEducate; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a260
-unsigned long WorkerHealth = { /* <data@0x0063a260> */ };
+unsigned long WorkerHealth; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a574
-unsigned long * ZonePop = { /* <data@0x0063a574> */ };
+unsigned long * ZonePop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639240
-unsigned long * TaxPop = { /* <data@0x00639240> */ };
+unsigned long * TaxPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News* NewsList = { /* <data@0x0063a25c> */ };
+struct News* NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper* PaperList = { /* <data@0x00639714> */ };
+struct Paper* PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a58
-short * IndRates = { /* <data@0x00639a58> */ };
+short * IndRates; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639ac4
-unsigned short * MilCnt = { /* <data@0x00639ac4> */ };
+unsigned short * MilCnt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006392e0
-short toolNum[18] = { /* <data@0x006392e0> */ };
+short toolNum[18]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a70
-short mapNum[9] = { /* <data@0x00639a70> */ };
+short mapNum[9]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things* ThingList = { /* <data@0x00639720> */ };
+struct Things* ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639200
-struct scenario ScenarioData = { /* <data@0x00639200> */ };
+struct scenario ScenarioData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5a8
-unsigned short Scenario = { /* <data@0x0063a5a8> */ };
+unsigned short Scenario; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a64
-long unemployed = { /* <data@0x00639a64> */ };
+long unemployed; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a258
-short GlobalHills = { /* <data@0x0063a258> */ };
+short GlobalHills; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a02c
-unsigned short GlobalCoast = { /* <data@0x0063a02c> */ };
+unsigned short GlobalCoast; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a630
-unsigned short GlobalRiver = { /* <data@0x0063a630> */ };
+unsigned short GlobalRiver; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639304
-short ConnectTiles = { /* <data@0x00639304> */ };
+short ConnectTiles; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063971c
-short TeamsActive = { /* <data@0x0063971c> */ };
+short TeamsActive; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639aba
-unsigned short oldArrest = { /* <data@0x00639aba> */ };
+unsigned short oldArrest; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a738
-long GlobalArcoPop = { /* <data@0x0063a738> */ };
+long GlobalArcoPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f8
-unsigned short GoDisaster = { /* <data@0x006391f8> */ };
+unsigned short GoDisaster; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a024
-short PaperChoice = { /* <data@0x0063a024> */ };
+short PaperChoice; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063923c
-long * MiscInfo = { /* <data@0x0063923c> */ };
+long * MiscInfo; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a230
-char userName[32] = { /* <data@0x0063a230> */ };
+char userName[32]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a73c
-short CivilizedTiles = { /* <data@0x0063a73c> */ };
+short CivilizedTiles; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
 // GLOBAL: COPTER_D 0x006392d0
-short FloodCycle = { /* <data@0x006392d0> */ };
+short FloodCycle; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
 // GLOBAL: COPTER_D 0x0063a734
-unsigned long Resolutions = { /* <data@0x0063a734> */ };
+unsigned long Resolutions; // Contrib missing
 

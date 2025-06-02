@@ -5064,16 +5064,16 @@ _T391:
 
 // Contribution: 3:0006fa5c-0006fa69 Module: 147, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a5c
-int32_t ObjDataSize = { /* <data@0x00606a5c> */ };
+int32_t ObjDataSize;
 
 // GLOBAL: COPTER_D 0x00606a60
-char * ObjData = { /* <data@0x00606a60> */ };
+char * ObjData;
 
 // GLOBAL: COPTER_D 0x00606a64
-struct _BSPtree* Tree = { /* <data@0x00606a64> */ };
+struct _BSPtree* Tree;
 
 // GLOBAL: COPTER_D 0x00606a68
-unsigned short BSPIndex = { /* <data@0x00606a68> */ };
+unsigned short BSPIndex;
 
 
 
@@ -5082,40 +5082,40 @@ unsigned short BSPIndex = { /* <data@0x00606a68> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
 // GLOBAL: COPTER_D 0x0063a858
-int32_t MainPoolIndex = { /* <data@0x0063a858> */ };
+int32_t MainPoolIndex; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
 // GLOBAL: COPTER_D 0x0063a854
-int32_t ScratchPoolIndex = { /* <data@0x0063a854> */ };
+int32_t ScratchPoolIndex; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x006666b0
-struct GEOM_Header GEOM_hdr = { /* <data@0x006666b0> */ };
+struct GEOM_Header GEOM_hdr; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x00666698
-struct GEOM_DirGroup* GEOM_GPdir = { /* <data@0x00666698> */ };
+struct GEOM_DirGroup* GEOM_GPdir; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x0066669c
-struct GEOM_DirId* GEOM_IDdir = { /* <data@0x0066669c> */ };
+struct GEOM_DirId* GEOM_IDdir; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x006666a4
-struct CMAP_Header CMAP_hdr = { /* <data@0x006666a4> */ };
+struct CMAP_Header CMAP_hdr; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x00666690
-struct CMAP_Dir* CMAP_directory = { /* <data@0x00666690> */ };
+struct CMAP_Dir* CMAP_directory; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x006666c0
-struct _FaceHdr** FaceArray = { /* <data@0x006666c0> */ };
+struct _FaceHdr** FaceArray; // Contrib missing
 

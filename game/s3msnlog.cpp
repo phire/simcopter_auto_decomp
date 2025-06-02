@@ -4008,5 +4008,5 @@ struct list<tagLogBase *>::list_node_buffer* list<tagLogBase *>::buffer_list = {
 
 // Contribution: 3:0006fe78-0006fe83 Module: 178, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606e78
-class LogManager gLogManager = { /* <data@0x00606e78> */ };
+class LogManager gLogManager;
 

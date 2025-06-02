@@ -1637,23 +1637,23 @@ char * SZ_CITY_BIG_VIDEO_SUFFIX = { /* <data@0x00597548> */ };
 
 // Contribution: 3:0002b918-0002c4ef Module: 67, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2918
-char gCityFilePath[264] = { /* <data@0x005c2918> */ };
+char gCityFilePath[264];
 
 // GLOBAL: COPTER_D 0x005c2a20
-struct tagUserCityInfo gCurrentUserCityInfo = { /* <data@0x005c2a20> */ };
+struct tagUserCityInfo gCurrentUserCityInfo;
 
 // GLOBAL: COPTER_D 0x005c2aa0
-long gCurrentCityType = { /* <data@0x005c2aa0> */ };
+long gCurrentCityType;
 
 // GLOBAL: COPTER_D 0x005c2aa8
-struct tagCurrentCareerCityInfo gCurrentCareerCityInfo = { /* <data@0x005c2aa8> */ };
+struct tagCurrentCareerCityInfo gCurrentCareerCityInfo;
 
 // GLOBAL: COPTER_D 0x005c2b18
-struct tagCareerCityInfo gAllCareerCities[31] = { /* <data@0x005c2b18> */ };
+struct tagCareerCityInfo gAllCareerCities[31];
 
 // GLOBAL: COPTER_D 0x005c33d0
-struct GraduationState gGraduationState = { /* <data@0x005c33d0> */ };
+struct GraduationState gGraduationState;
 
 // GLOBAL: COPTER_D 0x005c33e8
-char gGameFilePath[264] = { /* <data@0x005c33e8> */ };
+char gGameFilePath[264];
 

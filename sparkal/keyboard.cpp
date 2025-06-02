@@ -661,5 +661,5 @@ void (*$S5)() = { /* <data@0x00597024> */ };
 
 // Contribution: 3:0002c4f0-0002c5ff Module: 62, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c34f0
-class Keyboard gKeyboard = { /* <data@0x005c34f0> */ };
+class Keyboard gKeyboard;
 

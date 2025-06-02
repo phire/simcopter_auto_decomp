@@ -645,5 +645,5 @@ struct IDirectDrawPalette* lpPalette = { /* <data@0x00597268> */ };
 
 // Contribution: 3:0002b798-0002b843 Module: 74, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2798
-struct _DDCAPS ddCaps = { /* <data@0x005c2798> */ };
+struct _DDCAPS ddCaps;
 

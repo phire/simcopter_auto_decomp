@@ -2509,5 +2509,5 @@ const enum TurnIndex TILUT[4][4] = { /* <data@0x00593480> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Game\S3rdgrph.cpp
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO* G_omap[256][256] = { /* <data@0x0067ed30> */ };
+struct _CELL_INFO* G_omap[256][256]; // Contrib missing
 

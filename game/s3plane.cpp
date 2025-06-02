@@ -4517,10 +4517,10 @@ int32_t PlaneClass::sPlaneModelSet = { /* <data@0x005b7698> */ };
 
 // Contribution: 3:000946e8-000947b0 Module: 163, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b6e8
-class PlaneClass PlaneClass::lsPlane = { /* <data@0x0062b6e8> */ };
+class PlaneClass PlaneClass::lsPlane;
 
 // GLOBAL: COPTER_D 0x0062b7a8
-class PlaneClass* planes[2] = { /* <data@0x0062b7a8> */ };
+class PlaneClass* planes[2];
 
 // GLOBAL: COPTER_D 0x0062b7b0
 // LOCAL: COPTER_D 0x0062b7b0

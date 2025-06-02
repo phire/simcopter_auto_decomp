@@ -418,5 +418,5 @@ union __unnamed rrandSeed = { /* <data@0x005bdfdc> */ };
 
 // Contribution: 3:000a06a8-000a06ab Module: 193, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006376a8
-unsigned long srandSeed = { /* <data@0x006376a8> */ };
+unsigned long srandSeed;
 

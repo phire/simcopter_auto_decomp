@@ -4629,30 +4629,30 @@ long CfdMIFFID = { /* <data@0x005b73d8> */ };
 
 // Contribution: 3:00094548-000945ef Module: 165, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b548
-struct _CELL_FIRE_DATA lscfd = { /* <data@0x0062b548> */ };
+struct _CELL_FIRE_DATA lscfd;
 
 // GLOBAL: COPTER_D 0x0062b550
-struct _FIRE_DATA lsfire = { /* <data@0x0062b550> */ };
+struct _FIRE_DATA lsfire;
 
 
 
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x0066be90
-struct _CELL_FIRE_DATA S_cfdata[140] = { /* <data@0x0066be90> */ };
+struct _CELL_FIRE_DATA S_cfdata[140]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066be70
-struct VRBmpHdr* G_fireseq[6] = { /* <data@0x0066be70> */ };
+struct VRBmpHdr* G_fireseq[6]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666f0
-struct _FIRE_DATA S_fires[140] = { /* <data@0x006666f0> */ };
+struct _FIRE_DATA S_fires[140]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666d0
-struct VRBmpHdr* G_smokeseq[7] = { /* <data@0x006666d0> */ };
+struct VRBmpHdr* G_smokeseq[7]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666f0
-struct _FIRE_DATA S_fires[140] = { /* <data@0x006666f0> */ };
+struct _FIRE_DATA S_fires[140]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066be90
-struct _CELL_FIRE_DATA S_cfdata[140] = { /* <data@0x0066be90> */ };
+struct _CELL_FIRE_DATA S_cfdata[140]; // Contrib missing
 

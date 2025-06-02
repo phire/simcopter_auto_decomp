@@ -2472,8 +2472,8 @@ short sTestPersonFrameNum = { /* <data@0x005be634> */ };
 
 // Contribution: 3:000a06c8-000a1991 Module: 189, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006376d0
-struct TransformedInfo sTransformedInfo[200] = { /* <data@0x006376d0> */ };
+struct TransformedInfo sTransformedInfo[200];
 
 // GLOBAL: COPTER_D 0x00638670
-struct cCopterBody::Part* cCopterBody::fsDrawOrderParts[200] = { /* <data@0x00638670> */ };
+struct cCopterBody::Part* cCopterBody::fsDrawOrderParts[200];
 

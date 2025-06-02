@@ -219,5 +219,5 @@ void (*$S3)() = { /* <data@0x00597084> */ };
 
 // Contribution: 3:0006db18-0006dbfb Module: 22, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604b18
-class Random gRandom = { /* <data@0x00604b18> */ };
+class Random gRandom;
 

@@ -3388,8 +3388,8 @@ char * SZ_CAREER_WINDOW_BUTTON_FILE_NAME = { /* <data@0x00599a8c> */ };
 
 // Contribution: 3:0006d448-0006d44f Module: 31, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604448
-struct SparkalColor colorTextGamePaletteNormal = { /* <data@0x00604448> */ };
+struct SparkalColor colorTextGamePaletteNormal;
 
 // GLOBAL: COPTER_D 0x0060444c
-struct SparkalColor colorTextGamePaletteHighlighted = { /* <data@0x0060444c> */ };
+struct SparkalColor colorTextGamePaletteHighlighted;
 

@@ -9201,7 +9201,7 @@ long S_color_no = { /* <data@0x005b72a0> */ };
 
 // Contribution: 3:00093528-0009352b Module: 168, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a528
-char * S_hires_color = { /* <data@0x0062a528> */ };
+char * S_hires_color;
 
 
 
@@ -9210,45 +9210,45 @@ char * S_hires_color = { /* <data@0x0062a528> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
 // GLOBAL: COPTER_D 0x0066eaf0
-char * G_lightshad = { /* <data@0x0066eaf0> */ };
+char * G_lightshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
 // GLOBAL: COPTER_D 0x0066eae8
-char * G_fireshad = { /* <data@0x0066eae8> */ };
+char * G_fireshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
 // GLOBAL: COPTER_D 0x0066eae4
-char * G_smokshad = { /* <data@0x0066eae4> */ };
+char * G_smokshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
 // GLOBAL: COPTER_D 0x0066eae0
-char * G_darkshad = { /* <data@0x0066eae0> */ };
+char * G_darkshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
 // GLOBAL: COPTER_D 0x0066eaec
-char * G_blueshad = { /* <data@0x0066eaec> */ };
+char * G_blueshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
 // GLOBAL: COPTER_D 0x0066eae8
-char * G_fireshad = { /* <data@0x0066eae8> */ };
+char * G_fireshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
 // GLOBAL: COPTER_D 0x0066eae4
-char * G_smokshad = { /* <data@0x0066eae4> */ };
+char * G_smokshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
 // GLOBAL: COPTER_D 0x0066eae0
-char * G_darkshad = { /* <data@0x0066eae0> */ };
+char * G_darkshad; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
 // GLOBAL: COPTER_D 0x0066eaf0
-char * G_lightshad = { /* <data@0x0066eaf0> */ };
+char * G_lightshad; // Contrib missing
 

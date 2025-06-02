@@ -1275,14 +1275,14 @@ long S_num_smoke = { /* <data@0x005b7384> */ };
 
 // Contribution: 3:00093578-00094547 Module: 166, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a578
-struct _EXPLODE_DATA S_explosions[20] = { /* <data@0x0062a578> */ };
+struct _EXPLODE_DATA S_explosions[20];
 
 // GLOBAL: COPTER_D 0x0062a988
-struct Point3d S_spark_vectors[14] = { /* <data@0x0062a988> */ };
+struct Point3d S_spark_vectors[14];
 
 // GLOBAL: COPTER_D 0x0062aa30
-struct VRBmpHdr* S_explseq[9] = { /* <data@0x0062aa30> */ };
+struct VRBmpHdr* S_explseq[9];
 
 // GLOBAL: COPTER_D 0x0062aa58
-struct _SMOKE_DATA S_smoke[100] = { /* <data@0x0062aa58> */ };
+struct _SMOKE_DATA S_smoke[100];
 

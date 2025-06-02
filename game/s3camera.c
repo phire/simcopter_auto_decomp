@@ -1587,30 +1587,30 @@ int32_t S_altdiff = { /* <data@0x005b4e00> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006bf1a0
-struct Point3d CameraIdeal = { /* <data@0x006bf1a0> */ };
+struct Point3d CameraIdeal; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf194
-int32_t G_camera_targ2objy = { /* <data@0x006bf194> */ };
+int32_t G_camera_targ2objy; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf190
-int32_t G_camera_targ2firey = { /* <data@0x006bf190> */ };
+int32_t G_camera_targ2firey; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf160
-struct _CHASE_INFO S_chase[3] = { /* <data@0x006bf160> */ };
+struct _CHASE_INFO S_chase[3]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3heli.c
 // GLOBAL: COPTER_D 0x006bf194
-int32_t G_camera_targ2objy = { /* <data@0x006bf194> */ };
+int32_t G_camera_targ2objy; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3heli.c
 // GLOBAL: COPTER_D 0x006bf190
-int32_t G_camera_targ2firey = { /* <data@0x006bf190> */ };
+int32_t G_camera_targ2firey; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1a0
-struct Point3d CameraIdeal = { /* <data@0x006bf1a0> */ };
+struct Point3d CameraIdeal; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf160
-struct _CHASE_INFO S_chase[3] = { /* <data@0x006bf160> */ };
+struct _CHASE_INFO S_chase[3]; // Contrib missing
 

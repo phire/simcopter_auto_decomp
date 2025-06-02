@@ -13944,28 +13944,28 @@ long HeliMIFFID = { /* <data@0x005b4ca4> */ };
 
 // Contribution: 3:0006feb0-000702b7 Module: 176, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606eb0
-struct _HELI_DATA lsheli = { /* <data@0x00606eb0> */ };
+struct _HELI_DATA lsheli;
 
 // GLOBAL: COPTER_D 0x006071e0
-struct Point3d S_spotvect = { /* <data@0x006071e0> */ };
+struct Point3d S_spotvect;
 
 // GLOBAL: COPTER_D 0x006071ec
-struct VRBmpHdr* S_shadbmp = { /* <data@0x006071ec> */ };
+struct VRBmpHdr* S_shadbmp;
 
 // GLOBAL: COPTER_D 0x006071f0
-int32_t S_turbyaw[10] = { /* <data@0x006071f0> */ };
+int32_t S_turbyaw[10];
 
 // GLOBAL: COPTER_D 0x00607218
-int32_t S_spotmat[4][4] = { /* <data@0x00607218> */ };
+int32_t S_spotmat[4][4];
 
 // GLOBAL: COPTER_D 0x00607258
-struct Point3d S_sound_loc = { /* <data@0x00607258> */ };
+struct Point3d S_sound_loc;
 
 // GLOBAL: COPTER_D 0x00607268
-int32_t S_turbslide[10] = { /* <data@0x00607268> */ };
+int32_t S_turbslide[10];
 
 // GLOBAL: COPTER_D 0x00607290
-int32_t S_turbpitch[10] = { /* <data@0x00607290> */ };
+int32_t S_turbpitch[10];
 
 
 
@@ -13974,29 +13974,29 @@ int32_t S_turbpitch[10] = { /* <data@0x00607290> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3city.c
 // GLOBAL: COPTER_D 0x006c1190
-struct _HELIBASE_DATA G_helibase = { /* <data@0x006c1190> */ };
+struct _HELIBASE_DATA G_helibase; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1200
-struct VRBmpHdr* S_spotlevels[4] = { /* <data@0x006c1200> */ };
+struct VRBmpHdr* S_spotlevels[4]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1d0
-struct _HELI_DATA G_helidata[10] = { /* <data@0x006bf1d0> */ };
+struct _HELI_DATA G_helidata[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1c0
-struct Point3d G_testloc = { /* <data@0x006bf1c0> */ };
+struct Point3d G_testloc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1b8
-struct Point2d S_spotloc = { /* <data@0x006bf1b8> */ };
+struct Point2d S_spotloc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1b8
-struct Point2d S_spotloc = { /* <data@0x006bf1b8> */ };
+struct Point2d S_spotloc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1d0
-struct _HELI_DATA G_helidata[10] = { /* <data@0x006bf1d0> */ };
+struct _HELI_DATA G_helidata[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1c0
-struct Point3d G_testloc = { /* <data@0x006bf1c0> */ };
+struct Point3d G_testloc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1200
-struct VRBmpHdr* S_spotlevels[4] = { /* <data@0x006c1200> */ };
+struct VRBmpHdr* S_spotlevels[4]; // Contrib missing
 

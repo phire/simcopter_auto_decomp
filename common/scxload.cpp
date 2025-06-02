@@ -2767,7 +2767,7 @@ _T152e:
 
 // Contribution: 3:0006fa58-0006fa5b Module: 89, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a58
-unsigned char * scxbuf = { /* <data@0x00606a58> */ };
+unsigned char * scxbuf;
 
 
 
@@ -2776,5 +2776,5 @@ unsigned char * scxbuf = { /* <data@0x00606a58> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a578
-short * NeighborName = { /* <data@0x0063a578> */ };
+short * NeighborName; // Contrib missing
 

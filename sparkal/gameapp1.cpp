@@ -4648,20 +4648,20 @@ uint32_t list<CopterGameMode>::number_of_lists = { /* <data@0x00599d74> */ };
 
 // Contribution: 3:0006d450-0006d817 Module: 28, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604450
-class SoundQueue gSoundQueue[1] = { /* <data@0x00604450> */ };
+class SoundQueue gSoundQueue[1];
 
 // GLOBAL: COPTER_D 0x00604480
-class Radio gCopterRadio = { /* <data@0x00604480> */ };
+class Radio gCopterRadio;
 
 // GLOBAL: COPTER_D 0x00604530
-class MessageDisplayManager gMessageDisplayManager = { /* <data@0x00604530> */ };
+class MessageDisplayManager gMessageDisplayManager;
 
 // GLOBAL: COPTER_D 0x00604588
-class SoundSystem gSoundSystem = { /* <data@0x00604588> */ };
+class SoundSystem gSoundSystem;
 
 // GLOBAL: COPTER_D 0x00604600
-class SoundManager gSoundManager = { /* <data@0x00604600> */ };
+class SoundManager gSoundManager;
 
 // GLOBAL: COPTER_D 0x00604808
-class CopterSparkalPalette gCopterPalette = { /* <data@0x00604808> */ };
+class CopterSparkalPalette gCopterPalette;
 

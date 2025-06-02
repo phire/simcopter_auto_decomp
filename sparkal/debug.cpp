@@ -5110,8 +5110,8 @@ uint32_t deque<basic_string<char>>::buffer_size = { /* <data@0x00597420> */ };
 
 // Contribution: 3:0002b8d0-0002b917 Module: 70, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c28d0
-struct tagWNDCLASSA CDebugWindow::m_class = { /* <data@0x005c28d0> */ };
+struct tagWNDCLASSA CDebugWindow::m_class;
 
 // GLOBAL: COPTER_D 0x005c28f8
-unsigned char ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA = { /* <data@0x005c28f8> */ };
+unsigned char ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA;
 

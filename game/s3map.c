@@ -4545,28 +4545,28 @@ int32_t S_mapzoom = { /* <data@0x005b5298> */ };
 
 // Contribution: 3:00071bc8-00071c23 Module: 172, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00608bc8
-long S_dicon_dim = { /* <data@0x00608bc8> */ };
+long S_dicon_dim;
 
 // GLOBAL: COPTER_D 0x00608bd0
-char * S_icons[8] = { /* <data@0x00608bd0> */ };
+char * S_icons[8];
 
 // GLOBAL: COPTER_D 0x00608bf0
-long S_icon_dim = { /* <data@0x00608bf0> */ };
+long S_icon_dim;
 
 // GLOBAL: COPTER_D 0x00608bf8
-struct Point2d S_lrc = { /* <data@0x00608bf8> */ };
+struct Point2d S_lrc;
 
 // GLOBAL: COPTER_D 0x00608c00
-long S_dicon_pitch = { /* <data@0x00608c00> */ };
+long S_dicon_pitch;
 
 // GLOBAL: COPTER_D 0x00608c08
-struct Point2d S_ulc = { /* <data@0x00608c08> */ };
+struct Point2d S_ulc;
 
 // GLOBAL: COPTER_D 0x00608c10
-long S_icon_pitch = { /* <data@0x00608c10> */ };
+long S_icon_pitch;
 
 // GLOBAL: COPTER_D 0x00608c18
-char * S_dicons[3] = { /* <data@0x00608c18> */ };
+char * S_dicons[3];
 
 
 
@@ -4575,13 +4575,13 @@ char * S_dicons[3] = { /* <data@0x00608c18> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO* G_omap[256][256] = { /* <data@0x0067ed30> */ };
+struct _CELL_INFO* G_omap[256][256]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3viewer.c
 // GLOBAL: COPTER_D 0x006c1330
-int32_t ViewYRot[4][4] = { /* <data@0x006c1330> */ };
+int32_t ViewYRot[4][4]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed40
-struct _MAP_CARINFO S_carinfo[20] = { /* <data@0x006bed40> */ };
+struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
 

@@ -250,13 +250,13 @@ _T24b:
 
 // Contribution: 3:0002b848-0002b8cf Module: 73, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2848
-char gszCommandLine[128] = { /* <data@0x005c2848> */ };
+char gszCommandLine[128];
 
 // GLOBAL: COPTER_D 0x005c28c8
-void * __ptr32 _ghWindowsInstance = { /* <data@0x005c28c8> */ };
+void * __ptr32 _ghWindowsInstance;
 
 // GLOBAL: COPTER_D 0x005c28cc
-float _gTimerFrequency = { /* <data@0x005c28cc> */ };
+float _gTimerFrequency;
 
 
 

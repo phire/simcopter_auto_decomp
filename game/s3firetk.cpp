@@ -1530,5 +1530,5 @@ int32_t curFireTrucks = { /* <data@0x005b7dc8> */ };
 
 // Contribution: 3:000949d0-000949e3 Module: 159, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9d0
-class FireEngineClass* fireTrucks[5] = { /* <data@0x0062b9d0> */ };
+class FireEngineClass* fireTrucks[5];
 

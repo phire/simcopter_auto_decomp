@@ -13899,79 +13899,79 @@ long S_water_timer = { /* <data@0x005b59f4> */ };
 
 // Contribution: 3:00072098-000934ff Module: 170, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00609098
-struct Point3d S_local_lstart = { /* <data@0x00609098> */ };
+struct Point3d S_local_lstart;
 
 // GLOBAL: COPTER_D 0x006090a4
-int32_t S_used_spiralscan = { /* <data@0x006090a4> */ };
+int32_t S_used_spiralscan;
 
 // GLOBAL: COPTER_D 0x006090a8
-struct VRview S_terr_pos = { /* <data@0x006090a8> */ };
+struct VRview S_terr_pos;
 
 // GLOBAL: COPTER_D 0x00609100
-long * S_facesort = { /* <data@0x00609100> */ };
+long * S_facesort;
 
 // GLOBAL: COPTER_D 0x00609104
-struct Point2d* S_rlast = { /* <data@0x00609104> */ };
+struct Point2d* S_rlast;
 
 // GLOBAL: COPTER_D 0x00609108
-struct Point2d S_lcells[256] = { /* <data@0x00609108> */ };
+struct Point2d S_lcells[256];
 
 // GLOBAL: COPTER_D 0x00609908
-long S_XposZneg[4] = { /* <data@0x00609908> */ };
+long S_XposZneg[4];
 
 // GLOBAL: COPTER_D 0x00609918
-struct _CELL_INFO S_tmp_cells[30] = { /* <data@0x00609918> */ };
+struct _CELL_INFO S_tmp_cells[30];
 
 // GLOBAL: COPTER_D 0x00609be8
-struct Point2d* S_fovlast = { /* <data@0x00609be8> */ };
+struct Point2d* S_fovlast;
 
 // GLOBAL: COPTER_D 0x00609bf0
-struct Point3d S_world_lstart = { /* <data@0x00609bf0> */ };
+struct Point3d S_world_lstart;
 
 // GLOBAL: COPTER_D 0x00609c00
-int32_t S_rrotmat[4][4] = { /* <data@0x00609c00> */ };
+int32_t S_rrotmat[4][4];
 
 // GLOBAL: COPTER_D 0x00609c40
-long S_XposZpos[4] = { /* <data@0x00609c40> */ };
+long S_XposZpos[4];
 
 // GLOBAL: COPTER_D 0x00609c50
-struct Point2d S_fov_cells[16384] = { /* <data@0x00609c50> */ };
+struct Point2d S_fov_cells[16384];
 
 // GLOBAL: COPTER_D 0x00629c50
-struct Point2d S_rcells[256] = { /* <data@0x00629c50> */ };
+struct Point2d S_rcells[256];
 
 // GLOBAL: COPTER_D 0x0062a450
-long S_tmpcell_ctr = { /* <data@0x0062a450> */ };
+long S_tmpcell_ctr;
 
 // GLOBAL: COPTER_D 0x0062a458
-int32_t S_lrotmat[4][4] = { /* <data@0x0062a458> */ };
+int32_t S_lrotmat[4][4];
 
 // GLOBAL: COPTER_D 0x0062a498
-struct Point2d S_pos = { /* <data@0x0062a498> */ };
+struct Point2d S_pos;
 
 // GLOBAL: COPTER_D 0x0062a4a0
-struct Point2d* S_llast = { /* <data@0x0062a4a0> */ };
+struct Point2d* S_llast;
 
 // GLOBAL: COPTER_D 0x0062a4a8
-struct Point3d S_local_rstart = { /* <data@0x0062a4a8> */ };
+struct Point3d S_local_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4b8
-long S_XnegZneg[4] = { /* <data@0x0062a4b8> */ };
+long S_XnegZneg[4];
 
 // GLOBAL: COPTER_D 0x0062a4c8
-struct Point3d S_world_rstart = { /* <data@0x0062a4c8> */ };
+struct Point3d S_world_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4d4
-short S_lowres_dist = { /* <data@0x0062a4d4> */ };
+short S_lowres_dist;
 
 // GLOBAL: COPTER_D 0x0062a4d8
-long S_XnegZpos[4] = { /* <data@0x0062a4d8> */ };
+long S_XnegZpos[4];
 
 // GLOBAL: COPTER_D 0x0062a4e8
-struct Point3d S_world_eye = { /* <data@0x0062a4e8> */ };
+struct Point3d S_world_eye;
 
 // GLOBAL: COPTER_D 0x0062a4f8
-struct Point2d S_last_pos = { /* <data@0x0062a4f8> */ };
+struct Point2d S_last_pos;
 
 
 
@@ -13980,52 +13980,52 @@ struct Point2d S_last_pos = { /* <data@0x0062a4f8> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
 // GLOBAL: COPTER_D 0x00662870
-long GridNSortFaces = { /* <data@0x00662870> */ };
+long GridNSortFaces; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
 // GLOBAL: COPTER_D 0x0066635c
-long G_opolys = { /* <data@0x0066635c> */ };
+long G_opolys; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
 // GLOBAL: COPTER_D 0x0066282c
-long G_gdpolys = { /* <data@0x0066282c> */ };
+long G_gdpolys; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
 // GLOBAL: COPTER_D 0x0066636c
-long G_odpolys = { /* <data@0x0066636c> */ };
+long G_odpolys; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
 // GLOBAL: COPTER_D 0x006663a0
-long G_ViewSize = { /* <data@0x006663a0> */ };
+long G_ViewSize; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed30
-struct Point2d S_curr_pos = { /* <data@0x006bed30> */ };
+struct Point2d S_curr_pos; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1190
-struct _HELIBASE_DATA G_helibase = { /* <data@0x006c1190> */ };
+struct _HELIBASE_DATA G_helibase; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1370
-int32_t ViewRot[4][4] = { /* <data@0x006c1370> */ };
+int32_t ViewRot[4][4]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x006c1370
-int32_t ViewRot[4][4] = { /* <data@0x006c1370> */ };
+int32_t ViewRot[4][4]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x006c1330
-int32_t ViewYRot[4][4] = { /* <data@0x006c1330> */ };
+int32_t ViewYRot[4][4]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x006bed30
-struct Point2d S_curr_pos = { /* <data@0x006bed30> */ };
+struct Point2d S_curr_pos; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed38
-char * G_smokey = { /* <data@0x006bed38> */ };
+char * G_smokey; // Contrib missing
 

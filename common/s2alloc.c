@@ -591,5 +591,5 @@ void * __ptr32 S_alignmem = { /* <data@0x0059b538> */ };
 
 // Contribution: 3:0006f9d8-0006fa57 Module: 91, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006069d8
-struct alloc_root_s* root[32] = { /* <data@0x006069d8> */ };
+struct alloc_root_s* root[32];
 

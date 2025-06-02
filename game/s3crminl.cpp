@@ -1372,5 +1372,5 @@ int32_t CriminalEvaderCarClass::curCriminalCars = { /* <data@0x005b7cbc> */ };
 
 // Contribution: 3:000949a0-000949b3 Module: 161, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9a0
-class CriminalEvaderCarClass* CriminalEvaderCarClass::criminalCars[5] = { /* <data@0x0062b9a0> */ };
+class CriminalEvaderCarClass* CriminalEvaderCarClass::criminalCars[5];
 

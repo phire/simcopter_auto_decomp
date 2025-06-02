@@ -18174,8 +18174,8 @@ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer* rb_t
 
 // Contribution: 3:0002b790-0002b797 Module: 75, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2790
-struct SparkalColor colorTextGamePaletteNormal = { /* <data@0x005c2790> */ };
+struct SparkalColor colorTextGamePaletteNormal;
 
 // GLOBAL: COPTER_D 0x005c2794
-struct SparkalColor colorTextGamePaletteHighlighted = { /* <data@0x005c2794> */ };
+struct SparkalColor colorTextGamePaletteHighlighted;
 

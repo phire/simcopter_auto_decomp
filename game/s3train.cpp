@@ -10224,10 +10224,10 @@ struct CONNECTION_INFO_TYPE connections[30] = { /* <data@0x005b7bb8> */ };
 
 // Contribution: 3:000947b8-00094998 Module: 162, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b7b8
-class TrainClass TrainClass::lsTrain = { /* <data@0x0062b7b8> */ };
+class TrainClass TrainClass::lsTrain;
 
 // GLOBAL: COPTER_D 0x0062b994
-class TrainClass* trains[1] = { /* <data@0x0062b994> */ };
+class TrainClass* trains[1];
 
 // GLOBAL: COPTER_D 0x0062b998
 // LOCAL: COPTER_D 0x0062b998
@@ -10237,8 +10237,8 @@ class TrainClass* trains[1] = { /* <data@0x0062b994> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006bf188
-struct Point2d CameraCell = { /* <data@0x006bf188> */ };
+struct Point2d CameraCell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf188
-struct Point2d CameraCell = { /* <data@0x006bf188> */ };
+struct Point2d CameraCell; // Contrib missing
 

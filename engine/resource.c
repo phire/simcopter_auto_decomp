@@ -1264,47 +1264,47 @@ int32_t G_currmempool = { /* <data@0x0059c22c> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006666b0
-struct GEOM_Header GEOM_hdr = { /* <data@0x006666b0> */ };
+struct GEOM_Header GEOM_hdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666a4
-struct CMAP_Header CMAP_hdr = { /* <data@0x006666a4> */ };
+struct CMAP_Header CMAP_hdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666a0
-int32_t ResourceFilePtr = { /* <data@0x006666a0> */ };
+int32_t ResourceFilePtr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066669c
-struct GEOM_DirId* GEOM_IDdir = { /* <data@0x0066669c> */ };
+struct GEOM_DirId* GEOM_IDdir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666698
-struct GEOM_DirGroup* GEOM_GPdir = { /* <data@0x00666698> */ };
+struct GEOM_DirGroup* GEOM_GPdir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666694
-struct DIRC_Header ResourceDirHdr = { /* <data@0x00666694> */ };
+struct DIRC_Header ResourceDirHdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666690
-struct CMAP_Dir* CMAP_directory = { /* <data@0x00666690> */ };
+struct CMAP_Dir* CMAP_directory; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666500
-struct VRResource* ResourceArray[100] = { /* <data@0x00666500> */ };
+struct VRResource* ResourceArray[100]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663f0
-char ResourceFileName[260] = { /* <data@0x006663f0> */ };
+char ResourceFileName[260]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663ec
-struct DIRC_Dir* ResourceDir = { /* <data@0x006663ec> */ };
+struct DIRC_Dir* ResourceDir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663f0
-char ResourceFileName[260] = { /* <data@0x006663f0> */ };
+char ResourceFileName[260]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663ec
-struct DIRC_Dir* ResourceDir = { /* <data@0x006663ec> */ };
+struct DIRC_Dir* ResourceDir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666a0
-int32_t ResourceFilePtr = { /* <data@0x006666a0> */ };
+int32_t ResourceFilePtr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666694
-struct DIRC_Header ResourceDirHdr = { /* <data@0x00666694> */ };
+struct DIRC_Header ResourceDirHdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666500
-struct VRResource* ResourceArray[100] = { /* <data@0x00666500> */ };
+struct VRResource* ResourceArray[100]; // Contrib missing
 

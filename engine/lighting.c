@@ -1428,10 +1428,10 @@ int32_t S_intensity3 = { /* <data@0x005add68> */ };
 
 // Contribution: 3:0006fa70-0006fe77 Module: 132, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a70
-struct TEXT_Resource* S_texres = { /* <data@0x00606a70> */ };
+struct TEXT_Resource* S_texres;
 
 // GLOBAL: COPTER_D 0x00606a78
-int32_t S_ctrs[256] = { /* <data@0x00606a78> */ };
+int32_t S_ctrs[256];
 
 
 
@@ -1440,13 +1440,13 @@ int32_t S_ctrs[256] = { /* <data@0x00606a78> */ };
 
 // WARNING: this global might actually belong to: Io.obj
 // GLOBAL: COPTER_D 0x00654cdc
-int32_t VRClearClr = { /* <data@0x00654cdc> */ };
+int32_t VRClearClr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00662810
-int32_t GlobalError = { /* <data@0x00662810> */ };
+int32_t GlobalError; // Contrib missing
 
 
 // WARNING: this global might actually belong to: matrix.asm
 // GLOBAL: COPTER_D 0x00662810
-int32_t GlobalError = { /* <data@0x00662810> */ };
+int32_t GlobalError; // Contrib missing
 

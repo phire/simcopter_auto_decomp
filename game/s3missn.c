@@ -6682,7 +6682,7 @@ long S_msg_general[6] = { /* <data@0x005b4f08> */ };
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006072b8
-struct _MISSION_STATICS S_mstatics = { /* <data@0x006072b8> */ };
+struct _MISSION_STATICS S_mstatics;
 
 
 
@@ -6691,21 +6691,21 @@ struct _MISSION_STATICS S_mstatics = { /* <data@0x006072b8> */ };
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x0066be70
-struct VRBmpHdr* G_fireseq[6] = { /* <data@0x0066be70> */ };
+struct VRBmpHdr* G_fireseq[6]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x006666d0
-struct VRBmpHdr* G_smokeseq[7] = { /* <data@0x006666d0> */ };
+struct VRBmpHdr* G_smokeseq[7]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3map.c
 // GLOBAL: COPTER_D 0x006bed40
-struct _MAP_CARINFO S_carinfo[20] = { /* <data@0x006bed40> */ };
+struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf060
-char logmsg[256] = { /* <data@0x006bf060> */ };
+char logmsg[256]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf060
-char logmsg[256] = { /* <data@0x006bf060> */ };
+char logmsg[256]; // Contrib missing
 

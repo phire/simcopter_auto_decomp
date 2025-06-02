@@ -545,16 +545,16 @@ int32_t g_nNextTWKErrorSlot = { /* <data@0x0059b3ac> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x00646ee0
-int32_t TWKErrorSlot[200] = { /* <data@0x00646ee0> */ };
+int32_t TWKErrorSlot[200]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a860
-struct tagTWKEntry TWKQueue[200] = { /* <data@0x0063a860> */ };
+struct tagTWKEntry TWKQueue[200]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x0063a860
-struct tagTWKEntry TWKQueue[200] = { /* <data@0x0063a860> */ };
+struct tagTWKEntry TWKQueue[200]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00646ee0
-int32_t TWKErrorSlot[200] = { /* <data@0x00646ee0> */ };
+int32_t TWKErrorSlot[200]; // Contrib missing
 

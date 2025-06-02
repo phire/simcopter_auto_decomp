@@ -994,16 +994,16 @@ long G_zoom_level = { /* <data@0x005b48b8> */ };
 
 // Contribution: 3:0006fe88-0006feab Module: 177, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606e88
-int32_t S_rotdelta = { /* <data@0x00606e88> */ };
+int32_t S_rotdelta;
 
 // GLOBAL: COPTER_D 0x00606e8c
-int32_t S_posdelta = { /* <data@0x00606e8c> */ };
+int32_t S_posdelta;
 
 // GLOBAL: COPTER_D 0x00606e90
-struct Point3d S_last_viewvect = { /* <data@0x00606e90> */ };
+struct Point3d S_last_viewvect;
 
 // GLOBAL: COPTER_D 0x00606ea0
-struct Point3d S_last_viewpos = { /* <data@0x00606ea0> */ };
+struct Point3d S_last_viewpos;
 
 
 
@@ -1012,88 +1012,88 @@ struct Point3d S_last_viewpos = { /* <data@0x00606ea0> */ };
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00662870
-long GridNSortFaces = { /* <data@0x00662870> */ };
+long GridNSortFaces; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x00666390
-long GridNSortCells = { /* <data@0x00666390> */ };
+long GridNSortCells; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x006663a0
-long G_ViewSize = { /* <data@0x006663a0> */ };
+long G_ViewSize; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x0066282c
-long G_gdpolys = { /* <data@0x0066282c> */ };
+long G_gdpolys; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x0066635c
-long G_opolys = { /* <data@0x0066635c> */ };
+long G_opolys; // Contrib missing
 
 
 // WARNING: this global might actually belong to: gridrend.asm
 // GLOBAL: COPTER_D 0x0066636c
-long G_odpolys = { /* <data@0x0066636c> */ };
+long G_odpolys; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1328
-int32_t rFriction = { /* <data@0x006c1328> */ };
+int32_t rFriction; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1324
-int32_t theta = { /* <data@0x006c1324> */ };
+int32_t theta; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c129c
-int32_t tVmax = { /* <data@0x006c129c> */ };
+int32_t tVmax; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1298
-int32_t tFrictionGnd = { /* <data@0x006c1298> */ };
+int32_t tFrictionGnd; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1294
-int32_t tForce = { /* <data@0x006c1294> */ };
+int32_t tForce; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1290
-int32_t tFrictionAir = { /* <data@0x006c1290> */ };
+int32_t tFrictionAir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c128c
-int32_t rForce = { /* <data@0x006c128c> */ };
+int32_t rForce; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1288
-int32_t phi = { /* <data@0x006c1288> */ };
+int32_t phi; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1284
-int32_t rVmax = { /* <data@0x006c1284> */ };
+int32_t rVmax; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Game\s3msnlog.cpp
 // GLOBAL: COPTER_D 0x006c1324
-int32_t theta = { /* <data@0x006c1324> */ };
+int32_t theta; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Game\s3msnlog.cpp
 // GLOBAL: COPTER_D 0x006c1288
-int32_t phi = { /* <data@0x006c1288> */ };
+int32_t phi; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1328
-int32_t rFriction = { /* <data@0x006c1328> */ };
+int32_t rFriction; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c128c
-int32_t rForce = { /* <data@0x006c128c> */ };
+int32_t rForce; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1284
-int32_t rVmax = { /* <data@0x006c1284> */ };
+int32_t rVmax; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1290
-int32_t tFrictionAir = { /* <data@0x006c1290> */ };
+int32_t tFrictionAir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1298
-int32_t tFrictionGnd = { /* <data@0x006c1298> */ };
+int32_t tFrictionGnd; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1294
-int32_t tForce = { /* <data@0x006c1294> */ };
+int32_t tForce; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c129c
-int32_t tVmax = { /* <data@0x006c129c> */ };
+int32_t tVmax; // Contrib missing
 

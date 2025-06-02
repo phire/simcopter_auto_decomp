@@ -7797,10 +7797,10 @@ struct list<CopterGameMode>::list_node_buffer* list<CopterGameMode>::buffer_list
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\Tweak.c
 // GLOBAL: COPTER_D 0x00646ed0
-int32_t g_uTWKMessageNum = { /* <data@0x00646ed0> */ };
+int32_t g_uTWKMessageNum; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Winwindo.cpp
 // GLOBAL: COPTER_D 0x00646ed0
-int32_t g_uTWKMessageNum = { /* <data@0x00646ed0> */ };
+int32_t g_uTWKMessageNum; // Contrib missing
 

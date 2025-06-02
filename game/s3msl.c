@@ -7414,45 +7414,45 @@ long dbMIFFID = { /* <data@0x005b7340> */ };
 
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a530
-struct _MISSILE_DATA lsmsl = { /* <data@0x0062a530> */ };
+struct _MISSILE_DATA lsmsl;
 
 
 
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x0066e270
-struct _MISSILE_DATA S_debris[30] = { /* <data@0x0066e270> */ };
+struct _MISSILE_DATA S_debris[30]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066dfa0
-struct _MISSILE_DATA S_traj[10] = { /* <data@0x0066dfa0> */ };
+struct _MISSILE_DATA S_traj[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c920
-struct _MISSILE_DATA S_bullets[80] = { /* <data@0x0066c920> */ };
+struct _MISSILE_DATA S_bullets[80]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c890
-struct _MISSILE_DATA S_lasers[2] = { /* <data@0x0066c890> */ };
+struct _MISSILE_DATA S_lasers[2]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c5c0
-struct _MISSILE_DATA S_teargas[10] = { /* <data@0x0066c5c0> */ };
+struct _MISSILE_DATA S_teargas[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c2f0
-struct _MISSILE_DATA S_missiles[10] = { /* <data@0x0066c2f0> */ };
+struct _MISSILE_DATA S_missiles[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c2f0
-struct _MISSILE_DATA S_missiles[10] = { /* <data@0x0066c2f0> */ };
+struct _MISSILE_DATA S_missiles[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c5c0
-struct _MISSILE_DATA S_teargas[10] = { /* <data@0x0066c5c0> */ };
+struct _MISSILE_DATA S_teargas[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c920
-struct _MISSILE_DATA S_bullets[80] = { /* <data@0x0066c920> */ };
+struct _MISSILE_DATA S_bullets[80]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066e270
-struct _MISSILE_DATA S_debris[30] = { /* <data@0x0066e270> */ };
+struct _MISSILE_DATA S_debris[30]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066dfa0
-struct _MISSILE_DATA S_traj[10] = { /* <data@0x0066dfa0> */ };
+struct _MISSILE_DATA S_traj[10]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066c890
-struct _MISSILE_DATA S_lasers[2] = { /* <data@0x0066c890> */ };
+struct _MISSILE_DATA S_lasers[2]; // Contrib missing
 

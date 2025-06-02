@@ -455,14 +455,14 @@ short S_ctr = { /* <data@0x00599430> */ };
 
 // Contribution: 3:0006cac0-0006d247 Module: 41, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00603ac0
-unsigned char wpal[768] = { /* <data@0x00603ac0> */ };
+unsigned char wpal[768];
 
 // GLOBAL: COPTER_D 0x00603dc0
-void * __ptr32 hdc = { /* <data@0x00603dc0> */ };
+void * __ptr32 hdc;
 
 // GLOBAL: COPTER_D 0x00603dc8
-struct PCXHEAD pcx = { /* <data@0x00603dc8> */ };
+struct PCXHEAD pcx;
 
 // GLOBAL: COPTER_D 0x00603e48
-struct tagPALETTEENTRY ppe[256] = { /* <data@0x00603e48> */ };
+struct tagPALETTEENTRY ppe[256];
 

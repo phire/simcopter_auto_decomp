@@ -1841,23 +1841,23 @@ const struct _dPoint2d LRT[4] = { /* <data@0x005933b8> */ };
 
 // Contribution: 3:00094a00-0009e1cf Module: 157, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062ba00
-int32_t DiagMatrix[4][4][4] = { /* <data@0x0062ba00> */ };
+int32_t DiagMatrix[4][4][4];
 
 // GLOBAL: COPTER_D 0x0062bb00
-struct Point3d DiagVector[4] = { /* <data@0x0062bb00> */ };
+struct Point3d DiagVector[4];
 
 // GLOBAL: COPTER_D 0x0062bb30
-int32_t DTT[4][10][3] = { /* <data@0x0062bb30> */ };
+int32_t DTT[4][10][3];
 
 // GLOBAL: COPTER_D 0x0062bd10
-struct Point3d DVT[4][4][10][3] = { /* <data@0x0062bd10> */ };
+struct Point3d DVT[4][4][10][3];
 
 // GLOBAL: COPTER_D 0x0062d390
-struct _fPoint2d OTT[4][4][11] = { /* <data@0x0062d390> */ };
+struct _fPoint2d OTT[4][4][11];
 
 // GLOBAL: COPTER_D 0x0062d910
-int32_t RMT[4][4][10][3][4][4] = { /* <data@0x0062d910> */ };
+int32_t RMT[4][4][10][3][4][4];
 
 // GLOBAL: COPTER_D 0x00635110
-struct Point3d DiagOffset[4][4] = { /* <data@0x00635110> */ };
+struct Point3d DiagOffset[4][4];
 

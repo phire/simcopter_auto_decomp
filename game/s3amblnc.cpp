@@ -1136,5 +1136,5 @@ int32_t curAmbulances = { /* <data@0x005b7d18> */ };
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9b8
-class AmbulanceClass* ambulances[5] = { /* <data@0x0062b9b8> */ };
+class AmbulanceClass* ambulances[5];
 

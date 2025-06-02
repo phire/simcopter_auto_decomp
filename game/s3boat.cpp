@@ -5940,10 +5940,10 @@ struct Point2d BoatClass::lastScannedLocation = { /* <data@0x005b73e8> */ };
 
 // Contribution: 3:000945f0-000946e4 Module: 164, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b5f0
-class BoatClass BoatClass::lsBoat = { /* <data@0x0062b5f0> */ };
+class BoatClass BoatClass::lsBoat;
 
 // GLOBAL: COPTER_D 0x0062b6d8
-class BoatClass* boats[3] = { /* <data@0x0062b6d8> */ };
+class BoatClass* boats[3];
 
 // GLOBAL: COPTER_D 0x0062b6e4
 // LOCAL: COPTER_D 0x0062b6e4
@@ -5953,10 +5953,10 @@ class BoatClass* boats[3] = { /* <data@0x0062b6d8> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x0066eb10
-unsigned char G_texmap[256][256] = { /* <data@0x0066eb10> */ };
+unsigned char G_texmap[256][256]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3fire.c
 // GLOBAL: COPTER_D 0x0066eb10
-unsigned char G_texmap[256][256] = { /* <data@0x0066eb10> */ };
+unsigned char G_texmap[256][256]; // Contrib missing
 

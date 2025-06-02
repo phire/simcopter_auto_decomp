@@ -2322,5 +2322,5 @@ int32_t curPoliceCars = { /* <data@0x005b7eb0> */ };
 
 // Contribution: 3:000949e8-000949fb Module: 158, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9e8
-class PoliceCarClass* policeCars[5] = { /* <data@0x0062b9e8> */ };
+class PoliceCarClass* policeCars[5];
 

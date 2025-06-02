@@ -7918,5 +7918,5 @@ char * SZ_CATALOG_WINDOW_TEXT_NAME = { /* <data@0x00599830> */ };
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x00638ed4
-int32_t clone_flag = { /* <data@0x00638ed4> */ };
+int32_t clone_flag; // Contrib missing
 

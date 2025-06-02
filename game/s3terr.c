@@ -6699,66 +6699,66 @@ short S_array2[32] = { /* <data@0x005b5d28> */ };
 
 // Contribution: 3:00093500-00093527 Module: 169, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a500
-unsigned short * S_h1 = { /* <data@0x0062a500> */ };
+unsigned short * S_h1;
 
 // GLOBAL: COPTER_D 0x0062a504
-unsigned short * S_h2 = { /* <data@0x0062a504> */ };
+unsigned short * S_h2;
 
 // GLOBAL: COPTER_D 0x0062a508
-unsigned short * S_h3 = { /* <data@0x0062a508> */ };
+unsigned short * S_h3;
 
 // GLOBAL: COPTER_D 0x0062a50c
-unsigned short * S_h4 = { /* <data@0x0062a50c> */ };
+unsigned short * S_h4;
 
 // GLOBAL: COPTER_D 0x0062a510
-unsigned short * S_h5 = { /* <data@0x0062a510> */ };
+unsigned short * S_h5;
 
 // GLOBAL: COPTER_D 0x0062a514
-unsigned short * S_h6 = { /* <data@0x0062a514> */ };
+unsigned short * S_h6;
 
 // GLOBAL: COPTER_D 0x0062a518
-unsigned short * S_h7 = { /* <data@0x0062a518> */ };
+unsigned short * S_h7;
 
 // GLOBAL: COPTER_D 0x0062a51c
-unsigned short * S_h8 = { /* <data@0x0062a51c> */ };
+unsigned short * S_h8;
 
 // GLOBAL: COPTER_D 0x0062a520
-unsigned short * S_h9 = { /* <data@0x0062a520> */ };
+unsigned short * S_h9;
 
 // GLOBAL: COPTER_D 0x0062a524
-int32_t S_recip_celldim = { /* <data@0x0062a524> */ };
+int32_t S_recip_celldim;
 
 
 
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x0067eb20
-long G_terr2bmp[128] = { /* <data@0x0067eb20> */ };
+long G_terr2bmp[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067eb10
-unsigned short * G_tmap = { /* <data@0x0067eb10> */ };
+unsigned short * G_tmap; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eb00
-int32_t G_terr_minalt = { /* <data@0x0066eb00> */ };
+int32_t G_terr_minalt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eaf8
-struct Point2d G_morphcell = { /* <data@0x0066eaf8> */ };
+struct Point2d G_morphcell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067ed28
-struct Point2d G_grid_ulc = { /* <data@0x0067ed28> */ };
+struct Point2d G_grid_ulc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067ed28
-struct Point2d G_grid_ulc = { /* <data@0x0067ed28> */ };
+struct Point2d G_grid_ulc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067eb10
-unsigned short * G_tmap = { /* <data@0x0067eb10> */ };
+unsigned short * G_tmap; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eaf8
-struct Point2d G_morphcell = { /* <data@0x0066eaf8> */ };
+struct Point2d G_morphcell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067eb20
-long G_terr2bmp[128] = { /* <data@0x0067eb20> */ };
+long G_terr2bmp[128]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eb00
-int32_t G_terr_minalt = { /* <data@0x0066eb00> */ };
+int32_t G_terr_minalt; // Contrib missing
 
