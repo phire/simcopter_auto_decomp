@@ -9,13 +9,13 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum /* __unnamed */ {
-			kHeaderSize = 8,
-			kMaxArrays = 1024,
-			kMaxLoadable = 64,
-			kFileNameLength = 15,
-			kArrayNameLength = 15,
-		};
+	enum /* __unnamed */ {
+		kHeaderSize = 8,
+		kMaxArrays = 1024,
+		kMaxLoadable = 64,
+		kFileNameLength = 15,
+		kArrayNameLength = 15,
+	};
 	struct _cArray::FileAndType{
 		class ResFile* file;
 		unsigned long type;
@@ -141,13 +141,13 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum /* __unnamed */ {
-			kHeaderSize = 8,
-			kMaxArrays = 1024,
-			kMaxLoadable = 64,
-			kFileNameLength = 15,
-			kArrayNameLength = 15,
-		};
+	enum /* __unnamed */ {
+		kHeaderSize = 8,
+		kMaxArrays = 1024,
+		kMaxLoadable = 64,
+		kFileNameLength = 15,
+		kArrayNameLength = 15,
+	};
 	struct _cArray::FileAndType{
 		class ResFile* file;
 		unsigned long type;
@@ -284,9 +284,9 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum /* __unnamed */ {
-			kMaxNameLen = 255,
-		};
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
 protected:
 	class FlatFile* fNext;
 	unsigned char fName[256];

@@ -191,18 +191,18 @@ public:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
-			nSoundSourceTypeResource = 0,
-			nSoundSourceTypeFile = 1,
-		};
+	enum SoundSourceType {
+		nSoundSourceTypeResource = 0,
+		nSoundSourceTypeFile = 1,
+	};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
-			nSoundDuplicateDefault = 0,
-			nSoundDuplicateInterrupt = 1,
-			nSoundDuplicateContinue = 2,
-			nSoundDuplicateOverlap = 3,
-		};
+	enum SoundDuplicateType {
+		nSoundDuplicateDefault = 0,
+		nSoundDuplicateInterrupt = 1,
+		nSoundDuplicateContinue = 2,
+		nSoundDuplicateOverlap = 3,
+	};
 public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;

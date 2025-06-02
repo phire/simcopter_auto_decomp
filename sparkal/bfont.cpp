@@ -4,10 +4,10 @@
 
 // Type: class BitmappedFont (forward reference);
 class BitmappedFont{
-		enum PitchType {
-			pitchTypeFixed = 0,
-			pitchTypeVariable = 1,
-		};
+	enum PitchType {
+		pitchTypeFixed = 0,
+		pitchTypeVariable = 1,
+	};
 public:
 	void BitmappedFont(char *, const long);
 	void BitmappedFont(class basic_string<char>&, const long);

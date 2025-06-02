@@ -198,11 +198,11 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
@@ -345,15 +345,15 @@ public:
 // Type: class AnimationWindow (forward reference);
 class AnimationWindow : public GraphicWindow
 {
-		enum AnimationLoopType {
-			nAnimationLoopTypeOnce = 0,
-			nAnimationLoopTypeCircular = 1,
-			nAnimationLoopTypeBackAndForth = 2,
-		};
-		enum AnimationDirection {
-			nAnimationDirectionForward = 1,
-			nAnimationDirectionBackward = -1,
-		};
+	enum AnimationLoopType {
+		nAnimationLoopTypeOnce = 0,
+		nAnimationLoopTypeCircular = 1,
+		nAnimationLoopTypeBackAndForth = 2,
+	};
+	enum AnimationDirection {
+		nAnimationDirectionForward = 1,
+		nAnimationDirectionBackward = -1,
+	};
 public:
 	void AnimationWindow(char *, class MRect&, long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, long, enum AnimationWindow::AnimationLoopType);
 	void AnimationWindow();
@@ -571,11 +571,11 @@ public:
 };
 
 // Type: enum AnimationWindow::AnimationLoopType;
-	enum AnimationLoopType {
-		nAnimationLoopTypeOnce = 0,
-		nAnimationLoopTypeCircular = 1,
-		nAnimationLoopTypeBackAndForth = 2,
-	};
+enum AnimationLoopType {
+	nAnimationLoopTypeOnce = 0,
+	nAnimationLoopTypeCircular = 1,
+	nAnimationLoopTypeBackAndForth = 2,
+};
 
 // Type: class RenderSettingsWindow (forward reference);
 class RenderSettingsWindow : public GraphicWindow
@@ -1014,11 +1014,11 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();

@@ -82,14 +82,14 @@ protected:
 // Type: unsigned long;
 
 // Type: enum RadioStationCycleType;
-	enum RadioStationCycleType {
-		nRadioStationCycleTypeMusicNone = -1,
-		nRadioStationCycleTypeMusic = 0,
-		nRadioStationCycleTypeDJ = 1,
-		nRadioStationCycleTypeCommercial = 2,
-		nRadioStationCycleTypeJingle = 3,
-		nRadioStationCycleTypeAll = 4,
-	};
+enum RadioStationCycleType {
+	nRadioStationCycleTypeMusicNone = -1,
+	nRadioStationCycleTypeMusic = 0,
+	nRadioStationCycleTypeDJ = 1,
+	nRadioStationCycleTypeCommercial = 2,
+	nRadioStationCycleTypeJingle = 3,
+	nRadioStationCycleTypeAll = 4,
+};
 
 // Type: class basic_string<char>;
 class basic_string<char>{
@@ -500,19 +500,19 @@ public:
 };
 
 // Type: enum RadioStationType;
-	enum RadioStationType {
-		nRadioStationTypeUnknown = -1,
-		nRadioStationTypeClassical = 0,
-		nRadioStationTypeRock = 1,
-		nRadioStationTypeTechno = 2,
-		nRadioStationTypeCountry = 3,
-		nRadioStationTypeJazz = 4,
-		nRadioStationTypeOldies = 5,
-		nRadioStationTypeRB = 6,
-		nRadioStationTypeEasy = 7,
-		nRadioStationTypeTalk = 8,
-		nRadioStationTypeCount = 9,
-	};
+enum RadioStationType {
+	nRadioStationTypeUnknown = -1,
+	nRadioStationTypeClassical = 0,
+	nRadioStationTypeRock = 1,
+	nRadioStationTypeTechno = 2,
+	nRadioStationTypeCountry = 3,
+	nRadioStationTypeJazz = 4,
+	nRadioStationTypeOldies = 5,
+	nRadioStationTypeRB = 6,
+	nRadioStationTypeEasy = 7,
+	nRadioStationTypeTalk = 8,
+	nRadioStationTypeCount = 9,
+};
 
 // Type: class DirectoryEntry (forward reference);
 class DirectoryEntry{
@@ -552,11 +552,11 @@ struct RadioPreferences{
 };
 
 // Type: enum RadioOption;
-	enum RadioOption {
-		nRadioOptionDJ = 0,
-		nRadioOptionCommercials = 1,
-		nRadioOptionEnglish = 2,
-	};
+enum RadioOption {
+	nRadioOptionDJ = 0,
+	nRadioOptionCommercials = 1,
+	nRadioOptionEnglish = 2,
+};
 
 // Type: long;
 
@@ -745,11 +745,11 @@ protected:
 
 // Type: class MTimer (forward reference);
 class MTimer{
-		enum TimerResolution {
-			nTimerResolutionMicroseconds = 0,
-			nTimerResolutionMilliseconds = 1,
-			nTimerResolutionSeconds = 2,
-		};
+	enum TimerResolution {
+		nTimerResolutionMicroseconds = 0,
+		nTimerResolutionMilliseconds = 1,
+		nTimerResolutionSeconds = 2,
+	};
 public:
 	void MTimer(enum MTimer::TimerResolution);
 	void ~MTimer();
@@ -771,11 +771,11 @@ protected:
 };
 
 // Type: enum MTimer::TimerResolution;
-	enum TimerResolution {
-		nTimerResolutionMicroseconds = 0,
-		nTimerResolutionMilliseconds = 1,
-		nTimerResolutionSeconds = 2,
-	};
+enum TimerResolution {
+	nTimerResolutionMicroseconds = 0,
+	nTimerResolutionMilliseconds = 1,
+	nTimerResolutionSeconds = 2,
+};
 
 // Type: class vector<int> (forward reference);
 class vector<int>{

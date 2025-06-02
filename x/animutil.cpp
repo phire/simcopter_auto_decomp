@@ -68,10 +68,10 @@ struct Rect{
 // Type: unsigned long;
 
 // Type: enum UseDrawGrid;
-	enum UseDrawGrid {
-		kReturnPosition = 0,
-		kActuallyDrawGrid = 1,
-	};
+enum UseDrawGrid {
+	kReturnPosition = 0,
+	kActuallyDrawGrid = 1,
+};
 
 // Type: void * __ptr32;
 

@@ -17,20 +17,20 @@ class CriminalEvaderCarClass : public AutomobileClass
 {
 public:
 	static class CriminalEvaderCarClass* criminalCars[0];
-		enum MissionState {
-			CRUISING = 0,
-			SEARCHING = 1,
-			ON_THE_RUN = 2,
-			OUT_OF_CAR = 3,
-			MISSION_OVER = 4,
-		};
-		enum CriminalType {
-			BURGLAR = 0,
-			DRUG_PUSHER = 1,
-			SNIPER = 2,
-			ARSONIST = 3,
-			TERRORIST = 4,
-		};
+	enum MissionState {
+		CRUISING = 0,
+		SEARCHING = 1,
+		ON_THE_RUN = 2,
+		OUT_OF_CAR = 3,
+		MISSION_OVER = 4,
+	};
+	enum CriminalType {
+		BURGLAR = 0,
+		DRUG_PUSHER = 1,
+		SNIPER = 2,
+		ARSONIST = 3,
+		TERRORIST = 4,
+	};
 protected:
 	enum CriminalEvaderCarClass::MissionState missionState;
 	enum CriminalEvaderCarClass::CriminalType criminalType;
@@ -112,97 +112,97 @@ private:
 
 // Type: class AutomobileClass;
 class AutomobileClass{
-		enum /* __unnamed */ {
-			CAR_TYPES = 7,
-			PERCENTAGE_OF_AUTO1 = 10,
-			PERCENTAGE_OF_AUTO2 = 20,
-			PERCENTAGE_OF_AUTO3 = 20,
-			PERCENTAGE_OF_AUTO4 = 10,
-			PERCENTAGE_OF_AUTO5 = 10,
-			PERCENTAGE_OF_AUTO6 = 20,
-			PERCENTAGE_OF_AUTO7 = 20,
-			TOTAL_PERCENTAGE = 110,
-		};
-		enum /* __unnamed */ {
-			NO_X_POSITION = -1,
-			STARTING_X = 3,
-			ENDING_X = 125,
-			NO_Y_POSITION = -1,
-			STARTING_Y = 3,
-			ENDING_Y = 125,
-		};
-		enum IntersectionTypes {
-			DEAD_END = 0,
-			STRAIGHT_AHEAD = 1,
-			LEFT_ONLY = 2,
-			RIGHT_ONLY = 4,
-			LEFT_OR_STRAIGHT = 3,
-			LEFT_OR_RIGHT = 6,
-			RIGHT_OR_STRAIGHT = 5,
-			LEFT_STRAIGHT_OR_RIGHT = 7,
-			DEAD_END_HIWAY = 16,
-		};
-		enum StoppedReasons {
-			NO_REASON = 0,
-			TRAFFIC = 1,
-			STOPPED_TRAFFIC = 2,
-			PERSON_IN_WAY = 3,
-			AUTO_IN_WAY = 4,
-			DEBRIS_IN_WAY = 5,
-			UNIDENTIFIED_IN_WAY = 6,
-			HELI_IN_WAY = 7,
-			END_OF_ROAD = 8,
-			END_OF_HIWAY = 9,
-			INTERSECTION_FULL = 10,
-			BEEN_PULLED_OVER = 11,
-		};
-		enum RoadTileOffsets {
-			RD_CENTOFF = 851968,
-			RD_EDGEOFF = 131072,
-		};
-		enum HiwayOffsets {
-			HW_CENTOFF_LANE1 = 851968,
-			HW_EDGEOFF_LANE1 = 131072,
-			HW_CENTOFF_LANE2 = 851968,
-			HW_EDGEOFF_LANE2 = 131072,
-			HW_HEIGHT = 2031616,
-		};
-		enum PersonState {
-			PS_IN_VEHICLE = 0,
-			PS_OUT_OF_VEHICLE = 1,
-			PS_BACK_IN_VEHICLE = 2,
-			PS_GOT_AWAY = 3,
-			PS_MISSION_OVER = 4,
-		};
-		enum /* __unnamed */ {
-			CAR_RADIUS = 327680,
-			COLLISION_SPACE = 655360,
-			ROAD_SPEED = 2621440,
-			ROAD_SLOWDOWN_FACTOR = 131072,
-			HIWAY_SPEED = 6225920,
-			HIWAY_SLOWDOWN_FACTOR = 327680,
-			SPEED_VARIANCE = 262144,
-			HIWAY_VARIANCE = 655360,
-			MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
-			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
-			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
-		};
-		enum Flags {
-			AUTO_INITIALIZED = 1,
-			AUTO_PLACED = 2,
-			AUTO_TURNING = 4,
-			AUTO_MAKING_UTURN = 8,
-			AUTO_PULL_OVER = 16,
-			AUTO_PULLING_OVER = 32,
-			AUTO_PULLED_OVER = 64,
-			AUTO_AT_DEAD_END = 128,
-			AUTO_IN_INTERSECTION = 256,
-			AUTO_ON_FIRE = 512,
-			AUTO_JAMMED = 1024,
-			AUTO_PULLING_OUT = 2048,
-			AUTO_RIGHT_OF_WAY = 4096,
-			AUTO_ON_HIWAY = 8192,
-		};
+	enum /* __unnamed */ {
+		CAR_TYPES = 7,
+		PERCENTAGE_OF_AUTO1 = 10,
+		PERCENTAGE_OF_AUTO2 = 20,
+		PERCENTAGE_OF_AUTO3 = 20,
+		PERCENTAGE_OF_AUTO4 = 10,
+		PERCENTAGE_OF_AUTO5 = 10,
+		PERCENTAGE_OF_AUTO6 = 20,
+		PERCENTAGE_OF_AUTO7 = 20,
+		TOTAL_PERCENTAGE = 110,
+	};
+	enum /* __unnamed */ {
+		NO_X_POSITION = -1,
+		STARTING_X = 3,
+		ENDING_X = 125,
+		NO_Y_POSITION = -1,
+		STARTING_Y = 3,
+		ENDING_Y = 125,
+	};
+	enum IntersectionTypes {
+		DEAD_END = 0,
+		STRAIGHT_AHEAD = 1,
+		LEFT_ONLY = 2,
+		RIGHT_ONLY = 4,
+		LEFT_OR_STRAIGHT = 3,
+		LEFT_OR_RIGHT = 6,
+		RIGHT_OR_STRAIGHT = 5,
+		LEFT_STRAIGHT_OR_RIGHT = 7,
+		DEAD_END_HIWAY = 16,
+	};
+	enum StoppedReasons {
+		NO_REASON = 0,
+		TRAFFIC = 1,
+		STOPPED_TRAFFIC = 2,
+		PERSON_IN_WAY = 3,
+		AUTO_IN_WAY = 4,
+		DEBRIS_IN_WAY = 5,
+		UNIDENTIFIED_IN_WAY = 6,
+		HELI_IN_WAY = 7,
+		END_OF_ROAD = 8,
+		END_OF_HIWAY = 9,
+		INTERSECTION_FULL = 10,
+		BEEN_PULLED_OVER = 11,
+	};
+	enum RoadTileOffsets {
+		RD_CENTOFF = 851968,
+		RD_EDGEOFF = 131072,
+	};
+	enum HiwayOffsets {
+		HW_CENTOFF_LANE1 = 851968,
+		HW_EDGEOFF_LANE1 = 131072,
+		HW_CENTOFF_LANE2 = 851968,
+		HW_EDGEOFF_LANE2 = 131072,
+		HW_HEIGHT = 2031616,
+	};
+	enum PersonState {
+		PS_IN_VEHICLE = 0,
+		PS_OUT_OF_VEHICLE = 1,
+		PS_BACK_IN_VEHICLE = 2,
+		PS_GOT_AWAY = 3,
+		PS_MISSION_OVER = 4,
+	};
+	enum /* __unnamed */ {
+		CAR_RADIUS = 327680,
+		COLLISION_SPACE = 655360,
+		ROAD_SPEED = 2621440,
+		ROAD_SLOWDOWN_FACTOR = 131072,
+		HIWAY_SPEED = 6225920,
+		HIWAY_SLOWDOWN_FACTOR = 327680,
+		SPEED_VARIANCE = 262144,
+		HIWAY_VARIANCE = 655360,
+		MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
+		MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
+		MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
+	};
+	enum Flags {
+		AUTO_INITIALIZED = 1,
+		AUTO_PLACED = 2,
+		AUTO_TURNING = 4,
+		AUTO_MAKING_UTURN = 8,
+		AUTO_PULL_OVER = 16,
+		AUTO_PULLING_OVER = 32,
+		AUTO_PULLED_OVER = 64,
+		AUTO_AT_DEAD_END = 128,
+		AUTO_IN_INTERSECTION = 256,
+		AUTO_ON_FIRE = 512,
+		AUTO_JAMMED = 1024,
+		AUTO_PULLING_OUT = 2048,
+		AUTO_RIGHT_OF_WAY = 4096,
+		AUTO_ON_HIWAY = 8192,
+	};
 public:
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;

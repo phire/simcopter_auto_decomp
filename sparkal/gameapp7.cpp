@@ -470,12 +470,12 @@ protected:
 // Type: class UserInputWindow (forward reference);
 class UserInputWindow : public GraphicWindow
 {
-		enum KeyUsageType {
-			nKeyUsageTypeFree = 0,
-			nKeyUsageTypeReserved = 1,
-			nKeyUsageTypeCurrentCommand = 2,
-			nKeyUsageTypeOtherCommand = 3,
-		};
+	enum KeyUsageType {
+		nKeyUsageTypeFree = 0,
+		nKeyUsageTypeReserved = 1,
+		nKeyUsageTypeCurrentCommand = 2,
+		nKeyUsageTypeOtherCommand = 3,
+	};
 public:
 	void UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize();
@@ -653,18 +653,18 @@ protected:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
-			nSoundSourceTypeResource = 0,
-			nSoundSourceTypeFile = 1,
-		};
+	enum SoundSourceType {
+		nSoundSourceTypeResource = 0,
+		nSoundSourceTypeFile = 1,
+	};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
-			nSoundDuplicateDefault = 0,
-			nSoundDuplicateInterrupt = 1,
-			nSoundDuplicateContinue = 2,
-			nSoundDuplicateOverlap = 3,
-		};
+	enum SoundDuplicateType {
+		nSoundDuplicateDefault = 0,
+		nSoundDuplicateInterrupt = 1,
+		nSoundDuplicateContinue = 2,
+		nSoundDuplicateOverlap = 3,
+	};
 public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;

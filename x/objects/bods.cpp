@@ -115,11 +115,11 @@ struct Point3d{
 };
 
 // Type: enum SPHERE_SHADE_FLAG;
-	enum SPHERE_SHADE_FLAG {
-		NO_SHADE = 0,
-		GRAD_SHADE = 1,
-		GRAD_DITHER_SHADE = 2,
-	};
+enum SPHERE_SHADE_FLAG {
+	NO_SHADE = 0,
+	GRAD_SHADE = 1,
+	GRAD_DITHER_SHADE = 2,
+};
 
 // Type: struct PrivAnimPartInfo (forward reference);
 // PrivAnimPartInfo Class implementation not found

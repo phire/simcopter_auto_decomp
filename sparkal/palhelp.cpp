@@ -51,11 +51,11 @@ struct SparkalColor{
 
 // Type: class MTimer;
 class MTimer{
-		enum TimerResolution {
-			nTimerResolutionMicroseconds = 0,
-			nTimerResolutionMilliseconds = 1,
-			nTimerResolutionSeconds = 2,
-		};
+	enum TimerResolution {
+		nTimerResolutionMicroseconds = 0,
+		nTimerResolutionMilliseconds = 1,
+		nTimerResolutionSeconds = 2,
+	};
 public:
 	void MTimer(enum MTimer::TimerResolution);
 	void ~MTimer();

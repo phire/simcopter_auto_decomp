@@ -12,62 +12,62 @@ struct Point2d{
 
 // Type: class TrainClass;
 class TrainClass{
-		enum /* __unnamed */ {
-			TRAIN_TYPES = 1,
-			PERCENTAGE_OF_TRAIN1 = 100,
-			TOTAL_PERCENTAGE = 100,
-		};
-		enum /* __unnamed */ {
-			NO_X_POSITION = -1,
-			STARTING_X = 3,
-			ENDING_X = 125,
-			NO_Y_POSITION = -1,
-			STARTING_Y = 3,
-			ENDING_Y = 125,
-		};
-		enum IntersectionTypes {
-			DEAD_END = 0,
-			STRAIGHT_AHEAD = 1,
-			LEFT_ONLY = 2,
-			RIGHT_ONLY = 4,
-			LEFT_OR_STRAIGHT = 3,
-			LEFT_OR_RIGHT = 6,
-			RIGHT_OR_STRAIGHT = 5,
-			LEFT_STRAIGHT_OR_RIGHT = 7,
-		};
-		enum StoppedReasons {
-			NO_REASON = 0,
-			TRAFFIC = 1,
-			STOPPED_TRAFFIC = 2,
-			PERSON_IN_WAY = 3,
-			END_OF_RAIL = 4,
-			INTERSECTION_FULL = 5,
-		};
-		enum RailTileOffsets {
-			RL_CENTOFF = 0,
-			RL_EDGEOFF = 131072,
-		};
-		enum /* __unnamed */ {
-			COLLISION_SPACE = 655360,
-			RAIL_SPEED = 5898240,
-			RAIL_SLOWDOWN_FACTOR = 131072,
-			SPEED_VARIANCE = 262144,
-			MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
-			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
-			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
-		};
-		enum flagEnums {
-			INITIALIZED = 0,
-			PLACED = 1,
-			TURNING = 2,
-			IN_INTERSECTION = 3,
-			MAKING_UTURN = 4,
-			AT_DEAD_END = 5,
-			CRASH_WHEN_READY = 6,
-			CRASHING = 7,
-			ON_RESCUE = 8,
-			NUMBER_OF_FLAGS = 9,
-		};
+	enum /* __unnamed */ {
+		TRAIN_TYPES = 1,
+		PERCENTAGE_OF_TRAIN1 = 100,
+		TOTAL_PERCENTAGE = 100,
+	};
+	enum /* __unnamed */ {
+		NO_X_POSITION = -1,
+		STARTING_X = 3,
+		ENDING_X = 125,
+		NO_Y_POSITION = -1,
+		STARTING_Y = 3,
+		ENDING_Y = 125,
+	};
+	enum IntersectionTypes {
+		DEAD_END = 0,
+		STRAIGHT_AHEAD = 1,
+		LEFT_ONLY = 2,
+		RIGHT_ONLY = 4,
+		LEFT_OR_STRAIGHT = 3,
+		LEFT_OR_RIGHT = 6,
+		RIGHT_OR_STRAIGHT = 5,
+		LEFT_STRAIGHT_OR_RIGHT = 7,
+	};
+	enum StoppedReasons {
+		NO_REASON = 0,
+		TRAFFIC = 1,
+		STOPPED_TRAFFIC = 2,
+		PERSON_IN_WAY = 3,
+		END_OF_RAIL = 4,
+		INTERSECTION_FULL = 5,
+	};
+	enum RailTileOffsets {
+		RL_CENTOFF = 0,
+		RL_EDGEOFF = 131072,
+	};
+	enum /* __unnamed */ {
+		COLLISION_SPACE = 655360,
+		RAIL_SPEED = 5898240,
+		RAIL_SLOWDOWN_FACTOR = 131072,
+		SPEED_VARIANCE = 262144,
+		MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
+		MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
+		MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
+	};
+	enum flagEnums {
+		INITIALIZED = 0,
+		PLACED = 1,
+		TURNING = 2,
+		IN_INTERSECTION = 3,
+		MAKING_UTURN = 4,
+		AT_DEAD_END = 5,
+		CRASH_WHEN_READY = 6,
+		CRASHING = 7,
+		ON_RESCUE = 8,
+		NUMBER_OF_FLAGS = 9,
+	};
 private:
 	static struct Point2d lastScannedLocation;
 	static class TrainClass lsTrain;
@@ -226,62 +226,62 @@ public:
 
 // Type: class TrainClass (forward reference);
 class TrainClass{
-		enum /* __unnamed */ {
-			TRAIN_TYPES = 1,
-			PERCENTAGE_OF_TRAIN1 = 100,
-			TOTAL_PERCENTAGE = 100,
-		};
-		enum /* __unnamed */ {
-			NO_X_POSITION = -1,
-			STARTING_X = 3,
-			ENDING_X = 125,
-			NO_Y_POSITION = -1,
-			STARTING_Y = 3,
-			ENDING_Y = 125,
-		};
-		enum IntersectionTypes {
-			DEAD_END = 0,
-			STRAIGHT_AHEAD = 1,
-			LEFT_ONLY = 2,
-			RIGHT_ONLY = 4,
-			LEFT_OR_STRAIGHT = 3,
-			LEFT_OR_RIGHT = 6,
-			RIGHT_OR_STRAIGHT = 5,
-			LEFT_STRAIGHT_OR_RIGHT = 7,
-		};
-		enum StoppedReasons {
-			NO_REASON = 0,
-			TRAFFIC = 1,
-			STOPPED_TRAFFIC = 2,
-			PERSON_IN_WAY = 3,
-			END_OF_RAIL = 4,
-			INTERSECTION_FULL = 5,
-		};
-		enum RailTileOffsets {
-			RL_CENTOFF = 0,
-			RL_EDGEOFF = 131072,
-		};
-		enum /* __unnamed */ {
-			COLLISION_SPACE = 655360,
-			RAIL_SPEED = 5898240,
-			RAIL_SLOWDOWN_FACTOR = 131072,
-			SPEED_VARIANCE = 262144,
-			MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
-			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
-			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
-		};
-		enum flagEnums {
-			INITIALIZED = 0,
-			PLACED = 1,
-			TURNING = 2,
-			IN_INTERSECTION = 3,
-			MAKING_UTURN = 4,
-			AT_DEAD_END = 5,
-			CRASH_WHEN_READY = 6,
-			CRASHING = 7,
-			ON_RESCUE = 8,
-			NUMBER_OF_FLAGS = 9,
-		};
+	enum /* __unnamed */ {
+		TRAIN_TYPES = 1,
+		PERCENTAGE_OF_TRAIN1 = 100,
+		TOTAL_PERCENTAGE = 100,
+	};
+	enum /* __unnamed */ {
+		NO_X_POSITION = -1,
+		STARTING_X = 3,
+		ENDING_X = 125,
+		NO_Y_POSITION = -1,
+		STARTING_Y = 3,
+		ENDING_Y = 125,
+	};
+	enum IntersectionTypes {
+		DEAD_END = 0,
+		STRAIGHT_AHEAD = 1,
+		LEFT_ONLY = 2,
+		RIGHT_ONLY = 4,
+		LEFT_OR_STRAIGHT = 3,
+		LEFT_OR_RIGHT = 6,
+		RIGHT_OR_STRAIGHT = 5,
+		LEFT_STRAIGHT_OR_RIGHT = 7,
+	};
+	enum StoppedReasons {
+		NO_REASON = 0,
+		TRAFFIC = 1,
+		STOPPED_TRAFFIC = 2,
+		PERSON_IN_WAY = 3,
+		END_OF_RAIL = 4,
+		INTERSECTION_FULL = 5,
+	};
+	enum RailTileOffsets {
+		RL_CENTOFF = 0,
+		RL_EDGEOFF = 131072,
+	};
+	enum /* __unnamed */ {
+		COLLISION_SPACE = 655360,
+		RAIL_SPEED = 5898240,
+		RAIL_SLOWDOWN_FACTOR = 131072,
+		SPEED_VARIANCE = 262144,
+		MAX_TIME_TO_WAIT_FOR_TRAFFIC = 1310720,
+		MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
+		MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
+	};
+	enum flagEnums {
+		INITIALIZED = 0,
+		PLACED = 1,
+		TURNING = 2,
+		IN_INTERSECTION = 3,
+		MAKING_UTURN = 4,
+		AT_DEAD_END = 5,
+		CRASH_WHEN_READY = 6,
+		CRASHING = 7,
+		ON_RESCUE = 8,
+		NUMBER_OF_FLAGS = 9,
+	};
 private:
 	static struct Point2d lastScannedLocation;
 	static class TrainClass lsTrain;
@@ -465,14 +465,14 @@ struct _MISSION_PARMS{
 // Type: int32_t[4][4];
 
 // Type: enum TrainClass::StoppedReasons;
-	enum StoppedReasons {
-		NO_REASON = 0,
-		TRAFFIC = 1,
-		STOPPED_TRAFFIC = 2,
-		PERSON_IN_WAY = 3,
-		END_OF_RAIL = 4,
-		INTERSECTION_FULL = 5,
-	};
+enum StoppedReasons {
+	NO_REASON = 0,
+	TRAFFIC = 1,
+	STOPPED_TRAFFIC = 2,
+	PERSON_IN_WAY = 3,
+	END_OF_RAIL = 4,
+	INTERSECTION_FULL = 5,
+};
 
 // Type: struct Point2d (forward reference);
 // Point2d Class implementation not found
@@ -486,34 +486,34 @@ struct _MISSION_PARMS{
 // _DYOBJ_INST Class implementation not found
 
 // Type: enum TrainClass::IntersectionTypes;
-	enum IntersectionTypes {
-		DEAD_END = 0,
-		STRAIGHT_AHEAD = 1,
-		LEFT_ONLY = 2,
-		RIGHT_ONLY = 4,
-		LEFT_OR_STRAIGHT = 3,
-		LEFT_OR_RIGHT = 6,
-		RIGHT_OR_STRAIGHT = 5,
-		LEFT_STRAIGHT_OR_RIGHT = 7,
-	};
+enum IntersectionTypes {
+	DEAD_END = 0,
+	STRAIGHT_AHEAD = 1,
+	LEFT_ONLY = 2,
+	RIGHT_ONLY = 4,
+	LEFT_OR_STRAIGHT = 3,
+	LEFT_OR_RIGHT = 6,
+	RIGHT_OR_STRAIGHT = 5,
+	LEFT_STRAIGHT_OR_RIGHT = 7,
+};
 
 // Type: enum DirectionTypes;
-	enum DirectionTypes {
-		NO_DIRECTION = 0,
-		NORTH = 1,
-		EAST = 2,
-		SOUTH = 4,
-		WEST = 8,
-		RISING = 16,
-		RISING_NORTH = 17,
-		RISING_SOUTH = 20,
-		RISING_EAST = 18,
-		RISING_WEST = 24,
-		NORTH_EAST = 3,
-		SOUTH_EAST = 6,
-		SOUTH_WEST = 12,
-		NORTH_WEST = 9,
-	};
+enum DirectionTypes {
+	NO_DIRECTION = 0,
+	NORTH = 1,
+	EAST = 2,
+	SOUTH = 4,
+	WEST = 8,
+	RISING = 16,
+	RISING_NORTH = 17,
+	RISING_SOUTH = 20,
+	RISING_EAST = 18,
+	RISING_WEST = 24,
+	NORTH_EAST = 3,
+	SOUTH_EAST = 6,
+	SOUTH_WEST = 12,
+	NORTH_WEST = 9,
+};
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{

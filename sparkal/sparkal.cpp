@@ -23,14 +23,14 @@ public:
 	unsigned long ResetFlag(unsigned long);
 	int32_t GetRuntimePlatform();
 	int32_t DecideRuntimePlatform();
-		enum PlatfromType {
-			Unknown = 0,
-			Win32s = 1,
-			WinNT31 = 2,
-			WinNT35 = 3,
-			Win95 = 4,
-			MacSystem7 = 5,
-		};
+	enum PlatfromType {
+		Unknown = 0,
+		Win32s = 1,
+		WinNT31 = 2,
+		WinNT35 = 3,
+		Win95 = 4,
+		MacSystem7 = 5,
+	};
 protected:
 	struct SparkalColor* mpColorTable;
 	int32_t _mRuntimePlatform;
@@ -51,11 +51,11 @@ protected:
 
 // Type: class MTimer;
 class MTimer{
-		enum TimerResolution {
-			nTimerResolutionMicroseconds = 0,
-			nTimerResolutionMilliseconds = 1,
-			nTimerResolutionSeconds = 2,
-		};
+	enum TimerResolution {
+		nTimerResolutionMicroseconds = 0,
+		nTimerResolutionMilliseconds = 1,
+		nTimerResolutionSeconds = 2,
+	};
 public:
 	void MTimer(enum MTimer::TimerResolution);
 	void ~MTimer();

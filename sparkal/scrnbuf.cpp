@@ -71,10 +71,10 @@ struct SparkalColor{
 // Type: int32_t;
 
 // Type: enum tagModeType;
-	enum tagModeType {
-		nModeTypeFullScreen = 0,
-		nModeTypeWindowed = 1,
-	};
+enum tagModeType {
+	nModeTypeFullScreen = 0,
+	nModeTypeWindowed = 1,
+};
 
 // Type: struct _DDSCAPS;
 struct _DDSCAPS{

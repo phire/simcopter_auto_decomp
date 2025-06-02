@@ -4,9 +4,9 @@
 
 // Type: class FlatFile (forward reference);
 class FlatFile{
-		enum /* __unnamed */ {
-			kMaxNameLen = 255,
-		};
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
 protected:
 	class FlatFile* fNext;
 	unsigned char fName[256];

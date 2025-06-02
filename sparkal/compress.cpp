@@ -166,44 +166,44 @@ protected:
 
 // Type: class ios;
 class ios{
-		enum io_state {
-			goodbit = 0,
-			eofbit = 1,
-			failbit = 2,
-			badbit = 4,
-		};
-		enum open_mode {
-			in = 1,
-			out = 2,
-			ate = 4,
-			app = 8,
-			trunc = 16,
-			nocreate = 32,
-			noreplace = 64,
-			binary = 128,
-		};
-		enum seek_dir {
-			beg = 0,
-			cur = 1,
-			end = 2,
-		};
-		enum /* __unnamed */ {
-			skipws = 1,
-			left = 2,
-			right = 4,
-			internal = 8,
-			dec = 16,
-			oct = 32,
-			hex = 64,
-			showbase = 128,
-			showpoint = 256,
-			uppercase = 512,
-			showpos = 1024,
-			scientific = 2048,
-			fixed = 4096,
-			unitbuf = 8192,
-			stdio = 16384,
-		};
+	enum io_state {
+		goodbit = 0,
+		eofbit = 1,
+		failbit = 2,
+		badbit = 4,
+	};
+	enum open_mode {
+		in = 1,
+		out = 2,
+		ate = 4,
+		app = 8,
+		trunc = 16,
+		nocreate = 32,
+		noreplace = 64,
+		binary = 128,
+	};
+	enum seek_dir {
+		beg = 0,
+		cur = 1,
+		end = 2,
+	};
+	enum /* __unnamed */ {
+		skipws = 1,
+		left = 2,
+		right = 4,
+		internal = 8,
+		dec = 16,
+		oct = 32,
+		hex = 64,
+		showbase = 128,
+		showpoint = 256,
+		uppercase = 512,
+		showpos = 1024,
+		scientific = 2048,
+		fixed = 4096,
+		unitbuf = 8192,
+		stdio = 16384,
+	};
 public:
 	static const long basefield;
 	static const long adjustfield;
@@ -260,10 +260,10 @@ public:
 protected:
 	class ios& operator=(const class ios&);
 	void init(class streambuf*);
-		enum /* __unnamed */ {
-			skipping = 0,
-			tied = 1,
-		};
+	enum /* __unnamed */ {
+		skipping = 0,
+		tied = 1,
+	};
 protected:
 	class streambuf* bp;
 	int32_t state;

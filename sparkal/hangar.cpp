@@ -70,11 +70,11 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();

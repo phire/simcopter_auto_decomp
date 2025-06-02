@@ -54,11 +54,11 @@ public:
 class cYObject : public TreeSim, public YObjLang
 {
 	using DataType = short;
-		enum /* __unnamed */ {
-			kNumData = 48,
-			kNumTemp = 8,
-			kNumPointers = 4,
-		};
+	enum /* __unnamed */ {
+		kNumData = 48,
+		kNumTemp = 8,
+		kNumPointers = 4,
+	};
 	struct cYObject::ObjDefHeader{
 		long version;
 		short stackSize;
@@ -74,26 +74,26 @@ class cYObject : public TreeSim, public YObjLang
 		short blue;
 		short _padding2;
 	};
-		enum MoveErrorCode {
-			kMoveError = -1,
-			kMoveSuccess = 0,
-			kMoveFailTooHigh = 1,
-			kMoveFailTooLow = 2,
-			kMoveFailNonNeutralTerritory = 3,
-			kMoveFailDynObjGeneric = 4,
-			kMoveFailDynObjPerson = 5,
-			kMoveFailOutOfDynObjRect = 6,
-			kMoveFailNoSpeed = 7,
-			kMoveFailFinishedMoving = 8,
-			kMoveFailStaticObj = 9,
-			kMoveFailStackObject = 10,
-			kMoveFailUnwalkableLoctype = 11,
-			kMoveFailOutOfRoad = 12,
-		};
-		enum ObjectType {
-			kPerson = 0,
-			kNumObjectTypes = 1,
-		};
+	enum MoveErrorCode {
+		kMoveError = -1,
+		kMoveSuccess = 0,
+		kMoveFailTooHigh = 1,
+		kMoveFailTooLow = 2,
+		kMoveFailNonNeutralTerritory = 3,
+		kMoveFailDynObjGeneric = 4,
+		kMoveFailDynObjPerson = 5,
+		kMoveFailOutOfDynObjRect = 6,
+		kMoveFailNoSpeed = 7,
+		kMoveFailFinishedMoving = 8,
+		kMoveFailStaticObj = 9,
+		kMoveFailStackObject = 10,
+		kMoveFailUnwalkableLoctype = 11,
+		kMoveFailOutOfRoad = 12,
+	};
+	enum ObjectType {
+		kPerson = 0,
+		kNumObjectTypes = 1,
+	};
 public:
 	static short sStackSize[1];
 	void SetToLoc(struct _DYOBJ_INST*);
@@ -101,42 +101,42 @@ public:
 	short GetTree();
 	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
 	void Die();
-		enum MissionUpdates {
-			kPickedUp = 0,
-			kOuttaHere = 1,
-			kReportNewPickupLocation = 2,
-			kJoinedRiot = 3,
-			kDrivenFromRiot = 4,
-			kLeftRiotOfOwnVolition = 5,
-			kReportNewLocation = 6,
-			kMedVicToted = 7,
-			kMedVicPickedUp = 8,
-			kPersonCaught = 9,
-		};
-		enum Checks {
-			kHeliLanded = 0,
-			kHeliLow = 1,
-			kMasterObjectLow = 2,
-			kMasterObjectMovingSlowly = 3,
-			kStackObjectLow = 4,
-		};
-		enum CompareMyLocWith {
-			kMissionDestLoc = 0,
-			kStackPointer = 1,
-			kHeli = 2,
-			kBucket = 3,
-			kLastHitter = 4,
-			kClosestMedevacVictim = 5,
-			kClosestCriminal = 6,
-			k_pad_MotherShipLoc = 7,
-			kClosestCop = 8,
-			kAvatarClose = 9,
-			kClosestAmbulance = 10,
-			kClosestCopCar = 11,
-			kClosestFiretruck = 12,
-			kClosestCriminalCar = 13,
-			kClosestAmbient = 14,
-		};
+	enum MissionUpdates {
+		kPickedUp = 0,
+		kOuttaHere = 1,
+		kReportNewPickupLocation = 2,
+		kJoinedRiot = 3,
+		kDrivenFromRiot = 4,
+		kLeftRiotOfOwnVolition = 5,
+		kReportNewLocation = 6,
+		kMedVicToted = 7,
+		kMedVicPickedUp = 8,
+		kPersonCaught = 9,
+	};
+	enum Checks {
+		kHeliLanded = 0,
+		kHeliLow = 1,
+		kMasterObjectLow = 2,
+		kMasterObjectMovingSlowly = 3,
+		kStackObjectLow = 4,
+	};
+	enum CompareMyLocWith {
+		kMissionDestLoc = 0,
+		kStackPointer = 1,
+		kHeli = 2,
+		kBucket = 3,
+		kLastHitter = 4,
+		kClosestMedevacVictim = 5,
+		kClosestCriminal = 6,
+		k_pad_MotherShipLoc = 7,
+		kClosestCop = 8,
+		kAvatarClose = 9,
+		kClosestAmbulance = 10,
+		kClosestCopCar = 11,
+		kClosestFiretruck = 12,
+		kClosestCriminalCar = 13,
+		kClosestAmbient = 14,
+	};
 public:
 	short * GetLocalVar(short);
 	// calltype: NearC
@@ -166,32 +166,32 @@ public:
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
 	long fLastInterrupt;
-		enum LocationType {
-			kOutOfCity = -1,
-			kLocNoInfo = 0,
-			kLocUnknown = 1,
-			kNothing = 2,
-			kForest = 3,
-			kRubble = 4,
-			kSmallPark = 5,
-			kWireStuff = 6,
-			kCarRoad = 7,
-			kCarBridge = 8,
-			kTrainTrack = 9,
-			kDomestic = 10,
-			kCommercial = 11,
-			kWhiteCollarBusiness = 12,
-			kBlueCollarBusiness = 13,
-			kNumLocTypes = 14,
-		};
+	enum LocationType {
+		kOutOfCity = -1,
+		kLocNoInfo = 0,
+		kLocUnknown = 1,
+		kNothing = 2,
+		kForest = 3,
+		kRubble = 4,
+		kSmallPark = 5,
+		kWireStuff = 6,
+		kCarRoad = 7,
+		kCarBridge = 8,
+		kTrainTrack = 9,
+		kDomestic = 10,
+		kCommercial = 11,
+		kWhiteCollarBusiness = 12,
+		kBlueCollarBusiness = 13,
+		kNumLocTypes = 14,
+	};
 public:
 	static enum cYObject::LocationType sLocType[256];
-		enum SearchType {
-			kSearchEdgeGround = 0,
-			kSearchAnywhereGround = 1,
-			kSearchRoof = 2,
-			kSearchAnywhereAtAll = 3,
-		};
+	enum SearchType {
+		kSearchEdgeGround = 0,
+		kSearchAnywhereGround = 1,
+		kSearchRoof = 2,
+		kSearchAnywhereAtAll = 3,
+	};
 	struct cYObject::LocationInfo{
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
@@ -362,43 +362,43 @@ public:
 	short _pad2;
 	short fDirInc;
 	struct cYObject::ObjDefHeader fDefinition;
-		enum /* __unnamed */ {
-			kMasterObject = 0,
-			kLastHitterObject = 1,
-		};
-		enum /* __unnamed */ {
-			kDirection = 0,
-			kAwake = 1,
-			kHeightCanJump = 2,
-			kPersonType = 3,
-			kMissionType = 4,
-			kMissionSupertype = 5,
-			kAnimFrame = 6,
-			kObjectID = 7,
-			kRiotVal = 8,
-			kVisible = 9,
-			kLastRiotVal = 10,
-			kNearMedFar = 11,
-			kLastHitterMsg = 12,
-			kMegaphoneMessage = 13,
-			kInRxnTree = 14,
-			kDead = 15,
-			kColorIndexShift = 16,
-			kDynAnim = 17,
-			kSpeed = 18,
-			kOnlyOnRoad = 19,
-			kMoveOnlyNeutrally = 20,
-			kMoveNoMatterWhat = 21,
-			kSpecificToScurkID = 22,
-			kCaptured = 23,
-			kStartingObject = 24,
-			kSoundChannel = 25,
-			kCurrentSound = 26,
-			kDynSound = 27,
-			kSoundFrequencyAdj = 28,
-			kInitBhav = 29,
-			kLastRxnTree = 30,
-		};
+	enum /* __unnamed */ {
+		kMasterObject = 0,
+		kLastHitterObject = 1,
+	};
+	enum /* __unnamed */ {
+		kDirection = 0,
+		kAwake = 1,
+		kHeightCanJump = 2,
+		kPersonType = 3,
+		kMissionType = 4,
+		kMissionSupertype = 5,
+		kAnimFrame = 6,
+		kObjectID = 7,
+		kRiotVal = 8,
+		kVisible = 9,
+		kLastRiotVal = 10,
+		kNearMedFar = 11,
+		kLastHitterMsg = 12,
+		kMegaphoneMessage = 13,
+		kInRxnTree = 14,
+		kDead = 15,
+		kColorIndexShift = 16,
+		kDynAnim = 17,
+		kSpeed = 18,
+		kOnlyOnRoad = 19,
+		kMoveOnlyNeutrally = 20,
+		kMoveNoMatterWhat = 21,
+		kSpecificToScurkID = 22,
+		kCaptured = 23,
+		kStartingObject = 24,
+		kSoundChannel = 25,
+		kCurrentSound = 26,
+		kDynSound = 27,
+		kSoundFrequencyAdj = 28,
+		kInitBhav = 29,
+		kLastRxnTree = 30,
+	};
 protected:
 	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
 	// vtable: 16
@@ -419,27 +419,27 @@ public:
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
 	static char GetRoadDir(struct Point3d);
-		enum SoundNum {
-			kSNone = -1,
-			kSAssertion = 1,
-			kSDunno = 2,
-			kSHoHum = 3,
-			kSQuery = 4,
-			kSSad = 5,
-			kSTitter = 6,
-			kSYouGoGirl = 7,
-			kSGrunt = 8,
-			kSWhoa = 9,
-			kSHey = 10,
-			kSHiThere = 11,
-			kSAaah = 12,
-			kSAck = 13,
-			kSFeet = 14,
-			kSYrUnderArrest = 15,
-			kSGimmeYrCash = 16,
-			kSSinisterChuckle = 17,
-			kSSayYrKindaHot = 18,
-		};
+	enum SoundNum {
+		kSNone = -1,
+		kSAssertion = 1,
+		kSDunno = 2,
+		kSHoHum = 3,
+		kSQuery = 4,
+		kSSad = 5,
+		kSTitter = 6,
+		kSYouGoGirl = 7,
+		kSGrunt = 8,
+		kSWhoa = 9,
+		kSHey = 10,
+		kSHiThere = 11,
+		kSAaah = 12,
+		kSAck = 13,
+		kSFeet = 14,
+		kSYrUnderArrest = 15,
+		kSGimmeYrCash = 16,
+		kSSinisterChuckle = 17,
+		kSSayYrKindaHot = 18,
+	};
 public:
 	// calltype: NearC
 	static short DistributeSoundChannels(short, short);
@@ -737,91 +737,91 @@ public:
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler();
-		enum /* __unnamed */ {
-			kIdle = 0,
-			kSetAnim = 1,
-			kAttr = 2,
-			_kWhatsAhead = 3,
-			kWalk = 4,
-			_kRunPad = 5,
-			kSetBody = 6,
-			kRandom = 7,
-			_kGetDirDistToFirst = 8,
-			_kGetDirDistToPerson = 9,
-			_kRoadDir = 10,
-			_kSearchForDyn = 11,
-			kWalkToAndGrabOntoStackObject = 12,
-			kUpdateMyMission = 13,
-			kCheckForTrue = 14,
-			kCompareMyLocWith = 15,
-			kSelfDecommission = 16,
-			kGetOffMasterObject = 17,
-			kTurnTowardsStackObject = 18,
-			kIsThisLocType = 19,
-			kIsThisLocTypeNeutral = 20,
-			kCanJumpOffHere = 21,
-			kCheckForSpotlightInMyCell = 22,
-			kIncrementRiotVal = 23,
-			kGetSurroundingRiotVal = 24,
-			kIsThisScurkID = 25,
-			kGosubToInitbhav = 26,
-			kAdjustRadiusForRiotVal = 27,
-			kJoinRiot = 28,
-			kSetDirection = 29,
-			kThrowProjectile = 30,
-			kTurnFromStackObject = 31,
-			kTurnFromLastHitter = 32,
-			kTurnTowardsLastHitter = 33,
-			kGetOutOfRoadEtc = 34,
-			kGenerateMedevacAndSetSelfAsVictim = 35,
-			kTurnToNearbyFire = 36,
-			kDie = 37,
-			kWalkToStackObject = 38,
-			kPutObjIntoTreeNum = 39,
-			kVisitOz = 40,
-			_kNotUsed = 41,
-			kMakeMyMedevacVictimVisible = 42,
-			kMakeMyMedevacVictimInvisible = 43,
-			kMakeMeMasterOfStackObject = 44,
-			kMakeMyStackObjectVisitOz = 45,
-			kPutTotedMedVicOnStackObject = 46,
-			kTakeAnyMedVicOffStackObject = 47,
-			kGetOnStackObject = 48,
-			kUpdateStackVictimToted = 49,
-			kGetNumSpacesOnStackObject = 50,
-			kDropToted = 51,
-			kUpdateStackVictimPickedUp = 52,
-			kCloseToHeli = 53,
-			kSetMyExpression = 54,
-			kGetHeliSpeedPlusDamage = 55,
-			kIsThisCellSafe = 56,
-			kPlaySound = 57,
-			kGetOnHeliIfHarnessRaised = 58,
-			kAmIOnHeli = 59,
-			kThrowFieryProjectile = 60,
-			kTellStartingObjectTrueOrFalse = 61,
-			kPutMyCarInStack = 62,
-			kDoIHaveAMaster = 63,
-			kNumPrimitives = 64,
-		};
+	enum /* __unnamed */ {
+		kIdle = 0,
+		kSetAnim = 1,
+		kAttr = 2,
+		_kWhatsAhead = 3,
+		kWalk = 4,
+		_kRunPad = 5,
+		kSetBody = 6,
+		kRandom = 7,
+		_kGetDirDistToFirst = 8,
+		_kGetDirDistToPerson = 9,
+		_kRoadDir = 10,
+		_kSearchForDyn = 11,
+		kWalkToAndGrabOntoStackObject = 12,
+		kUpdateMyMission = 13,
+		kCheckForTrue = 14,
+		kCompareMyLocWith = 15,
+		kSelfDecommission = 16,
+		kGetOffMasterObject = 17,
+		kTurnTowardsStackObject = 18,
+		kIsThisLocType = 19,
+		kIsThisLocTypeNeutral = 20,
+		kCanJumpOffHere = 21,
+		kCheckForSpotlightInMyCell = 22,
+		kIncrementRiotVal = 23,
+		kGetSurroundingRiotVal = 24,
+		kIsThisScurkID = 25,
+		kGosubToInitbhav = 26,
+		kAdjustRadiusForRiotVal = 27,
+		kJoinRiot = 28,
+		kSetDirection = 29,
+		kThrowProjectile = 30,
+		kTurnFromStackObject = 31,
+		kTurnFromLastHitter = 32,
+		kTurnTowardsLastHitter = 33,
+		kGetOutOfRoadEtc = 34,
+		kGenerateMedevacAndSetSelfAsVictim = 35,
+		kTurnToNearbyFire = 36,
+		kDie = 37,
+		kWalkToStackObject = 38,
+		kPutObjIntoTreeNum = 39,
+		kVisitOz = 40,
+		_kNotUsed = 41,
+		kMakeMyMedevacVictimVisible = 42,
+		kMakeMyMedevacVictimInvisible = 43,
+		kMakeMeMasterOfStackObject = 44,
+		kMakeMyStackObjectVisitOz = 45,
+		kPutTotedMedVicOnStackObject = 46,
+		kTakeAnyMedVicOffStackObject = 47,
+		kGetOnStackObject = 48,
+		kUpdateStackVictimToted = 49,
+		kGetNumSpacesOnStackObject = 50,
+		kDropToted = 51,
+		kUpdateStackVictimPickedUp = 52,
+		kCloseToHeli = 53,
+		kSetMyExpression = 54,
+		kGetHeliSpeedPlusDamage = 55,
+		kIsThisCellSafe = 56,
+		kPlaySound = 57,
+		kGetOnHeliIfHarnessRaised = 58,
+		kAmIOnHeli = 59,
+		kThrowFieryProjectile = 60,
+		kTellStartingObjectTrueOrFalse = 61,
+		kPutMyCarInStack = 62,
+		kDoIHaveAMaster = 63,
+		kNumPrimitives = 64,
+	};
 public:
 	virtual short CountPrimitives();
-		enum /* __unnamed */ {
-			kMyself = 0,
-			kTreeParam = 1,
-			kTargetObj = 2,
-			kMyData = 3,
-			kTreeParamData = 4,
-			kTargetObjData = 5,
-			kSimGlobals = 6,
-			kImmediate = 7,
-			kTempVars = 8,
-			kStackVars = 9,
-			kStackObject = 10,
-			kTempTempVars = 11,
-			kTreeTableValue = 12,
-			kNumOwners = 13,
-		};
+	enum /* __unnamed */ {
+		kMyself = 0,
+		kTreeParam = 1,
+		kTargetObj = 2,
+		kMyData = 3,
+		kTreeParamData = 4,
+		kTargetObjData = 5,
+		kSimGlobals = 6,
+		kImmediate = 7,
+		kTempVars = 8,
+		kStackVars = 9,
+		kStackObject = 10,
+		kTempTempVars = 11,
+		kTreeTableValue = 12,
+		kNumOwners = 13,
+	};
 	struct YObjLang::OwnerDataParam{
 		short owner1;
 		short data1;
@@ -949,20 +949,20 @@ public:
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 rhsOwner;
 	};
-		enum /* __unnamed */ {
-			kGreaterThan = 0,
-			kLessThan = 1,
-			kEquals = 2,
-			kIncrement = 3,
-			kDecrement = 4,
-			kSetValue = 5,
-			kTimesEq = 6,
-			kDivideEq = 7,
-			kIsFlagSet = 8,
-			kSetFlag = 9,
-			kClearFlag = 10,
-			kNumOps = 11,
-		};
+	enum /* __unnamed */ {
+		kGreaterThan = 0,
+		kLessThan = 1,
+		kEquals = 2,
+		kIncrement = 3,
+		kDecrement = 4,
+		kSetValue = 5,
+		kTimesEq = 6,
+		kDivideEq = 7,
+		kIsFlagSet = 8,
+		kSetFlag = 9,
+		kClearFlag = 10,
+		kNumOps = 11,
+	};
 	struct YObjLang::MiscParam{
 		short m1;
 		short m2;
@@ -971,74 +971,74 @@ public:
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// union YObjLang::Param Param
-		enum TreeNum {
-			kNoTree = -1,
-			kSpotlightTree = 900,
-			kMegaphoneTree = 901,
-			kOuchTree = 902,
-			kDieTree = 903,
-			kRunTree = 904,
-			kRunOrSwoonTree = 905,
-			kSwoonTree = 906,
-		};
-		enum /* __unnamed */ {
-			kWeightStringsID = 140,
-			kPrimitiveStringsID = 139,
-			kDataLabelsID = 129,
-			kDataBase = 1,
-			kGlobalBase = 33,
-			kOwnerStringsID = 132,
-			kNewOwnerBase = 1,
-			kMacroDescriptionStrings = 133,
-			kPrimMacroBase = 1,
-			kMotiveStringsID = 134,
-			kMiscStringsID = 135,
-			kDontCare = 1,
-			kSaveChanges = 2,
-			kMaxEntryLabel = 3,
-			kBehStringsID = 128,
-			kPrimBase = 1,
-			kOwnerBase = 33,
-			kGosubStr = 65,
-			kOpenParen = 66,
-			kForType = 67,
-			kRadius = 68,
-			kFromZeroTo = 69,
-			kInto = 70,
-			kDistance = 71,
-			kStack = 72,
-			kUseTempVars = 73,
-			kCloseParen = 74,
-			kTreetemp = 75,
-			kObjtemp = 76,
-			kThisObj = 77,
-			kAlertType = 78,
-			kCheckTreeID = 79,
-			kActionTreeID = 80,
-			kForAction = 81,
-			kEqualStr = 82,
-			kTree = 83,
-			kRate = 84,
-			kTo = 85,
-			kForNeed = 86,
-			kSel = 87,
-			kPairAction = 88,
-			kToCheck = 89,
-			kSet = 90,
-			kToNeed = 91,
-			kUpdateNeed = 92,
-			kToIndex = 93,
-			kCheck = 94,
-			kAct = 95,
-			kUntil = 96,
-			kNot = 97,
-			kClear = 98,
-			kFor = 99,
-			kByAmount = 100,
-			kOpBase = 117,
-			kTypeBase = 143,
-			kBaseTreeBase = 164,
-		};
+	enum TreeNum {
+		kNoTree = -1,
+		kSpotlightTree = 900,
+		kMegaphoneTree = 901,
+		kOuchTree = 902,
+		kDieTree = 903,
+		kRunTree = 904,
+		kRunOrSwoonTree = 905,
+		kSwoonTree = 906,
+	};
+	enum /* __unnamed */ {
+		kWeightStringsID = 140,
+		kPrimitiveStringsID = 139,
+		kDataLabelsID = 129,
+		kDataBase = 1,
+		kGlobalBase = 33,
+		kOwnerStringsID = 132,
+		kNewOwnerBase = 1,
+		kMacroDescriptionStrings = 133,
+		kPrimMacroBase = 1,
+		kMotiveStringsID = 134,
+		kMiscStringsID = 135,
+		kDontCare = 1,
+		kSaveChanges = 2,
+		kMaxEntryLabel = 3,
+		kBehStringsID = 128,
+		kPrimBase = 1,
+		kOwnerBase = 33,
+		kGosubStr = 65,
+		kOpenParen = 66,
+		kForType = 67,
+		kRadius = 68,
+		kFromZeroTo = 69,
+		kInto = 70,
+		kDistance = 71,
+		kStack = 72,
+		kUseTempVars = 73,
+		kCloseParen = 74,
+		kTreetemp = 75,
+		kObjtemp = 76,
+		kThisObj = 77,
+		kAlertType = 78,
+		kCheckTreeID = 79,
+		kActionTreeID = 80,
+		kForAction = 81,
+		kEqualStr = 82,
+		kTree = 83,
+		kRate = 84,
+		kTo = 85,
+		kForNeed = 86,
+		kSel = 87,
+		kPairAction = 88,
+		kToCheck = 89,
+		kSet = 90,
+		kToNeed = 91,
+		kUpdateNeed = 92,
+		kToIndex = 93,
+		kCheck = 94,
+		kAct = 95,
+		kUntil = 96,
+		kNot = 97,
+		kClear = 98,
+		kFor = 99,
+		kByAmount = 100,
+		kOpBase = 117,
+		kTypeBase = 143,
+		kBaseTreeBase = 164,
+	};
 };
 
 // Type: class Behavior (forward reference);
@@ -1050,23 +1050,23 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum /* __unnamed */ {
-			kPrimitiveBase = 0,
-			kPrimitiveMax = 255,
-			kActionBase = 256,
-			kGlobalBase = 256,
-			kGlobalMax = 4095,
-			kPrivateBase = 4096,
-			kPrivateMax = 8191,
-			kSemiGlobalBase = 8192,
-			kSemiGlobalMax = 30000,
-			kTreeMax = 30000,
-			kPrimitives = 0,
-			kGlobalTrees = 1,
-			kPrivateTrees = 2,
-			kSemiGlobalTrees = 3,
-			kMaxTreeClass = 3,
-		};
+	enum /* __unnamed */ {
+		kPrimitiveBase = 0,
+		kPrimitiveMax = 255,
+		kActionBase = 256,
+		kGlobalBase = 256,
+		kGlobalMax = 4095,
+		kPrivateBase = 4096,
+		kPrivateMax = 8191,
+		kSemiGlobalBase = 8192,
+		kSemiGlobalMax = 30000,
+		kTreeMax = 30000,
+		kPrimitives = 0,
+		kGlobalTrees = 1,
+		kPrivateTrees = 2,
+		kSemiGlobalTrees = 3,
+		kMaxTreeClass = 3,
+	};
 	struct Behavior::NodeParameter{
 		short p1;
 		short p2;
@@ -1080,11 +1080,11 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum /* __unnamed */ {
-			kUndefined = -3,
-			kPopOutTrue = -2,
-			kPopOutFalse = -1,
-		};
+	enum /* __unnamed */ {
+		kUndefined = -3,
+		kPopOutTrue = -2,
+		kPopOutFalse = -1,
+	};
 	struct Behavior::Tree{
 		short numNodes;
 		struct Behavior::Node nodes[1];
@@ -1130,11 +1130,11 @@ public:
 
 // Type: class MTimer;
 class MTimer{
-		enum TimerResolution {
-			nTimerResolutionMicroseconds = 0,
-			nTimerResolutionMilliseconds = 1,
-			nTimerResolutionSeconds = 2,
-		};
+	enum TimerResolution {
+		nTimerResolutionMicroseconds = 0,
+		nTimerResolutionMilliseconds = 1,
+		nTimerResolutionSeconds = 2,
+	};
 public:
 	void MTimer(enum MTimer::TimerResolution);
 	void ~MTimer();
@@ -1176,32 +1176,32 @@ struct Point3d{
 // _CELL_INFO Class implementation not found
 
 // Type: enum cYObject::SearchType;
-	enum SearchType {
-		kSearchEdgeGround = 0,
-		kSearchAnywhereGround = 1,
-		kSearchRoof = 2,
-		kSearchAnywhereAtAll = 3,
-	};
+enum SearchType {
+	kSearchEdgeGround = 0,
+	kSearchAnywhereGround = 1,
+	kSearchRoof = 2,
+	kSearchAnywhereAtAll = 3,
+};
 
 // Type: enum cYObject::LocationType;
-	enum LocationType {
-		kOutOfCity = -1,
-		kLocNoInfo = 0,
-		kLocUnknown = 1,
-		kNothing = 2,
-		kForest = 3,
-		kRubble = 4,
-		kSmallPark = 5,
-		kWireStuff = 6,
-		kCarRoad = 7,
-		kCarBridge = 8,
-		kTrainTrack = 9,
-		kDomestic = 10,
-		kCommercial = 11,
-		kWhiteCollarBusiness = 12,
-		kBlueCollarBusiness = 13,
-		kNumLocTypes = 14,
-	};
+enum LocationType {
+	kOutOfCity = -1,
+	kLocNoInfo = 0,
+	kLocUnknown = 1,
+	kNothing = 2,
+	kForest = 3,
+	kRubble = 4,
+	kSmallPark = 5,
+	kWireStuff = 6,
+	kCarRoad = 7,
+	kCarBridge = 8,
+	kTrainTrack = 9,
+	kDomestic = 10,
+	kCommercial = 11,
+	kWhiteCollarBusiness = 12,
+	kBlueCollarBusiness = 13,
+	kNumLocTypes = 14,
+};
 
 // Type: char[80];
 
@@ -1216,12 +1216,12 @@ struct cYObject::MoveInfo{
 };
 
 // Type: enum MissionSupertype;
-	enum MissionSupertype {
-		kMissionSupertypeError = -2,
-		kCriminal = 0,
-		kCop = 1,
-		kAmbient = 2,
-	};
+enum MissionSupertype {
+	kMissionSupertypeError = -2,
+	kCriminal = 0,
+	kCop = 1,
+	kAmbient = 2,
+};
 
 // Type: unsigned char;
 
@@ -1232,48 +1232,48 @@ struct cYObject::MoveInfo{
 // _HELI_DATA Class implementation not found
 
 // Type: enum PersonType;
-	enum PersonType {
-		kNoPreferredType = -1,
-		kCountryBlonde = 0,
-		kDominatrix = 1,
-		kNiceWoman1 = 2,
-		kNiceWoman2 = 3,
-		kChild = 4,
-		kQualityAssuranceEngineer = 5,
-		kFatMan = 6,
-		kSovietTractorDriver = 7,
-		kSuit = 8,
-		kShadyCharacter = 9,
-		kGuyInCap = 10,
-		kElectricDog = 11,
-		kParamedicPerson = 12,
-		kFiremanPerson = 13,
-		kCopPerson = 14,
-		kBadGuy = 15,
-		kNessie = 16,
-		kBessie = 17,
-		kNumPersonTypes = 18,
-	};
+enum PersonType {
+	kNoPreferredType = -1,
+	kCountryBlonde = 0,
+	kDominatrix = 1,
+	kNiceWoman1 = 2,
+	kNiceWoman2 = 3,
+	kChild = 4,
+	kQualityAssuranceEngineer = 5,
+	kFatMan = 6,
+	kSovietTractorDriver = 7,
+	kSuit = 8,
+	kShadyCharacter = 9,
+	kGuyInCap = 10,
+	kElectricDog = 11,
+	kParamedicPerson = 12,
+	kFiremanPerson = 13,
+	kCopPerson = 14,
+	kBadGuy = 15,
+	kNessie = 16,
+	kBessie = 17,
+	kNumPersonTypes = 18,
+};
 
 // Type: enum MissionType;
-	enum MissionType {
-		kMissionTypeError = -2,
-		kAmbientNoMission = 0,
-		kOnCapsizedBoat = 1,
-		kOnBurningBuilding = 2,
-		kRioting = 3,
-		kTransport = 4,
-		kMedevacParamedic = 5,
-		kMedevacVictim = 6,
-		kCopAerial = 7,
-		kCopFoot = 8,
-		kFireman = 9,
-		kCrimRobber = 10,
-		kCrimArsonist = 11,
-		kCrimMugger = 12,
-		kCrimCar = 13,
-		kNumMissionTypes = 14,
-	};
+enum MissionType {
+	kMissionTypeError = -2,
+	kAmbientNoMission = 0,
+	kOnCapsizedBoat = 1,
+	kOnBurningBuilding = 2,
+	kRioting = 3,
+	kTransport = 4,
+	kMedevacParamedic = 5,
+	kMedevacVictim = 6,
+	kCopAerial = 7,
+	kCopFoot = 8,
+	kFireman = 9,
+	kCrimRobber = 10,
+	kCrimArsonist = 11,
+	kCrimMugger = 12,
+	kCrimCar = 13,
+	kNumMissionTypes = 14,
+};
 
 // Type: struct _LZ_INFO (forward reference);
 // _LZ_INFO Class implementation not found
@@ -1312,27 +1312,27 @@ struct _MISSION_PARMS{
 };
 
 // Type: enum cYObject::SoundNum;
-	enum SoundNum {
-		kSNone = -1,
-		kSAssertion = 1,
-		kSDunno = 2,
-		kSHoHum = 3,
-		kSQuery = 4,
-		kSSad = 5,
-		kSTitter = 6,
-		kSYouGoGirl = 7,
-		kSGrunt = 8,
-		kSWhoa = 9,
-		kSHey = 10,
-		kSHiThere = 11,
-		kSAaah = 12,
-		kSAck = 13,
-		kSFeet = 14,
-		kSYrUnderArrest = 15,
-		kSGimmeYrCash = 16,
-		kSSinisterChuckle = 17,
-		kSSayYrKindaHot = 18,
-	};
+enum SoundNum {
+	kSNone = -1,
+	kSAssertion = 1,
+	kSDunno = 2,
+	kSHoHum = 3,
+	kSQuery = 4,
+	kSSad = 5,
+	kSTitter = 6,
+	kSYouGoGirl = 7,
+	kSGrunt = 8,
+	kSWhoa = 9,
+	kSHey = 10,
+	kSHiThere = 11,
+	kSAaah = 12,
+	kSAck = 13,
+	kSFeet = 14,
+	kSYrUnderArrest = 15,
+	kSGimmeYrCash = 16,
+	kSSinisterChuckle = 17,
+	kSSayYrKindaHot = 18,
+};
 
 // Type: class DigitalSound (forward reference);
 class DigitalSound : public Sound
@@ -1427,22 +1427,22 @@ struct tagPassengerInfo{
 // cYObject::MoveInfo Class implementation not found
 
 // Type: enum cYObject::MoveErrorCode;
-	enum MoveErrorCode {
-		kMoveError = -1,
-		kMoveSuccess = 0,
-		kMoveFailTooHigh = 1,
-		kMoveFailTooLow = 2,
-		kMoveFailNonNeutralTerritory = 3,
-		kMoveFailDynObjGeneric = 4,
-		kMoveFailDynObjPerson = 5,
-		kMoveFailOutOfDynObjRect = 6,
-		kMoveFailNoSpeed = 7,
-		kMoveFailFinishedMoving = 8,
-		kMoveFailStaticObj = 9,
-		kMoveFailStackObject = 10,
-		kMoveFailUnwalkableLoctype = 11,
-		kMoveFailOutOfRoad = 12,
-	};
+enum MoveErrorCode {
+	kMoveError = -1,
+	kMoveSuccess = 0,
+	kMoveFailTooHigh = 1,
+	kMoveFailTooLow = 2,
+	kMoveFailNonNeutralTerritory = 3,
+	kMoveFailDynObjGeneric = 4,
+	kMoveFailDynObjPerson = 5,
+	kMoveFailOutOfDynObjRect = 6,
+	kMoveFailNoSpeed = 7,
+	kMoveFailFinishedMoving = 8,
+	kMoveFailStaticObj = 9,
+	kMoveFailStackObject = 10,
+	kMoveFailUnwalkableLoctype = 11,
+	kMoveFailOutOfRoad = 12,
+};
 
 // Type: struct Point3D;
 struct Point3D{
@@ -1703,20 +1703,20 @@ struct TreeSim::StackElem{
 // Behavior::Node Class implementation not found
 
 // Type: enum TreeSim::ReturnCode;
-	enum ReturnCode {
-		kTrueComplete = 1,
-		kFalseComplete = 0,
-		kEngaged = 2,
-		kError = -1,
-		kStackLoaded = 3,
-	};
+enum ReturnCode {
+	kTrueComplete = 1,
+	kFalseComplete = 0,
+	kEngaged = 2,
+	kError = -1,
+	kStackLoaded = 3,
+};
 
 // Type: class TreeSim;
 class TreeSim{
-		enum /* __unnamed */ {
-			kNumLocals = 4,
-			kMaxIterations = 128,
-		};
+	enum /* __unnamed */ {
+		kNumLocals = 4,
+		kMaxIterations = 128,
+	};
 	struct TreeSim::StackElem{
 		short treeID;
 		short nodeNum;
@@ -1734,21 +1734,21 @@ private:
 	short fIterations;
 	short _pad;
 	short * fAutoStackArea;
-		enum ReturnCode {
-			kTrueComplete = 1,
-			kFalseComplete = 0,
-			kEngaged = 2,
-			kError = -1,
-			kStackLoaded = 3,
-		};
-		enum /* __unnamed */ {
-			kStackErrorBase = 1000,
-			kStackOverflow = 1000,
-			kUndefinedTransition = 1001,
-			kTooManyIterations = 1002,
-			kStackUnderflow = 1003,
-			kStackErrorMax = 1004,
-		};
+	enum ReturnCode {
+		kTrueComplete = 1,
+		kFalseComplete = 0,
+		kEngaged = 2,
+		kError = -1,
+		kStackLoaded = 3,
+	};
+	enum /* __unnamed */ {
+		kStackErrorBase = 1000,
+		kStackOverflow = 1000,
+		kUndefinedTransition = 1001,
+		kTooManyIterations = 1002,
+		kStackUnderflow = 1003,
+		kStackErrorMax = 1004,
+	};
 protected:
 	// vtable: 0
 	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
@@ -1787,88 +1787,88 @@ public:
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler();
-		enum /* __unnamed */ {
-			kIdle = 0,
-			kSetAnim = 1,
-			kAttr = 2,
-			kWhatsAhead = 3,
-			kWalk = 4,
-			_kRunPad = 5,
-			kSetBody = 6,
-			kRandom = 7,
-			kGetDirDistToFirst = 8,
-			kGetDirDistToPerson = 9,
-			kRoadDir = 10,
-			kSearchForDyn = 11,
-			kWalkToAndGrabOntoStackObject = 12,
-			kUpdateMyMission = 13,
-			kCheckForTrue = 14,
-			kCompareMyLocWith = 15,
-			kSelfDecommission = 16,
-			kGetOffMasterObject = 17,
-			kTurnTowardsStackObject = 18,
-			kIsThisLocType = 19,
-			kIsThisLocTypeNeutral = 20,
-			kCanJumpOffHere = 21,
-			kCheckForSpotlightInMyCell = 22,
-			kIncrementRiotVal = 23,
-			kGetSurroundingRiotVal = 24,
-			kIsThisScurkID = 25,
-			kGosubToInitbhav = 26,
-			kAdjustRadiusForRiotVal = 27,
-			kJoinRiot = 28,
-			kSetDirection = 29,
-			kThrowProjectile = 30,
-			kTurnFromStackObject = 31,
-			kTurnFromLastHitter = 32,
-			kTurnTowardsLastHitter = 33,
-			kGetOutOfRoadEtc = 34,
-			kGenerateMedevacAndSetSelfAsVictim = 35,
-			kTurnToNearbyFire = 36,
-			kDie = 37,
-			kWalkToStackObject = 38,
-			kPutObjIntoTreeNum = 39,
-			kVisitOz = 40,
-			kNotUsed = 41,
-			kMakeMyMedevacVictimVisible = 42,
-			kMakeMyMedevacVictimInvisible = 43,
-			kMakeMeMasterOfStackObject = 44,
-			kMakeMyStackObjectVisitOz = 45,
-			kPutTotedMedVicOnMotherShip = 46,
-			kTakeAnyMedVicOffMotherShip = 47,
-			kGetOnStackObject = 48,
-			kUpdateStackVictimToted = 49,
-			kGetNumSpacesOnMotherShip = 50,
-			kDropToted = 51,
-			kUpdateStackVictimPickedUp = 52,
-			kCloseToHeli = 53,
-			kSetMyExpression = 54,
-			kGetHeliSpeedPlusDamage = 55,
-			kIsThisCellSafe = 56,
-			kPlaySound = 57,
-			kGetOnHeliIfHarnessRaised = 58,
-			kAmIOnMotherShip = 59,
-			kThrowFieryProjectile = 60,
-			kNumPrimitives = 61,
-		};
+	enum /* __unnamed */ {
+		kIdle = 0,
+		kSetAnim = 1,
+		kAttr = 2,
+		kWhatsAhead = 3,
+		kWalk = 4,
+		_kRunPad = 5,
+		kSetBody = 6,
+		kRandom = 7,
+		kGetDirDistToFirst = 8,
+		kGetDirDistToPerson = 9,
+		kRoadDir = 10,
+		kSearchForDyn = 11,
+		kWalkToAndGrabOntoStackObject = 12,
+		kUpdateMyMission = 13,
+		kCheckForTrue = 14,
+		kCompareMyLocWith = 15,
+		kSelfDecommission = 16,
+		kGetOffMasterObject = 17,
+		kTurnTowardsStackObject = 18,
+		kIsThisLocType = 19,
+		kIsThisLocTypeNeutral = 20,
+		kCanJumpOffHere = 21,
+		kCheckForSpotlightInMyCell = 22,
+		kIncrementRiotVal = 23,
+		kGetSurroundingRiotVal = 24,
+		kIsThisScurkID = 25,
+		kGosubToInitbhav = 26,
+		kAdjustRadiusForRiotVal = 27,
+		kJoinRiot = 28,
+		kSetDirection = 29,
+		kThrowProjectile = 30,
+		kTurnFromStackObject = 31,
+		kTurnFromLastHitter = 32,
+		kTurnTowardsLastHitter = 33,
+		kGetOutOfRoadEtc = 34,
+		kGenerateMedevacAndSetSelfAsVictim = 35,
+		kTurnToNearbyFire = 36,
+		kDie = 37,
+		kWalkToStackObject = 38,
+		kPutObjIntoTreeNum = 39,
+		kVisitOz = 40,
+		kNotUsed = 41,
+		kMakeMyMedevacVictimVisible = 42,
+		kMakeMyMedevacVictimInvisible = 43,
+		kMakeMeMasterOfStackObject = 44,
+		kMakeMyStackObjectVisitOz = 45,
+		kPutTotedMedVicOnMotherShip = 46,
+		kTakeAnyMedVicOffMotherShip = 47,
+		kGetOnStackObject = 48,
+		kUpdateStackVictimToted = 49,
+		kGetNumSpacesOnMotherShip = 50,
+		kDropToted = 51,
+		kUpdateStackVictimPickedUp = 52,
+		kCloseToHeli = 53,
+		kSetMyExpression = 54,
+		kGetHeliSpeedPlusDamage = 55,
+		kIsThisCellSafe = 56,
+		kPlaySound = 57,
+		kGetOnHeliIfHarnessRaised = 58,
+		kAmIOnMotherShip = 59,
+		kThrowFieryProjectile = 60,
+		kNumPrimitives = 61,
+	};
 public:
 	virtual short CountPrimitives();
-		enum /* __unnamed */ {
-			kMyself = 0,
-			kTreeParam = 1,
-			kTargetObj = 2,
-			kMyData = 3,
-			kTreeParamData = 4,
-			kTargetObjData = 5,
-			kSimGlobals = 6,
-			kImmediate = 7,
-			kTempVars = 8,
-			kStackVars = 9,
-			kStackObject = 10,
-			kTempTempVars = 11,
-			kTreeTableValue = 12,
-			kNumOwners = 13,
-		};
+	enum /* __unnamed */ {
+		kMyself = 0,
+		kTreeParam = 1,
+		kTargetObj = 2,
+		kMyData = 3,
+		kTreeParamData = 4,
+		kTargetObjData = 5,
+		kSimGlobals = 6,
+		kImmediate = 7,
+		kTempVars = 8,
+		kStackVars = 9,
+		kStackObject = 10,
+		kTempTempVars = 11,
+		kTreeTableValue = 12,
+		kNumOwners = 13,
+	};
 	struct YObjLang::OwnerDataParam{
 		short owner1;
 		short data1;
@@ -1996,20 +1996,20 @@ public:
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 rhsOwner;
 	};
-		enum /* __unnamed */ {
-			kGreaterThan = 0,
-			kLessThan = 1,
-			kEquals = 2,
-			kIncrement = 3,
-			kDecrement = 4,
-			kSetValue = 5,
-			kTimesEq = 6,
-			kDivideEq = 7,
-			kIsFlagSet = 8,
-			kSetFlag = 9,
-			kClearFlag = 10,
-			kNumOps = 11,
-		};
+	enum /* __unnamed */ {
+		kGreaterThan = 0,
+		kLessThan = 1,
+		kEquals = 2,
+		kIncrement = 3,
+		kDecrement = 4,
+		kSetValue = 5,
+		kTimesEq = 6,
+		kDivideEq = 7,
+		kIsFlagSet = 8,
+		kSetFlag = 9,
+		kClearFlag = 10,
+		kNumOps = 11,
+	};
 	struct YObjLang::MiscParam{
 		short m1;
 		short m2;
@@ -2018,74 +2018,74 @@ public:
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// union YObjLang::Param Param
-		enum TreeNum {
-			kNoTree = -1,
-			kSpotlightTree = 900,
-			kMegaphoneTree = 901,
-			kOuchTree = 902,
-			kDieTree = 903,
-			kRunTree = 904,
-			kRunOrSwoonTree = 905,
-			kSwoonTree = 906,
-		};
-		enum /* __unnamed */ {
-			kWeightStringsID = 140,
-			kPrimitiveStringsID = 139,
-			kDataLabelsID = 129,
-			kDataBase = 1,
-			kGlobalBase = 33,
-			kOwnerStringsID = 132,
-			kNewOwnerBase = 1,
-			kMacroDescriptionStrings = 133,
-			kPrimMacroBase = 1,
-			kMotiveStringsID = 134,
-			kMiscStringsID = 135,
-			kDontCare = 1,
-			kSaveChanges = 2,
-			kMaxEntryLabel = 3,
-			kBehStringsID = 128,
-			kPrimBase = 1,
-			kOwnerBase = 33,
-			kGosubStr = 65,
-			kOpenParen = 66,
-			kForType = 67,
-			kRadius = 68,
-			kFromZeroTo = 69,
-			kInto = 70,
-			kDistance = 71,
-			kStack = 72,
-			kUseTempVars = 73,
-			kCloseParen = 74,
-			kTreetemp = 75,
-			kObjtemp = 76,
-			kThisObj = 77,
-			kAlertType = 78,
-			kCheckTreeID = 79,
-			kActionTreeID = 80,
-			kForAction = 81,
-			kEqualStr = 82,
-			kTree = 83,
-			kRate = 84,
-			kTo = 85,
-			kForNeed = 86,
-			kSel = 87,
-			kPairAction = 88,
-			kToCheck = 89,
-			kSet = 90,
-			kToNeed = 91,
-			kUpdateNeed = 92,
-			kToIndex = 93,
-			kCheck = 94,
-			kAct = 95,
-			kUntil = 96,
-			kNot = 97,
-			kClear = 98,
-			kFor = 99,
-			kByAmount = 100,
-			kOpBase = 117,
-			kTypeBase = 143,
-			kBaseTreeBase = 164,
-		};
+	enum TreeNum {
+		kNoTree = -1,
+		kSpotlightTree = 900,
+		kMegaphoneTree = 901,
+		kOuchTree = 902,
+		kDieTree = 903,
+		kRunTree = 904,
+		kRunOrSwoonTree = 905,
+		kSwoonTree = 906,
+	};
+	enum /* __unnamed */ {
+		kWeightStringsID = 140,
+		kPrimitiveStringsID = 139,
+		kDataLabelsID = 129,
+		kDataBase = 1,
+		kGlobalBase = 33,
+		kOwnerStringsID = 132,
+		kNewOwnerBase = 1,
+		kMacroDescriptionStrings = 133,
+		kPrimMacroBase = 1,
+		kMotiveStringsID = 134,
+		kMiscStringsID = 135,
+		kDontCare = 1,
+		kSaveChanges = 2,
+		kMaxEntryLabel = 3,
+		kBehStringsID = 128,
+		kPrimBase = 1,
+		kOwnerBase = 33,
+		kGosubStr = 65,
+		kOpenParen = 66,
+		kForType = 67,
+		kRadius = 68,
+		kFromZeroTo = 69,
+		kInto = 70,
+		kDistance = 71,
+		kStack = 72,
+		kUseTempVars = 73,
+		kCloseParen = 74,
+		kTreetemp = 75,
+		kObjtemp = 76,
+		kThisObj = 77,
+		kAlertType = 78,
+		kCheckTreeID = 79,
+		kActionTreeID = 80,
+		kForAction = 81,
+		kEqualStr = 82,
+		kTree = 83,
+		kRate = 84,
+		kTo = 85,
+		kForNeed = 86,
+		kSel = 87,
+		kPairAction = 88,
+		kToCheck = 89,
+		kSet = 90,
+		kToNeed = 91,
+		kUpdateNeed = 92,
+		kToIndex = 93,
+		kCheck = 94,
+		kAct = 95,
+		kUntil = 96,
+		kNot = 97,
+		kClear = 98,
+		kFor = 99,
+		kByAmount = 100,
+		kOpBase = 117,
+		kTypeBase = 143,
+		kBaseTreeBase = 164,
+	};
 };
 
 // Type: class ResFile;
@@ -2142,11 +2142,11 @@ public:
 class cYObject : public TreeSim, public YObjLang
 {
 	using DataType = short;
-		enum /* __unnamed */ {
-			kNumData = 24,
-			kNumTemp = 8,
-			kNumPointers = 4,
-		};
+	enum /* __unnamed */ {
+		kNumData = 24,
+		kNumTemp = 8,
+		kNumPointers = 4,
+	};
 	struct cYObject::ObjDefHeader{
 		long version;
 		short stackSize;
@@ -2162,26 +2162,26 @@ class cYObject : public TreeSim, public YObjLang
 		short blue;
 		short _padding2;
 	};
-		enum MoveErrorCode {
-			kMoveError = -1,
-			kMoveSuccess = 0,
-			kMoveFailTooHigh = 1,
-			kMoveFailTooLow = 2,
-			kMoveFailNonNeutralTerritory = 3,
-			kMoveFailDynObjGeneric = 4,
-			kMoveFailDynObjPerson = 5,
-			kMoveFailOutOfDynObjRect = 6,
-			kMoveFailNoSpeed = 7,
-			kMoveFailFinishedMoving = 8,
-			kMoveFailStaticObj = 9,
-			kMoveFailStackObject = 10,
-			kMoveFailUnwalkableLoctype = 11,
-			kMoveFailOutOfRoad = 12,
-		};
-		enum ObjectType {
-			kPerson = 0,
-			kNumObjectTypes = 1,
-		};
+	enum MoveErrorCode {
+		kMoveError = -1,
+		kMoveSuccess = 0,
+		kMoveFailTooHigh = 1,
+		kMoveFailTooLow = 2,
+		kMoveFailNonNeutralTerritory = 3,
+		kMoveFailDynObjGeneric = 4,
+		kMoveFailDynObjPerson = 5,
+		kMoveFailOutOfDynObjRect = 6,
+		kMoveFailNoSpeed = 7,
+		kMoveFailFinishedMoving = 8,
+		kMoveFailStaticObj = 9,
+		kMoveFailStackObject = 10,
+		kMoveFailUnwalkableLoctype = 11,
+		kMoveFailOutOfRoad = 12,
+	};
+	enum ObjectType {
+		kPerson = 0,
+		kNumObjectTypes = 1,
+	};
 public:
 	static short sStackSize[1];
 	void SetToLoc(struct _DYOBJ_INST*);
@@ -2189,36 +2189,36 @@ public:
 	short GetTree();
 	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
 	void Die();
-		enum MissionUpdates {
-			kPickedUp = 0,
-			kOuttaHere = 1,
-			kReportNewPickupLocation = 2,
-			kJoinedRiot = 3,
-			kDrivenFromRiot = 4,
-			kLeftRiotOfOwnVolition = 5,
-			kReportNewLocation = 6,
-			kMedVicToted = 7,
-			kMedVicPickedUp = 8,
-		};
-		enum Checks {
-			kHeliLanded = 0,
-			kHeliLow = 1,
-			kMasterObjectLow = 2,
-			kMasterObjectMovingSlowly = 3,
-			kMotherShipLow = 4,
-		};
-		enum CompareMyLocWith {
-			kMissionDestLoc = 0,
-			kStackPointer = 1,
-			kHeli = 2,
-			kBucket = 3,
-			kLastHitter = 4,
-			kClosestMedevacVictim = 5,
-			kClosestCriminal = 6,
-			kMotherShipLoc = 7,
-			kClosestCop = 8,
-			kAvatarClose = 9,
-		};
+	enum MissionUpdates {
+		kPickedUp = 0,
+		kOuttaHere = 1,
+		kReportNewPickupLocation = 2,
+		kJoinedRiot = 3,
+		kDrivenFromRiot = 4,
+		kLeftRiotOfOwnVolition = 5,
+		kReportNewLocation = 6,
+		kMedVicToted = 7,
+		kMedVicPickedUp = 8,
+	};
+	enum Checks {
+		kHeliLanded = 0,
+		kHeliLow = 1,
+		kMasterObjectLow = 2,
+		kMasterObjectMovingSlowly = 3,
+		kMotherShipLow = 4,
+	};
+	enum CompareMyLocWith {
+		kMissionDestLoc = 0,
+		kStackPointer = 1,
+		kHeli = 2,
+		kBucket = 3,
+		kLastHitter = 4,
+		kClosestMedevacVictim = 5,
+		kClosestCriminal = 6,
+		kMotherShipLoc = 7,
+		kClosestCop = 8,
+		kAvatarClose = 9,
+	};
 public:
 	short * GetLocalVar(short);
 	// calltype: NearC
@@ -2243,31 +2243,31 @@ public:
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
 	long fLastInterrupt;
-		enum LocationType {
-			kOutOfCity = -1,
-			kLocNoInfo = 0,
-			kLocUnknown = 1,
-			kNothing = 2,
-			kForest = 3,
-			kRubble = 4,
-			kSmallPark = 5,
-			kWireStuff = 6,
-			kCarRoad = 7,
-			kCarBridge = 8,
-			kTrainTrack = 9,
-			kDomestic = 10,
-			kCommercial = 11,
-			kWhiteCollarBusiness = 12,
-			kBlueCollarBusiness = 13,
-			kNumLocTypes = 14,
-		};
+	enum LocationType {
+		kOutOfCity = -1,
+		kLocNoInfo = 0,
+		kLocUnknown = 1,
+		kNothing = 2,
+		kForest = 3,
+		kRubble = 4,
+		kSmallPark = 5,
+		kWireStuff = 6,
+		kCarRoad = 7,
+		kCarBridge = 8,
+		kTrainTrack = 9,
+		kDomestic = 10,
+		kCommercial = 11,
+		kWhiteCollarBusiness = 12,
+		kBlueCollarBusiness = 13,
+		kNumLocTypes = 14,
+	};
 public:
 	static enum cYObject::LocationType sLocType[256];
-		enum SearchType {
-			kSearchEdgeGround = 0,
-			kSearchAnywhereGround = 1,
-			kSearchRoof = 2,
-		};
+	enum SearchType {
+		kSearchEdgeGround = 0,
+		kSearchAnywhereGround = 1,
+		kSearchRoof = 2,
+	};
 	struct cYObject::LocationInfo{
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
@@ -2434,36 +2434,36 @@ public:
 	short _pad2;
 	short fDirInc;
 	struct cYObject::ObjDefHeader fDefinition;
-		enum /* __unnamed */ {
-			kMasterObject = 0,
-			kLastHitterObject = 1,
-			kMotherShip = 2,
-		};
-		enum /* __unnamed */ {
-			kDirection = 0,
-			kAwake = 1,
-			kHeightCanJump = 2,
-			kPersonType = 3,
-			kMissionType = 4,
-			kNotMissionID = 5,
-			kAnimFrame = 6,
-			kObjectID = 7,
-			kRiotVal = 8,
-			kVisible = 9,
-			kLastRiotVal = 10,
-			kNearMedFar = 11,
-			kLastHitterMsg = 12,
-			kMegaphoneMessage = 13,
-			kInRxnTree = 14,
-			kDead = 15,
-			kColorIndexShift = 16,
-			kDynAnim = 17,
-			kSpeed = 18,
-			kOnlyOnRoad = 19,
-			kMoveOnlyNeutrally = 20,
-			kMoveNoMatterWhat = 21,
-			kSpecificToScurkID = 22,
-		};
+	enum /* __unnamed */ {
+		kMasterObject = 0,
+		kLastHitterObject = 1,
+		kMotherShip = 2,
+	};
+	enum /* __unnamed */ {
+		kDirection = 0,
+		kAwake = 1,
+		kHeightCanJump = 2,
+		kPersonType = 3,
+		kMissionType = 4,
+		kNotMissionID = 5,
+		kAnimFrame = 6,
+		kObjectID = 7,
+		kRiotVal = 8,
+		kVisible = 9,
+		kLastRiotVal = 10,
+		kNearMedFar = 11,
+		kLastHitterMsg = 12,
+		kMegaphoneMessage = 13,
+		kInRxnTree = 14,
+		kDead = 15,
+		kColorIndexShift = 16,
+		kDynAnim = 17,
+		kSpeed = 18,
+		kOnlyOnRoad = 19,
+		kMoveOnlyNeutrally = 20,
+		kMoveNoMatterWhat = 21,
+		kSpecificToScurkID = 22,
+	};
 protected:
 	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
 	// vtable: 16
@@ -2553,9 +2553,9 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum /* __unnamed */ {
-			kMaxNameLen = 255,
-		};
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
 protected:
 	class FlatFile* fNext;
 	unsigned char fName[256];
@@ -2598,18 +2598,18 @@ public:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
-			nSoundSourceTypeResource = 0,
-			nSoundSourceTypeFile = 1,
-		};
+	enum SoundSourceType {
+		nSoundSourceTypeResource = 0,
+		nSoundSourceTypeFile = 1,
+	};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
-			nSoundDuplicateDefault = 0,
-			nSoundDuplicateInterrupt = 1,
-			nSoundDuplicateContinue = 2,
-			nSoundDuplicateOverlap = 3,
-		};
+	enum SoundDuplicateType {
+		nSoundDuplicateDefault = 0,
+		nSoundDuplicateInterrupt = 1,
+		nSoundDuplicateContinue = 2,
+		nSoundDuplicateOverlap = 3,
+	};
 public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;

@@ -11,23 +11,23 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum /* __unnamed */ {
-			kPrimitiveBase = 0,
-			kPrimitiveMax = 255,
-			kActionBase = 256,
-			kGlobalBase = 256,
-			kGlobalMax = 4095,
-			kPrivateBase = 4096,
-			kPrivateMax = 8191,
-			kSemiGlobalBase = 8192,
-			kSemiGlobalMax = 30000,
-			kTreeMax = 30000,
-			kPrimitives = 0,
-			kGlobalTrees = 1,
-			kPrivateTrees = 2,
-			kSemiGlobalTrees = 3,
-			kMaxTreeClass = 3,
-		};
+	enum /* __unnamed */ {
+		kPrimitiveBase = 0,
+		kPrimitiveMax = 255,
+		kActionBase = 256,
+		kGlobalBase = 256,
+		kGlobalMax = 4095,
+		kPrivateBase = 4096,
+		kPrivateMax = 8191,
+		kSemiGlobalBase = 8192,
+		kSemiGlobalMax = 30000,
+		kTreeMax = 30000,
+		kPrimitives = 0,
+		kGlobalTrees = 1,
+		kPrivateTrees = 2,
+		kSemiGlobalTrees = 3,
+		kMaxTreeClass = 3,
+	};
 	struct Behavior::NodeParameter{
 		short p1;
 		short p2;
@@ -41,11 +41,11 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum /* __unnamed */ {
-			kUndefined = -3,
-			kPopOutTrue = -2,
-			kPopOutFalse = -1,
-		};
+	enum /* __unnamed */ {
+		kUndefined = -3,
+		kPopOutTrue = -2,
+		kPopOutFalse = -1,
+	};
 	struct Behavior::Tree{
 		short numNodes;
 		struct Behavior::Node nodes[1];
@@ -186,9 +186,9 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum /* __unnamed */ {
-			kMaxNameLen = 255,
-		};
+	enum /* __unnamed */ {
+		kMaxNameLen = 255,
+	};
 protected:
 	class FlatFile* fNext;
 	unsigned char fName[256];

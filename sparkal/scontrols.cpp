@@ -234,19 +234,19 @@ protected:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
-	enum SliderWindowDirection {
-		nSliderWindowDirectionHorizontal = 0,
-		nSliderWindowDirectionVertical = 1,
-	};
+enum SliderWindowDirection {
+	nSliderWindowDirectionHorizontal = 0,
+	nSliderWindowDirectionVertical = 1,
+};
 
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
@@ -284,11 +284,11 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
@@ -323,18 +323,18 @@ protected:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
-			nSoundSourceTypeResource = 0,
-			nSoundSourceTypeFile = 1,
-		};
+	enum SoundSourceType {
+		nSoundSourceTypeResource = 0,
+		nSoundSourceTypeFile = 1,
+	};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
-			nSoundDuplicateDefault = 0,
-			nSoundDuplicateInterrupt = 1,
-			nSoundDuplicateContinue = 2,
-			nSoundDuplicateOverlap = 3,
-		};
+	enum SoundDuplicateType {
+		nSoundDuplicateDefault = 0,
+		nSoundDuplicateInterrupt = 1,
+		nSoundDuplicateContinue = 2,
+		nSoundDuplicateOverlap = 3,
+	};
 public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
@@ -401,14 +401,14 @@ public:
 // Type: class ScrollBarWindow;
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollHitTestResult {
-			nScrollHitTestResultNone = 0,
-			nScrollHitTestResultLinePrevious = 1,
-			nScrollHitTestResultLineNext = 2,
-			nScrollHitTestResultPagePrevious = 3,
-			nScrollHitTestResultPageNext = 4,
-			nScrollHitTestResultThumb = 5,
-		};
+	enum ScrollHitTestResult {
+		nScrollHitTestResultNone = 0,
+		nScrollHitTestResultLinePrevious = 1,
+		nScrollHitTestResultLineNext = 2,
+		nScrollHitTestResultPagePrevious = 3,
+		nScrollHitTestResultPageNext = 4,
+		nScrollHitTestResultThumb = 5,
+	};
 public:
 	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	void ScrollBarWindow();
@@ -477,10 +477,10 @@ protected:
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
-			nSliderWindowDirectionHorizontal = 0,
-			nSliderWindowDirectionVertical = 1,
-		};
+	enum SliderWindowDirection {
+		nSliderWindowDirectionHorizontal = 0,
+		nSliderWindowDirectionVertical = 1,
+	};
 public:
 	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
 	void SliderWindow();

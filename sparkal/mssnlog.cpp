@@ -7,10 +7,10 @@
 // Type: class MissionLogWindow (forward reference);
 class MissionLogWindow : public GraphicWindow
 {
-		enum MissionLogWindowSortType {
-			nSortByTimeDate = 0,
-			nSortByType = 1,
-		};
+	enum MissionLogWindowSortType {
+		nSortByTimeDate = 0,
+		nSortByType = 1,
+	};
 public:
 	void MissionLogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~MissionLogWindow();
@@ -46,11 +46,11 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();

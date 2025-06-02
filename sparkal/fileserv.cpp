@@ -18,11 +18,11 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum AppBaseType {
-			nAppBaseTypeUnknown = 0,
-			nAppBaseTypeLocal = 1,
-			nAppBaseTypeRemote = 2,
-		};
+	enum AppBaseType {
+		nAppBaseTypeUnknown = 0,
+		nAppBaseTypeLocal = 1,
+		nAppBaseTypeRemote = 2,
+	};
 public:
 	enum FileServices::AppBaseType myAppBaseType;
 	class basic_string<char> sLocalDirectoryBase;
@@ -54,11 +54,11 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum AppBaseType {
-			nAppBaseTypeUnknown = 0,
-			nAppBaseTypeLocal = 1,
-			nAppBaseTypeRemote = 2,
-		};
+	enum AppBaseType {
+		nAppBaseTypeUnknown = 0,
+		nAppBaseTypeLocal = 1,
+		nAppBaseTypeRemote = 2,
+	};
 public:
 	enum FileServices::AppBaseType myAppBaseType;
 	class basic_string<char> sLocalDirectoryBase;
@@ -177,39 +177,39 @@ public:
 
 // Type: class PFile;
 class PFile{
-		enum /* __unnamed */ {
-			FileNull = -1,
-		};
-		enum SeekTypes {
-			N_SEEK_FROM_FILE_START = 0,
-			N_SEEK_FROM_FILE_CURRENT = 1,
-			N_SEEK_FROM_FILE_END = 2,
-		};
-		enum AccessTypes {
-			ReadOnly = 0,
-			ReadWrite = 2,
-			WriteOnly = 1,
-			Create = 768,
-			CreateExcl = 1280,
-			Append = 8,
-			Binary = 32768,
-			Compat = 0,
-			DenyNone = 64,
-			DenyRead = 48,
-			DenyWrite = 32,
-			DenyRdWr = 16,
-			NoInherit = 128,
-		};
-		enum PermissionTypes {
-			PermRead = 256,
-			PermWrite = 128,
-			PermRdWr = 384,
-		};
-		enum seek_dir {
-			beg = 0,
-			cur = 1,
-			end = 2,
-		};
+	enum /* __unnamed */ {
+		FileNull = -1,
+	};
+	enum SeekTypes {
+		N_SEEK_FROM_FILE_START = 0,
+		N_SEEK_FROM_FILE_CURRENT = 1,
+		N_SEEK_FROM_FILE_END = 2,
+	};
+	enum AccessTypes {
+		ReadOnly = 0,
+		ReadWrite = 2,
+		WriteOnly = 1,
+		Create = 768,
+		CreateExcl = 1280,
+		Append = 8,
+		Binary = 32768,
+		Compat = 0,
+		DenyNone = 64,
+		DenyRead = 48,
+		DenyWrite = 32,
+		DenyRdWr = 16,
+		NoInherit = 128,
+	};
+	enum PermissionTypes {
+		PermRead = 256,
+		PermWrite = 128,
+		PermRdWr = 384,
+	};
+	enum seek_dir {
+		beg = 0,
+		cur = 1,
+		end = 2,
+	};
 public:
 	void PFile(char *);
 	void PFile(const class PFile&);

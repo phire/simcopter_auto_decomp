@@ -18,13 +18,13 @@ struct VRwindowType{
 // Type: char *;
 
 // Type: enum tagResolution;
-	enum tagResolution {
-		nResolution320 = 0,
-		nResolution640 = 1,
-		nResolution800 = 2,
-		nResolution1024 = 3,
-		nResolution1280 = 4,
-	};
+enum tagResolution {
+	nResolution320 = 0,
+	nResolution640 = 1,
+	nResolution800 = 2,
+	nResolution1024 = 3,
+	nResolution1280 = 4,
+};
 
 // Type: int32_t;
 

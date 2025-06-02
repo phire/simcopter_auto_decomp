@@ -52,32 +52,32 @@ private:
 // Edge Class implementation not found
 
 // Type: enum SlopeIndex;
-	enum SlopeIndex {
-		DOWN = 0,
-		FLAT = 1,
-		UP = 2,
-	};
+enum SlopeIndex {
+	DOWN = 0,
+	FLAT = 1,
+	UP = 2,
+};
 
 // Type: struct Road (forward reference);
 // Road Class implementation not found
 
 // Type: enum DirectionTypes;
-	enum DirectionTypes {
-		NO_DIRECTION = 0,
-		NORTH = 1,
-		EAST = 2,
-		SOUTH = 4,
-		WEST = 8,
-		RISING = 16,
-		RISING_NORTH = 17,
-		RISING_SOUTH = 20,
-		RISING_EAST = 18,
-		RISING_WEST = 24,
-		NORTH_EAST = 3,
-		SOUTH_EAST = 6,
-		SOUTH_WEST = 12,
-		NORTH_WEST = 9,
-	};
+enum DirectionTypes {
+	NO_DIRECTION = 0,
+	NORTH = 1,
+	EAST = 2,
+	SOUTH = 4,
+	WEST = 8,
+	RISING = 16,
+	RISING_NORTH = 17,
+	RISING_SOUTH = 20,
+	RISING_EAST = 18,
+	RISING_WEST = 24,
+	NORTH_EAST = 3,
+	SOUTH_EAST = 6,
+	SOUTH_WEST = 12,
+	NORTH_WEST = 9,
+};
 
 // Type: struct _GridCoordinates;
 struct _GridCoordinates{
@@ -103,14 +103,14 @@ struct Goal{
 };
 
 // Type: enum DirIndex2;
-	enum DirIndex2 {
-		i2N = 0,
-		i2E = 1,
-		i2S = 2,
-		i2W = 3,
-		i2X = -1,
-		i2I = -2,
-	};
+enum DirIndex2 {
+	i2N = 0,
+	i2E = 1,
+	i2S = 2,
+	i2W = 3,
+	i2X = -1,
+	i2I = -2,
+};
 
 // Type: short;
 

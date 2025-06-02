@@ -337,11 +337,11 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
@@ -465,10 +465,10 @@ public:
 // Type: class SliderWindow (forward reference);
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
-			nSliderWindowDirectionHorizontal = 0,
-			nSliderWindowDirectionVertical = 1,
-		};
+	enum SliderWindowDirection {
+		nSliderWindowDirectionHorizontal = 0,
+		nSliderWindowDirectionVertical = 1,
+	};
 public:
 	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
 	void SliderWindow();
@@ -513,10 +513,10 @@ public:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
-	enum SliderWindowDirection {
-		nSliderWindowDirectionHorizontal = 0,
-		nSliderWindowDirectionVertical = 1,
-	};
+enum SliderWindowDirection {
+	nSliderWindowDirectionHorizontal = 0,
+	nSliderWindowDirectionVertical = 1,
+};
 
 // Type: class basic_string<char>;
 class basic_string<char>{
@@ -626,14 +626,14 @@ public:
 // Type: class ScrollBarWindow (forward reference);
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollHitTestResult {
-			nScrollHitTestResultNone = 0,
-			nScrollHitTestResultLinePrevious = 1,
-			nScrollHitTestResultLineNext = 2,
-			nScrollHitTestResultPagePrevious = 3,
-			nScrollHitTestResultPageNext = 4,
-			nScrollHitTestResultThumb = 5,
-		};
+	enum ScrollHitTestResult {
+		nScrollHitTestResultNone = 0,
+		nScrollHitTestResultLinePrevious = 1,
+		nScrollHitTestResultLineNext = 2,
+		nScrollHitTestResultPagePrevious = 3,
+		nScrollHitTestResultPageNext = 4,
+		nScrollHitTestResultThumb = 5,
+	};
 public:
 	void ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	void ScrollBarWindow();
@@ -678,14 +678,14 @@ protected:
 };
 
 // Type: enum ScrollBarWindow::ScrollHitTestResult;
-	enum ScrollHitTestResult {
-		nScrollHitTestResultNone = 0,
-		nScrollHitTestResultLinePrevious = 1,
-		nScrollHitTestResultLineNext = 2,
-		nScrollHitTestResultPagePrevious = 3,
-		nScrollHitTestResultPageNext = 4,
-		nScrollHitTestResultThumb = 5,
-	};
+enum ScrollHitTestResult {
+	nScrollHitTestResultNone = 0,
+	nScrollHitTestResultLinePrevious = 1,
+	nScrollHitTestResultLineNext = 2,
+	nScrollHitTestResultPagePrevious = 3,
+	nScrollHitTestResultPageNext = 4,
+	nScrollHitTestResultThumb = 5,
+};
 
 // Type: class ListBoxWindow (forward reference);
 class ListBoxWindow : public GraphicWindow
@@ -968,10 +968,10 @@ struct SparkalRect{
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
-			nSliderWindowDirectionHorizontal = 0,
-			nSliderWindowDirectionVertical = 1,
-		};
+	enum SliderWindowDirection {
+		nSliderWindowDirectionHorizontal = 0,
+		nSliderWindowDirectionVertical = 1,
+	};
 public:
 	void SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long);
 	void SliderWindow();
@@ -1018,11 +1018,11 @@ public:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
-			nButtonStateDisabled = 0,
-			nButtonStateOff = 1,
-			nButtonStateOn = 2,
-		};
+	enum ButtonState {
+		nButtonStateDisabled = 0,
+		nButtonStateOff = 1,
+		nButtonStateOn = 2,
+	};
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();

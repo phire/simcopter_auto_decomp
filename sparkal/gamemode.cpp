@@ -105,10 +105,10 @@ protected:
 // Type: class GameModePickCareerCityData (forward reference);
 class GameModePickCareerCityData : public GameModeCoreData
 {
-		enum PickCareerCitySubMode {
-			nPickCareerCitySubModeSelect = 0,
-			nPickCareerCitySubModeVideo = 1,
-		};
+	enum PickCareerCitySubMode {
+		nPickCareerCitySubModeSelect = 0,
+		nPickCareerCitySubModeVideo = 1,
+	};
 public:
 	void GameModePickCareerCityData();
 	void Initialize();
@@ -171,11 +171,11 @@ protected:
 // Type: class GameModePlayData (forward reference);
 class GameModePlayData : public GameModeCoreData
 {
-		enum ExceptionState {
-			nExceptionStateNone = 0,
-			nExceptionStateVRAppInit = 1,
-			nExceptionStateGamePlay = 2,
-		};
+	enum ExceptionState {
+		nExceptionStateNone = 0,
+		nExceptionStateVRAppInit = 1,
+		nExceptionStateGamePlay = 2,
+	};
 public:
 	void GameModePlayData();
 	void Initialize();

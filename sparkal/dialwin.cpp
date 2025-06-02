@@ -334,15 +334,15 @@ public:
 // Type: class PassengerWindow (forward reference);
 class PassengerWindow : public GraphicWindow
 {
-		enum Position {
-			nPositionUp = 0,
-			nPositionDown = 1,
-		};
-		enum PositionChangeDirection {
-			nPositionChangeDirectionDown = -1,
-			nPositionChangeDirectionNone = 0,
-			nPositionChangeDirectionUp = 1,
-		};
+	enum Position {
+		nPositionUp = 0,
+		nPositionDown = 1,
+	};
+	enum PositionChangeDirection {
+		nPositionChangeDirectionDown = -1,
+		nPositionChangeDirectionNone = 0,
+		nPositionChangeDirectionUp = 1,
+	};
 public:
 	void PassengerWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~PassengerWindow();
@@ -568,10 +568,10 @@ protected:
 
 // Type: class DialHand (forward reference);
 class DialHand{
-		enum DialDirection {
-			nDialDirectionClockwise = -1,
-			nDialDirectionCounterClockwise = 1,
-		};
+	enum DialDirection {
+		nDialDirectionClockwise = -1,
+		nDialDirectionCounterClockwise = 1,
+	};
 public:
 	void DialHand();
 	int32_t SetCurrentValue(long);
