@@ -5064,16 +5064,16 @@ _T391:
 
 // Contribution: 3:0006fa5c-0006fa69 Module: 147, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a5c
-int32_t ObjDataSize;
+static int32_t ObjDataSize;
 
 // GLOBAL: COPTER_D 0x00606a60
-char * ObjData;
+static char * ObjData;
 
 // GLOBAL: COPTER_D 0x00606a64
-struct _BSPtree* Tree;
+static struct _BSPtree* Tree;
 
 // GLOBAL: COPTER_D 0x00606a68
-unsigned short BSPIndex;
+static unsigned short BSPIndex;
 
 
 

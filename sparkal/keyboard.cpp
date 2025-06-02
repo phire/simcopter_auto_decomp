@@ -652,7 +652,7 @@ _T2e:
 
 // Contribution: 3:00000024-00000027 Module: 62, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597024
-void (*$S5)() = { /* <data@0x00597024> */ };
+static void (*$S5)() = { /* <data@0x00597024> */ };
 
 
 

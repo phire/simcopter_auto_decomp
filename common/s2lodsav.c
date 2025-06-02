@@ -7199,37 +7199,37 @@ _T9d:
 
 // Contribution: 3:00003fb0-000043a6 Module: 94, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059afb0
-long GraphStart[16] = { /* <data@0x0059afb0> */ };
+static long GraphStart[16] = { /* <data@0x0059afb0> */ };
 
 
 
 // Contribution: 3:0006f9b4-0006f9d7 Module: 94, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006069b4
-short newCX;
+static short newCX;
 
 // GLOBAL: COPTER_D 0x006069b8
-short newCY;
+static short newCY;
 
 // GLOBAL: COPTER_D 0x006069bc
-short newSC;
+static short newSC;
 
 // GLOBAL: COPTER_D 0x006069c0
-long WriteLength;
+static long WriteLength;
 
 // GLOBAL: COPTER_D 0x006069c4
-void * __ptr32 S_ptr1;
+static void * __ptr32 S_ptr1;
 
 // GLOBAL: COPTER_D 0x006069c8
-void * __ptr32 S_ptr3;
+static void * __ptr32 S_ptr3;
 
 // GLOBAL: COPTER_D 0x006069cc
-void * __ptr32 S_ptr2;
+static void * __ptr32 S_ptr2;
 
 // GLOBAL: COPTER_D 0x006069d0
-void * __ptr32 S_ptr5;
+static void * __ptr32 S_ptr5;
 
 // GLOBAL: COPTER_D 0x006069d4
-void * __ptr32 S_ptr4;
+static void * __ptr32 S_ptr4;
 
 
 

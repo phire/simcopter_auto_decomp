@@ -10603,16 +10603,16 @@ int32_t ScreenWindow::DrawSelf() {
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597090
-void (*$S49)() = { /* <data@0x00597090> */ };
+static void (*$S49)() = { /* <data@0x00597090> */ };
 
 // GLOBAL: COPTER_D 0x00597094
-void (*$S54)() = { /* <data@0x00597094> */ };
+static void (*$S54)() = { /* <data@0x00597094> */ };
 
 // GLOBAL: COPTER_D 0x00597098
-void (*$S59)() = { /* <data@0x00597098> */ };
+static void (*$S59)() = { /* <data@0x00597098> */ };
 
 // GLOBAL: COPTER_D 0x0059709c
-void (*$S62)() = { /* <data@0x0059709c> */ };
+static void (*$S62)() = { /* <data@0x0059709c> */ };
 
 
 

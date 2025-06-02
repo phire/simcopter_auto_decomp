@@ -4560,28 +4560,28 @@ _T104:
 
 // Contribution: 2:00003ff0-000041ff Module: 165, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592ff0
-const int32_t TurnTable3[4][8] = { /* <data@0x00592ff0> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592ff0> */ };
 
 // GLOBAL: COPTER_D 0x00593070
-const int32_t TurnTable2[4][4] = { /* <data@0x00593070> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00593070> */ };
 
 // GLOBAL: COPTER_D 0x005930b0
-const int32_t IndexToType[4] = { /* <data@0x005930b0> */ };
+static const int32_t IndexToType[4] = { /* <data@0x005930b0> */ };
 
 // GLOBAL: COPTER_D 0x005930c0
-const int32_t TypeToIndex2[16] = { /* <data@0x005930c0> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x005930c0> */ };
 
 // GLOBAL: COPTER_D 0x00593100
-const int32_t TILUT[4][4] = { /* <data@0x00593100> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00593100> */ };
 
 // GLOBAL: COPTER_D 0x00593140
-const struct _dPoint2d OT[4] = { /* <data@0x00593140> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x00593140> */ };
 
 // GLOBAL: COPTER_D 0x00593180
-const struct _dPoint2d RRT[4] = { /* <data@0x00593180> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00593180> */ };
 
 // GLOBAL: COPTER_D 0x005931c0
-const struct _dPoint2d LRT[4] = { /* <data@0x005931c0> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x005931c0> */ };
 
 
 
@@ -4605,7 +4605,7 @@ int32_t S_ftwk_spread_probability = { /* <data@0x005b7398> */ };
 int32_t S_ftwk_fire_radius = { /* <data@0x005b739c> */ };
 
 // GLOBAL: COPTER_D 0x005b73a0
-long S_fire_count = { /* <data@0x005b73a0> */ };
+static long S_fire_count = { /* <data@0x005b73a0> */ };
 
 // GLOBAL: COPTER_D 0x005b73a8
 struct Point2d S_dirs[4] = { /* <data@0x005b73a8> */ };
@@ -4614,25 +4614,25 @@ struct Point2d S_dirs[4] = { /* <data@0x005b73a8> */ };
 int32_t S_spread_time = { /* <data@0x005b73c8> */ };
 
 // GLOBAL: COPTER_D 0x005b73cc
-int32_t S_yval = { /* <data@0x005b73cc> */ };
+static int32_t S_yval = { /* <data@0x005b73cc> */ };
 
 // GLOBAL: COPTER_D 0x005b73d0
-int32_t S_yvaldelta = { /* <data@0x005b73d0> */ };
+static int32_t S_yvaldelta = { /* <data@0x005b73d0> */ };
 
 // GLOBAL: COPTER_D 0x005b73d4
-long FireMIFFID = { /* <data@0x005b73d4> */ };
+static long FireMIFFID = { /* <data@0x005b73d4> */ };
 
 // GLOBAL: COPTER_D 0x005b73d8
-long CfdMIFFID = { /* <data@0x005b73d8> */ };
+static long CfdMIFFID = { /* <data@0x005b73d8> */ };
 
 
 
 // Contribution: 3:00094548-000945ef Module: 165, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b548
-struct _CELL_FIRE_DATA lscfd;
+static struct _CELL_FIRE_DATA lscfd;
 
 // GLOBAL: COPTER_D 0x0062b550
-struct _FIRE_DATA lsfire;
+static struct _FIRE_DATA lsfire;
 
 
 

@@ -21380,16 +21380,16 @@ _T45:
 
 // Contribution: 3:00000044-00000053 Module: 45, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597044
-void (*$S67)() = { /* <data@0x00597044> */ };
+static void (*$S67)() = { /* <data@0x00597044> */ };
 
 // GLOBAL: COPTER_D 0x00597048
-void (*$S70)() = { /* <data@0x00597048> */ };
+static void (*$S70)() = { /* <data@0x00597048> */ };
 
 // GLOBAL: COPTER_D 0x0059704c
-void (*$S73)() = { /* <data@0x0059704c> */ };
+static void (*$S73)() = { /* <data@0x0059704c> */ };
 
 // GLOBAL: COPTER_D 0x00597050
-void (*$S76)() = { /* <data@0x00597050> */ };
+static void (*$S76)() = { /* <data@0x00597050> */ };
 
 
 
@@ -21461,14 +21461,14 @@ char * SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME = { /* <data@0x0059918c> */ };
 
 // Contribution: 3:0006cab0-0006cabf Module: 45, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00603ab0
-struct SparkalColor colorTextGamePaletteNormal;
+static struct SparkalColor colorTextGamePaletteNormal;
 
 // GLOBAL: COPTER_D 0x00603ab4
-struct SparkalColor colorTextCheckupHighlighted;
+static struct SparkalColor colorTextCheckupHighlighted;
 
 // GLOBAL: COPTER_D 0x00603ab8
-struct SparkalColor colorTextGamePaletteHighlighted;
+static struct SparkalColor colorTextGamePaletteHighlighted;
 
 // GLOBAL: COPTER_D 0x00603abc
-struct SparkalColor colorTextCheckupNormal;
+static struct SparkalColor colorTextCheckupNormal;
 

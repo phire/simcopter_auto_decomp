@@ -7369,31 +7369,31 @@ _T11b:
 
 // Contribution: 3:000202c8-0002037c Module: 167, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b72c8
-short S_num_active_missiles = { /* <data@0x005b72c8> */ };
+static short S_num_active_missiles = { /* <data@0x005b72c8> */ };
 
 // GLOBAL: COPTER_D 0x005b72cc
-short S_num_active_bullets = { /* <data@0x005b72cc> */ };
+static short S_num_active_bullets = { /* <data@0x005b72cc> */ };
 
 // GLOBAL: COPTER_D 0x005b72d0
-short S_num_active_teargas = { /* <data@0x005b72d0> */ };
+static short S_num_active_teargas = { /* <data@0x005b72d0> */ };
 
 // GLOBAL: COPTER_D 0x005b72d4
-short S_num_active_debris = { /* <data@0x005b72d4> */ };
+static short S_num_active_debris = { /* <data@0x005b72d4> */ };
 
 // GLOBAL: COPTER_D 0x005b72d8
-short S_num_active_traj = { /* <data@0x005b72d8> */ };
+static short S_num_active_traj = { /* <data@0x005b72d8> */ };
 
 // GLOBAL: COPTER_D 0x005b72dc
-short S_num_active_lasers = { /* <data@0x005b72dc> */ };
+static short S_num_active_lasers = { /* <data@0x005b72dc> */ };
 
 // GLOBAL: COPTER_D 0x005b72e0
-long S_debris_fireseq[8] = { /* <data@0x005b72e0> */ };
+static long S_debris_fireseq[8] = { /* <data@0x005b72e0> */ };
 
 // GLOBAL: COPTER_D 0x005b7300
-int32_t S_debris_firealt[8] = { /* <data@0x005b7300> */ };
+static int32_t S_debris_firealt[8] = { /* <data@0x005b7300> */ };
 
 // GLOBAL: COPTER_D 0x005b7320
-long S_tracer = { /* <data@0x005b7320> */ };
+static long S_tracer = { /* <data@0x005b7320> */ };
 
 // GLOBAL: COPTER_D 0x005b7328
 int32_t S_debris_types[3] = { /* <data@0x005b7328> */ };
@@ -7402,19 +7402,19 @@ int32_t S_debris_types[3] = { /* <data@0x005b7328> */ };
 int32_t S_num_debris_types = { /* <data@0x005b7334> */ };
 
 // GLOBAL: COPTER_D 0x005b7338
-int32_t S_msl_fire_delay = { /* <data@0x005b7338> */ };
+static int32_t S_msl_fire_delay = { /* <data@0x005b7338> */ };
 
 // GLOBAL: COPTER_D 0x005b733c
-long tgMIFFID = { /* <data@0x005b733c> */ };
+static long tgMIFFID = { /* <data@0x005b733c> */ };
 
 // GLOBAL: COPTER_D 0x005b7340
-long dbMIFFID = { /* <data@0x005b7340> */ };
+static long dbMIFFID = { /* <data@0x005b7340> */ };
 
 
 
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a530
-struct _MISSILE_DATA lsmsl;
+static struct _MISSILE_DATA lsmsl;
 
 
 

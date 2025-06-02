@@ -51,5 +51,5 @@ void VREngineInit() {
 
 // Contribution: 3:0002b770-0002b78b Module: 95, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c2770
-struct VRwindowType win = { /* <data@0x005c2770> */ };
+static struct VRwindowType win = { /* <data@0x005c2770> */ };
 

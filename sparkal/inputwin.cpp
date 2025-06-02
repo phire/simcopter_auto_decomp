@@ -17949,10 +17949,10 @@ _T57a:
 
 // Contribution: 3:00000018-0000001f Module: 75, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597018
-void (*$S98)() = { /* <data@0x00597018> */ };
+static void (*$S98)() = { /* <data@0x00597018> */ };
 
 // GLOBAL: COPTER_D 0x0059701c
-void (*$S101)() = { /* <data@0x0059701c> */ };
+static void (*$S101)() = { /* <data@0x0059701c> */ };
 
 
 

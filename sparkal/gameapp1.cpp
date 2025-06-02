@@ -4600,22 +4600,22 @@ _T118:
 
 // Contribution: 3:0000006c-00000083 Module: 28, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059706c
-void (*$S119)() = { /* <data@0x0059706c> */ };
+static void (*$S119)() = { /* <data@0x0059706c> */ };
 
 // GLOBAL: COPTER_D 0x00597070
-void (*$S124)() = { /* <data@0x00597070> */ };
+static void (*$S124)() = { /* <data@0x00597070> */ };
 
 // GLOBAL: COPTER_D 0x00597074
-void (*$S129)() = { /* <data@0x00597074> */ };
+static void (*$S129)() = { /* <data@0x00597074> */ };
 
 // GLOBAL: COPTER_D 0x00597078
-void (*$S134)() = { /* <data@0x00597078> */ };
+static void (*$S134)() = { /* <data@0x00597078> */ };
 
 // GLOBAL: COPTER_D 0x0059707c
-void (*$S139)() = { /* <data@0x0059707c> */ };
+static void (*$S139)() = { /* <data@0x0059707c> */ };
 
 // GLOBAL: COPTER_D 0x00597080
-void (*$S144)() = { /* <data@0x00597080> */ };
+static void (*$S144)() = { /* <data@0x00597080> */ };
 
 
 

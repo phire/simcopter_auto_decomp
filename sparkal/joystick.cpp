@@ -969,13 +969,13 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 
 // Contribution: 2:00002228-000022a7 Module: 15, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00591228
-const unsigned long dwJoystickButtonConstants[32] = { /* <data@0x00591228> */ };
+static const unsigned long dwJoystickButtonConstants[32] = { /* <data@0x00591228> */ };
 
 
 
 // Contribution: 3:0000008c-0000008f Module: 15, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059708c
-void (*$S3)() = { /* <data@0x0059708c> */ };
+static void (*$S3)() = { /* <data@0x0059708c> */ };
 
 
 

@@ -6484,55 +6484,55 @@ _T182:
 
 // Contribution: 2:00003898-00003aaf Module: 173, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592898
-const int32_t TurnTable3[4][8] = { /* <data@0x00592898> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592898> */ };
 
 // GLOBAL: COPTER_D 0x00592918
-const int32_t TurnTable2[4][4] = { /* <data@0x00592918> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00592918> */ };
 
 // GLOBAL: COPTER_D 0x00592958
-const int32_t IndexToType[4] = { /* <data@0x00592958> */ };
+static const int32_t IndexToType[4] = { /* <data@0x00592958> */ };
 
 // GLOBAL: COPTER_D 0x00592968
-const int32_t TypeToIndex2[16] = { /* <data@0x00592968> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x00592968> */ };
 
 // GLOBAL: COPTER_D 0x005929a8
-const int32_t TILUT[4][4] = { /* <data@0x005929a8> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x005929a8> */ };
 
 // GLOBAL: COPTER_D 0x005929e8
-const struct _dPoint2d OT[4] = { /* <data@0x005929e8> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x005929e8> */ };
 
 // GLOBAL: COPTER_D 0x00592a28
-const struct _dPoint2d RRT[4] = { /* <data@0x00592a28> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00592a28> */ };
 
 // GLOBAL: COPTER_D 0x00592a68
-const struct _dPoint2d LRT[4] = { /* <data@0x00592a68> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x00592a68> */ };
 
 
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b4e18
-long S_riotcheckctr = { /* <data@0x005b4e18> */ };
+static long S_riotcheckctr = { /* <data@0x005b4e18> */ };
 
 // GLOBAL: COPTER_D 0x005b4e1c
-int32_t S_mission_interval_easy = { /* <data@0x005b4e1c> */ };
+static int32_t S_mission_interval_easy = { /* <data@0x005b4e1c> */ };
 
 // GLOBAL: COPTER_D 0x005b4e20
-long S_max_missions_easy = { /* <data@0x005b4e20> */ };
+static long S_max_missions_easy = { /* <data@0x005b4e20> */ };
 
 // GLOBAL: COPTER_D 0x005b4e24
-int32_t S_mission_interval = { /* <data@0x005b4e24> */ };
+static int32_t S_mission_interval = { /* <data@0x005b4e24> */ };
 
 // GLOBAL: COPTER_D 0x005b4e28
-int32_t S_mission_interval_adj = { /* <data@0x005b4e28> */ };
+static int32_t S_mission_interval_adj = { /* <data@0x005b4e28> */ };
 
 // GLOBAL: COPTER_D 0x005b4e2c
-int32_t S_mission_timer = { /* <data@0x005b4e2c> */ };
+static int32_t S_mission_timer = { /* <data@0x005b4e2c> */ };
 
 // GLOBAL: COPTER_D 0x005b4e30
-long S_max_missions = { /* <data@0x005b4e30> */ };
+static long S_max_missions = { /* <data@0x005b4e30> */ };
 
 // GLOBAL: COPTER_D 0x005b4e34
-int32_t SpeederMissionActive = { /* <data@0x005b4e34> */ };
+static int32_t SpeederMissionActive = { /* <data@0x005b4e34> */ };
 
 // GLOBAL: COPTER_D 0x005b4e38
 long S_money_mission_riot = { /* <data@0x005b4e38> */ };
@@ -6673,7 +6673,7 @@ long S_money_vehicle_unjammed = { /* <data@0x005b4ef8> */ };
 long S_pts_vehicle_burned = { /* <data@0x005b4efc> */ };
 
 // GLOBAL: COPTER_D 0x005b4f00
-long missionMIFFID = { /* <data@0x005b4f00> */ };
+static long missionMIFFID = { /* <data@0x005b4f00> */ };
 
 // GLOBAL: COPTER_D 0x005b4f08
 long S_msg_general[6] = { /* <data@0x005b4f08> */ };
@@ -6682,7 +6682,7 @@ long S_msg_general[6] = { /* <data@0x005b4f08> */ };
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006072b8
-struct _MISSION_STATICS S_mstatics;
+static struct _MISSION_STATICS S_mstatics;
 
 
 

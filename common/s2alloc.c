@@ -582,14 +582,14 @@ uint32_t G_alloc_max = { /* <data@0x0059b52c> */ };
 uint32_t G_alloc_used = { /* <data@0x0059b530> */ };
 
 // GLOBAL: COPTER_D 0x0059b534
-int32_t poolCount = { /* <data@0x0059b534> */ };
+static int32_t poolCount = { /* <data@0x0059b534> */ };
 
 // GLOBAL: COPTER_D 0x0059b538
-void * __ptr32 S_alignmem = { /* <data@0x0059b538> */ };
+static void * __ptr32 S_alignmem = { /* <data@0x0059b538> */ };
 
 
 
 // Contribution: 3:0006f9d8-0006fa57 Module: 91, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006069d8
-struct alloc_root_s* root[32];
+static struct alloc_root_s* root[32];
 

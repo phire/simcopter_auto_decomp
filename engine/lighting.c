@@ -1413,25 +1413,25 @@ struct Point3d G_litevect2 = { /* <data@0x005add40> */ };
 struct Point3d G_litevect3 = { /* <data@0x005add50> */ };
 
 // GLOBAL: COPTER_D 0x005add5c
-int32_t S_ambient = { /* <data@0x005add5c> */ };
+static int32_t S_ambient = { /* <data@0x005add5c> */ };
 
 // GLOBAL: COPTER_D 0x005add60
-int32_t S_intensity1 = { /* <data@0x005add60> */ };
+static int32_t S_intensity1 = { /* <data@0x005add60> */ };
 
 // GLOBAL: COPTER_D 0x005add64
-int32_t S_intensity2 = { /* <data@0x005add64> */ };
+static int32_t S_intensity2 = { /* <data@0x005add64> */ };
 
 // GLOBAL: COPTER_D 0x005add68
-int32_t S_intensity3 = { /* <data@0x005add68> */ };
+static int32_t S_intensity3 = { /* <data@0x005add68> */ };
 
 
 
 // Contribution: 3:0006fa70-0006fe77 Module: 132, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a70
-struct TEXT_Resource* S_texres;
+static struct TEXT_Resource* S_texres;
 
 // GLOBAL: COPTER_D 0x00606a78
-int32_t S_ctrs[256];
+static int32_t S_ctrs[256];
 
 
 

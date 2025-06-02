@@ -5663,7 +5663,7 @@ _T445:
 
 // Contribution: 3:00000088-0000008b Module: 21, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597088
-void (*$S33)() = { /* <data@0x00597088> */ };
+static void (*$S33)() = { /* <data@0x00597088> */ };
 
 
 

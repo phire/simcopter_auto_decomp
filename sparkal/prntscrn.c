@@ -422,47 +422,47 @@ _T1d7:
 
 // Contribution: 2:000014f8-00001707 Module: 41, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x005904f8
-const int32_t TurnTable3[4][8] = { /* <data@0x005904f8> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x005904f8> */ };
 
 // GLOBAL: COPTER_D 0x00590578
-const int32_t TurnTable2[4][4] = { /* <data@0x00590578> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00590578> */ };
 
 // GLOBAL: COPTER_D 0x005905b8
-const int32_t IndexToType[4] = { /* <data@0x005905b8> */ };
+static const int32_t IndexToType[4] = { /* <data@0x005905b8> */ };
 
 // GLOBAL: COPTER_D 0x005905c8
-const int32_t TypeToIndex2[16] = { /* <data@0x005905c8> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x005905c8> */ };
 
 // GLOBAL: COPTER_D 0x00590608
-const int32_t TILUT[4][4] = { /* <data@0x00590608> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00590608> */ };
 
 // GLOBAL: COPTER_D 0x00590648
-const struct _dPoint2d OT[4] = { /* <data@0x00590648> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x00590648> */ };
 
 // GLOBAL: COPTER_D 0x00590688
-const struct _dPoint2d RRT[4] = { /* <data@0x00590688> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00590688> */ };
 
 // GLOBAL: COPTER_D 0x005906c8
-const struct _dPoint2d LRT[4] = { /* <data@0x005906c8> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x005906c8> */ };
 
 
 
 // Contribution: 3:00002430-00002446 Module: 41, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599430
-short S_ctr = { /* <data@0x00599430> */ };
+static short S_ctr = { /* <data@0x00599430> */ };
 
 
 
 // Contribution: 3:0006cac0-0006d247 Module: 41, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00603ac0
-unsigned char wpal[768];
+static unsigned char wpal[768];
 
 // GLOBAL: COPTER_D 0x00603dc0
-void * __ptr32 hdc;
+static void * __ptr32 hdc;
 
 // GLOBAL: COPTER_D 0x00603dc8
-struct PCXHEAD pcx;
+static struct PCXHEAD pcx;
 
 // GLOBAL: COPTER_D 0x00603e48
-struct tagPALETTEENTRY ppe[256];
+static struct tagPALETTEENTRY ppe[256];
 

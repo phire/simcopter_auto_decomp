@@ -1523,7 +1523,7 @@ _Tc0a:
 
 // Contribution: 3:00000020-00000023 Module: 67, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597020
-void (*$S49)() = { /* <data@0x00597020> */ };
+static void (*$S49)() = { /* <data@0x00597020> */ };
 
 
 

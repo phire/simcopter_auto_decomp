@@ -185,10 +185,10 @@ void $E6() {
 
 // Contribution: 3:0000003c-00000043 Module: 51, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059703c
-void (*$S5)() = { /* <data@0x0059703c> */ };
+static void (*$S5)() = { /* <data@0x0059703c> */ };
 
 // GLOBAL: COPTER_D 0x00597040
-void (*$S8)() = { /* <data@0x00597040> */ };
+static void (*$S8)() = { /* <data@0x00597040> */ };
 
 
 

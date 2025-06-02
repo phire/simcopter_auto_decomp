@@ -7490,10 +7490,10 @@ _T81:
 
 // Contribution: 2:00004430-0000447f Module: 155, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00593430
-const enum DirectionTypes IndexToType[4] = { /* <data@0x00593430> */ };
+static const enum DirectionTypes IndexToType[4] = { /* <data@0x00593430> */ };
 
 // GLOBAL: COPTER_D 0x00593440
-const enum DirIndex2 TypeToIndex2[16] = { /* <data@0x00593440> */ };
+static const enum DirIndex2 TypeToIndex2[16] = { /* <data@0x00593440> */ };
 
 
 

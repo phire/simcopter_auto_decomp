@@ -2304,7 +2304,7 @@ _T1f3:
 
 // Contribution: 2:000042d0-0000430f Module: 158, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x005932d0
-const enum TurnIndex TILUT[4][4] = { /* <data@0x005932d0> */ };
+static const enum TurnIndex TILUT[4][4] = { /* <data@0x005932d0> */ };
 
 
 

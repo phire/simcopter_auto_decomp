@@ -6669,64 +6669,64 @@ long G_tshift = { /* <data@0x005b5cc0> */ };
 long G_morphno = { /* <data@0x005b5cc4> */ };
 
 // GLOBAL: COPTER_D 0x005b5cc8
-unsigned short S_texcycle[4] = { /* <data@0x005b5cc8> */ };
+static unsigned short S_texcycle[4] = { /* <data@0x005b5cc8> */ };
 
 // GLOBAL: COPTER_D 0x005b5cd0
-short S_texlast = { /* <data@0x005b5cd0> */ };
+static short S_texlast = { /* <data@0x005b5cd0> */ };
 
 // GLOBAL: COPTER_D 0x005b5cd4
-short S_watercycle1 = { /* <data@0x005b5cd4> */ };
+static short S_watercycle1 = { /* <data@0x005b5cd4> */ };
 
 // GLOBAL: COPTER_D 0x005b5cd8
-short S_watercycle2 = { /* <data@0x005b5cd8> */ };
+static short S_watercycle2 = { /* <data@0x005b5cd8> */ };
 
 // GLOBAL: COPTER_D 0x005b5cdc
-int32_t S_looptime = { /* <data@0x005b5cdc> */ };
+static int32_t S_looptime = { /* <data@0x005b5cdc> */ };
 
 // GLOBAL: COPTER_D 0x005b5ce0
-int32_t S_checktime = { /* <data@0x005b5ce0> */ };
+static int32_t S_checktime = { /* <data@0x005b5ce0> */ };
 
 // GLOBAL: COPTER_D 0x005b5ce4
-short S_cycle = { /* <data@0x005b5ce4> */ };
+static short S_cycle = { /* <data@0x005b5ce4> */ };
 
 // GLOBAL: COPTER_D 0x005b5ce8
-short S_array1[32] = { /* <data@0x005b5ce8> */ };
+static short S_array1[32] = { /* <data@0x005b5ce8> */ };
 
 // GLOBAL: COPTER_D 0x005b5d28
-short S_array2[32] = { /* <data@0x005b5d28> */ };
+static short S_array2[32] = { /* <data@0x005b5d28> */ };
 
 
 
 // Contribution: 3:00093500-00093527 Module: 169, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062a500
-unsigned short * S_h1;
+static unsigned short * S_h1;
 
 // GLOBAL: COPTER_D 0x0062a504
-unsigned short * S_h2;
+static unsigned short * S_h2;
 
 // GLOBAL: COPTER_D 0x0062a508
-unsigned short * S_h3;
+static unsigned short * S_h3;
 
 // GLOBAL: COPTER_D 0x0062a50c
-unsigned short * S_h4;
+static unsigned short * S_h4;
 
 // GLOBAL: COPTER_D 0x0062a510
-unsigned short * S_h5;
+static unsigned short * S_h5;
 
 // GLOBAL: COPTER_D 0x0062a514
-unsigned short * S_h6;
+static unsigned short * S_h6;
 
 // GLOBAL: COPTER_D 0x0062a518
-unsigned short * S_h7;
+static unsigned short * S_h7;
 
 // GLOBAL: COPTER_D 0x0062a51c
-unsigned short * S_h8;
+static unsigned short * S_h8;
 
 // GLOBAL: COPTER_D 0x0062a520
-unsigned short * S_h9;
+static unsigned short * S_h9;
 
 // GLOBAL: COPTER_D 0x0062a524
-int32_t S_recip_celldim;
+static int32_t S_recip_celldim;
 
 
 

@@ -994,16 +994,16 @@ long G_zoom_level = { /* <data@0x005b48b8> */ };
 
 // Contribution: 3:0006fe88-0006feab Module: 177, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606e88
-int32_t S_rotdelta;
+static int32_t S_rotdelta;
 
 // GLOBAL: COPTER_D 0x00606e8c
-int32_t S_posdelta;
+static int32_t S_posdelta;
 
 // GLOBAL: COPTER_D 0x00606e90
-struct Point3d S_last_viewvect;
+static struct Point3d S_last_viewvect;
 
 // GLOBAL: COPTER_D 0x00606ea0
-struct Point3d S_last_viewpos;
+static struct Point3d S_last_viewpos;
 
 
 

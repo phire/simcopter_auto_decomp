@@ -5113,5 +5113,5 @@ uint32_t deque<basic_string<char>>::buffer_size = { /* <data@0x00597420> */ };
 struct tagWNDCLASSA CDebugWindow::m_class;
 
 // GLOBAL: COPTER_D 0x005c28f8
-unsigned char ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA;
+static unsigned char ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA;
 

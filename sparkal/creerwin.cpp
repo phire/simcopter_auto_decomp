@@ -3367,10 +3367,10 @@ _T109:
 
 // Contribution: 3:00000064-0000006b Module: 31, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597064
-void (*$S65)() = { /* <data@0x00597064> */ };
+static void (*$S65)() = { /* <data@0x00597064> */ };
 
 // GLOBAL: COPTER_D 0x00597068
-void (*$S68)() = { /* <data@0x00597068> */ };
+static void (*$S68)() = { /* <data@0x00597068> */ };
 
 
 
@@ -3388,8 +3388,8 @@ char * SZ_CAREER_WINDOW_BUTTON_FILE_NAME = { /* <data@0x00599a8c> */ };
 
 // Contribution: 3:0006d448-0006d44f Module: 31, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604448
-struct SparkalColor colorTextGamePaletteNormal;
+static struct SparkalColor colorTextGamePaletteNormal;
 
 // GLOBAL: COPTER_D 0x0060444c
-struct SparkalColor colorTextGamePaletteHighlighted;
+static struct SparkalColor colorTextGamePaletteHighlighted;
 

@@ -1660,13 +1660,13 @@ _T2c0:
 
 // Contribution: 3:00000028-00000033 Module: 58, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597028
-void (*$S15)() = { /* <data@0x00597028> */ };
+static void (*$S15)() = { /* <data@0x00597028> */ };
 
 // GLOBAL: COPTER_D 0x0059702c
-void (*$S18)() = { /* <data@0x0059702c> */ };
+static void (*$S18)() = { /* <data@0x0059702c> */ };
 
 // GLOBAL: COPTER_D 0x00597030
-void (*$S21)() = { /* <data@0x00597030> */ };
+static void (*$S21)() = { /* <data@0x00597030> */ };
 
 
 

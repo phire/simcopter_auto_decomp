@@ -703,7 +703,7 @@ void InitGridPool() {
 
 // Contribution: 3:000062d4-00006342 Module: 141, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059d2d4
-int32_t S_gridmempool = { /* <data@0x0059d2d4> */ };
+static int32_t S_gridmempool = { /* <data@0x0059d2d4> */ };
 
 
 

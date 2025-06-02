@@ -4496,7 +4496,7 @@ _T66:
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970a8
-void (*$S9)() = { /* <data@0x005970a8> */ };
+static void (*$S9)() = { /* <data@0x005970a8> */ };
 
 
 

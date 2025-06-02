@@ -5806,10 +5806,10 @@ _Ta9:
 
 // Contribution: 3:00000034-0000003b Module: 52, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597034
-void (*$S56)() = { /* <data@0x00597034> */ };
+static void (*$S56)() = { /* <data@0x00597034> */ };
 
 // GLOBAL: COPTER_D 0x00597038
-void (*$S59)() = { /* <data@0x00597038> */ };
+static void (*$S59)() = { /* <data@0x00597038> */ };
 
 
 
@@ -5818,7 +5818,7 @@ void (*$S59)() = { /* <data@0x00597038> */ };
 
 // Contribution: 3:0002c628-0002c7f3 Module: 52, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c3628
-long lOriginalSoundVolumes[113];
+static long lOriginalSoundVolumes[113];
 
 // GLOBAL: COPTER_D 0x005c37ec
 class SoundChangeNotificationSink gSoundChangeNotificationSink;

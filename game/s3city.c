@@ -13839,28 +13839,28 @@ _Tf04:
 
 // Contribution: 2:00003dc0-00003fd7 Module: 170, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592dc0
-const int32_t TurnTable3[4][8] = { /* <data@0x00592dc0> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592dc0> */ };
 
 // GLOBAL: COPTER_D 0x00592e40
-const int32_t TurnTable2[4][4] = { /* <data@0x00592e40> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00592e40> */ };
 
 // GLOBAL: COPTER_D 0x00592e80
-const int32_t IndexToType[4] = { /* <data@0x00592e80> */ };
+static const int32_t IndexToType[4] = { /* <data@0x00592e80> */ };
 
 // GLOBAL: COPTER_D 0x00592e90
-const int32_t TypeToIndex2[16] = { /* <data@0x00592e90> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x00592e90> */ };
 
 // GLOBAL: COPTER_D 0x00592ed0
-const int32_t TILUT[4][4] = { /* <data@0x00592ed0> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00592ed0> */ };
 
 // GLOBAL: COPTER_D 0x00592f10
-const struct _dPoint2d OT[4] = { /* <data@0x00592f10> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x00592f10> */ };
 
 // GLOBAL: COPTER_D 0x00592f50
-const struct _dPoint2d RRT[4] = { /* <data@0x00592f50> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00592f50> */ };
 
 // GLOBAL: COPTER_D 0x00592f90
-const struct _dPoint2d LRT[4] = { /* <data@0x00592f90> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x00592f90> */ };
 
 
 
@@ -13878,100 +13878,100 @@ long S_down_trend = { /* <data@0x005b59d8> */ };
 long S_up_trend = { /* <data@0x005b59dc> */ };
 
 // GLOBAL: COPTER_D 0x005b59e0
-long S_S2CityAlloc_Count = { /* <data@0x005b59e0> */ };
+static long S_S2CityAlloc_Count = { /* <data@0x005b59e0> */ };
 
 // GLOBAL: COPTER_D 0x005b59e4
-int32_t S_inmapmode = { /* <data@0x005b59e4> */ };
+static int32_t S_inmapmode = { /* <data@0x005b59e4> */ };
 
 // GLOBAL: COPTER_D 0x005b59e8
-int32_t S_watermorph = { /* <data@0x005b59e8> */ };
+static int32_t S_watermorph = { /* <data@0x005b59e8> */ };
 
 // GLOBAL: COPTER_D 0x005b59ec
-int32_t how_deep = { /* <data@0x005b59ec> */ };
+static int32_t how_deep = { /* <data@0x005b59ec> */ };
 
 // GLOBAL: COPTER_D 0x005b59f0
-long S_water_cycle = { /* <data@0x005b59f0> */ };
+static long S_water_cycle = { /* <data@0x005b59f0> */ };
 
 // GLOBAL: COPTER_D 0x005b59f4
-long S_water_timer = { /* <data@0x005b59f4> */ };
+static long S_water_timer = { /* <data@0x005b59f4> */ };
 
 
 
 // Contribution: 3:00072098-000934ff Module: 170, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00609098
-struct Point3d S_local_lstart;
+static struct Point3d S_local_lstart;
 
 // GLOBAL: COPTER_D 0x006090a4
-int32_t S_used_spiralscan;
+static int32_t S_used_spiralscan;
 
 // GLOBAL: COPTER_D 0x006090a8
-struct VRview S_terr_pos;
+static struct VRview S_terr_pos;
 
 // GLOBAL: COPTER_D 0x00609100
-long * S_facesort;
+static long * S_facesort;
 
 // GLOBAL: COPTER_D 0x00609104
-struct Point2d* S_rlast;
+static struct Point2d* S_rlast;
 
 // GLOBAL: COPTER_D 0x00609108
-struct Point2d S_lcells[256];
+static struct Point2d S_lcells[256];
 
 // GLOBAL: COPTER_D 0x00609908
-long S_XposZneg[4];
+static long S_XposZneg[4];
 
 // GLOBAL: COPTER_D 0x00609918
-struct _CELL_INFO S_tmp_cells[30];
+static struct _CELL_INFO S_tmp_cells[30];
 
 // GLOBAL: COPTER_D 0x00609be8
-struct Point2d* S_fovlast;
+static struct Point2d* S_fovlast;
 
 // GLOBAL: COPTER_D 0x00609bf0
-struct Point3d S_world_lstart;
+static struct Point3d S_world_lstart;
 
 // GLOBAL: COPTER_D 0x00609c00
-int32_t S_rrotmat[4][4];
+static int32_t S_rrotmat[4][4];
 
 // GLOBAL: COPTER_D 0x00609c40
-long S_XposZpos[4];
+static long S_XposZpos[4];
 
 // GLOBAL: COPTER_D 0x00609c50
-struct Point2d S_fov_cells[16384];
+static struct Point2d S_fov_cells[16384];
 
 // GLOBAL: COPTER_D 0x00629c50
-struct Point2d S_rcells[256];
+static struct Point2d S_rcells[256];
 
 // GLOBAL: COPTER_D 0x0062a450
-long S_tmpcell_ctr;
+static long S_tmpcell_ctr;
 
 // GLOBAL: COPTER_D 0x0062a458
-int32_t S_lrotmat[4][4];
+static int32_t S_lrotmat[4][4];
 
 // GLOBAL: COPTER_D 0x0062a498
-struct Point2d S_pos;
+static struct Point2d S_pos;
 
 // GLOBAL: COPTER_D 0x0062a4a0
-struct Point2d* S_llast;
+static struct Point2d* S_llast;
 
 // GLOBAL: COPTER_D 0x0062a4a8
-struct Point3d S_local_rstart;
+static struct Point3d S_local_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4b8
-long S_XnegZneg[4];
+static long S_XnegZneg[4];
 
 // GLOBAL: COPTER_D 0x0062a4c8
-struct Point3d S_world_rstart;
+static struct Point3d S_world_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4d4
-short S_lowres_dist;
+static short S_lowres_dist;
 
 // GLOBAL: COPTER_D 0x0062a4d8
-long S_XnegZpos[4];
+static long S_XnegZpos[4];
 
 // GLOBAL: COPTER_D 0x0062a4e8
-struct Point3d S_world_eye;
+static struct Point3d S_world_eye;
 
 // GLOBAL: COPTER_D 0x0062a4f8
-struct Point2d S_last_pos;
+static struct Point2d S_last_pos;
 
 
 

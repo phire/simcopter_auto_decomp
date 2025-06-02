@@ -3969,7 +3969,7 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
 
 // Contribution: 3:000000a0-000000a3 Module: 178, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970a0
-void (*$S58)() = { /* <data@0x005970a0> */ };
+static void (*$S58)() = { /* <data@0x005970a0> */ };
 
 
 

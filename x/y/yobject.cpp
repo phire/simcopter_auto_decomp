@@ -20473,13 +20473,13 @@ _T51:
 
 // Contribution: 3:000000b0-000000bb Module: 200, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970b0
-void (*$S76)() = { /* <data@0x005970b0> */ };
+static void (*$S76)() = { /* <data@0x005970b0> */ };
 
 // GLOBAL: COPTER_D 0x005970b4
-void (*$S82)() = { /* <data@0x005970b4> */ };
+static void (*$S82)() = { /* <data@0x005970b4> */ };
 
 // GLOBAL: COPTER_D 0x005970b8
-void (*$S87)() = { /* <data@0x005970b8> */ };
+static void (*$S87)() = { /* <data@0x005970b8> */ };
 
 
 
@@ -20560,16 +20560,16 @@ short gBodyDebugInfoIndex = { /* <data@0x005b86a0> */ };
 short cYObject::sScurkRectRad = { /* <data@0x005b86a4> */ };
 
 // GLOBAL: COPTER_D 0x005b86a8
-short sAvLastCellX = { /* <data@0x005b86a8> */ };
+static short sAvLastCellX = { /* <data@0x005b86a8> */ };
 
 // GLOBAL: COPTER_D 0x005b86ac
-short sAvLastCellY = { /* <data@0x005b86ac> */ };
+static short sAvLastCellY = { /* <data@0x005b86ac> */ };
 
 // GLOBAL: COPTER_D 0x005b86b0
-short gPersonSoundBeamSlice = { /* <data@0x005b86b0> */ };
+static short gPersonSoundBeamSlice = { /* <data@0x005b86b0> */ };
 
 // GLOBAL: COPTER_D 0x005b86b4
-short sCheckTotedCount = { /* <data@0x005b86b4> */ };
+static short sCheckTotedCount = { /* <data@0x005b86b4> */ };
 
 
 

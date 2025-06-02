@@ -1206,16 +1206,16 @@ _T3f:
 
 // Contribution: 3:00000054-00000063 Module: 38, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597054
-void (*$S66)() = { /* <data@0x00597054> */ };
+static void (*$S66)() = { /* <data@0x00597054> */ };
 
 // GLOBAL: COPTER_D 0x00597058
-void (*$S71)() = { /* <data@0x00597058> */ };
+static void (*$S71)() = { /* <data@0x00597058> */ };
 
 // GLOBAL: COPTER_D 0x0059705c
-void (*$S76)() = { /* <data@0x0059705c> */ };
+static void (*$S76)() = { /* <data@0x0059705c> */ };
 
 // GLOBAL: COPTER_D 0x00597060
-void (*$S81)() = { /* <data@0x00597060> */ };
+static void (*$S81)() = { /* <data@0x00597060> */ };
 
 
 

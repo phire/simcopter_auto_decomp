@@ -12141,16 +12141,16 @@ _T2b1:
 
 // Contribution: 2:00003cc0-00003d97 Module: 171, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592cc0
-const enum DirIndex2 TurnTable2[4][4] = { /* <data@0x00592cc0> */ };
+static const enum DirIndex2 TurnTable2[4][4] = { /* <data@0x00592cc0> */ };
 
 // GLOBAL: COPTER_D 0x00592d00
-const enum DirectionTypes IndexToType[4] = { /* <data@0x00592d00> */ };
+static const enum DirectionTypes IndexToType[4] = { /* <data@0x00592d00> */ };
 
 // GLOBAL: COPTER_D 0x00592d10
-const enum TurnIndex TILUT[4][4] = { /* <data@0x00592d10> */ };
+static const enum TurnIndex TILUT[4][4] = { /* <data@0x00592d10> */ };
 
 // GLOBAL: COPTER_D 0x00592d50
-const struct _dPoint2d OT[4] = { /* <data@0x00592d50> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x00592d50> */ };
 
 
 
@@ -12162,7 +12162,7 @@ const struct _dPoint2d OT[4] = { /* <data@0x00592d50> */ };
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b52c4
-int32_t lastSpeederID = { /* <data@0x005b52c4> */ };
+static int32_t lastSpeederID = { /* <data@0x005b52c4> */ };
 
 // GLOBAL: COPTER_D 0x005b52c8
 int32_t curAutos = { /* <data@0x005b52c8> */ };
@@ -12189,7 +12189,7 @@ struct CONNECTION_INFO_TYPE connections[61] = { /* <data@0x005b57e8> */ };
 
 // Contribution: 3:00071c28-00072097 Module: 171, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00608c28
-struct _AUTO_LOAD_SAVE S_autols;
+static struct _AUTO_LOAD_SAVE S_autols;
 
 // GLOBAL: COPTER_D 0x00608f6c
 int32_t AutomobileClass::fireHoseDist;

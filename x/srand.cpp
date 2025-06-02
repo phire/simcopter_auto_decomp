@@ -412,11 +412,11 @@ _T5b:
 
 // Contribution: 3:00026fdc-00027008 Module: 193, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bdfdc
-union __unnamed rrandSeed = { /* <data@0x005bdfdc> */ };
+static union __unnamed rrandSeed = { /* <data@0x005bdfdc> */ };
 
 
 
 // Contribution: 3:000a06a8-000a06ab Module: 193, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006376a8
-unsigned long srandSeed;
+static unsigned long srandSeed;
 

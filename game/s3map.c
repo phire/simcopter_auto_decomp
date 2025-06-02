@@ -4455,28 +4455,28 @@ _T10b:
 
 // Contribution: 2:00003ab0-00003cbf Module: 172, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592ab0
-const int32_t TurnTable3[4][8] = { /* <data@0x00592ab0> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592ab0> */ };
 
 // GLOBAL: COPTER_D 0x00592b30
-const int32_t TurnTable2[4][4] = { /* <data@0x00592b30> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00592b30> */ };
 
 // GLOBAL: COPTER_D 0x00592b70
-const int32_t IndexToType[4] = { /* <data@0x00592b70> */ };
+static const int32_t IndexToType[4] = { /* <data@0x00592b70> */ };
 
 // GLOBAL: COPTER_D 0x00592b80
-const int32_t TypeToIndex2[16] = { /* <data@0x00592b80> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x00592b80> */ };
 
 // GLOBAL: COPTER_D 0x00592bc0
-const int32_t TILUT[4][4] = { /* <data@0x00592bc0> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00592bc0> */ };
 
 // GLOBAL: COPTER_D 0x00592c00
-const struct _dPoint2d OT[4] = { /* <data@0x00592c00> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x00592c00> */ };
 
 // GLOBAL: COPTER_D 0x00592c40
-const struct _dPoint2d RRT[4] = { /* <data@0x00592c40> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00592c40> */ };
 
 // GLOBAL: COPTER_D 0x00592c80
-const struct _dPoint2d LRT[4] = { /* <data@0x00592c80> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x00592c80> */ };
 
 
 
@@ -4503,70 +4503,70 @@ struct Point2d S_bordermin = { /* <data@0x005b5258> */ };
 struct Point2d S_bordermax = { /* <data@0x005b5260> */ };
 
 // GLOBAL: COPTER_D 0x005b5268
-long S_borderdimx = { /* <data@0x005b5268> */ };
+static long S_borderdimx = { /* <data@0x005b5268> */ };
 
 // GLOBAL: COPTER_D 0x005b526c
-long S_borderdimy = { /* <data@0x005b526c> */ };
+static long S_borderdimy = { /* <data@0x005b526c> */ };
 
 // GLOBAL: COPTER_D 0x005b5270
-char * S_mapbuf = { /* <data@0x005b5270> */ };
+static char * S_mapbuf = { /* <data@0x005b5270> */ };
 
 // GLOBAL: COPTER_D 0x005b5274
-char * S_borderbuf = { /* <data@0x005b5274> */ };
+static char * S_borderbuf = { /* <data@0x005b5274> */ };
 
 // GLOBAL: COPTER_D 0x005b5278
-char * S_mapbufctr = { /* <data@0x005b5278> */ };
+static char * S_mapbufctr = { /* <data@0x005b5278> */ };
 
 // GLOBAL: COPTER_D 0x005b527c
-long S_mapdimx = { /* <data@0x005b527c> */ };
+static long S_mapdimx = { /* <data@0x005b527c> */ };
 
 // GLOBAL: COPTER_D 0x005b5280
-long S_mapdimy = { /* <data@0x005b5280> */ };
+static long S_mapdimy = { /* <data@0x005b5280> */ };
 
 // GLOBAL: COPTER_D 0x005b5284
-char S_fire_cycle = { /* <data@0x005b5284> */ };
+static char S_fire_cycle = { /* <data@0x005b5284> */ };
 
 // GLOBAL: COPTER_D 0x005b5288
-long S_dirlen = { /* <data@0x005b5288> */ };
+static long S_dirlen = { /* <data@0x005b5288> */ };
 
 // GLOBAL: COPTER_D 0x005b528c
-char * S_savebuffer1 = { /* <data@0x005b528c> */ };
+static char * S_savebuffer1 = { /* <data@0x005b528c> */ };
 
 // GLOBAL: COPTER_D 0x005b5290
-int32_t S_save_aspect = { /* <data@0x005b5290> */ };
+static int32_t S_save_aspect = { /* <data@0x005b5290> */ };
 
 // GLOBAL: COPTER_D 0x005b5294
-int32_t S_save_width = { /* <data@0x005b5294> */ };
+static int32_t S_save_width = { /* <data@0x005b5294> */ };
 
 // GLOBAL: COPTER_D 0x005b5298
-int32_t S_mapzoom = { /* <data@0x005b5298> */ };
+static int32_t S_mapzoom = { /* <data@0x005b5298> */ };
 
 
 
 // Contribution: 3:00071bc8-00071c23 Module: 172, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00608bc8
-long S_dicon_dim;
+static long S_dicon_dim;
 
 // GLOBAL: COPTER_D 0x00608bd0
-char * S_icons[8];
+static char * S_icons[8];
 
 // GLOBAL: COPTER_D 0x00608bf0
-long S_icon_dim;
+static long S_icon_dim;
 
 // GLOBAL: COPTER_D 0x00608bf8
-struct Point2d S_lrc;
+static struct Point2d S_lrc;
 
 // GLOBAL: COPTER_D 0x00608c00
-long S_dicon_pitch;
+static long S_dicon_pitch;
 
 // GLOBAL: COPTER_D 0x00608c08
-struct Point2d S_ulc;
+static struct Point2d S_ulc;
 
 // GLOBAL: COPTER_D 0x00608c10
-long S_icon_pitch;
+static long S_icon_pitch;
 
 // GLOBAL: COPTER_D 0x00608c18
-char * S_dicons[3];
+static char * S_dicons[3];
 
 
 

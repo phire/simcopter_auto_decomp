@@ -2110,25 +2110,25 @@ _T287:
 
 // Contribution: 2:00003380-000033bf Module: 2, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592380
-const unsigned char DaysInMonth[12] = { /* <data@0x00592380> */ };
+static const unsigned char DaysInMonth[12] = { /* <data@0x00592380> */ };
 
 // GLOBAL: COPTER_D 0x00592390
-const uint32_t FirstDayOfEachMonth[12] = { /* <data@0x00592390> */ };
+static const uint32_t FirstDayOfEachMonth[12] = { /* <data@0x00592390> */ };
 
 
 
 // Contribution: 3:00003c98-00003ec1 Module: 2, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059ac98
-char * MonthNames[12] = { /* <data@0x0059ac98> */ };
+static char * MonthNames[12] = { /* <data@0x0059ac98> */ };
 
 // GLOBAL: COPTER_D 0x0059acc8
-char * UCMonthNames[12] = { /* <data@0x0059acc8> */ };
+static char * UCMonthNames[12] = { /* <data@0x0059acc8> */ };
 
 // GLOBAL: COPTER_D 0x0059acf8
-char * WeekDayNames[7] = { /* <data@0x0059acf8> */ };
+static char * WeekDayNames[7] = { /* <data@0x0059acf8> */ };
 
 // GLOBAL: COPTER_D 0x0059ad18
-char * UCWeekDayNames[7] = { /* <data@0x0059ad18> */ };
+static char * UCWeekDayNames[7] = { /* <data@0x0059ad18> */ };
 
 
 

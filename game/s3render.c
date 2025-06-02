@@ -1341,28 +1341,28 @@ void SetUserVars(int32_t * user) {
 
 // Contribution: 2:00003470-0000367f Module: 179, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592470
-const int32_t TurnTable3[4][8] = { /* <data@0x00592470> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592470> */ };
 
 // GLOBAL: COPTER_D 0x005924f0
-const int32_t TurnTable2[4][4] = { /* <data@0x005924f0> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x005924f0> */ };
 
 // GLOBAL: COPTER_D 0x00592530
-const int32_t IndexToType[4] = { /* <data@0x00592530> */ };
+static const int32_t IndexToType[4] = { /* <data@0x00592530> */ };
 
 // GLOBAL: COPTER_D 0x00592540
-const int32_t TypeToIndex2[16] = { /* <data@0x00592540> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x00592540> */ };
 
 // GLOBAL: COPTER_D 0x00592580
-const int32_t TILUT[4][4] = { /* <data@0x00592580> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00592580> */ };
 
 // GLOBAL: COPTER_D 0x005925c0
-const struct _dPoint2d OT[4] = { /* <data@0x005925c0> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x005925c0> */ };
 
 // GLOBAL: COPTER_D 0x00592600
-const struct _dPoint2d RRT[4] = { /* <data@0x00592600> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00592600> */ };
 
 // GLOBAL: COPTER_D 0x00592640
-const struct _dPoint2d LRT[4] = { /* <data@0x00592640> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x00592640> */ };
 
 
 

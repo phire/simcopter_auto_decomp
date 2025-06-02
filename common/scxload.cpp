@@ -2767,7 +2767,7 @@ _T152e:
 
 // Contribution: 3:0006fa58-0006fa5b Module: 89, 4 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a58
-unsigned char * scxbuf;
+static unsigned char * scxbuf;
 
 
 

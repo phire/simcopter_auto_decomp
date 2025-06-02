@@ -13797,28 +13797,28 @@ _T11f:
 
 // Contribution: 2:00003688-00003897 Module: 176, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592688
-const int32_t TurnTable3[4][8] = { /* <data@0x00592688> */ };
+static const int32_t TurnTable3[4][8] = { /* <data@0x00592688> */ };
 
 // GLOBAL: COPTER_D 0x00592708
-const int32_t TurnTable2[4][4] = { /* <data@0x00592708> */ };
+static const int32_t TurnTable2[4][4] = { /* <data@0x00592708> */ };
 
 // GLOBAL: COPTER_D 0x00592748
-const int32_t IndexToType[4] = { /* <data@0x00592748> */ };
+static const int32_t IndexToType[4] = { /* <data@0x00592748> */ };
 
 // GLOBAL: COPTER_D 0x00592758
-const int32_t TypeToIndex2[16] = { /* <data@0x00592758> */ };
+static const int32_t TypeToIndex2[16] = { /* <data@0x00592758> */ };
 
 // GLOBAL: COPTER_D 0x00592798
-const int32_t TILUT[4][4] = { /* <data@0x00592798> */ };
+static const int32_t TILUT[4][4] = { /* <data@0x00592798> */ };
 
 // GLOBAL: COPTER_D 0x005927d8
-const struct _dPoint2d OT[4] = { /* <data@0x005927d8> */ };
+static const struct _dPoint2d OT[4] = { /* <data@0x005927d8> */ };
 
 // GLOBAL: COPTER_D 0x00592818
-const struct _dPoint2d RRT[4] = { /* <data@0x00592818> */ };
+static const struct _dPoint2d RRT[4] = { /* <data@0x00592818> */ };
 
 // GLOBAL: COPTER_D 0x00592858
-const struct _dPoint2d LRT[4] = { /* <data@0x00592858> */ };
+static const struct _dPoint2d LRT[4] = { /* <data@0x00592858> */ };
 
 
 
@@ -13872,16 +13872,16 @@ int32_t S_htwk_collide_damage_val = { /* <data@0x005b48f8> */ };
 int32_t S_htwk_depreciation = { /* <data@0x005b48fc> */ };
 
 // GLOBAL: COPTER_D 0x005b4900
-char ControlNoise = { /* <data@0x005b4900> */ };
+static char ControlNoise = { /* <data@0x005b4900> */ };
 
 // GLOBAL: COPTER_D 0x005b4904
-long S_sound_frames = { /* <data@0x005b4904> */ };
+static long S_sound_frames = { /* <data@0x005b4904> */ };
 
 // GLOBAL: COPTER_D 0x005b4908
-int32_t RopeSeg = { /* <data@0x005b4908> */ };
+static int32_t RopeSeg = { /* <data@0x005b4908> */ };
 
 // GLOBAL: COPTER_D 0x005b490c
-int32_t RopeDim = { /* <data@0x005b490c> */ };
+static int32_t RopeDim = { /* <data@0x005b490c> */ };
 
 // GLOBAL: COPTER_D 0x005b4910
 struct Point3d G_helidir = { /* <data@0x005b4910> */ };
@@ -13905,13 +13905,13 @@ long G_SpotLiteXRotation = { /* <data@0x005b492c> */ };
 long G_SpotLiteYRotation = { /* <data@0x005b4930> */ };
 
 // GLOBAL: COPTER_D 0x005b4934
-long S_test_frames = { /* <data@0x005b4934> */ };
+static long S_test_frames = { /* <data@0x005b4934> */ };
 
 // GLOBAL: COPTER_D 0x005b4938
-long S_avoiding = { /* <data@0x005b4938> */ };
+static long S_avoiding = { /* <data@0x005b4938> */ };
 
 // GLOBAL: COPTER_D 0x005b493c
-int32_t S_targalt = { /* <data@0x005b493c> */ };
+static int32_t S_targalt = { /* <data@0x005b493c> */ };
 
 // GLOBAL: COPTER_D 0x005b4940
 struct _HELI_DATA* G_helis[10] = { /* <data@0x005b4940> */ };
@@ -13923,49 +13923,49 @@ struct _HELI_DATA* G_uheli = { /* <data@0x005b4968> */ };
 struct _HELI_DATA* G_testheli = { /* <data@0x005b496c> */ };
 
 // GLOBAL: COPTER_D 0x005b4970
-long S_numhelis = { /* <data@0x005b4970> */ };
+static long S_numhelis = { /* <data@0x005b4970> */ };
 
 // GLOBAL: COPTER_D 0x005b4978
 struct _HELI_TYPE_DATA S_helitype_data[1] = { /* <data@0x005b4978> */ };
 
 // GLOBAL: COPTER_D 0x005b4c90
-struct Point3d S_bracket_loc = { /* <data@0x005b4c90> */ };
+static struct Point3d S_bracket_loc = { /* <data@0x005b4c90> */ };
 
 // GLOBAL: COPTER_D 0x005b4c9c
-int32_t S_shadalt = { /* <data@0x005b4c9c> */ };
+static int32_t S_shadalt = { /* <data@0x005b4c9c> */ };
 
 // GLOBAL: COPTER_D 0x005b4ca0
-int32_t S_spotdist = { /* <data@0x005b4ca0> */ };
+static int32_t S_spotdist = { /* <data@0x005b4ca0> */ };
 
 // GLOBAL: COPTER_D 0x005b4ca4
-long HeliMIFFID = { /* <data@0x005b4ca4> */ };
+static long HeliMIFFID = { /* <data@0x005b4ca4> */ };
 
 
 
 // Contribution: 3:0006feb0-000702b7 Module: 176, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606eb0
-struct _HELI_DATA lsheli;
+static struct _HELI_DATA lsheli;
 
 // GLOBAL: COPTER_D 0x006071e0
-struct Point3d S_spotvect;
+static struct Point3d S_spotvect;
 
 // GLOBAL: COPTER_D 0x006071ec
-struct VRBmpHdr* S_shadbmp;
+static struct VRBmpHdr* S_shadbmp;
 
 // GLOBAL: COPTER_D 0x006071f0
-int32_t S_turbyaw[10];
+static int32_t S_turbyaw[10];
 
 // GLOBAL: COPTER_D 0x00607218
-int32_t S_spotmat[4][4];
+static int32_t S_spotmat[4][4];
 
 // GLOBAL: COPTER_D 0x00607258
-struct Point3d S_sound_loc;
+static struct Point3d S_sound_loc;
 
 // GLOBAL: COPTER_D 0x00607268
-int32_t S_turbslide[10];
+static int32_t S_turbslide[10];
 
 // GLOBAL: COPTER_D 0x00607290
-int32_t S_turbpitch[10];
+static int32_t S_turbpitch[10];
 
 
 
