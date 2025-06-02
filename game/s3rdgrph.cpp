@@ -252,7 +252,7 @@ _T1aa:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -6379,7 +6379,7 @@ _T5e:
 	__asm        mov    cx, [eax+4];
 	__asm        lea    eax, [ecx*2];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;

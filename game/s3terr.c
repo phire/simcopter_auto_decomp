@@ -112,7 +112,7 @@ void S3TerrainInit() {
 	__asm        push   0x10000;
 	__asm        call   0x004D19DF;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62A524], eax;
+	__asm        mov    S_recip_celldim, eax;
 // LINE 135:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2f;
@@ -154,28 +154,28 @@ short S3TerrainInitMap() {
 	short wflags;
 
 // LINE 164:
-	__asm        mov    dword ptr ds:[0x66EB00], 0x7530;
+	__asm        mov    G_terr_minalt, 0x7530;
 // LINE 165:
-	__asm        mov    dword ptr ds:[0x67ED20], 0;
+	__asm        mov    G_terr_maxalt, 0;
 // LINE 171:
-	__asm        mov    dword ptr ds:[0x5B5CB8], 0x100;
+	__asm        mov    G_tdim, 0x100;
 // LINE 172:
-	__asm        mov    dword ptr ds:[0x5B5CBC], 0xFF;
+	__asm        mov    G_tmask, 0xFF;
 // LINE 173:
-	__asm        mov    dword ptr ds:[0x5B5CC0], 8;
+	__asm        mov    G_tshift, 8;
 // LINE 176:
-	__asm        mov    eax, ds:[0x5B5CB8];
-	__asm        imul   eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
+	__asm        imul   eax, G_tdim;
 	__asm        add    eax, eax;
 	__asm        push   eax;
 	__asm        push   0x5B5D68;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x67EB10], eax;
+	__asm        mov    G_tmap, eax;
 // LINE 177:
-	__asm        cmp    dword ptr ds:[0x67EB10], 0;
+	__asm        cmp    G_tmap, 0;
 	__asm        jne    _T7c;
 // LINE 178:
 	__asm        push   0x5B5D70;
@@ -183,10 +183,10 @@ short S3TerrainInitMap() {
 	__asm        add    esp, 4;
 // LINE 181:
 _T7c:
-	__asm        mov    edx, ds:[0x5B5CB8];
-	__asm        imul   edx, ds:[0x5B5CB8];
+	__asm        mov    edx, G_tdim;
+	__asm        imul   edx, G_tdim;
 	__asm        add    edx, edx;
-	__asm        mov    edi, ds:[0x67EB10];
+	__asm        mov    edi, G_tmap;
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, edx;
 	__asm        shr    ecx, 2;
@@ -245,35 +245,35 @@ _T127:
 	__asm        mov    alt, ax;
 // LINE 202:
 	__asm        movsx  eax, alt;
-	__asm        cmp    eax, ds:[0x67ED20];
+	__asm        cmp    eax, G_terr_maxalt;
 	__asm        jle    _T14e;
 // LINE 203:
 	__asm        movsx  eax, alt;
-	__asm        mov    ds:[0x67ED20], eax;
+	__asm        mov    G_terr_maxalt, eax;
 // LINE 204:
 _T14e:
 	__asm        movsx  eax, alt;
-	__asm        cmp    eax, ds:[0x66EB00];
+	__asm        cmp    eax, G_terr_minalt;
 	__asm        jge    _T167;
 // LINE 205:
 	__asm        movsx  eax, alt;
-	__asm        mov    ds:[0x66EB00], eax;
+	__asm        mov    G_terr_minalt, eax;
 // LINE 207:
 _T167:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
 	__asm        add    edx, edx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        mov    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 208:
 	__asm        jmp    _Tc9;
@@ -281,14 +281,14 @@ _T19f:
 	__asm        jmp    _Tad;
 // LINE 211:
 _T1a4:
-	__asm        sub    dword ptr ds:[0x66EB00], 0x32;
+	__asm        sub    G_terr_minalt, 0x32;
 // LINE 212:
-	__asm        add    dword ptr ds:[0x67ED20], 0x64;
+	__asm        add    G_terr_maxalt, 0x64;
 // LINE 213:
-	__asm        cmp    dword ptr ds:[0x66EB00], 0;
+	__asm        cmp    G_terr_minalt, 0;
 	__asm        jge    _T1c9;
 
-	__asm        mov    dword ptr ds:[0x66EB00], 0;
+	__asm        mov    G_terr_minalt, 0;
 // LINE 219:
 _T1c9:
 	__asm        mov    x, 1;
@@ -312,14 +312,14 @@ _T1f6:
 // LINE 224:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        sub    edx, 2;
@@ -327,14 +327,14 @@ _T1f6:
 // LINE 225:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 227:
 	__asm        jmp    _T372;
@@ -344,14 +344,14 @@ _T272:
 // LINE 229:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        sub    edx, 2;
@@ -359,14 +359,14 @@ _T272:
 // LINE 230:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 232:
 	__asm        jmp    _T372;
@@ -374,26 +374,26 @@ _T272:
 _T2e4:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        add    edx, ebx;
@@ -402,14 +402,14 @@ _T2e4:
 // LINE 235:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 237:
 _T372:
@@ -438,15 +438,15 @@ _T3a9:
 	__asm        jne    _T425;
 // LINE 247:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        sub    edx, 2;
@@ -454,14 +454,14 @@ _T3a9:
 // LINE 248:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 250:
 	__asm        jmp    _T525;
@@ -470,15 +470,15 @@ _T425:
 	__asm        jne    _T497;
 // LINE 252:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        sub    edx, 2;
@@ -486,41 +486,41 @@ _T425:
 // LINE 253:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 255:
 	__asm        jmp    _T525;
 // LINE 257:
 _T497:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        add    edx, ebx;
@@ -529,14 +529,14 @@ _T497:
 // LINE 258:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 260:
 _T525:
@@ -565,15 +565,15 @@ _T55c:
 	__asm        jne    _T5d6;
 // LINE 269:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        dec    edx;
@@ -581,14 +581,14 @@ _T55c:
 // LINE 270:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 272:
 	__asm        jmp    _T6d4;
@@ -597,15 +597,15 @@ _T5d6:
 	__asm        jne    _T646;
 // LINE 274:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        dec    edx;
@@ -613,41 +613,41 @@ _T5d6:
 // LINE 275:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 277:
 	__asm        jmp    _T6d4;
 // LINE 279:
 _T646:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        add    edx, ebx;
@@ -656,14 +656,14 @@ _T646:
 // LINE 280:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 282:
 _T6d4:
@@ -690,44 +690,44 @@ _T709:
 // LINE 294:
 	__asm        mov    eax, y;
 	__asm        add    eax, eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        add    ecx, ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 295:
 	__asm        jmp    _T706;
 // LINE 298:
 _T771:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
 	__asm        lea    edx, [eax*2];
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
+	__asm        add    eax, G_tmap;
 	__asm        mov    edi, eax;
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, edx;
@@ -745,18 +745,18 @@ _T7bf:
 _T7cb:
 	__asm        inc    y;
 _T7ce:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        cmp    y, eax;
 	__asm        jge    _T814;
 // LINE 304:
-	__asm        mov    edx, ds:[0x5B5CB8];
+	__asm        mov    edx, G_tdim;
 	__asm        add    edx, edx;
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        add    eax, eax;
-	__asm        add    eax, ds:[0x67EB10];
+	__asm        add    eax, G_tmap;
 	__asm        mov    edi, eax;
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, edx;
@@ -778,41 +778,41 @@ _T823:
 	__asm        jge    _T8ce;
 // LINE 313:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, 0x7F;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, 0x80;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 314:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, 1;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [ecx+edx*2], ax;
 // LINE 315:
 	__asm        jmp    _T820;
@@ -826,59 +826,59 @@ _T8dd:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T98d;
 // LINE 319:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, 0x7F;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
-	__asm        mov    edx, ds:[0x5B5CBC];
+	__asm        mov    edx, G_tmask;
 	__asm        and    edx, 0x80;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 320:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, 1;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        xor    edx, edx;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 321:
 	__asm        jmp    _T8da;
 // LINE 324:
 _T98d:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, 0x7F;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, 0x7F;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 326:
@@ -900,14 +900,14 @@ _T9e4:
 // LINE 330:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 331:
 	__asm        jmp    _T9e1;
@@ -921,14 +921,14 @@ _Ta28:
 	__asm        call   srand;
 	__asm        add    esp, 4;
 // LINE 344:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
 	__asm        call   do_map_square;
 	__asm        add    esp, 0xC;
 // LINE 349:
-	__asm        cmp    dword ptr ds:[0x598E84], 1;
+	__asm        cmp    G_fract_blurr, 1;
 	__asm        jne    _Tbc2;
 // LINE 351:
 	__asm        mov    k1, 0x30A3;
@@ -942,7 +942,7 @@ _Ta28:
 _Ta76:
 	__asm        inc    x;
 _Ta79:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        cmp    x, eax;
 	__asm        jg     _Tbc2;
 // LINE 356:
@@ -951,16 +951,16 @@ _Ta79:
 _Ta93:
 	__asm        inc    y;
 _Ta96:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        cmp    y, eax;
 	__asm        jg     _Tbbd;
 // LINE 359:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, x;
 	__asm        jle    _Tacb;
 
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, y;
 	__asm        jle    _Tacb;
@@ -970,15 +970,15 @@ _Ta96:
 _Tacb:
 	__asm        mov    eax, y;
 	__asm        add    eax, 2;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        sub    ecx, 2;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -990,15 +990,15 @@ _Tacb:
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, y;
 	__asm        sub    eax, 2;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -1009,14 +1009,14 @@ _Tacb:
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -1028,14 +1028,14 @@ _Tacb:
 	__asm        add    ebx, eax;
 	__asm        sar    ebx, 0x10;
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [eax+ecx], bx;
 // LINE 366:
 	__asm        jmp    _Ta93;
@@ -1159,26 +1159,26 @@ _Tcec:
 	__asm        jne    _Td83;
 // LINE 421:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        sub    edx, 8;
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [eax+ecx], dx;
 // LINE 423:
 _Td83:
@@ -1964,54 +1964,54 @@ _T170c:
 // LINE 566:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 567:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 568:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 569:
 	__asm        mov    ax, alt;
 	__asm        mov    edx, y;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 570:
 	__asm        jmp    _T1622;
@@ -2020,8 +2020,8 @@ _T17d7:
 	__asm        jmp    _T1606;
 // LINE 578:
 _T17dc:
-	__asm        mov    eax, ds:[0x67ED20];
-	__asm        sub    eax, ds:[0x66EB00];
+	__asm        mov    eax, G_terr_maxalt;
+	__asm        sub    eax, G_terr_minalt;
 	__asm        mov    alt2, ax;
 // LINE 579:
 	__asm        movsx  eax, alt2;
@@ -2054,27 +2054,27 @@ _T1821:
 // LINE 593:
 _T184d:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 594:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2083,15 +2083,15 @@ _T184d:
 // LINE 595:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2100,14 +2100,14 @@ _T184d:
 // LINE 596:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2120,7 +2120,7 @@ _T184d:
 // LINE 599:
 	__asm        movsx  eax, alt2;
 	__asm        sar    eax, 1;
-	__asm        add    eax, ds:[0x66EB00];
+	__asm        add    eax, G_terr_minalt;
 	__asm        movsx  ecx, alt;
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T1952;
@@ -2154,27 +2154,27 @@ _T1987:
 	__asm        jge    _T1b6c;
 // LINE 616:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 617:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2183,15 +2183,15 @@ _T1987:
 // LINE 618:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2200,14 +2200,14 @@ _T1987:
 // LINE 619:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2281,7 +2281,7 @@ _T1b2d:
 _T1b3e:
 	__asm        movsx  eax, alt2;
 	__asm        add    eax, eax;
-	__asm        add    eax, ds:[0x66EB00];
+	__asm        add    eax, G_terr_minalt;
 	__asm        movsx  ecx, alt;
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T1b67;
@@ -2315,27 +2315,27 @@ _T1b9c:
 	__asm        jge    _T1d86;
 // LINE 652:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 653:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2344,15 +2344,15 @@ _T1b9c:
 // LINE 654:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2361,14 +2361,14 @@ _T1b9c:
 // LINE 655:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2442,7 +2442,7 @@ _T1d46:
 _T1d57:
 	__asm        movsx  eax, alt2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x66EB00];
+	__asm        add    eax, G_terr_minalt;
 	__asm        movsx  ecx, alt;
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T1d81;
@@ -2516,27 +2516,27 @@ _T1e09:
 // LINE 700:
 _T1e41:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 701:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2545,15 +2545,15 @@ _T1e41:
 // LINE 702:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2562,14 +2562,14 @@ _T1e41:
 // LINE 703:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2580,7 +2580,7 @@ _T1e41:
 	__asm        sar    eax, 2;
 	__asm        mov    alt, ax;
 // LINE 707:
-	__asm        mov    eax, ds:[0x67ED20];
+	__asm        mov    eax, G_terr_maxalt;
 	__asm        movsx  ecx, alt2;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        add    ecx, ecx;
@@ -2723,27 +2723,27 @@ _T20bb:
 // LINE 742:
 _T20f3:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 743:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2752,15 +2752,15 @@ _T20f3:
 // LINE 744:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2769,14 +2769,14 @@ _T20f3:
 // LINE 745:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2787,7 +2787,7 @@ _T20f3:
 	__asm        sar    eax, 2;
 	__asm        mov    alt, ax;
 // LINE 749:
-	__asm        mov    eax, ds:[0x67ED20];
+	__asm        mov    eax, G_terr_maxalt;
 	__asm        movsx  ecx, alt2;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        sub    eax, ecx;
@@ -2929,27 +2929,27 @@ _T236b:
 // LINE 784:
 _T23a3:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 785:
 	__asm        mov    eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2958,15 +2958,15 @@ _T23a3:
 // LINE 786:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2975,14 +2975,14 @@ _T23a3:
 // LINE 787:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt;
@@ -2994,7 +2994,7 @@ _T23a3:
 	__asm        mov    alt, ax;
 // LINE 791:
 	__asm        movsx  eax, alt2;
-	__asm        add    eax, ds:[0x67ED20];
+	__asm        add    eax, G_terr_maxalt;
 	__asm        movsx  ecx, alt;
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T2499;
@@ -4198,7 +4198,7 @@ _T3375:
 	__asm        jmp    _T3141;
 // LINE 990:
 _T337a:
-	__asm        cmp    dword ptr ds:[0x598EA8], 1;
+	__asm        cmp    G_use_height_backplane, 1;
 	__asm        jne    _T3396;
 // LINE 991:
 	__asm        push   0x11;
@@ -4213,9 +4213,9 @@ _T3396:
 	__asm        add    esp, 4;
 // LINE 998:
 _T33a0:
-	__asm        shl    dword ptr ds:[0x66EB00], 0x10;
+	__asm        shl    G_terr_minalt, 0x10;
 // LINE 999:
-	__asm        shl    dword ptr ds:[0x67ED20], 0x10;
+	__asm        shl    G_terr_maxalt, 0x10;
 // LINE 1001:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00517237;
@@ -4247,14 +4247,14 @@ _T26:
 	__asm        movsx  eax, midp;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4263,25 +4263,25 @@ _T26:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4299,30 +4299,30 @@ _T26:
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1030:
 _T11a:
 	__asm        movsx  eax, midp;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4331,29 +4331,29 @@ _T11a:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  ebx, y;
-	__asm        and    ebx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    ebx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    ebx, cl;
 	__asm        add    ebx, ebx;
 	__asm        lea    eax, [ebx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4371,30 +4371,30 @@ _T11a:
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1035:
 _T21b:
 	__asm        movsx  eax, midp;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        add    edx, edx;
 	__asm        lea    eax, [edx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4403,25 +4403,25 @@ _T21b:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        add    edx, edx;
 	__asm        lea    eax, [edx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4439,30 +4439,30 @@ _T21b:
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
+	__asm        and    edx, G_tmask;
 	__asm        movsx  ebx, y;
-	__asm        and    ebx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    ebx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    ebx, cl;
 	__asm        add    ebx, ebx;
 	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1040:
 _T304:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4471,29 +4471,29 @@ _T304:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4511,16 +4511,16 @@ _T304:
 	__asm        movsx  edx, msize;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1049:
 _T405:
@@ -4532,14 +4532,14 @@ _T405:
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4548,25 +4548,25 @@ _T405:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4585,14 +4585,14 @@ _T405:
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1056:
 _T4fc:
@@ -4600,16 +4600,16 @@ _T4fc:
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4618,29 +4618,29 @@ _T4fc:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  ebx, y;
-	__asm        and    ebx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    ebx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    ebx, cl;
 	__asm        add    ebx, ebx;
 	__asm        lea    eax, [ebx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4659,16 +4659,16 @@ _T4fc:
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1061:
 _T5ff:
@@ -4676,14 +4676,14 @@ _T5ff:
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        add    edx, edx;
 	__asm        lea    eax, [edx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4692,25 +4692,25 @@ _T5ff:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  edx, y;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        add    edx, edx;
 	__asm        lea    eax, [edx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4729,31 +4729,31 @@ _T5ff:
 	__asm        movsx  ebx, x;
 	__asm        add    edx, ebx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
+	__asm        and    edx, G_tmask;
 	__asm        movsx  ebx, y;
-	__asm        and    ebx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    ebx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    ebx, cl;
 	__asm        add    ebx, ebx;
 	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1066:
 _T6ea:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4762,29 +4762,29 @@ _T6ea:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4802,72 +4802,72 @@ _T6ea:
 	__asm        movsx  edx, msize;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1078:
 _T7ed:
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, msize;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, x;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
+	__asm        and    eax, G_tmask;
 	__asm        movsx  ebx, y;
-	__asm        and    ebx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    ebx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    ebx, cl;
 	__asm        add    ebx, ebx;
 	__asm        lea    eax, [ebx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        add    edx, ebx;
 	__asm        movsx  eax, msize;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        add    edx, ebx;
 	__asm        movsx  eax, y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bx, [eax+ecx];
 	__asm        lea    eax, [edx+ebx];
@@ -4880,16 +4880,16 @@ _T7ed:
 	__asm        movsx  eax, midp;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4904,16 +4904,16 @@ _T7ed:
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1082:
 _T955:
@@ -4924,17 +4924,17 @@ _T955:
 	__asm        movsx  eax, midp;
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4949,17 +4949,17 @@ _T955:
 	__asm        movsx  edx, midp;
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1086:
 _T9eb:
@@ -4967,16 +4967,16 @@ _T9eb:
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -4992,16 +4992,16 @@ _T9eb:
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1088:
 _Ta75:
@@ -5009,17 +5009,17 @@ _Ta75:
 	__asm        movsx  ecx, y;
 	__asm        add    eax, ecx;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  edx, x;
 	__asm        add    ecx, edx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        test   edx, edx;
@@ -5035,17 +5035,17 @@ _Ta75:
 	__asm        movsx  ebx, y;
 	__asm        add    edx, ebx;
 	__asm        inc    edx;
-	__asm        and    edx, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    edx, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
 	__asm        movsx  ecx, midp;
 	__asm        movsx  ebx, x;
 	__asm        add    ecx, ebx;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1095:
 _Tb01:
@@ -5123,7 +5123,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        fild   qword ptr [ebp-0x18];
 	__asm        fmulp;
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        fidiv  dword ptr [ebp-0x1C];
 	__asm        call   0x0056EBE8;
@@ -5145,12 +5145,12 @@ _T62:
 	__asm        add    eax, delta;
 	__asm        mov    new_height, eax;
 // LINE 1119:
-	__asm        mov    eax, ds:[0x66EB00];
+	__asm        mov    eax, G_terr_minalt;
 	__asm        cmp    new_height, eax;
 	__asm        jge    _T89;
 
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x66EB00];
+	__asm        mov    ax, reinterpret_cast<uint16_t>(G_terr_minalt);
 	__asm        mov    new_height, eax;
 // LINE 1120:
 _T89:
@@ -5167,15 +5167,15 @@ void S3TerrSetGridObj() {
 	struct Point2d ulp;
 
 // LINE 1144:
-	__asm        mov    eax, ds:[0x67ED28];
+	__asm        mov    eax, G_grid_ulc.x;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ulp.x, eax;
 // LINE 1145:
-	__asm        mov    eax, ds:[0x67ED2C];
+	__asm        mov    eax, G_grid_ulc.y;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ulp.y, eax;
 // LINE 1148:
-	__asm        mov    eax, ds:[0x666368];
+	__asm        mov    eax, GridVerts;
 	__asm        add    eax, 4;
 	__asm        mov    yptr, eax;
 // LINE 1150:
@@ -5186,7 +5186,7 @@ _T39:
 	__asm        inc    y;
 _T3c:
 	__asm        mov    eax, ulp.y;
-	__asm        add    eax, ds:[0x666358];
+	__asm        add    eax, G_VertDim;
 	__asm        cmp    eax, y;
 	__asm        jle    _T10e;
 // LINE 1152:
@@ -5197,12 +5197,12 @@ _T59:
 	__asm        inc    x;
 _T5c:
 	__asm        mov    eax, ulp.x;
-	__asm        add    eax, ds:[0x666358];
+	__asm        add    eax, G_VertDim;
 	__asm        cmp    eax, x;
 	__asm        jle    _T109;
 // LINE 1154:
 	__asm        mov    eax, yptr;
-	__asm        cmp    ds:[0x666368], eax;
+	__asm        cmp    GridVerts, eax;
 	__asm        jbe    _T99;
 
 	__asm        push   0x482;
@@ -5216,7 +5216,7 @@ _T99:
 // LINE 1155:
 _T9e:
 	__asm        mov    eax, yptr;
-	__asm        cmp    ds:[0x662874], eax;
+	__asm        cmp    GridVertsEnd, eax;
 	__asm        ja     _Tc9;
 
 	__asm        push   0x483;
@@ -5229,15 +5229,15 @@ _Tc9:
 	__asm        jmp    _Tce;
 // LINE 1158:
 _Tce:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, y;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -5261,260 +5261,260 @@ void S3TerrainMorph() {
 	struct Point2d ulp;
 
 // LINE 1199:
-	__asm        cmp    dword ptr ds:[0x5B5CC4], 0xA;
+	__asm        cmp    G_morphno, 0xA;
 	__asm        jne    _T232;
 // LINE 1202:
-	__asm        mov    eax, ds:[0x66EAF8];
+	__asm        mov    eax, G_morphcell.x;
 	__asm        and    eax, 0xFF;
 	__asm        add    eax, eax;
 	__asm        mov    ulp.x, eax;
 // LINE 1203:
-	__asm        mov    eax, ds:[0x66EAFC];
+	__asm        mov    eax, G_morphcell.y;
 	__asm        and    eax, 0xFF;
 	__asm        add    eax, eax;
 	__asm        mov    ulp.y, eax;
 // LINE 1204:
 	__asm        mov    eax, ulp.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A500], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h1, eax;
 // LINE 1205:
 	__asm        mov    eax, ulp.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A504], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h2, eax;
 // LINE 1206:
 	__asm        mov    eax, ulp.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        add    ecx, 2;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A508], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h3, eax;
 // LINE 1207:
 	__asm        mov    eax, ulp.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A50C], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h4, eax;
 // LINE 1208:
 	__asm        mov    eax, ulp.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A510], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h5, eax;
 // LINE 1209:
 	__asm        mov    eax, ulp.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        add    ecx, 2;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A514], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h6, eax;
 // LINE 1210:
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, 2;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A518], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h7, eax;
 // LINE 1211:
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, 2;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A51C], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h8, eax;
 // LINE 1212:
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, 2;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, ulp.x;
 	__asm        add    ecx, 2;
-	__asm        and    ecx, ds:[0x5B5CBC];
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        add    eax, ds:[0x67EB10];
-	__asm        mov    ds:[0x62A520], eax;
+	__asm        add    eax, G_tmap;
+	__asm        mov    S_h9, eax;
 // LINE 1218:
 _T232:
-	__asm        mov    eax, ds:[0x62A500];
+	__asm        mov    eax, S_h1;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A500];
+	__asm        mov    eax, S_h1;
 	__asm        mov    [eax], cx;
 // LINE 1219:
-	__asm        mov    eax, ds:[0x62A504];
+	__asm        mov    eax, S_h2;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A504];
+	__asm        mov    eax, S_h2;
 	__asm        mov    [eax], cx;
 // LINE 1220:
-	__asm        mov    eax, ds:[0x62A508];
+	__asm        mov    eax, S_h3;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A508];
+	__asm        mov    eax, S_h3;
 	__asm        mov    [eax], cx;
 // LINE 1221:
-	__asm        mov    eax, ds:[0x62A50C];
+	__asm        mov    eax, S_h4;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A50C];
+	__asm        mov    eax, S_h4;
 	__asm        mov    [eax], cx;
 // LINE 1222:
-	__asm        mov    eax, ds:[0x62A510];
+	__asm        mov    eax, S_h5;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A510];
+	__asm        mov    eax, S_h5;
 	__asm        mov    [eax], cx;
 // LINE 1223:
-	__asm        mov    eax, ds:[0x62A514];
+	__asm        mov    eax, S_h6;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A514];
+	__asm        mov    eax, S_h6;
 	__asm        mov    [eax], cx;
 // LINE 1224:
-	__asm        mov    eax, ds:[0x62A518];
+	__asm        mov    eax, S_h7;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A518];
+	__asm        mov    eax, S_h7;
 	__asm        mov    [eax], cx;
 // LINE 1225:
-	__asm        mov    eax, ds:[0x62A51C];
+	__asm        mov    eax, S_h8;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A51C];
+	__asm        mov    eax, S_h8;
 	__asm        mov    [eax], cx;
 // LINE 1226:
-	__asm        mov    eax, ds:[0x62A520];
+	__asm        mov    eax, S_h9;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A520];
+	__asm        mov    eax, S_h9;
 	__asm        mov    [eax], cx;
 // LINE 1229:
-	__asm        dec    dword ptr ds:[0x5B5CC4];
+	__asm        dec    G_morphno;
 // LINE 1232:
-	__asm        cmp    dword ptr ds:[0x5B5CC4], 3;
+	__asm        cmp    G_morphno, 3;
 	__asm        jge    _T317;
 // LINE 1233:
-	__asm        mov    eax, ds:[0x62A510];
+	__asm        mov    eax, S_h5;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        add    ecx, 8;
-	__asm        mov    eax, ds:[0x62A510];
+	__asm        mov    eax, S_h5;
 	__asm        mov    [eax], cx;
 // LINE 1236:
 _T317:
-	__asm        cmp    dword ptr ds:[0x5B5CC4], 0;
+	__asm        cmp    G_morphno, 0;
 	__asm        jle    _T356;
 // LINE 1238:
-	__asm        mov    eax, ds:[0x5B5CC4];
+	__asm        mov    eax, G_morphno;
 	__asm        and    eax, 3;
 	__asm        mov    al, [eax*2+0x5B5CC8];
-	__asm        mov    ecx, ds:[0x66EAFC];
+	__asm        mov    ecx, G_morphcell.y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dx, ds:[0x66EAF8];
+	__asm        mov    dx, reinterpret_cast<uint16_t>(G_morphcell.x);
 	__asm        mov    dh, dl;
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 1240:
 	__asm        jmp    _T38c;
 // LINE 1242:
 _T356:
-	__asm        movsx  eax, word ptr ds:[0x5B5CD0];
+	__asm        movsx  eax, S_texlast;
 	__asm        and    eax, 3;
 	__asm        mov    al, [eax*2+0x5B5CC8];
-	__asm        mov    ecx, ds:[0x66EAFC];
+	__asm        mov    ecx, G_morphcell.y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dx, ds:[0x66EAF8];
+	__asm        mov    dx, reinterpret_cast<uint16_t>(G_morphcell.x);
 	__asm        mov    dh, dl;
 	__asm        mov    [ecx+edx+0x66EB10], al;
 // LINE 1243:
-	__asm        inc    word ptr ds:[0x5B5CD0];
+	__asm        inc    S_texlast;
 // LINE 1249:
 _T38c:
-	__asm        mov    eax, ds:[0x66EAF8];
-	__asm        sub    eax, ds:[0x67ED28];
+	__asm        mov    eax, G_morphcell.x;
+	__asm        sub    eax, G_grid_ulc.x;
 	__asm        mov    mcell.x, eax;
 // LINE 1250:
-	__asm        mov    eax, ds:[0x66EAFC];
-	__asm        sub    eax, ds:[0x67ED2C];
+	__asm        mov    eax, G_morphcell.y;
+	__asm        sub    eax, G_grid_ulc.y;
 	__asm        mov    mcell.y, eax;
 // LINE 1255:
 	__asm        cmp    mcell.x, 0;
@@ -5523,11 +5523,11 @@ _T38c:
 	__asm        cmp    mcell.y, 0;
 	__asm        jl     _T3d8;
 
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cmp    mcell.x, eax;
 	__asm        jge    _T3d8;
 
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cmp    mcell.y, eax;
 	__asm        jl     _T3dd;
 // LINE 1256:
@@ -5536,16 +5536,16 @@ _T3d8:
 // LINE 1259:
 _T3dd:
 	__asm        mov    eax, mcell.y;
-	__asm        imul   eax, ds:[0x666358];
+	__asm        imul   eax, G_VertDim;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, mcell.x;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        shl    ecx, 3;
 	__asm        lea    eax, [ecx+eax*8];
-	__asm        add    eax, ds:[0x666368];
+	__asm        add    eax, GridVerts;
 	__asm        mov    v, eax;
 // LINE 1261:
-	__asm        mov    eax, ds:[0x666368];
+	__asm        mov    eax, GridVerts;
 	__asm        cmp    v, eax;
 	__asm        jae    _T429;
 
@@ -5559,7 +5559,7 @@ _T429:
 	__asm        jmp    _T42e;
 // LINE 1262:
 _T42e:
-	__asm        mov    eax, ds:[0x662874];
+	__asm        mov    eax, GridVertsEnd;
 	__asm        cmp    v, eax;
 	__asm        jb     _T458;
 
@@ -5573,73 +5573,73 @@ _T458:
 	__asm        jmp    _T45d;
 // LINE 1265:
 _T45d:
-	__asm        mov    eax, ds:[0x62A500];
+	__asm        mov    eax, S_h1;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+4], ecx;
 // LINE 1266:
-	__asm        mov    eax, ds:[0x62A504];
+	__asm        mov    eax, S_h2;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x10], ecx;
 // LINE 1267:
-	__asm        mov    eax, ds:[0x62A508];
+	__asm        mov    eax, S_h3;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x1C], ecx;
 // LINE 1268:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    v, eax;
 // LINE 1269:
-	__asm        mov    eax, ds:[0x62A50C];
+	__asm        mov    eax, S_h4;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+4], ecx;
 // LINE 1270:
-	__asm        mov    eax, ds:[0x62A510];
+	__asm        mov    eax, S_h5;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x10], ecx;
 // LINE 1271:
-	__asm        mov    eax, ds:[0x62A514];
+	__asm        mov    eax, S_h6;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x1C], ecx;
 // LINE 1272:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    v, eax;
 // LINE 1273:
-	__asm        mov    eax, ds:[0x62A518];
+	__asm        mov    eax, S_h7;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+4], ecx;
 // LINE 1274:
-	__asm        mov    eax, ds:[0x62A51C];
+	__asm        mov    eax, S_h8;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x10], ecx;
 // LINE 1275:
-	__asm        mov    eax, ds:[0x62A520];
+	__asm        mov    eax, S_h9;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax];
 	__asm        shl    ecx, 0x10;
@@ -5660,20 +5660,20 @@ int32_t S3TerrMorphWater() {
 	short * array1;
 
 // LINE 1439:
-	__asm        mov    eax, ds:[0x5B4760];
-	__asm        add    ds:[0x5B5CDC], eax;
+	__asm        mov    eax, LoopTime;
+	__asm        add    S_looptime, eax;
 // LINE 1441:
-	__asm        mov    eax, ds:[0x5B5CDC];
-	__asm        cmp    ds:[0x5B5CE0], eax;
+	__asm        mov    eax, S_looptime;
+	__asm        cmp    S_checktime, eax;
 	__asm        jle    _T2c;
 // LINE 1442:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1bd;
 // LINE 1444:
 _T2c:
-	__asm        mov    dword ptr ds:[0x5B5CDC], 0;
+	__asm        mov    S_looptime, 0;
 // LINE 1446:
-	__asm        movsx  eax, word ptr ds:[0x5B5CE4];
+	__asm        movsx  eax, S_cycle;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Ta0;
 // LINE 1450:
@@ -5683,7 +5683,7 @@ _T2c:
 // LINE 1452:
 	__asm        mov    cycle, 0x5B5CD4;
 // LINE 1453:
-	__asm        mov    dword ptr ds:[0x5B5CE0], 0;
+	__asm        mov    S_checktime, 0;
 // LINE 1454:
 	__asm        mov    array1, 0x5B5D28;
 // LINE 1455:
@@ -5695,7 +5695,7 @@ _T2c:
 // LINE 1460:
 	__asm        mov    cycle, 0x5B5CD8;
 // LINE 1461:
-	__asm        mov    dword ptr ds:[0x5B5CE0], 0;
+	__asm        mov    S_checktime, 0;
 // LINE 1462:
 	__asm        mov    array1, 0x5B5CE8;
 // LINE 1463:
@@ -5711,13 +5711,13 @@ _Ta0:
 // Switch pointers
 // LINE 1466:
 _Tc4:
-	__asm        inc    word ptr ds:[0x5B5CE4];
+	__asm        inc    S_cycle;
 // LINE 1467:
-	__asm        movsx  eax, word ptr ds:[0x5B5CE4];
+	__asm        movsx  eax, S_cycle;
 	__asm        cmp    eax, 4;
 	__asm        jne    _Te4;
 
-	__asm        mov    word ptr ds:[0x5B5CE4], 0;
+	__asm        mov    S_cycle, 0;
 // LINE 1469:
 _Te4:
 	__asm        mov    eax, cycle;
@@ -5756,28 +5756,28 @@ _T129:
 	__asm        cmp    edx, 5;
 	__asm        jne    _T1a9;
 // LINE 1483:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, y;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        movsx  eax, alt0;
 	__asm        add    edx, eax;
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, y;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [eax+ecx], dx;
 // LINE 1485:
 _T1a9:
@@ -5807,7 +5807,7 @@ void AdjustTerrainMap() {
 	int32_t alt1;
 
 // LINE 1544:
-	__asm        mov    eax, ds:[0x5B5CB8];
+	__asm        mov    eax, G_tdim;
 	__asm        sar    eax, 1;
 	__asm        mov    citysize, eax;
 // LINE 1545:
@@ -5843,59 +5843,59 @@ _T56:
 	__asm        cmp    eax, z;
 	__asm        jg     _T1e1;
 // LINE 1555:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt, edx;
 // LINE 1556:
 	__asm        mov    eax, z;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt1, edx;
 // LINE 1557:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt2, edx;
 // LINE 1558:
 	__asm        mov    eax, z;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt3, edx;
@@ -5955,15 +5955,15 @@ _T198:
 	__asm        mov    alt, eax;
 _T1b0:
 	__asm        mov    eax, alt;
-	__asm        mov    edx, ds:[0x5B5CBC];
+	__asm        mov    edx, G_tmask;
 	__asm        and    edx, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1560:
 	__asm        jmp    _T53;
@@ -5987,59 +5987,59 @@ _T1fb:
 	__asm        cmp    eax, x;
 	__asm        jg     _T387;
 // LINE 1568:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt, edx;
 // LINE 1569:
 	__asm        mov    eax, z;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        dec    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt1, edx;
 // LINE 1570:
 	__asm        mov    eax, z;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt2, edx;
 // LINE 1571:
 	__asm        mov    eax, z;
 	__asm        dec    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt3, edx;
@@ -6099,15 +6099,15 @@ _T33e:
 	__asm        mov    alt, eax;
 _T356:
 	__asm        mov    eax, alt;
-	__asm        mov    edx, ds:[0x5B5CBC];
+	__asm        mov    edx, G_tmask;
 	__asm        and    edx, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1573:
 	__asm        jmp    _T1f8;
@@ -6116,15 +6116,15 @@ _T387:
 	__asm        jmp    _T2d;
 // LINE 1578:
 _T38c:
-	__asm        mov    eax, ds:[0x5B5CBC];
+	__asm        mov    eax, G_tmask;
 	__asm        and    eax, 0x80;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, 0x80;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt, edx;
@@ -6146,15 +6146,15 @@ _T3e9:
 	__asm        jg     _T427;
 // LINE 1584:
 	__asm        mov    eax, alt;
-	__asm        mov    edx, ds:[0x5B5CBC];
+	__asm        mov    edx, G_tmask;
 	__asm        and    edx, z;
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    edx, cl;
-	__asm        mov    ecx, ds:[0x5B5CBC];
+	__asm        mov    ecx, G_tmask;
 	__asm        and    ecx, x;
 	__asm        add    ecx, ecx;
 	__asm        lea    edx, [ecx+edx*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1585:
 	__asm        jmp    _T3e6;
@@ -6210,15 +6210,15 @@ _T1c:
 	__asm        mov    z, eax;
 // LINE 1625:
 	__asm        mov    eax, cell.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -6226,14 +6226,14 @@ _T1c:
 // LINE 1626:
 	__asm        mov    eax, cell.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -6243,7 +6243,7 @@ _T1c:
 // LINE 1634:
 	__asm        and    worldz, 0x3FFFFF;
 // LINE 1642:
-	__asm        mov    eax, ds:[0x62A524];
+	__asm        mov    eax, S_recip_celldim;
 	__asm        push   eax;
 	__asm        mov    eax, worldx;
 	__asm        push   eax;
@@ -6274,29 +6274,29 @@ _T1c:
 	__asm        jge    _T1d7;
 // LINE 1654:
 	__asm        mov    eax, cell.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
 	__asm        mov    alt1, edx;
 // LINE 1655:
 	__asm        mov    eax, cell.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -6341,15 +6341,15 @@ _T1d7:
 // LINE 1673:
 	__asm        mov    eax, cell.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -6357,14 +6357,14 @@ _T1d7:
 // LINE 1674:
 	__asm        mov    eax, cell.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
@@ -6409,29 +6409,29 @@ _T2a1:
 // LINE 1693:
 	__asm        mov    eax, cell.y;
 	__asm        inc    eax;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
 	__asm        inc    ecx;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;
 	__asm        mov    alt1, edx;
 // LINE 1694:
 	__asm        mov    eax, cell.y;
-	__asm        and    eax, ds:[0x5B5CBC];
-	__asm        mov    cl, ds:[0x5B5CC0];
+	__asm        and    eax, G_tmask;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
 	__asm        shl    eax, cl;
 	__asm        mov    ecx, cell.x;
-	__asm        and    ecx, ds:[0x5B5CBC];
+	__asm        and    ecx, G_tmask;
 	__asm        add    ecx, ecx;
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x67EB10];
+	__asm        mov    ecx, G_tmap;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx];
 	__asm        shl    edx, 0x10;

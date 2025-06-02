@@ -654,21 +654,21 @@ void PreferenceManager::PreferenceManager(long lTheFileCreator, long lTheFileTyp
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        inc    dword ptr ds:[0x599A5C];
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        inc    list<PreferenceItem>::number_of_lists;
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x599A68], 0;
+	__asm        cmp    list<PreferenceItem>::free_list, 0;
 	__asm        je     _T48;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
 _T48:
-	__asm        mov    eax, ds:[0x599A64];
-	__asm        cmp    ds:[0x599A60], eax;
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
+	__asm        cmp    list<PreferenceItem>::last, eax;
 	__asm        jne    _T210;
 
 	__asm        push   0;
@@ -763,14 +763,14 @@ _T15f:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x599A6C], eax;
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    list<PreferenceItem>::buffer_list, eax;
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x599A64], eax;
+	__asm        mov    list<PreferenceItem>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0xCC;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -800,20 +800,20 @@ _T1cc:
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x599A64];
-	__asm        mov    ds:[0x599A60], eax;
+	__asm        add    eax, list<PreferenceItem>::next_avail;
+	__asm        mov    list<PreferenceItem>::last, eax;
 	__asm        jmp    near ptr 0x0047C098;
 
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
 _T210:
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T225:
@@ -1022,11 +1022,11 @@ _T13a:
 
 	__asm        jmp    near ptr 0x0047C302;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    near ptr 0x0047C319;
 
 	__asm        mov    eax, this;
@@ -1040,24 +1040,24 @@ _T16b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    near ptr 0x0047C34E;
 
-	__asm        dec    dword ptr ds:[0x599A5C];
+	__asm        dec    list<PreferenceItem>::number_of_lists;
 	__asm        jne    _T21a;
 _T19c:
-	__asm        cmp    dword ptr ds:[0x599A6C], 0;
+	__asm        cmp    list<PreferenceItem>::buffer_list, 0;
 	__asm        je     _T1f7;
 
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A6C], eax;
+	__asm        mov    list<PreferenceItem>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x40], eax;
@@ -1079,9 +1079,9 @@ _T19c:
 
 	__asm        jmp    _T19c;
 _T1f7:
-	__asm        mov    dword ptr ds:[0x599A68], 0;
-	__asm        mov    dword ptr ds:[0x599A64], 0;
-	__asm        mov    dword ptr ds:[0x599A60], 0;
+	__asm        mov    list<PreferenceItem>::free_list, 0;
+	__asm        mov    list<PreferenceItem>::next_avail, 0;
+	__asm        mov    list<PreferenceItem>::last, 0;
 	__asm        jmp    _T21a;
 _T21a:
 	__asm        jmp    near ptr 0x0047C3DD;
@@ -1604,11 +1604,11 @@ _Ted:
 
 	__asm        jmp    near ptr 0x0047C92B;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    near ptr 0x0047C942;
 
 	__asm        mov    eax, this;
@@ -1730,11 +1730,11 @@ _T105:
 
 	__asm        jmp    near ptr 0x0047CA7F;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    near ptr 0x0047CA96;
 
 	__asm        mov    eax, this;
@@ -2080,35 +2080,35 @@ _Tb0:
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        cmp    dword ptr ds:[0x599A68], 0;
+	__asm        cmp    list<PreferenceItem>::free_list, 0;
 	__asm        je     _T121;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T16c;
 _T121:
-	__asm        mov    eax, ds:[0x599A64];
-	__asm        cmp    ds:[0x599A60], eax;
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
+	__asm        cmp    list<PreferenceItem>::last, eax;
 	__asm        jne    _T157;
 
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 8;
 	__asm        call   list<PreferenceItem>::add_new_buffer;
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T16c;
 _T157:
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-0x38], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x3C], eax;
 _T16c:
@@ -2222,20 +2222,20 @@ long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        cmp    dword ptr ds:[0x599A68], 0;
+	__asm        cmp    list<PreferenceItem>::free_list, 0;
 	__asm        je     _T68;
 
-	__asm        mov    eax, ds:[0x599A68];
+	__asm        mov    eax, list<PreferenceItem>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A68], eax;
+	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T245;
 _T68:
-	__asm        mov    eax, ds:[0x599A64];
-	__asm        cmp    ds:[0x599A60], eax;
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
+	__asm        cmp    list<PreferenceItem>::last, eax;
 	__asm        jne    _T230;
 
 	__asm        push   0;
@@ -2330,14 +2330,14 @@ _T17f:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x599A6C], eax;
-	__asm        mov    eax, ds:[0x599A6C];
+	__asm        mov    list<PreferenceItem>::buffer_list, eax;
+	__asm        mov    eax, list<PreferenceItem>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x599A64], eax;
+	__asm        mov    list<PreferenceItem>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x3C], 0xCC;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
@@ -2367,20 +2367,20 @@ _T1ec:
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x599A64];
-	__asm        mov    ds:[0x599A60], eax;
+	__asm        add    eax, list<PreferenceItem>::next_avail;
+	__asm        mov    list<PreferenceItem>::last, eax;
 	__asm        jmp    near ptr 0x0047D16D;
 
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T245;
 _T230:
-	__asm        mov    eax, ds:[0x599A64];
+	__asm        mov    eax, list<PreferenceItem>::next_avail;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        add    dword ptr ds:[0x599A64], 0x14;
+	__asm        add    list<PreferenceItem>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T245:
@@ -2463,21 +2463,21 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 	__asm        call   PreferenceManager::PreferenceManager;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        inc    dword ptr ds:[0x599A70];
-	__asm        mov    eax, ds:[0x599A7C];
+	__asm        inc    list<NotificationItem>::number_of_lists;
+	__asm        mov    eax, list<NotificationItem>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x599A7C], 0;
+	__asm        cmp    list<NotificationItem>::free_list, 0;
 	__asm        je     _T60;
 
-	__asm        mov    eax, ds:[0x599A7C];
+	__asm        mov    eax, list<NotificationItem>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A7C], eax;
+	__asm        mov    list<NotificationItem>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T237;
 _T60:
-	__asm        mov    eax, ds:[0x599A78];
-	__asm        cmp    ds:[0x599A74], eax;
+	__asm        mov    eax, list<NotificationItem>::next_avail;
+	__asm        cmp    list<NotificationItem>::last, eax;
 	__asm        jne    _T222;
 
 	__asm        push   0;
@@ -2571,14 +2571,14 @@ _T174:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x599A80];
+	__asm        mov    eax, list<NotificationItem>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x599A80], eax;
-	__asm        mov    eax, ds:[0x599A80];
+	__asm        mov    list<NotificationItem>::buffer_list, eax;
+	__asm        mov    eax, list<NotificationItem>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x599A78], eax;
+	__asm        mov    list<NotificationItem>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x100;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -2607,20 +2607,20 @@ _T1e1:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x599A78];
-	__asm        mov    ds:[0x599A74], eax;
+	__asm        add    eax, list<NotificationItem>::next_avail;
+	__asm        mov    list<NotificationItem>::last, eax;
 	__asm        jmp    near ptr 0x0047D458;
 
-	__asm        mov    eax, ds:[0x599A78];
+	__asm        mov    eax, list<NotificationItem>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x599A78], 0x10;
+	__asm        add    list<NotificationItem>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T237;
 _T222:
-	__asm        mov    eax, ds:[0x599A78];
+	__asm        mov    eax, list<NotificationItem>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x599A78], 0x10;
+	__asm        add    list<NotificationItem>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T237:
@@ -2685,20 +2685,20 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        mov    eax, ds:[0x599A7C];
+	__asm        mov    eax, list<NotificationItem>::free_list;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        cmp    dword ptr ds:[0x599A7C], 0;
+	__asm        cmp    list<NotificationItem>::free_list, 0;
 	__asm        je     _T57;
 
-	__asm        mov    eax, ds:[0x599A7C];
+	__asm        mov    eax, list<NotificationItem>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x599A7C], eax;
+	__asm        mov    list<NotificationItem>::free_list, eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T22e;
 _T57:
-	__asm        mov    eax, ds:[0x599A78];
-	__asm        cmp    ds:[0x599A74], eax;
+	__asm        mov    eax, list<NotificationItem>::next_avail;
+	__asm        cmp    list<NotificationItem>::last, eax;
 	__asm        jne    _T219;
 
 	__asm        push   0;
@@ -2792,14 +2792,14 @@ _T16b:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x599A80];
+	__asm        mov    eax, list<NotificationItem>::buffer_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x599A80], eax;
-	__asm        mov    eax, ds:[0x599A80];
+	__asm        mov    list<NotificationItem>::buffer_list, eax;
+	__asm        mov    eax, list<NotificationItem>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x599A78], eax;
+	__asm        mov    list<NotificationItem>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x3C], 0x100;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
@@ -2828,20 +2828,20 @@ _T1d8:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x599A78];
-	__asm        mov    ds:[0x599A74], eax;
+	__asm        add    eax, list<NotificationItem>::next_avail;
+	__asm        mov    list<NotificationItem>::last, eax;
 	__asm        jmp    near ptr 0x0047D705;
 
-	__asm        mov    eax, ds:[0x599A78];
+	__asm        mov    eax, list<NotificationItem>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x599A78], 0x10;
+	__asm        add    list<NotificationItem>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T22e;
 _T219:
-	__asm        mov    eax, ds:[0x599A78];
+	__asm        mov    eax, list<NotificationItem>::next_avail;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        add    dword ptr ds:[0x599A78], 0x10;
+	__asm        add    list<NotificationItem>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T22e:
@@ -2997,11 +2997,11 @@ _Tc2:
 
 	__asm        jmp    near ptr 0x0047D8D2;
 
-	__asm        mov    eax, ds:[0x599A7C];
+	__asm        mov    eax, list<NotificationItem>::free_list;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    ds:[0x599A7C], eax;
+	__asm        mov    list<NotificationItem>::free_list, eax;
 	__asm        jmp    near ptr 0x0047D8E9;
 
 	__asm        mov    eax, this;

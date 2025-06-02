@@ -1295,7 +1295,7 @@ _T99:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 // LINE 357:
-	__asm        inc    dword ptr ds:[0x599DA4];
+	__asm        inc    IFlatImage::lTotalLockCount;
 // LINE 360:
 _Tb2:
 	__asm        mov    eax, this;
@@ -1342,7 +1342,7 @@ _T68:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
 // LINE 370:
-	__asm        dec    dword ptr ds:[0x599DA4];
+	__asm        dec    IFlatImage::lTotalLockCount;
 // LINE 373:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

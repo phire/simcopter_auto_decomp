@@ -74,7 +74,7 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 40:
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 41:

@@ -516,14 +516,14 @@ struct bidirectional_iterator<CopterGameMode,int>{
 // FUNCTION: COPTER_D 0x00461180
 void S3SwitchToProperSkyType() {
 // LINE 91:
-	__asm        cmp    dword ptr ds:[0x5B4794], 0;
+	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T35;
 
-	__asm        mov    eax, ds:[0x599BBC];
+	__asm        mov    eax, gGameApp;
 	__asm        cmp    dword ptr [eax+0xDC], 0;
 	__asm        je     _T35;
 // LINE 92:
-	__asm        mov    eax, ds:[0x599BBC];
+	__asm        mov    eax, gGameApp;
 	__asm        mov    ecx, [eax+0xDC];
 	__asm        call   SkyImage::SwitchToProperSkyType;
 // LINE 93:
@@ -579,18 +579,18 @@ void  CGameApp::GetPreferences() {
 	__asm        push   0x52545043;
 	__asm        mov    ecx, [ebp-0x10C];
 	__asm        call   NotificationPreferenceManager::NotificationPreferenceManager;
-	__asm        mov    ds:[0x599BC4], eax;
+	__asm        mov    gPreferenceManager, eax;
 	__asm        jmp    _T5f;
 _T55:
-	__asm        mov    dword ptr ds:[0x599BC4], 0;
+	__asm        mov    gPreferenceManager, 0;
 // LINE 116:
 _T5f:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T1b9;
 // LINE 117:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599288];
+	__asm        mov    eax, SZ_COPTER_MAIN_PREFERENCES_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   9;
@@ -599,13 +599,13 @@ _T5f:
 // LINE 118:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   PreferenceManager::IPreferenceManager;
 // LINE 119:
 	__asm        push   0x2FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 120:
@@ -613,9 +613,9 @@ _T5f:
 	__asm        je     _Tf6;
 // LINE 122:
 	__asm        push   0x2FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x20;
 	__asm        jne    _Tf6;
@@ -628,9 +628,9 @@ _T5f:
 // LINE 125:
 _Tf6:
 	__asm        push   0x3FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 126:
@@ -638,9 +638,9 @@ _Tf6:
 	__asm        je     _T164;
 // LINE 127:
 	__asm        push   0x3FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x10;
 	__asm        jne    _T164;
@@ -659,9 +659,9 @@ _Tf6:
 // LINE 130:
 _T164:
 	__asm        push   0x5FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 131:
@@ -669,9 +669,9 @@ _T164:
 	__asm        je     _T1b9;
 // LINE 132:
 	__asm        push   0x5FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x24;
 	__asm        jne    _T1b9;
@@ -692,9 +692,9 @@ void  CGameApp::GetSoundPreferences() {
 
 // LINE 147:
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 148:
@@ -702,9 +702,9 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        je     _T7c;
 // LINE 150:
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x10;
 	__asm        jne    _T7c;
@@ -742,9 +742,9 @@ _T7c:
 	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
 	__asm        push   eax;
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 164:
 	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
@@ -763,18 +763,18 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 // LINE 173:
 	__asm        mov    eax, newSoundPreferences;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5C37F0], eax;
+	__asm        mov    glMasterVolume, eax;
 // LINE 175:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T3e;
 // LINE 177:
 	__asm        push   0x10;
 	__asm        mov    eax, newSoundPreferences;
 	__asm        push   eax;
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 179:
 _T3e:
@@ -790,10 +790,10 @@ void  CGameApp::SavePreferences() {
 // LINE 188:
 	__asm        jmp    near ptr 0x004614EF;
 
-	__asm        mov    eax, ds:[0x604C78];
+	__asm        mov    eax, gJoystickManager.nJoystickCount;
 	__asm        mov    lCurrentJoystickCount, eax;
 // LINE 192:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T141;
 // LINE 194:
 	__asm        mov    eax, this;
@@ -806,9 +806,9 @@ void  CGameApp::SavePreferences() {
 	__asm        add    eax, 0x4308;
 	__asm        push   eax;
 	__asm        push   0x2FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 198:
 	__asm        push   0x10;
@@ -816,27 +816,27 @@ void  CGameApp::SavePreferences() {
 	__asm        add    eax, 0x4328;
 	__asm        push   eax;
 	__asm        push   0x3FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 199:
 	__asm        push   0x24;
 	__asm        call   S3CameraGetChaseInfo;
 	__asm        push   eax;
 	__asm        push   0x5FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 200:
 	__asm        push   4;
 	__asm        lea    eax, lCurrentJoystickCount;
 	__asm        push   eax;
 	__asm        push   0x4EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 201:
 	__asm        mov    i, 0;
@@ -868,15 +868,15 @@ _Tbc:
 	__asm        mov    eax, i;
 	__asm        add    eax, 0xEEEEEE;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 205:
 	__asm        jmp    _Tb9;
 // LINE 206:
 _T10e:
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x4C], eax;
@@ -891,7 +891,7 @@ _T10e:
 	__asm        jmp    _T137;
 // LINE 207:
 _T137:
-	__asm        mov    dword ptr ds:[0x599BC4], 0;
+	__asm        mov    gPreferenceManager, 0;
 // LINE 209:
 _T141:
 	__asm        jmp    near ptr 0x00461624;
@@ -1078,10 +1078,10 @@ _T203:
 	__asm        call   dword ptr [edx+8];
 // LINE 251:
 _T24e:
-	__asm        cmp    dword ptr ds:[0x599DA4], 0;
+	__asm        cmp    IFlatImage::lTotalLockCount, 0;
 	__asm        je     _T26e;
 // LINE 253:
-	__asm        mov    eax, ds:[0x599DA4];
+	__asm        mov    eax, IFlatImage::lTotalLockCount;
 	__asm        push   eax;
 	__asm        push   0x5992D8;
 	__asm        call   DebugOutput;
@@ -1132,7 +1132,7 @@ void  CGameApp::ComposeFrame() {
 	char szPath[260];
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599284];
+	__asm        mov    eax, SZ_SMACKER_INTRO_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -1142,7 +1142,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    dword ptr [ebp-0x124], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x120], 1;
 	__asm        mov    dword ptr [ebp-0x22C], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x228];
@@ -1535,26 +1535,26 @@ void  CGameApp::ComposePlayFrame() {
 // LINE 411:
 	__asm        mov    eax, ds:[0x59929C];
 	__asm        sub    eax, ds:[0x599298];
-	__asm        mov    ds:[0x5B4760], eax;
+	__asm        mov    LoopTime, eax;
 // LINE 412:
-	__asm        shl    dword ptr ds:[0x5B4760], 0x10;
+	__asm        shl    LoopTime, 0x10;
 // LINE 413:
 	__asm        mov    ecx, 0x3E8;
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    ds:[0x5B4760], eax;
+	__asm        mov    LoopTime, eax;
 // LINE 414:
-	__asm        cmp    dword ptr ds:[0x5B4760], 0x64;
+	__asm        cmp    LoopTime, 0x64;
 	__asm        jge    _T7b;
 // LINE 415:
-	__asm        mov    dword ptr ds:[0x5B4760], 0x64;
+	__asm        mov    LoopTime, 0x64;
 // LINE 416:
 _T7b:
-	__asm        cmp    dword ptr ds:[0x5B4760], 0x8000;
+	__asm        cmp    LoopTime, 0x8000;
 	__asm        jle    _T95;
 // LINE 417:
-	__asm        mov    dword ptr ds:[0x5B4760], 0x8000;
+	__asm        mov    LoopTime, 0x8000;
 // LINE 418:
 _T95:
 	__asm        call   VRAppNextFrame;
@@ -1572,7 +1572,7 @@ _T95:
 	__asm        cmp    al, 0x3F;
 	__asm        jne    _T3f6;
 // LINE 423:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _Te4;
 
 	__asm        call   GetUserPoints;
@@ -1588,31 +1588,31 @@ _Te9:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T1cb;
 _Tf8:
-	__asm        cmp    dword ptr ds:[0x5C33D0], 0;
+	__asm        cmp    gGraduationState.nGraduationState, 0;
 	__asm        jne    _T1cb;
 // LINE 425:
-	__asm        mov    dword ptr ds:[0x5C33D0], 1;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 1;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x00461FE1;
 
 	__asm        jmp    near ptr 0x00461FE6;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T13f;
 
 	__asm        jmp    _T1ae;
 _T13f:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T161;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a9;
 
 	__asm        jmp    _T1a9;
 _T161:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T190;
 
 	__asm        lea    eax, [ebp-0x1C];
@@ -1621,7 +1621,7 @@ _T161:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a9;
 
 	__asm        jmp    _T1a9;
@@ -1630,7 +1630,7 @@ _T190:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a9;
 _T1a9:
 	__asm        jmp    _T1ae;
@@ -1646,17 +1646,17 @@ _T1ae:
 // LINE 429:
 	__asm        jmp    _T3f1;
 _T1cb:
-	__asm        cmp    dword ptr ds:[0x5C33D0], 1;
+	__asm        cmp    gGraduationState.nGraduationState, 1;
 	__asm        jne    _T2de;
 // LINE 430:
-	__asm        mov    eax, ds:[0x5C33DC];
+	__asm        mov    eax, gGraduationState.timerGraduationState.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x0046209E;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T268;
 
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T212;
 
 	__asm        call   dword ptr ds:[0x6C3908];
@@ -1665,7 +1665,7 @@ _T1cb:
 
 	__asm        jmp    _T256;
 _T212:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T23f;
 
 	__asm        lea    eax, [ebp-0x3C];
@@ -1687,18 +1687,18 @@ _T23f:
 	__asm        jmp    _T256;
 _T256:
 	__asm        mov    eax, [ebp-0x40];
-	__asm        sub    eax, ds:[0x5C33D8];
+	__asm        sub    eax, gGraduationState.timerGraduationState.lStartTime;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        add    [ebp-0x30], eax;
 _T268:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T2ac;
 
-	__asm        cmp    dword ptr ds:[0x5C33E0], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lFrequency, 0;
 	__asm        je     _T2ac;
 
-	__asm        mov    eax, ds:[0x5C33E0];
+	__asm        mov    eax, gGraduationState.timerGraduationState.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
 	__asm        mov    eax, [ebp-0x30];
@@ -1728,17 +1728,17 @@ _T2d9:
 	__asm        jmp    _T3f1;
 // LINE 434:
 _T2de:
-	__asm        cmp    dword ptr ds:[0x5C33D0], 2;
+	__asm        cmp    gGraduationState.nGraduationState, 2;
 	__asm        jne    _T3f1;
 
-	__asm        mov    eax, ds:[0x5C33DC];
+	__asm        mov    eax, gGraduationState.timerGraduationState.lTotalElapsedTime;
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    near ptr 0x004621B1;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T37b;
 
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T325;
 
 	__asm        call   dword ptr ds:[0x6C3908];
@@ -1747,7 +1747,7 @@ _T2de:
 
 	__asm        jmp    _T369;
 _T325:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T352;
 
 	__asm        lea    eax, [ebp-0x58];
@@ -1769,18 +1769,18 @@ _T352:
 	__asm        jmp    _T369;
 _T369:
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        sub    eax, ds:[0x5C33D8];
+	__asm        sub    eax, gGraduationState.timerGraduationState.lStartTime;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        add    [ebp-0x4C], eax;
 _T37b:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T3bf;
 
-	__asm        cmp    dword ptr ds:[0x5C33E0], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lFrequency, 0;
 	__asm        je     _T3bf;
 
-	__asm        mov    eax, ds:[0x5C33E0];
+	__asm        mov    eax, gGraduationState.timerGraduationState.lFrequency;
 	__asm        push   eax;
 	__asm        push   0xF4240;
 	__asm        mov    eax, [ebp-0x4C];
@@ -1811,10 +1811,10 @@ _T3de:
 _T3f1:
 	__asm        jmp    _T542;
 _T3f6:
-	__asm        cmp    dword ptr ds:[0x598EB8], 0xFFFFFFFF;
+	__asm        cmp    gIDOfBuildingAvatarIsIn, 0xFFFFFFFF;
 	__asm        je     _T41a;
 
-	__asm        mov    eax, ds:[0x598EB8];
+	__asm        mov    eax, gIDOfBuildingAvatarIsIn;
 	__asm        mov    lBuildingID, eax;
 	__asm        cmp    lBuildingID, 0;
 	__asm        je     _T450;
@@ -1865,28 +1865,28 @@ _T485:
 	__asm        cmp    lEventValue, 3;
 	__asm        jne    _T542;
 // LINE 451:
-	__asm        mov    dword ptr ds:[0x5C33D0], 2;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 2;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x0046236B;
 
 	__asm        jmp    near ptr 0x00462370;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T4c9;
 
 	__asm        jmp    _T538;
 _T4c9:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T4eb;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T533;
 
 	__asm        jmp    _T533;
 _T4eb:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T51a;
 
 	__asm        lea    eax, [ebp-0x28];
@@ -1895,7 +1895,7 @@ _T4eb:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T533;
 
 	__asm        jmp    _T533;
@@ -1904,7 +1904,7 @@ _T51a:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T533;
 _T533:
 	__asm        jmp    _T538;
@@ -1941,10 +1941,10 @@ _T570:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::S3PostRender;
 // LINE 465:
-	__asm        cmp    dword ptr ds:[0x5C381C], 0;
+	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        je     _T5f0;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T5f0;
 // LINE 466:
 	__asm        mov    eax, this;
@@ -2041,7 +2041,7 @@ _T71:
 	__asm        jmp    near ptr 0x00462554;
 
 	__asm        mov    eax, i;
-	__asm        cmp    ds:[0x604C78], eax;
+	__asm        cmp    gJoystickManager.nJoystickCount, eax;
 	__asm        jle    _T98;
 // LINE 492:
 	__asm        mov    eax, i;
@@ -2658,7 +2658,7 @@ _T830:
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::SetUpRenderWindowSizes;
 // LINE 565:
-	__asm        cmp    dword ptr ds:[0x5B4794], 0;
+	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T912;
 // LINE 566:
 	__asm        push   1;
@@ -2670,7 +2670,7 @@ _T830:
 _T912:
 	__asm        mov    bCheckForCommandLineCheatCodes, 1;
 // LINE 569:
-	__asm        mov    dword ptr ds:[0x5B4794], 1;
+	__asm        mov    G_VRAppInitCalled, 1;
 // LINE 570:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::BackgroundVRAppInit;
@@ -3214,11 +3214,11 @@ _T66:
 
 	__asm        jmp    near ptr 0x004636CD;
 
-	__asm        mov    eax, ds:[0x59930C];
+	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    ds:[0x59930C], eax;
+	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    near ptr 0x004636E4;
 
 	__asm        mov    eax, this;
@@ -3341,11 +3341,11 @@ _T1b5:
 
 	__asm        jmp    near ptr 0x00463842;
 
-	__asm        mov    eax, ds:[0x59930C];
+	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ds:[0x59930C], eax;
+	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    near ptr 0x00463859;
 
 	__asm        mov    eax, this;
@@ -3459,11 +3459,11 @@ _T318:
 
 	__asm        jmp    near ptr 0x0046399B;
 
-	__asm        mov    eax, ds:[0x59930C];
+	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    ds:[0x59930C], eax;
+	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    near ptr 0x004639B2;
 
 	__asm        mov    eax, this;
@@ -3547,11 +3547,11 @@ _T434:
 
 	__asm        jmp    near ptr 0x00463AA9;
 
-	__asm        mov    eax, ds:[0x59930C];
+	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ds:[0x59930C], eax;
+	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    near ptr 0x00463AC0;
 
 	__asm        mov    eax, this;
@@ -3635,11 +3635,11 @@ _T542:
 
 	__asm        jmp    near ptr 0x00463BB7;
 
-	__asm        mov    eax, ds:[0x59930C];
+	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    ds:[0x59930C], eax;
+	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    near ptr 0x00463BCE;
 
 	__asm        mov    eax, this;
@@ -4160,7 +4160,7 @@ _T3ce:
 	__asm        jg     _T41f;
 // LINE 876:
 _T3fc:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T415;
 // LINE 877:
 	__asm        mov    eax, nCommand;
@@ -4207,7 +4207,7 @@ _T46f:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T498;
 // LINE 895:
-	__asm        mov    eax, ds:[0x598E88];
+	__asm        mov    eax, G_texobjs;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4328], eax;
 // LINE 896:
@@ -4216,7 +4216,7 @@ _T498:
 	__asm        cmp    nCommand, 0x2E;
 	__asm        jne    _T4b0;
 // LINE 897:
-	__asm        mov    eax, ds:[0x598E8C];
+	__asm        mov    eax, G_texterr;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x432C], eax;
 // LINE 898:
@@ -4232,7 +4232,7 @@ _T4ba:
 	__asm        cmp    nCommand, 0x25;
 	__asm        jg     _T503;
 // LINE 903:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T4f9;
 
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -4322,7 +4322,7 @@ _T5e5:
 	__asm        cmp    nCommand, 0x2A;
 	__asm        jne    _T63a;
 // LINE 930:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T601;
 
 	__asm        jmp    _T606;
@@ -4391,9 +4391,9 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 971:
 	__asm        cmp    nCommand, 0;
@@ -4545,9 +4545,9 @@ _T16f:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1007:
 	__asm        cmp    nCommand, 0;
@@ -4596,9 +4596,9 @@ _T1fb:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1015:
 	__asm        cmp    nCommand, 0;
@@ -4647,9 +4647,9 @@ _T287:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1022:
 	__asm        cmp    nCommand, 0;
@@ -4698,9 +4698,9 @@ _T313:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1029:
 	__asm        cmp    nCommand, 0;
@@ -4749,9 +4749,9 @@ _T39f:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1036:
 	__asm        cmp    nCommand, 0;
@@ -4816,9 +4816,9 @@ _T30:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1056:
 	__asm        jmp    _T21a;
@@ -4850,9 +4850,9 @@ _T93:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1058:
 	__asm        jmp    _T21a;
@@ -4884,9 +4884,9 @@ _Tf6:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1060:
 	__asm        jmp    _T21a;
@@ -4918,9 +4918,9 @@ _T159:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1062:
 	__asm        jmp    _T21a;
@@ -4952,9 +4952,9 @@ _T1bc:
 	__asm        push   eax;
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599BC0];
+	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC0];
+	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1064:
 _T21a:
@@ -5233,14 +5233,14 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 	int32_t nNewLevel;
 
 // LINE 1147:
-	__asm        cmp    dword ptr ds:[0x5C3814], 0;
+	__asm        cmp    G_CheatCodes[3], 0;
 	__asm        je     _T43;
 // LINE 1148:
-	__asm        mov    eax, ds:[0x5C3814];
+	__asm        mov    eax, G_CheatCodes[3];
 	__asm        dec    eax;
 	__asm        mov    nNewLevel, eax;
 // LINE 1149:
-	__asm        mov    dword ptr ds:[0x5C3814], 0;
+	__asm        mov    G_CheatCodes[3], 0;
 // LINE 1150:
 	__asm        mov    eax, nNewLevel;
 	__asm        push   eax;
@@ -5352,7 +5352,7 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        jmp    _T167;
 // LINE 1185:
 _T54:
-	__asm        cmp    dword ptr ds:[0x5C2AB4], 0x1E;
+	__asm        cmp    gCurrentCareerCityInfo.lCurrentCityIndex, 0x1E;
 	__asm        jl     _T74;
 // LINE 1186:
 	__asm        mov    eax, this;
@@ -5362,28 +5362,28 @@ _T54:
 	__asm        jmp    _T167;
 // LINE 1192:
 _T74:
-	__asm        mov    dword ptr ds:[0x5C33D0], 0;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x00464F49;
 
 	__asm        jmp    near ptr 0x00464F4E;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _Tae;
 
 	__asm        jmp    _T11d;
 _Tae:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _Td0;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T118;
 
 	__asm        jmp    _T118;
 _Td0:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _Tff;
 
 	__asm        lea    eax, [ebp-0xC];
@@ -5392,7 +5392,7 @@ _Td0:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T118;
 
 	__asm        jmp    _T118;
@@ -5401,7 +5401,7 @@ _Tff:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T118;
 _T118:
 	__asm        jmp    _T11d;
@@ -5492,7 +5492,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1C8], eax;
@@ -5507,7 +5507,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1C8], eax;
@@ -5537,7 +5537,7 @@ _Ta6:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1CC], eax;
@@ -5552,7 +5552,7 @@ _Ta6:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1CC], eax;
@@ -5573,7 +5573,7 @@ _T141:
 // LINE 1230:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599290];
+	__asm        mov    eax, SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   2;
@@ -5738,7 +5738,7 @@ _T3d0:
 	__asm        mov    ecx, tempNotificationSound;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 1233:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    eax, tempNotificationSound;
 	__asm        mov    eax, [eax];
@@ -6824,9 +6824,9 @@ _T1dd:
 // LINE 1521:
 _T1f1:
 	__asm        push   0x6EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 1522:
@@ -6899,9 +6899,9 @@ _T278:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;
 	__asm        push   0x6EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 1538:
 	__asm        lea    eax, lFileType;
@@ -7282,7 +7282,7 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        mov    dword ptr [ebp-0x214], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x210], 1;
 	__asm        mov    dword ptr [ebp-0x31C], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        lea    eax, szFullCityVideoFilePath[0];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x318];
@@ -7512,7 +7512,7 @@ int  CGameApp::StartVideoForMainMenu() {
 // LINE 1717:
 	__asm        lea    eax, szMainMenuVideoPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59928C];
+	__asm        mov    eax, SZ_MAIN_MENU_VIDEO_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -7522,7 +7522,7 @@ int  CGameApp::StartVideoForMainMenu() {
 	__asm        mov    dword ptr [ebp-0x110], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x10C], 1;
 	__asm        mov    dword ptr [ebp-0x218], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        lea    eax, szMainMenuVideoPath[0];
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x214];

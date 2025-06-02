@@ -500,7 +500,7 @@ void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* win
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590708;
-	__asm        mov    eax, ds:[0x599448];
+	__asm        mov    eax, SZ_MISSION_LOG_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x44], eax;
 // LINE 48:
 	__asm        jmp    near ptr 0x0046BD48;
@@ -784,7 +784,7 @@ _T6d:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59944C];
+	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -810,7 +810,7 @@ _Tf7:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1080], eax;
@@ -825,7 +825,7 @@ _Tf7:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1080], eax;
@@ -978,7 +978,7 @@ _T306:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59944C];
+	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1004,7 +1004,7 @@ _T393:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2098], eax;
@@ -1019,7 +1019,7 @@ _T393:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2098], eax;
@@ -1095,7 +1095,7 @@ _T480:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59944C];
+	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1121,7 +1121,7 @@ _T50d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x309C], eax;
@@ -1136,7 +1136,7 @@ _T50d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x309C], eax;
@@ -1363,7 +1363,7 @@ _T7af:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0xD8];
 // LINE 106:
-	__asm        mov    eax, ds:[0x599450];
+	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -1553,7 +1553,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 // LINE 132:
 	__asm        lea    eax, szBackgroundBufferPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599454];
+	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -1852,7 +1852,7 @@ _T68:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0xCC];
-	__asm        mov    eax, ds:[0x606E78];
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x30], eax;
 // LINE 230:
 	__asm        mov    eax, [ebp-0x30];
@@ -1869,7 +1869,7 @@ _T68:
 	__asm        mov    iterator.node, eax;
 // LINE 23:
 _Tba:
-	__asm        mov    eax, ds:[0x606E78];
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x20], eax;
 // LINE 231:
 	__asm        mov    eax, [ebp-0x20];
@@ -2050,7 +2050,7 @@ _T6e:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0xCC];
-	__asm        mov    eax, ds:[0x606E78];
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x3C], eax;
 // LINE 251:
 	__asm        mov    eax, [ebp-0x3C];
@@ -2074,7 +2074,7 @@ _T6e:
 	__asm        mov    nCurrentMissionID, eax;
 // LINE 23:
 _Td7:
-	__asm        mov    eax, ds:[0x606E78];
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 253:
 	__asm        mov    eax, [ebp-0x2C];

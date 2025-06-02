@@ -49,7 +49,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        cmp    file, 0xFFFFFFFF;
 	__asm        jne    _T38;
 // LINE 79:
-	__asm        mov    dword ptr ds:[0x662810], 1;
+	__asm        mov    GlobalError, 1;
 // LINE 81:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -71,7 +71,7 @@ _T38:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 89:
-	__asm        mov    dword ptr ds:[0x662810], 2;
+	__asm        mov    GlobalError, 2;
 // LINE 91:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -82,7 +82,7 @@ _T74:
 	__asm        shl    eax, 2;
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -91,7 +91,7 @@ _T74:
 	__asm        cmp    res, 0;
 	__asm        jne    _Tad;
 // LINE 145:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 147:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -105,7 +105,7 @@ _Tad:
 // LINE 176:
 	__asm        mov    eax, s;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -113,7 +113,7 @@ _Tad:
 	__asm        cmp    group, 0;
 	__asm        jne    _Tf8;
 // LINE 177:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 179:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -463,7 +463,7 @@ _T22:
 	__asm        cmp    file, 0xFFFFFFFF;
 	__asm        jne    _T51;
 // LINE 398:
-	__asm        mov    dword ptr ds:[0x662810], 1;
+	__asm        mov    GlobalError, 1;
 // LINE 399:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -485,7 +485,7 @@ _T51:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 408:
-	__asm        mov    dword ptr ds:[0x662810], 2;
+	__asm        mov    GlobalError, 2;
 // LINE 409:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -499,7 +499,7 @@ _T8d:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 451:
-	__asm        mov    dword ptr ds:[0x662810], 2;
+	__asm        mov    GlobalError, 2;
 // LINE 452:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -541,7 +541,7 @@ _T105:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 474:
-	__asm        mov    dword ptr ds:[0x662810], 2;
+	__asm        mov    GlobalError, 2;
 // LINE 475:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -572,7 +572,7 @@ _T122:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 486:
-	__asm        mov    dword ptr ds:[0x662810], 2;
+	__asm        mov    GlobalError, 2;
 // LINE 487:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;

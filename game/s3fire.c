@@ -78,7 +78,7 @@ void S3FireReset() {
 	struct _FIRE_DATA* fd;
 
 // LINE 105:
-	__asm        mov    dword ptr ds:[0x5B73A0], 0;
+	__asm        mov    S_fire_count, 0;
 // LINE 111:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -182,7 +182,7 @@ _T72:
 	__asm        mov    dword ptr [eax+0x1C], 0;
 // LINE 165:
 	__asm        push   0x10;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -200,7 +200,7 @@ _T72:
 // LINE 169:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -218,7 +218,7 @@ _T72:
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        mov    [ecx+4], eax;
 // LINE 171:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x20];
@@ -410,15 +410,15 @@ _T170:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 260:
-	__asm        mov    eax, ds:[0x598EB0];
+	__asm        mov    eax, G_diff_level;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x5B7388];
+	__asm        add    eax, S_ftwk_douse_points;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+8], eax;
 // LINE 261:
-	__asm        mov    eax, ds:[0x5B7390];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_time_to_live;
+	__asm        mov    ecx, G_diff_level;
 	__asm        lea    ecx, [ecx+ecx*4-5];
 	__asm        shl    ecx, 0x12;
 	__asm        sub    eax, ecx;
@@ -513,7 +513,7 @@ _T170:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 294:
-	__asm        inc    dword ptr ds:[0x5B73A0];
+	__asm        inc    S_fire_count;
 // LINE 295:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
@@ -552,7 +552,7 @@ void S3FireDriver() {
 	__asm        add    esp, 4;
 	__asm        mov    fireloopsound, eax;
 // LINE 328:
-	__asm        cmp    dword ptr ds:[0x5B73A0], 0;
+	__asm        cmp    S_fire_count, 0;
 	__asm        jne    _T43;
 // LINE 330:
 	__asm        cmp    fireloopsound, 1;
@@ -613,15 +613,15 @@ _T85:
 	__asm        shl    eax, 0x10;
 	__asm        mov    floc.z, eax;
 // LINE 358:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        sub    eax, floc.x;
 	__asm        mov    loc.x, eax;
 // LINE 359:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        sub    eax, floc.y;
 	__asm        mov    loc.y, eax;
 // LINE 360:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        sub    eax, floc.z;
 	__asm        mov    loc.z, eax;
 // LINE 361:
@@ -651,7 +651,7 @@ _T85:
 // LINE 369:
 _T13c:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, fd;
 	__asm        sub    [ecx+4], eax;
@@ -787,15 +787,15 @@ _T2a7:
 	__asm        mov    eax, fd;
 	__asm        dec    dword ptr [eax+0x1C];
 // LINE 438:
-	__asm        mov    eax, ds:[0x598EB0];
+	__asm        mov    eax, G_diff_level;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x5B7388];
+	__asm        add    eax, S_ftwk_douse_points;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+8], eax;
 // LINE 439:
-	__asm        mov    eax, ds:[0x5B7390];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_time_to_live;
+	__asm        mov    ecx, G_diff_level;
 	__asm        lea    ecx, [ecx+ecx*4-5];
 	__asm        shl    ecx, 0x12;
 	__asm        sub    eax, ecx;
@@ -900,7 +900,7 @@ _T3bf:
 	__asm        mov    eax, [eax+0x98];
 	__asm        dec    dword ptr [eax+4];
 // LINE 470:
-	__asm        dec    dword ptr ds:[0x5B73A0];
+	__asm        dec    S_fire_count;
 // LINE 472:
 	__asm        mov    mp.op, 3;
 // LINE 473:
@@ -1013,22 +1013,22 @@ _T50d:
 	__asm        call   S3FireDyObjCollisionCheck;
 	__asm        add    esp, 8;
 // LINE 520:
-	__asm        mov    eax, ds:[0x5B4768];
-	__asm        add    ds:[0x5B73C8], eax;
+	__asm        mov    eax, G_AvLoopTime;
+	__asm        add    S_spread_time, eax;
 // LINE 521:
-	__asm        mov    eax, ds:[0x5B7394];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_spread_interval;
+	__asm        mov    ecx, G_diff_level;
 	__asm        dec    ecx;
 	__asm        shl    ecx, 0x12;
 	__asm        sub    eax, ecx;
-	__asm        cmp    eax, ds:[0x5B73C8];
+	__asm        cmp    eax, S_spread_time;
 	__asm        jge    _T580;
 // LINE 523:
-	__asm        mov    dword ptr ds:[0x5B73C8], 0;
+	__asm        mov    S_spread_time, 0;
 // LINE 524:
 	__asm        call   rand;
-	__asm        mov    ecx, ds:[0x5B7398];
-	__asm        mov    edx, ds:[0x598EB0];
+	__asm        mov    ecx, S_ftwk_spread_probability;
+	__asm        mov    edx, G_diff_level;
 	__asm        lea    edx, [edx+edx*4-5];
 	__asm        add    edx, edx;
 	__asm        sub    ecx, edx;
@@ -1237,8 +1237,8 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 	struct _FIRE_DATA* fd;
 
 // LINE 651:
-	__asm        mov    eax, ds:[0x5B739C];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_fire_radius;
+	__asm        mov    ecx, G_diff_level;
 	__asm        dec    ecx;
 	__asm        shl    ecx, 0x13;
 	__asm        sub    eax, ecx;
@@ -1344,8 +1344,8 @@ _T109:
 	__asm        add    esp, 8;
 	__asm        mov    dfactor, eax;
 // LINE 697:
-	__asm        mov    eax, ds:[0x5B738C];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_douse_multiplier;
+	__asm        mov    ecx, G_diff_level;
 	__asm        lea    ecx, [ecx+ecx*4-5];
 	__asm        sub    eax, ecx;
 	__asm        imul   eax, dfactor;
@@ -1530,7 +1530,7 @@ _T2f5:
 	__asm        add    esp, 4;
 // LINE 768:
 _T329:
-	__asm        dec    dword ptr ds:[0x5B73A0];
+	__asm        dec    S_fire_count;
 // LINE 769:
 	__asm        jmp    _T3f3;
 // LINE 774:
@@ -2674,7 +2674,7 @@ _Ta18:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
-	__asm        imul   eax, ds:[0x5B4E64];
+	__asm        imul   eax, S_money_mission_fire;
 	__asm        mov    mp.i2num, eax;
 // LINE 912:
 	__asm        mov    eax, flags;
@@ -2693,7 +2693,7 @@ _Ta18:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax+8];
-	__asm        imul   eax, ds:[0x5B4E68];
+	__asm        imul   eax, S_pts_mission_fire;
 	__asm        mov    mp.i2num, eax;
 // LINE 918:
 	__asm        mov    eax, flags;
@@ -2792,8 +2792,8 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 	__asm        jmp    _Tfb;
 // LINE 976:
 _T1e:
-	__asm        mov    eax, ds:[0x5B739C];
-	__asm        mov    ecx, ds:[0x598EB0];
+	__asm        mov    eax, S_ftwk_fire_radius;
+	__asm        mov    ecx, G_diff_level;
 	__asm        dec    ecx;
 	__asm        shl    ecx, 0x13;
 	__asm        sub    eax, ecx;
@@ -2946,27 +2946,27 @@ _T61:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1065:
-	__asm        mov    eax, ds:[0x5B73D0];
-	__asm        add    ds:[0x5B73CC], eax;
+	__asm        mov    eax, S_yvaldelta;
+	__asm        add    S_yval, eax;
 // LINE 1066:
-	__asm        cmp    dword ptr ds:[0x5B73CC], 0x40000;
+	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Tce;
 // LINE 1068:
-	__asm        mov    dword ptr ds:[0x5B73CC], 0x40000;
+	__asm        mov    S_yval, 0x40000;
 // LINE 1069:
-	__asm        mov    dword ptr ds:[0x5B73D0], 0xFFFFE667;
+	__asm        mov    S_yvaldelta, 0xFFFFE667;
 // LINE 1071:
 	__asm        jmp    _Tef;
 _Tce:
-	__asm        cmp    dword ptr ds:[0x5B73CC], 0;
+	__asm        cmp    S_yval, 0;
 	__asm        jge    _Tef;
 // LINE 1073:
-	__asm        mov    dword ptr ds:[0x5B73CC], 0;
+	__asm        mov    S_yval, 0;
 // LINE 1074:
-	__asm        mov    dword ptr ds:[0x5B73D0], 0x1999;
+	__asm        mov    S_yvaldelta, 0x1999;
 // LINE 1076:
 _Tef:
-	__asm        mov    eax, ds:[0x5B73CC];
+	__asm        mov    eax, S_yval;
 	__asm        mov    vec.y, eax;
 // LINE 1077:
 	__asm        lea    eax, vec.x;
@@ -3076,27 +3076,27 @@ _T65:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1131:
-	__asm        mov    eax, ds:[0x5B73D0];
-	__asm        add    ds:[0x5B73CC], eax;
+	__asm        mov    eax, S_yvaldelta;
+	__asm        add    S_yval, eax;
 // LINE 1132:
-	__asm        cmp    dword ptr ds:[0x5B73CC], 0x40000;
+	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Td2;
 // LINE 1134:
-	__asm        mov    dword ptr ds:[0x5B73CC], 0x40000;
+	__asm        mov    S_yval, 0x40000;
 // LINE 1135:
-	__asm        mov    dword ptr ds:[0x5B73D0], 0xFFFFE667;
+	__asm        mov    S_yvaldelta, 0xFFFFE667;
 // LINE 1137:
 	__asm        jmp    _Tf3;
 _Td2:
-	__asm        cmp    dword ptr ds:[0x5B73CC], 0;
+	__asm        cmp    S_yval, 0;
 	__asm        jge    _Tf3;
 // LINE 1139:
-	__asm        mov    dword ptr ds:[0x5B73CC], 0;
+	__asm        mov    S_yval, 0;
 // LINE 1140:
-	__asm        mov    dword ptr ds:[0x5B73D0], 0x1999;
+	__asm        mov    S_yvaldelta, 0x1999;
 // LINE 1142:
 _Tf3:
-	__asm        mov    eax, ds:[0x5B73CC];
+	__asm        mov    eax, S_yval;
 	__asm        mov    vec.y, eax;
 // LINE 1143:
 	__asm        lea    eax, vec.x;
@@ -3695,7 +3695,7 @@ _T51b:
 // FUNCTION: COPTER_D 0x00526b81
 long S3FireGetCount() {
 // LINE 1381:
-	__asm        mov    eax, ds:[0x5B73A0];
+	__asm        mov    eax, S_fire_count;
 	__asm        jmp    near ptr 0x00526B91;
 // LINE 1382:
 }
@@ -3907,7 +3907,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 	__asm        jne    _T42;
 // LINE 1512:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, fd;
 	__asm        sub    [ecx+0x88], eax;
@@ -3975,7 +3975,7 @@ _Tca:
 	__asm        test   al, 4;
 	__asm        je     _Tf2;
 
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        jne    _Tf2;
@@ -4116,7 +4116,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 // LINE 1626:
 	__asm        push   0xA0;
 	__asm        push   0x62B550;
-	__asm        mov    eax, ds:[0x5B73D4];
+	__asm        mov    eax, FireMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -4145,23 +4145,23 @@ _T48:
 	__asm        add    eax, 0x6666F0;
 	__asm        mov    fd, eax;
 // LINE 1636:
-	__asm        mov    eax, ds:[0x62B550];
+	__asm        mov    eax, lsfire.flags;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx], eax;
 // LINE 1637:
-	__asm        mov    eax, ds:[0x62B554];
+	__asm        mov    eax, lsfire.timetolive;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+4], eax;
 // LINE 1638:
-	__asm        mov    eax, ds:[0x62B558];
+	__asm        mov    eax, lsfire.douse_points;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+8], eax;
 // LINE 1639:
-	__asm        mov    eax, ds:[0x62B55C];
+	__asm        mov    eax, lsfire.hdelta;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1640:
-	__asm        mov    eax, ds:[0x62B56C];
+	__asm        mov    eax, lsfire.elevation;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1641:
@@ -4176,19 +4176,19 @@ _T48:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1642:
-	__asm        mov    eax, ds:[0x62B5D8];
+	__asm        mov    eax, lsfire.dycheck_timer;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x88], eax;
 // LINE 1643:
-	__asm        mov    eax, ds:[0x62B5E4];
+	__asm        mov    eax, lsfire.building;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x94], eax;
 // LINE 1644:
-	__asm        mov    eax, ds:[0x62B5E8];
+	__asm        mov    eax, lsfire.cfd;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x98], eax;
 // LINE 1645:
-	__asm        mov    eax, ds:[0x62B5EC];
+	__asm        mov    eax, lsfire.mission_id;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x9C], eax;
 // LINE 1646:
@@ -4203,7 +4203,7 @@ _T48:
 // LINE 1653:
 	__asm        push   0xA0;
 	__asm        push   0x62B550;
-	__asm        mov    eax, ds:[0x5B73D4];
+	__asm        mov    eax, FireMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -4226,7 +4226,7 @@ _T14c:
 _T151:
 	__asm        push   8;
 	__asm        push   0x62B548;
-	__asm        mov    eax, ds:[0x5B73D8];
+	__asm        mov    eax, CfdMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -4249,13 +4249,13 @@ _T18d:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T1e8;
 // LINE 1671:
-	__asm        mov    eax, ds:[0x62B54C];
+	__asm        mov    eax, lscfd.fire_count;
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*8+0x66BE94], eax;
 // LINE 1678:
 	__asm        push   8;
 	__asm        push   0x62B548;
-	__asm        mov    eax, ds:[0x5B73D8];
+	__asm        mov    eax, CfdMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -4276,7 +4276,7 @@ _T1e3:
 	__asm        jmp    _T18a;
 // LINE 1685:
 _T1e8:
-	__asm        mov    dword ptr ds:[0x5B73A0], 0;
+	__asm        mov    S_fire_count, 0;
 // LINE 1686:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -4295,7 +4295,7 @@ _T20f:
 	__asm        jmp    _T205;
 // LINE 1692:
 _T22d:
-	__asm        inc    dword ptr ds:[0x5B73A0];
+	__asm        inc    S_fire_count;
 // LINE 1695:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -4442,19 +4442,19 @@ _T18:
 	__asm        mov    ecx, 0x28;
 	__asm        rep movsd;
 // LINE 1739:
-	__asm        test   byte ptr ds:[0x62B550], 1;
+	__asm        test   reinterpret_cast<uint8_t>(lsfire.flags), 1;
 	__asm        je     _T92;
 // LINE 1741:
-	__asm        mov    eax, ds:[0x62B5E4];
+	__asm        mov    eax, lsfire.building;
 	__asm        push   eax;
 	__asm        call   0x004D8629;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x62B5E4], eax;
+	__asm        mov    lsfire.building, eax;
 // LINE 1742:
-	__asm        mov    eax, ds:[0x62B5E8];
+	__asm        mov    eax, lsfire.cfd;
 	__asm        sub    eax, 0x66BE90;
 	__asm        sar    eax, 3;
-	__asm        mov    ds:[0x62B5E8], eax;
+	__asm        mov    lsfire.cfd, eax;
 // LINE 1743:
 	__asm        mov    eax, 0x62B550;
 	__asm        add    eax, 0x10;
@@ -4470,7 +4470,7 @@ _T18:
 _T92:
 	__asm        push   0xA0;
 	__asm        push   0x62B550;
-	__asm        mov    eax, ds:[0x5B73D4];
+	__asm        mov    eax, FireMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;
@@ -4489,7 +4489,7 @@ _Tc2:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax*8+0x66BE90];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B73D8];
+	__asm        mov    eax, CfdMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;

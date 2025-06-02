@@ -642,10 +642,10 @@ void S3StationInit() {
 	__asm        push   0xD1;
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   Station::Station;
-	__asm        mov    ds:[0x5C3820], eax;
+	__asm        mov    gHospitals, eax;
 	__asm        jmp    _T41;
 _T37:
-	__asm        mov    dword ptr ds:[0x5C3820], 0;
+	__asm        mov    gHospitals, 0;
 // LINE 29:
 _T41:
 	__asm        push   0x1C;
@@ -658,10 +658,10 @@ _T41:
 	__asm        push   0xD2;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   Station::Station;
-	__asm        mov    ds:[0x5C3800], eax;
+	__asm        mov    gPoliceStations, eax;
 	__asm        jmp    _T79;
 _T6f:
-	__asm        mov    dword ptr ds:[0x5C3800], 0;
+	__asm        mov    gPoliceStations, 0;
 // LINE 30:
 _T79:
 	__asm        push   0x1C;
@@ -674,10 +674,10 @@ _T79:
 	__asm        push   0xD3;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   Station::Station;
-	__asm        mov    ds:[0x5C3AA8], eax;
+	__asm        mov    gFireStations, eax;
 	__asm        jmp    _Tb1;
 _Ta7:
-	__asm        mov    dword ptr ds:[0x5C3AA8], 0;
+	__asm        mov    gFireStations, 0;
 // LINE 31:
 _Tb1:
 	__asm        jmp    near ptr 0x00539CB6;
@@ -686,7 +686,7 @@ _Tb1:
 // FUNCTION: COPTER_D 0x00539cbb
 void S3StationReset() {
 // LINE 40:
-	__asm        mov    eax, ds:[0x5C3820];
+	__asm        mov    eax, gHospitals;
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
@@ -704,7 +704,7 @@ void S3StationReset() {
 	__asm        jmp    _T3c;
 // LINE 41:
 _T3c:
-	__asm        mov    eax, ds:[0x5C3800];
+	__asm        mov    eax, gPoliceStations;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
@@ -722,7 +722,7 @@ _T3c:
 	__asm        jmp    _T6f;
 // LINE 42:
 _T6f:
-	__asm        mov    eax, ds:[0x5C3AA8];
+	__asm        mov    eax, gFireStations;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
@@ -2149,14 +2149,14 @@ _T87:
 	__asm        jmp    near ptr 0x0053AC29;
 // LINE 434:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63524C];
+	__asm        mov    al, ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA;
 	__asm        test   al, 1;
 	__asm        jne    _Tca;
 
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63524C];
+	__asm        mov    al, ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA;
 	__asm        or     al, 1;
-	__asm        mov    ds:[0x63524C], al;
+	__asm        mov    ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA, al;
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::DigitalSound;
 	__asm        push   0x53B99B;
@@ -2307,7 +2307,7 @@ _T2c9:
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetSoundFile;
 // LINE 461:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetVolume;
@@ -2494,7 +2494,7 @@ _T59c:
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetSoundFile;
 // LINE 471:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetVolume;
@@ -3017,7 +3017,7 @@ _Tc57:
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetSoundFile;
 // LINE 578:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::SetVolume;
@@ -3286,7 +3286,7 @@ _T1a8:
 	__asm        shl    eax, 5;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -3404,7 +3404,7 @@ _T2cc:
 	__asm        mov    eax, [eax+4];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -3450,7 +3450,7 @@ _T355:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        add    eax, eax;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;

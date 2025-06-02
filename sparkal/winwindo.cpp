@@ -261,7 +261,7 @@ _Tbf:
 	__asm        lea    eax, ClassInfo.style;
 	__asm        push   eax;
 	__asm        push   0x599AB8;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3878];
 	__asm        test   eax, eax;
@@ -277,7 +277,7 @@ _Tbf:
 	__asm        call   dword ptr ds:[0x6C3560];
 	__asm        mov    ClassInfo.hbrBackground, eax;
 // LINE 99:
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        mov    ClassInfo.hInstance, eax;
 // LINE 100:
 	__asm        mov    ClassInfo.style, 0x23;
@@ -419,7 +419,7 @@ _T251:
 	__asm        mov    Top, eax;
 // LINE 152:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -871,7 +871,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 	__asm        mov    eax, CursorID;
 	__asm        and    eax, 0xFFFF;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3818];
 	__asm        mov    hNewCursor, eax;
@@ -1624,7 +1624,7 @@ _T92:
 // LINE 627:
 	__asm        jmp    near ptr 0x004816E8;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        or     dword ptr [eax+0xC], 2;
@@ -1635,7 +1635,7 @@ _T92:
 _Tba:
 	__asm        jmp    near ptr 0x00481706;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFD;
@@ -1682,7 +1682,7 @@ _T125:
 // LINE 642:
 	__asm        jmp    _T12f;
 _T12f:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
@@ -1747,7 +1747,7 @@ _T1c3:
 // LINE 664:
 	__asm        jmp    near ptr 0x0048181E;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        or     dword ptr [eax+0xC], 4;
@@ -1781,7 +1781,7 @@ _T221:
 // LINE 671:
 	__asm        jmp    near ptr 0x0048187C;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        or     dword ptr [eax+0xC], 8;
@@ -1813,7 +1813,7 @@ _T27f:
 // LINE 678:
 	__asm        jmp    near ptr 0x004818D6;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFB;
@@ -1845,7 +1845,7 @@ _T2d9:
 // LINE 685:
 	__asm        jmp    near ptr 0x00481930;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFF7;

@@ -295,7 +295,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x140], eax;
 // LINE 42:
-	__asm        mov    eax, ds:[0x67ED20];
+	__asm        mov    eax, G_terr_maxalt;
 	__asm        add    eax, 0xC80000;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x144], eax;
@@ -348,7 +348,7 @@ _T32:
 // FUNCTION: COPTER_D 0x0049550c
 void SkyImage::SwitchToProperSkyType() {
 // LINE 71:
-	__asm        cmp    dword ptr ds:[0x598E90], 0;
+	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T38;
 
 	__asm        mov    eax, this;
@@ -361,7 +361,7 @@ void SkyImage::SwitchToProperSkyType() {
 // LINE 73:
 	__asm        jmp    _T5f;
 _T38:
-	__asm        cmp    dword ptr ds:[0x598E90], 1;
+	__asm        cmp    G_daynight, 1;
 	__asm        jne    _T5f;
 
 	__asm        mov    eax, this;
@@ -392,7 +392,7 @@ int32_t SkyImage::LoadImageA() {
 // LINE 103:
 	__asm        lea    eax, szFullSkyImagePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A120];
+	__asm        mov    eax, SZ_SKY_DAY_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -404,7 +404,7 @@ int32_t SkyImage::LoadImageA() {
 _T43:
 	__asm        lea    eax, szFullSkyImagePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A124];
+	__asm        mov    eax, SZ_SKY_NIGHT_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -501,11 +501,11 @@ _T16c:
 	__asm        jmp    _T36d;
 // LINE 133:
 _T173:
-	__asm        cmp    dword ptr ds:[0x5B476C], 0;
+	__asm        cmp    G_restex, 0;
 	__asm        je     _T354;
 // LINE 136:
 	__asm        push   2;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -537,7 +537,7 @@ _T173:
 	__asm        add    esp, 0xC;
 // LINE 149:
 	__asm        push   0x27;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -569,7 +569,7 @@ _T173:
 	__asm        add    esp, 0xC;
 // LINE 162:
 	__asm        push   0x28;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -601,7 +601,7 @@ _T173:
 	__asm        add    esp, 0xC;
 // LINE 176:
 	__asm        push   0x14;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -632,7 +632,7 @@ _T173:
 	__asm        add    esp, 0xC;
 // LINE 188:
 	__asm        push   0xD;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -691,12 +691,12 @@ unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinat
 // LINE 219:
 	__asm        jmp    near ptr 0x004958FD;
 // LINE 224:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x144];
 	__asm        mov    altdiff, eax;
 // LINE 226:
-	__asm        mov    eax, ds:[0x6BF1B0];
+	__asm        mov    eax, cameraPitch;
 	__asm        mov    pitch, eax;
 // LINE 227:
 	__asm        cmp    pitch, 0x7080000;
@@ -746,7 +746,7 @@ _Tb3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x140];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6BF1AC];
+	__asm        mov    eax, cameraHeading;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -804,7 +804,7 @@ _T135:
 	__asm        add    eax, start_col;
 	__asm        mov    rectSource.right, eax;
 // LINE 268:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
+	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T1e1;
 // LINE 270:
 	__asm        mov    rectDestination.top, 0;

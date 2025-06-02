@@ -614,7 +614,7 @@ _T94:
 _Ta1:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AECC];
+	__asm        mov    eax, SZ_MAIN_MENU_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -649,11 +649,11 @@ void GameModeMainMenuData::UsePalette() {
 // LINE 186:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 187:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 188:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 189:
 	__asm        jmp    near ptr 0x004BD945;
 }
@@ -710,7 +710,7 @@ _T81:
 
 	__asm        jmp    near ptr 0x004BDA04;
 
-	__asm        mov    eax, ds:[0x59AECC];
+	__asm        mov    eax, SZ_MAIN_MENU_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0xA0], eax;
 // LINE 200:
 	__asm        jmp    near ptr 0x004BDA14;
@@ -726,7 +726,7 @@ _T81:
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004BDA38;
 // LINE 201:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    tempUMWD.nTransparentIndex, eax;
 // LINE 202:
 	__asm        jmp    near ptr 0x004BDA45;
@@ -1007,7 +1007,7 @@ _T94:
 _Ta1:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AED0];
+	__asm        mov    eax, SZ_CAREER_PALETTE_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -1042,11 +1042,11 @@ void GameModePickCareerCityData::UsePalette() {
 // LINE 290:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 291:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 292:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 293:
 	__asm        jmp    near ptr 0x004BDE86;
 }
@@ -1066,7 +1066,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        jmp    _T3b;
 // LINE 306:
 _T25:
-	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, 0x5C2B18;
@@ -1333,35 +1333,35 @@ _T94:
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 418:
 _Ta1:
-	__asm        cmp    dword ptr ds:[0x598EFC], 0;
+	__asm        cmp    S_pal, 0;
 	__asm        jne    _Tf6;
 // LINE 419:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEC4];
+	__asm        mov    eax, SZ_VR_APP_PALETTE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   7;
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 420:
-	__asm        mov    eax, ds:[0x59AEC8];
+	__asm        mov    eax, SZ_VR_APP_PALETTE_CHUNK_TYPE;
 	__asm        push   eax;
 	__asm        push   4;
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x5B4770], eax;
+	__asm        mov    G_respal, eax;
 // LINE 421:
-	__asm        mov    eax, ds:[0x5B4770];
+	__asm        mov    eax, G_respal;
 	__asm        push   eax;
 	__asm        call   VRGetPalFromResource;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x598EFC], eax;
+	__asm        mov    S_pal, eax;
 // LINE 424:
 _Tf6:
-	__asm        mov    eax, ds:[0x598EFC];
+	__asm        mov    eax, S_pal;
 	__asm        mov    pPalettePosition, eax;
 // LINE 425:
 	__asm        mov    i, 0;
@@ -1419,11 +1419,11 @@ void GameModePlayData::UsePalette() {
 // LINE 440:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 441:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 442:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 443:
 	__asm        jmp    near ptr 0x004BE353;
 }
@@ -1972,7 +1972,7 @@ int32_t GameModePlayData::CreatePanels() {
 
 	__asm        jmp    near ptr 0x004BE92D;
 // LINE 564:
-	__asm        cmp    dword ptr ds:[0x598F00], 1;
+	__asm        cmp    gameResolution, 1;
 	__asm        jne    _T17c;
 // LINE 565:
 	__asm        mov    rectPanel0.left, 0;
@@ -2025,12 +2025,12 @@ int32_t GameModePlayData::CreatePanels() {
 // LINE 574:
 	__asm        jmp    _T19b;
 _T17c:
-	__asm        cmp    dword ptr ds:[0x598F00], 2;
+	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T18e;
 // LINE 577:
 	__asm        jmp    _T19b;
 _T18e:
-	__asm        cmp    dword ptr ds:[0x598F00], 3;
+	__asm        cmp    gameResolution, 3;
 	__asm        jne    _T19b;
 // LINE 581:
 _T19b:
@@ -2050,7 +2050,7 @@ _T19b:
 	__asm        push   0;
 	__asm        lea    eax, rectPanel0.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AED4];
+	__asm        mov    eax, SZ_PANEL0_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2086,7 +2086,7 @@ _T1fa:
 	__asm        push   0;
 	__asm        lea    eax, rectPanel1.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AED8];
+	__asm        mov    eax, SZ_PANEL1_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x88];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2122,7 +2122,7 @@ _T275:
 	__asm        push   0;
 	__asm        lea    eax, rectPanel2.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEDC];
+	__asm        mov    eax, SZ_PANEL2_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x8C];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2158,7 +2158,7 @@ _T2f0:
 	__asm        push   0;
 	__asm        lea    eax, rectPanel3.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEE0];
+	__asm        mov    eax, SZ_PANEL3_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x90];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2462,7 +2462,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    userPersonalInfo, eax;
 // LINE 644:
-	__asm        cmp    dword ptr ds:[0x598F00], 1;
+	__asm        cmp    gameResolution, 1;
 	__asm        jne    _Tcd;
 // LINE 645:
 	__asm        mov    rectFlap0.left, 0x1F6;
@@ -2515,7 +2515,7 @@ _Tcd:
 	__asm        push   0;
 	__asm        lea    eax, rectFlap0.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEF0];
+	__asm        mov    eax, SZ_FLAP0_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
@@ -2542,7 +2542,7 @@ _T13a:
 	__asm        mov    ecx, [eax+0x5C];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 656:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T186;
 // LINE 657:
 	__asm        mov    eax, this;
@@ -2609,7 +2609,7 @@ _T20c:
 	__asm        push   1;
 	__asm        lea    eax, rectFlap1.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEF4];
+	__asm        mov    eax, SZ_FLAP1_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
@@ -2636,7 +2636,7 @@ _T247:
 	__asm        mov    ecx, [eax+0x60];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 671:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T293;
 // LINE 672:
 	__asm        mov    eax, this;
@@ -2703,7 +2703,7 @@ _T319:
 	__asm        push   2;
 	__asm        lea    eax, rectFlap2.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEF8];
+	__asm        mov    eax, SZ_FLAP2_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
@@ -2730,7 +2730,7 @@ _T354:
 	__asm        mov    ecx, [eax+0x64];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 686:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T3a0;
 // LINE 687:
 	__asm        mov    eax, this;
@@ -2797,7 +2797,7 @@ _T426:
 	__asm        push   3;
 	__asm        lea    eax, rectFlap3.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AEFC];
+	__asm        mov    eax, SZ_FLAP3_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   EquipmentPanelWindow::EquipmentPanelWindow;
@@ -2824,7 +2824,7 @@ _T461:
 	__asm        mov    ecx, [eax+0x68];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 701:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T4ad;
 // LINE 702:
 	__asm        mov    eax, this;
@@ -2868,7 +2868,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 
 	__asm        push   0xC8;
 	__asm        push   0x280;
-	__asm        mov    eax, ds:[0x598E90];
+	__asm        mov    eax, G_daynight;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   SkyImage::SkyImage;
@@ -3210,30 +3210,30 @@ void GameModePlayData::ShowPanels() {
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598EC8], eax;
+	__asm        mov    qwindow.WindowWide, eax;
 // LINE 841:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598ECC], eax;
+	__asm        mov    qwindow.WindowHigh, eax;
 // LINE 842:
 	__asm        jmp    near ptr 0x004BF906;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598ED4], eax;
+	__asm        mov    qwindow.RenderWide, eax;
 // LINE 845:
 _T72:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ds:[0x598EE8], eax;
+	__asm        mov    swindow.WindowWide, eax;
 // LINE 846:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x598EEC], eax;
+	__asm        mov    swindow.WindowHigh, eax;
 // LINE 847:
 	__asm        jmp    near ptr 0x004BF92F;
 
@@ -3241,7 +3241,7 @@ _T72:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598EF4], eax;
+	__asm        mov    swindow.RenderWide, eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-4], eax;
@@ -3380,30 +3380,30 @@ void GameModePlayData::HidePanels() {
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598EC8], eax;
+	__asm        mov    qwindow.WindowWide, eax;
 // LINE 894:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598ECC], eax;
+	__asm        mov    qwindow.WindowHigh, eax;
 // LINE 895:
 	__asm        jmp    near ptr 0x004BFB02;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598ED4], eax;
+	__asm        mov    qwindow.RenderWide, eax;
 // LINE 898:
 _T65:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ds:[0x598EE8], eax;
+	__asm        mov    swindow.WindowWide, eax;
 // LINE 899:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ds:[0x598EEC], eax;
+	__asm        mov    swindow.WindowHigh, eax;
 // LINE 900:
 	__asm        jmp    near ptr 0x004BFB2B;
 
@@ -3411,7 +3411,7 @@ _T65:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598EF4], eax;
+	__asm        mov    swindow.RenderWide, eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    [ebp-4], eax;
@@ -3719,7 +3719,7 @@ long GameModePlayData::TestForUserInHelicopter() {
 // LINE 1012:
 	__asm        mov    lReturnValue, 0;
 // LINE 1014:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T25;
 
 	__asm        jmp    _T2a;
@@ -3790,7 +3790,7 @@ long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::HidePanels;
 // LINE 1065:
-	__asm        cmp    dword ptr ds:[0x5C33D0], 1;
+	__asm        cmp    gGraduationState.nGraduationState, 1;
 	__asm        jne    _T2b;
 // LINE 1066:
 	__asm        mov    eax, 3;
@@ -3826,7 +3826,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 1088:
-	__asm        cmp    dword ptr ds:[0x598F00], 0;
+	__asm        cmp    gameResolution, 0;
 	__asm        jne    _T5d;
 // LINE 1089:
 	__asm        mov    eax, this;
@@ -3837,7 +3837,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1092:
 	__asm        jmp    _Tbe;
 _T5d:
-	__asm        cmp    dword ptr ds:[0x598F00], 1;
+	__asm        cmp    gameResolution, 1;
 	__asm        jne    _T7d;
 // LINE 1093:
 	__asm        mov    eax, this;
@@ -3848,7 +3848,7 @@ _T5d:
 // LINE 1096:
 	__asm        jmp    _Tbe;
 _T7d:
-	__asm        cmp    dword ptr ds:[0x598F00], 2;
+	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T9d;
 // LINE 1097:
 	__asm        mov    eax, this;
@@ -3859,7 +3859,7 @@ _T7d:
 // LINE 1100:
 	__asm        jmp    _Tbe;
 _T9d:
-	__asm        cmp    dword ptr ds:[0x598F00], 3;
+	__asm        cmp    gameResolution, 3;
 	__asm        jne    _Tbe;
 // LINE 1101:
 	__asm        mov    eax, this;
@@ -3878,29 +3878,29 @@ _Tbe:
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598EC8], eax;
+	__asm        mov    qwindow.WindowWide, eax;
 // LINE 1107:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598ECC], eax;
+	__asm        mov    qwindow.WindowHigh, eax;
 // LINE 1108:
 	__asm        jmp    near ptr 0x004C00CC;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598ED4], eax;
+	__asm        mov    qwindow.RenderWide, eax;
 // LINE 1111:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ds:[0x598EE8], eax;
+	__asm        mov    swindow.WindowWide, eax;
 // LINE 1112:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x598EEC], eax;
+	__asm        mov    swindow.WindowHigh, eax;
 // LINE 1113:
 	__asm        jmp    near ptr 0x004C00F5;
 
@@ -3908,7 +3908,7 @@ _Tbe:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598EF4], eax;
+	__asm        mov    swindow.RenderWide, eax;
 // LINE 1115:
 	__asm        jmp    _T192;
 // LINE 1116:
@@ -3918,29 +3918,29 @@ _T131:
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598EC8], eax;
+	__asm        mov    qwindow.WindowWide, eax;
 // LINE 1117:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        mov    ds:[0x598ECC], eax;
+	__asm        mov    qwindow.WindowHigh, eax;
 // LINE 1118:
 	__asm        jmp    near ptr 0x004C0132;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598ED4], eax;
+	__asm        mov    qwindow.RenderWide, eax;
 // LINE 1121:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ds:[0x598EE8], eax;
+	__asm        mov    swindow.WindowWide, eax;
 // LINE 1122:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ds:[0x598EEC], eax;
+	__asm        mov    swindow.WindowHigh, eax;
 // LINE 1123:
 	__asm        jmp    near ptr 0x004C015B;
 
@@ -3948,7 +3948,7 @@ _T131:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x598EF4], eax;
+	__asm        mov    swindow.RenderWide, eax;
 // LINE 1125:
 _T192:
 	__asm        jmp    near ptr 0x004C0171;
@@ -4065,11 +4065,11 @@ _T84:
 
 	__asm        jmp    near ptr 0x004C02A7;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x004C02BE;
 
 	__asm        mov    eax, this;
@@ -5372,11 +5372,11 @@ void GameModeHangarData::UsePalette() {
 // LINE 1500:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 1501:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 1502:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 1503:
 	__asm        jmp    near ptr 0x004C1590;
 }
@@ -6023,11 +6023,11 @@ void GameModeCatalogData::UsePalette() {
 // LINE 1654:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 1655:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 1656:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 1657:
 	__asm        jmp    near ptr 0x004C1E06;
 }
@@ -6119,11 +6119,11 @@ _Tae:
 
 	__asm        jmp    near ptr 0x004C1F44;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0xEC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xEC];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x004C1F61;
 
 	__asm        mov    eax, this;
@@ -6157,20 +6157,20 @@ _T14e:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x80], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T1ce;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T1ce:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T2f9;
 
 	__asm        jmp    near ptr 0x004C200D;
@@ -6217,14 +6217,14 @@ _T22e:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x64], 0x80;
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
@@ -6253,20 +6253,20 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C2108;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T2f9:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x48], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x7C], eax;
 _T30e:
@@ -6337,20 +6337,20 @@ _T348:
 
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0xD8], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T423;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T423:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T5b7;
 
 	__asm        jmp    near ptr 0x004C2262;
@@ -6397,14 +6397,14 @@ _T4aa:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xA4];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xBC], 0x80;
 	__asm        lea    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
@@ -6433,20 +6433,20 @@ _T56a:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C23BD;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x9C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T5b7:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xA0], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0xD4], eax;
 _T5d5:
@@ -6728,11 +6728,11 @@ void GameModeMissionLogData::UsePalette() {
 // LINE 1779:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 1780:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 1781:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 1782:
 	__asm        jmp    near ptr 0x004C278E;
 }
@@ -6824,11 +6824,11 @@ _Tae:
 
 	__asm        jmp    near ptr 0x004C28CC;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0xEC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xEC];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x004C28E9;
 
 	__asm        mov    eax, this;
@@ -6862,20 +6862,20 @@ _T14e:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x80], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T1ce;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T1ce:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T2f9;
 
 	__asm        jmp    near ptr 0x004C2995;
@@ -6922,14 +6922,14 @@ _T22e:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x64], 0x80;
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
@@ -6958,20 +6958,20 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C2A90;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T2f9:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x48], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x7C], eax;
 _T30e:
@@ -7042,20 +7042,20 @@ _T348:
 
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0xD8], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T423;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T423:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T5b7;
 
 	__asm        jmp    near ptr 0x004C2BEA;
@@ -7102,14 +7102,14 @@ _T4aa:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xA4];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xBC], 0x80;
 	__asm        lea    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
@@ -7138,20 +7138,20 @@ _T56a:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C2D45;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x9C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T5b7:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xA0], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0xD4], eax;
 _T5d5:
@@ -7433,11 +7433,11 @@ void GameModeInventoryData::UsePalette() {
 // LINE 1901:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x60480C], eax;
+	__asm        mov    gCopterPalette.pColors, eax;
 // LINE 1902:
-	__asm        mov    dword ptr ds:[0x604810], 0x100;
+	__asm        mov    gCopterPalette.lColors, 0x100;
 // LINE 1903:
-	__asm        mov    dword ptr ds:[0x604814], 0;
+	__asm        mov    gCopterPalette.bOwnColors, 0;
 // LINE 1904:
 	__asm        jmp    near ptr 0x004C3116;
 }
@@ -7529,11 +7529,11 @@ _Tae:
 
 	__asm        jmp    near ptr 0x004C3254;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0xEC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xEC];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x004C3271;
 
 	__asm        mov    eax, this;
@@ -7567,20 +7567,20 @@ _T14e:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x80], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T1ce;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T1ce:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T2f9;
 
 	__asm        jmp    near ptr 0x004C331D;
@@ -7627,14 +7627,14 @@ _T22e:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x64], 0x80;
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
@@ -7663,20 +7663,20 @@ _T2b8:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C3418;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T30e;
 _T2f9:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x48], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x7C], eax;
 _T30e:
@@ -7747,20 +7747,20 @@ _T348:
 
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    [ebp-0xD8], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T423;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T423:
-	__asm        mov    eax, ds:[0x59721C];
-	__asm        cmp    ds:[0x597220], eax;
+	__asm        mov    eax, list<Shortcut>::last;
+	__asm        cmp    list<Shortcut>::next_avail, eax;
 	__asm        jne    _T5b7;
 
 	__asm        jmp    near ptr 0x004C3572;
@@ -7807,14 +7807,14 @@ _T4aa:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0xA4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xA4];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xBC], 0x80;
 	__asm        lea    eax, [ebp-0xBC];
 	__asm        mov    [ebp-0xC4], eax;
@@ -7843,20 +7843,20 @@ _T56a:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004C36CD;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x9C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T5d5;
 _T5b7:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xA0], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0xD4], eax;
 _T5d5:

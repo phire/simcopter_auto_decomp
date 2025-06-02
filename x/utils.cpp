@@ -1205,7 +1205,7 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 	__asm        jne    _T26;
 // LINE 1077:
 	__asm        push   6;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1078:
@@ -1216,7 +1216,7 @@ _T26:
 	__asm        jne    _T46;
 // LINE 1079:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1080:
@@ -1224,7 +1224,7 @@ _T26:
 // LINE 1081:
 _T46:
 	__asm        push   2;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3554];
 // LINE 1082:
@@ -1239,7 +1239,7 @@ _T54:
 	__asm        mov    eax, rect;
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 1084:

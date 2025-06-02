@@ -48,10 +48,10 @@ void S3CameraMove(struct Point3d* P) {
 // LINE 101:
 	__asm        mov    Velocity, 0;
 // LINE 124:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T23d;
 // LINE 126:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _Tfe;
 // LINE 129:
 	__asm        call   GetAvatarDYOBJ;
@@ -69,17 +69,17 @@ void S3CameraMove(struct Point3d* P) {
 	__asm        mov    eax, u_dyobj;
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, viewerPos.x;
-	__asm        mov    ds:[0x6C1318], eax;
+	__asm        mov    Viewer.pos.x, eax;
 // LINE 132:
 	__asm        mov    eax, u_dyobj;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        add    eax, viewerPos.y;
-	__asm        mov    ds:[0x6C131C], eax;
+	__asm        mov    Viewer.pos.y, eax;
 // LINE 133:
 	__asm        mov    eax, u_dyobj;
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    eax, viewerPos.z;
-	__asm        mov    ds:[0x6C1320], eax;
+	__asm        mov    Viewer.pos.z, eax;
 // LINE 136:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -95,9 +95,9 @@ void S3CameraMove(struct Point3d* P) {
 // LINE 140:
 _T9c:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6C1320];
+	__asm        mov    eax, Viewer.pos.z;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1318];
+	__asm        mov    eax, Viewer.pos.x;
 	__asm        push   eax;
 	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
@@ -105,7 +105,7 @@ _T9c:
 	__asm        add    alt, eax;
 // LINE 141:
 	__asm        mov    eax, alt;
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    altdiff, eax;
 // LINE 142:
 	__asm        cmp    altdiff, 0;
@@ -114,23 +114,23 @@ _T9c:
 	__asm        mov    altdiff, 0;
 // LINE 144:
 _Td7:
-	__asm        mov    eax, ds:[0x5B4E00];
+	__asm        mov    eax, S_altdiff;
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        add    eax, altdiff;
 	__asm        sar    eax, 3;
-	__asm        mov    ds:[0x5B4E00], eax;
+	__asm        mov    S_altdiff, eax;
 // LINE 145:
-	__asm        mov    eax, ds:[0x5B4E00];
-	__asm        add    ds:[0x6C131C], eax;
+	__asm        mov    eax, S_altdiff;
+	__asm        add    Viewer.pos.y, eax;
 // LINE 148:
 	__asm        jmp    _T238;
 _Tfe:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
+	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _T172;
 // LINE 151:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
@@ -140,30 +140,30 @@ _Tfe:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 152:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, viewerPos.x;
-	__asm        mov    ds:[0x6C1318], eax;
+	__asm        mov    Viewer.pos.x, eax;
 // LINE 153:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        add    eax, viewerPos.y;
-	__asm        mov    ds:[0x6C131C], eax;
+	__asm        mov    Viewer.pos.y, eax;
 // LINE 154:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    eax, viewerPos.z;
-	__asm        mov    ds:[0x6C1320], eax;
+	__asm        mov    Viewer.pos.z, eax;
 // LINE 156:
 	__asm        jmp    _T238;
 _T172:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
+	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _T1f2;
 // LINE 158:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x100;
 	__asm        push   eax;
 	__asm        lea    eax, mat[0][0];
@@ -179,65 +179,65 @@ _T172:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 162:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, viewerPos.x;
-	__asm        mov    ds:[0x6C1318], eax;
+	__asm        mov    Viewer.pos.x, eax;
 // LINE 163:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        add    eax, viewerPos.y;
-	__asm        mov    ds:[0x6C131C], eax;
+	__asm        mov    Viewer.pos.y, eax;
 // LINE 164:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    eax, viewerPos.z;
-	__asm        mov    ds:[0x6C1320], eax;
+	__asm        mov    Viewer.pos.z, eax;
 // LINE 166:
 	__asm        jmp    _T238;
 // LINE 169:
 _T1f2:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ds:[0x6C1318], eax;
+	__asm        mov    Viewer.pos.x, eax;
 // LINE 170:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ds:[0x6C1320], eax;
+	__asm        mov    Viewer.pos.z, eax;
 // LINE 172:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6C1320];
+	__asm        mov    eax, Viewer.pos.z;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1318];
+	__asm        mov    eax, Viewer.pos.x;
 	__asm        push   eax;
 	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
 	__asm        add    eax, 0x3200000;
-	__asm        mov    ds:[0x6C131C], eax;
+	__asm        mov    Viewer.pos.y, eax;
 // LINE 174:
 _T238:
 	__asm        jmp    _T474;
 // LINE 177:
 _T23d:
-	__asm        mov    eax, ds:[0x6C126C];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    eax, ViewState.world_pos.x;
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        sub    eax, [ecx+0x18];
 	__asm        mov    viewerPos.x, eax;
 // LINE 178:
-	__asm        mov    eax, ds:[0x6C1270];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    eax, ViewState.world_pos.y;
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        sub    eax, [ecx+0x1C];
 	__asm        mov    viewerPos.y, eax;
 // LINE 179:
-	__asm        mov    eax, ds:[0x6C1274];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    eax, ViewState.world_pos.z;
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        sub    eax, [ecx+0x20];
 	__asm        mov    viewerPos.z, eax;
@@ -266,17 +266,17 @@ _T2be:
 	__asm        add    viewerPos.z, 0x40000000;
 // LINE 191:
 _T2d2:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    viewerPos.x, eax;
 // LINE 192:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        add    viewerPos.y, eax;
 // LINE 193:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
 	__asm        add    viewerPos.z, eax;
@@ -317,7 +317,7 @@ _T2d2:
 // LINE 237:
 	__asm        mov    eax, CameraVector.y;
 	__asm        add    eax, viewerPos.y;
-	__asm        mov    ds:[0x6C131C], eax;
+	__asm        mov    Viewer.pos.y, eax;
 // LINE 240:
 	__asm        mov    CameraVector.y, 0;
 // LINE 243:
@@ -336,7 +336,7 @@ _T2d2:
 	__asm        jle    _T3b4;
 // LINE 248:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x5B4DEC];
+	__asm        mov    ax, InClose;
 	__asm        test   eax, eax;
 	__asm        je     _T3a8;
 // LINE 250:
@@ -355,7 +355,7 @@ _T3b4:
 	__asm        mov    Velocity, eax;
 // LINE 255:
 	__asm        mov    eax, Velocity;
-	__asm        mov    ds:[0x6C12B4], eax;
+	__asm        mov    Viewer.p.Vmag, eax;
 // LINE 257:
 	__asm        mov    eax, Velocity;
 	__asm        push   eax;
@@ -375,11 +375,11 @@ _T3b4:
 // LINE 260:
 	__asm        mov    eax, viewerPos.x;
 	__asm        add    eax, CameraDelta.x;
-	__asm        mov    ds:[0x6C1318], eax;
+	__asm        mov    Viewer.pos.x, eax;
 // LINE 261:
 	__asm        mov    eax, CameraDelta.z;
 	__asm        add    eax, viewerPos.z;
-	__asm        mov    ds:[0x6C1320], eax;
+	__asm        mov    Viewer.pos.z, eax;
 // LINE 264:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -389,9 +389,9 @@ _T3b4:
 	__asm        mov    alt, eax;
 // LINE 270:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6C1320];
+	__asm        mov    eax, Viewer.pos.z;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1318];
+	__asm        mov    eax, Viewer.pos.x;
 	__asm        push   eax;
 	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
@@ -399,7 +399,7 @@ _T3b4:
 	__asm        add    alt, eax;
 // LINE 271:
 	__asm        mov    eax, alt;
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    altdiff, eax;
 // LINE 272:
 	__asm        cmp    altdiff, 0;
@@ -408,16 +408,16 @@ _T3b4:
 	__asm        mov    altdiff, 0;
 // LINE 274:
 _T452:
-	__asm        mov    eax, ds:[0x5B4E00];
+	__asm        mov    eax, S_altdiff;
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        add    eax, altdiff;
 	__asm        sar    eax, 3;
-	__asm        mov    ds:[0x5B4E00], eax;
+	__asm        mov    S_altdiff, eax;
 // LINE 275:
-	__asm        mov    eax, ds:[0x5B4E00];
-	__asm        add    ds:[0x6C131C], eax;
+	__asm        mov    eax, S_altdiff;
+	__asm        add    Viewer.pos.y, eax;
 // LINE 276:
 _T474:
 }
@@ -473,9 +473,9 @@ void SetIdealCameraPos() {
 // LINE 309:
 	__asm        mov    temp, 0;
 // LINE 311:
-	__asm        mov    word ptr ds:[0x5B4DEC], 0;
+	__asm        mov    InClose, 0;
 // LINE 318:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T43;
 // LINE 320:
 	__asm        call   GetAvatarDYOBJ;
@@ -487,20 +487,20 @@ void SetIdealCameraPos() {
 	__asm        jmp    _T259;
 // LINE 325:
 _T43:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
 	__asm        call   NormalizeGridPoint;
 	__asm        add    esp, 4;
 // LINE 328:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T6c;
 // LINE 329:
 	__asm        jmp    _T259;
 // LINE 332:
 _T6c:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    eax, [eax*4+0x6BF160];
 	__asm        neg    eax;
@@ -525,10 +525,10 @@ _T6c:
 	__asm        neg    eax;
 	__asm        mov    AccelAdjust, eax;
 // LINE 342:
-	__asm        mov    word ptr ds:[0x5B4DEC], 1;
+	__asm        mov    InClose, 1;
 // LINE 347:
 _Tbe:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
 	__asm        jne    _Td7;
 // LINE 348:
@@ -541,7 +541,7 @@ _Td7:
 	__asm        sub    cameraDistance, eax;
 // LINE 351:
 	__asm        xor    ecx, ecx;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        cdq;
 	__asm        and    edx, 0x1F;
@@ -551,48 +551,48 @@ _Td7:
 	__asm        neg    ecx;
 	__asm        sub    cameraDistance, ecx;
 // LINE 354:
-	__asm        mov    eax, ds:[0x5B4DF0];
+	__asm        mov    eax, S_ctwk_min_dist;
 	__asm        neg    eax;
 	__asm        cmp    eax, cameraDistance;
 	__asm        jge    _T118;
 // LINE 355:
-	__asm        mov    eax, ds:[0x5B4DF0];
+	__asm        mov    eax, S_ctwk_min_dist;
 	__asm        neg    eax;
 	__asm        mov    cameraDistance, eax;
 // LINE 358:
 _T118:
 	__asm        mov    eax, cameraDistance;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x100];
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        mov    ecx, [ecx+0x18];
 	__asm        add    ecx, eax;
-	__asm        mov    ds:[0x6BF1A0], ecx;
+	__asm        mov    CameraIdeal.x, ecx;
 // LINE 359:
 	__asm        mov    eax, cameraDistance;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        add    ecx, eax;
-	__asm        mov    ds:[0x6BF1A8], ecx;
+	__asm        mov    CameraIdeal.z, ecx;
 // LINE 369:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
 	__asm        jne    _T19f;
 // LINE 370:
 	__asm        mov    eax, 0x11;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        sub    eax, [ecx+0x1AC];
 	__asm        shl    eax, 2;
 	__asm        mov    temp, eax;
@@ -604,19 +604,19 @@ _T19f:
 	__asm        mov    temp, 0;
 // LINE 373:
 _T1b0:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, temp;
 	__asm        shl    ecx, 0x10;
 	__asm        add    eax, ecx;
-	__asm        mov    ds:[0x6BF1A4], eax;
+	__asm        mov    CameraIdeal.y, eax;
 // LINE 375:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x1B0], 1;
 	__asm        jne    _T1fe;
 // LINE 376:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        cdq;
 	__asm        and    edx, 3;
@@ -630,7 +630,7 @@ _T1b0:
 	__asm        jmp    _T21a;
 // LINE 378:
 _T1fe:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        cdq;
 	__asm        and    edx, 7;
@@ -642,22 +642,22 @@ _T1fe:
 	__asm        mov    AccelAdjust, eax;
 // LINE 380:
 _T21a:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, AccelAdjust;
 	__asm        cmp    [eax*4+0x6BF164], ecx;
 	__asm        jle    _T24a;
 // LINE 381:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    eax, [eax*4+0x6BF164];
 	__asm        sub    eax, AccelAdjust;
-	__asm        add    ds:[0x6BF1A4], eax;
+	__asm        add    CameraIdeal.y, eax;
 // LINE 395:
 _T24a:
-	__asm        mov    eax, ds:[0x6BF1A4];
+	__asm        mov    eax, CameraIdeal.y;
 	__asm        and    eax, 0xFFFFFF00;
-	__asm        mov    ds:[0x6BF1A4], eax;
+	__asm        mov    CameraIdeal.y, eax;
 // LINE 398:
 _T259:
 }
@@ -748,7 +748,7 @@ _T8c:
 	__asm        push   eax;
 	__asm        call   0x004D20B1;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6BF1AC], eax;
+	__asm        mov    cameraHeading, eax;
 // LINE 465:
 	__asm        mov    eax, Vector;
 	__asm        mov    eax, [eax+4];
@@ -804,7 +804,7 @@ _T116:
 	__asm        push   eax;
 	__asm        call   0x004D20B1;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6BF1B0], eax;
+	__asm        mov    cameraPitch, eax;
 // LINE 485:
 	__asm        mov    cosineRoll, 0x10000;
 // LINE 486:
@@ -829,7 +829,7 @@ _T116:
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
-	__asm        mov    ds:[0x6C12D8], ebx;
+	__asm        mov    Viewer.matrix[0][0], ebx;
 // LINE 491:
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
@@ -837,7 +837,7 @@ _T116:
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6C12DC], eax;
+	__asm        mov    Viewer.matrix[0][1], eax;
 // LINE 493:
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
@@ -859,9 +859,9 @@ _T116:
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
-	__asm        mov    ds:[0x6C12E0], ebx;
+	__asm        mov    Viewer.matrix[0][2], ebx;
 // LINE 494:
-	__asm        mov    dword ptr ds:[0x6C12E4], 0;
+	__asm        mov    Viewer.matrix[0][3], 0;
 // LINE 497:
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
@@ -883,7 +883,7 @@ _T116:
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
-	__asm        mov    ds:[0x6C12E8], ebx;
+	__asm        mov    Viewer.matrix[1][0], ebx;
 // LINE 498:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -891,7 +891,7 @@ _T116:
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6C12EC], eax;
+	__asm        mov    Viewer.matrix[1][1], eax;
 // LINE 500:
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
@@ -912,9 +912,9 @@ _T116:
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
-	__asm        mov    ds:[0x6C12F0], ebx;
+	__asm        mov    Viewer.matrix[1][2], ebx;
 // LINE 501:
-	__asm        mov    dword ptr ds:[0x6C12F4], 0;
+	__asm        mov    Viewer.matrix[1][3], 0;
 // LINE 503:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -922,11 +922,11 @@ _T116:
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6C12F8], eax;
+	__asm        mov    Viewer.matrix[2][0], eax;
 // LINE 504:
 	__asm        mov    eax, sinePitch;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x6C12FC], eax;
+	__asm        mov    Viewer.matrix[2][1], eax;
 // LINE 505:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -934,29 +934,29 @@ _T116:
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6C1300], eax;
+	__asm        mov    Viewer.matrix[2][2], eax;
 // LINE 506:
-	__asm        mov    dword ptr ds:[0x6C1304], 0;
+	__asm        mov    Viewer.matrix[2][3], 0;
 // LINE 510:
-	__asm        mov    dword ptr ds:[0x6C1310], 0;
-	__asm        mov    eax, ds:[0x6C1310];
-	__asm        mov    ds:[0x6C130C], eax;
-	__asm        mov    eax, ds:[0x6C130C];
-	__asm        mov    ds:[0x6C1308], eax;
+	__asm        mov    Viewer.matrix[3][2], 0;
+	__asm        mov    eax, Viewer.matrix[3][2];
+	__asm        mov    Viewer.matrix[3][1], eax;
+	__asm        mov    eax, Viewer.matrix[3][1];
+	__asm        mov    Viewer.matrix[3][0], eax;
 // LINE 511:
-	__asm        mov    dword ptr ds:[0x6C1314], 0x10000;
+	__asm        mov    Viewer.matrix[3][3], 0x10000;
 // LINE 515:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T2d7;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
+	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _T2f7;
 // LINE 517:
 _T2d7:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x114];
 	__asm        sar    eax, 1;
 	__asm        push   eax;
@@ -1166,7 +1166,7 @@ void S3CameraRotate() {
 	struct Point3d cameraDelta;
 
 // LINE 606:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T5c;
 // LINE 608:
 // Block start:
@@ -1176,17 +1176,17 @@ void S3CameraRotate() {
 // LINE 613:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, ds:[0x6C1318];
+	__asm        sub    eax, Viewer.pos.x;
 	__asm        mov    cameraDelta.x, eax;
 // LINE 614:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, ds:[0x6C1320];
+	__asm        sub    eax, Viewer.pos.z;
 	__asm        mov    cameraDelta.z, eax;
 // LINE 615:
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x1C];
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    cameraDelta.y, eax;
 // LINE 634:
 	__asm        lea    eax, cameraDelta.x;
@@ -1197,34 +1197,34 @@ void S3CameraRotate() {
 // Block end:
 	__asm        jmp    _T1a2;
 _T5c:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
+	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _Td6;
 // LINE 639:
-	__asm        cmp    dword ptr ds:[0x6BF190], 0;
+	__asm        cmp    G_camera_targ2firey, 0;
 	__asm        je     _T83;
 
-	__asm        mov    eax, ds:[0x6BF194];
+	__asm        mov    eax, G_camera_targ2objy;
 	__asm        mov    alt, eax;
 	__asm        jmp    _T8b;
 _T83:
-	__asm        mov    eax, ds:[0x6BF194];
+	__asm        mov    eax, G_camera_targ2objy;
 	__asm        mov    alt, eax;
 // LINE 640:
 _T8b:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, ds:[0x6C1318];
+	__asm        sub    eax, Viewer.pos.x;
 	__asm        mov    cameraDelta.x, eax;
 // LINE 641:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, ds:[0x6C1320];
+	__asm        sub    eax, Viewer.pos.z;
 	__asm        mov    cameraDelta.z, eax;
 // LINE 642:
 	__asm        mov    eax, alt;
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    cameraDelta.y, eax;
 // LINE 654:
 	__asm        lea    eax, cameraDelta.x;
@@ -1234,10 +1234,10 @@ _T8b:
 // LINE 656:
 	__asm        jmp    _T1a2;
 _Td6:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T114;
 // LINE 658:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
@@ -1256,7 +1256,7 @@ _Td6:
 // LINE 676:
 _T114:
 	__asm        mov    eax, 0x11;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        sub    eax, [ecx+0x1AC];
 	__asm        mov    temp, eax;
 // LINE 677:
@@ -1266,28 +1266,28 @@ _T114:
 	__asm        mov    temp, 0;
 // LINE 678:
 _T139:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, ds:[0x6C1318];
+	__asm        sub    eax, Viewer.pos.x;
 	__asm        mov    cameraDelta.x, eax;
 // LINE 679:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    eax, [eax*4+0x6BF168];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        add    eax, [ecx+0x1C];
 	__asm        mov    ecx, temp;
 	__asm        shl    ecx, 0x10;
 	__asm        sub    eax, ecx;
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    cameraDelta.y, eax;
 // LINE 680:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, ds:[0x6C1320];
+	__asm        sub    eax, Viewer.pos.z;
 	__asm        mov    cameraDelta.z, eax;
 // LINE 693:
 	__asm        lea    eax, cameraDelta.x;
@@ -1325,59 +1325,59 @@ void S3CameraChaseAdjust(int32_t camevent) {
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T107;
 // LINE 746:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    dword ptr [eax*4+0x6BF160], 0x40000;
 // LINE 747:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, ds:[0x5B4DF0];
+	__asm        mov    ecx, S_ctwk_min_dist;
 	__asm        cmp    [eax*4+0x6BF160], ecx;
 	__asm        jge    _T57;
 // LINE 748:
-	__asm        mov    eax, ds:[0x5B4DF0];
-	__asm        mov    ecx, ds:[0x5B4DFC];
+	__asm        mov    eax, S_ctwk_min_dist;
+	__asm        mov    ecx, S_curr_chase;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    [ecx*4+0x6BF160], eax;
 // LINE 749:
 _T57:
 	__asm        jmp    _T137;
 // LINE 751:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    dword ptr [eax*4+0x6BF160], 0x40000;
 // LINE 752:
 	__asm        jmp    _T137;
 // LINE 754:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    dword ptr [eax*4+0x6BF164], 0x40000;
 // LINE 755:
 	__asm        jmp    _T137;
 // LINE 757:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    dword ptr [eax*4+0x6BF164], 0x40000;
 // LINE 759:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        cmp    dword ptr [eax*4+0x6BF164], 0;
 	__asm        jge    _Tc8;
 // LINE 760:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    dword ptr [eax*4+0x6BF164], 0;
 // LINE 761:
 _Tc8:
 	__asm        jmp    _T137;
 // LINE 763:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    dword ptr [eax*4+0x6BF168], 0x40000;
 // LINE 764:
 	__asm        jmp    _T137;
 // LINE 766:
-	__asm        mov    eax, ds:[0x5B4DFC];
+	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    dword ptr [eax*4+0x6BF168], 0x40000;
 // LINE 767:
@@ -1401,12 +1401,12 @@ _T137:
 // FUNCTION: COPTER_D 0x004f9a4e
 void S3CameraCycleChase() {
 // LINE 782:
-	__asm        inc    dword ptr ds:[0x5B4DFC];
+	__asm        inc    S_curr_chase;
 // LINE 783:
-	__asm        cmp    dword ptr ds:[0x5B4DFC], 3;
+	__asm        cmp    S_curr_chase, 3;
 	__asm        jl     _T23;
 // LINE 784:
-	__asm        mov    dword ptr ds:[0x5B4DFC], 0;
+	__asm        mov    S_curr_chase, 0;
 // LINE 785:
 _T23:
 }

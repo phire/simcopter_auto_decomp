@@ -51,7 +51,7 @@ void S3MissionReset() {
 	long i;
 
 // LINE 138:
-	__asm        mov    dword ptr ds:[0x5B4EC4], 0x6BF060;
+	__asm        mov    S_log.szLogString, 0x6BF060;
 // LINE 141:
 	__asm        mov    i, 0;
 	__asm        jmp    _T22;
@@ -71,35 +71,35 @@ _T22:
 	__asm        jmp    _T1f;
 // LINE 146:
 _T4a:
-	__asm        mov    dword ptr ds:[0x6072E0], 0;
+	__asm        mov    S_mstatics.num_active_missions, 0;
 // LINE 147:
-	__asm        mov    dword ptr ds:[0x6072E4], 0;
+	__asm        mov    S_mstatics.num_delayed_missions, 0;
 // LINE 148:
-	__asm        mov    dword ptr ds:[0x6072EC], 0;
+	__asm        mov    S_mstatics.curr_mission, 0;
 // LINE 149:
-	__asm        mov    dword ptr ds:[0x6072BC], 1;
+	__asm        mov    S_mstatics.fire_ctr, 1;
 // LINE 150:
-	__asm        mov    dword ptr ds:[0x6072D0], 1;
+	__asm        mov    S_mstatics.speeder_ctr, 1;
 // LINE 151:
-	__asm        mov    dword ptr ds:[0x6072D8], 1;
+	__asm        mov    S_mstatics.train_ctr, 1;
 // LINE 152:
-	__asm        mov    dword ptr ds:[0x6072C4], 1;
+	__asm        mov    S_mstatics.plane_ctr, 1;
 // LINE 153:
-	__asm        mov    dword ptr ds:[0x6072D4], 1;
+	__asm        mov    S_mstatics.traffic_ctr, 1;
 // LINE 154:
-	__asm        mov    dword ptr ds:[0x6072C0], 1;
+	__asm        mov    S_mstatics.medevac_ctr, 1;
 // LINE 155:
-	__asm        mov    dword ptr ds:[0x6072C8], 1;
+	__asm        mov    S_mstatics.rescue_ctr, 1;
 // LINE 156:
-	__asm        mov    dword ptr ds:[0x6072CC], 1;
+	__asm        mov    S_mstatics.riot_ctr, 1;
 // LINE 157:
-	__asm        mov    dword ptr ds:[0x6072DC], 1;
+	__asm        mov    S_mstatics.transport_ctr, 1;
 // LINE 158:
-	__asm        mov    dword ptr ds:[0x6072B8], 1;
+	__asm        mov    S_mstatics.crime_ctr, 1;
 // LINE 159:
-	__asm        mov    dword ptr ds:[0x6072E8], 0;
+	__asm        mov    S_mstatics.key_ctr, 0;
 // LINE 160:
-	__asm        mov    dword ptr ds:[0x5B4E2C], 0xB40000;
+	__asm        mov    S_mission_timer, 0xB40000;
 // LINE 162:
 }
 
@@ -115,9 +115,9 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, citySettingsOut;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x598EB0], eax;
+	__asm        mov    G_diff_level, eax;
 // LINE 185:
-	__asm        inc    dword ptr ds:[0x598EB0];
+	__asm        inc    G_diff_level;
 // LINE 193:
 	__asm        mov    eax, citySettingsIn;
 	__asm        mov    eax, [eax+0x14];
@@ -287,45 +287,45 @@ void S3MissionGenerator() {
 	__asm        call   ConvertCitySettingsToSteppedPercentages;
 	__asm        add    esp, 8;
 // LINE 248:
-	__asm        mov    eax, ds:[0x5B4E20];
-	__asm        imul   eax, ds:[0x598EB0];
-	__asm        mov    ds:[0x5B4E30], eax;
+	__asm        mov    eax, S_max_missions_easy;
+	__asm        imul   eax, G_diff_level;
+	__asm        mov    S_max_missions, eax;
 // LINE 249:
-	__asm        mov    eax, ds:[0x5B4E1C];
+	__asm        mov    eax, S_mission_interval_easy;
 	__asm        cdq;
-	__asm        idiv   dword ptr ds:[0x598EB0];
-	__asm        mov    ds:[0x5B4E24], eax;
+	__asm        idiv   G_diff_level;
+	__asm        mov    S_mission_interval, eax;
 // LINE 253:
-	__asm        mov    eax, ds:[0x5B4E30];
-	__asm        cmp    ds:[0x6072E0], eax;
+	__asm        mov    eax, S_max_missions;
+	__asm        cmp    S_mstatics.num_active_missions, eax;
 	__asm        jge    _T89;
 // LINE 256:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x5B4E2C], eax;
+	__asm        sub    S_mission_timer, eax;
 // LINE 260:
-	__asm        mov    eax, ds:[0x5B4E30];
-	__asm        sub    eax, ds:[0x6072E0];
+	__asm        mov    eax, S_max_missions;
+	__asm        sub    eax, S_mstatics.num_active_missions;
 	__asm        dec    eax;
 	__asm        mov    adjustor, eax;
 // LINE 262:
 	__asm        xor    eax, eax;
-	__asm        mov    ecx, ds:[0x5B4E28];
+	__asm        mov    ecx, S_mission_interval_adj;
 	__asm        imul   ecx, adjustor;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x5B4E2C], eax;
+	__asm        sub    S_mission_timer, eax;
 // LINE 266:
 _T89:
-	__asm        cmp    dword ptr ds:[0x5B4E34], 0;
+	__asm        cmp    SpeederMissionActive, 0;
 	__asm        jne    _Ta0;
 // LINE 267:
 	__asm        call   S3StartSpeederMission;
-	__asm        mov    ds:[0x5B4E34], eax;
+	__asm        mov    SpeederMissionActive, eax;
 // LINE 270:
 _Ta0:
-	__asm        cmp    dword ptr ds:[0x5B4E2C], 0;
+	__asm        cmp    S_mission_timer, 0;
 	__asm        jge    _T3d8;
 // LINE 273:
 	__asm        call   rand;
@@ -687,7 +687,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 446:
 _T4f:
-	__asm        mov    eax, ds:[0x5B4768];
+	__asm        mov    eax, G_AvLoopTime;
 	__asm        mov    ecx, md;
 	__asm        add    [ecx+0x40], eax;
 // LINE 449:
@@ -736,11 +736,11 @@ _Tb3:
 	__asm        jmp    _T15;
 // LINE 480:
 _Td1:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _Te6;
 // LINE 481:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 486:
 _Te6:
 	__asm        mov    fires_done, 1;
@@ -989,10 +989,10 @@ _T3ef:
 	__asm        mov    personriot_done, 0;
 // LINE 604:
 _T424:
-	__asm        cmp    dword ptr ds:[0x5B4E18], 0xC;
+	__asm        cmp    S_riotcheckctr, 0xC;
 	__asm        jle    _T45c;
 // LINE 605:
-	__asm        mov    dword ptr ds:[0x5B4E18], 0;
+	__asm        mov    S_riotcheckctr, 0;
 // LINE 606:
 	__asm        cmp    personriot_done, 0;
 	__asm        jne    _T45c;
@@ -1007,7 +1007,7 @@ _T424:
 	__asm        mov    [ecx+4], edx;
 // LINE 609:
 _T45c:
-	__asm        inc    dword ptr ds:[0x5B4E18];
+	__asm        inc    S_riotcheckctr;
 // LINE 612:
 _T462:
 	__asm        mov    eax, md;
@@ -1172,10 +1172,10 @@ _T7e:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x40], 0;
 // LINE 687:
-	__asm        mov    eax, ds:[0x6072E8];
+	__asm        mov    eax, S_mstatics.key_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x24], eax;
-	__asm        inc    dword ptr ds:[0x6072E8];
+	__asm        inc    S_mstatics.key_ctr;
 // LINE 689:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0x2C], eax;
@@ -1197,7 +1197,7 @@ _T107:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 695:
@@ -1246,7 +1246,7 @@ _T197:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 709:
@@ -1273,7 +1273,7 @@ _T1f5:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 724:
@@ -1303,7 +1303,7 @@ _T214:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 728:
-	__asm        mov    eax, ds:[0x6072CC];
+	__asm        mov    eax, S_mstatics.riot_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F20;
 	__asm        mov    eax, md;
@@ -1311,10 +1311,10 @@ _T214:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 729:
-	__asm        mov    eax, ds:[0x6072CC];
+	__asm        mov    eax, S_mstatics.riot_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072CC];
+	__asm        inc    S_mstatics.riot_ctr;
 // LINE 731:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1404,7 +1404,7 @@ _T361:
 	__asm        cmp    startthismission, 0;
 	__asm        je     _T3b2;
 // LINE 763:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F28;
 	__asm        mov    eax, md;
@@ -1412,10 +1412,10 @@ _T361:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 764:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072C8];
+	__asm        inc    S_mstatics.rescue_ctr;
 // LINE 767:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1436,7 +1436,7 @@ _T3b2:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 774:
@@ -1462,7 +1462,7 @@ _T3d6:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 785:
@@ -1474,7 +1474,7 @@ _T416:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 786:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F3C;
 	__asm        mov    eax, md;
@@ -1482,10 +1482,10 @@ _T416:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 787:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072C8];
+	__asm        inc    S_mstatics.rescue_ctr;
 // LINE 789:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1516,7 +1516,7 @@ _T473:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 802:
@@ -1528,7 +1528,7 @@ _T4ae:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 803:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F4C;
 	__asm        mov    eax, md;
@@ -1536,10 +1536,10 @@ _T4ae:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 804:
-	__asm        mov    eax, ds:[0x6072C8];
+	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072C8];
+	__asm        inc    S_mstatics.rescue_ctr;
 // LINE 806:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1555,7 +1555,7 @@ _T4ae:
 	__asm        jmp    _Te60;
 // LINE 811:
 _T50b:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        je     _T537;
 // LINE 812:
 	__asm        mov    eax, md;
@@ -1563,7 +1563,7 @@ _T50b:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 813:
@@ -1582,7 +1582,7 @@ _T537:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 819:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        je     _T589;
 // LINE 820:
 	__asm        mov    eax, md;
@@ -1590,7 +1590,7 @@ _T537:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 827:
@@ -1619,7 +1619,7 @@ _T589:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 840:
@@ -1627,7 +1627,7 @@ _T5d9:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x84], 1;
 // LINE 843:
-	__asm        mov    eax, ds:[0x6072C0];
+	__asm        mov    eax, S_mstatics.medevac_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F5C;
 	__asm        mov    eax, md;
@@ -1635,10 +1635,10 @@ _T5d9:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 844:
-	__asm        mov    eax, ds:[0x6072C0];
+	__asm        mov    eax, S_mstatics.medevac_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072C0];
+	__asm        inc    S_mstatics.medevac_ctr;
 // LINE 847:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1721,7 +1721,7 @@ _T6bd:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 875:
-	__asm        mov    eax, ds:[0x6072DC];
+	__asm        mov    eax, S_mstatics.transport_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F68;
 	__asm        mov    eax, md;
@@ -1729,10 +1729,10 @@ _T6bd:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 876:
-	__asm        mov    eax, ds:[0x6072DC];
+	__asm        mov    eax, S_mstatics.transport_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072DC];
+	__asm        inc    S_mstatics.transport_ctr;
 // LINE 879:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1753,7 +1753,7 @@ _T724:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 886:
@@ -1761,7 +1761,7 @@ _T743:
 	__asm        jmp    _Te60;
 // LINE 888:
 _T748:
-	__asm        mov    eax, ds:[0x6072BC];
+	__asm        mov    eax, S_mstatics.fire_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F78;
 	__asm        mov    eax, md;
@@ -1769,24 +1769,24 @@ _T748:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 889:
-	__asm        mov    eax, ds:[0x6072BC];
+	__asm        mov    eax, S_mstatics.fire_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072BC];
+	__asm        inc    S_mstatics.fire_ctr;
 // LINE 890:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        jne    _T7a7;
 // LINE 892:
-	__asm        dec    dword ptr ds:[0x6072BC];
+	__asm        dec    S_mstatics.fire_ctr;
 // LINE 893:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 895:
@@ -1815,14 +1815,14 @@ _T7a7:
 	__asm        test   eax, eax;
 	__asm        jne    _T811;
 // LINE 898:
-	__asm        dec    dword ptr ds:[0x6072BC];
+	__asm        dec    S_mstatics.fire_ctr;
 // LINE 899:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 902:
@@ -1841,7 +1841,7 @@ _T811:
 	__asm        jmp    _Te60;
 // LINE 906:
 _T830:
-	__asm        mov    eax, ds:[0x6072C4];
+	__asm        mov    eax, S_mstatics.plane_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F80;
 	__asm        mov    eax, md;
@@ -1849,10 +1849,10 @@ _T830:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 907:
-	__asm        mov    eax, ds:[0x6072C4];
+	__asm        mov    eax, S_mstatics.plane_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072C4];
+	__asm        inc    S_mstatics.plane_ctr;
 // LINE 908:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -1862,14 +1862,14 @@ _T830:
 	__asm        test   eax, eax;
 	__asm        jne    _T894;
 // LINE 910:
-	__asm        dec    dword ptr ds:[0x6072C4];
+	__asm        dec    S_mstatics.plane_ctr;
 // LINE 911:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 913:
@@ -1880,7 +1880,7 @@ _T894:
 	__asm        jmp    _Te60;
 // LINE 916:
 _T8a3:
-	__asm        mov    eax, ds:[0x6072D8];
+	__asm        mov    eax, S_mstatics.train_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4F90;
 	__asm        mov    eax, md;
@@ -1888,10 +1888,10 @@ _T8a3:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 917:
-	__asm        mov    eax, ds:[0x6072D8];
+	__asm        mov    eax, S_mstatics.train_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072D8];
+	__asm        inc    S_mstatics.train_ctr;
 // LINE 918:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -1901,14 +1901,14 @@ _T8a3:
 	__asm        test   eax, eax;
 	__asm        jne    _T907;
 // LINE 920:
-	__asm        dec    dword ptr ds:[0x6072D8];
+	__asm        dec    S_mstatics.train_ctr;
 // LINE 921:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 923:
@@ -1919,7 +1919,7 @@ _T907:
 	__asm        jmp    _Te60;
 // LINE 926:
 _T916:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FA0;
 	__asm        mov    eax, md;
@@ -1927,10 +1927,10 @@ _T916:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 927:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072B8];
+	__asm        inc    S_mstatics.crime_ctr;
 // LINE 928:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -1950,7 +1950,7 @@ _T916:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 930:
@@ -2016,7 +2016,7 @@ _T9aa:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 952:
@@ -2024,7 +2024,7 @@ _Ta34:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x94], 1;
 // LINE 953:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FAC;
 	__asm        mov    eax, md;
@@ -2032,10 +2032,10 @@ _Ta34:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 954:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072B8];
+	__asm        inc    S_mstatics.crime_ctr;
 // LINE 956:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2095,7 +2095,7 @@ _Ta88:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 978:
@@ -2103,7 +2103,7 @@ _Tb12:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x94], 1;
 // LINE 979:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FB8;
 	__asm        mov    eax, md;
@@ -2111,10 +2111,10 @@ _Tb12:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 980:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072B8];
+	__asm        inc    S_mstatics.crime_ctr;
 // LINE 982:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2174,7 +2174,7 @@ _Tb66:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 1004:
@@ -2182,7 +2182,7 @@ _Tbf0:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x94], 1;
 // LINE 1005:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FC4;
 	__asm        mov    eax, md;
@@ -2190,10 +2190,10 @@ _Tbf0:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1006:
-	__asm        mov    eax, ds:[0x6072B8];
+	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072B8];
+	__asm        inc    S_mstatics.crime_ctr;
 // LINE 1008:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2225,12 +2225,12 @@ _Tc44:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 1017:
 _Tc81:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FD0;
 	__asm        mov    eax, md;
@@ -2238,10 +2238,10 @@ _Tc81:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1018:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072D4];
+	__asm        inc    S_mstatics.traffic_ctr;
 // LINE 1021:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2272,12 +2272,12 @@ _Tcc8:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 1030:
 _Td02:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B4FE0;
 	__asm        mov    eax, md;
@@ -2285,10 +2285,10 @@ _Td02:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1031:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072D4];
+	__asm        inc    S_mstatics.traffic_ctr;
 // LINE 1032:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x54], 2;
@@ -2301,7 +2301,7 @@ _Td39:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _Tf04;
 // LINE 1039:
@@ -2395,21 +2395,21 @@ _Te60:
 	__asm        mov    eax, md;
 	__asm        push   eax;
 	__asm        push   0x5B4FFC;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1047:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x5B4EC0], eax;
+	__asm        mov    S_log.nMissionID, eax;
 // LINE 1048:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
 	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 1050:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _Ted1;
 
 	__asm        mov    eax, md;
@@ -2417,23 +2417,23 @@ _Te60:
 	__asm        je     _Ted1;
 // LINE 1051:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1053:
 _Ted1:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _Tee9;
 // LINE 1054:
-	__asm        inc    dword ptr ds:[0x6072E4];
+	__asm        inc    S_mstatics.num_delayed_missions;
 // LINE 1055:
 	__asm        jmp    _Teef;
 // LINE 1056:
 _Tee9:
-	__asm        inc    dword ptr ds:[0x6072E0];
+	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1058:
 _Teef:
-	__asm        mov    eax, ds:[0x5B4E24];
-	__asm        mov    ds:[0x5B4E2C], eax;
+	__asm        mov    eax, S_mission_interval;
+	__asm        mov    S_mission_timer, eax;
 // LINE 1060:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -2566,14 +2566,14 @@ _T63:
 // FUNCTION: COPTER_D 0x004fbc9a
 struct Point2d* S3MissionGetCurrMapLoc() {
 // LINE 1162:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
 // LINE 1163:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T27;
 // LINE 1165:
 _T1a:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x28;
 	__asm        jmp    _T27;
 // LINE 1166:
@@ -2583,14 +2583,14 @@ _T27:
 // FUNCTION: COPTER_D 0x004fbcc6
 struct Point2d* S3MissionGetCurrDestMapLoc() {
 // LINE 1179:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
 // LINE 1180:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3d;
 // LINE 1182:
 _T1a:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
 	__asm        jne    _T30;
 // LINE 1183:
@@ -2598,7 +2598,7 @@ _T1a:
 	__asm        jmp    _T3d;
 // LINE 1185:
 _T30:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x30;
 	__asm        jmp    _T3d;
 // LINE 1186:
@@ -2608,14 +2608,14 @@ _T3d:
 // FUNCTION: COPTER_D 0x004fbd08
 struct Point2d* S3MissionGetCurrPickupLoc() {
 // LINE 1199:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
 // LINE 1200:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T3d;
 // LINE 1202:
 _T1a:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        cmp    dword ptr [eax+0x38], 0xFFFFFFFF;
 	__asm        jne    _T30;
 // LINE 1203:
@@ -2623,7 +2623,7 @@ _T1a:
 	__asm        jmp    _T3d;
 // LINE 1205:
 _T30:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x38;
 	__asm        jmp    _T3d;
 // LINE 1206:
@@ -2951,9 +2951,9 @@ _T1fa:
 	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1351:
-	__asm        dec    dword ptr ds:[0x6072E4];
+	__asm        dec    S_mstatics.num_delayed_missions;
 // LINE 1352:
-	__asm        inc    dword ptr ds:[0x6072E0];
+	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1355:
 _T35d:
 	__asm        jmp    _T4c9;
@@ -3011,9 +3011,9 @@ _T35d:
 	__asm        add    esp, 0xC;
 // LINE 1377:
 _T3f6:
-	__asm        dec    dword ptr ds:[0x6072E4];
+	__asm        dec    S_mstatics.num_delayed_missions;
 // LINE 1378:
-	__asm        inc    dword ptr ds:[0x6072E0];
+	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1380:
 _T402:
 	__asm        mov    eax, mp;
@@ -3063,13 +3063,13 @@ void S3MissionEnd(long mission_id) {
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
 // LINE 1407:
-	__asm        dec    dword ptr ds:[0x6072E0];
+	__asm        dec    S_mstatics.num_active_missions;
 // LINE 1410:
 	__asm        mov    eax, md;
-	__asm        cmp    ds:[0x6072EC], eax;
+	__asm        cmp    S_mstatics.curr_mission, eax;
 	__asm        jne    _Tbe;
 // LINE 1412:
-	__asm        mov    dword ptr ds:[0x6072EC], 0;
+	__asm        mov    S_mstatics.curr_mission, 0;
 // LINE 1413:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6d;
@@ -3097,7 +3097,7 @@ _T6d:
 	__asm        je     _Tb9;
 // LINE 1418:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1419:
 	__asm        jmp    _Tbe;
 // LINE 1421:
@@ -3184,7 +3184,7 @@ _T75:
 // FUNCTION: COPTER_D 0x004fc39d
 struct MISSION_DATA* S3MissionGetCurr() {
 // LINE 1468:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        jmp    near ptr 0x004FC3AD;
 // LINE 1469:
 }
@@ -3685,13 +3685,13 @@ void S3MissionSetCurrNext() {
 // LINE 1601:
 	__asm        mov    md, 0;
 // LINE 1603:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
 // LINE 1604:
 	__asm        jmp    _T10c;
 // LINE 1606:
 _T22:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
 	__asm        sub    eax, ecx;
@@ -3725,7 +3725,7 @@ _T45:
 	__asm        je     _T91;
 // LINE 1611:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1612:
 	__asm        jmp    _T10c;
 // LINE 1614:
@@ -3738,7 +3738,7 @@ _T96:
 _Ta2:
 	__asm        inc    i;
 _Ta5:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
 	__asm        sub    eax, ecx;
@@ -3766,7 +3766,7 @@ _Ta5:
 	__asm        je     _T107;
 // LINE 1621:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1622:
 	__asm        jmp    _T10c;
 // LINE 1624:
@@ -3784,13 +3784,13 @@ void S3MissionSetCurrPrev() {
 // LINE 1636:
 	__asm        mov    md, 0;
 // LINE 1638:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
 // LINE 1639:
 	__asm        jmp    _T10c;
 // LINE 1641:
 _T22:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
 	__asm        sub    eax, ecx;
@@ -3824,7 +3824,7 @@ _T45:
 	__asm        je     _T91;
 // LINE 1646:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1647:
 	__asm        jmp    _T10c;
 // LINE 1649:
@@ -3837,7 +3837,7 @@ _T96:
 _Ta2:
 	__asm        dec    i;
 _Ta5:
-	__asm        mov    eax, ds:[0x6072EC];
+	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
 	__asm        sub    eax, ecx;
@@ -3865,7 +3865,7 @@ _Ta5:
 	__asm        je     _T107;
 // LINE 1656:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1657:
 	__asm        jmp    _T10c;
 // LINE 1659:
@@ -4059,22 +4059,22 @@ _T92:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _Taa;
 // LINE 1864:
-	__asm        dec    dword ptr ds:[0x6072E4];
+	__asm        dec    S_mstatics.num_delayed_missions;
 // LINE 1865:
 	__asm        jmp    _Tb0;
 // LINE 1866:
 _Taa:
-	__asm        dec    dword ptr ds:[0x6072E0];
+	__asm        dec    S_mstatics.num_active_missions;
 // LINE 1870:
 _Tb0:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x5B4EC0], eax;
+	__asm        mov    S_log.nMissionID, eax;
 // LINE 1873:
 	__asm        mov    eax, md;
 	__asm        push   eax;
 	__asm        push   0x5B5054;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
@@ -4167,10 +4167,10 @@ _T77:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x40], 0;
 // LINE 1922:
-	__asm        mov    eax, ds:[0x6072E8];
+	__asm        mov    eax, S_mstatics.key_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x24], eax;
-	__asm        inc    dword ptr ds:[0x6072E8];
+	__asm        inc    S_mstatics.key_ctr;
 // LINE 1924:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0xC], eax;
@@ -4182,7 +4182,7 @@ _T102:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1928:
@@ -4194,7 +4194,7 @@ _T126:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1931:
@@ -4206,7 +4206,7 @@ _T14a:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1934:
@@ -4218,7 +4218,7 @@ _T16e:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1937:
@@ -4230,7 +4230,7 @@ _T192:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1940:
@@ -4242,7 +4242,7 @@ _T1b6:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1943:
@@ -4254,7 +4254,7 @@ _T1da:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1946:
@@ -4266,7 +4266,7 @@ _T1fe:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1949:
@@ -4278,7 +4278,7 @@ _T222:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1952:
@@ -4290,14 +4290,14 @@ _T246:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1955:
 	__asm        jmp    _T36d;
 // LINE 1957:
 _T26a:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        push   eax;
 	__asm        push   0x5B5064;
 	__asm        mov    eax, md;
@@ -4308,10 +4308,10 @@ _T26a:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x54], 2;
 // LINE 1959:
-	__asm        mov    eax, ds:[0x6072D4];
+	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    dword ptr ds:[0x6072D4];
+	__asm        inc    S_mstatics.traffic_ctr;
 // LINE 1960:
 	__asm        jmp    _T36d;
 // LINE 1962:
@@ -4321,7 +4321,7 @@ _T2a1:
 	__asm        and    eax, 0xFFFFFFFE;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
-	__asm        dec    dword ptr ds:[0x6072E8];
+	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T411;
 // LINE 1963:
@@ -4377,7 +4377,7 @@ _T341:
 	__asm        jmp    _T2a1;
 // LINE 1966:
 _T36d:
-	__asm        cmp    dword ptr ds:[0x6072EC], 0;
+	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T38f;
 
 	__asm        mov    eax, md;
@@ -4385,23 +4385,23 @@ _T36d:
 	__asm        je     _T38f;
 // LINE 1967:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 1969:
 _T38f:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _T3a7;
 // LINE 1970:
-	__asm        inc    dword ptr ds:[0x6072E4];
+	__asm        inc    S_mstatics.num_delayed_missions;
 // LINE 1971:
 	__asm        jmp    _T3ad;
 // LINE 1972:
 _T3a7:
-	__asm        inc    dword ptr ds:[0x6072E0];
+	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1974:
 _T3ad:
-	__asm        mov    eax, ds:[0x5B4E24];
-	__asm        mov    ds:[0x5B4E2C], eax;
+	__asm        mov    eax, S_mission_interval;
+	__asm        mov    S_mission_timer, eax;
 // LINE 1980:
 	__asm        mov    eax, 0x5B5074;
 	__asm        mov    ecx, 0x5B507C;
@@ -4417,14 +4417,14 @@ _T3ad:
 	__asm        mov    eax, md;
 	__asm        push   eax;
 	__asm        push   0x5B5080;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1981:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x5B4EC0], eax;
+	__asm        mov    S_log.nMissionID, eax;
 // LINE 1982:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -4509,13 +4509,13 @@ _T9c:
 // LINE 2045:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ECC];
+	__asm        imul   eax, S_pts_flame;
 	__asm        neg    eax;
 	__asm        mov    points, eax;
 // LINE 2046:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ECC];
+	__asm        imul   eax, S_pts_flame;
 	__asm        neg    eax;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
@@ -4527,12 +4527,12 @@ _T9c:
 // LINE 2050:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED0];
+	__asm        imul   eax, S_money_flame;
 	__asm        mov    money, eax;
 // LINE 2051:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED0];
+	__asm        imul   eax, S_money_flame;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4553,13 +4553,13 @@ _T9c:
 // LINE 2060:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED4];
+	__asm        imul   eax, S_pts_destroyed_building;
 	__asm        neg    eax;
 	__asm        mov    points, eax;
 // LINE 2061:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED4];
+	__asm        imul   eax, S_pts_destroyed_building;
 	__asm        neg    eax;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
@@ -4573,12 +4573,12 @@ _T9c:
 // LINE 2067:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED8];
+	__asm        imul   eax, S_money_saved_building;
 	__asm        mov    money, eax;
 // LINE 2068:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4ED8];
+	__asm        imul   eax, S_money_saved_building;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4597,13 +4597,13 @@ _T9c:
 // LINE 2075:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EDC];
+	__asm        imul   eax, S_pts_new_debris;
 	__asm        neg    eax;
 	__asm        mov    points, eax;
 // LINE 2076:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EDC];
+	__asm        imul   eax, S_pts_new_debris;
 	__asm        neg    eax;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
@@ -4615,12 +4615,12 @@ _T9c:
 // LINE 2080:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE0];
+	__asm        imul   eax, S_money_debris_doused;
 	__asm        mov    money, eax;
 // LINE 2081:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE0];
+	__asm        imul   eax, S_money_debris_doused;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4651,12 +4651,12 @@ _T9c:
 // LINE 2100:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE4];
+	__asm        imul   eax, S_money_person_rescued;
 	__asm        mov    money, eax;
 // LINE 2101:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE4];
+	__asm        imul   eax, S_money_person_rescued;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4675,12 +4675,12 @@ _T9c:
 // LINE 2108:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE8];
+	__asm        imul   eax, S_money_person_transport;
 	__asm        mov    money, eax;
 // LINE 2109:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EE8];
+	__asm        imul   eax, S_money_person_transport;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4699,12 +4699,12 @@ _T9c:
 // LINE 2116:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EEC];
+	__asm        imul   eax, S_money_person_medevaced;
 	__asm        mov    money, eax;
 // LINE 2117:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EEC];
+	__asm        imul   eax, S_money_person_medevaced;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4723,12 +4723,12 @@ _T9c:
 // LINE 2124:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF0];
+	__asm        imul   eax, S_money_person_pickup;
 	__asm        mov    money, eax;
 // LINE 2125:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF0];
+	__asm        imul   eax, S_money_person_pickup;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4759,12 +4759,12 @@ _T9c:
 // LINE 2144:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF4];
+	__asm        imul   eax, S_money_vehicle_doused;
 	__asm        mov    money, eax;
 // LINE 2145:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF4];
+	__asm        imul   eax, S_money_vehicle_doused;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4783,12 +4783,12 @@ _T9c:
 // LINE 2152:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF8];
+	__asm        imul   eax, S_money_vehicle_unjammed;
 	__asm        mov    money, eax;
 // LINE 2153:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EF8];
+	__asm        imul   eax, S_money_vehicle_unjammed;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4807,13 +4807,13 @@ _T9c:
 // LINE 2160:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EFC];
+	__asm        imul   eax, S_pts_vehicle_burned;
 	__asm        neg    eax;
 	__asm        mov    points, eax;
 // LINE 2161:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EFC];
+	__asm        imul   eax, S_pts_vehicle_burned;
 	__asm        neg    eax;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
@@ -4825,24 +4825,24 @@ _T9c:
 // LINE 2165:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4E90];
+	__asm        imul   eax, S_pts_mission_speeder;
 	__asm        mov    points, eax;
 // LINE 2166:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4E90];
+	__asm        imul   eax, S_pts_mission_speeder;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2167:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4E8C];
+	__asm        imul   eax, S_money_mission_speeder;
 	__asm        mov    money, eax;
 // LINE 2168:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4E8C];
+	__asm        imul   eax, S_money_mission_speeder;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4861,24 +4861,24 @@ _T9c:
 // LINE 2175:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EB4];
+	__asm        imul   eax, S_pts_mission_ufo;
 	__asm        mov    points, eax;
 // LINE 2176:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EB4];
+	__asm        imul   eax, S_pts_mission_ufo;
 	__asm        push   eax;
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2177:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EB0];
+	__asm        imul   eax, S_money_mission_ufo;
 	__asm        mov    money, eax;
 // LINE 2178:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, ds:[0x5B4EB0];
+	__asm        imul   eax, S_money_mission_ufo;
 	__asm        push   eax;
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
@@ -4917,7 +4917,7 @@ _T53f:
 // LINE 2191:
 _T5f2:
 	__asm        mov    eax, key;
-	__asm        mov    ds:[0x5B4EC0], eax;
+	__asm        mov    S_log.nMissionID, eax;
 // LINE 2194:
 	__asm        cmp    money, 0;
 	__asm        je     _T632;
@@ -4929,7 +4929,7 @@ _T5f2:
 	__asm        mov    eax, mname;
 	__asm        push   eax;
 	__asm        push   0x5B518C;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
@@ -4950,7 +4950,7 @@ _T632:
 	__asm        mov    eax, mname;
 	__asm        push   eax;
 	__asm        push   0x5B51AC;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
@@ -4981,27 +4981,27 @@ void S3MissionScoreEnd(struct MISSION_DATA* md) {
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x78];
-	__asm        imul   ecx, ds:[0x5B4EAC];
+	__asm        imul   ecx, S_pts_mission_debris;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2240:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x74];
-	__asm        imul   eax, ds:[0x5B4EAC];
+	__asm        imul   eax, S_pts_mission_debris;
 	__asm        add    total_pts, eax;
 // LINE 2241:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x78];
-	__asm        imul   ecx, ds:[0x5B4EA8];
+	__asm        imul   ecx, S_money_mission_debris;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2242:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x74];
-	__asm        imul   eax, ds:[0x5B4EA8];
+	__asm        imul   eax, S_money_mission_debris;
 	__asm        add    total_money, eax;
 // LINE 2245:
 _T70:
@@ -5026,7 +5026,7 @@ _T70:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x68];
-	__asm        imul   ecx, ds:[0x5B4E70];
+	__asm        imul   ecx, S_pts_mission_fire_penalty;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
@@ -5035,7 +5035,7 @@ _T70:
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x5C];
 	__asm        dec    ecx;
-	__asm        imul   ecx, ds:[0x5B4E70];
+	__asm        imul   ecx, S_pts_mission_fire_penalty;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
@@ -5043,7 +5043,7 @@ _T70:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x68];
-	__asm        imul   ecx, ds:[0x5B4E6C];
+	__asm        imul   ecx, S_money_mission_fire_penalty;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
@@ -5052,7 +5052,7 @@ _T70:
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x5C];
 	__asm        dec    ecx;
-	__asm        imul   ecx, ds:[0x5B4E6C];
+	__asm        imul   ecx, S_money_mission_fire_penalty;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
@@ -5064,18 +5064,18 @@ _Tfd:
 // LINE 2263:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA0];
-	__asm        imul   eax, ds:[0x5B4E58];
+	__asm        imul   eax, S_pts_mission_medevac;
 	__asm        add    total_pts, eax;
 // LINE 2264:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA0];
-	__asm        imul   eax, ds:[0x5B4E54];
+	__asm        imul   eax, S_money_mission_medevac;
 	__asm        add    total_money, eax;
 // LINE 2265:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, ds:[0x5B4E58];
+	__asm        imul   ecx, S_pts_mission_medevac;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
@@ -5083,7 +5083,7 @@ _Tfd:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, ds:[0x5B4E54];
+	__asm        imul   ecx, S_money_mission_medevac;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
@@ -5091,13 +5091,13 @@ _Tfd:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E58];
+	__asm        imul   eax, S_pts_mission_medevac;
 	__asm        add    total_pts, eax;
 // LINE 2268:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E54];
+	__asm        imul   eax, S_money_mission_medevac;
 	__asm        add    total_money, eax;
 // LINE 2272:
 _T18e:
@@ -5107,18 +5107,18 @@ _T18e:
 // LINE 2275:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x98];
-	__asm        imul   eax, ds:[0x5B4E50];
+	__asm        imul   eax, S_pts_mission_rescue;
 	__asm        add    total_pts, eax;
 // LINE 2276:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x98];
-	__asm        imul   eax, ds:[0x5B4E4C];
+	__asm        imul   eax, S_money_mission_rescue;
 	__asm        add    total_money, eax;
 // LINE 2277:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, ds:[0x5B4E50];
+	__asm        imul   ecx, S_pts_mission_rescue;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
@@ -5126,7 +5126,7 @@ _T18e:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, ds:[0x5B4E4C];
+	__asm        imul   ecx, S_money_mission_rescue;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
@@ -5134,13 +5134,13 @@ _T18e:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E50];
+	__asm        imul   eax, S_pts_mission_rescue;
 	__asm        add    total_pts, eax;
 // LINE 2280:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E4C];
+	__asm        imul   eax, S_money_mission_rescue;
 	__asm        add    total_money, eax;
 // LINE 2283:
 _T21f:
@@ -5150,18 +5150,18 @@ _T21f:
 // LINE 2287:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x9C];
-	__asm        imul   eax, ds:[0x5B4E60];
+	__asm        imul   eax, S_pts_mission_transport;
 	__asm        add    total_pts, eax;
 // LINE 2288:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x9C];
-	__asm        imul   eax, ds:[0x5B4E5C];
+	__asm        imul   eax, S_money_mission_transport;
 	__asm        add    total_money, eax;
 // LINE 2289:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xBC];
-	__asm        imul   ecx, ds:[0x5B4E60];
+	__asm        imul   ecx, S_pts_mission_transport;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
@@ -5169,7 +5169,7 @@ _T21f:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xBC];
-	__asm        imul   ecx, ds:[0x5B4E5C];
+	__asm        imul   ecx, S_money_mission_transport;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
@@ -5177,13 +5177,13 @@ _T21f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E60];
+	__asm        imul   eax, S_pts_mission_transport;
 	__asm        add    total_pts, eax;
 // LINE 2292:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        sar    eax, 2;
-	__asm        imul   eax, ds:[0x5B4E5C];
+	__asm        imul   eax, S_money_mission_transport;
 	__asm        add    total_money, eax;
 // LINE 2295:
 _T2b0:
@@ -5191,20 +5191,20 @@ _T2b0:
 	__asm        test   byte ptr [eax+0x51], 0x10;
 	__asm        je     _T325;
 // LINE 2299:
-	__asm        mov    eax, ds:[0x5B4E3C];
+	__asm        mov    eax, S_pts_mission_riot;
 	__asm        add    total_pts, eax;
 // LINE 2300:
-	__asm        mov    eax, ds:[0x5B4E38];
+	__asm        mov    eax, S_money_mission_riot;
 	__asm        add    total_money, eax;
 // LINE 2303:
 	__asm        mov    eax, md;
-	__asm        mov    ecx, ds:[0x5B4E48];
+	__asm        mov    ecx, S_mission_riot_time;
 	__asm        cmp    [eax+0x40], ecx;
 	__asm        jle    _T325;
 // LINE 2306:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x40];
-	__asm        sub    eax, ds:[0x5B4E48];
+	__asm        sub    eax, S_mission_riot_time;
 	__asm        mov    timetmp, eax;
 // LINE 2309:
 	__asm        mov    ecx, 0x3C;
@@ -5215,14 +5215,14 @@ _T2b0:
 	__asm        mov    timetmp, eax;
 // LINE 2311:
 	__asm        xor    eax, eax;
-	__asm        mov    ecx, ds:[0x5B4E44];
+	__asm        mov    ecx, S_pts_mission_riot_penalty;
 	__asm        imul   ecx, timetmp;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2312:
 	__asm        xor    eax, eax;
-	__asm        mov    ecx, ds:[0x5B4E40];
+	__asm        mov    ecx, S_money_mission_riot_penalty;
 	__asm        imul   ecx, timetmp;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
@@ -5236,27 +5236,27 @@ _T325:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xCC];
-	__asm        imul   ecx, ds:[0x5B4EA4];
+	__asm        imul   ecx, S_pts_mission_vehiclefire;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2323:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC8];
-	__asm        imul   eax, ds:[0x5B4EA4];
+	__asm        imul   eax, S_pts_mission_vehiclefire;
 	__asm        add    total_pts, eax;
 // LINE 2324:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0xCC];
-	__asm        imul   ecx, ds:[0x5B4EA0];
+	__asm        imul   ecx, S_money_mission_vehiclefire;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2325:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC8];
-	__asm        imul   eax, ds:[0x5B4EA0];
+	__asm        imul   eax, S_money_mission_vehiclefire;
 	__asm        add    total_money, eax;
 // LINE 2328:
 _T38a:
@@ -5265,14 +5265,14 @@ _T38a:
 	__asm        je     _T3b9;
 // LINE 2331:
 	__asm        mov    eax, md;
-	__asm        mov    ecx, ds:[0x5B4E9C];
+	__asm        mov    ecx, S_mission_jam_time;
 	__asm        cmp    [eax+0x40], ecx;
 	__asm        jge    _T3b9;
 // LINE 2333:
-	__asm        mov    eax, ds:[0x5B4E98];
+	__asm        mov    eax, S_pts_mission_jam;
 	__asm        add    total_pts, eax;
 // LINE 2334:
-	__asm        mov    eax, ds:[0x5B4E94];
+	__asm        mov    eax, S_money_mission_jam;
 	__asm        add    total_money, eax;
 // LINE 2338:
 _T3b9:
@@ -5280,10 +5280,10 @@ _T3b9:
 	__asm        test   byte ptr [eax+0x51], 2;
 	__asm        je     _T3d6;
 // LINE 2341:
-	__asm        mov    eax, ds:[0x5B4E88];
+	__asm        mov    eax, S_pts_mission_criminal;
 	__asm        add    total_pts, eax;
 // LINE 2342:
-	__asm        mov    eax, ds:[0x5B4E84];
+	__asm        mov    eax, S_money_mission_criminal;
 	__asm        add    total_money, eax;
 // LINE 2345:
 _T3d6:
@@ -5291,10 +5291,10 @@ _T3d6:
 	__asm        test   byte ptr [eax+0x51], 0x20;
 	__asm        je     _T3f3;
 // LINE 2348:
-	__asm        mov    eax, ds:[0x5B4E88];
+	__asm        mov    eax, S_pts_mission_criminal;
 	__asm        add    total_pts, eax;
 // LINE 2349:
-	__asm        mov    eax, ds:[0x5B4E84];
+	__asm        mov    eax, S_money_mission_criminal;
 	__asm        add    total_money, eax;
 // LINE 2352:
 _T3f3:
@@ -5302,10 +5302,10 @@ _T3f3:
 	__asm        test   byte ptr [eax+0x52], 2;
 	__asm        je     _T410;
 // LINE 2355:
-	__asm        mov    eax, ds:[0x5B4E88];
+	__asm        mov    eax, S_pts_mission_criminal;
 	__asm        add    total_pts, eax;
 // LINE 2356:
-	__asm        mov    eax, ds:[0x5B4E84];
+	__asm        mov    eax, S_money_mission_criminal;
 	__asm        add    total_money, eax;
 // LINE 2360:
 _T410:
@@ -5313,10 +5313,10 @@ _T410:
 	__asm        test   byte ptr [eax+0x50], 2;
 	__asm        je     _T42d;
 // LINE 2363:
-	__asm        mov    eax, ds:[0x5B4E90];
+	__asm        mov    eax, S_pts_mission_speeder;
 	__asm        add    total_pts, eax;
 // LINE 2364:
-	__asm        mov    eax, ds:[0x5B4E8C];
+	__asm        mov    eax, S_money_mission_speeder;
 	__asm        add    total_money, eax;
 // LINE 2371:
 _T42d:
@@ -5351,7 +5351,7 @@ _T466:
 _T477:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ds:[0x5B4EC0], eax;
+	__asm        mov    S_log.nMissionID, eax;
 // LINE 2394:
 	__asm        mov    eax, total_money;
 	__asm        push   eax;
@@ -5360,7 +5360,7 @@ _T477:
 	__asm        mov    eax, md;
 	__asm        push   eax;
 	__asm        push   0x5B51CC;
-	__asm        mov    eax, ds:[0x5B4EC4];
+	__asm        mov    eax, S_log.szLogString;
 	__asm        push   eax;
 	__asm        call   sprintf;
 	__asm        add    esp, 0x14;
@@ -5476,7 +5476,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2494:
 	__asm        push   0x1910;
 	__asm        push   0x6072B8;
-	__asm        mov    eax, ds:[0x5B4F00];
+	__asm        mov    eax, missionMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffReader;
 	__asm        push   eax;
@@ -5491,7 +5491,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	__asm        jmp    _Tad;
 // LINE 2500:
 _T39:
-	__asm        mov    dword ptr ds:[0x6072EC], 0;
+	__asm        mov    S_mstatics.curr_mission, 0;
 // LINE 2501:
 	__asm        mov    i, 0;
 	__asm        jmp    _T52;
@@ -5519,7 +5519,7 @@ _T52:
 	__asm        je     _T9e;
 // LINE 2506:
 	__asm        mov    eax, md;
-	__asm        mov    ds:[0x6072EC], eax;
+	__asm        mov    S_mstatics.curr_mission, eax;
 // LINE 2507:
 	__asm        jmp    _Ta3;
 // LINE 2510:
@@ -5540,7 +5540,7 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 // LINE 2523:
 	__asm        push   0x1910;
 	__asm        push   0x6072B8;
-	__asm        mov    eax, ds:[0x5B4F00];
+	__asm        mov    eax, missionMIFFID;
 	__asm        push   eax;
 	__asm        mov    eax, miffWriter;
 	__asm        push   eax;

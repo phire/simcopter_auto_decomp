@@ -504,12 +504,12 @@ void $E29() {
 	__asm        jmp    near ptr 0x004911E8;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    ds:[0x604C08], eax;
+	__asm        mov    gFileServices.sLocalDirectoryBase.reference, eax;
 	__asm        jmp    _T65;
 _T5b:
-	__asm        mov    dword ptr ds:[0x604C08], 0;
+	__asm        mov    gFileServices.sLocalDirectoryBase.reference, 0;
 _T65:
-	__asm        mov    dword ptr ds:[0x604C04], 0;
+	__asm        mov    gFileServices.sLocalDirectoryBase.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049120E;
 
 	__asm        push   0x10;
@@ -532,12 +532,12 @@ _T65:
 	__asm        jmp    near ptr 0x00491253;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x604C10], eax;
+	__asm        mov    gFileServices.sRemoteDirectoryBase.reference, eax;
 	__asm        jmp    _Td0;
 _Tc6:
-	__asm        mov    dword ptr ds:[0x604C10], 0;
+	__asm        mov    gFileServices.sRemoteDirectoryBase.reference, 0;
 _Td0:
-	__asm        mov    dword ptr ds:[0x604C0C], 0;
+	__asm        mov    gFileServices.sRemoteDirectoryBase.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00491279;
 
 	__asm        mov    dword ptr [ebp-0x18], 0xC;
@@ -555,7 +555,7 @@ _Tf1:
 _T10b:
 	__asm        jmp    near ptr 0x004912AA;
 
-	__asm        mov    dword ptr ds:[0x604C00], 0;
+	__asm        mov    gFileServices.myAppBaseType, 0;
 	__asm        jmp    near ptr 0x004912B9;
 
 	__asm        push   0x59A118;
@@ -563,7 +563,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A118;
-	__asm        lea    ecx, ds:[0x604C1C];
+	__asm        lea    ecx, gFileServices.sDirs[1].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004912DC;
 
@@ -574,7 +574,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A110;
-	__asm        lea    ecx, ds:[0x604C24];
+	__asm        lea    ecx, gFileServices.sDirs[2].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491304;
 
@@ -585,7 +585,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A100;
-	__asm        lea    ecx, ds:[0x604C2C];
+	__asm        lea    ecx, gFileServices.sDirs[3].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049132C;
 
@@ -596,7 +596,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0F8;
-	__asm        lea    ecx, ds:[0x604C34];
+	__asm        lea    ecx, gFileServices.sDirs[4].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00491354;
 
@@ -607,7 +607,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0E8;
-	__asm        lea    ecx, ds:[0x604C3C];
+	__asm        lea    ecx, gFileServices.sDirs[5].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049137C;
 
@@ -618,7 +618,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0E0;
-	__asm        lea    ecx, ds:[0x604C44];
+	__asm        lea    ecx, gFileServices.sDirs[6].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913A4;
 
@@ -629,7 +629,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0D8;
-	__asm        lea    ecx, ds:[0x604C4C];
+	__asm        lea    ecx, gFileServices.sDirs[7].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913CC;
 
@@ -640,7 +640,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0D0;
-	__asm        lea    ecx, ds:[0x604C54];
+	__asm        lea    ecx, gFileServices.sDirs[8].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004913F4;
 
@@ -651,7 +651,7 @@ _T10b:
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59A0CC;
-	__asm        lea    ecx, ds:[0x604C64];
+	__asm        lea    ecx, gFileServices.sDirs[10].c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0049141C;
 
@@ -681,7 +681,7 @@ _T10b:
 _T2d3:
 	__asm        jmp    near ptr 0x00491472;
 
-	__asm        mov    eax, ds:[0x604C70];
+	__asm        mov    eax, gFileServices.sDirs[11].reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     _T307;
 
@@ -690,7 +690,7 @@ _T2d3:
 
 	__asm        jmp    near ptr 0x00491490;
 
-	__asm        mov    eax, ds:[0x604C70];
+	__asm        mov    eax, gFileServices.sDirs[11].reference;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T356;
@@ -712,10 +712,10 @@ _T307:
 _T337:
 	__asm        mov    dword ptr [ebp-4], 0;
 _T33e:
-	__asm        lea    ecx, ds:[0x604C6C];
+	__asm        lea    ecx, gFileServices.sDirs[11].c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-4];
-	__asm        mov    ds:[0x604C70], eax;
+	__asm        mov    gFileServices.sDirs[11].reference, eax;
 	__asm        jmp    _T389;
 _T356:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -723,7 +723,7 @@ _T356:
 
 	__asm        jmp    near ptr 0x004914FF;
 
-	__asm        mov    eax, ds:[0x604C70];
+	__asm        mov    eax, gFileServices.sDirs[11].reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0x14];
@@ -736,7 +736,7 @@ _T356:
 	__asm        jmp    _T389;
 _T389:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ecx, ds:[0x604C70];
+	__asm        mov    ecx, gFileServices.sDirs[11].reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00491534;
 
@@ -781,13 +781,13 @@ _T29:
 _T43:
 	__asm        jmp    near ptr 0x004915AD;
 
-	__asm        mov    eax, ds:[0x604C10];
+	__asm        mov    eax, gFileServices.sRemoteDirectoryBase.reference;
 	__asm        dec    dword ptr [eax+0xC];
-	__asm        mov    eax, ds:[0x604C10];
+	__asm        mov    eax, gFileServices.sRemoteDirectoryBase.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _Td1;
 
-	__asm        mov    eax, ds:[0x604C10];
+	__asm        mov    eax, gFileServices.sRemoteDirectoryBase.reference;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
@@ -826,10 +826,10 @@ _Tb1:
 _Td1:
 	__asm        jmp    near ptr 0x0049163B;
 
-	__asm        cmp    dword ptr ds:[0x604C0C], 0;
+	__asm        cmp    gFileServices.sRemoteDirectoryBase.c_str_ptr, 0;
 	__asm        je     _Tfd;
 
-	__asm        mov    eax, ds:[0x604C0C];
+	__asm        mov    eax, gFileServices.sRemoteDirectoryBase.c_str_ptr;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
@@ -840,13 +840,13 @@ _Td1:
 _Tfd:
 	__asm        jmp    near ptr 0x00491667;
 
-	__asm        mov    eax, ds:[0x604C08];
+	__asm        mov    eax, gFileServices.sLocalDirectoryBase.reference;
 	__asm        dec    dword ptr [eax+0xC];
-	__asm        mov    eax, ds:[0x604C08];
+	__asm        mov    eax, gFileServices.sLocalDirectoryBase.reference;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T18b;
 
-	__asm        mov    eax, ds:[0x604C08];
+	__asm        mov    eax, gFileServices.sLocalDirectoryBase.reference;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
@@ -885,10 +885,10 @@ _T16b:
 _T18b:
 	__asm        jmp    near ptr 0x004916F5;
 
-	__asm        cmp    dword ptr ds:[0x604C04], 0;
+	__asm        cmp    gFileServices.sLocalDirectoryBase.c_str_ptr, 0;
 	__asm        je     _T1b7;
 
-	__asm        mov    eax, ds:[0x604C04];
+	__asm        mov    eax, gFileServices.sLocalDirectoryBase.c_str_ptr;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x20], eax;
@@ -984,7 +984,7 @@ _Td0:
 	__asm        mov    sErrorTitle.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00491831;
 // LINE 45:
-	__asm        mov    eax, ds:[0x598F04];
+	__asm        mov    eax, gszAppDirectory;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x0049183E;
 
@@ -1121,7 +1121,7 @@ _T286:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -1136,7 +1136,7 @@ _T286:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -1193,7 +1193,7 @@ _T370:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2074], eax;
@@ -1208,7 +1208,7 @@ _T370:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2074], eax;
@@ -2116,7 +2116,7 @@ _T231:
 	__asm        mov    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        mov    tempPFile.ShouldClose, 1;
 	__asm        mov    tempPFile.<vftable>, 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    dword ptr [ebp-0x184], 0;
 	__asm        je     _T2cf;
 
@@ -2362,7 +2362,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        call   Directory::Directory;
 // LINE 166:
 	__asm        mov    tempStringListDirectories.length, 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        lea    ecx, tempStringListDirectories.node;
 	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    tempStringListDirectories.node, eax;
@@ -2630,14 +2630,14 @@ _T338:
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        mov    eax, tempStringListFiles.node;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x7C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x7C];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x00492D38;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T3b2;
 
 	__asm        lea    ecx, tempStringListFiles.node;
@@ -2670,14 +2670,14 @@ _T3b2:
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        mov    eax, tempStringListDirectories.node;
 	__asm        mov    [ebp-0x90], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x90];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x90];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x00492DCD;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T447;
 
 	__asm        lea    ecx, tempStringListDirectories.node;
@@ -2726,7 +2726,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T24;
 // LINE 219:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 221:
 _T24:
@@ -2822,7 +2822,7 @@ _Te1:
 	__asm        mov    dword ptr [ebp-0xDC], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0xD8], 0;
 	__asm        mov    dword ptr [ebp-0x1E4], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x1E0], 0;
 	__asm        jmp    near ptr 0x00492FAF;
 
@@ -3043,7 +3043,7 @@ _T3a3:
 	__asm        mov    dword ptr [ebp-0x1F4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
 	__asm        mov    dword ptr [ebp-0x2FC], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x2F8], 0;
 	__asm        jmp    near ptr 0x00493271;
 
@@ -3264,7 +3264,7 @@ _T665:
 	__asm        mov    dword ptr [ebp-0x30C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x308], 0;
 	__asm        mov    dword ptr [ebp-0x414], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x410], 0;
 	__asm        jmp    near ptr 0x00493533;
 
@@ -3485,7 +3485,7 @@ _T927:
 	__asm        mov    dword ptr [ebp-0x424], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x420], 0;
 	__asm        mov    dword ptr [ebp-0x52C], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x528], 0;
 	__asm        jmp    near ptr 0x004937F5;
 
@@ -3706,7 +3706,7 @@ _Tbe9:
 	__asm        mov    dword ptr [ebp-0x53C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x538], 0;
 	__asm        mov    dword ptr [ebp-0x644], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x640], 0;
 	__asm        jmp    near ptr 0x00493AB7;
 
@@ -3927,7 +3927,7 @@ _Teab:
 	__asm        mov    dword ptr [ebp-0x654], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x650], 0;
 	__asm        mov    dword ptr [ebp-0x75C], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x758], 0;
 	__asm        jmp    near ptr 0x00493D79;
 
@@ -4148,7 +4148,7 @@ _T116d:
 	__asm        mov    dword ptr [ebp-0x76C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x768], 0;
 	__asm        mov    dword ptr [ebp-0x874], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x870], 0;
 	__asm        jmp    near ptr 0x0049403B;
 
@@ -4369,7 +4369,7 @@ _T143e:
 	__asm        mov    dword ptr [ebp-0x884], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x880], 0;
 	__asm        mov    dword ptr [ebp-0x98C], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0x988], 0;
 	__asm        jmp    near ptr 0x0049430F;
 
@@ -4590,7 +4590,7 @@ _T1724:
 	__asm        mov    dword ptr [ebp-0x99C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x998], 0;
 	__asm        mov    dword ptr [ebp-0xAA4], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    byte ptr [ebp-0xAA0], 0;
 	__asm        jmp    near ptr 0x004945F5;
 

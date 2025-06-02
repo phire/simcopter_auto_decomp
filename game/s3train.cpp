@@ -298,7 +298,7 @@ void $E7() {
 // FUNCTION: COPTER_D 0x0052ddba
 void $E3() {
 
-	__asm        mov    dword ptr ds:[0x62B7B8], 0x593238;
+	__asm        mov    TrainClass::lsTrain.<vftable>, 0x593238;
 	__asm        jmp    near ptr 0x0052DDCF;
 
 	__asm        jmp    near ptr 0x0052DDD4;
@@ -825,7 +825,7 @@ void TrainClass::Itterate() {
 	__asm        test   eax, eax;
 	__asm        je     _T182;
 // LINE 710:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x61], eax;
 // LINE 711:
@@ -1021,17 +1021,17 @@ _T63:
 	__asm        jmp    _T138;
 // LINE 793:
 _T68:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xB9];
 	__asm        mov    vec.x, eax;
 // LINE 794:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xBD];
 	__asm        mov    vec.y, eax;
 // LINE 795:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC1];
 	__asm        mov    vec.z, eax;
@@ -1114,7 +1114,7 @@ void TrainClass::ItterateFSM() {
 	__asm        jne    _T6c;
 // LINE 845:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x71], eax;
@@ -1362,7 +1362,7 @@ void TrainClass::SetCrashWhenReady() {
 	int32_t dist;
 
 // LINE 1048:
-	__asm        mov    eax, ds:[0x6BF188];
+	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x35];
 	__asm        cdq;
@@ -1370,7 +1370,7 @@ void TrainClass::SetCrashWhenReady() {
 	__asm        sub    eax, edx;
 	__asm        mov    deltaX, eax;
 // LINE 1049:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x39];
 	__asm        cdq;
@@ -1431,7 +1431,7 @@ void TrainClass::TrainCrashMovement() {
 	int32_t speed;
 
 // LINE 1086:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2D];
@@ -1564,7 +1564,7 @@ _T8b:
 	__asm        add    esp, 8;
 // LINE 1119:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x6D], eax;
@@ -2829,12 +2829,12 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 	int32_t deltaX;
 
 // LINE 1661:
-	__asm        mov    eax, ds:[0x6BF188];
+	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x35];
 	__asm        mov    deltaX, eax;
 // LINE 1662:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x39];
 	__asm        mov    deltaY, eax;
@@ -2888,13 +2888,13 @@ _T98:
 	__asm        mov    deltaY, eax;
 // LINE 1695:
 _Taa:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaX;
 	__asm        jl     _Td2;
 
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaY;
@@ -4719,7 +4719,7 @@ void TrainClass::MoveForward() {
 	int32_t distance;
 
 // LINE 2701:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2D];
@@ -8045,13 +8045,13 @@ _T66:
 	__asm        mov    vec.x, eax;
 // LINE 3836:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 3837:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -8070,13 +8070,13 @@ _Ta3:
 	__asm        mov    vec.x, eax;
 // LINE 3845:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 3846:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -8093,13 +8093,13 @@ _Te0:
 	__asm        mov    vec.z, eax;
 // LINE 3853:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 3854:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -8107,13 +8107,13 @@ _Te0:
 	__asm        jmp    _T166;
 // LINE 3859:
 _T119:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.x;
 	__asm        mov    vec.x, eax;
 // LINE 3860:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.z;
@@ -8139,14 +8139,14 @@ _T166:
 // LINE 3865:
 	__asm        shl    vec.z, 6;
 // LINE 3867:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        add    eax, vec.x;
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    x, eax;
 // LINE 3868:
 	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ds:[0x6C1274];
+	__asm        mov    ecx, ViewState.world_pos.z;
 	__asm        add    ecx, vec.z;
 	__asm        sub    eax, ecx;
 	__asm        sar    eax, 0x16;
@@ -9639,11 +9639,11 @@ _T47:
 	__asm        mov    al, [eax+8];
 	__asm        mov    [ecx+8], al;
 // LINE 4867:
-	__asm        mov    eax, ds:[0x62B7C5];
+	__asm        mov    eax, TrainClass::lsTrain.stalledTimer;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0xD], eax;
 // LINE 4868:
-	__asm        mov    eax, ds:[0x62B7C9];
+	__asm        mov    eax, TrainClass::lsTrain.direction;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x11], eax;
 // LINE 4869:
@@ -9658,23 +9658,23 @@ _T47:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4870:
-	__asm        mov    eax, ds:[0x62B7D9];
+	__asm        mov    eax, TrainClass::lsTrain.remainingDist;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x21], eax;
 // LINE 4871:
-	__asm        mov    eax, ds:[0x62B7DD];
+	__asm        mov    eax, TrainClass::lsTrain.remainingTime;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x25], eax;
 // LINE 4872:
-	__asm        mov    eax, ds:[0x62B7E1];
+	__asm        mov    eax, TrainClass::lsTrain.utdirection;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x29], eax;
 // LINE 4873:
-	__asm        mov    eax, ds:[0x62B7E5];
+	__asm        mov    eax, TrainClass::lsTrain.speed;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x2D], eax;
 // LINE 4874:
-	__asm        mov    eax, ds:[0x62B7E9];
+	__asm        mov    eax, TrainClass::lsTrain.desiredSpeed;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x31], eax;
 // LINE 4875:
@@ -9723,27 +9723,27 @@ _T47:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 4880:
-	__asm        mov    eax, ds:[0x62B815];
+	__asm        mov    eax, TrainClass::lsTrain.beamDelay;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x5D], eax;
 // LINE 4881:
-	__asm        mov    eax, ds:[0x62B819];
+	__asm        mov    eax, TrainClass::lsTrain.beamTimer;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x61], eax;
 // LINE 4882:
-	__asm        mov    eax, ds:[0x62B81D];
+	__asm        mov    eax, TrainClass::lsTrain.utRotation;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x65], eax;
 // LINE 4883:
-	__asm        mov    eax, ds:[0x62B821];
+	__asm        mov    eax, TrainClass::lsTrain.missionId;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x69], eax;
 // LINE 4884:
-	__asm        mov    eax, ds:[0x62B825];
+	__asm        mov    eax, TrainClass::lsTrain.smokeTime;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x6D], eax;
 // LINE 4885:
-	__asm        mov    eax, ds:[0x62B829];
+	__asm        mov    eax, TrainClass::lsTrain.timeToLive;
 	__asm        mov    ecx, t;
 	__asm        mov    [ecx+0x71], eax;
 // LINE 4886:
@@ -9796,7 +9796,7 @@ _T47:
 // LINE 4892:
 	__asm        mov    edi, t;
 	__asm        add    edi, 0xC5;
-	__asm        lea    esi, ds:[0x62B87D];
+	__asm        lea    esi, TrainClass::lsTrain.dyObj1.matrix[0][0];
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 4893:
@@ -9813,7 +9813,7 @@ _T47:
 // LINE 4894:
 	__asm        mov    edi, t;
 	__asm        add    edi, 0x129;
-	__asm        lea    esi, ds:[0x62B8E1];
+	__asm        lea    esi, TrainClass::lsTrain.dyObj2.matrix[0][0];
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 4895:
@@ -9830,7 +9830,7 @@ _T47:
 // LINE 4896:
 	__asm        mov    edi, t;
 	__asm        add    edi, 0x18D;
-	__asm        lea    esi, ds:[0x62B945];
+	__asm        lea    esi, TrainClass::lsTrain.dyObj3.matrix[0][0];
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 4898:

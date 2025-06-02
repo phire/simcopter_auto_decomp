@@ -317,14 +317,14 @@ _Tc9:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    word ptr [eax], 0xC;
 	__asm        mov    eax, [ebp-8];
-	__asm        mov    ds:[0x59A9D4], eax;
+	__asm        mov    CRLECompressedImage::RLEGraphicsPool, eax;
 	__asm        jmp    _Tf3;
 _Ted:
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _Tf3:
 	__asm        jmp    near ptr 0x004270B8;
 // LINE 35:
-	__asm        cmp    dword ptr ds:[0x59A9D4], 0;
+	__asm        cmp    CRLECompressedImage::RLEGraphicsPool, 0;
 	__asm        jne    _T114;
 // LINE 37:
 	__asm        push   1;
@@ -343,7 +343,7 @@ void CSparkalApp::~CSparkalApp() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F428;
-	__asm        mov    eax, ds:[0x59A9D4];
+	__asm        mov    eax, CRLECompressedImage::RLEGraphicsPool;
 	__asm        mov    [ebp-0xC], eax;
 // LINE 51:
 	__asm        cmp    dword ptr [ebp-0xC], 0;

@@ -726,7 +726,7 @@ protected:
 // FUNCTION: COPTER_D 0x00448270
 void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class Radio* myNewRadio, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -738,7 +738,7 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        push   eax;
 	__asm        mov    eax, rectNewWindow;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F58];
+	__asm        mov    eax, SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -749,7 +749,7 @@ void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNe
 	__asm        mov    [ecx+0x78], eax;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x84], 0;
-	__asm        mov    eax, ds:[0x598F5C];
+	__asm        mov    eax, SZ_COMPASS_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1292,7 +1292,7 @@ _T3e:
 	__asm        test   byte ptr [eax+0x74], 1;
 	__asm        je     _Tc6;
 // LINE 176:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x10C];
 	__asm        mov    nCurrentCompassPosition, eax;
 	__asm        jmp    near ptr 0x00448986;
@@ -1327,7 +1327,7 @@ _T3e:
 	__asm        mov    ecx, [eax+0x84];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 187:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x10C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x90], eax;
@@ -2002,7 +2002,7 @@ void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct Comm
 	__asm        push   eax;
 	__asm        mov    eax, rectNewWindow;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F60];
+	__asm        mov    eax, SZ_DIAL_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -3049,7 +3049,7 @@ _T2ba:
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
 	__asm        jl     _T322;
 // LINE 498:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T2dd;
 
@@ -3296,7 +3296,7 @@ _Td0:
 // LINE 558:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F64];
+	__asm        mov    eax, SZ_DIAL_WINDOW_DAMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3322,7 +3322,7 @@ _T13f:
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 560:
 _T14f:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3339,7 +3339,7 @@ _T174:
 // LINE 563:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F68];
+	__asm        mov    eax, SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3371,7 +3371,7 @@ _T1f3:
 // LINE 567:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F70];
+	__asm        mov    eax, SZ_DIAL_WINDOW_MANA_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3403,7 +3403,7 @@ _T272:
 // LINE 571:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F6C];
+	__asm        mov    eax, SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   8;
@@ -3444,7 +3444,7 @@ _T2fd:
 // LINE 576:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F74];
+	__asm        mov    eax, SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3476,7 +3476,7 @@ _T37c:
 // LINE 580:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F78];
+	__asm        mov    eax, SZ_DIAL_WINDOW_BOOT_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3502,7 +3502,7 @@ _T3eb:
 	__asm        mov    dword ptr [eax+0x90], 0;
 // LINE 582:
 _T3fb:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3519,7 +3519,7 @@ _T420:
 // LINE 585:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598F7C];
+	__asm        mov    eax, SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -3568,7 +3568,7 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        mov    ebx, [eax+0x98];
 	__asm        lea    ebx, [ebx+ebx*2];
 	__asm        lea    ebx, [ebx+ebx*4];
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliGetMaximumDamage;
 	__asm        add    esp, 4;
@@ -3733,7 +3733,7 @@ _T106:
 // FUNCTION: COPTER_D 0x0044a97a
 long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 658:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -3899,13 +3899,13 @@ _T3d:
 	__asm        test   byte ptr ds:[0x598FB0], 1;
 	__asm        je     _Te55;
 // LINE 709:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x98];
 	__asm        cmp    [eax+0xD0], ecx;
 	__asm        je     _T8f;
 
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xD0];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x98], eax;
@@ -4493,25 +4493,25 @@ _Tb04:
 	__asm        jne    _Tb44;
 
 	__asm        mov    eax, this;
-	__asm        mov    ecx, ds:[0x5B492C];
+	__asm        mov    ecx, G_SpotLiteXRotation;
 	__asm        cmp    [eax+0x190], ecx;
 	__asm        jne    _Tb44;
 
 	__asm        mov    eax, this;
-	__asm        mov    ecx, ds:[0x5B4930];
+	__asm        mov    ecx, G_SpotLiteYRotation;
 	__asm        cmp    [eax+0x18C], ecx;
 	__asm        je     _Tcb3;
 // LINE 736:
 _Tb44:
-	__asm        mov    eax, ds:[0x5B492C];
+	__asm        mov    eax, G_SpotLiteXRotation;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x190], eax;
 // LINE 737:
-	__asm        mov    eax, ds:[0x5B4930];
+	__asm        mov    eax, G_SpotLiteYRotation;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18C], eax;
 // LINE 742:
-	__asm        mov    eax, ds:[0x5B4930];
+	__asm        mov    eax, G_SpotLiteYRotation;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        add    eax, eax;
 	__asm        mov    ecx, 0x1F40000;
@@ -4520,7 +4520,7 @@ _Tb44:
 	__asm        neg    eax;
 	__asm        mov    ptSpotLightPositionLocalCoordinates.x, eax;
 // LINE 743:
-	__asm        mov    eax, ds:[0x5B492C];
+	__asm        mov    eax, G_SpotLiteXRotation;
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
@@ -4804,7 +4804,7 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T65;
 
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x98];
 	__asm        cmp    [eax+0xD0], ecx;
@@ -4832,14 +4832,14 @@ void DialWindow::SetNewDialPositions() {
 	__asm        jne    _T1d7;
 // LINE 817:
 	__asm        push   0x640000;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
 	__asm        mov    eax, [eax*8+0x5B49B8];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x320];
 	__asm        push   eax;
 	__asm        call   0x004D19DF;
@@ -4978,10 +4978,10 @@ _T1d7:
 	__asm        cmp    al, 3;
 	__asm        jne    _T3df;
 // LINE 833:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        sub    eax, [ecx+0x150];
 	__asm        sar    eax, 0x10;
 	__asm        mov    lNewAltitude, eax;
@@ -5075,7 +5075,7 @@ _T26e:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 841:
 _T30f:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x128];
 	__asm        sar    eax, 0x14;
 	__asm        push   eax;
@@ -5159,7 +5159,7 @@ void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID,
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FB8];
+	__asm        mov    eax, SZ_PASSENGER_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -5205,7 +5205,7 @@ _Tb5:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA0], 0;
-	__asm        mov    eax, ds:[0x598FBC];
+	__asm        mov    eax, SZ_PASSENGER_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -5277,7 +5277,7 @@ _T1b3:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F800;
 // LINE 911:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 912:
@@ -5385,10 +5385,10 @@ int32_t PassengerWindow::Initialize() {
 // FUNCTION: COPTER_D 0x0044c15e
 void PassengerWindow::InitializeCachedSettings() {
 // LINE 941:
-	__asm        cmp    dword ptr ds:[0x5B4968], 0;
+	__asm        cmp    G_uheli, 0;
 	__asm        je     _T2c;
 // LINE 942:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        push   eax;
 	__asm        call   HeliPassengerSetChanged;
@@ -5688,7 +5688,7 @@ _T5e:
 	__asm        mov    dword ptr [eax+0xA0], 0;
 // LINE 980:
 _T6b:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T7e;
 
@@ -5942,7 +5942,7 @@ _T222:
 
 	__asm        jmp    near ptr 0x0044C7CD;
 // LINE 1035:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        mov    tempHeliPassengerData, eax;
 // LINE 1036:
@@ -5986,10 +5986,10 @@ _T222:
 	__asm        cmp    lPassengerIndex, 0xFFFFFFFF;
 	__asm        je     _T3c9;
 // LINE 1040:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        sub    eax, [ecx+0x154];
 	__asm        cmp    eax, 0x50000;
 	__asm        jle    _T35a;
@@ -6056,7 +6056,7 @@ _T3c9:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0xFFFFFFFF;
 // LINE 1052:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T3e9;
 
@@ -6095,7 +6095,7 @@ void PassengerWindow::DrawPassengers() {
 	int32_t bSeats[16];
 
 // LINE 1064:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        mov    tempHeliPassengerData, eax;
 // LINE 1067:
@@ -6399,7 +6399,7 @@ int32_t PassengerWindow::DoesWindowNeedUpdating() {
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T56;
 
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        push   eax;
 	__asm        call   HeliPassengerHasChanged;
@@ -6684,7 +6684,7 @@ _T12a:
 	__asm        test   eax, eax;
 	__asm        je     _T1ab;
 // LINE 1203:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T15e;
 
@@ -6727,7 +6727,7 @@ _T1ab:
 // FUNCTION: COPTER_D 0x0044d0c3
 long PassengerWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1222:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -6808,7 +6808,7 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 
 	__asm        jmp    near ptr 0x0044D1B1;
 // LINE 1253:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        mov    tempHeliPassengerData, eax;
 // LINE 1255:
@@ -6925,7 +6925,7 @@ void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class Graph
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FC0];
+	__asm        mov    eax, SZ_MAP_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -7032,7 +7032,7 @@ _Ta2:
 	__asm        mov    dword ptr [eax+0x104], 0x6B;
 	__asm        jmp    near ptr 0x0044D508;
 // LINE 1315:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 1316:
@@ -7147,7 +7147,7 @@ _T54:
 // LINE 1367:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FC4];
+	__asm        mov    eax, SZ_MAP_WINDOW_BUTTON_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -7217,7 +7217,7 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1387:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T75;
 
@@ -7594,26 +7594,26 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 
 // LINE 1490:
 	__asm        mov    eax, nCursorX;
-	__asm        cmp    ds:[0x5B5258], eax;
+	__asm        cmp    S_bordermin.x, eax;
 	__asm        jg     _Tb6;
 
 	__asm        mov    eax, nCursorX;
-	__asm        cmp    ds:[0x5B5260], eax;
+	__asm        cmp    S_bordermax.x, eax;
 	__asm        jl     _Tb6;
 
 	__asm        mov    eax, nCursorY;
-	__asm        cmp    ds:[0x5B525C], eax;
+	__asm        cmp    S_bordermin.y, eax;
 	__asm        jg     _Tb6;
 
 	__asm        mov    eax, nCursorY;
-	__asm        cmp    ds:[0x5B5264], eax;
+	__asm        cmp    S_bordermax.y, eax;
 	__asm        jl     _Tb6;
 // LINE 1492:
 	__asm        mov    eax, nCursorY;
-	__asm        sub    eax, ds:[0x5B525C];
+	__asm        sub    eax, S_bordermin.y;
 	__asm        push   eax;
 	__asm        mov    eax, nCursorX;
-	__asm        sub    eax, ds:[0x5B5258];
+	__asm        sub    eax, S_bordermin.x;
 	__asm        push   eax;
 	__asm        call   S3MapCursorDown;
 	__asm        add    esp, 8;
@@ -7846,7 +7846,7 @@ _T2fb:
 // FUNCTION: COPTER_D 0x0044df29
 long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal) {
 // LINE 1528:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -8132,7 +8132,7 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A968];
+	__asm        mov    eax, GraphicWindow::screenWindow;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        lea    eax, [ebp-0x1C];
@@ -8486,7 +8486,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 1722:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FCC];
+	__asm        mov    eax, SZ_BUCKET_WATER_GUAGE_IMAGE;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -8522,7 +8522,7 @@ _Ta1:
 // LINE 1728:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FD0];
+	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_0;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -8537,7 +8537,7 @@ _Te2:
 // LINE 1730:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FD8];
+	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_2;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -8549,7 +8549,7 @@ _Te2:
 _T110:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598FD4];
+	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_1;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -8576,7 +8576,7 @@ _T16c:
 	__asm        mov    dword ptr [eax+0xC0], 0;
 // LINE 1734:
 _T17c:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -8660,7 +8660,7 @@ _Tba:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1755:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _Td5;
 
@@ -8725,12 +8725,12 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T76;
 // LINE 1782:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x1C0];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx];
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -9036,12 +9036,12 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        mov    iGuageEnd, 0xB;
 	__asm        mov    nYPosition, 0x2B;
 // LINE 1872:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x1C0];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx];
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -9658,7 +9658,7 @@ _T448:
 // FUNCTION: COPTER_D 0x0044f64e
 long EquipmentPanelWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1981:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -10096,7 +10096,7 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A968];
+	__asm        mov    eax, GraphicWindow::screenWindow;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        lea    eax, [ebp-0x24];

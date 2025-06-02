@@ -60,7 +60,7 @@ unsigned long cCopterAnim::GetBodyType() {
 // FUNCTION: COPTER_D 0x0055f6a0
 class cBList<cBBase>* cCopterAnim::GetList() {
 
-	__asm        mov    eax, ds:[0x5BF6D4];
+	__asm        mov    eax, cCopterAnim::fsList;
 	__asm        jmp    near ptr 0x0055F6B6;
 }
 

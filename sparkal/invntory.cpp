@@ -356,21 +356,21 @@ void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windo
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x5971CC];
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        inc    list<HotSpot>::number_of_lists;
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _Tbf;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T2ce;
 _Tbf:
-	__asm        mov    eax, ds:[0x5971D4];
-	__asm        cmp    ds:[0x5971D0], eax;
+	__asm        mov    eax, list<HotSpot>::next_avail;
+	__asm        cmp    list<HotSpot>::last, eax;
 	__asm        jne    _T2b6;
 
 	__asm        push   0;
@@ -467,14 +467,14 @@ _T1fb:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x70], 0x92;
 	__asm        lea    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x78], eax;
@@ -506,20 +506,20 @@ _T26b:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x004A85F9;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T2ce;
 _T2b6:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x54], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x98], eax;
 _T2ce:
@@ -577,7 +577,7 @@ _T387:
 _T3a1:
 	__asm        jmp    near ptr 0x004A8706;
 
-	__asm        mov    eax, ds:[0x59A988];
+	__asm        mov    eax, SZ_INVENTORY_CHECKMARK_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -743,7 +743,7 @@ _T5ee:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0x10;
-	__asm        mov    eax, ds:[0x59A98C];
+	__asm        mov    eax, SZ_INVENTORY_WINDOW_HELICOPTER_TEXT_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x18E;
@@ -752,7 +752,7 @@ _T5ee:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0x1C;
-	__asm        mov    eax, ds:[0x59A990];
+	__asm        mov    eax, SZ_INVENTORY_WINDOW_TITLE_TEXT_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1AA;
@@ -761,14 +761,14 @@ _T5ee:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0xC;
-	__asm        mov    eax, ds:[0x59A994];
+	__asm        mov    eax, SZ_INVENTORY_WINDOW_ADDRESS_TEXT_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1C6;
 	__asm        call   MFont::MFont;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591888;
-	__asm        mov    eax, ds:[0x59A984];
+	__asm        mov    eax, SZ_INVENTORY_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x14], eax;
 // LINE 54:
 	__asm        jmp    near ptr 0x004A89D9;
@@ -1119,14 +1119,14 @@ _T3c9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x004A8E3E;
 
-	__asm        dec    dword ptr ds:[0x5971CC];
+	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T405;
 
 	__asm        mov    ecx, this;
@@ -1171,7 +1171,7 @@ _T33:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1010], eax;
@@ -1186,7 +1186,7 @@ _T33:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1010], eax;
@@ -1339,7 +1339,7 @@ _T2bd:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2028], eax;
@@ -1354,7 +1354,7 @@ _T2bd:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2028], eax;
@@ -1496,7 +1496,7 @@ _T514:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3040], eax;
@@ -1511,7 +1511,7 @@ _T514:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3040], eax;
@@ -1571,7 +1571,7 @@ _T61c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4044], eax;
@@ -1586,7 +1586,7 @@ _T61c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4044], eax;
@@ -1738,7 +1738,7 @@ _T882:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x505C], eax;
@@ -1753,7 +1753,7 @@ _T882:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x505C], eax;
@@ -2186,7 +2186,7 @@ _T2e8:
 	__asm        mov    dword ptr [eax+0x80], 0;
 // LINE 131:
 _T2f5:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;

@@ -124,7 +124,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	class FlatFile* srch;
 
 // LINE 44:
-	__asm        mov    eax, ds:[0x5BDDD8];
+	__asm        mov    eax, FlatFile::sList;
 	__asm        mov    srch, eax;
 	__asm        jmp    _T1f;
 _T16:
@@ -286,8 +286,8 @@ _T11a:
 	__asm        mov    err, 0xFFFFFFCE;
 // LINE 85:
 _T121:
-	__asm        inc    dword ptr ds:[0x5BDDDC];
-	__asm        mov    eax, ds:[0x5BDDDC];
+	__asm        inc    FlatFile::sLastFileID;
+	__asm        mov    eax, FlatFile::sLastFileID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x108], eax;
 	__asm        jmp    near ptr 0x0055C504;
@@ -671,12 +671,12 @@ long FlatFile::Read1(char * val) {
 // FUNCTION: COPTER_D 0x0055c945
 void FlatFile::Link() {
 // LINE 266:
-	__asm        mov    eax, ds:[0x5BDDD8];
+	__asm        mov    eax, FlatFile::sList;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 267:
 	__asm        mov    eax, this;
-	__asm        mov    ds:[0x5BDDD8], eax;
+	__asm        mov    FlatFile::sList, eax;
 // LINE 268:
 	__asm        jmp    near ptr 0x0055C969;
 }
@@ -731,7 +731,7 @@ unsigned short FlatFile::Exclusive() {
 	class FlatFile* srch;
 
 // LINE 285:
-	__asm        mov    eax, ds:[0x5BDDD8];
+	__asm        mov    eax, FlatFile::sList;
 	__asm        mov    srch, eax;
 // LINE 286:
 _T14:
@@ -796,7 +796,7 @@ short FlatFile::CheckForLeaks() {
 // LINE 302:
 	__asm        mov    total, 0;
 // LINE 304:
-	__asm        mov    eax, ds:[0x5BDDD8];
+	__asm        mov    eax, FlatFile::sList;
 	__asm        mov    list, eax;
 	__asm        jmp    _T25;
 _T1c:

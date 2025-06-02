@@ -48,7 +48,7 @@ _T3a:
 
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
-	__asm        mov    eax, ds:[0x604480];
+	__asm        mov    eax, gCopterRadio.<Radio+0x00:4>;
 	__asm        call   dword ptr [eax+0x1C];
 _T5b:
 	__asm        jmp    near ptr 0x00471EE4;
@@ -69,7 +69,7 @@ _T81:
 
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
-	__asm        mov    eax, ds:[0x604480];
+	__asm        mov    eax, gCopterRadio.<Radio+0x00:4>;
 	__asm        call   dword ptr [eax+0x1C];
 _Ta2:
 	__asm        jmp    near ptr 0x00471F2B;

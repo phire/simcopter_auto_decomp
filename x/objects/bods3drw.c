@@ -81,12 +81,12 @@ _T1d:
 	__asm        jmp    _T117;
 // LINE 149:
 _T22:
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        dec    eax;
 	__asm        cmp    eax, x;
 	__asm        jl     _T40;
 
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        dec    eax;
 	__asm        cmp    eax, y;
 	__asm        jge    _T45;
@@ -95,9 +95,9 @@ _T40:
 // LINE 151:
 _T45:
 	__asm        mov    eax, y;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    eax, x;
-	__asm        add    eax, ds:[0x598EAC];
+	__asm        add    eax, buffer1;
 	__asm        mov    ptr, eax;
 // LINE 152:
 	__asm        push   0x5BEF48;
@@ -116,7 +116,7 @@ _T7b:
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 155:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
+	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T117;
 // LINE 157:
 	__asm        inc    ptr;
@@ -137,7 +137,7 @@ _Tb3:
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 160:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        dec    eax;
 	__asm        add    ptr, eax;
 // LINE 161:
@@ -220,7 +220,7 @@ _T3f:
 	__asm        jne    _T7c;
 
 	__asm        fld    qword ptr ds:[0x5939B0];
-	__asm        fdiv   qword ptr ds:[0x5BEF40];
+	__asm        fdiv   G_figureShadeSpread;
 	__asm        mov    eax, diameter;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        fimul  dword ptr [ebp-0x108];
@@ -261,7 +261,7 @@ _Tbd:
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x110], eax;
 	__asm        fidiv  dword ptr [ebp-0x110];
-	__asm        fmul   qword ptr ds:[0x5BEF40];
+	__asm        fmul   G_figureShadeSpread;
 	__asm        call   0x0056EBE8;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, color;
@@ -296,7 +296,7 @@ _T149:
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x118], eax;
 	__asm        fidiv  dword ptr [ebp-0x118];
-	__asm        fmul   qword ptr ds:[0x5BEF40];
+	__asm        fmul   G_figureShadeSpread;
 	__asm        call   0x0056EBE8;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, color;
@@ -491,7 +491,7 @@ _T430:
 	__asm        jne    _T68c;
 // LINE 254:
 	__asm        fld    qword ptr ds:[0x5939B0];
-	__asm        fdiv   qword ptr ds:[0x5BEF40];
+	__asm        fdiv   G_figureShadeSpread;
 	__asm        mov    eax, diameter;
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        fimul  dword ptr [ebp-0x11C];
@@ -783,7 +783,7 @@ _T1f:
 _T48:
 	__asm        movsx  eax, facenum;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
@@ -826,8 +826,8 @@ _T84:
 	__asm        fild   dword ptr [ebp-0x68];
 	__asm        fst    bSquared;
 // LINE 448:
-	__asm        fmul   qword ptr ds:[0x5BEF38];
-	__asm        fmul   qword ptr ds:[0x5BEF38];
+	__asm        fmul   G_figureHeadShapeRatio;
+	__asm        fmul   G_figureHeadShapeRatio;
 	__asm        fstp   aSquared;
 // LINE 450:
 	__asm        mov    pixLine.width, 0x34;
@@ -1384,9 +1384,9 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 // LINE 648:
 	__asm        mov    error, 0;
 // LINE 656:
-	__asm        mov    eax, ds:[0x5BEF44];
+	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
-	__asm        mov    eax, ds:[0x5BEF40];
+	__asm        mov    eax, reinterpret_cast<uint32_t>(G_figureShadeSpread);
 	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
 // LINE 659:
 	__asm        cmp    width, 0x19;
@@ -1475,14 +1475,14 @@ _T10c:
 	__asm        jmp    _T493;
 // LINE 689:
 _T111:
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.x;
 	__asm        jl     _T139;
 
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
@@ -1493,14 +1493,14 @@ _T139:
 	__asm        jmp    _T493;
 // LINE 691:
 _T13e:
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.y;
 	__asm        jl     _T166;
 
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
@@ -1537,13 +1537,13 @@ _T1a2:
 	__asm        cmp    dy, 0;
 	__asm        jl     _T1b9;
 // LINE 708:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        mov    yInc, eax;
 // LINE 709:
 	__asm        jmp    _T1cb;
 // LINE 711:
 _T1b9:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        neg    eax;
 	__asm        mov    yInc, eax;
 // LINE 712:
@@ -1562,9 +1562,9 @@ _T1cb:
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
 	__asm        sub    ecx, eax;
-	__asm        imul   ecx, ds:[0x5BEF28];
+	__asm        imul   ecx, Pbufwidth;
 	__asm        add    ecx, startPt.x;
-	__asm        add    ecx, ds:[0x598EAC];
+	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 722:
 	__asm        mov    eax, dx;
@@ -1603,7 +1603,7 @@ _T224:
 	__asm        mov    endWidth, eax;
 // LINE 736:
 	__asm        mov    eax, startWidth;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    writeBufferTmp, eax;
 // LINE 738:
 	__asm        mov    eax, startWidth;
@@ -1633,7 +1633,7 @@ _T28d:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], al;
 // LINE 742:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        add    writeBufferTmp, eax;
 // LINE 743:
 	__asm        jmp    _T261;
@@ -1671,9 +1671,9 @@ _T2d8:
 	__asm        sar    eax, 1;
 	__asm        sub    ecx, eax;
 	__asm        mov    eax, startPt.y;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    ecx, eax;
-	__asm        add    ecx, ds:[0x598EAC];
+	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 758:
 	__asm        mov    eax, dy;
@@ -1866,9 +1866,9 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 // LINE 833:
 	__asm        mov    error, 0;
 // LINE 836:
-	__asm        mov    eax, ds:[0x5BEF44];
+	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
-	__asm        mov    eax, ds:[0x5BEF40];
+	__asm        mov    eax, reinterpret_cast<uint32_t>(G_figureShadeSpread);
 	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
 // LINE 848:
 	__asm        cmp    width, 0x19;
@@ -1944,14 +1944,14 @@ _Te3:
 	__asm        jmp    _T417;
 // LINE 866:
 _Te8:
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.x;
 	__asm        jl     _T110;
 
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
@@ -1962,14 +1962,14 @@ _T110:
 	__asm        jmp    _T417;
 // LINE 868:
 _T115:
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
 	__asm        cmp    eax, startPt.y;
 	__asm        jl     _T13d;
 
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        mov    ecx, width;
 	__asm        dec    ecx;
 	__asm        sub    eax, ecx;
@@ -2006,13 +2006,13 @@ _T179:
 	__asm        cmp    dy, 0;
 	__asm        jl     _T190;
 // LINE 884:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        mov    yInc, eax;
 // LINE 885:
 	__asm        jmp    _T1a2;
 // LINE 887:
 _T190:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        neg    eax;
 	__asm        mov    yInc, eax;
 // LINE 888:
@@ -2031,9 +2031,9 @@ _T1a2:
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
 	__asm        sub    ecx, eax;
-	__asm        imul   ecx, ds:[0x5BEF28];
+	__asm        imul   ecx, Pbufwidth;
 	__asm        add    ecx, startPt.x;
-	__asm        add    ecx, ds:[0x598EAC];
+	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 896:
 	__asm        mov    i, 0;
@@ -2074,7 +2074,7 @@ _T228:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], al;
 // LINE 904:
-	__asm        mov    eax, ds:[0x5BEF28];
+	__asm        mov    eax, Pbufwidth;
 	__asm        add    writeBufferTmp, eax;
 // LINE 905:
 	__asm        jmp    _T1fc;
@@ -2112,9 +2112,9 @@ _T273:
 	__asm        sar    eax, 1;
 	__asm        sub    ecx, eax;
 	__asm        mov    eax, startPt.y;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    ecx, eax;
-	__asm        add    ecx, ds:[0x598EAC];
+	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 920:
 	__asm        mov    i, 0;
@@ -2313,11 +2313,11 @@ _T60:
 // LINE 1001:
 _T6f:
 	__asm        mov    eax, startX;
-	__asm        cmp    ds:[0x5BEF2C], eax;
+	__asm        cmp    Pwinwidth, eax;
 	__asm        jl     _T8d;
 
 	__asm        mov    eax, endX;
-	__asm        cmp    ds:[0x5BEF2C], eax;
+	__asm        cmp    Pwinwidth, eax;
 	__asm        jge    _T92;
 // LINE 1002:
 _T8d:
@@ -2325,16 +2325,16 @@ _T8d:
 // LINE 1003:
 _T92:
 	__asm        mov    eax, yPos;
-	__asm        cmp    ds:[0x5BEF30], eax;
+	__asm        cmp    Pwinheight, eax;
 	__asm        jge    _Ta6;
 // LINE 1004:
 	__asm        jmp    _T252;
 // LINE 1006:
 _Ta6:
 	__asm        mov    eax, yPos;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    eax, startX;
-	__asm        add    eax, ds:[0x598EAC];
+	__asm        add    eax, buffer1;
 	__asm        mov    writeBuffer, eax;
 // LINE 1008:
 	__asm        mov    eax, endX;
@@ -2514,11 +2514,11 @@ _T22:
 	__asm        jmp    _T19a;
 // LINE 1079:
 _T31:
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        cmp    startX, eax;
 	__asm        jg     _T4d;
 
-	__asm        mov    eax, ds:[0x5BEF2C];
+	__asm        mov    eax, Pwinwidth;
 	__asm        cmp    endX, eax;
 	__asm        jle    _T52;
 // LINE 1080:
@@ -2526,7 +2526,7 @@ _T4d:
 	__asm        jmp    _T19a;
 // LINE 1081:
 _T52:
-	__asm        mov    eax, ds:[0x5BEF30];
+	__asm        mov    eax, Pwinheight;
 	__asm        cmp    yPos, eax;
 	__asm        jle    _T65;
 // LINE 1082:
@@ -2534,9 +2534,9 @@ _T52:
 // LINE 1084:
 _T65:
 	__asm        mov    eax, yPos;
-	__asm        imul   eax, ds:[0x5BEF28];
+	__asm        imul   eax, Pbufwidth;
 	__asm        add    eax, startX;
-	__asm        add    eax, ds:[0x598EAC];
+	__asm        add    eax, buffer1;
 	__asm        mov    writeBuffer, eax;
 // LINE 1086:
 	__asm        mov    eax, endX;

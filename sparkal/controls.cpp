@@ -1160,7 +1160,7 @@ void BoxWindow::BoxWindow() {
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    near ptr 0x004ACABD;
 
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 	__asm        mov    eax, this;
@@ -1203,7 +1203,7 @@ void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class Grap
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    near ptr 0x004ACB41;
 
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x80], eax;
 	__asm        mov    eax, this;
@@ -1307,7 +1307,7 @@ void TextWindow::TextWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
 // LINE 99:
-	__asm        mov    al, ds:[0x606968];
+	__asm        mov    al, reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], al;
 	__asm        mov    eax, this;
@@ -1319,7 +1319,7 @@ void TextWindow::TextWindow() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 100:
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
 // LINE 101:
@@ -1380,7 +1380,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 118:
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
 // LINE 119:
@@ -1438,7 +1438,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 136:
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7C], eax;
 // LINE 137:
@@ -1630,7 +1630,7 @@ void TextWindow::LoadStrings() {
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -1645,7 +1645,7 @@ void TextWindow::LoadStrings() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -2774,7 +2774,7 @@ void ButtonWindow::ButtonWindow() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591B78;
-	__asm        mov    eax, ds:[0x59ABA0];
+	__asm        mov    eax, SZ_DEFAULT_BUTTON_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x20], eax;
 // LINE 293:
 	__asm        jmp    near ptr 0x004ADEFC;
@@ -3050,7 +3050,7 @@ _T1d8:
 	__asm        jmp    _T319;
 // LINE 310:
 _T1f3:
-	__asm        mov    eax, ds:[0x59ABA0];
+	__asm        mov    eax, SZ_DEFAULT_BUTTON_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    near ptr 0x004AE25D;
 
@@ -3157,7 +3157,7 @@ _T319:
 // FUNCTION: COPTER_D 0x004ae385
 int32_t ButtonWindow::Initialize() {
 // LINE 319:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 320:
@@ -3895,7 +3895,7 @@ _T4c:
 // FUNCTION: COPTER_D 0x004aec9a
 long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal) {
 // LINE 481:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -3960,7 +3960,7 @@ _Ta2:
 // FUNCTION: COPTER_D 0x004aed4d
 long ButtonWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 496:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -4047,7 +4047,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 	__asm        call   ButtonWindow::ButtonWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591C58;
-	__asm        mov    eax, ds:[0x59ABA4];
+	__asm        mov    eax, SZ_DEFAULT_CHECKBOX_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x34], eax;
 // LINE 540:
 	__asm        jmp    near ptr 0x004AEE53;
@@ -4475,7 +4475,7 @@ _T279:
 	__asm        jmp    _T4ec;
 // LINE 556:
 _T294:
-	__asm        mov    eax, ds:[0x59ABA4];
+	__asm        mov    eax, SZ_DEFAULT_CHECKBOX_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004AF34C;
 
@@ -5122,7 +5122,7 @@ _T285:
 	__asm        jmp    _T4f8;
 // LINE 680:
 _T2a0:
-	__asm        mov    eax, ds:[0x59ABA8];
+	__asm        mov    eax, SZ_DEFAULT_RADIO_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    near ptr 0x004AFAA4;
 
@@ -5649,21 +5649,21 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x59AC30];
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        inc    list<RadioButtonWindow *>::number_of_lists;
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
+	__asm        cmp    list<RadioButtonWindow *>::free_list, 0;
 	__asm        je     _T50;
 
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59AC3C], eax;
+	__asm        mov    list<RadioButtonWindow *>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T22d;
 _T50:
-	__asm        mov    eax, ds:[0x59AC38];
-	__asm        cmp    ds:[0x59AC34], eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        cmp    list<RadioButtonWindow *>::last, eax;
 	__asm        jne    _T218;
 
 	__asm        push   0;
@@ -5758,14 +5758,14 @@ _T167:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x59AC40], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    list<RadioButtonWindow *>::buffer_list, eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59AC38], eax;
+	__asm        mov    list<RadioButtonWindow *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -5795,20 +5795,20 @@ _T1d4:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x59AC38];
-	__asm        mov    ds:[0x59AC34], eax;
+	__asm        add    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        mov    list<RadioButtonWindow *>::last, eax;
 	__asm        jmp    near ptr 0x004B0281;
 
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T22d;
 _T218:
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T22d:
@@ -5866,21 +5866,21 @@ _T22d:
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x59AC30];
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        inc    list<RadioButtonWindow *>::number_of_lists;
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
+	__asm        cmp    list<RadioButtonWindow *>::free_list, 0;
 	__asm        je     _T8a;
 
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59AC3C], eax;
+	__asm        mov    list<RadioButtonWindow *>::free_list, eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T267;
 _T8a:
-	__asm        mov    eax, ds:[0x59AC38];
-	__asm        cmp    ds:[0x59AC34], eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        cmp    list<RadioButtonWindow *>::last, eax;
 	__asm        jne    _T252;
 
 	__asm        push   0;
@@ -5975,14 +5975,14 @@ _T1a1:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    ds:[0x59AC40], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    list<RadioButtonWindow *>::buffer_list, eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59AC38], eax;
+	__asm        mov    list<RadioButtonWindow *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x38], 0x155;
 	__asm        lea    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x40], eax;
@@ -6012,20 +6012,20 @@ _T20e:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x59AC38];
-	__asm        mov    ds:[0x59AC34], eax;
+	__asm        add    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        mov    list<RadioButtonWindow *>::last, eax;
 	__asm        jmp    near ptr 0x004B0545;
 
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T267;
 _T252:
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x60], eax;
 _T267:
@@ -6083,20 +6083,20 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        cmp    dword ptr ds:[0x59AC3C], 0;
+	__asm        cmp    list<RadioButtonWindow *>::free_list, 0;
 	__asm        je     _T6b;
 
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59AC3C], eax;
+	__asm        mov    list<RadioButtonWindow *>::free_list, eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T248;
 _T6b:
-	__asm        mov    eax, ds:[0x59AC38];
-	__asm        cmp    ds:[0x59AC34], eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        cmp    list<RadioButtonWindow *>::last, eax;
 	__asm        jne    _T233;
 
 	__asm        push   0;
@@ -6191,14 +6191,14 @@ _T182:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x59AC40], eax;
-	__asm        mov    eax, ds:[0x59AC40];
+	__asm        mov    list<RadioButtonWindow *>::buffer_list, eax;
+	__asm        mov    eax, list<RadioButtonWindow *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59AC38], eax;
+	__asm        mov    list<RadioButtonWindow *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x3C], 0x155;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
@@ -6228,20 +6228,20 @@ _T1ef:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x59AC38];
-	__asm        mov    ds:[0x59AC34], eax;
+	__asm        add    eax, list<RadioButtonWindow *>::next_avail;
+	__asm        mov    list<RadioButtonWindow *>::last, eax;
 	__asm        jmp    near ptr 0x004B07FB;
 
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T248;
 _T233:
-	__asm        mov    eax, ds:[0x59AC38];
+	__asm        mov    eax, list<RadioButtonWindow *>::next_avail;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        add    dword ptr ds:[0x59AC38], 0xC;
+	__asm        add    list<RadioButtonWindow *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T248:
@@ -6376,11 +6376,11 @@ _T9a:
 
 	__asm        jmp    near ptr 0x004B098D;
 
-	__asm        mov    eax, ds:[0x59AC3C];
+	__asm        mov    eax, list<RadioButtonWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x59AC3C], eax;
+	__asm        mov    list<RadioButtonWindow *>::free_list, eax;
 	__asm        jmp    near ptr 0x004B09A4;
 
 	__asm        mov    eax, this;
@@ -7280,7 +7280,7 @@ _T15c:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T294;
 // LINE 1139:
-	__asm        mov    eax, ds:[0x59ABB0];
+	__asm        mov    eax, SZ_SLIDER_THUMB_IMAGE_H_FILE_NAME;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B13CC;
 
@@ -7381,7 +7381,7 @@ _T279:
 	__asm        jmp    _T3ba;
 // LINE 1141:
 _T294:
-	__asm        mov    eax, ds:[0x59ABAC];
+	__asm        mov    eax, SZ_SLIDER_THUMB_IMAGE_V_FILE_NAME;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    near ptr 0x004B14F7;
 
@@ -7586,7 +7586,7 @@ _T4f9:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T643;
 // LINE 1148:
-	__asm        mov    eax, ds:[0x59ABB8];
+	__asm        mov    eax, SZ_SLIDER_BACKGROUND_IMAGE_H_FILE_NAME;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004B1769;
 
@@ -7687,7 +7687,7 @@ _T625:
 	__asm        jmp    _T77b;
 // LINE 1150:
 _T643:
-	__asm        mov    eax, ds:[0x59ABB4];
+	__asm        mov    eax, SZ_SLIDER_BACKGROUND_IMAGE_V_FILE_NAME;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    near ptr 0x004B18A6;
 
@@ -7878,7 +7878,7 @@ int32_t SliderWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 1170:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 1171:
@@ -8325,7 +8325,7 @@ _Tb7:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x60696C];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexDarkGray;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -8573,7 +8573,7 @@ long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButto
 	long lNewValue;
 
 // LINE 1310:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -8623,7 +8623,7 @@ long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	long lNewValue;
 
 // LINE 1326:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -9194,7 +9194,7 @@ _T79:
 	__asm        mov    eax, [eax+0xB8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xB4], eax;
-	__asm        mov    eax, ds:[0x59ABBC];
+	__asm        mov    eax, SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x34], eax;
 // LINE 1548:
 	__asm        jmp    near ptr 0x004B29C0;
@@ -9595,7 +9595,7 @@ _T249:
 	__asm        jmp    _T3d9;
 // LINE 1572:
 _T264:
-	__asm        mov    eax, ds:[0x59ABBC];
+	__asm        mov    eax, SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004B2E96;
 
@@ -9734,7 +9734,7 @@ int32_t ScrollBarWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 1585:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x58], eax;
 // LINE 1586:
@@ -9842,7 +9842,7 @@ _T6e:
 	__asm        mov    nLineDownImageIndexToUse, 0xA;
 // LINE 1629:
 _T7c:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T8f;
 
@@ -10485,7 +10485,7 @@ long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 	long lNewValue;
 
 // LINE 1760:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -10540,7 +10540,7 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	long lNewValue;
 
 // LINE 1779:
-	__asm        mov    eax, ds:[0x59A960];
+	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T1f;
 
@@ -11277,21 +11277,21 @@ void ListBoxWindow::ListBoxWindow() {
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x598560];
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x59856C], 0;
+	__asm        cmp    list<basic_string<char>>::free_list, 0;
 	__asm        je     _T50;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T227;
 _T50:
-	__asm        mov    eax, ds:[0x598568];
-	__asm        cmp    ds:[0x598564], eax;
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
+	__asm        cmp    list<basic_string<char>>::last, eax;
 	__asm        jne    _T212;
 
 	__asm        push   0;
@@ -11385,14 +11385,14 @@ _T164:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x598570], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    list<basic_string<char>>::buffer_list, eax;
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x598568], eax;
+	__asm        mov    list<basic_string<char>>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x100;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -11421,20 +11421,20 @@ _T1d1:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x598568];
-	__asm        mov    ds:[0x598564], eax;
+	__asm        add    eax, list<basic_string<char>>::next_avail;
+	__asm        mov    list<basic_string<char>>::last, eax;
 	__asm        jmp    near ptr 0x004B42DB;
 
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T227;
 _T212:
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T227:
@@ -11487,11 +11487,11 @@ _T227:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x82], al;
 // LINE 2083:
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
 // LINE 2084:
-	__asm        mov    eax, ds:[0x606968];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexBlack;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 // LINE 2085:
@@ -11553,21 +11553,21 @@ void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, cl
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x598560];
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x59856C], 0;
+	__asm        cmp    list<basic_string<char>>::free_list, 0;
 	__asm        je     _T64;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T23b;
 _T64:
-	__asm        mov    eax, ds:[0x598568];
-	__asm        cmp    ds:[0x598564], eax;
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
+	__asm        cmp    list<basic_string<char>>::last, eax;
 	__asm        jne    _T226;
 
 	__asm        push   0;
@@ -11661,14 +11661,14 @@ _T178:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x598570], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    list<basic_string<char>>::buffer_list, eax;
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x598568], eax;
+	__asm        mov    list<basic_string<char>>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x100;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -11697,20 +11697,20 @@ _T1e5:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x598568];
-	__asm        mov    ds:[0x598564], eax;
+	__asm        add    eax, list<basic_string<char>>::next_avail;
+	__asm        mov    list<basic_string<char>>::last, eax;
 	__asm        jmp    near ptr 0x004B466E;
 
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T23b;
 _T226:
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T23b:
@@ -11763,11 +11763,11 @@ _T23b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x82], al;
 // LINE 2112:
-	__asm        mov    eax, ds:[0x606974];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
 // LINE 2113:
-	__asm        mov    eax, ds:[0x606968];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexBlack;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 // LINE 2114:
@@ -12888,11 +12888,11 @@ _T169:
 
 	__asm        jmp    near ptr 0x004B54BA;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x004B54D1;
 
 	__asm        mov    eax, this;
@@ -13047,7 +13047,7 @@ _T6d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -13062,7 +13062,7 @@ _T6d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -14090,11 +14090,11 @@ _T2e:
 	__asm        call   basic_string<char>::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x004B62F1;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x004B6308;
 
 	__asm        mov    eax, this;
@@ -14157,11 +14157,11 @@ _T13a:
 
 	__asm        jmp    near ptr 0x004B63AA;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x004B63C1;
 
 	__asm        mov    eax, this;
@@ -14298,11 +14298,11 @@ _T2b7:
 
 	__asm        jmp    near ptr 0x004B6527;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x54];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x004B653E;
 
 	__asm        mov    eax, this;
@@ -14537,20 +14537,20 @@ _T236:
 	__asm        mov    eax, tempStringListIterator.node;
 	__asm        mov    [ebp-0xB0], eax;
 // LINE 2598:
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    [ebp-0x68], eax;
-	__asm        cmp    dword ptr ds:[0x59856C], 0;
+	__asm        cmp    list<basic_string<char>>::free_list, 0;
 	__asm        je     _T27a;
 
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    _T45b;
 _T27a:
-	__asm        mov    eax, ds:[0x598568];
-	__asm        cmp    ds:[0x598564], eax;
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
+	__asm        cmp    list<basic_string<char>>::last, eax;
 	__asm        jne    _T443;
 
 	__asm        jmp    near ptr 0x004B6815;
@@ -14621,14 +14621,14 @@ _T368:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    ecx, [ebp-0x74];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    ecx, [ebp-0x74];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x74];
-	__asm        mov    ds:[0x598570], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    list<basic_string<char>>::buffer_list, eax;
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x598568], eax;
+	__asm        mov    list<basic_string<char>>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x8C], 0x100;
 	__asm        lea    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x94], eax;
@@ -14657,20 +14657,20 @@ _T3fc:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x598568];
-	__asm        mov    ds:[0x598564], eax;
+	__asm        add    eax, list<basic_string<char>>::next_avail;
+	__asm        mov    list<basic_string<char>>::last, eax;
 	__asm        jmp    near ptr 0x004B69AB;
 
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-0x6C], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    _T45b;
 _T443:
-	__asm        mov    eax, ds:[0x598568];
+	__asm        mov    eax, list<basic_string<char>>::next_avail;
 	__asm        mov    [ebp-0x70], eax;
-	__asm        add    dword ptr ds:[0x598568], 0x10;
+	__asm        add    list<basic_string<char>>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0xAC], eax;
 _T45b:
@@ -15657,7 +15657,7 @@ _Tad:
 	__asm        jmp    _T3bb;
 _Tc7:
 	__asm        mov    dword ptr [ebp-0x30], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        call   list<basic_string<char>>::get_node;
 	__asm        mov    [ebp-0x34], eax;

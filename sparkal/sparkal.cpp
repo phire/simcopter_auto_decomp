@@ -66,7 +66,7 @@ float GetMillisecondTime() {
 	__asm        fst    Time;
 // LINE 37:
 	__asm        fmul   dword ptr ds:[0x58F5B4];
-	__asm        fdiv   dword ptr ds:[0x5C28CC];
+	__asm        fdiv   _gTimerFrequency;
 	__asm        fstp   Time;
 // LINE 39:
 	__asm        jmp    _T69;

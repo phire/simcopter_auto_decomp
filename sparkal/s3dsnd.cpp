@@ -232,7 +232,7 @@ void $E55() {
 // FUNCTION: COPTER_D 0x00441e45
 void $E54() {
 
-	__asm        mov    dword ptr ds:[0x5C37F0], 0x2710;
+	__asm        mov    glMasterVolume, 0x2710;
 	__asm        jmp    near ptr 0x00441E5A;
 }
 
@@ -248,10 +248,10 @@ void $E58() {
 // FUNCTION: COPTER_D 0x00441e74
 void $E57() {
 
-	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C8;
+	__asm        mov    gSoundChangeNotificationSink.<SoundChangeNotificationSink+0x00>, 0x58F5C8;
 	__asm        jmp    near ptr 0x00441E89;
 
-	__asm        mov    dword ptr ds:[0x5C37EC], 0x58F5C0;
+	__asm        mov    gSoundChangeNotificationSink.<SoundChangeNotificationSink+0x00>, 0x58F5C0;
 	__asm        jmp    near ptr 0x00441E98;
 
 	__asm        jmp    near ptr 0x00441E9D;
@@ -260,15 +260,15 @@ void $E57() {
 // FUNCTION: COPTER_D 0x00441ea2
 int32_t SoundChangeNotificationSink::Initialize() {
 // LINE 57:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T37;
 // LINE 58:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x38];
 	__asm        jmp    _T3e;
 // LINE 60:
@@ -305,7 +305,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 // LINE 88:
 	__asm        mov    eax, currentSoundPreferences;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5C37F0], eax;
+	__asm        mov    glMasterVolume, eax;
 // LINE 89:
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
@@ -323,7 +323,7 @@ _T55:
 	__asm        mov    eax, [eax*4+0x5C3628];
 	__asm        mov    [ebp-0x14], eax;
 // LINE 91:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        imul   eax, [ebp-0x14];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    ecx, 0x2710;
@@ -5329,17 +5329,17 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 // LINE 503:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax];
-	__asm        sub    eax, ds:[0x6C126C];
+	__asm        sub    eax, ViewState.world_pos.x;
 	__asm        mov    viewvect.x, eax;
 // LINE 504:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, ds:[0x6C1270];
+	__asm        sub    eax, ViewState.world_pos.y;
 	__asm        mov    viewvect.y, eax;
 // LINE 505:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, ds:[0x6C1274];
+	__asm        sub    eax, ViewState.world_pos.z;
 	__asm        mov    viewvect.z, eax;
 // LINE 506:
 	__asm        lea    eax, viewvect.x;
@@ -5375,7 +5375,7 @@ _T65:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    [ebp-0x28], eax;
 // LINE 515:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        imul   eax, [ebp-0x28];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    ecx, 0x2710;
@@ -5491,7 +5491,7 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    [ebp-4], eax;
 // LINE 615:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        imul   eax, [ebp-4];
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    ecx, 0x2710;
@@ -5568,17 +5568,17 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 _T25:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax];
-	__asm        sub    eax, ds:[0x6C1318];
+	__asm        sub    eax, Viewer.pos.x;
 	__asm        mov    positionTemp.x, eax;
 // LINE 692:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, ds:[0x6C131C];
+	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    positionTemp.y, eax;
 // LINE 693:
 	__asm        mov    eax, loc;
 	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, ds:[0x6C1320];
+	__asm        sub    eax, Viewer.pos.z;
 	__asm        mov    positionTemp.z, eax;
 // LINE 694:
 	__asm        mov    eax, 0x6C12A0;
@@ -5669,7 +5669,7 @@ _Tf5:
 	__asm        mov    eax, lVolume;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 725:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        imul   eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    ecx, 0x2710;
@@ -5710,7 +5710,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        mov    theSound, eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x2710;
 // LINE 738:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        imul   eax, [ebp-0x14];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    ecx, 0x2710;

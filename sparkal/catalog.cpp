@@ -615,7 +615,7 @@ _T26f:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0x10;
-	__asm        mov    eax, ds:[0x599830];
+	__asm        mov    eax, SZ_CATALOG_WINDOW_TEXT_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x166;
@@ -1210,7 +1210,7 @@ _Tdf6:
 	__asm        call   Random::seed;
 	__asm        jmp    near ptr 0x00475799;
 
-	__asm        mov    eax, ds:[0x59981C];
+	__asm        mov    eax, SZ_CATALOG_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x104], eax;
 // LINE 70:
 	__asm        jmp    near ptr 0x004757A9;
@@ -1357,7 +1357,7 @@ _T1035:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x116C], eax;
@@ -1372,7 +1372,7 @@ _T1035:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x116C], eax;
@@ -1432,7 +1432,7 @@ _T113d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2170], eax;
@@ -1447,7 +1447,7 @@ _T113d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2170], eax;
@@ -1507,7 +1507,7 @@ _T1245:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3174], eax;
@@ -1522,7 +1522,7 @@ _T1245:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3174], eax;
@@ -1582,7 +1582,7 @@ _T134d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4178], eax;
@@ -1597,7 +1597,7 @@ _T134d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4178], eax;
@@ -2209,7 +2209,7 @@ _T6d:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599828];
+	__asm        mov    eax, SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -2237,7 +2237,7 @@ _T109:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -2252,7 +2252,7 @@ _T109:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -2332,7 +2332,7 @@ _T1f6:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599828];
+	__asm        mov    eax, SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -2360,7 +2360,7 @@ _T2b9:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2068], eax;
@@ -2375,7 +2375,7 @@ _T2b9:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2068], eax;
@@ -2532,7 +2532,7 @@ _T4c8:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599828];
+	__asm        mov    eax, SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -2560,7 +2560,7 @@ _T58b:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3080], eax;
@@ -2575,7 +2575,7 @@ _T58b:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3080], eax;
@@ -2912,7 +2912,7 @@ _T2db:
 	__asm        jmp    _T3a2;
 // LINE 186:
 _T3a2:
-	__asm        mov    eax, ds:[0x59981C];
+	__asm        mov    eax, SZ_CATALOG_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x84C], eax;
 	__asm        jmp    near ptr 0x00477016;
 
@@ -3313,7 +3313,7 @@ _T841:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1958], eax;
@@ -3328,7 +3328,7 @@ _T841:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1958], eax;
@@ -3473,7 +3473,7 @@ _Tba1:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2970], eax;
@@ -3488,7 +3488,7 @@ _Tba1:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2970], eax;
@@ -3633,7 +3633,7 @@ _Te0e:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3988], eax;
@@ -3648,7 +3648,7 @@ _Te0e:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3988], eax;
@@ -4452,7 +4452,7 @@ _T1a43:
 	__asm        jmp    _T1a9f;
 // LINE 273:
 _T1a9f:
-	__asm        mov    eax, ds:[0x599820];
+	__asm        mov    eax, SZ_CATALOG_EQUIPMENT_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x850], eax;
 	__asm        jmp    near ptr 0x00478713;
 
@@ -4867,7 +4867,7 @@ _T213c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x49A0], eax;
@@ -4882,7 +4882,7 @@ _T213c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x49A0], eax;
@@ -5493,7 +5493,7 @@ _T2b1e:
 	class CBackBuffer tempStainImage;
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599824];
+	__asm        mov    eax, SZ_STAIN_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -5505,7 +5505,7 @@ _T2b1e:
 	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 368:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
@@ -5571,7 +5571,7 @@ _T2c2c:
 	class CBackBuffer tempPaperClipImage;
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59982C];
+	__asm        mov    eax, SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -5583,7 +5583,7 @@ _T2c2c:
 	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 379:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;

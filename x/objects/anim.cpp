@@ -97,7 +97,7 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 
 	// Function registers exception cleanup function at 0x005674bb
 // LINE 38:
-	__asm        cmp    dword ptr ds:[0x5BF6D4], 0;
+	__asm        cmp    cCopterAnim::fsList, 0;
 	__asm        jne    _T47;
 
 	__asm        push   0x8C085;
@@ -132,7 +132,7 @@ _T6d:
 	__asm        mov    tmp[4], 0x69;
 	__asm        mov    ax, expectondisk;
 	__asm        mov    [ebp-0x50], ax;
-	__asm        mov    eax, ds:[0x5BF6D4];
+	__asm        mov    eax, cCopterAnim::fsList;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x54], eax;
 // LINE 45:

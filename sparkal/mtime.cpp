@@ -659,12 +659,12 @@ void $E19() {
 int  MTime::AssertMDate(const class MDate& date) {
 // LINE 77:
 	__asm        mov    eax, date;
-	__asm        mov    ecx, ds:[0x5C360C];
+	__asm        mov    ecx, MTime::RefDate.Julnum;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jb     _T37;
 
 	__asm        mov    eax, date;
-	__asm        mov    ecx, ds:[0x5C361C];
+	__asm        mov    ecx, MTime::MaxDate.Julnum;
 	__asm        cmp    [eax+4], ecx;
 	__asm        ja     _T37;
 
@@ -688,7 +688,7 @@ class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
 
 	__asm        mov    eax, date;
 	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, ds:[0x5C360C];
+	__asm        sub    eax, MTime::RefDate.Julnum;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*2];
@@ -700,7 +700,7 @@ class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
 	__asm        lea    ecx, [ecx+ecx*8];
 	__asm        shl    ecx, 4;
 	__asm        add    eax, ecx;
-	__asm        add    eax, ds:[0x5C0870];
+	__asm        add    eax, _timezone;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, __$ReturnUdt;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -721,7 +721,7 @@ unsigned long  MTime::LocalSecs() {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
-	__asm        sub    eax, ds:[0x5C0870];
+	__asm        sub    eax, _timezone;
 	__asm        mov    [ebp-0xC], eax;
 // LINE 102:
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -984,7 +984,7 @@ _T3c:
 
 	__asm        mov    eax, date;
 	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, ds:[0x5C360C];
+	__asm        sub    eax, MTime::RefDate.Julnum;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*2];
@@ -1009,7 +1009,7 @@ _T3c:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T9a;
 // LINE 218:
-	__asm        mov    eax, ds:[0x5C0870];
+	__asm        mov    eax, _timezone;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx], eax;
 // LINE 220:
@@ -1152,7 +1152,7 @@ int  MTime::IsDST() {
 	uint32_t year;
 
 // LINE 305:
-	__asm        cmp    dword ptr ds:[0x5C0874], 0;
+	__asm        cmp    _daylight, 0;
 	__asm        jne    _T20;
 // LINE 306:
 	__asm        xor    eax, eax;

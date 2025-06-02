@@ -497,9 +497,9 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    hResult, eax;
@@ -528,7 +528,7 @@ _Tdd:
 	__asm        imul   eax, [ecx+8];
 	__asm        mov    ecx, this;
 	__asm        imul   eax, [ecx+0xC];
-	__asm        add    ds:[0x599DA0], eax;
+	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 159:
 	__asm        mov    ddsBackBufferCaps.dwCaps, 4;
 // LINE 160:
@@ -589,9 +589,9 @@ _T150:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    hResult, eax;
@@ -651,9 +651,9 @@ _T1e7:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    hResult, eax;
@@ -695,7 +695,7 @@ _T2b2:
 	__asm        mov    ecx, this;
 	__asm        imul   eax, [ecx+0xC];
 	__asm        add    eax, eax;
-	__asm        add    ds:[0x599DA0], eax;
+	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 207:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 1;
@@ -715,9 +715,9 @@ _T2e7:
 	__asm        add    eax, 0x156;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x10];
 	__asm        mov    hResult, eax;
@@ -825,7 +825,7 @@ _T4f:
 	__asm        imul   ecx, [edx+0xC];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x599DA0], eax;
+	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 257:
 _T68:
 	__asm        mov    eax, this;
@@ -850,7 +850,7 @@ _T68:
 	__asm        imul   ecx, [edx+0xC];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x599DA0], eax;
+	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 267:
 _Taa:
 	__asm        mov    eax, this;
@@ -1329,9 +1329,9 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 _T0c:
 	__asm        lea    eax, bIsInVerticalBlank;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x44];
 	__asm        mov    hResult, eax;
@@ -1532,14 +1532,14 @@ _T116:
 	__asm        jmp    _T113;
 // LINE 564:
 _T16e:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        je     _T1cc;
 // LINE 565:
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 566:
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 	__asm        jmp    _T1bb;
@@ -1560,7 +1560,7 @@ _L37298:
 _L37298:
 _T1bb:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        mov    dword ptr ds:[0x597268], 0;
+	__asm        mov    lpPalette, 0;
 // LINE 573:
 _T1cc:
 	__asm        mov    eax, this;
@@ -1573,9 +1573,9 @@ _T1cc:
 	__asm        lea    eax, palEntries[0].peRed;
 	__asm        push   eax;
 	__asm        push   4;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x14];
 	__asm        mov    hResult, eax;
@@ -1585,7 +1585,7 @@ _T1cc:
 // LINE 579:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x54];
-	__asm        mov    ds:[0x597268], eax;
+	__asm        mov    lpPalette, eax;
 // LINE 580:
 	__asm        mov    dword ptr [ebp-4], 2;
 // LINE 581:
@@ -1649,10 +1649,10 @@ _T2d0:
 	__asm        jmp    _T30c;
 // LINE 603:
 _T2d5:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        je     _T305;
 // LINE 604:
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
@@ -1683,16 +1683,16 @@ _T320:
 // FUNCTION: COPTER_D 0x0049f42b
 void ScreenBuffer::FreePalette() {
 // LINE 620:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        je     _T3d;
 // LINE 621:
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 622:
-	__asm        mov    dword ptr ds:[0x597268], 0;
+	__asm        mov    lpPalette, 0;
 // LINE 623:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;

@@ -1171,21 +1171,21 @@ void SoundQueue::SoundQueue() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
-	__asm        inc    dword ptr ds:[0x597354];
-	__asm        mov    eax, ds:[0x597360];
+	__asm        inc    list<SoundQueueItem *>::number_of_lists;
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x597360], 0;
+	__asm        cmp    list<SoundQueueItem *>::free_list, 0;
 	__asm        je     _T48;
 
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
 _T48:
-	__asm        mov    eax, ds:[0x59735C];
-	__asm        cmp    ds:[0x597358], eax;
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
+	__asm        cmp    list<SoundQueueItem *>::last, eax;
 	__asm        jne    _T210;
 
 	__asm        push   0;
@@ -1280,14 +1280,14 @@ _T15f:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x597364], eax;
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    list<SoundQueueItem *>::buffer_list, eax;
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59735C], eax;
+	__asm        mov    list<SoundQueueItem *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -1317,20 +1317,20 @@ _T1cc:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x59735C];
-	__asm        mov    ds:[0x597358], eax;
+	__asm        add    eax, list<SoundQueueItem *>::next_avail;
+	__asm        mov    list<SoundQueueItem *>::last, eax;
 	__asm        jmp    near ptr 0x00421226;
 
-	__asm        mov    eax, ds:[0x59735C];
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x59735C], 0xC;
+	__asm        add    list<SoundQueueItem *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T225;
 _T210:
-	__asm        mov    eax, ds:[0x59735C];
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x59735C], 0xC;
+	__asm        add    list<SoundQueueItem *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T225:
@@ -1451,11 +1451,11 @@ _Ta2:
 
 	__asm        jmp    near ptr 0x004213A4;
 
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    near ptr 0x004213BB;
 
 	__asm        mov    eax, this;
@@ -1469,24 +1469,24 @@ _T112:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    near ptr 0x004213F0;
 
-	__asm        dec    dword ptr ds:[0x597354];
+	__asm        dec    list<SoundQueueItem *>::number_of_lists;
 	__asm        jne    _T1c1;
 _T143:
-	__asm        cmp    dword ptr ds:[0x597364], 0;
+	__asm        cmp    list<SoundQueueItem *>::buffer_list, 0;
 	__asm        je     _T19e;
 
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597364], eax;
+	__asm        mov    list<SoundQueueItem *>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x38], eax;
@@ -1508,9 +1508,9 @@ _T143:
 
 	__asm        jmp    _T143;
 _T19e:
-	__asm        mov    dword ptr ds:[0x597360], 0;
-	__asm        mov    dword ptr ds:[0x59735C], 0;
-	__asm        mov    dword ptr ds:[0x597358], 0;
+	__asm        mov    list<SoundQueueItem *>::free_list, 0;
+	__asm        mov    list<SoundQueueItem *>::next_avail, 0;
+	__asm        mov    list<SoundQueueItem *>::last, 0;
 	__asm        jmp    _T1c1;
 _T1c1:
 	__asm        jmp    near ptr 0x0042147F;
@@ -1807,11 +1807,11 @@ _T234:
 
 	__asm        jmp    near ptr 0x00421797;
 
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    near ptr 0x004217AE;
 
 	__asm        mov    eax, this;
@@ -1901,20 +1901,20 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueIte
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        cmp    dword ptr ds:[0x597360], 0;
+	__asm        cmp    list<SoundQueueItem *>::free_list, 0;
 	__asm        je     _T74;
 
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T251;
 _T74:
-	__asm        mov    eax, ds:[0x59735C];
-	__asm        cmp    ds:[0x597358], eax;
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
+	__asm        cmp    list<SoundQueueItem *>::last, eax;
 	__asm        jne    _T23c;
 
 	__asm        push   0;
@@ -2009,14 +2009,14 @@ _T18b:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x597364], eax;
-	__asm        mov    eax, ds:[0x597364];
+	__asm        mov    list<SoundQueueItem *>::buffer_list, eax;
+	__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59735C], eax;
+	__asm        mov    list<SoundQueueItem *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x3C], 0x155;
 	__asm        lea    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
@@ -2046,20 +2046,20 @@ _T1f8:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x59735C];
-	__asm        mov    ds:[0x597358], eax;
+	__asm        add    eax, list<SoundQueueItem *>::next_avail;
+	__asm        mov    list<SoundQueueItem *>::last, eax;
 	__asm        jmp    near ptr 0x00421A7D;
 
-	__asm        mov    eax, ds:[0x59735C];
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x59735C], 0xC;
+	__asm        add    list<SoundQueueItem *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T251;
 _T23c:
-	__asm        mov    eax, ds:[0x59735C];
+	__asm        mov    eax, list<SoundQueueItem *>::next_avail;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        add    dword ptr ds:[0x59735C], 0xC;
+	__asm        add    list<SoundQueueItem *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T251:
@@ -2457,11 +2457,11 @@ _T16f:
 
 	__asm        jmp    near ptr 0x00421ECE;
 
-	__asm        mov    eax, ds:[0x597360];
+	__asm        mov    eax, list<SoundQueueItem *>::free_list;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    ds:[0x597360], eax;
+	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    near ptr 0x00421EE5;
 
 	__asm        mov    eax, this;

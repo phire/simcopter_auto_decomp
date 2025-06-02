@@ -1013,7 +1013,7 @@ _T194:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x50;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1066,7 +1066,7 @@ _T248:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x68], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x64;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1119,7 +1119,7 @@ _T2fc:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1161,7 +1161,7 @@ _T38d:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1372,7 +1372,7 @@ _T176:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x50;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1414,7 +1414,7 @@ _T201:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x68], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x64;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1456,7 +1456,7 @@ _T28c:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -1498,7 +1498,7 @@ _T31d:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x90], 0;
-	__asm        inc    dword ptr ds:[0x598560];
+	__asm        inc    list<basic_string<char>>::number_of_lists;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   list<basic_string<char>>::get_node;
@@ -2270,14 +2270,14 @@ void RadioStation::~RadioStation() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x60], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x00434253;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _Ta7;
 
 	__asm        mov    ecx, this;
@@ -2349,14 +2349,14 @@ _T129:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x78];
 	__asm        mov    [ebp-0x74], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x74];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x74];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x0043434E;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T19f;
 
 	__asm        mov    ecx, this;
@@ -3752,7 +3752,7 @@ _T69:
 _Tbd:
 	__asm        jmp    near ptr 0x004354A4;
 
-	__asm        mov    eax, ds:[0x5984C4];
+	__asm        mov    eax, SZ_SOUND_FILE_FILTER;
 	__asm        mov    [ebp-0xEC], eax;
 // LINE 320:
 	__asm        push   0x10;
@@ -6284,7 +6284,7 @@ _Td3:
 _Tfa:
 	__asm        jmp    near ptr 0x00437436;
 
-	__asm        mov    eax, ds:[0x5984C8];
+	__asm        mov    eax, SZ_CALL_ID_FILTER;
 	__asm        mov    [ebp-0x70], eax;
 // LINE 546:
 	__asm        push   0x10;
@@ -7076,13 +7076,13 @@ int  Radio::GetPreferences() {
 	char * chPrefData;
 
 // LINE 679:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _Ta1;
 // LINE 680:
 	__asm        push   0x5245494F;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 681:
@@ -7090,9 +7090,9 @@ int  Radio::GetPreferences() {
 	__asm        je     _Ta1;
 // LINE 683:
 	__asm        push   0x5245494F;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x1C;
 	__asm        jne    _Ta1;
@@ -7135,7 +7135,7 @@ int  Radio::SavePreferences() {
 	struct RadioPreferences tempRadioPreferences;
 
 // LINE 706:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T74;
 // LINE 707:
 	__asm        mov    eax, this;
@@ -7166,9 +7166,9 @@ int  Radio::SavePreferences() {
 	__asm        lea    eax, tempRadioPreferences.lVolume;
 	__asm        push   eax;
 	__asm        push   0x5245494F;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 717:
 	__asm        mov    eax, 1;
@@ -7957,7 +7957,7 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x100];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 928:
-	__asm        mov    eax, ds:[0x5984B4];
+	__asm        mov    eax, SZ_RADIO_STATIONS_DIRECTORY_NAME;
 	__asm        push   eax;
 	__asm        lea    eax, sRadioDirectory.c_str_ptr;
 	__asm        push   eax;
@@ -7971,7 +7971,7 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0x108];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 929:
-	__asm        mov    eax, ds:[0x5984B0];
+	__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
 	__asm        push   eax;
 	__asm        lea    eax, sRadioDirectory.c_str_ptr;
 	__asm        push   eax;
@@ -8087,7 +8087,7 @@ _T20f:
 	__asm        lea    ecx, tempRadioStation.<vftable>;
 	__asm        call   RadioStation::DetectRadioStationType;
 // LINE 952:
-	__asm        mov    eax, ds:[0x5984B8];
+	__asm        mov    eax, SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME;
 	__asm        push   eax;
 	__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
 	__asm        push   eax;
@@ -8114,7 +8114,7 @@ _T20f:
 _T2d6:
 	__asm        jmp    near ptr 0x00438958;
 // LINE 956:
-	__asm        mov    eax, ds:[0x5984BC];
+	__asm        mov    eax, SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME;
 	__asm        push   eax;
 	__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
 	__asm        push   eax;
@@ -8174,7 +8174,7 @@ _T33c:
 _T3b7:
 	__asm        jmp    near ptr 0x00438A39;
 // LINE 959:
-	__asm        cmp    dword ptr ds:[0x597664], 1;
+	__asm        cmp    gDefaultLanguage, 1;
 	__asm        je     _T429;
 
 	__asm        lea    eax, sScratch.c_str_ptr;
@@ -8221,7 +8221,7 @@ _T429:
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00438ACE;
 
-	__asm        mov    eax, ds:[0x5984B0];
+	__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
 	__asm        mov    [ebp-0x22C], eax;
 // LINE 969:
 	__asm        mov    eax, [ebp-0x22C];
@@ -8476,7 +8476,7 @@ _T7b9:
 _T7fd:
 	__asm        jmp    near ptr 0x00438E7F;
 // LINE 972:
-	__asm        cmp    dword ptr ds:[0x597664], 1;
+	__asm        cmp    gDefaultLanguage, 1;
 	__asm        je     _T86f;
 
 	__asm        lea    eax, sScratch.c_str_ptr;
@@ -8523,7 +8523,7 @@ _T86f:
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x00438F14;
 
-	__asm        mov    eax, ds:[0x5984C0];
+	__asm        mov    eax, SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME;
 	__asm        mov    [ebp-0x1E4], eax;
 // LINE 982:
 	__asm        mov    eax, [ebp-0x1E4];
@@ -8778,7 +8778,7 @@ _Tbff:
 _Tc43:
 	__asm        jmp    near ptr 0x004392C5;
 // LINE 985:
-	__asm        cmp    dword ptr ds:[0x597664], 1;
+	__asm        cmp    gDefaultLanguage, 1;
 	__asm        je     _Tcb5;
 
 	__asm        lea    eax, sScratch.c_str_ptr;
@@ -8925,14 +8925,14 @@ _Tdc0:
 	__asm        call   list<basic_string<char>>::erase;
 	__asm        mov    eax, radioStationStringList.node;
 	__asm        mov    [ebp-0x1A4], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0x1A4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x1A4];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x004394EC;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _Te86;
 
 	__asm        lea    ecx, radioStationStringList.node;
@@ -9028,7 +9028,7 @@ _Tfd1:
 // FUNCTION: COPTER_D 0x00439663
 int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_string<char>& sDirectory) {
 
-	__asm        mov    eax, ds:[0x5984C4];
+	__asm        mov    eax, SZ_SOUND_FILE_FILTER;
 	__asm        mov    [ebp-0x6C], eax;
 // LINE 1014:
 	__asm        mov    eax, [ebp-0x6C];

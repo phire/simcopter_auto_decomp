@@ -824,7 +824,7 @@ _T8d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x12B0], eax;
@@ -839,7 +839,7 @@ _T8d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x12B0], eax;
@@ -984,7 +984,7 @@ _T22f:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x22B4], eax;
@@ -999,7 +999,7 @@ _T22f:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x22B4], eax;
@@ -1081,7 +1081,7 @@ _T3da:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x32B8], eax;
@@ -1096,7 +1096,7 @@ _T3da:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x32B8], eax;
@@ -1176,7 +1176,7 @@ _T513:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x42BC], eax;
@@ -1191,7 +1191,7 @@ _T513:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x42BC], eax;
@@ -1291,7 +1291,7 @@ _T60c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x52C0], eax;
@@ -1306,7 +1306,7 @@ _T60c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x52C0], eax;
@@ -1385,7 +1385,7 @@ _T77e:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x62C4], eax;
@@ -1400,7 +1400,7 @@ _T77e:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x62C4], eax;
@@ -1471,7 +1471,7 @@ _T8b2:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x72C8], eax;
@@ -1486,7 +1486,7 @@ _T8b2:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x72C8], eax;
@@ -1652,13 +1652,13 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    _T3b7;
 // LINE 196:
-	__asm        mov    eax, ds:[0x598688];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_1;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 197:
-	__asm        mov    eax, ds:[0x5986A8];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 198:
-	__asm        mov    eax, ds:[0x5986C8];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 199:
 	__asm        mov    byte ptr [ebp-0x20], 0x6B;
@@ -1698,13 +1698,13 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        cmp    dword ptr [eax+0xF2], 0;
 	__asm        je     _T170;
 // LINE 205:
-	__asm        mov    eax, ds:[0x598690];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 206:
-	__asm        mov    eax, ds:[0x5986B0];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 207:
-	__asm        mov    eax, ds:[0x5986D0];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 208:
 	__asm        mov    byte ptr [ebp-0x2C], 0x18;
@@ -1734,13 +1734,13 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        jmp    _T1cd;
 // LINE 213:
 _T170:
-	__asm        mov    eax, ds:[0x59868C];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 214:
-	__asm        mov    eax, ds:[0x5986AC];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 215:
-	__asm        mov    eax, ds:[0x5986CC];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 216:
 	__asm        mov    byte ptr [ebp-0x38], 0x19;
@@ -1770,13 +1770,13 @@ _T170:
 _T1cd:
 	__asm        jmp    _T3f8;
 // LINE 222:
-	__asm        mov    eax, ds:[0x598694];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_3;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 223:
-	__asm        mov    eax, ds:[0x5986B4];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 224:
-	__asm        mov    eax, ds:[0x5986D4];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 225:
 	__asm        mov    byte ptr [ebp-0x44], 0x15;
@@ -1805,13 +1805,13 @@ _T1cd:
 // LINE 228:
 	__asm        jmp    _T3f8;
 // LINE 230:
-	__asm        mov    eax, ds:[0x598698];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_4;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 231:
-	__asm        mov    eax, ds:[0x5986B8];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 232:
-	__asm        mov    eax, ds:[0x5986D8];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 233:
 	__asm        mov    byte ptr [ebp-0x50], 0x15;
@@ -1840,13 +1840,13 @@ _T1cd:
 // LINE 236:
 	__asm        jmp    _T3f8;
 // LINE 238:
-	__asm        mov    eax, ds:[0x59869C];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_5;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 239:
-	__asm        mov    eax, ds:[0x5986BC];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 240:
-	__asm        mov    eax, ds:[0x5986DC];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 241:
 	__asm        mov    byte ptr [ebp-0x5C], 0x15;
@@ -1875,13 +1875,13 @@ _T1cd:
 // LINE 244:
 	__asm        jmp    _T3f8;
 // LINE 246:
-	__asm        mov    eax, ds:[0x5986A0];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_6;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 247:
-	__asm        mov    eax, ds:[0x5986C0];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 248:
-	__asm        mov    eax, ds:[0x5986E0];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 249:
 	__asm        mov    byte ptr [ebp-0x68], 0x10;
@@ -1909,13 +1909,13 @@ _T1cd:
 	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 254:
 _T355:
-	__asm        mov    eax, ds:[0x598684];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_0;
 	__asm        mov    szImageFileNameToUse, eax;
 // LINE 255:
-	__asm        mov    eax, ds:[0x5986A4];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0;
 	__asm        mov    szButtonImageFileNameToUse, eax;
 // LINE 256:
-	__asm        mov    eax, ds:[0x5986C4];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0;
 	__asm        mov    szAnimationFileNameToUse, eax;
 // LINE 257:
 	__asm        mov    byte ptr [ebp-0x74], 0x10;
@@ -2092,7 +2092,7 @@ _T6d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -2107,7 +2107,7 @@ _T6d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -2605,13 +2605,13 @@ _Tfb:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    near ptr 0x0043FA2D;
 
-	__asm        mov    eax, ds:[0x5986C4];
+	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5986A4];
+	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598684];
+	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_0;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5986E4];
+	__asm        mov    eax, SZ_CHEAT_BOX_TEXT_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        push   1;
@@ -2788,16 +2788,16 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _Tb3;
 // LINE 362:
-	__asm        cmp    dword ptr ds:[0x5C3808], 0;
+	__asm        cmp    G_CheatCodes[0], 0;
 	__asm        jne    _T84;
 
-	__asm        mov    dword ptr ds:[0x5C3808], 1;
+	__asm        mov    G_CheatCodes[0], 1;
 	__asm        jmp    _T8e;
 _T84:
-	__asm        mov    dword ptr ds:[0x5C3808], 0;
+	__asm        mov    G_CheatCodes[0], 0;
 // LINE 363:
 _T8e:
-	__asm        cmp    dword ptr ds:[0x5C3808], 0;
+	__asm        cmp    G_CheatCodes[0], 0;
 	__asm        je     _Ta6;
 // LINE 364:
 	__asm        mov    eax, szCheatOn;
@@ -2828,16 +2828,16 @@ _Tb3:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T12e;
 // LINE 370:
-	__asm        cmp    dword ptr ds:[0x5C380C], 0;
+	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _Tff;
 
-	__asm        mov    dword ptr ds:[0x5C380C], 1;
+	__asm        mov    G_CheatCodes[1], 1;
 	__asm        jmp    _T109;
 _Tff:
-	__asm        mov    dword ptr ds:[0x5C380C], 0;
+	__asm        mov    G_CheatCodes[1], 0;
 // LINE 371:
 _T109:
-	__asm        cmp    dword ptr ds:[0x5C380C], 0;
+	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        je     _T121;
 // LINE 372:
 	__asm        mov    eax, szCheatOn;
@@ -2868,25 +2868,25 @@ _T12e:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T1cb;
 // LINE 378:
-	__asm        cmp    dword ptr ds:[0x5C3810], 0;
+	__asm        cmp    G_CheatCodes[2], 0;
 	__asm        jne    _T17a;
 
-	__asm        mov    dword ptr ds:[0x5C3810], 1;
+	__asm        mov    G_CheatCodes[2], 1;
 	__asm        jmp    _T184;
 _T17a:
-	__asm        mov    dword ptr ds:[0x5C3810], 0;
+	__asm        mov    G_CheatCodes[2], 0;
 // LINE 379:
 _T184:
-	__asm        cmp    dword ptr ds:[0x5C3810], 0;
+	__asm        cmp    G_CheatCodes[2], 0;
 	__asm        je     _T1be;
 // LINE 380:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
 	__asm        mov    eax, [eax*8+0x5B49B8];
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    [ecx+0x320], eax;
 // LINE 381:
 	__asm        mov    eax, szCheatOn;
@@ -2917,16 +2917,16 @@ _T1cb:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T246;
 // LINE 388:
-	__asm        cmp    dword ptr ds:[0x5C3818], 0;
+	__asm        cmp    G_CheatCodes[4], 0;
 	__asm        jne    _T217;
 
-	__asm        mov    dword ptr ds:[0x5C3818], 1;
+	__asm        mov    G_CheatCodes[4], 1;
 	__asm        jmp    _T221;
 _T217:
-	__asm        mov    dword ptr ds:[0x5C3818], 0;
+	__asm        mov    G_CheatCodes[4], 0;
 // LINE 389:
 _T221:
-	__asm        cmp    dword ptr ds:[0x5C3818], 0;
+	__asm        cmp    G_CheatCodes[4], 0;
 	__asm        je     _T239;
 // LINE 390:
 	__asm        mov    eax, szCheatOn;
@@ -2957,7 +2957,7 @@ _T246:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T2bc;
 // LINE 397:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T2b7;
 // LINE 398:
 // Block start:
@@ -3000,15 +3000,15 @@ _T2bc:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T32f;
 // LINE 405:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T32a;
 // LINE 406:
 	__asm        push   0x50000;
 	__asm        push   0x50000;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        call   S3PersonUserAppear;
@@ -3134,7 +3134,7 @@ _T4dc:
 	__asm        cmp    dword ptr [ebp-0x168], 0xFFFFFFFF;
 	__asm        je     _T515;
 // LINE 412:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T515;
 // LINE 413:
 	__asm        push   0x3E9;
@@ -3259,16 +3259,16 @@ _T6c2:
 	__asm        cmp    dword ptr [ebp-0x184], 0xFFFFFFFF;
 	__asm        je     _T71f;
 // LINE 419:
-	__asm        cmp    dword ptr ds:[0x5C381C], 0;
+	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        jne    _T6f0;
 
-	__asm        mov    dword ptr ds:[0x5C381C], 1;
+	__asm        mov    G_CheatCodes[5], 1;
 	__asm        jmp    _T6fa;
 _T6f0:
-	__asm        mov    dword ptr ds:[0x5C381C], 0;
+	__asm        mov    G_CheatCodes[5], 0;
 // LINE 420:
 _T6fa:
-	__asm        cmp    dword ptr ds:[0x5C381C], 0;
+	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        je     _T712;
 // LINE 421:
 	__asm        mov    eax, szCheatOn;
@@ -3402,7 +3402,7 @@ _T8cc:
 	char szCareerLevel[3];
 	int32_t nCharsToCopy;
 	int32_t nNewCareerLevel;
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T9cf;
 // LINE 432:
 	__asm        push   0x598918;
@@ -3479,7 +3479,7 @@ _T99e:
 // LINE 443:
 _T9c1:
 	__asm        mov    eax, nNewCareerLevel;
-	__asm        mov    ds:[0x5C3814], eax;
+	__asm        mov    G_CheatCodes[3], eax;
 // LINE 444:
 	__asm        mov    eax, szCheatOn;
 	__asm        mov    szCheatSoundFileName, eax;
@@ -3863,7 +3863,7 @@ _Tf06:
 	__asm        mov    ecx, tempCheatCodeSound;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 487:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    eax, tempCheatCodeSound;
 	__asm        mov    eax, [eax];
@@ -4252,10 +4252,10 @@ void  CGameApp::ToggleDebugWindowDisplay() {
 	__asm        cmp    dword ptr [eax+0x4310], 0;
 	__asm        jne    _T46;
 // LINE 583:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T34;
 // LINE 584:
-	__asm        mov    ecx, ds:[0x597374];
+	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::ShowWindow;
 // LINE 585:
 _T34:
@@ -4265,10 +4265,10 @@ _T34:
 	__asm        jmp    _T6b;
 // LINE 588:
 _T46:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T5e;
 // LINE 589:
-	__asm        mov    ecx, ds:[0x597374];
+	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::HideWindow;
 // LINE 590:
 _T5e:
@@ -4331,7 +4331,7 @@ _T81:
 
 	__asm        jmp    near ptr 0x00441129;
 
-	__asm        mov    eax, ds:[0x598680];
+	__asm        mov    eax, SZ_PLAY_MENU_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0xA4], eax;
 // LINE 604:
 	__asm        jmp    near ptr 0x00441139;
@@ -4347,7 +4347,7 @@ _T81:
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0044115D;
 // LINE 605:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        mov    tempUMWD.nTransparentIndex, eax;
 // LINE 606:
 	__asm        jmp    near ptr 0x0044116A;
@@ -4369,7 +4369,7 @@ _T81:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 607:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T151;
 
 	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x3C;
@@ -4378,7 +4378,7 @@ _T151:
 	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x3D;
 // LINE 608:
 _T158:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T171;
 
 	__asm        mov    tempUMWD.lMenuStringResourceCount, 8;
@@ -4387,7 +4387,7 @@ _T171:
 	__asm        mov    tempUMWD.lMenuStringResourceCount, 7;
 // LINE 609:
 _T178:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T191;
 
 	__asm        mov    tempUMWD.lSelectionBase, 0;
@@ -4412,7 +4412,7 @@ _T198:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue), eax;
 // LINE 614:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1f6;
 
 	__asm        jmp    near ptr 0x00441247;
@@ -4868,14 +4868,14 @@ _T5c:
 	__asm        call   RenderSettingsWindow::GetCurrentSettings;
 // LINE 709:
 	__asm        mov    eax, bShowBuildingTextures;
-	__asm        mov    ds:[0x598E88], eax;
-	__asm        mov    eax, ds:[0x598E88];
+	__asm        mov    G_texobjs, eax;
+	__asm        mov    eax, G_texobjs;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x4328], eax;
 // LINE 710:
 	__asm        mov    eax, bShowGroundTextures;
-	__asm        mov    ds:[0x598E8C], eax;
-	__asm        mov    eax, ds:[0x598E8C];
+	__asm        mov    G_texterr, eax;
+	__asm        mov    eax, G_texterr;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x432C], eax;
 // LINE 711:
@@ -4995,9 +4995,9 @@ _Te8:
 	__asm        call   dword ptr [eax+0x40];
 // LINE 742:
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 743:
@@ -5005,9 +5005,9 @@ _Te8:
 	__asm        je     _T166;
 
 	__asm        push   0x4FFFFFF;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x10;
 	__asm        jne    _T166;
@@ -5227,9 +5227,9 @@ void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow* windowToDest
 	__asm        call   GetCurrentCitySettings;
 	__asm        push   eax;
 	__asm        push   0x5EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 830:
 _T4a:
@@ -5414,7 +5414,7 @@ void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32
 // LINE 879:
 	__asm        mov    eax, lSettings[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliPurchaseRepairs;
 	__asm        add    esp, 8;
@@ -5427,7 +5427,7 @@ void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32
 // LINE 882:
 	__asm        mov    eax, lSettings[1];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliPurchaseFuel;
 	__asm        add    esp, 8;

@@ -622,21 +622,21 @@ _T12f:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x11A], 0;
-	__asm        inc    dword ptr ds:[0x5971CC];
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        inc    list<HotSpot>::number_of_lists;
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-0x28], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _T173;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T358;
 _T173:
-	__asm        mov    eax, ds:[0x5971D4];
-	__asm        cmp    ds:[0x5971D0], eax;
+	__asm        mov    eax, list<HotSpot>::next_avail;
+	__asm        cmp    list<HotSpot>::last, eax;
 	__asm        jne    _T343;
 
 	__asm        push   0;
@@ -733,14 +733,14 @@ _T28e:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x4C], 0x92;
 	__asm        lea    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x54], eax;
@@ -772,20 +772,20 @@ _T2fb:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x00472299;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T358;
 _T343:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x74], eax;
 _T358:
@@ -821,7 +821,7 @@ _T358:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590C20;
 // LINE 54:
-	__asm        cmp    dword ptr ds:[0x598E90], 0;
+	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T3fd;
 
 	__asm        mov    eax, this;
@@ -979,11 +979,11 @@ _T15a:
 
 	__asm        jmp    near ptr 0x00472513;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x0047252A;
 
 	__asm        mov    eax, this;
@@ -997,24 +997,24 @@ _T18e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x116];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x00472565;
 
-	__asm        dec    dword ptr ds:[0x5971CC];
+	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T240;
 _T1c2:
-	__asm        cmp    dword ptr ds:[0x5971DC], 0;
+	__asm        cmp    list<HotSpot>::buffer_list, 0;
 	__asm        je     _T21d;
 
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971DC], eax;
+	__asm        mov    list<HotSpot>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x44], eax;
@@ -1036,9 +1036,9 @@ _T1c2:
 
 	__asm        jmp    _T1c2;
 _T21d:
-	__asm        mov    dword ptr ds:[0x5971D8], 0;
-	__asm        mov    dword ptr ds:[0x5971D4], 0;
-	__asm        mov    dword ptr ds:[0x5971D0], 0;
+	__asm        mov    list<HotSpot>::free_list, 0;
+	__asm        mov    list<HotSpot>::next_avail, 0;
+	__asm        mov    list<HotSpot>::last, 0;
 	__asm        jmp    _T240;
 _T240:
 	__asm        jmp    near ptr 0x004725F4;
@@ -1094,11 +1094,11 @@ _T85:
 	__asm        cmp    dword ptr [eax+0xF2], 0;
 	__asm        je     _Tb6;
 
-	__asm        mov    eax, ds:[0x5997D0];
+	__asm        mov    eax, SZ_HANGAR_DAY_BUTTON_FILE_NAME;
 	__asm        mov    szButtonFileName, eax;
 	__asm        jmp    _Tbe;
 _Tb6:
-	__asm        mov    eax, ds:[0x5997D4];
+	__asm        mov    eax, SZ_HANGAR_NIGHT_BUTTON_FILE_NAME;
 	__asm        mov    szButtonFileName, eax;
 // LINE 80:
 _Tbe:
@@ -1219,7 +1219,7 @@ _T235:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1098], eax;
@@ -1234,7 +1234,7 @@ _T235:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1098], eax;
@@ -1336,7 +1336,7 @@ _T3aa:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x209C], eax;
@@ -1351,7 +1351,7 @@ _T3aa:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x209C], eax;
@@ -1530,7 +1530,7 @@ _T641:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x30B4], eax;
@@ -1545,7 +1545,7 @@ _T641:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x30B4], eax;
@@ -1647,7 +1647,7 @@ _T7b6:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x40B8], eax;
@@ -1662,7 +1662,7 @@ _T7b6:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x40B8], eax;
@@ -2525,7 +2525,7 @@ void HangarWindow::GetImagePath() {
 	__asm        cmp    dword ptr [eax+0xF2], 0;
 	__asm        je     _T196;
 // LINE 281:
-	__asm        mov    eax, ds:[0x5997C8];
+	__asm        mov    eax, SZ_HANGAR_DAY_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x0047384F;
 
@@ -2653,7 +2653,7 @@ _T17b:
 	__asm        jmp    _T30b;
 // LINE 283:
 _T196:
-	__asm        mov    eax, ds:[0x5997CC];
+	__asm        mov    eax, SZ_HANGAR_NIGHT_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004739C9;
 
@@ -3253,7 +3253,7 @@ _T10a:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1090], eax;
@@ -3268,7 +3268,7 @@ _T10a:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1090], eax;
@@ -3606,7 +3606,7 @@ _T554:
 _T57b:
 	__asm        jmp    near ptr 0x004744D3;
 // LINE 471:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

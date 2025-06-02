@@ -217,9 +217,9 @@ _T51:
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x50];
 	__asm        mov    hResult, eax;
@@ -364,9 +364,9 @@ _T51:
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x50];
 	__asm        mov    hResult, eax;
@@ -442,9 +442,9 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 	long hResult;
 
 // LINE 168:
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 	__asm        mov    hResult, eax;
@@ -468,9 +468,9 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x42D4];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x54];
 	__asm        mov    hResult, eax;
@@ -575,7 +575,7 @@ _T8f:
 	__asm        mov    ecx, [eax+0x50];
 	__asm        call   dword ptr [edx+0x40];
 // LINE 226:
-	__asm        cmp    dword ptr ds:[0x598F00], 1;
+	__asm        cmp    gameResolution, 1;
 	__asm        jne    _Te5;
 // LINE 227:
 	__asm        mov    rectScreenWindow.left, 0;
@@ -586,7 +586,7 @@ _T8f:
 // LINE 228:
 	__asm        jmp    _T146;
 _Te5:
-	__asm        cmp    dword ptr ds:[0x598F00], 2;
+	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T118;
 // LINE 229:
 	__asm        mov    rectScreenWindow.left, 0;
@@ -597,7 +597,7 @@ _Te5:
 // LINE 230:
 	__asm        jmp    _T146;
 _T118:
-	__asm        cmp    dword ptr ds:[0x598F00], 3;
+	__asm        cmp    gameResolution, 3;
 	__asm        jne    _T146;
 // LINE 231:
 	__asm        mov    rectScreenWindow.left, 0;
@@ -647,7 +647,7 @@ _T1ac:
 	__asm        mov    [ebp-0x28], eax;
 // LINE 233:
 	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    ds:[0x59A968], eax;
+	__asm        mov    GraphicWindow::screenWindow, eax;
 	__asm        jmp    near ptr 0x00432AC2;
 // LINE 234:
 	__asm        mov    eax, this;
@@ -690,7 +690,7 @@ int  CGameApp::DestroyDisplaySurfaces() {
 _T3c:
 	__asm        jmp    near ptr 0x00432B2F;
 
-	__asm        cmp    dword ptr ds:[0x6069A4], 0;
+	__asm        cmp    GraphicWindow::listValidWindows.length, 0;
 	__asm        je     _T6a;
 
 	__asm        push   0xFC;

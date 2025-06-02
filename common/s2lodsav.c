@@ -518,7 +518,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    _T8b8;
 // LINE 308:
 _T31:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -628,7 +628,7 @@ _T176:
 	__asm        cmp    eax, dp;
 	__asm        jne    _T1cf;
 // LINE 336:
-	__asm        mov    eax, ds:[0x639510];
+	__asm        mov    eax, AltMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -645,7 +645,7 @@ _T176:
 _T1b8:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x639510];
+	__asm        mov    eax, AltMap[0];
 	__asm        push   eax;
 	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
@@ -659,7 +659,7 @@ _T1cf:
 	__asm        jne    _T21b;
 // LINE 341:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x63A270];
+	__asm        mov    eax, TerrainMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -683,7 +683,7 @@ _T21b:
 	__asm        jne    _T267;
 // LINE 345:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639850];
+	__asm        mov    eax, BuildMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -707,7 +707,7 @@ _T267:
 	__asm        jne    _T2b3;
 // LINE 349:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639DE0];
+	__asm        mov    eax, ZoneMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -731,7 +731,7 @@ _T2b3:
 	__asm        jne    _T2ff;
 // LINE 353:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x63A030];
+	__asm        mov    eax, UnderMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -755,7 +755,7 @@ _T2ff:
 	__asm        jne    _T34b;
 // LINE 357:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639AD0];
+	__asm        mov    eax, TextMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -781,7 +781,7 @@ _T34b:
 	__asm        mov    got_label, 1;
 // LINE 363:
 	__asm        push   0x1900;
-	__asm        mov    eax, ds:[0x639834];
+	__asm        mov    eax, LabelArray;
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -805,7 +805,7 @@ _T3a0:
 	__asm        jne    _T3ff;
 // LINE 368:
 	__asm        push   0x4B0;
-	__asm        mov    eax, ds:[0x63A744];
+	__asm        mov    eax, MicroRecord;
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -821,7 +821,7 @@ _T3a0:
 // LINE 370:
 _T3e7:
 	__asm        push   0x4B0;
-	__asm        mov    eax, ds:[0x63A744];
+	__asm        mov    eax, MicroRecord;
 	__asm        push   eax;
 	__asm        call   swizzle_Micro;
 	__asm        add    esp, 8;
@@ -835,7 +835,7 @@ _T3ff:
 	__asm        jne    _T44b;
 // LINE 374:
 	__asm        push   0x1E0;
-	__asm        mov    eax, ds:[0x639720];
+	__asm        mov    eax, ThingList;
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -859,7 +859,7 @@ _T44b:
 	__asm        jne    _T497;
 // LINE 379:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x638F70];
+	__asm        mov    eax, BitsMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -883,7 +883,7 @@ _T497:
 	__asm        jne    _T4e3;
 // LINE 383:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x639730];
+	__asm        mov    eax, TrafficMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -907,7 +907,7 @@ _T4e3:
 	__asm        jne    _T52f;
 // LINE 387:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x639CD0];
+	__asm        mov    eax, PolluteMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -931,7 +931,7 @@ _T52f:
 	__asm        jne    _T57b;
 // LINE 391:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x63A470];
+	__asm        mov    eax, ValueMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -955,7 +955,7 @@ _T57b:
 	__asm        jne    _T5c7;
 // LINE 395:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x63A750];
+	__asm        mov    eax, CrimeMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -979,7 +979,7 @@ _T5c7:
 	__asm        jne    _T613;
 // LINE 399:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x639170];
+	__asm        mov    eax, PoliceMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1003,7 +1003,7 @@ _T613:
 	__asm        jne    _T65f;
 // LINE 403:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x63A5B0];
+	__asm        mov    eax, FireMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1027,7 +1027,7 @@ _T65f:
 	__asm        jne    _T6ab;
 // LINE 407:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x638EE0];
+	__asm        mov    eax, PopMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1051,7 +1051,7 @@ _T6ab:
 	__asm        jne    _T6f7;
 // LINE 411:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x63A640];
+	__asm        mov    eax, ROGMap[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1075,7 +1075,7 @@ _T6f7:
 	__asm        jne    _T756;
 // LINE 415:
 	__asm        push   0xD00;
-	__asm        mov    eax, ds:[0x639FE0];
+	__asm        mov    eax, GraphData[0];
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1091,7 +1091,7 @@ _T6f7:
 // LINE 417:
 _T73e:
 	__asm        push   0xD00;
-	__asm        mov    eax, ds:[0x639FE0];
+	__asm        mov    eax, GraphData[0];
 	__asm        push   eax;
 	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
@@ -1157,7 +1157,7 @@ _T7f6:
 	__asm        test   eax, eax;
 	__asm        jne    _T82c;
 // LINE 436:
-	__asm        mov    eax, ds:[0x63A570];
+	__asm        mov    eax, CityNameString;
 	__asm        push   eax;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
@@ -1169,12 +1169,12 @@ _T7f6:
 _T82c:
 	__asm        lea    eax, tempCityName[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x63A570];
+	__asm        mov    eax, CityNameString;
 	__asm        push   eax;
 	__asm        call   CopyPString;
 	__asm        add    esp, 8;
 // LINE 439:
-	__asm        mov    eax, ds:[0x63A570];
+	__asm        mov    eax, CityNameString;
 	__asm        push   eax;
 	__asm        call   PStringToCString;
 	__asm        add    esp, 4;
@@ -1183,7 +1183,7 @@ _T84f:
 	__asm        jmp    _T866;
 // LINE 443:
 _T854:
-	__asm        mov    eax, ds:[0x63A570];
+	__asm        mov    eax, CityNameString;
 	__asm        push   eax;
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
@@ -1244,7 +1244,7 @@ _T18:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639834];
+	__asm        mov    ecx, LabelArray;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    len, ax;
 // LINE 478:
@@ -1255,12 +1255,12 @@ _T18:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639834];
+	__asm        mov    ecx, LabelArray;
 	__asm        mov    byte ptr [eax+ecx], 0x17;
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639834];
+	__asm        mov    ecx, LabelArray;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    len, ax;
 // LINE 480:
@@ -1271,7 +1271,7 @@ _T7a:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        add    eax, ecx;
-	__asm        mov    ecx, ds:[0x639834];
+	__asm        mov    ecx, LabelArray;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 481:
 	__asm        jmp    _T14;
@@ -1308,7 +1308,7 @@ _T36:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        add    eax, ecx;
-	__asm        mov    ecx, ds:[0x639834];
+	__asm        mov    ecx, LabelArray;
 	__asm        mov    byte ptr [eax+ecx], 0;
 	__asm        jmp    _T32;
 // LINE 502:
@@ -1336,7 +1336,7 @@ _T18:
 	__asm        movsx  eax, i;
 	__asm        mov    eax, [eax*4+0x59AFB0];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A020];
+	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 521:
 	__asm        mov    j, 0;
@@ -1352,7 +1352,7 @@ _T4c:
 	__asm        mov    eax, [eax*4+0x639FE0];
 	__asm        movsx  ecx, j;
 	__asm        movsx  edx, i;
-	__asm        mov    ebx, ds:[0x63A020];
+	__asm        mov    ebx, GraphMax;
 	__asm        mov    edx, [ebx+edx*4];
 	__asm        cmp    [eax+ecx*4], edx;
 	__asm        jbe    _T9d;
@@ -1362,7 +1362,7 @@ _T4c:
 	__asm        movsx  ecx, j;
 	__asm        mov    eax, [eax+ecx*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A020];
+	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 524:
 _T9d:
@@ -1381,10 +1381,10 @@ _Tb6:
 	__asm        cmp    eax, 3;
 	__asm        jg     _Tdc;
 // LINE 527:
-	__asm        mov    eax, ds:[0x63A020];
+	__asm        mov    eax, GraphMax;
 	__asm        mov    eax, [eax];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A020];
+	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        jmp    _Tb2;
 // LINE 528:
@@ -1551,7 +1551,7 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 
 // LINE 633:
 	__asm        push   0x12C0;
-	__asm        mov    eax, ds:[0x63923C];
+	__asm        mov    eax, MiscInfo;
 	__asm        push   eax;
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -1569,12 +1569,12 @@ unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 _T37:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x63923C];
+	__asm        mov    eax, MiscInfo;
 	__asm        push   eax;
 	__asm        call   swizzle_buffer;
 	__asm        add    esp, 8;
 // LINE 639:
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        cmp    dword ptr [ecx], 0x122;
 	__asm        je     _T63;
 // LINE 640:
@@ -1585,187 +1585,187 @@ _T63:
 	__asm        mov    ix, 1;
 // LINE 645:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59BC14], ax;
+	__asm        mov    GameMode, ax;
 	__asm        inc    ix;
 // LINE 646:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59BC18], ax;
+	__asm        mov    Compass, ax;
 	__asm        inc    ix;
 // LINE 647:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B584], ax;
+	__asm        mov    baseYear, ax;
 	__asm        inc    ix;
 // LINE 648:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B580], eax;
+	__asm        mov    simCycle, eax;
 	__asm        inc    ix;
 // LINE 649:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A850], eax;
+	__asm        mov    TotalFunds, eax;
 	__asm        inc    ix;
 // LINE 650:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AB4], eax;
+	__asm        mov    TotalBonds, eax;
 	__asm        inc    ix;
 // LINE 651:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x6391FA], ax;
+	__asm        mov    GameLevel, ax;
 	__asm        inc    ix;
 // LINE 652:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639238], ax;
+	__asm        mov    CityStatus, ax;
 	__asm        inc    ix;
 // LINE 653:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639724], eax;
+	__asm        mov    CityValue, eax;
 	__asm        inc    ix;
 // LINE 654:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A6C4], eax;
+	__asm        mov    LandValue, eax;
 	__asm        inc    ix;
 // LINE 655:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A634], eax;
+	__asm        mov    CrimeCount, eax;
 	__asm        inc    ix;
 // LINE 656:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639838], eax;
+	__asm        mov    TrafficCount, eax;
 	__asm        inc    ix;
 // LINE 657:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AA8], eax;
+	__asm        mov    Pollution, eax;
 	__asm        inc    ix;
 // LINE 658:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63983C], eax;
+	__asm        mov    CityFame, eax;
 	__asm        inc    ix;
 // LINE 659:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639A50], eax;
+	__asm        mov    Advertising, eax;
 	__asm        inc    ix;
 // LINE 660:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A028], eax;
+	__asm        mov    Garbage, eax;
 	__asm        inc    ix;
 // LINE 661:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AC0], eax;
+	__asm        mov    WorkerPercent, eax;
 	__asm        inc    ix;
 // LINE 662:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A260], eax;
+	__asm        mov    WorkerHealth, eax;
 	__asm        inc    ix;
 // LINE 663:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639A5C], eax;
+	__asm        mov    WorkerEducate, eax;
 	__asm        inc    ix;
 // LINE 664:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x638F60], eax;
+	__asm        mov    NationalPop, eax;
 	__asm        inc    ix;
 // LINE 665:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63930C], eax;
+	__asm        mov    NationalValue, eax;
 	__asm        inc    ix;
 // LINE 666:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x638ED8], ax;
+	__asm        mov    NationalTax, ax;
 	__asm        inc    ix;
 // LINE 667:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AB8], ax;
+	__asm        mov    NationalTrend, ax;
 	__asm        inc    ix;
 // LINE 668:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x63A6C0], al;
+	__asm        mov    heat, al;
 	__asm        inc    ix;
 // LINE 669:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x638EDA], al;
+	__asm        mov    wind, al;
 	__asm        inc    ix;
 // LINE 670:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x639AB2], al;
+	__asm        mov    humid, al;
 	__asm        inc    ix;
 // LINE 671:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x63924A], al;
+	__asm        mov    weatherTrend, al;
 	__asm        inc    ix;
 // LINE 672:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B554], ax;
+	__asm        mov    NewDisaster, ax;
 	__asm        inc    ix;
 // LINE 673:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C018], eax;
+	__asm        mov    oldResPop, eax;
 	__asm        inc    ix;
 // LINE 677:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    lval, eax;
 	__asm        inc    ix;
 // LINE 679:
 	__asm        mov    eax, lval;
-	__asm        mov    ds:[0x59BB84], eax;
+	__asm        mov    ToolActive[5], eax;
 // LINE 685:
 	__asm        mov    i, 0;
 	__asm        jmp    _T31a;
@@ -1777,26 +1777,26 @@ _T31a:
 	__asm        jge    _T386;
 // LINE 686:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639244];
+	__asm        mov    edx, PopRatio;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 687:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639DDC];
+	__asm        mov    edx, EducateRatio;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 688:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639844];
+	__asm        mov    edx, HealthRatio;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 689:
@@ -1813,26 +1813,26 @@ _T395:
 	__asm        jge    _T403;
 // LINE 692:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639308];
+	__asm        mov    edx, IndDemand;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 // LINE 693:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639A58];
+	__asm        mov    edx, IndRates;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 // LINE 694:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639A54];
+	__asm        mov    edx, IndRatio;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 695:
@@ -1849,10 +1849,10 @@ _T412:
 	__asm        jge    _T445;
 // LINE 698:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639AC8];
+	__asm        mov    edx, TileCnt;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 	__asm        jmp    _T40e;
@@ -1868,10 +1868,10 @@ _T454:
 	__asm        jge    _T484;
 // LINE 701:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A574];
+	__asm        mov    edx, ZonePop;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 702:
@@ -1888,7 +1888,7 @@ _T493:
 	__asm        jge    _T4c2;
 // LINE 705:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    [ecx*2+0x63A6D0], ax;
@@ -1907,15 +1907,15 @@ _T4d1:
 	__asm        jge    _T5ed;
 // LINE 709:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A578];
+	__asm        mov    edx, NeighborName;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 // LINE 711:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A578];
+	__asm        mov    ecx, NeighborName;
 	__asm        movsx  eax, word ptr [ecx+eax*2];
 	__asm        test   eax, eax;
 	__asm        jne    _T541;
@@ -1937,7 +1937,7 @@ _T4d1:
 // LINE 716:
 _T541:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A578];
+	__asm        mov    ecx, NeighborName;
 	__asm        mov    ax, [ecx+eax*2];
 	__asm        push   eax;
 	__asm        push   0x3E8;
@@ -1962,26 +1962,26 @@ _T541:
 // LINE 720:
 _T58e:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639710];
+	__asm        mov    edx, NeighborPop;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 721:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A264];
+	__asm        mov    edx, NeighborValue;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 722:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63984C];
+	__asm        mov    edx, NeighborFame;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 723:
@@ -1998,7 +1998,7 @@ _T5fc:
 	__asm        jge    _T62b;
 // LINE 726:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    [ecx*2+0x639A90], ax;
@@ -2016,7 +2016,7 @@ _T63a:
 	__asm        jge    _T669;
 // LINE 729:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    [ecx*2+0x63A580], ax;
@@ -2034,38 +2034,38 @@ _T678:
 	__asm        jge    _T785;
 // LINE 732:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
 	__asm        shl    ecx, 4;
-	__asm        mov    edx, ds:[0x639830];
+	__asm        mov    edx, budgetList;
 	__asm        mov    [ecx+edx+0x60], eax;
 	__asm        inc    ix;
 // LINE 733:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
 	__asm        shl    ecx, 4;
-	__asm        mov    edx, ds:[0x639830];
+	__asm        mov    edx, budgetList;
 	__asm        mov    [ecx+edx+0x64], eax;
 	__asm        inc    ix;
 // LINE 734:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
 	__asm        shl    ecx, 4;
-	__asm        mov    edx, ds:[0x639830];
+	__asm        mov    edx, budgetList;
 	__asm        mov    [ecx+edx+0x68], eax;
 	__asm        inc    ix;
 // LINE 736:
@@ -2079,7 +2079,7 @@ _T70f:
 	__asm        jge    _T780;
 // LINE 737:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, j;
 	__asm        movsx  edx, i;
@@ -2088,12 +2088,12 @@ _T70f:
 	__asm        sub    edx, ebx;
 	__asm        shl    edx, 4;
 	__asm        lea    ecx, [edx+ecx*4];
-	__asm        mov    edx, ds:[0x639830];
+	__asm        mov    edx, budgetList;
 	__asm        mov    [ecx+edx], eax;
 	__asm        inc    ix;
 // LINE 738:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, j;
 	__asm        movsx  edx, i;
@@ -2102,7 +2102,7 @@ _T70f:
 	__asm        sub    edx, ebx;
 	__asm        shl    edx, 4;
 	__asm        lea    ecx, [edx+ecx*4];
-	__asm        mov    edx, ds:[0x639830];
+	__asm        mov    edx, budgetList;
 	__asm        mov    [ecx+edx+0x30], eax;
 	__asm        inc    ix;
 // LINE 739:
@@ -2113,33 +2113,33 @@ _T780:
 // LINE 743:
 _T785:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C014], ax;
+	__asm        mov    YearEnd, ax;
 	__asm        inc    ix;
 // LINE 744:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639840], ax;
+	__asm        mov    GlobalSeaLevel, ax;
 	__asm        inc    ix;
 // LINE 745:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59BBF0], ax;
+	__asm        mov    terCoast, ax;
 	__asm        inc    ix;
 // LINE 746:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59BBF4], ax;
+	__asm        mov    terRiver, ax;
 	__asm        inc    ix;
 // LINE 747:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x59BBEC], al;
+	__asm        mov    Military, al;
 	__asm        inc    ix;
 // LINE 749:
 	__asm        mov    i, 0;
@@ -2152,47 +2152,47 @@ _T806:
 	__asm        jge    _T8c1;
 // LINE 750:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, ds:[0x639714];
+	__asm        mov    edx, PaperList;
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    ix;
 // LINE 751:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, ds:[0x639714];
+	__asm        mov    edx, PaperList;
 	__asm        mov    [ecx+edx+1], al;
 	__asm        inc    ix;
 // LINE 752:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, ds:[0x639714];
+	__asm        mov    edx, PaperList;
 	__asm        mov    [ecx+edx+2], al;
 	__asm        inc    ix;
 // LINE 753:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, ds:[0x639714];
+	__asm        mov    edx, PaperList;
 	__asm        mov    [ecx+edx+3], al;
 	__asm        inc    ix;
 // LINE 754:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, ds:[0x639714];
+	__asm        mov    edx, PaperList;
 	__asm        mov    [ecx+edx+4], al;
 	__asm        inc    ix;
 // LINE 755:
@@ -2209,50 +2209,50 @@ _T8d0:
 	__asm        jge    _T99d;
 // LINE 758:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8], ax;
 	__asm        inc    ix;
 // LINE 759:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8+2], ax;
 	__asm        inc    ix;
 // LINE 760:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8+4], al;
 	__asm        inc    ix;
 // LINE 761:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8+5], al;
 	__asm        inc    ix;
 // LINE 762:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8+6], al;
 	__asm        inc    ix;
 // LINE 763:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x63A25C];
+	__asm        mov    edx, NewsList;
 	__asm        mov    [edx+ecx*8+7], al;
 	__asm        inc    ix;
 // LINE 764:
@@ -2260,15 +2260,15 @@ _T8d0:
 // LINE 766:
 _T99d:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A748], eax;
+	__asm        mov    Ordinances, eax;
 	__asm        inc    ix;
 // LINE 767:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639A64], eax;
+	__asm        mov    unemployed, eax;
 	__asm        inc    ix;
 // LINE 769:
 	__asm        mov    i, 0;
@@ -2281,77 +2281,77 @@ _T9d8:
 	__asm        jge    _Ta09;
 // LINE 770:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    edx, ds:[0x639AC4];
+	__asm        mov    edx, MilCnt;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 	__asm        jmp    _T9d4;
 // LINE 772:
 _Ta09:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AB0], ax;
+	__asm        mov    SubwayCnt, ax;
 	__asm        inc    ix;
 // LINE 776:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B550], ax;
+	__asm        mov    GameSpeed, ax;
 	__asm        inc    ix;
 // LINE 777:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B55C], ax;
+	__asm        mov    AutoBudget, ax;
 	__asm        inc    ix;
 // LINE 778:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B560], ax;
+	__asm        mov    AutoGo, ax;
 	__asm        inc    ix;
 // LINE 779:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B564], ax;
+	__asm        mov    UserSoundOn, ax;
 	__asm        inc    ix;
 // LINE 780:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B568], ax;
+	__asm        mov    UserMusicOn, ax;
 	__asm        inc    ix;
 // LINE 781:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B56C], ax;
+	__asm        mov    NoDisasters, ax;
 	__asm        inc    ix;
 // LINE 782:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C03C], ax;
+	__asm        mov    PaperDeliver, ax;
 	__asm        inc    ix;
 // LINE 783:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C038], ax;
+	__asm        mov    PaperExtra, ax;
 	__asm        inc    ix;
 // LINE 784:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A024], ax;
+	__asm        mov    PaperChoice, ax;
 	__asm        inc    ix;
 // LINE 787:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    lval, eax;
 	__asm        inc    ix;
@@ -2359,272 +2359,272 @@ _Ta09:
 	__asm        cmp    lval, 0xFFFFFFFF;
 	__asm        jne    _Tb24;
 // LINE 790:
-	__asm        mov    word ptr ds:[0x6069B4], 0x40;
+	__asm        mov    newCX, 0x40;
 // LINE 791:
-	__asm        mov    word ptr ds:[0x6069B8], 0x80;
+	__asm        mov    newCY, 0x80;
 // LINE 793:
 	__asm        jmp    _Tb3c;
 // LINE 794:
 _Tb24:
 	__asm        mov    eax, lval;
 	__asm        and    eax, 0x7F;
-	__asm        mov    ds:[0x6069B4], ax;
+	__asm        mov    newCX, ax;
 // LINE 795:
 	__asm        mov    eax, lval;
 	__asm        sar    eax, 8;
-	__asm        mov    ds:[0x6069B8], ax;
+	__asm        mov    newCY, ax;
 // LINE 798:
 _Tb3c:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x6069BC], ax;
+	__asm        mov    newSC, ax;
 	__asm        inc    ix;
 // LINE 799:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C01C], ax;
+	__asm        mov    CityCentX, ax;
 	__asm        inc    ix;
 // LINE 800:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C020], ax;
+	__asm        mov    CityCentY, ax;
 	__asm        inc    ix;
 // LINE 801:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A738], eax;
+	__asm        mov    GlobalArcoPop, eax;
 	__asm        inc    ix;
 // LINE 802:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639304], ax;
+	__asm        mov    ConnectTiles, ax;
 	__asm        inc    ix;
 // LINE 803:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63971C], ax;
+	__asm        mov    TeamsActive, ax;
 	__asm        inc    ix;
 // LINE 804:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A740], eax;
+	__asm        mov    TotalPop, eax;
 	__asm        inc    ix;
 // LINE 805:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639A62], ax;
+	__asm        mov    IndustryBonus, ax;
 	__asm        inc    ix;
 // LINE 806:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639DD0], ax;
+	__asm        mov    PolluteBonus, ax;
 	__asm        inc    ix;
 // LINE 807:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639ABA], ax;
+	__asm        mov    oldArrest, ax;
 	__asm        inc    ix;
 // LINE 808:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A632], ax;
+	__asm        mov    PoliceBonus, ax;
 	__asm        inc    ix;
 // LINE 809:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59B558], ax;
+	__asm        mov    DisasterObject, ax;
 	__asm        inc    ix;
 // LINE 810:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C024], ax;
+	__asm        mov    CurrentDisaster, ax;
 	__asm        inc    ix;
 // LINE 811:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x6391F8], ax;
+	__asm        mov    GoDisaster, ax;
 	__asm        inc    ix;
 // LINE 812:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AAC], ax;
+	__asm        mov    SewerBonus, ax;
 	__asm        inc    ix;
 // LINE 813:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639A60], ax;
+	__asm        mov    CommerceConnect, ax;
 	__asm        inc    ix;
 // LINE 814:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639234], eax;
+	__asm        mov    BusTrips, eax;
 	__asm        inc    ix;
 // LINE 815:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639DD8], eax;
+	__asm        mov    RailTrips, eax;
 	__asm        inc    ix;
 // LINE 816:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AA0], eax;
+	__asm        mov    SubTrips, eax;
 	__asm        inc    ix;
 // LINE 817:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639AA4], eax;
+	__asm        mov    PowerUse, eax;
 	__asm        inc    ix;
 // LINE 818:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639DD4], eax;
+	__asm        mov    WaterUse, eax;
 	__asm        inc    ix;
 // LINE 821:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A5A8], ax;
+	__asm        mov    Scenario, ax;
 	__asm        inc    ix;
 // LINE 822:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639204], ax;
+	__asm        mov    ScenarioData.TimeLimit, ax;
 	__asm        inc    ix;
 // LINE 823:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639206], eax;
+	__asm        mov    ScenarioData.Size, eax;
 	__asm        inc    ix;
 // LINE 824:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63920A], eax;
+	__asm        mov    ScenarioData.Res, eax;
 	__asm        inc    ix;
 // LINE 825:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63920E], eax;
+	__asm        mov    ScenarioData.Com, eax;
 	__asm        inc    ix;
 // LINE 826:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639212], eax;
+	__asm        mov    ScenarioData.Ind, eax;
 	__asm        inc    ix;
 // LINE 827:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639216], eax;
+	__asm        mov    ScenarioData.Cash, eax;
 	__asm        inc    ix;
 // LINE 828:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63921A], eax;
+	__asm        mov    ScenarioData.Value, eax;
 	__asm        inc    ix;
 // LINE 829:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63921E], ax;
+	__asm        mov    ScenarioData.Health, ax;
 	__asm        inc    ix;
 // LINE 830:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639220], ax;
+	__asm        mov    ScenarioData.Education, ax;
 	__asm        inc    ix;
 // LINE 831:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639222], eax;
+	__asm        mov    ScenarioData.Pollute, eax;
 	__asm        inc    ix;
 // LINE 832:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639226], eax;
+	__asm        mov    ScenarioData.Crime, eax;
 	__asm        inc    ix;
 // LINE 833:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63922A], eax;
+	__asm        mov    ScenarioData.Traffic, eax;
 	__asm        inc    ix;
 // LINE 834:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x63922E], al;
+	__asm        mov    ScenarioData.BuildOne, al;
 	__asm        inc    ix;
 // LINE 835:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ds:[0x63922F], al;
+	__asm        mov    ScenarioData.BuildTwo, al;
 	__asm        inc    ix;
 // LINE 836:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639230], ax;
+	__asm        mov    ScenarioData.NBCount1, ax;
 	__asm        inc    ix;
 // LINE 837:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x639232], ax;
+	__asm        mov    ScenarioData.NBCount2, ax;
 	__asm        inc    ix;
 // LINE 838:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A73C], ax;
+	__asm        mov    CivilizedTiles, ax;
 	__asm        inc    ix;
 // LINE 839:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x59C040], ax;
+	__asm        mov    HurricaneCnt, ax;
 	__asm        inc    ix;
 // LINE 840:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x6392D0], ax;
+	__asm        mov    FloodCycle, ax;
 	__asm        inc    ix;
 // LINE 841:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ds:[0x63A5A4], eax;
+	__asm        mov    TotalRate, eax;
 	__asm        inc    ix;
 // LINE 845:
 	__asm        mov    ax, 1;
@@ -2667,7 +2667,7 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        push   0x59B0D4;
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
@@ -2694,7 +2694,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f;
 // LINE 892:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -2703,7 +2703,7 @@ _T35:
 	__asm        jmp    _T86;
 // LINE 896:
 _T6f:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -2727,7 +2727,7 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 	__asm        mov    eax, size;
 	__asm        push   eax;
 	__asm        push   0x59B0E8;
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
@@ -2754,7 +2754,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f;
 // LINE 925:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -2843,7 +2843,7 @@ _T135:
 	__asm        jmp    _T88;
 // LINE 947:
 _T13a:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -2893,10 +2893,10 @@ _T2f:
 	__asm        jmp    _T4d7;
 // LINE 987:
 _T4d:
-	__asm        mov    dword ptr ds:[0x6069C0], 4;
+	__asm        mov    WriteLength, 4;
 // LINE 989:
 	__asm        push   0x20;
-	__asm        mov    eax, ds:[0x63A570];
+	__asm        mov    eax, CityNameString;
 	__asm        push   eax;
 	__asm        lea    eax, tempCityNameString[0];
 	__asm        push   eax;
@@ -2937,7 +2937,7 @@ _Ta5:
 // LINE 995:
 _Tc1:
 	__asm        push   0x8000;
-	__asm        mov    eax, ds:[0x639510];
+	__asm        mov    eax, AltMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B108;
 	__asm        call   stol;
@@ -2955,7 +2955,7 @@ _Tc1:
 // LINE 997:
 _Tf6:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x63A270];
+	__asm        mov    eax, TerrainMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B110;
 	__asm        call   stol;
@@ -2973,7 +2973,7 @@ _Tf6:
 // LINE 999:
 _T12b:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639850];
+	__asm        mov    eax, BuildMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B118;
 	__asm        call   stol;
@@ -2991,7 +2991,7 @@ _T12b:
 // LINE 1001:
 _T160:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639DE0];
+	__asm        mov    eax, ZoneMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B120;
 	__asm        call   stol;
@@ -3009,7 +3009,7 @@ _T160:
 // LINE 1003:
 _T195:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x63A030];
+	__asm        mov    eax, UnderMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B128;
 	__asm        call   stol;
@@ -3027,7 +3027,7 @@ _T195:
 // LINE 1005:
 _T1ca:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x639AD0];
+	__asm        mov    eax, TextMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B130;
 	__asm        call   stol;
@@ -3045,7 +3045,7 @@ _T1ca:
 // LINE 1009:
 _T1ff:
 	__asm        push   0x1900;
-	__asm        mov    eax, ds:[0x639834];
+	__asm        mov    eax, LabelArray;
 	__asm        push   eax;
 	__asm        push   0x59B138;
 	__asm        call   stol;
@@ -3063,7 +3063,7 @@ _T1ff:
 // LINE 1013:
 _T234:
 	__asm        push   0x4B0;
-	__asm        mov    eax, ds:[0x63A744];
+	__asm        mov    eax, MicroRecord;
 	__asm        push   eax;
 	__asm        push   0x59B140;
 	__asm        call   stol;
@@ -3081,7 +3081,7 @@ _T234:
 // LINE 1017:
 _T269:
 	__asm        push   0x1E0;
-	__asm        mov    eax, ds:[0x639720];
+	__asm        mov    eax, ThingList;
 	__asm        push   eax;
 	__asm        push   0x59B148;
 	__asm        call   stol;
@@ -3099,7 +3099,7 @@ _T269:
 // LINE 1021:
 _T29e:
 	__asm        push   0x4000;
-	__asm        mov    eax, ds:[0x638F70];
+	__asm        mov    eax, BitsMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B150;
 	__asm        call   stol;
@@ -3117,7 +3117,7 @@ _T29e:
 // LINE 1023:
 _T2d3:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x639730];
+	__asm        mov    eax, TrafficMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B158;
 	__asm        call   stol;
@@ -3135,7 +3135,7 @@ _T2d3:
 // LINE 1025:
 _T308:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x639CD0];
+	__asm        mov    eax, PolluteMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B160;
 	__asm        call   stol;
@@ -3153,7 +3153,7 @@ _T308:
 // LINE 1027:
 _T33d:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x63A470];
+	__asm        mov    eax, ValueMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B168;
 	__asm        call   stol;
@@ -3171,7 +3171,7 @@ _T33d:
 // LINE 1029:
 _T372:
 	__asm        push   0x1000;
-	__asm        mov    eax, ds:[0x63A750];
+	__asm        mov    eax, CrimeMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B170;
 	__asm        call   stol;
@@ -3189,7 +3189,7 @@ _T372:
 // LINE 1031:
 _T3a7:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x639170];
+	__asm        mov    eax, PoliceMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B178;
 	__asm        call   stol;
@@ -3207,7 +3207,7 @@ _T3a7:
 // LINE 1033:
 _T3dc:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x63A5B0];
+	__asm        mov    eax, FireMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B180;
 	__asm        call   stol;
@@ -3225,7 +3225,7 @@ _T3dc:
 // LINE 1035:
 _T411:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x638EE0];
+	__asm        mov    eax, PopMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B188;
 	__asm        call   stol;
@@ -3243,7 +3243,7 @@ _T411:
 // LINE 1037:
 _T446:
 	__asm        push   0x400;
-	__asm        mov    eax, ds:[0x63A640];
+	__asm        mov    eax, ROGMap[0];
 	__asm        push   eax;
 	__asm        push   0x59B190;
 	__asm        call   stol;
@@ -3261,7 +3261,7 @@ _T446:
 // LINE 1039:
 _T47b:
 	__asm        push   0xD00;
-	__asm        mov    eax, ds:[0x639FE0];
+	__asm        mov    eax, GraphData[0];
 	__asm        push   eax;
 	__asm        push   0x59B198;
 	__asm        call   stol;
@@ -3278,7 +3278,7 @@ _T47b:
 	__asm        jmp    _T4d7;
 // LINE 1043:
 _T4b0:
-	__asm        mov    eax, ds:[0x6069C0];
+	__asm        mov    eax, WriteLength;
 	__asm        push   eax;
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3386,7 +3386,7 @@ _T88:
 _Tbd:
 	__asm        mov    eax, size;
 	__asm        add    eax, 8;
-	__asm        add    ds:[0x6069C0], eax;
+	__asm        add    WriteLength, eax;
 // LINE 1093:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Td2;
@@ -3496,7 +3496,7 @@ _Tdc:
 // LINE 1136:
 	__asm        mov    ecx, size;
 	__asm        add    ecx, 8;
-	__asm        add    ds:[0x6069C0], ecx;
+	__asm        add    WriteLength, ecx;
 // LINE 1137:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T101;
@@ -3627,7 +3627,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 	__asm        sar    eax, 1;
 	__asm        push   eax;
 	__asm        push   0x59B1B0;
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
@@ -3851,7 +3851,7 @@ _T240:
 _T266:
 	__asm        mov    eax, tp;
 	__asm        add    eax, 8;
-	__asm        add    ds:[0x6069C0], eax;
+	__asm        add    WriteLength, eax;
 // LINE 1259:
 	__asm        mov    count, 4;
 // LINE 1260:
@@ -3920,7 +3920,7 @@ _T2e4:
 	__asm        jmp    _T32d;
 // LINE 1278:
 _T316:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -3930,7 +3930,7 @@ _T316:
 // LINE 1282:
 BadCompWrite:
 _T32d:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -3951,192 +3951,192 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	__asm        mov    ix, 0;
 // LINE 1304:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    dword ptr [ecx+eax*4], 0x122;
 	__asm        inc    ix;
 // LINE 1307:
-	__asm        movsx  eax, word ptr ds:[0x59BC14];
+	__asm        movsx  eax, GameMode;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1308:
-	__asm        movsx  eax, word ptr ds:[0x59BC18];
+	__asm        movsx  eax, Compass;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1309:
-	__asm        movsx  eax, word ptr ds:[0x59B584];
+	__asm        movsx  eax, baseYear;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1310:
-	__asm        mov    eax, ds:[0x59B580];
+	__asm        mov    eax, simCycle;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1311:
-	__asm        mov    eax, ds:[0x63A850];
+	__asm        mov    eax, TotalFunds;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1312:
-	__asm        mov    eax, ds:[0x639AB4];
+	__asm        mov    eax, TotalBonds;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1313:
-	__asm        movsx  eax, word ptr ds:[0x6391FA];
+	__asm        movsx  eax, GameLevel;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1314:
-	__asm        movsx  eax, word ptr ds:[0x639238];
+	__asm        movsx  eax, CityStatus;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1315:
-	__asm        mov    eax, ds:[0x639724];
+	__asm        mov    eax, CityValue;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1316:
-	__asm        mov    eax, ds:[0x63A6C4];
+	__asm        mov    eax, LandValue;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1317:
-	__asm        mov    eax, ds:[0x63A634];
+	__asm        mov    eax, CrimeCount;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1318:
-	__asm        mov    eax, ds:[0x639838];
+	__asm        mov    eax, TrafficCount;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1319:
-	__asm        mov    eax, ds:[0x639AA8];
+	__asm        mov    eax, Pollution;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1320:
-	__asm        mov    eax, ds:[0x63983C];
+	__asm        mov    eax, CityFame;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1321:
-	__asm        mov    eax, ds:[0x639A50];
+	__asm        mov    eax, Advertising;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1322:
-	__asm        mov    eax, ds:[0x63A028];
+	__asm        mov    eax, Garbage;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1323:
-	__asm        mov    eax, ds:[0x639AC0];
+	__asm        mov    eax, WorkerPercent;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1324:
-	__asm        mov    eax, ds:[0x63A260];
+	__asm        mov    eax, WorkerHealth;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1325:
-	__asm        mov    eax, ds:[0x639A5C];
+	__asm        mov    eax, WorkerEducate;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1326:
-	__asm        mov    eax, ds:[0x638F60];
+	__asm        mov    eax, NationalPop;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1327:
-	__asm        mov    eax, ds:[0x63930C];
+	__asm        mov    eax, NationalValue;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1328:
-	__asm        movsx  eax, word ptr ds:[0x638ED8];
+	__asm        movsx  eax, NationalTax;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1329:
-	__asm        movsx  eax, word ptr ds:[0x639AB8];
+	__asm        movsx  eax, NationalTrend;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1330:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63A6C0];
+	__asm        mov    al, heat;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1331:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x638EDA];
+	__asm        mov    al, wind;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1332:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x639AB2];
+	__asm        mov    al, humid;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1333:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63924A];
+	__asm        mov    al, weatherTrend;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1334:
-	__asm        movsx  eax, word ptr ds:[0x59B554];
+	__asm        movsx  eax, NewDisaster;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1335:
-	__asm        mov    eax, ds:[0x639FE4];
+	__asm        mov    eax, GraphData[1];
 	__asm        mov    eax, [eax+4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1336:
-	__asm        mov    eax, ds:[0x59BB84];
+	__asm        mov    eax, ToolActive[5];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1339:
@@ -4150,26 +4150,26 @@ _T2e2:
 	__asm        jge    _T34e;
 // LINE 1340:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639244];
+	__asm        mov    ecx, PopRatio;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1341:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639DDC];
+	__asm        mov    ecx, EducateRatio;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1342:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639844];
+	__asm        mov    ecx, HealthRatio;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1343:
@@ -4186,26 +4186,26 @@ _T35d:
 	__asm        jge    _T3cb;
 // LINE 1345:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639308];
+	__asm        mov    ecx, IndDemand;
 	__asm        movsx  eax, word ptr [ecx+eax*2];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1346:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639A58];
+	__asm        mov    ecx, IndRates;
 	__asm        movsx  eax, word ptr [ecx+eax*2];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1347:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639A54];
+	__asm        mov    ecx, IndRatio;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1348:
@@ -4222,11 +4222,11 @@ _T3da:
 	__asm        jge    _T40f;
 // LINE 1350:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639AC8];
+	__asm        mov    ecx, TileCnt;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 	__asm        jmp    _T3d6;
@@ -4242,10 +4242,10 @@ _T41e:
 	__asm        jge    _T44e;
 // LINE 1352:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A574];
+	__asm        mov    ecx, ZonePop;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 	__asm        jmp    _T41a;
@@ -4263,7 +4263,7 @@ _T45d:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, word ptr [eax*2+0x63A6D0];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 	__asm        jmp    _T459;
@@ -4279,34 +4279,34 @@ _T49b:
 	__asm        jge    _T526;
 // LINE 1356:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A578];
+	__asm        mov    ecx, NeighborName;
 	__asm        movsx  eax, word ptr [ecx+eax*2];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1357:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639710];
+	__asm        mov    ecx, NeighborPop;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1358:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A264];
+	__asm        mov    ecx, NeighborValue;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1359:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63984C];
+	__asm        mov    ecx, NeighborFame;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1360:
@@ -4325,7 +4325,7 @@ _T535:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, word ptr [eax*2+0x639A90];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 	__asm        jmp    _T531;
@@ -4343,7 +4343,7 @@ _T573:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, word ptr [eax*2+0x63A580];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 	__asm        jmp    _T56f;
@@ -4363,10 +4363,10 @@ _T5b1:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 4;
-	__asm        mov    ecx, ds:[0x639830];
+	__asm        mov    ecx, budgetList;
 	__asm        mov    eax, [eax+ecx+0x60];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1367:
@@ -4375,10 +4375,10 @@ _T5b1:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 4;
-	__asm        mov    ecx, ds:[0x639830];
+	__asm        mov    ecx, budgetList;
 	__asm        mov    eax, [eax+ecx+0x64];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1368:
@@ -4387,10 +4387,10 @@ _T5b1:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 4;
-	__asm        mov    ecx, ds:[0x639830];
+	__asm        mov    ecx, budgetList;
 	__asm        mov    eax, [eax+ecx+0x68];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1369:
@@ -4410,10 +4410,10 @@ _T648:
 	__asm        sub    ecx, edx;
 	__asm        shl    ecx, 4;
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, ds:[0x639830];
+	__asm        mov    ecx, budgetList;
 	__asm        mov    eax, [eax+ecx];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1371:
@@ -4424,10 +4424,10 @@ _T648:
 	__asm        sub    ecx, edx;
 	__asm        shl    ecx, 4;
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, ds:[0x639830];
+	__asm        mov    ecx, budgetList;
 	__asm        mov    eax, [eax+ecx+0x30];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1372:
@@ -4438,36 +4438,36 @@ _T6b9:
 // LINE 1376:
 _T6be:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59C014];
+	__asm        mov    ax, YearEnd;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1377:
-	__asm        movsx  eax, word ptr ds:[0x639840];
+	__asm        movsx  eax, GlobalSeaLevel;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1378:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59BBF0];
+	__asm        mov    ax, terCoast;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1379:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59BBF4];
+	__asm        mov    ax, terRiver;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1380:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x59BBEC];
+	__asm        mov    al, Military;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1382:
@@ -4482,51 +4482,51 @@ _T748:
 // LINE 1383:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639714];
+	__asm        mov    ecx, PaperList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1384:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639714];
+	__asm        mov    ecx, PaperList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx+1];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1385:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639714];
+	__asm        mov    ecx, PaperList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx+2];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1386:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639714];
+	__asm        mov    ecx, PaperList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx+3];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1387:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, ds:[0x639714];
+	__asm        mov    ecx, PaperList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx+4];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1388:
@@ -4543,69 +4543,69 @@ _T81c:
 	__asm        jge    _T8f1;
 // LINE 1391:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        movsx  eax, word ptr [ecx+eax*8];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1392:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        movsx  eax, word ptr [ecx+eax*8+2];
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1393:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*8+4];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1394:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*8+5];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1395:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*8+6];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1396:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x63A25C];
+	__asm        mov    ecx, NewsList;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*8+7];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1397:
 	__asm        jmp    _T818;
 // LINE 1400:
 _T8f1:
-	__asm        mov    eax, ds:[0x63A748];
+	__asm        mov    eax, Ordinances;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1401:
-	__asm        mov    eax, ds:[0x639A64];
+	__asm        mov    eax, unemployed;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1403:
@@ -4619,344 +4619,344 @@ _T92c:
 	__asm        jge    _T95f;
 // LINE 1404:
 	__asm        movsx  eax, i;
-	__asm        mov    ecx, ds:[0x639AC4];
+	__asm        mov    ecx, MilCnt;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 	__asm        jmp    _T928;
 // LINE 1406:
 _T95f:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x639AB0];
+	__asm        mov    ax, SubwayCnt;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1409:
-	__asm        movsx  eax, word ptr ds:[0x59B550];
+	__asm        movsx  eax, GameSpeed;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1410:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59B55C];
+	__asm        mov    ax, AutoBudget;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1411:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59B560];
+	__asm        mov    ax, AutoGo;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1412:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59B564];
+	__asm        mov    ax, UserSoundOn;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1413:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59B568];
+	__asm        mov    ax, UserMusicOn;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1414:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59B56C];
+	__asm        mov    ax, NoDisasters;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1415:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59C03C];
+	__asm        mov    ax, PaperDeliver;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1416:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x59C038];
+	__asm        mov    ax, PaperExtra;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1417:
-	__asm        movsx  eax, word ptr ds:[0x63A024];
+	__asm        movsx  eax, PaperChoice;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1425:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    dword ptr [ecx+eax*4], 0;
 	__asm        inc    ix;
 // LINE 1426:
-	__asm        movsx  eax, word ptr ds:[0x59BC1C];
+	__asm        movsx  eax, Scale;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1427:
-	__asm        movsx  eax, word ptr ds:[0x59C01C];
+	__asm        movsx  eax, CityCentX;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1428:
-	__asm        movsx  eax, word ptr ds:[0x59C020];
+	__asm        movsx  eax, CityCentY;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1429:
-	__asm        mov    eax, ds:[0x63A738];
+	__asm        mov    eax, GlobalArcoPop;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1430:
-	__asm        movsx  eax, word ptr ds:[0x639304];
+	__asm        movsx  eax, ConnectTiles;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1431:
-	__asm        movsx  eax, word ptr ds:[0x63971C];
+	__asm        movsx  eax, TeamsActive;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1432:
-	__asm        mov    eax, ds:[0x63A740];
+	__asm        mov    eax, TotalPop;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1433:
-	__asm        movsx  eax, word ptr ds:[0x639A62];
+	__asm        movsx  eax, IndustryBonus;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1434:
-	__asm        movsx  eax, word ptr ds:[0x639DD0];
+	__asm        movsx  eax, PolluteBonus;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1435:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x639ABA];
+	__asm        mov    ax, oldArrest;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1436:
-	__asm        movsx  eax, word ptr ds:[0x63A632];
+	__asm        movsx  eax, PoliceBonus;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1437:
-	__asm        movsx  eax, word ptr ds:[0x59B558];
+	__asm        movsx  eax, DisasterObject;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1438:
-	__asm        movsx  eax, word ptr ds:[0x59C024];
+	__asm        movsx  eax, CurrentDisaster;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1439:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x6391F8];
+	__asm        mov    ax, GoDisaster;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1440:
-	__asm        movsx  eax, word ptr ds:[0x639AAC];
+	__asm        movsx  eax, SewerBonus;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1443:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x639A60];
+	__asm        mov    ax, CommerceConnect;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1444:
-	__asm        mov    eax, ds:[0x639234];
+	__asm        mov    eax, BusTrips;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1445:
-	__asm        mov    eax, ds:[0x639DD8];
+	__asm        mov    eax, RailTrips;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1446:
-	__asm        mov    eax, ds:[0x639AA0];
+	__asm        mov    eax, SubTrips;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1447:
-	__asm        mov    eax, ds:[0x639AA4];
+	__asm        mov    eax, PowerUse;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1448:
-	__asm        mov    eax, ds:[0x639DD4];
+	__asm        mov    eax, WaterUse;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1451:
 	__asm        xor    eax, eax;
-	__asm        mov    ax, ds:[0x63A5A8];
+	__asm        mov    ax, Scenario;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1452:
-	__asm        movsx  eax, word ptr ds:[0x639204];
+	__asm        movsx  eax, ScenarioData.TimeLimit;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1453:
-	__asm        mov    eax, ds:[0x639206];
+	__asm        mov    eax, ScenarioData.Size;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1454:
-	__asm        mov    eax, ds:[0x63920A];
+	__asm        mov    eax, ScenarioData.Res;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1455:
-	__asm        mov    eax, ds:[0x63920E];
+	__asm        mov    eax, ScenarioData.Com;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1456:
-	__asm        mov    eax, ds:[0x639212];
+	__asm        mov    eax, ScenarioData.Ind;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1457:
-	__asm        mov    eax, ds:[0x639216];
+	__asm        mov    eax, ScenarioData.Cash;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1458:
-	__asm        mov    eax, ds:[0x63921A];
+	__asm        mov    eax, ScenarioData.Value;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1459:
-	__asm        movsx  eax, word ptr ds:[0x63921E];
+	__asm        movsx  eax, ScenarioData.Health;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1460:
-	__asm        movsx  eax, word ptr ds:[0x639220];
+	__asm        movsx  eax, ScenarioData.Education;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1461:
-	__asm        mov    eax, ds:[0x639222];
+	__asm        mov    eax, ScenarioData.Pollute;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1462:
-	__asm        mov    eax, ds:[0x639226];
+	__asm        mov    eax, ScenarioData.Crime;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1463:
-	__asm        mov    eax, ds:[0x63922A];
+	__asm        mov    eax, ScenarioData.Traffic;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1464:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63922E];
+	__asm        mov    al, ScenarioData.BuildOne;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1465:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x63922F];
+	__asm        mov    al, ScenarioData.BuildTwo;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1466:
-	__asm        movsx  eax, word ptr ds:[0x639230];
+	__asm        movsx  eax, ScenarioData.NBCount1;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1467:
-	__asm        movsx  eax, word ptr ds:[0x639232];
+	__asm        movsx  eax, ScenarioData.NBCount2;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1469:
-	__asm        movsx  eax, word ptr ds:[0x63A73C];
+	__asm        movsx  eax, CivilizedTiles;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1470:
-	__asm        movsx  eax, word ptr ds:[0x59C040];
+	__asm        movsx  eax, HurricaneCnt;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1471:
-	__asm        movsx  eax, word ptr ds:[0x6392D0];
+	__asm        movsx  eax, FloodCycle;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1473:
-	__asm        mov    eax, ds:[0x63A5A4];
+	__asm        mov    eax, TotalRate;
 	__asm        movsx  ecx, ix;
-	__asm        mov    edx, ds:[0x63923C];
+	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1476:
@@ -4969,13 +4969,13 @@ _Te47:
 	__asm        jge    _Te6c;
 // LINE 1477:
 	__asm        movsx  eax, ix;
-	__asm        mov    ecx, ds:[0x63923C];
+	__asm        mov    ecx, MiscInfo;
 	__asm        mov    dword ptr [ecx+eax*4], 0;
 	__asm        jmp    _Te43;
 // LINE 1479:
 _Te6c:
 	__asm        push   0x12C0;
-	__asm        mov    eax, ds:[0x63923C];
+	__asm        mov    eax, MiscInfo;
 	__asm        push   eax;
 	__asm        push   0x59B1E4;
 	__asm        call   stol;
@@ -5242,87 +5242,87 @@ short S2CityAlloc() {
 	long cnt;
 
 // LINE 1711:
-	__asm        mov    dword ptr ds:[0x639FE0], 0;
+	__asm        mov    GraphData[0], 0;
 // LINE 1712:
-	__asm        mov    dword ptr ds:[0x63A020], 0;
+	__asm        mov    GraphMax, 0;
 // LINE 1713:
-	__asm        mov    dword ptr ds:[0x639510], 0;
+	__asm        mov    AltMap[0], 0;
 // LINE 1714:
-	__asm        mov    dword ptr ds:[0x6069C4], 0;
+	__asm        mov    S_ptr1, 0;
 // LINE 1715:
-	__asm        mov    dword ptr ds:[0x6069CC], 0;
+	__asm        mov    S_ptr2, 0;
 // LINE 1716:
-	__asm        mov    dword ptr ds:[0x6069C8], 0;
+	__asm        mov    S_ptr3, 0;
 // LINE 1717:
-	__asm        mov    dword ptr ds:[0x6069D4], 0;
+	__asm        mov    S_ptr4, 0;
 // LINE 1718:
-	__asm        mov    dword ptr ds:[0x6069D0], 0;
+	__asm        mov    S_ptr5, 0;
 // LINE 1719:
-	__asm        mov    dword ptr ds:[0x639834], 0;
+	__asm        mov    LabelArray, 0;
 // LINE 1720:
-	__asm        mov    dword ptr ds:[0x63A744], 0;
+	__asm        mov    MicroRecord, 0;
 // LINE 1721:
-	__asm        mov    dword ptr ds:[0x639720], 0;
+	__asm        mov    ThingList, 0;
 // LINE 1722:
-	__asm        mov    dword ptr ds:[0x639310], 0;
+	__asm        mov    TMap[0], 0;
 // LINE 1723:
-	__asm        mov    dword ptr ds:[0x638F70], 0;
+	__asm        mov    BitsMap[0], 0;
 // LINE 1724:
-	__asm        mov    dword ptr ds:[0x639730], 0;
+	__asm        mov    TrafficMap[0], 0;
 // LINE 1725:
-	__asm        mov    dword ptr ds:[0x639CD0], 0;
+	__asm        mov    PolluteMap[0], 0;
 // LINE 1726:
-	__asm        mov    dword ptr ds:[0x63A470], 0;
+	__asm        mov    ValueMap[0], 0;
 // LINE 1727:
-	__asm        mov    dword ptr ds:[0x63A750], 0;
+	__asm        mov    CrimeMap[0], 0;
 // LINE 1728:
-	__asm        mov    dword ptr ds:[0x639170], 0;
+	__asm        mov    PoliceMap[0], 0;
 // LINE 1729:
-	__asm        mov    dword ptr ds:[0x63A5B0], 0;
+	__asm        mov    FireMap[0], 0;
 // LINE 1730:
-	__asm        mov    dword ptr ds:[0x638EE0], 0;
+	__asm        mov    PopMap[0], 0;
 // LINE 1731:
-	__asm        mov    dword ptr ds:[0x63A640], 0;
+	__asm        mov    ROGMap[0], 0;
 // LINE 1732:
-	__asm        mov    dword ptr ds:[0x639830], 0;
+	__asm        mov    budgetList, 0;
 // LINE 1733:
-	__asm        mov    dword ptr ds:[0x63A574], 0;
+	__asm        mov    ZonePop, 0;
 // LINE 1734:
-	__asm        mov    dword ptr ds:[0x639240], 0;
+	__asm        mov    TaxPop, 0;
 // LINE 1735:
-	__asm        mov    dword ptr ds:[0x63A578], 0;
+	__asm        mov    NeighborName, 0;
 // LINE 1736:
-	__asm        mov    dword ptr ds:[0x63A264], 0;
+	__asm        mov    NeighborValue, 0;
 // LINE 1737:
-	__asm        mov    dword ptr ds:[0x639710], 0;
+	__asm        mov    NeighborPop, 0;
 // LINE 1738:
-	__asm        mov    dword ptr ds:[0x63984C], 0;
+	__asm        mov    NeighborFame, 0;
 // LINE 1739:
-	__asm        mov    dword ptr ds:[0x639244], 0;
+	__asm        mov    PopRatio, 0;
 // LINE 1740:
-	__asm        mov    dword ptr ds:[0x639DDC], 0;
+	__asm        mov    EducateRatio, 0;
 // LINE 1741:
-	__asm        mov    dword ptr ds:[0x639844], 0;
+	__asm        mov    HealthRatio, 0;
 // LINE 1742:
-	__asm        mov    dword ptr ds:[0x639308], 0;
+	__asm        mov    IndDemand, 0;
 // LINE 1743:
-	__asm        mov    dword ptr ds:[0x639A58], 0;
+	__asm        mov    IndRates, 0;
 // LINE 1744:
-	__asm        mov    dword ptr ds:[0x639A54], 0;
+	__asm        mov    IndRatio, 0;
 // LINE 1745:
-	__asm        mov    dword ptr ds:[0x639AC8], 0;
+	__asm        mov    TileCnt, 0;
 // LINE 1746:
-	__asm        mov    dword ptr ds:[0x639AC4], 0;
+	__asm        mov    MilCnt, 0;
 // LINE 1747:
-	__asm        mov    dword ptr ds:[0x639718], 0;
+	__asm        mov    StackPts, 0;
 // LINE 1748:
-	__asm        mov    dword ptr ds:[0x63A570], 0;
+	__asm        mov    CityNameString, 0;
 // LINE 1749:
-	__asm        mov    dword ptr ds:[0x63923C], 0;
+	__asm        mov    MiscInfo, 0;
 // LINE 1750:
-	__asm        mov    dword ptr ds:[0x639714], 0;
+	__asm        mov    PaperList, 0;
 // LINE 1751:
-	__asm        mov    dword ptr ds:[0x63A25C], 0;
+	__asm        mov    NewsList, 0;
 // LINE 1760:
 	__asm        mov    poolsize, 0xD00;
 // LINE 1761:
@@ -5412,16 +5412,16 @@ short S2CityAlloc() {
 	__asm        push   eax;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x647200], eax;
+	__asm        mov    G_citymempool, eax;
 // LINE 1811:
 	__asm        push   0xD00;
 	__asm        push   0x59B1EC;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639FE0], eax;
-	__asm        cmp    dword ptr ds:[0x639FE0], 0;
+	__asm        mov    GraphData[0], eax;
+	__asm        cmp    GraphData[0], 0;
 	__asm        jne    _T2d3;
 // LINE 1812:
 	__asm        jmp    _Tdfd;
@@ -5429,12 +5429,12 @@ short S2CityAlloc() {
 _T2d3:
 	__asm        push   0x40;
 	__asm        push   0x59B1F8;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A020], eax;
-	__asm        cmp    dword ptr ds:[0x63A020], 0;
+	__asm        mov    GraphMax, eax;
+	__asm        cmp    GraphMax, 0;
 	__asm        jne    _T2ff;
 // LINE 1814:
 	__asm        jmp    _Tdfd;
@@ -5453,7 +5453,7 @@ _T30e:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x639FE0];
+	__asm        add    eax, GraphData[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x639FE0], eax;
 // LINE 1817:
@@ -5473,32 +5473,32 @@ _T345:
 // LINE 1819:
 _T368:
 	__asm        mov    eax, i;
-	__asm        mov    ecx, ds:[0x63A020];
+	__asm        mov    ecx, GraphMax;
 	__asm        mov    dword ptr [ecx+eax*4], 1;
 // LINE 1820:
 	__asm        jmp    _T30b;
 // LINE 1821:
 _T37d:
-	__asm        mov    eax, ds:[0x63A020];
+	__asm        mov    eax, GraphMax;
 	__asm        mov    dword ptr [eax+0x20], 0x64;
 // LINE 1822:
-	__asm        mov    eax, ds:[0x63A020];
+	__asm        mov    eax, GraphMax;
 	__asm        mov    dword ptr [eax+0x24], 0x64;
 // LINE 1823:
-	__asm        mov    eax, ds:[0x63A020];
+	__asm        mov    eax, GraphMax;
 	__asm        mov    dword ptr [eax+0x2C], 0x96;
 // LINE 1824:
-	__asm        mov    eax, ds:[0x63A020];
+	__asm        mov    eax, GraphMax;
 	__asm        mov    dword ptr [eax+0x28], 0x5A;
 // LINE 1826:
 	__asm        push   0x8000;
 	__asm        push   0x59B204;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639510], eax;
-	__asm        cmp    dword ptr ds:[0x639510], 0;
+	__asm        mov    AltMap[0], eax;
+	__asm        cmp    AltMap[0], 0;
 	__asm        jne    _T3dc;
 // LINE 1827:
 	__asm        jmp    _Tdfd;
@@ -5514,7 +5514,7 @@ _T3eb:
 // LINE 1829:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 8;
-	__asm        add    eax, ds:[0x639510];
+	__asm        add    eax, AltMap[0];
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x639510], eax;
 	__asm        jmp    _T3e8;
@@ -5522,12 +5522,12 @@ _T3eb:
 _T413:
 	__asm        push   0x4000;
 	__asm        push   0x59B20C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x6069C4], eax;
-	__asm        cmp    dword ptr ds:[0x6069C4], 0;
+	__asm        mov    S_ptr1, eax;
+	__asm        cmp    S_ptr1, 0;
 	__asm        jne    _T442;
 // LINE 1831:
 	__asm        jmp    _Tdfd;
@@ -5543,7 +5543,7 @@ _T451:
 // LINE 1833:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x6069C4];
+	__asm        add    eax, S_ptr1;
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x639850], eax;
 	__asm        jmp    _T44e;
@@ -5551,12 +5551,12 @@ _T451:
 _T479:
 	__asm        push   0x4000;
 	__asm        push   0x59B214;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x6069CC], eax;
-	__asm        cmp    dword ptr ds:[0x6069CC], 0;
+	__asm        mov    S_ptr2, eax;
+	__asm        cmp    S_ptr2, 0;
 	__asm        jne    _T4a8;
 // LINE 1835:
 	__asm        jmp    _Tdfd;
@@ -5572,7 +5572,7 @@ _T4b7:
 // LINE 1837:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x6069CC];
+	__asm        add    eax, S_ptr2;
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x639DE0], eax;
 	__asm        jmp    _T4b4;
@@ -5580,12 +5580,12 @@ _T4b7:
 _T4df:
 	__asm        push   0x4000;
 	__asm        push   0x59B21C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x6069C8], eax;
-	__asm        cmp    dword ptr ds:[0x6069C8], 0;
+	__asm        mov    S_ptr3, eax;
+	__asm        cmp    S_ptr3, 0;
 	__asm        jne    _T50e;
 // LINE 1839:
 	__asm        jmp    _Tdfd;
@@ -5601,7 +5601,7 @@ _T51d:
 // LINE 1841:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x6069C8];
+	__asm        add    eax, S_ptr3;
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x63A270], eax;
 	__asm        jmp    _T51a;
@@ -5609,12 +5609,12 @@ _T51d:
 _T545:
 	__asm        push   0x4000;
 	__asm        push   0x59B224;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x6069D4], eax;
-	__asm        cmp    dword ptr ds:[0x6069D4], 0;
+	__asm        mov    S_ptr4, eax;
+	__asm        cmp    S_ptr4, 0;
 	__asm        jne    _T574;
 // LINE 1843:
 	__asm        jmp    _Tdfd;
@@ -5630,7 +5630,7 @@ _T583:
 // LINE 1845:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x6069D4];
+	__asm        add    eax, S_ptr4;
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x63A030], eax;
 	__asm        jmp    _T580;
@@ -5638,12 +5638,12 @@ _T583:
 _T5ab:
 	__asm        push   0x4000;
 	__asm        push   0x59B22C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x6069D0], eax;
-	__asm        cmp    dword ptr ds:[0x6069D0], 0;
+	__asm        mov    S_ptr5, eax;
+	__asm        cmp    S_ptr5, 0;
 	__asm        jne    _T5da;
 // LINE 1847:
 	__asm        jmp    _Tdfd;
@@ -5659,7 +5659,7 @@ _T5e9:
 // LINE 1849:
 	__asm        mov    eax, cnt;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x6069D0];
+	__asm        add    eax, S_ptr5;
 	__asm        mov    ecx, cnt;
 	__asm        mov    [ecx*4+0x639AD0], eax;
 	__asm        jmp    _T5e6;
@@ -5667,12 +5667,12 @@ _T5e9:
 _T611:
 	__asm        push   0x1900;
 	__asm        push   0x59B234;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639834], eax;
-	__asm        cmp    dword ptr ds:[0x639834], 0;
+	__asm        mov    LabelArray, eax;
+	__asm        cmp    LabelArray, 0;
 	__asm        jne    _T640;
 // LINE 1851:
 	__asm        jmp    _Tdfd;
@@ -5680,12 +5680,12 @@ _T611:
 _T640:
 	__asm        push   0x4B0;
 	__asm        push   0x59B23C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A744], eax;
-	__asm        cmp    dword ptr ds:[0x63A744], 0;
+	__asm        mov    MicroRecord, eax;
+	__asm        cmp    MicroRecord, 0;
 	__asm        jne    _T66f;
 // LINE 1853:
 	__asm        jmp    _Tdfd;
@@ -5693,12 +5693,12 @@ _T640:
 _T66f:
 	__asm        push   0x1E0;
 	__asm        push   0x59B244;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639720], eax;
-	__asm        cmp    dword ptr ds:[0x639720], 0;
+	__asm        mov    ThingList, eax;
+	__asm        cmp    ThingList, 0;
 	__asm        jne    _T69e;
 // LINE 1855:
 	__asm        jmp    _Tdfd;
@@ -5768,12 +5768,12 @@ _T765:
 _T76a:
 	__asm        push   0x8000;
 	__asm        push   0x59B24C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639310], eax;
-	__asm        cmp    dword ptr ds:[0x639310], 0;
+	__asm        mov    TMap[0], eax;
+	__asm        cmp    TMap[0], 0;
 	__asm        jne    _T799;
 // LINE 1870:
 	__asm        jmp    _Tdfd;
@@ -5781,12 +5781,12 @@ _T76a:
 _T799:
 	__asm        push   0x4000;
 	__asm        push   0x59B254;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x638F70], eax;
-	__asm        cmp    dword ptr ds:[0x638F70], 0;
+	__asm        mov    BitsMap[0], eax;
+	__asm        cmp    BitsMap[0], 0;
 	__asm        jne    _T7c8;
 // LINE 1872:
 	__asm        jmp    _Tdfd;
@@ -5794,12 +5794,12 @@ _T799:
 _T7c8:
 	__asm        push   0x1000;
 	__asm        push   0x59B25C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639730], eax;
-	__asm        cmp    dword ptr ds:[0x639730], 0;
+	__asm        mov    TrafficMap[0], eax;
+	__asm        cmp    TrafficMap[0], 0;
 	__asm        jne    _T7f7;
 // LINE 1874:
 	__asm        jmp    _Tdfd;
@@ -5807,12 +5807,12 @@ _T7c8:
 _T7f7:
 	__asm        push   0x1000;
 	__asm        push   0x59B268;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639CD0], eax;
-	__asm        cmp    dword ptr ds:[0x639CD0], 0;
+	__asm        mov    PolluteMap[0], eax;
+	__asm        cmp    PolluteMap[0], 0;
 	__asm        jne    _T826;
 // LINE 1876:
 	__asm        jmp    _Tdfd;
@@ -5820,12 +5820,12 @@ _T7f7:
 _T826:
 	__asm        push   0x1000;
 	__asm        push   0x59B274;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A470], eax;
-	__asm        cmp    dword ptr ds:[0x63A470], 0;
+	__asm        mov    ValueMap[0], eax;
+	__asm        cmp    ValueMap[0], 0;
 	__asm        jne    _T855;
 // LINE 1878:
 	__asm        jmp    _Tdfd;
@@ -5833,12 +5833,12 @@ _T826:
 _T855:
 	__asm        push   0x1000;
 	__asm        push   0x59B280;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A750], eax;
-	__asm        cmp    dword ptr ds:[0x63A750], 0;
+	__asm        mov    CrimeMap[0], eax;
+	__asm        cmp    CrimeMap[0], 0;
 	__asm        jne    _T884;
 // LINE 1880:
 	__asm        jmp    _Tdfd;
@@ -5846,12 +5846,12 @@ _T855:
 _T884:
 	__asm        push   0x400;
 	__asm        push   0x59B28C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639170], eax;
-	__asm        cmp    dword ptr ds:[0x639170], 0;
+	__asm        mov    PoliceMap[0], eax;
+	__asm        cmp    PoliceMap[0], 0;
 	__asm        jne    _T8b3;
 // LINE 1882:
 	__asm        jmp    _Tdfd;
@@ -5859,12 +5859,12 @@ _T884:
 _T8b3:
 	__asm        push   0x400;
 	__asm        push   0x59B298;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A5B0], eax;
-	__asm        cmp    dword ptr ds:[0x63A5B0], 0;
+	__asm        mov    FireMap[0], eax;
+	__asm        cmp    FireMap[0], 0;
 	__asm        jne    _T8e2;
 // LINE 1884:
 	__asm        jmp    _Tdfd;
@@ -5872,12 +5872,12 @@ _T8b3:
 _T8e2:
 	__asm        push   0x400;
 	__asm        push   0x59B2A0;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x638EE0], eax;
-	__asm        cmp    dword ptr ds:[0x638EE0], 0;
+	__asm        mov    PopMap[0], eax;
+	__asm        cmp    PopMap[0], 0;
 	__asm        jne    _T911;
 // LINE 1887:
 	__asm        jmp    _Tdfd;
@@ -5885,12 +5885,12 @@ _T8e2:
 _T911:
 	__asm        push   0x400;
 	__asm        push   0x59B2A8;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A640], eax;
-	__asm        cmp    dword ptr ds:[0x63A640], 0;
+	__asm        mov    ROGMap[0], eax;
+	__asm        cmp    ROGMap[0], 0;
 	__asm        jne    _T940;
 // LINE 1889:
 	__asm        jmp    _Tdfd;
@@ -5906,13 +5906,13 @@ _T94f:
 // LINE 1891:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 8;
-	__asm        add    eax, ds:[0x639310];
+	__asm        add    eax, TMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x639310], eax;
 // LINE 1892:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 7;
-	__asm        add    eax, ds:[0x638F70];
+	__asm        add    eax, BitsMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x638F70], eax;
 // LINE 1893:
@@ -5929,25 +5929,25 @@ _T99c:
 // LINE 1895:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
-	__asm        add    eax, ds:[0x639730];
+	__asm        add    eax, TrafficMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x639730], eax;
 // LINE 1896:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
-	__asm        add    eax, ds:[0x639CD0];
+	__asm        add    eax, PolluteMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x639CD0], eax;
 // LINE 1897:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
-	__asm        add    eax, ds:[0x63A470];
+	__asm        add    eax, ValueMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x63A470], eax;
 // LINE 1898:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
-	__asm        add    eax, ds:[0x63A750];
+	__asm        add    eax, CrimeMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x63A750], eax;
 // LINE 1899:
@@ -5964,25 +5964,25 @@ _Ta12:
 // LINE 1901:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x639170];
+	__asm        add    eax, PoliceMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x639170], eax;
 // LINE 1902:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x63A5B0];
+	__asm        add    eax, FireMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x63A5B0], eax;
 // LINE 1903:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x638EE0];
+	__asm        add    eax, PopMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x638EE0], eax;
 // LINE 1904:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x63A640];
+	__asm        add    eax, ROGMap[0];
 	__asm        mov    ecx, i;
 	__asm        mov    [ecx*4+0x63A640], eax;
 // LINE 1905:
@@ -5991,12 +5991,12 @@ _Ta12:
 _Ta79:
 	__asm        push   0x700;
 	__asm        push   0x59B2B0;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639830], eax;
-	__asm        cmp    dword ptr ds:[0x639830], 0;
+	__asm        mov    budgetList, eax;
+	__asm        cmp    budgetList, 0;
 	__asm        jne    _Taa8;
 // LINE 1907:
 	__asm        jmp    _Tdfd;
@@ -6004,12 +6004,12 @@ _Ta79:
 _Taa8:
 	__asm        push   0x20;
 	__asm        push   0x59B2BC;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A574], eax;
-	__asm        cmp    dword ptr ds:[0x63A574], 0;
+	__asm        mov    ZonePop, eax;
+	__asm        cmp    ZonePop, 0;
 	__asm        jne    _Tad4;
 // LINE 1909:
 	__asm        jmp    _Tdfd;
@@ -6017,12 +6017,12 @@ _Taa8:
 _Tad4:
 	__asm        push   0xC;
 	__asm        push   0x59B2C4;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639240], eax;
-	__asm        cmp    dword ptr ds:[0x639240], 0;
+	__asm        mov    TaxPop, eax;
+	__asm        cmp    TaxPop, 0;
 	__asm        jne    _Tb00;
 // LINE 1911:
 	__asm        jmp    _Tdfd;
@@ -6030,12 +6030,12 @@ _Tad4:
 _Tb00:
 	__asm        push   8;
 	__asm        push   0x59B2CC;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A578], eax;
-	__asm        cmp    dword ptr ds:[0x63A578], 0;
+	__asm        mov    NeighborName, eax;
+	__asm        cmp    NeighborName, 0;
 	__asm        jne    _Tb2c;
 // LINE 1913:
 	__asm        jmp    _Tdfd;
@@ -6043,12 +6043,12 @@ _Tb00:
 _Tb2c:
 	__asm        push   0x10;
 	__asm        push   0x59B2DC;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A264], eax;
-	__asm        cmp    dword ptr ds:[0x63A264], 0;
+	__asm        mov    NeighborValue, eax;
+	__asm        cmp    NeighborValue, 0;
 	__asm        jne    _Tb58;
 // LINE 1915:
 	__asm        jmp    _Tdfd;
@@ -6056,12 +6056,12 @@ _Tb2c:
 _Tb58:
 	__asm        push   0x10;
 	__asm        push   0x59B2EC;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639710], eax;
-	__asm        cmp    dword ptr ds:[0x639710], 0;
+	__asm        mov    NeighborPop, eax;
+	__asm        cmp    NeighborPop, 0;
 	__asm        jne    _Tb84;
 // LINE 1917:
 	__asm        jmp    _Tdfd;
@@ -6069,12 +6069,12 @@ _Tb58:
 _Tb84:
 	__asm        push   0x10;
 	__asm        push   0x59B2F8;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63984C], eax;
-	__asm        cmp    dword ptr ds:[0x63984C], 0;
+	__asm        mov    NeighborFame, eax;
+	__asm        cmp    NeighborFame, 0;
 	__asm        jne    _Tbb0;
 // LINE 1919:
 	__asm        jmp    _Tdfd;
@@ -6082,12 +6082,12 @@ _Tb84:
 _Tbb0:
 	__asm        push   0x50;
 	__asm        push   0x59B308;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639244], eax;
-	__asm        cmp    dword ptr ds:[0x639244], 0;
+	__asm        mov    PopRatio, eax;
+	__asm        cmp    PopRatio, 0;
 	__asm        jne    _Tbdc;
 // LINE 1921:
 	__asm        jmp    _Tdfd;
@@ -6095,12 +6095,12 @@ _Tbb0:
 _Tbdc:
 	__asm        push   0x50;
 	__asm        push   0x59B314;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639DDC], eax;
-	__asm        cmp    dword ptr ds:[0x639DDC], 0;
+	__asm        mov    EducateRatio, eax;
+	__asm        cmp    EducateRatio, 0;
 	__asm        jne    _Tc08;
 // LINE 1923:
 	__asm        jmp    _Tdfd;
@@ -6108,12 +6108,12 @@ _Tbdc:
 _Tc08:
 	__asm        push   0x50;
 	__asm        push   0x59B324;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639844], eax;
-	__asm        cmp    dword ptr ds:[0x639844], 0;
+	__asm        mov    HealthRatio, eax;
+	__asm        cmp    HealthRatio, 0;
 	__asm        jne    _Tc34;
 // LINE 1925:
 	__asm        jmp    _Tdfd;
@@ -6121,12 +6121,12 @@ _Tc08:
 _Tc34:
 	__asm        push   0x16;
 	__asm        push   0x59B330;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639308], eax;
-	__asm        cmp    dword ptr ds:[0x639308], 0;
+	__asm        mov    IndDemand, eax;
+	__asm        cmp    IndDemand, 0;
 	__asm        jne    _Tc60;
 // LINE 1927:
 	__asm        jmp    _Tdfd;
@@ -6134,12 +6134,12 @@ _Tc34:
 _Tc60:
 	__asm        push   0x16;
 	__asm        push   0x59B33C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639A58], eax;
-	__asm        cmp    dword ptr ds:[0x639A58], 0;
+	__asm        mov    IndRates, eax;
+	__asm        cmp    IndRates, 0;
 	__asm        jne    _Tc8c;
 // LINE 1929:
 	__asm        jmp    _Tdfd;
@@ -6147,12 +6147,12 @@ _Tc60:
 _Tc8c:
 	__asm        push   0x2C;
 	__asm        push   0x59B348;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639A54], eax;
-	__asm        cmp    dword ptr ds:[0x639A54], 0;
+	__asm        mov    IndRatio, eax;
+	__asm        cmp    IndRatio, 0;
 	__asm        jne    _Tcb8;
 // LINE 1931:
 	__asm        jmp    _Tdfd;
@@ -6160,12 +6160,12 @@ _Tc8c:
 _Tcb8:
 	__asm        push   0x200;
 	__asm        push   0x59B354;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639AC8], eax;
-	__asm        cmp    dword ptr ds:[0x639AC8], 0;
+	__asm        mov    TileCnt, eax;
+	__asm        cmp    TileCnt, 0;
 	__asm        jne    _Tce7;
 // LINE 1933:
 	__asm        jmp    _Tdfd;
@@ -6173,12 +6173,12 @@ _Tcb8:
 _Tce7:
 	__asm        push   0x20;
 	__asm        push   0x59B35C;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639AC4], eax;
-	__asm        cmp    dword ptr ds:[0x639AC4], 0;
+	__asm        mov    MilCnt, eax;
+	__asm        cmp    MilCnt, 0;
 	__asm        jne    _Td13;
 // LINE 1935:
 	__asm        jmp    _Tdfd;
@@ -6186,12 +6186,12 @@ _Tce7:
 _Td13:
 	__asm        push   0x800;
 	__asm        push   0x59B364;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639718], eax;
-	__asm        cmp    dword ptr ds:[0x639718], 0;
+	__asm        mov    StackPts, eax;
+	__asm        cmp    StackPts, 0;
 	__asm        jne    _Td42;
 // LINE 1937:
 	__asm        jmp    _Tdfd;
@@ -6199,12 +6199,12 @@ _Td13:
 _Td42:
 	__asm        push   0x21;
 	__asm        push   0x59B370;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A570], eax;
-	__asm        cmp    dword ptr ds:[0x63A570], 0;
+	__asm        mov    CityNameString, eax;
+	__asm        cmp    CityNameString, 0;
 	__asm        jne    _Td6e;
 // LINE 1939:
 	__asm        jmp    _Tdfd;
@@ -6212,12 +6212,12 @@ _Td42:
 _Td6e:
 	__asm        push   0x1E;
 	__asm        push   0x59B378;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x639714], eax;
-	__asm        cmp    dword ptr ds:[0x639714], 0;
+	__asm        mov    PaperList, eax;
+	__asm        cmp    PaperList, 0;
 	__asm        jne    _Td9a;
 // LINE 1941:
 	__asm        jmp    _Tdfd;
@@ -6225,12 +6225,12 @@ _Td6e:
 _Td9a:
 	__asm        push   0x48;
 	__asm        push   0x59B380;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63A25C], eax;
-	__asm        cmp    dword ptr ds:[0x63A25C], 0;
+	__asm        mov    NewsList, eax;
+	__asm        cmp    NewsList, 0;
 	__asm        jne    _Tdc6;
 // LINE 1943:
 	__asm        jmp    _Tdfd;
@@ -6238,12 +6238,12 @@ _Td9a:
 _Tdc6:
 	__asm        push   0x12C0;
 	__asm        push   0x59B388;
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x63923C], eax;
-	__asm        cmp    dword ptr ds:[0x63923C], 0;
+	__asm        mov    MiscInfo, eax;
+	__asm        cmp    MiscInfo, 0;
 	__asm        jne    _Tdf5;
 // LINE 1945:
 	__asm        jmp    _Tdfd;
@@ -6254,7 +6254,7 @@ _Tdf5:
 // LINE 1950:
 alloc_failure:
 _Tdfd:
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
@@ -6268,7 +6268,7 @@ _Te14:
 // FUNCTION: COPTER_D 0x004c920e
 void S2CityFree() {
 // LINE 1969:
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;

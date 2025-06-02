@@ -713,21 +713,21 @@ void LogManager::LogManager() {
 
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+4], 0;
-	__asm        inc    dword ptr ds:[0x5B4884];
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        inc    list<tagLogBase *>::number_of_lists;
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    [ebp-8], eax;
-	__asm        cmp    dword ptr ds:[0x5B4890], 0;
+	__asm        cmp    list<tagLogBase *>::free_list, 0;
 	__asm        je     _T73;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T250;
 _T73:
-	__asm        mov    eax, ds:[0x5B488C];
-	__asm        cmp    ds:[0x5B4888], eax;
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
+	__asm        cmp    list<tagLogBase *>::last, eax;
 	__asm        jne    _T23b;
 
 	__asm        push   0;
@@ -822,14 +822,14 @@ _T18a:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ds:[0x5B4894], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    list<tagLogBase *>::buffer_list, eax;
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5B488C], eax;
+	__asm        mov    list<tagLogBase *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x2C], 0x155;
 	__asm        lea    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x34], eax;
@@ -859,20 +859,20 @@ _T1f7:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5B488C];
-	__asm        mov    ds:[0x5B4888], eax;
+	__asm        add    eax, list<tagLogBase *>::next_avail;
+	__asm        mov    list<tagLogBase *>::last, eax;
 	__asm        jmp    near ptr 0x004EBE70;
 
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T250;
 _T23b:
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x54], eax;
 _T250:
@@ -998,11 +998,11 @@ _Tb4:
 
 	__asm        jmp    near ptr 0x004EBFEA;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004EC001;
 
 	__asm        mov    eax, [ebp-4];
@@ -1016,24 +1016,24 @@ _T124:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004EC035;
 
-	__asm        dec    dword ptr ds:[0x5B4884];
+	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T1d2;
 _T154:
-	__asm        cmp    dword ptr ds:[0x5B4894], 0;
+	__asm        cmp    list<tagLogBase *>::buffer_list, 0;
 	__asm        je     _T1af;
 
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5B4894], eax;
+	__asm        mov    list<tagLogBase *>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x40], eax;
@@ -1055,9 +1055,9 @@ _T154:
 
 	__asm        jmp    _T154;
 _T1af:
-	__asm        mov    dword ptr ds:[0x5B4890], 0;
-	__asm        mov    dword ptr ds:[0x5B488C], 0;
-	__asm        mov    dword ptr ds:[0x5B4888], 0;
+	__asm        mov    list<tagLogBase *>::free_list, 0;
+	__asm        mov    list<tagLogBase *>::next_avail, 0;
+	__asm        mov    list<tagLogBase *>::last, 0;
 	__asm        jmp    _T1d2;
 _T1d2:
 	__asm        jmp    near ptr 0x004EC0C4;
@@ -1452,11 +1452,11 @@ _T2b9:
 
 	__asm        jmp    near ptr 0x004EC5AA;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x170];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x170];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004EC5C7;
 
 	__asm        mov    eax, [ebp-0x17C];
@@ -2071,21 +2071,21 @@ int32_t LogManager::SortLogEntriesByDate() {
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+4], 0;
-	__asm        inc    dword ptr ds:[0x5B4884];
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        inc    list<tagLogBase *>::number_of_lists;
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    [ebp-0x74], eax;
-	__asm        cmp    dword ptr ds:[0x5B4890], 0;
+	__asm        cmp    list<tagLogBase *>::free_list, 0;
 	__asm        je     _T68;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        jmp    _T205;
 _T68:
-	__asm        mov    eax, ds:[0x5B488C];
-	__asm        cmp    ds:[0x5B4888], eax;
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
+	__asm        cmp    list<tagLogBase *>::last, eax;
 	__asm        jne    _T1ed;
 
 	__asm        jmp    near ptr 0x004ECD4F;
@@ -2132,14 +2132,14 @@ _Tec:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x80];
-	__asm        mov    ds:[0x5B4894], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    list<tagLogBase *>::buffer_list, eax;
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5B488C], eax;
+	__asm        mov    list<tagLogBase *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x98], 0x155;
 	__asm        lea    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xA0], eax;
@@ -2169,20 +2169,20 @@ _T1a3:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5B488C];
-	__asm        mov    ds:[0x5B4888], eax;
+	__asm        add    eax, list<tagLogBase *>::next_avail;
+	__asm        mov    list<tagLogBase *>::last, eax;
 	__asm        jmp    near ptr 0x004ECEA1;
 
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x78], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        jmp    _T205;
 _T1ed:
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xB0], eax;
 _T205:
@@ -2389,11 +2389,11 @@ _T3a6:
 
 	__asm        jmp    near ptr 0x004ED108;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xB4];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004ED125;
 
 	__asm        mov    eax, [ebp-0xB8];
@@ -2439,14 +2439,14 @@ _T467:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x64];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004ED1B4;
 
-	__asm        dec    dword ptr ds:[0x5B4884];
+	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T4f7;
 
 	__asm        mov    ecx, [ebp-0x20];
@@ -2488,21 +2488,21 @@ int32_t LogManager::SortLogEntriesByType() {
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+4], 0;
-	__asm        inc    dword ptr ds:[0x5B4884];
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        inc    list<tagLogBase *>::number_of_lists;
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    [ebp-0x74], eax;
-	__asm        cmp    dword ptr ds:[0x5B4890], 0;
+	__asm        cmp    list<tagLogBase *>::free_list, 0;
 	__asm        je     _T68;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        jmp    _T205;
 _T68:
-	__asm        mov    eax, ds:[0x5B488C];
-	__asm        cmp    ds:[0x5B4888], eax;
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
+	__asm        cmp    list<tagLogBase *>::last, eax;
 	__asm        jne    _T1ed;
 
 	__asm        jmp    near ptr 0x004ED27B;
@@ -2549,14 +2549,14 @@ _Tec:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    ecx, [ebp-0x80];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x80];
-	__asm        mov    ds:[0x5B4894], eax;
-	__asm        mov    eax, ds:[0x5B4894];
+	__asm        mov    list<tagLogBase *>::buffer_list, eax;
+	__asm        mov    eax, list<tagLogBase *>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5B488C], eax;
+	__asm        mov    list<tagLogBase *>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x98], 0x155;
 	__asm        lea    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xA0], eax;
@@ -2586,20 +2586,20 @@ _T1a3:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5B488C];
-	__asm        mov    ds:[0x5B4888], eax;
+	__asm        add    eax, list<tagLogBase *>::next_avail;
+	__asm        mov    list<tagLogBase *>::last, eax;
 	__asm        jmp    near ptr 0x004ED3CD;
 
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x78], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        jmp    _T205;
 _T1ed:
-	__asm        mov    eax, ds:[0x5B488C];
+	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        add    dword ptr ds:[0x5B488C], 0xC;
+	__asm        add    list<tagLogBase *>::next_avail, 0xC;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xB0], eax;
 _T205:
@@ -2806,11 +2806,11 @@ _T3a6:
 
 	__asm        jmp    near ptr 0x004ED634;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xB4];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004ED651;
 
 	__asm        mov    eax, [ebp-0xB8];
@@ -2856,14 +2856,14 @@ _T467:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x64];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004ED6E0;
 
-	__asm        dec    dword ptr ds:[0x5B4884];
+	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T4f7;
 
 	__asm        mov    ecx, [ebp-0x20];
@@ -3074,11 +3074,11 @@ _T19a:
 
 	__asm        jmp    near ptr 0x004ED90C;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004ED923;
 
 	__asm        mov    eax, [ebp-0x6C];
@@ -3270,11 +3270,11 @@ _T181:
 
 	__asm        jmp    near ptr 0x004EDB11;
 
-	__asm        mov    eax, ds:[0x5B4890];
+	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x54];
-	__asm        mov    ds:[0x5B4890], eax;
+	__asm        mov    list<tagLogBase *>::free_list, eax;
 	__asm        jmp    near ptr 0x004EDB28;
 
 	__asm        mov    eax, [ebp-0x60];
@@ -3623,7 +3623,7 @@ _T3fb:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x26C], eax;
@@ -3638,7 +3638,7 @@ _T3fb:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x26C], eax;
@@ -3704,7 +3704,7 @@ _T541:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x270], eax;
@@ -3719,7 +3719,7 @@ _T541:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x270], eax;
@@ -3773,7 +3773,7 @@ _T606:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x274], eax;
@@ -3788,7 +3788,7 @@ _T606:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x274], eax;

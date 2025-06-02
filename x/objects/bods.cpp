@@ -222,7 +222,7 @@ _Tad:
 	__asm        mov    eax, al;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        mov    eax, ds:[0x5BF6D4];
+	__asm        mov    eax, cCopterAnim::fsList;
 	__asm        mov    [ebp-0x38], eax;
 // LINE 1946:
 	__asm        mov    dword ptr [ebp-0x14], 0;
@@ -514,7 +514,7 @@ class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 	__asm        call   PStr2Long;
 	__asm        add    esp, 4;
 	__asm        mov    [ebp-0x24], eax;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x28], eax;
 // LINE 2086:
 	__asm        mov    dword ptr [ebp-4], 0;
@@ -1561,7 +1561,7 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 
 	// Function registers exception cleanup function at 0x00562095
 // LINE 2286:
-	__asm        cmp    dword ptr ds:[0x5BE630], 0;
+	__asm        cmp    cCopterBody::fsList, 0;
 	__asm        jne    _T50;
 
 	__asm        push   0x8C085;
@@ -1584,7 +1584,7 @@ _T50:
 	__asm        mov    tmp[4], 0x63;
 	__asm        mov    ax, expectondisk;
 	__asm        mov    [ebp-0x54], ax;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x58], eax;
 // LINE 2292:
@@ -1758,7 +1758,7 @@ _T2a2:
 	__asm        mov    tmp[4], 0x4C;
 	__asm        mov    ax, expectondisk;
 	__asm        mov    [ebp-0x90], ax;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x94], eax;
 // LINE 2295:
@@ -1946,7 +1946,7 @@ void  cCopterBody::DestroyAll() {
 	short count;
 
 
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x18], eax;
 // LINE 2301:
@@ -1964,10 +1964,10 @@ void  cCopterBody::DestroyAll() {
 _T31:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
@@ -2000,7 +2000,7 @@ _T9f:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0x41524350;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
@@ -2033,7 +2033,7 @@ _T109:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0x41524C55;
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   FlatResFile::GetByIndex;
 	__asm        mov    h, eax;
@@ -2059,7 +2059,7 @@ _T109:
 _T168:
 	__asm        jmp    _T109;
 _T16d:
-	__asm        mov    eax, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x4C], eax;
 // LINE 2318:
 _T175:
@@ -2199,8 +2199,8 @@ _T2ef:
 _T2f9:
 	__asm        jmp    near ptr 0x005623AD;
 // LINE 2320:
-	__asm        mov    eax, ds:[0x5BE630];
-	__asm        mov    ecx, ds:[0x5BE630];
+	__asm        mov    eax, cCopterBody::fsList;
+	__asm        mov    ecx, cCopterBody::fsList;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xC];

@@ -51,7 +51,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 136:
 	__asm        call   InitGridPool;
 // LINE 137:
-	__asm        cmp    dword ptr ds:[0x59D2D4], 0;
+	__asm        cmp    S_gridmempool, 0;
 	__asm        jge    _T38;
 // LINE 138:
 	__asm        mov    ax, 1;
@@ -80,29 +80,29 @@ _T51:
 _T6a:
 	__asm        mov    eax, ViewSize;
 	__asm        inc    eax;
-	__asm        mov    ds:[0x666358], eax;
+	__asm        mov    G_VertDim, eax;
 // LINE 159:
 	__asm        mov    eax, ViewSize;
 	__asm        add    eax, eax;
-	__asm        mov    ds:[0x662830], eax;
+	__asm        mov    G_FaceDim, eax;
 // LINE 160:
 	__asm        mov    vert_inc, 0x400000;
 // LINE 166:
 	__asm        mov    eax, ViewSize;
-	__asm        mov    ds:[0x6663A0], eax;
+	__asm        mov    G_ViewSize, eax;
 // LINE 171:
-	__asm        mov    eax, ds:[0x666358];
-	__asm        imul   eax, ds:[0x666358];
-	__asm        mov    ds:[0x662814], eax;
+	__asm        mov    eax, G_VertDim;
+	__asm        imul   eax, G_VertDim;
+	__asm        mov    GridNVerts, eax;
 // LINE 172:
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        add    eax, eax;
-	__asm        mov    ds:[0x66637C], eax;
+	__asm        mov    GridNFaces, eax;
 // LINE 177:
-	__asm        mov    dword ptr ds:[0x6662A8], 0x3C;
+	__asm        mov    GridFaceSize, 0x3C;
 // LINE 193:
-	__asm        mov    eax, ds:[0x66637C];
+	__asm        mov    eax, GridNFaces;
 	__asm        mov    goff, eax;
 // LINE 194:
 	__asm        mov    eax, goff;
@@ -117,156 +117,156 @@ _T6a:
 	__asm        call   VRFreeGridObj;
 // LINE 201:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 4;
 	__asm        push   eax;
 	__asm        push   0x59D2DC;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x662828], eax;
+	__asm        mov    GridRotate, eax;
 // LINE 202:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 4;
-	__asm        add    eax, ds:[0x662828];
-	__asm        mov    ds:[0x6662A4], eax;
+	__asm        add    eax, GridRotate;
+	__asm        mov    GridRotateEnd, eax;
 // LINE 203:
 	__asm        push   0;
 	__asm        mov    eax, goff;
 	__asm        push   eax;
 	__asm        push   0x59D2E4;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x6662F0], eax;
+	__asm        mov    GridProject, eax;
 // LINE 204:
 	__asm        mov    eax, goff;
-	__asm        add    eax, ds:[0x6662F0];
-	__asm        mov    ds:[0x662820], eax;
+	__asm        add    eax, GridProject;
+	__asm        mov    GridProjectEnd, eax;
 // LINE 206:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        push   eax;
 	__asm        push   0x59D2F0;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666368], eax;
+	__asm        mov    GridVerts, eax;
 // LINE 207:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x666368];
-	__asm        mov    ds:[0x662874], eax;
+	__asm        add    eax, GridVerts;
+	__asm        mov    GridVertsEnd, eax;
 // LINE 208:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x66637C];
+	__asm        mov    eax, GridNFaces;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
 	__asm        push   0x59D2FC;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666364], eax;
+	__asm        mov    GridSortFaces, eax;
 // LINE 209:
-	__asm        mov    eax, ds:[0x66637C];
+	__asm        mov    eax, GridNFaces;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x666364];
-	__asm        mov    ds:[0x66639C], eax;
+	__asm        add    eax, GridSortFaces;
+	__asm        mov    GridSortFacesEnd, eax;
 // LINE 210:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6662A8];
-	__asm        imul   eax, ds:[0x66637C];
+	__asm        mov    eax, GridFaceSize;
+	__asm        imul   eax, GridNFaces;
 	__asm        push   eax;
 	__asm        push   0x59D308;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x662824], eax;
+	__asm        mov    GridFaces, eax;
 // LINE 211:
-	__asm        mov    eax, ds:[0x6662A8];
-	__asm        imul   eax, ds:[0x66637C];
-	__asm        add    eax, ds:[0x662824];
-	__asm        mov    ds:[0x666394], eax;
+	__asm        mov    eax, GridFaceSize;
+	__asm        imul   eax, GridNFaces;
+	__asm        add    eax, GridFaces;
+	__asm        mov    GridFacesEnd, eax;
 // LINE 213:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
 	__asm        push   0x59D314;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666398], eax;
+	__asm        mov    WhereIsIt, eax;
 // LINE 214:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x666398];
-	__asm        mov    ds:[0x666370], eax;
+	__asm        add    eax, WhereIsIt;
+	__asm        mov    WhereIsItEnd, eax;
 // LINE 215:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        push   eax;
 	__asm        push   0x59D320;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666360], eax;
+	__asm        mov    IsRotated, eax;
 // LINE 216:
-	__asm        mov    eax, ds:[0x662814];
-	__asm        add    eax, ds:[0x666360];
-	__asm        mov    ds:[0x662864], eax;
+	__asm        mov    eax, GridNVerts;
+	__asm        add    eax, IsRotated;
+	__asm        mov    IsRotatedEnd, eax;
 // LINE 218:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        shl    eax, 2;
 	__asm        shr    eax, 1;
 	__asm        push   eax;
 	__asm        push   0x59D32C;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666384], eax;
+	__asm        mov    GridSortCells, eax;
 // LINE 219:
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        shl    eax, 2;
 	__asm        shr    eax, 1;
-	__asm        add    eax, ds:[0x666384];
-	__asm        mov    ds:[0x666378], eax;
+	__asm        add    eax, GridSortCells;
+	__asm        mov    GridSortCellsEnd, eax;
 // LINE 220:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        shl    eax, 2;
 	__asm        shr    eax, 1;
 	__asm        push   eax;
 	__asm        push   0x59D338;
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocMem1;
 	__asm        add    esp, 0x10;
-	__asm        mov    ds:[0x666374], eax;
+	__asm        mov    GridCellAddrs, eax;
 // LINE 221:
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        shl    eax, 2;
 	__asm        shr    eax, 1;
-	__asm        add    eax, ds:[0x666374];
-	__asm        mov    ds:[0x666380], eax;
+	__asm        add    eax, GridCellAddrs;
+	__asm        mov    GridCellAddrsEnd, eax;
 // LINE 225:
-	__asm        mov    eax, ds:[0x662824];
+	__asm        mov    eax, GridFaces;
 	__asm        mov    goff, eax;
 // LINE 226:
 	__asm        mov    y, 0;
@@ -275,7 +275,7 @@ _T2fc:
 	__asm        inc    y;
 _T2ff:
 	__asm        mov    eax, y;
-	__asm        cmp    ds:[0x6663A0], eax;
+	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T35d;
 // LINE 228:
 	__asm        mov    x, 0;
@@ -284,7 +284,7 @@ _T31a:
 	__asm        inc    x;
 _T31d:
 	__asm        mov    eax, x;
-	__asm        cmp    ds:[0x6663A0], eax;
+	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T358;
 // LINE 230:
 	__asm        mov    eax, goff;
@@ -297,7 +297,7 @@ _T31d:
 	__asm        mov    edx, x;
 	__asm        mov    [ecx+edx*4+0x662880], eax;
 // LINE 231:
-	__asm        mov    eax, ds:[0x6662A8];
+	__asm        mov    eax, GridFaceSize;
 	__asm        add    eax, eax;
 	__asm        add    goff, eax;
 // LINE 232:
@@ -307,39 +307,39 @@ _T358:
 	__asm        jmp    _T2fc;
 // LINE 240:
 _T35d:
-	__asm        mov    dword ptr ds:[0x662840], 0;
+	__asm        mov    CVerts[0][0], 0;
 // LINE 241:
-	__asm        mov    dword ptr ds:[0x662844], 1;
+	__asm        mov    CVerts[0][1], 1;
 // LINE 242:
-	__asm        mov    dword ptr ds:[0x662848], 2;
+	__asm        mov    CVerts[0][2], 2;
 // LINE 243:
-	__asm        mov    eax, ds:[0x666358];
-	__asm        mov    ds:[0x66284C], eax;
+	__asm        mov    eax, G_VertDim;
+	__asm        mov    CVerts[1][0], eax;
 // LINE 244:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        inc    eax;
-	__asm        mov    ds:[0x662850], eax;
+	__asm        mov    CVerts[1][1], eax;
 // LINE 245:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        add    eax, 2;
-	__asm        mov    ds:[0x662854], eax;
+	__asm        mov    CVerts[1][2], eax;
 // LINE 246:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        add    eax, eax;
-	__asm        mov    ds:[0x662858], eax;
+	__asm        mov    CVerts[2][0], eax;
 // LINE 247:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        add    eax, eax;
 	__asm        inc    eax;
-	__asm        mov    ds:[0x66285C], eax;
+	__asm        mov    CVerts[2][1], eax;
 // LINE 248:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        add    eax, eax;
 	__asm        add    eax, 2;
-	__asm        mov    ds:[0x662860], eax;
+	__asm        mov    CVerts[2][2], eax;
 // LINE 255:
 	__asm        push   0x400000;
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -350,7 +350,7 @@ _T35d:
 	__asm        mov    z_val, eax;
 // LINE 256:
 	__asm        push   0x400000;
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -361,7 +361,7 @@ _T35d:
 	__asm        neg    eax;
 	__asm        mov    x_start, eax;
 // LINE 257:
-	__asm        mov    eax, ds:[0x666368];
+	__asm        mov    eax, GridVerts;
 	__asm        mov    v, eax;
 // LINE 258:
 	__asm        mov    i, 0;
@@ -370,7 +370,7 @@ _T418:
 	__asm        inc    i;
 _T41c:
 	__asm        movsx  eax, i;
-	__asm        cmp    eax, ds:[0x666358];
+	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T480;
 // LINE 260:
 	__asm        mov    eax, x_start;
@@ -382,7 +382,7 @@ _T43d:
 	__asm        inc    j;
 _T441:
 	__asm        movsx  eax, j;
-	__asm        cmp    eax, ds:[0x666358];
+	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T471;
 // LINE 263:
 	__asm        mov    eax, x_val;
@@ -409,7 +409,7 @@ _T471:
 	__asm        jmp    _T418;
 // LINE 275:
 _T480:
-	__asm        mov    eax, ds:[0x662824];
+	__asm        mov    eax, GridFaces;
 	__asm        mov    dataptr, eax;
 // LINE 276:
 	__asm        mov    y, 0;
@@ -418,7 +418,7 @@ _T494:
 	__asm        inc    y;
 _T497:
 	__asm        mov    eax, y;
-	__asm        cmp    ds:[0x6663A0], eax;
+	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T644;
 // LINE 278:
 	__asm        mov    x, 0;
@@ -427,10 +427,10 @@ _T4b2:
 	__asm        inc    x;
 _T4b5:
 	__asm        mov    eax, x;
-	__asm        cmp    ds:[0x6663A0], eax;
+	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T63f;
 // LINE 281:
-	__asm        mov    eax, ds:[0x666358];
+	__asm        mov    eax, G_VertDim;
 	__asm        imul   eax, y;
 	__asm        add    eax, x;
 	__asm        mov    ul, eax;
@@ -455,7 +455,7 @@ _T4e2:
 	__asm        add    eax, 0x24;
 	__asm        mov    mapv, eax;
 // LINE 309:
-	__asm        mov    eax, ds:[0x6662A8];
+	__asm        mov    eax, GridFaceSize;
 	__asm        add    dataptr, eax;
 // LINE 311:
 	__asm        mov    eax, plotter;
@@ -470,19 +470,19 @@ _T4e2:
 	__asm        jmp    _T61c;
 // LINE 317:
 _T52d:
-	__asm        mov    eax, ds:[0x662840];
+	__asm        mov    eax, CVerts[0][0];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 318:
-	__asm        mov    eax, ds:[0x662844];
+	__asm        mov    eax, CVerts[0][1];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 319:
-	__asm        mov    eax, ds:[0x66284C];
+	__asm        mov    eax, CVerts[1][0];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
@@ -512,19 +512,19 @@ _T52d:
 	__asm        jmp    _T635;
 // LINE 330:
 _T5a2:
-	__asm        mov    eax, ds:[0x662844];
+	__asm        mov    eax, CVerts[0][1];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 331:
-	__asm        mov    eax, ds:[0x662850];
+	__asm        mov    eax, CVerts[1][1];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 332:
-	__asm        mov    eax, ds:[0x66284C];
+	__asm        mov    eax, CVerts[1][0];
 	__asm        add    eax, ul;
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
@@ -582,11 +582,11 @@ _T644:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 353:
-	__asm        mov    dword ptr ds:[0x666308], 0;
-	__asm        mov    eax, ds:[0x666308];
-	__asm        mov    ds:[0x666304], eax;
-	__asm        mov    eax, ds:[0x666304];
-	__asm        mov    ds:[0x666300], eax;
+	__asm        mov    GridPos.loc.z, 0;
+	__asm        mov    eax, GridPos.loc.z;
+	__asm        mov    GridPos.loc.y, eax;
+	__asm        mov    eax, GridPos.loc.y;
+	__asm        mov    GridPos.loc.x, eax;
 // LINE 354:
 	__asm        mov    dword ptr ds:[0x59D2D8], 0;
 // LINE 357:
@@ -600,7 +600,7 @@ _T692:
 // FUNCTION: COPTER_D 0x004d71d7
 void VRFreeGridObj() {
 // LINE 364:
-	__asm        mov    eax, ds:[0x59D2D4];
+	__asm        mov    eax, S_gridmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -616,31 +616,31 @@ void InitGridPool() {
 // LINE 371:
 	__asm        mov    GridPoolSize, 0;
 // LINE 372:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    tempSize, eax;
 // LINE 376:
-	__asm        mov    dword ptr ds:[0x6663A0], 0x3D;
+	__asm        mov    G_ViewSize, 0x3D;
 // LINE 377:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        inc    eax;
-	__asm        mov    ds:[0x666358], eax;
+	__asm        mov    G_VertDim, eax;
 // LINE 378:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        add    eax, eax;
-	__asm        mov    ds:[0x662830], eax;
+	__asm        mov    G_FaceDim, eax;
 // LINE 383:
-	__asm        mov    eax, ds:[0x666358];
-	__asm        imul   eax, ds:[0x666358];
-	__asm        mov    ds:[0x662814], eax;
+	__asm        mov    eax, G_VertDim;
+	__asm        imul   eax, G_VertDim;
+	__asm        mov    GridNVerts, eax;
 // LINE 384:
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        add    eax, eax;
-	__asm        mov    ds:[0x66637C], eax;
+	__asm        mov    GridNFaces, eax;
 // LINE 390:
-	__asm        mov    dword ptr ds:[0x6662A8], 0x3C;
+	__asm        mov    GridFaceSize, 0x3C;
 // LINE 398:
-	__asm        mov    eax, ds:[0x66637C];
+	__asm        mov    eax, GridNFaces;
 	__asm        mov    goff, eax;
 // LINE 399:
 	__asm        mov    eax, goff;
@@ -652,38 +652,38 @@ void InitGridPool() {
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    goff, eax;
 // LINE 403:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 4;
 	__asm        mov    GridPoolSize, eax;
 // LINE 404:
 	__asm        mov    eax, goff;
 	__asm        add    GridPoolSize, eax;
 // LINE 405:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 406:
-	__asm        mov    eax, ds:[0x66637C];
+	__asm        mov    eax, GridNFaces;
 	__asm        shl    eax, 2;
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 407:
-	__asm        mov    eax, ds:[0x6662A8];
-	__asm        imul   eax, ds:[0x66637C];
+	__asm        mov    eax, GridFaceSize;
+	__asm        imul   eax, GridNFaces;
 	__asm        add    GridPoolSize, eax;
 // LINE 408:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        shl    eax, 2;
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 409:
-	__asm        mov    eax, ds:[0x662814];
+	__asm        mov    eax, GridNVerts;
 	__asm        add    GridPoolSize, eax;
 // LINE 410:
-	__asm        mov    eax, ds:[0x6663A0];
-	__asm        imul   eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
+	__asm        imul   eax, G_ViewSize;
 	__asm        shl    eax, 2;
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
@@ -692,7 +692,7 @@ void InitGridPool() {
 	__asm        push   eax;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x59D2D4], eax;
+	__asm        mov    S_gridmempool, eax;
 // LINE 413:
 }
 

@@ -36,13 +36,13 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        mov    ecx, index;
 	__asm        mov    [ecx*4+0x6069D8], eax;
 // LINE 272:
-	__asm        add    dword ptr ds:[0x59B524], 8;
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        cmp    ds:[0x59B52C], eax;
+	__asm        add    G_alloc_curr, 8;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _T4c;
 
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        mov    ds:[0x59B52C], eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        mov    G_alloc_max, eax;
 // LINE 274:
 _T4c:
 	__asm        mov    eax, poolsize;
@@ -125,13 +125,13 @@ _T59:
 // LINE 251:
 	__asm        mov    eax, size;
 	__asm        add    eax, 0x10;
-	__asm        add    ds:[0x59B524], eax;
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        cmp    ds:[0x59B52C], eax;
+	__asm        add    G_alloc_curr, eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _Ta7;
 
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        mov    ds:[0x59B52C], eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        mov    G_alloc_max, eax;
 // LINE 253:
 _Ta7:
 	__asm        mov    eax, hdr;
@@ -145,7 +145,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	struct alloc_handle_t* lastPool;
 
 // LINE 295:
-	__asm        cmp    dword ptr ds:[0x59B534], 0x20;
+	__asm        cmp    poolCount, 0x20;
 	__asm        jne    _T20;
 // LINE 296:
 	__asm        mov    eax, 0xFFFFFFFF;
@@ -194,7 +194,7 @@ _T68:
 	__asm        jmp    _Ta6;
 // LINE 313:
 _T98:
-	__asm        inc    dword ptr ds:[0x59B534];
+	__asm        inc    poolCount;
 // LINE 314:
 	__asm        mov    eax, index;
 	__asm        jmp    _Ta6;
@@ -293,7 +293,7 @@ _Tc3:
 // LINE 372:
 _Te9:
 	__asm        mov    eax, size;
-	__asm        add    ds:[0x59B530], eax;
+	__asm        add    G_alloc_used, eax;
 // LINE 383:
 	__asm        mov    eax, ptr;
 	__asm        jmp    near ptr 0x004CB5A6;
@@ -379,7 +379,7 @@ _T2e:
 	__asm        sub    ecx, [edx+4];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x59B530], eax;
+	__asm        sub    G_alloc_used, eax;
 // LINE 466:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax];
@@ -440,17 +440,17 @@ _T2e:
 	__asm        sub    ecx, [edx+4];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x59B524], eax;
+	__asm        sub    G_alloc_curr, eax;
 // LINE 502:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, hdr;
 	__asm        sub    eax, [ecx+4];
-	__asm        add    ds:[0x59B528], eax;
+	__asm        add    G_alloc_free, eax;
 // LINE 503:
-	__asm        sub    dword ptr ds:[0x59B524], 0x10;
+	__asm        sub    G_alloc_curr, 0x10;
 // LINE 504:
-	__asm        add    dword ptr ds:[0x59B528], 0x10;
+	__asm        add    G_alloc_free, 0x10;
 // LINE 505:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+4];
@@ -475,14 +475,14 @@ _T9e:
 	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 510:
-	__asm        sub    dword ptr ds:[0x59B524], 8;
+	__asm        sub    G_alloc_curr, 8;
 // LINE 511:
-	__asm        add    dword ptr ds:[0x59B528], 8;
+	__asm        add    G_alloc_free, 8;
 // LINE 512:
 	__asm        mov    eax, index;
 	__asm        mov    dword ptr [eax*4+0x6069D8], 0;
 // LINE 513:
-	__asm        dec    dword ptr ds:[0x59B534];
+	__asm        dec    poolCount;
 // LINE 516:
 	__asm        call   _heapmin;
 // LINE 517:
@@ -526,16 +526,16 @@ _T2a:
 	__asm        add    retaddr, 0x10000;
 // LINE 767:
 _T49:
-	__asm        add    dword ptr ds:[0x59B524], 0x10000;
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        cmp    ds:[0x59B52C], eax;
+	__asm        add    G_alloc_curr, 0x10000;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _T6e;
 
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        mov    ds:[0x59B52C], eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        mov    G_alloc_max, eax;
 // LINE 768:
 _T6e:
-	__asm        add    dword ptr ds:[0x59B530], 0x10000;
+	__asm        add    G_alloc_used, 0x10000;
 // LINE 770:
 	__asm        mov    eax, retaddr;
 	__asm        jmp    _T80;
@@ -552,11 +552,11 @@ void S2FreeAligned(void * __ptr32 mem) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3734];
 // LINE 789:
-	__asm        sub    dword ptr ds:[0x59B524], 0x10000;
+	__asm        sub    G_alloc_curr, 0x10000;
 // LINE 790:
-	__asm        sub    dword ptr ds:[0x59B530], 0x10000;
+	__asm        sub    G_alloc_used, 0x10000;
 // LINE 791:
-	__asm        add    dword ptr ds:[0x59B528], 0x10000;
+	__asm        add    G_alloc_free, 0x10000;
 // LINE 797:
 }
 

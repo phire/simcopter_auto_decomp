@@ -475,9 +475,9 @@ _T2d:
 	__asm        push   0x100;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x10];
 	__asm        mov    hResult, eax;

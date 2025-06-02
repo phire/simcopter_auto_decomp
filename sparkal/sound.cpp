@@ -472,7 +472,7 @@ void SoundSystem::SoundSystem() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F440;
 // LINE 89:
-	__asm        cmp    dword ptr ds:[0x597E58], 0;
+	__asm        cmp    SoundSystem::dwMaxWaveFormatExSize, 0;
 	__asm        jne    _T30;
 // LINE 91:
 	__asm        push   0x597E58;
@@ -605,7 +605,7 @@ _T47:
 _Ted:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ds:[0x597E60], eax;
+	__asm        mov    DigitalSound::lpDirectSound, eax;
 // LINE 158:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -759,8 +759,8 @@ _T263:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 207:
-	__asm        mov    dword ptr ds:[0x597E60], 0;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    DigitalSound::lpDirectSound, 0;
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 216:
@@ -1889,7 +1889,7 @@ int32_t Sound::GetSoundType() {
 // FUNCTION: COPTER_D 0x0042ef72
 unsigned long Sound::GetTotalMemoryUsage() {
 // LINE 520:
-	__asm        mov    eax, ds:[0x597E5C];
+	__asm        mov    eax, Sound::lTotalMemoryUsage;
 	__asm        jmp    near ptr 0x0042EF82;
 // LINE 521:
 }
@@ -2847,7 +2847,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 	struct _DSBUFFERDESC dsBufferDescription;
 
 // LINE 881:
-	__asm        cmp    dword ptr ds:[0x597E60], 0;
+	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _T20;
 // LINE 882:
 	__asm        xor    eax, eax;
@@ -2863,9 +2863,9 @@ _T20:
 	__asm        push   eax;
 	__asm        mov    eax, dsNewBufferDescription;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0xC];
 	__asm        mov    hResult, eax;
@@ -2888,7 +2888,7 @@ _T20:
 _T76:
 	__asm        mov    eax, dsNewBufferDescription;
 	__asm        mov    eax, [eax+8];
-	__asm        add    ds:[0x597E5C], eax;
+	__asm        add    Sound::lTotalMemoryUsage, eax;
 // LINE 896:
 	__asm        jmp    _T105;
 // LINE 899:
@@ -2915,9 +2915,9 @@ _T87:
 	__asm        push   eax;
 	__asm        lea    eax, dsBufferDescription.dwSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0xC];
 	__asm        mov    hResult, eax;
@@ -2939,7 +2939,7 @@ _T87:
 // LINE 913:
 _Tfc:
 	__asm        mov    eax, dsBufferDescription.dwBufferBytes;
-	__asm        add    ds:[0x597E5C], eax;
+	__asm        add    Sound::lTotalMemoryUsage, eax;
 // LINE 916:
 _T105:
 	__asm        mov    eax, 1;
@@ -2989,7 +2989,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x3C];
 	__asm        neg    eax;
-	__asm        sub    ds:[0x597E5C], eax;
+	__asm        sub    Sound::lTotalMemoryUsage, eax;
 // LINE 953:
 _T34:
 	__asm        mov    eax, i;
@@ -3784,7 +3784,7 @@ _Ta1:
 	__asm        jmp    _T10f;
 // LINE 1385:
 _Ta6:
-	__asm        cmp    dword ptr ds:[0x597E60], 0;
+	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _Tba;
 // LINE 1386:
 	__asm        xor    eax, eax;
@@ -3797,9 +3797,9 @@ _Tba:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, [ecx+eax*4+0x52];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x14];
 	__asm        mov    hResult, eax;
@@ -4077,7 +4077,7 @@ _T39:
 	__asm        jmp    _T3a3;
 // LINE 1498:
 _T40:
-	__asm        cmp    dword ptr ds:[0x597E60], 0;
+	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _T54;
 // LINE 1499:
 	__asm        xor    eax, eax;
@@ -4352,9 +4352,9 @@ _T2a6:
 	__asm        push   eax;
 	__asm        lea    eax, dsBufferDescription.dwSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597E60];
+	__asm        mov    eax, DigitalSound::lpDirectSound;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0xC];
 	__asm        mov    hResult, eax;
@@ -4386,7 +4386,7 @@ _T384:
 // LINE 1565:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
-	__asm        add    ds:[0x597E5C], eax;
+	__asm        add    Sound::lTotalMemoryUsage, eax;
 // LINE 1568:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T3a3;

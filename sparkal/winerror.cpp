@@ -42,7 +42,7 @@ _T34:
 	__asm        push   eax;
 	__asm        mov    eax, Error;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        test   eax, eax;
@@ -61,7 +61,7 @@ _T82:
 	__asm        lea    eax, ErrorTitle[0];
 	__asm        push   eax;
 	__asm        push   0x29A;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        test   eax, eax;

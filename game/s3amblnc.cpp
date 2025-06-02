@@ -489,7 +489,7 @@ _T3a:
 	__asm        call   0x004D8520;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -511,7 +511,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        je     _Td6;
 // LINE 136:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    eax, [eax+0x12E];
@@ -586,9 +586,9 @@ _T145:
 	__asm        add    esp, 8;
 // LINE 163:
 	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    ecx, ds:[0x5B7D18];
+	__asm        mov    ecx, curAmbulances;
 	__asm        mov    [ecx*4+0x62B9B8], eax;
-	__asm        inc    dword ptr ds:[0x5B7D18];
+	__asm        inc    curAmbulances;
 // LINE 165:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        jmp    _T1e4;
@@ -631,7 +631,7 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3820];
+	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
 	__asm        jmp    near ptr 0x00535B41;
 // LINE 252:
@@ -723,7 +723,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        jle    _T40;
 // LINE 297:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
@@ -753,7 +753,7 @@ _T40:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3820];
+	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 311:
 	__asm        mov    eax, this;
@@ -791,7 +791,7 @@ _Tad:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3820];
+	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 323:
 	__asm        mov    ecx, this;
@@ -881,17 +881,17 @@ _T1ff:
 	__asm        jmp    _T263;
 // LINE 355:
 _T204:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 356:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 357:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -902,12 +902,12 @@ _T204:
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 359:
-	__asm        mov    eax, ds:[0x608F70];
+	__asm        mov    eax, AutomobileClass::ambSirenDist;
 	__asm        cmp    dist, eax;
 	__asm        jge    _T253;
 // LINE 360:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F70], eax;
+	__asm        mov    AutomobileClass::ambSirenDist, eax;
 // LINE 362:
 _T253:
 	__asm        mov    ecx, this;
@@ -934,7 +934,7 @@ _T282:
 	__asm        jle    _T2a5;
 // LINE 376:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
@@ -973,7 +973,7 @@ _T2d5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3820];
+	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 391:
 	__asm        mov    eax, this;

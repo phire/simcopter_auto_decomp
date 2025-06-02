@@ -301,7 +301,7 @@ int32_t LanguageManager::Initialize() {
 // FUNCTION: COPTER_D 0x0042a505
 int32_t LanguageManager::Uninitialize() {
 // LINE 53:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        push   eax;
 	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
 	__asm        add    esp, 4;
@@ -351,7 +351,7 @@ _T63:
 // LINE 69:
 _T80:
 	__asm        mov    eax, nLanguage;
-	__asm        cmp    ds:[0x597664], eax;
+	__asm        cmp    gDefaultLanguage, eax;
 	__asm        jne    _T14d;
 // LINE 70:
 	__asm        mov    dword ptr [ebp-0xC], 0;
@@ -425,13 +425,13 @@ _T14d:
 	__asm        test   eax, eax;
 	__asm        je     _T341;
 // LINE 73:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        push   eax;
 	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
 	__asm        add    esp, 4;
 // LINE 74:
 	__asm        mov    eax, nLanguage;
-	__asm        mov    ds:[0x597664], eax;
+	__asm        mov    gDefaultLanguage, eax;
 // LINE 75:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -752,7 +752,7 @@ _T10e:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T120;
 // LINE 102:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 105:
 _T120:
@@ -765,7 +765,7 @@ _T120:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        shl    eax, 3;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1050], eax;
@@ -784,7 +784,7 @@ _T120:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1050], eax;
@@ -1369,7 +1369,7 @@ _T21:
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T33;
 // LINE 159:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 160:
 _T33:
@@ -1430,7 +1430,7 @@ _T67:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -1445,7 +1445,7 @@ _T67:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1030], eax;
@@ -1879,7 +1879,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T18;
 // LINE 231:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 235:
 _T18:
@@ -2071,7 +2071,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLangu
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T22;
 // LINE 329:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 331:
 _T22:
@@ -2087,7 +2087,7 @@ _T22:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -2102,7 +2102,7 @@ _T22:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -2589,7 +2589,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguag
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T22;
 // LINE 351:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 353:
 _T22:
@@ -2605,7 +2605,7 @@ _T22:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -2620,7 +2620,7 @@ _T22:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -3107,7 +3107,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T22;
 // LINE 373:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 375:
 _T22:
@@ -3123,7 +3123,7 @@ _T22:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -3138,7 +3138,7 @@ _T22:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1038], eax;
@@ -3623,7 +3623,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T18;
 // LINE 394:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 399:
 _T18:
@@ -4047,7 +4047,7 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t nLanguage) {
 	__asm        cmp    nLanguage, 0;
 	__asm        jne    _T18;
 // LINE 605:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguage, eax;
 // LINE 608:
 _T18:

@@ -79,7 +79,7 @@ unsigned short wincpuid() {
 _T27:
 	__asm        call   check_clone;
 	__asm        movzx  eax, ax;
-	__asm        mov    ds:[0x638ED4], eax;
+	__asm        mov    clone_flag, eax;
 // LINE 118:
 	__asm        call   check_8086;
 	__asm        mov    cpuid, ax;
@@ -116,7 +116,7 @@ _T8d:
 // LINE 133:
 end:
 _T93:
-	__asm        cmp    dword ptr ds:[0x638ED4], 0;
+	__asm        cmp    clone_flag, 0;
 	__asm        je     _Tb1;
 // LINE 134:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
@@ -195,7 +195,7 @@ _T78:
 	__asm        cmp    ecx, edx;
 	__asm        je     _Ta6;
 // LINE 186:
-	__asm        mov    dword ptr ds:[0x638ED4], 1;
+	__asm        mov    clone_flag, 1;
 // LINE 187:
 _Ta6:
 	__asm        jmp    _T75;
@@ -296,7 +296,7 @@ _T73:
 	__asm        cmp    ecx, edx;
 	__asm        je     _Ta1;
 // LINE 276:
-	__asm        mov    dword ptr ds:[0x638ED4], 1;
+	__asm        mov    clone_flag, 1;
 // LINE 277:
 _Ta1:
 	__asm        jmp    _T70;
@@ -616,7 +616,7 @@ _T6a:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T98;
 // LINE 584:
-	__asm        mov    dword ptr ds:[0x638ED4], 1;
+	__asm        mov    clone_flag, 1;
 // LINE 585:
 _T98:
 	__asm        jmp    _T67;

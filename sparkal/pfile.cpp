@@ -576,7 +576,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        mov    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        mov    tempPFile.ShouldClose, 1;
 	__asm        mov    tempPFile.<vftable>, 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    name, 0;
 	__asm        je     _T5e;
 

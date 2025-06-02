@@ -782,7 +782,7 @@ _T74:
 	__asm        mov    dword ptr [eax+0x10C], 1;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    imageFileName, 0;
 	__asm        je     _T112;
 
@@ -955,9 +955,9 @@ _T25d:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    ddrval, eax;
@@ -980,7 +980,7 @@ _T2fd:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
 	__asm        imul   eax, [ecx+0xC];
-	__asm        add    ds:[0x599DA0], eax;
+	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 142:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Load;
@@ -1072,9 +1072,9 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    ddrval, eax;
@@ -1097,7 +1097,7 @@ _T120:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
 	__asm        imul   eax, [ecx+0xC];
-	__asm        add    ds:[0x599DA0], eax;
+	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 204:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Lock;
@@ -1275,7 +1275,7 @@ _T95:
 	__asm        imul   ecx, [edx+0xC];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x599DA0], eax;
+	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 281:
 _Td7:
 	__asm        mov    eax, this;
@@ -1300,7 +1300,7 @@ _Td7:
 	__asm        imul   ecx, [edx+0xC];
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x599DA0], eax;
+	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 291:
 _T119:
 	__asm        mov    eax, this;
@@ -1348,7 +1348,7 @@ unsigned long CBackBuffer::Load() {
 	__asm        mov    dword ptr [eax+0x10C], 1;
 	__asm        mov    eax, [ebp-0x454];
 	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    dword ptr [ebp-0x478], 0;
 	__asm        je     _Ta2;
 
@@ -3060,7 +3060,7 @@ unsigned long CBackBuffer::Lock() {
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 // LINE 1039:
-	__asm        inc    dword ptr ds:[0x599DA4];
+	__asm        inc    IFlatImage::lTotalLockCount;
 // LINE 1041:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -3126,7 +3126,7 @@ _Ta6:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax+4];
 // LINE 1060:
-	__asm        inc    dword ptr ds:[0x599DA4];
+	__asm        inc    IFlatImage::lTotalLockCount;
 // LINE 1062:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -3148,7 +3148,7 @@ unsigned long CBackBuffer::Unlock() {
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
 // LINE 1092:
-	__asm        dec    dword ptr ds:[0x599DA4];
+	__asm        dec    IFlatImage::lTotalLockCount;
 // LINE 1094:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -3204,7 +3204,7 @@ _Ta5:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+4];
 // LINE 1111:
-	__asm        dec    dword ptr ds:[0x599DA4];
+	__asm        dec    IFlatImage::lTotalLockCount;
 // LINE 1114:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3493,7 +3493,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalCol
 	__asm        mov    dword ptr [eax+0x10C], 1;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    imageFileName, 0;
 	__asm        je     _T72;
 

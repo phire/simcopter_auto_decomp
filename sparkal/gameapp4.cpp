@@ -253,9 +253,9 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x50];
 	__asm        mov    hResult, eax;
@@ -427,7 +427,7 @@ _Td6:
 // LINE 110:
 	__asm        lea    eax, szVideoPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59AC44];
+	__asm        mov    eax, SZ_HOURGLASS_VIDEO_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -533,7 +533,7 @@ _T2c5:
 	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x140>;
 	__asm        call   SmackerBackBuffer::Compose;
 // LINE 130:
-	__asm        mov    eax, ds:[0x5B4790];
+	__asm        mov    eax, G_InitializationProgress;
 	__asm        test   lCurrentInitializationFlag, eax;
 	__asm        je     _T661;
 
@@ -557,7 +557,7 @@ _T2c5:
 	__asm        push   eax;
 	__asm        mov    eax, lFullStringIndex;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1514], eax;
@@ -572,7 +572,7 @@ _T2c5:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1514], eax;

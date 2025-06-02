@@ -49,9 +49,9 @@ void S3ViewerInit() {
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 120:
-	__asm        mov    dword ptr ds:[0x6C12B0], 0x10000;
+	__asm        mov    Viewer.p.M, 0x10000;
 // LINE 121:
-	__asm        mov    dword ptr ds:[0x6C12C4], 0x10000;
+	__asm        mov    Viewer.r.M, 0x10000;
 // LINE 122:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x38;
@@ -59,13 +59,13 @@ void S3ViewerInit() {
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 123:
-	__asm        mov    dword ptr ds:[0x6C12A0], 1;
+	__asm        mov    Viewer.mode, 1;
 // LINE 126:
-	__asm        mov    dword ptr ds:[0x6C121C], 0;
-	__asm        mov    eax, ds:[0x6C121C];
-	__asm        mov    ds:[0x6C1218], eax;
+	__asm        mov    ViewState.init_vect.y, 0;
+	__asm        mov    eax, ViewState.init_vect.y;
+	__asm        mov    ViewState.init_vect.x, eax;
 // LINE 127:
-	__asm        mov    dword ptr ds:[0x6C1220], 0x10000;
+	__asm        mov    ViewState.init_vect.z, 0x10000;
 // LINE 128:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -114,11 +114,11 @@ void S3ViewerInit() {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 140:
-	__asm        mov    dword ptr ds:[0x6C1260], 0;
+	__asm        mov    ViewState.heading, 0;
 // LINE 141:
-	__asm        mov    dword ptr ds:[0x6C1264], 0;
+	__asm        mov    ViewState.roll, 0;
 // LINE 142:
-	__asm        mov    dword ptr ds:[0x6C1268], 0;
+	__asm        mov    ViewState.pitch, 0;
 // LINE 143:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x20;
@@ -177,7 +177,7 @@ void S3ViewerControl() {
 	long viewSize;
 
 // LINE 177:
-	__asm        cmp    dword ptr ds:[0x5B4760], 0x200;
+	__asm        cmp    LoopTime, 0x200;
 	__asm        jge    _T25;
 // LINE 178:
 	__asm        mov    timerDelay, 0x200;
@@ -185,7 +185,7 @@ void S3ViewerControl() {
 	__asm        jmp    _T2d;
 // LINE 180:
 _T25:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    timerDelay, eax;
 // LINE 183:
 _T2d:
@@ -199,7 +199,7 @@ _T2d:
 	__asm        test   eax, eax;
 	__asm        je     _T65;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T65;
 // LINE 187:
 	__asm        mov    rotx, 0x280000;
@@ -212,7 +212,7 @@ _T65:
 	__asm        test   eax, eax;
 	__asm        je     _T90;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T90;
 // LINE 189:
 	__asm        mov    rotx, 0xFFD80000;
@@ -227,7 +227,7 @@ _T90:
 	__asm        test   eax, eax;
 	__asm        je     _Tbd;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _Tbd;
 
 	__asm        mov    lJoystickValue, 1;
@@ -254,7 +254,7 @@ _Te7:
 	__asm        test   eax, eax;
 	__asm        je     _T112;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T112;
 // LINE 200:
 	__asm        mov    roty, 0x280000;
@@ -267,7 +267,7 @@ _T112:
 	__asm        test   eax, eax;
 	__asm        je     _T13d;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T13d;
 // LINE 202:
 	__asm        mov    roty, 0xFFD80000;
@@ -282,7 +282,7 @@ _T13d:
 	__asm        test   eax, eax;
 	__asm        je     _T16a;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T16a;
 
 	__asm        mov    lJoystickValue, 1;
@@ -348,15 +348,15 @@ _T1b8:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 237:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
-	__asm        mov    ds:[0x6BF188], eax;
+	__asm        mov    CameraCell.x, eax;
 // LINE 238:
 	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, ds:[0x6C1274];
+	__asm        sub    eax, ViewState.world_pos.z;
 	__asm        sar    eax, 0x16;
-	__asm        mov    ds:[0x6BF18C], eax;
+	__asm        mov    CameraCell.y, eax;
 // LINE 242:
 	__asm        push   0x6C1370;
 	__asm        mov    eax, 0x6C12A0;
@@ -399,7 +399,7 @@ _T1b8:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 246:
-	__asm        mov    dword ptr ds:[0x6C1228], 0;
+	__asm        mov    ViewState.view_vect.y, 0;
 // LINE 247:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
@@ -414,34 +414,34 @@ _T1b8:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 251:
-	__asm        mov    eax, ds:[0x6C126C];
-	__asm        sub    eax, ds:[0x606EA0];
+	__asm        mov    eax, ViewState.world_pos.x;
+	__asm        sub    eax, S_last_viewpos.x;
 	__asm        mov    vec.x, eax;
 // LINE 252:
-	__asm        mov    eax, ds:[0x6C1270];
-	__asm        sub    eax, ds:[0x606EA4];
+	__asm        mov    eax, ViewState.world_pos.y;
+	__asm        sub    eax, S_last_viewpos.y;
 	__asm        mov    vec.y, eax;
 // LINE 253:
-	__asm        mov    eax, ds:[0x6C1274];
-	__asm        sub    eax, ds:[0x606EA8];
+	__asm        mov    eax, ViewState.world_pos.z;
+	__asm        sub    eax, S_last_viewpos.z;
 	__asm        mov    vec.z, eax;
 // LINE 254:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
 	__asm        call   MTNormalize;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x606E8C], eax;
+	__asm        mov    S_posdelta, eax;
 // LINE 257:
-	__asm        mov    eax, ds:[0x606E98];
+	__asm        mov    eax, S_last_viewvect.z;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C122C];
+	__asm        mov    eax, ViewState.view_vect.z;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
-	__asm        mov    eax, ds:[0x606E90];
+	__asm        mov    eax, S_last_viewvect.x;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1224];
+	__asm        mov    eax, ViewState.view_vect.x;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -449,7 +449,7 @@ _T1b8:
 	__asm        cdq;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        mov    ds:[0x606E88], eax;
+	__asm        mov    S_rotdelta, eax;
 // LINE 258:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x5C;
@@ -479,7 +479,7 @@ _T1b8:
 	__asm        test   eax, eax;
 	__asm        je     _T3f4;
 // LINE 268:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    viewSize, eax;
 // LINE 269:
 	__asm        mov    eax, viewSize;
@@ -488,7 +488,7 @@ _T1b8:
 	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 270:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -500,12 +500,12 @@ _T1b8:
 // LINE 272:
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
-	__asm        cmp    eax, ds:[0x6663A0];
+	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T3ef;
 // LINE 273:
-	__asm        dec    dword ptr ds:[0x67ED28];
+	__asm        dec    G_grid_ulc.x;
 // LINE 274:
-	__asm        dec    dword ptr ds:[0x67ED2C];
+	__asm        dec    G_grid_ulc.y;
 // LINE 277:
 _T3ef:
 	__asm        jmp    _T51c;
@@ -516,7 +516,7 @@ _T3f4:
 	__asm        test   eax, eax;
 	__asm        je     _T45a;
 // LINE 278:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    viewSize, eax;
 // LINE 279:
 	__asm        mov    eax, viewSize;
@@ -525,7 +525,7 @@ _T3f4:
 	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 280:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -537,12 +537,12 @@ _T3f4:
 // LINE 281:
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
-	__asm        cmp    eax, ds:[0x6663A0];
+	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T455;
 // LINE 282:
-	__asm        inc    dword ptr ds:[0x67ED28];
+	__asm        inc    G_grid_ulc.x;
 // LINE 283:
-	__asm        inc    dword ptr ds:[0x67ED2C];
+	__asm        inc    G_grid_ulc.y;
 // LINE 286:
 _T455:
 	__asm        jmp    _T51c;
@@ -557,7 +557,7 @@ _T45a:
 // LINE 287:
 	__asm        jle    _T4cd;
 // LINE 288:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    viewSize, eax;
 // LINE 289:
 	__asm        mov    eax, viewSize;
@@ -566,7 +566,7 @@ _T45a:
 	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 290:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -578,18 +578,18 @@ _T45a:
 // LINE 292:
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
-	__asm        cmp    eax, ds:[0x6663A0];
+	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T4c8;
 // LINE 293:
-	__asm        dec    dword ptr ds:[0x67ED28];
+	__asm        dec    G_grid_ulc.x;
 // LINE 294:
-	__asm        dec    dword ptr ds:[0x67ED2C];
+	__asm        dec    G_grid_ulc.y;
 // LINE 297:
 _T4c8:
 	__asm        jmp    _T51c;
 // LINE 298:
 _T4cd:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    viewSize, eax;
 // LINE 299:
 	__asm        mov    eax, viewSize;
@@ -598,7 +598,7 @@ _T4cd:
 	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 300:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -610,12 +610,12 @@ _T4cd:
 // LINE 301:
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
-	__asm        cmp    eax, ds:[0x6663A0];
+	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T51c;
 // LINE 302:
-	__asm        inc    dword ptr ds:[0x67ED28];
+	__asm        inc    G_grid_ulc.x;
 // LINE 303:
-	__asm        inc    dword ptr ds:[0x67ED2C];
+	__asm        inc    G_grid_ulc.y;
 // LINE 307:
 _T51c:
 }
@@ -626,7 +626,7 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	long nConvertedValue;
 
 // LINE 323:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        mov    nOriginalViewSize, eax;
 // LINE 325:
 	__asm        cmp    lValue, 0;
@@ -652,7 +652,7 @@ _T33:
 	__asm        call   VRInitGridObj;
 	__asm        add    esp, 4;
 // LINE 333:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -662,23 +662,23 @@ _T33:
 	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 335:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cmp    nConvertedValue, eax;
 	__asm        jne    _Ta0;
 // LINE 337:
 	__asm        mov    eax, nOriginalViewSize;
-	__asm        sub    eax, ds:[0x6663A0];
+	__asm        sub    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        add    ds:[0x67ED28], eax;
+	__asm        add    G_grid_ulc.x, eax;
 // LINE 338:
 	__asm        mov    eax, nOriginalViewSize;
-	__asm        sub    eax, ds:[0x6663A0];
+	__asm        sub    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
-	__asm        add    ds:[0x67ED2C], eax;
+	__asm        add    G_grid_ulc.y, eax;
 // LINE 340:
 _Ta0:
 }
@@ -686,7 +686,7 @@ _Ta0:
 // FUNCTION: COPTER_D 0x004eeeb7
 long GetRenderBackPlaneValue() {
 // LINE 349:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        jmp    near ptr 0x004EEEC7;
 // LINE 350:
 }
@@ -752,7 +752,7 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 int32_t S3ViewerRotDelta() {
 // LINE 401:
 	__asm        mov    eax, 0x10000;
-	__asm        sub    eax, ds:[0x606E88];
+	__asm        sub    eax, S_rotdelta;
 	__asm        jmp    near ptr 0x004EEF65;
 // LINE 402:
 }
@@ -760,7 +760,7 @@ int32_t S3ViewerRotDelta() {
 // FUNCTION: COPTER_D 0x004eef6a
 int32_t S3ViewerPosDelta() {
 // LINE 412:
-	__asm        mov    eax, ds:[0x606E8C];
+	__asm        mov    eax, S_posdelta;
 	__asm        jmp    near ptr 0x004EEF7A;
 // LINE 413:
 }
@@ -771,15 +771,15 @@ void S3ViewerSetView() {
 	struct Point3d p;
 
 // LINE 427:
-	__asm        mov    eax, ds:[0x6C1318];
+	__asm        mov    eax, Viewer.pos.x;
 	__asm        neg    eax;
 	__asm        mov    p.x, eax;
 // LINE 428:
-	__asm        mov    eax, ds:[0x6C131C];
+	__asm        mov    eax, Viewer.pos.y;
 	__asm        neg    eax;
 	__asm        mov    p.y, eax;
 // LINE 429:
-	__asm        mov    eax, ds:[0x6C1320];
+	__asm        mov    eax, Viewer.pos.z;
 	__asm        neg    eax;
 	__asm        mov    p.z, eax;
 // LINE 430:
@@ -822,21 +822,21 @@ _T2b:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T41;
 // LINE 450:
-	__asm        xor    dword ptr ds:[0x598E88], 1;
+	__asm        xor    G_texobjs, 1;
 // LINE 451:
 	__asm        jmp    _T16d;
 _T41:
 	__asm        cmp    nCommand, 0x2E;
 	__asm        jne    _T57;
 // LINE 452:
-	__asm        xor    dword ptr ds:[0x598E8C], 1;
+	__asm        xor    G_texterr, 1;
 // LINE 453:
 	__asm        jmp    _T16d;
 _T57:
 	__asm        cmp    nCommand, 5;
 	__asm        jne    _T78;
 // LINE 455:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T73;
 // LINE 456:
 	__asm        call   S3CameraCycleChase;
@@ -854,7 +854,7 @@ _T8c:
 	__asm        cmp    nCommand, 0x2F;
 	__asm        jne    _Taf;
 // LINE 461:
-	__asm        cmp    dword ptr ds:[0x598E90], 1;
+	__asm        cmp    G_daynight, 1;
 	__asm        sbb    eax, eax;
 	__asm        neg    eax;
 	__asm        push   eax;
@@ -866,32 +866,32 @@ _Taf:
 	__asm        cmp    nCommand, 0x14;
 	__asm        jne    _T16d;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T16d;
 // LINE 464:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 2;
+	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _Te2;
 // LINE 465:
-	__asm        mov    dword ptr ds:[0x5B4DB8], 0;
+	__asm        mov    G_camera_mode, 0;
 // LINE 466:
 	__asm        jmp    _T16d;
 _Te2:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T13d;
 // LINE 468:
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 469:
-	__asm        cmp    dword ptr ds:[0x598E98], 1;
+	__asm        cmp    G_artmode, 1;
 	__asm        jne    _T12e;
 // LINE 470:
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xAC];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -899,22 +899,22 @@ _Te2:
 	__asm        add    esp, 8;
 // LINE 471:
 _T12e:
-	__asm        mov    dword ptr ds:[0x5B4DB8], 1;
+	__asm        mov    G_camera_mode, 1;
 // LINE 473:
 	__asm        jmp    _T16d;
 _T13d:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 1;
+	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _T16d;
 // LINE 475:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 476:
-	__asm        mov    dword ptr ds:[0x5B4DB8], 2;
+	__asm        mov    G_camera_mode, 2;
 // LINE 481:
 _T16d:
 }
@@ -923,14 +923,14 @@ _T16d:
 void S3SetDayNight(int32_t nDayOrNight) {
 // LINE 489:
 	__asm        mov    eax, nDayOrNight;
-	__asm        mov    ds:[0x598E90], eax;
+	__asm        mov    G_daynight, eax;
 // LINE 490:
-	__asm        cmp    dword ptr ds:[0x5B4794], 0;
+	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T65;
 // LINE 492:
 	__asm        call   S3ObjSetFlatShading;
 // LINE 493:
-	__asm        cmp    dword ptr ds:[0x598E90], 1;
+	__asm        cmp    G_daynight, 1;
 	__asm        jne    _T3c;
 // LINE 494:
 	__asm        push   1;
@@ -945,7 +945,7 @@ _T3c:
 	__asm        add    esp, 4;
 // LINE 497:
 _T46:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;

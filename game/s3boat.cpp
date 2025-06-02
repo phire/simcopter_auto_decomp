@@ -273,7 +273,7 @@ void $E7() {
 // FUNCTION: COPTER_D 0x0052748a
 void $E3() {
 
-	__asm        mov    dword ptr ds:[0x62B5F0], 0x593200;
+	__asm        mov    BoatClass::lsBoat.<vftable>, 0x593200;
 	__asm        jmp    near ptr 0x0052749F;
 
 	__asm        jmp    near ptr 0x005274A4;
@@ -619,7 +619,7 @@ void BoatClass::Itterate() {
 	__asm        test   eax, eax;
 	__asm        je     _Tea;
 // LINE 568:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x4F], eax;
 // LINE 569:
@@ -803,7 +803,7 @@ _T39:
 	__asm        mov    [ecx+0x9B], eax;
 // LINE 703:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x57], eax;
@@ -892,7 +892,7 @@ _T159:
 	__asm        call   BoatClass::MoveForward;
 // LINE 729:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xB], eax;
@@ -1423,12 +1423,12 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 	int32_t deltaX;
 
 // LINE 1078:
-	__asm        mov    eax, ds:[0x6BF188];
+	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x33];
 	__asm        mov    deltaX, eax;
 // LINE 1079:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x37];
 	__asm        mov    deltaY, eax;
@@ -1482,13 +1482,13 @@ _T98:
 	__asm        mov    deltaY, eax;
 // LINE 1112:
 _Taa:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaX;
 	__asm        jl     _Td2;
 
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaY;
@@ -1765,7 +1765,7 @@ void BoatClass::MoveForward() {
 	int32_t distance;
 
 // LINE 1259:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2B];
@@ -3734,13 +3734,13 @@ _T70:
 	__asm        mov    vec.x, eax;
 // LINE 2214:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2215:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3759,13 +3759,13 @@ _Tad:
 	__asm        mov    vec.x, eax;
 // LINE 2223:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2224:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3782,13 +3782,13 @@ _Tea:
 	__asm        mov    vec.z, eax;
 // LINE 2231:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2232:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3796,13 +3796,13 @@ _Tea:
 	__asm        jmp    _T170;
 // LINE 2237:
 _T123:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.x;
 	__asm        mov    vec.x, eax;
 // LINE 2238:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.z;
@@ -3828,14 +3828,14 @@ _T170:
 // LINE 2243:
 	__asm        shl    vec.z, 6;
 // LINE 2245:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        add    eax, vec.x;
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    x, eax;
 // LINE 2246:
 	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ds:[0x6C1274];
+	__asm        mov    ecx, ViewState.world_pos.z;
 	__asm        add    ecx, vec.z;
 	__asm        sub    eax, ecx;
 	__asm        sar    eax, 0x16;
@@ -4922,7 +4922,7 @@ _T78:
 	__asm        call   0x004D8520;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -4944,7 +4944,7 @@ _T78:
 	__asm        cmp    dword ptr [eax+0x87], 0;
 	__asm        je     _Te6;
 // LINE 2868:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x87];
@@ -5199,7 +5199,7 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 	class BoatClass* capboat;
 
 // LINE 3066:
-	__asm        mov    eax, ds:[0x62B6D8];
+	__asm        mov    eax, boats[0];
 	__asm        mov    capboat, eax;
 // LINE 3068:
 	__asm        jmp    near ptr 0x0052AB94;
@@ -5354,7 +5354,7 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 	class BoatClass* capboat;
 
 // LINE 3129:
-	__asm        mov    eax, ds:[0x62B6D8];
+	__asm        mov    eax, boats[0];
 	__asm        mov    capboat, eax;
 // LINE 3131:
 	__asm        jmp    near ptr 0x0052AD11;
@@ -5453,11 +5453,11 @@ _T47:
 	__asm        mov    eax, [eax*4+0x62B6D8];
 	__asm        mov    b, eax;
 // LINE 3215:
-	__asm        mov    eax, ds:[0x62B5FB];
+	__asm        mov    eax, BoatClass::lsBoat.sprayTimer;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0xB], eax;
 // LINE 3216:
-	__asm        mov    eax, ds:[0x62B5FF];
+	__asm        mov    eax, BoatClass::lsBoat.direction;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0xF], eax;
 // LINE 3217:
@@ -5472,23 +5472,23 @@ _T47:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 3218:
-	__asm        mov    eax, ds:[0x62B60F];
+	__asm        mov    eax, BoatClass::lsBoat.remainingDist;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x1F], eax;
 // LINE 3219:
-	__asm        mov    eax, ds:[0x62B613];
+	__asm        mov    eax, BoatClass::lsBoat.remainingTime;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x23], eax;
 // LINE 3220:
-	__asm        mov    eax, ds:[0x62B617];
+	__asm        mov    eax, BoatClass::lsBoat.utdirection;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x27], eax;
 // LINE 3221:
-	__asm        mov    eax, ds:[0x62B61B];
+	__asm        mov    eax, BoatClass::lsBoat.speed;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x2B], eax;
 // LINE 3222:
-	__asm        mov    eax, ds:[0x62B61F];
+	__asm        mov    eax, BoatClass::lsBoat.desiredSpeed;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x2F], eax;
 // LINE 3223:
@@ -5519,19 +5519,19 @@ _T47:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 3226:
-	__asm        mov    eax, ds:[0x62B63B];
+	__asm        mov    eax, BoatClass::lsBoat.beamDelay;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x4B], eax;
 // LINE 3227:
-	__asm        mov    eax, ds:[0x62B63F];
+	__asm        mov    eax, BoatClass::lsBoat.beamTimer;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x4F], eax;
 // LINE 3228:
-	__asm        mov    eax, ds:[0x62B643];
+	__asm        mov    eax, BoatClass::lsBoat.missionId;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x53], eax;
 // LINE 3229:
-	__asm        mov    eax, ds:[0x62B647];
+	__asm        mov    eax, BoatClass::lsBoat.timeToLive;
 	__asm        mov    ecx, b;
 	__asm        mov    [ecx+0x57], eax;
 // LINE 3230:
@@ -5584,7 +5584,7 @@ _T47:
 // LINE 3235:
 	__asm        mov    edi, b;
 	__asm        add    edi, 0xA3;
-	__asm        lea    esi, ds:[0x62B693];
+	__asm        lea    esi, BoatClass::lsBoat.dyObj.matrix[0][0];
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 3236:

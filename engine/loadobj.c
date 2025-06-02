@@ -117,7 +117,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        shl    eax, 2;
 	__asm        add    eax, 0x18;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -126,7 +126,7 @@ struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
 	__asm        cmp    res, 0;
 	__asm        jne    _T3f;
 // LINE 154:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 155:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1f4;
@@ -169,7 +169,7 @@ _T3f:
 	__asm        lea    ecx, [ecx+ecx*8];
 	__asm        shl    ecx, 4;
 	__asm        add    eax, ecx;
-	__asm        mov    ds:[0x606A5C], eax;
+	__asm        mov    ObjDataSize, eax;
 // LINE 168:
 	__asm        mov    eax, info;
 	__asm        mov    eax, [eax+4];
@@ -184,15 +184,15 @@ _T3f:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jge    _Te1;
 // LINE 171:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 172:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1f4;
 // LINE 175:
 _Te1:
-	__asm        mov    eax, ds:[0x606A5C];
+	__asm        mov    eax, ObjDataSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -200,16 +200,16 @@ _Te1:
 	__asm        cmp    group, 0;
 	__asm        jne    _T113;
 // LINE 176:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 177:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1f4;
 // LINE 180:
 _T113:
 	__asm        mov    eax, group;
-	__asm        mov    ds:[0x606A60], eax;
+	__asm        mov    ObjData, eax;
 // LINE 184:
-	__asm        mov    dword ptr ds:[0x6666C0], 0;
+	__asm        mov    FaceArray, 0;
 // LINE 185:
 	__asm        mov    i, 0;
 	__asm        jmp    _T134;
@@ -220,7 +220,7 @@ _T134:
 	__asm        cmp    i, eax;
 	__asm        jge    _T19b;
 // LINE 186:
-	__asm        mov    eax, ds:[0x606A60];
+	__asm        mov    eax, ObjData;
 	__asm        mov    ecx, i;
 	__asm        mov    edx, res;
 	__asm        mov    [edx+ecx*4+0x18], eax;
@@ -233,16 +233,16 @@ _T134:
 	__asm        test   eax, eax;
 	__asm        jne    _T196;
 // LINE 189:
-	__asm        cmp    dword ptr ds:[0x6666C0], 0;
+	__asm        cmp    FaceArray, 0;
 	__asm        je     _T181;
 // LINE 190:
-	__asm        mov    eax, ds:[0x6666C0];
+	__asm        mov    eax, FaceArray;
 	__asm        push   eax;
 	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 191:
 _T181:
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -254,15 +254,15 @@ _T196:
 	__asm        jmp    _T131;
 // LINE 196:
 _T19b:
-	__asm        cmp    dword ptr ds:[0x606A5C], 0;
+	__asm        cmp    ObjDataSize, 0;
 	__asm        jge    _T1c7;
 // LINE 198:
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 199:
-	__asm        mov    dword ptr ds:[0x662810], 0xA;
+	__asm        mov    GlobalError, 0xA;
 // LINE 200:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1f4;
@@ -373,7 +373,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 296:
 	__asm        mov    uses_gouraud, 0;
 // LINE 299:
-	__asm        mov    eax, ds:[0x606A60];
+	__asm        mov    eax, ObjData;
 	__asm        mov    ObjectPtr, eax;
 // LINE 300:
 	__asm        mov    eax, ObjectPtr;
@@ -387,7 +387,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	__asm        test   eax, eax;
 	__asm        jne    _T4e;
 // LINE 302:
-	__asm        mov    dword ptr ds:[0x662810], 9;
+	__asm        mov    GlobalError, 9;
 // LINE 303:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6b8;
@@ -474,15 +474,15 @@ _T10d:
 	__asm        movsx  eax, fileobjhdr.NFaces;
 	__asm        shl    eax, 2;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x6666C0], eax;
-	__asm        cmp    dword ptr ds:[0x6666C0], 0;
+	__asm        mov    FaceArray, eax;
+	__asm        cmp    FaceArray, 0;
 	__asm        jne    _T168;
 // LINE 452:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 453:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T6b8;
@@ -513,7 +513,7 @@ _T193:
 	__asm        test   eax, eax;
 	__asm        jne    _T1da;
 // LINE 466:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -531,9 +531,9 @@ _T1da:
 	__asm        test   eax, eax;
 	__asm        je     _T214;
 // LINE 506:
-	__asm        mov    dword ptr ds:[0x662810], 6;
+	__asm        mov    GlobalError, 6;
 // LINE 507:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -652,7 +652,7 @@ _T339:
 	__asm        test   eax, eax;
 	__asm        jne    _T385;
 // LINE 583:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -836,7 +836,7 @@ _T581:
 // LINE 652:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, x;
-	__asm        mov    edx, ds:[0x6666C0];
+	__asm        mov    edx, FaceArray;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 653:
 _T5ba:
@@ -847,7 +847,7 @@ _T5bf:
 	__asm        je     _T62f;
 // LINE 659:
 	__asm        mov    eax, dataptr;
-	__asm        mov    ds:[0x606A64], eax;
+	__asm        mov    Tree, eax;
 // LINE 662:
 	__asm        push   0xA;
 	__asm        lea    eax, treehdr.Id[0];
@@ -857,7 +857,7 @@ _T5bf:
 	__asm        test   eax, eax;
 	__asm        jne    _T602;
 // LINE 664:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
@@ -866,7 +866,7 @@ _T5bf:
 	__asm        jmp    _T6b8;
 // LINE 687:
 _T602:
-	__asm        mov    word ptr ds:[0x606A68], 0;
+	__asm        mov    BSPIndex, 0;
 // LINE 688:
 	__asm        call   ReadTree;
 	__asm        mov    ecx, ObjectPtr;
@@ -885,12 +885,12 @@ _T62f:
 	__asm        mov    dword ptr [eax+0x34], 0;
 // LINE 693:
 _T639:
-	__asm        mov    eax, ds:[0x63A854];
+	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 694:
-	__asm        mov    dword ptr ds:[0x6666C0], 0;
+	__asm        mov    FaceArray, 0;
 // LINE 700:
 	__asm        mov    eax, VertCount;
 	__asm        mov    ecx, ObjectPtr;
@@ -898,13 +898,13 @@ _T639:
 // LINE 701:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, dataptr;
-	__asm        sub    ecx, ds:[0x606A60];
+	__asm        sub    ecx, ObjData;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x606A5C], eax;
+	__asm        sub    ObjDataSize, eax;
 // LINE 702:
 	__asm        mov    eax, dataptr;
-	__asm        mov    ds:[0x606A60], eax;
+	__asm        mov    ObjData, eax;
 // LINE 703:
 	__asm        mov    eax, ObjectPtr;
 	__asm        test   byte ptr [eax], 2;
@@ -3146,21 +3146,21 @@ struct _BSPtree* ReadTree() {
 	__asm        cmp    eax, 0xFFFF;
 	__asm        je     _Teb;
 // LINE 1811:
-	__asm        mov    ax, ds:[0x606A68];
+	__asm        mov    ax, BSPIndex;
 	__asm        mov    ThisIndex, ax;
 // LINE 1812:
-	__asm        inc    word ptr ds:[0x606A68];
+	__asm        inc    BSPIndex;
 // LINE 1813:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
 	__asm        and    eax, 0xFFFF;
-	__asm        mov    ecx, ds:[0x6666C0];
+	__asm        mov    ecx, FaceArray;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ThisIndex);
 	__asm        and    ecx, 0xFFFF;
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
-	__asm        mov    edx, ds:[0x606A64];
+	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 1815:
 	__asm        push   0x10;
@@ -3170,7 +3170,7 @@ struct _BSPtree* ReadTree() {
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x606A64];
+	__asm        add    eax, Tree;
 	__asm        add    eax, 4;
 	__asm        push   eax;
 	__asm        call   ReadResource;
@@ -3182,7 +3182,7 @@ struct _BSPtree* ReadTree() {
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
-	__asm        mov    edx, ds:[0x606A64];
+	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4+0x14], eax;
 // LINE 1828:
 	__asm        call   ReadTree;
@@ -3191,7 +3191,7 @@ struct _BSPtree* ReadTree() {
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 3;
 	__asm        sub    ecx, edx;
-	__asm        mov    edx, ds:[0x606A64];
+	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4+0x18], eax;
 // LINE 1829:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(ThisIndex);
@@ -3200,7 +3200,7 @@ struct _BSPtree* ReadTree() {
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x606A64];
+	__asm        add    eax, Tree;
 	__asm        jmp    _Tf2;
 // LINE 1831:
 	__asm        jmp    _Tf2;
@@ -3396,7 +3396,7 @@ _Td3:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jge    _T120;
 // LINE 1905:
-	__asm        mov    dword ptr ds:[0x662810], 0xD;
+	__asm        mov    GlobalError, 0xD;
 // LINE 1906:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a0;
@@ -3422,7 +3422,7 @@ _T143:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jge    _T163;
 // LINE 1914:
-	__asm        mov    dword ptr ds:[0x662810], 0xD;
+	__asm        mov    GlobalError, 0xD;
 // LINE 1915:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a0;
@@ -3536,7 +3536,7 @@ struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
 	__asm        cmp    mp, 0;
 	__asm        jne    _T3b;
 // LINE 1976:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 1977:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tf3;
@@ -3575,19 +3575,19 @@ _T3b:
 	__asm        mov    eax, d2;
 	__asm        add    eax, xf;
 	__asm        add    eax, 0xA0;
-	__asm        add    ds:[0x59B524], eax;
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        cmp    ds:[0x59B52C], eax;
+	__asm        add    G_alloc_curr, eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _Tb5;
 
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        mov    ds:[0x59B52C], eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        mov    G_alloc_max, eax;
 // LINE 1989:
 _Tb5:
 	__asm        mov    eax, d2;
 	__asm        add    eax, xf;
 	__asm        add    eax, 0xA0;
-	__asm        add    ds:[0x59B530], eax;
+	__asm        add    G_alloc_used, eax;
 // LINE 1992:
 	__asm        mov    eax, mp;
 	__asm        push   eax;
@@ -3596,7 +3596,7 @@ _Tb5:
 	__asm        test   eax, eax;
 	__asm        jne    _Teb;
 // LINE 1993:
-	__asm        mov    dword ptr ds:[0x662810], 0xE;
+	__asm        mov    GlobalError, 0xE;
 // LINE 1994:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tf3;
@@ -3812,20 +3812,20 @@ _T30:
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    ds:[0x59B524], eax;
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        cmp    ds:[0x59B52C], eax;
+	__asm        add    G_alloc_curr, eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _T5d;
 
-	__asm        mov    eax, ds:[0x59B524];
-	__asm        mov    ds:[0x59B52C], eax;
+	__asm        mov    eax, G_alloc_curr;
+	__asm        mov    G_alloc_max, eax;
 // LINE 2110:
 _T5d:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
-	__asm        add    ds:[0x59B530], eax;
+	__asm        add    G_alloc_used, eax;
 // LINE 2116:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
@@ -4024,7 +4024,7 @@ _T23f:
 	__asm        shl    ecx, 2;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x59B524], eax;
+	__asm        sub    G_alloc_curr, eax;
 // LINE 2191:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, obj;
@@ -4033,7 +4033,7 @@ _T23f:
 	__asm        shl    ecx, 2;
 	__asm        sub    eax, ecx;
 	__asm        neg    eax;
-	__asm        sub    ds:[0x59B530], eax;
+	__asm        sub    G_alloc_used, eax;
 // LINE 2192:
 _T28b:
 }
@@ -4076,11 +4076,11 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        lea    eax, [eax+ecx*4];
 	__asm        add    eax, 0xA0;
-	__asm        mov    ds:[0x606A5C], eax;
+	__asm        mov    ObjDataSize, eax;
 // LINE 2241:
-	__asm        mov    eax, ds:[0x606A5C];
+	__asm        mov    eax, ObjDataSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x63A858];
+	__asm        mov    eax, MainPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -4088,7 +4088,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	__asm        cmp    dataptr, 0;
 	__asm        jne    _T5f;
 // LINE 2244:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 2245:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T20d;
@@ -4101,13 +4101,13 @@ _T5f:
 	__asm        test   eax, eax;
 	__asm        jne    _T84;
 // LINE 2250:
-	__asm        mov    dword ptr ds:[0x662810], 9;
+	__asm        mov    GlobalError, 9;
 // LINE 2251:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T20d;
 // LINE 2254:
 _T84:
-	__asm        mov    eax, ds:[0x606A5C];
+	__asm        mov    eax, ObjDataSize;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    eax, dataptr;
@@ -4291,11 +4291,11 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        lea    eax, [eax+ecx*4];
 	__asm        add    eax, 0x98;
-	__asm        mov    ds:[0x606A5C], eax;
+	__asm        mov    ObjDataSize, eax;
 // LINE 2346:
-	__asm        mov    eax, ds:[0x606A5C];
+	__asm        mov    eax, ObjDataSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x63A858];
+	__asm        mov    eax, MainPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -4303,7 +4303,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	__asm        cmp    dataptr, 0;
 	__asm        jne    _T5d;
 // LINE 2349:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 2350:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1ee;
@@ -4316,13 +4316,13 @@ _T5d:
 	__asm        test   eax, eax;
 	__asm        jne    _T82;
 // LINE 2355:
-	__asm        mov    dword ptr ds:[0x662810], 9;
+	__asm        mov    GlobalError, 9;
 // LINE 2356:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1ee;
 // LINE 2359:
 _T82:
-	__asm        mov    eax, ds:[0x606A5C];
+	__asm        mov    eax, ObjDataSize;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    eax, dataptr;
@@ -4533,7 +4533,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	__asm        test   eax, eax;
 	__asm        jne    _T40;
 // LINE 2463:
-	__asm        mov    dword ptr ds:[0x662810], 9;
+	__asm        mov    GlobalError, 9;
 // LINE 2464:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T161;

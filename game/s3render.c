@@ -34,7 +34,7 @@ int32_t VRAppInit() {
 	char szFilePath[260];
 
 // LINE 175:
-	__asm        mov    dword ptr ds:[0x5B4790], 1;
+	__asm        mov    G_InitializationProgress, 1;
 // LINE 179:
 	__asm        call   S3HeliTweakInit;
 // LINE 180:
@@ -54,11 +54,11 @@ int32_t VRAppInit() {
 // LINE 186:
 	__asm        call   UpdateFigureVals;
 // LINE 188:
-	__asm        or     dword ptr ds:[0x5B4790], 2;
+	__asm        or     G_InitializationProgress, 2;
 // LINE 189:
 	__asm        call   VREngineInit;
 // LINE 190:
-	__asm        cmp    dword ptr ds:[0x598E7C], 0;
+	__asm        cmp    G_run_old, 0;
 	__asm        jne    _T64;
 // LINE 191:
 	__asm        call   0x004D7300;
@@ -73,13 +73,13 @@ _T64:
 // LINE 199:
 	__asm        mov    eax, i;
 	__asm        and    eax, 0xFF;
-	__asm        mov    ds:[0x598EA0], eax;
+	__asm        mov    G_ClearColor, eax;
 // LINE 243:
 	__asm        push   0x598EE0;
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 244:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
+	__asm        mov    G_video_mode, 0x10;
 // LINE 247:
 	__asm        push   0x10000;
 	__asm        call   0x004D6610;
@@ -87,7 +87,7 @@ _T64:
 // LINE 248:
 	__asm        call   VRFrustSetNormals;
 // LINE 271:
-	__asm        or     dword ptr ds:[0x5B4790], 4;
+	__asm        or     G_InitializationProgress, 4;
 // LINE 276:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -103,7 +103,7 @@ _T64:
 	__asm        push   eax;
 	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x5B476C], eax;
+	__asm        mov    G_restex, eax;
 // LINE 279:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -119,7 +119,7 @@ _T64:
 	__asm        push   eax;
 	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x5B4774], eax;
+	__asm        mov    G_resgeo1, eax;
 // LINE 282:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -135,7 +135,7 @@ _T64:
 	__asm        push   eax;
 	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x5B4778], eax;
+	__asm        mov    G_resgeo2, eax;
 // LINE 285:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -151,18 +151,18 @@ _T64:
 	__asm        push   eax;
 	__asm        call   VRLoadResource;
 	__asm        add    esp, 0xC;
-	__asm        mov    ds:[0x5B477C], eax;
+	__asm        mov    G_resgeo3, eax;
 // LINE 305:
-	__asm        cmp    dword ptr ds:[0x5B476C], 0;
+	__asm        cmp    G_restex, 0;
 	__asm        je     _T1bd;
 
-	__asm        cmp    dword ptr ds:[0x5B4774], 0;
+	__asm        cmp    G_resgeo1, 0;
 	__asm        je     _T1bd;
 
-	__asm        cmp    dword ptr ds:[0x5B4778], 0;
+	__asm        cmp    G_resgeo2, 0;
 	__asm        je     _T1bd;
 
-	__asm        cmp    dword ptr ds:[0x5B477C], 0;
+	__asm        cmp    G_resgeo3, 0;
 	__asm        jne    _T1ca;
 // LINE 306:
 _T1bd:
@@ -181,7 +181,7 @@ _T1ca:
 // LINE 312:
 	__asm        push   0x14;
 	__asm        push   0x1F1F;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -198,7 +198,7 @@ _T214:
 	__asm        push   0;
 	__asm        push   2;
 	__asm        push   0x1F1F;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
@@ -206,7 +206,7 @@ _T214:
 	__asm        push   0;
 	__asm        push   0x27;
 	__asm        push   0x1F1F;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
@@ -214,7 +214,7 @@ _T214:
 	__asm        push   0;
 	__asm        push   0x28;
 	__asm        push   0x1F1F;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
@@ -222,15 +222,15 @@ _T214:
 	__asm        push   0;
 	__asm        push   0xD;
 	__asm        push   0x1F1F;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
 // LINE 324:
-	__asm        or     dword ptr ds:[0x5B4790], 8;
+	__asm        or     G_InitializationProgress, 8;
 // LINE 326:
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRCreateTexColors;
 	__asm        add    esp, 8;
@@ -246,7 +246,7 @@ _T29c:
 	__asm        mov    eax, mem2d;
 	__asm        mov    memxf, eax;
 // LINE 339:
-	__asm        mov    eax, ds:[0x5B4774];
+	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
 	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
@@ -263,7 +263,7 @@ _T2db:
 // LINE 342:
 	__asm        mov    eax, j;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4774];
+	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
 	__asm        call   VRGetResObject;
 	__asm        add    esp, 8;
@@ -300,7 +300,7 @@ _T36e:
 	__asm        jmp    _T2d5;
 // LINE 349:
 _T373:
-	__asm        mov    eax, ds:[0x5B4778];
+	__asm        mov    eax, G_resgeo2;
 	__asm        push   eax;
 	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
@@ -317,7 +317,7 @@ _T39c:
 // LINE 352:
 	__asm        mov    eax, j;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4778];
+	__asm        mov    eax, G_resgeo2;
 	__asm        push   eax;
 	__asm        call   VRGetResObject;
 	__asm        add    esp, 8;
@@ -354,7 +354,7 @@ _T42f:
 	__asm        jmp    _T396;
 // LINE 360:
 _T434:
-	__asm        mov    eax, ds:[0x5B477C];
+	__asm        mov    eax, G_resgeo3;
 	__asm        push   eax;
 	__asm        call   VRGetResObjectCnt;
 	__asm        add    esp, 4;
@@ -371,7 +371,7 @@ _T45d:
 // LINE 363:
 	__asm        mov    eax, j;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B477C];
+	__asm        mov    eax, G_resgeo3;
 	__asm        push   eax;
 	__asm        call   VRGetResObject;
 	__asm        add    esp, 8;
@@ -416,9 +416,9 @@ _T4f5:
 	__asm        push   eax;
 	__asm        call   VRCreateMemPool;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x5B4780], eax;
+	__asm        mov    G_main_mp, eax;
 // LINE 375:
-	__asm        cmp    dword ptr ds:[0x5B4780], 0;
+	__asm        cmp    G_main_mp, 0;
 	__asm        jne    _T531;
 // LINE 376:
 	__asm        push   0x5B485C;
@@ -426,72 +426,72 @@ _T4f5:
 	__asm        add    esp, 4;
 // LINE 379:
 _T531:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4774];
+	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
 	__asm        call   VRAssignMemPoolToRes;
 	__asm        add    esp, 8;
 // LINE 380:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4778];
+	__asm        mov    eax, G_resgeo2;
 	__asm        push   eax;
 	__asm        call   VRAssignMemPoolToRes;
 	__asm        add    esp, 8;
 // LINE 381:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B477C];
+	__asm        mov    eax, G_resgeo3;
 	__asm        push   eax;
 	__asm        call   VRAssignMemPoolToRes;
 	__asm        add    esp, 8;
 // LINE 383:
-	__asm        or     dword ptr ds:[0x5B4790], 0x10;
+	__asm        or     G_InitializationProgress, 0x10;
 // LINE 384:
 	__asm        call   S3TerrainInit;
 // LINE 386:
-	__asm        or     dword ptr ds:[0x5B4790], 0x20;
+	__asm        or     G_InitializationProgress, 0x20;
 // LINE 387:
 	__asm        call   S3ObjInit;
 // LINE 393:
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4774];
+	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
 	__asm        call   VRAssignTextureResToGroup;
 	__asm        add    esp, 8;
 // LINE 394:
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4778];
+	__asm        mov    eax, G_resgeo2;
 	__asm        push   eax;
 	__asm        call   VRAssignTextureResToGroup;
 	__asm        add    esp, 8;
 // LINE 395:
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B477C];
+	__asm        mov    eax, G_resgeo3;
 	__asm        push   eax;
 	__asm        call   VRAssignTextureResToGroup;
 	__asm        add    esp, 8;
 // LINE 398:
-	__asm        mov    eax, ds:[0x5B4774];
+	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
 	__asm        call   VRResFreeBarrys;
 	__asm        add    esp, 4;
 // LINE 399:
-	__asm        mov    eax, ds:[0x5B4778];
+	__asm        mov    eax, G_resgeo2;
 	__asm        push   eax;
 	__asm        call   VRResFreeBarrys;
 	__asm        add    esp, 4;
 // LINE 400:
-	__asm        mov    eax, ds:[0x5B477C];
+	__asm        mov    eax, G_resgeo3;
 	__asm        push   eax;
 	__asm        call   VRResFreeBarrys;
 	__asm        add    esp, 4;
 // LINE 403:
-	__asm        or     dword ptr ds:[0x5B4790], 0x40;
+	__asm        or     G_InitializationProgress, 0x40;
 // LINE 404:
 	__asm        call   S3MapInit;
 // LINE 408:
@@ -500,27 +500,27 @@ _T531:
 	__asm        push   0x10000;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x5B5E78], eax;
+	__asm        mov    G_dyobjmempool, eax;
 // LINE 416:
-	__asm        or     dword ptr ds:[0x5B4790], 0x80;
+	__asm        or     G_InitializationProgress, 0x80;
 // LINE 417:
-	__asm        mov    dword ptr ds:[0x6BFB54], 3;
+	__asm        mov    G_helidata[3].type, 3;
 // LINE 418:
-	__asm        mov    dword ptr ds:[0x6BF4FC], 1;
+	__asm        mov    G_helidata[1].type, 1;
 // LINE 419:
-	__asm        mov    dword ptr ds:[0x6BF828], 2;
+	__asm        mov    G_helidata[2].type, 2;
 // LINE 420:
-	__asm        mov    dword ptr ds:[0x6C01AC], 5;
+	__asm        mov    G_helidata[5].type, 5;
 // LINE 421:
-	__asm        mov    dword ptr ds:[0x6BF1D0], 0;
+	__asm        mov    G_helidata[0].type, 0;
 // LINE 422:
-	__asm        mov    dword ptr ds:[0x6BFE80], 4;
+	__asm        mov    G_helidata[4].type, 4;
 // LINE 423:
-	__asm        mov    dword ptr ds:[0x6C04D8], 6;
+	__asm        mov    G_helidata[6].type, 6;
 // LINE 424:
-	__asm        mov    dword ptr ds:[0x6C0804], 7;
+	__asm        mov    G_helidata[7].type, 7;
 // LINE 425:
-	__asm        mov    dword ptr ds:[0x6C0B30], 8;
+	__asm        mov    G_helidata[8].type, 8;
 // LINE 426:
 	__asm        push   0x6BF1D0;
 	__asm        call   S3HeliInitInstance;
@@ -574,7 +574,7 @@ _T531:
 	__asm        call   S3HeliInitInstance;
 	__asm        add    esp, 4;
 // LINE 436:
-	__asm        or     dword ptr ds:[0x5B4790], 0x100;
+	__asm        or     G_InitializationProgress, 0x100;
 // LINE 439:
 	__asm        mov    instanceID, 0;
 	__asm        jmp    _T736;
@@ -672,7 +672,7 @@ _T846:
 	__asm        jmp    _T812;
 // LINE 467:
 _T84b:
-	__asm        or     dword ptr ds:[0x5B4790], 0x200;
+	__asm        or     G_InitializationProgress, 0x200;
 // LINE 468:
 	__asm        mov    eax, instanceID;
 	__asm        add    eax, 5;
@@ -747,7 +747,7 @@ _T923:
 	__asm        jmp    _T91d;
 // LINE 510:
 _T944:
-	__asm        or     dword ptr ds:[0x5B4790], 0x400;
+	__asm        or     G_InitializationProgress, 0x400;
 // LINE 511:
 	__asm        call   S3FireInit;
 // LINE 514:
@@ -755,11 +755,11 @@ _T944:
 // LINE 517:
 	__asm        call   S3MissileInit;
 // LINE 520:
-	__asm        or     dword ptr ds:[0x5B4790], 0x800;
+	__asm        or     G_InitializationProgress, 0x800;
 // LINE 521:
 	__asm        call   S3PersonInit;
 // LINE 527:
-	__asm        mov    dword ptr ds:[0x5B4794], 1;
+	__asm        mov    G_VRAppInitCalled, 1;
 // LINE 529:
 	__asm        push   0;
 	__asm        call   VRAppCityInit;
@@ -778,12 +778,12 @@ int32_t VRAppCityInit(int32_t reload) {
 	__asm        cmp    reload, 1;
 	__asm        jne    _T1d;
 // LINE 554:
-	__asm        mov    dword ptr ds:[0x5B4790], 0;
+	__asm        mov    G_InitializationProgress, 0;
 // LINE 555:
 _T1d:
-	__asm        or     dword ptr ds:[0x5B4790], 0x1000;
+	__asm        or     G_InitializationProgress, 0x1000;
 // LINE 558:
-	__asm        mov    dword ptr ds:[0x5B4DB8], 3;
+	__asm        mov    G_camera_mode, 3;
 // LINE 562:
 	__asm        cmp    reload, 1;
 	__asm        jne    _T7b;
@@ -808,7 +808,7 @@ _T1d:
 // LINE 573:
 	__asm        call   ResetAllBoats;
 // LINE 574:
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
@@ -818,7 +818,7 @@ _T7b:
 // LINE 579:
 	__asm        call   S3CityInit;
 // LINE 581:
-	__asm        or     dword ptr ds:[0x5B4790], 0x2000;
+	__asm        or     G_InitializationProgress, 0x2000;
 // LINE 583:
 	__asm        call   S3RoadGraphInit;
 // LINE 586:
@@ -826,7 +826,7 @@ _T7b:
 // LINE 589:
 	__asm        call   S3RoadDataInit;
 // LINE 597:
-	__asm        cmp    dword ptr ds:[0x598E90], 1;
+	__asm        cmp    G_daynight, 1;
 	__asm        jne    _Tba;
 // LINE 599:
 	__asm        push   1;
@@ -843,16 +843,16 @@ _Tba:
 _Tc4:
 	__asm        call   S3ObjSetFlatShading;
 // LINE 609:
-	__asm        mov    dword ptr ds:[0x5B4968], 0x6BF1D0;
+	__asm        mov    G_uheli, 0x6BF1D0;
 // LINE 613:
-	__asm        mov    dword ptr ds:[0x5B496C], 0;
+	__asm        mov    G_testheli, 0;
 // LINE 618:
-	__asm        cmp    dword ptr ds:[0x598E9C], 1;
+	__asm        cmp    G_testmode, 1;
 	__asm        jne    _T12b;
 // LINE 620:
-	__asm        mov    dword ptr ds:[0x5B4DB8], 0;
+	__asm        mov    G_camera_mode, 0;
 // LINE 622:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        add    eax, 0x18;
 	__asm        mov    ecx, 0x6BF1C0;
@@ -863,35 +863,35 @@ _Tc4:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 623:
-	__asm        sub    dword ptr ds:[0x6BF1C0], 0x6400000;
+	__asm        sub    G_testloc.x, 0x6400000;
 // LINE 624:
-	__asm        add    dword ptr ds:[0x6BF1C8], 0x76C0000;
+	__asm        add    G_testloc.z, 0x76C0000;
 // LINE 627:
 _T12b:
-	__asm        or     dword ptr ds:[0x5B4790], 0x4000;
+	__asm        or     G_InitializationProgress, 0x4000;
 // LINE 629:
 	__asm        call   S3ViewerInit;
 // LINE 632:
 	__asm        push   0x140000;
 	__asm        push   0x140000;
-	__asm        mov    eax, ds:[0x6C1194];
+	__asm        mov    eax, G_helibase.pad1.y;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1190];
+	__asm        mov    eax, G_helibase.pad1.x;
 	__asm        push   eax;
 	__asm        call   S3PersonUserStart;
 	__asm        add    esp, 0x10;
 // LINE 633:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T194;
 // LINE 635:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 638:
 	__asm        push   0x140000;
 	__asm        push   0x140000;
-	__asm        mov    eax, ds:[0x6C1194];
+	__asm        mov    eax, G_helibase.pad1.y;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C1190];
+	__asm        mov    eax, G_helibase.pad1.x;
 	__asm        push   eax;
 	__asm        call   S3PersonUserAppear;
 	__asm        add    esp, 0x10;
@@ -899,7 +899,7 @@ _T12b:
 	__asm        jmp    _T1a0;
 // LINE 643:
 _T194:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    dword ptr [eax+8], 1;
 // LINE 647:
 _T1a0:
@@ -921,7 +921,7 @@ _T1b7:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
 	__asm        lea    eax, [eax*2+0x6BF1D0];
-	__asm        cmp    eax, ds:[0x5B4968];
+	__asm        cmp    eax, G_uheli;
 	__asm        je     _T1ff;
 // LINE 653:
 	__asm        mov    eax, i;
@@ -936,12 +936,12 @@ _T1ff:
 	__asm        cmp    i, 2;
 	__asm        jne    _T24e;
 // LINE 660:
-	__asm        cmp    dword ptr ds:[0x5B4920], 1;
+	__asm        cmp    G_apachebase_found, 1;
 	__asm        jne    _T24e;
 // LINE 664:
-	__asm        mov    eax, ds:[0x6C11FC];
+	__asm        mov    eax, G_helibase.apache_pad.y;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6C11F8];
+	__asm        mov    eax, G_helibase.apache_pad.x;
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -1045,7 +1045,7 @@ int32_t VRAppGameInit(void * __ptr32 miffReader) {
 	__asm        jmp    _T75;
 // LINE 724:
 _T75:
-	__asm        mov    eax, ds:[0x598E90];
+	__asm        mov    eax, G_daynight;
 	__asm        push   eax;
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
@@ -1108,12 +1108,12 @@ void VRAppDeInit() {
 // LINE 770:
 	__asm        call   S3PersonDelete;
 // LINE 771:
-	__asm        mov    eax, ds:[0x647200];
+	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 772:
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
@@ -1123,32 +1123,32 @@ void VRAppDeInit() {
 // FUNCTION: COPTER_D 0x004eb9aa
 void VRAppNextFrame() {
 // LINE 791:
-	__asm        mov    eax, ds:[0x5B4768];
+	__asm        mov    eax, G_AvLoopTime;
 	__asm        shl    eax, 3;
-	__asm        sub    eax, ds:[0x5B4768];
-	__asm        add    eax, ds:[0x5B4760];
+	__asm        sub    eax, G_AvLoopTime;
+	__asm        add    eax, LoopTime;
 	__asm        sar    eax, 3;
-	__asm        mov    ds:[0x5B4768], eax;
+	__asm        mov    G_AvLoopTime, eax;
 // LINE 792:
-	__asm        inc    dword ptr ds:[0x5B4788];
+	__asm        inc    G_framectr;
 // LINE 805:
-	__asm        inc    dword ptr ds:[0x5B478C];
+	__asm        inc    G_maptics;
 // LINE 806:
-	__asm        test   byte ptr ds:[0x5B478C], 1;
+	__asm        test   reinterpret_cast<uint8_t>(G_maptics), 1;
 	__asm        je     _Tb4;
 // LINE 807:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T98;
 // LINE 808:
-	__asm        cmp    dword ptr ds:[0x5B5200], 1;
+	__asm        cmp    G_mapmode, 1;
 	__asm        jne    _T79;
 // LINE 809:
 	__asm        call   S3CityDrawOverHeadGrid;
 // LINE 810:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        call   S3MapDrawPosLines;
@@ -1157,10 +1157,10 @@ void VRAppNextFrame() {
 	__asm        jmp    _T93;
 // LINE 813:
 _T79:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
 	__asm        call   S3MapRender;
@@ -1182,10 +1182,10 @@ _T98:
 	__asm        add    esp, 8;
 // LINE 837:
 _Tb4:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _Td9;
 // LINE 838:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliNextFrame;
 	__asm        add    esp, 4;
@@ -1214,7 +1214,7 @@ _Tde:
 // LINE 868:
 	__asm        call   ItterateAllBoats;
 // LINE 872:
-	__asm        mov    eax, ds:[0x5B496C];
+	__asm        mov    eax, G_testheli;
 	__asm        push   eax;
 	__asm        call   S3HeliTestCopter;
 	__asm        add    esp, 4;
@@ -1243,71 +1243,71 @@ void SetUserVars(int32_t * user) {
 // LINE 941:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x6C1328], eax;
+	__asm        mov    rFriction, eax;
 // LINE 942:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x6C128C], eax;
+	__asm        mov    rForce, eax;
 // LINE 943:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ds:[0x6C1284], eax;
+	__asm        mov    rVmax, eax;
 // LINE 945:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ds:[0x6C1290], eax;
+	__asm        mov    tFrictionAir, eax;
 // LINE 946:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ds:[0x6C1298], eax;
+	__asm        mov    tFrictionGnd, eax;
 // LINE 947:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ds:[0x6C129C], eax;
+	__asm        mov    tVmax, eax;
 // LINE 949:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x38];
 	__asm        sar    eax, 0x10;
-	__asm        mov    ds:[0x5B4744], eax;
+	__asm        mov    keyRotateXp, eax;
 // LINE 950:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        sar    eax, 0x10;
-	__asm        mov    ds:[0x5B4748], eax;
+	__asm        mov    keyRotateXm, eax;
 // LINE 951:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x48];
 	__asm        sar    eax, 0x10;
-	__asm        mov    ds:[0x5B4754], eax;
+	__asm        mov    keyRotateZp, eax;
 // LINE 952:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x4C];
 	__asm        sar    eax, 0x10;
-	__asm        mov    ds:[0x5B4758], eax;
+	__asm        mov    keyRotateZm, eax;
 // LINE 954:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ds:[0x5B4898], eax;
+	__asm        mov    thetaspeed, eax;
 // LINE 955:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ds:[0x5B489C], eax;
+	__asm        mov    phispeed, eax;
 // LINE 956:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ds:[0x5B48A0], eax;
+	__asm        mov    radius, eax;
 // LINE 957:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ds:[0x5B48A4], eax;
+	__asm        mov    circley, eax;
 // LINE 958:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ds:[0x5B48A8], eax;
+	__asm        mov    yposcilate, eax;
 // LINE 959:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ds:[0x5B48AC], eax;
+	__asm        mov    ynoscilate, eax;
 // LINE 962:
 }
 

@@ -40,7 +40,7 @@ _T29:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T7a;
 // LINE 56:
-	__asm        fld    qword ptr ds:[0x593338];
+	__asm        fld    OT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -50,7 +50,7 @@ _T29:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        fild   dword ptr [ebp-0x3C];
 	__asm        fmul   straightLegSize;
-	__asm        fadd   qword ptr ds:[0x593340];
+	__asm        fadd   OT[0].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -71,13 +71,13 @@ _T89:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        fild   dword ptr [ebp-0x40];
 	__asm        fmul   straightLegSize;
-	__asm        fadd   qword ptr ds:[0x593348];
+	__asm        fadd   OT[1].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
 	__asm        mov    [ecx*8+0x62D3E8], eax;
 // LINE 62:
-	__asm        fld    qword ptr ds:[0x593350];
+	__asm        fld    OT[1].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -94,7 +94,7 @@ _Te9:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T13a;
 // LINE 66:
-	__asm        fld    qword ptr ds:[0x593358];
+	__asm        fld    OT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -104,7 +104,7 @@ _Te9:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        fild   dword ptr [ebp-0x44];
 	__asm        fmul   straightLegSize;
-	__asm        fsubr  qword ptr ds:[0x593360];
+	__asm        fsubr  OT[2].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -125,13 +125,13 @@ _T149:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        fild   dword ptr [ebp-0x48];
 	__asm        fmul   straightLegSize;
-	__asm        fsubr  qword ptr ds:[0x593368];
+	__asm        fsubr  OT[3].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
 	__asm        mov    [ecx*8+0x62D498], eax;
 // LINE 72:
-	__asm        fld    qword ptr ds:[0x593370];
+	__asm        fld    OT[3].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -140,11 +140,11 @@ _T149:
 	__asm        jmp    _T146;
 // LINE 85:
 _T19a:
-	__asm        mov    dword ptr ds:[0x62BB00], 1;
+	__asm        mov    DiagVector[0].x, 1;
 // LINE 86:
-	__asm        mov    dword ptr ds:[0x62BB08], 0xFFFFFFFF;
+	__asm        mov    DiagVector[0].z, 0xFFFFFFFF;
 // LINE 87:
-	__asm        mov    dword ptr ds:[0x62BB04], 0;
+	__asm        mov    DiagVector[0].y, 0;
 // LINE 88:
 	__asm        push   0x62BB00;
 	__asm        call   MTNormalize;
@@ -155,11 +155,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 91:
-	__asm        mov    dword ptr ds:[0x62BB0C], 0xFFFFFFFF;
+	__asm        mov    DiagVector[1].x, 0xFFFFFFFF;
 // LINE 92:
-	__asm        mov    dword ptr ds:[0x62BB14], 0xFFFFFFFF;
+	__asm        mov    DiagVector[1].z, 0xFFFFFFFF;
 // LINE 93:
-	__asm        mov    dword ptr ds:[0x62BB10], 0;
+	__asm        mov    DiagVector[1].y, 0;
 // LINE 94:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0xC;
@@ -176,11 +176,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 97:
-	__asm        mov    dword ptr ds:[0x62BB18], 0xFFFFFFFF;
+	__asm        mov    DiagVector[2].x, 0xFFFFFFFF;
 // LINE 98:
-	__asm        mov    dword ptr ds:[0x62BB20], 1;
+	__asm        mov    DiagVector[2].z, 1;
 // LINE 99:
-	__asm        mov    dword ptr ds:[0x62BB1C], 0;
+	__asm        mov    DiagVector[2].y, 0;
 // LINE 100:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x18;
@@ -197,11 +197,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 103:
-	__asm        mov    dword ptr ds:[0x62BB24], 1;
+	__asm        mov    DiagVector[3].x, 1;
 // LINE 104:
-	__asm        mov    dword ptr ds:[0x62BB2C], 1;
+	__asm        mov    DiagVector[3].z, 1;
 // LINE 105:
-	__asm        mov    dword ptr ds:[0x62BB28], 0;
+	__asm        mov    DiagVector[3].y, 0;
 // LINE 106:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x24;
@@ -226,79 +226,79 @@ _T19a:
 	__asm        call   0x0056EC1A;
 	__asm        fst    DiagLongDist;
 // LINE 117:
-	__asm        mov    dword ptr ds:[0x635110], 0xFFF80000;
+	__asm        mov    DiagOffset[0][0].x, 0xFFF80000;
 // LINE 118:
-	__asm        mov    dword ptr ds:[0x635118], 0x200000;
+	__asm        mov    DiagOffset[0][0].z, 0x200000;
 // LINE 119:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x635114], eax;
+	__asm        mov    DiagOffset[0][0].y, eax;
 // LINE 121:
-	__asm        mov    dword ptr ds:[0x635128], 0x200000;
+	__asm        mov    DiagOffset[0][2].x, 0x200000;
 // LINE 122:
-	__asm        mov    dword ptr ds:[0x635130], 0x80000;
+	__asm        mov    DiagOffset[0][2].z, 0x80000;
 // LINE 123:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x63512C], eax;
+	__asm        mov    DiagOffset[0][2].y, eax;
 // LINE 125:
-	__asm        mov    dword ptr ds:[0x63514C], 0x200000;
+	__asm        mov    DiagOffset[1][1].x, 0x200000;
 // LINE 126:
-	__asm        mov    dword ptr ds:[0x635154], 0x80000;
+	__asm        mov    DiagOffset[1][1].z, 0x80000;
 // LINE 127:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x635150], eax;
+	__asm        mov    DiagOffset[1][1].y, eax;
 // LINE 129:
-	__asm        mov    dword ptr ds:[0x635164], 0x80000;
+	__asm        mov    DiagOffset[1][3].x, 0x80000;
 // LINE 130:
-	__asm        mov    dword ptr ds:[0x63516C], 0xFFE00000;
+	__asm        mov    DiagOffset[1][3].z, 0xFFE00000;
 // LINE 131:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x635168], eax;
+	__asm        mov    DiagOffset[1][3].y, eax;
 // LINE 133:
-	__asm        mov    dword ptr ds:[0x635170], 0xFFE00000;
+	__asm        mov    DiagOffset[2][0].x, 0xFFE00000;
 // LINE 134:
-	__asm        mov    dword ptr ds:[0x635178], 0xFFF80000;
+	__asm        mov    DiagOffset[2][0].z, 0xFFF80000;
 // LINE 135:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x635174], eax;
+	__asm        mov    DiagOffset[2][0].y, eax;
 // LINE 137:
-	__asm        mov    dword ptr ds:[0x635188], 0x80000;
+	__asm        mov    DiagOffset[2][2].x, 0x80000;
 // LINE 138:
-	__asm        mov    dword ptr ds:[0x635190], 0xFFE00000;
+	__asm        mov    DiagOffset[2][2].z, 0xFFE00000;
 // LINE 139:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x63518C], eax;
+	__asm        mov    DiagOffset[2][2].y, eax;
 // LINE 141:
-	__asm        mov    dword ptr ds:[0x6351AC], 0xFFF80000;
+	__asm        mov    DiagOffset[3][1].x, 0xFFF80000;
 // LINE 142:
-	__asm        mov    dword ptr ds:[0x6351B4], 0x200000;
+	__asm        mov    DiagOffset[3][1].z, 0x200000;
 // LINE 143:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x6351B0], eax;
+	__asm        mov    DiagOffset[3][1].y, eax;
 // LINE 145:
-	__asm        mov    dword ptr ds:[0x6351C4], 0xFFE00000;
+	__asm        mov    DiagOffset[3][3].x, 0xFFE00000;
 // LINE 146:
-	__asm        mov    dword ptr ds:[0x6351CC], 0xFFF80000;
+	__asm        mov    DiagOffset[3][3].z, 0xFFF80000;
 // LINE 147:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x6351C8], eax;
+	__asm        mov    DiagOffset[3][3].y, eax;
 // LINE 151:
-	__asm        fld    qword ptr ds:[0x593378];
-	__asm        fsub   qword ptr ds:[0x593338];
+	__asm        fld    RRT[0].x;
+	__asm        fsub   OT[0].x;
 	__asm        fstp   turnRadius;
 // LINE 152:
 	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
@@ -318,7 +318,7 @@ _T433:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x593378];
+	__asm        fsubr  RRT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -330,7 +330,7 @@ _T433:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x593380];
+	__asm        fadd   RRT[0].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -353,7 +353,7 @@ _T4af:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x593388];
+	__asm        fadd   RRT[1].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -365,7 +365,7 @@ _T4af:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x593390];
+	__asm        fadd   RRT[1].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -388,7 +388,7 @@ _T52b:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x593398];
+	__asm        fadd   RRT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -400,7 +400,7 @@ _T52b:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933A0];
+	__asm        fsubr  RRT[2].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -423,7 +423,7 @@ _T5a7:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933A8];
+	__asm        fsubr  RRT[3].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -435,7 +435,7 @@ _T5a7:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933B0];
+	__asm        fsubr  RRT[3].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -444,8 +444,8 @@ _T5a7:
 	__asm        jmp    _T5a4;
 // LINE 176:
 _T614:
-	__asm        fld    qword ptr ds:[0x593338];
-	__asm        fsub   qword ptr ds:[0x5933B8];
+	__asm        fld    OT[0].x;
+	__asm        fsub   LRT[0].x;
 	__asm        fstp   turnRadius;
 // LINE 177:
 	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
@@ -465,7 +465,7 @@ _T640:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x5933B8];
+	__asm        fadd   LRT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -477,7 +477,7 @@ _T640:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x5933C0];
+	__asm        fadd   LRT[0].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -500,7 +500,7 @@ _T6bc:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x5933C8];
+	__asm        fadd   LRT[1].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -512,7 +512,7 @@ _T6bc:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933D0];
+	__asm        fsubr  LRT[1].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -535,7 +535,7 @@ _T738:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933D8];
+	__asm        fsubr  LRT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -547,7 +547,7 @@ _T738:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933E0];
+	__asm        fsubr  LRT[2].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -570,7 +570,7 @@ _T7b4:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F338;
 	__asm        fmul   turnRadius;
-	__asm        fsubr  qword ptr ds:[0x5933E8];
+	__asm        fsubr  LRT[3].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -582,7 +582,7 @@ _T7b4:
 	__asm        fmul   turnAngle;
 	__asm        call   0x0056F342;
 	__asm        fmul   turnRadius;
-	__asm        fadd   qword ptr ds:[0x5933F0];
+	__asm        fadd   LRT[3].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
@@ -597,15 +597,15 @@ _T82d:
 	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x54411744;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FD921FB;
 // LINE 204:
-	__asm        fld    qword ptr ds:[0x593338];
+	__asm        fld    OT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D7B0], eax;
+	__asm        mov    OTT[3][0][0].x, eax;
 // LINE 205:
-	__asm        fld    qword ptr ds:[0x593340];
+	__asm        fld    OT[0].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D7B4], eax;
+	__asm        mov    OTT[3][0][0].z, eax;
 // LINE 206:
 	__asm        mov    leg, 1;
 	__asm        jmp    _T884;
@@ -642,19 +642,19 @@ _T884:
 	__asm        jmp    _T881;
 // LINE 211:
 _T8f3:
-	__asm        mov    dword ptr ds:[0x62D800], 0xFFF80000;
+	__asm        mov    OTT[3][0][10].x, 0xFFF80000;
 // LINE 212:
-	__asm        mov    dword ptr ds:[0x62D804], 0xFFE00000;
+	__asm        mov    OTT[3][0][10].z, 0xFFE00000;
 // LINE 214:
-	__asm        fld    qword ptr ds:[0x593348];
+	__asm        fld    OT[1].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D808], eax;
+	__asm        mov    OTT[3][1][0].x, eax;
 // LINE 215:
-	__asm        fld    qword ptr ds:[0x593350];
+	__asm        fld    OT[1].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D80C], eax;
+	__asm        mov    OTT[3][1][0].z, eax;
 // LINE 216:
 	__asm        mov    leg, 1;
 	__asm        jmp    _T942;
@@ -692,19 +692,19 @@ _T942:
 	__asm        jmp    _T93f;
 // LINE 221:
 _T9b3:
-	__asm        mov    dword ptr ds:[0x62D858], 0xFFE00000;
+	__asm        mov    OTT[3][1][10].x, 0xFFE00000;
 // LINE 222:
-	__asm        mov    dword ptr ds:[0x62D85C], 0x80000;
+	__asm        mov    OTT[3][1][10].z, 0x80000;
 // LINE 224:
-	__asm        fld    qword ptr ds:[0x593358];
+	__asm        fld    OT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D860], eax;
+	__asm        mov    OTT[3][2][0].x, eax;
 // LINE 225:
-	__asm        fld    qword ptr ds:[0x593360];
+	__asm        fld    OT[2].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D864], eax;
+	__asm        mov    OTT[3][2][0].z, eax;
 // LINE 226:
 	__asm        mov    leg, 1;
 	__asm        jmp    _Ta02;
@@ -743,19 +743,19 @@ _Ta02:
 	__asm        jmp    _T9ff;
 // LINE 231:
 _Ta75:
-	__asm        mov    dword ptr ds:[0x62D8B0], 0x80000;
+	__asm        mov    OTT[3][2][10].x, 0x80000;
 // LINE 232:
-	__asm        mov    dword ptr ds:[0x62D8B4], 0x200000;
+	__asm        mov    OTT[3][2][10].z, 0x200000;
 // LINE 234:
-	__asm        fld    qword ptr ds:[0x593368];
+	__asm        fld    OT[3].x;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D8B8], eax;
+	__asm        mov    OTT[3][3][0].x, eax;
 // LINE 235:
-	__asm        fld    qword ptr ds:[0x593370];
+	__asm        fld    OT[3].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
-	__asm        mov    ds:[0x62D8BC], eax;
+	__asm        mov    OTT[3][3][0].z, eax;
 // LINE 236:
 	__asm        mov    leg, 1;
 	__asm        jmp    _Tac4;
@@ -793,9 +793,9 @@ _Tac4:
 	__asm        jmp    _Tac1;
 // LINE 241:
 _Tb35:
-	__asm        mov    dword ptr ds:[0x62D908], 0x200000;
+	__asm        mov    OTT[3][3][10].x, 0x200000;
 // LINE 242:
-	__asm        mov    dword ptr ds:[0x62D90C], 0xFFF80000;
+	__asm        mov    OTT[3][3][10].z, 0xFFF80000;
 // LINE 245:
 	__asm        mov    incline, 0;
 // LINE 249:

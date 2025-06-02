@@ -17,7 +17,7 @@ struct VRResource* LoadPalette() {
 
 // LINE 56:
 	__asm        push   0x310;
-	__asm        mov    eax, ds:[0x59C22C];
+	__asm        mov    eax, G_currmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -26,7 +26,7 @@ struct VRResource* LoadPalette() {
 	__asm        cmp    res, 0;
 	__asm        jne    _T3a;
 // LINE 58:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 59:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T82;

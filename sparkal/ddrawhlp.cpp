@@ -200,7 +200,7 @@ long DDEnable() {
 	long hResult;
 
 // LINE 33:
-	__asm        cmp    dword ptr ds:[0x597264], 0;
+	__asm        cmp    lpDD, 0;
 	__asm        jne    _T27;
 // LINE 34:
 	__asm        push   0;
@@ -217,13 +217,13 @@ _T27:
 	__asm        jmp    _Ta0;
 // LINE 38:
 _T39:
-	__asm        mov    dword ptr ds:[0x5C2798], 0xAC;
+	__asm        mov    ddCaps.dwSize, 0xAC;
 // LINE 39:
 	__asm        push   0;
 	__asm        push   0x5C2798;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x2C];
 	__asm        mov    hResult, eax;
@@ -232,9 +232,9 @@ _T39:
 	__asm        je     _T99;
 // LINE 41:
 _T67:
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
@@ -243,7 +243,7 @@ _T67:
 	__asm        jmp    _T67;
 // LINE 42:
 _T87:
-	__asm        mov    dword ptr ds:[0x597264], 0;
+	__asm        mov    lpDD, 0;
 // LINE 43:
 	__asm        mov    eax, hResult;
 	__asm        jmp    _Ta0;
@@ -258,15 +258,15 @@ _Ta0:
 // FUNCTION: COPTER_D 0x0041f5a5
 void DDDisable() {
 // LINE 60:
-	__asm        cmp    dword ptr ds:[0x597264], 0;
+	__asm        cmp    lpDD, 0;
 	__asm        jne    _T18;
 // LINE 61:
 	__asm        jmp    _T47;
 // LINE 65:
 _T18:
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 	__asm        cmp    eax, 0x8876021C;
@@ -275,7 +275,7 @@ _T18:
 	__asm        jmp    _T18;
 // LINE 66:
 _T38:
-	__asm        mov    dword ptr ds:[0x597264], 0;
+	__asm        mov    lpDD, 0;
 // LINE 70:
 	__asm        jmp    _T47;
 _T47:
@@ -509,9 +509,9 @@ _T157:
 	__asm        lea    eax, pal.ape[0].peRed;
 	__asm        push   eax;
 	__asm        push   4;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x14];
 	__asm        mov    ddrval, eax;

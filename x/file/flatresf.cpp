@@ -1711,7 +1711,7 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 
 	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
-	__asm        mov    eax, ds:[0x5BBEDC];
+	__asm        mov    eax, ResMap::sMaps;
 	__asm        mov    srch, eax;
 	__asm        jmp    _T33;
 _T2b:
@@ -1810,12 +1810,12 @@ _T119:
 	__asm        mov    ecx, fromFile;
 	__asm        mov    [ecx+0x110], eax;
 // LINE 776:
-	__asm        mov    eax, ds:[0x5BBEDC];
+	__asm        mov    eax, ResMap::sMaps;
 	__asm        mov    ecx, srch;
 	__asm        mov    [ecx], eax;
 // LINE 777:
 	__asm        mov    eax, srch;
-	__asm        mov    ds:[0x5BBEDC], eax;
+	__asm        mov    ResMap::sMaps, eax;
 // LINE 778:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T162;
@@ -1914,7 +1914,7 @@ short  ResMap::CheckForLeaks() {
 // LINE 803:
 	__asm        mov    total, 0;
 // LINE 804:
-	__asm        mov    eax, ds:[0x5BBEDC];
+	__asm        mov    eax, ResMap::sMaps;
 	__asm        mov    srch, eax;
 	__asm        jmp    _T24;
 _T1c:

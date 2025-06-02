@@ -23,15 +23,15 @@ void S3PrintScreen() {
 	char fname[260];
 
 // LINE 56:
-	__asm        mov    eax, ds:[0x5B4770];
+	__asm        mov    eax, G_respal;
 	__asm        push   eax;
 	__asm        call   VRGetPalFromResource;
 	__asm        add    esp, 4;
 	__asm        mov    chPalette, eax;
 // LINE 57:
-	__asm        mov    ax, ds:[0x599430];
+	__asm        mov    ax, S_ctr;
 	__asm        mov    [ebp-0x10C], ax;
-	__asm        inc    word ptr ds:[0x599430];
+	__asm        inc    S_ctr;
 	__asm        movsx  eax, word ptr [ebp-0x10C];
 	__asm        push   eax;
 	__asm        push   0x599434;
@@ -59,57 +59,57 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	char * ptr;
 
 // LINE 74:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x10;
+	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T33;
 // LINE 76:
-	__asm        mov    eax, ds:[0x598EE8];
+	__asm        mov    eax, swindow.WindowWide;
 	__asm        mov    xdim, eax;
 // LINE 77:
-	__asm        mov    eax, ds:[0x598EEC];
+	__asm        mov    eax, swindow.WindowHigh;
 	__asm        mov    ydim, eax;
 // LINE 78:
-	__asm        mov    eax, ds:[0x598EF4];
+	__asm        mov    eax, swindow.RenderWide;
 	__asm        mov    pitch, eax;
 // LINE 80:
 	__asm        jmp    _T4b;
 // LINE 82:
 _T33:
-	__asm        mov    eax, ds:[0x598EC8];
+	__asm        mov    eax, qwindow.WindowWide;
 	__asm        mov    xdim, eax;
 // LINE 83:
-	__asm        mov    eax, ds:[0x598ECC];
+	__asm        mov    eax, qwindow.WindowHigh;
 	__asm        mov    ydim, eax;
 // LINE 84:
-	__asm        mov    eax, ds:[0x598ED4];
+	__asm        mov    eax, qwindow.RenderWide;
 	__asm        mov    pitch, eax;
 // LINE 87:
 _T4b:
-	__asm        mov    byte ptr ds:[0x603DC8], 0xA;
+	__asm        mov    pcx.manufacturer, 0xA;
 // LINE 88:
-	__asm        mov    byte ptr ds:[0x603DCA], 1;
+	__asm        mov    pcx.encoding, 1;
 // LINE 89:
-	__asm        mov    word ptr ds:[0x603DCE], 0;
-	__asm        mov    ax, ds:[0x603DCE];
-	__asm        mov    ds:[0x603DCC], ax;
+	__asm        mov    pcx.ymin, 0;
+	__asm        mov    ax, pcx.ymin;
+	__asm        mov    pcx.xmin, ax;
 // LINE 90:
 	__asm        mov    eax, xdim;
 	__asm        dec    eax;
-	__asm        mov    ds:[0x603DD0], ax;
+	__asm        mov    pcx.xmax, ax;
 // LINE 91:
 	__asm        mov    eax, ydim;
 	__asm        dec    eax;
-	__asm        mov    ds:[0x603DD2], ax;
+	__asm        mov    pcx.ymax, ax;
 // LINE 92:
-	__asm        mov    word ptr ds:[0x603E0C], 0;
+	__asm        mov    pcx.palette_type, 0;
 // LINE 93:
-	__asm        mov    byte ptr ds:[0x603DCB], 8;
+	__asm        mov    pcx.bits_per_pixel, 8;
 // LINE 94:
-	__asm        mov    byte ptr ds:[0x603DC9], 5;
+	__asm        mov    pcx.version, 5;
 // LINE 95:
-	__asm        mov    byte ptr ds:[0x603E09], 1;
+	__asm        mov    pcx.colour_planes, 1;
 // LINE 96:
 	__asm        mov    eax, xdim;
-	__asm        mov    ds:[0x603E0A], ax;
+	__asm        mov    pcx.bytes_per_line, ax;
 // LINE 99:
 	__asm        push   0x599444;
 	__asm        mov    eax, fname;
@@ -129,7 +129,7 @@ _T4b:
 	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 // LINE 103:
-	__asm        mov    eax, ds:[0x598EAC];
+	__asm        mov    eax, buffer1;
 	__asm        mov    ptr, eax;
 // LINE 104:
 	__asm        mov    y, 0;
@@ -164,16 +164,16 @@ _T121:
 // LINE 111:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
-	__asm        mov    ds:[0x603DC0], eax;
+	__asm        mov    hdc, eax;
 // LINE 112:
 	__asm        push   0x603E48;
 	__asm        push   0x100;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x603DC0];
+	__asm        mov    eax, hdc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3580];
 // LINE 113:
-	__asm        mov    eax, ds:[0x603DC0];
+	__asm        mov    eax, hdc;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];

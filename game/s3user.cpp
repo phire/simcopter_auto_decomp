@@ -36,11 +36,11 @@ void $E48() {
 // FUNCTION: COPTER_D 0x00428e9a
 void $E45() {
 
-	__asm        mov    dword ptr ds:[0x5C33D4], 1;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33E0], 0;
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        mov    gGraduationState.timerGraduationState.nTimerResolution, 1;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lFrequency, 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T5b;
 
 	__asm        lea    eax, [ebp-0xC];
@@ -49,12 +49,12 @@ void $E45() {
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
-	__asm        mov    ds:[0x5C33E0], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lFrequency, eax;
 	__asm        jmp    _T5b;
 _T5b:
 	__asm        jmp    near ptr 0x00428EFA;
 
-	__asm        mov    dword ptr ds:[0x5C33D0], 0;
+	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        jmp    near ptr 0x00428F09;
 
 	__asm        jmp    near ptr 0x00428F0E;
@@ -84,14 +84,14 @@ void $E46() {
 // FUNCTION: COPTER_D 0x00428f4a
 struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 // LINE 84:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1e;
 // LINE 85:
-	__asm        lea    eax, ds:[0x5C2A48];
+	__asm        lea    eax, gCurrentUserCityInfo.userPersonalInfo.szUserName[0];
 	__asm        jmp    _T29;
 // LINE 86:
 _T1e:
-	__asm        lea    eax, ds:[0x5C2ABC];
+	__asm        lea    eax, gCurrentCareerCityInfo.userPersonalInfo.szUserName[0];
 	__asm        jmp    _T29;
 // LINE 87:
 _T29:
@@ -100,16 +100,16 @@ _T29:
 // FUNCTION: COPTER_D 0x00428f78
 void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
 // LINE 93:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T23;
 // LINE 94:
-	__asm        lea    edi, ds:[0x5C2A48];
+	__asm        lea    edi, gCurrentUserCityInfo.userPersonalInfo.szUserName[0];
 	__asm        mov    esi, newUserPersonalInfo;
 	__asm        mov    ecx, 0x16;
 	__asm        rep movsd;
 // LINE 95:
 _T23:
-	__asm        lea    edi, ds:[0x5C2ABC];
+	__asm        lea    edi, gCurrentCareerCityInfo.userPersonalInfo.szUserName[0];
 	__asm        mov    esi, newUserPersonalInfo;
 	__asm        mov    ecx, 0x16;
 	__asm        rep movsd;
@@ -186,14 +186,14 @@ void ChangeUserPoints(long lNewPointsDelta) {
 // FUNCTION: COPTER_D 0x00429075
 struct tagCitySettings* GetCurrentCitySettings() {
 // LINE 147:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1d;
 // LINE 148:
 	__asm        mov    eax, 0x5C2A20;
 	__asm        jmp    _T31;
 // LINE 149:
 _T1d:
-	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
 	__asm        lea    eax, [eax+eax*8+0x5C2B1C];
 	__asm        jmp    _T31;
@@ -240,15 +240,15 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 // FUNCTION: COPTER_D 0x00429109
 void SetUserHasSavedCurrentCity() {
 // LINE 186:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T22;
 // LINE 187:
-	__asm        mov    dword ptr ds:[0x5C2A44], 1;
+	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 1;
 // LINE 188:
 	__asm        jmp    _T2c;
 // LINE 189:
 _T22:
-	__asm        mov    dword ptr ds:[0x5C2AB8], 1;
+	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 1;
 // LINE 190:
 _T2c:
 	__asm        jmp    near ptr 0x0042913A;
@@ -257,16 +257,16 @@ _T2c:
 // FUNCTION: COPTER_D 0x0042913f
 int32_t GetUserHasSavedCurrentCity() {
 // LINE 197:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T22;
 // LINE 198:
-	__asm        mov    eax, ds:[0x5C2A44];
+	__asm        mov    eax, gCurrentUserCityInfo.bUserHasSavedGame;
 	__asm        jmp    _T2c;
 // LINE 199:
 	__asm        jmp    _T2c;
 // LINE 200:
 _T22:
-	__asm        mov    eax, ds:[0x5C2AB8];
+	__asm        mov    eax, gCurrentCareerCityInfo.bUserHasSavedGame;
 	__asm        jmp    _T2c;
 // LINE 201:
 _T2c:
@@ -285,7 +285,7 @@ void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * s
 	__asm        cmp    nCityFileType, 1;
 	__asm        jne    _T37;
 // LINE 218:
-	__asm        mov    eax, ds:[0x597540];
+	__asm        mov    eax, SZ_CITY_DATA_SUFFIX;
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
@@ -297,7 +297,7 @@ _T37:
 	__asm        cmp    nCityFileType, 2;
 	__asm        jne    _T58;
 // LINE 220:
-	__asm        mov    eax, ds:[0x597544];
+	__asm        mov    eax, SZ_CITY_SMALL_VIDEO_SUFFIX;
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
@@ -309,7 +309,7 @@ _T58:
 	__asm        cmp    nCityFileType, 3;
 	__asm        jne    _T74;
 // LINE 222:
-	__asm        mov    eax, ds:[0x597548];
+	__asm        mov    eax, SZ_CITY_BIG_VIDEO_SUFFIX;
 	__asm        push   eax;
 	__asm        mov    eax, szCityFileName;
 	__asm        push   eax;
@@ -323,55 +323,55 @@ _T74:
 // FUNCTION: COPTER_D 0x004291ee
 void InitializeAllUserInfo() {
 // LINE 231:
-	__asm        mov    byte ptr ds:[0x5C2918], 0;
+	__asm        mov    gCityFilePath[0], 0;
 // LINE 232:
-	__asm        mov    byte ptr ds:[0x5C33E8], 0;
+	__asm        mov    gGameFilePath[0], 0;
 // LINE 234:
-	__asm        mov    dword ptr ds:[0x5C2AA8], 0;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], 0;
 // LINE 235:
-	__asm        mov    dword ptr ds:[0x5C2AAC], 1;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], 1;
 // LINE 236:
-	__asm        mov    dword ptr ds:[0x5C2AB0], 2;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], 2;
 // LINE 237:
-	__asm        mov    dword ptr ds:[0x5C2AB4], 0;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, 0;
 // LINE 238:
-	__asm        mov    dword ptr ds:[0x5C2AB8], 0;
+	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 0;
 // LINE 239:
-	__asm        mov    byte ptr ds:[0x5C2ABC], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.szUserName[0], 0;
 // LINE 240:
-	__asm        mov    dword ptr ds:[0x5C2AFC], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0;
 // LINE 241:
-	__asm        mov    dword ptr ds:[0x5C2B00], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lHelicopters, 0;
 // LINE 242:
-	__asm        mov    dword ptr ds:[0x5C2B04], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0;
 // LINE 243:
-	__asm        mov    dword ptr ds:[0x5C2B08], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTrophies, 0;
 // LINE 244:
-	__asm        mov    dword ptr ds:[0x5C2B0C], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lPoints, 0;
 // LINE 245:
-	__asm        mov    dword ptr ds:[0x5C2B10], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0;
 // LINE 247:
-	__asm        mov    dword ptr ds:[0x5C2A20], 0;
+	__asm        mov    gCurrentUserCityInfo.citySettings.lDifficulty, 0;
 // LINE 248:
-	__asm        mov    dword ptr ds:[0x5C2A40], 0;
+	__asm        mov    gCurrentUserCityInfo.citySettings.lDaytime, 0;
 // LINE 249:
-	__asm        mov    dword ptr ds:[0x5C2A44], 0;
+	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 0;
 // LINE 250:
-	__asm        mov    byte ptr ds:[0x5C2A48], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.szUserName[0], 0;
 // LINE 251:
-	__asm        mov    dword ptr ds:[0x5C2A88], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0;
 // LINE 252:
-	__asm        mov    dword ptr ds:[0x5C2A8C], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0;
 // LINE 253:
-	__asm        mov    dword ptr ds:[0x5C2A90], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0;
 // LINE 254:
-	__asm        mov    dword ptr ds:[0x5C2A94], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTrophies, 0;
 // LINE 255:
-	__asm        mov    dword ptr ds:[0x5C2A98], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lPoints, 0;
 // LINE 256:
-	__asm        mov    dword ptr ds:[0x5C2A9C], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0;
 // LINE 258:
-	__asm        mov    dword ptr ds:[0x5C2AA0], 0;
+	__asm        mov    gCurrentCityType, 0;
 // LINE 259:
 	__asm        jmp    near ptr 0x004292E7;
 }
@@ -484,32 +484,32 @@ _T27:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 310:
-	__asm        mov    dword ptr ds:[0x5C2AA8], 0;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], 0;
 // LINE 311:
-	__asm        mov    dword ptr ds:[0x5C2AAC], 1;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], 1;
 // LINE 312:
-	__asm        mov    dword ptr ds:[0x5C2AB0], 2;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], 2;
 // LINE 313:
 	__asm        mov    eax, lNewCareerCityIndex;
-	__asm        mov    ds:[0x5C2AB4], eax;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, eax;
 // LINE 314:
-	__asm        mov    dword ptr ds:[0x5C2AB8], 0;
+	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 0;
 // LINE 315:
-	__asm        mov    byte ptr ds:[0x5C2ABC], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.szUserName[0], 0;
 // LINE 316:
-	__asm        mov    dword ptr ds:[0x5C2AFC], 0xFA0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0xFA0;
 // LINE 317:
-	__asm        mov    dword ptr ds:[0x5C2B00], 0x10;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lHelicopters, 0x10;
 // LINE 318:
-	__asm        mov    dword ptr ds:[0x5C2B04], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0;
 // LINE 319:
-	__asm        mov    dword ptr ds:[0x5C2B08], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTrophies, 0;
 // LINE 320:
-	__asm        mov    dword ptr ds:[0x5C2B0C], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lPoints, 0;
 // LINE 321:
-	__asm        mov    dword ptr ds:[0x5C2B10], 0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0;
 // LINE 322:
-	__asm        mov    dword ptr ds:[0x5C2AA0], 2;
+	__asm        mov    gCurrentCityType, 2;
 // LINE 323:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
@@ -518,28 +518,28 @@ _T27:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 324:
-	__asm        mov    dword ptr ds:[0x5C33D0], 0;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x004294AF;
 
 	__asm        jmp    near ptr 0x004294B4;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T12b;
 
 	__asm        jmp    _T1a6;
 _T12b:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T14d;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a1;
 
 	__asm        jmp    _T1a1;
 _T14d:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T188;
 
 	__asm        lea    eax, [ebp-0x10C];
@@ -548,7 +548,7 @@ _T14d:
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    [ebp-0x104], eax;
 	__asm        mov    eax, [ebp-0x104];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a1;
 
 	__asm        jmp    _T1a1;
@@ -557,7 +557,7 @@ _T188:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T1a1;
 _T1a1:
 	__asm        jmp    _T1a6;
@@ -568,13 +568,13 @@ _T1a6:
 
 	__asm        jmp    near ptr 0x00429550;
 // LINE 327:
-	__asm        mov    dword ptr ds:[0x5C2AFC], 0xFA0;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0xFA0;
 // LINE 328:
-	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
 // LINE 329:
-	__asm        mov    dword ptr ds:[0x5C2B04], 0xFFFFFFFF;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0xFFFFFFFF;
 // LINE 330:
-	__asm        mov    dword ptr ds:[0x5C2B10], 0xA;
+	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0xA;
 // LINE 332:
 	__asm        jmp    near ptr 0x0042957D;
 }
@@ -591,35 +591,35 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        add    esp, 8;
 // LINE 349:
 	__asm        mov    edi, 0x5C2A20;
-	__asm        lea    esi, ds:[0x5C2B1C];
+	__asm        lea    esi, gAllCareerCities[0].citySettings.lDifficulty;
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 350:
-	__asm        mov    dword ptr ds:[0x5C2A44], 0;
+	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 0;
 // LINE 351:
-	__asm        mov    byte ptr ds:[0x5C2A48], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.szUserName[0], 0;
 // LINE 352:
-	__asm        mov    dword ptr ds:[0x5C2A88], 0xFA0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0xFA0;
 // LINE 353:
-	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
 // LINE 354:
-	__asm        mov    dword ptr ds:[0x5C2A90], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0;
 // LINE 355:
-	__asm        mov    dword ptr ds:[0x5C2A94], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTrophies, 0;
 // LINE 356:
-	__asm        mov    dword ptr ds:[0x5C2A98], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lPoints, 0;
 // LINE 357:
-	__asm        mov    dword ptr ds:[0x5C2A9C], 0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0;
 // LINE 358:
-	__asm        mov    dword ptr ds:[0x5C2AA0], 1;
+	__asm        mov    gCurrentCityType, 1;
 // LINE 361:
-	__asm        cmp    dword ptr ds:[0x599BC4], 0;
+	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _Tdf;
 // LINE 362:
 	__asm        push   0x5EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 363:
@@ -627,9 +627,9 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        je     _Tdf;
 // LINE 364:
 	__asm        push   0x5EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x24];
 	__asm        cmp    eax, 0x24;
 	__asm        jne    _Tdf;
@@ -648,28 +648,28 @@ _Tdf:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 369:
-	__asm        mov    dword ptr ds:[0x5C33D0], 0;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x00429699;
 
 	__asm        jmp    near ptr 0x0042969E;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T12e;
 
 	__asm        jmp    _T19d;
 _T12e:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _T150;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T198;
 
 	__asm        jmp    _T198;
 _T150:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T17f;
 
 	__asm        lea    eax, [ebp-0x10];
@@ -678,7 +678,7 @@ _T150:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T198;
 
 	__asm        jmp    _T198;
@@ -687,7 +687,7 @@ _T17f:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T198;
 _T198:
 	__asm        jmp    _T19d;
@@ -698,13 +698,13 @@ _T19d:
 
 	__asm        jmp    near ptr 0x0042972E;
 // LINE 372:
-	__asm        mov    dword ptr ds:[0x5C2A88], 0xFA0;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0xFA0;
 // LINE 373:
-	__asm        mov    dword ptr ds:[0x5C2A8C], 0x10;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
 // LINE 374:
-	__asm        mov    dword ptr ds:[0x5C2A90], 0xFFFFFFFF;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0xFFFFFFFF;
 // LINE 375:
-	__asm        mov    dword ptr ds:[0x5C2A9C], 0xA;
+	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0xA;
 // LINE 377:
 	__asm        jmp    near ptr 0x0042975B;
 }
@@ -715,7 +715,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	long lOriginalIndex;
 
 // LINE 395:
-	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        mov    lOriginalIndex, eax;
 // LINE 398:
 	__asm        lea    eax, szFullCityFileName[0];
@@ -739,20 +739,20 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
 	__asm        mov    eax, [eax+eax*8+0x5C2B40];
-	__asm        mov    ds:[0x5C2AA8], eax;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], eax;
 // LINE 402:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
 	__asm        mov    eax, [eax+eax*8+0x5C2B44];
-	__asm        mov    ds:[0x5C2AAC], eax;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], eax;
 // LINE 403:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
 	__asm        mov    eax, [eax+eax*8+0x5C2B48];
-	__asm        mov    ds:[0x5C2AB0], eax;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], eax;
 // LINE 404:
 	__asm        mov    eax, lNewCareerCityIndex;
-	__asm        mov    ds:[0x5C2AB4], eax;
+	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, eax;
 // LINE 405:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
@@ -761,28 +761,28 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 406:
-	__asm        mov    dword ptr ds:[0x5C33D0], 0;
-	__asm        mov    dword ptr ds:[0x5C33DC], 0;
-	__asm        mov    dword ptr ds:[0x5C33D8], 0;
+	__asm        mov    gGraduationState.nGraduationState, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        jmp    near ptr 0x00429822;
 
 	__asm        jmp    near ptr 0x00429827;
 
-	__asm        cmp    dword ptr ds:[0x5C33D8], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _Td9;
 
 	__asm        jmp    _T154;
 _Td9:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 1;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 1;
 	__asm        jne    _Tfb;
 
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T14f;
 
 	__asm        jmp    _T14f;
 _Tfb:
-	__asm        cmp    dword ptr ds:[0x5C33D4], 0;
+	__asm        cmp    gGraduationState.timerGraduationState.nTimerResolution, 0;
 	__asm        jne    _T136;
 
 	__asm        lea    eax, [ebp-0x110];
@@ -791,7 +791,7 @@ _Tfb:
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x108], eax;
 	__asm        mov    eax, [ebp-0x108];
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T14f;
 
 	__asm        jmp    _T14f;
@@ -800,7 +800,7 @@ _T136:
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        mov    ds:[0x5C33D8], eax;
+	__asm        mov    gGraduationState.timerGraduationState.lStartTime, eax;
 	__asm        jmp    _T14f;
 _T14f:
 	__asm        jmp    _T154;
@@ -823,613 +823,613 @@ void InitializeAllCareerCitiesInfo() {
 	int32_t i;
 
 // LINE 421:
-	__asm        mov    dword ptr ds:[0x5C2B4C], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[0].lPrevCities[0], 0xFFFFFFFF;
 // LINE 422:
-	__asm        mov    dword ptr ds:[0x5C2B50], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[0].lPrevCities[1], 0xFFFFFFFF;
 // LINE 423:
-	__asm        mov    dword ptr ds:[0x5C2B54], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[0].lPrevCities[2], 0xFFFFFFFF;
 // LINE 424:
-	__asm        mov    dword ptr ds:[0x5C2B40], 3;
+	__asm        mov    gAllCareerCities[0].lNextCities[0], 3;
 // LINE 425:
-	__asm        mov    dword ptr ds:[0x5C2B44], 4;
+	__asm        mov    gAllCareerCities[0].lNextCities[1], 4;
 // LINE 426:
-	__asm        mov    dword ptr ds:[0x5C2B48], 1;
+	__asm        mov    gAllCareerCities[0].lNextCities[2], 1;
 // LINE 427:
-	__asm        mov    dword ptr ds:[0x5C2B58], 0;
+	__asm        mov    gAllCareerCities[0].lCityNameStringIndex, 0;
 // LINE 428:
-	__asm        mov    dword ptr ds:[0x5C2B18], 0;
+	__asm        mov    gAllCareerCities[0].lCityLevel, 0;
 // LINE 429:
-	__asm        mov    eax, ds:[0x5974C0];
-	__asm        mov    ds:[0x5C2B5C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_0;
+	__asm        mov    gAllCareerCities[0].chCityFileNameBase, eax;
 // LINE 431:
-	__asm        mov    dword ptr ds:[0x5C2B94], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[1].lPrevCities[0], 0xFFFFFFFF;
 // LINE 432:
-	__asm        mov    dword ptr ds:[0x5C2B98], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[1].lPrevCities[1], 0xFFFFFFFF;
 // LINE 433:
-	__asm        mov    dword ptr ds:[0x5C2B9C], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[1].lPrevCities[2], 0xFFFFFFFF;
 // LINE 434:
-	__asm        mov    dword ptr ds:[0x5C2B88], 3;
+	__asm        mov    gAllCareerCities[1].lNextCities[0], 3;
 // LINE 435:
-	__asm        mov    dword ptr ds:[0x5C2B8C], 4;
+	__asm        mov    gAllCareerCities[1].lNextCities[1], 4;
 // LINE 436:
-	__asm        mov    dword ptr ds:[0x5C2B90], 5;
+	__asm        mov    gAllCareerCities[1].lNextCities[2], 5;
 // LINE 437:
-	__asm        mov    dword ptr ds:[0x5C2BA0], 1;
+	__asm        mov    gAllCareerCities[1].lCityNameStringIndex, 1;
 // LINE 438:
-	__asm        mov    dword ptr ds:[0x5C2B60], 0;
+	__asm        mov    gAllCareerCities[1].lCityLevel, 0;
 // LINE 439:
-	__asm        mov    eax, ds:[0x5974C4];
-	__asm        mov    ds:[0x5C2BA4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_1;
+	__asm        mov    gAllCareerCities[1].chCityFileNameBase, eax;
 // LINE 441:
-	__asm        mov    dword ptr ds:[0x5C2BDC], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[2].lPrevCities[0], 0xFFFFFFFF;
 // LINE 442:
-	__asm        mov    dword ptr ds:[0x5C2BE0], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[2].lPrevCities[1], 0xFFFFFFFF;
 // LINE 443:
-	__asm        mov    dword ptr ds:[0x5C2BE4], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[2].lPrevCities[2], 0xFFFFFFFF;
 // LINE 444:
-	__asm        mov    dword ptr ds:[0x5C2BD0], 1;
+	__asm        mov    gAllCareerCities[2].lNextCities[0], 1;
 // LINE 445:
-	__asm        mov    dword ptr ds:[0x5C2BD4], 4;
+	__asm        mov    gAllCareerCities[2].lNextCities[1], 4;
 // LINE 446:
-	__asm        mov    dword ptr ds:[0x5C2BD8], 5;
+	__asm        mov    gAllCareerCities[2].lNextCities[2], 5;
 // LINE 447:
-	__asm        mov    dword ptr ds:[0x5C2BE8], 2;
+	__asm        mov    gAllCareerCities[2].lCityNameStringIndex, 2;
 // LINE 448:
-	__asm        mov    dword ptr ds:[0x5C2BA8], 0;
+	__asm        mov    gAllCareerCities[2].lCityLevel, 0;
 // LINE 449:
-	__asm        mov    eax, ds:[0x5974C8];
-	__asm        mov    ds:[0x5C2BEC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_2;
+	__asm        mov    gAllCareerCities[2].chCityFileNameBase, eax;
 // LINE 451:
-	__asm        mov    dword ptr ds:[0x5C2C24], 1;
+	__asm        mov    gAllCareerCities[3].lPrevCities[0], 1;
 // LINE 452:
-	__asm        mov    dword ptr ds:[0x5C2C28], 2;
+	__asm        mov    gAllCareerCities[3].lPrevCities[1], 2;
 // LINE 453:
-	__asm        mov    dword ptr ds:[0x5C2C2C], 4;
+	__asm        mov    gAllCareerCities[3].lPrevCities[2], 4;
 // LINE 454:
-	__asm        mov    dword ptr ds:[0x5C2C18], 4;
+	__asm        mov    gAllCareerCities[3].lNextCities[0], 4;
 // LINE 455:
-	__asm        mov    dword ptr ds:[0x5C2C1C], 6;
+	__asm        mov    gAllCareerCities[3].lNextCities[1], 6;
 // LINE 456:
-	__asm        mov    dword ptr ds:[0x5C2C20], 7;
+	__asm        mov    gAllCareerCities[3].lNextCities[2], 7;
 // LINE 457:
-	__asm        mov    dword ptr ds:[0x5C2C30], 3;
+	__asm        mov    gAllCareerCities[3].lCityNameStringIndex, 3;
 // LINE 458:
-	__asm        mov    dword ptr ds:[0x5C2BF0], 1;
+	__asm        mov    gAllCareerCities[3].lCityLevel, 1;
 // LINE 459:
-	__asm        mov    eax, ds:[0x5974CC];
-	__asm        mov    ds:[0x5C2C34], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_3;
+	__asm        mov    gAllCareerCities[3].chCityFileNameBase, eax;
 // LINE 461:
-	__asm        mov    dword ptr ds:[0x5C2C6C], 1;
+	__asm        mov    gAllCareerCities[4].lPrevCities[0], 1;
 // LINE 462:
-	__asm        mov    dword ptr ds:[0x5C2C70], 3;
+	__asm        mov    gAllCareerCities[4].lPrevCities[1], 3;
 // LINE 463:
-	__asm        mov    dword ptr ds:[0x5C2C74], 5;
+	__asm        mov    gAllCareerCities[4].lPrevCities[2], 5;
 // LINE 464:
-	__asm        mov    dword ptr ds:[0x5C2C60], 6;
+	__asm        mov    gAllCareerCities[4].lNextCities[0], 6;
 // LINE 465:
-	__asm        mov    dword ptr ds:[0x5C2C64], 7;
+	__asm        mov    gAllCareerCities[4].lNextCities[1], 7;
 // LINE 466:
-	__asm        mov    dword ptr ds:[0x5C2C68], 8;
+	__asm        mov    gAllCareerCities[4].lNextCities[2], 8;
 // LINE 467:
-	__asm        mov    dword ptr ds:[0x5C2C78], 4;
+	__asm        mov    gAllCareerCities[4].lCityNameStringIndex, 4;
 // LINE 468:
-	__asm        mov    dword ptr ds:[0x5C2C38], 1;
+	__asm        mov    gAllCareerCities[4].lCityLevel, 1;
 // LINE 469:
-	__asm        mov    eax, ds:[0x5974D0];
-	__asm        mov    ds:[0x5C2C7C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_4;
+	__asm        mov    gAllCareerCities[4].chCityFileNameBase, eax;
 // LINE 471:
-	__asm        mov    dword ptr ds:[0x5C2CB4], 0;
+	__asm        mov    gAllCareerCities[5].lPrevCities[0], 0;
 // LINE 472:
-	__asm        mov    dword ptr ds:[0x5C2CB8], 1;
+	__asm        mov    gAllCareerCities[5].lPrevCities[1], 1;
 // LINE 473:
-	__asm        mov    dword ptr ds:[0x5C2CBC], 4;
+	__asm        mov    gAllCareerCities[5].lPrevCities[2], 4;
 // LINE 474:
-	__asm        mov    dword ptr ds:[0x5C2CA8], 4;
+	__asm        mov    gAllCareerCities[5].lNextCities[0], 4;
 // LINE 475:
-	__asm        mov    dword ptr ds:[0x5C2CAC], 7;
+	__asm        mov    gAllCareerCities[5].lNextCities[1], 7;
 // LINE 476:
-	__asm        mov    dword ptr ds:[0x5C2CB0], 8;
+	__asm        mov    gAllCareerCities[5].lNextCities[2], 8;
 // LINE 477:
-	__asm        mov    dword ptr ds:[0x5C2CC0], 5;
+	__asm        mov    gAllCareerCities[5].lCityNameStringIndex, 5;
 // LINE 478:
-	__asm        mov    dword ptr ds:[0x5C2C80], 1;
+	__asm        mov    gAllCareerCities[5].lCityLevel, 1;
 // LINE 479:
-	__asm        mov    eax, ds:[0x5974D4];
-	__asm        mov    ds:[0x5C2CC4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_5;
+	__asm        mov    gAllCareerCities[5].chCityFileNameBase, eax;
 // LINE 481:
-	__asm        mov    dword ptr ds:[0x5C2CFC], 3;
+	__asm        mov    gAllCareerCities[6].lPrevCities[0], 3;
 // LINE 482:
-	__asm        mov    dword ptr ds:[0x5C2D00], 4;
+	__asm        mov    gAllCareerCities[6].lPrevCities[1], 4;
 // LINE 483:
-	__asm        mov    dword ptr ds:[0x5C2D04], 7;
+	__asm        mov    gAllCareerCities[6].lPrevCities[2], 7;
 // LINE 484:
-	__asm        mov    dword ptr ds:[0x5C2CF0], 7;
+	__asm        mov    gAllCareerCities[6].lNextCities[0], 7;
 // LINE 485:
-	__asm        mov    dword ptr ds:[0x5C2CF4], 9;
+	__asm        mov    gAllCareerCities[6].lNextCities[1], 9;
 // LINE 486:
-	__asm        mov    dword ptr ds:[0x5C2CF8], 0xA;
+	__asm        mov    gAllCareerCities[6].lNextCities[2], 0xA;
 // LINE 487:
-	__asm        mov    dword ptr ds:[0x5C2D08], 6;
+	__asm        mov    gAllCareerCities[6].lCityNameStringIndex, 6;
 // LINE 488:
-	__asm        mov    dword ptr ds:[0x5C2CC8], 2;
+	__asm        mov    gAllCareerCities[6].lCityLevel, 2;
 // LINE 489:
-	__asm        mov    eax, ds:[0x5974D8];
-	__asm        mov    ds:[0x5C2D0C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_6;
+	__asm        mov    gAllCareerCities[6].chCityFileNameBase, eax;
 // LINE 491:
-	__asm        mov    dword ptr ds:[0x5C2D44], 4;
+	__asm        mov    gAllCareerCities[7].lPrevCities[0], 4;
 // LINE 492:
-	__asm        mov    dword ptr ds:[0x5C2D48], 6;
+	__asm        mov    gAllCareerCities[7].lPrevCities[1], 6;
 // LINE 493:
-	__asm        mov    dword ptr ds:[0x5C2D4C], 8;
+	__asm        mov    gAllCareerCities[7].lPrevCities[2], 8;
 // LINE 494:
-	__asm        mov    dword ptr ds:[0x5C2D38], 9;
+	__asm        mov    gAllCareerCities[7].lNextCities[0], 9;
 // LINE 495:
-	__asm        mov    dword ptr ds:[0x5C2D3C], 0xA;
+	__asm        mov    gAllCareerCities[7].lNextCities[1], 0xA;
 // LINE 496:
-	__asm        mov    dword ptr ds:[0x5C2D40], 0xB;
+	__asm        mov    gAllCareerCities[7].lNextCities[2], 0xB;
 // LINE 497:
-	__asm        mov    dword ptr ds:[0x5C2D50], 7;
+	__asm        mov    gAllCareerCities[7].lCityNameStringIndex, 7;
 // LINE 498:
-	__asm        mov    dword ptr ds:[0x5C2D10], 2;
+	__asm        mov    gAllCareerCities[7].lCityLevel, 2;
 // LINE 499:
-	__asm        mov    eax, ds:[0x5974DC];
-	__asm        mov    ds:[0x5C2D54], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_7;
+	__asm        mov    gAllCareerCities[7].chCityFileNameBase, eax;
 // LINE 501:
-	__asm        mov    dword ptr ds:[0x5C2D8C], 3;
+	__asm        mov    gAllCareerCities[8].lPrevCities[0], 3;
 // LINE 502:
-	__asm        mov    dword ptr ds:[0x5C2D90], 4;
+	__asm        mov    gAllCareerCities[8].lPrevCities[1], 4;
 // LINE 503:
-	__asm        mov    dword ptr ds:[0x5C2D94], 7;
+	__asm        mov    gAllCareerCities[8].lPrevCities[2], 7;
 // LINE 504:
-	__asm        mov    dword ptr ds:[0x5C2D80], 7;
+	__asm        mov    gAllCareerCities[8].lNextCities[0], 7;
 // LINE 505:
-	__asm        mov    dword ptr ds:[0x5C2D84], 0xA;
+	__asm        mov    gAllCareerCities[8].lNextCities[1], 0xA;
 // LINE 506:
-	__asm        mov    dword ptr ds:[0x5C2D88], 0xB;
+	__asm        mov    gAllCareerCities[8].lNextCities[2], 0xB;
 // LINE 507:
-	__asm        mov    dword ptr ds:[0x5C2D98], 8;
+	__asm        mov    gAllCareerCities[8].lCityNameStringIndex, 8;
 // LINE 508:
-	__asm        mov    dword ptr ds:[0x5C2D58], 2;
+	__asm        mov    gAllCareerCities[8].lCityLevel, 2;
 // LINE 509:
-	__asm        mov    eax, ds:[0x5974E0];
-	__asm        mov    ds:[0x5C2D9C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_8;
+	__asm        mov    gAllCareerCities[8].chCityFileNameBase, eax;
 // LINE 511:
-	__asm        mov    dword ptr ds:[0x5C2DD4], 7;
+	__asm        mov    gAllCareerCities[9].lPrevCities[0], 7;
 // LINE 512:
-	__asm        mov    dword ptr ds:[0x5C2DD8], 8;
+	__asm        mov    gAllCareerCities[9].lPrevCities[1], 8;
 // LINE 513:
-	__asm        mov    dword ptr ds:[0x5C2DDC], 0xA;
+	__asm        mov    gAllCareerCities[9].lPrevCities[2], 0xA;
 // LINE 514:
-	__asm        mov    dword ptr ds:[0x5C2DC8], 0xA;
+	__asm        mov    gAllCareerCities[9].lNextCities[0], 0xA;
 // LINE 515:
-	__asm        mov    dword ptr ds:[0x5C2DCC], 0xC;
+	__asm        mov    gAllCareerCities[9].lNextCities[1], 0xC;
 // LINE 516:
-	__asm        mov    dword ptr ds:[0x5C2DD0], 0xD;
+	__asm        mov    gAllCareerCities[9].lNextCities[2], 0xD;
 // LINE 517:
-	__asm        mov    dword ptr ds:[0x5C2DE0], 9;
+	__asm        mov    gAllCareerCities[9].lCityNameStringIndex, 9;
 // LINE 518:
-	__asm        mov    dword ptr ds:[0x5C2DA0], 3;
+	__asm        mov    gAllCareerCities[9].lCityLevel, 3;
 // LINE 519:
-	__asm        mov    eax, ds:[0x5974E4];
-	__asm        mov    ds:[0x5C2DE4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_9;
+	__asm        mov    gAllCareerCities[9].chCityFileNameBase, eax;
 // LINE 521:
-	__asm        mov    dword ptr ds:[0x5C2E1C], 9;
+	__asm        mov    gAllCareerCities[10].lPrevCities[0], 9;
 // LINE 522:
-	__asm        mov    dword ptr ds:[0x5C2E20], 7;
+	__asm        mov    gAllCareerCities[10].lPrevCities[1], 7;
 // LINE 523:
-	__asm        mov    dword ptr ds:[0x5C2E24], 0xB;
+	__asm        mov    gAllCareerCities[10].lPrevCities[2], 0xB;
 // LINE 524:
-	__asm        mov    dword ptr ds:[0x5C2E10], 0xC;
+	__asm        mov    gAllCareerCities[10].lNextCities[0], 0xC;
 // LINE 525:
-	__asm        mov    dword ptr ds:[0x5C2E14], 0xD;
+	__asm        mov    gAllCareerCities[10].lNextCities[1], 0xD;
 // LINE 526:
-	__asm        mov    dword ptr ds:[0x5C2E18], 0xE;
+	__asm        mov    gAllCareerCities[10].lNextCities[2], 0xE;
 // LINE 527:
-	__asm        mov    dword ptr ds:[0x5C2E28], 0xA;
+	__asm        mov    gAllCareerCities[10].lCityNameStringIndex, 0xA;
 // LINE 528:
-	__asm        mov    dword ptr ds:[0x5C2DE8], 3;
+	__asm        mov    gAllCareerCities[10].lCityLevel, 3;
 // LINE 529:
-	__asm        mov    eax, ds:[0x5974E8];
-	__asm        mov    ds:[0x5C2E2C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_10;
+	__asm        mov    gAllCareerCities[10].chCityFileNameBase, eax;
 // LINE 531:
-	__asm        mov    dword ptr ds:[0x5C2E64], 6;
+	__asm        mov    gAllCareerCities[11].lPrevCities[0], 6;
 // LINE 532:
-	__asm        mov    dword ptr ds:[0x5C2E68], 7;
+	__asm        mov    gAllCareerCities[11].lPrevCities[1], 7;
 // LINE 533:
-	__asm        mov    dword ptr ds:[0x5C2E6C], 0xA;
+	__asm        mov    gAllCareerCities[11].lPrevCities[2], 0xA;
 // LINE 534:
-	__asm        mov    dword ptr ds:[0x5C2E58], 0xA;
+	__asm        mov    gAllCareerCities[11].lNextCities[0], 0xA;
 // LINE 535:
-	__asm        mov    dword ptr ds:[0x5C2E5C], 0xD;
+	__asm        mov    gAllCareerCities[11].lNextCities[1], 0xD;
 // LINE 536:
-	__asm        mov    dword ptr ds:[0x5C2E60], 0xE;
+	__asm        mov    gAllCareerCities[11].lNextCities[2], 0xE;
 // LINE 537:
-	__asm        mov    dword ptr ds:[0x5C2E70], 0xB;
+	__asm        mov    gAllCareerCities[11].lCityNameStringIndex, 0xB;
 // LINE 538:
-	__asm        mov    dword ptr ds:[0x5C2E30], 3;
+	__asm        mov    gAllCareerCities[11].lCityLevel, 3;
 // LINE 539:
-	__asm        mov    eax, ds:[0x5974EC];
-	__asm        mov    ds:[0x5C2E74], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_11;
+	__asm        mov    gAllCareerCities[11].chCityFileNameBase, eax;
 // LINE 541:
-	__asm        mov    dword ptr ds:[0x5C2EAC], 0xA;
+	__asm        mov    gAllCareerCities[12].lPrevCities[0], 0xA;
 // LINE 542:
-	__asm        mov    dword ptr ds:[0x5C2EB0], 0xB;
+	__asm        mov    gAllCareerCities[12].lPrevCities[1], 0xB;
 // LINE 543:
-	__asm        mov    dword ptr ds:[0x5C2EB4], 0xD;
+	__asm        mov    gAllCareerCities[12].lPrevCities[2], 0xD;
 // LINE 544:
-	__asm        mov    dword ptr ds:[0x5C2EA0], 0xD;
+	__asm        mov    gAllCareerCities[12].lNextCities[0], 0xD;
 // LINE 545:
-	__asm        mov    dword ptr ds:[0x5C2EA4], 0xF;
+	__asm        mov    gAllCareerCities[12].lNextCities[1], 0xF;
 // LINE 546:
-	__asm        mov    dword ptr ds:[0x5C2EA8], 0x10;
+	__asm        mov    gAllCareerCities[12].lNextCities[2], 0x10;
 // LINE 547:
-	__asm        mov    dword ptr ds:[0x5C2EB8], 0xC;
+	__asm        mov    gAllCareerCities[12].lCityNameStringIndex, 0xC;
 // LINE 548:
-	__asm        mov    dword ptr ds:[0x5C2E78], 4;
+	__asm        mov    gAllCareerCities[12].lCityLevel, 4;
 // LINE 549:
-	__asm        mov    eax, ds:[0x5974F0];
-	__asm        mov    ds:[0x5C2EBC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_12;
+	__asm        mov    gAllCareerCities[12].chCityFileNameBase, eax;
 // LINE 551:
-	__asm        mov    dword ptr ds:[0x5C2EF4], 0xC;
+	__asm        mov    gAllCareerCities[13].lPrevCities[0], 0xC;
 // LINE 552:
-	__asm        mov    dword ptr ds:[0x5C2EF8], 0xA;
+	__asm        mov    gAllCareerCities[13].lPrevCities[1], 0xA;
 // LINE 553:
-	__asm        mov    dword ptr ds:[0x5C2EFC], 0xE;
+	__asm        mov    gAllCareerCities[13].lPrevCities[2], 0xE;
 // LINE 554:
-	__asm        mov    dword ptr ds:[0x5C2EE8], 0xF;
+	__asm        mov    gAllCareerCities[13].lNextCities[0], 0xF;
 // LINE 555:
-	__asm        mov    dword ptr ds:[0x5C2EEC], 0x10;
+	__asm        mov    gAllCareerCities[13].lNextCities[1], 0x10;
 // LINE 556:
-	__asm        mov    dword ptr ds:[0x5C2EF0], 0x11;
+	__asm        mov    gAllCareerCities[13].lNextCities[2], 0x11;
 // LINE 557:
-	__asm        mov    dword ptr ds:[0x5C2F00], 0xD;
+	__asm        mov    gAllCareerCities[13].lCityNameStringIndex, 0xD;
 // LINE 558:
-	__asm        mov    dword ptr ds:[0x5C2EC0], 4;
+	__asm        mov    gAllCareerCities[13].lCityLevel, 4;
 // LINE 559:
-	__asm        mov    eax, ds:[0x5974F4];
-	__asm        mov    ds:[0x5C2F04], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_13;
+	__asm        mov    gAllCareerCities[13].chCityFileNameBase, eax;
 // LINE 561:
-	__asm        mov    dword ptr ds:[0x5C2F3C], 9;
+	__asm        mov    gAllCareerCities[14].lPrevCities[0], 9;
 // LINE 562:
-	__asm        mov    dword ptr ds:[0x5C2F40], 0xA;
+	__asm        mov    gAllCareerCities[14].lPrevCities[1], 0xA;
 // LINE 563:
-	__asm        mov    dword ptr ds:[0x5C2F44], 0xD;
+	__asm        mov    gAllCareerCities[14].lPrevCities[2], 0xD;
 // LINE 564:
-	__asm        mov    dword ptr ds:[0x5C2F30], 0xD;
+	__asm        mov    gAllCareerCities[14].lNextCities[0], 0xD;
 // LINE 565:
-	__asm        mov    dword ptr ds:[0x5C2F34], 0x10;
+	__asm        mov    gAllCareerCities[14].lNextCities[1], 0x10;
 // LINE 566:
-	__asm        mov    dword ptr ds:[0x5C2F38], 0x11;
+	__asm        mov    gAllCareerCities[14].lNextCities[2], 0x11;
 // LINE 567:
-	__asm        mov    dword ptr ds:[0x5C2F48], 0xE;
+	__asm        mov    gAllCareerCities[14].lCityNameStringIndex, 0xE;
 // LINE 568:
-	__asm        mov    dword ptr ds:[0x5C2F08], 4;
+	__asm        mov    gAllCareerCities[14].lCityLevel, 4;
 // LINE 569:
-	__asm        mov    eax, ds:[0x5974F8];
-	__asm        mov    ds:[0x5C2F4C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_14;
+	__asm        mov    gAllCareerCities[14].chCityFileNameBase, eax;
 // LINE 571:
-	__asm        mov    dword ptr ds:[0x5C2F84], 0xD;
+	__asm        mov    gAllCareerCities[15].lPrevCities[0], 0xD;
 // LINE 572:
-	__asm        mov    dword ptr ds:[0x5C2F88], 0xE;
+	__asm        mov    gAllCareerCities[15].lPrevCities[1], 0xE;
 // LINE 573:
-	__asm        mov    dword ptr ds:[0x5C2F8C], 0x10;
+	__asm        mov    gAllCareerCities[15].lPrevCities[2], 0x10;
 // LINE 574:
-	__asm        mov    dword ptr ds:[0x5C2F78], 0x10;
+	__asm        mov    gAllCareerCities[15].lNextCities[0], 0x10;
 // LINE 575:
-	__asm        mov    dword ptr ds:[0x5C2F7C], 0x12;
+	__asm        mov    gAllCareerCities[15].lNextCities[1], 0x12;
 // LINE 576:
-	__asm        mov    dword ptr ds:[0x5C2F80], 0x13;
+	__asm        mov    gAllCareerCities[15].lNextCities[2], 0x13;
 // LINE 577:
-	__asm        mov    dword ptr ds:[0x5C2F90], 0xF;
+	__asm        mov    gAllCareerCities[15].lCityNameStringIndex, 0xF;
 // LINE 578:
-	__asm        mov    dword ptr ds:[0x5C2F50], 5;
+	__asm        mov    gAllCareerCities[15].lCityLevel, 5;
 // LINE 579:
-	__asm        mov    eax, ds:[0x5974FC];
-	__asm        mov    ds:[0x5C2F94], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_15;
+	__asm        mov    gAllCareerCities[15].chCityFileNameBase, eax;
 // LINE 581:
-	__asm        mov    dword ptr ds:[0x5C2FCC], 0xF;
+	__asm        mov    gAllCareerCities[16].lPrevCities[0], 0xF;
 // LINE 582:
-	__asm        mov    dword ptr ds:[0x5C2FD0], 0xD;
+	__asm        mov    gAllCareerCities[16].lPrevCities[1], 0xD;
 // LINE 583:
-	__asm        mov    dword ptr ds:[0x5C2FD4], 0x11;
+	__asm        mov    gAllCareerCities[16].lPrevCities[2], 0x11;
 // LINE 584:
-	__asm        mov    dword ptr ds:[0x5C2FC0], 0x12;
+	__asm        mov    gAllCareerCities[16].lNextCities[0], 0x12;
 // LINE 585:
-	__asm        mov    dword ptr ds:[0x5C2FC4], 0x13;
+	__asm        mov    gAllCareerCities[16].lNextCities[1], 0x13;
 // LINE 586:
-	__asm        mov    dword ptr ds:[0x5C2FC8], 0x14;
+	__asm        mov    gAllCareerCities[16].lNextCities[2], 0x14;
 // LINE 587:
-	__asm        mov    dword ptr ds:[0x5C2FD8], 0x10;
+	__asm        mov    gAllCareerCities[16].lCityNameStringIndex, 0x10;
 // LINE 588:
-	__asm        mov    dword ptr ds:[0x5C2F98], 5;
+	__asm        mov    gAllCareerCities[16].lCityLevel, 5;
 // LINE 589:
-	__asm        mov    eax, ds:[0x597500];
-	__asm        mov    ds:[0x5C2FDC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_16;
+	__asm        mov    gAllCareerCities[16].chCityFileNameBase, eax;
 // LINE 591:
-	__asm        mov    dword ptr ds:[0x5C3014], 0xC;
+	__asm        mov    gAllCareerCities[17].lPrevCities[0], 0xC;
 // LINE 592:
-	__asm        mov    dword ptr ds:[0x5C3018], 0xD;
+	__asm        mov    gAllCareerCities[17].lPrevCities[1], 0xD;
 // LINE 593:
-	__asm        mov    dword ptr ds:[0x5C301C], 0x10;
+	__asm        mov    gAllCareerCities[17].lPrevCities[2], 0x10;
 // LINE 594:
-	__asm        mov    dword ptr ds:[0x5C3008], 0x10;
+	__asm        mov    gAllCareerCities[17].lNextCities[0], 0x10;
 // LINE 595:
-	__asm        mov    dword ptr ds:[0x5C300C], 0x13;
+	__asm        mov    gAllCareerCities[17].lNextCities[1], 0x13;
 // LINE 596:
-	__asm        mov    dword ptr ds:[0x5C3010], 0x14;
+	__asm        mov    gAllCareerCities[17].lNextCities[2], 0x14;
 // LINE 597:
-	__asm        mov    dword ptr ds:[0x5C3020], 0x11;
+	__asm        mov    gAllCareerCities[17].lCityNameStringIndex, 0x11;
 // LINE 598:
-	__asm        mov    dword ptr ds:[0x5C2FE0], 5;
+	__asm        mov    gAllCareerCities[17].lCityLevel, 5;
 // LINE 599:
-	__asm        mov    eax, ds:[0x597504];
-	__asm        mov    ds:[0x5C3024], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_17;
+	__asm        mov    gAllCareerCities[17].chCityFileNameBase, eax;
 // LINE 601:
-	__asm        mov    dword ptr ds:[0x5C305C], 0x10;
+	__asm        mov    gAllCareerCities[18].lPrevCities[0], 0x10;
 // LINE 602:
-	__asm        mov    dword ptr ds:[0x5C3060], 0x11;
+	__asm        mov    gAllCareerCities[18].lPrevCities[1], 0x11;
 // LINE 603:
-	__asm        mov    dword ptr ds:[0x5C3064], 0x13;
+	__asm        mov    gAllCareerCities[18].lPrevCities[2], 0x13;
 // LINE 604:
-	__asm        mov    dword ptr ds:[0x5C3050], 0x13;
+	__asm        mov    gAllCareerCities[18].lNextCities[0], 0x13;
 // LINE 605:
-	__asm        mov    dword ptr ds:[0x5C3054], 0x15;
+	__asm        mov    gAllCareerCities[18].lNextCities[1], 0x15;
 // LINE 606:
-	__asm        mov    dword ptr ds:[0x5C3058], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[18].lNextCities[2], 0xFFFFFFFF;
 // LINE 607:
-	__asm        mov    dword ptr ds:[0x5C3068], 0x12;
+	__asm        mov    gAllCareerCities[18].lCityNameStringIndex, 0x12;
 // LINE 608:
-	__asm        mov    dword ptr ds:[0x5C3028], 6;
+	__asm        mov    gAllCareerCities[18].lCityLevel, 6;
 // LINE 609:
-	__asm        mov    eax, ds:[0x597508];
-	__asm        mov    ds:[0x5C306C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_18;
+	__asm        mov    gAllCareerCities[18].chCityFileNameBase, eax;
 // LINE 611:
-	__asm        mov    dword ptr ds:[0x5C30A4], 0x12;
+	__asm        mov    gAllCareerCities[19].lPrevCities[0], 0x12;
 // LINE 612:
-	__asm        mov    dword ptr ds:[0x5C30A8], 0x10;
+	__asm        mov    gAllCareerCities[19].lPrevCities[1], 0x10;
 // LINE 613:
-	__asm        mov    dword ptr ds:[0x5C30AC], 0x14;
+	__asm        mov    gAllCareerCities[19].lPrevCities[2], 0x14;
 // LINE 614:
-	__asm        mov    dword ptr ds:[0x5C3098], 0x15;
+	__asm        mov    gAllCareerCities[19].lNextCities[0], 0x15;
 // LINE 615:
-	__asm        mov    dword ptr ds:[0x5C309C], 0x16;
+	__asm        mov    gAllCareerCities[19].lNextCities[1], 0x16;
 // LINE 616:
-	__asm        mov    dword ptr ds:[0x5C30A0], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[19].lNextCities[2], 0xFFFFFFFF;
 // LINE 617:
-	__asm        mov    dword ptr ds:[0x5C30B0], 0x13;
+	__asm        mov    gAllCareerCities[19].lCityNameStringIndex, 0x13;
 // LINE 618:
-	__asm        mov    dword ptr ds:[0x5C3070], 6;
+	__asm        mov    gAllCareerCities[19].lCityLevel, 6;
 // LINE 619:
-	__asm        mov    eax, ds:[0x59750C];
-	__asm        mov    ds:[0x5C30B4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_19;
+	__asm        mov    gAllCareerCities[19].chCityFileNameBase, eax;
 // LINE 621:
-	__asm        mov    dword ptr ds:[0x5C30EC], 0xF;
+	__asm        mov    gAllCareerCities[20].lPrevCities[0], 0xF;
 // LINE 622:
-	__asm        mov    dword ptr ds:[0x5C30F0], 0x10;
+	__asm        mov    gAllCareerCities[20].lPrevCities[1], 0x10;
 // LINE 623:
-	__asm        mov    dword ptr ds:[0x5C30F4], 0x13;
+	__asm        mov    gAllCareerCities[20].lPrevCities[2], 0x13;
 // LINE 624:
-	__asm        mov    dword ptr ds:[0x5C30E0], 0x13;
+	__asm        mov    gAllCareerCities[20].lNextCities[0], 0x13;
 // LINE 625:
-	__asm        mov    dword ptr ds:[0x5C30E4], 0x16;
+	__asm        mov    gAllCareerCities[20].lNextCities[1], 0x16;
 // LINE 626:
-	__asm        mov    dword ptr ds:[0x5C30E8], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[20].lNextCities[2], 0xFFFFFFFF;
 // LINE 627:
-	__asm        mov    dword ptr ds:[0x5C30F8], 0x14;
+	__asm        mov    gAllCareerCities[20].lCityNameStringIndex, 0x14;
 // LINE 628:
-	__asm        mov    dword ptr ds:[0x5C30B8], 6;
+	__asm        mov    gAllCareerCities[20].lCityLevel, 6;
 // LINE 629:
-	__asm        mov    eax, ds:[0x597510];
-	__asm        mov    ds:[0x5C30FC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_20;
+	__asm        mov    gAllCareerCities[20].chCityFileNameBase, eax;
 // LINE 631:
-	__asm        mov    dword ptr ds:[0x5C3134], 0x13;
+	__asm        mov    gAllCareerCities[21].lPrevCities[0], 0x13;
 // LINE 632:
-	__asm        mov    dword ptr ds:[0x5C3138], 0x14;
+	__asm        mov    gAllCareerCities[21].lPrevCities[1], 0x14;
 // LINE 633:
-	__asm        mov    dword ptr ds:[0x5C313C], 0x16;
+	__asm        mov    gAllCareerCities[21].lPrevCities[2], 0x16;
 // LINE 634:
-	__asm        mov    dword ptr ds:[0x5C3128], 0x17;
+	__asm        mov    gAllCareerCities[21].lNextCities[0], 0x17;
 // LINE 635:
-	__asm        mov    dword ptr ds:[0x5C312C], 0x18;
+	__asm        mov    gAllCareerCities[21].lNextCities[1], 0x18;
 // LINE 636:
-	__asm        mov    dword ptr ds:[0x5C3130], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[21].lNextCities[2], 0xFFFFFFFF;
 // LINE 637:
-	__asm        mov    dword ptr ds:[0x5C3140], 0x15;
+	__asm        mov    gAllCareerCities[21].lCityNameStringIndex, 0x15;
 // LINE 638:
-	__asm        mov    dword ptr ds:[0x5C3100], 7;
+	__asm        mov    gAllCareerCities[21].lCityLevel, 7;
 // LINE 639:
-	__asm        mov    eax, ds:[0x597514];
-	__asm        mov    ds:[0x5C3144], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_21;
+	__asm        mov    gAllCareerCities[21].chCityFileNameBase, eax;
 // LINE 641:
-	__asm        mov    dword ptr ds:[0x5C317C], 0x12;
+	__asm        mov    gAllCareerCities[22].lPrevCities[0], 0x12;
 // LINE 642:
-	__asm        mov    dword ptr ds:[0x5C3180], 0x13;
+	__asm        mov    gAllCareerCities[22].lPrevCities[1], 0x13;
 // LINE 643:
-	__asm        mov    dword ptr ds:[0x5C3184], 0x15;
+	__asm        mov    gAllCareerCities[22].lPrevCities[2], 0x15;
 // LINE 644:
-	__asm        mov    dword ptr ds:[0x5C3170], 0x17;
+	__asm        mov    gAllCareerCities[22].lNextCities[0], 0x17;
 // LINE 645:
-	__asm        mov    dword ptr ds:[0x5C3174], 0x18;
+	__asm        mov    gAllCareerCities[22].lNextCities[1], 0x18;
 // LINE 646:
-	__asm        mov    dword ptr ds:[0x5C3178], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[22].lNextCities[2], 0xFFFFFFFF;
 // LINE 647:
-	__asm        mov    dword ptr ds:[0x5C3188], 0x16;
+	__asm        mov    gAllCareerCities[22].lCityNameStringIndex, 0x16;
 // LINE 648:
-	__asm        mov    dword ptr ds:[0x5C3148], 7;
+	__asm        mov    gAllCareerCities[22].lCityLevel, 7;
 // LINE 649:
-	__asm        mov    eax, ds:[0x597518];
-	__asm        mov    ds:[0x5C318C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_22;
+	__asm        mov    gAllCareerCities[22].chCityFileNameBase, eax;
 // LINE 651:
-	__asm        mov    dword ptr ds:[0x5C31C4], 0x15;
+	__asm        mov    gAllCareerCities[23].lPrevCities[0], 0x15;
 // LINE 652:
-	__asm        mov    dword ptr ds:[0x5C31C8], 0x16;
+	__asm        mov    gAllCareerCities[23].lPrevCities[1], 0x16;
 // LINE 653:
-	__asm        mov    dword ptr ds:[0x5C31CC], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[23].lPrevCities[2], 0xFFFFFFFF;
 // LINE 654:
-	__asm        mov    dword ptr ds:[0x5C31B8], 0x19;
+	__asm        mov    gAllCareerCities[23].lNextCities[0], 0x19;
 // LINE 655:
-	__asm        mov    dword ptr ds:[0x5C31BC], 0x1A;
+	__asm        mov    gAllCareerCities[23].lNextCities[1], 0x1A;
 // LINE 656:
-	__asm        mov    dword ptr ds:[0x5C31C0], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[23].lNextCities[2], 0xFFFFFFFF;
 // LINE 657:
-	__asm        mov    dword ptr ds:[0x5C31D0], 0x17;
+	__asm        mov    gAllCareerCities[23].lCityNameStringIndex, 0x17;
 // LINE 658:
-	__asm        mov    dword ptr ds:[0x5C3190], 8;
+	__asm        mov    gAllCareerCities[23].lCityLevel, 8;
 // LINE 659:
-	__asm        mov    eax, ds:[0x59751C];
-	__asm        mov    ds:[0x5C31D4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_23;
+	__asm        mov    gAllCareerCities[23].chCityFileNameBase, eax;
 // LINE 661:
-	__asm        mov    dword ptr ds:[0x5C320C], 0x15;
+	__asm        mov    gAllCareerCities[24].lPrevCities[0], 0x15;
 // LINE 662:
-	__asm        mov    dword ptr ds:[0x5C3210], 0x16;
+	__asm        mov    gAllCareerCities[24].lPrevCities[1], 0x16;
 // LINE 663:
-	__asm        mov    dword ptr ds:[0x5C3214], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[24].lPrevCities[2], 0xFFFFFFFF;
 // LINE 664:
-	__asm        mov    dword ptr ds:[0x5C3200], 0x19;
+	__asm        mov    gAllCareerCities[24].lNextCities[0], 0x19;
 // LINE 665:
-	__asm        mov    dword ptr ds:[0x5C3204], 0x1A;
+	__asm        mov    gAllCareerCities[24].lNextCities[1], 0x1A;
 // LINE 666:
-	__asm        mov    dword ptr ds:[0x5C3208], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[24].lNextCities[2], 0xFFFFFFFF;
 // LINE 667:
-	__asm        mov    dword ptr ds:[0x5C3218], 0x18;
+	__asm        mov    gAllCareerCities[24].lCityNameStringIndex, 0x18;
 // LINE 668:
-	__asm        mov    dword ptr ds:[0x5C31D8], 8;
+	__asm        mov    gAllCareerCities[24].lCityLevel, 8;
 // LINE 669:
-	__asm        mov    eax, ds:[0x597520];
-	__asm        mov    ds:[0x5C321C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_24;
+	__asm        mov    gAllCareerCities[24].chCityFileNameBase, eax;
 // LINE 671:
-	__asm        mov    dword ptr ds:[0x5C3254], 0x17;
+	__asm        mov    gAllCareerCities[25].lPrevCities[0], 0x17;
 // LINE 672:
-	__asm        mov    dword ptr ds:[0x5C3258], 0x18;
+	__asm        mov    gAllCareerCities[25].lPrevCities[1], 0x18;
 // LINE 673:
-	__asm        mov    dword ptr ds:[0x5C325C], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[25].lPrevCities[2], 0xFFFFFFFF;
 // LINE 674:
-	__asm        mov    dword ptr ds:[0x5C3248], 0x1B;
+	__asm        mov    gAllCareerCities[25].lNextCities[0], 0x1B;
 // LINE 675:
-	__asm        mov    dword ptr ds:[0x5C324C], 0x1C;
+	__asm        mov    gAllCareerCities[25].lNextCities[1], 0x1C;
 // LINE 676:
-	__asm        mov    dword ptr ds:[0x5C3250], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[25].lNextCities[2], 0xFFFFFFFF;
 // LINE 677:
-	__asm        mov    dword ptr ds:[0x5C3260], 0x19;
+	__asm        mov    gAllCareerCities[25].lCityNameStringIndex, 0x19;
 // LINE 678:
-	__asm        mov    dword ptr ds:[0x5C3220], 9;
+	__asm        mov    gAllCareerCities[25].lCityLevel, 9;
 // LINE 679:
-	__asm        mov    eax, ds:[0x597524];
-	__asm        mov    ds:[0x5C3264], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_25;
+	__asm        mov    gAllCareerCities[25].chCityFileNameBase, eax;
 // LINE 681:
-	__asm        mov    dword ptr ds:[0x5C329C], 0x17;
+	__asm        mov    gAllCareerCities[26].lPrevCities[0], 0x17;
 // LINE 682:
-	__asm        mov    dword ptr ds:[0x5C32A0], 0x18;
+	__asm        mov    gAllCareerCities[26].lPrevCities[1], 0x18;
 // LINE 683:
-	__asm        mov    dword ptr ds:[0x5C32A4], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[26].lPrevCities[2], 0xFFFFFFFF;
 // LINE 684:
-	__asm        mov    dword ptr ds:[0x5C3290], 0x1B;
+	__asm        mov    gAllCareerCities[26].lNextCities[0], 0x1B;
 // LINE 685:
-	__asm        mov    dword ptr ds:[0x5C3294], 0x1C;
+	__asm        mov    gAllCareerCities[26].lNextCities[1], 0x1C;
 // LINE 686:
-	__asm        mov    dword ptr ds:[0x5C3298], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[26].lNextCities[2], 0xFFFFFFFF;
 // LINE 687:
-	__asm        mov    dword ptr ds:[0x5C32A8], 0x1A;
+	__asm        mov    gAllCareerCities[26].lCityNameStringIndex, 0x1A;
 // LINE 688:
-	__asm        mov    dword ptr ds:[0x5C3268], 9;
+	__asm        mov    gAllCareerCities[26].lCityLevel, 9;
 // LINE 689:
-	__asm        mov    eax, ds:[0x597528];
-	__asm        mov    ds:[0x5C32AC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_26;
+	__asm        mov    gAllCareerCities[26].chCityFileNameBase, eax;
 // LINE 691:
-	__asm        mov    dword ptr ds:[0x5C32E4], 0x19;
+	__asm        mov    gAllCareerCities[27].lPrevCities[0], 0x19;
 // LINE 692:
-	__asm        mov    dword ptr ds:[0x5C32E8], 0x1A;
+	__asm        mov    gAllCareerCities[27].lPrevCities[1], 0x1A;
 // LINE 693:
-	__asm        mov    dword ptr ds:[0x5C32EC], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[27].lPrevCities[2], 0xFFFFFFFF;
 // LINE 694:
-	__asm        mov    dword ptr ds:[0x5C32D8], 0x1D;
+	__asm        mov    gAllCareerCities[27].lNextCities[0], 0x1D;
 // LINE 695:
-	__asm        mov    dword ptr ds:[0x5C32DC], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[27].lNextCities[1], 0xFFFFFFFF;
 // LINE 696:
-	__asm        mov    dword ptr ds:[0x5C32E0], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[27].lNextCities[2], 0xFFFFFFFF;
 // LINE 697:
-	__asm        mov    dword ptr ds:[0x5C32F0], 0x1B;
+	__asm        mov    gAllCareerCities[27].lCityNameStringIndex, 0x1B;
 // LINE 698:
-	__asm        mov    dword ptr ds:[0x5C32B0], 0xA;
+	__asm        mov    gAllCareerCities[27].lCityLevel, 0xA;
 // LINE 699:
-	__asm        mov    eax, ds:[0x59752C];
-	__asm        mov    ds:[0x5C32F4], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_27;
+	__asm        mov    gAllCareerCities[27].chCityFileNameBase, eax;
 // LINE 701:
-	__asm        mov    dword ptr ds:[0x5C332C], 0x19;
+	__asm        mov    gAllCareerCities[28].lPrevCities[0], 0x19;
 // LINE 702:
-	__asm        mov    dword ptr ds:[0x5C3330], 0x1A;
+	__asm        mov    gAllCareerCities[28].lPrevCities[1], 0x1A;
 // LINE 703:
-	__asm        mov    dword ptr ds:[0x5C3334], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[28].lPrevCities[2], 0xFFFFFFFF;
 // LINE 704:
-	__asm        mov    dword ptr ds:[0x5C3320], 0x1D;
+	__asm        mov    gAllCareerCities[28].lNextCities[0], 0x1D;
 // LINE 705:
-	__asm        mov    dword ptr ds:[0x5C3324], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[28].lNextCities[1], 0xFFFFFFFF;
 // LINE 706:
-	__asm        mov    dword ptr ds:[0x5C3328], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[28].lNextCities[2], 0xFFFFFFFF;
 // LINE 707:
-	__asm        mov    dword ptr ds:[0x5C3338], 0x1C;
+	__asm        mov    gAllCareerCities[28].lCityNameStringIndex, 0x1C;
 // LINE 708:
-	__asm        mov    dword ptr ds:[0x5C32F8], 0xA;
+	__asm        mov    gAllCareerCities[28].lCityLevel, 0xA;
 // LINE 709:
-	__asm        mov    eax, ds:[0x597530];
-	__asm        mov    ds:[0x5C333C], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_28;
+	__asm        mov    gAllCareerCities[28].chCityFileNameBase, eax;
 // LINE 711:
-	__asm        mov    dword ptr ds:[0x5C3374], 0x1C;
+	__asm        mov    gAllCareerCities[29].lPrevCities[0], 0x1C;
 // LINE 712:
-	__asm        mov    dword ptr ds:[0x5C3378], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[29].lPrevCities[1], 0xFFFFFFFF;
 // LINE 713:
-	__asm        mov    dword ptr ds:[0x5C337C], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[29].lPrevCities[2], 0xFFFFFFFF;
 // LINE 714:
-	__asm        mov    dword ptr ds:[0x5C3368], 0x1E;
+	__asm        mov    gAllCareerCities[29].lNextCities[0], 0x1E;
 // LINE 715:
-	__asm        mov    dword ptr ds:[0x5C336C], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[29].lNextCities[1], 0xFFFFFFFF;
 // LINE 716:
-	__asm        mov    dword ptr ds:[0x5C3370], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[29].lNextCities[2], 0xFFFFFFFF;
 // LINE 717:
-	__asm        mov    dword ptr ds:[0x5C3380], 0x1D;
+	__asm        mov    gAllCareerCities[29].lCityNameStringIndex, 0x1D;
 // LINE 718:
-	__asm        mov    dword ptr ds:[0x5C3340], 0x1D;
+	__asm        mov    gAllCareerCities[29].lCityLevel, 0x1D;
 // LINE 719:
-	__asm        mov    eax, ds:[0x597534];
-	__asm        mov    ds:[0x5C3384], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_29;
+	__asm        mov    gAllCareerCities[29].chCityFileNameBase, eax;
 // LINE 721:
-	__asm        mov    dword ptr ds:[0x5C33BC], 0x1D;
+	__asm        mov    gAllCareerCities[30].lPrevCities[0], 0x1D;
 // LINE 722:
-	__asm        mov    dword ptr ds:[0x5C33C0], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[30].lPrevCities[1], 0xFFFFFFFF;
 // LINE 723:
-	__asm        mov    dword ptr ds:[0x5C33C4], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[30].lPrevCities[2], 0xFFFFFFFF;
 // LINE 724:
-	__asm        mov    dword ptr ds:[0x5C33B0], 0x1F;
+	__asm        mov    gAllCareerCities[30].lNextCities[0], 0x1F;
 // LINE 725:
-	__asm        mov    dword ptr ds:[0x5C33B4], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[30].lNextCities[1], 0xFFFFFFFF;
 // LINE 726:
-	__asm        mov    dword ptr ds:[0x5C33B8], 0xFFFFFFFF;
+	__asm        mov    gAllCareerCities[30].lNextCities[2], 0xFFFFFFFF;
 // LINE 727:
-	__asm        mov    dword ptr ds:[0x5C33C8], 0x1E;
+	__asm        mov    gAllCareerCities[30].lCityNameStringIndex, 0x1E;
 // LINE 728:
-	__asm        mov    dword ptr ds:[0x5C3388], 0xC;
+	__asm        mov    gAllCareerCities[30].lCityLevel, 0xC;
 // LINE 729:
-	__asm        mov    eax, ds:[0x597538];
-	__asm        mov    ds:[0x5C33CC], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_30;
+	__asm        mov    gAllCareerCities[30].chCityFileNameBase, eax;
 // LINE 731:
-	__asm        mov    dword ptr ds:[0x5C3404], 0x1E;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[28]), 0x1E;
 // LINE 732:
-	__asm        mov    dword ptr ds:[0x5C3408], 0xFFFFFFFF;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[32]), 0xFFFFFFFF;
 // LINE 733:
-	__asm        mov    dword ptr ds:[0x5C340C], 0xFFFFFFFF;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[36]), 0xFFFFFFFF;
 // LINE 734:
-	__asm        mov    dword ptr ds:[0x5C33F8], 0xFFFFFFFF;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[16]), 0xFFFFFFFF;
 // LINE 735:
-	__asm        mov    dword ptr ds:[0x5C33FC], 0xFFFFFFFF;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[20]), 0xFFFFFFFF;
 // LINE 736:
-	__asm        mov    dword ptr ds:[0x5C3400], 0xFFFFFFFF;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[24]), 0xFFFFFFFF;
 // LINE 737:
-	__asm        mov    dword ptr ds:[0x5C3410], 0x1F;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[40]), 0x1F;
 // LINE 738:
-	__asm        mov    dword ptr ds:[0x5C33D0], 0xD;
+	__asm        mov    gGraduationState.nGraduationState, 0xD;
 // LINE 739:
-	__asm        mov    eax, ds:[0x59753C];
-	__asm        mov    ds:[0x5C3414], eax;
+	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_31;
+	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[44]), eax;
 // LINE 744:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb58;

@@ -1725,7 +1725,7 @@ _T69:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Tc2;
 _T78:
-	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
+	__asm        cmp    __mb_cur_max, 1;
 	__asm        jle    _T9f;
 
 	__asm        push   0x107;
@@ -1737,7 +1737,7 @@ _T78:
 	__asm        jmp    _Tb8;
 _T9f:
 	__asm        movsx  eax, c;
-	__asm        mov    ecx, ds:[0x5C0998];
+	__asm        mov    ecx, _pctype;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        and    edx, 0x107;
@@ -1810,7 +1810,7 @@ _T48:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Tce;
 _T57:
-	__asm        cmp    dword ptr ds:[0x5C0BA4], 1;
+	__asm        cmp    __mb_cur_max, 1;
 	__asm        jle    _T7e;
 
 	__asm        push   0x103;
@@ -1822,7 +1822,7 @@ _T57:
 	__asm        jmp    _T97;
 _T7e:
 	__asm        movsx  eax, c;
-	__asm        mov    ecx, ds:[0x5C0998];
+	__asm        mov    ecx, _pctype;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        and    edx, 0x103;

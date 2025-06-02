@@ -797,7 +797,7 @@ _Tca:
 	__asm        push   eax;
 	__asm        mov    eax, nLoadTitleStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -812,7 +812,7 @@ _Tca:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -945,7 +945,7 @@ _T2af:
 	__asm        push   eax;
 	__asm        mov    eax, nFileFilterStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
@@ -960,7 +960,7 @@ _T2af:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
@@ -1137,7 +1137,7 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 	__asm        call   dword ptr ds:[0x6C3884];
 	__asm        mov    ofn.hwndOwner, eax;
 // LINE 88:
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        mov    ofn.hInstance, eax;
 // LINE 89:
 	__asm        mov    eax, pFilter;
@@ -1261,7 +1261,7 @@ _Tca:
 	__asm        push   eax;
 	__asm        mov    eax, nLoadTitleStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -1276,7 +1276,7 @@ _Tca:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1070], eax;
@@ -1409,7 +1409,7 @@ _T2af:
 	__asm        push   eax;
 	__asm        mov    eax, nFileFilterStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
@@ -1424,7 +1424,7 @@ _T2af:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2078], eax;
@@ -1601,7 +1601,7 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 	__asm        call   dword ptr ds:[0x6C3884];
 	__asm        mov    ofn.hwndOwner, eax;
 // LINE 145:
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        mov    ofn.hInstance, eax;
 // LINE 146:
 	__asm        mov    eax, pFilter;

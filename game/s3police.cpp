@@ -479,7 +479,7 @@ _T3a:
 	__asm        call   0x004D8520;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -501,7 +501,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        je     _Td6;
 // LINE 148:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    eax, [eax+0x12E];
@@ -576,9 +576,9 @@ _T145:
 	__asm        add    esp, 8;
 // LINE 175:
 	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    ecx, ds:[0x5B7EB0];
+	__asm        mov    ecx, curPoliceCars;
 	__asm        mov    [ecx*4+0x62B9E8], eax;
-	__asm        inc    dword ptr ds:[0x5B7EB0];
+	__asm        inc    curPoliceCars;
 // LINE 177:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        jmp    _T1e4;
@@ -621,7 +621,7 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3800];
+	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
 	__asm        jmp    near ptr 0x005370AE;
 // LINE 218:
@@ -650,7 +650,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        jle    _T4d;
 // LINE 254:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
@@ -677,7 +677,7 @@ _T4d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3800];
+	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 267:
 	__asm        mov    ecx, this;
@@ -784,7 +784,7 @@ _T18f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3800];
+	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 302:
 	__asm        mov    ecx, this;
@@ -946,17 +946,17 @@ _T3bc:
 	__asm        mov    [ecx+0x31E], eax;
 // LINE 369:
 _T3cd:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 370:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 371:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -968,11 +968,11 @@ _T3cd:
 	__asm        mov    dist, eax;
 // LINE 373:
 	__asm        mov    eax, dist;
-	__asm        cmp    ds:[0x608F74], eax;
+	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T41d;
 // LINE 374:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F74], eax;
+	__asm        mov    AutomobileClass::policeSirenDist, eax;
 // LINE 376:
 _T41d:
 	__asm        mov    ecx, this;
@@ -1199,17 +1199,17 @@ _T6bd:
 	__asm        jmp    _T72a;
 // LINE 453:
 _T6ca:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 454:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 455:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -1221,11 +1221,11 @@ _T6ca:
 	__asm        mov    dist, eax;
 // LINE 457:
 	__asm        mov    eax, dist;
-	__asm        cmp    ds:[0x608F74], eax;
+	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T71a;
 // LINE 458:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F74], eax;
+	__asm        mov    AutomobileClass::policeSirenDist, eax;
 // LINE 460:
 _T71a:
 	__asm        mov    ecx, this;
@@ -1252,7 +1252,7 @@ _T749:
 	__asm        jle    _T76c;
 // LINE 474:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
@@ -1291,7 +1291,7 @@ _T7ac:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3820];
+	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 491:
 	__asm        mov    eax, this;
@@ -1350,17 +1350,17 @@ _T854:
 	__asm        test   al, 0x10;
 	__asm        je     _T903;
 // LINE 514:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 515:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 516:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -1372,11 +1372,11 @@ _T854:
 	__asm        mov    dist, eax;
 // LINE 518:
 	__asm        mov    eax, dist;
-	__asm        cmp    ds:[0x608F74], eax;
+	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T8ee;
 // LINE 519:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F74], eax;
+	__asm        mov    AutomobileClass::policeSirenDist, eax;
 // LINE 521:
 _T8ee:
 	__asm        mov    ecx, this;
@@ -1766,7 +1766,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 647:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xC0];
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, 0x20000000;
@@ -1774,7 +1774,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        mov    loc.x, al;
 // LINE 648:
 	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xC0];
 	__asm        sub    eax, [ecx+0x20];
 	__asm        sar    eax, 0x16;

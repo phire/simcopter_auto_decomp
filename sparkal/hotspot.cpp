@@ -3509,20 +3509,20 @@ _Tba:
 
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0xC8], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-0x78], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _T131;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T39a;
 _T131:
-	__asm        mov    eax, ds:[0x5971D0];
-	__asm        cmp    ds:[0x5971D4], eax;
+	__asm        mov    eax, list<HotSpot>::last;
+	__asm        cmp    list<HotSpot>::next_avail, eax;
 	__asm        jne    _T382;
 
 	__asm        push   0;
@@ -3619,14 +3619,14 @@ _T297:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x84];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x84];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x9C], 0x92;
 	__asm        lea    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xA4], eax;
@@ -3658,20 +3658,20 @@ _T334:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x004BB800;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T39a;
 _T382:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x80], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0xC4], eax;
 _T39a:

@@ -580,14 +580,14 @@ void SoundButtonWindow::SoundButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 30:
-	__asm        cmp    dword ptr ds:[0x5997B8], 0;
+	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 31:
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   DigitalSound::Load;
 // LINE 32:
 _T34:
-	__asm        inc    dword ptr ds:[0x5997B8];
+	__asm        inc    SoundButtonWindow::lButtonSoundReferenceCount;
 // LINE 33:
 	__asm        jmp    near ptr 0x0047183F;
 
@@ -614,14 +614,14 @@ void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nN
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 45:
-	__asm        cmp    dword ptr ds:[0x5997B8], 0;
+	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T4c;
 // LINE 46:
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   DigitalSound::Load;
 // LINE 47:
 _T4c:
-	__asm        inc    dword ptr ds:[0x5997B8];
+	__asm        inc    SoundButtonWindow::lButtonSoundReferenceCount;
 // LINE 48:
 	__asm        jmp    near ptr 0x0047189E;
 
@@ -634,7 +634,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590870;
 // LINE 56:
-	__asm        dec    dword ptr ds:[0x5997B8];
+	__asm        dec    SoundButtonWindow::lButtonSoundReferenceCount;
 // LINE 57:
 	__asm        jne    _T2b;
 // LINE 58:
@@ -661,7 +661,7 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    nNewButtonState, 2;
 	__asm        jne    _T43;
 // LINE 67:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   DigitalSound::SetVolume;
@@ -702,14 +702,14 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadi
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 83:
-	__asm        cmp    dword ptr ds:[0x5997BC], 0;
+	__asm        cmp    SoundRadioButtonWindow::lRadioSoundReferenceCount, 0;
 	__asm        jne    _T50;
 // LINE 84:
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   DigitalSound::Load;
 // LINE 85:
 _T50:
-	__asm        inc    dword ptr ds:[0x5997BC];
+	__asm        inc    SoundRadioButtonWindow::lRadioSoundReferenceCount;
 // LINE 86:
 	__asm        jmp    near ptr 0x004719A0;
 
@@ -722,7 +722,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590950;
 // LINE 92:
-	__asm        dec    dword ptr ds:[0x5997BC];
+	__asm        dec    SoundRadioButtonWindow::lRadioSoundReferenceCount;
 // LINE 93:
 	__asm        jne    _T2b;
 // LINE 94:
@@ -748,7 +748,7 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T46;
 // LINE 103:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   DigitalSound::SetVolume;
@@ -775,14 +775,14 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 113:
-	__asm        cmp    dword ptr ds:[0x5997C0], 0;
+	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 114:
 	__asm        mov    ecx, 0x604348;
 	__asm        call   DigitalSound::Load;
 // LINE 115:
 _T34:
-	__asm        inc    dword ptr ds:[0x5997C0];
+	__asm        inc    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
 // LINE 116:
 	__asm        jmp    near ptr 0x00471A84;
 
@@ -809,14 +809,14 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 127:
-	__asm        cmp    dword ptr ds:[0x5997C0], 0;
+	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T4c;
 // LINE 128:
 	__asm        mov    ecx, 0x604348;
 	__asm        call   DigitalSound::Load;
 // LINE 129:
 _T4c:
-	__asm        inc    dword ptr ds:[0x5997C0];
+	__asm        inc    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
 // LINE 130:
 	__asm        jmp    near ptr 0x00471AE3;
 
@@ -829,7 +829,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590A38;
 // LINE 136:
-	__asm        dec    dword ptr ds:[0x5997C0];
+	__asm        dec    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
 // LINE 137:
 	__asm        jne    _T2b;
 // LINE 138:
@@ -855,7 +855,7 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _T39;
 // LINE 147:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604348;
 	__asm        call   DigitalSound::SetVolume;
@@ -882,14 +882,14 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 157:
-	__asm        cmp    dword ptr ds:[0x5997C4], 0;
+	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 158:
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::Load;
 // LINE 159:
 _T34:
-	__asm        inc    dword ptr ds:[0x5997C4];
+	__asm        inc    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
 // LINE 160:
 	__asm        jmp    near ptr 0x00471BC4;
 
@@ -918,14 +918,14 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int3
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 171:
-	__asm        cmp    dword ptr ds:[0x5997C4], 0;
+	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T50;
 // LINE 172:
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::Load;
 // LINE 173:
 _T50:
-	__asm        inc    dword ptr ds:[0x5997C4];
+	__asm        inc    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
 // LINE 174:
 	__asm        jmp    near ptr 0x00471C27;
 
@@ -938,7 +938,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590B18;
 // LINE 180:
-	__asm        dec    dword ptr ds:[0x5997C4];
+	__asm        dec    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
 // LINE 181:
 	__asm        jne    _T2b;
 // LINE 182:
@@ -965,7 +965,7 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jle    _T3f;
 // LINE 192:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::SetVolume;
@@ -991,7 +991,7 @@ void SoundScrollBarWindow::MoveLineNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jle    _T3f;
 // LINE 206:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::SetVolume;

@@ -15,7 +15,7 @@ int32_t IsEventSet(int32_t nEvent) {
 	__asm        jmp    near ptr 0x00431B6B;
 
 	__asm        mov    eax, nEvent;
-	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    ecx, gGameApp;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*2+0x110];
 	__asm        mov    eax, edx;
@@ -34,7 +34,7 @@ _T06:
 	__asm        jmp    near ptr 0x00431BA0;
 
 	__asm        mov    eax, nEventStart;
-	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    ecx, gGameApp;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*2+0x110];
 	__asm        test   edx, edx;
@@ -61,7 +61,7 @@ long GetJoystickValue(int32_t nCommand) {
 	__asm        jmp    near ptr 0x00431BE1;
 
 	__asm        mov    eax, nCommand;
-	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        jmp    near ptr 0x00431BF6;
 // LINE 48:
@@ -73,7 +73,7 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 
 // LINE 58:
 	__asm        mov    eax, nCommand1;
-	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        mov    lReturnValue, eax;
 	__asm        jmp    near ptr 0x00431C1C;
@@ -88,7 +88,7 @@ _T33:
 	__asm        jmp    near ptr 0x00431C33;
 
 	__asm        mov    eax, nCommand2;
-	__asm        mov    ecx, ds:[0x599BBC];
+	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        jmp    _T4d;
 // LINE 61:

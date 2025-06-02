@@ -364,7 +364,7 @@ _Td1:
 	__asm        lea    eax, ClassInfo.style;
 	__asm        push   eax;
 	__asm        push   0x599AB8;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3878];
 	__asm        test   eax, eax;
@@ -380,7 +380,7 @@ _Td1:
 	__asm        call   dword ptr ds:[0x6C3560];
 	__asm        mov    ClassInfo.hbrBackground, eax;
 // LINE 58:
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        mov    ClassInfo.hInstance, eax;
 // LINE 59:
 	__asm        mov    ClassInfo.style, 0x20;
@@ -533,7 +533,7 @@ _Tbf:
 	__asm        jmp    near ptr 0x0046721B;
 
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -1437,7 +1437,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 
 // LINE 496:
 	__asm        mov    eax, Message;
-	__asm        cmp    ds:[0x646ED0], eax;
+	__asm        cmp    g_uTWKMessageNum, eax;
 	__asm        jne    _T31;
 // LINE 497:
 	__asm        push   0x599348;

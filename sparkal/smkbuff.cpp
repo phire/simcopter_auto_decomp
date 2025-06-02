@@ -2403,9 +2403,9 @@ _T40:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x198;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    ddrval, eax;
@@ -2429,7 +2429,7 @@ _T13b:
 	__asm        mov    eax, [eax+0x148];
 	__asm        mov    ecx, this;
 	__asm        imul   eax, [ecx+0x14C];
-	__asm        add    ds:[0x599DA0], eax;
+	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 981:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

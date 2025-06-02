@@ -1272,7 +1272,7 @@ _Tbe:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597420], eax;
+	__asm        mov    deque<basic_string<char>>::buffer_size, eax;
 	__asm        jmp    near ptr 0x004229C0;
 
 	__asm        jmp    near ptr 0x004229C5;
@@ -1286,14 +1286,14 @@ _Tbe:
 	__asm        jmp    near ptr 0x004229E8;
 // LINE 59:
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x5C28F8];
+	__asm        mov    al, ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA;
 	__asm        test   al, 1;
 	__asm        jne    _T43b;
 
 	__asm        xor    eax, eax;
-	__asm        mov    al, ds:[0x5C28F8];
+	__asm        mov    al, ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA;
 	__asm        or     al, 1;
-	__asm        mov    ds:[0x5C28F8], al;
+	__asm        mov    ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA, al;
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1345,7 +1345,7 @@ _T1b5:
 	__asm        mov    dword ptr ds:[0x5C2900], 0x58F41C;
 	__asm        mov    eax, this;
 	__asm        mov    ds:[0x5C2914], eax;
-	__asm        mov    eax, ds:[0x597370];
+	__asm        mov    eax, CDebugWindowusage_text;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00422AE0;
 
@@ -1437,7 +1437,7 @@ _T2f1:
 
 	__asm        jmp    near ptr 0x00422BF5;
 
-	__asm        mov    eax, ds:[0x59736C];
+	__asm        mov    eax, CDebugWindowhelp_text;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x00422C02;
 
@@ -1918,7 +1918,7 @@ _T229:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        mov    eax, ds:[0x597420];
+	__asm        mov    eax, deque<basic_string<char>>::buffer_size;
 	__asm        shl    eax, 3;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        add    eax, [ecx];
@@ -1958,35 +1958,35 @@ int32_t CDebugWindow::Create(char * windowName) {
 	int32_t Width;
 	int32_t Height;
 	int32_t xPos;
-	__asm        mov    dword ptr ds:[0x5C28D0], 0x20;
+	__asm        mov    CDebugWindow::m_class.style, 0x20;
 // LINE 80:
-	__asm        mov    dword ptr ds:[0x5C28D4], 0x4249EF;
+	__asm        mov    CDebugWindow::m_class.lpfnWndProc, 0x4249EF;
 // LINE 81:
-	__asm        mov    dword ptr ds:[0x5C28D8], 0;
+	__asm        mov    CDebugWindow::m_class.cbClsExtra, 0;
 // LINE 82:
-	__asm        mov    dword ptr ds:[0x5C28DC], 0;
+	__asm        mov    CDebugWindow::m_class.cbWndExtra, 0;
 // LINE 83:
-	__asm        mov    eax, ds:[0x5C28C8];
-	__asm        mov    ds:[0x5C28E0], eax;
+	__asm        mov    eax, _ghWindowsInstance;
+	__asm        mov    CDebugWindow::m_class.hInstance, eax;
 // LINE 84:
 	__asm        push   0x7F00;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C381C];
-	__asm        mov    ds:[0x5C28E4], eax;
+	__asm        mov    CDebugWindow::m_class.hIcon, eax;
 // LINE 85:
 	__asm        push   0x7F00;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3818];
-	__asm        mov    ds:[0x5C28E8], eax;
+	__asm        mov    CDebugWindow::m_class.hCursor, eax;
 // LINE 86:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3560];
-	__asm        mov    ds:[0x5C28EC], eax;
+	__asm        mov    CDebugWindow::m_class.hbrBackground, eax;
 // LINE 87:
-	__asm        mov    dword ptr ds:[0x5C28F0], 0;
+	__asm        mov    CDebugWindow::m_class.lpszMenuName, 0;
 // LINE 88:
-	__asm        mov    eax, ds:[0x597368];
-	__asm        mov    ds:[0x5C28F4], eax;
+	__asm        mov    eax, CDebugWindow::m_className;
+	__asm        mov    CDebugWindow::m_class.lpszClassName, eax;
 // LINE 89:
 	__asm        push   0x5C28D0;
 	__asm        call   dword ptr ds:[0x6C3814];
@@ -2011,7 +2011,7 @@ int32_t CDebugWindow::Create(char * windowName) {
 // LINE 110:
 _Td5:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -2025,7 +2025,7 @@ _Td5:
 	__asm        push   0x90E40000;
 	__asm        mov    eax, windowName;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597368];
+	__asm        mov    eax, CDebugWindow::m_className;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3808];
@@ -2041,7 +2041,7 @@ _Td5:
 	__asm        call   dword ptr ds:[0x6C380C];
 // LINE 124:
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2179,7 +2179,7 @@ _Tc1:
 	__asm        sub    eax, [ebp-0x18];
 	__asm        sar    eax, 2;
 	__asm        dec    eax;
-	__asm        imul   eax, ds:[0x597420];
+	__asm        imul   eax, deque<basic_string<char>>::buffer_size;
 	__asm        mov    ecx, it.current;
 	__asm        sub    ecx, it.first;
 	__asm        sar    ecx, 3;
@@ -2356,7 +2356,7 @@ _T204:
 	__asm        mov    it.first, eax;
 	__asm        mov    eax, it.first;
 	__asm        mov    it.current, eax;
-	__asm        mov    eax, ds:[0x597420];
+	__asm        mov    eax, deque<basic_string<char>>::buffer_size;
 	__asm        shl    eax, 3;
 	__asm        add    eax, it.first;
 	__asm        mov    it.last, eax;
@@ -2528,7 +2528,7 @@ _Td4:
 	__asm        mov    it.first, eax;
 	__asm        mov    eax, it.first;
 	__asm        mov    it.current, eax;
-	__asm        mov    eax, ds:[0x597420];
+	__asm        mov    eax, deque<basic_string<char>>::buffer_size;
 	__asm        shl    eax, 3;
 	__asm        add    eax, it.first;
 	__asm        mov    it.last, eax;
@@ -2590,7 +2590,7 @@ _T203:
 	__asm        sub    eax, [ebp-0xBC];
 	__asm        sar    eax, 2;
 	__asm        dec    eax;
-	__asm        imul   eax, ds:[0x597420];
+	__asm        imul   eax, deque<basic_string<char>>::buffer_size;
 	__asm        mov    ecx, it.current;
 	__asm        sub    ecx, it.first;
 	__asm        sar    ecx, 3;
@@ -3947,7 +3947,7 @@ _T5b:
 // FUNCTION: COPTER_D 0x00424a51
 void CreateDebugWindow() {
 // LINE 384:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        jne    _T59;
 // LINE 386:
 	__asm        push   0x40;
@@ -3959,14 +3959,14 @@ void CreateDebugWindow() {
 
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CDebugWindow::CDebugWindow;
-	__asm        mov    ds:[0x597374], eax;
+	__asm        mov    gDebugWindow, eax;
 	__asm        jmp    _T49;
 _T3f:
-	__asm        mov    dword ptr ds:[0x597374], 0;
+	__asm        mov    gDebugWindow, 0;
 // LINE 387:
 _T49:
 	__asm        push   0x5973F8;
-	__asm        mov    ecx, ds:[0x597374];
+	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::Create;
 // LINE 389:
 _T59:
@@ -3976,10 +3976,10 @@ _T59:
 // FUNCTION: COPTER_D 0x00424ab4
 void DestroyDebugWindow() {
 // LINE 393:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T56;
 // LINE 395:
-	__asm        mov    eax, ds:[0x597374];
+	__asm        mov    eax, gDebugWindow;
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
@@ -3997,7 +3997,7 @@ void DestroyDebugWindow() {
 	__asm        jmp    _T4c;
 // LINE 396:
 _T4c:
-	__asm        mov    dword ptr ds:[0x597374], 0;
+	__asm        mov    gDebugWindow, 0;
 // LINE 398:
 _T56:
 	__asm        jmp    near ptr 0x00424B0F;
@@ -4021,12 +4021,12 @@ void DebugOutput(char * text, ...) {
 	__asm        call   vsprintf;
 	__asm        add    esp, 0xC;
 // LINE 406:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T4e;
 // LINE 407:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x597374];
+	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::OutputString;
 // LINE 408:
 _T4e:
@@ -4036,12 +4036,12 @@ _T4e:
 // FUNCTION: COPTER_D 0x00424b6c
 void RegisterDebugCommand(struct debug_command* aCommand) {
 // LINE 412:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T3ba;
 // LINE 413:
 	__asm        mov    eax, aCommand;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        mov    eax, ds:[0x597374];
+	__asm        mov    eax, gDebugWindow;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x80];
@@ -4379,12 +4379,12 @@ _T3ba:
 // FUNCTION: COPTER_D 0x00424f30
 void UnregisterDebugCommand(struct debug_command* aCommand) {
 // LINE 418:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _Tdb;
 // LINE 419:
 	__asm        mov    eax, aCommand;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        mov    eax, ds:[0x597374];
+	__asm        mov    eax, gDebugWindow;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x00424F59;
 
@@ -4460,12 +4460,12 @@ _Tdb:
 // FUNCTION: COPTER_D 0x00425015
 void SaveDebugWindow(char * fileName) {
 // LINE 424:
-	__asm        cmp    dword ptr ds:[0x597374], 0;
+	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T22;
 // LINE 425:
 	__asm        mov    eax, fileName;
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x597374];
+	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::Save;
 // LINE 426:
 _T22:

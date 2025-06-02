@@ -413,9 +413,9 @@ _T3a:
 	__asm        je     _T7b;
 // LINE 135:
 	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    ecx, ds:[0x5B7CBC];
+	__asm        mov    ecx, CriminalEvaderCarClass::curCriminalCars;
 	__asm        mov    [ecx*4+0x62B9A0], eax;
-	__asm        inc    dword ptr ds:[0x5B7CBC];
+	__asm        inc    CriminalEvaderCarClass::curCriminalCars;
 // LINE 138:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        jmp    _Ta9;
@@ -517,8 +517,8 @@ _T24:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
-	__asm        idiv   dword ptr ds:[0x5B7CAC];
-	__asm        mov    eax, ds:[0x5B7CA8];
+	__asm        idiv   CriminalEvaderCarClass::maxTimeBetweenCriminalActivities;
+	__asm        mov    eax, CriminalEvaderCarClass::baseTimeBetweenCriminalActivities;
 	__asm        add    eax, edx;
 	__asm        mov    ecx, i;
 	__asm        mov    ecx, [ecx*4+0x62B9A0];
@@ -663,8 +663,8 @@ _T141:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
-	__asm        idiv   dword ptr ds:[0x5B7CAC];
-	__asm        mov    eax, ds:[0x5B7CA8];
+	__asm        idiv   CriminalEvaderCarClass::maxTimeBetweenCriminalActivities;
+	__asm        mov    eax, CriminalEvaderCarClass::baseTimeBetweenCriminalActivities;
 	__asm        add    eax, edx;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x122], eax;
@@ -673,7 +673,7 @@ _T141:
 // LINE 240:
 _T182:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x122], eax;
@@ -775,7 +775,7 @@ _T2a5:
 	__asm        jmp    _T4df;
 // LINE 289:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xFE], eax;
@@ -899,7 +899,7 @@ _T427:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T44a;
 // LINE 352:
-	__asm        mov    eax, ds:[0x5B7CB0];
+	__asm        mov    eax, CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x126], eax;
 // LINE 354:
@@ -909,7 +909,7 @@ _T44a:
 	__asm        cmp    dword ptr [eax+0x126], 0;
 	__asm        jge    _T47a;
 // LINE 356:
-	__asm        mov    eax, ds:[0x5B7CB0];
+	__asm        mov    eax, CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x126], eax;
 // LINE 357:
@@ -920,7 +920,7 @@ _T44a:
 // LINE 360:
 _T47a:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x126], eax;
@@ -1006,7 +1006,7 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	__asm        cmp    dword ptr [eax+0x11A], 2;
 	__asm        jne    _T45;
 // LINE 422:
-	__asm        mov    eax, ds:[0x5B7CB4];
+	__asm        mov    eax, CriminalEvaderCarClass::evasionSpeedMultiplier;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
@@ -1031,7 +1031,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	class SpiralScan scan;
 
 // LINE 442:
-	__asm        movsx  eax, word ptr ds:[0x5B7CB8];
+	__asm        movsx  eax, CriminalEvaderCarClass::maxSearchForBuildingRadius;
 	__asm        push   eax;
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::SpiralScan;

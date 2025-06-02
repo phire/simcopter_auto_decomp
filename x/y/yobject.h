@@ -6,7 +6,7 @@ class cYObject* cYObject::GetObjectA(short id) {
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T1f;
 
-	__asm        mov    eax, ds:[0x5B8680];
+	__asm        mov    eax, gAvatar;
 	__asm        jmp    _T92;
 // LINE 515:
 _T1f:

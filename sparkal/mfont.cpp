@@ -63,7 +63,7 @@ struct tagRECT{
 // FUNCTION: COPTER_D 0x0049f780
 void MFont::MFont() {
 
-	__asm        mov    eax, ds:[0x59A950];
+	__asm        mov    eax, SZ_DEFAULT_FACE_NAME;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1086,7 +1086,7 @@ _T27:
 	__asm        cmp    szString, 0;
 	__asm        jne    _T4e;
 // LINE 273:
-	__asm        mov    eax, ds:[0x59A94C];
+	__asm        mov    eax, SZ_DEFAULT_TEST_STRING;
 	__asm        mov    szString, eax;
 // LINE 274:
 _T4e:

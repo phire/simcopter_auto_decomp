@@ -2648,21 +2648,21 @@ _T4de:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
-	__asm        inc    dword ptr ds:[0x5974AC];
-	__asm        mov    eax, ds:[0x5974B8];
+	__asm        inc    list<DirectoryEntry>::number_of_lists;
+	__asm        mov    eax, list<DirectoryEntry>::free_list;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        cmp    dword ptr ds:[0x5974B8], 0;
+	__asm        cmp    list<DirectoryEntry>::free_list, 0;
 	__asm        je     _T48;
 
-	__asm        mov    eax, ds:[0x5974B8];
+	__asm        mov    eax, list<DirectoryEntry>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5974B8], eax;
+	__asm        mov    list<DirectoryEntry>::free_list, eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T225;
 _T48:
-	__asm        mov    eax, ds:[0x5974B4];
-	__asm        cmp    ds:[0x5974B0], eax;
+	__asm        mov    eax, list<DirectoryEntry>::next_avail;
+	__asm        cmp    list<DirectoryEntry>::last, eax;
 	__asm        jne    _T210;
 
 	__asm        push   0;
@@ -2757,14 +2757,14 @@ _T15f:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5974BC];
+	__asm        mov    eax, list<DirectoryEntry>::buffer_list;
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    ds:[0x5974BC], eax;
-	__asm        mov    eax, ds:[0x5974BC];
+	__asm        mov    list<DirectoryEntry>::buffer_list, eax;
+	__asm        mov    eax, list<DirectoryEntry>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5974B4], eax;
+	__asm        mov    list<DirectoryEntry>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x38], 0xAA;
 	__asm        lea    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x40], eax;
@@ -2794,20 +2794,20 @@ _T1cc:
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 3;
-	__asm        add    eax, ds:[0x5974B4];
-	__asm        mov    ds:[0x5974B0], eax;
+	__asm        add    eax, list<DirectoryEntry>::next_avail;
+	__asm        mov    list<DirectoryEntry>::last, eax;
 	__asm        jmp    near ptr 0x00483499;
 
-	__asm        mov    eax, ds:[0x5974B4];
+	__asm        mov    eax, list<DirectoryEntry>::next_avail;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        add    dword ptr ds:[0x5974B4], 0x18;
+	__asm        add    list<DirectoryEntry>::next_avail, 0x18;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T225;
 _T210:
-	__asm        mov    eax, ds:[0x5974B4];
+	__asm        mov    eax, list<DirectoryEntry>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        add    dword ptr ds:[0x5974B4], 0x18;
+	__asm        add    list<DirectoryEntry>::next_avail, 0x18;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x60], eax;
 _T225:
@@ -2971,7 +2971,7 @@ _T3f1:
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        jmp    near ptr 0x004836A3;
 
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3257,7 +3257,7 @@ _T2b5:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00483A8B;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x324], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x324];
@@ -3345,7 +3345,7 @@ _T41f:
 	__asm        mov    dword ptr [ebp-0x1A4], 0;
 	__asm        jmp    near ptr 0x00483BF5;
 
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x308], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x308];
@@ -3514,7 +3514,7 @@ _T6a6:
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
 	__asm        jmp    near ptr 0x00483E7C;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x2D4], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x2D4];
@@ -3602,7 +3602,7 @@ _T810:
 	__asm        mov    dword ptr [ebp-0x1BC], 0;
 	__asm        jmp    near ptr 0x00483FE6;
 
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x2B8], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x2B8];
@@ -3733,7 +3733,7 @@ _Ta0e:
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
 	__asm        jmp    near ptr 0x004841E4;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x284], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x284];
@@ -3818,7 +3818,7 @@ _Tb6b:
 	__asm        mov    dword ptr [ebp-0x1D4], 0;
 	__asm        jmp    near ptr 0x00484341;
 
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x268], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x268];
@@ -3915,7 +3915,7 @@ _Tcd2:
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        jne    _Ted6;
 
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x204], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x204];
@@ -3938,7 +3938,7 @@ _Td23:
 // Block start:
 	class basic_string<char> sParentDirectory;
 _Td35:
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x358], eax;
 // LINE 307:
 	__asm        push   0x10;
@@ -4052,7 +4052,7 @@ _Ted6:
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    _T1118;
 
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x20C], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x20C];
@@ -4075,7 +4075,7 @@ _Tf27:
 // Block start:
 	class basic_string<char> sCurrentDirectory;
 _Tf39:
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x360], eax;
 // LINE 318:
 	__asm        push   0x10;
@@ -4097,7 +4097,7 @@ _Tf88:
 	__asm        mov    sCurrentDirectory.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0048475E;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x368], eax;
 // LINE 319:
 	__asm        push   0x10;
@@ -4286,7 +4286,7 @@ _Tcb:
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    _T1ef;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x330], eax;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
@@ -4353,7 +4353,7 @@ _T1ef:
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        jne    _T370;
 
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x318], eax;
 	__asm        lea    eax, findData.cFileName[0];
 	__asm        push   eax;
@@ -4606,7 +4606,7 @@ _T5d4:
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
 	__asm        jmp    near ptr 0x00484F30;
 
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x2CC], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x2CC];
@@ -4728,7 +4728,7 @@ _T7c9:
 	__asm        mov    dword ptr [ebp-0x1CC], 0;
 	__asm        jmp    near ptr 0x00485125;
 
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x2A4], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x2A4];
@@ -4954,7 +4954,7 @@ _Tb35:
 	__asm        cmp    bParentDirectoryEnumerated, 0;
 	__asm        je     _Tc61;
 
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x240], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x240];
@@ -4975,7 +4975,7 @@ _Tb80:
 	__asm        je     _Tc61;
 // LINE 413:
 _Tb92:
-	__asm        mov    eax, ds:[0x599B94];
+	__asm        mov    eax, SZ_PARENT_DIR_NAME;
 	__asm        mov    [ebp-0x23C], eax;
 // LINE 414:
 	__asm        push   0x10;
@@ -5034,7 +5034,7 @@ _Tc61:
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        je     _Td8d;
 
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x220], eax;
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x220];
@@ -5055,7 +5055,7 @@ _Tcac:
 	__asm        je     _Td8d;
 // LINE 419:
 _Tcbe:
-	__asm        mov    eax, ds:[0x599B90];
+	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
 	__asm        mov    [ebp-0x21C], eax;
 // LINE 420:
 	__asm        push   0x10;
@@ -5932,7 +5932,7 @@ _T1ce:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T440;
 // LINE 514:
-	__asm        mov    eax, ds:[0x599B8C];
+	__asm        mov    eax, SZ_DEFAULT_FILTER;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    near ptr 0x004860B3;
 
@@ -6580,7 +6580,7 @@ _T29:
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, 2;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        mov    eax, ds:[0x599B9C];
+	__asm        mov    eax, SZ_DIR_SEPARATOR_1;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x0048681C;
 
@@ -6860,7 +6860,7 @@ _T34d:
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, 2;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        mov    eax, ds:[0x599BA0];
+	__asm        mov    eax, SZ_DIR_SEPARATOR_2;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    near ptr 0x00486B40;
 
@@ -6997,7 +6997,7 @@ _T4c4:
 	__asm        jmp    _T5f4;
 // LINE 570:
 _T4e1:
-	__asm        mov    eax, ds:[0x599B9C];
+	__asm        mov    eax, SZ_DIR_SEPARATOR_1;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    near ptr 0x00486CC0;
 

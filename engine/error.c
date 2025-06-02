@@ -10,7 +10,7 @@
 // FUNCTION: COPTER_D 0x004d8450
 int32_t VRGetError() {
 // LINE 30:
-	__asm        mov    eax, ds:[0x662810];
+	__asm        mov    eax, GlobalError;
 	__asm        jmp    near ptr 0x004D8460;
 // LINE 32:
 }

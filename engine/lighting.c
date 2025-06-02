@@ -66,7 +66,7 @@ int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
 	__asm        mov    hdr, eax;
 // LINE 123:
 	__asm        mov    eax, hdr;
-	__asm        mov    ds:[0x606A70], eax;
+	__asm        mov    S_texres, eax;
 // LINE 126:
 	__asm        cmp    create_new, 1;
 	__asm        jne    _T40;
@@ -88,7 +88,7 @@ _T40:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    _T61;
 // LINE 134:
-	__asm        mov    dword ptr ds:[0x662810], 4;
+	__asm        mov    GlobalError, 4;
 // LINE 135:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T193;
@@ -416,7 +416,7 @@ _T55:
 	__asm        cmp    hiword, 0;
 	__asm        je     _T9e;
 // LINE 293:
-	__asm        mov    eax, ds:[0x606A70];
+	__asm        mov    eax, S_texres;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, hiword;
 	__asm        mov    eax, [eax+ecx*4];
@@ -431,7 +431,7 @@ _T55:
 	__asm        jmp    _Tb2;
 // LINE 298:
 _T9e:
-	__asm        mov    eax, ds:[0x606A70];
+	__asm        mov    eax, S_texres;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, loword;
 	__asm        mov    eax, [eax+ecx*4];
@@ -463,7 +463,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        cmp    hiword, 0;
 	__asm        je     _T49;
 // LINE 327:
-	__asm        mov    eax, ds:[0x606A70];
+	__asm        mov    eax, S_texres;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, hiword;
 	__asm        mov    eax, [eax+ecx*4];
@@ -477,7 +477,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        jmp    _T5a;
 // LINE 332:
 _T49:
-	__asm        mov    eax, ds:[0x606A70];
+	__asm        mov    eax, S_texres;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    ecx, loword;
 	__asm        mov    eax, [eax+ecx*4];
@@ -534,16 +534,16 @@ _T61:
 void VRSetIntensities(int32_t ambient, int32_t var1, int32_t var2, int32_t var3) {
 // LINE 371:
 	__asm        mov    eax, ambient;
-	__asm        mov    ds:[0x5ADD5C], eax;
+	__asm        mov    S_ambient, eax;
 // LINE 372:
 	__asm        mov    eax, var1;
-	__asm        mov    ds:[0x5ADD60], eax;
+	__asm        mov    S_intensity1, eax;
 // LINE 373:
 	__asm        mov    eax, var2;
-	__asm        mov    ds:[0x5ADD64], eax;
+	__asm        mov    S_intensity2, eax;
 // LINE 374:
 	__asm        mov    eax, var3;
-	__asm        mov    ds:[0x5ADD68], eax;
+	__asm        mov    S_intensity3, eax;
 // LINE 375:
 }
 
@@ -620,7 +620,7 @@ _T96:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD38];
+	__asm        mov    eax, G_litevect1.z;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -629,7 +629,7 @@ _T96:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD34];
+	__asm        mov    eax, G_litevect1.y;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -638,7 +638,7 @@ _T96:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD30];
+	__asm        mov    eax, G_litevect1.x;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -648,7 +648,7 @@ _T96:
 	__asm        cmp    diffuse, 0;
 	__asm        jle    _T10c;
 // LINE 422:
-	__asm        mov    eax, ds:[0x5ADD60];
+	__asm        mov    eax, S_intensity1;
 	__asm        push   eax;
 	__asm        mov    eax, diffuse;
 	__asm        push   eax;
@@ -661,7 +661,7 @@ _T10c:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD48];
+	__asm        mov    eax, G_litevect2.z;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -670,7 +670,7 @@ _T10c:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD44];
+	__asm        mov    eax, G_litevect2.y;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -679,7 +679,7 @@ _T10c:
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD40];
+	__asm        mov    eax, G_litevect2.x;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -689,7 +689,7 @@ _T10c:
 	__asm        cmp    diffuse, 0;
 	__asm        jle    _T17b;
 // LINE 430:
-	__asm        mov    eax, ds:[0x5ADD64];
+	__asm        mov    eax, S_intensity2;
 	__asm        push   eax;
 	__asm        mov    eax, diffuse;
 	__asm        push   eax;
@@ -698,7 +698,7 @@ _T10c:
 	__asm        add    intensity, eax;
 // LINE 433:
 _T17b:
-	__asm        mov    eax, ds:[0x5ADD5C];
+	__asm        mov    eax, S_ambient;
 	__asm        add    intensity, eax;
 // LINE 435:
 	__asm        cmp    intensity, 0x10000;
@@ -886,7 +886,7 @@ _Taa:
 	__asm        cmp    diffuse, 0;
 	__asm        jle    _T11a;
 // LINE 516:
-	__asm        mov    eax, ds:[0x5ADD68];
+	__asm        mov    eax, S_intensity3;
 	__asm        push   eax;
 	__asm        mov    eax, diffuse;
 	__asm        push   eax;
@@ -895,7 +895,7 @@ _Taa:
 	__asm        mov    intensity, eax;
 // LINE 519:
 _T11a:
-	__asm        mov    eax, ds:[0x5ADD5C];
+	__asm        mov    eax, S_ambient;
 	__asm        add    intensity, eax;
 // LINE 521:
 	__asm        cmp    intensity, 0x10000;
@@ -1189,7 +1189,7 @@ _T7b:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD34];
+	__asm        mov    eax, G_litevect1.y;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1197,7 +1197,7 @@ _T7b:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD30];
+	__asm        mov    eax, G_litevect1.x;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1205,7 +1205,7 @@ _T7b:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD38];
+	__asm        mov    eax, G_litevect1.z;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1215,7 +1215,7 @@ _T7b:
 	__asm        cmp    diffuse, 0;
 	__asm        jle    _T115;
 // LINE 652:
-	__asm        mov    eax, ds:[0x5ADD60];
+	__asm        mov    eax, S_intensity1;
 	__asm        push   eax;
 	__asm        mov    eax, diffuse;
 	__asm        push   eax;
@@ -1227,7 +1227,7 @@ _T115:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD44];
+	__asm        mov    eax, G_litevect2.y;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1235,7 +1235,7 @@ _T115:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD40];
+	__asm        mov    eax, G_litevect2.x;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1243,7 +1243,7 @@ _T115:
 	__asm        mov    eax, vn;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5ADD48];
+	__asm        mov    eax, G_litevect2.z;
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
@@ -1253,7 +1253,7 @@ _T115:
 	__asm        cmp    diffuse, 0;
 	__asm        jle    _T17b;
 // LINE 660:
-	__asm        mov    eax, ds:[0x5ADD64];
+	__asm        mov    eax, S_intensity2;
 	__asm        push   eax;
 	__asm        mov    eax, diffuse;
 	__asm        push   eax;
@@ -1262,7 +1262,7 @@ _T115:
 	__asm        add    intensity, eax;
 // LINE 663:
 _T17b:
-	__asm        mov    eax, ds:[0x5ADD5C];
+	__asm        mov    eax, S_ambient;
 	__asm        add    intensity, eax;
 // LINE 665:
 	__asm        cmp    intensity, 0x10000;

@@ -500,7 +500,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        or     InputMode, 0x20;
 // LINE 65:
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x593E30];
+	__asm        mov    eax, filebuf::openprot;
 	__asm        push   eax;
 	__asm        mov    eax, InputMode;
 	__asm        push   eax;

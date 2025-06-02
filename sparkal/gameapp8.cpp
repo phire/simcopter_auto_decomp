@@ -688,20 +688,20 @@ _T3a7:
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        jne    _T3e2;
 // LINE 182:
-	__asm        mov    dword ptr ds:[0x5C2AA0], 1;
+	__asm        mov    gCurrentCityType, 1;
 // LINE 183:
 	__asm        lea    esi, tempUserCityInfo.citySettings.lDifficulty;
 	__asm        mov    edi, 0x5C2A20;
 	__asm        mov    ecx, 0x20;
 	__asm        rep movsd;
 // LINE 185:
-	__asm        mov    eax, ds:[0x5C2A40];
-	__asm        mov    ds:[0x598E90], eax;
+	__asm        mov    eax, gCurrentUserCityInfo.citySettings.lDaytime;
+	__asm        mov    G_daynight, eax;
 // LINE 187:
 	__asm        jmp    _T455;
 // LINE 188:
 _T3e2:
-	__asm        mov    dword ptr ds:[0x5C2AA0], 2;
+	__asm        mov    gCurrentCityType, 2;
 // LINE 189:
 	__asm        lea    esi, tempCurrentCareerCityInfo.lCurrentCities[0];
 	__asm        mov    edi, 0x5C2AA8;
@@ -727,7 +727,7 @@ _T3e2:
 	__asm        call   dword ptr [eax+0x40];
 // LINE 193:
 	__asm        mov    eax, savedCitySettings.lDaytime;
-	__asm        mov    ds:[0x598E90], eax;
+	__asm        mov    G_daynight, eax;
 // LINE 196:
 _T455:
 	__asm        lea    eax, szCityPath[0];
@@ -827,14 +827,14 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 // LINE 234:
 	__asm        call   SetUserHasSavedCurrentCity;
 // LINE 236:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T63;
 // LINE 237:
 	__asm        mov    lFileType, 0x43524552;
 // LINE 238:
 	__asm        jmp    _T7a;
 _T63:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T7a;
 // LINE 239:
 	__asm        mov    lFileType, 0x55534552;
@@ -910,7 +910,7 @@ _Tb8:
 	__asm        jmp    _T39d;
 // LINE 251:
 _T171:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T254;
 // LINE 252:
 	__asm        push   0x6C;
@@ -934,14 +934,14 @@ _T171:
 	__asm        jmp    _T39d;
 // LINE 260:
 _T1d2:
-	__asm        mov    eax, ds:[0x5C2AB4];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
 	__asm        lea    edi, tempCitySettings.lDifficulty;
 	__asm        lea    esi, [eax+eax*8+0x5C2B1C];
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 261:
-	__asm        mov    eax, ds:[0x598E90];
+	__asm        mov    eax, G_daynight;
 	__asm        mov    tempCitySettings.lDaytime, eax;
 // LINE 262:
 	__asm        push   0x24;
@@ -968,7 +968,7 @@ _T1d2:
 _T24f:
 	__asm        jmp    _T2b8;
 _T254:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 1;
+	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T2b8;
 // LINE 268:
 	__asm        push   0x80;
@@ -1092,9 +1092,9 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        add    esp, 0x14;
 // LINE 328:
 	__asm        push   0x7EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 329:
@@ -1272,7 +1272,7 @@ _T2bd:
 	__asm        jmp    _T80a;
 // LINE 340:
 _T30c:
-	__asm        mov    eax, ds:[0x598F04];
+	__asm        mov    eax, gszAppDirectory;
 	__asm        push   eax;
 	__asm        lea    eax, szGameFileSavePath[0];
 	__asm        push   eax;
@@ -1290,7 +1290,7 @@ _T30c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x7F0], eax;
@@ -1305,7 +1305,7 @@ _T30c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x7F0], eax;
@@ -1460,7 +1460,7 @@ _T5e4:
 	__asm        mov    dword ptr [ebp-0x770], 0;
 	__asm        jmp    near ptr 0x0042858B;
 
-	__asm        mov    eax, ds:[0x598F04];
+	__asm        mov    eax, gszAppDirectory;
 	__asm        mov    [ebp-0x7E4], eax;
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1592,7 +1592,7 @@ _T7f4:
 	__asm        add    esp, 8;
 // LINE 354:
 _T80a:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T830;
 // LINE 355:
 	__asm        mov    nFullTitleID, 0x2F;
@@ -1673,14 +1673,14 @@ _T8ae:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 380:
-	__asm        cmp    dword ptr ds:[0x5C2AA0], 2;
+	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T99a;
 // LINE 381:
 	__asm        movsx  eax, szSplitPathExtension[0];
 	__asm        test   eax, eax;
 	__asm        je     _T96a;
 
-	__asm        mov    eax, ds:[0x597488];
+	__asm        mov    eax, SZ_CAREER_DATA_FILE_SUFFIX;
 	__asm        push   eax;
 	__asm        lea    eax, szSplitPathExtension[0];
 	__asm        push   eax;
@@ -1704,7 +1704,7 @@ _T96a:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 384:
-	__asm        mov    eax, ds:[0x597488];
+	__asm        mov    eax, SZ_CAREER_DATA_FILE_SUFFIX;
 	__asm        push   eax;
 	__asm        lea    eax, szGameFileSavePath[0];
 	__asm        push   eax;
@@ -1718,7 +1718,7 @@ _T99a:
 	__asm        test   eax, eax;
 	__asm        je     _T9dc;
 
-	__asm        mov    eax, ds:[0x59748C];
+	__asm        mov    eax, SZ_USER_DATA_FILE_SUFFIX;
 	__asm        push   eax;
 	__asm        lea    eax, szSplitPathExtension[0];
 	__asm        push   eax;
@@ -1742,7 +1742,7 @@ _T9dc:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 390:
-	__asm        mov    eax, ds:[0x59748C];
+	__asm        mov    eax, SZ_USER_DATA_FILE_SUFFIX;
 	__asm        push   eax;
 	__asm        lea    eax, szGameFileSavePath[0];
 	__asm        push   eax;
@@ -1750,7 +1750,7 @@ _T9dc:
 	__asm        add    esp, 8;
 // LINE 394:
 _Ta07:
-	__asm        mov    eax, ds:[0x597484];
+	__asm        mov    eax, SZ_CITY_DATA_FILE_SUFFIX;
 	__asm        push   eax;
 	__asm        lea    eax, szCityFileSavePath[0];
 	__asm        push   eax;
@@ -1804,9 +1804,9 @@ _Ta07:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;
 	__asm        push   0x7EEEEEE;
-	__asm        mov    eax, ds:[0x599BC4];
+	__asm        mov    eax, gPreferenceManager;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x599BC4];
+	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 405:
 _Tacc:

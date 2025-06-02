@@ -64,9 +64,9 @@ void S3ExplosionReset() {
 	struct _SMOKE_DATA* sd;
 
 // LINE 59:
-	__asm        mov    dword ptr ds:[0x5B7380], 0;
+	__asm        mov    S_num_expls, 0;
 // LINE 60:
-	__asm        mov    dword ptr ds:[0x5B7384], 0;
+	__asm        mov    S_num_smoke, 0;
 // LINE 63:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
@@ -161,7 +161,7 @@ _T39:
 	__asm        mov    size, eax;
 // LINE 117:
 	__asm        push   0x64;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -174,7 +174,7 @@ _T39:
 // LINE 120:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -192,7 +192,7 @@ _T39:
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        mov    [ecx+8], eax;
 // LINE 122:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x20];
@@ -250,7 +250,7 @@ _T17d:
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 147:
 	__asm        push   0x64;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -267,7 +267,7 @@ _T17d:
 // LINE 152:
 	__asm        mov    eax, size;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -294,7 +294,7 @@ _T17d:
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 157:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, sd;
 	__asm        mov    eax, [eax+4];
@@ -307,67 +307,67 @@ _T17d:
 // LINE 162:
 _T236:
 	__asm        push   0xF;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA30], eax;
+	__asm        mov    S_explseq[0], eax;
 // LINE 163:
 	__asm        push   0x10;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA34], eax;
+	__asm        mov    S_explseq[1], eax;
 // LINE 164:
 	__asm        push   0x11;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA38], eax;
+	__asm        mov    S_explseq[2], eax;
 // LINE 165:
 	__asm        push   0x12;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA3C], eax;
+	__asm        mov    S_explseq[3], eax;
 // LINE 166:
 	__asm        push   0x19;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA40], eax;
+	__asm        mov    S_explseq[4], eax;
 // LINE 167:
 	__asm        push   0x1A;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA44], eax;
+	__asm        mov    S_explseq[5], eax;
 // LINE 168:
 	__asm        push   0x1B;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA48], eax;
+	__asm        mov    S_explseq[6], eax;
 // LINE 169:
 	__asm        push   0x1C;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA4C], eax;
+	__asm        mov    S_explseq[7], eax;
 // LINE 170:
 	__asm        push   0x1D;
-	__asm        mov    eax, ds:[0x5B476C];
+	__asm        mov    eax, G_restex;
 	__asm        push   eax;
 	__asm        call   VRInt2BmpHdr;
 	__asm        add    esp, 8;
-	__asm        mov    ds:[0x62AA50], eax;
+	__asm        mov    S_explseq[8], eax;
 // LINE 173:
 	__asm        mov    eax, 0x59B4F8;
 	__asm        mov    ecx, 0x62A988;
@@ -428,17 +428,17 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 179:
-	__asm        mov    eax, ds:[0x59B4F8];
+	__asm        mov    eax, X_axis.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9AC], eax;
+	__asm        mov    S_spark_vectors[3].x, eax;
 // LINE 180:
-	__asm        mov    eax, ds:[0x59B50C];
+	__asm        mov    eax, Y_axis.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9BC], eax;
+	__asm        mov    S_spark_vectors[4].y, eax;
 // LINE 181:
-	__asm        mov    eax, ds:[0x59B520];
+	__asm        mov    eax, Z_axis.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9CC], eax;
+	__asm        mov    S_spark_vectors[5].z, eax;
 // LINE 183:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -477,15 +477,15 @@ _T236:
 // LINE 188:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9DC], eax;
+	__asm        mov    S_spark_vectors[7].x, eax;
 // LINE 189:
 	__asm        mov    eax, vec.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9E0], eax;
+	__asm        mov    S_spark_vectors[7].y, eax;
 // LINE 190:
 	__asm        mov    eax, vec.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9E4], eax;
+	__asm        mov    S_spark_vectors[7].z, eax;
 // LINE 192:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -524,15 +524,15 @@ _T236:
 // LINE 197:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9F4], eax;
+	__asm        mov    S_spark_vectors[9].x, eax;
 // LINE 198:
 	__asm        mov    eax, vec.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9F8], eax;
+	__asm        mov    S_spark_vectors[9].y, eax;
 // LINE 199:
 	__asm        mov    eax, vec.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62A9FC], eax;
+	__asm        mov    S_spark_vectors[9].z, eax;
 // LINE 201:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -571,15 +571,15 @@ _T236:
 // LINE 206:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA0C], eax;
+	__asm        mov    S_spark_vectors[11].x, eax;
 // LINE 207:
 	__asm        mov    eax, vec.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA10], eax;
+	__asm        mov    S_spark_vectors[11].y, eax;
 // LINE 208:
 	__asm        mov    eax, vec.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA14], eax;
+	__asm        mov    S_spark_vectors[11].z, eax;
 // LINE 210:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -618,15 +618,15 @@ _T236:
 // LINE 215:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA24], eax;
+	__asm        mov    S_spark_vectors[13].x, eax;
 // LINE 216:
 	__asm        mov    eax, vec.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA28], eax;
+	__asm        mov    S_spark_vectors[13].y, eax;
 // LINE 217:
 	__asm        mov    eax, vec.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x62AA2C], eax;
+	__asm        mov    S_spark_vectors[13].z, eax;
 // LINE 220:
 }
 
@@ -686,7 +686,7 @@ _T61:
 	__asm        call   0x004D6905;
 	__asm        add    esp, 8;
 // LINE 265:
-	__asm        mov    eax, ds:[0x62AA30];
+	__asm        mov    eax, S_explseq[0];
 	__asm        mov    finfo.Bitmap, eax;
 // LINE 266:
 	__asm        lea    eax, finfo.Face;
@@ -784,7 +784,7 @@ _T61:
 	__asm        mov    ecx, cptr;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 303:
-	__asm        inc    dword ptr ds:[0x5B7380];
+	__asm        inc    S_num_expls;
 // LINE 304:
 _T187:
 }
@@ -941,7 +941,7 @@ _T176:
 // Switch pointers
 // LINE 388:
 _T1b6:
-	__asm        inc    dword ptr ds:[0x5B7384];
+	__asm        inc    S_num_smoke;
 // LINE 389:
 _T1bc:
 }
@@ -965,7 +965,7 @@ _T22:
 	__asm        inc    i;
 	__asm        add    ed, 0x34;
 _T2c:
-	__asm        cmp    dword ptr ds:[0x5B7380], 0;
+	__asm        cmp    S_num_expls, 0;
 	__asm        jle    _T218;
 
 	__asm        cmp    i, 0x14;
@@ -1073,7 +1073,7 @@ _T160:
 	__asm        mov    ecx, ed;
 	__asm        mov    [ecx], eax;
 // LINE 455:
-	__asm        dec    dword ptr ds:[0x5B7380];
+	__asm        dec    S_num_expls;
 // LINE 456:
 	__asm        jmp    _T22;
 // LINE 460:
@@ -1137,7 +1137,7 @@ _T22b:
 	__asm        inc    i;
 	__asm        add    sd, 0x1C;
 _T232:
-	__asm        cmp    dword ptr ds:[0x5B7384], 0;
+	__asm        cmp    S_num_smoke, 0;
 	__asm        jle    _T347;
 
 	__asm        cmp    i, 0x64;
@@ -1151,7 +1151,7 @@ _T232:
 // LINE 478:
 _T25a:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, sd;
 	__asm        sub    [ecx+8], eax;
@@ -1198,12 +1198,12 @@ _T2bf:
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx], eax;
 // LINE 496:
-	__asm        dec    dword ptr ds:[0x5B7384];
+	__asm        dec    S_num_smoke;
 // LINE 497:
 	__asm        jmp    _T22b;
 // LINE 501:
 _T2d7:
-	__asm        mov    eax, ds:[0x5B4768];
+	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, sd;
 	__asm        mov    eax, [eax+0x14];

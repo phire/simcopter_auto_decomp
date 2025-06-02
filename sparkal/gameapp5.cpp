@@ -159,7 +159,7 @@ protected:
 // FUNCTION: COPTER_D 0x00495b40
 void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) {
 // LINE 68:
-	__asm        cmp    dword ptr ds:[0x598F00], 0;
+	__asm        cmp    gameResolution, 0;
 	__asm        jne    _T30;
 // LINE 69:
 	__asm        mov    eax, nWidth;
@@ -170,7 +170,7 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 // LINE 72:
 	__asm        jmp    _T97;
 _T30:
-	__asm        cmp    dword ptr ds:[0x598F00], 1;
+	__asm        cmp    gameResolution, 1;
 	__asm        jne    _T54;
 // LINE 73:
 	__asm        mov    eax, nWidth;
@@ -181,7 +181,7 @@ _T30:
 // LINE 76:
 	__asm        jmp    _T97;
 _T54:
-	__asm        cmp    dword ptr ds:[0x598F00], 2;
+	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T78;
 // LINE 77:
 	__asm        mov    eax, nWidth;
@@ -192,7 +192,7 @@ _T54:
 // LINE 80:
 	__asm        jmp    _T97;
 _T78:
-	__asm        cmp    dword ptr ds:[0x598F00], 3;
+	__asm        cmp    gameResolution, 3;
 	__asm        jne    _T97;
 // LINE 81:
 	__asm        mov    eax, nWidth;
@@ -226,13 +226,13 @@ int  CGameApp::S3PreRender() {
 // LINE 99:
 	__asm        call   VRFrustSetNormals;
 // LINE 100:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x20;
+	__asm        mov    G_video_mode, 0x20;
 // LINE 101:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C24C], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_ASPECT, cl;
 // LINE 102:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C248], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_WIDTH, cl;
 // LINE 104:
 	__asm        jmp    _T16c;
 _T6d:
@@ -240,7 +240,7 @@ _T6d:
 	__asm        cmp    dword ptr [eax+0x4308], 1;
 	__asm        jne    _T138;
 // LINE 106:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
+	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _Te1;
 // LINE 107:
 	__asm        call   S3ViewerPosDelta;
@@ -257,13 +257,13 @@ _T6d:
 // LINE 109:
 	__asm        call   VRFrustSetNormals;
 // LINE 110:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
+	__asm        mov    G_video_mode, 0x10;
 // LINE 111:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C24C], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_ASPECT, cl;
 // LINE 112:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C248], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_WIDTH, cl;
 // LINE 115:
 _Tdc:
 	__asm        jmp    _T133;
@@ -284,13 +284,13 @@ _Tff:
 // LINE 118:
 	__asm        call   VRFrustSetNormals;
 // LINE 119:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x20;
+	__asm        mov    G_video_mode, 0x20;
 // LINE 120:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C24C], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_ASPECT, cl;
 // LINE 121:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C248], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_WIDTH, cl;
 // LINE 125:
 _T133:
 	__asm        jmp    _T16c;
@@ -302,13 +302,13 @@ _T138:
 // LINE 128:
 	__asm        call   VRFrustSetNormals;
 // LINE 129:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
+	__asm        mov    G_video_mode, 0x10;
 // LINE 130:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C24C], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_ASPECT, cl;
 // LINE 131:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C248], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_WIDTH, cl;
 // LINE 134:
 _T16c:
 	__asm        jmp    _T1a5;
@@ -320,35 +320,35 @@ _T171:
 // LINE 136:
 	__asm        call   VRFrustSetNormals;
 // LINE 137:
-	__asm        mov    dword ptr ds:[0x598EBC], 0x10;
+	__asm        mov    G_video_mode, 0x10;
 // LINE 138:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C24C], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_ASPECT, cl;
 // LINE 139:
-	__asm        mov    cl, ds:[0x5B48B8];
-	__asm        shl    dword ptr ds:[0x59C248], cl;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
+	__asm        shl    HALF_WIDTH, cl;
 // LINE 143:
 _T1a5:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
+	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _T267;
 // LINE 144:
-	__asm        mov    eax, ds:[0x598EC0];
+	__asm        mov    eax, qwindow.WindowX;
 	__asm        mov    rectFill.left, eax;
 // LINE 145:
-	__asm        mov    eax, ds:[0x598EC4];
+	__asm        mov    eax, qwindow.WindowY;
 	__asm        mov    rectFill.top, eax;
 // LINE 146:
-	__asm        mov    eax, ds:[0x598EC8];
-	__asm        add    eax, ds:[0x598EC0];
+	__asm        mov    eax, qwindow.WindowWide;
+	__asm        add    eax, qwindow.WindowX;
 	__asm        mov    rectFill.right, eax;
 // LINE 147:
-	__asm        mov    eax, ds:[0x598EC4];
-	__asm        add    eax, ds:[0x598ECC];
+	__asm        mov    eax, qwindow.WindowY;
+	__asm        add    eax, qwindow.WindowHigh;
 	__asm        mov    rectFill.bottom, eax;
 // LINE 150:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598EA0];
+	__asm        mov    eax, G_ClearColor;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -361,7 +361,7 @@ _T1a5:
 	__asm        cmp    dword ptr [eax+0x4330], 0;
 	__asm        je     _T236;
 // LINE 154:
-	__asm        mov    eax, ds:[0x598EC8];
+	__asm        mov    eax, qwindow.WindowWide;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
@@ -386,28 +386,28 @@ _T236:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ds:[0x598EAC], eax;
+	__asm        mov    buffer1, eax;
 // LINE 161:
 	__asm        jmp    _T305;
 // LINE 162:
 _T267:
-	__asm        mov    eax, ds:[0x598EE0];
+	__asm        mov    eax, swindow.WindowX;
 	__asm        mov    rectFill.left, eax;
 // LINE 163:
-	__asm        mov    eax, ds:[0x598EE4];
+	__asm        mov    eax, swindow.WindowY;
 	__asm        mov    rectFill.top, eax;
 // LINE 164:
-	__asm        mov    eax, ds:[0x598EE8];
-	__asm        add    eax, ds:[0x598EE0];
+	__asm        mov    eax, swindow.WindowWide;
+	__asm        add    eax, swindow.WindowX;
 	__asm        mov    rectFill.right, eax;
 // LINE 165:
-	__asm        mov    eax, ds:[0x598EE4];
-	__asm        add    eax, ds:[0x598EEC];
+	__asm        mov    eax, swindow.WindowY;
+	__asm        add    eax, swindow.WindowHigh;
 	__asm        mov    rectFill.bottom, eax;
 // LINE 169:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598EA0];
+	__asm        mov    eax, G_ClearColor;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -420,7 +420,7 @@ _T267:
 	__asm        cmp    dword ptr [eax+0x4330], 0;
 	__asm        je     _T2e2;
 // LINE 173:
-	__asm        mov    eax, ds:[0x598EC8];
+	__asm        mov    eax, qwindow.WindowWide;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
@@ -445,7 +445,7 @@ _T2e2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ds:[0x598EAC], eax;
+	__asm        mov    buffer1, eax;
 // LINE 188:
 _T305:
 	__asm        mov    eax, 1;
@@ -456,7 +456,7 @@ _T305:
 // FUNCTION: COPTER_D 0x00495ef7
 void  CGameApp::S3PostRender() {
 // LINE 198:
-	__asm        cmp    dword ptr ds:[0x598EBC], 0x20;
+	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _T94;
 // LINE 200:
 	__asm        mov    eax, this;
@@ -472,15 +472,15 @@ void  CGameApp::S3PostRender() {
 	__asm        call   BodyDrawDebugInfo;
 	__asm        add    esp, 4;
 // LINE 206:
-	__asm        mov    eax, ds:[0x598ECC];
+	__asm        mov    eax, qwindow.WindowHigh;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598EC8];
+	__asm        mov    eax, qwindow.WindowWide;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x598EEC];
+	__asm        mov    eax, swindow.WindowHigh;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598EE8];
+	__asm        mov    eax, swindow.WindowWide;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -536,10 +536,10 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 	char * pBufferCurrentPosition;
 
 // LINE 235:
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 0;
+	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _Tf5;
 
-	__asm        cmp    dword ptr ds:[0x5B4DB8], 3;
+	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _Tf5;
 // LINE 237:
 	__asm        mov    eax, bufferToDrawTo;
@@ -559,11 +559,11 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    nSurfaceStride, eax;
 // LINE 241:
-	__asm        mov    eax, ds:[0x598EE8];
+	__asm        mov    eax, swindow.WindowWide;
 	__asm        sar    eax, 1;
 	__asm        mov    nMidXPosition, eax;
 // LINE 242:
-	__asm        mov    eax, ds:[0x598EEC];
+	__asm        mov    eax, swindow.WindowHigh;
 	__asm        sar    eax, 1;
 	__asm        mov    nMidYPosition, eax;
 // LINE 243:
@@ -714,24 +714,24 @@ _T42:
 // Block start:
 	struct MISSION_DATA* md;
 _T112:
-	__asm        mov    eax, ds:[0x662820];
-	__asm        sub    eax, ds:[0x59D370];
+	__asm        mov    eax, GridProjectEnd;
+	__asm        sub    eax, NextProject;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B59D0];
+	__asm        mov    eax, G_alt;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x66636C];
+	__asm        mov    eax, G_odpolys;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x66282C];
+	__asm        mov    eax, G_gdpolys;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x66635C];
+	__asm        mov    eax, G_opolys;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x662870];
+	__asm        mov    eax, GridNSortFaces;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x598EA4];
+	__asm        mov    eax, G_numcellsrej;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x666390];
+	__asm        mov    eax, GridNSortCells;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        fld    dword ptr [eax+0x4344];
@@ -760,19 +760,19 @@ _T112:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 314:
-	__asm        mov    eax, ds:[0x599DA0];
+	__asm        mov    eax, IFlatImage::lTotalMemoryUsage;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
 	__asm        call   Sound::GetTotalMemoryUsage;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59B52C];
+	__asm        mov    eax, G_alloc_max;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59B530];
+	__asm        mov    eax, G_alloc_used;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59B524];
+	__asm        mov    eax, G_alloc_curr;
 	__asm        shr    eax, 0xA;
 	__asm        push   eax;
 	__asm        push   0x59A19C;

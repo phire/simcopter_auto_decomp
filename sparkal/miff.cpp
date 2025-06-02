@@ -247,7 +247,7 @@ void MIFF::MIFF() {
 	__asm        mov    dword ptr [eax+0x10C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x004AB629;
@@ -311,7 +311,7 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        mov    dword ptr [eax+0x10C], 1;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    szFileOrPath, 0;
 	__asm        je     _T5b;
 
@@ -488,7 +488,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 140:
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 // LINE 141:
 	__asm        push   0x180;
 	__asm        push   0;
@@ -575,7 +575,7 @@ long MIFF::OpenForAppending() {
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 170:
-	__asm        mov    dword ptr ds:[0x5C0920], 0x8000;
+	__asm        mov    _fmode, 0x8000;
 // LINE 171:
 	__asm        push   0x180;
 	__asm        push   0;

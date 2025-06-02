@@ -679,7 +679,7 @@ _T100:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T118;
 // LINE 62:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 64:
 _T118:
@@ -938,7 +938,7 @@ _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 174:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 176:
 _T31:
@@ -969,7 +969,7 @@ _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 187:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 189:
 _T31:
@@ -1007,7 +1007,7 @@ _T28:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T3a;
 // LINE 204:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 205:
 _T3a:
@@ -1069,7 +1069,7 @@ _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 225:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 227:
 _T31:
@@ -1209,7 +1209,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
@@ -1224,7 +1224,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
@@ -1264,7 +1264,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
@@ -1279,7 +1279,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-8], eax;
@@ -1312,7 +1312,7 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T24;
 // LINE 330:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        mov    nLanguageToUse, eax;
 // LINE 332:
 _T24:

@@ -1243,7 +1243,7 @@ int32_t UserMenuWindow::Initialize() {
 // LINE 93:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A2D0];
+	__asm        mov    eax, SZ_MENU_SELECTION_SOUND;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   2;
@@ -1937,7 +1937,7 @@ _Tb1e:
 	__asm        jmp    _T423;
 // LINE 149:
 _Tb28:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2075,7 +2075,7 @@ _T47:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 189:
-	__asm        mov    eax, ds:[0x5C37F0];
+	__asm        mov    eax, glMasterVolume;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2833,7 +2833,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    dword ptr [ebp-8], 1;
 	__asm        jmp    near ptr 0x0049CDBB;
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -2844,7 +2844,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x14];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A2D4];
+	__asm        mov    eax, SZ_MAIN_PART_1_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2871,7 +2871,7 @@ _T8b:
 	__asm        mov    dword ptr [ebp-0x1C], 0x13C;
 	__asm        jmp    near ptr 0x0049CE3A;
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -2882,7 +2882,7 @@ _T8b:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A2D8];
+	__asm        mov    eax, SZ_MAIN_PART_2_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -2976,7 +2976,7 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x15A], 0;
 	__asm        jne    _T267;
 
-	__asm        mov    eax, ds:[0x59A2E0];
+	__asm        mov    eax, SZ_MAIN_RATCHET_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x20], eax;
 // LINE 431:
 	__asm        jmp    near ptr 0x0049CFA0;
@@ -3106,7 +3106,7 @@ _T267:
 	__asm        cmp    dword ptr [eax+0x15E], 0;
 	__asm        jne    _T3ee;
 
-	__asm        mov    eax, ds:[0x59A2DC];
+	__asm        mov    eax, SZ_MAIN_LIGHT_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x24], eax;
 // LINE 436:
 	__asm        jmp    near ptr 0x0049D122;
@@ -3933,7 +3933,7 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        jne    _T28c;
 
-	__asm        mov    eax, ds:[0x59A2E4];
+	__asm        mov    eax, SZ_PLAY_RATCHET_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x20], eax;
 // LINE 636:
 	__asm        jmp    near ptr 0x0049DBCD;
@@ -4059,7 +4059,7 @@ _T257:
 	__asm        mov    dword ptr [eax+0x152], 0;
 // LINE 639:
 _T267:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -4074,7 +4074,7 @@ _T28c:
 	__asm        cmp    dword ptr [eax+0x156], 0;
 	__asm        jne    _T413;
 
-	__asm        mov    eax, ds:[0x59A2E8];
+	__asm        mov    eax, SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x24], eax;
 // LINE 642:
 	__asm        jmp    near ptr 0x0049DD74;

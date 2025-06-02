@@ -1152,9 +1152,9 @@ void $E66() {
 // FUNCTION: COPTER_D 0x00450065
 void $E65() {
 
-	__asm        mov    byte ptr ds:[0x603AB0], 0xA;
-	__asm        mov    byte ptr ds:[0x603AB1], 0x85;
-	__asm        mov    byte ptr ds:[0x603AB2], 0xDA;
+	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
+	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
+	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    near ptr 0x00450085;
 
 	__asm        jmp    near ptr 0x0045008A;
@@ -1172,9 +1172,9 @@ void $E69() {
 // FUNCTION: COPTER_D 0x004500a4
 void $E68() {
 
-	__asm        mov    byte ptr ds:[0x603AB8], 0x6F;
-	__asm        mov    byte ptr ds:[0x603AB9], 0xDA;
-	__asm        mov    byte ptr ds:[0x603ABA], 0xFF;
+	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
+	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
+	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    near ptr 0x004500C4;
 
 	__asm        jmp    near ptr 0x004500C9;
@@ -1190,7 +1190,7 @@ void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned lo
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T29;
 _T21:
-	__asm        mov    eax, ds:[0x59913C];
+	__asm        mov    eax, SZ_MESSAGE_BOX_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x14], eax;
 _T29:
 	__asm        mov    eax, ptNewPosition;
@@ -1217,7 +1217,7 @@ _T29:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x0045013B;
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -1559,7 +1559,7 @@ void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned lo
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T29;
 _T21:
-	__asm        mov    eax, ds:[0x59913C];
+	__asm        mov    eax, SZ_MESSAGE_BOX_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x14], eax;
 _T29:
 	__asm        mov    eax, ptNewPosition;
@@ -1586,7 +1586,7 @@ _T29:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    near ptr 0x004505E0;
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -2313,7 +2313,7 @@ _T3d7:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1094], eax;
@@ -2328,7 +2328,7 @@ _T3d7:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1094], eax;
@@ -2621,7 +2621,7 @@ _T82a:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x20AC], eax;
@@ -2636,7 +2636,7 @@ _T82a:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x20AC], eax;
@@ -3022,7 +3022,7 @@ void MessageBoxWindow::DrawTextOntoBox() {
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -3037,7 +3037,7 @@ void MessageBoxWindow::DrawTextOntoBox() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -3938,7 +3938,7 @@ _T72:
 // FUNCTION: COPTER_D 0x004524ad
 void RenderSettingsWindow::RenderSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -3950,7 +3950,7 @@ void RenderSettingsWindow::RenderSettingsWindow(class MRect& rectNewPosition, in
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599140];
+	__asm        mov    eax, SZ_RENDER_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -4867,7 +4867,7 @@ _Tbc4:
 	__asm        jmp    near ptr 0x00453268;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x599168];
+	__asm        mov    eax, SZ_RENDER_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -4949,7 +4949,7 @@ _Td4c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x11CC], eax;
@@ -4964,7 +4964,7 @@ _Td4c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x11CC], eax;
@@ -5391,7 +5391,7 @@ _T1381:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2228], eax;
@@ -5406,7 +5406,7 @@ _T1381:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2228], eax;
@@ -6819,7 +6819,7 @@ _T642:
 	__asm        mov    dword ptr [eax+0xA0], 0;
 // LINE 835:
 _T652:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -7004,7 +7004,7 @@ _T8f6:
 // FUNCTION: COPTER_D 0x004550cf
 void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPreviewFileName, class basic_string<char>& sGroundPreviewFileName, class basic_string<char>& sBuildingPreviewFileName) {
 
-	__asm        mov    eax, ds:[0x599144];
+	__asm        mov    eax, SZ_SKY_FILE_NAME_BASE;
 	__asm        mov    [ebp-4], eax;
 // LINE 858:
 	__asm        jmp    near ptr 0x004550EE;
@@ -7020,7 +7020,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPre
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0045510C;
 
-	__asm        mov    eax, ds:[0x599148];
+	__asm        mov    eax, SZ_GROUND_FILE_NAME_BASE;
 	__asm        mov    [ebp-8], eax;
 // LINE 859:
 	__asm        jmp    near ptr 0x00455119;
@@ -7036,7 +7036,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPre
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x00455137;
 
-	__asm        mov    eax, ds:[0x59914C];
+	__asm        mov    eax, SZ_BUILDING_FILE_NAME_BASE;
 	__asm        mov    [ebp-0xC], eax;
 // LINE 860:
 	__asm        jmp    near ptr 0x00455144;
@@ -7056,7 +7056,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPre
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        jne    _T101;
 
-	__asm        mov    eax, ds:[0x599150];
+	__asm        mov    eax, SZ_LO_RES;
 	__asm        mov    [ebp-0x10], eax;
 // LINE 862:
 	__asm        jmp    near ptr 0x00455182;
@@ -7072,7 +7072,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPre
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004551A0;
 
-	__asm        mov    eax, ds:[0x599150];
+	__asm        mov    eax, SZ_LO_RES;
 	__asm        mov    [ebp-0x14], eax;
 // LINE 863:
 	__asm        jmp    near ptr 0x004551AD;
@@ -7090,7 +7090,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPre
 // LINE 865:
 	__asm        jmp    _T157;
 _T101:
-	__asm        mov    eax, ds:[0x599154];
+	__asm        mov    eax, SZ_HI_RES;
 	__asm        mov    [ebp-0x18], eax;
 // LINE 866:
 	__asm        jmp    near ptr 0x004551DD;
@@ -7106,7 +7106,7 @@ _T101:
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x004551FB;
 
-	__asm        mov    eax, ds:[0x599154];
+	__asm        mov    eax, SZ_HI_RES;
 	__asm        mov    [ebp-0x1C], eax;
 // LINE 867:
 	__asm        jmp    near ptr 0x00455208;
@@ -7127,7 +7127,7 @@ _T157:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T197;
 // LINE 870:
-	__asm        mov    eax, ds:[0x599158];
+	__asm        mov    eax, SZ_TEXTURE;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    near ptr 0x00455243;
 
@@ -7145,7 +7145,7 @@ _T157:
 	__asm        jmp    _T2fb;
 // LINE 872:
 _T197:
-	__asm        mov    eax, ds:[0x59915C];
+	__asm        mov    eax, SZ_NO_TEXTURE;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00455273;
 
@@ -7271,7 +7271,7 @@ _T2fb:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        je     _T474;
 // LINE 874:
-	__asm        mov    eax, ds:[0x599158];
+	__asm        mov    eax, SZ_TEXTURE;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    near ptr 0x004553E7;
 
@@ -7395,7 +7395,7 @@ _T459:
 	__asm        jmp    _T5d8;
 // LINE 876:
 _T474:
-	__asm        mov    eax, ds:[0x59915C];
+	__asm        mov    eax, SZ_NO_TEXTURE;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    near ptr 0x00455550;
 
@@ -7521,7 +7521,7 @@ _T5d8:
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        je     _T751;
 // LINE 878:
-	__asm        mov    eax, ds:[0x599160];
+	__asm        mov    eax, SZ_SKY_COOL;
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    near ptr 0x004556C4;
 
@@ -7645,7 +7645,7 @@ _T736:
 	__asm        jmp    _T92b;
 // LINE 880:
 _T751:
-	__asm        mov    eax, ds:[0x599164];
+	__asm        mov    eax, SZ_SKY_GRAY;
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    near ptr 0x00455830;
 
@@ -7948,7 +7948,7 @@ _T1ee:
 // FUNCTION: COPTER_D 0x00455bfb
 void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -7960,7 +7960,7 @@ void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int3
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59916C];
+	__asm        mov    eax, SZ_SOUND_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -8436,9 +8436,9 @@ _T5fa:
 	__asm        jmp    near ptr 0x00456308;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x599170];
+	__asm        mov    eax, SZ_SOUND_WINDOW_STATION_IMAGE_FILE_NAME;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599174];
+	__asm        mov    eax, SZ_SOUND_WINDOW_STATION_THUMB_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -8519,7 +8519,7 @@ _T796:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1110], eax;
@@ -8534,7 +8534,7 @@ _T796:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1110], eax;
@@ -8910,7 +8910,7 @@ _Td12:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2158], eax;
@@ -8925,7 +8925,7 @@ _Td12:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2158], eax;
@@ -9652,7 +9652,7 @@ void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_
 	int32_t i;
 
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -9664,7 +9664,7 @@ void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599178];
+	__asm        mov    eax, SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -10161,7 +10161,7 @@ _T5e9:
 	__asm        jmp    near ptr 0x00457A1B;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10216,7 +10216,7 @@ _T6bd:
 	__asm        jmp    near ptr 0x00457AEF;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10271,7 +10271,7 @@ _T791:
 	__asm        jmp    near ptr 0x00457BC3;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10326,7 +10326,7 @@ _T865:
 	__asm        jmp    near ptr 0x00457C97;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10381,7 +10381,7 @@ _T93f:
 	__asm        jmp    near ptr 0x00457D7D;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10436,7 +10436,7 @@ _Ta25:
 	__asm        jmp    near ptr 0x00457E63;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10491,7 +10491,7 @@ _Tb0b:
 	__asm        jmp    near ptr 0x00457F49;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10546,7 +10546,7 @@ _Tbf1:
 	__asm        jmp    near ptr 0x0045802F;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59917C];
+	__asm        mov    eax, SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -10628,7 +10628,7 @@ _Tda1:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x11A0], eax;
@@ -10643,7 +10643,7 @@ _Tda1:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x11A0], eax;
@@ -11214,7 +11214,7 @@ _T1611:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x221C], eax;
@@ -11229,7 +11229,7 @@ _T1611:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x221C], eax;
@@ -12184,7 +12184,7 @@ _T23b:
 	__asm        jmp    _T3e6;
 // LINE 1555:
 _T259:
-	__asm        mov    eax, ds:[0x599180];
+	__asm        mov    eax, SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x004596CA;
 
@@ -12466,24 +12466,24 @@ _T1b7:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, ds:[0x59856C];
+	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ds:[0x59856C], eax;
+	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    near ptr 0x00459A35;
 
-	__asm        dec    dword ptr ds:[0x598560];
+	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T266;
 _T1e8:
-	__asm        cmp    dword ptr ds:[0x598570], 0;
+	__asm        cmp    list<basic_string<char>>::buffer_list, 0;
 	__asm        je     _T243;
 
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        mov    eax, ds:[0x598570];
+	__asm        mov    eax, list<basic_string<char>>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x598570], eax;
+	__asm        mov    list<basic_string<char>>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
@@ -12505,9 +12505,9 @@ _T1e8:
 
 	__asm        jmp    _T1e8;
 _T243:
-	__asm        mov    dword ptr ds:[0x59856C], 0;
-	__asm        mov    dword ptr ds:[0x598568], 0;
-	__asm        mov    dword ptr ds:[0x598564], 0;
+	__asm        mov    list<basic_string<char>>::free_list, 0;
+	__asm        mov    list<basic_string<char>>::next_avail, 0;
+	__asm        mov    list<basic_string<char>>::last, 0;
 	__asm        jmp    _T266;
 _T266:
 	__asm        jmp    near ptr 0x00459AC4;
@@ -13523,7 +13523,7 @@ _T1b5:
 	__asm        mov    dword ptr [eax+0xCC], 0;
 // LINE 1696:
 _T1c2:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -13982,7 +13982,7 @@ _T22d:
 	__asm        jmp    _T3d8;
 // LINE 1803:
 _T24b:
-	__asm        mov    eax, ds:[0x599180];
+	__asm        mov    eax, SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    near ptr 0x0045AD0C;
 
@@ -14296,7 +14296,7 @@ _T229:
 	__asm        jmp    _T3c0;
 // LINE 1820:
 _T247:
-	__asm        mov    eax, ds:[0x599180];
+	__asm        mov    eax, SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0045B0EF;
 
@@ -14968,7 +14968,7 @@ _T1b5:
 	__asm        mov    dword ptr [eax+0xA4], 0;
 // LINE 1902:
 _T1c2:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -18327,9 +18327,9 @@ void $E72() {
 // FUNCTION: COPTER_D 0x0045e13b
 void $E71() {
 
-	__asm        mov    byte ptr ds:[0x603ABC], 0x40;
-	__asm        mov    byte ptr ds:[0x603ABD], 0;
-	__asm        mov    byte ptr ds:[0x603ABE], 0;
+	__asm        mov    colorTextCheckupNormal.Blue, 0x40;
+	__asm        mov    colorTextCheckupNormal.Green, 0;
+	__asm        mov    colorTextCheckupNormal.Red, 0;
 	__asm        jmp    near ptr 0x0045E15B;
 
 	__asm        jmp    near ptr 0x0045E160;
@@ -18347,9 +18347,9 @@ void $E75() {
 // FUNCTION: COPTER_D 0x0045e17a
 void $E74() {
 
-	__asm        mov    byte ptr ds:[0x603AB4], 0xEF;
-	__asm        mov    byte ptr ds:[0x603AB5], 0xC5;
-	__asm        mov    byte ptr ds:[0x603AB6], 0xC5;
+	__asm        mov    colorTextCheckupHighlighted.Blue, 0xEF;
+	__asm        mov    colorTextCheckupHighlighted.Green, 0xC5;
+	__asm        mov    colorTextCheckupHighlighted.Red, 0xC5;
 	__asm        jmp    near ptr 0x0045E19A;
 
 	__asm        jmp    near ptr 0x0045E19F;
@@ -18360,7 +18360,7 @@ void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, 
 	int32_t i;
 
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -18372,7 +18372,7 @@ void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, 
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599188];
+	__asm        mov    eax, SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -19063,7 +19063,7 @@ _T90b:
 	__asm        jmp    near ptr 0x0045EC15;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59918C];
+	__asm        mov    eax, SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -19118,7 +19118,7 @@ _Ta15:
 	__asm        jmp    near ptr 0x0045ECE9;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59918C];
+	__asm        mov    eax, SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -19173,7 +19173,7 @@ _Tae9:
 	__asm        jmp    near ptr 0x0045EDBD;
 
 	__asm        push   8;
-	__asm        mov    eax, ds:[0x59918C];
+	__asm        mov    eax, SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   1;
@@ -19255,7 +19255,7 @@ _Tc7b:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1178], eax;
@@ -19270,7 +19270,7 @@ _Tc7b:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1178], eax;
@@ -19785,7 +19785,7 @@ _T140c:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x21E8], eax;
@@ -19800,7 +19800,7 @@ _T140c:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x21E8], eax;
@@ -20384,7 +20384,7 @@ void CheckupWindow::SetAllControlValuesToDefaults() {
 	long lValue;
 
 // LINE 2576:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3GetFullRepairCost;
 	__asm        add    esp, 4;
@@ -20408,7 +20408,7 @@ _T2e:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   SliderWindow::SetValue;
 // LINE 2582:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3GetFullRefuelCost;
 	__asm        add    esp, 4;
@@ -20476,19 +20476,19 @@ _Te5:
 // FUNCTION: COPTER_D 0x0045ffb9
 int32_t CheckupWindow::ShouldWeDisplayCheckupWindow() {
 // LINE 2608:
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliGetMaximumDamage;
 	__asm        add    esp, 4;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        cmp    eax, [ecx+0xD0];
 	__asm        jne    _T64;
 
-	__asm        mov    eax, ds:[0x5B4968];
+	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
 	__asm        call   S3HeliGetMaximumFuel;
 	__asm        add    esp, 4;
-	__asm        mov    ecx, ds:[0x5B4968];
+	__asm        mov    ecx, G_uheli;
 	__asm        cmp    eax, [ecx+0x320];
 	__asm        jne    _T64;
 

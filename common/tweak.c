@@ -28,7 +28,7 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 	int32_t nCt;
 
 // LINE 43:
-	__asm        cmp    dword ptr ds:[0x59B3A8], 0xC8;
+	__asm        cmp    g_nNextTWKQueueSlot, 0xC8;
 	__asm        jle    _T23;
 // LINE 44:
 	__asm        mov    eax, 0xFFFFFF9B;
@@ -55,7 +55,7 @@ _T46:
 	__asm        mov    ecx, pValues;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    ecx, nCt;
-	__asm        mov    edx, ds:[0x59B3A8];
+	__asm        mov    edx, g_nNextTWKQueueSlot;
 	__asm        mov    ebx, edx;
 	__asm        shl    edx, 8;
 	__asm        sub    edx, ebx;
@@ -66,7 +66,7 @@ _T46:
 _T79:
 	__asm        mov    eax, pszSection;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59B3A8];
+	__asm        mov    eax, g_nNextTWKQueueSlot;
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 8;
 	__asm        sub    eax, ecx;
@@ -78,16 +78,16 @@ _T79:
 	__asm        add    esp, 8;
 // LINE 53:
 	__asm        mov    eax, nNumValues;
-	__asm        mov    ecx, ds:[0x59B3A8];
+	__asm        mov    ecx, g_nNextTWKQueueSlot;
 	__asm        mov    edx, ecx;
 	__asm        shl    ecx, 8;
 	__asm        sub    ecx, edx;
 	__asm        sub    ecx, edx;
 	__asm        mov    [ecx+0x63A928], eax;
 // LINE 54:
-	__asm        inc    dword ptr ds:[0x59B3A8];
+	__asm        inc    g_nNextTWKQueueSlot;
 // LINE 56:
-	__asm        mov    eax, ds:[0x59B3A8];
+	__asm        mov    eax, g_nNextTWKQueueSlot;
 	__asm        jmp    _Tc6;
 // LINE 57:
 _Tc6:
@@ -101,7 +101,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	char szFullPath[260];
 
 // LINE 77:
-	__asm        mov    dword ptr ds:[0x59B3AC], 0;
+	__asm        mov    g_nNextTWKErrorSlot, 0;
 // LINE 78:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -161,7 +161,7 @@ _Td5:
 	__asm        inc    nCt;
 _Tdb:
 	__asm        mov    eax, nCt;
-	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        jle    _T128;
 // LINE 89:
 	__asm        lea    eax, szSection[0];
@@ -185,7 +185,7 @@ _T123:
 	__asm        jmp    _Td5;
 _T128:
 	__asm        mov    eax, nCt;
-	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        je     _T173;
 // LINE 93:
 	__asm        mov    eax, nCt;
@@ -214,7 +214,7 @@ _T178:
 	__asm        add    esp, 4;
 // LINE 104:
 _T184:
-	__asm        mov    eax, ds:[0x59B3AC];
+	__asm        mov    eax, g_nNextTWKErrorSlot;
 	__asm        jmp    _T18e;
 // LINE 105:
 _T18e:
@@ -225,11 +225,11 @@ void TWKGameInit() {
 // LINE 117:
 	__asm        push   0x59B450;
 	__asm        call   dword ptr ds:[0x6C37E4];
-	__asm        mov    ds:[0x646ED0], eax;
+	__asm        mov    g_uTWKMessageNum, eax;
 // LINE 119:
-	__asm        mov    dword ptr ds:[0x59B3A8], 0;
+	__asm        mov    g_nNextTWKQueueSlot, 0;
 // LINE 120:
-	__asm        mov    dword ptr ds:[0x59B3AC], 0;
+	__asm        mov    g_nNextTWKErrorSlot, 0;
 // LINE 121:
 }
 
@@ -262,7 +262,7 @@ _T32:
 	__asm        inc    nCt;
 _T38:
 	__asm        mov    eax, nCt;
-	__asm        cmp    ds:[0x59B3A8], eax;
+	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        jle    _Te2;
 // LINE 172:
 	__asm        mov    eax, nCt;
@@ -480,10 +480,10 @@ _T1ea:
 // LINE 245:
 _T1ef:
 	__asm        mov    eax, nTweakQueueSlotIdx;
-	__asm        mov    ecx, ds:[0x59B3AC];
+	__asm        mov    ecx, g_nNextTWKErrorSlot;
 	__asm        mov    [ecx*4+0x646EE0], eax;
 // LINE 246:
-	__asm        inc    dword ptr ds:[0x59B3AC];
+	__asm        inc    g_nNextTWKErrorSlot;
 // LINE 249:
 _T205:
 }
@@ -491,7 +491,7 @@ _T205:
 // FUNCTION: COPTER_D 0x004ca059
 int32_t TWKDOSRead(char * pszTWKFile) {
 // LINE 265:
-	__asm        mov    eax, ds:[0x59B3AC];
+	__asm        mov    eax, g_nNextTWKErrorSlot;
 	__asm        jmp    near ptr 0x004CA069;
 // LINE 352:
 }

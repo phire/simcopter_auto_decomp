@@ -461,7 +461,7 @@ _T3a:
 	__asm        call   0x004D8520;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -483,7 +483,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        je     _Td6;
 // LINE 140:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    eax, [eax+0x12E];
@@ -561,9 +561,9 @@ _T145:
 	__asm        add    esp, 8;
 // LINE 169:
 	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    ecx, ds:[0x5B7DC8];
+	__asm        mov    ecx, curFireTrucks;
 	__asm        mov    [ecx*4+0x62B9D0], eax;
-	__asm        inc    dword ptr ds:[0x5B7DC8];
+	__asm        inc    curFireTrucks;
 // LINE 171:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        jmp    _T1f1;
@@ -606,7 +606,7 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3AA8];
+	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
 	__asm        jmp    near ptr 0x005363AE;
 // LINE 212:
@@ -715,7 +715,7 @@ _T1d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3AA8];
+	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 261:
 	__asm        mov    ecx, this;
@@ -813,7 +813,7 @@ _T149:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3AA8];
+	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 302:
 	__asm        mov    eax, this;
@@ -833,17 +833,17 @@ _T1b2:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 313:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 314:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 315:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -854,12 +854,12 @@ _T1b2:
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 317:
-	__asm        mov    eax, ds:[0x608F78];
+	__asm        mov    eax, AutomobileClass::fireSirenDist;
 	__asm        cmp    dist, eax;
 	__asm        jge    _T209;
 // LINE 318:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F78], eax;
+	__asm        mov    AutomobileClass::fireSirenDist, eax;
 // LINE 320:
 _T209:
 	__asm        mov    ecx, this;
@@ -894,7 +894,7 @@ _T21e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x298];
 	__asm        push   eax;
-	__asm        mov    ecx, ds:[0x5C3AA8];
+	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 339:
 	__asm        mov    eax, this;
@@ -1024,17 +1024,17 @@ _Tf0:
 	__asm        jmp    _T150;
 // LINE 392:
 _Tf7:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    vec.x, eax;
 // LINE 393:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x28];
 	__asm        mov    vec.y, eax;
 // LINE 394:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x2C];
 	__asm        mov    vec.z, eax;
@@ -1045,12 +1045,12 @@ _Tf7:
 	__asm        add    esp, 4;
 	__asm        mov    dist, eax;
 // LINE 396:
-	__asm        mov    eax, ds:[0x608F6C];
+	__asm        mov    eax, AutomobileClass::fireHoseDist;
 	__asm        cmp    dist, eax;
 	__asm        jge    _T146;
 // LINE 397:
 	__asm        mov    eax, dist;
-	__asm        mov    ds:[0x608F6C], eax;
+	__asm        mov    AutomobileClass::fireHoseDist, eax;
 // LINE 399:
 _T146:
 	__asm        mov    eax, 1;

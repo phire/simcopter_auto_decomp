@@ -759,7 +759,7 @@ void _cArray::~_cArray() {
 	__asm        add    esp, 4;
 // LINE 167:
 _T40:
-	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
+	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        je     _T126;
 // LINE 169:
 // Block start:
@@ -776,12 +776,12 @@ _T62:
 	__asm        jge    _T126;
 // LINE 173:
 	__asm        mov    eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _Tb4;
 
 	__asm        mov    eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _Tb4;
@@ -795,12 +795,12 @@ _T62:
 // LINE 174:
 _Tb4:
 	__asm        mov    eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _T121;
 
 	__asm        mov    eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x4C];
@@ -819,7 +819,7 @@ _Tb4:
 // LINE 179:
 _T10b:
 	__asm        mov    eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    dword ptr [ecx+eax*4], 0;
 // LINE 182:
 	__asm        mov    bFound, 1;
@@ -835,7 +835,7 @@ _T126:
 // FUNCTION: COPTER_D 0x00567b1b
 void _cArray::MakeTable() {
 // LINE 195:
-	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
+	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        jne    _T82;
 // LINE 196:
 // Block start:
@@ -843,9 +843,9 @@ void _cArray::MakeTable() {
 	__asm        push   0x1000;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
-	__asm        mov    ds:[0x5BF74C], eax;
+	__asm        mov    _cArray::sArrayTable, eax;
 // LINE 197:
-	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
+	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        jne    _T51;
 
 	__asm        push   0x8C085;
@@ -865,7 +865,7 @@ _T60:
 	__asm        jge    _T82;
 // LINE 199:
 	__asm        mov    eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    dword ptr [ecx+eax*4], 0;
 // LINE 200:
 	__asm        jmp    _T5d;
@@ -878,10 +878,10 @@ _T82:
 // FUNCTION: COPTER_D 0x00567ba7
 void _cArray::DeleteTable() {
 // LINE 206:
-	__asm        cmp    dword ptr ds:[0x5BF74C], 0;
+	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        je     _T30;
 // LINE 207:
-	__asm        mov    eax, ds:[0x5BF74C];
+	__asm        mov    eax, _cArray::sArrayTable;
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
@@ -935,12 +935,12 @@ _T5d:
 	__asm        jge    _Tdc;
 // LINE 256:
 	__asm        mov    eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _Tb4;
 
 	__asm        mov    eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x4C];
@@ -959,7 +959,7 @@ _Tb4:
 	__asm        jne    _Td7;
 
 	__asm        mov    eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        jne    _Td7;
 // LINE 258:
@@ -983,7 +983,7 @@ _Tdc:
 _T102:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, foundcount;
-	__asm        mov    edx, ds:[0x5BF74C];
+	__asm        mov    edx, _cArray::sArrayTable;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 264:
 // Block end:
@@ -2521,12 +2521,12 @@ _T1d:
 	__asm        jge    _T168;
 // LINE 614:
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _T73;
 
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T73;
@@ -2544,19 +2544,19 @@ _T73:
 	__asm        jne    _Tc4;
 
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _Tc4;
 
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    ecx, tinyname;
 	__asm        cmp    [eax+0x4C], ecx;
 	__asm        jne    _Tc4;
 // LINE 616:
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        jmp    _T16f;
 // LINE 618:
@@ -2567,7 +2567,7 @@ _Tc4:
 	__asm        je     _T163;
 
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _T163;
 // LINE 619:
@@ -2596,7 +2596,7 @@ _T110:
 // LINE 621:
 _T12c:
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    eax, [eax+0x4C];
 	__asm        mov    cl, reinterpret_cast<uint8_t>(shiftnum);
@@ -2608,7 +2608,7 @@ _T12c:
 	__asm        jne    _T163;
 // LINE 622:
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        jmp    _T16f;
 // LINE 624:
@@ -2644,7 +2644,7 @@ _T23:
 	__asm        jge    _T77;
 // LINE 634:
 	__asm        movsx  eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    arr, eax;
 // LINE 635:
@@ -2698,7 +2698,7 @@ _T23:
 // Block start:
 	class _cArray* tmp;
 	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    tmp, eax;
 // LINE 651:
@@ -2740,7 +2740,7 @@ _T23:
 	__asm        jge    _T77;
 // LINE 663:
 	__asm        movsx  eax, count;
-	__asm        mov    ecx, ds:[0x5BF74C];
+	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        mov    arr, eax;
 // LINE 664:

@@ -30,9 +30,9 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 
 // LINE 33:
 	__asm        mov    eax, hInstance;
-	__asm        mov    ds:[0x5C28C8], eax;
+	__asm        mov    _ghWindowsInstance, eax;
 // LINE 40:
-	__asm        mov    byte ptr ds:[0x5C2848], 0;
+	__asm        mov    gszCommandLine[0], 0;
 // LINE 41:
 	__asm        push   0x80;
 	__asm        mov    eax, CommandLine;
@@ -54,7 +54,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    dword ptr [ebp-0x50], 0;
 	__asm        fild   qword ptr [ebp-0x54];
 	__asm        faddp;
-	__asm        fstp   dword ptr ds:[0x5C28CC];
+	__asm        fstp   _gTimerFrequency;
 // LINE 48:
 	__asm        jmp    near ptr 0x0041F8D4;
 // LINE 49:
@@ -67,13 +67,13 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   CGameApp::CGameApp;
-	__asm        mov    ds:[0x598580], eax;
+	__asm        mov    _gSparkalApp, eax;
 	__asm        jmp    _T9a;
 _T90:
-	__asm        mov    dword ptr ds:[0x598580], 0;
+	__asm        mov    _gSparkalApp, 0;
 // LINE 50:
 _T9a:
-	__asm        cmp    dword ptr ds:[0x598580], 0;
+	__asm        cmp    _gSparkalApp, 0;
 	__asm        jne    _Tb3;
 // LINE 52:
 	__asm        jmp    near ptr 0x0041F91C;
@@ -82,16 +82,16 @@ _T9a:
 	__asm        jmp    _T24b;
 // LINE 56:
 _Tb3:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x598580];
+	__asm        mov    ecx, _gSparkalApp;
 	__asm        call   dword ptr [eax+0x14];
 	__asm        test   eax, eax;
 	__asm        je     _T100;
 // LINE 57:
 	__asm        jmp    near ptr 0x0041F940;
 // LINE 58:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
@@ -110,7 +110,7 @@ _Tf9:
 	__asm        jmp    _T24b;
 // LINE 62:
 _T100:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        or     dword ptr [eax+0xC], 2;
@@ -118,16 +118,16 @@ _T100:
 // LINE 63:
 	__asm        call   ClearWindowsSystemPalette;
 // LINE 64:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x598580];
+	__asm        mov    ecx, _gSparkalApp;
 	__asm        call   dword ptr [eax+8];
 	__asm        test   eax, eax;
 	__asm        je     _T166;
 // LINE 65:
 	__asm        jmp    near ptr 0x0041F9A6;
 // LINE 66:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
@@ -148,7 +148,7 @@ _T15f:
 _T166:
 	__asm        jmp    _T16b;
 _T16b:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        test   byte ptr [eax+0xC], 1;
 	__asm        je     _T201;
 // LINE 71:
@@ -166,7 +166,7 @@ _T17a:
 	__asm        cmp    Message.message, 0x12;
 	__asm        jne    _T1bc;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x48], eax;
 // LINE 73:
 	__asm        mov    eax, [ebp-0x48];
@@ -191,15 +191,15 @@ _T1bc:
 _T1d5:
 	__asm        jmp    near ptr 0x0041FA4A;
 
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax+0xC];
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
 	__asm        jne    _T1fc;
 // LINE 84:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x598580];
+	__asm        mov    ecx, _gSparkalApp;
 	__asm        call   dword ptr [eax+0xC];
 // LINE 86:
 _T1fc:
@@ -207,14 +207,14 @@ _T1fc:
 // LINE 89:
 Cleanup:
 _T201:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];
-	__asm        mov    ecx, ds:[0x598580];
+	__asm        mov    ecx, _gSparkalApp;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 90:
 	__asm        jmp    near ptr 0x0041FA86;
 // LINE 91:
-	__asm        mov    eax, ds:[0x598580];
+	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;

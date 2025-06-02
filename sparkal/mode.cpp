@@ -24,9 +24,9 @@ int32_t GetAllDisplayModes() {
 	__asm        push   0;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x20];
 // LINE 34:
@@ -46,7 +46,7 @@ _T15:
 	__asm        inc    i;
 _T18:
 	__asm        mov    eax, i;
-	__asm        cmp    ds:[0x599D80], eax;
+	__asm        cmp    gNumModes, eax;
 	__asm        jle    _T78;
 // LINE 65:
 	__asm        mov    eax, i;
@@ -129,7 +129,7 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 // FUNCTION: COPTER_D 0x0048b234
 long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
 // LINE 104:
-	__asm        cmp    dword ptr ds:[0x599D80], 0x40;
+	__asm        cmp    gNumModes, 0x40;
 	__asm        jl     _T1a;
 // LINE 105:
 	__asm        xor    eax, eax;
@@ -138,23 +138,23 @@ long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Conte
 _T1a:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, ds:[0x599D80];
+	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    [ecx*4+0x604818], eax;
 // LINE 107:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, ds:[0x599D80];
+	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    [ecx*4+0x60481C], eax;
 // LINE 108:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+0x54];
-	__asm        mov    ecx, ds:[0x599D80];
+	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    [ecx*4+0x604820], eax;
 // LINE 109:
-	__asm        inc    dword ptr ds:[0x599D80];
+	__asm        inc    gNumModes;
 // LINE 111:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6c;

@@ -460,21 +460,21 @@ void CommandSystem::CommandSystem() {
 	__asm        call   CharList::CharList;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xDC], 0;
-	__asm        inc    dword ptr ds:[0x597218];
-	__asm        mov    eax, ds:[0x597224];
+	__asm        inc    list<Shortcut>::number_of_lists;
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T59;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T230;
 _T59:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T21b;
 
 	__asm        push   0;
@@ -568,14 +568,14 @@ _T16d:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x80;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -604,20 +604,20 @@ _T1da:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x0048B4B1;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T230;
 _T21b:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T230:
@@ -1074,7 +1074,7 @@ void CommandSystem::PollJoysticksForCommands() {
 	int32_t nCommand;
 
 // LINE 199:
-	__asm        mov    eax, ds:[0x604C78];
+	__asm        mov    eax, gJoystickManager.nJoystickCount;
 	__asm        mov    iEnd, eax;
 	__asm        jmp    near ptr 0x0048B9C2;
 // LINE 200:
@@ -1219,7 +1219,7 @@ _T15e:
 	__asm        cmp    lValue, 0;
 	__asm        je     _T1cb;
 // LINE 225:
-	__asm        mov    eax, ds:[0x604CD0];
+	__asm        mov    eax, gJoystickManager.lNormalizedMaximum;
 	__asm        mov    ecx, nCommand;
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4+0x918], eax;
@@ -1537,7 +1537,7 @@ _T7e:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 434:
-	__asm        mov    eax, ds:[0x5C34F4];
+	__asm        mov    eax, gKeyboard.myCharDownList.firstCharData;
 	__asm        mov    currentCharData, eax;
 // LINE 435:
 _T94:
@@ -1720,7 +1720,7 @@ _T6c:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 496:
-	__asm        mov    eax, ds:[0x5C34F4];
+	__asm        mov    eax, gKeyboard.myCharDownList.firstCharData;
 	__asm        mov    currentCharData, eax;
 // LINE 497:
 _T82:
@@ -1861,7 +1861,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 556:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599D84];
+	__asm        mov    eax, SZ_SHORTCUT_PREFS_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   9;
@@ -1921,20 +1921,20 @@ _Tb1:
 
 	__asm        mov    eax, [ebp-0x270];
 	__asm        mov    [ebp-0x2D4], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x284], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T13e;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    [ebp-0x2D0], eax;
 	__asm        jmp    _T3a5;
 _T13e:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T387;
 
 	__asm        push   0;
@@ -2028,14 +2028,14 @@ _T29d:
 	__asm        mov    eax, [ebp-0x2C4];
 	__asm        mov    ecx, [ebp-0x290];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x290];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x290];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x2A8], 0x80;
 	__asm        lea    eax, [ebp-0x2A8];
 	__asm        mov    [ebp-0x2B0], eax;
@@ -2064,20 +2064,20 @@ _T33a:
 	__asm        mov    eax, [ebp-0x2B8];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x0048C598;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x288], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x288];
 	__asm        mov    [ebp-0x2D0], eax;
 	__asm        jmp    _T3a5;
 _T387:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x28C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x28C];
 	__asm        mov    [ebp-0x2D0], eax;
 _T3a5:
@@ -2174,7 +2174,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 591:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599D84];
+	__asm        mov    eax, SZ_SHORTCUT_PREFS_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   9;
@@ -4428,7 +4428,7 @@ void DeleteShortcutPrefsFile() {
 // LINE 971:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599D84];
+	__asm        mov    eax, SZ_SHORTCUT_PREFS_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   9;

@@ -10,7 +10,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        push   eax;
 	__asm        mov    eax, lResourceID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    nChars, eax;
@@ -26,7 +26,7 @@ int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsig
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    nChars, eax;

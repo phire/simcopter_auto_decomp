@@ -440,14 +440,14 @@ _T86:
 	__asm        je     _Td8;
 
 	__asm        mov    eax, i;
-	__asm        cmp    ds:[0x5B52C4], eax;
+	__asm        cmp    lastSpeederID, eax;
 	__asm        je     _Td8;
 // LINE 90:
 	__asm        mov    eax, pCar;
 	__asm        or     dword ptr [eax+8], 0x1000;
 // LINE 93:
 	__asm        mov    eax, i;
-	__asm        mov    ds:[0x5B52C4], eax;
+	__asm        mov    lastSpeederID, eax;
 // LINE 94:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Te4;
@@ -862,7 +862,7 @@ _T45:
 // FUNCTION: COPTER_D 0x00501af9
 int32_t GetTheCurrentNumberOfAutomobiles() {
 // LINE 269:
-	__asm        mov    eax, ds:[0x5B52C8];
+	__asm        mov    eax, curAutos;
 	__asm        jmp    near ptr 0x00501B09;
 // LINE 270:
 }
@@ -874,7 +874,7 @@ int32_t SetTheCurrentNumberOfAutomobiles(int32_t num) {
 	__asm        jg     _T22;
 // LINE 277:
 	__asm        mov    eax, num;
-	__asm        mov    ds:[0x5B52C8], eax;
+	__asm        mov    curAutos, eax;
 // LINE 278:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T29;
@@ -1074,7 +1074,7 @@ _T3e:
 class AutomobileClass* AutomobileClass::GetAutoPointer(long index) {
 // LINE 451:
 	__asm        mov    eax, index;
-	__asm        cmp    ds:[0x5B52C8], eax;
+	__asm        cmp    curAutos, eax;
 	__asm        jg     _T31;
 
 	__asm        push   0x1C3;
@@ -1088,7 +1088,7 @@ _T31:
 // LINE 453:
 _T36:
 	__asm        mov    eax, index;
-	__asm        cmp    ds:[0x5B52C8], eax;
+	__asm        cmp    curAutos, eax;
 	__asm        jg     _T4c;
 // LINE 454:
 	__asm        xor    eax, eax;
@@ -1232,7 +1232,7 @@ _T35:
 	__asm        jmp    _T3a;
 // LINE 608:
 _T3a:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0xBE], eax;
 // LINE 613:
@@ -1296,7 +1296,7 @@ _Tec:
 	__asm        jle    _T121;
 // LINE 627:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0xC6], eax;
@@ -1631,7 +1631,7 @@ _Tc9:
 	__asm        mov    itterationDist, 0;
 	__asm        jmp    _Tfd;
 _Te2:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
@@ -1652,7 +1652,7 @@ _Tfd:
 // LINE 841:
 	__asm        jmp    _T59f;
 // LINE 845:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9E], eax;
 // LINE 849:
@@ -1809,7 +1809,7 @@ _T31a:
 // LINE 886:
 	__asm        jmp    _T59f;
 // LINE 889:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9E], eax;
 // LINE 891:
@@ -1895,7 +1895,7 @@ _T433:
 // LINE 912:
 	__asm        jmp    _T59f;
 // LINE 916:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9E], eax;
 // LINE 918:
@@ -1982,7 +1982,7 @@ _T54c:
 	__asm        jmp    _T59f;
 // LINE 942:
 _T556:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9E], eax;
 // LINE 943:
@@ -2622,13 +2622,13 @@ _T50:
 	__asm        mov    vec.x, eax;
 // LINE 1222:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 1223:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -2647,13 +2647,13 @@ _T8d:
 	__asm        mov    vec.x, eax;
 // LINE 1231:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 1232:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -2670,13 +2670,13 @@ _Tca:
 	__asm        mov    vec.z, eax;
 // LINE 1239:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 1240:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -2684,13 +2684,13 @@ _Tca:
 	__asm        jmp    _T150;
 // LINE 1245:
 _T103:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.x;
 	__asm        mov    vec.x, eax;
 // LINE 1246:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.z;
@@ -2714,13 +2714,13 @@ _T12d:
 _T150:
 	__asm        mov    eax, vec.x;
 	__asm        shl    eax, 6;
-	__asm        add    eax, ds:[0x6C126C];
+	__asm        add    eax, ViewState.world_pos.x;
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    beamCell.x, al;
 // LINE 1257:
 	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, ds:[0x6C1274];
+	__asm        sub    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, vec.z;
 	__asm        shl    ecx, 6;
 	__asm        add    eax, ecx;
@@ -4203,7 +4203,7 @@ _T6b:
 	__asm        call   0x004D8520;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5B5E78];
+	__asm        mov    eax, G_dyobjmempool;
 	__asm        push   eax;
 	__asm        call   S2Alloc;
 	__asm        add    esp, 8;
@@ -4245,7 +4245,7 @@ _Tf3:
 	__asm        jmp    _Tf8;
 // LINE 1912:
 _Tf8:
-	__asm        mov    eax, ds:[0x5B4780];
+	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -6912,7 +6912,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        sub    ecx, ds:[0x6BF188];
+	__asm        sub    ecx, CameraCell.x;
 	__asm        mov    eax, ecx;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6922,7 +6922,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD3];
-	__asm        sub    ecx, ds:[0x6BF18C];
+	__asm        sub    ecx, CameraCell.y;
 	__asm        mov    eax, ecx;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6935,7 +6935,7 @@ _T54:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        sub    ecx, ds:[0x6BF188];
+	__asm        sub    ecx, CameraCell.x;
 	__asm        mov    eax, ecx;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6945,7 +6945,7 @@ _T54:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
-	__asm        sub    ecx, ds:[0x6BF18C];
+	__asm        sub    ecx, CameraCell.y;
 	__asm        mov    eax, ecx;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -6971,9 +6971,9 @@ _Ta0:
 	__asm        mov    dist, eax;
 // LINE 3006:
 _Tab:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
-	__asm        add    eax, ds:[0x6663A0];
+	__asm        add    eax, G_ViewSize;
 	__asm        add    eax, 2;
 	__asm        cmp    eax, dist;
 	__asm        jge    _Td4;
@@ -7467,13 +7467,13 @@ void AutomobileClass::RunFireState() {
 
 // LINE 3298:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x102], eax;
 // LINE 3299:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x106], eax;
@@ -7681,7 +7681,7 @@ void AutomobileClass::RunJamState() {
 	__asm        call   AutomobileClass::HonkHorn;
 // LINE 3378:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x102], eax;
@@ -10627,7 +10627,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 	int32_t distance;
 
 // LINE 4490:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
@@ -11431,13 +11431,13 @@ _T96:
 // FUNCTION: COPTER_D 0x0050994b
 void S3AutoSoundDistReset() {
 // LINE 4773:
-	__asm        mov    dword ptr ds:[0x608F78], 0x7800000;
+	__asm        mov    AutomobileClass::fireSirenDist, 0x7800000;
 // LINE 4774:
-	__asm        mov    dword ptr ds:[0x608F74], 0x7800000;
+	__asm        mov    AutomobileClass::policeSirenDist, 0x7800000;
 // LINE 4775:
-	__asm        mov    dword ptr ds:[0x608F70], 0x7800000;
+	__asm        mov    AutomobileClass::ambSirenDist, 0x7800000;
 // LINE 4776:
-	__asm        mov    dword ptr ds:[0x608F6C], 0x7800000;
+	__asm        mov    AutomobileClass::fireHoseDist, 0x7800000;
 // LINE 4777:
 	__asm        jmp    near ptr 0x0050997E;
 }
@@ -11449,7 +11449,7 @@ void S3AutoSoundDriver() {
 	int32_t dist;
 
 // LINE 4794:
-	__asm        mov    eax, ds:[0x608F78];
+	__asm        mov    eax, AutomobileClass::fireSirenDist;
 	__asm        mov    dist, eax;
 // LINE 4795:
 	__asm        cmp    dist, 0x7800000;
@@ -11514,7 +11514,7 @@ _T99:
 	__asm        add    esp, 4;
 // LINE 4818:
 _Tb6:
-	__asm        mov    eax, ds:[0x608F74];
+	__asm        mov    eax, AutomobileClass::policeSirenDist;
 	__asm        mov    dist, eax;
 // LINE 4819:
 	__asm        cmp    dist, 0x7800000;
@@ -11579,7 +11579,7 @@ _T146:
 	__asm        add    esp, 4;
 // LINE 4842:
 _T163:
-	__asm        mov    eax, ds:[0x608F70];
+	__asm        mov    eax, AutomobileClass::ambSirenDist;
 	__asm        mov    dist, eax;
 // LINE 4843:
 	__asm        cmp    dist, 0x7800000;
@@ -11644,7 +11644,7 @@ _T1f3:
 	__asm        add    esp, 4;
 // LINE 4866:
 _T210:
-	__asm        mov    eax, ds:[0x608F6C];
+	__asm        mov    eax, AutomobileClass::fireHoseDist;
 	__asm        mov    dist, eax;
 // LINE 4867:
 	__asm        cmp    dist, 0x7800000;
@@ -11709,7 +11709,7 @@ _T2a0:
 	__asm        add    esp, 4;
 // LINE 4890:
 _T2bd:
-	__asm        mov    eax, ds:[0x608F6C];
+	__asm        mov    eax, AutomobileClass::fireHoseDist;
 	__asm        mov    dist, eax;
 // LINE 4891:
 	__asm        cmp    dist, 0x7800000;

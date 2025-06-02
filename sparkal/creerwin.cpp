@@ -383,9 +383,9 @@ void $E64() {
 // FUNCTION: COPTER_D 0x0047de95
 void $E63() {
 
-	__asm        mov    byte ptr ds:[0x604448], 0xA;
-	__asm        mov    byte ptr ds:[0x604449], 0x85;
-	__asm        mov    byte ptr ds:[0x60444A], 0xDA;
+	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
+	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
+	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    near ptr 0x0047DEB5;
 
 	__asm        jmp    near ptr 0x0047DEBA;
@@ -403,9 +403,9 @@ void $E67() {
 // FUNCTION: COPTER_D 0x0047ded4
 void $E66() {
 
-	__asm        mov    byte ptr ds:[0x60444C], 0x6F;
-	__asm        mov    byte ptr ds:[0x60444D], 0xDA;
-	__asm        mov    byte ptr ds:[0x60444E], 0xFF;
+	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
+	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
+	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    near ptr 0x0047DEF4;
 
 	__asm        jmp    near ptr 0x0047DEF9;
@@ -425,7 +425,7 @@ void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, vo
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599A84];
+	__asm        mov    eax, SZ_CAREER_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -521,15 +521,15 @@ _T9a:
 	__asm        jmp    _T1cb;
 // LINE 74:
 _T1a1:
-	__asm        mov    eax, ds:[0x5C2AA8];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[0];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xA8], eax;
 // LINE 75:
-	__asm        mov    eax, ds:[0x5C2AAC];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[1];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xAC], eax;
 // LINE 76:
-	__asm        mov    eax, ds:[0x5C2AB0];
+	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[2];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xB0], eax;
 // LINE 80:
@@ -664,7 +664,7 @@ _T85:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599A8C];
+	__asm        mov    eax, SZ_CAREER_WINDOW_BUTTON_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -690,7 +690,7 @@ _T140:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x12AC], eax;
@@ -705,7 +705,7 @@ _T140:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x12AC], eax;
@@ -883,7 +883,7 @@ _T390:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599A8C];
+	__asm        mov    eax, SZ_CAREER_WINDOW_BUTTON_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -909,7 +909,7 @@ _T465:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x22CC], eax;
@@ -924,7 +924,7 @@ _T465:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x22CC], eax;
@@ -1108,7 +1108,7 @@ _T6fe:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x599A8C];
+	__asm        mov    eax, SZ_CAREER_WINDOW_BUTTON_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -1134,7 +1134,7 @@ _T78f:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x32EC], eax;
@@ -1149,7 +1149,7 @@ _T78f:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x32EC], eax;
@@ -1310,7 +1310,7 @@ _T9df:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4304], eax;
@@ -1325,7 +1325,7 @@ _T9df:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4304], eax;
@@ -1540,7 +1540,7 @@ _Tc97:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x531C], eax;
@@ -1555,7 +1555,7 @@ _Tc97:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x531C], eax;
@@ -1912,7 +1912,7 @@ _Tc6:
 	__asm        cmp    dword ptr [eax+0x83C], 0;
 	__asm        jne    _T255;
 
-	__asm        mov    eax, ds:[0x599A88];
+	__asm        mov    eax, SZ_CAREER_WINDOW_SELECTION_FILE_NAME;
 	__asm        mov    [ebp-0x1C], eax;
 // LINE 207:
 	__asm        jmp    near ptr 0x0047F48A;

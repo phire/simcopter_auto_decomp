@@ -25,19 +25,19 @@ void VRFrustSetNormals() {
 	struct Point3d vect;
 
 // LINE 74:
-	__asm        mov    eax, ds:[0x59C248];
+	__asm        mov    eax, HALF_WIDTH;
 	__asm        shl    eax, 4;
 	__asm        mov    distx, eax;
 // LINE 75:
-	__asm        mov    eax, ds:[0x59C24C];
+	__asm        mov    eax, HALF_ASPECT;
 	__asm        shl    eax, 4;
 	__asm        mov    disty, eax;
 // LINE 76:
-	__asm        mov    eax, ds:[0x59C254];
+	__asm        mov    eax, CLIP_RITE;
 	__asm        shl    eax, 4;
 	__asm        mov    swide, eax;
 // LINE 77:
-	__asm        mov    eax, ds:[0x59C258];
+	__asm        mov    eax, CLIP_BOTM;
 	__asm        shl    eax, 4;
 	__asm        mov    shigh, eax;
 // LINE 81:
@@ -61,12 +61,12 @@ void VRFrustSetNormals() {
 // LINE 89:
 	__asm        mov    eax, vect.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x6663D0], eax;
+	__asm        mov    VRFrusRiteNorm.x, eax;
 // LINE 90:
 	__asm        mov    eax, vect.x;
-	__asm        mov    ds:[0x6663D8], eax;
+	__asm        mov    VRFrusRiteNorm.z, eax;
 // LINE 91:
-	__asm        mov    dword ptr ds:[0x6663D4], 0;
+	__asm        mov    VRFrusRiteNorm.y, 0;
 // LINE 94:
 	__asm        mov    eax, 0x6663D0;
 	__asm        mov    ecx, 0x6663C0;
@@ -77,9 +77,9 @@ void VRFrustSetNormals() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 95:
-	__asm        mov    eax, ds:[0x6663C0];
+	__asm        mov    eax, VRFrusLeftNorm.x;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x6663C0], eax;
+	__asm        mov    VRFrusLeftNorm.x, eax;
 // LINE 99:
 	__asm        mov    eax, disty;
 	__asm        add    eax, eax;
@@ -101,12 +101,12 @@ void VRFrustSetNormals() {
 // LINE 107:
 	__asm        mov    eax, vect.z;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x6663B4], eax;
+	__asm        mov    VRFrusTopNorm.y, eax;
 // LINE 108:
 	__asm        mov    eax, vect.y;
-	__asm        mov    ds:[0x6663B8], eax;
+	__asm        mov    VRFrusTopNorm.z, eax;
 // LINE 109:
-	__asm        mov    dword ptr ds:[0x6663B0], 0;
+	__asm        mov    VRFrusTopNorm.x, 0;
 // LINE 112:
 	__asm        mov    eax, 0x6663B0;
 	__asm        mov    ecx, 0x6663E0;
@@ -117,9 +117,9 @@ void VRFrustSetNormals() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 113:
-	__asm        mov    eax, ds:[0x6663B4];
+	__asm        mov    eax, VRFrusTopNorm.y;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x6663E4], eax;
+	__asm        mov    VRFrusBotNorm.y, eax;
 // LINE 114:
 }
 

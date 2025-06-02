@@ -1744,6 +1744,10 @@ public:
 struct bidirectional_iterator<Shortcut,int>{
 };
 
+// Type: struct bidirectional_iterator<long,int>;
+struct bidirectional_iterator<long,int>{
+};
+
 // Type: struct SparkalRect;
 struct SparkalRect{
 	long left;
@@ -1760,10 +1764,6 @@ struct SparkalPoint{
 	long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
-};
-
-// Type: struct bidirectional_iterator<long,int>;
-struct bidirectional_iterator<long,int>{
 };
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
@@ -1956,9 +1956,9 @@ void $E97() {
 // FUNCTION: COPTER_D 0x00401295
 void $E96() {
 
-	__asm        mov    byte ptr ds:[0x5C2790], 0xA;
-	__asm        mov    byte ptr ds:[0x5C2791], 0x85;
-	__asm        mov    byte ptr ds:[0x5C2792], 0xDA;
+	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
+	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
+	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    near ptr 0x004012B5;
 
 	__asm        jmp    near ptr 0x004012BA;
@@ -1976,9 +1976,9 @@ void $E100() {
 // FUNCTION: COPTER_D 0x004012d4
 void $E99() {
 
-	__asm        mov    byte ptr ds:[0x5C2794], 0x6F;
-	__asm        mov    byte ptr ds:[0x5C2795], 0xDA;
-	__asm        mov    byte ptr ds:[0x5C2796], 0xFF;
+	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
+	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
+	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    near ptr 0x004012F4;
 
 	__asm        jmp    near ptr 0x004012F9;
@@ -1998,27 +1998,27 @@ void KeyboardWindow::KeyboardWindow(class MRect& rectNewPosition, int32_t nNewID
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5970F0];
+	__asm        mov    eax, SZ_KEYBOARD_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        inc    dword ptr ds:[0x5971CC];
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        inc    list<HotSpot>::number_of_lists;
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _T78;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T213;
 _T78:
-	__asm        mov    eax, ds:[0x5971D4];
-	__asm        cmp    ds:[0x5971D0], eax;
+	__asm        mov    eax, list<HotSpot>::next_avail;
+	__asm        cmp    list<HotSpot>::last, eax;
 	__asm        jne    _T1fe;
 
 	__asm        jmp    near ptr 0x0040138C;
@@ -2092,14 +2092,14 @@ _T149:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x92;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -2131,20 +2131,20 @@ _T1b6:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x004014E2;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T213;
 _T1fe:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x48], eax;
 _T213:
@@ -2167,21 +2167,21 @@ _T213:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        inc    dword ptr ds:[0x5971CC];
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        inc    list<HotSpot>::number_of_lists;
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _T297;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T3ea;
 _T297:
-	__asm        mov    eax, ds:[0x5971D4];
-	__asm        cmp    ds:[0x5971D0], eax;
+	__asm        mov    eax, list<HotSpot>::next_avail;
+	__asm        cmp    list<HotSpot>::last, eax;
 	__asm        jne    _T3d2;
 
 	__asm        jmp    near ptr 0x004015AB;
@@ -2228,14 +2228,14 @@ _T2f7:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x70], 0x92;
 	__asm        lea    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x78], eax;
@@ -2267,20 +2267,20 @@ _T387:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x004016B3;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T3ea;
 _T3d2:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x54], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x88], eax;
 _T3ea:
@@ -2303,21 +2303,21 @@ _T3ea:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x88], 0;
-	__asm        inc    dword ptr ds:[0x5971CC];
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        inc    list<HotSpot>::number_of_lists;
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    [ebp-0x8C], eax;
-	__asm        cmp    dword ptr ds:[0x5971D8], 0;
+	__asm        cmp    list<HotSpot>::free_list, 0;
 	__asm        je     _T477;
 
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T630;
 _T477:
-	__asm        mov    eax, ds:[0x5971D4];
-	__asm        cmp    ds:[0x5971D0], eax;
+	__asm        mov    eax, list<HotSpot>::next_avail;
+	__asm        cmp    list<HotSpot>::last, eax;
 	__asm        jne    _T612;
 
 	__asm        jmp    near ptr 0x0040178B;
@@ -2364,14 +2364,14 @@ _T4fe:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x98];
-	__asm        mov    ds:[0x5971DC], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    list<HotSpot>::buffer_list, eax;
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x5971D4], eax;
+	__asm        mov    list<HotSpot>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xB0], 0x92;
 	__asm        lea    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xB8], eax;
@@ -2403,20 +2403,20 @@ _T5be:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
-	__asm        add    eax, ds:[0x5971D4];
-	__asm        mov    ds:[0x5971D0], eax;
+	__asm        add    eax, list<HotSpot>::next_avail;
+	__asm        mov    list<HotSpot>::last, eax;
 	__asm        jmp    near ptr 0x004018ED;
 
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x90], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T630;
 _T612:
-	__asm        mov    eax, ds:[0x5971D4];
+	__asm        mov    eax, list<HotSpot>::next_avail;
 	__asm        mov    [ebp-0x94], eax;
-	__asm        add    dword ptr ds:[0x5971D4], 0x1C;
+	__asm        add    list<HotSpot>::next_avail, 0x1C;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0xC8], eax;
 _T630:
@@ -2439,36 +2439,36 @@ _T630:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0;
-	__asm        inc    dword ptr ds:[0x5971BC];
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        inc    list<KeyColors>::number_of_lists;
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    [ebp-0xCC], eax;
-	__asm        cmp    dword ptr ds:[0x5971C8], 0;
+	__asm        cmp    list<KeyColors>::free_list, 0;
 	__asm        je     _T6cc;
 
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        jmp    _T72f;
 _T6cc:
-	__asm        mov    eax, ds:[0x5971C4];
-	__asm        cmp    ds:[0x5971C0], eax;
+	__asm        mov    eax, list<KeyColors>::next_avail;
+	__asm        cmp    list<KeyColors>::last, eax;
 	__asm        jne    _T711;
 
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x90;
 	__asm        call   list<KeyColors>::add_new_buffer;
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0xD0], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        jmp    _T72f;
 _T711:
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0xD4], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    [ebp-0xD8], eax;
 _T72f:
@@ -2610,14 +2610,14 @@ _T150:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        jmp    near ptr 0x00401C47;
 
-	__asm        dec    dword ptr ds:[0x5971BC];
+	__asm        dec    list<KeyColors>::number_of_lists;
 	__asm        jne    _T198;
 
 	__asm        mov    ecx, this;
@@ -2689,24 +2689,24 @@ _T24e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x00401D45;
 
-	__asm        dec    dword ptr ds:[0x5971CC];
+	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T303;
 _T285:
-	__asm        cmp    dword ptr ds:[0x5971DC], 0;
+	__asm        cmp    list<HotSpot>::buffer_list, 0;
 	__asm        je     _T2e0;
 
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    [ebp-0x60], eax;
-	__asm        mov    eax, ds:[0x5971DC];
+	__asm        mov    eax, list<HotSpot>::buffer_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971DC], eax;
+	__asm        mov    list<HotSpot>::buffer_list, eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x64], eax;
@@ -2728,9 +2728,9 @@ _T285:
 
 	__asm        jmp    _T285;
 _T2e0:
-	__asm        mov    dword ptr ds:[0x5971D8], 0;
-	__asm        mov    dword ptr ds:[0x5971D4], 0;
-	__asm        mov    dword ptr ds:[0x5971D0], 0;
+	__asm        mov    list<HotSpot>::free_list, 0;
+	__asm        mov    list<HotSpot>::next_avail, 0;
+	__asm        mov    list<HotSpot>::last, 0;
 	__asm        jmp    _T303;
 _T303:
 	__asm        jmp    near ptr 0x00401DD4;
@@ -2798,14 +2798,14 @@ _T3c2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
 	__asm        mov    [ebp-0x70], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x70];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x00401EB6;
 
-	__asm        dec    dword ptr ds:[0x5971CC];
+	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T404;
 
 	__asm        mov    ecx, this;
@@ -2877,14 +2877,14 @@ _T4e1:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x98], eax;
-	__asm        mov    eax, ds:[0x5971D8];
+	__asm        mov    eax, list<HotSpot>::free_list;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x98];
-	__asm        mov    ds:[0x5971D8], eax;
+	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    near ptr 0x00401FDE;
 
-	__asm        dec    dword ptr ds:[0x5971CC];
+	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T52c;
 
 	__asm        mov    ecx, this;
@@ -2903,7 +2903,7 @@ int32_t KeyboardWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 91:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        add    eax, 0xC8;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -2912,7 +2912,7 @@ int32_t KeyboardWindow::Initialize() {
 	__asm        call   LoadListFromResource;
 	__asm        add    esp, 8;
 // LINE 92:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        add    eax, 0x12C;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -2921,7 +2921,7 @@ int32_t KeyboardWindow::Initialize() {
 	__asm        call   LoadListFromResource;
 	__asm        add    esp, 8;
 // LINE 93:
-	__asm        mov    eax, ds:[0x597664];
+	__asm        mov    eax, gDefaultLanguage;
 	__asm        add    eax, 0x190;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -3047,7 +3047,7 @@ _Te4:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::CreateImage;
 // LINE 117:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3061,7 +3061,7 @@ _Te4:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T32a;
 
-	__asm        mov    eax, ds:[0x5970F4];
+	__asm        mov    eax, SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x7C], eax;
 // LINE 120:
 	__asm        push   0x10;
@@ -3218,7 +3218,7 @@ _T32a:
 	__asm        cmp    dword ptr [eax+0x9C], 0;
 	__asm        jne    _T473;
 
-	__asm        mov    eax, ds:[0x5970F8];
+	__asm        mov    eax, SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x64], eax;
 // LINE 124:
 	__asm        push   0x10;
@@ -3304,7 +3304,7 @@ _T43e:
 	__asm        mov    dword ptr [eax+0x9C], 0;
 // LINE 126:
 _T44e:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3471,7 +3471,7 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, class b
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -3486,7 +3486,7 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, class b
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -6057,7 +6057,7 @@ void JoystickWindow::JoystickWindow(class MRect& rectNewPosition, int32_t nNewID
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5970FC];
+	__asm        mov    eax, SZ_JOYSTICK_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -6388,7 +6388,7 @@ _T81:
 	__asm        cmp    dword ptr [eax+0x1CE], 0;
 	__asm        jne    _T30a;
 
-	__asm        mov    eax, ds:[0x597100];
+	__asm        mov    eax, SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x8C], eax;
 // LINE 669:
 	__asm        push   0x10;
@@ -6554,7 +6554,7 @@ _T2d5:
 	__asm        mov    dword ptr [eax+0x1CE], 0;
 // LINE 671:
 _T2e5:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6569,7 +6569,7 @@ _T30a:
 	__asm        cmp    dword ptr [eax+0x1D2], 0;
 	__asm        jne    _T506;
 
-	__asm        mov    eax, ds:[0x597104];
+	__asm        mov    eax, SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x74], eax;
 // LINE 674:
 	__asm        push   0x10;
@@ -6704,7 +6704,7 @@ _T4d1:
 	__asm        mov    dword ptr [eax+0x1D2], 0;
 // LINE 676:
 _T4e1:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6719,7 +6719,7 @@ _T506:
 	__asm        cmp    dword ptr [eax+0x1D6], 0;
 	__asm        jne    _T61a;
 
-	__asm        mov    eax, ds:[0x597108];
+	__asm        mov    eax, SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x64], eax;
 // LINE 679:
 	__asm        push   0x10;
@@ -6787,7 +6787,7 @@ _T5e5:
 	__asm        mov    dword ptr [eax+0x1D6], 0;
 // LINE 681:
 _T5f5:
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6802,7 +6802,7 @@ _T61a:
 	__asm        cmp    dword ptr [eax+0x1DA], 0;
 	__asm        jne    _T709;
 
-	__asm        mov    eax, ds:[0x59710C];
+	__asm        mov    eax, SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME;
 	__asm        mov    [ebp-0x54], eax;
 // LINE 684:
 	__asm        push   0x10;
@@ -8069,7 +8069,7 @@ _T32f:
 // FUNCTION: COPTER_D 0x004061a4
 void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -8081,7 +8081,7 @@ void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNew
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597110];
+	__asm        mov    eax, SZ_USER_INPUT_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -8097,21 +8097,21 @@ void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNew
 	__asm        mov    dword ptr [eax+0x84], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x8C], 0;
-	__asm        inc    dword ptr ds:[0x597204];
-	__asm        mov    eax, ds:[0x597210];
+	__asm        inc    list<StringIDAssociation>::number_of_lists;
+	__asm        mov    eax, list<StringIDAssociation>::free_list;
 	__asm        mov    [ebp-4], eax;
-	__asm        cmp    dword ptr ds:[0x597210], 0;
+	__asm        cmp    list<StringIDAssociation>::free_list, 0;
 	__asm        je     _Tc6;
 
-	__asm        mov    eax, ds:[0x597210];
+	__asm        mov    eax, list<StringIDAssociation>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597210], eax;
+	__asm        mov    list<StringIDAssociation>::free_list, eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T259;
 _Tc6:
-	__asm        mov    eax, ds:[0x59720C];
-	__asm        cmp    ds:[0x597208], eax;
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
+	__asm        cmp    list<StringIDAssociation>::last, eax;
 	__asm        jne    _T244;
 
 	__asm        jmp    near ptr 0x00406280;
@@ -8183,14 +8183,14 @@ _T193:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597214];
+	__asm        mov    eax, list<StringIDAssociation>::buffer_list;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ds:[0x597214], eax;
-	__asm        mov    eax, ds:[0x597214];
+	__asm        mov    list<StringIDAssociation>::buffer_list, eax;
+	__asm        mov    eax, list<StringIDAssociation>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59720C], eax;
+	__asm        mov    list<StringIDAssociation>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x28], 0xCC;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
@@ -8220,20 +8220,20 @@ _T200:
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x59720C];
-	__asm        mov    ds:[0x597208], eax;
+	__asm        add    eax, list<StringIDAssociation>::next_avail;
+	__asm        mov    list<StringIDAssociation>::last, eax;
 	__asm        jmp    near ptr 0x004063CE;
 
-	__asm        mov    eax, ds:[0x59720C];
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
 	__asm        mov    [ebp-8], eax;
-	__asm        add    dword ptr ds:[0x59720C], 0x14;
+	__asm        add    list<StringIDAssociation>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T259;
 _T244:
-	__asm        mov    eax, ds:[0x59720C];
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        add    dword ptr ds:[0x59720C], 0x14;
+	__asm        add    list<StringIDAssociation>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x48], eax;
 _T259:
@@ -8256,21 +8256,21 @@ _T259:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x94], 0;
-	__asm        inc    dword ptr ds:[0x597204];
-	__asm        mov    eax, ds:[0x597210];
+	__asm        inc    list<StringIDAssociation>::number_of_lists;
+	__asm        mov    eax, list<StringIDAssociation>::free_list;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        cmp    dword ptr ds:[0x597210], 0;
+	__asm        cmp    list<StringIDAssociation>::free_list, 0;
 	__asm        je     _T2ec;
 
-	__asm        mov    eax, ds:[0x597210];
+	__asm        mov    eax, list<StringIDAssociation>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597210], eax;
+	__asm        mov    list<StringIDAssociation>::free_list, eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T43b;
 _T2ec:
-	__asm        mov    eax, ds:[0x59720C];
-	__asm        cmp    ds:[0x597208], eax;
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
+	__asm        cmp    list<StringIDAssociation>::last, eax;
 	__asm        jne    _T423;
 
 	__asm        jmp    near ptr 0x004064A6;
@@ -8317,14 +8317,14 @@ _T34c:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597214];
+	__asm        mov    eax, list<StringIDAssociation>::buffer_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ds:[0x597214], eax;
-	__asm        mov    eax, ds:[0x597214];
+	__asm        mov    list<StringIDAssociation>::buffer_list, eax;
+	__asm        mov    eax, list<StringIDAssociation>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x59720C], eax;
+	__asm        mov    list<StringIDAssociation>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x70], 0xCC;
 	__asm        lea    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x78], eax;
@@ -8354,20 +8354,20 @@ _T3dc:
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ds:[0x59720C];
-	__asm        mov    ds:[0x597208], eax;
+	__asm        add    eax, list<StringIDAssociation>::next_avail;
+	__asm        mov    list<StringIDAssociation>::last, eax;
 	__asm        jmp    near ptr 0x004065AA;
 
-	__asm        mov    eax, ds:[0x59720C];
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        add    dword ptr ds:[0x59720C], 0x14;
+	__asm        add    list<StringIDAssociation>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T43b;
 _T423:
-	__asm        mov    eax, ds:[0x59720C];
+	__asm        mov    eax, list<StringIDAssociation>::next_avail;
 	__asm        mov    [ebp-0x54], eax;
-	__asm        add    dword ptr ds:[0x59720C], 0x14;
+	__asm        add    list<StringIDAssociation>::next_avail, 0x14;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x88], eax;
 _T43b:
@@ -8390,21 +8390,21 @@ _T43b:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x9C], 0;
-	__asm        inc    dword ptr ds:[0x597218];
-	__asm        mov    eax, ds:[0x597224];
+	__asm        inc    list<Shortcut>::number_of_lists;
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x8C], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T4d7;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T689;
 _T4d7:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T66b;
 
 	__asm        jmp    near ptr 0x00406691;
@@ -8451,14 +8451,14 @@ _T55e:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x98];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x98];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xB0], 0x80;
 	__asm        lea    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xB8], eax;
@@ -8487,20 +8487,20 @@ _T61e:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x004067EC;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x90], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T689;
 _T66b:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x94], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0xC8], eax;
 _T689:
@@ -8523,36 +8523,36 @@ _T689:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA4], 0;
-	__asm        inc    dword ptr ds:[0x597218];
-	__asm        mov    eax, ds:[0x597224];
+	__asm        inc    list<Shortcut>::number_of_lists;
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0xCC], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T725;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        jmp    _T788;
 _T725:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T76a;
 
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   list<Shortcut>::add_new_buffer;
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xD0], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        jmp    _T788;
 _T76a:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xD4], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    [ebp-0xD8], eax;
 _T788:
@@ -8891,7 +8891,7 @@ _T37e:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10E0], eax;
@@ -8906,7 +8906,7 @@ _T37e:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10E0], eax;
@@ -9164,7 +9164,7 @@ _T842:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2100], eax;
@@ -9179,7 +9179,7 @@ _T842:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2100], eax;
@@ -9382,7 +9382,7 @@ _Tb4b:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3120], eax;
@@ -9397,7 +9397,7 @@ _Tb4b:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x3120], eax;
@@ -9600,7 +9600,7 @@ _Te54:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4140], eax;
@@ -9615,7 +9615,7 @@ _Te54:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4140], eax;
@@ -9818,7 +9818,7 @@ _T115d:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x5160], eax;
@@ -9833,7 +9833,7 @@ _T115d:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x5160], eax;
@@ -10145,11 +10145,11 @@ _T124:
 
 	__asm        jmp    near ptr 0x00407F1E;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x00407F35;
 
 	__asm        mov    eax, this;
@@ -10234,7 +10234,7 @@ _T197:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x59A968];
+	__asm        mov    eax, GraphicWindow::screenWindow;
 	__asm        push   eax;
 	__asm        push   0x2711;
 	__asm        lea    eax, [ebp-0x20];
@@ -10252,7 +10252,7 @@ _T2a2:
 	__asm        mov    ecx, tempControlDisplayWindow;
 	__asm        call   dword ptr [eax+4];
 // LINE 1232:
-	__asm        mov    eax, ds:[0x59A968];
+	__asm        mov    eax, GraphicWindow::screenWindow;
 	__asm        push   eax;
 	__asm        mov    eax, tempControlDisplayWindow;
 	__asm        mov    eax, [eax];
@@ -10398,20 +10398,20 @@ _T2c:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x90], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T11b;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T304;
 _T11b:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T2ec;
 
 	__asm        push   0;
@@ -10505,14 +10505,14 @@ _T23b:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x64], 0x80;
 	__asm        lea    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
@@ -10541,20 +10541,20 @@ _T2a8:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x00408411;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T304;
 _T2ec:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x48], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x8C], eax;
 _T304:
@@ -10695,20 +10695,20 @@ _T454:
 
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0xF8], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0xA8], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T4ee;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    [ebp-0xF4], eax;
 	__asm        jmp    _T755;
 _T4ee:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T737;
 
 	__asm        push   0;
@@ -10802,14 +10802,14 @@ _T64d:
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xB4];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xCC], 0x80;
 	__asm        lea    eax, [ebp-0xCC];
 	__asm        mov    [ebp-0xD4], eax;
@@ -10838,20 +10838,20 @@ _T6ea:
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x00408856;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xAC], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    [ebp-0xF4], eax;
 	__asm        jmp    _T755;
 _T737:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0xB0], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xF4], eax;
 _T755:
@@ -10989,20 +10989,20 @@ void UserInputWindow::AddJoystickTwinCommand(long lCommand, long lDevice, long l
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x84], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _Ta6;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T27d;
 _Ta6:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T268;
 
 	__asm        push   0;
@@ -11096,14 +11096,14 @@ _T1ba:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x58], 0x80;
 	__asm        lea    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
@@ -11132,20 +11132,20 @@ _T227:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x00408C34;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x38], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T27d;
 _T268:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x80], eax;
 _T27d:
@@ -11305,20 +11305,20 @@ _T61:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x94], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T10a;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        jmp    _T2fc;
 _T10a:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T2e4;
 
 	__asm        push   0;
@@ -11412,14 +11412,14 @@ _T230:
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x50];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x68], 0x80;
 	__asm        lea    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x70], eax;
@@ -11448,20 +11448,20 @@ _T2a0:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x00409010;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x48], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        jmp    _T2fc;
 _T2e4:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x90], eax;
 _T2fc:
@@ -11959,11 +11959,11 @@ _T84:
 
 	__asm        jmp    near ptr 0x004095AF;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    near ptr 0x004095C6;
 
 	__asm        mov    eax, this;
@@ -12360,11 +12360,11 @@ _T1f4:
 
 	__asm        jmp    near ptr 0x00409A65;
 
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    ecx, [ebp-0x164];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x164];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        jmp    near ptr 0x00409A82;
 
 	__asm        mov    eax, [ebp-0x170];
@@ -12408,34 +12408,34 @@ _T2a9:
 
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        mov    [ebp-0xF4], eax;
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    [ebp-0xE4], eax;
-	__asm        cmp    dword ptr ds:[0x5971C8], 0;
+	__asm        cmp    list<KeyColors>::free_list, 0;
 	__asm        je     _T341;
 
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        jmp    _T39e;
 _T341:
-	__asm        mov    eax, ds:[0x5971C4];
-	__asm        cmp    ds:[0x5971C0], eax;
+	__asm        mov    eax, list<KeyColors>::next_avail;
+	__asm        cmp    list<KeyColors>::last, eax;
 	__asm        jne    _T380;
 
 	__asm        mov    ecx, [ebp-0xF8];
 	__asm        call   list<KeyColors>::add_new_buffer;
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0xE8], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        jmp    _T39e;
 _T380:
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0xEC], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0xEC];
 	__asm        mov    [ebp-0xF0], eax;
 _T39e:
@@ -12580,34 +12580,34 @@ _T4ec:
 
 	__asm        mov    eax, [ebp-0xFC];
 	__asm        mov    [ebp-0x120], eax;
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    [ebp-0x110], eax;
-	__asm        cmp    dword ptr ds:[0x5971C8], 0;
+	__asm        cmp    list<KeyColors>::free_list, 0;
 	__asm        je     _T5b4;
 
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    _T611;
 _T5b4:
-	__asm        mov    eax, ds:[0x5971C4];
-	__asm        cmp    ds:[0x5971C0], eax;
+	__asm        mov    eax, list<KeyColors>::next_avail;
+	__asm        cmp    list<KeyColors>::last, eax;
 	__asm        jne    _T5f3;
 
 	__asm        mov    ecx, [ebp-0x124];
 	__asm        call   list<KeyColors>::add_new_buffer;
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0x114], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    _T611;
 _T5f3:
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0x118], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    [ebp-0x11C], eax;
 _T611:
@@ -12681,34 +12681,34 @@ _T6cd:
 
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    [ebp-0x14C], eax;
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    [ebp-0x13C], eax;
-	__asm        cmp    dword ptr ds:[0x5971C8], 0;
+	__asm        cmp    list<KeyColors>::free_list, 0;
 	__asm        je     _T753;
 
-	__asm        mov    eax, ds:[0x5971C8];
+	__asm        mov    eax, list<KeyColors>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x5971C8], eax;
+	__asm        mov    list<KeyColors>::free_list, eax;
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    [ebp-0x148], eax;
 	__asm        jmp    _T7b0;
 _T753:
-	__asm        mov    eax, ds:[0x5971C4];
-	__asm        cmp    ds:[0x5971C0], eax;
+	__asm        mov    eax, list<KeyColors>::next_avail;
+	__asm        cmp    list<KeyColors>::last, eax;
 	__asm        jne    _T792;
 
 	__asm        mov    ecx, [ebp-0x150];
 	__asm        call   list<KeyColors>::add_new_buffer;
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0x140], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    [ebp-0x148], eax;
 	__asm        jmp    _T7b0;
 _T792:
-	__asm        mov    eax, ds:[0x5971C4];
+	__asm        mov    eax, list<KeyColors>::next_avail;
 	__asm        mov    [ebp-0x144], eax;
-	__asm        add    dword ptr ds:[0x5971C4], 0x10;
+	__asm        add    list<KeyColors>::next_avail, 0x10;
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    [ebp-0x148], eax;
 _T7b0:
@@ -13106,7 +13106,7 @@ void UserInputWindow::ClearDeviceArea() {
 // LINE 1720:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597114];
+	__asm        mov    eax, SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME;
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   6;
@@ -13257,11 +13257,11 @@ _T139:
 	__asm        call   StringIDAssociation::`scalar deleting destructor';
 	__asm        jmp    near ptr 0x0040A6BE;
 
-	__asm        mov    eax, ds:[0x597210];
+	__asm        mov    eax, list<StringIDAssociation>::free_list;
 	__asm        mov    ecx, [ebp-0xCC];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xCC];
-	__asm        mov    ds:[0x597210], eax;
+	__asm        mov    list<StringIDAssociation>::free_list, eax;
 	__asm        jmp    near ptr 0x0040A6DB;
 
 	__asm        mov    eax, this;
@@ -13283,7 +13283,7 @@ _T1e9:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10D8], eax;
@@ -13298,7 +13298,7 @@ _T1e9:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10D8], eax;
@@ -13401,7 +13401,7 @@ _T37f:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 1751:
-	__asm        mov    eax, ds:[0x604C78];
+	__asm        mov    eax, gJoystickManager.nJoystickCount;
 	__asm        mov    nJoystickCount, eax;
 	__asm        jmp    near ptr 0x0040A8B9;
 // LINE 1752:
@@ -13589,7 +13589,7 @@ _T88:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -13604,7 +13604,7 @@ _T88:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1064], eax;
@@ -13950,20 +13950,20 @@ _T82:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x78], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x38], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T103;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T243;
 _T103:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T22e;
 
 	__asm        jmp    near ptr 0x0040AF95;
@@ -14010,14 +14010,14 @@ _T163:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0x5C], 0x80;
 	__asm        lea    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x64], eax;
@@ -14046,20 +14046,20 @@ _T1ed:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x0040B090;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T243;
 _T22e:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x74], eax;
 _T243:
@@ -14128,20 +14128,20 @@ _T2d1:
 
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0xD4], eax;
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    [ebp-0x94], eax;
-	__asm        cmp    dword ptr ds:[0x597224], 0;
+	__asm        cmp    list<Shortcut>::free_list, 0;
 	__asm        je     _T345;
 
-	__asm        mov    eax, ds:[0x597224];
+	__asm        mov    eax, list<Shortcut>::free_list;
 	__asm        mov    eax, [eax];
-	__asm        mov    ds:[0x597224], eax;
+	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        jmp    _T4f7;
 _T345:
-	__asm        mov    eax, ds:[0x597220];
-	__asm        cmp    ds:[0x59721C], eax;
+	__asm        mov    eax, list<Shortcut>::next_avail;
+	__asm        cmp    list<Shortcut>::last, eax;
 	__asm        jne    _T4d9;
 
 	__asm        jmp    near ptr 0x0040B1D7;
@@ -14188,14 +14188,14 @@ _T3cc:
 	__asm        add    esp, 8;
 	__asm        mov    ecx, [ebp-0xA0];
 	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    ecx, [ebp-0xA0];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xA0];
-	__asm        mov    ds:[0x597228], eax;
-	__asm        mov    eax, ds:[0x597228];
+	__asm        mov    list<Shortcut>::buffer_list, eax;
+	__asm        mov    eax, list<Shortcut>::buffer_list;
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ds:[0x597220], eax;
+	__asm        mov    list<Shortcut>::next_avail, eax;
 	__asm        mov    dword ptr [ebp-0xB8], 0x80;
 	__asm        lea    eax, [ebp-0xB8];
 	__asm        mov    [ebp-0xC0], eax;
@@ -14224,20 +14224,20 @@ _T48c:
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    eax, [eax];
 	__asm        shl    eax, 5;
-	__asm        add    eax, ds:[0x597220];
-	__asm        mov    ds:[0x59721C], eax;
+	__asm        add    eax, list<Shortcut>::next_avail;
+	__asm        mov    list<Shortcut>::last, eax;
 	__asm        jmp    near ptr 0x0040B332;
 
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        jmp    _T4f7;
 _T4d9:
-	__asm        mov    eax, ds:[0x597220];
+	__asm        mov    eax, list<Shortcut>::next_avail;
 	__asm        mov    [ebp-0x9C], eax;
-	__asm        add    dword ptr ds:[0x597220], 0x20;
+	__asm        add    list<Shortcut>::next_avail, 0x20;
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0xD0], eax;
 _T4f7:
@@ -14330,7 +14330,7 @@ void UserInputWindow::DisplayError(int32_t nErrorType) {
 // FUNCTION: COPTER_D 0x0040b4b0
 void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, ds:[0x606988];
+	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -14342,7 +14342,7 @@ void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, in
 	__asm        push   eax;
 	__asm        mov    eax, rectNewPosition;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597118];
+	__asm        mov    eax, SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -14410,7 +14410,7 @@ _T85:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10C0], eax;
@@ -14425,7 +14425,7 @@ _T85:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x10C0], eax;
@@ -14632,7 +14632,7 @@ _T317:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x20D8], eax;
@@ -14647,7 +14647,7 @@ _T317:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x20D8], eax;
@@ -14844,7 +14844,7 @@ _T5ff:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x30F0], eax;
@@ -14859,7 +14859,7 @@ _T5ff:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x30F0], eax;
@@ -15240,7 +15240,7 @@ _Tac9:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4108], eax;
@@ -15255,7 +15255,7 @@ _Tac9:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x4108], eax;
@@ -16098,7 +16098,7 @@ void ControlDisplayWindow::GetCommandString(class basic_string<char>& sCommand, 
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -16113,7 +16113,7 @@ void ControlDisplayWindow::GetCommandString(class basic_string<char>& sCommand, 
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1008], eax;
@@ -16649,7 +16649,7 @@ _Tb8:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1050], eax;
@@ -16664,7 +16664,7 @@ _Tb8:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1050], eax;
@@ -16749,7 +16749,7 @@ _T208:
 	__asm        push   eax;
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2054], eax;
@@ -16764,7 +16764,7 @@ _T208:
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        push   edx;
-	__asm        mov    eax, ds:[0x5C28C8];
+	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x2054], eax;

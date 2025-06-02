@@ -78,7 +78,7 @@ void GlobalToLocal(struct Point* pt) {
 // LINE 12:
 	__asm        lea    eax, wpt.x;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF638];
+	__asm        mov    eax, gPort.window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37F0];
 // LINE 13:
@@ -108,7 +108,7 @@ void LocalToGlobal(struct Point* pt) {
 // LINE 21:
 	__asm        lea    eax, wpt.x;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF638];
+	__asm        mov    eax, gPort.window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37E0];
 // LINE 22:
@@ -151,7 +151,7 @@ short StringWidth(unsigned char * str) {
 	__asm        mov    eax, str;
 	__asm        inc    eax;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35C4];
 	__asm        test   eax, eax;
@@ -331,9 +331,9 @@ void SetPortDC(void * __ptr32 dc) {
 	__asm        call   CleanUpPort;
 // LINE 105:
 	__asm        mov    eax, dc;
-	__asm        mov    ds:[0x5BF63C], eax;
+	__asm        mov    gPort.dc, eax;
 // LINE 106:
-	__asm        mov    dword ptr ds:[0x5BF638], 0;
+	__asm        mov    gPort.window, 0;
 // LINE 107:
 	__asm        jmp    near ptr 0x00566CCA;
 }
@@ -341,10 +341,10 @@ void SetPortDC(void * __ptr32 dc) {
 // FUNCTION: COPTER_D 0x00566ccf
 void CleanUpPort() {
 // LINE 85:
-	__asm        cmp    dword ptr ds:[0x5BF638], 0;
+	__asm        cmp    gPort.window, 0;
 	__asm        je     _T4b;
 // LINE 87:
-	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
+	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T39;
 
 	__asm        push   0x8C085;
@@ -355,16 +355,16 @@ void CleanUpPort() {
 	__asm        add    esp, 0x10;
 // LINE 88:
 _T39:
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF638];
+	__asm        mov    eax, gPort.window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 90:
 _T4b:
-	__asm        mov    dword ptr ds:[0x5BF638], 0;
+	__asm        mov    gPort.window, 0;
 // LINE 91:
-	__asm        mov    dword ptr ds:[0x5BF63C], 0;
+	__asm        mov    gPort.dc, 0;
 // LINE 92:
 	__asm        jmp    near ptr 0x00566D33;
 }
@@ -375,12 +375,12 @@ void SetPort(void * __ptr32 newHWND) {
 	__asm        call   CleanUpPort;
 // LINE 113:
 	__asm        mov    eax, newHWND;
-	__asm        mov    ds:[0x5BF638], eax;
+	__asm        mov    gPort.window, eax;
 // LINE 114:
-	__asm        mov    eax, ds:[0x5BF638];
+	__asm        mov    eax, gPort.window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3850];
-	__asm        mov    ds:[0x5BF63C], eax;
+	__asm        mov    gPort.dc, eax;
 // LINE 115:
 	__asm        jmp    near ptr 0x00566D61;
 }
@@ -403,8 +403,8 @@ void SetPort(struct GrafPtr newPort) {
 _T26:
 	__asm        mov    eax, newPort.window;
 	__asm        mov    ecx, newPort.dc;
-	__asm        mov    ds:[0x5BF638], eax;
-	__asm        mov    ds:[0x5BF63C], ecx;
+	__asm        mov    gPort.window, eax;
+	__asm        mov    gPort.dc, ecx;
 // LINE 126:
 _T37:
 	__asm        jmp    near ptr 0x00566DA2;
@@ -413,8 +413,8 @@ _T37:
 // FUNCTION: COPTER_D 0x00566da7
 void GetPort(struct GrafPtr* pPort) {
 // LINE 131:
-	__asm        mov    eax, ds:[0x5BF638];
-	__asm        mov    ecx, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.window;
+	__asm        mov    ecx, gPort.dc;
 	__asm        mov    edx, pPort;
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
@@ -429,7 +429,7 @@ void EraseRect(struct tagRECT* rect) {
 	struct tagRECT lRect;
 
 // LINE 136:
-	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
+	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
 	__asm        push   0x8C085;
@@ -453,7 +453,7 @@ _T32:
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        mov    lRect.right, eax;
 // LINE 139:
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3548];
 	__asm        mov    bk, eax;
@@ -467,7 +467,7 @@ _T32:
 	__asm        push   eax;
 	__asm        lea    eax, lRect.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3888];
 // LINE 142:
@@ -511,7 +511,7 @@ void FrameRect(struct Rect* rect) {
 	struct tagRECT lRect;
 
 // LINE 154:
-	__asm        cmp    dword ptr ds:[0x5BF63C], 0;
+	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
 	__asm        push   0x8C085;
@@ -546,7 +546,7 @@ _T32:
 	__asm        push   eax;
 	__asm        lea    eax, lRect.left;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37FC];
 // LINE 160:
@@ -800,7 +800,7 @@ _T42:
 // FUNCTION: COPTER_D 0x005671ba
 void GetBackColor(unsigned long * color) {
 // LINE 223:
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3548];
 	__asm        mov    ecx, color;
@@ -815,7 +815,7 @@ void RGBBackColor(unsigned long * color) {
 	__asm        mov    eax, color;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x5BF63C];
+	__asm        mov    eax, gPort.dc;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3544];
 // LINE 229:

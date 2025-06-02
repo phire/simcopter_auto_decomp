@@ -246,7 +246,7 @@ void $E8() {
 // FUNCTION: COPTER_D 0x0052b0da
 void $E4() {
 
-	__asm        mov    dword ptr ds:[0x62B6E8], 0x593220;
+	__asm        mov    PlaneClass::lsPlane.<vftable>, 0x593220;
 	__asm        jmp    near ptr 0x0052B0EF;
 
 	__asm        jmp    near ptr 0x0052B0F4;
@@ -332,13 +332,13 @@ _T3e:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 196:
-	__asm        cmp    dword ptr ds:[0x5B7698], 0;
+	__asm        cmp    PlaneClass::sPlaneModelSet, 0;
 	__asm        jne    _Tb0;
 // LINE 198:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x54], 0x12E;
 // LINE 199:
-	__asm        mov    dword ptr ds:[0x5B7698], 1;
+	__asm        mov    PlaneClass::sPlaneModelSet, 1;
 // LINE 201:
 	__asm        jmp    _Tba;
 // LINE 203:
@@ -638,7 +638,7 @@ _T4e:
 	__asm        je     _T7c;
 // LINE 623:
 _T5d:
-	__asm        cmp    dword ptr ds:[0x5B4924], 0;
+	__asm        cmp    G_apache_placed, 0;
 	__asm        je     _T77;
 
 	__asm        mov    eax, this;
@@ -649,7 +649,7 @@ _T77:
 	__asm        jmp    _T170;
 // LINE 627:
 _T7c:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x34], eax;
 // LINE 628:
@@ -842,17 +842,17 @@ _T83:
 	__asm        jmp    _T2ce;
 // LINE 767:
 _T88:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x70];
 	__asm        mov    vec.x, eax;
 // LINE 768:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x74];
 	__asm        mov    vec.y, eax;
 // LINE 769:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x78];
 	__asm        mov    vec.z, eax;
@@ -990,17 +990,17 @@ _T204:
 	__asm        jmp    _T2ce;
 // LINE 826:
 _T209:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x70];
 	__asm        mov    vec.x, eax;
 // LINE 827:
-	__asm        mov    eax, ds:[0x6C1270];
+	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x74];
 	__asm        mov    vec.y, eax;
 // LINE 828:
-	__asm        mov    eax, ds:[0x6C1274];
+	__asm        mov    eax, ViewState.world_pos.z;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x78];
 	__asm        mov    vec.z, eax;
@@ -1273,7 +1273,7 @@ _T5d:
 	__asm        cmp    dword ptr [eax+0x50], 0;
 	__asm        jne    _Tc6;
 // LINE 1198:
-	__asm        mov    eax, ds:[0x6BF188];
+	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x20];
 	__asm        cdq;
@@ -1281,7 +1281,7 @@ _T5d:
 	__asm        sub    eax, edx;
 	__asm        mov    deltaX, eax;
 // LINE 1199:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        cdq;
@@ -1458,12 +1458,12 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 	int32_t deltaX;
 
 // LINE 1281:
-	__asm        mov    eax, ds:[0x6BF188];
+	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x20];
 	__asm        mov    deltaX, eax;
 // LINE 1282:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x24];
 	__asm        mov    deltaY, eax;
@@ -1517,13 +1517,13 @@ _T98:
 	__asm        mov    deltaY, eax;
 // LINE 1315:
 _Taa:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaX;
 	__asm        jl     _Td2;
 
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        add    eax, 4;
 	__asm        cmp    eax, deltaY;
@@ -1569,7 +1569,7 @@ void PlaneClass::MoveForward() {
 	int32_t dist;
 
 // LINE 1390:
-	__asm        mov    eax, ds:[0x5B4760];
+	__asm        mov    eax, LoopTime;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1726,7 +1726,7 @@ _T1b9:
 	__asm        mov    cptr, eax;
 // LINE 1424:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4768];
+	__asm        sub    eax, G_AvLoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x48], eax;
@@ -2859,9 +2859,9 @@ void PlaneClass::AdjustNextPosition() {
 	int32_t mat[4][4];
 
 // LINE 1944:
-	__asm        mov    eax, ds:[0x6BF18C];
+	__asm        mov    eax, CameraCell.y;
 	__asm        and    eax, 0xFF;
-	__asm        mov    ecx, ds:[0x6BF188];
+	__asm        mov    ecx, CameraCell.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
 	__asm        mov    eax, [ecx+eax*4+0x67ED30];
@@ -3183,13 +3183,13 @@ _T70:
 	__asm        mov    vec.x, eax;
 // LINE 2083:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2084:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3208,13 +3208,13 @@ _Tad:
 	__asm        mov    vec.x, eax;
 // LINE 2092:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2093:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3231,13 +3231,13 @@ _Tea:
 	__asm        mov    vec.z, eax;
 // LINE 2100:
 	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.x, eax;
 // LINE 2101:
 	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, ds:[0x6663A0];
+	__asm        mov    ecx, G_ViewSize;
 	__asm        sar    ecx, 1;
 	__asm        imul   eax, ecx;
 	__asm        mov    vec.z, eax;
@@ -3245,13 +3245,13 @@ _Tea:
 	__asm        jmp    _T170;
 // LINE 2106:
 _T123:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.x;
 	__asm        mov    vec.x, eax;
 // LINE 2107:
-	__asm        mov    eax, ds:[0x6663A0];
+	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
 	__asm        inc    eax;
 	__asm        imul   eax, vec.z;
@@ -3277,14 +3277,14 @@ _T170:
 // LINE 2112:
 	__asm        shl    vec.z, 6;
 // LINE 2114:
-	__asm        mov    eax, ds:[0x6C126C];
+	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        add    eax, vec.x;
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    x, eax;
 // LINE 2115:
 	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ds:[0x6C1274];
+	__asm        mov    ecx, ViewState.world_pos.z;
 	__asm        add    ecx, vec.z;
 	__asm        sub    eax, ecx;
 	__asm        sar    eax, 0x16;
@@ -3681,7 +3681,7 @@ void PlaneClass::HandleUFOStuff() {
 // LINE 2487:
 _T34:
 	__asm        xor    eax, eax;
-	__asm        sub    eax, ds:[0x5B4760];
+	__asm        sub    eax, LoopTime;
 	__asm        neg    eax;
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x48], eax;
@@ -4142,15 +4142,15 @@ _T47:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2814:
-	__asm        mov    eax, ds:[0x62B6FC];
+	__asm        mov    eax, PlaneClass::lsPlane.remainingDist;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 2815:
-	__asm        mov    eax, ds:[0x62B700];
+	__asm        mov    eax, PlaneClass::lsPlane.speed;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 2816:
-	__asm        mov    eax, ds:[0x62B704];
+	__asm        mov    eax, PlaneClass::lsPlane.desiredSpeed;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 2817:
@@ -4172,19 +4172,19 @@ _T47:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 2819:
-	__asm        mov    eax, ds:[0x62B718];
+	__asm        mov    eax, PlaneClass::lsPlane.beamDelay;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x30], eax;
 // LINE 2820:
-	__asm        mov    eax, ds:[0x62B71C];
+	__asm        mov    eax, PlaneClass::lsPlane.beamTimer;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x34], eax;
 // LINE 2821:
-	__asm        mov    eax, ds:[0x62B724];
+	__asm        mov    eax, PlaneClass::lsPlane.missionId;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x3C], eax;
 // LINE 2822:
-	__asm        mov    eax, ds:[0x62B720];
+	__asm        mov    eax, PlaneClass::lsPlane.altAdjustment;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 2823:
@@ -4197,15 +4197,15 @@ _T47:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 2824:
-	__asm        mov    eax, ds:[0x62B730];
+	__asm        mov    eax, PlaneClass::lsPlane.smokeTime;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x48], eax;
 // LINE 2825:
-	__asm        mov    eax, ds:[0x62B734];
+	__asm        mov    eax, PlaneClass::lsPlane.shieldCtr;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x4C], eax;
 // LINE 2826:
-	__asm        mov    eax, ds:[0x62B738];
+	__asm        mov    eax, PlaneClass::lsPlane.missileHits;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x50], eax;
 // LINE 2827:
@@ -4222,12 +4222,12 @@ _T47:
 // LINE 2828:
 	__asm        mov    edi, p;
 	__asm        add    edi, 0x7C;
-	__asm        lea    esi, ds:[0x62B764];
+	__asm        lea    esi, PlaneClass::lsPlane.dyObj.matrix[0][0];
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 2829:
 	__asm        mov    eax, p;
-	__asm        mov    ecx, ds:[0x62B6EC];
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(PlaneClass::lsPlane.flags[0]);
 	__asm        mov    [eax+4], ecx;
 // LINE 2831:
 	__asm        jmp    near ptr 0x0052DC87;

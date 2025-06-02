@@ -360,7 +360,7 @@ _T83:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 116:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        jne    _Tbe;
 // LINE 117:
 	__asm        jmp    near ptr 0x00496669;
@@ -528,9 +528,9 @@ _T240:
 _T2d6:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 140:
@@ -539,9 +539,9 @@ _T2d6:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 144:
@@ -683,7 +683,7 @@ _T83:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 203:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        jne    _Tbe;
 // LINE 204:
 	__asm        jmp    near ptr 0x00496ACD;
@@ -842,9 +842,9 @@ _T240:
 _T2b2:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 229:
@@ -853,9 +853,9 @@ _T2b2:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 233:
@@ -998,7 +998,7 @@ _T83:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 293:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        jne    _Tbe;
 // LINE 294:
 	__asm        jmp    near ptr 0x00496F0D;
@@ -1187,9 +1187,9 @@ _T240:
 _T305:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 322:
@@ -1198,9 +1198,9 @@ _T305:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 326:
@@ -1378,7 +1378,7 @@ _T6d:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 399:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        jne    _Tbc;
 // LINE 400:
 	__asm        jmp    near ptr 0x004973D1;
@@ -1650,9 +1650,9 @@ _T293:
 _T39a:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 437:
@@ -1664,9 +1664,9 @@ _T39a:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 441:
@@ -1751,9 +1751,9 @@ _T4b3:
 _T4b8:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 445:
@@ -1765,9 +1765,9 @@ _T4b8:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 450:
@@ -1829,9 +1829,9 @@ _T1b:
 _T67:
 	__asm        push   0;
 	__asm        push   1;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597264];
+	__asm        mov    eax, lpDD;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x58];
 // LINE 476:
@@ -1840,9 +1840,9 @@ _T67:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 483:
@@ -1888,7 +1888,7 @@ _T21:
 	__asm        jmp    _T1e;
 // LINE 510:
 _T79:
-	__asm        cmp    dword ptr ds:[0x597268], 0;
+	__asm        cmp    lpPalette, 0;
 	__asm        je     _Tda;
 // LINE 511:
 	__asm        lea    eax, palEntries[10].peRed;
@@ -1896,9 +1896,9 @@ _T79:
 	__asm        push   0xEC;
 	__asm        push   0xA;
 	__asm        push   0;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
-	__asm        mov    eax, ds:[0x597268];
+	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 	__asm        mov    hResult, eax;
